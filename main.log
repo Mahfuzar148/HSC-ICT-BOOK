@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  21 MAY 2026 20:22
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  21 MAY 2026 23:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -906,10 +906,8 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Segoe UI
 (fontspec)             Symbol/OT:script=latn;language=dflt;mapping=tex-text;"
 
-) (main.aux (chapters/Chapter01/latex/chapter.aux)
-(chapters/Chapter02/latex/chapter.aux) (chapters/Chapter03/latex/chapter.aux)
-(chapters/Chapter04/latex/chapter.aux) (chapters/Chapter05/latex/chapter.aux)
-(chapters/Chapter06/latex/chapter.aux))
+)
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -994,9 +992,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 5.
 \c@lstlisting=\count365
 Package hyperref Info: Link coloring OFF on input line 5.
- (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 19.68933pt on input line 10.
@@ -1007,7 +1007,6 @@ LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 6.64539pt on input line 10.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
-
 
 (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1036,30 +1035,25 @@ LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 23.6196pt on input line 10.
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 (Font)              scaled to size 23.6196pt on input line 10.
- (main.toc
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
-(Font)              scaled to size 11.39209pt on input line 1.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 7.59473pt on input line 2.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 5.69604pt on input line 2.
- [3] [4] [5] [6] [7] [8] [9] [10] [11])
+
+No file main.toc.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [12] [13] [14
+[3] [4
 
 ]
 \openout2 = `chapters/Chapter01/latex/chapter.aux'.
 
-
-(chapters/Chapter01/latex/chapter.tex
+ (chapters/Chapter01/latex/chapter.tex
 Chapter 1.
 (chapters/Chapter01/topics/01_bishwogram/topic.tex
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 16.4046pt on input line 1.
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 (Font)              scaled to size 16.4046pt on input line 1.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 11.39209pt on input line 3.
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 (Font)              scaled to size 13.6705pt on input line 14.
  [1
@@ -1069,126 +1063,610 @@ LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 Underfull \vbox (badness 1253) has occurred while \output is active []
 
  [2]
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 7.59473pt on input line 48.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 5.69604pt on input line 48.
+
 [3] [4] [5] [6] [7])
 (chapters/Chapter01/topics/02_bishwogramer_upadan_o_obodan/topic.tex [8])
 (chapters/Chapter01/topics/03_virtual_reality/topic.tex
 Underfull \vbox (badness 4181) has occurred while \output is active []
 
  [9]
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:18: Undefined control se
+quence.
+l.18 ভার্চুয়াল রিয়েলিটি বা \textenglish
+                                       {Virtual Reality (VR)} হলো তথ্য ও যোগ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:22: Undefined control se
+quence.
+l.22 সাধারণত VR পরিবেশে ব্যবহারকারী \textenglish
+                                                {Head Mounted Display (HMD)}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:22: Undefined control se
+quence.
+l.22 ...{Head Mounted Display (HMD)}, \textenglish
+                                                  {Data Glove}, \textenglish...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:22: Undefined control se
+quence.
+l.22 ...)}, \textenglish{Data Glove}, \textenglish
+                                                  {Controller}, \textenglish...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:22: Undefined control se
+quence.
+l.22 ...e}, \textenglish{Controller}, \textenglish
+                                                  {Sensor} অথবা \textenglish...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:22: Undefined control se
+quence.
+l.22 ...r}, \textenglish{Sensor} অথবা \textenglish
+                                                  {Body Suit} ব্যবহার করে। এ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:25: Undefined control se
+quence.
+l.25 ...য়, তাকে ভার্চুয়াল রিয়েলিটি বা \textenglish
+                                                  {Virtual Reality} বলে।
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [10]
-Underfull \hbox (badness 7116) in paragraph at lines 49--49
-[]|\TU/kalpurush(0)/b/n/12 Head-Mounted Display
- []
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:28: LaTeX Error: Unknown
+ float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+
+LaTeX Warning: File `images/vr_concept_scene.png' not found on input line 30.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:30: Unable to load pictu
+re or PDF file 'images/vr_concept_scene.png'.
+<to be read again> 
+                   }
+l.30 ...72\textwidth]{images/vr_concept_scene.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:30: Package graphics Err
+or: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...72\textwidth]{images/vr_concept_scene.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: images/vr_concept_scene.png Graphic file (type bmp)
+<images/vr_concept_scene.png>
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:33: LaTeX Error: There's
+ no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \\
+       [0.15cm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 10.39528pt on input line 34.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/it' will be
+(Font)              scaled to size 10.39528pt on input line 34.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:37: LaTeX Error: \captio
+n outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 \caption
+             {ভার্চুয়াল রিয়েলিটির মৌলিক ধারণা}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:41: Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.41 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:41: Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.41 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:41: Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.41 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:41: LaTeX Error: \begin{
+document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:41: Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.41 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 10.39528pt on input line 56.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:60: LaTeX Error: Unknown
+ float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.60 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+
+LaTeX Warning: File `images/vr_simple_examples.png' not found on input line 62.
+
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:62: Unable to load pictu
+re or PDF file 'images/vr_simple_examples.png'.
+<to be read again> 
+                   }
+l.62 ...\textwidth]{images/vr_simple_examples.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:62: Package graphics Err
+or: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...\textwidth]{images/vr_simple_examples.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: images/vr_simple_examples.png Graphic file (type bmp)
+<images/vr_simple_examples.png>
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:65: LaTeX Error: There's
+ no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \\
+       [0.15cm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 [11]
-Underfull \hbox (badness 1796) in paragraph at lines 79--79
-\TU/kalpurush(0)/b/n/12 পরিবেশে ব্যবহারকারী প্রবেশ
+Overfull \hbox (1.9396pt too wide) in paragraph at lines 100--101
+ []\TU/kalpurush(0)/b/n/12 ৩. Presence[] \TU/kalpurush(0)/b/n/10.95 Presence হল
+ো VR-এর সবচেয়ে গুরুত্বপূর্ণ মানসিক অভিজ্ঞতার একটি। এখানে ব্যবহারকারী
  []
 
 
-Underfull \hbox (badness 1609) in paragraph at lines 79--80
-[]|\TU/kalpurush(0)/b/n/12 flight simulator, virtual
- []
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:106: LaTeX Error: Unknow
+n float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106 \begin{figure}[H]
+                       
+Option `H' ignored and `p' used.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--83
-[]|\TU/kalpurush(0)/b/n/12 কোনো বাস্তব system-এর
- []
+LaTeX Warning: File `images/vr_three_pillars.png' not found on input line 108.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:108: Unable to load pict
+ure or PDF file 'images/vr_three_pillars.png'.
+<to be read again> 
+                   }
+l.108 ...6\textwidth]{images/vr_three_pillars.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-[]|\TU/kalpurush(0)/b/n/12 traffic simulation,
- []
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:108: Package graphics Er
+ror: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108 ...6\textwidth]{images/vr_three_pillars.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: images/vr_three_pillars.png Graphic file (type bmp)
+<images/vr_three_pillars.png>
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:111: LaTeX Error: There'
+s no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.111 \\
+        [0.15cm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 [12]
-Underfull \hbox (badness 5189) in paragraph at lines 118--119
-[]|\TU/kalpurush(0)/b/n/12 CAVE (তিন মাত্রিক immersive
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:139: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.139 \textenglish
+                  {Head Mounted Display (HMD)} & মাথায় বা চোখে পরা display d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
+[]|\TU/kalpurush(0)/b/n/10.95 Head Mounted Display
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 124--125
-[]|\TU/kalpurush(0)/b/n/12 Meta Quest 3S, Vision Pro,
+Underfull \hbox (badness 1275) in paragraph at lines 139--140
+[]|\TU/kalpurush(0)/b/n/10.95 মাথায় বা চোখে পরা display device; এর মাধ্যমে
  []
 
-[13] [14] [15]
-Overfull \hbox (14.20688pt too wide) in paragraph at lines 236--253
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:141: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.141 \textenglish
+                  {Data Glove} & হাতে পরা বিশেষ glove; হাতের নড়াচড়া, আঙুলের ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:143: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.143 \textenglish
+                  {Body Suit} & শরীরের বিভিন্ন অংশের movement শনাক্ত করে vir...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:145: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.145 \textenglish
+                  {Motion Sensor} & মাথা, হাত বা শরীরের গতি ও অবস্থান শনাক্ত...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:147: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.147 \textenglish
+                  {Controller} & virtual object নির্বাচন, ধরা, সরানো বা comm...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:149: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.149 \textenglish
+                  {Audio System} & বাস্তবের মতো শব্দের পরিবেশ তৈরি করে; যেমন...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:151: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.151 \textenglish
+                  {Haptic Device} & vibration বা force feedback-এর মাধ্যমে স...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:153: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.153 \textenglish
+                  {Computer / Graphics System} & virtual environment তৈরি, p...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:155: Undefined control s
+equence.
+<recently read> \textenglish 
+                             
+l.155 \textenglish
+                  {Simulation Software} & virtual object, scene, movement, r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:161: Undefined control s
+equence.
+l.161 VR পরিবেশ তৈরির জন্য \textenglish
+                                       {Head Mounted Display}, \textenglish{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:161: Undefined control s
+equence.
+l.161 ...glish{Head Mounted Display}, \textenglish
+                                                  {Data Glove} এবং \textengl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:161: Undefined control s
+equence.
+l.161 ...\textenglish{Data Glove} এবং \textenglish
+                                                  {Body Suit} খুব গুরুত্বপূর...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[13]
+Underfull \hbox (badness 1360) in paragraph at lines 238--239
+[]|\TU/kalpurush(0)/b/n/10.95 YouTube video, documen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+[]|\TU/kalpurush(0)/b/n/10.95 ব্যবহারকারী computer-
+ []
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 242--242
+\TU/kalpurush(0)/b/n/10.95 এ প্রবেশ করে interaction
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 242--243
+[]|\TU/kalpurush(0)/b/n/10.95 Flight simulator, surgical
+ []
+
+[14]
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:275: Undefined control s
+equence.
+l.275     \item VR device: \textenglish
+                                       {Head Mounted Display}, \textenglish{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:275: Undefined control s
+equence.
+l.275 ...glish{Head Mounted Display}, \textenglish
+                                                  {Data Glove}, \textenglish...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/Chapter01/topics/03_virtual_reality/topic.tex:275: Undefined control s
+equence.
+l.275 ...}, \textenglish{Data Glove}, \textenglish
+                                                  {Body Suit}, sensor, contr...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\TU/kalpurush(0)/b/n/10.95 সম্পূর্ণ computer-generated
+ []
+
+[16] [17] [18]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19]
+Overfull \hbox (14.20688pt too wide) in paragraph at lines 477--494
  [] 
  []
 
-[16] [17] [18] [19]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-[21] [22] [23] [24] [25] [26] [27] [28])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex [29]
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_budd
-himotta/topic.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+ [21]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 4492) has occurred while \output is active []
+
+ [24]
+[25] [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-[31] [32])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/02_robotics/top
-ic.tex [33]
+ [27]
+Underfull \vbox (badness 1424) has occurred while \output is active []
+
+ [28]
+[29] [30] [31]) (chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_budd
+himotta/topic.tex [33]
+Underfull \vbox (badness 1226) has occurred while \output is active []
 
  [34]
 [35])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/02_robotics/top
+ic.tex [36]
+Underfull \vbox (badness 4660) has occurred while \output is active []
+
+ [37]
+[38])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/03_cryosurgery/
-topic.tex [36] [37] [38])
+topic.tex [39] [40] [41])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/04_mohakash_ovi
-jan/topic.tex
-Underfull \vbox (badness 6658) has occurred while \output is active []
-
- [39]
-Underfull \vbox (badness 1365) has occurred while \output is active []
-
- [40]
-Underfull \vbox (badness 3503) has occurred while \output is active []
-
- [41])
+jan/topic.tex [42] [43])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/05_ict_nirvor_u
-tpadon/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42]
-[43] [44])
+tpadon/topic.tex [44] [45] [46])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/06_protirokkha/
-topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
-[46] [47])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/t
-opic.tex
-Overfull \hbox (19.13278pt too wide) in paragraph at lines 25--26
-\TU/kalpurush(0)/b/n/12 Mobile unlock, attendance system, passport/ID verificat
-ion এবং criminal investigation-
+topic.tex [47]
+Underfull \hbox (badness 2150) in paragraph at lines 69--70
+[]\TU/kalpurush(0)/b/n/10.95 প্রতিরক্ষায় ICT-এর প্রশ্নে radar, satellite, cyber
+ security, drone এবং secure
  []
 
-
-Underfull \vbox (badness 2035) has occurred while \output is active []
-
- [48]
-[49])
+[48])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/t
+opic.tex [49] [50])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/08_bioinformati
-cs/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
-[51] [52])
+cs/topic.tex [51] [52] [53])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/09_genetic_engi
-neering/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [53]
-[54] [55])
+neering/topic.tex [54] [55] [56])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/10_nanotechnolo
-gy/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [56]
-[57] [58] [59])) (chapters/Chapter01/topics/05_noitikota/topic.tex)
-(chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex)
+gy/topic.tex [57] [58]) [59]) (chapters/Chapter01/topics/05_noitikota/topic.tex
+) (chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex)
 (chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1196,199 +1674,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Overfull \vbox (135.42894pt too high) has occurred while \output is active []
+Overfull \vbox (116.10994pt too high) has occurred while \output is active []
 
 
-[62])
+[62]) [63]
 \openout2 = `chapters/Chapter02/latex/chapter.aux'.
 
- (chapters/Chapter02/latex/chapter.tex
+ (chapters/Chapter02/latex/chapter.tex [64
+
+
+
+
+]
 Chapter 2.
 (chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic.tex
-[63
-
-
-
-
-]) (chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic.tex [6
-4]) (chapters/Chapter02/topics/03_media_of_data_communication/topic.tex)
-(chapters/Chapter02/topics/04_wired_media/topic.tex [65])
-(chapters/Chapter02/topics/05_wireless_media_and_systems/topic.tex [66])
-(chapters/Chapter02/topics/06_mobile_communication_and_generations/topic.tex)
-(chapters/Chapter02/topics/07_computer_networking_objectives_and_types/topic.te
-x [67]) (chapters/Chapter02/topics/08_network_devices/topic.tex)
-(chapters/Chapter02/topics/09_network_topology/topic.tex [68])
-(chapters/Chapter02/topics/10_cloud_computing/topic.tex)
-(chapters/Chapter02/topics/11_exercises/topic.tex)) [69]
-\openout2 = `chapters/Chapter03/latex/chapter.aux'.
-
-
-(chapters/Chapter03/latex/chapter.tex [70
-
-
-
-
-]
-Chapter 3.
-(chapters/Chapter03/topics/01_history_of_numbers/topic.tex)
-(chapters/Chapter03/topics/02_number_systems/topic.tex [71]
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-) (chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex [72])
-(chapters/Chapter03/topics/04_binary_add_sub/topic.tex)
-(chapters/Chapter03/topics/05_signed_numbers/topic.tex)
-(chapters/Chapter03/topics/06_twos_complement/topic.tex [73])
-(chapters/Chapter03/topics/07_codes_overview/topic.tex)
-(chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic.tex [74])
-(chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex)
-(chapters/Chapter03/topics/10_boolean_algebra/topic.tex)
-(chapters/Chapter03/topics/11_boolean_theorems/topic.tex)
-(chapters/Chapter03/topics/12_de_morgan/topic.tex [75])
-(chapters/Chapter03/topics/13_truth_table/topic.tex)
-(chapters/Chapter03/topics/14_basic_gates/topic.tex [76])
-(chapters/Chapter03/topics/15_universal_gates/topic.tex)
-(chapters/Chapter03/topics/16_special_gates/topic.tex)
-(chapters/Chapter03/topics/17_encoder/topic.tex)
-(chapters/Chapter03/topics/18_decoder/topic.tex [77])
-(chapters/Chapter03/topics/19_adder/topic.tex)
-(chapters/Chapter03/topics/20_register/topic.tex [78])
-(chapters/Chapter03/topics/21_counter/topic.tex)
-(chapters/Chapter03/topics/22_exercises/topic.tex)) [79]
-\openout2 = `chapters/Chapter04/latex/chapter.aux'.
-
-
-(chapters/Chapter04/latex/chapter.tex [80
-
-
-
-
-]
-Chapter 4.
-(chapters/Chapter04/topics/01_web_design_concept/topic.tex)
-(chapters/Chapter04/topics/02_website_structure/topic.tex)
-(chapters/Chapter04/topics/03_html_basic/topic.tex [81])
-(chapters/Chapter04/topics/04_tag_syntax/topic.tex)
-(chapters/Chapter04/topics/05_design_structure_layout/topic.tex)
-(chapters/Chapter04/topics/06_formatting/topic.tex [82])
-(chapters/Chapter04/topics/07_hyperlink/topic.tex)
-(chapters/Chapter04/topics/08_image/topic.tex)
-(chapters/Chapter04/topics/09_table/topic.tex [83])
-(chapters/Chapter04/topics/10_form/topic.tex)
-(chapters/Chapter04/topics/11_web_page_designing/topic.tex)
-(chapters/Chapter04/topics/12_website_publishing/topic.tex)
-(chapters/Chapter04/topics/13_exercises/topic.tex [84])) [85]
-\openout2 = `chapters/Chapter05/latex/chapter.aux'.
-
-
-(chapters/Chapter05/latex/chapter.tex [86
-
-
-
-
-]
-Chapter 5.
-(chapters/Chapter05/topics/01_overview/topic.tex)
-(chapters/Chapter05/topics/02_program_concept/topic.tex)
-(chapters/Chapter05/topics/03_programming_language_concept/topic.tex [87])
-(chapters/Chapter05/topics/04_generations_of_language/topic.tex)
-(chapters/Chapter05/topics/05_low_level_language/topic.tex [88])
-(chapters/Chapter05/topics/06_machine_language/topic.tex)
-(chapters/Chapter05/topics/07_assembly_language/topic.tex)
-(chapters/Chapter05/topics/08_mid_level_language/topic.tex [89])
-(chapters/Chapter05/topics/09_high_level_language/topic.tex)
-(chapters/Chapter05/topics/10_4gl/topic.tex)
-(chapters/Chapter05/topics/11_translator_program/topic.tex [90])
-(chapters/Chapter05/topics/12_compiler/topic.tex)
-(chapters/Chapter05/topics/13_interpreter/topic.tex)
-(chapters/Chapter05/topics/14_assembler/topic.tex)
-(chapters/Chapter05/topics/15_program_organization/topic.tex [91])
-(chapters/Chapter05/topics/16_steps_of_development/topic.tex)
-(chapters/Chapter05/topics/17_algorithm/topic.tex [92])
-(chapters/Chapter05/topics/18_flowchart/topic.tex)
-(chapters/Chapter05/topics/19_program_design_model/topic.tex)
-(chapters/Chapter05/topics/20_structured_programming/topic.tex [93])
-(chapters/Chapter05/topics/21_visual_programming/topic.tex)
-(chapters/Chapter05/topics/22_oop/topic.tex)
-(chapters/Chapter05/topics/23_event_driven_programming/topic.tex)
-(chapters/Chapter05/topics/24_c_intro/topic.tex)
-(chapters/Chapter05/topics/25_c_characteristics/topic.tex)
-(chapters/Chapter05/topics/26_c_compiling/topic.tex [94])
-(chapters/Chapter05/topics/27_c_structure/topic.tex)
-(chapters/Chapter05/topics/28_data_type/topic.tex)
-(chapters/Chapter05/topics/29_constant/topic.tex)
-(chapters/Chapter05/topics/30_variable/topic.tex [95])
-(chapters/Chapter05/topics/31_operator/topic.tex)
-(chapters/Chapter05/topics/32_expression/topic.tex)
-(chapters/Chapter05/topics/33_keyword/topic.tex)
-(chapters/Chapter05/topics/34_io_statement/topic.tex)
-(chapters/Chapter05/topics/35_conditional_statement/topic.tex [96])
-(chapters/Chapter05/topics/36_loop_statement/topic.tex)
-(chapters/Chapter05/topics/37_array/topic.tex)
-(chapters/Chapter05/topics/38_function/topic.tex)
-(chapters/Chapter05/topics/39_practical_program_practice/topic.tex [97])
-(chapters/Chapter05/topics/40_exercises/topic.tex)) [98]
-\openout2 = `chapters/Chapter06/latex/chapter.aux'.
-
-
-(chapters/Chapter06/latex/chapter.tex
-Chapter 6.
-(chapters/Chapter06/topics/01_overview/topic.tex)
-(chapters/Chapter06/topics/02_basic_elements/topic.tex)
-(chapters/Chapter06/topics/03_dbms/topic.tex [99
-
-
-
-
-])
-(chapters/Chapter06/topics/04_rdbms/topic.tex)
-(chapters/Chapter06/topics/05_creating_database/topic.tex)
-(chapters/Chapter06/topics/06_data_type/topic.tex [100])
-(chapters/Chapter06/topics/07_query/topic.tex)
-(chapters/Chapter06/topics/08_sorting/topic.tex)
-(chapters/Chapter06/topics/09_indexing/topic.tex [101])
-(chapters/Chapter06/topics/10_relation/topic.tex)
-(chapters/Chapter06/topics/11_form/topic.tex)
-(chapters/Chapter06/topics/12_report/topic.tex [102])
-(chapters/Chapter06/topics/13_corporate_database/topic.tex)
-(chapters/Chapter06/topics/14_government_database/topic.tex)
-(chapters/Chapter06/topics/15_data_security/topic.tex)
-(chapters/Chapter06/topics/16_data_encryption/topic.tex [103])
-(chapters/Chapter06/topics/17_practical_tasks/topic.tex
-Overfull \hbox (23.56496pt too wide) in paragraph at lines 6--7
-[]\TU/kalpurush(0)/b/n/12 Table/Primary key/Record insert/edit/delete, Query/So
-rting/Indexing, Form/Report 
- []
-
-) (chapters/Chapter06/topics/18_exercises/topic.tex)) [104] (main.aux
-(chapters/Chapter01/latex/chapter.aux) (chapters/Chapter02/latex/chapter.aux)
-(chapters/Chapter03/latex/chapter.aux) (chapters/Chapter04/latex/chapter.aux)
-(chapters/Chapter05/latex/chapter.aux) (chapters/Chapter06/latex/chapter.aux))
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
- ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F9C46CA12CFE395E996582FA071B636B;71356.
- ) 
-Here is how much of TeX's memory you used:
- 30447 strings out of 402983
- 692065 string characters out of 5448482
- 1185694 words of memory out of 5000000
- 58336 multiletter control sequences out of 15000+600000
- 635493 words of font info for 91 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 103i,9n,116p,750b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on main.pdf (118 pages).
+[65]) (chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic.tex
+[66]) (chapters/Chapter02/topics/03_media_of_data_communication/topic.tex)
+(chapters/Chapter02/topics/04_wired_media/topic.tex [67

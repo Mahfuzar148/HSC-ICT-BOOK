@@ -23,6 +23,8 @@
   ]{kalpurush}
 \fi
 \usepackage{graphicx}
+% Allow using [H] float specifier and better placement control
+\usepackage{float}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{newunicodechar}
@@ -53,6 +55,12 @@
 \renewcommand{\labelitemi}{{\symbolfont\textbullet}}
 \renewcommand{\labelitemii}{{\symbolfont\textendash}}
 \renewcommand{\labelitemiii}{{\symbolfont\textperiodcentered}}
+
+% Define \textenglish if not provided by language packages — keep English text inline
+\providecommand{\textenglish}[1]{#1}
+
+% Helpful graphicspath entries for topic images (add more paths if needed)
+\graphicspath{{chapters/Chapter01/topics/03_virtual_reality/images/}{images/}}
 
 % Document-level settings (fonts, margins) to be standardized here.
 % Table of Contents depth: 0=chapters, 1=sections, 2=subsections
