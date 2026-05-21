@@ -1,0 +1,163 @@
+% Shared preamble for HSC ICT book
+% Compile with XeLaTeX or LuaLaTeX to render Bangla text correctly.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX}
+  % Primary Bangla font (Kalpurush). Provide fallbacks for missing shapes
+  % and fake bold/slant when the font lacks those variants.
+  \setmainfont[
+    Path=C:/Windows/Fonts/,
+    Extension=.ttf,
+    Script=Bengali,
+    UprightFont = * ,
+    BoldFont = * ,
+    ItalicFont = * ,
+    BoldItalicFont = * ,
+    FakeBold=1.4,
+    FakeSlant=0.18,
+    Scale=MatchLowercase
+  ]{kalpurush}
+\fi
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{newunicodechar}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage[unicode]{hyperref}
+% Disable colored boxes around links in the PDF (remove red boxes in TOC)
+\hypersetup{hidelinks, pdfborder={0 0 0}}
+\usepackage{amsmath,amssymb}
+
+% Use a system symbol font for common bullets/glyphs missing in Bengali font.
+% Try the Windows 'Segoe UI Symbol' first, fall back to a safe sans-serif.
+\IfFontExistsTF{Segoe UI Symbol}{%
+  \newfontfamily\symbolfont{Segoe UI Symbol}%
+}{%
+  \newfontfamily\symbolfont{DejaVu Sans}%
+}
+
+% Map common Unicode characters to LaTeX-safe equivalents using the symbol
+% font for bullets so they render even when the main Bengali font lacks them.
+\newunicodechar{•}{{\symbolfont\textbullet}}
+% Common Unicode -> LaTeX mappings to avoid missing-glyph warnings
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{±}{\ensuremath{\pm}}
+
+% Force itemize bullets to use the symbol font (avoids missing glyph boxes)
+\renewcommand{\labelitemi}{{\symbolfont\textbullet}}
+\renewcommand{\labelitemii}{{\symbolfont\textendash}}
+\renewcommand{\labelitemiii}{{\symbolfont\textperiodcentered}}
+
+% Document-level settings (fonts, margins) to be standardized here.
+% Table of Contents depth: 0=chapters, 1=sections, 2=subsections
+% Show chapters and their sections/subsections in the TOC so topics appear there.
+\setcounter{tocdepth}{2}
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+
+% Semantic boxes for the book. Writers should use these names instead of
+% manual colors so the whole book can be redesigned from one place.
+\newtcolorbox{learningbox}{
+  breakable,
+  colback=blue!4!white,
+  colframe=blue!55!black,
+  coltitle=white,
+  title={শিখনফল},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{definitionbox}[1]{
+  breakable,
+  colback=cyan!4!white,
+  colframe=cyan!45!black,
+  coltitle=white,
+  title={#1},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{keypointbox}[1]{
+  breakable,
+  colback=gray!8!white,
+  colframe=gray!60!black,
+  coltitle=white,
+  title={#1},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{examplebox}[1]{
+  breakable,
+  colback=green!5!white,
+  colframe=green!45!black,
+  coltitle=white,
+  title={#1},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{boardbox}[1]{
+  breakable,
+  colback=yellow!10!white,
+  colframe=orange!70!black,
+  coltitle=black,
+  title={#1},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{mistakebox}[1]{
+  breakable,
+  colback=red!5!white,
+  colframe=red!55!black,
+  coltitle=white,
+  title={#1},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{practicebox}{
+  breakable,
+  colback=purple!4!white,
+  colframe=purple!55!black,
+  coltitle=white,
+  title={অনুশীলন},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{recapbox}{
+  breakable,
+  colback=gray!7!white,
+  colframe=gray!55!black,
+  coltitle=white,
+  title={১ মিনিটে রিভিশন},
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.6pt
+}
+
+\newtcolorbox{sourcebox}{
+  breakable,
+  colback=white,
+  colframe=gray!45!black,
+  coltitle=black,
+  title={উৎস-নোট},
+  fonttitle=\bfseries,
+  arc=1mm,
+  boxrule=0.4pt
+}

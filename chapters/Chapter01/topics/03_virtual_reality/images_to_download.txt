@@ -1,0 +1,6 @@
+# Add one direct image URL per line. Lines starting with # are ignored.
+# Example (copy direct image URL from Wikimedia Commons or other permitted source):
+# https://upload.wikimedia.org/wikipedia/commons/9/9a/Oculus_Rift_Crescent_Bay_Prototype_(16383004719).jpg
+#
+# Paste your image URLs below:
+

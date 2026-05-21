@@ -1,0 +1,94 @@
+\subsection{বায়োমেট্রিক্স}
+
+\begin{learningbox}
+এই অংশ শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item বায়োমেট্রিক্সের ধারণা ব্যাখ্যা করতে।
+\item fingerprint, face, iris, retina ও voice recognition-এর ব্যবহার লিখতে।
+\item authentication ও identification-এর পার্থক্য বুঝতে।
+\item বায়োমেট্রিক্সের সুবিধা, সীমাবদ্ধতা ও privacy risk বিশ্লেষণ করতে।
+\end{itemize}
+\end{learningbox}
+
+\subsubsection{বায়োমেট্রিক্সের ধারণা}
+
+মানুষের কিছু শারীরিক ও আচরণগত বৈশিষ্ট্য তুলনামূলকভাবে অনন্য। যেমন আঙুলের ছাপ, মুখমণ্ডল, চোখের iris, কণ্ঠস্বর বা হাতের লেখা। এসব বৈশিষ্ট্য digital পদ্ধতিতে মেপে পরিচয় যাচাই বা শনাক্ত করার প্রযুক্তিকে বায়োমেট্রিক্স বলা হয়।
+
+\begin{definitionbox}{সংজ্ঞা}
+বায়োমেট্রিক্স হলো মানুষের অনন্য শারীরিক বা আচরণগত বৈশিষ্ট্য digitalভাবে সংগ্রহ, বিশ্লেষণ ও তুলনা করে পরিচয় যাচাই বা শনাক্ত করার প্রযুক্তি।
+\end{definitionbox}
+
+NIST-এর biometric guidance অনুযায়ী biometric system সাধারণত capture, feature extraction, template storage এবং matching ধাপে কাজ করে। অর্থাৎ সরাসরি “আঙুলের ছবি” নয়; অনেক ক্ষেত্রে বৈশিষ্ট্য থেকে template তৈরি করে তুলনা করা হয়।
+
+\subsubsection{ফিঙ্গারপ্রিন্ট শনাক্তকরণ}
+
+Fingerprint recognition আঙুলের ridge, valley, minutiae point ইত্যাদি বিশ্লেষণ করে। Mobile unlock, attendance system, passport/ID verification এবং criminal investigation-এ fingerprint ব্যবহৃত হয়।
+
+\subsubsection{মুখমণ্ডল শনাক্তকরণ}
+
+Face recognition camera image থেকে মুখের feature বিশ্লেষণ করে template তৈরি করে। Smartphone unlock, airport security, surveillance এবং photo organization-এ ব্যবহৃত হয়। আলো, angle, mask বা image quality performance কমাতে পারে।
+
+\subsubsection{আইরিস ও রেটিনা স্ক্যান}
+
+Iris হলো চোখের রঙিন অংশ; এর pattern খুব অনন্য। Retina scan চোখের পেছনের blood vessel pattern বিশ্লেষণ করে। উচ্চ নিরাপত্তা দরকার এমন ক্ষেত্রে iris/retina-based system ব্যবহার করা যায়।
+
+\subsubsection{ভয়েস রিকগনিশন}
+
+Voice recognition কণ্ঠস্বরের pitch, tone, rhythm ও speech pattern বিশ্লেষণ করে। Call center verification, voice assistant এবং accessibility system-এ ব্যবহার হয়। তবে noise, অসুস্থতা বা mimicry problem হতে পারে।
+
+\subsubsection{বায়োমেট্রিক্সের ব্যবহারক্ষেত্র}
+
+\begin{keypointbox}{ব্যবহারক্ষেত্র}
+\begin{itemize}
+\item জাতীয় পরিচয়পত্র, পাসপোর্ট ও immigration।
+\item অফিস attendance ও access control।
+\item smartphone unlock ও mobile payment।
+\item ব্যাংকিং ও financial verification।
+\item আইনশৃঙ্খলা ও forensic investigation।
+\item পরীক্ষাকেন্দ্র বা secure lab-এ identity verification।
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.30\textwidth}|p{0.56\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{উদাহরণ} \\
+\hline
+শারীরিক বৈশিষ্ট্য & fingerprint, face, iris, retina, palm vein \\
+\hline
+আচরণগত বৈশিষ্ট্য & voice, signature, typing rhythm, gait \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{সুবিধা ও সীমাবদ্ধতা}
+\begin{itemize}
+\item সুবিধা: password মনে রাখতে হয় না, পরিচয় যাচাই দ্রুত, নকল করা কঠিন।
+\item সীমাবদ্ধতা: sensor error, false match, injury বা lighting problem, privacy risk।
+\item নিরাপত্তা: biometric data leak হলে password-এর মতো সহজে বদলানো যায় না।
+\end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+বায়োমেট্রিক্সের উত্তরে “মানুষের অনন্য বৈশিষ্ট্য” শব্দটি অবশ্যই রাখবে। fingerprint, face, iris, voice—কমপক্ষে চারটি উদাহরণ মনে রাখো।
+\end{boardbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item আঙুলের ছাপ দিয়ে পরিচয় যাচাই কোন প্রযুক্তির উদাহরণ?\\
+ক. Biometrics \quad খ. Blogging \quad গ. Formatting \quad ঘ. Spreadsheet
+\item চোখের রঙিন অংশের pattern শনাক্তকরণ কোনটি?\\
+ক. Iris recognition \quad খ. OCR \quad গ. GPS \quad ঘ. Router
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item বায়োমেট্রিক্স কী?
+\item বায়োমেট্রিক্সের দুটি privacy risk লেখ।
+\end{enumerate}
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশে local ICT PDF resources, NIST biometric concepts, ISO-style biometric vocabulary overview এবং HSC ICT resources মিলিয়ে লেখা হয়েছে।
+\end{sourcebox}
