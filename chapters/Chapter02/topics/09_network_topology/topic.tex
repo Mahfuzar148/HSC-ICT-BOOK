@@ -1,149 +1,723 @@
-\section{Network Topology}
+﻿\section{Network Topology}
+
+\newcommand{\topicheading}[1]{%
+  \par\vspace{0.35em}\noindent
+  \begingroup\setlength{\fboxsep}{3pt}%
+  \colorbox{cyan!12!white}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{#1}}}%
+  \endgroup\par\vspace{0.05em}%
+}
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item network topology কী তা ব্যাখ্যা করতে।
-\item bus, star, ring, mesh ও hybrid topology আলাদা করতে।
-\item topology comparison table লিখতে।
-\item কোন topology কোথায় বেশি উপযোগী তা বলতে।
-\item board-style diagram-based প্রশ্নের উত্তর লিখতে।
+এই পাঠ শেষে শিক্ষার্থীরা:
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item network topology কী তা ব্যাখ্যা করতে পারবে।
+\item physical topology ও logical topology-এর পার্থক্য বুঝতে পারবে।
+\item Star, Ring, Bus, Tree, Mesh ও Hybrid topology শনাক্ত করতে পারবে।
+\item প্রতিটি topology-এর diagram, কার্যপ্রণালি, সুবিধা, অসুবিধা ও ব্যবহার লিখতে পারবে।
+\item topology-গুলোর পার্থক্য ও তুলনামূলক আলোচনা লিখতে পারবে।
+\item HSC board ও admission exam-এর topology-related প্রশ্নের উত্তর দিতে পারবে।
 \end{itemize}
 \end{learningbox}
 
-Network topology হলো network-এর ভেতরে device ও cable-এর physical বা logical arrangement। topology দেখে বোঝা যায় data কীভাবে travel করবে, কোথায় fault হলে কতটা প্রভাব পড়বে এবং expansion কতটা সহজ হবে।
+\subsection{ভূমিকা}
+
+বর্তমান যুগে computer network শিক্ষা প্রতিষ্ঠান, অফিস, ব্যাংক, ব্যবসা প্রতিষ্ঠান, গবেষণাগার এবং ঘরোয়া ব্যবহারে অত্যন্ত গুরুত্বপূর্ণ। একাধিক computer বা device পরস্পরের সাথে যুক্ত হলে data আদান-প্রদান, hardware ও software resource sharing, দ্রুত যোগাযোগ এবং centralized management সহজ হয়।
+
+তবে network তৈরি করার সময় শুধু device-গুলোকে cable বা wireless link দিয়ে যুক্ত করলেই যথেষ্ট নয়। কোন computer কোনটির সাথে যুক্ত থাকবে, data কোন পথে চলাচল করবে, কোন device কেন্দ্রীয় ভূমিকা পালন করবে এবং কোনো অংশ নষ্ট হলে network-এর উপর কী প্রভাব পড়বে - এসব বিষয় পরিকল্পনা করে নির্ধারণ করতে হয়। এই পরিকল্পিত সংযোগ বিন্যাসই network topology।
+
+একই সংখ্যক device নিয়েও ভিন্ন ভিন্ন topology তৈরি করা যায়। topology বদলালে cable খরচ, data transmission-এর গতি, reliability, security, troubleshooting এবং maintenance-এর ধরনও বদলে যায়। তাই network তৈরি করার আগে cost, speed, reliability, security এবং future expansion বিবেচনা করে উপযুক্ত topology নির্বাচন করা প্রয়োজন।
 
 \begin{definitionbox}{Network topology}
-কম্পিউটার ও network device-গুলো কীভাবে পরস্পরের সঙ্গে যুক্ত থাকে, তার গঠনগত বিন্যাসকে network topology বলা হয়।
+কম্পিউটার network-এ ব্যবহৃত computer, server, switch, router, hub এবং সংযোগ মাধ্যমগুলোর বিন্যাস বা সংযোগ কাঠামো, যার মাধ্যমে data আদান-প্রদানের পথ নির্ধারিত হয়, তাকে network topology বলে।
 \end{definitionbox}
 
-\begin{center}
-\begin{tabular}{c}
-\textbf{Network Topology} \\
-\hline
-Bus \hspace{0.8cm} Star \hspace{0.8cm} Ring \hspace{0.8cm} Mesh \hspace{0.8cm} Hybrid \\
-\end{tabular}
-\end{center}
+\subsection{টপোলজির প্রয়োজনীয়তা}
 
-\subsection{Common Topologies}
+Network topology network-এর গঠন, খরচ, গতি, নিরাপত্তা ও নির্ভরযোগ্যতার উপর সরাসরি প্রভাব ফেলে। সঠিক topology নির্বাচন করলে network পরিচালনা সহজ হয়, fault দ্রুত ধরা যায় এবং ভবিষ্যতে network বড় করা সুবিধাজনক হয়।
 
-\subsubsection{Bus Topology}
-\begin{definitionbox}{Bus topology}
-একটি প্রধান backbone cable-এর সাথে সব device যুক্ত থাকলে তাকে bus topology বলে।
-\end{definitionbox}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Network planning:} কোন device কোথায় বসবে এবং কীভাবে সংযুক্ত হবে তা আগে থেকে বোঝা যায়।
+\item \textbf{Data path:} data কোন node বা device হয়ে destination-এ যাবে তা নির্ধারণ করা যায়।
+\item \textbf{Cost control:} cable, switch, router, port ও installation খরচ অনুমান করা যায়।
+\item \textbf{Fault detection:} কোনো cable, node বা central device নষ্ট হলে কোন অংশ প্রভাবিত হবে তা দ্রুত বোঝা যায়।
+\item \textbf{Performance:} data collision, delay ও traffic load কমানোর জন্য উপযুক্ত design নেওয়া যায়।
+\item \textbf{Expansion:} ভবিষ্যতে নতুন computer, branch বা department যোগ করার পরিকল্পনা সহজ হয়।
+\end{itemize}
 
-\subsubsection{Star Topology}
-\begin{definitionbox}{Star topology}
-একটি central hub বা switch-এর সঙ্গে সব node আলাদা cable দিয়ে যুক্ত থাকলে star topology হয়।
-\end{definitionbox}
+\subsection{Physical ও Logical topology}
 
-\subsubsection{Ring Topology}
-\begin{definitionbox}{Ring topology}
-প্রতিটি node তার পাশের node-এর সঙ্গে যুক্ত হয়ে বৃত্তাকার network তৈরি করলে ring topology হয়।
-\end{definitionbox}
+\textbf{Physical topology} হলো network device ও cable-এর বাস্তব বা দৃশ্যমান সংযোগ বিন্যাস। অর্থাৎ computer, switch, router, cable ইত্যাদি বাস্তবে কোথায় বসানো হয়েছে এবং কীভাবে সংযুক্ত হয়েছে, সেটি physical topology।
 
-\subsubsection{Mesh Topology}
-\begin{definitionbox}{Mesh topology}
-প্রতিটি node একাধিক node-এর সঙ্গে direct connection-এ যুক্ত থাকলে mesh topology হয়।
-\end{definitionbox}
+\textbf{Logical topology} হলো network-এর ভিতরে data কীভাবে চলাচল করে তার যৌক্তিক পথ। device-গুলো বাস্তবে যেভাবেই সংযুক্ত থাকুক, data কোন নিয়মে এবং কোন পথে এক node থেকে অন্য node-এ যায়, সেটিই logical topology।
 
-\subsubsection{Hybrid Topology}
-\begin{definitionbox}{Hybrid topology}
-দুই বা ততোধিক topology একসঙ্গে মিলিয়ে যে network গঠিত হয়, তাকে hybrid topology বলে।
-\end{definitionbox}
-
-\begin{center}
-\begin{tabular}{|p{0.17\textwidth}|p{0.22\textwidth}|p{0.23\textwidth}|p{0.26\textwidth}|}
-\hline
-\textbf{Topology} & \textbf{Strength} & \textbf{Weakness} & \textbf{Use} \\
-\hline
-Bus & কম খরচ, কম cable & backbone fault হলে বড় সমস্যা & ছোট temporary network \\
-\hline
-Star & manage সহজ, fault isolate সহজ & central device failure risk & lab, office LAN \\
-\hline
-Ring & orderly data flow & one node সমস্যা করলে প্রভাব পড়ে & limited controlled network \\
-\hline
-Mesh & খুব reliable & costly, complex & critical systems \\
-\hline
-Hybrid & flexible & design জটিল & large mixed network \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{examplebox}{কোথায় কোনটি}
-স্কুলের computer lab-এ star topology সাধারণ; কারণ management সহজ। দূরবর্তী branch office-সহ বড় system-এ hybrid topology দেখা যেতে পারে। Critical backhaul link-এ mesh reliability বাড়াতে পারে।
+\begin{examplebox}{উদাহরণ}
+একটি lab-এ সব computer যদি একটি switch-এর সাথে cable দিয়ে যুক্ত থাকে, তাহলে physical structureটি Star topology। কিন্তু data flow switch configuration ও communication protocol অনুযায়ী logicalভাবে নিয়ন্ত্রিত হয়।
 \end{examplebox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Topology question-এ diagram, advantage, disadvantage এবং use-case একসঙ্গে লিখলে নম্বরের সম্ভাবনা বাড়ে। Star বনাম bus এবং mesh বনাম hybrid তুলনা খুব common।
+\subsection{নেটওয়ার্ক টপোলজির গুরুত্বপূর্ণ উপাদান}
+
+\begin{keypointbox}{গুরুত্বপূর্ণ শব্দ}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Node:} network-এ যুক্ত প্রতিটি computer, printer, server, phone, router বা অন্য device।
+\item \textbf{Link:} দুইটি node-এর মধ্যে সংযোগ। এটি wired cable বা wireless connection হতে পারে।
+\item \textbf{Hub:} central device, যা data পেলে সাধারণত connected সব device-এর দিকে পাঠায়।
+\item \textbf{Switch:} hub-এর তুলনায় উন্নত device; destination address দেখে নির্দিষ্ট device-এ data পাঠায়।
+\item \textbf{Router:} এক network থেকে অন্য network-এ data পাঠায়; internet connection ও বড় network-এ গুরুত্বপূর্ণ।
+\item \textbf{Backbone:} network-এর প্রধান সংযোগ line বা main cable, যার সাথে একাধিক device বা branch যুক্ত থাকে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Topology নির্বাচন করার সময় বিবেচ্য বিষয়}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.62\textwidth}|}
+\hline
+\textbf{বিচারের বিষয়} & \textbf{কেন গুরুত্বপূর্ণ} \\
+\hline
+Cost & cable, switch/router, installation ও maintenance খরচ বোঝায়। \\
+\hline
+Network size & ছোট lab, বড় office, campus বা enterprise network অনুযায়ী topology নির্বাচন করতে হয়। \\
+\hline
+Reliability & একটি node বা link নষ্ট হলে network কতটা সচল থাকবে তা বোঝায়। \\
+\hline
+Scalability & পরে নতুন computer/device যোগ করা কতটা সহজ তা বোঝায়। \\
+\hline
+Fault isolation & সমস্যা কোথায় হয়েছে তা দ্রুত শনাক্ত করা যায় কি না। \\
+\hline
+Performance & data collision, delay, traffic load ও bandwidth ব্যবহার কেমন হবে। \\
+\hline
+Security & গুরুত্বপূর্ণ data নির্দিষ্ট ও নিরাপদ path দিয়ে পাঠানো যাবে কি না। \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{HSC পরীক্ষার জন্য মনে রাখো}
+Topology মানে শুধু diagram নয়; এটি device-এর সংযোগ বিন্যাস এবং data চলাচলের পথ দুটোই বোঝায়। Star মানে central hub/switch, Bus মানে backbone cable, Ring মানে বৃত্তাকার connection, Tree মানে hierarchical structure, Mesh মানে একাধিক path, আর Hybrid মানে একাধিক topology-এর সমন্বয়।
 \end{boardbox}
 
-\begin{recapbox}
-\begin{itemize}
-\item Topology network-এর arrangement বোঝায়।
-\item Bus, star, ring, mesh ও hybrid—এই পাঁচটি নাম সবচেয়ে গুরুত্বপূর্ণ।
-\item Cost, reliability, scalability ও fault tolerance দিয়ে topology বিচার করা যায়।
-\end{itemize}
-\end{recapbox}
-
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item একটি central switch-এর সাথে সব device যুক্ত থাকলে কোন topology?\\
-ক. Bus \quad খ. Star \quad গ. Ring \quad ঘ. Mesh
-\item সবচেয়ে বেশি reliability সাধারণত কোন topology-তে পাওয়া যায়?\\
-ক. Bus \quad খ. Star \quad গ. Mesh \quad ঘ. Ring
-\end{enumerate}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Bus topology-এর একটি সুবিধা ও একটি অসুবিধা লেখ।
-\item Star topology কেন জনপ্রিয়?
-\end{enumerate}
-
-\textbf{সৃজনশীল অনুশীলন}
-একটি অফিসে central switch নষ্ট হলে পুরো network বন্ধ হয়ে যায়, কিন্তু অন্য design-এ একটি link নষ্ট হলেও network সচল থাকে। উদ্দীপকের আলোকে topology বিশ্লেষণ করো।
-\end{practicebox}
-
-\begin{sourcebox}
-এই অংশ chapter 2 main sheet, handnote, and standard network-topology references নিয়ে প্রস্তুত করা হয়েছে।
-\end{sourcebox}
-
-\subsection{Topology diagram placeholders}
+\subsection{নেটওয়ার্ক টপোলজির প্রকারভেদ}
 
 \begin{center}
-\fbox{\parbox{0.92\textwidth}{
-\centering
-\textbf{চিত্র placeholder}\\[4pt]
-Bus: একটি backbone cable-এ সব node।\\
-Ring: node-গুলো বৃত্তাকারে সংযুক্ত।\\
-Star: central hub/switch থেকে সব node।\\
-Tree: star topology-এর hierarchical রূপ।\\
-Mesh: বহু node পরস্পরের সাথে বহু link।\\
-Hybrid: একাধিক topology-এর সমন্বয়।
-}}
+\begin{tikzpicture}[
+  root/.style={draw, rounded corners, minimum width=4cm, minimum height=0.7cm, align=center, font=\bfseries},
+  child/.style={draw, rounded corners, minimum width=1.45cm, minimum height=0.55cm, align=center}
+]
+\node[root] (topology) at (0,2) {Network Topology};
+\draw[thick] (topology.south) -- (0,1.25);
+\draw[thick] (-4.5,1.25) -- (4.5,1.25);
+\foreach \x/\name in {-4.5/Bus, -2.7/Star, -0.9/Ring, 0.9/Mesh, 2.7/Tree, 4.5/Hybrid} {
+  \draw[thick] (\x,1.25) -- (\x,0.65);
+  \node[child] at (\x,0.25) {\name};
+}
+\end{tikzpicture}
 \end{center}
 
+HSC ICT অনুযায়ী প্রধান topology হলো Star, Ring, Bus, Tree, Mesh ও Hybrid topology। এগুলো diagram দিয়ে মনে রাখলে board exam, MCQ এবং সৃজনশীল প্রশ্নে উত্তর লেখা সহজ হয়।
+
+\subsection{Star Topology}
+
+\begin{definitionbox}{Star Network Topology}
+Star topology হলো এমন একটি network topology যেখানে network-এর সব computer বা node একটি কেন্দ্রীয় device, যেমন hub বা switch-এর সাথে আলাদাভাবে সংযুক্ত থাকে।
+\end{definitionbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={draw, rounded corners, minimum width=1.25cm, minimum height=0.6cm, align=center}]
+\node (s) at (4,1.8) {Switch};
+\node (n1) at (1,3.4) {PC-1};
+\node (n2) at (7,3.4) {PC-2};
+\node (n3) at (1,0.2) {PC-3};
+\node (n4) at (7,0.2) {PC-4};
+\node (srv) at (4,-0.7) {Server};
+\draw[thick] (s) -- (n1);
+\draw[thick] (s) -- (n2);
+\draw[thick] (s) -- (n3);
+\draw[thick] (s) -- (n4);
+\draw[thick] (s) -- (srv);
+\end{tikzpicture}
+\caption{Star Network Topology}
+\label{fig:star-topology}
+\end{figure}
+
+\topicheading{কার্যপ্রণালি}
+Star topology-তে কোনো computer data পাঠালে data প্রথমে central hub/switch-এর কাছে যায়। এরপর central device data-টি destination computer-এ পাঠায়। ফলে hub/switch এই network-এর communication centre হিসেবে কাজ করে।
+
+\topicheading{বৈশিষ্ট্য}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item সব node একটি central device-এর সাথে যুক্ত থাকে।
+\item central device হিসেবে সাধারণত hub বা switch ব্যবহৃত হয়।
+\item প্রতিটি node-এর জন্য আলাদা cable লাগে।
+\item একটি node নষ্ট হলে সাধারণত অন্য node-এর communication বন্ধ হয় না।
+\item central device নষ্ট হলে পুরো network অচল হতে পারে।
+\end{itemize}
+
+\begin{keypointbox}{Hub ও Switch ব্যবহারের পার্থক্য}
+Hub data পেলে সাধারণত সব connected device-এর দিকে পাঠায়। Switch destination address দেখে নির্দিষ্ট device-এ data পাঠায়। তাই modern Star topology-তে switch ব্যবহার করলে performance ও security তুলনামূলক ভালো হয়।
+\end{keypointbox}
+
+\topicheading{সুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item সহজে স্থাপন করা যায়।
+\item ত্রুটি নির্ণয় সহজ।
+\item একটি computer নষ্ট হলেও পুরো network বন্ধ হয় না।
+\item নতুন device যোগ করা সহজ।
+\item school lab, office LAN ও home network-এ বেশি ব্যবহৃত হয়।
+\end{itemize}
+
+\topicheading{অসুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item hub/switch নষ্ট হলে পুরো network বন্ধ হয়ে যেতে পারে।
+\item প্রতিটি node-এর জন্য আলাদা cable লাগায় খরচ বাড়ে।
+\item অনেক device একসাথে traffic করলে central device-এ চাপ পড়ে।
+\end{itemize}
+
+\begin{examplebox}{ব্যবহার}
+School বা college computer lab, office LAN, small business network এবং home router-based network-এ Star topology বেশি ব্যবহৃত হয়।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Star topology হলো এমন network topology যেখানে সব computer বা node একটি কেন্দ্রীয় hub বা switch-এর সাথে সংযুক্ত থাকে এবং data আদান-প্রদান সেই কেন্দ্রীয় device-এর মাধ্যমে সম্পন্ন হয়।
+\end{boardbox}
+
+\begin{boardbox}{সৃজনশীল উত্তরের মূল পয়েন্ট}
+Star topology-তে central hub/switch-এর ভূমিকা, একটি computer নষ্ট হলেও network সচল থাকা, নতুন node যোগের সুবিধা এবং central device নষ্ট হলে পুরো network বন্ধ হওয়ার ঝুঁকি উল্লেখ করলে উত্তর পূর্ণাঙ্গ হয়।
+\end{boardbox}
+
+\subsection{Ring Topology}
+
+\begin{definitionbox}{Ring Network Topology}
+Ring topology হলো এমন একটি network topology যেখানে প্রতিটি computer তার পূর্ববর্তী ও পরবর্তী computer-এর সাথে যুক্ত হয়ে একটি বৃত্তাকার communication path তৈরি করে।
+\end{definitionbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={draw, circle, minimum size=0.9cm, align=center}]
+\node (a) at (4,3.2) {A};
+\node (b) at (6.3,2.2) {B};
+\node (c) at (5.7,0.2) {C};
+\node (d) at (2.3,0.2) {D};
+\node (e) at (1.7,2.2) {E};
+\draw[thick] (a) -- (b) -- (c) -- (d) -- (e) -- (a);
+\end{tikzpicture}
+\caption{Ring Network Topology}
+\label{fig:ring-topology}
+\end{figure}
+
+\topicheading{কার্যপ্রণালি}
+Ring topology-তে data সাধারণত একটি নির্দিষ্ট direction-এ এক node থেকে পরবর্তী node-এ যায়। গন্তব্য node না আসা পর্যন্ত data ধারাবাহিকভাবে node অতিক্রম করে।
+
+\topicheading{বৈশিষ্ট্য}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item প্রতিটি node তার পাশের দুইটি node-এর সাথে যুক্ত থাকে।
+\item network structure closed loop বা বৃত্তাকার হয়।
+\item সাধারণত central hub/switch থাকে না।
+\item প্রতিটি node data গ্রহণ করে এবং প্রয়োজন হলে পরবর্তী node-এ পাঠায়।
+\item open end না থাকায় Bus topology-এর মতো terminator দরকার হয় না।
+\end{itemize}
+
+\topicheading{সুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item data চলাচলের নির্দিষ্ট path থাকে।
+\item collision তুলনামূলক কম হতে পারে।
+\item প্রতিটি node signal regenerate করতে পারে।
+\item ছোট বা controlled network-এ ব্যবহার করা যায়।
+\end{itemize}
+
+\topicheading{অসুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item একটি node বা cable নষ্ট হলে পুরো ring network প্রভাবিত হতে পারে।
+\item নতুন node যোগ করতে network সাময়িকভাবে বন্ধ করতে হতে পারে।
+\item fault বের করা star topology-এর তুলনায় কঠিন।
+\item আধুনিক LAN-এ এটি খুব বেশি ব্যবহৃত হয় না।
+\end{itemize}
+
+\begin{examplebox}{ব্যবহার}
+পুরনো Token Ring network, নির্দিষ্ট control system বা loop-based closed network-এ Ring topology দেখা যেতে পারে।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Ring topology হলো এমন network topology যেখানে প্রতিটি computer তার পাশের দুইটি computer-এর সাথে যুক্ত হয়ে একটি বৃত্তাকার network তৈরি করে।
+\end{boardbox}
+
+\begin{boardbox}{সৃজনশীল উত্তরের মূল পয়েন্ট}
+Ring topology ব্যাখ্যার সময় closed loop, central device না থাকা, node-to-node data flow, collision কম হওয়া এবং একটি node/link নষ্ট হলে network ক্ষতিগ্রস্ত হওয়ার দিকগুলো লিখতে হবে।
+\end{boardbox}
+
+\subsection{Bus Topology}
+
+\begin{definitionbox}{Bus Network Topology}
+Bus topology হলো এমন একটি network topology যেখানে network-এর সব computer বা node একটি সাধারণ প্রধান cable বা backbone cable-এর সাথে যুক্ত থাকে।
+\end{definitionbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=1.7cm, every node/.style={draw, rounded corners, minimum width=1.2cm, minimum height=0.6cm, align=center}]
+\draw[thick] (0,0) -- (8,0);
+\node (n1) at (1,1) {PC-1};
+\node (n2) at (2.8,1) {PC-2};
+\node (n3) at (5.2,1) {PC-3};
+\node (n4) at (7,1) {PC-4};
+\draw (n1.south) -- (1,0);
+\draw (n2.south) -- (2.8,0);
+\draw (n3.south) -- (5.2,0);
+\draw (n4.south) -- (7,0);
+\node[draw=none] at (4,-0.35) {Backbone cable};
+\node[draw=none] at (-0.25,0) {T};
+\node[draw=none] at (8.25,0) {T};
+\end{tikzpicture}
+\caption{Bus Network Topology}
+\label{fig:bus-topology}
+\end{figure}
+
+\topicheading{কার্যপ্রণালি}
+কোনো computer data পাঠালে data backbone cable দিয়ে network-এর সব node-এর কাছে পৌঁছে যায়। data packet-এর address যেই computer-এর সাথে মিলে, শুধু সেই computer data গ্রহণ করে।
+
+\topicheading{বৈশিষ্ট্য}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item সব node একটি common backbone cable-এর সাথে যুক্ত থাকে।
+\item data একই communication line share করে।
+\item central hub বা switch থাকে না।
+\item ছোট network হলে setup সহজ ও খরচ কম।
+\item backbone cable network-এর সবচেয়ে গুরুত্বপূর্ণ অংশ।
+\end{itemize}
+
+\begin{keypointbox}{Terminator}
+Bus topology-তে backbone cable-এর দুই প্রান্তে terminator ব্যবহার করা হয়। Terminator signal reflection বা bounce back কমিয়ে data transmission স্থিতিশীল রাখতে সাহায্য করে।
+\end{keypointbox}
+
+\topicheading{সুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item cable কম লাগে।
+\item ছোট network তৈরি করতে খরচ কম।
+\item setup তুলনামূলক সহজ।
+\item temporary বা demonstration network-এর জন্য উপযোগী।
+\end{itemize}
+
+\topicheading{অসুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item backbone cable নষ্ট হলে পুরো network বন্ধ হয়ে যেতে পারে।
+\item computer সংখ্যা বেশি হলে network ধীর হয়ে যায়।
+\item data collision বেশি হতে পারে।
+\item fault শনাক্ত করা কঠিন।
+\item বড় network-এর জন্য উপযোগী নয়।
+\end{itemize}
+
+\begin{examplebox}{ব্যবহার}
+ছোট বা temporary network এবং পুরনো Ethernet network-এ Bus topology ব্যবহার দেখা যেত। আধুনিক office LAN-এ সাধারণত Star topology বেশি ব্যবহৃত হয়।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Bus topology হলো এমন network topology যেখানে সব computer বা node একটি প্রধান cable বা backbone cable-এর সাথে যুক্ত থাকে।
+\end{boardbox}
+
+\begin{boardbox}{সৃজনশীল উত্তরের মূল পয়েন্ট}
+Bus topology-এর উত্তরে backbone cable, কম cable খরচ, ছোট network-এ উপযোগিতা, data collision এবং backbone নষ্ট হলে পুরো network বন্ধ হওয়ার বিষয়গুলো লিখলে উত্তর শক্তিশালী হয়।
+\end{boardbox}
+
+\subsection{Tree Topology}
+
+\begin{definitionbox}{Tree Network Topology}
+Tree topology হলো এমন একটি network topology যেখানে network-এর computer বা device গুলো গাছের শাখা-প্রশাখার মতো স্তরভিত্তিক বা hierarchical বিন্যাসে যুক্ত থাকে।
+\end{definitionbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={draw, rounded corners, minimum width=1.2cm, minimum height=0.55cm, align=center}]
+\node (root) at (4,3.4) {Root / Core};
+\node (s1) at (1.5,2) {Switch-1};
+\node (s2) at (6.5,2) {Switch-2};
+\node (a) at (0.3,0.6) {PC-1};
+\node (b) at (2.7,0.6) {PC-2};
+\node (c) at (5.3,0.6) {PC-3};
+\node (d) at (7.7,0.6) {PC-4};
+\draw[thick] (root) -- (s1);
+\draw[thick] (root) -- (s2);
+\draw[thick] (s1) -- (a);
+\draw[thick] (s1) -- (b);
+\draw[thick] (s2) -- (c);
+\draw[thick] (s2) -- (d);
+\end{tikzpicture}
+\caption{Tree Network Topology}
+\label{fig:tree-topology}
+\end{figure}
+
+\topicheading{কার্যপ্রণালি}
+Tree topology-তে network স্তরভিত্তিকভাবে কাজ করে। উপরের স্তরের device নিচের স্তরের device গুলোকে connect বা control করে। কোনো computer data পাঠালে data প্রথমে local switch-এ যায়, তারপর প্রয়োজন হলে upper-level switch বা root device হয়ে destination branch-এ পৌঁছে।
+
+\topicheading{বৈশিষ্ট্য}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item এটি hierarchical বা স্তরভিত্তিক topology।
+\item root/core device থেকে branch ও sub-branch তৈরি হয়।
+\item একাধিক star network root বা backbone-এর মাধ্যমে যুক্ত থাকতে পারে।
+\item বড় network-কে ছোট অংশে ভাগ করে পরিচালনা করা যায়।
+\item root বা parent device গুরুত্বপূর্ণ ভূমিকা পালন করে।
+\end{itemize}
+
+\begin{keypointbox}{Tree topology কেন Star + Bus-এর মতো}
+Tree topology-তে নিচের branch-গুলো অনেক সময় Star topology-এর মতো হয়, আর branch-গুলো একটি root/backbone-এর মাধ্যমে যুক্ত থাকে। তাই বড় network গঠনে এটি Star ও Bus topology-এর বৈশিষ্ট্য মিলিয়ে ব্যবহার করতে পারে।
+\end{keypointbox}
+
+\topicheading{সুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item বড় network তৈরি ও পরিচালনা করা যায়।
+\item department-wise বা floor-wise network design করা সহজ।
+\item network expand করা তুলনামূলক সহজ।
+\item fault নির্দিষ্ট branch-এ সীমাবদ্ধ থাকতে পারে।
+\item school, college, office বা campus network-এর জন্য উপযোগী।
+\end{itemize}
+
+\topicheading{অসুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item root বা backbone device নষ্ট হলে network-এর বড় অংশ অচল হতে পারে।
+\item cable বেশি লাগে।
+\item configuration তুলনামূলক জটিল।
+\item maintenance খরচ বেশি হতে পারে।
+\end{itemize}
+
+\begin{examplebox}{ব্যবহার}
+বড় office, শিক্ষা প্রতিষ্ঠান, campus network, bank বা department-wise network design-এ Tree topology উপযোগী।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Tree topology হলো এমন network topology যেখানে computer বা device গুলো গাছের শাখা-প্রশাখার মতো স্তরভিত্তিকভাবে বিন্যস্ত থাকে।
+\end{boardbox}
+
+\begin{boardbox}{সৃজনশীল উত্তরের মূল পয়েন্ট}
+Tree topology-এর উত্তরে hierarchical structure, root/core switch, department-wise branch, সহজ expansion এবং root/backbone নষ্ট হলে বড় অংশ অচল হওয়ার ঝুঁকি উল্লেখ করতে হবে।
+\end{boardbox}
+
+\subsection{Mesh Topology}
+
+\begin{definitionbox}{Mesh Network Topology}
+Mesh topology হলো এমন একটি network topology যেখানে network-এর প্রতিটি node একাধিক node-এর সাথে, এবং full mesh ক্ষেত্রে প্রতিটি node অন্য সব node-এর সাথে সরাসরি সংযুক্ত থাকে।
+\end{definitionbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={draw, circle, minimum size=0.85cm, align=center}]
+\node (a) at (1,2.8) {A};
+\node (b) at (4,3.3) {B};
+\node (c) at (7,2.8) {C};
+\node (d) at (2,0.4) {D};
+\node (e) at (6,0.4) {E};
+\draw[thick] (a) -- (b) -- (c) -- (e) -- (d) -- (a);
+\draw[thick] (a) -- (c);
+\draw[thick] (a) -- (e);
+\draw[thick] (b) -- (d);
+\draw[thick] (b) -- (e);
+\draw[thick] (c) -- (d);
+\end{tikzpicture}
+\caption{Mesh Network Topology}
+\label{fig:mesh-topology}
+\end{figure}
+
+\topicheading{কার্যপ্রণালি}
+একটি node থেকে data সরাসরি বা বিকল্প path দিয়ে গন্তব্য node-এ যেতে পারে। কোনো link নষ্ট হলেও data অন্য link দিয়ে যেতে পারে। তাই Mesh topology reliability ও fault tolerance-এর জন্য শক্তিশালী।
+
+\topicheading{Mesh topology-এর প্রকারভেদ}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Full Mesh:} প্রতিটি node network-এর অন্য সব node-এর সাথে সরাসরি যুক্ত থাকে।
+\item \textbf{Partial Mesh:} প্রতিটি node সব node-এর সাথে যুক্ত থাকে না; কিছু গুরুত্বপূর্ণ node multiple links রাখে।
+\end{itemize}
+
+\begin{boardbox}{Full Mesh link formula}
+Full mesh topology-তে যদি node সংখ্যা \(n\) হয়, তবে মোট direct link সংখ্যা হবে:
+\[
+\frac{n(n-1)}{2}
+\]
+যেমন, 4টি node থাকলে link সংখ্যা \( \frac{4 \times 3}{2}=6 \) টি। 10টি computer হলে link সংখ্যা \( \frac{10 \times 9}{2}=45 \) টি।
+\end{boardbox}
+
+\topicheading{বৈশিষ্ট্য}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item প্রতিটি node একাধিক node-এর সাথে connected থাকে।
+\item full mesh হলে প্রতিটি node অন্য সব node-এর সাথে সরাসরি যুক্ত থাকে।
+\item data চলাচলের জন্য একাধিক path থাকে।
+\item reliability ও fault tolerance বেশি।
+\item cable, port, installation ও configuration বেশি লাগে।
+\end{itemize}
+
+\topicheading{সুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item reliability সবচেয়ে বেশি।
+\item একটি link নষ্ট হলেও data অন্য path দিয়ে যেতে পারে।
+\item data transmission নিরাপদ ও দ্রুত হতে পারে।
+\item fault সহজে isolate করা যায়।
+\item high-security বা critical network-এর জন্য উপযোগী।
+\end{itemize}
+
+\topicheading{অসুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item cable অনেক বেশি লাগে।
+\item installation খরচ বেশি।
+\item configuration ও maintenance জটিল।
+\item প্রতিটি device-এ বেশি port দরকার হয়।
+\item বড় network-এ full mesh সবসময় practical নয়।
+\end{itemize}
+
+\begin{examplebox}{ব্যবহার}
+Bank network, military communication, data center, wireless mesh network এবং critical communication system-এ Mesh topology ধারণা ব্যবহৃত হয়।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Mesh topology হলো এমন network topology যেখানে প্রতিটি node একাধিক বা সব node-এর সাথে সরাসরি সংযুক্ত থাকে, ফলে data চলাচলের জন্য একাধিক পথ থাকে।
+\end{boardbox}
+
+\begin{boardbox}{সৃজনশীল উত্তরের মূল পয়েন্ট}
+Mesh topology বিশ্লেষণে multiple path, full/partial mesh, link formula, reliability, fault tolerance, security এবং বেশি cable/port খরচের বিষয়গুলো রাখতে হবে।
+\end{boardbox}
+
+\subsection{Hybrid Topology}
+
+\begin{definitionbox}{Hybrid Network Topology}
+Hybrid topology হলো এমন network topology যেখানে দুই বা ততোধিক network topology-এর সমন্বয়ে একটি network তৈরি করা হয়।
+\end{definitionbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={draw, rounded corners, minimum width=1.15cm, minimum height=0.55cm, align=center}]
+\node (s1) at (2,2.1) {Switch-A};
+\node (s2) at (6,2.1) {Switch-B};
+\node (a1) at (0.5,3.4) {A1};
+\node (a2) at (2,3.7) {A2};
+\node (a3) at (3.5,3.4) {A3};
+\node (b1) at (4.5,0.7) {B1};
+\node (b2) at (6,0.4) {B2};
+\node (b3) at (7.5,0.7) {B3};
+\draw[thick] (s1) -- (a1);
+\draw[thick] (s1) -- (a2);
+\draw[thick] (s1) -- (a3);
+\draw[thick] (s2) -- (b1);
+\draw[thick] (s2) -- (b2);
+\draw[thick] (s2) -- (b3);
+\draw[thick] (s1) -- node[draw=none, above]{Backbone link} (s2);
+\end{tikzpicture}
+\caption{Hybrid Network Topology}
+\label{fig:hybrid-topology}
+\end{figure}
+
+\topicheading{কার্যপ্রণালি}
+Hybrid topology-তে network-এর প্রয়োজন অনুযায়ী বিভিন্ন topology একসাথে ব্যবহার করা হয়। যেমন, কোনো প্রতিষ্ঠানের প্রতিটি department Star topology ব্যবহার করতে পারে, আবার department switch-গুলো backbone link দিয়ে যুক্ত হতে পারে।
+
+\topicheading{Hybrid topology-এর common form}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Star-Bus Hybrid:} একাধিক Star network একটি backbone cable-এর সাথে যুক্ত থাকে।
+\item \textbf{Star-Ring Hybrid:} কয়েকটি Star network ring আকারে যুক্ত হতে পারে।
+\item \textbf{Star-Mesh Hybrid:} user computer Star topology-তে এবং গুরুত্বপূর্ণ server/router Mesh topology-তে যুক্ত থাকে।
+\end{itemize}
+
+\topicheading{বৈশিষ্ট্য}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item দুই বা ততোধিক topology-এর সমন্বয়ে তৈরি হয়।
+\item বড় network design করার জন্য উপযোগী।
+\item organization-এর প্রয়োজন অনুযায়ী flexible structure তৈরি করা যায়।
+\item network expansion সহজ হতে পারে।
+\item design, installation ও maintenance তুলনামূলক জটিল।
+\end{itemize}
+
+\topicheading{সুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item flexible network design করা যায়।
+\item বড় network তৈরি করা যায়।
+\item প্রয়োজন অনুযায়ী topology নির্বাচন করা যায়।
+\item কোনো অংশে সমস্যা হলে পুরো network সবসময় বন্ধ হয় না।
+\item performance ও scalability ভালো হতে পারে।
+\end{itemize}
+
+\topicheading{অসুবিধা}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item design জটিল।
+\item installation ও maintenance খরচ বেশি।
+\item দক্ষ network administrator প্রয়োজন।
+\item fault detection সবসময় সহজ নয়।
+\end{itemize}
+
+\begin{examplebox}{ব্যবহার}
+বড় corporate office, university campus, bank, ISP network বা enterprise network-এ Hybrid topology বেশি ব্যবহারযোগ্য।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Hybrid topology হলো এমন network topology যেখানে দুই বা ততোধিক topology একত্রে ব্যবহার করে network তৈরি করা হয়।
+\end{boardbox}
+
+\begin{boardbox}{সৃজনশীল উত্তরের মূল পয়েন্ট}
+Hybrid topology-এর উত্তরে কোন কোন topology একত্রে ব্যবহৃত হয়েছে, বড় organization/campus network-এ এর সুবিধা, flexible expansion এবং skilled administrator দরকার হওয়ার কারণ ব্যাখ্যা করতে হবে।
+\end{boardbox}
+
+\subsection{Topology গুলোর তুলনামূলক আলোচনা}
+
 \begin{center}
-\begin{tabular}{|p{0.17\textwidth}|p{0.29\textwidth}|p{0.38\textwidth}|}
+{\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|p{0.12\textwidth}|p{0.18\textwidth}|p{0.17\textwidth}|p{0.17\textwidth}|p{0.15\textwidth}|}
 \hline
-\textbf{Topology} & \textbf{সুবিধা} & \textbf{সীমাবদ্ধতা} \\
+\textbf{Topology} & \textbf{গঠন} & \textbf{মূল সুবিধা} & \textbf{fault প্রভাব} & \textbf{ব্যবহার} \\
 \hline
-Bus & কম cable, সহজ ধারণা & backbone নষ্ট হলে network বন্ধ \\
+Bus & backbone cable & খরচ কম, cable কম & backbone নষ্ট হলে network বন্ধ & ছোট network \\
 \hline
-Ring & data flow শৃঙ্খলাবদ্ধ & একটি node/link নষ্ট হলে সমস্যা হতে পারে \\
+Star & hub/switch কেন্দ্রিক & fault isolation সহজ & hub/switch নষ্ট হলে network বন্ধ & LAN, lab \\
 \hline
-Star & fault isolate করা সহজ & central device নষ্ট হলে পুরো network প্রভাবিত \\
+Ring & বৃত্তাকার loop & data flow শৃঙ্খলাবদ্ধ & node/link fault করলে সমস্যা & পুরনো ring network \\
 \hline
-Tree & বড় network স্তরভিত্তিক সাজানো যায় & root/backbone failure বড় সমস্যা \\
+Tree & গাছের মতো hierarchy & বড় network ভাগ করা যায় & root/backbone fault করলে সমস্যা & office/campus \\
 \hline
-Mesh & reliability বেশি & cable ও cost বেশি \\
+Mesh & জালের মতো multiple link & reliability বেশি & বিকল্প path থাকে & critical network \\
 \hline
-Hybrid & প্রয়োজনমতো flexible design & design ও maintenance জটিল \\
+Hybrid & মিশ্র structure & flexible design & design-এর উপর নির্ভর করে & বড় প্রতিষ্ঠান \\
 \hline
 \end{tabular}
+}
 \end{center}
 
-\begin{examplebox}{প্রয়োগ}
-একটি school lab-এ star topology সাধারণত সুবিধাজনক, কারণ প্রতিটি computer আলাদা cable দিয়ে switch-এ যুক্ত থাকে। একটি computer নষ্ট হলেও অন্যগুলো চলতে পারে।
-\end{examplebox}
+\subsection{কোন topology কোথায় উপযুক্ত?}
+
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{ছোট ও কম খরচের network:} Bus topology
+\item \textbf{Computer lab বা office LAN:} Star topology
+\item \textbf{বড় institution বা campus:} Tree topology
+\item \textbf{High security ও high reliability দরকার:} Mesh topology
+\item \textbf{বড় organization যেখানে বিভিন্ন network structure দরকার:} Hybrid topology
+\item \textbf{পুরনো বা নির্দিষ্ট loop-based network:} Ring topology
+\end{itemize}
+
+\begin{keypointbox}{মনে রাখার সহজ নিয়ম}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{সবচেয়ে সহজ ও কম খরচ:} Bus topology
+\item \textbf{LAN বা computer lab-এ বেশি ব্যবহারযোগ্য:} Star topology
+\item \textbf{সবচেয়ে reliable:} Mesh topology
+\item \textbf{বড় institution/campus-এর জন্য ভালো:} Tree topology
+\item \textbf{সবচেয়ে flexible design:} Hybrid topology
+\item \textbf{গাছের মতো structure:} Tree topology
+\item \textbf{জালের মতো structure:} Mesh topology
+\end{itemize}
+\end{keypointbox}
+
+\subsection{পরীক্ষায় গুরুত্বপূর্ণ topology পার্থক্য}
+
+\begin{center}
+{\small
+\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{তুলনা} & \textbf{প্রথম topology} & \textbf{দ্বিতীয় topology} \\
+\hline
+Bus বনাম Star & Bus-এ shared backbone cable থাকে; cable কম লাগে, কিন্তু backbone fault হলে বড় সমস্যা। & Star-এ সব node central hub/switch-এর সাথে যুক্ত; fault isolation সহজ, কিন্তু central device গুরুত্বপূর্ণ। \\
+\hline
+Bus বনাম Ring & Bus-এ data backbone দিয়ে ছড়ায়; সাধারণত loop নেই। & Ring-এ node গুলো closed loop তৈরি করে; data node-to-node যায়। \\
+\hline
+Star বনাম Ring & Star-এ data central device-এর মাধ্যমে যায়। & Ring-এ data circular path ধরে যায় এবং central device থাকে না। \\
+\hline
+Ring বনাম Mesh & Ring-এ সাধারণত একটি path থাকে। & Mesh-এ data যাওয়ার একাধিক path থাকে, তাই reliability বেশি। \\
+\hline
+Star বনাম Mesh & Star setup সহজ ও LAN-এ বেশি ব্যবহৃত। & Mesh বেশি reliable, কিন্তু খরচ ও complexity বেশি। \\
+\hline
+Tree বনাম Hybrid & Tree hierarchical star-bus ধরনের structure। & Hybrid যেকোনো দুই বা ততোধিক topology-এর সমন্বয় হতে পারে। \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+\begin{keypointbox}{Board ও admission quick facts}
+\begin{itemize}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item central hub/switch/router থাকলে topology সাধারণত Star।
+\item backbone cable শব্দ থাকলে Bus topology মনে রাখতে হবে।
+\item circular বা closed loop থাকলে Ring topology।
+\item reliability, redundant path, multiple direct link বা \( \frac{n(n-1)}{2} \) link formula থাকলে Mesh topology।
+\item গাছের শাখা-প্রশাখার মতো স্তরভিত্তিক network হলে Tree topology।
+\item দুই বা ততোধিক topology মিলে network হলে Hybrid topology।
+\end{itemize}
+\end{keypointbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Star topology মানেই Internet topology নয়। Star হলো local arrangement, যেখানে central device থাকে। আবার Wi-Fi network অনেক সময় physical দিক থেকে Star-এর মতো হলেও logical data flow device ও access point-এর configuration অনুযায়ী ভিন্ন হতে পারে।
+\end{mistakebox}
+
+\begin{practicebox}
+\textbf{গুরুত্বপূর্ণ প্রশ্নোত্তর}
+\begin{enumerate}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Network topology কী?}\\
+Network topology হলো network-এর computer, device ও connection line-এর বিন্যাস এবং data চলাচলের পথের পরিকল্পনা।
+\item \textbf{Star topology-তে central device কী?}\\
+Hub বা Switch।
+\item \textbf{Bus topology-এর main cable-কে কী বলে?}\\
+Backbone cable।
+\item \textbf{কোন topology সবচেয়ে reliable?}\\
+Mesh topology।
+\item \textbf{কোন topology LAN-এ সবচেয়ে বেশি ব্যবহৃত হয়?}\\
+Star topology।
+\item \textbf{Hybrid topology কী?}\\
+দুই বা ততোধিক topology একত্রে ব্যবহার করে যে network তৈরি করা হয় তাকে Hybrid topology বলে।
+\item \textbf{Tree topology দেখতে কেমন?}\\
+Tree topology গাছের শাখা-প্রশাখার মতো স্তরভিত্তিক বিন্যাসে তৈরি হয়।
+\end{enumerate}
+
+\textbf{অনুশীলন প্রশ্ন}
+\begin{enumerate}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item Bus topology-এর একটি সুবিধা ও একটি অসুবিধা লেখ।
+\item Star topology কেন computer lab-এ বেশি ব্যবহৃত হয়?
+\item Mesh topology কেন বেশি reliable?
+\item Bus ও Ring topology-এর পার্থক্য লেখ।
+\item Ring ও Mesh topology-এর পার্থক্য লেখ।
+\item Tree ও Hybrid topology-এর পার্থক্য লেখ।
+\item 10টি computer full mesh topology-তে যুক্ত করতে কতটি link প্রয়োজন?
+\end{enumerate}
+
+\textbf{গুরুত্বপূর্ণ MCQ}
+\begin{enumerate}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item Network topology বলতে কী বোঝায়?\\
+ক) Data storage system \quad খ) Network device-এর সংযোগ বিন্যাস \quad গ) Programming language \quad ঘ) Database design
+\item Star topology-তে সব computer কোন device-এর সাথে যুক্ত থাকে?\\
+ক) Printer \quad খ) Hub/Switch \quad গ) Modem only \quad ঘ) Monitor
+\item Bus topology-এর প্রধান cable-কে কী বলা হয়?\\
+ক) Ring \quad খ) Backbone \quad গ) Switch \quad ঘ) Node
+\item Ring topology-তে network-এর structure কেমন হয়?\\
+ক) সরলরেখা \quad খ) বৃত্তাকার \quad গ) গাছের মতো \quad ঘ) জালের মতো
+\item Mesh topology-তে reliability বেশি কেন?\\
+ক) একটি মাত্র cable থাকে \quad খ) data শুধু server-এ যায় \quad গ) একাধিক path থাকে \quad ঘ) কোনো cable লাগে না
+\item Tree topology দেখতে কেমন?\\
+ক) Ring-এর মতো \quad খ) Bus-এর মতো \quad গ) গাছের শাখা-প্রশাখার মতো \quad ঘ) একক computer-এর মতো
+\item Hybrid topology কী দিয়ে তৈরি হয়?\\
+ক) শুধু Star topology \quad খ) শুধু Bus topology \quad গ) দুই বা ততোধিক topology-এর সমন্বয় \quad ঘ) শুধু wireless network
+\item কোন topology-তে central device নষ্ট হলে পুরো network অচল হতে পারে?\\
+ক) Star \quad খ) Mesh \quad গ) Partial mesh \quad ঘ) Hybrid only
+\item কোন topology ছোট ও কম খরচের network-এর জন্য উপযোগী?\\
+ক) Bus \quad খ) Mesh \quad গ) Hybrid \quad ঘ) Tree
+\item কোন topology-তে প্রতিটি node অন্য সব node-এর সাথে সরাসরি যুক্ত থাকতে পারে?\\
+ক) Bus \quad খ) Ring \quad গ) Full Mesh \quad ঘ) Tree
+\item Bus topology-তে data কোন পথে যায়?\\
+ক) Hub হয়ে \quad খ) Backbone cable দিয়ে \quad গ) শুধু wireless wave দিয়ে \quad ঘ) Database হয়ে
+\item Ring topology-তে একটি node signal forward করতে না পারলে কী হতে পারে?\\
+ক) network আরও দ্রুত হয় \quad খ) কোনো প্রভাব পড়ে না \quad গ) network ক্ষতিগ্রস্ত হতে পারে \quad ঘ) cable কমে যায়
+\item Office LAN বা computer lab-এ সবচেয়ে উপযোগী topology কোনটি?\\
+ক) Star \quad খ) Ring \quad গ) Bus \quad ঘ) Mesh
+\item Internet কোন topology-এর উদাহরণ হিসেবে ধরা যায়?\\
+ক) শুধু Bus \quad খ) শুধু Ring \quad গ) Hybrid \quad ঘ) শুধু Star
+\item Full Mesh topology-তে ৫টি node থাকলে link সংখ্যা কত?\\
+ক) ৫ \quad খ) ১০ \quad গ) ১৫ \quad ঘ) ২০
+\end{enumerate}
+
+\textbf{MCQ Answer Key:}
+১. খ, ২. খ, ৩. খ, ৪. খ, ৫. গ, ৬. গ, ৭. গ, ৮. ক, ৯. ক, ১০. গ, ১১. খ, ১২. গ, ১৩. ক, ১৪. গ, ১৫. খ।
+
+\textbf{সৃজনশীল অনুশীলন}
+\begin{enumerate}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item একটি কলেজের ICT lab-এ ২৫টি computer আছে। সব computer একটি switch-এর সাথে যুক্ত। একটি computer নষ্ট হলেও অন্য computer গুলো কাজ করতে পারে। কিন্তু switch নষ্ট হলে পুরো lab network বন্ধ হয়ে যায়। উদ্দীপকের network কোন topology? কারণ, সুবিধা ও দুর্বলতা ব্যাখ্যা করো।
+\item একটি ছোট অফিসে ৮টি computer একটি মাত্র main cable-এর সাথে যুক্ত। main cable নষ্ট হলে সব computer-এর communication বন্ধ হয়ে যায়। অফিসটি কম খরচে network তৈরি করেছে। উদ্দীপকের network কোন topology? ছোট network-এ এটি উপযোগী হলেও বড় network-এ কেন উপযোগী নয়, বিশ্লেষণ করো।
+\item একটি ব্যাংকের server network-এ প্রতিটি server অন্য server-এর সাথে সরাসরি যুক্ত। একটি link নষ্ট হলেও data অন্য link দিয়ে গন্তব্যে পৌঁছাতে পারে। তবে network তৈরি করতে অনেক cable ও port দরকার হয়েছে। উদ্দীপকের topology শনাক্ত করে reliability ও ব্যয়বহুল হওয়ার কারণ লেখ।
+\item একটি university campus network-এ প্রতিটি department-এর computer গুলো Star topology-তে যুক্ত। আবার department switch গুলো একটি main backbone-এর সাথে যুক্ত। Server room-এ গুরুত্বপূর্ণ server গুলো Mesh topology-তে যুক্ত করা হয়েছে। উদ্দীপকের network Hybrid topology কেন, সুবিধা ও maintenance জটিলতা ব্যাখ্যা করো।
+\end{enumerate}
+
+\textbf{সৃজনশীল উত্তরের ইঙ্গিত}
+\begin{enumerate}[leftmargin=1.0cm,labelsep=0.35cm,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+\item উদ্দীপকে সব computer central switch-এর সাথে যুক্ত, তাই এটি Star topology। সুবিধা হিসেবে একটি computer নষ্ট হলেও অন্যগুলো সচল থাকা এবং fault isolation সহজ হওয়া লিখবে। দুর্বলতা হিসেবে switch নষ্ট হলে পুরো lab network বন্ধ হওয়ার কথা লিখবে।
+\item উদ্দীপকে সব computer একটি main cable বা backbone-এর সাথে যুক্ত, তাই এটি Bus topology। কম cable ও কম খরচের কারণে ছোট network-এ উপযোগী; কিন্তু backbone নষ্ট হলে পুরো network বন্ধ এবং traffic বেশি হলে collision/speed problem হয়।
+\item প্রতিটি server অন্য server-এর সাথে সরাসরি যুক্ত এবং link নষ্ট হলেও বিকল্প path আছে, তাই এটি Mesh topology। Reliability বেশি কারণ multiple path থাকে; ব্যয়বহুল কারণ cable, port, connector ও configuration বেশি লাগে।
+\item উদ্দীপকে department-এ Star, department switch-গুলোর মধ্যে backbone এবং server room-এ Mesh connection আছে; তাই এটি Hybrid topology। বড় campus network-এ flexible design ও expansion সুবিধা দিলেও maintenance, configuration ও troubleshooting জটিল।
+\end{enumerate}
+\end{practicebox}
+
+\begin{recapbox}
+বর্তমান যুগে computer network বিভিন্ন প্রতিষ্ঠান, শিক্ষা প্রতিষ্ঠান, অফিস, ব্যাংক ও গবেষণাগারে অত্যন্ত গুরুত্বপূর্ণ। একটি network কত দ্রুত, নিরাপদ ও নির্ভরযোগ্যভাবে কাজ করবে তা অনেকাংশে topology নির্বাচনের উপর নির্ভর করে। তাই HSC ICT শিক্ষার্থীদের জন্য network topology জানা গুরুত্বপূর্ণ, কারণ এটি computer networking অধ্যায়ের একটি মৌলিক বিষয়।
+\end{recapbox}
+
+

@@ -3,213 +3,216 @@
 \contentsline {subsection}{\numberline {1.1.1}বিশ্বগ্রামের ধারণা}{2}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}যোগাযোগ ও টেলিকনফারেন্সিং}{3}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}কর্মসংস্থান}{4}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}শিক্ষা}{5}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.4}শিক্ষা}{4}{subsection.1.1.4}%
 \contentsline {subsection}{\numberline {1.1.5}চিকিৎসা ও টেলিমেডিসিন}{5}{subsection.1.1.5}%
-\contentsline {subsection}{\numberline {1.1.6}গবেষণা}{6}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.6}গবেষণা}{5}{subsection.1.1.6}%
 \contentsline {subsection}{\numberline {1.1.7}অফিস}{6}{subsection.1.1.7}%
 \contentsline {subsection}{\numberline {1.1.8}বাসস্থান}{6}{subsection.1.1.8}%
-\contentsline {subsection}{\numberline {1.1.9}ব্যবসা-বাণিজ্য ও ই-কমার্স}{7}{subsection.1.1.9}%
+\contentsline {subsection}{\numberline {1.1.9}ব্যবসা-বাণিজ্য ও ই-কমার্স}{6}{subsection.1.1.9}%
 \contentsline {subsection}{\numberline {1.1.10}সংবাদ}{7}{subsection.1.1.10}%
-\contentsline {subsection}{\numberline {1.1.11}বিনোদন ও সামাজিক যোগাযোগ}{8}{subsection.1.1.11}%
-\contentsline {subsection}{\numberline {1.1.12}সাংস্কৃতিক বিনিময়}{8}{subsection.1.1.12}%
+\contentsline {subsection}{\numberline {1.1.11}বিনোদন ও সামাজিক যোগাযোগ}{7}{subsection.1.1.11}%
+\contentsline {subsection}{\numberline {1.1.12}সাংস্কৃতিক বিনিময়}{7}{subsection.1.1.12}%
 \contentsline {section}{\numberline {1.2}বিশ্বগ্রাম প্রতিষ্ঠার উপাদান ও তথ্য ও যোগাযোগ প্রযুক্তির অবদান}{9}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}বিশ্বগ্রাম প্রতিষ্ঠার প্রধান উপাদান}{9}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}শিক্ষায় ICT-এর অবদান}{10}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}চিকিৎসায় ICT-এর অবদান}{10}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4}ব্যবসা-বাণিজ্যে ICT-এর অবদান}{10}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}গবেষণা ও কর্মসংস্থানে ICT}{11}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.5}গবেষণা ও কর্মসংস্থানে ICT}{10}{subsection.1.2.5}%
 \contentsline {section}{\numberline {1.3}ভার্চুয়াল রিয়েলিটি}{11}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}ভার্চুয়াল রিয়েলিটির ধারণা}{11}{subsection.1.3.1}%
 \contentsline {subsubsection}{সহজ ভাষায় VR}{13}{section*.2}%
 \contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটির মূল ভিত্তি}{15}{section*.3}%
 \contentsline {paragraph}{১. Immersion}{15}{section*.4}%
-\contentsline {paragraph}{২. Interaction}{16}{section*.5}%
-\contentsline {paragraph}{৩. Presence}{16}{section*.6}%
-\contentsline {subsubsection}{VR System-এর প্রধান উপাদান}{18}{section*.7}%
-\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটি কীভাবে কাজ করে}{18}{section*.8}%
-\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটির প্রধান বৈশিষ্ট্য}{19}{section*.9}%
-\contentsline {subsubsection}{VR, সাধারণ ভিডিও এবং Simulation-এর পার্থক্য}{19}{section*.10}%
-\contentsline {subsubsection}{চিকিৎসা প্রশিক্ষণে VR-এর ধারণাগত গুরুত্ব}{20}{section*.11}%
-\contentsline {subsubsection}{VR কেন বাস্তব অনুভূতি দেয়}{20}{section*.12}%
-\contentsline {subsubsection}{বোর্ড পরীক্ষার জন্য মনে রাখো}{21}{section*.13}%
-\contentsline {subsection}{\numberline {1.3.2}ভার্চুয়াল রিয়েলিটির উপাদান}{21}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}VR, AR ও Simulation-এর পার্থক্য}{22}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}প্রাত্যহিক জীবনে ভার্চুয়াল রিয়েলিটির প্রভাব}{22}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}ভার্চুয়াল রিয়েলিটির ইতিহাস}{23}{subsection.1.3.5}%
-\contentsline {subsection}{\numberline {1.3.6}আধুনিক ভার্চুয়াল রিয়েলিটি হার্ডওয়্যার (VR Headsets)}{24}{subsection.1.3.6}%
-\contentsline {subsubsection}{VR হার্ডওয়্যার কম্পোনেন্ট বিস্তারিত}{25}{section*.14}%
-\contentsline {subsection}{\numberline {1.3.7}VR Tracking এবং Motion Capture সিস্টেম}{26}{subsection.1.3.7}%
-\contentsline {subsubsection}{Inside-Out vs Outside-In Tracking}{26}{section*.15}%
-\contentsline {subsubsection}{Motion Capture প্রযুক্তি}{26}{section*.16}%
-\contentsline {subsection}{\numberline {1.3.8}চিকিৎসা শিক্ষা এবং অস্ত্রোপচার প্রশিক্ষণে VR}{27}{subsection.1.3.8}%
-\contentsline {subsection}{\numberline {1.3.9}মেডিকেল রিহ্যাবিলিটেশন এবং থেরাপিতে VR}{28}{subsection.1.3.9}%
-\contentsline {subsection}{\numberline {1.3.10}পাইলট এবং ফ্লাইট সিমুলেটর প্রশিক্ষণ}{29}{subsection.1.3.10}%
-\contentsline {subsection}{\numberline {1.3.11}গেমিং এবং বিনোদনে ভার্চুয়াল রিয়েলিটি}{30}{subsection.1.3.11}%
-\contentsline {subsection}{\numberline {1.3.12}ডাটা গ্লাভ এবং মোশন ট্র্যাকিং ডিভাইস}{31}{subsection.1.3.12}%
-\contentsline {subsection}{\numberline {1.3.13}ভার্চুয়াল রিয়েলিটির গুরুত্বপূর্ণ পরামিতি এবং মেট্রিক্স}{32}{subsection.1.3.13}%
-\contentsline {subsection}{\numberline {1.3.14}ভার্চুয়াল রিয়েলিটির স্বাস্থ্য ঝুঁকি এবং সতর্কতা (HSC এর জন্য গুরুত্বপূর্ণ)}{33}{subsection.1.3.14}%
-\contentsline {subsection}{\numberline {1.3.15}ভবিষ্যতের ভার্চুয়াল রিয়েলিটি (HSC এর জন্য ভবিষ্যত দৃষ্টিভঙ্গি)}{34}{subsection.1.3.15}%
-\contentsline {subsection}{\numberline {1.3.16}ভার্চুয়াল রিয়েলিটি এবং সামাজিক প্রভাব (HSC সমাজ বিজ্ঞানের জন্য)}{36}{subsection.1.3.16}%
-\contentsline {subsection}{\numberline {1.3.17}ভার্চুয়াল রিয়েলিটির ব্যবহারক্ষেত্র}{37}{subsection.1.3.17}%
-\contentsline {subsection}{\numberline {1.3.18}ভার্চুয়াল রিয়েলিটির সুবিধা}{38}{subsection.1.3.18}%
-\contentsline {subsection}{\numberline {1.3.19}ভার্চুয়াল রিয়েলিটির অসুবিধা}{38}{subsection.1.3.19}%
-\contentsline {section}{\numberline {1.4}তথ্য ও যোগাযোগ প্রযুক্তির সাম্প্রতিক প্রবণতা}{40}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}কৃত্রিম বুদ্ধিমত্তা}{41}{subsection.1.4.1}%
-\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার ধারণা}{41}{section*.17}%
-\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার বৈশিষ্ট্য}{42}{section*.18}%
-\contentsline {subsubsection}{এক্সপার্ট সিস্টেম}{42}{section*.19}%
-\contentsline {subsubsection}{প্রাকৃতিক ভাষা প্রক্রিয়াকরণ}{42}{section*.20}%
-\contentsline {subsubsection}{মেশিন লার্নিং}{43}{section*.21}%
-\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার ব্যবহারক্ষেত্র}{43}{section*.22}%
-\contentsline {subsection}{\numberline {1.4.2}রোবটিকস}{45}{subsection.1.4.2}%
-\contentsline {subsubsection}{রোবটিকসের ধারণা}{45}{section*.23}%
-\contentsline {subsubsection}{রোবটের প্রধান অংশ}{46}{section*.24}%
-\contentsline {subsubsection}{রোবটের বৈশিষ্ট্য}{46}{section*.25}%
-\contentsline {subsubsection}{রোবটের ব্যবহারক্ষেত্র}{46}{section*.26}%
-\contentsline {subsubsection}{রোবটিকসের সুবিধা}{47}{section*.27}%
-\contentsline {subsubsection}{রোবটিকসের সীমাবদ্ধতা}{47}{section*.28}%
-\contentsline {subsection}{\numberline {1.4.3}ক্রায়োসার্জারি}{48}{subsection.1.4.3}%
-\contentsline {subsubsection}{ক্রায়োসার্জারির ধারণা}{48}{section*.29}%
-\contentsline {subsubsection}{ক্রায়োসার্জারিতে ব্যবহৃত উপাদান}{49}{section*.30}%
-\contentsline {subsubsection}{ক্রায়োসার্জারির পদ্ধতি}{49}{section*.31}%
-\contentsline {subsubsection}{ক্রায়োসার্জারির ব্যবহারক্ষেত্র}{49}{section*.32}%
-\contentsline {subsubsection}{ক্রায়োসার্জারির সুবিধা}{50}{section*.33}%
-\contentsline {subsubsection}{ক্রায়োসার্জারির অসুবিধা}{50}{section*.34}%
-\contentsline {subsection}{\numberline {1.4.4}মহাকাশ অভিযান}{51}{subsection.1.4.4}%
-\contentsline {subsubsection}{মহাকাশ অভিযানে আইসিটির ভূমিকা}{51}{section*.35}%
-\contentsline {subsubsection}{স্যাটেলাইট যোগাযোগ}{52}{section*.36}%
-\contentsline {subsubsection}{রিমোট সেন্সিং}{52}{section*.37}%
-\contentsline {subsubsection}{জিপিএস}{52}{section*.38}%
-\contentsline {subsubsection}{আবহাওয়া পূর্বাভাস}{53}{section*.39}%
-\contentsline {subsubsection}{মহাকাশ গবেষণায় তথ্য বিশ্লেষণ}{53}{section*.40}%
-\contentsline {subsection}{\numberline {1.4.5}আইসিটি নির্ভর উৎপাদন ব্যবস্থা}{54}{subsection.1.4.5}%
-\contentsline {subsubsection}{স্বয়ংক্রিয় উৎপাদন}{54}{section*.41}%
-\contentsline {subsubsection}{কম্পিউটার-নিয়ন্ত্রিত যন্ত্র}{54}{section*.42}%
-\contentsline {subsubsection}{রোবট ব্যবহৃত উৎপাদন}{55}{section*.43}%
-\contentsline {subsubsection}{গুণগত মান নিয়ন্ত্রণ}{55}{section*.44}%
-\contentsline {subsubsection}{উৎপাদন ব্যবস্থায় আইসিটির সুবিধা}{55}{section*.45}%
-\contentsline {subsection}{\numberline {1.4.6}প্রতিরক্ষা}{56}{subsection.1.4.6}%
-\contentsline {subsubsection}{প্রতিরক্ষা ব্যবস্থায় আইসিটি}{57}{section*.46}%
-\contentsline {subsubsection}{রাডার ও সেন্সর}{57}{section*.47}%
-\contentsline {subsubsection}{স্যাটেলাইট নজরদারি}{57}{section*.48}%
-\contentsline {subsubsection}{সাইবার নিরাপত্তা}{58}{section*.49}%
-\contentsline {subsubsection}{ড্রোন ও রোবট}{58}{section*.50}%
-\contentsline {subsection}{\numberline {1.4.7}বায়োমেট্রিক্স}{59}{subsection.1.4.7}%
-\contentsline {subsubsection}{বায়োমেট্রিক্সের ধারণা}{59}{section*.51}%
-\contentsline {subsubsection}{ফিঙ্গারপ্রিন্ট শনাক্তকরণ}{60}{section*.52}%
-\contentsline {subsubsection}{মুখমণ্ডল শনাক্তকরণ}{60}{section*.53}%
-\contentsline {subsubsection}{আইরিস ও রেটিনা স্ক্যান}{60}{section*.54}%
-\contentsline {subsubsection}{ভয়েস রিকগনিশন}{60}{section*.55}%
-\contentsline {subsubsection}{বায়োমেট্রিক্সের ব্যবহারক্ষেত্র}{60}{section*.56}%
-\contentsline {subsection}{\numberline {1.4.8}বায়োইনফরমেটিক্স}{62}{subsection.1.4.8}%
-\contentsline {subsubsection}{বায়োইনফরমেটিক্সের ধারণা}{62}{section*.57}%
-\contentsline {subsubsection}{জৈব তথ্য সংরক্ষণ}{62}{section*.58}%
-\contentsline {subsubsection}{ডিএনএ বিশ্লেষণ}{63}{section*.59}%
-\contentsline {subsubsection}{প্রোটিন বিশ্লেষণ}{63}{section*.60}%
-\contentsline {subsubsection}{চিকিৎসা ও গবেষণায় ব্যবহার}{63}{section*.61}%
-\contentsline {subsubsection}{কৃষি গবেষণায় ব্যবহার}{63}{section*.62}%
-\contentsline {subsection}{\numberline {1.4.9}জেনেটিক ইঞ্জিনিয়ারিং}{65}{subsection.1.4.9}%
-\contentsline {subsubsection}{জেনেটিক ইঞ্জিনিয়ারিংয়ের ধারণা}{65}{section*.63}%
-\contentsline {subsubsection}{ডিএনএ ও জিন}{65}{section*.64}%
-\contentsline {subsubsection}{রিকম্বিন্যান্ট ডিএনএ}{66}{section*.65}%
-\contentsline {subsubsection}{জেনেটিক্যালি মডিফাইড অর্গানিজম}{66}{section*.66}%
-\contentsline {subsubsection}{চিকিৎসায় ব্যবহার}{66}{section*.67}%
-\contentsline {subsubsection}{কৃষিতে ব্যবহার}{66}{section*.68}%
-\contentsline {subsubsection}{নৈতিকতা ও ঝুঁকি}{67}{section*.69}%
-\contentsline {subsection}{\numberline {1.4.10}ন্যানো টেকনোলজি}{68}{subsection.1.4.10}%
-\contentsline {subsubsection}{ন্যানো টেকনোলজির ধারণা}{68}{section*.70}%
-\contentsline {subsubsection}{ন্যানোমিটার ও ন্যানো উপাদান}{68}{section*.71}%
-\contentsline {subsubsection}{চিকিৎসায় ব্যবহার}{69}{section*.72}%
-\contentsline {subsubsection}{ইলেকট্রনিক্সে ব্যবহার}{69}{section*.73}%
-\contentsline {subsubsection}{কৃষি ও শিল্পে ব্যবহার}{69}{section*.74}%
-\contentsline {subsubsection}{ন্যানো টেকনোলজির সুবিধা}{69}{section*.75}%
-\contentsline {subsubsection}{ন্যানো টেকনোলজির ঝুঁকি}{70}{section*.76}%
-\contentsline {section}{\numberline {1.5}তথ্য ও যোগাযোগ প্রযুক্তি ব্যবহারে নৈতিকতা}{72}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}নৈতিকতার ধারণা}{72}{subsection.1.5.1}%
-\contentsline {section}{\numberline {1.6}সমাজজীবনে তথ্য ও যোগাযোগ প্রযুক্তির প্রভাব}{73}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}যোগাযোগ ব্যবস্থার পরিবর্তন}{73}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}শিক্ষা ও জ্ঞানচর্চা}{73}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}স্বাস্থ্যসেবা}{74}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}কর্মসংস্থান ও বিনোদন}{74}{subsection.1.6.4}%
-\contentsline {section}{\numberline {1.7}তথ্য ও যোগাযোগ প্রযুক্তি এবং অর্থনৈতিক উন্নয়ন}{75}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}অর্থনীতিতে ICT-এর ভূমিকা}{75}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Digital Bangladesh প্রেক্ষিত}{75}{subsection.1.7.2}%
-\contentsline {chapter}{\numberline {2}কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং}{77}{chapter.2}%
-\contentsline {section}{\numberline {2.1}কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ}{78}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}কমিউনিকেশন সিস্টেমের ধারণা}{78}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}কমিউনিকেশন মডেল}{78}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}ডেটা কমিউনিকেশনের ধারণা}{79}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}ব্যান্ডউইডথ}{79}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}ডেটা ও সিগন্যাল}{79}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Analog signal ও Digital signal}{80}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}ডেটা কমিউনিকেশন}{80}{subsection.2.1.7}%
-\contentsline {subsection}{\numberline {2.1.8}ব্যান্ডউইডথ}{81}{subsection.2.1.8}%
-\contentsline {subsection}{\numberline {2.1.9}চিত্র ও পরীক্ষামুখী উপস্থাপন}{83}{subsection.2.1.9}%
-\contentsline {section}{\numberline {2.2}ডেটা ট্রান্সমিশন মেথড ও মোড}{84}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}ডেটা ট্রান্সমিশন মেথড}{84}{subsection.2.2.1}%
-\contentsline {subsubsection}{Asynchronous Transmission}{84}{section*.77}%
-\contentsline {subsubsection}{Synchronous Transmission}{84}{section*.78}%
-\contentsline {subsubsection}{Isochronous Transmission}{84}{section*.79}%
-\contentsline {subsection}{\numberline {2.2.2}ডেটা ট্রান্সমিশন মোড}{84}{subsection.2.2.2}%
-\contentsline {subsubsection}{Simplex}{84}{section*.80}%
-\contentsline {subsubsection}{Half Duplex}{85}{section*.81}%
-\contentsline {subsubsection}{Full Duplex}{85}{section*.82}%
-\contentsline {subsection}{\numberline {2.2.3}ডেটা ট্রান্সমিশন মোড}{85}{subsection.2.2.3}%
-\contentsline {subsubsection}{Simplex}{85}{section*.83}%
-\contentsline {subsubsection}{Half Duplex}{85}{section*.84}%
-\contentsline {subsubsection}{Full Duplex}{86}{section*.85}%
-\contentsline {subsection}{\numberline {2.2.4}শ্রেণিবিন্যাস ও চিত্র}{87}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}ডেটা কমিউনিকেশন মিডিয়া (Overview)}{88}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Transmission Media}{89}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Guided Media}{89}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Unguided Media}{89}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}মিডিয়া নির্বাচন করার নিয়ম}{91}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Wired Media}{92}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Twisted Pair Cable}{92}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Coaxial Cable}{93}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Fiber Optic Cable}{93}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}তারযুক্ত মাধ্যমের গঠনচিত্র}{95}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Wireless Media and Systems}{96}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Wireless Media Types}{97}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Wireless Systems}{97}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Advantages and Limitations}{98}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}তারবিহীন মাধ্যম ও সিস্টেমের শ্রেণি}{99}{subsection.2.5.4}%
-\contentsline {section}{\numberline {2.6}Mobile Communication and Generations}{100}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Cellular Concept}{100}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Generations of Mobile Communication}{101}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Mobile Network Basics}{102}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}Mobile generation timeline}{103}{subsection.2.6.4}%
-\contentsline {section}{\numberline {2.7}Computer Networking: Objectives and Types}{104}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Objectives of Networking}{105}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Types of Networks}{105}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}Intranet and Extranet}{106}{subsection.2.7.3}%
-\contentsline {subsection}{\numberline {2.7.4}নেটওয়ার্কের উদ্দেশ্য ও বিস্তৃতি}{107}{subsection.2.7.4}%
-\contentsline {section}{\numberline {2.8}Network Devices}{108}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Hub}{109}{subsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.8.2}Switch}{109}{subsection.2.8.2}%
-\contentsline {subsection}{\numberline {2.8.3}Router}{109}{subsection.2.8.3}%
-\contentsline {subsection}{\numberline {2.8.4}Bridge}{110}{subsection.2.8.4}%
-\contentsline {subsection}{\numberline {2.8.5}Gateway}{110}{subsection.2.8.5}%
-\contentsline {subsection}{\numberline {2.8.6}Modem}{110}{subsection.2.8.6}%
-\contentsline {subsection}{\numberline {2.8.7}Network device map}{112}{subsection.2.8.7}%
-\contentsline {section}{\numberline {2.9}Network Topology}{113}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Common Topologies}{113}{subsection.2.9.1}%
-\contentsline {subsubsection}{Bus Topology}{113}{section*.86}%
-\contentsline {subsubsection}{Star Topology}{114}{section*.87}%
-\contentsline {subsubsection}{Ring Topology}{114}{section*.88}%
-\contentsline {subsubsection}{Mesh Topology}{114}{section*.89}%
-\contentsline {subsubsection}{Hybrid Topology}{114}{section*.90}%
-\contentsline {subsection}{\numberline {2.9.2}Topology diagram placeholders}{116}{subsection.2.9.2}%
+\contentsline {paragraph}{২. Interaction}{15}{section*.5}%
+\contentsline {paragraph}{৩. Presence}{15}{section*.6}%
+\contentsline {subsubsection}{VR System-এর প্রধান উপাদান}{17}{section*.7}%
+\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটি কীভাবে কাজ করে}{17}{section*.8}%
+\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটির প্রধান বৈশিষ্ট্য}{18}{section*.9}%
+\contentsline {subsubsection}{VR, সাধারণ ভিডিও এবং Simulation-এর পার্থক্য}{18}{section*.10}%
+\contentsline {subsubsection}{চিকিৎসা প্রশিক্ষণে VR-এর ধারণাগত গুরুত্ব}{19}{section*.11}%
+\contentsline {subsubsection}{VR কেন বাস্তব অনুভূতি দেয়}{19}{section*.12}%
+\contentsline {subsubsection}{বোর্ড পরীক্ষার জন্য মনে রাখো}{20}{section*.13}%
+\contentsline {subsection}{\numberline {1.3.2}ভার্চুয়াল রিয়েলিটির উপাদান}{20}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}VR, AR ও Simulation-এর পার্থক্য}{21}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}প্রাত্যহিক জীবনে ভার্চুয়াল রিয়েলিটির প্রভাব}{21}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}ভার্চুয়াল রিয়েলিটির ইতিহাস}{22}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}আধুনিক ভার্চুয়াল রিয়েলিটি হার্ডওয়্যার (VR Headsets)}{22}{subsection.1.3.6}%
+\contentsline {subsubsection}{VR হার্ডওয়্যার কম্পোনেন্ট বিস্তারিত}{24}{section*.14}%
+\contentsline {subsection}{\numberline {1.3.7}VR Tracking এবং Motion Capture সিস্টেম}{25}{subsection.1.3.7}%
+\contentsline {subsubsection}{Inside-Out vs Outside-In Tracking}{25}{section*.15}%
+\contentsline {subsubsection}{Motion Capture প্রযুক্তি}{25}{section*.16}%
+\contentsline {subsection}{\numberline {1.3.8}চিকিৎসা শিক্ষা এবং অস্ত্রোপচার প্রশিক্ষণে VR}{26}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}মেডিকেল রিহ্যাবিলিটেশন এবং থেরাপিতে VR}{27}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.10}পাইলট এবং ফ্লাইট সিমুলেটর প্রশিক্ষণ}{28}{subsection.1.3.10}%
+\contentsline {subsection}{\numberline {1.3.11}গেমিং এবং বিনোদনে ভার্চুয়াল রিয়েলিটি}{28}{subsection.1.3.11}%
+\contentsline {subsection}{\numberline {1.3.12}ডাটা গ্লাভ এবং মোশন ট্র্যাকিং ডিভাইস}{29}{subsection.1.3.12}%
+\contentsline {subsection}{\numberline {1.3.13}ভার্চুয়াল রিয়েলিটির গুরুত্বপূর্ণ পরামিতি এবং মেট্রিক্স}{30}{subsection.1.3.13}%
+\contentsline {subsection}{\numberline {1.3.14}ভার্চুয়াল রিয়েলিটির স্বাস্থ্য ঝুঁকি এবং সতর্কতা (HSC এর জন্য গুরুত্বপূর্ণ)}{31}{subsection.1.3.14}%
+\contentsline {subsection}{\numberline {1.3.15}ভবিষ্যতের ভার্চুয়াল রিয়েলিটি (HSC এর জন্য ভবিষ্যত দৃষ্টিভঙ্গি)}{32}{subsection.1.3.15}%
+\contentsline {subsection}{\numberline {1.3.16}ভার্চুয়াল রিয়েলিটি এবং সামাজিক প্রভাব (HSC সমাজ বিজ্ঞানের জন্য)}{34}{subsection.1.3.16}%
+\contentsline {subsection}{\numberline {1.3.17}ভার্চুয়াল রিয়েলিটির ব্যবহারক্ষেত্র}{35}{subsection.1.3.17}%
+\contentsline {subsection}{\numberline {1.3.18}ভার্চুয়াল রিয়েলিটির সুবিধা}{35}{subsection.1.3.18}%
+\contentsline {subsection}{\numberline {1.3.19}ভার্চুয়াল রিয়েলিটির অসুবিধা}{36}{subsection.1.3.19}%
+\contentsline {section}{\numberline {1.4}তথ্য ও যোগাযোগ প্রযুক্তির সাম্প্রতিক প্রবণতা}{38}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}কৃত্রিম বুদ্ধিমত্তা}{39}{subsection.1.4.1}%
+\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার ধারণা}{39}{section*.17}%
+\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার বৈশিষ্ট্য}{39}{section*.18}%
+\contentsline {subsubsection}{এক্সপার্ট সিস্টেম}{40}{section*.19}%
+\contentsline {subsubsection}{প্রাকৃতিক ভাষা প্রক্রিয়াকরণ}{40}{section*.20}%
+\contentsline {subsubsection}{মেশিন লার্নিং}{40}{section*.21}%
+\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার ব্যবহারক্ষেত্র}{41}{section*.22}%
+\contentsline {subsection}{\numberline {1.4.2}রোবটিকস}{42}{subsection.1.4.2}%
+\contentsline {subsubsection}{রোবটিকসের ধারণা}{42}{section*.23}%
+\contentsline {subsubsection}{রোবটের প্রধান অংশ}{43}{section*.24}%
+\contentsline {subsubsection}{রোবটের বৈশিষ্ট্য}{43}{section*.25}%
+\contentsline {subsubsection}{রোবটের ব্যবহারক্ষেত্র}{43}{section*.26}%
+\contentsline {subsubsection}{রোবটিকসের সুবিধা}{44}{section*.27}%
+\contentsline {subsubsection}{রোবটিকসের সীমাবদ্ধতা}{44}{section*.28}%
+\contentsline {subsection}{\numberline {1.4.3}ক্রায়োসার্জারি}{45}{subsection.1.4.3}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির ধারণা}{45}{section*.29}%
+\contentsline {subsubsection}{ক্রায়োসার্জারিতে ব্যবহৃত উপাদান}{46}{section*.30}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির পদ্ধতি}{46}{section*.31}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির ব্যবহারক্ষেত্র}{46}{section*.32}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির সুবিধা}{47}{section*.33}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির অসুবিধা}{47}{section*.34}%
+\contentsline {subsection}{\numberline {1.4.4}মহাকাশ অভিযান}{48}{subsection.1.4.4}%
+\contentsline {subsubsection}{মহাকাশ অভিযানে আইসিটির ভূমিকা}{48}{section*.35}%
+\contentsline {subsubsection}{স্যাটেলাইট যোগাযোগ}{49}{section*.36}%
+\contentsline {subsubsection}{রিমোট সেন্সিং}{49}{section*.37}%
+\contentsline {subsubsection}{জিপিএস}{49}{section*.38}%
+\contentsline {subsubsection}{আবহাওয়া পূর্বাভাস}{49}{section*.39}%
+\contentsline {subsubsection}{মহাকাশ গবেষণায় তথ্য বিশ্লেষণ}{50}{section*.40}%
+\contentsline {subsection}{\numberline {1.4.5}আইসিটি নির্ভর উৎপাদন ব্যবস্থা}{51}{subsection.1.4.5}%
+\contentsline {subsubsection}{স্বয়ংক্রিয় উৎপাদন}{51}{section*.41}%
+\contentsline {subsubsection}{কম্পিউটার-নিয়ন্ত্রিত যন্ত্র}{51}{section*.42}%
+\contentsline {subsubsection}{রোবট ব্যবহৃত উৎপাদন}{52}{section*.43}%
+\contentsline {subsubsection}{গুণগত মান নিয়ন্ত্রণ}{52}{section*.44}%
+\contentsline {subsubsection}{উৎপাদন ব্যবস্থায় আইসিটির সুবিধা}{52}{section*.45}%
+\contentsline {subsection}{\numberline {1.4.6}প্রতিরক্ষা}{53}{subsection.1.4.6}%
+\contentsline {subsubsection}{প্রতিরক্ষা ব্যবস্থায় আইসিটি}{53}{section*.46}%
+\contentsline {subsubsection}{রাডার ও সেন্সর}{54}{section*.47}%
+\contentsline {subsubsection}{স্যাটেলাইট নজরদারি}{54}{section*.48}%
+\contentsline {subsubsection}{সাইবার নিরাপত্তা}{54}{section*.49}%
+\contentsline {subsubsection}{ড্রোন ও রোবট}{55}{section*.50}%
+\contentsline {subsection}{\numberline {1.4.7}বায়োমেট্রিক্স}{56}{subsection.1.4.7}%
+\contentsline {subsubsection}{বায়োমেট্রিক্সের ধারণা}{56}{section*.51}%
+\contentsline {subsubsection}{ফিঙ্গারপ্রিন্ট শনাক্তকরণ}{56}{section*.52}%
+\contentsline {subsubsection}{মুখমণ্ডল শনাক্তকরণ}{56}{section*.53}%
+\contentsline {subsubsection}{আইরিস ও রেটিনা স্ক্যান}{57}{section*.54}%
+\contentsline {subsubsection}{ভয়েস রিকগনিশন}{57}{section*.55}%
+\contentsline {subsubsection}{বায়োমেট্রিক্সের ব্যবহারক্ষেত্র}{57}{section*.56}%
+\contentsline {subsection}{\numberline {1.4.8}বায়োইনফরমেটিক্স}{58}{subsection.1.4.8}%
+\contentsline {subsubsection}{বায়োইনফরমেটিক্সের ধারণা}{58}{section*.57}%
+\contentsline {subsubsection}{জৈব তথ্য সংরক্ষণ}{59}{section*.58}%
+\contentsline {subsubsection}{ডিএনএ বিশ্লেষণ}{59}{section*.59}%
+\contentsline {subsubsection}{প্রোটিন বিশ্লেষণ}{59}{section*.60}%
+\contentsline {subsubsection}{চিকিৎসা ও গবেষণায় ব্যবহার}{59}{section*.61}%
+\contentsline {subsubsection}{কৃষি গবেষণায় ব্যবহার}{60}{section*.62}%
+\contentsline {subsection}{\numberline {1.4.9}জেনেটিক ইঞ্জিনিয়ারিং}{61}{subsection.1.4.9}%
+\contentsline {subsubsection}{জেনেটিক ইঞ্জিনিয়ারিংয়ের ধারণা}{61}{section*.63}%
+\contentsline {subsubsection}{ডিএনএ ও জিন}{61}{section*.64}%
+\contentsline {subsubsection}{রিকম্বিন্যান্ট ডিএনএ}{62}{section*.65}%
+\contentsline {subsubsection}{জেনেটিক্যালি মডিফাইড অর্গানিজম}{62}{section*.66}%
+\contentsline {subsubsection}{চিকিৎসায় ব্যবহার}{62}{section*.67}%
+\contentsline {subsubsection}{কৃষিতে ব্যবহার}{62}{section*.68}%
+\contentsline {subsubsection}{নৈতিকতা ও ঝুঁকি}{63}{section*.69}%
+\contentsline {subsection}{\numberline {1.4.10}ন্যানো টেকনোলজি}{64}{subsection.1.4.10}%
+\contentsline {subsubsection}{ন্যানো টেকনোলজির ধারণা}{64}{section*.70}%
+\contentsline {subsubsection}{ন্যানোমিটার ও ন্যানো উপাদান}{64}{section*.71}%
+\contentsline {subsubsection}{চিকিৎসায় ব্যবহার}{65}{section*.72}%
+\contentsline {subsubsection}{ইলেকট্রনিক্সে ব্যবহার}{65}{section*.73}%
+\contentsline {subsubsection}{কৃষি ও শিল্পে ব্যবহার}{65}{section*.74}%
+\contentsline {subsubsection}{ন্যানো টেকনোলজির সুবিধা}{65}{section*.75}%
+\contentsline {subsubsection}{ন্যানো টেকনোলজির ঝুঁকি}{66}{section*.76}%
+\contentsline {section}{\numberline {1.5}তথ্য ও যোগাযোগ প্রযুক্তি ব্যবহারে নৈতিকতা}{67}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}নৈতিকতার ধারণা}{67}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}সমাজজীবনে তথ্য ও যোগাযোগ প্রযুক্তির প্রভাব}{69}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}যোগাযোগ ব্যবস্থার পরিবর্তন}{69}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}শিক্ষা ও জ্ঞানচর্চা}{69}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}স্বাস্থ্যসেবা}{69}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}কর্মসংস্থান ও বিনোদন}{69}{subsection.1.6.4}%
+\contentsline {section}{\numberline {1.7}তথ্য ও যোগাযোগ প্রযুক্তি এবং অর্থনৈতিক উন্নয়ন}{70}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}অর্থনীতিতে ICT-এর ভূমিকা}{70}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Digital Bangladesh প্রেক্ষিত}{71}{subsection.1.7.2}%
+\contentsline {chapter}{\numberline {2}কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং}{73}{chapter.2}%
+\contentsline {section}{\numberline {2.1}কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ}{74}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}কমিউনিকেশন সিস্টেমের ধারণা}{74}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}কমিউনিকেশন মডেল}{74}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}ডেটা কমিউনিকেশনের ধারণা}{75}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}ব্যান্ডউইডথ}{75}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}ডেটা ও সিগন্যাল}{75}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Analog signal ও Digital signal}{76}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}ডেটা কমিউনিকেশন}{76}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}ব্যান্ডউইডথ}{77}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}চিত্র ও পরীক্ষামুখী উপস্থাপন}{79}{subsection.2.1.9}%
+\contentsline {section}{\numberline {2.2}ডেটা ট্রান্সমিশন মেথড ও মোড}{79}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}ডেটা ট্রান্সমিশন মেথড}{79}{subsection.2.2.1}%
+\contentsline {subsubsection}{Asynchronous Transmission}{79}{section*.77}%
+\contentsline {subsubsection}{Synchronous Transmission}{80}{section*.78}%
+\contentsline {subsubsection}{Isochronous Transmission}{80}{section*.79}%
+\contentsline {subsection}{\numberline {2.2.2}ডেটা ট্রান্সমিশন মোড}{80}{subsection.2.2.2}%
+\contentsline {subsubsection}{Simplex}{80}{section*.80}%
+\contentsline {subsubsection}{Half Duplex}{80}{section*.81}%
+\contentsline {subsubsection}{Full Duplex}{80}{section*.82}%
+\contentsline {subsection}{\numberline {2.2.3}ডেটা ট্রান্সমিশন মোড}{80}{subsection.2.2.3}%
+\contentsline {subsubsection}{Simplex}{80}{section*.83}%
+\contentsline {subsubsection}{Half Duplex}{81}{section*.84}%
+\contentsline {subsubsection}{Full Duplex}{81}{section*.85}%
+\contentsline {subsection}{\numberline {2.2.4}শ্রেণিবিন্যাস ও চিত্র}{83}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}ডেটা কমিউনিকেশন মিডিয়া (Overview)}{84}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Transmission Media}{84}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Guided Media}{84}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Unguided Media}{85}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}মিডিয়া নির্বাচন করার নিয়ম}{86}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Wired Media}{87}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Twisted Pair Cable}{88}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Coaxial Cable}{88}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Fiber Optic Cable}{89}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}তারযুক্ত মাধ্যমের গঠনচিত্র}{90}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Wireless Media and Systems}{91}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Wireless Media Types}{92}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Wireless Systems}{92}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Advantages and Limitations}{93}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}তারবিহীন মাধ্যম ও সিস্টেমের শ্রেণি}{94}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}Mobile Communication and Generations}{95}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Cellular Concept}{95}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Generations of Mobile Communication}{96}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Mobile Network Basics}{96}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Mobile generation timeline}{98}{subsection.2.6.4}%
+\contentsline {section}{\numberline {2.7}Computer Networking: Objectives and Types}{98}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Objectives of Networking}{99}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Types of Networks}{99}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Intranet and Extranet}{100}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}নেটওয়ার্কের উদ্দেশ্য ও বিস্তৃতি}{102}{subsection.2.7.4}%
+\contentsline {section}{\numberline {2.8}Network Devices}{103}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Hub}{103}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Switch}{104}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Router}{104}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}Bridge}{104}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.5}Gateway}{104}{subsection.2.8.5}%
+\contentsline {subsection}{\numberline {2.8.6}Modem}{104}{subsection.2.8.6}%
+\contentsline {subsection}{\numberline {2.8.7}Network device map}{106}{subsection.2.8.7}%
+\contentsline {section}{\numberline {2.9}Network Topology}{107}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Topology classification}{108}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Bus Topology}{108}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Star Topology}{109}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Ring Topology}{110}{subsection.2.9.4}%
+\contentsline {subsection}{\numberline {2.9.5}Mesh Topology}{111}{subsection.2.9.5}%
+\contentsline {subsection}{\numberline {2.9.6}Tree Topology}{112}{subsection.2.9.6}%
+\contentsline {subsection}{\numberline {2.9.7}Hybrid Topology}{112}{subsection.2.9.7}%
+\contentsline {subsection}{\numberline {2.9.8}এক topology থেকে আরেক topology-এর পার্থক্য}{114}{subsection.2.9.8}%
+\contentsline {subsection}{\numberline {2.9.9}সকল topology-এর comparison table}{114}{subsection.2.9.9}%
+\contentsline {subsection}{\numberline {2.9.10}Mermaid diagram source}{115}{subsection.2.9.10}%
 \contentsline {section}{\numberline {2.10}Cloud Computing}{117}{section.2.10}%
 \contentsline {subsection}{\numberline {2.10.1}Cloud Service Models}{117}{subsection.2.10.1}%
 \contentsline {subsection}{\numberline {2.10.2}Deployment Models}{118}{subsection.2.10.2}%
-\contentsline {subsection}{\numberline {2.10.3}Cloud service model}{120}{subsection.2.10.3}%
-\contentsline {section}{\numberline {2.11}প্রশ্নাবলী ও অনুশীলনী}{121}{section.2.11}%
+\contentsline {subsection}{\numberline {2.10.3}Cloud service model}{119}{subsection.2.10.3}%
+\contentsline {section}{\numberline {2.11}প্রশ্নাবলী ও অনুশীলনী}{120}{section.2.11}%
 \contentsline {subsection}{\numberline {2.11.1}MCQ অনুশীলন}{121}{subsection.2.11.1}%
 \contentsline {subsection}{\numberline {2.11.2}সংক্ষিপ্ত প্রশ্ন}{121}{subsection.2.11.2}%
 \contentsline {subsection}{\numberline {2.11.3}সৃজনশীল অনুশীলন}{122}{subsection.2.11.3}%
 \contentsline {subsection}{\numberline {2.11.4}বোর্ড টিপস}{122}{subsection.2.11.4}%
-\contentsline {subsection}{\numberline {2.11.5}অতিরিক্ত সৃজনশীল অনুশীলন}{123}{subsection.2.11.5}%
+\contentsline {subsection}{\numberline {2.11.5}অতিরিক্ত সৃজনশীল অনুশীলন}{122}{subsection.2.11.5}%
 \contentsline {subsection}{\numberline {2.11.6}দ্রুত উত্তর-ইঙ্গিত}{123}{subsection.2.11.6}%
 \contentsline {chapter}{\numberline {3}সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস}{125}{chapter.3}%
 \contentsline {section}{\numberline {3.1}সংখ্যা আবিষ্কারের ইতিহাস}{126}{section.3.1}%
@@ -219,13 +222,13 @@
 \contentsline {section}{\numberline {3.2}সংখ্যা পদ্ধতি}{127}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}সংখ্যা পদ্ধতির ধারণা}{127}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}সংখ্যা পদ্ধতির প্রকারভেদ}{127}{subsection.3.2.2}%
-\contentsline {paragraph}{Decimal (Base 10)}{127}{section*.91}%
-\contentsline {paragraph}{Binary (Base 2)}{128}{section*.92}%
-\contentsline {paragraph}{Octal (Base 8) and Hexadecimal (Base 16)}{128}{section*.93}%
+\contentsline {paragraph}{Decimal (Base 10)}{127}{section*.86}%
+\contentsline {paragraph}{Binary (Base 2)}{127}{section*.87}%
+\contentsline {paragraph}{Octal (Base 8) and Hexadecimal (Base 16)}{128}{section*.88}%
 \contentsline {section}{\numberline {3.3}সংখ্যা রূপান্তর (Conversion)}{129}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Decimal থেকে Binary}{129}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Binary থেকে Decimal}{129}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Decimal ও Octal/Hexadecimal এবং Binary ও Octal/Hex মধ্যে রূপান্তর}{130}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Decimal ও Octal/Hexadecimal এবং Binary ও Octal/Hex মধ্যে রূপান্তর}{129}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}বাইনারি যোগ ও বিয়োগ}{131}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Binary Addition}{131}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Binary Subtraction}{131}{subsection.3.4.2}%
@@ -233,9 +236,9 @@
 \contentsline {section}{\numberline {3.5}চিহ্নযুক্ত সংখ্যা}{132}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}সংজ্ঞা}{132}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}প্রতিনিধিত্ব পদ্ধতি}{132}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}2's Complement}{134}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Complement ধারণা}{134}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}2's complement বের করার নিয়ম}{134}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.6}2's Complement}{133}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Complement ধারণা}{133}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}2's complement বের করার নিয়ম}{133}{subsection.3.6.2}%
 \contentsline {subsection}{\numberline {3.6.3}ব্যবহার}{134}{subsection.3.6.3}%
 \contentsline {section}{\numberline {3.7}কোড: ধারণা ও প্রয়োজন}{135}{section.3.7}%
 \contentsline {section}{\numberline {3.8}BCD, EBCDIC, ASCII এবং Unicode}{136}{section.3.8}%
@@ -243,141 +246,141 @@
 \contentsline {subsection}{\numberline {3.8.2}EBCDIC}{136}{subsection.3.8.2}%
 \contentsline {subsection}{\numberline {3.8.3}ASCII}{136}{subsection.3.8.3}%
 \contentsline {subsection}{\numberline {3.8.4}Unicode}{136}{subsection.3.8.4}%
-\contentsline {section}{\numberline {3.9}কিছু গাণিতিক সমস্যা ও সমাধান}{138}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Boolean Algebra}{139}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}পরিচিতি}{139}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Boolean Variable ও Operator}{139}{subsection.3.10.2}%
-\contentsline {subsection}{\numberline {3.10.3}Boolean Expression}{139}{subsection.3.10.3}%
-\contentsline {section}{\numberline {3.11}Boolean Theorems}{140}{section.3.11}%
-\contentsline {section}{\numberline {3.12}ডি-মরগ্যানের উপপাদ্য}{141}{section.3.12}%
-\contentsline {subsection}{\numberline {3.12.1}প্রথম উপপাদ্য}{141}{subsection.3.12.1}%
-\contentsline {subsection}{\numberline {3.12.2}দ্বিতীয় উপপাদ্য}{141}{subsection.3.12.2}%
-\contentsline {subsection}{\numberline {3.12.3}ব্যাখ্যা ও উদাহরণ}{141}{subsection.3.12.3}%
-\contentsline {section}{\numberline {3.13}Truth Table}{142}{section.3.13}%
-\contentsline {subsection}{\numberline {3.13.1}সংজ্ঞা}{142}{subsection.3.13.1}%
-\contentsline {subsection}{\numberline {3.13.2}প্রশিক্ষণ}{142}{subsection.3.13.2}%
-\contentsline {section}{\numberline {3.14}মৌলিক গেট: AND, OR, NOT}{143}{section.3.14}%
-\contentsline {subsection}{\numberline {3.14.1}AND Gate}{143}{subsection.3.14.1}%
-\contentsline {subsection}{\numberline {3.14.2}OR Gate}{143}{subsection.3.14.2}%
+\contentsline {section}{\numberline {3.9}কিছু গাণিতিক সমস্যা ও সমাধান}{137}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Boolean Algebra}{138}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}পরিচিতি}{138}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Boolean Variable ও Operator}{138}{subsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.10.3}Boolean Expression}{138}{subsection.3.10.3}%
+\contentsline {section}{\numberline {3.11}Boolean Theorems}{139}{section.3.11}%
+\contentsline {section}{\numberline {3.12}ডি-মরগ্যানের উপপাদ্য}{140}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}প্রথম উপপাদ্য}{140}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}দ্বিতীয় উপপাদ্য}{140}{subsection.3.12.2}%
+\contentsline {subsection}{\numberline {3.12.3}ব্যাখ্যা ও উদাহরণ}{140}{subsection.3.12.3}%
+\contentsline {section}{\numberline {3.13}Truth Table}{141}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}সংজ্ঞা}{141}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}প্রশিক্ষণ}{141}{subsection.3.13.2}%
+\contentsline {section}{\numberline {3.14}মৌলিক গেট: AND, OR, NOT}{142}{section.3.14}%
+\contentsline {subsection}{\numberline {3.14.1}AND Gate}{142}{subsection.3.14.1}%
+\contentsline {subsection}{\numberline {3.14.2}OR Gate}{142}{subsection.3.14.2}%
 \contentsline {subsection}{\numberline {3.14.3}NOT Gate}{143}{subsection.3.14.3}%
-\contentsline {section}{\numberline {3.15}Universal Gates: NAND, NOR}{144}{section.3.15}%
-\contentsline {subsection}{\numberline {3.15.1}NAND}{144}{subsection.3.15.1}%
+\contentsline {section}{\numberline {3.15}Universal Gates: NAND, NOR}{143}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}NAND}{143}{subsection.3.15.1}%
 \contentsline {subsection}{\numberline {3.15.2}NOR}{144}{subsection.3.15.2}%
-\contentsline {section}{\numberline {3.16}Special Gates}{145}{section.3.16}%
-\contentsline {subsection}{\numberline {3.16.1}XOR (Exclusive OR)}{145}{subsection.3.16.1}%
+\contentsline {section}{\numberline {3.16}Special Gates}{144}{section.3.16}%
+\contentsline {subsection}{\numberline {3.16.1}XOR (Exclusive OR)}{144}{subsection.3.16.1}%
 \contentsline {subsection}{\numberline {3.16.2}XNOR}{145}{subsection.3.16.2}%
-\contentsline {section}{\numberline {3.17}Encoder}{146}{section.3.17}%
-\contentsline {subsection}{\numberline {3.17.1}সংজ্ঞা ও কাজ}{146}{subsection.3.17.1}%
-\contentsline {subsection}{\numberline {3.17.2}ব্যবহার}{147}{subsection.3.17.2}%
-\contentsline {section}{\numberline {3.18}Decoder}{147}{section.3.18}%
-\contentsline {subsection}{\numberline {3.18.1}সংজ্ঞা}{147}{subsection.3.18.1}%
-\contentsline {subsection}{\numberline {3.18.2}ব্যবহার}{148}{subsection.3.18.2}%
-\contentsline {section}{\numberline {3.19}Adder}{148}{section.3.19}%
-\contentsline {subsection}{\numberline {3.19.1}Half Adder}{148}{subsection.3.19.1}%
-\contentsline {subsection}{\numberline {3.19.2}Full Adder}{149}{subsection.3.19.2}%
-\contentsline {subsection}{\numberline {3.19.3}Half vs Full Adder}{149}{subsection.3.19.3}%
-\contentsline {section}{\numberline {3.20}Register}{150}{section.3.20}%
-\contentsline {subsection}{\numberline {3.20.1}সংজ্ঞা}{150}{subsection.3.20.1}%
-\contentsline {subsection}{\numberline {3.20.2}প্রকারভেদ}{150}{subsection.3.20.2}%
-\contentsline {subsection}{\numberline {3.20.3}ব্যবহার}{150}{subsection.3.20.3}%
-\contentsline {section}{\numberline {3.21}Counter}{151}{section.3.21}%
-\contentsline {subsection}{\numberline {3.21.1}সংজ্ঞা}{151}{subsection.3.21.1}%
-\contentsline {subsection}{\numberline {3.21.2}প্রকারভেদ}{151}{subsection.3.21.2}%
-\contentsline {subsection}{\numberline {3.21.3}ব্যবহার}{151}{subsection.3.21.3}%
-\contentsline {section}{\numberline {3.22}অনুশীলনী}{152}{section.3.22}%
-\contentsline {subsection}{\numberline {3.22.1}ধরন}{152}{subsection.3.22.1}%
-\contentsline {chapter}{\numberline {4}ওয়েব ডিজাইন পরিচিতি এবং HTML}{157}{chapter.4}%
-\contentsline {section}{\numberline {4.1}ওয়েব ডিজাইনের ধারণা}{158}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}ওয়েব ডিজাইন কী}{158}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Static ও Dynamic ওয়েবসাইট}{159}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}ওয়েবসাইট তৈরির ধাপ}{159}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}ওয়েবসাইটের কাঠামো}{160}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}কাঠামোর ধারণা}{160}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}কাঠামোর ধরন}{160}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}HTML-এর মৌলিক বিষয়}{161}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}HTML কী}{161}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}HTML, CSS ও JavaScript}{162}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}ট্যাগ ও সিনট্যাক্স}{163}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Tag, Element ও Attribute}{163}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}ট্যাগের ধরন}{163}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}ডিজাইন: স্ট্রাকচার ও লেআউট}{164}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}লেআউটের ধারণা}{164}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}লেআউটের ধরন}{165}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}টেক্সট ও কনটেন্ট ফরম্যাটিং}{166}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Heading, Paragraph ও Line Break}{166}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Formatting tag}{166}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}List}{166}{subsection.4.6.3}%
-\contentsline {section}{\numberline {4.7}হাইপারলিঙ্ক ও নেভিগেশন}{167}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Hyperlink}{167}{subsection.4.7.1}%
-\contentsline {section}{\numberline {4.8}ইমেজ নিয়ন্ত্রণ ও ব্যবহার}{168}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Image tag}{169}{subsection.4.8.1}%
-\contentsline {section}{\numberline {4.9}টেবিল ও ডেটা উপস্থাপন}{170}{section.4.9}%
-\contentsline {subsection}{\numberline {4.9.1}Table tag}{170}{subsection.4.9.1}%
-\contentsline {section}{\numberline {4.10}ফর্ম ও ডেটা সংগ্রহ}{171}{section.4.10}%
-\contentsline {subsection}{\numberline {4.10.1}Form}{171}{subsection.4.10.1}%
-\contentsline {subsection}{\numberline {4.10.2}GET ও POST}{172}{subsection.4.10.2}%
-\contentsline {section}{\numberline {4.11}ওয়েব পেজ ডিজাইন পদ্ধতি}{173}{section.4.11}%
-\contentsline {subsection}{\numberline {4.11.1}Design workflow}{173}{subsection.4.11.1}%
-\contentsline {section}{\numberline {4.12}ওয়েবসাইট প্রকাশ ও হোস্টিং}{174}{section.4.12}%
-\contentsline {subsection}{\numberline {4.12.1}Domain ও Hosting}{174}{subsection.4.12.1}%
-\contentsline {section}{\numberline {4.13}অনুশীলনী}{176}{section.4.13}%
-\contentsline {chapter}{\numberline {5}প্রোগ্রামিং ভাষা}{179}{chapter.5}%
-\contentsline {section}{\numberline {5.1}প্রোগ্রামিং ভাষা — পরিচিতি}{180}{section.5.1}%
-\contentsline {section}{\numberline {5.2}প্রোগ্রামের ধারণা}{181}{section.5.2}%
-\contentsline {section}{\numberline {5.3}প্রোগ্রামিং ভাষার ধারণা}{182}{section.5.3}%
-\contentsline {section}{\numberline {5.4}বিভিন্ন প্রজন্মের প্রোগ্রামিং ভাষা}{182}{section.5.4}%
-\contentsline {section}{\numberline {5.5}নিম্নস্তরের ভাষা}{183}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Machine Language}{184}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Assembly Language}{185}{section.5.7}%
-\contentsline {section}{\numberline {5.8}মধ্যস্তরের ভাষা}{185}{section.5.8}%
-\contentsline {section}{\numberline {5.9}উচ্চস্তরের ভাষা}{186}{section.5.9}%
-\contentsline {section}{\numberline {5.10}চতুর্থ প্রজন্মের ভাষা (4GL)}{187}{section.5.10}%
-\contentsline {section}{\numberline {5.11}অনুবাদক (Translator) প্রোগ্রাম}{187}{section.5.11}%
-\contentsline {section}{\numberline {5.12}Compiler}{188}{section.5.12}%
-\contentsline {section}{\numberline {5.13}Interpreter}{189}{section.5.13}%
-\contentsline {section}{\numberline {5.14}Assembler}{189}{section.5.14}%
-\contentsline {section}{\numberline {5.15}প্রোগ্রামের সংগঠন}{190}{section.5.15}%
-\contentsline {section}{\numberline {5.16}প্রোগ্রাম উন্নয়নের ধাপসমূহ}{191}{section.5.16}%
-\contentsline {section}{\numberline {5.17}অ্যালগরিদম}{192}{section.5.17}%
-\contentsline {section}{\numberline {5.18}ফ্লোচার্ট}{193}{section.5.18}%
-\contentsline {section}{\numberline {5.19}প্রোগ্রাম ডিজাইন মডেল}{193}{section.5.19}%
-\contentsline {section}{\numberline {5.20}Structured Programming}{194}{section.5.20}%
-\contentsline {section}{\numberline {5.21}Visual Programming}{195}{section.5.21}%
-\contentsline {section}{\numberline {5.22}Object Oriented Programming}{195}{section.5.22}%
-\contentsline {section}{\numberline {5.23}Event Driven Programming}{196}{section.5.23}%
-\contentsline {section}{\numberline {5.24}C প্রোগ্রামিং — প্রাথমিক ধারণা}{197}{section.5.24}%
-\contentsline {section}{\numberline {5.25}C ভাষার বৈশিষ্ট্য}{197}{section.5.25}%
-\contentsline {section}{\numberline {5.26}C Program Compiling}{198}{section.5.26}%
-\contentsline {section}{\numberline {5.27}C Program-এর গঠন}{199}{section.5.27}%
-\contentsline {section}{\numberline {5.28}Data Type}{200}{section.5.28}%
-\contentsline {section}{\numberline {5.29}Constant}{200}{section.5.29}%
-\contentsline {section}{\numberline {5.30}Variable}{201}{section.5.30}%
-\contentsline {section}{\numberline {5.31}Operator}{201}{section.5.31}%
-\contentsline {section}{\numberline {5.32}Expression}{202}{section.5.32}%
-\contentsline {section}{\numberline {5.33}Keyword}{203}{section.5.33}%
-\contentsline {section}{\numberline {5.34}Input/Output Statement}{203}{section.5.34}%
-\contentsline {section}{\numberline {5.35}Conditional Statement}{204}{section.5.35}%
-\contentsline {section}{\numberline {5.36}Loop Statement}{205}{section.5.36}%
-\contentsline {section}{\numberline {5.37}Array}{206}{section.5.37}%
-\contentsline {section}{\numberline {5.38}Function}{206}{section.5.38}%
-\contentsline {section}{\numberline {5.39}Practical Program Practice}{207}{section.5.39}%
-\contentsline {section}{\numberline {5.40}অনুশীলনী}{208}{section.5.40}%
-\contentsline {chapter}{\numberline {6}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}{211}{chapter.6}%
-\contentsline {section}{\numberline {6.1}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম --- পরিচিতি}{212}{section.6.1}%
-\contentsline {section}{\numberline {6.2}ডেটাবেজের মৌলিক উপাদান}{213}{section.6.2}%
-\contentsline {section}{\numberline {6.3}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}{213}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Relational Database Management System (RDBMS)}{214}{section.6.4}%
-\contentsline {section}{\numberline {6.5}ডেটাবেজ তৈরি}{215}{section.6.5}%
-\contentsline {section}{\numberline {6.6}ডেটা টাইপ}{216}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Query}{217}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Sorting}{218}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Indexing}{219}{section.6.9}%
-\contentsline {section}{\numberline {6.10}Database Relation}{219}{section.6.10}%
-\contentsline {section}{\numberline {6.11}Form}{220}{section.6.11}%
-\contentsline {section}{\numberline {6.12}Report}{221}{section.6.12}%
-\contentsline {section}{\numberline {6.13}Corporate Database}{222}{section.6.13}%
-\contentsline {section}{\numberline {6.14}সরকারি প্রতিষ্ঠানে ডেটাবেজ}{222}{section.6.14}%
-\contentsline {section}{\numberline {6.15}Data Security}{223}{section.6.15}%
-\contentsline {section}{\numberline {6.16}Data Encryption}{224}{section.6.16}%
-\contentsline {section}{\numberline {6.17}Practical Database Task}{225}{section.6.17}%
-\contentsline {section}{\numberline {6.18}অনুশীলনী}{226}{section.6.18}%
+\contentsline {section}{\numberline {3.17}Encoder}{145}{section.3.17}%
+\contentsline {subsection}{\numberline {3.17.1}সংজ্ঞা ও কাজ}{145}{subsection.3.17.1}%
+\contentsline {subsection}{\numberline {3.17.2}ব্যবহার}{146}{subsection.3.17.2}%
+\contentsline {section}{\numberline {3.18}Decoder}{146}{section.3.18}%
+\contentsline {subsection}{\numberline {3.18.1}সংজ্ঞা}{146}{subsection.3.18.1}%
+\contentsline {subsection}{\numberline {3.18.2}ব্যবহার}{147}{subsection.3.18.2}%
+\contentsline {section}{\numberline {3.19}Adder}{147}{section.3.19}%
+\contentsline {subsection}{\numberline {3.19.1}Half Adder}{147}{subsection.3.19.1}%
+\contentsline {subsection}{\numberline {3.19.2}Full Adder}{148}{subsection.3.19.2}%
+\contentsline {subsection}{\numberline {3.19.3}Half vs Full Adder}{148}{subsection.3.19.3}%
+\contentsline {section}{\numberline {3.20}Register}{149}{section.3.20}%
+\contentsline {subsection}{\numberline {3.20.1}সংজ্ঞা}{149}{subsection.3.20.1}%
+\contentsline {subsection}{\numberline {3.20.2}প্রকারভেদ}{149}{subsection.3.20.2}%
+\contentsline {subsection}{\numberline {3.20.3}ব্যবহার}{149}{subsection.3.20.3}%
+\contentsline {section}{\numberline {3.21}Counter}{150}{section.3.21}%
+\contentsline {subsection}{\numberline {3.21.1}সংজ্ঞা}{150}{subsection.3.21.1}%
+\contentsline {subsection}{\numberline {3.21.2}প্রকারভেদ}{150}{subsection.3.21.2}%
+\contentsline {subsection}{\numberline {3.21.3}ব্যবহার}{150}{subsection.3.21.3}%
+\contentsline {section}{\numberline {3.22}অনুশীলনী}{151}{section.3.22}%
+\contentsline {subsection}{\numberline {3.22.1}ধরন}{151}{subsection.3.22.1}%
+\contentsline {chapter}{\numberline {4}ওয়েব ডিজাইন পরিচিতি এবং HTML}{155}{chapter.4}%
+\contentsline {section}{\numberline {4.1}ওয়েব ডিজাইনের ধারণা}{156}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}ওয়েব ডিজাইন কী}{156}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Static ও Dynamic ওয়েবসাইট}{156}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}ওয়েবসাইট তৈরির ধাপ}{157}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}ওয়েবসাইটের কাঠামো}{157}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}কাঠামোর ধারণা}{158}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}কাঠামোর ধরন}{158}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}HTML-এর মৌলিক বিষয়}{159}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}HTML কী}{159}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}HTML, CSS ও JavaScript}{160}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}ট্যাগ ও সিনট্যাক্স}{160}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Tag, Element ও Attribute}{160}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}ট্যাগের ধরন}{161}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}ডিজাইন: স্ট্রাকচার ও লেআউট}{161}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}লেআউটের ধারণা}{162}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}লেআউটের ধরন}{162}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}টেক্সট ও কনটেন্ট ফরম্যাটিং}{163}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Heading, Paragraph ও Line Break}{163}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Formatting tag}{163}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}List}{164}{subsection.4.6.3}%
+\contentsline {section}{\numberline {4.7}হাইপারলিঙ্ক ও নেভিগেশন}{164}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Hyperlink}{164}{subsection.4.7.1}%
+\contentsline {section}{\numberline {4.8}ইমেজ নিয়ন্ত্রণ ও ব্যবহার}{165}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Image tag}{166}{subsection.4.8.1}%
+\contentsline {section}{\numberline {4.9}টেবিল ও ডেটা উপস্থাপন}{167}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Table tag}{167}{subsection.4.9.1}%
+\contentsline {section}{\numberline {4.10}ফর্ম ও ডেটা সংগ্রহ}{168}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Form}{168}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}GET ও POST}{169}{subsection.4.10.2}%
+\contentsline {section}{\numberline {4.11}ওয়েব পেজ ডিজাইন পদ্ধতি}{169}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Design workflow}{170}{subsection.4.11.1}%
+\contentsline {section}{\numberline {4.12}ওয়েবসাইট প্রকাশ ও হোস্টিং}{171}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Domain ও Hosting}{171}{subsection.4.12.1}%
+\contentsline {section}{\numberline {4.13}অনুশীলনী}{172}{section.4.13}%
+\contentsline {chapter}{\numberline {5}প্রোগ্রামিং ভাষা}{175}{chapter.5}%
+\contentsline {section}{\numberline {5.1}প্রোগ্রামিং ভাষা — পরিচিতি}{176}{section.5.1}%
+\contentsline {section}{\numberline {5.2}প্রোগ্রামের ধারণা}{176}{section.5.2}%
+\contentsline {section}{\numberline {5.3}প্রোগ্রামিং ভাষার ধারণা}{177}{section.5.3}%
+\contentsline {section}{\numberline {5.4}বিভিন্ন প্রজন্মের প্রোগ্রামিং ভাষা}{178}{section.5.4}%
+\contentsline {section}{\numberline {5.5}নিম্নস্তরের ভাষা}{179}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Machine Language}{179}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Assembly Language}{180}{section.5.7}%
+\contentsline {section}{\numberline {5.8}মধ্যস্তরের ভাষা}{180}{section.5.8}%
+\contentsline {section}{\numberline {5.9}উচ্চস্তরের ভাষা}{181}{section.5.9}%
+\contentsline {section}{\numberline {5.10}চতুর্থ প্রজন্মের ভাষা (4GL)}{182}{section.5.10}%
+\contentsline {section}{\numberline {5.11}অনুবাদক (Translator) প্রোগ্রাম}{182}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Compiler}{183}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Interpreter}{184}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Assembler}{184}{section.5.14}%
+\contentsline {section}{\numberline {5.15}প্রোগ্রামের সংগঠন}{185}{section.5.15}%
+\contentsline {section}{\numberline {5.16}প্রোগ্রাম উন্নয়নের ধাপসমূহ}{186}{section.5.16}%
+\contentsline {section}{\numberline {5.17}অ্যালগরিদম}{186}{section.5.17}%
+\contentsline {section}{\numberline {5.18}ফ্লোচার্ট}{187}{section.5.18}%
+\contentsline {section}{\numberline {5.19}প্রোগ্রাম ডিজাইন মডেল}{188}{section.5.19}%
+\contentsline {section}{\numberline {5.20}Structured Programming}{189}{section.5.20}%
+\contentsline {section}{\numberline {5.21}Visual Programming}{189}{section.5.21}%
+\contentsline {section}{\numberline {5.22}Object Oriented Programming}{190}{section.5.22}%
+\contentsline {section}{\numberline {5.23}Event Driven Programming}{190}{section.5.23}%
+\contentsline {section}{\numberline {5.24}C প্রোগ্রামিং — প্রাথমিক ধারণা}{191}{section.5.24}%
+\contentsline {section}{\numberline {5.25}C ভাষার বৈশিষ্ট্য}{192}{section.5.25}%
+\contentsline {section}{\numberline {5.26}C Program Compiling}{192}{section.5.26}%
+\contentsline {section}{\numberline {5.27}C Program-এর গঠন}{193}{section.5.27}%
+\contentsline {section}{\numberline {5.28}Data Type}{194}{section.5.28}%
+\contentsline {section}{\numberline {5.29}Constant}{194}{section.5.29}%
+\contentsline {section}{\numberline {5.30}Variable}{195}{section.5.30}%
+\contentsline {section}{\numberline {5.31}Operator}{195}{section.5.31}%
+\contentsline {section}{\numberline {5.32}Expression}{196}{section.5.32}%
+\contentsline {section}{\numberline {5.33}Keyword}{197}{section.5.33}%
+\contentsline {section}{\numberline {5.34}Input/Output Statement}{197}{section.5.34}%
+\contentsline {section}{\numberline {5.35}Conditional Statement}{198}{section.5.35}%
+\contentsline {section}{\numberline {5.36}Loop Statement}{199}{section.5.36}%
+\contentsline {section}{\numberline {5.37}Array}{199}{section.5.37}%
+\contentsline {section}{\numberline {5.38}Function}{200}{section.5.38}%
+\contentsline {section}{\numberline {5.39}Practical Program Practice}{201}{section.5.39}%
+\contentsline {section}{\numberline {5.40}অনুশীলনী}{202}{section.5.40}%
+\contentsline {chapter}{\numberline {6}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}{205}{chapter.6}%
+\contentsline {section}{\numberline {6.1}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম --- পরিচিতি}{205}{section.6.1}%
+\contentsline {section}{\numberline {6.2}ডেটাবেজের মৌলিক উপাদান}{206}{section.6.2}%
+\contentsline {section}{\numberline {6.3}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}{207}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Relational Database Management System (RDBMS)}{208}{section.6.4}%
+\contentsline {section}{\numberline {6.5}ডেটাবেজ তৈরি}{209}{section.6.5}%
+\contentsline {section}{\numberline {6.6}ডেটা টাইপ}{210}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Query}{210}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Sorting}{211}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Indexing}{212}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Database Relation}{213}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Form}{214}{section.6.11}%
+\contentsline {section}{\numberline {6.12}Report}{214}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Corporate Database}{215}{section.6.13}%
+\contentsline {section}{\numberline {6.14}সরকারি প্রতিষ্ঠানে ডেটাবেজ}{216}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Data Security}{216}{section.6.15}%
+\contentsline {section}{\numberline {6.16}Data Encryption}{217}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Practical Database Task}{218}{section.6.17}%
+\contentsline {section}{\numberline {6.18}অনুশীলনী}{219}{section.6.18}%
