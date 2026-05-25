@@ -11,3 +11,38 @@
 \item ১,২,৩ input truth table উদাহরণ
 \item Logic gate যাচাই
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item input সংখ্যা অনুযায়ী truth table row নির্ণয় করতে।
+\item Boolean expression থেকে output column পূরণ করতে।
+\item logic gate-এর কাজ truth table দিয়ে যাচাই করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Truth table}
+কোনো logic expression বা circuit-এর সম্ভাব্য সব input combination এবং প্রতিটির জন্য output দেখানো সারণিকে truth table বলা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{Row সংখ্যা}
+\begin{itemize}
+\item 1 input হলে row = $2^1=2$
+\item 2 input হলে row = $2^2=4$
+\item 3 input হলে row = $2^3=8$
+\item সাধারণভাবে $n$ input হলে row = $2^n$
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{Expression: $Y=A+B\cdot C$}
+প্রথমে $B\cdot C$ column তৈরি করো, তারপর $A$-এর সাথে OR করো। intermediate column রাখলে ভুল কম হয়।
+\end{examplebox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Truth table placeholder}\\[4pt]
+Columns: $A$, $B$, $C$, $B\cdot C$, $Y=A+B\cdot C$\\
+৮টি row পূরণ করার জায়গা।
+}}
+\end{center}

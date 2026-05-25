@@ -1,12 +1,61 @@
 % ৪.৫ ডিজাইন: স্ট্রাকচার ও লেআউট
 \section{ডিজাইন: স্ট্রাকচার ও লেআউট}
 
-\subsection{লেআউটের ধরন}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Fixed, Fluid, Responsive design ধারণা
+\item layout, wireframe ও responsive design-এর ধারণা ব্যাখ্যা করতে।
+\item fixed, fluid ও responsive layout আলাদা করতে।
+\item ভালো web layout-এর basic design principle লিখতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{মৌলিক নীতিমালা}
+\subsection{লেআউটের ধারণা}
+ওয়েব পেজে header, navigation, content, sidebar, image, footer ইত্যাদি অংশ কোথায় থাকবে, সেটির পরিকল্পনাকে layout বলা হয়। ভালো layout page-কে পরিষ্কার, পড়ার উপযোগী ও ব্যবহারকারী-বান্ধব করে।
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Page layout wireframe placeholder}\\[4pt]
+Header\\
+Navigation menu\\
+Main content \hspace{1cm} Sidebar\\
+Footer
+}}
+\end{center}
+
+\subsection{লেআউটের ধরন}
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.34\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{Layout} & \textbf{ধারণা} & \textbf{সীমাবদ্ধতা/সুবিধা} \\
+\hline
+Fixed & width fixed থাকে & desktop-এ predictable, mobile-এ সমস্যা \\
+\hline
+Fluid & width percentage ভিত্তিক & screen অনুযায়ী ছড়ায়, control কম \\
+\hline
+Responsive & screen size অনুযায়ী layout বদলায় & modern website-এর জন্য উপযোগী \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{Design principle}
 \begin{itemize}
-\item Contrast, Alignment, Repetition, Proximity
+\item Contrast: গুরুত্বপূর্ণ অংশ আলাদা করে দেখানো।
+\item Alignment: text ও element সুশৃঙ্খল রাখা।
+\item Repetition: একই style বারবার ব্যবহার করে consistency রাখা।
+\item Proximity: সম্পর্কিত বিষয় কাছাকাছি রাখা।
 \end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব প্রয়োগ}
+শিক্ষাপ্রতিষ্ঠানের website-এ top navigation-এ Home, Notice, Routine, Result, Contact রাখা যায়। Main area-তে latest notice এবং sidebar-এ important link রাখলে ব্যবহারকারী দ্রুত তথ্য পায়।
+\end{examplebox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item Responsive design কী?
+\item Wireframe কেন দরকার?
+\item Fixed ও responsive layout-এর পার্থক্য লেখ।
+\end{enumerate}
+\end{practicebox}

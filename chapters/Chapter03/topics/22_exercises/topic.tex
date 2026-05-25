@@ -6,3 +6,78 @@
 \item MCQ, জ্ঞানমূলক, অনুধাবনমূলক, প্রয়োগমূলক প্রশ্ন
 \item Number conversion, binary arithmetic, truth table, circuit drawing
 \end{itemize}
+
+\begin{learningbox}
+এই অনুশীলন শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item number conversion, complement, code ও logic gate-এর প্রশ্ন সমাধান করতে।
+\item truth table এবং circuit-based CQ উত্তর সাজাতে।
+\item board-style সংক্ষিপ্ত ও সৃজনশীল প্রশ্নের উত্তর পরিকল্পনা করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item Computer-এর মৌলিক সংখ্যা পদ্ধতি কোনটি?\\
+ক. Decimal \quad খ. Binary \quad গ. Octal \quad ঘ. Hexadecimal
+\item $(1111)_2$-এর decimal মান কত?\\
+ক. 7 \quad খ. 10 \quad গ. 15 \quad ঘ. 16
+\item Universal gate কোনগুলো?\\
+ক. AND, OR \quad খ. XOR, XNOR \quad গ. NAND, NOR \quad ঘ. Encoder, Decoder
+\item Half adder-এর carry expression কোনটি?\\
+ক. $A+B$ \quad খ. $A\cdot B$ \quad গ. $\overline{A}$ \quad ঘ. $A\oplus B$
+\item Unicode প্রধানত কী কাজে গুরুত্বপূর্ণ?\\
+ক. শুধু সংখ্যা যোগে \quad খ. বহুভাষিক character প্রকাশে \quad গ. pulse গণনায় \quad ঘ. voltage বাড়াতে
+\end{enumerate}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Base বা radix কী?
+\item BCD ও pure binary-এর মধ্যে পার্থক্য লেখ।
+\item De Morgan-এর দুইটি উপপাদ্য লেখ।
+\item Truth table-এ 3 input হলে কয়টি row হবে? কেন?
+\item Encoder ও decoder-এর একটি পার্থক্য লেখ।
+\item Register কেন দ্রুত storage unit?
+\end{enumerate}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{সৃজনশীল অনুশীলন ১}\\
+একটি digital display system decimal digit গ্রহণ করে binary code তৈরি করে এবং পরে decoder ব্যবহার করে নির্দিষ্ট segment চালু করে। system-টি বাংলা character দেখানোর জন্য Unicode-supported controller ব্যবহার করে।
+
+\begin{enumerate}
+\item ক. BCD কী?
+\item খ. Unicode কেন ASCII-এর তুলনায় বেশি উপযোগী?
+\item গ. encoder ও decoder-এর ভূমিকা উদ্দীপকের আলোকে ব্যাখ্যা কর।
+\item ঘ. decimal digit display করতে BCD, decoder ও logic gate কীভাবে একসাথে কাজ করতে পারে বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{সৃজনশীল অনুশীলন ২}\\
+একজন শিক্ষার্থী $A$ ও $B$ input নিয়ে এমন circuit বানাল যেখানে Sum output $A\oplus B$ এবং Carry output $A\cdot B$। পরে সে carry-in যুক্ত করে তিন input-এর যোগফল বের করতে চাইল।
+
+\begin{enumerate}
+\item ক. XOR gate কী?
+\item খ. Half adder-এ AND gate কেন দরকার?
+\item গ. উদ্দীপকের প্রথম circuit-এর truth table তৈরি কর।
+\item ঘ. carry-in যুক্ত হলে full adder কেন প্রয়োজন হয়? যুক্তিসহ ব্যাখ্যা কর।
+\end{enumerate}
+\end{practicebox}
+
+\begin{recapbox}
+\begin{itemize}
+\item Decimal থেকে অন্য base: repeated division; অন্য base থেকে decimal: positional expansion।
+\item Binary থেকে octal/hex: 3-bit/4-bit grouping।
+\item 2's complement: bit invert + 1।
+\item Boolean simplification-এ theorem, De Morgan ও truth table গুরুত্বপূর্ণ।
+\item Digital device অংশে diagram, truth table ও Boolean expression একসাথে লিখলে উত্তর পূর্ণ হয়।
+\end{itemize}
+\end{recapbox}
+
+\begin{sourcebox}
+Chapter 03 local sheet resources, HSC ICT chapter outline, এবং standard digital-logic terminology অনুসরণ করে এই অনুশীলনগুলো নতুনভাবে রচিত হয়েছে; কোনো বইয়ের দীর্ঘ অংশ হুবহু ব্যবহার করা হয়নি।
+\end{sourcebox}

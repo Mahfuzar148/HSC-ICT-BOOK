@@ -1,14 +1,32 @@
 % ৪.২ Assembly Language
 \section{Assembly Language}
 
-\subsection{Assembly language কী}
-\begin{itemize}
-\item mnemonic code ও assembler
-\item source program → object program
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী assembly language, mnemonic code ও assembler-এর ভূমিকা ব্যাখ্যা করতে পারবে।
+\end{learningbox}
 
-\subsection{উদাহরণ ও সুবিধা/অসুবিধা}
-\begin{itemize}
-\item উদাহরণ: ADD, SUB, MOV, MUL
-\item Assembly language-এর সুবিধা ও অসুবিধা
-\end{itemize}
+\begin{definitionbox}{Assembly language}
+যে low-level language-এ binary instruction-এর বদলে mnemonic code যেমন \texttt{ADD}, \texttt{MOV}, \texttt{SUB} ব্যবহার করা হয়, তাকে assembly language বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Translation placeholder}\\[4pt]
+Assembly source $\rightarrow$ Assembler $\rightarrow$ Machine code/Object code
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.26\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ভিত্তি} & \textbf{Machine} & \textbf{Assembly} \\
+\hline
+রূপ & 0 ও 1 & mnemonic code \\
+\hline
+Translator & লাগে না & assembler লাগে \\
+\hline
+বোঝা & খুব কঠিন & তুলনামূলক সহজ \\
+\hline
+\end{tabular}
+\end{center}

@@ -1,18 +1,175 @@
-% Chapter 02.8: Network devices
 \section{Network Devices}
 
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Hub
-\item Switch
-\item Router
-\item Bridge
-\item Gateway
-\item Modem
+\item common network device চিনতে।
+\item hub, switch, router, bridge, gateway ও modem-এর কাজ বলতে।
+\item MAC address এবং IP routing-এর ধারণা বুঝতে।
+\item device comparison table লিখতে।
+\item network design-এ কোন device কেন লাগে তা বুঝতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{Device Functions}
+Network device হলো এমন hardware, যা network-এ data flow, connection, addressing বা protocol conversion-এর কাজ করে। কিছু device একই local segment-এর মধ্যে কাজ করে, আবার কিছু device different network-এর মধ্যে যোগাযোগ স্থাপন করে।
+
+\begin{definitionbox}{Network device}
+যে hardware ডিভাইস network communication, forwarding, connecting বা conversion-এর কাজ করে, তাকে network device বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Network Devices} \\
+\hline
+Hub, Switch, Bridge \hspace{0.5cm} Router, Gateway, Modem \\
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{ডিভাইসের কাজের দল}
 \begin{itemize}
-\item Packet forwarding
-\item Addressing (MAC, IP)
-\item Routing vs Switching
+\item \textbf{Connecting devices}: hub, switch, bridge
+\item \textbf{Inter-networking devices}: router, gateway
+\item \textbf{Signal conversion device}: modem
 \end{itemize}
+\end{keypointbox}
+
+\subsection{Hub}
+
+Hub হলো basic central connecting device। এটি একটি port-এ পাওয়া data সব port-এ পাঠিয়ে দেয়।
+
+\begin{definitionbox}{Hub}
+Hub হলো এমন network device, যা এক port থেকে পাওয়া signal network-এর সব active port-এ broadcast করে।
+\end{definitionbox}
+
+\subsection{Switch}
+
+Switch hub-এর চেয়ে বেশি intelligent। এটি MAC address দেখে নির্দিষ্ট destination-এ frame পাঠায়।
+
+\begin{definitionbox}{Switch}
+Switch হলো এমন device, যা source ও destination MAC address দেখে নির্দিষ্ট port-এ data পাঠায়।
+\end{definitionbox}
+
+\subsection{Router}
+
+Router বিভিন্ন network-এর মধ্যে packet route করে। এটি IP address ও routing table ব্যবহার করে।
+
+\begin{definitionbox}{Router}
+Router হলো এমন device, যা এক network থেকে অন্য network-এ data packet forward করতে routing decision নেয়।
+\end{definitionbox}
+
+\subsection{Bridge}
+
+Bridge দুটি একই ধরনের network segment সংযুক্ত করে এবং traffic reduce করতে সাহায্য করে।
+
+\subsection{Gateway}
+
+Gateway দুই ভিন্ন protocol বা network environment-এর মধ্যে translation করে।
+
+\begin{definitionbox}{Gateway}
+Gateway হলো এমন device বা node, যা ভিন্ন protocol-based network-এর মধ্যে communication সম্ভব করে।
+\end{definitionbox}
+
+\subsection{Modem}
+
+Modem digital signal এবং analog transmission medium-এর মধ্যে conversion করে।
+
+\begin{definitionbox}{Modem}
+Modem হলো এমন device, যা digital signal-কে modulation করে transmission-এর উপযোগী করে এবং demodulation করে আবার digital data-তে ফেরত আনে।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.16\textwidth}|p{0.23\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{Device} & \textbf{মূল কাজ} & \textbf{বিশেষ কথা} \\
+\hline
+Hub & broadcast & সবচেয়ে basic device \\
+\hline
+Switch & MAC-based forwarding & hub-এর চেয়ে efficient \\
+\hline
+Router & inter-network routing & IP address-based \\
+\hline
+Bridge & segment connect & traffic কমায় \\
+\hline
+Gateway & protocol conversion & different systems link করে \\
+\hline
+Modem & modulation/demodulation & internet connection-এ ব্যবহৃত \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Hub vs switch, switch vs router, router vs gateway—এই তিন জোড়া comparison খুবই important। Table format-এ লিখলে answer দ্রুত এবং পরিষ্কার হয়।
+\end{boardbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Router এবং switch এক নয়। Switch local network-এর ভেতরে device connect করে, আর router ভিন্ন network-এর মধ্যে packet পাঠায়।
+\end{mistakebox}
+
+\begin{recapbox}
+\begin{itemize}
+\item Hub সবদিকে পাঠায়, switch নির্দিষ্ট port-এ পাঠায়।
+\item Router network-to-network routing করে।
+\item Gateway ভিন্ন protocol-এর মধ্যে translation করে।
+\item Modem signal conversion করে।
+\end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item MAC address-based forwarding কোন device করে?\\
+ক. Hub \quad খ. Switch \quad গ. Modem \quad ঘ. Gateway
+\item ভিন্ন protocol-এর মধ্যে কাজ করাতে কোন device ব্যবহৃত হয়?\\
+ক. Bridge \quad খ. Router \quad গ. Gateway \quad ঘ. Hub
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Hub ও switch-এর মধ্যে দুটি পার্থক্য লেখ।
+\item Modem-এর কাজ কী?
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি office network-এ device sharing, internet access এবং branch office connection-এর জন্য ভিন্ন ভিন্ন network device ব্যবহার করা হচ্ছে। উদ্দীপকের আলোকে device selection বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশে chapter 2 network-device sheet, CQ reference এবং standard networking device concept ব্যবহার করা হয়েছে।
+\end{sourcebox}
+
+\subsection{Network device map}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{Diagram placeholder: Small LAN}\\[4pt]
+Internet $\rightarrow$ Modem/ONT $\rightarrow$ Router $\rightarrow$ Switch $\rightarrow$ PCs/Printer/AP\\
+Switch-এর একটি port থেকে Access Point দেখিয়ে wireless users যুক্ত করতে হবে।
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{Device} & \textbf{মূল কাজ} & \textbf{পরীক্ষায় পার্থক্য} \\
+\hline
+NIC & device-কে network-এ যুক্ত করে & প্রতিটি networked device-এ থাকে \\
+\hline
+Hub & signal সব port-এ পাঠায় & কম বুদ্ধিমান, collision বেশি \\
+\hline
+Switch & MAC address দেখে নির্দিষ্ট port-এ পাঠায় & LAN-এ hub-এর উন্নত বিকল্প \\
+\hline
+Router & ভিন্ন network যুক্ত করে route নির্ধারণ করে & internet connection ভাগ করে \\
+\hline
+Bridge & দুই LAN segment যুক্ত/ফিল্টার করে & ছোট segment সংযোগে ব্যবহৃত \\
+\hline
+Gateway & ভিন্ন protocol/architecture যুক্ত করে & protocol conversion করতে পারে \\
+\hline
+Repeater & দুর্বল signal পুনরায় শক্তিশালী করে & distance বাড়াতে ব্যবহৃত \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Switch বনাম hub, router বনাম gateway এবং modem-এর modulation/demodulation কাজ—এই তিনটি তুলনা বারবার গুরুত্বপূর্ণ হয়।
+\end{boardbox}

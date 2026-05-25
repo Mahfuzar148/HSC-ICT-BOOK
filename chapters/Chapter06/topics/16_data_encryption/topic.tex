@@ -1,12 +1,29 @@
 % ১৬. Data Encryption
 \section{Data Encryption}
+এনক্রিপশন হলো ডেটাকে এমন গোপন সংকেতে রূপান্তর করা যাতে অনুমতি ছাড়া কেউ তা বুঝতে না পারে। ইন্টারনেট ব্যাংকিং, ই-কমার্স, মেসেজিং, পাসওয়ার্ড সংরক্ষণ এবং সরকারি সেবায় এনক্রিপশন অত্যন্ত গুরুত্বপূর্ণ।
 
-\subsection{Encryption ও Decryption}
-\begin{itemize}
-\item Encryption কী, Decryption কী, প্রয়োজনীয়তা
-\end{itemize}
+\begin{definitionbox}{Encryption ও Decryption}
+পাঠযোগ্য ডেটাকে গোপন কোডে রূপান্তর করার প্রক্রিয়া হলো \textbf{Encryption}; গোপন কোড থেকে আবার পাঠযোগ্য ডেটায় ফিরিয়ে আনার প্রক্রিয়া হলো \textbf{Decryption}।
+\end{definitionbox}
 
-\subsection{ধরন ও ব্যবহার}
-\begin{itemize}
-\item Symmetric ও Asymmetric, Public/Private key, online banking, e-commerce
-\end{itemize}
+\begin{center}
+\fbox{\parbox{0.84\textwidth}{\centering
+Plain Text $\xrightarrow{\text{Encryption + Key}}$ Cipher Text $\xrightarrow{\text{Decryption + Key}}$ Plain Text}}
+\end{center}
+\textbf{চিত্রের স্থানধারক:} এনক্রিপশন-ডিক্রিপশন প্রবাহচিত্র।
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.58\textwidth}|}
+\hline
+ধরন & বৈশিষ্ট্য \\
+\hline
+Symmetric encryption & একই key দিয়ে encryption ও decryption হয়; দ্রুত, কিন্তু key নিরাপদে শেয়ার করতে হয়। \\
+\hline
+Asymmetric encryption & Public key ও Private key ব্যবহৃত হয়; নিরাপদ যোগাযোগে কার্যকর। \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{বাস্তব প্রয়োগ}
+HTTPS ওয়েবসাইটে ব্যবহারকারীর ব্রাউজার ও সার্ভারের মধ্যে পাঠানো সংবেদনশীল তথ্য এনক্রিপ্টেড থাকে, ফলে মাঝপথে কেউ ডেটা পেলেও সহজে পড়তে পারে না।
+\end{examplebox}

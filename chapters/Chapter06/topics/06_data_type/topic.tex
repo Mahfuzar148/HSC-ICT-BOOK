@@ -1,12 +1,35 @@
 % ৬. ডেটা টাইপ
 \section{ডেটা টাইপ}
+ডেটা টাইপ নির্ধারণ করে একটি ফিল্ডে কী ধরনের মান রাখা যাবে। সঠিক ডেটা টাইপ ব্যবহার করলে স্টোরেজ সাশ্রয় হয়, ভুল ডেটা এন্ট্রি কমে এবং কুয়েরি/গণনা সহজ হয়।
 
-\begin{itemize}
-\item Text, Number, Date/Time, Currency, AutoNumber, Yes/No, Memo
-\item Hyperlink, OLE Object, Lookup Wizard সংক্রান্ত সংক্ষিপ্ত উল্লেখ
-\end{itemize}
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.46\textwidth}|p{0.20\textwidth}|}
+\hline
+ডেটা টাইপ & ব্যবহার & উদাহরণ \\
+\hline
+Short Text & ছোট লেখা, কোড, মোবাইল নম্বর & Name, Mobile \\
+\hline
+Long Text/Memo & বড় বিবরণ বা মন্তব্য & Address, Note \\
+\hline
+Number & গাণিতিক হিসাবযোগ্য সংখ্যা & Marks, Quantity \\
+\hline
+Date/Time & তারিখ ও সময় & BirthDate \\
+\hline
+Currency & টাকা-পয়সা & Salary, Price \\
+\hline
+AutoNumber & স্বয়ংক্রিয় অনন্য নম্বর & StudentID \\
+\hline
+Yes/No & সত্য/মিথ্যা বা হ্যাঁ/না মান & Paid, Active \\
+\hline
+Hyperlink & ওয়েব/ইমেইল লিংক & Website \\
+\hline
+\end{tabular}
+\end{center}
 
-\subsection{প্রয়োগ}
-\begin{itemize}
-\item কোন ধরনের field-এ কোন data type ব্যবহার করা উচিত তার উদাহরণ
-\end{itemize}
+\begin{keypointbox}{ডেটা টাইপ নির্বাচন}
+যে ফিল্ডে যোগ, বিয়োগ বা গড় বের করতে হবে সেটি Number/Currency হওয়া উচিত। যে নম্বরের শুরুতে 0 থাকতে পারে বা গণনা দরকার নেই, সেটি Text রাখা ভালো।
+\end{keypointbox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+প্রশ্নে যদি ``মোবাইল নম্বরের জন্য কোন ডেটা টাইপ?'' আসে, উত্তর হবে Text/Short Text; কারণ মোবাইল নম্বর গাণিতিক হিসাবের জন্য নয় এবং শুরুতে 0 থাকতে পারে।
+\end{boardbox}

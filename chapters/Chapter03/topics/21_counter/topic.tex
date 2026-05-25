@@ -15,3 +15,46 @@
 \begin{itemize}
 \item Digital clock, frequency counter, timers
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item counter-এর সংজ্ঞা ও sequential circuit ধারণা ব্যাখ্যা করতে।
+\item asynchronous ও synchronous counter আলাদা করতে।
+\item mod counter, up counter ও down counter-এর ধারণা লিখতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Counter}
+clock pulse বা event গণনা করে নির্দিষ্ট binary sequence তৈরি করে যে sequential circuit, তাকে counter বলা হয়। counter সাধারণত flip-flop দিয়ে তৈরি হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{বৈশিষ্ট্য} & \textbf{উদাহরণ} \\
+\hline
+Asynchronous & flip-flop একসাথে clock পায় না & ripple counter \\
+\hline
+Synchronous & সব flip-flop একই clock পায় & high-speed counter \\
+\hline
+Up counter & sequence বাড়ে & 000, 001, 010 ... \\
+\hline
+Down counter & sequence কমে & 111, 110, 101 ... \\
+\hline
+Mod counter & নির্দিষ্ট state পর্যন্ত গুনে repeat করে & Mod-10 decade counter \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{State diagram placeholder}\\[4pt]
+3-bit up counter: 000 $\rightarrow$ 001 $\rightarrow$ 010 $\rightarrow$ 011 $\rightarrow$ 100 $\rightarrow$ 101 $\rightarrow$ 110 $\rightarrow$ 111 $\rightarrow$ 000
+}}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Counter প্রশ্নে ``flip-flop'', ``clock pulse'', ``sequential circuit'' এবং ``state sequence'' শব্দগুলো ব্যবহার করলে উত্তর বেশি স্পষ্ট হয়।
+\end{boardbox}

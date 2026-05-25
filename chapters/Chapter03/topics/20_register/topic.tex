@@ -15,3 +15,37 @@
 \begin{itemize}
 \item CPU register, data transfer, arithmetic operations
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item register-এর সংজ্ঞা ও কাজ লিখতে।
+\item flip-flop ও register-এর সম্পর্ক ব্যাখ্যা করতে।
+\item shift register-এর ধরন ও ব্যবহার বুঝতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Register}
+একাধিক flip-flop-এর সমন্বয়ে গঠিত যে দ্রুতগতির ক্ষণস্থায়ী storage unit binary data সংরক্ষণ করে, তাকে register বলা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{Register-এর ধরন}
+\begin{itemize}
+\item Serial-in Serial-out (SISO)
+\item Serial-in Parallel-out (SIPO)
+\item Parallel-in Serial-out (PISO)
+\item Parallel-in Parallel-out (PIPO)
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Diagram placeholder: 4-bit Register}\\[4pt]
+চারটি flip-flop পাশাপাশি, common clock line, input/output line label করতে হবে।
+}}
+\end{center}
+
+\begin{examplebox}{ব্যবহার}
+CPU কোনো operation করার সময় operand, intermediate result বা instruction address অল্প সময়ের জন্য register-এ রাখে। তাই register memory-র তুলনায় ছোট হলেও খুব দ্রুত।
+\end{examplebox}

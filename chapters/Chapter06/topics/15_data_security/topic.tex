@@ -1,13 +1,37 @@
 % ১৫. Data Security
 \section{Data Security}
+ডেটা নিরাপত্তা হলো ডেটাকে অননুমোদিত প্রবেশ, পরিবর্তন, নষ্ট হওয়া, চুরি, প্রকাশ বা হারিয়ে যাওয়া থেকে রক্ষা করার ব্যবস্থা। ডেটাবেজ যত বড় ও গুরুত্বপূর্ণ হয়, নিরাপত্তার প্রয়োজনও তত বেশি হয়।
 
-\subsection{Security কী ও প্রয়োজনীয়তা}
-\begin{itemize}
-\item Unauthorized access, hacking, malware, accidental deletion, hardware failure
-\item Privacy ও business continuity রক্ষা করা
-\end{itemize}
+\begin{definitionbox}{Data Security}
+ডেটার গোপনীয়তা, অখণ্ডতা এবং প্রাপ্যতা রক্ষা করার জন্য নেওয়া প্রযুক্তিগত ও প্রশাসনিক ব্যবস্থাকে Data Security বলে।
+\end{definitionbox}
 
-\subsection{Security পদ্ধতি}
+\begin{keypointbox}{CIA Triad}
 \begin{itemize}
-\item Strong password, access control, backup, antivirus, firewall, encryption, audit log
+    \item Confidentiality: অনুমোদিত ব্যক্তি ছাড়া কেউ ডেটা দেখতে পারবে না।
+    \item Integrity: ডেটা সঠিক ও অপরিবর্তিত থাকবে।
+    \item Availability: প্রয়োজনের সময় অনুমোদিত ব্যবহারকারী ডেটা পাবে।
 \end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.58\textwidth}|}
+\hline
+ঝুঁকি & প্রতিরোধ \\
+\hline
+দুর্বল পাসওয়ার্ড & শক্তিশালী পাসওয়ার্ড ও Two-factor authentication \\
+\hline
+ডেটা হারানো & নিয়মিত backup ও recovery plan \\
+\hline
+অননুমোদিত প্রবেশ & Role-based access control \\
+\hline
+ম্যালওয়্যার & Antivirus, firewall, update \\
+\hline
+ভুল পরিবর্তন & Audit log, validation, permission \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+ডেটা নিরাপত্তার পদ্ধতি হিসেবে password, access control, backup, encryption, antivirus, firewall এবং audit trail উল্লেখ করা যায়।
+\end{boardbox}

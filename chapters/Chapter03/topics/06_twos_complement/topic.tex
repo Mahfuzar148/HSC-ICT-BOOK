@@ -18,3 +18,32 @@
 \item ঋণাত্মক সংখ্যা প্রকাশ
 \item Binary subtraction সহজ করা
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item 1's complement ও 2's complement বের করতে।
+\item 2's complement ব্যবহার করে ঋণাত্মক সংখ্যা প্রকাশ করতে।
+\item subtraction-কে addition হিসেবে সমাধান করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{1's complement}
+কোনো binary সংখ্যার প্রতিটি 0-কে 1 এবং প্রতিটি 1-কে 0 করলে যে সংখ্যা পাওয়া যায়, সেটি 1's complement।
+\end{definitionbox}
+
+\begin{definitionbox}{2's complement}
+কোনো binary সংখ্যার 1's complement-এর সাথে 1 যোগ করলে যে সংখ্যা পাওয়া যায়, সেটি 2's complement।
+\end{definitionbox}
+
+\begin{examplebox}{2's complement বের করা}
+8-bit $00001101$-এর 1's complement $11110010$। এর সাথে 1 যোগ করলে $11110011$। তাই 8-bit-এ $-13$ প্রকাশের 2's complement form হলো $11110011$।
+\end{examplebox}
+
+\begin{examplebox}{Subtraction by 2's complement}
+$9-5$ করতে $9$-এর সাথে $5$-এর 2's complement যোগ করা যায়। 4-bit-এ $9=1001$, $5=0101$, $-5=1011$। যোগ: $1001+1011=1\,0100$; extra carry বাদ দিলে ফল $0100=4$।
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+2's complement করার সময় bit count ধরে রাখতে হবে। 4-bit আর 8-bit representation এক নয়; leading zero বাদ দিলে উত্তর ভুল হতে পারে।
+\end{mistakebox}

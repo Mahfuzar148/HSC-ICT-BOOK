@@ -1,14 +1,30 @@
 % ৮.২ Interpreter
 \section{Interpreter}
 
-\subsection{Interpreter কী}
-\begin{itemize}
-\item Line by line translate করে, error পেলে execution থামে
-\item object program না-ও তৈরি হতে পারে
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী interpreter-এর কাজ এবং compiler থেকে পার্থক্য ব্যাখ্যা করতে পারবে।
+\end{learningbox}
 
-\subsection{সুবিধা ও অসুবিধা}
-\begin{itemize}
-\item সুবিধা: error correction সহজ, শিক্ষার জন্য উপযোগী
-\item অসুবিধা: execution ধীর, প্রতিবার run এ translate প্রয়োজন
-\end{itemize}
+\begin{definitionbox}{Interpreter}
+যে translator source program line by line translate ও execute করে এবং error পেলে সাধারণত সেই line-এ execution থামায়, তাকে interpreter বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ভিত্তি} & \textbf{Compiler} & \textbf{Interpreter} \\
+\hline
+Translation & পুরো program একসাথে & line by line \\
+\hline
+Execution speed & দ্রুত & তুলনামূলক ধীর \\
+\hline
+Error handling & error list একসাথে & line ধরে error দেখায় \\
+\hline
+Object code & তৈরি হতে পারে & সাধারণত তৈরি করে না \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{শেখার সুবিধা}
+Interpreter line ধরে error দেখায় বলে beginners দ্রুত ভুল খুঁজতে পারে।
+\end{examplebox}

@@ -11,3 +11,52 @@
 \begin{itemize}
 \item Memory address decoding, display selection
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item decoder-এর input-output relation লিখতে।
+\item $n$ input থেকে $2^n$ output ধারণা ব্যাখ্যা করতে।
+\item encoder ও decoder-এর পার্থক্য লিখতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Decoder}
+যে combinational circuit binary input code গ্রহণ করে নির্দিষ্ট একটি output line সক্রিয় করে, তাকে decoder বলা হয়। সাধারণ decoder-এ $n$ input এবং $2^n$ output থাকে।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Block diagram placeholder: 2-to-4 Decoder}\\[4pt]
+Inputs: $A_1,A_0$ $\rightarrow$ Decoder block $\rightarrow$ Outputs: $D_0,D_1,D_2,D_3$
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$A_1$ & $A_0$ & $D_0$ & $D_1$ & $D_2$ & $D_3$ \\
+\hline
+0 & 0 & 1 & 0 & 0 & 0 \\
+\hline
+0 & 1 & 0 & 1 & 0 & 0 \\
+\hline
+1 & 0 & 0 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ভিত্তি} & \textbf{Encoder} & \textbf{Decoder} \\
+\hline
+রূপান্তর & $2^n$ input থেকে $n$ output & $n$ input থেকে $2^n$ output \\
+\hline
+কাজ & code তৈরি করে & code decode করে output select করে \\
+\hline
+\end{tabular}
+\end{center}

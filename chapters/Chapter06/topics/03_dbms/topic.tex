@@ -1,19 +1,31 @@
 % ৩. ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)
 \section{ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}
+DBMS বা Database Management System হলো এমন সফটওয়্যার, যার মাধ্যমে ডেটাবেজ তৈরি, সংরক্ষণ, হালনাগাদ, অনুসন্ধান, নিয়ন্ত্রণ ও নিরাপত্তা ব্যবস্থাপনা করা হয়। ব্যবহারকারী সরাসরি ফাইল নিয়ে কাজ না করে DBMS-এর মাধ্যমে ডেটার সাথে কাজ করে।
 
-\subsection{DBMS কী}
-\begin{itemize}
-\item DBMS সংজ্ঞা: database ও user-এর মধ্যে মধ্যস্থ সফটওয়্যার
-\end{itemize}
+\begin{definitionbox}{DBMS}
+ডেটাবেজ তৈরি, পরিচালনা, নিয়ন্ত্রণ, অনুসন্ধান ও নিরাপত্তা নিশ্চিত করার জন্য ব্যবহৃত সিস্টেম সফটওয়্যারকে DBMS বলে।
+\end{definitionbox}
 
-\subsection{DBMS-এর কাজ}
+\begin{keypointbox}{DBMS-এর প্রধান কাজ}
 \begin{itemize}
-\item Database তৈরি, Table তৈরি, Insert/Update/Delete, Query, Report
-\item Sorting, Indexing, Security, Backup, Recovery, Integrity
+    \item ডেটাবেজ, টেবিল ও ফিল্ড তৈরি করা।
+    \item ডেটা ইনসার্ট, আপডেট, ডিলিট ও অনুসন্ধান করা।
+    \item ব্যবহারকারীর অনুমতি, পাসওয়ার্ড ও অ্যাক্সেস নিয়ন্ত্রণ করা।
+    \item ডেটার পুনরাবৃত্তি ও অসামঞ্জস্য কমানো।
+    \item ব্যাকআপ, রিকভারি এবং ডেটা ইন্টেগ্রিটি রক্ষা করা।
 \end{itemize}
+\end{keypointbox}
 
-\subsection{সুবিধা ও অসুবিধা}
-\begin{itemize}
-\item সুবিধা: redundancy কমা, consistency, multi-user support
-\item অসুবিধা: খরচ, skilled user প্রয়োজন, system failure-এর ঝুঁকি
-\end{itemize}
+\begin{examplebox}{DBMS সফটওয়্যার}
+Microsoft Access, MySQL, Oracle Database, Microsoft SQL Server, PostgreSQL, SQLite, FoxPro ইত্যাদি DBMS/RDBMS ব্যবস্থার পরিচিত উদাহরণ।
+\end{examplebox}
+
+\begin{center}
+\fbox{\parbox{0.82\textwidth}{\centering
+User/Application $\leftrightarrow$ DBMS $\leftrightarrow$ Database}}
+\end{center}
+\textbf{চিত্রের স্থানধারক:} ব্যবহারকারী, DBMS এবং ডেটাবেজের সম্পর্ক।
+
+\begin{boardbox}{বোর্ড ফোকাস}
+DBMS-এর সুবিধা লিখতে হলে দ্রুত অনুসন্ধান, নিরাপত্তা, ডেটা শেয়ারিং, ব্যাকআপ, পুনরাবৃত্তি কমানো এবং রিপোর্ট তৈরির বিষয়গুলো উল্লেখ করা যায়।
+\end{boardbox}

@@ -1,17 +1,149 @@
-% Chapter 02.9: Network topology
 \section{Network Topology}
 
-\subsection{Common Topologies}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Bus topology
-\item Star topology
-\item Ring topology
-\item Mesh topology
-\item Hybrid topology
+\item network topology কী তা ব্যাখ্যা করতে।
+\item bus, star, ring, mesh ও hybrid topology আলাদা করতে।
+\item topology comparison table লিখতে।
+\item কোন topology কোথায় বেশি উপযোগী তা বলতে।
+\item board-style diagram-based প্রশ্নের উত্তর লিখতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{Comparison}
+Network topology হলো network-এর ভেতরে device ও cable-এর physical বা logical arrangement। topology দেখে বোঝা যায় data কীভাবে travel করবে, কোথায় fault হলে কতটা প্রভাব পড়বে এবং expansion কতটা সহজ হবে।
+
+\begin{definitionbox}{Network topology}
+কম্পিউটার ও network device-গুলো কীভাবে পরস্পরের সঙ্গে যুক্ত থাকে, তার গঠনগত বিন্যাসকে network topology বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Network Topology} \\
+\hline
+Bus \hspace{0.8cm} Star \hspace{0.8cm} Ring \hspace{0.8cm} Mesh \hspace{0.8cm} Hybrid \\
+\end{tabular}
+\end{center}
+
+\subsection{Common Topologies}
+
+\subsubsection{Bus Topology}
+\begin{definitionbox}{Bus topology}
+একটি প্রধান backbone cable-এর সাথে সব device যুক্ত থাকলে তাকে bus topology বলে।
+\end{definitionbox}
+
+\subsubsection{Star Topology}
+\begin{definitionbox}{Star topology}
+একটি central hub বা switch-এর সঙ্গে সব node আলাদা cable দিয়ে যুক্ত থাকলে star topology হয়।
+\end{definitionbox}
+
+\subsubsection{Ring Topology}
+\begin{definitionbox}{Ring topology}
+প্রতিটি node তার পাশের node-এর সঙ্গে যুক্ত হয়ে বৃত্তাকার network তৈরি করলে ring topology হয়।
+\end{definitionbox}
+
+\subsubsection{Mesh Topology}
+\begin{definitionbox}{Mesh topology}
+প্রতিটি node একাধিক node-এর সঙ্গে direct connection-এ যুক্ত থাকলে mesh topology হয়।
+\end{definitionbox}
+
+\subsubsection{Hybrid Topology}
+\begin{definitionbox}{Hybrid topology}
+দুই বা ততোধিক topology একসঙ্গে মিলিয়ে যে network গঠিত হয়, তাকে hybrid topology বলে।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.17\textwidth}|p{0.22\textwidth}|p{0.23\textwidth}|p{0.26\textwidth}|}
+\hline
+\textbf{Topology} & \textbf{Strength} & \textbf{Weakness} & \textbf{Use} \\
+\hline
+Bus & কম খরচ, কম cable & backbone fault হলে বড় সমস্যা & ছোট temporary network \\
+\hline
+Star & manage সহজ, fault isolate সহজ & central device failure risk & lab, office LAN \\
+\hline
+Ring & orderly data flow & one node সমস্যা করলে প্রভাব পড়ে & limited controlled network \\
+\hline
+Mesh & খুব reliable & costly, complex & critical systems \\
+\hline
+Hybrid & flexible & design জটিল & large mixed network \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{কোথায় কোনটি}
+স্কুলের computer lab-এ star topology সাধারণ; কারণ management সহজ। দূরবর্তী branch office-সহ বড় system-এ hybrid topology দেখা যেতে পারে। Critical backhaul link-এ mesh reliability বাড়াতে পারে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Topology question-এ diagram, advantage, disadvantage এবং use-case একসঙ্গে লিখলে নম্বরের সম্ভাবনা বাড়ে। Star বনাম bus এবং mesh বনাম hybrid তুলনা খুব common।
+\end{boardbox}
+
+\begin{recapbox}
 \begin{itemize}
-\item Reliability, cost, scalability
-\item Use-cases for each topology
+\item Topology network-এর arrangement বোঝায়।
+\item Bus, star, ring, mesh ও hybrid—এই পাঁচটি নাম সবচেয়ে গুরুত্বপূর্ণ।
+\item Cost, reliability, scalability ও fault tolerance দিয়ে topology বিচার করা যায়।
 \end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item একটি central switch-এর সাথে সব device যুক্ত থাকলে কোন topology?\\
+ক. Bus \quad খ. Star \quad গ. Ring \quad ঘ. Mesh
+\item সবচেয়ে বেশি reliability সাধারণত কোন topology-তে পাওয়া যায়?\\
+ক. Bus \quad খ. Star \quad গ. Mesh \quad ঘ. Ring
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Bus topology-এর একটি সুবিধা ও একটি অসুবিধা লেখ।
+\item Star topology কেন জনপ্রিয়?
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি অফিসে central switch নষ্ট হলে পুরো network বন্ধ হয়ে যায়, কিন্তু অন্য design-এ একটি link নষ্ট হলেও network সচল থাকে। উদ্দীপকের আলোকে topology বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশ chapter 2 main sheet, handnote, and standard network-topology references নিয়ে প্রস্তুত করা হয়েছে।
+\end{sourcebox}
+
+\subsection{Topology diagram placeholders}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{চিত্র placeholder}\\[4pt]
+Bus: একটি backbone cable-এ সব node।\\
+Ring: node-গুলো বৃত্তাকারে সংযুক্ত।\\
+Star: central hub/switch থেকে সব node।\\
+Tree: star topology-এর hierarchical রূপ।\\
+Mesh: বহু node পরস্পরের সাথে বহু link।\\
+Hybrid: একাধিক topology-এর সমন্বয়।
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.17\textwidth}|p{0.29\textwidth}|p{0.38\textwidth}|}
+\hline
+\textbf{Topology} & \textbf{সুবিধা} & \textbf{সীমাবদ্ধতা} \\
+\hline
+Bus & কম cable, সহজ ধারণা & backbone নষ্ট হলে network বন্ধ \\
+\hline
+Ring & data flow শৃঙ্খলাবদ্ধ & একটি node/link নষ্ট হলে সমস্যা হতে পারে \\
+\hline
+Star & fault isolate করা সহজ & central device নষ্ট হলে পুরো network প্রভাবিত \\
+\hline
+Tree & বড় network স্তরভিত্তিক সাজানো যায় & root/backbone failure বড় সমস্যা \\
+\hline
+Mesh & reliability বেশি & cable ও cost বেশি \\
+\hline
+Hybrid & প্রয়োজনমতো flexible design & design ও maintenance জটিল \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{প্রয়োগ}
+একটি school lab-এ star topology সাধারণত সুবিধাজনক, কারণ প্রতিটি computer আলাদা cable দিয়ে switch-এ যুক্ত থাকে। একটি computer নষ্ট হলেও অন্যগুলো চলতে পারে।
+\end{examplebox}

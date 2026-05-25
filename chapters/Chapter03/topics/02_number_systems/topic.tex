@@ -18,3 +18,59 @@
 
 \paragraph{Octal (Base 8) and Hexadecimal (Base 16)}\mbox{}\\
 \begin{itemize}\item Octal: 0--7\item Hex: 0--9, A--F\end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item base/radix, digit, bit, place value ও face value ব্যাখ্যা করতে।
+\item binary, octal, decimal ও hexadecimal সংখ্যা পদ্ধতির digit set লিখতে।
+\item positional ও non-positional system আলাদা করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{সংখ্যা পদ্ধতি}
+সংখ্যা প্রকাশের জন্য নির্দিষ্ট digit, নিয়ম এবং base ব্যবহার করে যে পদ্ধতি গঠিত হয়, তাকে সংখ্যা পদ্ধতি বলা হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{Base বা Radix}
+কোনো সংখ্যা পদ্ধতিতে মোট যতটি পৃথক digit ব্যবহার করা হয়, সেই সংখ্যাটিকে ঐ পদ্ধতির base বা radix বলা হয়। যেমন binary-এর base 2, decimal-এর base 10।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.18\textwidth}|p{0.28\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{পদ্ধতি} & \textbf{Base} & \textbf{Digit} & \textbf{ব্যবহার} \\
+\hline
+Binary & 2 & 0, 1 & computer circuit, memory \\
+\hline
+Octal & 8 & 0--7 & binary group সহজ করা \\
+\hline
+Decimal & 10 & 0--9 & দৈনন্দিন গণনা \\
+\hline
+Hexadecimal & 16 & 0--9, A--F & memory address, color code \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Place value diagram placeholder}\\[4pt]
+$(735)_{10}=7\times10^2+3\times10^1+5\times10^0$\\
+একইভাবে $(1011)_2=1\times2^3+0\times2^2+1\times2^1+1\times2^0$
+}}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Hexadecimal-এ A, B, C, D, E, F হলো digit; এগুলোর মান যথাক্রমে 10, 11, 12, 13, 14, 15। এগুলো variable নয়।
+\end{mistakebox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item Binary number system-এর base কত?\\
+ক. 2 \quad খ. 8 \quad গ. 10 \quad ঘ. 16
+\item Hexadecimal-এ F-এর decimal মান কত?\\
+ক. 10 \quad খ. 12 \quad গ. 15 \quad ঘ. 16
+\end{enumerate}
+\end{practicebox}

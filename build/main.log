@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  21 MAY 2026 23:35
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  25 MAY 2026 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -70,51 +70,106 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
 
 Package fontspec Info: 
-(fontspec)             kalpurush scale = 0.9493363507272275.
+(fontspec)             Noto Serif Bengali scale = 0.8041012599370388.
 
 
 Package fontspec Info: 
-(fontspec)             kalpurush scale = 0.9493363507272275.
+(fontspec)             Noto Serif Bengali scale = 0.8041012599370388.
 
 
 Package fontspec Info: 
-(fontspec)             kalpurush scale = 0.9493363507272275.
+(fontspec)             Noto Serif Bengali scale = 0.8041012599370388.
 
 
 Package fontspec Info: 
-(fontspec)             kalpurush scale = 0.9493363507272275.
+(fontspec)             Noto Serif Bengali scale = 0.8041012599370388.
 
 
 Package fontspec Info: 
-(fontspec)             kalpurush scale = 0.9493363507272275.
+(fontspec)             Noto Serif Bengali scale = 0.8041012599370388.
 
 
 Package fontspec Info: 
-(fontspec)             Font family 'kalpurush(0)' created for font 'kalpurush'
-(fontspec)             with options
-(fontspec)             [Ligatures=TeX,Ligatures=TeX,Path=C:/Windows/Fonts/,Exte
-nsion=.ttf,Script=Bengali,UprightFont
-(fontspec)             = *,BoldFont = *,ItalicFont = *,BoldItalicFont =
-(fontspec)             *,FakeBold=1.4,FakeSlant=0.18,Scale=MatchLowercase].
+(fontspec)             Font family 'NotoSerifBengali(0)' created for font
+(fontspec)             'Noto Serif Bengali' with options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX,Script=Bengali,Scale=MatchL
+owercase,BoldFont={Noto
+(fontspec)             Serif Bengali},ItalicFont={Noto Serif
+(fontspec)             Bengali},BoldItalicFont={Noto Serif
+(fontspec)             Bengali},BoldFeatures={FakeBold=1.25},ItalicFeatures={Fa
+keSlant=0.12},BoldItalicFeatures={FakeBold=1.25,FakeSlant=0.12}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
-f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             <->s*[0.8041012599370388]"Noto Serif
+(fontspec)             Bengali/OT:script=bng2;language=dflt;mapping=tex-text;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
-f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             <->s*[0.8041012599370388]"Noto Serif
+(fontspec)             Bengali/OT:script=bng2;language=dflt;embolden=1.25;mappi
+ng=tex-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
-f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             <->s*[0.8041012599370388]"Noto Serif
+(fontspec)             Bengali/OT:script=bng2;language=dflt;slant=0.12;mapping=
+tex-text;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
-f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             <->s*[0.8041012599370388]"Noto Serif
+(fontspec)             Bengali/OT:script=bng2;language=dflt;embolden=1.25;slant
+=0.12;mapping=tex-text;"
 
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 11.39209pt on input line 24.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 9.64929pt on input line 41.
+
+Package fontspec Info: 
+(fontspec)             Noto Sans Bengali scale = 0.8041060045690807.
+
+
+Package fontspec Info: 
+(fontspec)             Noto Sans Bengali scale = 0.8041060045690807.
+
+
+Package fontspec Info: 
+(fontspec)             Noto Sans Bengali scale = 0.8041060045690807.
+
+
+Package fontspec Info: 
+(fontspec)             Noto Sans Bengali scale = 0.8041060045690807.
+
+
+Package fontspec Info: 
+(fontspec)             Noto Sans Bengali scale = 0.8041060045690807.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'NotoSansBengali(0)' created for font 'Noto
+(fontspec)             Sans Bengali' with options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX,Script=Bengali,Scale=MatchL
+owercase,BoldFont={Noto
+(fontspec)             Sans Bengali},ItalicFont={Noto Sans
+(fontspec)             Bengali},BoldItalicFont={Noto Sans
+(fontspec)             Bengali},BoldFeatures={FakeBold=1.2},ItalicFeatures={Fak
+eSlant=0.12},BoldItalicFeatures={FakeBold=1.2,FakeSlant=0.12}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.8041060045690807]"Noto Sans
+(fontspec)             Bengali/OT:script=bng2;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.8041060045690807]"Noto Sans
+(fontspec)             Bengali/OT:script=bng2;language=dflt;embolden=1.2;mappin
+g=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[0.8041060045690807]"Noto Sans
+(fontspec)             Bengali/OT:script=bng2;language=dflt;slant=0.12;mapping=
+tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[0.8041060045690807]"Noto Sans
+(fontspec)             Bengali/OT:script=bng2;language=dflt;embolden=1.2;slant=
+0.12;mapping=tex-text;"
+
  (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
@@ -913,11 +968,10 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Segoe UI
 (fontspec)             Symbol/OT:script=latn;language=dflt;mapping=tex-text;"
 
-) (main.aux (chapters/Chapter01/latex/chapter.aux
-
-LaTeX Warning: Label `fig:vr-concept-scene' multiply defined.
-
-) (chapters/Chapter02/latex/chapter.aux))
+) (main.aux (chapters/Chapter01/latex/chapter.aux)
+(chapters/Chapter02/latex/chapter.aux) (chapters/Chapter03/latex/chapter.aux)
+(chapters/Chapter04/latex/chapter.aux) (chapters/Chapter05/latex/chapter.aux)
+(chapters/Chapter06/latex/chapter.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -974,30 +1028,36 @@ LaTeX Font Info:    Redeclaring symbol font `operators' on input line 5.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `normal' on input line 5.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/kalpurush(0)/m/n on input line 5.
+(Font)                  OT1/cmr/m/n --> TU/NotoSerifBengali(0)/m/n on input lin
+e 5.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `bold' on input line 5.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/kalpurush(0)/m/n on input line 5.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/kalpurush(0)/m/n --> TU/kalpurush(0)/m/n on input li
+(Font)                  OT1/cmr/bx/n --> TU/NotoSerifBengali(0)/m/n on input li
 ne 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/NotoSerifBengali(0)/m/n --> TU/NotoSerifBengali(0)/m
+/n on input line 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/kalpurush(0)/m/it on input line 5.
+(Font)                  OT1/cmr/m/it --> TU/NotoSerifBengali(0)/m/it on input l
+ine 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/kalpurush(0)/b/n on input line 5.
+(Font)                  OT1/cmr/bx/n --> TU/NotoSerifBengali(0)/b/n on input li
+ne 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 5.
+(Font)                  OT1/cmss/m/n --> TU/NotoSansBengali(0)/m/n on input lin
+e 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 5.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/kalpurush(0)/m/n --> TU/kalpurush(0)/b/n on input li
-ne 5.
+(Font)                  TU/NotoSerifBengali(0)/m/n --> TU/NotoSerifBengali(0)/b
+/n on input line 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/kalpurush(0)/b/it on input line 5.
-
+(Font)                  OT1/cmr/bx/it --> TU/NotoSerifBengali(0)/b/it on input 
+line 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 5.
+(Font)                  OT1/cmss/bx/n --> TU/NotoSansBengali(0)/b/n on input li
+ne 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 5.
 \c@lstlisting=\count366
@@ -1006,14 +1066,14 @@ Package hyperref Info: Link coloring OFF on input line 5.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 19.68933pt on input line 10.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 13.6705pt on input line 10.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 9.49341pt on input line 10.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 6.64539pt on input line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 16.67719pt on input line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 11.57913pt on input line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 8.04108pt on input line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 5.62875pt on input line 10.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
 
@@ -1031,322 +1091,1216 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/sl' in size <12> not availabl
-e
-(Font)              Font shape `TU/kalpurush(0)/m/it' tried instead on input li
-ne 10.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/it' will be
-(Font)              scaled to size 11.39209pt on input line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/sl' in size <12> not a
+vailable
+(Font)              Font shape `TU/NotoSerifBengali(0)/m/it' tried instead on i
+nput line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/it' will be
+(Font)              scaled to size 9.64929pt on input line 10.
  [2
 
 ]
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 23.6196pt on input line 10.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
-(Font)              scaled to size 23.6196pt on input line 10.
- (main.toc)
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 20.0062pt on input line 10.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/b/n' will be
+(Font)              scaled to size 20.0062pt on input line 10.
+ (main.toc
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/b/n' will be
+(Font)              scaled to size 9.64929pt on input line 1.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 6.43286pt on input line 2.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 4.82465pt on input line 2.
+
+Overfull \hbox (1.22545pt too wide) detected at line 177
+ []\TU/NotoSerifBengali(0)/m/n/12 100
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 182
+ []\TU/NotoSerifBengali(0)/m/n/12 104
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 187
+ []\TU/NotoSerifBengali(0)/m/n/12 108
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 195
+ []\TU/NotoSerifBengali(0)/m/n/12 113
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 203
+ []\TU/NotoSerifBengali(0)/m/n/12 117
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 207
+ []\TU/NotoSerifBengali(0)/m/n/12 121
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 215
+ []\TU/NotoSerifBengali(0)/m/n/12 126
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 219
+ []\TU/NotoSerifBengali(0)/m/n/12 127
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 225
+ []\TU/NotoSerifBengali(0)/m/n/12 129
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 229
+ []\TU/NotoSerifBengali(0)/m/n/12 131
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 233
+ []\TU/NotoSerifBengali(0)/m/n/12 132
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 236
+ []\TU/NotoSerifBengali(0)/m/n/12 134
+ []
+
+[3]
+Overfull \hbox (1.22545pt too wide) detected at line 240
+ []\TU/NotoSerifBengali(0)/m/n/12 135
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 241
+ []\TU/NotoSerifBengali(0)/m/n/12 136
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 246
+ []\TU/NotoSerifBengali(0)/m/n/12 138
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 247
+ []\TU/NotoSerifBengali(0)/m/n/12 139
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 251
+ []\TU/NotoSerifBengali(0)/m/n/12 140
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 252
+ []\TU/NotoSerifBengali(0)/m/n/12 141
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 256
+ []\TU/NotoSerifBengali(0)/m/n/12 142
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 259
+ []\TU/NotoSerifBengali(0)/m/n/12 143
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 263
+ []\TU/NotoSerifBengali(0)/m/n/12 144
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 266
+ []\TU/NotoSerifBengali(0)/m/n/12 145
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 269
+ []\TU/NotoSerifBengali(0)/m/n/12 146
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 272
+ []\TU/NotoSerifBengali(0)/m/n/12 147
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 275
+ []\TU/NotoSerifBengali(0)/m/n/12 148
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 279
+ []\TU/NotoSerifBengali(0)/m/n/12 150
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 283
+ []\TU/NotoSerifBengali(0)/m/n/12 151
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 287
+ []\TU/NotoSerifBengali(0)/m/n/12 152
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 290
+ []\TU/NotoSerifBengali(0)/m/n/12 158
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 294
+ []\TU/NotoSerifBengali(0)/m/n/12 160
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 297
+ []\TU/NotoSerifBengali(0)/m/n/12 161
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 300
+ []\TU/NotoSerifBengali(0)/m/n/12 163
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 303
+ []\TU/NotoSerifBengali(0)/m/n/12 164
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 306
+ []\TU/NotoSerifBengali(0)/m/n/12 166
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 310
+ []\TU/NotoSerifBengali(0)/m/n/12 167
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 312
+ []\TU/NotoSerifBengali(0)/m/n/12 168
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 314
+ []\TU/NotoSerifBengali(0)/m/n/12 170
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 316
+ []\TU/NotoSerifBengali(0)/m/n/12 171
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 319
+ []\TU/NotoSerifBengali(0)/m/n/12 173
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 321
+ []\TU/NotoSerifBengali(0)/m/n/12 174
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 323
+ []\TU/NotoSerifBengali(0)/m/n/12 176
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 325
+ []\TU/NotoSerifBengali(0)/m/n/12 180
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 326
+ []\TU/NotoSerifBengali(0)/m/n/12 181
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 327
+ []\TU/NotoSerifBengali(0)/m/n/12 182
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 328
+ []\TU/NotoSerifBengali(0)/m/n/12 182
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 329
+ []\TU/NotoSerifBengali(0)/m/n/12 183
+ []
+
+[4]
+Overfull \hbox (1.22545pt too wide) detected at line 330
+ []\TU/NotoSerifBengali(0)/m/n/12 184
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 331
+ []\TU/NotoSerifBengali(0)/m/n/12 185
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 332
+ []\TU/NotoSerifBengali(0)/m/n/12 185
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 333
+ []\TU/NotoSerifBengali(0)/m/n/12 186
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 334
+ []\TU/NotoSerifBengali(0)/m/n/12 187
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 335
+ []\TU/NotoSerifBengali(0)/m/n/12 187
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 336
+ []\TU/NotoSerifBengali(0)/m/n/12 188
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 337
+ []\TU/NotoSerifBengali(0)/m/n/12 189
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 338
+ []\TU/NotoSerifBengali(0)/m/n/12 189
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 339
+ []\TU/NotoSerifBengali(0)/m/n/12 190
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 340
+ []\TU/NotoSerifBengali(0)/m/n/12 191
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 341
+ []\TU/NotoSerifBengali(0)/m/n/12 192
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 342
+ []\TU/NotoSerifBengali(0)/m/n/12 193
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 343
+ []\TU/NotoSerifBengali(0)/m/n/12 193
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 344
+ []\TU/NotoSerifBengali(0)/m/n/12 194
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 345
+ []\TU/NotoSerifBengali(0)/m/n/12 195
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 346
+ []\TU/NotoSerifBengali(0)/m/n/12 195
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 347
+ []\TU/NotoSerifBengali(0)/m/n/12 196
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 348
+ []\TU/NotoSerifBengali(0)/m/n/12 197
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 349
+ []\TU/NotoSerifBengali(0)/m/n/12 197
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 350
+ []\TU/NotoSerifBengali(0)/m/n/12 198
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 351
+ []\TU/NotoSerifBengali(0)/m/n/12 199
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 352
+ []\TU/NotoSerifBengali(0)/m/n/12 200
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 353
+ []\TU/NotoSerifBengali(0)/m/n/12 200
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 354
+ []\TU/NotoSerifBengali(0)/m/n/12 201
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 355
+ []\TU/NotoSerifBengali(0)/m/n/12 201
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 356
+ []\TU/NotoSerifBengali(0)/m/n/12 202
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 357
+ []\TU/NotoSerifBengali(0)/m/n/12 203
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 358
+ []\TU/NotoSerifBengali(0)/m/n/12 203
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 359
+ []\TU/NotoSerifBengali(0)/m/n/12 204
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 360
+ []\TU/NotoSerifBengali(0)/m/n/12 205
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 361
+ []\TU/NotoSerifBengali(0)/m/n/12 206
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 362
+ []\TU/NotoSerifBengali(0)/m/n/12 206
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 363
+ []\TU/NotoSerifBengali(0)/m/n/12 207
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 364
+ []\TU/NotoSerifBengali(0)/m/n/12 208
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 366
+ []\TU/NotoSerifBengali(0)/m/n/12 212
+ []
+
+[5]
+Overfull \hbox (1.22545pt too wide) detected at line 367
+ []\TU/NotoSerifBengali(0)/m/n/12 213
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 368
+ []\TU/NotoSerifBengali(0)/m/n/12 213
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 369
+ []\TU/NotoSerifBengali(0)/m/n/12 214
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 370
+ []\TU/NotoSerifBengali(0)/m/n/12 215
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 371
+ []\TU/NotoSerifBengali(0)/m/n/12 216
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 372
+ []\TU/NotoSerifBengali(0)/m/n/12 217
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 373
+ []\TU/NotoSerifBengali(0)/m/n/12 218
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 374
+ []\TU/NotoSerifBengali(0)/m/n/12 219
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 375
+ []\TU/NotoSerifBengali(0)/m/n/12 219
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 376
+ []\TU/NotoSerifBengali(0)/m/n/12 220
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 377
+ []\TU/NotoSerifBengali(0)/m/n/12 221
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 378
+ []\TU/NotoSerifBengali(0)/m/n/12 222
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 379
+ []\TU/NotoSerifBengali(0)/m/n/12 222
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 380
+ []\TU/NotoSerifBengali(0)/m/n/12 223
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 381
+ []\TU/NotoSerifBengali(0)/m/n/12 224
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 382
+ []\TU/NotoSerifBengali(0)/m/n/12 225
+ []
+
+
+Overfull \hbox (1.22545pt too wide) detected at line 383
+ []\TU/NotoSerifBengali(0)/m/n/12 226
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3] [4
-
-]
+ [6]
 \openout2 = `chapters/Chapter01/latex/chapter.aux'.
 
  (chapters/Chapter01/latex/chapter.tex
 Chapter 1.
-(chapters/Chapter01/topics/01_bishwogram/topic.tex
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 16.4046pt on input line 1.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
-(Font)              scaled to size 16.4046pt on input line 1.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
-(Font)              scaled to size 11.39209pt on input line 3.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
-(Font)              scaled to size 13.6705pt on input line 14.
- [1
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+[]\TU/NotoSerifBengali(0)/m/n/12 AI, robotics, biometrics, bioinformatics, gene
+tic engineering ও
+ []
+
+[1
 
 
-]
-Underfull \vbox (badness 1253) has occurred while \output is active []
 
+] (chapters/Chapter01/topics/01_bishwogram/topic.tex
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 13.89497pt on input line 1.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/b/n' will be
+(Font)              scaled to size 13.89497pt on input line 1.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/b/n' will be
+(Font)              scaled to size 11.57913pt on input line 14.
  [2]
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 7.59473pt on input line 48.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 5.69604pt on input line 48.
+Underfull \hbox (badness 2310) in paragraph at lines 56--57
+[]|\TU/NotoSerifBengali(0)/m/n/12 announcement, public awareness, community
+ []
 
-[3] [4] [5] [6] [7])
-(chapters/Chapter01/topics/02_bishwogramer_upadan_o_obodan/topic.tex [8])
-(chapters/Chapter01/topics/03_virtual_reality/topic.tex
-Underfull \vbox (badness 4181) has occurred while \output is active []
+[3] [4]
+Underfull \vbox (badness 1342) has occurred while \output is active []
+
+ [5]
+[6] [7]
+Underfull \hbox (badness 3281) in paragraph at lines 224--225
+[]\TU/NotoSerifBengali(0)/m/n/12 এই topic লেখায় local resource PDF, NCTB-style 
+chapter outline, Marshall
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8])
+(chapters/Chapter01/topics/02_bishwogramer_upadan_o_obodan/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+[]|\TU/NotoSerifBengali(0)/m/n/12 computer, smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+[]|\TU/NotoSerifBengali(0)/m/n/12 browser, app,
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 34--35
+[]|\TU/NotoSerifBengali(0)/m/n/12 text, image, video,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-[10]
+[10]) (chapters/Chapter01/topics/03_virtual_reality/topic.tex [11]
 File: chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png 
 Graphic file (type bmp)
 <chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png>
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 \\
-       [0.15cm]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
-(Font)              scaled to size 10.39528pt on input line 34.
-LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/it' will be
-(Font)              scaled to size 10.39528pt on input line 34.
-[11]
-File: chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.pn
-g Graphic file (type bmp)
-<chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.png>
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.61 \\
-       [0.15cm]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/n' will be
+(Font)              scaled to size 8.80496pt on input line 34.
+LaTeX Font Info:    Font shape `TU/NotoSerifBengali(0)/m/it' will be
+(Font)              scaled to size 8.80496pt on input line 34.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
 [13]
-Overfull \hbox (5.8916pt too wide) in paragraph at lines 88--89
- []\TU/kalpurush(0)/b/n/12 ২. Interaction[] Interaction হলো VR environment-এর স
-ঙ্গে ব্যবহারকারীর সক্রিয় অংশগ্রহণ।
- []
-
+File: chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.pn
+g Graphic file (type bmp)
+<chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.png>
+ [14]
 File: chapters/Chapter01/topics/03_virtual_reality/images/vr_three_pillars.png 
 Graphic file (type bmp)
 <chapters/Chapter01/topics/03_virtual_reality/images/vr_three_pillars.png>
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.107 \\
-        [0.15cm]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
+ [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-! Interruption.
-<argument> ...\__shipout_drop_firstpage_specials: 
-                                                  \set@typeset@protect \hook...
-l.110 
-      
-? Set-Location "f:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE"; .\build.ps1
-OK, entering \scrollmode...
-
-Underfull \vbox (badness 1742) has occurred while \output is active []
-
- [15]
-Underfull \hbox (badness 5147) in paragraph at lines 149--149
-[]|\TU/kalpurush(0)/b/n/12 Computer / Graphics
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+[]|\TU/NotoSerifBengali(0)/m/n/12 Head Mounted Display
  []
 
 
-Underfull \hbox (badness 6978) in paragraph at lines 182--183
-[]|\TU/kalpurush(0)/b/n/12 Headset, sensor, controller বা data glove
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
-[]|\TU/kalpurush(0)/b/n/12 ব্যবহারকারী শুধু দেখে;
+Underfull \hbox (badness 2181) in paragraph at lines 186--187
+[]|\TU/NotoSerifBengali(0)/m/n/12 Headset-এ 3D দৃশ্য, audio system-এ শব্দ এবং h
+aptic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
-[]|\TU/kalpurush(0)/b/n/12 বাস্তব কোনো system-এর
- []
+Underfull \vbox (badness 1888) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-[]|\TU/kalpurush(0)/b/n/12 Traffic simulation,
+ [17]
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
+[]|\TU/NotoSerifBengali(0)/m/n/12 ব্যবহারকারী computer-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 238--238
-[]|\TU/kalpurush(0)/b/n/12 ব্যবহারকারী computer-
+\TU/NotoSerifBengali(0)/m/n/12 generated 3D
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\TU/kalpurush(0)/b/n/12 generated 3D
+\TU/NotoSerifBengali(0)/m/n/12 environment-এ প্রবেশ করে
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\TU/kalpurush(0)/b/n/12 environment-এ প্রবেশ
+Underfull \hbox (badness 3547) in paragraph at lines 238--239
+[]|\TU/NotoSerifBengali(0)/m/n/12 Flight simulator, surgical
+ []
+
+[18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]|\TU/NotoSerifBengali(0)/m/n/12 সম্পূর্ণ computer-generated
+ []
+
+[21]
+Underfull \hbox (badness 5050) in paragraph at lines 349--350
+[]|\TU/NotoSerifBengali(0)/m/n/12 Sensorama (প্রথম immersive de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\TU/kalpurush(0)/b/n/12 করে interaction করতে
+Underfull \hbox (badness 4144) in paragraph at lines 353--354
+[]|\TU/NotoSerifBengali(0)/m/n/12 DataGlove, EyePhone, commer-
  []
 
-[17] [18]
-Underfull \hbox (badness 7116) in paragraph at lines 286--286
-[]|\TU/kalpurush(0)/b/n/12 Head-Mounted Display
- []
+[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[19]
-Underfull \hbox (badness 1796) in paragraph at lines 316--316
-\TU/kalpurush(0)/b/n/12 পরিবেশে ব্যবহারকারী প্রবেশ
- []
-
-
-Underfull \hbox (badness 1609) in paragraph at lines 316--317
-[]|\TU/kalpurush(0)/b/n/12 flight simulator, virtual
+ [23]
+[24]
+Underfull \hbox (badness 3746) in paragraph at lines 477--478
+[]|\TU/NotoSerifBengali(0)/m/n/12 বাইরে ইনস্টল করা (base sta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--320
-[]|\TU/kalpurush(0)/b/n/12 কোনো বাস্তব system-এর
+Underfull \hbox (badness 3701) in paragraph at lines 481--481
+[]|\TU/NotoSerifBengali(0)/m/n/12 কম accurate, lighting de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
-[]|\TU/kalpurush(0)/b/n/12 traffic simulation,
- []
-
-[20]
-Underfull \hbox (badness 5189) in paragraph at lines 355--356
-[]|\TU/kalpurush(0)/b/n/12 CAVE (তিন মাত্রিক immersive
+Underfull \hbox (badness 1259) in paragraph at lines 483--483
+[]|\TU/NotoSerifBengali(0)/m/n/12 Meta Quest, Apple Vision
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 361--362
-[]|\TU/kalpurush(0)/b/n/12 Meta Quest 3S, Vision Pro,
- []
-
-[21] [22] [23]
 Overfull \hbox (14.20688pt too wide) in paragraph at lines 473--490
  [] 
  []
 
-[24] [25] [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+[]\TU/NotoSerifBengali(0)/b/n/12 Magnetic Mocap\TU/NotoSerifBengali(0)/m/n/12 :
+ Magnetic sensors ব্যবহার করে। Medical/industrial
+ []
+
+[25]
+Underfull \hbox (badness 1783) in paragraph at lines 523--524
+[]\TU/NotoSerifBengali(0)/m/n/12 Multiple surgical scenarios (cholecystectomy, 
+nephrectomy, hysterec-
+ []
+
+
+Underfull \hbox (badness 7151) in paragraph at lines 563--564
+[]\TU/NotoSerifBengali(0)/m/n/12 2018 systematic review: 23 randomized controll
+ed trials, সব VR
+ []
+
+[26]
+Underfull \vbox (badness 2617) has occurred while \output is active []
 
  [27]
-[28] [29] [30] [31] [32]
+[28] [29] [30] [31]
+Underfull \vbox (badness 6658) has occurred while \output is active []
+
+ [32]
+[33]
+Underfull \vbox (badness 1968) has occurred while \output is active []
+
+ [34]
+Underfull \hbox (badness 3803) in paragraph at lines 902--903
+[]\TU/NotoSerifBengali(0)/m/n/12 স্থপতি building তৈরি হওয়ার আগে client-কে virtu
+al walkthrough দেখাতে পারেন।
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-[34] [35] [36] [37])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_budd
-himotta/topic.tex [38]
-Underfull \vbox (badness 1496) has occurred while \output is active []
+ [35]
+[36] [37]) (chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]|\TU/NotoSerifBengali(0)/m/n/12 data/rule/model দিয়ে intelligent
+ []
 
- [39]
-[40] [41])
+
+Underfull \hbox (badness 1975) in paragraph at lines 30--30
+[]|\TU/NotoSerifBengali(0)/m/n/12 biological feature-based identifi-
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 30--31
+[]|\TU/NotoSerifBengali(0)/m/n/12 attendance, pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+[]|\TU/NotoSerifBengali(0)/m/n/12 genome,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+\TU/NotoSerifBengali(0)/m/n/12 medicine, re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+[]|\TU/NotoSerifBengali(0)/m/n/12 medicine, elec-
+ []
+
+
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_budd
+himotta/topic.tex [38] [39] [40] [41])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/02_robotics/top
 ic.tex [42] [43] [44])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/03_cryosurgery/
 topic.tex [45] [46] [47])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/04_mohakash_ovi
 jan/topic.tex
-Underfull \vbox (badness 1755) has occurred while \output is active []
+Underfull \vbox (badness 1057) has occurred while \output is active []
 
  [48]
-[49] [50])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/05_ict_nirvor_u
-tpadon/topic.tex [51] [52])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/06_protirokkha/
-topic.tex [53] [54] [55])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/t
-opic.tex
-Overfull \hbox (19.13278pt too wide) in paragraph at lines 25--26
-\TU/kalpurush(0)/b/n/12 Mobile unlock, attendance system, passport/ID verificat
-ion এবং criminal investigation-
+[49]
+Underfull \hbox (badness 2762) in paragraph at lines 59--60
+[]|\TU/NotoSerifBengali(0)/m/n/12 temperature, radiation, image, motion data
  []
 
+)
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/05_ict_nirvor_u
+tpadon/topic.tex [50]
+Underfull \vbox (badness 1292) has occurred while \output is active []
+
+ [51]
+[52])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/06_protirokkha/
+topic.tex [53] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+[]\TU/NotoSerifBengali(0)/m/n/12 প্রতিরক্ষায় ICT-এর প্রশ্নে radar, satellite, c
+yber security, drone এবং secure
+ []
+
+)
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/t
+opic.tex
+Underfull \vbox (badness 1112) has occurred while \output is active []
+
+ [55]
 [56] [57])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/08_bioinformati
 cs/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1360) in paragraph at lines 20--21
+[]\TU/NotoSerifBengali(0)/m/n/12 NCBI ও NIH-ভিত্তিক bioinformatics resources-এ 
+sequence database, alignment,
+ []
 
- [58]
-[59] [60])
+[58] [59] [60])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/09_genetic_engi
-neering/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61]
-[62] [63])
+neering/topic.tex [61] [62])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/10_nanotechnolo
 gy/topic.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64]
-[65] [66] [67])) (chapters/Chapter01/topics/05_noitikota/topic.tex)
-(chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex)
-(chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic.tex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [63]
+[64]
+Underfull \hbox (badness 1087) in paragraph at lines 48--49
+\TU/NotoSerifBengali(0)/m/n/12 Computer chip, memory device, display, sensor, b
+attery, solar cell এবং flexible
+ []
+
+[65]
+Underfull \hbox (badness 2846) in paragraph at lines 89--90
+[]\TU/NotoSerifBengali(0)/m/n/12 ন্যানো টেকনোলজির সংজ্ঞায় 1-100 nanometer scale
+ উল্লেখ করলে উত্তর শক্তিশালী হয়।
+ []
+
+) [66]) (chapters/Chapter01/topics/05_noitikota/topic.tex [67]
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+[]|\TU/NotoSerifBengali(0)/m/n/12 password/share
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+[]|\TU/NotoSerifBengali(0)/m/n/12 licensed/open-
+ []
+
+) (chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex
+Underfull \vbox (badness 2626) has occurred while \output is active []
 
  [68]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+[]|\TU/NotoSerifBengali(0)/m/n/12 misinformation, pri-
+ []
 
- [69]
-Overfull \vbox (135.42894pt too high) has occurred while \output is active []
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\TU/NotoSerifBengali(0)/m/n/12 awareness, civic ser-
+ []
 
 
-[70])
+Underfull \hbox (badness 3601) in paragraph at lines 37--38
+[]|\TU/NotoSerifBengali(0)/m/n/12 cyber bullying, addic-
+ []
+
+
+Underfull \vbox (badness 3612) has occurred while \output is active []
+
+ [69])
+(chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic.tex
+Underfull \hbox (badness 1540) in paragraph at lines 7--8
+[]\TU/NotoSerifBengali(0)/m/n/12 e-commerce, e-governance, e-learning, e-health
+, e-agriculture ও mobile
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+[]|\TU/NotoSerifBengali(0)/m/n/12 marketplace, on-
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 30--31
+[]|\TU/NotoSerifBengali(0)/m/n/12 online form, tax,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+[]|\TU/NotoSerifBengali(0)/m/n/12 mobile financial
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 46--47
+\TU/NotoSerifBengali(0)/m/n/12 ডিজিটাল সেবা, online নাগরিক সেবা, mobile banking
+, digital education, e-health, e-
+ []
+
+
+Underfull \hbox (badness 5726) in paragraph at lines 49--50
+[]\TU/NotoSerifBengali(0)/m/n/12 একজন তরুণ গ্রামে বসে graphic design বা web dev
+elopment-এর কাজ online
+ []
+
+[71])) [72]
 \openout2 = `chapters/Chapter02/latex/chapter.aux'.
 
  (chapters/Chapter02/latex/chapter.tex
 Chapter 2.
-(chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic.tex
-[71
+[73
 
 
 
 
-]) (chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic.tex [7
-2]) (chapters/Chapter02/topics/03_media_of_data_communication/topic.tex)
-(chapters/Chapter02/topics/04_wired_media/topic.tex [73])
-(chapters/Chapter02/topics/05_wireless_media_and_systems/topic.tex [74])
-(chapters/Chapter02/topics/06_mobile_communication_and_generations/topic.tex)
+] (chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic.tex [7
+4] [75] [76]
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+[]|\TU/NotoSerifBengali(0)/m/n/12 মানুষের কণ্ঠস্বর পাঠানোর
+ []
+
+[77]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78])
+(chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic.tex
+[79] [80]
+Overfull \hbox (3.20187pt too wide) in paragraph at lines 87--98
+ [] 
+ []
+
+[81]
+Underfull \vbox (badness 2799) has occurred while \output is active []
+
+ [82]
+Underfull \hbox (badness 4168) in paragraph at lines 169--169
+[]|\TU/NotoSerifBengali(0)/m/n/12 internal bus, পুরনো printer
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 169--170
+[]|\TU/NotoSerifBengali(0)/m/n/12 USB, network link, modem
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 175--176
+[]\TU/NotoSerifBengali(0)/m/n/12 Synchronous transmission আর full duplex একই জি
+নিস নয়। Synchronous হলো
+ []
+
+) (chapters/Chapter02/topics/03_media_of_data_communication/topic.tex [83]
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
+[]|\TU/NotoSerifBengali(0)/m/n/12 wireless, mobility sup-
+ []
+
+[85] [86]) (chapters/Chapter02/topics/04_wired_media/topic.tex [87] [88]
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+[]|\TU/NotoSerifBengali(0)/m/n/12 backbone, ISP
+ []
+
+
+Overfull \hbox (3.20187pt too wide) in paragraph at lines 79--90
+ [] 
+ []
+
+[89]
+Underfull \hbox (badness 6995) in paragraph at lines 151--151
+[]|\TU/NotoSerifBengali(0)/m/n/12 shield থাকায় inter-
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 151--152
+[]|\TU/NotoSerifBengali(0)/m/n/12 UTP-এর চেয়ে ভারী ও
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+[]|\TU/NotoSerifBengali(0)/m/n/12 স্থাপন ও মেরামত
+ []
+
+
+Overfull \hbox (18.7933pt too wide) in paragraph at lines 145--156
+ [] 
+ []
+
+[90]) (chapters/Chapter02/topics/05_wireless_media_and_systems/topic.tex
+[91]
+Underfull \hbox (badness 6412) in paragraph at lines 55--55
+[]|\TU/NotoSerifBengali(0)/m/n/12 Wireless Local Area
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]|\TU/NotoSerifBengali(0)/m/n/12 Wireless Personal
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 57--58
+[]|\TU/NotoSerifBengali(0)/m/n/12 Bluetooth, personal device
+ []
+
+
+Underfull \hbox (badness 7362) in paragraph at lines 59--59
+[]|\TU/NotoSerifBengali(0)/m/n/12 Wireless Wide Area
+ []
+
+[92] [93]
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+[]|\TU/NotoSerifBengali(0)/m/n/12 তুলনামূলক দীর্ঘ coverage,
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 137--137
+\TU/NotoSerifBengali(0)/m/n/12 obstacle আংশিক অতিক্রম
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+[]|\TU/NotoSerifBengali(0)/m/n/12 radio/TV broadcast, mobile
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+[]|\TU/NotoSerifBengali(0)/m/n/12 long-distance link, cellular
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+[]|\TU/NotoSerifBengali(0)/m/n/12 remote control, short-range
+ []
+
+) (chapters/Chapter02/topics/06_mobile_communication_and_generations/topic.tex
+Underfull \vbox (badness 2556) has occurred while \output is active []
+
+ [94]
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\TU/NotoSerifBengali(0)/m/n/12 advanced broad-
+ []
+
+[95] [96] [97]
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+[]|\TU/NotoSerifBengali(0)/m/n/12 SMS, MMS, basic
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 139--140
+[]|\TU/NotoSerifBengali(0)/m/n/12 WCDMA, UMTS, Mbps
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+[]|\TU/NotoSerifBengali(0)/m/n/12 Advanced mobile
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 143--143
+[]|\TU/NotoSerifBengali(0)/m/n/12 IoT, smart city, re-
+ []
+
+
+Overfull \hbox (10.99759pt too wide) in paragraph at lines 131--146
+ [] 
+ []
+
+)
 (chapters/Chapter02/topics/07_computer_networking_objectives_and_types/topic.te
-x [75]) (chapters/Chapter02/topics/08_network_devices/topic.tex)
-(chapters/Chapter02/topics/09_network_topology/topic.tex [76])
-(chapters/Chapter02/topics/10_cloud_computing/topic.tex)
-(chapters/Chapter02/topics/11_exercises/topic.tex)) [77]
+x [98]
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+[]|\TU/NotoSerifBengali(0)/m/n/12 mobile-phone and headset
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+[]|\TU/NotoSerifBengali(0)/m/n/12 Local Area Net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+[]|\TU/NotoSerifBengali(0)/m/n/12 city-wide institutional net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]|\TU/NotoSerifBengali(0)/m/n/12 Wide Area Net-
+ []
+
+
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+ [99]
+[100]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [101])
+(chapters/Chapter02/topics/08_network_devices/topic.tex
+Underfull \vbox (badness 3965) has occurred while \output is active []
+
+ [102]
+Underfull \hbox (badness 5189) in paragraph at lines 17--18
+[]\TU/NotoSerifBengali(0)/m/n/12 যে hardware ডিভাইস network communication, forw
+arding, connecting বা
+ []
+
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\TU/NotoSerifBengali(0)/m/n/12 MAC-based for-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+[]|\TU/NotoSerifBengali(0)/m/n/12 protocol conver-
+ []
+
+
+Overfull \hbox (31.04326pt too wide) in paragraph at lines 95--95
+[]|\TU/NotoSerifBengali(0)/m/n/12 modulation/demodulation| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+[]|\TU/NotoSerifBengali(0)/m/n/12 internet connection-এ
+ []
+
+[104] [105]
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+[]|\TU/NotoSerifBengali(0)/m/n/12 প্রতিটি networked device-এ
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 162--162
+[]|\TU/NotoSerifBengali(0)/m/n/12 ভিন্ন network যুক্ত করে route
+ []
+
+) (chapters/Chapter02/topics/09_network_topology/topic.tex [106] [107]
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+[]|\TU/NotoSerifBengali(0)/m/n/12 ছোট temporary net-
+ []
+
+
+Overfull \hbox (3.19592pt too wide) in paragraph at lines 56--71
+ [] 
+ []
+
+[108]
+Underfull \hbox (badness 1424) in paragraph at lines 136--137
+[]|\TU/NotoSerifBengali(0)/m/n/12 central device নষ্ট হলে পুরো net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
+[]|\TU/NotoSerifBengali(0)/m/n/12 বড় network স্তরভিত্তিক
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+[]|\TU/NotoSerifBengali(0)/m/n/12 প্রয়োজনমতো flexible de-
+ []
+
+
+Underfull \vbox (badness 1147) has occurred while \output is active []
+
+ [109])
+(chapters/Chapter02/topics/10_cloud_computing/topic.tex [110]
+Underfull \hbox (badness 3189) in paragraph at lines 45--45
+[]|\TU/NotoSerifBengali(0)/m/n/12 Infrastructure as a
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 45--46
+[]|\TU/NotoSerifBengali(0)/m/n/12 virtual server, storage, network
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 47--47
+[]|\TU/NotoSerifBengali(0)/m/n/12 Platform as a Ser-
+ []
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 49--49
+[]|\TU/NotoSerifBengali(0)/m/n/12 Software as a Ser-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+[]|\TU/NotoSerifBengali(0)/m/n/12 provider-managed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/NotoSerifBengali(0)/m/n/12 single organization
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+[]|\TU/NotoSerifBengali(0)/m/n/12 bank, government, enter-
+ []
+
+
+Underfull \hbox (badness 5756) in paragraph at lines 69--70
+[]|\TU/NotoSerifBengali(0)/m/n/12 flexible workload manage-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]|\TU/NotoSerifBengali(0)/m/n/12 Community
+ []
+
+[111] [112]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+[]|\TU/NotoSerifBengali(0)/m/n/12 website hosting, backup
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+[]|\TU/NotoSerifBengali(0)/m/n/12 web app deployment,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+[]|\TU/NotoSerifBengali(0)/m/n/12 email, online document,
+ []
+
+) (chapters/Chapter02/topics/11_exercises/topic.tex [113]
+Underfull \hbox (badness 1917) in paragraph at lines 14--15
+\TU/NotoSerifBengali(0)/m/n/12 channel, mobile communication, networking, devic
+e, topology এবং cloud
+ []
+
+[114] [115])) [116]
 \openout2 = `chapters/Chapter03/latex/chapter.aux'.
 
-
-(chapters/Chapter03/latex/chapter.tex [78
-
-
-
-
-]
+ (chapters/Chapter03/latex/chapter.tex
 Chapter 3.
-(chapters/Chapter03/topics/01_history_of_numbers/topic.tex)
-(chapters/Chapter03/topics/02_number_systems/topic.tex [79]
+(chapters/Chapter03/topics/01_history_of_numbers/topic.tex [117
+
+
+
+
+] [118])
+(chapters/Chapter03/topics/02_number_systems/topic.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
@@ -1356,157 +2310,409 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-
+[119]
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-) (chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex [80])
-(chapters/Chapter03/topics/04_binary_add_sub/topic.tex)
-(chapters/Chapter03/topics/05_signed_numbers/topic.tex)
-(chapters/Chapter03/topics/06_twos_complement/topic.tex [81])
-(chapters/Chapter03/topics/07_codes_overview/topic.tex)
-(chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic.tex [82])
-(chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex)
-(chapters/Chapter03/topics/10_boolean_algebra/topic.tex)
-(chapters/Chapter03/topics/11_boolean_theorems/topic.tex)
-(chapters/Chapter03/topics/12_de_morgan/topic.tex [83])
-(chapters/Chapter03/topics/13_truth_table/topic.tex)
-(chapters/Chapter03/topics/14_basic_gates/topic.tex [84])
-(chapters/Chapter03/topics/15_universal_gates/topic.tex)
-(chapters/Chapter03/topics/16_special_gates/topic.tex)
-(chapters/Chapter03/topics/17_encoder/topic.tex)
-(chapters/Chapter03/topics/18_decoder/topic.tex [85])
-(chapters/Chapter03/topics/19_adder/topic.tex)
-(chapters/Chapter03/topics/20_register/topic.tex [86])
-(chapters/Chapter03/topics/21_counter/topic.tex)
-(chapters/Chapter03/topics/22_exercises/topic.tex)) [87]
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+[]|\TU/NotoSerifBengali(0)/m/n/12 computer circuit,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+[]|\TU/NotoSerifBengali(0)/m/n/12 binary group সহজ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+[]|\TU/NotoSerifBengali(0)/m/n/12 memory address,
+ []
+
+
+Overfull \hbox (18.79926pt too wide) in paragraph at lines 40--53
+ [] 
+ []
+
+[120]) (chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex [121])
+(chapters/Chapter03/topics/04_binary_add_sub/topic.tex
+Underfull \vbox (badness 2582) has occurred while \output is active []
+
+ [122]
+[123]) (chapters/Chapter03/topics/05_signed_numbers/topic.tex [124]
+Underfull \hbox (badness 2735) in paragraph at lines 39--39
+[]|\TU/NotoSerifBengali(0)/m/n/12 1’s complement-এর সাথে 1
+ []
+
+) (chapters/Chapter03/topics/06_twos_complement/topic.tex [125])
+(chapters/Chapter03/topics/07_codes_overview/topic.tex [126])
+(chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic.tex [127]
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+[]|\TU/NotoSerifBengali(0)/m/n/12 arithmetic dis-
+ []
+
+
+Underfull \hbox (badness 5147) in paragraph at lines 44--44
+[]|\TU/NotoSerifBengali(0)/m/n/12 মূলত 7-bit, ex-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+[]|\TU/NotoSerifBengali(0)/m/n/12 variable/fixed
+ []
+
+
+Overfull \hbox (10.99164pt too wide) in paragraph at lines 38--51
+ [] 
+ []
+
+[128]) (chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex
+[129]) (chapters/Chapter03/topics/10_boolean_algebra/topic.tex [130])
+(chapters/Chapter03/topics/11_boolean_theorems/topic.tex [131])
+(chapters/Chapter03/topics/12_de_morgan/topic.tex [132])
+(chapters/Chapter03/topics/13_truth_table/topic.tex [133])
+(chapters/Chapter03/topics/14_basic_gates/topic.tex [134])
+(chapters/Chapter03/topics/15_universal_gates/topic.tex [135])
+(chapters/Chapter03/topics/16_special_gates/topic.tex [136])
+(chapters/Chapter03/topics/17_encoder/topic.tex [137])
+(chapters/Chapter03/topics/18_decoder/topic.tex [138]
+Underfull \hbox (badness 1789) in paragraph at lines 59--60
+[]|\TU/NotoSerifBengali(0)/m/n/12 code decode করে output
+ []
+
+) (chapters/Chapter03/topics/19_adder/topic.tex [139] [140])
+(chapters/Chapter03/topics/20_register/topic.tex [141])
+(chapters/Chapter03/topics/21_counter/topic.tex [142])
+(chapters/Chapter03/topics/22_exercises/topic.tex [143] [144])) [145]
 \openout2 = `chapters/Chapter04/latex/chapter.aux'.
 
 
-(chapters/Chapter04/latex/chapter.tex [88
+(chapters/Chapter04/latex/chapter.tex [146
 
 
 
 
 ]
 Chapter 4.
-(chapters/Chapter04/topics/01_web_design_concept/topic.tex)
-(chapters/Chapter04/topics/02_website_structure/topic.tex)
-(chapters/Chapter04/topics/03_html_basic/topic.tex [89])
-(chapters/Chapter04/topics/04_tag_syntax/topic.tex)
-(chapters/Chapter04/topics/05_design_structure_layout/topic.tex)
-(chapters/Chapter04/topics/06_formatting/topic.tex [90])
-(chapters/Chapter04/topics/07_hyperlink/topic.tex)
-(chapters/Chapter04/topics/08_image/topic.tex)
-(chapters/Chapter04/topics/09_table/topic.tex [91])
-(chapters/Chapter04/topics/10_form/topic.tex)
-(chapters/Chapter04/topics/11_web_page_designing/topic.tex)
-(chapters/Chapter04/topics/12_website_publishing/topic.tex)
-(chapters/Chapter04/topics/13_exercises/topic.tex [92])) [93]
+(chapters/Chapter04/topics/01_web_design_concept/topic.tex [147]
+Underfull \hbox (badness 1057) in paragraph at lines 21--22
+[]\TU/NotoSerifBengali(0)/m/n/12 একই domain বা web address-এর অধীনে থাকা সম্পর্
+কিত একাধিক ওয়েব পেজের সমষ্টিকে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+[]|\TU/NotoSerifBengali(0)/m/n/12 HTML, CSS, JS,
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 43--44
+[]|\TU/NotoSerifBengali(0)/m/n/12 ecommerce, LMS, social
+ []
+
+[148]) (chapters/Chapter04/topics/02_website_structure/topic.tex
+Underfull \vbox (badness 6708) has occurred while \output is active []
+
+ [149]
+Underfull \hbox (badness 5847) in paragraph at lines 37--38
+[]|\TU/NotoSerifBengali(0)/m/n/12 tutorial, story, step-by-
+ []
+
+[150]) (chapters/Chapter04/topics/03_html_basic/topic.tex
+Underfull \hbox (badness 2261) in paragraph at lines 37--38
+[]|\TU/NotoSerifBengali(0)/m/n/12 heading, paragraph, ta-
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 41--42
+[]|\TU/NotoSerifBengali(0)/m/n/12 validation, button click,
+ []
+
+[151]) (chapters/Chapter04/topics/04_tag_syntax/topic.tex
+Underfull \hbox (badness 3815) in paragraph at lines 19--20
+[]\TU/NotoSerifBengali(0)/m/n/12 start tag, content এবং end tag মিলিয়ে একটি HTM
+L element তৈরি হয়। যেমন
+ []
+
+[152]
+Underfull \hbox (badness 7685) in paragraph at lines 23--24
+[]\TU/NotoSerifBengali(0)/m/n/12 tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে 
+attribute ব্যবহৃত হয়। যেমন \TU/lmtt/m/n/12 <a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|\TU/lmtt/m/n/12 <img src="a.jpg"
+ []
+
+) (chapters/Chapter04/topics/05_design_structure_layout/topic.tex [153]
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+[]|\TU/NotoSerifBengali(0)/m/n/12 desktop-এ predictable,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\TU/NotoSerifBengali(0)/m/n/12 screen size অনুযায়ী layout
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 37--38
+[]|\TU/NotoSerifBengali(0)/m/n/12 modern website-এর জন্য
+ []
+
+[154]) (chapters/Chapter04/topics/06_formatting/topic.tex [155])
+(chapters/Chapter04/topics/07_hyperlink/topic.tex [156]
+Overfull \hbox (13.79904pt too wide) in paragraph at lines 25--25
+[]|\TU/lmtt/m/n/12 <a href="about.html">About</a>| 
+ []
+
+
+Overfull \hbox (69.41904pt too wide) in paragraph at lines 27--27
+[]|\TU/lmtt/m/n/12 <a href="https://example.com">Visit</a>| 
+ []
+
+
+Overfull \hbox (87.95905pt too wide) in paragraph at lines 29--29
+[]|\TU/lmtt/m/n/12 <a href="mailto:info@example.com">Mail</a>| 
+ []
+
+) (chapters/Chapter04/topics/08_image/topic.tex
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 16.
+
+Underfull \hbox (badness 6575) in paragraph at lines 17--18
+[]\TU/lmtt/m/n/12 <img src="photo.jpg" alt="Description"> \TU/NotoSerifBengali(
+0)/m/n/12 syntax ব্যবহার করে web
+ []
+
+[157]
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[]|\TU/NotoSerifBengali(0)/m/n/12 accessibility-এর জন্য
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+[]|\TU/NotoSerifBengali(0)/m/n/12 aspect ratio খেয়াল
+ []
+
+) (chapters/Chapter04/topics/09_table/topic.tex
+Underfull \vbox (badness 2680) has occurred while \output is active []
+
+ [158]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[]|\TU/NotoSerifBengali(0)/m/n/12 bold/center de-
+ []
+
+[159]) (chapters/Chapter04/topics/10_form/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[]|\TU/NotoSerifBengali(0)/m/n/12 action, method
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[]|\TU/NotoSerifBengali(0)/m/n/12 text, password,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [160])
+(chapters/Chapter04/topics/11_web_page_designing/topic.tex [161] [162])
+(chapters/Chapter04/topics/12_website_publishing/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+[]|\TU/NotoSerifBengali(0)/m/n/12 portfolio, documenta-
+ []
+
+[163]) (chapters/Chapter04/topics/13_exercises/topic.tex [164] [165]
+Underfull \hbox (badness 2781) in paragraph at lines 76--77
+[]\TU/NotoSerifBengali(0)/m/n/12 Chapter 04 handnote/main sheet, HSC ICT chapte
+r outline এবং standard
+ []
+
+)) [166]
 \openout2 = `chapters/Chapter05/latex/chapter.aux'.
 
+ (chapters/Chapter05/latex/chapter.tex
+Chapter 5.
+[167
 
-(chapters/Chapter05/latex/chapter.tex [94
+
+
+
+] (chapters/Chapter05/topics/01_overview/topic.tex)
+(chapters/Chapter05/topics/02_program_concept/topic.tex [168])
+(chapters/Chapter05/topics/03_programming_language_concept/topic.tex
+Underfull \hbox (badness 1796) in paragraph at lines 5--6
+[]\TU/NotoSerifBengali(0)/m/n/12 এই টপিক শেষে শিক্ষার্থী programming language-এ
+র প্রয়োজন, syntax এবং human-
+ []
+
+[169]) (chapters/Chapter05/topics/04_generations_of_language/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]|\TU/NotoSerifBengali(0)/m/n/12 human-readable, com-
+ []
+
+) (chapters/Chapter05/topics/05_low_level_language/topic.tex
+Underfull \vbox (badness 2376) has occurred while \output is active []
+
+ [170])
+(chapters/Chapter05/topics/06_machine_language/topic.tex [171])
+(chapters/Chapter05/topics/07_assembly_language/topic.tex)
+(chapters/Chapter05/topics/08_mid_level_language/topic.tex [172])
+(chapters/Chapter05/topics/09_high_level_language/topic.tex [173])
+(chapters/Chapter05/topics/10_4gl/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[]\TU/lmtt/m/n/12 SELECT name, marks FROM students; \TU/NotoSerifBengali(0)/m/n
+/12 — এই ধরনের statement দিয়ে
+ []
+
+) (chapters/Chapter05/topics/11_translator_program/topic.tex
+Underfull \hbox (badness 2680) in paragraph at lines 5--6
+[]\TU/NotoSerifBengali(0)/m/n/12 এই টপিক শেষে শিক্ষার্থী translator program-এর 
+কাজ এবং compiler, interpreter,
+ []
+
+[174]
+Underfull \hbox (badness 1412) in paragraph at lines 35--36
+[]\TU/NotoSerifBengali(0)/m/n/12 Translator-এর প্রশ্নে source program, object p
+rogram এবং machine language
+ []
+
+) (chapters/Chapter05/topics/12_compiler/topic.tex)
+(chapters/Chapter05/topics/13_interpreter/topic.tex [175])
+(chapters/Chapter05/topics/14_assembler/topic.tex [176])
+(chapters/Chapter05/topics/15_program_organization/topic.tex
+Underfull \hbox (badness 1953) in paragraph at lines 33--34
+[]\TU/NotoSerifBengali(0)/m/n/12 C program structure আঁকতে \TU/lmtt/m/n/12 #inc
+lude <stdio.h> \TU/NotoSerifBengali(0)/m/n/12 এবং \TU/lmtt/m/n/12 int main() \T
+U/NotoSerifBengali(0)/m/n/12 অংশ
+ []
+
+) (chapters/Chapter05/topics/16_steps_of_development/topic.tex [177])
+(chapters/Chapter05/topics/17_algorithm/topic.tex [178])
+(chapters/Chapter05/topics/18_flowchart/topic.tex [179])
+(chapters/Chapter05/topics/19_program_design_model/topic.tex)
+(chapters/Chapter05/topics/20_structured_programming/topic.tex
+Underfull \vbox (badness 2027) has occurred while \output is active []
+
+ [180])
+(chapters/Chapter05/topics/21_visual_programming/topic.tex [181])
+(chapters/Chapter05/topics/22_oop/topic.tex)
+(chapters/Chapter05/topics/23_event_driven_programming/topic.tex [182])
+(chapters/Chapter05/topics/24_c_intro/topic.tex
+Underfull \hbox (badness 1048) in paragraph at lines 22--23
+[]\TU/NotoSerifBengali(0)/m/n/12 C ভাষার পরিচিতিতে Dennis Ritchie, structured, 
+mid-level, portable ও general-
+ []
+
+) (chapters/Chapter05/topics/25_c_characteristics/topic.tex [183])
+(chapters/Chapter05/topics/26_c_compiling/topic.tex [184])
+(chapters/Chapter05/topics/27_c_structure/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]|\TU/lmtt/m/n/12 #include
+ []
+
+) (chapters/Chapter05/topics/28_data_type/topic.tex
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+ [185]
+Overfull \hbox (3.19592pt too wide) in paragraph at lines 13--26
+ [] 
+ []
+
+) (chapters/Chapter05/topics/29_constant/topic.tex)
+(chapters/Chapter05/topics/30_variable/topic.tex [186])
+(chapters/Chapter05/topics/31_operator/topic.tex
+Overfull \hbox (7.83122pt too wide) in paragraph at lines 25--25
+[]|\TU/NotoSerifBengali(0)/m/n/12 Increment/Decrement| 
+ []
+
+[187]) (chapters/Chapter05/topics/32_expression/topic.tex)
+(chapters/Chapter05/topics/33_keyword/topic.tex [188])
+(chapters/Chapter05/topics/34_io_statement/topic.tex [189])
+(chapters/Chapter05/topics/35_conditional_statement/topic.tex)
+(chapters/Chapter05/topics/36_loop_statement/topic.tex [190])
+(chapters/Chapter05/topics/37_array/topic.tex [191])
+(chapters/Chapter05/topics/38_function/topic.tex)
+(chapters/Chapter05/topics/39_practical_program_practice/topic.tex [192])
+(chapters/Chapter05/topics/40_exercises/topic.tex [193] [194])) [195]
+\openout2 = `chapters/Chapter06/latex/chapter.aux'.
+
+
+(chapters/Chapter06/latex/chapter.tex [196
 
 
 
 
 ]
-Chapter 5.
-(chapters/Chapter05/topics/01_overview/topic.tex)
-(chapters/Chapter05/topics/02_program_concept/topic.tex)
-(chapters/Chapter05/topics/03_programming_language_concept/topic.tex [95])
-(chapters/Chapter05/topics/04_generations_of_language/topic.tex)
-(chapters/Chapter05/topics/05_low_level_language/topic.tex [96])
-(chapters/Chapter05/topics/06_machine_language/topic.tex)
-(chapters/Chapter05/topics/07_assembly_language/topic.tex)
-(chapters/Chapter05/topics/08_mid_level_language/topic.tex [97])
-(chapters/Chapter05/topics/09_high_level_language/topic.tex)
-(chapters/Chapter05/topics/10_4gl/topic.tex)
-(chapters/Chapter05/topics/11_translator_program/topic.tex [98])
-(chapters/Chapter05/topics/12_compiler/topic.tex)
-(chapters/Chapter05/topics/13_interpreter/topic.tex)
-(chapters/Chapter05/topics/14_assembler/topic.tex)
-(chapters/Chapter05/topics/15_program_organization/topic.tex [99])
-(chapters/Chapter05/topics/16_steps_of_development/topic.tex)
-(chapters/Chapter05/topics/17_algorithm/topic.tex [100])
-(chapters/Chapter05/topics/18_flowchart/topic.tex)
-(chapters/Chapter05/topics/19_program_design_model/topic.tex)
-(chapters/Chapter05/topics/20_structured_programming/topic.tex [101])
-(chapters/Chapter05/topics/21_visual_programming/topic.tex)
-(chapters/Chapter05/topics/22_oop/topic.tex)
-(chapters/Chapter05/topics/23_event_driven_programming/topic.tex)
-(chapters/Chapter05/topics/24_c_intro/topic.tex)
-(chapters/Chapter05/topics/25_c_characteristics/topic.tex)
-(chapters/Chapter05/topics/26_c_compiling/topic.tex [102])
-(chapters/Chapter05/topics/27_c_structure/topic.tex)
-(chapters/Chapter05/topics/28_data_type/topic.tex)
-(chapters/Chapter05/topics/29_constant/topic.tex)
-(chapters/Chapter05/topics/30_variable/topic.tex [103])
-(chapters/Chapter05/topics/31_operator/topic.tex)
-(chapters/Chapter05/topics/32_expression/topic.tex)
-(chapters/Chapter05/topics/33_keyword/topic.tex)
-(chapters/Chapter05/topics/34_io_statement/topic.tex)
-(chapters/Chapter05/topics/35_conditional_statement/topic.tex [104])
-(chapters/Chapter05/topics/36_loop_statement/topic.tex)
-(chapters/Chapter05/topics/37_array/topic.tex)
-(chapters/Chapter05/topics/38_function/topic.tex)
-(chapters/Chapter05/topics/39_practical_program_practice/topic.tex [105])
-(chapters/Chapter05/topics/40_exercises/topic.tex)) [106]
-\openout2 = `chapters/Chapter06/latex/chapter.aux'.
-
-
-(chapters/Chapter06/latex/chapter.tex
 Chapter 6.
-(chapters/Chapter06/topics/01_overview/topic.tex)
-(chapters/Chapter06/topics/02_basic_elements/topic.tex)
-(chapters/Chapter06/topics/03_dbms/topic.tex [107
-
-
-
-
-])
-(chapters/Chapter06/topics/04_rdbms/topic.tex)
-(chapters/Chapter06/topics/05_creating_database/topic.tex)
-(chapters/Chapter06/topics/06_data_type/topic.tex [108])
-(chapters/Chapter06/topics/07_query/topic.tex)
-(chapters/Chapter06/topics/08_sorting/topic.tex)
-(chapters/Chapter06/topics/09_indexing/topic.tex [109])
-(chapters/Chapter06/topics/10_relation/topic.tex)
-(chapters/Chapter06/topics/11_form/topic.tex)
-(chapters/Chapter06/topics/12_report/topic.tex [110])
-(chapters/Chapter06/topics/13_corporate_database/topic.tex)
-(chapters/Chapter06/topics/14_government_database/topic.tex)
-(chapters/Chapter06/topics/15_data_security/topic.tex)
-(chapters/Chapter06/topics/16_data_encryption/topic.tex [111])
-(chapters/Chapter06/topics/17_practical_tasks/topic.tex
-Overfull \hbox (23.56496pt too wide) in paragraph at lines 6--7
-[]\TU/kalpurush(0)/b/n/12 Table/Primary key/Record insert/edit/delete, Query/So
-rting/Indexing, Form/Report 
+(chapters/Chapter06/topics/01_overview/topic.tex [197])
+(chapters/Chapter06/topics/02_basic_elements/topic.tex [198])
+(chapters/Chapter06/topics/03_dbms/topic.tex [199])
+(chapters/Chapter06/topics/04_rdbms/topic.tex
+Underfull \hbox (badness 4859) in paragraph at lines 14--14
+[]|\TU/NotoSerifBengali(0)/m/n/12 ফাইল/টেবিলসহ বিভিন্ন মডেল
  []
 
-) (chapters/Chapter06/topics/18_exercises/topic.tex)) [112] (main.aux
-(chapters/Chapter01/latex/chapter.aux) (chapters/Chapter02/latex/chapter.aux))
+
+Underfull \hbox (badness 7888) in paragraph at lines 18--19
+[]|\TU/NotoSerifBengali(0)/m/n/12 Primary key, Foreign
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+[]|\TU/NotoSerifBengali(0)/m/n/12 MySQL, Oracle, SQL
+ []
+
+[200]) (chapters/Chapter06/topics/05_creating_database/topic.tex
+Underfull \vbox (badness 2582) has occurred while \output is active []
+
+ [201])
+(chapters/Chapter06/topics/06_data_type/topic.tex)
+(chapters/Chapter06/topics/07_query/topic.tex [202])
+(chapters/Chapter06/topics/08_sorting/topic.tex [203])
+(chapters/Chapter06/topics/09_indexing/topic.tex [204])
+(chapters/Chapter06/topics/10_relation/topic.tex
+Underfull \hbox (badness 3646) in paragraph at lines 14--14
+[]|\TU/NotoSerifBengali(0)/m/n/12 এক টেবিলের এক রেকর্ড অন্য টেবিলের এক
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 24--25
+[]\TU/NotoSerifBengali(0)/m/n/12 Customer(CustomerID, Name) এবং Order(OrderID, 
+CustomerID, Date) টেবিল
+ []
+
+) (chapters/Chapter06/topics/11_form/topic.tex [205])
+(chapters/Chapter06/topics/12_report/topic.tex [206])
+(chapters/Chapter06/topics/13_corporate_database/topic.tex)
+(chapters/Chapter06/topics/14_government_database/topic.tex
+Underfull \vbox (badness 7888) has occurred while \output is active []
+
+ [207])
+(chapters/Chapter06/topics/15_data_security/topic.tex [208])
+(chapters/Chapter06/topics/16_data_encryption/topic.tex [209])
+(chapters/Chapter06/topics/17_practical_tasks/topic.tex)
+(chapters/Chapter06/topics/18_exercises/topic.tex [210])) [211] (main.aux
+(chapters/Chapter01/latex/chapter.aux) (chapters/Chapter02/latex/chapter.aux)
+(chapters/Chapter03/latex/chapter.aux) (chapters/Chapter04/latex/chapter.aux)
+(chapters/Chapter05/latex/chapter.aux) (chapters/Chapter06/latex/chapter.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F9C46CA12CFE395E996582FA071B636B;71356.
+(rerunfilecheck)             Checksum: 4722F10E52366A775F4AB2700E203BB1;22603.
  ) 
 Here is how much of TeX's memory you used:
- 30455 strings out of 402983
- 693299 string characters out of 5448482
- 1135303 words of memory out of 5000000
- 58351 multiletter control sequences out of 15000+600000
- 635501 words of font info for 92 fonts, out of 8000000 for 9000
+ 31109 strings out of 402983
+ 706205 string characters out of 5448482
+ 1173304 words of memory out of 5000000
+ 58969 multiletter control sequences out of 15000+600000
+ 635597 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,9n,116p,705b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,15n,119p,705b,1010s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build\main.pdf (
-116 pages).
+217 pages).

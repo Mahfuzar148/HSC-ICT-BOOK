@@ -1,12 +1,40 @@
 % ১৪.১০ Input Output Statement
 \section{Input/Output Statement}
 
-\subsection{Output: printf}
-\begin{itemize}
-\item printf ব্যবহার, format specifiers (%d, %f, %lf, %c, %s)
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী \texttt{printf} ও \texttt{scanf} ব্যবহার করে input-output করতে পারবে।
+\end{learningbox}
 
-\subsection{Input: scanf}
-\begin{itemize}
-\item scanf ব্যবহার, address-of operator (\&) প্রয়োজন
-\end{itemize}
+\begin{definitionbox}{\texttt{printf}}
+C language-এ output দেখানোর জন্য \texttt{printf()} function ব্যবহৃত হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{\texttt{scanf}}
+Keyboard থেকে input নেওয়ার জন্য \texttt{scanf()} function ব্যবহৃত হয়।
+\end{definitionbox}
+
+\begin{verbatim}
+int n;
+scanf("%d", &n);
+printf("Number = %d", n);
+\end{verbatim}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{Specifier} & \textbf{Data type} & \textbf{Example} \\
+\hline
+\texttt{\%d} & int & \texttt{10} \\
+\hline
+\texttt{\%f} & float & \texttt{3.5} \\
+\hline
+\texttt{\%c} & char & \texttt{A} \\
+\hline
+\texttt{\%s} & string & \texttt{ICT} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\texttt{scanf}-এ variable-এর আগে সাধারণত address operator \texttt{\&} দিতে হয়, যেমন \texttt{\&n}।
+\end{mistakebox}

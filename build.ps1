@@ -14,3 +14,8 @@ if (-not $engine) {
 
 & $engine.Source -interaction=nonstopmode -output-directory=build main.tex
 & $engine.Source -interaction=nonstopmode -output-directory=build main.tex
+
+if ($LASTEXITCODE -eq 0 -and (Test-Path .\build\main.pdf)) {
+    Copy-Item .\build\main.pdf .\main.pdf -Force
+    Write-Host "PDF built successfully: build\main.pdf and main.pdf"
+}

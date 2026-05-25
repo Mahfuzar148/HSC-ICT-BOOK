@@ -1,20 +1,41 @@
 % ১৪.৩ C Program-এর গঠন
 \section{C Program-এর গঠন}
 
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী একটি basic C program-এর অংশ চিনতে ও লিখতে পারবে।
+\end{learningbox}
+
 \begin{verbatim}
 #include <stdio.h>
 
 int main()
 {
-    // declaration
-    // input
-    // processing
-    // output
+    int a, b, sum;
+    scanf("%d %d", &a, &b);
+    sum = a + b;
+    printf("Sum = %d", sum);
     return 0;
 }
 \end{verbatim}
 
-\subsection{মূল অংশ}
-\begin{itemize}
-\item Header file, main(), statements, semicolon, comments
-\end{itemize}
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.52\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{কাজ} \\
+\hline
+\texttt{\#include <stdio.h>} & standard input-output library যুক্ত করে \\
+\hline
+\texttt{int main()} & program execution শুরু হয় \\
+\hline
+Declaration & variable-এর type ও name ঘোষণা করে \\
+\hline
+\texttt{scanf}/\texttt{printf} & input নেওয়া ও output দেখানো \\
+\hline
+\texttt{return 0;} & program সফলভাবে শেষ বোঝায় \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Code লেখার প্রশ্নে indentation, semicolon, brace এবং format specifier ঠিক রাখা জরুরি।
+\end{boardbox}

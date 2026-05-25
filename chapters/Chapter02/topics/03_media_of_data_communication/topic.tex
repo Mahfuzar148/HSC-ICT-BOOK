@@ -1,23 +1,138 @@
-% Chapter 02.3: Data communication media overview
 \section{ডেটা কমিউনিকেশন মিডিয়া (Overview)}
 
-\subsection{Transmission Media পরিচিতি}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Guided media (Wired)
-\item Unguided media (Wireless)
+\item transmission media কী এবং কেন দরকার তা ব্যাখ্যা করতে।
+\item guided media ও unguided media আলাদা করতে।
+\item wired ও wireless channel-এর উদাহরণ দিতে।
+\item media selection-এর ভিত্তিতে বাস্তব ব্যবহার ব্যাখ্যা করতে।
+\item tree diagram বা comparison table ব্যবহার করে media শ্রেণিবিভাগ লিখতে।
 \end{itemize}
+\end{learningbox}
+
+\subsection{Transmission Media}
+
+ডেটা এক স্থান থেকে অন্য স্থানে পাঠাতে যে পথ ব্যবহার করা হয়, তাকে transmission media বলা হয়। এই মাধ্যম physical cable হতে পারে আবার radio wave-এর মতো অবিকল অদৃশ্য wave-ও হতে পারে। Network design-এ media নির্বাচন খুব গুরুত্বপূর্ণ, কারণ speed, distance, cost, security এবং reliability—সবকিছুর উপর এর প্রভাব পড়ে।
+
+\begin{definitionbox}{Transmission media}
+যে মাধ্যমের মাধ্যমে data signal এক প্রান্ত থেকে অন্য প্রান্তে যায়, তাকে transmission media বলা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{মিডিয়ার প্রধান ধরন}
+\begin{itemize}
+\item \textbf{Guided media}: signal নির্দিষ্ট path বা cable দিয়ে যায়।
+\item \textbf{Unguided media}: signal বায়ু বা space দিয়ে ছড়িয়ে পড়ে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Transmission Media} \\
+\hline
+Guided Media \hspace{1.5cm} Unguided Media \\
+\end{tabular}
+\end{center}
 
 \subsection{Guided Media}
+
+Guided media-তে signal নির্দিষ্ট conductor-এর ভেতর দিয়ে যায়। এর সুবিধা হলো তুলনামূলকভাবে বেশি control, কম interference এবং বেশি security।
+
+\begin{keypointbox}{Guided media-এর ধরন}
 \begin{itemize}
-\item Twisted Pair
-\item Coaxial Cable
-\item Fiber Optic Cable
+\item Twisted pair cable
+\item Coaxial cable
+\item Fiber optic cable
 \end{itemize}
+\end{keypointbox}
 
 \subsection{Unguided Media}
+
+Unguided media-তে signal কোনো cable ছাড়াই electromagnetic wave আকারে যায়। এটি mobility দেয়, কিন্তু interference, weather এবং security issue তুলনামূলক বেশি হতে পারে।
+
+\begin{keypointbox}{Unguided media-এর ধরন}
 \begin{itemize}
-\item Radio Waves
-\item Microwaves
+\item Radio wave
+\item Microwave
 \item Infrared
-\item Satellite Communication
+\item Satellite link
 \end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{বৈশিষ্ট্য} & \textbf{উদাহরণ} \\
+\hline
+Guided media & নির্দিষ্ট পথ, বেশি control & UTP, coaxial, fiber optic \\
+\hline
+Unguided media & wireless, mobility support & radio, microwave, satellite \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{মাধ্যম নির্বাচন}
+Office LAN-এর জন্য cable-based guided media ভালো, কারণ speed ও security দরকার। দূরবর্তী mobile communication-এর জন্য wireless media দরকার, কারণ mobility and coverage বেশি গুরুত্বপূর্ণ।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+“Guided ও unguided media-এর মধ্যে পার্থক্য লেখ” প্রশ্নে definition, classification এবং ব্যবহার একসঙ্গে লিখলে উত্তর পূর্ণ হয়।
+\end{boardbox}
+
+\begin{recapbox}
+\begin{itemize}
+\item Transmission media হলো data signal বহনের পথ।
+\item Guided media cable-based, unguided media wireless-based।
+\item Media choice নির্ভর করে distance, speed, security ও cost-এর উপর।
+\item এই topic-এ tree diagram লিখতে পারলে exam answer দেখতে সুন্দর হয়।
+\end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item কোনটি guided media-এর উদাহরণ?\\
+ক. Radio wave \quad খ. Microwave \quad গ. Fiber optic cable \quad ঘ. Satellite
+\item Wireless communication-এ কোনটি ব্যবহার হয়?\\
+ক. Twisted pair \quad খ. Unguided media \quad গ. Coaxial cable \quad ঘ. Copper bus
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Guided media কী? একটি উদাহরণ দাও।
+\item Unguided media-এর দুটি সুবিধা লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি শিক্ষা প্রতিষ্ঠানে computer lab-এ wired LAN এবং মাঠ পর্যায়ে mobile-based communication ব্যবহৃত হচ্ছে। উদ্দীপকের আলোকে guided ও unguided media বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই summary chapter 2 handnote, main sheet chapter 2, এবং HSC ICT standard transmission-media references অনুসরণ করে লেখা হয়েছে।
+\end{sourcebox}
+
+\subsection{মিডিয়া নির্বাচন করার নিয়ম}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Tree diagram placeholder: Transmission Media}\\[4pt]
+Transmission Media\\
+$\rightarrow$ Guided/Wired: Twisted Pair, Coaxial, Optical Fiber\\
+$\rightarrow$ Unguided/Wireless: Radio Wave, Microwave, Infrared, Satellite
+}}
+\end{center}
+
+\begin{keypointbox}{মিডিয়া বাছাইয়ের মানদণ্ড}
+\begin{itemize}
+\item \textbf{দূরত্ব}: বেশি দূরত্বে fiber optic, microwave বা satellite বেশি কার্যকর।
+\item \textbf{গতি}: high bandwidth দরকার হলে optical fiber ভালো।
+\item \textbf{নিরাপত্তা}: cable-based link সাধারণত wireless-এর তুলনায় নিয়ন্ত্রণযোগ্য।
+\item \textbf{খরচ}: ছোট LAN-এ twisted pair কম খরচে ব্যবহারযোগ্য।
+\item \textbf{mobility}: চলমান ব্যবহারকারীর জন্য wireless media দরকার।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব সিদ্ধান্ত}
+একটি কলেজের computer lab-এ স্থায়ী desktop সংযোগের জন্য UTP cable ব্যবহার করা যায়। একই প্রতিষ্ঠানের campus-wide student internet-এর জন্য Wi-Fi দরকার, আর দূরের branch campus যুক্ত করতে fiber বা microwave link বিবেচনা করা যায়।
+\end{examplebox}

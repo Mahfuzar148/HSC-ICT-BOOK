@@ -1,12 +1,64 @@
 % ৪.১২ ওয়েবসাইট প্রকাশ ও হোস্টিং
 \section{ওয়েবসাইট প্রকাশ ও হোস্টিং}
 
-\subsection{হোস্টিং ও ডোমেইন}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Server hosting types: shared, VPS, cloud; domain registration
+\item domain, hosting, URL ও web server ব্যাখ্যা করতে।
+\item website publish করার ধাপ লিখতে।
+\item FTP/SFTP, control panel ও version-based deployment-এর ধারণা বুঝতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{FTP, Git ও প্রকাশ পদ্ধতি}
+\subsection{Domain ও Hosting}
+ওয়েবসাইট তৈরি করার পর সেটি internet-এ দেখা যাওয়ার জন্য server-এ রাখতে হয়। ব্যবহারকারী domain name বা URL লিখে সেই server থেকে page দেখতে পায়।
+
+\begin{definitionbox}{Domain name}
+Internet-এ কোনো website-কে সহজে চেনার জন্য ব্যবহৃত human-readable address-কে domain name বলা হয়। যেমন \texttt{example.com}।
+\end{definitionbox}
+
+\begin{definitionbox}{Web hosting}
+ওয়েবসাইটের file, image, database ইত্যাদি internet-connected server-এ সংরক্ষণ করে ব্যবহারকারীর কাছে পৌঁছে দেওয়ার সেবাকে web hosting বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Publishing flow diagram placeholder}\\[4pt]
+HTML/CSS files $\rightarrow$ Test locally $\rightarrow$ Buy domain/hosting $\rightarrow$ Upload files $\rightarrow$ DNS points to server $\rightarrow$ Website live
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{ধারণা} & \textbf{ব্যবহার} \\
+\hline
+Shared hosting & এক server বহু website ভাগ করে & ছোট website \\
+\hline
+VPS & virtual private server & medium project \\
+\hline
+Cloud hosting & scalable resource & high traffic/modern app \\
+\hline
+Static hosting & HTML/CSS/JS file serve করে & portfolio, documentation \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{Publish checklist}
 \begin{itemize}
-\item FTP, SFTP, GitHub Pages, Netlify, FTP deploy
+\item Home page file সাধারণত \texttt{index.html} নাম রাখা।
+\item সব link, image path ও form action test করা।
+\item mobile view ও browser compatibility দেখা।
+\item domain DNS ঠিকভাবে hosting server-এর দিকে point করা।
+\item security-এর জন্য HTTPS ব্যবহার করা।
 \end{itemize}
+\end{keypointbox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item Domain ও hosting-এর পার্থক্য লেখ।
+\item \texttt{index.html} file কেন গুরুত্বপূর্ণ?
+\item Website publish করার চারটি ধাপ লেখ।
+\end{enumerate}
+\end{practicebox}

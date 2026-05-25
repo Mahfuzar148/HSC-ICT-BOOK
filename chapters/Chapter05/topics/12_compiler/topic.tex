@@ -1,14 +1,30 @@
 % ৮.১ Compiler
 \section{Compiler}
 
-\subsection{Compiler কী}
-\begin{itemize}
-\item সম্পূর্ণ program একসাথে translate করে
-\item source → object এবং error list একসঙ্গে দেখায়
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী compiler-এর কাজ, সুবিধা, অসুবিধা এবং interpreter-এর সাথে পার্থক্য লিখতে পারবে।
+\end{learningbox}
 
-\subsection{সুবিধা ও অসুবিধা}
+\begin{definitionbox}{Compiler}
+যে translator পুরো source program একসাথে machine code/object code-এ রূপান্তর করে এবং error list দেখায়, তাকে compiler বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Compiler flow placeholder}\\[4pt]
+Source code $\rightarrow$ Compiler $\rightarrow$ Object code $\rightarrow$ Linker $\rightarrow$ Executable
+}}
+\end{center}
+
+\begin{keypointbox}{সুবিধা ও সীমাবদ্ধতা}
 \begin{itemize}
-\item সুবিধা: execution দ্রুত, object code তৈরি
-\item অসুবিধা: debugging ধীর, memory বেশি লাগতে পারে
+\item একবার compile হলে executable দ্রুত run হয়।
+\item object/executable file তৈরি হতে পারে।
+\item সব error একসাথে দেখাতে পারে, তাই নতুনদের কাছে debugging কঠিন লাগতে পারে।
 \end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{C language}
+C program সাধারণত compiler দিয়ে machine code-এ রূপান্তরিত হয়, তারপর run করা হয়।
+\end{examplebox}

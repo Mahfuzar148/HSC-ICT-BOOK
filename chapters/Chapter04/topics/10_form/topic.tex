@@ -1,12 +1,66 @@
 % ৪.১০ ফর্ম ও ডেটা সংগ্রহ
 \section{ফর্ম ও ডেটা সংগ্রহ}
 
-\subsection{ফর্ম উপাদান}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}\
+\item HTML form-এর কাজ ও মৌলিক tag লিখতে।
+\item input type, textarea, select, button ব্যবহার করতে।
+\item GET ও POST method-এর পার্থক্য ব্যাখ্যা করতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{ফর্ম সাবমিশন ও ভ্যালিডেশন}
-\begin{itemize}
-\item GET vs POST, client-side validation (JS), server-side validation
-\end{itemize}
+\subsection{Form}
+ব্যবহারকারীর কাছ থেকে data নেওয়ার জন্য HTML form ব্যবহৃত হয়। registration, login, search, feedback, admission application ইত্যাদি form-এর উদাহরণ।
+
+\begin{definitionbox}{Form}
+যে HTML structure ব্যবহারকারীর input গ্রহণ করে server বা script-এর কাছে পাঠাতে পারে, তাকে form বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.42\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{Tag/Attribute} & \textbf{কাজ} & \textbf{উদাহরণ} \\
+\hline
+\texttt{<form>} & form container & action, method থাকে \\
+\hline
+\texttt{<input>} & এক লাইনের input & text, password, email \\
+\hline
+\texttt{<textarea>} & বহু লাইনের text & comment/message \\
+\hline
+\texttt{<select>} & dropdown list & option list \\
+\hline
+\texttt{required} & input বাধ্যতামূলক করে & validation \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{Form example placeholder}\\[4pt]
+\texttt{<form action="submit.php" method="post">}\\
+\texttt{<input type="text" name="name" required>}\\
+\texttt{<input type="email" name="email">}\\
+\texttt{<button type="submit">Send</button>}\\
+\texttt{</form>}
+}}
+\end{center}
+
+\subsection{GET ও POST}
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ভিত্তি} & \textbf{GET} & \textbf{POST} \\
+\hline
+Data পাঠানো & URL-এর সাথে query হিসেবে & request body-তে \\
+\hline
+ব্যবহার & search, filter & login, registration, sensitive data \\
+\hline
+গোপনীয়তা & কম & তুলনামূলক ভালো, তবে HTTPS দরকার \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Client-side validation সুবিধাজনক, কিন্তু নিরাপত্তার জন্য server-side validation দরকার। শুধু browser validation-এর উপর নির্ভর করা ঠিক নয়।
+\end{mistakebox}

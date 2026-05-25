@@ -1,13 +1,38 @@
 % ৫. ডেটাবেজ তৈরি
 \section{ডেটাবেজ তৈরি}
+ভালো ডেটাবেজ তৈরির আগে কী তথ্য রাখা হবে, কোন কোন টেবিল লাগবে, কোন ফিল্ডের ডেটা টাইপ কী হবে এবং কোন ফিল্ডটি রেকর্ডকে অনন্যভাবে শনাক্ত করবে তা ঠিক করতে হয়।
 
-\subsection{তৈরির ধাপ}
-\begin{itemize}
-\item প্রয়োজন নির্ধারণ, Entity নির্বাচন, Field ও Data type নির্ধারণ
-\item Primary/Foreign key, Table তৈরি, Record insert, Test
-\end{itemize}
+\begin{keypointbox}{ডেটাবেজ তৈরির ধাপ}
+\begin{enumerate}
+    \item উদ্দেশ্য নির্ধারণ: ডেটাবেজটি কোন কাজ করবে।
+    \item এন্টিটি নির্বাচন: Student, Teacher, Product, Sales ইত্যাদি।
+    \item ফিল্ড নির্ধারণ: Roll, Name, Class, Mobile, GPA ইত্যাদি।
+    \item ডেটা টাইপ নির্ধারণ: Text, Number, Date/Time ইত্যাদি।
+    \item Primary key নির্বাচন: যেমন StudentID বা Roll।
+    \item টেবিল তৈরি, ডেটা এন্ট্রি, সম্পর্ক তৈরি এবং পরীক্ষা।
+\end{enumerate}
+\end{keypointbox}
 
-\subsection{Table ও Field ডিজাইন}
-\begin{itemize}
-\item Field name, data type, size, primary key নির্ধারণের নিয়ম
-\end{itemize}
+\begin{examplebox}{Student ডেটাবেজ ডিজাইন}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Field Name & Data Type & Note \\
+\hline
+StudentID & Number/AutoNumber & Primary Key \\
+Name & Short Text & ছাত্রের নাম \\
+GroupName & Short Text & বিভাগ \\
+BirthDate & Date/Time & জন্মতারিখ \\
+Mobile & Short Text & শুরুতে 0 থাকায় Text ভালো \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+মোবাইল নম্বর বা রোল নম্বর সব সময় গণনার জন্য ব্যবহৃত হয় না। তাই অনেক ক্ষেত্রে এগুলো Number না রেখে Text রাখা নিরাপদ, বিশেষ করে শুরুতে 0 থাকতে পারে এমন ডেটার ক্ষেত্রে।
+\end{mistakebox}
+
+\begin{practicebox}
+একটি লাইব্রেরি ডেটাবেজের জন্য Book, Member ও Issue টেবিলের সম্ভাব্য ফিল্ড এবং Primary key নির্ধারণ করো।
+\end{practicebox}

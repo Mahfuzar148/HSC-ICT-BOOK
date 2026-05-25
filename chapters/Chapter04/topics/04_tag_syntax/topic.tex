@@ -1,12 +1,53 @@
-% ৪.৪ ট্যাগ ও সিন্দ্যাক্স
-\section{ট্যাগ ও সিন্দ্যাক্স}
+% ৪.৪ ট্যাগ ও সিনট্যাক্স
+\section{ট্যাগ ও সিনট্যাক্স}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item tag, element ও attribute-এর পার্থক্য লিখতে।
+\item paired tag ও empty tag শনাক্ত করতে।
+\item একটি valid HTML document-এর basic structure লিখতে।
+\end{itemize}
+\end{learningbox}
+
+\subsection{Tag, Element ও Attribute}
+\begin{definitionbox}{Tag}
+angle bracket-এর মধ্যে লেখা HTML নির্দেশনাকে tag বলা হয়। যেমন \texttt{<p>} paragraph শুরু করে এবং \texttt{</p>} paragraph শেষ করে।
+\end{definitionbox}
+
+\begin{definitionbox}{Element}
+start tag, content এবং end tag মিলিয়ে একটি HTML element তৈরি হয়। যেমন \texttt{<h1>Title</h1>} একটি heading element।
+\end{definitionbox}
+
+\begin{definitionbox}{Attribute}
+tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে attribute ব্যবহৃত হয়। যেমন \texttt{<a href="page.html">Link</a>}-এ \texttt{href} attribute।
+\end{definitionbox}
 
 \subsection{ট্যাগের ধরন}
-\begin{itemize}
-\item Paired tags \texttt{<p>...</p>}, Self-closing tags \texttt{<img />}\
-\end{itemize}
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{উদাহরণ} & \textbf{কাজ} \\
+\hline
+Paired tag & \texttt{<p>...</p>} & content ঘিরে রাখে \\
+\hline
+Empty tag & \texttt{<br>}, \texttt{<img>} & end tag সাধারণত থাকে না \\
+\hline
+Attributeসহ tag & \texttt{<img src="a.jpg" alt="A">} & অতিরিক্ত তথ্য দেয় \\
+\hline
+\end{tabular}
+\end{center}
 
-\subsection{HTML ডকুমেন্ট রূপ}
-\begin{itemize}
-\item \texttt{<!DOCTYPE html>}, \texttt{<html>}, \texttt{<head>}, \texttt{<body>}\
-\end{itemize}
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{HTML document structure placeholder}\\[4pt]
+\texttt{<!DOCTYPE html>} document type জানায়।\\
+\texttt{<html>} পুরো document ধরে।\\
+\texttt{<head>} metadata/title রাখে।\\
+\texttt{<body>} দৃশ্যমান content রাখে।
+}}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Tag, element ও attribute-এর পার্থক্য উদাহরণসহ লিখলে উত্তর সহজে বোঝা যায়। শুধু সংজ্ঞা মুখস্থ করলে অনেক সময় নম্বর কমে।
+\end{boardbox}

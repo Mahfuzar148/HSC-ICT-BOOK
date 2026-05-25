@@ -19,3 +19,47 @@
 \item Binary থেকে Hex: 4-bit grouping
 \item Octal/Hex এর মধ্যে রূপান্তর: Binary intermediary
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item decimal থেকে binary/octal/hex রূপান্তর করতে।
+\item binary থেকে decimal, octal ও hexadecimal রূপান্তর করতে।
+\item fraction রূপান্তরে multiplication method-এর ধারণা ব্যবহার করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{keypointbox}{রূপান্তরের shortcut}
+\begin{itemize}
+\item Decimal থেকে অন্য base: base দিয়ে বারবার ভাগ, remainder নিচ থেকে ওপর।
+\item অন্য base থেকে Decimal: প্রতিটি digit $\times$ base-এর ঘাত যোগ।
+\item Binary থেকে Octal: ডান দিক থেকে 3-bit group।
+\item Binary থেকে Hex: ডান দিক থেকে 4-bit group।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{Decimal থেকে Binary}
+$(25)_{10}$ রূপান্তর: $25\div2=12$ remainder 1, $12\div2=6$ remainder 0, $6\div2=3$ remainder 0, $3\div2=1$ remainder 1, $1\div2=0$ remainder 1। তাই $(25)_{10}=(11001)_2$।
+\end{examplebox}
+
+\begin{examplebox}{Binary থেকে Decimal}
+$(10110)_2=1\times2^4+0\times2^3+1\times2^2+1\times2^1+0\times2^0=16+4+2=22$।
+\end{examplebox}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Conversion flowchart placeholder}\\[4pt]
+Decimal $\leftrightarrow$ Binary $\leftrightarrow$ Octal/Hex\\
+Octal ও Hex-এর মধ্যে সরাসরি না করে binary intermediary ব্যবহার দেখাতে হবে।
+}}
+\end{center}
+
+\begin{practicebox}
+\textbf{অনুশীলন}
+\begin{enumerate}
+\item $(43)_{10}$ কে binary-তে রূপান্তর কর।
+\item $(101101)_2$ কে decimal-এ রূপান্তর কর।
+\item $(11011101)_2$ কে hexadecimal-এ রূপান্তর কর।
+\end{enumerate}
+\end{practicebox}

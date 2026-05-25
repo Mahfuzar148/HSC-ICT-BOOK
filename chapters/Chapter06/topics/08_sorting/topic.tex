@@ -1,12 +1,32 @@
 % ৮. Sorting
 \section{Sorting}
+ডেটাকে নির্দিষ্ট ক্রমে সাজানোকে Sorting বলে। নামের বর্ণানুক্রম, রোলের ছোট থেকে বড় ক্রম, তারিখের নতুন থেকে পুরোনো ক্রম বা নম্বরের বেশি থেকে কম ক্রমে ডেটা সাজানো যায়।
 
-\subsection{Sorting কী}
-\begin{itemize}
-\item Ascending ও Descending order-এ record সাজানো
-\end{itemize}
+\begin{definitionbox}{Sorting}
+ডেটাবেজের রেকর্ডগুলোকে একটি বা একাধিক ফিল্ডের মান অনুযায়ী ঊর্ধ্বক্রম বা নিম্নক্রমে সাজানোর প্রক্রিয়াকে Sorting বলে।
+\end{definitionbox}
 
-\subsection{ব্যবহার}
-\begin{itemize}
-\item Alphabetical, roll/marks/salary/date অনুযায়ী সাজানো
-\end{itemize}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+ধরন & অর্থ & উদাহরণ \\
+\hline
+Ascending & ছোট থেকে বড় / A থেকে Z & Roll 1, 2, 3 \\
+\hline
+Descending & বড় থেকে ছোট / Z থেকে A & GPA 5.00, 4.75 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{SQL-এ Sorting}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC;
+\end{verbatim}
+এখানে GPA বেশি থেকে কম ক্রমে দেখানো হবে।
+\end{examplebox}
+
+\begin{practicebox}
+Student টেবিল থেকে Name বর্ণানুক্রমে এবং GPA বেশি থেকে কম ক্রমে দেখানোর জন্য দুটি আলাদা কুয়েরি লিখো।
+\end{practicebox}

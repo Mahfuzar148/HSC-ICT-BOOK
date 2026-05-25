@@ -1,7 +1,27 @@
 % ১৪.২ C Program Compiling
 \section{C Program Compiling}
 
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী C program compile/run করার ধাপ ব্যাখ্যা করতে পারবে।
+\end{learningbox}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{C build flow placeholder}\\[4pt]
+Source file \texttt{.c} $\rightarrow$ Preprocessor $\rightarrow$ Compiler $\rightarrow$ Object file $\rightarrow$ Linker $\rightarrow$ Executable $\rightarrow$ Run
+}}
+\end{center}
+
+\begin{keypointbox}{ধাপ}
 \begin{itemize}
-\item Source code → Compiler → Object code → Linker → Executable
-\item Error checking, run/execute, debugging ধারাবাহিকতা
+\item Source code editor-এ লেখা হয়।
+\item Compiler syntax/error পরীক্ষা করে object code তৈরি করে।
+\item Linker library function যুক্ত করে executable তৈরি করে।
+\item Run করলে output দেখা যায়।
 \end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{Error}
+Semicolon বাদ গেলে compile-time error হতে পারে। Logic ভুল হলে program compile হলেও output ভুল হতে পারে।
+\end{examplebox}

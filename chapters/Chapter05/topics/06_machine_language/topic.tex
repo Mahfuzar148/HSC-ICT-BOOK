@@ -1,14 +1,28 @@
 % ৪.১ Machine Language
 \section{Machine Language}
 
-\subsection{Machine language কী}
-\begin{itemize}
-\item Binary digit 0 ও 1
-\item কম্পিউটারের নিজস্ব ভাষা, machine dependent
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী machine language-এর সংজ্ঞা, বৈশিষ্ট্য, সুবিধা ও অসুবিধা ব্যাখ্যা করতে পারবে।
+\end{learningbox}
 
-\subsection{সুবিধা ও অসুবিধা}
-\begin{itemize}
-\item সুবিধা: সরাসরি execution, translator লাগেনা
-\item অসুবিধা: লেখা কঠিন, maintenance কঠিন
-\end{itemize}
+\begin{definitionbox}{Machine language}
+কম্পিউটারের processor সরাসরি যে binary instruction বা 0 ও 1-এর ভাষা বুঝতে পারে, তাকে machine language বলা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{ধারণা}
+\texttt{10110000 01100001} ধরনের binary pattern processor-এর কাছে instruction/data হিসেবে কাজ করতে পারে। মানুষ এটি সহজে বুঝতে পারে না, কিন্তু machine সরাসরি বুঝতে পারে।
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.30\textwidth}|p{0.50\textwidth}|}
+\hline
+\textbf{সুবিধা} & দ্রুত execute হয়; translator লাগে না। \\
+\hline
+\textbf{অসুবিধা} & লেখা, মনে রাখা, debug ও maintain করা কঠিন; machine dependent। \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Machine language দ্রুত হলেও programmer-friendly নয়। দ্রুত execution আর সহজ programming একই জিনিস নয়।
+\end{mistakebox}

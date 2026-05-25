@@ -7,20 +7,56 @@
 \else
   \usepackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX}
-  % Primary Bangla font (Kalpurush). Provide fallbacks for missing shapes
-  % and fake bold/slant when the font lacks those variants.
-  \setmainfont[
-    Path=C:/Windows/Fonts/,
-    Extension=.ttf,
-    Script=Bengali,
-    UprightFont = * ,
-    BoldFont = * ,
-    ItalicFont = * ,
-    BoldItalicFont = * ,
-    FakeBold=1.4,
-    FakeSlant=0.18,
-    Scale=MatchLowercase
-  ]{kalpurush}
+  % Bengali font stack for clean book typography. Noto Serif Bengali gives
+  % the best long-form reading quality; Kalpurush/Siyam Rupali remain as
+  % fallbacks for machines where Noto is not installed.
+  \IfFontExistsTF{Noto Serif Bengali}{%
+    \setmainfont[
+      Script=Bengali,
+      Scale=MatchLowercase,
+      BoldFont={Noto Serif Bengali},
+      ItalicFont={Noto Serif Bengali},
+      BoldItalicFont={Noto Serif Bengali},
+      BoldFeatures={FakeBold=1.25},
+      ItalicFeatures={FakeSlant=0.12},
+      BoldItalicFeatures={FakeBold=1.25,FakeSlant=0.12}
+    ]{Noto Serif Bengali}
+  }{%
+    \IfFontExistsTF{Kalpurush}{%
+      \setmainfont[
+        Script=Bengali,
+        FakeBold=1.4,
+        FakeSlant=0.18,
+        Scale=MatchLowercase
+      ]{Kalpurush}
+    }{%
+      \setmainfont[
+        Script=Bengali,
+        FakeBold=1.3,
+        FakeSlant=0.15,
+        Scale=MatchLowercase
+      ]{Siyam Rupali}
+    }%
+  }
+
+  \IfFontExistsTF{Noto Sans Bengali}{%
+    \setsansfont[
+      Script=Bengali,
+      Scale=MatchLowercase,
+      BoldFont={Noto Sans Bengali},
+      ItalicFont={Noto Sans Bengali},
+      BoldItalicFont={Noto Sans Bengali},
+      BoldFeatures={FakeBold=1.2},
+      ItalicFeatures={FakeSlant=0.12},
+      BoldItalicFeatures={FakeBold=1.2,FakeSlant=0.12}
+    ]{Noto Sans Bengali}
+  }{%
+    \setsansfont[
+      Script=Bengali,
+      FakeBold=1.3,
+      Scale=MatchLowercase
+    ]{Kalpurush}
+  }
 \fi
 \usepackage{graphicx}
 % Allow using [H] float specifier and better placement control
@@ -63,9 +99,12 @@
 \graphicspath{{chapters/Chapter01/topics/03_virtual_reality/images/}{images/}}
 
 % Document-level settings (fonts, margins) to be standardized here.
-% Table of Contents depth: 0=chapters, 1=sections, 2=subsections
-% Show chapters and their sections/subsections in the TOC so topics appear there.
-\setcounter{tocdepth}{2}
+% Table of Contents depth: 0=chapters, 1=sections, 2=subsections.
+% Keep the TOC focused on chapters and main topic sections; detailed
+% subsections remain in the body to avoid an overlong contents section.
+\setcounter{tocdepth}{1}
+\emergencystretch=2em
+\hfuzz=1pt
 \setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=4pt}
 \setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
 

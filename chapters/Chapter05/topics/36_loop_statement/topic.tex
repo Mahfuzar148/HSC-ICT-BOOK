@@ -1,12 +1,34 @@
 % ১৪.১২ Loop Statement
 \section{Loop Statement}
 
-\begin{itemize}
-\item for, while, do...while
-\item Initialization, condition, increment/decrement
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী \texttt{for}, \texttt{while}, \texttt{do...while} loop-এর ব্যবহার লিখতে পারবে।
+\end{learningbox}
 
-\subsection{ব্যবহার}
-\begin{itemize}
-\item 1 থেকে n পর্যন্ত print, যোগফল, factorial, multiplication table
-\end{itemize}
+\begin{definitionbox}{Loop}
+একই statement বা statement block বারবার execute করার জন্য যে control structure ব্যবহৃত হয়, তাকে loop বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.44\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{Loop} & \textbf{ধারণা} & \textbf{Condition check} \\
+\hline
+\texttt{for} & count জানা থাকলে সুবিধাজনক & আগে \\
+\hline
+\texttt{while} & condition true থাকা পর্যন্ত চলে & আগে \\
+\hline
+\texttt{do...while} & অন্তত একবার চলে & পরে \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{verbatim}
+for (int i = 1; i <= 5; i++) {
+    printf("%d ", i);
+}
+\end{verbatim}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Loop condition update না করলে infinite loop হতে পারে। initialization, condition, increment/decrement খেয়াল রাখতে হবে।
+\end{mistakebox}

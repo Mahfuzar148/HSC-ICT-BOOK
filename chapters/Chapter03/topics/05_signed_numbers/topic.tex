@@ -13,3 +13,38 @@
 \item 1's complement
 \item 2's complement
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item signed ও unsigned number আলাদা করতে।
+\item sign bit, magnitude bit, MSB ও LSB ব্যাখ্যা করতে।
+\item sign-magnitude, 1's complement ও 2's complement তুলনা করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Signed number}
+যে binary representation-এ সংখ্যার ধনাত্মক বা ঋণাত্মক চিহ্ন প্রকাশ করা হয়, তাকে signed number বলা হয়। সাধারণত সর্ববাম bit বা MSB sign bit হিসেবে ব্যবহৃত হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{পদ্ধতি} & \textbf{ধারণা} & \textbf{সীমাবদ্ধতা/সুবিধা} \\
+\hline
+Sign-magnitude & MSB sign, বাকি অংশ magnitude & +0 ও -0 দুইভাবে থাকতে পারে \\
+\hline
+1's complement & positive number-এর bit উল্টে negative & end-around carry দরকার হতে পারে \\
+\hline
+2's complement & 1's complement-এর সাথে 1 যোগ & arithmetic সহজ, computer-এ বেশি ব্যবহৃত \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{8-bit sign-magnitude}
+$+13=(00001101)_2$ হলে $-13=(10001101)_2$। এখানে প্রথম bit 1 হওয়ায় সংখ্যাটি ঋণাত্মক, বাকি 7 bit magnitude প্রকাশ করছে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+signed number-এর প্রশ্নে bit count উল্লেখ করা জরুরি। 4-bit, 8-bit বা 16-bit ভেদে range ও representation বদলে যায়।
+\end{boardbox}

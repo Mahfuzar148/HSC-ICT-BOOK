@@ -1,19 +1,155 @@
-% Chapter 02.10: Cloud computing basics
 \section{Cloud Computing}
 
-\subsection{Cloud Overview}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Definition of cloud computing
-\item On-demand resource provisioning
+\item cloud computing-এর মৌলিক ধারণা বলতে।
+\item on-demand resource, scalability এবং internet-based service ব্যাখ্যা করতে।
+\item IaaS, PaaS ও SaaS compare করতে।
+\item public, private, hybrid ও community cloud আলাদা করতে।
+\item cloud service model-এর tree diagram লিখতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{Service Models}
+Cloud computing হলো এমন একটি model, যেখানে local device-এ সব resource না রেখে internet-এর মাধ্যমে remote server থেকে storage, software, processing ও platform ব্যবহার করা হয়। এতে cost কমে, flexibility বাড়ে এবং collaboration সহজ হয়।
+
+\begin{definitionbox}{Cloud computing}
+ইন্টারনেটের মাধ্যমে demand অনুযায়ী computing resource, storage, software এবং platform ব্যবহার করার পদ্ধতিকে cloud computing বলা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{Cloud computing-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item IaaS, PaaS, SaaS
-\item উদাহরণ ও ব্যবহারক্ষেত্র
+\item on-demand access
+\item scalability
+\item resource pooling
+\item pay-as-you-go model
+\item device-independent access
 \end{itemize}
+\end{keypointbox}
+
+\subsection{Cloud Service Models}
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Cloud Service Models} \\
+\hline
+IaaS \hspace{1.0cm} PaaS \hspace{1.0cm} SaaS \\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.14\textwidth}|p{0.24\textwidth}|p{0.40\textwidth}|}
+\hline
+\textbf{Model} & \textbf{Full form} & \textbf{কাজ} \\
+\hline
+IaaS & Infrastructure as a Service & virtual server, storage, network resource \\
+\hline
+PaaS & Platform as a Service & application build/test platform \\
+\hline
+SaaS & Software as a Service & ready-to-use software via web \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{উদাহরণ}
+Cloud storage IaaS-এর কাছাকাছি service দিতে পারে, developer platform PaaS-এর উদাহরণ, আর Gmail, Google Docs, Office 365 ধরনের service SaaS-এর উদাহরণ।
+\end{examplebox}
 
 \subsection{Deployment Models}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.26\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{Model} & \textbf{Ownership / access} & \textbf{Use} \\
+\hline
+Public cloud & provider-managed shared platform & general public, startups \\
+\hline
+Private cloud & single organization use & bank, government, enterprise \\
+\hline
+Hybrid cloud & public + private mix & flexible workload management \\
+\hline
+Community cloud & shared by related organizations & education, research consortium \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{বাংলাদেশ প্রেক্ষিত}
+অনলাইন class platform, document sharing, backup storage এবং software subscription cloud computing-এর বাস্তব উদাহরণ। এ ধরনের service remote work, freelancing এবং institutional collaboration সহজ করে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Cloud computing প্রশ্নে definition-এর পরে service model আর deployment model আলাদা করে লিখতে হয়। IaaS, PaaS, SaaS গুলোর role mix না করে লিখতে হবে।
+\end{boardbox}
+
+\begin{recapbox}
 \begin{itemize}
-\item Public, Private, Hybrid, Community
+\item Cloud computing internet-based resource access।
+\item IaaS infrastructure, PaaS platform, SaaS software দেয়।
+\item Public, private, hybrid ও community deployment model আছে।
+\item On-demand এবং scalable হওয়াই cloud-এর বড় শক্তি।
 \end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item Ready-to-use web software কোন model-এর উদাহরণ?\\
+ক. IaaS \quad খ. PaaS \quad গ. SaaS \quad ঘ. LAN
+\item কোন deployment model সাধারণত একটি প্রতিষ্ঠানের নিজস্ব ব্যবহারের জন্য থাকে?\\
+ক. Public cloud \quad খ. Private cloud \quad গ. Community cloud \quad ঘ. Open cloud
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Cloud computing কী?
+\item SaaS ও PaaS-এর মধ্যে পার্থক্য লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি কলেজের শিক্ষার্থী online document, remote assignment submission এবং cloud storage ব্যবহার করছে। উদ্দীপকের আলোকে cloud computing-এর service model ও সুবিধা বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশ chapter 2 cloud summary, local handnote, update CQ resource এবং common cloud-computing references মিলিয়ে লেখা হয়েছে।
+\end{sourcebox}
+
+\subsection{Cloud service model}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{Layer diagram placeholder}\\[4pt]
+User/Application\\
+SaaS: ready software\\
+PaaS: development platform\\
+IaaS: virtual machine, storage, network\\
+Data Center: server, storage, power, cooling
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{Model} & \textbf{ব্যবহারকারী কী পায়} & \textbf{উদাহরণধর্মী ব্যবহার} \\
+\hline
+IaaS & virtual server, storage, network & website hosting, backup server \\
+\hline
+PaaS & app তৈরি/চালানোর platform & web app deployment, database platform \\
+\hline
+SaaS & ready-to-use software & email, online document, LMS \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{Cloud-এর সুবিধা}
+\begin{itemize}
+\item প্রয়োজন অনুযায়ী resource বাড়ানো-কমানো যায়।
+\item শুরুতে hardware কেনার খরচ কমে।
+\item internet থাকলে যেকোনো জায়গা থেকে access করা যায়।
+\item backup, collaboration ও maintenance সহজ হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Cloud মানে শুধু online storage নয়। Cloud computing-এ server, storage, platform, software, network resource—সবই service হিসেবে পাওয়া যায়।
+\end{mistakebox}

@@ -1,13 +1,29 @@
 % ১০. Database Relation
 \section{Database Relation}
+রিলেশনাল ডেটাবেজে একাধিক টেবিল আলাদা রাখা হলেও প্রয়োজন অনুযায়ী তাদের মধ্যে সম্পর্ক তৈরি করা হয়। এই সম্পর্ক তৈরি হয় সাধারণত Primary key ও Foreign key-এর মাধ্যমে।
 
-\subsection{Relation কী ও দরকারি ধরন}
-\begin{itemize}
-\item One-to-One, One-to-Many, Many-to-Many ব্যাখ্যা
-\item Referential integrity সংজ্ঞা
-\end{itemize}
+\begin{definitionbox}{Primary Key ও Foreign Key}
+\textbf{Primary Key} হলো এমন ফিল্ড যা প্রতিটি রেকর্ডকে অনন্যভাবে শনাক্ত করে। \textbf{Foreign Key} হলো এক টেবিলের এমন ফিল্ড, যা অন্য টেবিলের Primary key-এর সাথে সম্পর্ক তৈরি করে।
+\end{definitionbox}
 
-\subsection{Junction table আলোচনা}
-\begin{itemize}
-\item Many-to-Many সম্পর্কের জন্য junction table ব্যবহারের ধারণা
-\end{itemize}
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.45\textwidth}|p{0.20\textwidth}|}
+\hline
+রিলেশনের ধরন & ব্যাখ্যা & উদাহরণ \\
+\hline
+One-to-One & এক টেবিলের এক রেকর্ড অন্য টেবিলের এক রেকর্ডের সাথে যুক্ত & Person--Passport \\
+\hline
+One-to-Many & এক টেবিলের এক রেকর্ড অন্য টেবিলের একাধিক রেকর্ডের সাথে যুক্ত & Customer--Order \\
+\hline
+Many-to-Many & দুই পাশে একাধিক রেকর্ড যুক্ত; সাধারণত Junction table লাগে & Student--Course \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{চিত্রের স্থানধারক}
+Customer(CustomerID, Name) এবং Order(OrderID, CustomerID, Date) টেবিল দেখিয়ে CustomerID-এর মাধ্যমে One-to-Many relation আঁকা হবে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+HSC পরীক্ষায় One-to-Many relation সবচেয়ে বেশি আসে। Parent table-এর Primary key child table-এ Foreign key হিসেবে ব্যবহার হয়।
+\end{boardbox}

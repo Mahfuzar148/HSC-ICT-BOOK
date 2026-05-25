@@ -1,21 +1,160 @@
-% Chapter 02.4: Wired media
 \section{Wired Media}
 
-\subsection{Twisted Pair}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item UTP ও STP প্যার সম্পর্কে
-\item ব্যবহার: LAN, telephone lines
+\item twisted pair, coaxial cable ও fiber optic cable চিনতে।
+\item UTP, STP, single-mode ও multi-mode-এর পার্থক্য বলতে।
+\item wired media কেন ব্যবহার করা হয় তা বোঝাতে।
+\item একটি comparison table ব্যবহার করে cable type compare করতে।
+\item board প্রশ্নে cable নির্বাচন যুক্তিসহ লিখতে।
 \end{itemize}
+\end{learningbox}
+
+Wired media হলো guided transmission-এর এমন রূপ, যেখানে signal নির্দিষ্ট cable-এর ভেতর দিয়ে যায়। এটি office network, backbone connection, telephone line, broadband access এবং data center-এর জন্য খুবই গুরুত্বপূর্ণ।
+
+\begin{definitionbox}{Wired media}
+যে transmission media-তে data signal physical cable বা conductor-এর মাধ্যমে প্রেরিত হয়, তাকে wired media বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Wired Media} \\
+\hline
+Twisted Pair \hspace{1.2cm} Coaxial Cable \hspace{1.2cm} Fiber Optic Cable \\
+\end{tabular}
+\end{center}
+
+\subsection{Twisted Pair Cable}
+
+Twisted pair cable-এ দুইটি insulated copper wire একসঙ্গে পেঁচানো থাকে। এই twisting electromagnetic interference কমাতে সাহায্য করে। এটি সবচেয়ে common এবং comparatively কম খরচের wired medium।
+
+\begin{definitionbox}{Twisted pair cable}
+দুইটি insulated copper conductor পরস্পর পেঁচানো অবস্থায় যে cable তৈরি হয়, তাকে twisted pair cable বলে।
+\end{definitionbox}
+
+\begin{keypointbox}{Twisted pair-এর ধরন}
+\begin{itemize}
+\item UTP: Unshielded Twisted Pair
+\item STP: Shielded Twisted Pair
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{UTP বনাম STP}
+UTP তুলনামূলক সস্তা এবং LAN-এ খুব ব্যবহৃত। STP-তে shielding থাকায় noise কম আসে, তাই interference-প্রবণ জায়গায় এটি ভালো।
+\end{examplebox}
 
 \subsection{Coaxial Cable}
-\begin{itemize}
-\item উদাহরণ: broadband cable internet
-\item নির্মাণ ও ব্যবহার
-\end{itemize}
+
+Coaxial cable-এ একটি central conductor, insulating layer, metallic shield এবং outer jacket থাকে। এটি twisted pair-এর তুলনায় বেশি bandwidth এবং better shielding দেয়।
+
+\begin{definitionbox}{Coaxial cable}
+একটি কেন্দ্রীয় conductor-এর চারপাশে insulating material ও metallic shield নিয়ে যে cable গঠিত হয়, তাকে coaxial cable বলা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{ব্যবহার}
+পুরনো cable television, broadband access, CCTV এবং কিছু networking system-এ coaxial cable ব্যবহৃত হয়।
+\end{examplebox}
 
 \subsection{Fiber Optic Cable}
+
+Fiber optic cable glass বা plastic fiber-এর ভেতর light pulse ব্যবহার করে data পাঠায়। এটি খুব high speed, low loss এবং long-distance communication-এর জন্য উপযোগী।
+
+\begin{definitionbox}{Fiber optic cable}
+যে cable-এ data light signal-এর মাধ্যমে glass বা plastic fiber দিয়ে প্রেরিত হয়, তাকে fiber optic cable বলে।
+\end{definitionbox}
+
+\begin{keypointbox}{Fiber optic-এর ধরন}
 \begin{itemize}
-\item Light based transmission
-\item Single mode, Multi mode
-\item সুবিধা: উচ্চ ব্যান্ডউইডথ, কম ক্ষতি
+\item Single-mode fiber
+\item Multi-mode fiber
 \end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{Single-mode ও multi-mode}
+Single-mode fiber long-distance backbone-এর জন্য উপযুক্ত। Multi-mode তুলনামূলক ছোট distance ও campus network-এ ভালো কাজ করে।
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.20\textwidth}|}
+\hline
+\textbf{Cable} & \textbf{Signal} & \textbf{Strength} & \textbf{Common use} \\
+\hline
+Twisted pair & electrical & কম খরচ, সহজ স্থাপন & LAN, telephone \\
+\hline
+Coaxial & electrical & shielding, moderate bandwidth & cable TV, broadband \\
+\hline
+Fiber optic & light & খুব high speed, long distance & backbone, ISP link \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Wired media question-এ “কোন cable কেন বেশি উপযোগী” এই reasoning-টা important। শুধু নাম না লিখে speed, distance, noise এবং cost উল্লেখ করতে হয়।
+\end{boardbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Fiber optic cable-এ current যায় না, light যায়। তাই এটি electromagnetic interference-এ খুব কম প্রভাবিত হয়।
+\end{mistakebox}
+
+\begin{recapbox}
+\begin{itemize}
+\item Twisted pair কম খরচে LAN-এ ব্যবহৃত হয়।
+\item Coaxial cable shielding বেশি দেয় এবং bandwidth মাঝারি।
+\item Fiber optic cable সবচেয়ে দ্রুত এবং long-distance-এর জন্য শক্তিশালী।
+\item UTP, STP, single-mode ও multi-mode নামগুলো exam-এ খুব গুরুত্বপূর্ণ।
+\end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item কোন cable light ব্যবহার করে data পাঠায়?\\
+ক. Twisted pair \quad খ. Coaxial \quad গ. Fiber optic \quad ঘ. UTP
+\item STP-এর প্রধান বৈশিষ্ট্য কোনটি?\\
+ক. shielding নেই \quad খ. noise কমানোর জন্য shielding আছে \quad গ. light ব্যবহার করে \quad ঘ. wireless
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Twisted pair cable-এর দুটি ধরন লেখ।
+\item Fiber optic cable-এর একটি সুবিধা ও একটি ব্যবহার লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি বিশ্ববিদ্যালয়ে computer lab-এর LAN, campus backbone এবং CCTV line-এ ভিন্ন ভিন্ন cable ব্যবহার করা হচ্ছে। উদ্দীপকের আলোকে wired media নির্বাচন বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশটি Chapter 2 main sheet, handnote PDF, এবং standard networking cable references মিলিয়ে সাজানো হয়েছে।
+\end{sourcebox}
+
+\subsection{তারযুক্ত মাধ্যমের গঠনচিত্র}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Image placeholders}\\[4pt]
+১. Twisted Pair Cable: জোড়া জোড়া পাকানো copper wire, insulation, outer jacket।\\
+২. Coaxial Cable: central conductor, dielectric insulator, metallic shield, outer jacket।\\
+৩. Optical Fiber: core, cladding, protective jacket; light signal-এর পথ দেখাতে হবে।
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.23\textwidth}|p{0.23\textwidth}|p{0.23\textwidth}|p{0.23\textwidth}|}
+\hline
+\textbf{মাধ্যম} & \textbf{সিগন্যাল} & \textbf{সুবিধা} & \textbf{সীমাবদ্ধতা} \\
+\hline
+Twisted pair & বৈদ্যুতিক & সস্তা, সহজ স্থাপন & দূরত্ব ও noise সীমাবদ্ধতা \\
+\hline
+Coaxial & বৈদ্যুতিক & shield থাকায় interference কম & UTP-এর চেয়ে ভারী ও ব্যয়বহুল \\
+\hline
+Optical fiber & আলো & অত্যন্ত দ্রুত, EMI প্রভাব কম & স্থাপন ও মেরামত তুলনামূলক কঠিন \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Fiber optic কেন দ্রুত এবং নিরাপদ—এই প্রশ্নে ``আলো সিগন্যাল'', ``কম attenuation'', ``EMI প্রভাব কম'' এবং ``high bandwidth'' শব্দগুলো ব্যবহার করলে উত্তর শক্ত হয়।
+\end{boardbox}

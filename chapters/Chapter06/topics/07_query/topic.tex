@@ -1,18 +1,49 @@
 % ৭. Query
 \section{Query}
+ডেটাবেজে প্রচুর ডেটা থাকলে প্রয়োজনীয় ডেটা দ্রুত বের করার জন্য কুয়েরি ব্যবহার করা হয়। কুয়েরি নির্দিষ্ট শর্ত অনুযায়ী টেবিল থেকে রেকর্ড নির্বাচন, গণনা, সাজানো বা পরিবর্তনের নির্দেশ দিতে পারে।
 
-\subsection{Query কী}
-\begin{itemize}
-\item Database থেকে শর্তমত record বের করার পদ্ধতি
-\end{itemize}
+\begin{definitionbox}{Query}
+ডেটাবেজ থেকে নির্দিষ্ট শর্ত অনুযায়ী প্রয়োজনীয় ডেটা খুঁজে বের করা, প্রদর্শন করা বা পরিবর্তনের নির্দেশকে Query বলে।
+\end{definitionbox}
 
-\subsection{Query-এর ধরন ও Condition}
-\begin{itemize}
-\item Select, Parameter, Action, Update, Delete, Append, Make Table
-\item Condition: =, >, <, >=, <=, <>, AND, OR, LIKE, BETWEEN
-\end{itemize}
+\begin{keypointbox}{SQL-এর মৌলিক রূপ}
+\begin{verbatim}
+SELECT field1, field2
+FROM table_name
+WHERE condition
+ORDER BY field_name;
+\end{verbatim}
+\end{keypointbox}
 
-\subsection{প্র্যাকটিক্যাল উদাহরণ}
-\begin{itemize}
-\item GPA 5.00 ছাত্রদের তালিকা, salary>20000 তালিকা ইত্যাদি
-\end{itemize}
+\begin{examplebox}{নমুনা SQL}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE GPA >= 5.00;
+
+SELECT Name, GroupName
+FROM Student
+WHERE GroupName = 'Science'
+ORDER BY Name ASC;
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|l|p{0.56\textwidth}|}
+\hline
+অপারেটর & কাজ \\
+\hline
+=, <, >, <=, >= & তুলনা করা \\
+\hline
+AND, OR, NOT & একাধিক শর্ত যুক্ত করা \\
+\hline
+LIKE & প্যাটার্ন মিলিয়ে খোঁজা \\
+\hline
+BETWEEN & নির্দিষ্ট সীমার মধ্যে মান খোঁজা \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Select query, Parameter query, Action query, Update query, Delete query, Append query ইত্যাদি কুয়েরির ধরন হিসেবে জানতে হবে। HSC ব্যবহারিকে সাধারণত Select query বেশি ব্যবহৃত হয়।
+\end{boardbox}

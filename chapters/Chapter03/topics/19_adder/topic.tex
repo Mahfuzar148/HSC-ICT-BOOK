@@ -17,3 +17,53 @@
 \begin{itemize}
 \item পার্থক্য ও ব্যবহার
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item half adder ও full adder-এর input-output লিখতে।
+\item Sum ও Carry-এর Boolean expression নির্ণয় করতে।
+\item multi-bit binary addition-এ full adder-এর প্রয়োজন ব্যাখ্যা করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Half adder}
+দুইটি single-bit binary input যোগ করে Sum ও Carry output দেয় যে combinational circuit, তাকে half adder বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A$ & $B$ & Sum $S=A\oplus B$ & Carry $C=A\cdot B$ \\
+\hline
+0 & 0 & 0 & 0 \\
+\hline
+0 & 1 & 1 & 0 \\
+\hline
+1 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{definitionbox}{Full adder}
+তিনটি input $A$, $B$ এবং carry-in যোগ করে Sum ও carry-out দেয় যে circuit, তাকে full adder বলা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{Formula}
+\begin{itemize}
+\item Half adder: $S=A\oplus B$, $C=A\cdot B$
+\item Full adder: $S=A\oplus B\oplus C_{in}$
+\item Full adder carry: $C_{out}=AB+BC_{in}+AC_{in}$
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Circuit placeholders}\\[4pt]
+Half adder: XOR gate for Sum, AND gate for Carry।\\
+Full adder: দুটি half adder + একটি OR gate দেখাতে হবে।
+}}
+\end{center}

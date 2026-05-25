@@ -1,12 +1,14 @@
 % ১৪.১১ Conditional Statement
 \section{Conditional Statement}
 
-\begin{itemize}
-\item if, if...else, else if ladder, nested if
-\item switch statement
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী \texttt{if}, \texttt{if...else}, nested if এবং \texttt{switch} ব্যবহার বুঝতে পারবে।
+\end{learningbox}
 
-\subsection{উদাহরণ}
+\begin{definitionbox}{Conditional statement}
+যে statement condition true/false অনুযায়ী program-এর flow পরিবর্তন করে, তাকে conditional statement বলা হয়।
+\end{definitionbox}
+
 \begin{verbatim}
 if (mark >= 33) {
     printf("Pass");
@@ -14,3 +16,21 @@ if (mark >= 33) {
     printf("Fail");
 }
 \end{verbatim}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Decision flowchart placeholder}\\[4pt]
+Input mark $\rightarrow$ mark >= 33? $\rightarrow$ Yes: Pass, No: Fail
+}}
+\end{center}
+
+\begin{keypointbox}{ধরন}
+\begin{itemize}
+\item \texttt{if}
+\item \texttt{if...else}
+\item \texttt{else if ladder}
+\item nested \texttt{if}
+\item \texttt{switch}
+\end{itemize}
+\end{keypointbox}

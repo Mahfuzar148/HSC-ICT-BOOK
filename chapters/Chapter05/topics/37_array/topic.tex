@@ -1,12 +1,27 @@
 % ১৪.১৩ Array
 \section{Array}
 
-\begin{itemize}
-\item Array কী, index, one-dimensional, two-dimensional
-\item declaration, initialization, input-output
-\end{itemize}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী array declaration, index এবং one-dimensional array ব্যবহার করতে পারবে।
+\end{learningbox}
 
-\subsection{উদাহরণ}
+\begin{definitionbox}{Array}
+একই data type-এর একাধিক data একই নামের অধীনে ধারাবাহিক memory location-এ রাখার পদ্ধতিকে array বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Array memory placeholder}\\[4pt]
+\texttt{marks[0]} \quad \texttt{marks[1]} \quad \texttt{marks[2]} \quad \texttt{marks[3]} \quad \texttt{marks[4]}
+}}
+\end{center}
+
 \begin{verbatim}
-int marks[5];
+int marks[5] = {80, 75, 90, 60, 85};
+printf("%d", marks[0]);
 \end{verbatim}
+
+\begin{mistakebox}{সাধারণ ভুল}
+C array index 0 থেকে শুরু হয়। \texttt{marks[5]} array-তে valid index 0 থেকে 4।
+\end{mistakebox}

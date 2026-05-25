@@ -1,17 +1,170 @@
-% Chapter 02.7: Computer networking objectives and types
 \section{Computer Networking: Objectives and Types}
 
-\subsection{Objectives of Networking}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Resource sharing
-\item Communication and collaboration
-\item Centralized data access
-\item Reliability and fault tolerance
+\item networking-এর উদ্দেশ্য বলতে।
+\item PAN, LAN, MAN ও WAN compare করতে।
+\item intranet ও extranet-এর ব্যবহার ব্যাখ্যা করতে।
+\item area-based network classification tree আকারে দেখাতে।
+\item network type নির্বাচন করার যুক্তি লিখতে।
 \end{itemize}
+\end{learningbox}
+
+Computer networking হলো একাধিক computer বা device-কে যুক্ত করে resource share, communication এবং coordinated কাজ করানোর ব্যবস্থা। এটি modern office, school, bank, hospital, shop এবং online service-এর backbone।
+
+\begin{definitionbox}{Computer networking}
+দুই বা ততোধিক computer বা device-কে communication media দিয়ে সংযুক্ত করে তথ্য ও resource আদান-প্রদান করার ব্যবস্থাকে computer networking বলা হয়।
+\end{definitionbox}
+
+\subsection{Objectives of Networking}
+
+\begin{keypointbox}{Networking-এর মূল উদ্দেশ্য}
+\begin{itemize}
+\item Resource sharing: printer, file, internet share করা।
+\item Communication: email, chat, video call, collaborative work।
+\item Centralized data access: data management সহজ করা।
+\item Reliability: backup ও fault tolerance বৃদ্ধি করা।
+\item Cost saving: একাধিক device একসঙ্গে use করা।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+একটি office-এ একটিমাত্র printer যদি সব computer share করে, তাহলে খরচ কমে এবং কাজ দ্রুত হয়। একইভাবে cloud folder share করলে document centrally access করা যায়।
+\end{examplebox}
 
 \subsection{Types of Networks}
+
+Network-এর পরিধি অনুযায়ী classification খুব গুরুত্বপূর্ণ।
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Computer Networks} \\
+\hline
+$PAN \rightarrow LAN \rightarrow MAN \rightarrow WAN$ \\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.16\textwidth}|p{0.22\textwidth}|p{0.36\textwidth}|}
+\hline
+\textbf{Type} & \textbf{Full form / area} & \textbf{Example} \\
+\hline
+PAN & Personal Area Network & mobile-phone and headset connection \\
+\hline
+LAN & Local Area Network & lab, office, home network \\
+\hline
+MAN & Metropolitan Area Network & city-wide institutional network \\
+\hline
+WAN & Wide Area Network & national or global network \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{definitionbox}{PAN}
+ব্যক্তিগত পরিসরে কয়েকটি device-এর মধ্যে যোগাযোগব্যবস্থাকে PAN বলে।
+\end{definitionbox}
+
+\begin{definitionbox}{LAN}
+একটি সীমিত এলাকা যেমন room, building, lab বা campus-এর মধ্যে network-কে LAN বলে।
+\end{definitionbox}
+
+\begin{definitionbox}{MAN}
+একটি শহর বা বৃহৎ metropolitan area জুড়ে বিস্তৃত network-কে MAN বলে।
+\end{definitionbox}
+
+\begin{definitionbox}{WAN}
+বিভিন্ন দেশ বা মহাদেশ জুড়ে বিস্তৃত network-কে WAN বলে।
+\end{definitionbox}
+
+\subsection{Intranet and Extranet}
+
+\begin{definitionbox}{Intranet}
+সংস্থার অভ্যন্তরীণ ব্যবহারকারীদের জন্য তৈরি private network-কে intranet বলে।
+\end{definitionbox}
+
+\begin{definitionbox}{Extranet}
+সংস্থার নির্দিষ্ট external partner বা client-কে controlled access দেওয়ার private network-কে extranet বলে।
+\end{definitionbox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Network type প্রশ্নে area, ownership এবং ব্যবহার একসঙ্গে লিখতে হয়। PAN-LAN-MAN-WAN-এর order মনে রাখা খুব গুরুত্বপূর্ণ।
+\end{boardbox}
+
+\begin{recapbox}
 \begin{itemize}
-\item LAN, MAN, WAN
-\item PAN
-\item Intranet, Extranet
+\item Networking resource sharing ও communication সহজ করে।
+\item PAN ছোট personal area, LAN local area, MAN city area, WAN global area cover করে।
+\item Intranet private internal network, extranet controlled external access network।
 \end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item একটি lab network সাধারণত কোন ধরনের?\\
+ক. PAN \quad খ. LAN \quad গ. MAN \quad ঘ. WAN
+\item Intranet-এর বৈশিষ্ট্য কোনটি?\\
+ক. public network \quad খ. private internal network \quad গ. satellite only \quad ঘ. no authentication
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Networking-এর দুটি উদ্দেশ্য লেখ।
+\item LAN ও WAN-এর মধ্যে পার্থক্য লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি প্রতিষ্ঠানের প্রধান office, regional branch এবং remote worker একই database ব্যবহার করছে। উদ্দীপকের আলোকে network type এবং objective বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশে chapter 2 network section, update CQ resource, এবং standard networking classification অনুসরণ করা হয়েছে।
+\end{sourcebox}
+
+\subsection{নেটওয়ার্কের উদ্দেশ্য ও বিস্তৃতি}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{Tree diagram placeholder: Computer Network Types}\\[4pt]
+Computer Network\\
+$\rightarrow$ PAN: personal area\\
+$\rightarrow$ LAN: room/building/campus lab\\
+$\rightarrow$ CAN: campus area\\
+$\rightarrow$ MAN: city area\\
+$\rightarrow$ WAN: country/worldwide
+}}
+\end{center}
+
+\begin{keypointbox}{নেটওয়ার্ক তৈরির উদ্দেশ্য}
+\begin{itemize}
+\item resource sharing: printer, file, software, internet connection ভাগাভাগি।
+\item communication: email, chat, video conference, online class।
+\item data sharing and backup: central server বা cloud-এ তথ্য রাখা।
+\item cost reduction: একই device বা service বহু ব্যবহারকারী ব্যবহার করতে পারে।
+\item management: lab, office বা institution-এর কাজ কেন্দ্রীয়ভাবে নিয়ন্ত্রণ।
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.16\textwidth}|p{0.28\textwidth}|p{0.40\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{পরিসর} & \textbf{উদাহরণ} \\
+\hline
+PAN & ব্যক্তিগত স্বল্প দূরত্ব & mobile থেকে Bluetooth headphone \\
+\hline
+LAN & কক্ষ/ভবন & school computer lab \\
+\hline
+CAN & campus & university বা college campus network \\
+\hline
+MAN & শহর & city-wide ISP network \\
+\hline
+WAN & দেশ/বিশ্ব & Internet, bank branch network \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+LAN এবং Wi-Fi একই জিনিস নয়। LAN হলো network-এর পরিসরভিত্তিক ধরন; Wi-Fi হলো LAN তৈরির একটি wireless technology।
+\end{mistakebox}

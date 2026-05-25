@@ -11,3 +11,44 @@
 \begin{itemize}
 \item Keyboard encoding, data compression
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item encoder-এর input-output relation লিখতে।
+\item $2^n$ input থেকে $n$ output ধারণা বুঝতে।
+\item priority encoder-এর প্রয়োজনীয়তা ব্যাখ্যা করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Encoder}
+যে combinational circuit একাধিক input line-এর সক্রিয় অবস্থাকে কম সংখ্যক binary output line-এ code করে, তাকে encoder বলা হয়। সাধারণ encoder-এ $2^n$ input এবং $n$ output থাকে।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{Block diagram placeholder: 4-to-2 Encoder}\\[4pt]
+Inputs: $D_0,D_1,D_2,D_3$ $\rightarrow$ Encoder block $\rightarrow$ Outputs: $Y_1,Y_0$
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Active input} & $Y_1$ & $Y_0$ \\
+\hline
+$D_0$ & 0 & 0 \\
+\hline
+$D_1$ & 0 & 1 \\
+\hline
+$D_2$ & 1 & 0 \\
+\hline
+$D_3$ & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Encoder-এ সাধারণত এক সময়ে একটি input active ধরা হয়। একাধিক input active হলে priority encoder দরকার হয়।
+\end{mistakebox}

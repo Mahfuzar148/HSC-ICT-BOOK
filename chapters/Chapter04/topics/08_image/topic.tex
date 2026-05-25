@@ -1,12 +1,54 @@
 % ৪.৮ ইমেজ নিয়ন্ত্রণ ও ব্যবহার
 \section{ইমেজ নিয়ন্ত্রণ ও ব্যবহার}
 
-\subsection{ইমেজ ট্যাগ}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item \texttt{<img src="path" alt="text" width="" height="" />}\
+\item \texttt{<img>} tag-এর syntax ও attribute ব্যবহার করতে।
+\item \texttt{src}, \texttt{alt}, \texttt{width}, \texttt{height} attribute ব্যাখ্যা করতে।
+\item image optimization ও accessibility-এর গুরুত্ব বুঝতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{অপ্টিমাইজেশন এবং অ্যাক্সেসিবিলিটি}
+\subsection{Image tag}
+HTML-এ image দেখাতে \texttt{<img>} tag ব্যবহার করা হয়। এটি সাধারণত empty tag, অর্থাৎ আলাদা closing tag থাকে না।
+
+\begin{definitionbox}{\texttt{<img>} tag}
+\texttt{<img src="photo.jpg" alt="Description">} syntax ব্যবহার করে web page-এ image যুক্ত করা যায়। \texttt{src} image file-এর path এবং \texttt{alt} বিকল্প text নির্দেশ করে।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{Attribute} & \textbf{কাজ} & \textbf{নোট} \\
+\hline
+\texttt{src} & image file-এর path & আবশ্যক \\
+\hline
+\texttt{alt} & image না দেখা গেলে text & accessibility-এর জন্য জরুরি \\
+\hline
+\texttt{width} & image-এর প্রস্থ & CSS দিয়ে করা ভালো \\
+\hline
+\texttt{height} & image-এর উচ্চতা & aspect ratio খেয়াল রাখতে হয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Image placeholder}\\[4pt]
+একটি sample web page screenshot যেখানে image, caption এবং alt text note থাকবে।
+}}
+\end{center}
+
+\begin{keypointbox}{Image optimization}
 \begin{itemize}
-\item alt attribute, responsive images, formats (WebP, JPEG, PNG)
+\item প্রয়োজনের চেয়ে বড় image ব্যবহার করলে page load ধীর হয়।
+\item photograph-এর জন্য JPEG/WebP, transparent graphic-এর জন্য PNG ব্যবহার করা যায়।
+\item অর্থবহ alt text screen reader ও search engine-এর জন্য সহায়ক।
 \end{itemize}
+\end{keypointbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\texttt{alt} attribute image-এর title নয়; এটি image না দেখা গেলে বা screen reader-এ বিকল্প বর্ণনা হিসেবে ব্যবহৃত হয়।
+\end{mistakebox}

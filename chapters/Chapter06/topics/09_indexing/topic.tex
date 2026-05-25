@@ -1,12 +1,22 @@
 % ৯. Indexing
 \section{Indexing}
+ইনডেক্সিং হলো বইয়ের সূচিপত্রের মতো একটি সহায়ক ব্যবস্থা, যা ডেটাবেজে নির্দিষ্ট রেকর্ড দ্রুত খুঁজে পেতে সাহায্য করে। বড় টেবিলে বারবার অনুসন্ধান করা হলে ইনডেক্স খুব কার্যকর।
 
-\subsection{Indexing কী}
-\begin{itemize}
-\item দ্রুত search ও query performance বাড়াতে index তৈরির পদ্ধতি
-\end{itemize}
+\begin{definitionbox}{Indexing}
+কোনো টেবিলের নির্দিষ্ট ফিল্ডের মানের ভিত্তিতে দ্রুত অনুসন্ধানের জন্য তৈরি বিশেষ ডেটা কাঠামোকে Index বলে; এই প্রক্রিয়াকে Indexing বলে।
+\end{definitionbox}
 
-\subsection{সুবিধা ও অসুবিধা}
+\begin{keypointbox}{সুবিধা ও সীমাবদ্ধতা}
 \begin{itemize}
-\item সুবিধা: দ্রুত search, sorting সহজ; অসুবিধা: storage বাড়ায়, update ধীর
+    \item সুবিধা: অনুসন্ধান দ্রুত হয়, Sort ও Join অপারেশনে সহায়তা করে।
+    \item সীমাবদ্ধতা: অতিরিক্ত স্টোরেজ লাগে এবং Insert/Update/Delete কিছুটা ধীর হতে পারে।
 \end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{ব্যবহার}
+StudentID, Roll, NID, AccountNo-এর মতো অনন্য বা বেশি অনুসন্ধানযোগ্য ফিল্ডে ইনডেক্স রাখা উপযোগী। কিন্তু Address বা Comment-এর মতো বড় লেখা ফিল্ডে সাধারণত ইনডেক্স কম দরকার।
+\end{examplebox}
+
+\begin{mistakebox}{Sorting বনাম Indexing}
+Sorting ডেটা প্রদর্শনের ক্রম বদলায়। Indexing মূলত অনুসন্ধান দ্রুত করার জন্য সহায়ক কাঠামো তৈরি করে। দুইটি একই বিষয় নয়।
+\end{mistakebox}

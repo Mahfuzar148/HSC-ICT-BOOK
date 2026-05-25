@@ -15,3 +15,40 @@
 \begin{itemize}
 \item Truth table ও gate দিয়ে প্রমাণ
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item De Morgan-এর দুইটি উপপাদ্য লিখতে।
+\item truth table দিয়ে উপপাদ্য যাচাই করতে।
+\item NAND/NOR gate বুঝতে De Morgan ব্যবহার করতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{De Morgan-এর মূল কথা}
+কোনো sum বা product-এর উপর complement থাকলে complement ভেতরে ঢোকানোর সময় operator বদলে যায়: OR বদলে AND, AND বদলে OR।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A$ & $B$ & $\overline{A+B}$ & $\overline{A}\cdot\overline{B}$ \\
+\hline
+0 & 0 & 1 & 1 \\
+\hline
+0 & 1 & 0 & 0 \\
+\hline
+1 & 0 & 0 & 0 \\
+\hline
+1 & 1 & 0 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{প্রয়োগ}
+$\overline{A+\overline{B}}=\overline{A}\cdot B$। কারণ complement ভেতরে ঢুকলে $+$ বদলে $\cdot$ হয় এবং প্রতিটি term complement হয়।
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+$\overline{A+B}$ কখনোই $\overline{A}+\overline{B}$ নয়। De Morgan প্রয়োগ করলে operator বদলাতে হবে।
+\end{mistakebox}

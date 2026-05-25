@@ -1,24 +1,154 @@
-% Chapter 02.6: Mobile communication and generations
 \section{Mobile Communication and Generations}
 
-\subsection{Cellular Concept}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Cell, Base Station, Mobile Switching Center
-\item Frequency reuse
+\item cellular concept-এর মৌলিক ধারণা ব্যাখ্যা করতে।
+\item mobile communication generation 1G থেকে 5G পর্যন্ত compare করতে।
+\item handover, roaming ও authentication-এর ভূমিকা বুঝতে।
+\item mobile network evolution-এর timeline লিখতে।
+\item আধুনিক mobile internet-এর বৈশিষ্ট্য board-style answer-এ লিখতে।
 \end{itemize}
+\end{learningbox}
+
+Mobile communication এমন একটি ব্যবস্থা, যেখানে ব্যবহারকারী চলমান অবস্থাতেও voice, message, data ও multimedia service পেতে পারে। এর ভিত্তি হলো cellular network।
+
+\begin{definitionbox}{Mobile communication}
+মোবাইল ডিভাইস ব্যবহার করে চলমান অবস্থায় voice, data এবং multimedia আদান-প্রদানের প্রযুক্তিকে mobile communication বলা হয়।
+\end{definitionbox}
+
+\subsection{Cellular Concept}
+
+Cellular network-এ একটি বড় coverage area ছোট ছোট cell-এ ভাগ করা হয়। প্রতিটি cell-এ base station থাকে এবং একই frequency পুনর্ব্যবহার করা যায়। ফলে বেশি ব্যবহারকারীকে একই সাথে সেবা দেওয়া সম্ভব হয়।
+
+\begin{keypointbox}{Cellular network-এর অংশ}
+\begin{itemize}
+\item Cell: coverage-এর ছোট area
+\item Base station: signal পাঠানো ও গ্রহণের কেন্দ্র
+\item Mobile switching center: connection control ও handover management
+\item Frequency reuse: channel দক্ষতার সঙ্গে পুনরায় ব্যবহার
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{Cellular ধারণা}
+একটি শহরকে অনেক cell-এ ভাগ করলে একই frequency আলাদা cell-এ ব্যবহৃত হতে পারে। এতে network capacity বাড়ে এবং spectrum waste কমে।
+\end{examplebox}
 
 \subsection{Generations of Mobile Communication}
+
+\begin{center}
+\begin{tabular}{|p{0.13\textwidth}|p{0.24\textwidth}|p{0.43\textwidth}|}
+\hline
+\textbf{Gen} & \textbf{Type} & \textbf{মূল বৈশিষ্ট্য} \\
+\hline
+1G & Analog & voice-only, কম security, basic mobile telephony \\
+\hline
+2G & Digital & GSM, SMS, better voice quality, basic data \\
+\hline
+3G & Digital & mobile internet, video call, higher data transfer \\
+\hline
+4G & IP-based digital & LTE, fast internet, streaming, app-centric use \\
+\hline
+5G & advanced broadband & very low latency, IoT support, ultra-fast service \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{definitionbox}{5G}
+5G হলো mobile communication-এর এমন advanced generation, যা খুব দ্রুত data transfer, কম latency এবং massive device connectivity সমর্থন করে।
+\end{definitionbox}
+
+\begin{keypointbox}{Generation trend}
 \begin{itemize}
-\item 1G: Analog
-\item 2G: Digital (GSM)
-\item 3G: UMTS, higher data
-\item 4G: LTE
-\item 5G: enhanced mobile broadband, low latency
+\item voice থেকে data-এর দিকে অগ্রগতি হয়েছে।
+\item speed ক্রমে বেড়েছে।
+\item security ও capacity উন্নত হয়েছে।
+\item multimedia ও IoT support বেড়েছে।
 \end{itemize}
+\end{keypointbox}
 
 \subsection{Mobile Network Basics}
+
+\begin{definitionbox}{Handover}
+চলমান user এক cell থেকে অন্য cell-এ গেলে call বা data session না ভেঙে connection transfer করার প্রক্রিয়াকে handover বলা হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{Roaming}
+নিজ network coverage-এর বাইরে অন্য network-এর coverage ব্যবহার করে service গ্রহণ করার সক্ষমতাকে roaming বলে।
+\end{definitionbox}
+
+\begin{examplebox}{SIM and authentication}
+SIM user identity বহন করে, আর authentication নিশ্চিত করে যে network-এ সঠিক subscriber যুক্ত হচ্ছে কি না।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+1G to 5G প্রশ্নে শুধু speed না লিখে voice, data, latency, security ও application উল্লেখ করতে হয়। Handover ও roaming definition-সহ example দিলে উত্তর শক্তিশালী হয়।
+\end{boardbox}
+
+\begin{recapbox}
 \begin{itemize}
-\item Handover types
-\item Roaming
-\item SIM and authentication
+\item Mobile communication চলমান অবস্থায় service দেয়।
+\item Cellular concept network capacity বাড়ায়।
+\item 1G analog, 2G digital, 3G internet, 4G LTE, 5G ultra-fast network।
+\item Handover, roaming ও authentication mobile network-এর essential part।
 \end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item 2G-এর প্রধান বৈশিষ্ট্য কোনটি?\\
+ক. Analog voice only \quad খ. Digital voice and SMS \quad গ. Ultra-low latency \quad ঘ. Satellite-only
+\item এক cell থেকে অন্য cell-এ call transfer কোনটি?\\
+ক. Roaming \quad খ. Authentication \quad গ. Handover \quad ঘ. Packet switching
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Cellular concept কী?
+\item Roaming বলতে কী বোঝায়?
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একজন ব্যবহারকারী শহর থেকে গ্রামে যেতে যেতে ভিডিও call চালু রেখেছেন এবং network বদলাচ্ছে। উদ্দীপকের আলোকে handover, roaming ও cellular concept বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশটি chapter 2 handnote, mobile generation overview এবং standard cellular-network concepts মিলিয়ে লেখা হয়েছে।
+\end{sourcebox}
+
+\subsection{Mobile generation timeline}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{Timeline diagram placeholder}\\[4pt]
+1G: Analog voice $\rightarrow$ 2G: Digital voice/SMS $\rightarrow$ 3G: Mobile internet/video call $\rightarrow$ 4G: IP-based high-speed data $\rightarrow$ 5G: ultra-low latency, IoT, high capacity
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.14\textwidth}|p{0.23\textwidth}|p{0.25\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{প্রজন্ম} & \textbf{প্রধান ধরন} & \textbf{সেবা} & \textbf{বোর্ডে মনে রাখার শব্দ} \\
+\hline
+1G & Analog & voice call & FDMA, cellular start \\
+\hline
+2G & Digital & SMS, MMS, basic data & GSM, TDMA/CDMA, encryption \\
+\hline
+3G & Packet data & video call, mobile internet & WCDMA, UMTS, Mbps speed \\
+\hline
+4G & All-IP broadband & HD video, fast internet & LTE, high speed, low latency \\
+\hline
+5G & Advanced mobile broadband & IoT, smart city, remote service & very low latency, massive device \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{বাংলাদেশ প্রেক্ষিত}
+মোবাইল ব্যাংকিং, অনলাইন ক্লাস, টেলিমেডিসিন, ride sharing এবং কৃষি তথ্যসেবা মোবাইল যোগাযোগের উপর নির্ভরশীল। প্রজন্ম পরিবর্তনের ফলে শুধু voice call নয়, data-based সেবাই বেশি গুরুত্বপূর্ণ হয়ে উঠেছে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+প্রজন্ম তুলনার প্রশ্নে ``analog থেকে digital'', ``circuit switching থেকে packet/IP-based network'', ``গতি বৃদ্ধি'', ``multimedia service''—এই ধারাবাহিকতা দেখালে উত্তর পরিষ্কার হয়।
+\end{boardbox}

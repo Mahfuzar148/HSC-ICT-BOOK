@@ -17,3 +17,54 @@
 \begin{itemize}
 \item পরীক্ষার ধাঁচের উদাহরণ
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item binary addition ও subtraction-এর basic rule লিখতে।
+\item carry ও borrow ব্যবহার করে multi-bit অংক করতে।
+\item binary arithmetic-এ common mistake এড়াতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{Addition} & \textbf{ফল} & \textbf{নোট} \\
+\hline
+$0+0$ & 0 & carry 0 \\
+\hline
+$0+1$ বা $1+0$ & 1 & carry 0 \\
+\hline
+$1+1$ & 10 & sum 0, carry 1 \\
+\hline
+$1+1+1$ & 11 & sum 1, carry 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{Binary যোগ}
+\[
+\begin{array}{r}
+  1011\\
++ 0110\\ \hline
+ 10001
+\end{array}
+\]
+এখানে ডান দিক থেকে bit যোগ করে carry পরের column-এ নেওয়া হয়েছে।
+\end{examplebox}
+
+\begin{examplebox}{Binary বিয়োগ}
+\[
+\begin{array}{r}
+  10110\\
+- 01011\\ \hline
+  01011
+\end{array}
+\]
+যেখানে $0-1$ এসেছে, সেখানে বাম পাশের bit থেকে borrow নেওয়া হয়েছে।
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Binary addition-এ $1+1=2$ লেখা যাবে না; binary-তে 2 প্রকাশ হয় $10$ হিসেবে। তাই ফল 0 এবং carry 1।
+\end{mistakebox}

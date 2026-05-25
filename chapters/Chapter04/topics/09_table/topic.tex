@@ -1,12 +1,62 @@
 % ৪.৯ টেবিল ও ডেটা উপস্থাপন
 \section{টেবিল ও ডেটা উপস্থাপন}
 
-\subsection{টেবিল ট্যাগ}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item \texttt{<table>}, \texttt{<tr>}, \texttt{<td>}, \texttt{<th>}\
+\item HTML table তৈরির tagগুলো ব্যবহার করতে।
+\item row, column, header cell ও data cell ব্যাখ্যা করতে।
+\item \texttt{rowspan} ও \texttt{colspan} attribute-এর ব্যবহার বুঝতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{সাজেশন ও স্টাইলিং}
+\subsection{Table tag}
+সারণি আকারে তথ্য দেখাতে HTML table ব্যবহার করা হয়। marksheet, routine, price list, comparison chart ইত্যাদিতে table দরকার হয়।
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.46\textwidth}|p{0.20\textwidth}|}
+\hline
+\textbf{Tag} & \textbf{কাজ} & \textbf{নোট} \\
+\hline
+\texttt{<table>} & পুরো table তৈরি করে & parent tag \\
+\hline
+\texttt{<tr>} & table row তৈরি করে & row \\
+\hline
+\texttt{<th>} & heading cell তৈরি করে & bold/center default হতে পারে \\
+\hline
+\texttt{<td>} & data cell তৈরি করে & সাধারণ cell \\
+\hline
+\texttt{<caption>} & table caption দেয় & table title \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{HTML table example placeholder}\\[4pt]
+\texttt{<table>}\\
+\texttt{<tr><th>Name</th><th>Marks</th></tr>}\\
+\texttt{<tr><td>Asha</td><td>85</td></tr>}\\
+\texttt{</table>}
+}}
+\end{center}
+
+\begin{keypointbox}{Attribute}
 \begin{itemize}
-\item CSS দিয়ে প্রান্ত, মার্জিন, padding নিয়ন্ত্রণ
+\item \texttt{rowspan}: একটি cell একাধিক row জুড়ে থাকবে।
+\item \texttt{colspan}: একটি cell একাধিক column জুড়ে থাকবে।
+\item Modern HTML-এ table styling সাধারণত CSS দিয়ে করা ভালো।
 \end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Table drawing প্রশ্নে \texttt{table}, \texttt{tr}, \texttt{th}, \texttt{td} tag-এর nesting ঠিক রাখতে হবে। row-এর ভিতরে cell বসে, cell-এর ভিতরে content বসে।
+\end{boardbox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item \texttt{<th>} ও \texttt{<td>} tag-এর পার্থক্য লেখ।
+\item \texttt{colspan} কী কাজে লাগে?
+\item তিন row ও দুই column-এর একটি routine table-এর HTML structure লেখ।
+\end{enumerate}
+\end{practicebox}

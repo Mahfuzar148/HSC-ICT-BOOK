@@ -1,12 +1,63 @@
 % ৪.৬ টেক্সট ও কনটেন্ট ফরম্যাটিং
 \section{টেক্সট ও কনটেন্ট ফরম্যাটিং}
 
-\subsection{প্যারাগ্রাফ, হেডিং ও লাইন ব্রেক}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item \texttt{<h1>} থেকে \texttt{<h6>}, \texttt{<p>}, \texttt{<br>}\
+\item heading, paragraph, line break ও horizontal rule ব্যবহার করতে।
+\item basic formatting tag ও style attribute চিনতে।
+\item list ব্যবহার করে content সাজাতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{ফন্ট, রঙ ও স্টাইল}
+\subsection{Heading, Paragraph ও Line Break}
+HTML-এ heading-এর জন্য \texttt{<h1>} থেকে \texttt{<h6>} tag ব্যবহৃত হয়। paragraph-এর জন্য \texttt{<p>} এবং line break-এর জন্য \texttt{<br>} ব্যবহৃত হয়।
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{Example placeholder}\\[4pt]
+\texttt{<h1>ICT Chapter 4</h1>}\\
+\texttt{<p>}HTML দিয়ে ওয়েব পেজ তৈরি করা যায়।\texttt{</p>}\\
+\texttt{<br>} line break তৈরি করে।
+}}
+\end{center}
+
+\subsection{Formatting tag}
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.38\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{Tag} & \textbf{কাজ} & \textbf{নোট} \\
+\hline
+\texttt{<b>} & bold করে & visual bold \\
+\hline
+\texttt{<strong>} & গুরুত্বপূর্ণ text বোঝায় & semantic গুরুত্ব \\
+\hline
+\texttt{<i>} & italic করে & visual italic \\
+\hline
+\texttt{<em>} & emphasis বোঝায় & semantic emphasis \\
+\hline
+\texttt{<u>} & underline করে & কম ব্যবহার করা ভালো \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{List}
+\begin{keypointbox}{List tag}
 \begin{itemize}
-\item \texttt{style} attribute বা CSS দিয়ে কন্ট্রোল
+\item Ordered list: \texttt{<ol>} এবং \texttt{<li>}
+\item Unordered list: \texttt{<ul>} এবং \texttt{<li>}
+\item Definition list: \texttt{<dl>}, \texttt{<dt>}, \texttt{<dd>}
 \end{itemize}
+\end{keypointbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Heading tag শুধু text বড় করার জন্য নয়। Page structure বোঝাতে heading level ঠিকভাবে ব্যবহার করা উচিত।
+\end{mistakebox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item \texttt{<p>} ও \texttt{<br>} tag-এর পার্থক্য লেখ।
+\item Ordered list তৈরির tag লেখ।
+\item \texttt{<strong>} ও \texttt{<b>} tag-এর ব্যবহার ব্যাখ্যা কর।
+\end{enumerate}
+\end{practicebox}

@@ -16,3 +16,38 @@
 \begin{itemize}
 \item Logic expressions ও circuit expressions
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item Boolean algebra-এর ধারণা, variable ও constant ব্যাখ্যা করতে।
+\item AND, OR, NOT operator ব্যবহার করে expression লিখতে।
+\item logic circuit ও Boolean expression-এর সম্পর্ক বুঝতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Boolean algebra}
+যে বীজগণিতে variable-এর মান কেবল 0 বা 1 হয় এবং AND, OR, NOT ধরনের logical operation ব্যবহৃত হয়, তাকে Boolean algebra বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.24\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{Operator} & \textbf{চিহ্ন} & \textbf{অর্থ} \\
+\hline
+AND & $A\cdot B$ বা $AB$ & দুই input 1 হলে output 1 \\
+\hline
+OR & $A+B$ & অন্তত একটি input 1 হলে output 1 \\
+\hline
+NOT & $\overline{A}$ & input উল্টে দেয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{Expression}
+$Y=A\cdot B+\overline{C}$ expression-এ প্রথমে $A$ AND $B$, তারপর $C$-এর NOT, শেষে OR operation হবে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Boolean algebra প্রশ্নে operator precedence পরিষ্কার রাখো: NOT আগে, তারপর AND, তারপর OR। bracket থাকলে bracket আগে সমাধান করতে হবে।
+\end{boardbox}

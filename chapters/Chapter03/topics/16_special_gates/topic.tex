@@ -10,3 +10,40 @@
 \begin{itemize}
 \item $Y=\overline{A\oplus B}$; দুই input একই হলে output 1
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item XOR ও XNOR gate-এর output rule ব্যাখ্যা করতে।
+\item truth table থেকে parity/equality ধারণা বুঝতে।
+\item adder circuit-এ XOR-এর ভূমিকা লিখতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A$ & $B$ & XOR $A\oplus B$ & XNOR $\overline{A\oplus B}$ \\
+\hline
+0 & 0 & 0 & 1 \\
+\hline
+0 & 1 & 1 & 0 \\
+\hline
+1 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{definitionbox}{XOR}
+দুই input ভিন্ন হলে XOR gate-এর output 1 হয়, আর input একই হলে output 0 হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{XNOR}
+দুই input একই হলে XNOR gate-এর output 1 হয়, আর input ভিন্ন হলে output 0 হয়।
+\end{definitionbox}
+
+\begin{examplebox}{ব্যবহার}
+Half adder-এর Sum output পেতে XOR gate ব্যবহৃত হয়: $S=A\oplus B$। Equality checking-এ XNOR gate কার্যকর, কারণ একই input হলে output 1।
+\end{examplebox}

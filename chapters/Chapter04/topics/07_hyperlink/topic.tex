@@ -1,12 +1,53 @@
 % ৪.৭ হাইপারলিঙ্ক ও নেভিগেশন
 \section{হাইপারলিঙ্ক ও নেভিগেশন}
 
-\subsection{লিঙ্ক তৈরি}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item \texttt{<a href="url">link text</a>} — internal ও external links
+\item hyperlink ও anchor tag-এর কাজ ব্যাখ্যা করতে।
+\item internal, external, email ও bookmark link তৈরি করতে।
+\item navigation menu-এর basic structure লিখতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{নেভিগেশন বার ও মেনু}
-\begin{itemize}
-\item semantic list-based navigation: \texttt{<nav>} ও \texttt{<ul>}\
-\end{itemize}
+\subsection{Hyperlink}
+এক web page থেকে অন্য page, file, section বা website-এ যাওয়ার clickable সংযোগকে hyperlink বলা হয়। HTML-এ hyperlink তৈরির জন্য anchor tag \texttt{<a>} ব্যবহৃত হয়।
+
+\begin{definitionbox}{Anchor tag}
+\texttt{<a href="url">link text</a>} syntax ব্যবহার করে link তৈরি করা হয়। এখানে \texttt{href} attribute link-এর গন্তব্য নির্দেশ করে।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.44\textwidth}|p{0.20\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{উদাহরণ} & \textbf{কাজ} \\
+\hline
+Internal & \texttt{<a href="about.html">About</a>} & একই site-এর page \\
+\hline
+External & \texttt{<a href="https://example.com">Visit</a>} & অন্য website \\
+\hline
+Email & \texttt{<a href="mailto:info@example.com">Mail</a>} & email client খুলে \\
+\hline
+Bookmark & \texttt{<a href="\#top">Top</a>} & একই page-এর section \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{Navigation placeholder}\\[4pt]
+\texttt{<nav>} এর ভিতরে \texttt{<ul>} list ব্যবহার করে Home, Notice, Gallery, Contact link দেখাতে হবে।
+}}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Hyperlink প্রশ্নে \texttt{href} attribute অবশ্যই উল্লেখ করবে। অনেক answer-এ tag লেখা থাকে কিন্তু attribute না থাকায় উত্তর অসম্পূর্ণ হয়।
+\end{boardbox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item Hyperlink কী?
+\item External link তৈরির syntax লেখ।
+\item \texttt{target="\_blank"} attribute-এর কাজ কী?
+\end{enumerate}
+\end{practicebox}

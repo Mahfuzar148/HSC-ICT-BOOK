@@ -1,7 +1,30 @@
 % ১৭. Practical Database Task
 \section{Practical Database Task}
+এই অধ্যায়ের ব্যবহারিক অংশে সাধারণত MS Access বা সমজাতীয় DBMS ব্যবহার করে ডেটাবেজ, টেবিল, কুয়েরি, ফর্ম ও রিপোর্ট তৈরি করতে বলা হয়।
 
-\begin{itemize}
-\item Student/Employee database তৈরি, field ও data type নির্ধারণ
-\item Table/Primary key/Record insert/edit/delete, Query/Sorting/Indexing, Form/Report
-\end{itemize}
+\begin{practicebox}
+\textbf{কাজ: StudentDB তৈরি}
+\begin{enumerate}
+    \item StudentDB নামে একটি ডেটাবেজ তৈরি করো।
+    \item Student নামে একটি টেবিল তৈরি করো।
+    \item ফিল্ড দাও: StudentID, Roll, Name, GroupName, GPA, Mobile।
+    \item StudentID-কে Primary Key করো।
+    \item অন্তত ৫টি রেকর্ড এন্ট্রি করো।
+    \item GPA 5.00 পাওয়া ছাত্রদের দেখানোর জন্য Select query তৈরি করো।
+    \item Name অনুযায়ী Ascending sort করো।
+    \item Student Entry Form এবং GPA Report তৈরি করো।
+\end{enumerate}
+\end{practicebox}
+
+\begin{examplebox}{নমুনা কুয়েরি}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE GPA = 5.00
+ORDER BY Name ASC;
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{ব্যবহারিক খাতার জন্য}
+প্রতিটি কাজের শেষে স্ক্রিনশট/চিত্রের স্থানধারক রাখা যেতে পারে: Table Design View, Datasheet View, Query Design, Form View, Report Preview।
+\end{keypointbox}

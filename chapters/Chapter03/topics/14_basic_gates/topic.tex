@@ -15,3 +15,54 @@
 \begin{itemize}
 \item Symbol, Boolean: $Y=\overline{A}$, Truth table
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item AND, OR ও NOT gate-এর symbol, Boolean expression ও truth table লিখতে।
+\item মৌলিক gate দিয়ে simple logic circuit ব্যাখ্যা করতে।
+\item বাস্তব switch analogy ব্যবহার করে gate-এর output বুঝতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Logic gate symbol placeholders}\\[4pt]
+AND gate: দুই input বাম পাশে, output ডান পাশে।\\
+OR gate: curved input side, output ডান পাশে।\\
+NOT gate: triangle with small bubble at output।
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A$ & $B$ & $A\cdot B$ & $A+B$ \\
+\hline
+0 & 0 & 0 & 0 \\
+\hline
+0 & 1 & 0 & 1 \\
+\hline
+1 & 0 & 0 & 1 \\
+\hline
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$A$ & $\overline{A}$ \\
+\hline
+0 & 1 \\
+\hline
+1 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{Switch analogy}
+AND gate হলো series switch-এর মতো: দুই switch on না হলে current যাবে না। OR gate হলো parallel switch-এর মতো: যেকোনো একটি switch on হলেই current যেতে পারে।
+\end{examplebox}

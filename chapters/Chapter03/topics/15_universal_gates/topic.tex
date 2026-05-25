@@ -10,3 +10,47 @@
 \begin{itemize}
 \item $Y=\overline{A+B}$; NOR দিয়ে সব গেট নির্মাণ
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item NAND ও NOR gate-এর truth table লিখতে।
+\item universal gate কেন বলা হয় ব্যাখ্যা করতে।
+\item NAND/NOR দিয়ে NOT, AND, OR gate নির্মাণের ধারণা দেখাতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{Universal gate}
+যে gate একাই ব্যবহার করে মৌলিক gateসহ যেকোনো logic circuit তৈরি করা যায়, তাকে universal gate বলা হয়। NAND ও NOR universal gate।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A$ & $B$ & NAND $\overline{A\cdot B}$ & NOR $\overline{A+B}$ \\
+\hline
+0 & 0 & 1 & 1 \\
+\hline
+0 & 1 & 1 & 0 \\
+\hline
+1 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Circuit placeholders}\\[4pt]
+NAND দিয়ে NOT: দুই input একসাথে $A$।\\
+NAND দিয়ে AND: NAND output-কে আবার NAND inverter-এ দাও।\\
+NOR দিয়ে NOT: দুই input একসাথে $A$।\\
+NOR দিয়ে OR: NOR output-কে আবার NOR inverter-এ দাও।
+}}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Universal gate প্রমাণের প্রশ্নে অন্তত NOT, AND এবং OR gate তৈরি দেখাতে হয়। শুধু ``সব gate তৈরি করা যায়'' লিখলে পূর্ণ নম্বর নাও আসতে পারে।
+\end{boardbox}

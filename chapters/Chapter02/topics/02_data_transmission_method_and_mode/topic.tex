@@ -1,5 +1,16 @@
-% Chapter 02.2: ডেটা ট্রান্সমিশন মেথড ও মোড
-\section{ডেটা ট্রান্সমিশন মেথড ও ডেটা ট্রান্সমিশন মোড}
+% Chapter 02.2: ডেটা ট্রান্সমিশন মেথড ও ডেটা ট্রান্সমিশন মোড
+\section{ডেটা ট্রান্সমিশন মেথড ও মোড}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item asynchronous, synchronous ও isochronous transmission ব্যাখ্যা করতে।
+\item start bit, stop bit ও clock synchronization-এর ভূমিকা বুঝতে।
+\item simplex, half duplex ও full duplex mode আলাদা করতে।
+\item একটি table বা tree ব্যবহার করে transmission method compare করতে।
+\item board-style comparison question-এর উত্তর লিখতে।
+\end{itemize}
+\end{learningbox}
 
 \subsection{ডেটা ট্রান্সমিশন মেথড}
 \subsubsection{Asynchronous Transmission}
@@ -29,3 +40,137 @@
 \begin{itemize}\item উভয় দিকে ডেটা যায়, কিন্তু একই সময়ে নয়; উদাহরণ: walkie-talkie\end{itemize}
 \subsubsection{Full Duplex}
 \begin{itemize}\item একই সময়ে উভয় দিকে data আদান-প্রদান; উদাহরণ: telephone\end{itemize}
+
+\subsection{ডেটা ট্রান্সমিশন মোড}
+
+\begin{definitionbox}{ডেটা ট্রান্সমিশন মোড}
+ডেটা প্রেরণ ও গ্রহণের দিক এবং একই সময়ে data flow-এর মাত্রাকে transmission mode বলা হয়।
+\end{definitionbox}
+
+\subsubsection{Simplex}
+
+Simplex mode-এ data শুধু একদিকে যায়। Receiver কোনো data ফেরত পাঠায় না।
+
+\begin{definitionbox}{সিম্প্লেক্স}
+যে transmission mode-এ data কেবল একদিকে প্রেরিত হয়, তাকে simplex mode বলে।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+TV broadcasting, radio broadcasting এবং digital notice board simplex-এর সহজ উদাহরণ।
+\end{examplebox}
+
+\subsubsection{Half Duplex}
+
+Half duplex mode-এ দুই দিকেই data যেতে পারে, কিন্তু একই সময়ে নয়। এক পক্ষ কথা বললে অন্য পক্ষ শুনে।
+
+\begin{definitionbox}{হাফ ডুপ্লেক্স}
+যে transmission mode-এ উভয় দিকে data আদান-প্রদান সম্ভব, কিন্তু একই সময়ে নয়, তাকে half duplex বলে।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+Walkie-talkie, old-style intercom এবং কিছু shared channel communication half duplex-এর উদাহরণ।
+\end{examplebox}
+
+\subsubsection{Full Duplex}
+
+Full duplex mode-এ একই সময়ে উভয় দিকে data আদান-প্রদান হয়। এটি সবচেয়ে কার্যকর এবং স্বাভাবিক conversation-like communication-এর জন্য উপযুক্ত।
+
+\begin{definitionbox}{ফুল ডুপ্লেক্স}
+যে transmission mode-এ উভয় দিকেই একই সময়ে data প্রেরণ ও গ্রহণ করা যায়, তাকে full duplex বলে।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+Telephone call, video chat, modern internet communication এবং two-way live conferencing full duplex-এর উদাহরণ।
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{Mode} & \textbf{Direction} & \textbf{Same time?} & \textbf{উদাহরণ} \\
+\hline
+Simplex & একদিকে & না & TV broadcasting \\
+\hline
+Half duplex & দুইদিকে & না & Walkie-talkie \\
+\hline
+Full duplex & দুইদিকে & হ্যাঁ & Telephone \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Transmission method-এর প্রশ্নে method ও mode গুলোর পার্থক্য খুব পরিষ্কার করে লিখতে হয়। Table, example এবং এক লাইনের conclusion দিলে answer strong হয়।
+\end{boardbox}
+
+\begin{recapbox}
+\begin{itemize}
+\item Asynchronous-এ প্রতিটি character আলাদা, synchronous-এ বড় block, isochronous-এ নির্দিষ্ট সময়ভিত্তিক data যায়।
+\item Simplex একদিকে, half duplex দুইদিকে কিন্তু একই সময়ে নয়, full duplex দুইদিকে একই সময়ে।
+\item Real-time media-এর জন্য isochronous খুব গুরুত্বপূর্ণ।
+\item পরীক্ষায় compare table আঁকলে উত্তর দ্রুত বোঝা যায়।
+\end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item Start bit ও stop bit কোন transmission method-এ ব্যবহৃত হয়?\\
+ক. Synchronous \quad খ. Asynchronous \quad গ. Isochronous \quad ঘ. Full duplex
+\item একই সময়ে উভয় দিকে data আদান-প্রদান কোন mode-এ সম্ভব?\\
+ক. Simplex \quad খ. Half duplex \quad গ. Full duplex \quad ঘ. Broadcast
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Asynchronous ও synchronous transmission-এর মধ্যে দুটি পার্থক্য লেখ।
+\item Half duplex mode-এর একটি বাস্তব উদাহরণ দাও।
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একটি online class-এ শিক্ষক ভিডিও, audio ও slide একসঙ্গে পাঠাচ্ছেন; আবার শিক্ষার্থীরা প্রশ্ন পাঠাচ্ছে। উদ্দীপকের আলোকে transmission method ও mode বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+Chapter 02 handnote, Chapter 2 update CQ material এবং common transmission-method references মিলিয়ে এই অংশটি book-style summary হিসেবে লেখা হয়েছে।
+\end{sourcebox}
+
+\subsection{শ্রেণিবিন্যাস ও চিত্র}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\textbf{Tree diagram placeholder: Data Transmission}\\[4pt]
+Data Transmission\\
+$\rightarrow$ Method: Parallel, Serial\\
+$\rightarrow$ Serial Synchronization: Asynchronous, Synchronous, Isochronous\\
+$\rightarrow$ Direction Mode: Simplex, Half Duplex, Full Duplex\\
+$\rightarrow$ Receiver-based Mode: Unicast, Broadcast, Multicast
+}}
+\end{center}
+
+\begin{definitionbox}{Parallel transmission}
+যে পদ্ধতিতে একটি character বা data word-এর একাধিক bit একই সময়ে একাধিক line দিয়ে গন্তব্যে পাঠানো হয়, তাকে parallel transmission বলা হয়। এটি কাছাকাছি ডিভাইসের জন্য দ্রুত হলেও বেশি line দরকার হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{Serial transmission}
+যে পদ্ধতিতে bit-গুলো একটির পর একটি ধারাবাহিকভাবে একটি channel দিয়ে পাঠানো হয়, তাকে serial transmission বলা হয়। দূরবর্তী যোগাযোগে এটি বেশি ব্যবহারযোগ্য।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{ভিত্তি} & \textbf{Parallel} & \textbf{Serial} \\
+\hline
+Bit flow & একসাথে একাধিক bit & একটির পর একটি bit \\
+\hline
+দূরত্ব & কম দূরত্বে সুবিধাজনক & বেশি দূরত্বে সুবিধাজনক \\
+\hline
+ব্যয় & line বেশি, ব্যয় বেশি & line কম, ব্যয় কম \\
+\hline
+উদাহরণ & internal bus, পুরনো printer port & USB, network link, modem communication \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Synchronous transmission আর full duplex একই জিনিস নয়। Synchronous হলো timing/synchronization-এর পদ্ধতি; full duplex হলো একই সময়ে দুই দিকে data flow-এর mode।
+\end{mistakebox}

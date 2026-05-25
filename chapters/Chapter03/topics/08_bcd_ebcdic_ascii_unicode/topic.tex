@@ -20,3 +20,44 @@
 \begin{itemize}
 \item বহুভাষিক character representation; বাংলা ও অন্যান্য ভাষা
 \end{itemize}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item BCD, ASCII, EBCDIC ও Unicode-এর কাজ ব্যাখ্যা করতে।
+\item codeগুলোর bit-size ও ব্যবহার তুলনা করতে।
+\item বাংলা লেখার ক্ষেত্রে Unicode-এর গুরুত্ব বুঝতে।
+\end{itemize}
+\end{learningbox}
+
+\begin{definitionbox}{BCD}
+BCD বা Binary Coded Decimal পদ্ধতিতে প্রতিটি decimal digit আলাদাভাবে 4-bit binary code দিয়ে প্রকাশ করা হয়। যেমন 59-এর BCD হলো 0101 1001।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.18\textwidth}|p{0.34\textwidth}|p{0.20\textwidth}|}
+\hline
+\textbf{Code} & \textbf{Bit ধারণা} & \textbf{ব্যবহার} & \textbf{নোট} \\
+\hline
+BCD & প্রতি digit 4-bit & decimal digit representation & arithmetic display \\
+\hline
+ASCII & মূলত 7-bit, extended 8-bit & English letters, digits, symbols & widely used \\
+\hline
+EBCDIC & 8-bit & IBM mainframe system & legacy system \\
+\hline
+Unicode & variable/fixed encoding form & বিশ্বভাষার character & বাংলা support করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{BCD example}
+$(38)_{10}$-এর binary value হলো $(100110)_2$, কিন্তু BCD হলো $0011\ 1000$। কারণ BCD-তে 3 ও 8 আলাদা digit হিসেবে code করা হয়।
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+BCD আর pure binary এক নয়। Decimal 12-এর binary $1100$, কিন্তু BCD $0001\ 0010$।
+\end{mistakebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Unicode-এর প্রশ্নে বাংলা, আরবি, চীনা, ইংরেজি ইত্যাদি বহুভাষিক character এক standard-এ প্রকাশ করার সুবিধা লিখলে উত্তর ভালো হয়।
+\end{boardbox}

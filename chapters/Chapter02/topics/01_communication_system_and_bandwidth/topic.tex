@@ -1,6 +1,17 @@
 % Chapter 02.1: কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ
 \section{কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ}
 
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item কমিউনিকেশন সিস্টেম, ডেটা কমিউনিকেশন এবং ডেটা সিগন্যালের পার্থক্য ব্যাখ্যা করতে।
+\item একটি সাধারণ কমিউনিকেশন মডেলের উপাদানগুলো চিহ্নিত করতে।
+\item Analog signal ও Digital signal-এর মৌলিক পার্থক্য লিখতে।
+\item ব্যান্ডউইডথ, ডেটা রেট এবং transmission capacity-এর সম্পর্ক বুঝতে।
+\item Narrow band, voice band ও broadband সম্পর্কে board-style উত্তর লিখতে।
+\end{itemize}
+\end{learningbox}
+
 \subsection{কমিউনিকেশন সিস্টেমের ধারণা}
 
 \begin{itemize}
@@ -38,3 +49,168 @@
 \item bps, Kbps, Mbps, Gbps
 \item Narrow Band, Voice Band, Broadband
 \end{itemize}
+
+\subsection{ডেটা ও সিগন্যাল}
+
+\begin{definitionbox}{ডেটা}
+ডেটা হলো এমন কাঁচা বা প্রক্রিয়াজাত তথ্য, যা কম্পিউটার বা মানুষ ব্যবহার করে সিদ্ধান্ত, গণনা বা communication-এর জন্য কাজে লাগাতে পারে।
+\end{definitionbox}
+
+\begin{definitionbox}{সিগন্যাল}
+সিগন্যাল হলো electrical, optical বা electromagnetic পরিবর্তন, যার মাধ্যমে তথ্য এক স্থান থেকে অন্য স্থানে প্রেরণ করা হয়।
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{|p{0.26\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{ডেটা} & \textbf{সিগন্যাল} \\
+\hline
+প্রকৃতি & তথ্যের মূল রূপ & তথ্য বহনের রূপ \\
+\hline
+ব্যবহার & সংরক্ষণ, বিশ্লেষণ & প্রেরণ, গ্রহণ \\
+\hline
+উদাহরণ & text, image, file, number & electrical pulse, light, radio wave \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Analog signal ও Digital signal}
+
+\begin{definitionbox}{Analog signal}
+Analog signal হলো এমন সিগন্যাল, যার মান সময়ের সঙ্গে ধীরে ধীরে continuousভাবে পরিবর্তিত হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{Digital signal}
+Digital signal হলো এমন সিগন্যাল, যার মান নির্দিষ্ট discrete স্তরে থাকে, সাধারণত 0 এবং 1 দিয়ে প্রকাশ করা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{পার্থক্য}
+\begin{itemize}
+\item Analog signal continuous; digital signal discrete.
+\item Analog signal noise-এ বেশি প্রভাবিত হয়; digital signal তুলনামূলকভাবে স্থিতিশীল।
+\item Computer communication-এ digital signal বেশি ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+পুরনো radio broadcast analog signal-এর উদাহরণ। অন্যদিকে computer network, mobile data, USB communication এবং online chat digital signal-এর উপর বেশি নির্ভরশীল।
+\end{examplebox}
+
+\subsection{ডেটা কমিউনিকেশন}
+
+ডেটা কমিউনিকেশন হলো sender ও receiver-এর মধ্যে device, medium এবং protocol ব্যবহার করে data আদান-প্রদানের প্রক্রিয়া। এটি modern ICT-এর ভিত্তি। internet, LAN, mobile network, cloud service, online payment—সব ক্ষেত্রেই data communication কাজ করে।
+
+\begin{definitionbox}{ডেটা কমিউনিকেশন}
+ডিজিটাল বা অ্যানালগ data-কে যোগাযোগ মাধ্যমের সাহায্যে এক স্থান থেকে অন্য স্থানে প্রেরণ ও গ্রহণ করার প্রক্রিয়াকে ডেটা কমিউনিকেশন বলা হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{ডেটা কমিউনিকেশনের শর্ত}
+\begin{itemize}
+\item sender ও receiver থাকতে হবে।
+\item transmission medium থাকতে হবে।
+\item message ও protocol থাকতে হবে।
+\item timing, accuracy ও security বজায় রাখতে হবে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+“কমিউনিকেশন সিস্টেমের উপাদানগুলো চিহ্নিত করো” বা “ডেটা ও সিগন্যালের মধ্যে পার্থক্য লেখো”—এই ধরনের প্রশ্নে প্রতিটি উপাদানের কাজ ১ লাইনে লিখলে উত্তর পরিপূর্ণ হয়।
+\end{boardbox}
+
+\subsection{ব্যান্ডউইডথ}
+
+ব্যান্ডউইডথ বলতে কোনো communication channel কত দ্রুত data বহন করতে পারে, সেই সক্ষমতাকে বোঝায়। অনেক শিক্ষার্থী bandwith-কে শুধু frequency range ভাবে, কিন্তু HSC ICT-তে data communication context-এ bandwidth সাধারণত data transfer capacity বোঝায়।
+
+\begin{definitionbox}{ব্যান্ডউইডথ}
+ব্যান্ডউইডথ হলো নির্দিষ্ট সময়ের মধ্যে কোনো communication channel দিয়ে কত পরিমাণ data transfer করা যায়, তার পরিমাপ।
+\end{definitionbox}
+
+\begin{keypointbox}{ব্যান্ডউইডথের একক}
+\begin{itemize}
+\item bit per second (bps)
+\item kilobit per second (Kbps)
+\item megabit per second (Mbps)
+\item gigabit per second (Gbps)
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{Band} & \textbf{ধারণা} & \textbf{উদাহরণ} \\
+\hline
+Narrow band & কম data rate, কম capacity & পুরনো low-speed communication \\
+\hline
+Voice band & মানুষের কণ্ঠস্বর পাঠানোর উপযোগী & telephone system \\
+\hline
+Broadband & উচ্চ data rate, বৃহৎ capacity & fiber internet, modern mobile data \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{সাধারণ ভুল}
+Bandwidth আর speed একেবারে একই জিনিস নয়। Speed বলতে অনেক সময় ব্যবহারকারীর অনুভূত দ্রুততা বোঝায়, কিন্তু bandwidth হলো channel-এর capacity। Latency ও congestion থাকলে high bandwidth থাকলেও experience ধীর হতে পারে।
+\end{mistakebox}
+
+\begin{recapbox}
+\begin{itemize}
+\item কমিউনিকেশন সিস্টেমে source, transmitter, medium, receiver ও destination থাকে।
+\item Data হলো তথ্য, signal হলো তার বহনের রূপ।
+\item Analog continuous, digital discrete।
+\item Bandwidth channel-এর data বহনের ক্ষমতা নির্দেশ করে।
+\item Board answer-এ diagram, definition ও example একসঙ্গে দিলে marks বাড়ে।
+\end{itemize}
+\end{recapbox}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item কমিউনিকেশন সিস্টেমে তথ্য গ্রহণকারী অংশ কোনটি?\\
+ক. Source \quad খ. Transmitter \quad গ. Receiver \quad ঘ. Medium
+\item Digital signal সাধারণত কী দিয়ে প্রকাশ করা হয়?\\
+ক. 1 ও 2 \quad খ. A ও B \quad গ. 0 ও 1 \quad ঘ. + ও -
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item ডেটা কমিউনিকেশনের দুটি শর্ত লেখ।
+\item Bandwidth বলতে কী বোঝায়?
+\end{enumerate}
+
+\textbf{সৃজনশীল অনুশীলন}
+একজন শিক্ষার্থী video class-এ অংশ নিচ্ছে। তার device data-কে signal-এ রূপান্তর করে ISP-এর মাধ্যমে teacher-এর কাছে পাঠাচ্ছে। উদ্দীপকের আলোকে communication system-এর উপাদানগুলো বিশ্লেষণ করো।
+\end{practicebox}
+
+\begin{sourcebox}
+এই অংশটি Chapter 02 handnote, Chapter 2 main sheet, chapter-wise CQ/MCQ resource এবং standard ICT communication-system terminology মিলিয়ে book style-এ সাজানো হয়েছে।
+\end{sourcebox}
+
+\subsection{চিত্র ও পরীক্ষামুখী উপস্থাপন}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{চিত্র placeholder: Data Communication Model}\\[4pt]
+Source/Sender $\rightarrow$ Transmitter $\rightarrow$ Medium/Channel $\rightarrow$ Receiver $\rightarrow$ Destination\\
+\smallskip
+নিচে Message ও Protocol-কে সহায়ক উপাদান হিসেবে দেখাতে হবে।
+}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.28\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{কার্যকারিতা} & \textbf{অর্থ} & \textbf{উদাহরণ} \\
+\hline
+Delivery & ডেটা সঠিক গন্তব্যে পৌঁছানো & ইমেইল নির্দিষ্ট ঠিকানায় যাওয়া \\
+\hline
+Accuracy & ডেটা ভুল ছাড়া পৌঁছানো & ফাইল corrupt না হওয়া \\
+\hline
+Timeliness & প্রয়োজনীয় সময়ে পৌঁছানো & লাইভ ক্লাসে audio/video দেরি না হওয়া \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{উত্তর লেখার কৌশল}
+কমিউনিকেশন সিস্টেমের প্রশ্নে শুধু সংজ্ঞা লিখলেই উত্তর অসম্পূর্ণ থাকে। উপাদানগুলোর কাজ, একটি তীর-চিহ্নযুক্ত চিত্র এবং বাস্তব উদাহরণ দিলে উত্তরটি পূর্ণাঙ্গ হয়।
+\end{boardbox}

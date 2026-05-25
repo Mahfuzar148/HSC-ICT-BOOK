@@ -1,14 +1,70 @@
 % ৪.১ ওয়েব ডিজাইনের ধারণা
 \section{ওয়েব ডিজাইনের ধারণা}
 
-\subsection{ওয়েব ডিজাইন কী}
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item ওয়েব পেজ ও ওয়েবসাইটের সাধারণ ধারণা
-\item ওয়েব ব্রাউজার ও ওয়েব সার্ভার
+\item ওয়েব পেজ, ওয়েবসাইট, ব্রাউজার ও ওয়েব সার্ভার আলাদা করতে।
+\item static ও dynamic website-এর পার্থক্য লিখতে।
+\item ওয়েবসাইট তৈরির ধাপ ও ভালো ওয়েব পেজের বৈশিষ্ট্য ব্যাখ্যা করতে।
 \end{itemize}
+\end{learningbox}
 
-\subsection{ওয়েবসাইট তৈরির ধাপ ও বৈশিষ্ট্য}
+\subsection{ওয়েব ডিজাইন কী}
+ওয়েব ডিজাইন হলো ওয়েব পেজ বা ওয়েবসাইটের content, layout, navigation, color, typography ও ব্যবহারযোগ্যতা পরিকল্পনা করে browser-এ উপস্থাপন করার প্রক্রিয়া। এখানে শুধু সুন্দর দেখা নয়, ব্যবহারকারী যেন দ্রুত তথ্য খুঁজে পায় সেটিও গুরুত্বপূর্ণ।
+
+\begin{definitionbox}{ওয়েব পেজ}
+ইন্টারনেটে প্রকাশযোগ্য HTML document, যা web browser দিয়ে দেখা যায়, তাকে ওয়েব পেজ বলা হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{ওয়েবসাইট}
+একই domain বা web address-এর অধীনে থাকা সম্পর্কিত একাধিক ওয়েব পেজের সমষ্টিকে ওয়েবসাইট বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\centering
+\textbf{Client-server diagram placeholder}\\[4pt]
+User/Browser $\rightarrow$ HTTP Request $\rightarrow$ Web Server\\
+Web Server $\rightarrow$ HTML/CSS/Image Response $\rightarrow$ Browser render
+}}
+\end{center}
+
+\subsection{Static ও Dynamic ওয়েবসাইট}
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.28\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ভিত্তি} & \textbf{Static website} & \textbf{Dynamic website} \\
+\hline
+Content & fixed file থেকে আসে & database/server program থেকে বদলায় \\
+\hline
+Technology & HTML, CSS & HTML, CSS, JS, PHP/Python, database \\
+\hline
+উদাহরণ & notice page, portfolio & ecommerce, LMS, social site \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{ওয়েবসাইট তৈরির ধাপ}
+\begin{keypointbox}{ধাপে ধাপে কাজ}
 \begin{itemize}
-\item পরিকল্পনা, কন্টেন্ট, লেআউট, কোডিং, টেস্টিং, পাবলিশিং
-\item ভালো ওয়েব পেজের বৈশিষ্ট্য
+\item লক্ষ্য, audience ও প্রয়োজনীয় page নির্ধারণ।
+\item content, image ও link সংগ্রহ।
+\item sitemap ও wireframe তৈরি।
+\item HTML/CSS দিয়ে coding।
+\item browser, mobile ও link testing।
+\item hosting server-এ publish এবং নিয়মিত update।
 \end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+ওয়েব ডিজাইন প্রশ্নে content organization, navigation, readability, accessibility ও device compatibility উল্লেখ করলে উত্তর পূর্ণাঙ্গ হয়।
+\end{boardbox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item ওয়েব পেজ ও ওয়েবসাইটের পার্থক্য লেখ।
+\item Static website ও dynamic website তুলনা কর।
+\item ভালো ওয়েব পেজের চারটি বৈশিষ্ট্য লেখ।
+\end{enumerate}
+\end{practicebox}

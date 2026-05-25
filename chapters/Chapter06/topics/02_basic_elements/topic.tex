@@ -1,17 +1,31 @@
 % ২. ডেটাবেজের মৌলিক উপাদান
 \section{ডেটাবেজের মৌলিক উপাদান}
+ডেটাবেজ বোঝার জন্য কয়েকটি শব্দ খুব গুরুত্বপূর্ণ: ফিল্ড, রেকর্ড, টেবিল, ফাইল, এন্টিটি, অ্যাট্রিবিউট, ডোমেইন এবং কী। এগুলোকে একসাথে বুঝলে DBMS অধ্যায়ের বাকি অংশ সহজ হয়।
 
-\subsection{Field}
-\begin{itemize}
-\item Field কী, উদাহরণ: Roll, Name, Address, Date of Birth
-\end{itemize}
+\begin{definitionbox}{ফিল্ড, রেকর্ড ও টেবিল}
+\textbf{Field} হলো একই ধরনের একটি ডেটা রাখার ঘর, যেমন Roll বা Name। \textbf{Record} হলো একটি নির্দিষ্ট ব্যক্তি/বস্তুর সব ফিল্ডের মানের সমষ্টি। \textbf{Table} হলো একই ধরনের রেকর্ডের সারি-কলামভিত্তিক সংগ্রহ।
+\end{definitionbox}
 
-\subsection{Record, Table, File}
-\begin{itemize}
-\item Record কী, Table-এর row ও column, File সংজ্ঞা
-\end{itemize}
+\begin{center}
+\begin{tabular}{|c|l|l|c|}
+\hline
+Roll & Name & Group & GPA \\
+\hline
+101 & Rahim & Science & 5.00 \\
+102 & Karim & Business Studies & 4.75 \\
+103 & Nila & Humanities & 4.50 \\
+\hline
+\end{tabular}
+\end{center}
 
-\subsection{Entity, Attribute, Tuple, Domain}
-\begin{itemize}
-\item Entity ও attribute, Tuple (relational record), Domain বিষয়ক ব্যাখ্যা
-\end{itemize}
+\begin{keypointbox}{টেবিলের অংশ}
+উপরের টেবিলে Roll, Name, Group, GPA হলো ফিল্ড। প্রতিটি সারি একটি রেকর্ড। Student হলো একটি এন্টিটি; Roll, Name, Group হলো এন্টিটির অ্যাট্রিবিউট। GPA ফিল্ডের গ্রহণযোগ্য মানের সীমা হলো তার ডোমেইন।
+\end{keypointbox}
+
+\begin{examplebox}{চিত্রের স্থানধারক}
+একটি Student table দেখিয়ে তীর চিহ্ন দিয়ে Field, Record, Table, Primary Key এবং Attribute আলাদা করে চিহ্নিত করা হবে।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+ফিল্ড = কলাম, রেকর্ড = সারি, টেবিল = সম্পর্কিত রেকর্ডের সংগ্রহ। পরীক্ষায় এই তিনটির পার্থক্য প্রায়ই আসে।
+\end{boardbox}
