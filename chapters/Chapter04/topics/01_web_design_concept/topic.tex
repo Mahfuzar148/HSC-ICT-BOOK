@@ -4,67 +4,409 @@
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item ওয়েব পেজ, ওয়েবসাইট, ব্রাউজার ও ওয়েব সার্ভার আলাদা করতে।
-\item static ও dynamic website-এর পার্থক্য লিখতে।
-\item ওয়েবসাইট তৈরির ধাপ ও ভালো ওয়েব পেজের বৈশিষ্ট্য ব্যাখ্যা করতে।
+\item ওয়েব ডিজাইন কী তা সংজ্ঞাসহ ব্যাখ্যা করতে।
+\item ওয়েবপেজ, ওয়েবসাইট, ওয়েব সার্ভার ও ওয়েব ব্রাউজারের ধারণা লিখতে।
+\item ওয়েব ডিজাইনের উদ্দেশ্য, উপাদান, সুবিধা ও ব্যবহারক্ষেত্র ব্যাখ্যা করতে।
+\item HTML, CSS ও JavaScript-এর ভূমিকা আলাদা করতে।
+\item ভালো ওয়েব ডিজাইনের বৈশিষ্ট্য ও exam focus point মনে রাখতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{ওয়েব ডিজাইন কী}
-ওয়েব ডিজাইন হলো ওয়েব পেজ বা ওয়েবসাইটের content, layout, navigation, color, typography ও ব্যবহারযোগ্যতা পরিকল্পনা করে browser-এ উপস্থাপন করার প্রক্রিয়া। এখানে শুধু সুন্দর দেখা নয়, ব্যবহারকারী যেন দ্রুত তথ্য খুঁজে পায় সেটিও গুরুত্বপূর্ণ।
+\subsection{ভূমিকা}
 
-\begin{definitionbox}{ওয়েব পেজ}
-ইন্টারনেটে প্রকাশযোগ্য HTML document, যা web browser দিয়ে দেখা যায়, তাকে ওয়েব পেজ বলা হয়।
+বর্তমান যুগে শিক্ষা, ব্যবসা, সংবাদ, ব্যাংকিং, চিকিৎসা, বিনোদন, যোগাযোগ এবং সরকারি সেবা - প্রায় সব ক্ষেত্রেই ওয়েবসাইট ব্যবহার করা হয়। কোনো ব্যক্তি, প্রতিষ্ঠান, স্কুল, কলেজ, সংবাদমাধ্যম বা ব্যবসা প্রতিষ্ঠান তাদের তথ্য internet-এর মাধ্যমে মানুষের কাছে পৌঁছে দিতে ওয়েবসাইট ব্যবহার করে।
+
+ওয়েবসাইট তৈরি করার জন্য প্রথমে ওয়েবপেজ পরিকল্পনা ও ডিজাইন করতে হয়। একটি ওয়েবপেজে কোন তথ্য কোথায় থাকবে, কোন অংশে ছবি বা link থাকবে এবং user কীভাবে page ব্যবহার করবে - এসব আগে ঠিক করা হয়।
+
+এরপর text, image, link, list, table ও form সাজিয়ে page-টি ব্যবহারবান্ধব করা হয়। ব্যবহারকারী যেন সহজে প্রয়োজনীয় তথ্য খুঁজে পায়, সেটিও ওয়েব ডিজাইনের গুরুত্বপূর্ণ অংশ।
+
+HSC ICT Chapter 4-এ মূলত ওয়েব ডিজাইনের ধারণা, ওয়েবসাইটের কাঠামো, HTML-এর মৌলিক বিষয়, HTML tag ও syntax, text formatting, list, hyperlink, image, table, form, webpage designing এবং website publishing আলোচনা করা হয়।
+
+\subsection{ওয়েব ডিজাইন কী?}
+
+\begin{definitionbox}{ওয়েব ডিজাইন}
+ওয়েবসাইট বা ওয়েবপেজের তথ্য, ছবি, লিংক, টেবিল, মেনু ও অন্যান্য উপাদানকে নির্দিষ্ট কাঠামো অনুযায়ী সুন্দর ও ব্যবহারবান্ধবভাবে সাজানোর প্রক্রিয়াকে ওয়েব ডিজাইন বলে।
 \end{definitionbox}
+
+আরও সহজভাবে বলা যায়, internet-এ প্রদর্শনের জন্য ওয়েবপেজ বা ওয়েবসাইট তৈরি ও সাজানোর কৌশলই হলো ওয়েব ডিজাইন। ওয়েব ডিজাইনে শুধু page সুন্দর দেখানোই উদ্দেশ্য নয়; বরং তথ্যগুলো যেন logical order-এ থাকে, navigation সহজ হয়, text পড়তে সুবিধা হয় এবং user দ্রুত প্রয়োজনীয় তথ্য পায় - সেটিও গুরুত্বপূর্ণ।
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+ওয়েবসাইট বা ওয়েবপেজের তথ্য, ছবি, লিংক, টেবিল, মেনু ও অন্যান্য উপাদানকে নির্দিষ্ট কাঠামো অনুযায়ী সুন্দর ও ব্যবহারবান্ধবভাবে সাজানোর প্রক্রিয়াকে ওয়েব ডিজাইন বলে। এর মাধ্যমে internet-এ প্রদর্শনের উপযোগী web page তৈরি করা হয়।
+\end{boardbox}
+
+\subsection{ওয়েব ডিজাইনের মূল উদ্দেশ্য}
+
+ওয়েব ডিজাইনের উদ্দেশ্য শুধু সুন্দর page তৈরি করা নয়; বরং তথ্যকে এমনভাবে সাজানো যাতে ব্যবহারকারী দ্রুত, সহজে এবং স্পষ্টভাবে প্রয়োজনীয় তথ্য পায়।
+
+\begin{keypointbox}{প্রধান উদ্দেশ্য}
+\begin{itemize}
+\item তথ্য সুন্দর ও সংগঠিতভাবে উপস্থাপন করা।
+\item ব্যবহারকারীর জন্য সহজ navigation তৈরি করা।
+\item ওয়েবসাইটকে আকর্ষণীয় ও user-friendly করা।
+\item প্রয়োজনীয় তথ্য দ্রুত খুঁজে পাওয়ার ব্যবস্থা করা।
+\item text, image, link, list, table ও form-এর সঠিক ব্যবহার নিশ্চিত করা।
+\item বিভিন্ন browser ও device-এ web page ঠিকভাবে দেখা যায় এমনভাবে তৈরি করা।
+\item প্রতিষ্ঠান, পণ্য, সেবা বা ব্যক্তিগত পরিচিতি online-এ প্রকাশ করা।
+\item visitor বা user যেন সহজে contact, download বা service নিতে পারে সে ব্যবস্থা রাখা।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{ওয়েব ডিজাইনের সাথে সম্পর্কিত মৌলিক ধারণা}
+
+ওয়েব ডিজাইন ভালোভাবে বুঝতে হলে কয়েকটি basic term জানা প্রয়োজন।
+
+\subsubsection{ওয়েবপেজ}
+
+\begin{definitionbox}{ওয়েবপেজ}
+ওয়েবপেজ হলো এমন একটি web document, যা web browser দিয়ে দেখা যায় এবং সাধারণত HTML দিয়ে তৈরি করা হয়।
+\end{definitionbox}
+
+একটি ওয়েবসাইটের স্বতন্ত্র যেকোনো page-কে ওয়েবপেজ বলা যায়। যেমন, একটি কলেজ ওয়েবসাইটে Home, About, Notice, Admission, Result, Contact - প্রতিটি আলাদা ওয়েবপেজ হতে পারে।
+
+\begin{examplebox}{উদাহরণ}
+\texttt{notice.html} একটি notice page হতে পারে, যেখানে কলেজের notice list দেওয়া থাকে। \texttt{result.html} একটি result page হতে পারে, যেখানে student result table দেওয়া থাকে।
+\end{examplebox}
+
+\begin{keypointbox}{History Highlight: Webpage-এর শুরু}
+\begin{itemize}
+\item Webpage ধারণার জন্ম World Wide Web-এর সাথে সম্পর্কিত।
+\item \textbf{Tim Berners-Lee} ১৯৮৯ সালে CERN-এ World Wide Web-এর ধারণা দেন।
+\item ১৯৯০ সালে তিনি প্রথম web server, প্রথম web browser/editor এবং প্রথম website তৈরির কাজ করেন।
+\item প্রথম web page-গুলো ছিল simple HTML document, যেখানে text ও hyperlink ছিল।
+\item Webpage-এর মূল শক্তি ছিল hypertext link - এক page থেকে অন্য page-এ যাওয়ার সুবিধা।
+\end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{কার অবদান?}
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.56\textwidth}|}
+\hline
+\textbf{ব্যক্তি/প্রতিষ্ঠান} & \textbf{অবদান} \\
+\hline
+Tim Berners-Lee & World Wide Web, HTML, HTTP, প্রথম browser/editor ও প্রথম web server তৈরিতে প্রধান ভূমিকা \\
+\hline
+Robert Cailliau & Web proposal formal করতে Tim Berners-Lee-কে সহযোগিতা করেন \\
+\hline
+CERN & যে গবেষণা প্রতিষ্ঠানে Web-এর ধারণা ও প্রাথমিক বাস্তবায়ন শুরু হয় \\
+\hline
+W3C & Web standard, accessibility ও browser compatibility উন্নয়নে কাজ করে \\
+\hline
+\end{tabular}
+\end{center}
+\end{boardbox}
+
+\subsubsection{ওয়েবসাইট}
 
 \begin{definitionbox}{ওয়েবসাইট}
-একই domain বা web address-এর অধীনে থাকা সম্পর্কিত একাধিক ওয়েব পেজের সমষ্টিকে ওয়েবসাইট বলা হয়।
+একই domain name বা web address-এর অধীনে থাকা সম্পর্কিত একাধিক ওয়েবপেজের সমষ্টিকে ওয়েবসাইট বলা হয়।
 \end{definitionbox}
 
+কোনো ওয়েবসাইটে প্রবেশ করলে সাধারণত প্রথম যে page দেখা যায় তাকে homepage বলা হয়। Homepage থেকে About, Notice, Result, Contact ইত্যাদি page-এ যাওয়ার link থাকে।
+
+\begin{examplebox}{উদাহরণ}
+\texttt{www.educationboard.gov.bd} একটি ওয়েবসাইট। এর অধীনে notice page, result page, circular page ইত্যাদি থাকতে পারে।
+\end{examplebox}
+
+\subsubsection{ওয়েব সার্ভার}
+
+\begin{definitionbox}{ওয়েব সার্ভার}
+যে server-এ ওয়েবসাইট বা ওয়েবপেজের file সংরক্ষিত থাকে এবং browser request করলে সেই file পাঠায়, তাকে ওয়েব সার্ভার বলা হয়।
+\end{definitionbox}
+
+ওয়েব সার্ভারে HTML file, CSS file, image, video, PDF, database বা website-এর অন্যান্য resource রাখা থাকতে পারে। ব্যবহারকারী browser-এ website address লিখলে browser সেই server-এর কাছে request পাঠায়।
+
+\subsubsection{ওয়েব ব্রাউজার}
+
+\begin{definitionbox}{ওয়েব ব্রাউজার}
+ওয়েব ব্রাউজার হলো এমন application software, যার মাধ্যমে ব্যবহারকারী ওয়েবপেজ দেখতে, hyperlink follow করতে, file download করতে এবং website ব্যবহার করতে পারে।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+Google Chrome, Mozilla Firefox, Microsoft Edge, Safari ও Opera হলো web browser-এর উদাহরণ।
+\end{examplebox}
+
+\begin{keypointbox}{Browser-এর কাজ}
+\begin{itemize}
+\item URL অনুযায়ী server-এ request পাঠানো।
+\item HTML, CSS ও image render করে web page দেখানো।
+\item hyperlink-এর মাধ্যমে এক page থেকে অন্য page-এ যেতে সাহায্য করা।
+\item file download, form submit ও website interaction করতে সাহায্য করা।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{ওয়েব ডিজাইন কীভাবে কাজ করে?}
+
+একটি ওয়েবপেজ তৈরি করার পর সেটি server-এ রাখা হয়। ব্যবহারকারী browser-এ website address বা URL লিখলে browser web server-এ request পাঠায়। Server সেই request অনুযায়ী web page-এর file পাঠায়। এরপর browser HTML/CSS/image file interpret করে user-এর সামনে webpage আকারে দেখায়।
+
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
+\fbox{\parbox{0.88\textwidth}{
 \centering
-\textbf{Client-server diagram placeholder}\\[4pt]
-User/Browser $\rightarrow$ HTTP Request $\rightarrow$ Web Server\\
-Web Server $\rightarrow$ HTML/CSS/Image Response $\rightarrow$ Browser render
+\textbf{Web page load flow}\\[4pt]
+User $\rightarrow$ Browser $\rightarrow$ Internet $\rightarrow$ Web Server\\
+Web Server $\rightarrow$ HTML/CSS/Image Files $\rightarrow$ Browser Output
 }}
 \end{center}
 
-\subsection{Static ও Dynamic ওয়েবসাইট}
+\begin{enumerate}
+\item User browser-এ URL লিখে।
+\item Browser server-এ request পাঠায়।
+\item Web server requested file খুঁজে response পাঠায়।
+\item Browser HTML, CSS ও image process করে।
+\item User screen-এ web page output দেখা যায়।
+\end{enumerate}
+
+\subsection{ওয়েব ডিজাইনে HTML-এর ভূমিকা}
+
+HTML-এর পূর্ণরূপ হলো \textbf{HyperText Markup Language}। এটি ওয়েবপেজ তৈরির মৌলিক ভাষা। HTML ব্যবহার করে web page-এর structure তৈরি করা হয় - কোথায় heading থাকবে, কোথায় paragraph থাকবে, কোথায় image, list, table, form বা hyperlink থাকবে তা HTML tag দিয়ে নির্ধারণ করা হয়।
+
+\begin{keypointbox}{HTML, CSS ও JavaScript}
+\begin{itemize}
+\item \textbf{HTML} web page-এর structure বা কাঠামো তৈরি করে।
+\item \textbf{CSS} web page-এর design, color, font, spacing ও layout সুন্দর করে।
+\item \textbf{JavaScript} web page-এ dynamic behavior ও interactivity যোগ করে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{Exam-standard line}
+HTML ওয়েবপেজের কাঠামো তৈরি করে, CSS ওয়েবপেজকে সুন্দর করে এবং JavaScript ওয়েবপেজকে dynamic বা interactive করে।
+\end{boardbox}
+
+\subsection{ওয়েব ডিজাইনের জন্য প্রয়োজনীয় উপাদান}
+
+একটি ভালো ওয়েবপেজ ডিজাইনের জন্য সাধারণত নিচের বিষয়গুলো দরকার হয়:
+
 \begin{center}
-\begin{tabular}{|p{0.28\textwidth}|p{0.28\textwidth}|p{0.30\textwidth}|}
+\begin{tabular}{|p{0.28\textwidth}|p{0.54\textwidth}|}
 \hline
-\textbf{ভিত্তি} & \textbf{Static website} & \textbf{Dynamic website} \\
+\textbf{উপাদান} & \textbf{ব্যাখ্যা} \\
 \hline
-Content & fixed file থেকে আসে & database/server program থেকে বদলায় \\
+Content & লেখা, তথ্য, ছবি, video, table, notice, result ইত্যাদি \\
 \hline
-Technology & HTML, CSS & HTML, CSS, JS, PHP/Python, database \\
+Structure & heading, paragraph, section, list, table, form-এর বিন্যাস \\
 \hline
-উদাহরণ & notice page, portfolio & ecommerce, LMS, social site \\
+Navigation & menu, hyperlink, button, back/home link \\
+\hline
+Visual design & color, font, spacing, image size, layout \\
+\hline
+Usability & user যেন সহজে বুঝতে ও ব্যবহার করতে পারে \\
+\hline
+Accessibility & বিভিন্ন ব্যবহারকারী যেন page ব্যবহার করতে পারে \\
+\hline
+Performance & page দ্রুত load হওয়া \\
+\hline
+Compatibility & বিভিন্ন browser ও device-এ ঠিকভাবে দেখা যাওয়া \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{ওয়েবসাইট তৈরির ধাপ}
-\begin{keypointbox}{ধাপে ধাপে কাজ}
+\subsection{ওয়েব ডিজাইনের সুবিধা}
+
+ওয়েব ডিজাইনের মাধ্যমে ব্যক্তি বা প্রতিষ্ঠান সহজে তাদের তথ্য বিশ্বব্যাপী প্রকাশ করতে পারে। শিক্ষার্থী, অভিভাবক, customer বা visitor যেকোনো স্থান থেকে প্রয়োজনীয় তথ্য দেখতে পারে।
+
 \begin{itemize}
-\item লক্ষ্য, audience ও প্রয়োজনীয় page নির্ধারণ।
-\item content, image ও link সংগ্রহ।
-\item sitemap ও wireframe তৈরি।
-\item HTML/CSS দিয়ে coding।
-\item browser, mobile ও link testing।
-\item hosting server-এ publish এবং নিয়মিত update।
+\item তথ্য দ্রুত প্রকাশ করা যায়।
+\item যেকোনো স্থান থেকে তথ্য দেখা যায়।
+\item প্রতিষ্ঠান বা ব্যবসার পরিচিতি বাড়ে।
+\item online service দেওয়া যায়।
+\item শিক্ষার্থীরা online class, note, result, routine ও notice পেতে পারে।
+\item customer বা visitor সহজে যোগাযোগ করতে পারে।
+\item কম খরচে বিশ্বব্যাপী প্রচার করা যায়।
+\item প্রয়োজনীয় file, PDF, form বা notice download করা যায়।
+\end{itemize}
+
+\subsection{ওয়েব ডিজাইনের ব্যবহারক্ষেত্র}
+
+\begin{itemize}
+\item \textbf{শিক্ষা প্রতিষ্ঠান:} notice, result, admission, routine, teacher information।
+\item \textbf{ব্যবসা প্রতিষ্ঠান:} product, service, order, payment information।
+\item \textbf{সংবাদমাধ্যম:} online news portal।
+\item \textbf{সরকারি সেবা:} নাগরিক সেবা, আবেদন, তথ্য প্রকাশ।
+\item \textbf{স্বাস্থ্যসেবা:} appointment, doctor information, health notice।
+\item \textbf{ব্যক্তিগত portfolio:} নিজের কাজ, skill, project দেখানো।
+\item \textbf{E-commerce:} online shopping, product catalog, cart।
+\item \textbf{Banking:} online banking information ও service notice।
+\end{itemize}
+
+\subsection{ভালো ওয়েব ডিজাইনের বৈশিষ্ট্য}
+
+একটি ভালো ওয়েবসাইট শুধু দেখতে সুন্দর হলেই যথেষ্ট নয়; সেটি ব্যবহার করাও সহজ হতে হবে।
+
+\begin{keypointbox}{ভালো ওয়েব ডিজাইনের বৈশিষ্ট্য}
+\begin{itemize}
+\item পরিষ্কার ও সহজ layout।
+\item সহজ navigation menu।
+\item পাঠযোগ্য font ও color।
+\item দ্রুত page loading।
+\item প্রয়োজনীয় image ও content।
+\item mobile-friendly design।
+\item broken link না থাকা।
+\item user-friendly structure।
+\item তথ্য নিয়মিত update করা।
+\item browser compatibility থাকা।
+\item unnecessary animation বা অতিরিক্ত design এড়িয়ে চলা।
 \end{itemize}
 \end{keypointbox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-ওয়েব ডিজাইন প্রশ্নে content organization, navigation, readability, accessibility ও device compatibility উল্লেখ করলে উত্তর পূর্ণাঙ্গ হয়।
+\subsection{ওয়েব ডিজাইন বনাম ওয়েব ডেভেলপমেন্ট}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{ওয়েব ডিজাইন} & \textbf{ওয়েব ডেভেলপমেন্ট} \\
+\hline
+কাজ & ওয়েবপেজের appearance ও layout তৈরি & ওয়েবসাইটের functionality তৈরি \\
+\hline
+Focus & color, font, layout, image, user experience & code, database, server, logic \\
+\hline
+Tool & HTML, CSS, design tool & HTML, CSS, JavaScript, PHP, database \\
+\hline
+উদাহরণ & homepage সুন্দরভাবে সাজানো & login system বা result search system তৈরি \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{HSC note}
+HSC ICT-তে মূল focus হলো HTML দিয়ে basic webpage design করা। তাই design, structure, tag, syntax এবং output বোঝা বেশি গুরুত্বপূর্ণ।
+\end{keypointbox}
+
+\subsection{ওয়েবসাইট তৈরির ধাপ}
+
+\begin{enumerate}
+\item ওয়েবসাইটের উদ্দেশ্য ও target user নির্ধারণ করা।
+\item কোন কোন page থাকবে তা ঠিক করা।
+\item content, image, file ও link সংগ্রহ করা।
+\item sitemap বা page structure তৈরি করা।
+\item rough layout বা wireframe তৈরি করা।
+\item HTML দিয়ে web page structure তৈরি করা।
+\item প্রয়োজনে CSS দিয়ে page সুন্দর করা।
+\item browser-এ output test করা।
+\item link, image, table ও form ঠিক আছে কিনা পরীক্ষা করা।
+\item hosting server-এ website publish করা।
+\end{enumerate}
+
+\subsection{Static ও Dynamic ওয়েবসাইট: প্রাথমিক ধারণা}
+
+ওয়েবসাইটের content যদি সাধারণত fixed থাকে এবং user অনুযায়ী স্বয়ংক্রিয়ভাবে পরিবর্তিত না হয়, তাহলে সেটি static website। আর content যদি user input, database বা server-side program অনুযায়ী পরিবর্তিত হয়, তাহলে সেটি dynamic website। এই অধ্যায়ে পরের টপিকে static, dynamic, local ও remote website আলাদা করে বিস্তারিত আলোচনা করা হয়েছে।
+
+\begin{keypointbox}{মনে রাখো}
+এই টপিকে শুধু ধারণা বোঝানো হলো। পরীক্ষার তুলনামূলক উত্তর লেখার জন্য ``ওয়েবসাইটের প্রকারভেদ'' টপিকের table অনুসরণ করবে।
+\end{keypointbox}
+
+\subsection{Simple HTML Skeleton}
+
+নিচের code টি একটি simple web page-এর basic structure দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Example College</title>
+</head>
+<body>
+  <h1>Example College</h1>
+  <p>Welcome to our college website.</p>
+  <a href="notice.html">Notice</a>
+  <br>
+  <img src="images/college.jpg" alt="College" width="300">
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+Browser tab-এ \texttt{Example College} title দেখা যাবে। Web page-এর body অংশে \textbf{Example College} heading, একটি welcome paragraph, একটি Notice link এবং একটি college image দেখা যাবে।
+\end{examplebox}
+
+\begin{keypointbox}{Code explanation}
+\begin{itemize}
+\item \texttt{<!DOCTYPE html>} document-টি HTML5 standard অনুসরণ করে তা বোঝায়।
+\item \texttt{<title>} browser tab-এর title নির্ধারণ করে।
+\item \texttt{<h1>} বড় heading তৈরি করে।
+\item \texttt{<p>} paragraph তৈরি করে।
+\item \texttt{<a href="notice.html">} internal hyperlink তৈরি করে।
+\item \texttt{<img>} web page-এ image দেখায়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}
+
+\subsubsection{প্রশ্ন: ওয়েব ডিজাইন কী?}
+
+\begin{boardbox}{উত্তর}
+ওয়েবসাইট বা ওয়েবপেজের তথ্য, ছবি, লিংক, টেবিল, মেনু ও অন্যান্য উপাদানকে নির্দিষ্ট কাঠামো অনুযায়ী সুন্দর ও ব্যবহারবান্ধবভাবে সাজানোর প্রক্রিয়াকে ওয়েব ডিজাইন বলে। এর মাধ্যমে internet-এ প্রদর্শনের উপযোগী web page তৈরি করা হয়।
 \end{boardbox}
 
-\begin{practicebox}
+\subsubsection{প্রশ্ন: ওয়েব ডিজাইন কেন গুরুত্বপূর্ণ?}
+
+\begin{boardbox}{উত্তর}
+ওয়েব ডিজাইন গুরুত্বপূর্ণ, কারণ এর মাধ্যমে কোনো ব্যক্তি বা প্রতিষ্ঠান তাদের তথ্য, সেবা বা পণ্য internet-এর মাধ্যমে আকর্ষণীয় ও সহজভাবে ব্যবহারকারীর কাছে উপস্থাপন করতে পারে। ভালো ওয়েব ডিজাইন তথ্য খুঁজে পাওয়া সহজ করে, ওয়েবসাইটকে user-friendly করে এবং প্রতিষ্ঠানের পরিচিতি বৃদ্ধি করে।
+\end{boardbox}
+
+\subsection{Board/Exam Focus}
+
+এই topic থেকে সাধারণত MCQ, short question বা creative question-এর ক/খ অংশে প্রশ্ন আসে।
+
+\begin{keypointbox}{গুরুত্বপূর্ণ MCQ point}
+\begin{itemize}
+\item ওয়েবপেজ হলো browser-এ দেখা যায় এমন web document।
+\item একাধিক ওয়েবপেজের সমষ্টি হলো ওয়েবসাইট।
+\item ওয়েবসাইটের প্রথম page হলো homepage।
+\item ওয়েবসাইট web server-এ রাখা হয়।
+\item ওয়েবসাইট দেখার জন্য browser ব্যবহার করা হয়।
+\item ওয়েবপেজ তৈরির প্রধান ভাষা হলো HTML।
+\item HTML-এর পূর্ণরূপ HyperText Markup Language।
+\item HTML structure তৈরি করে, CSS design করে, JavaScript interactivity যোগ করে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Practice MCQ}
+
 \begin{enumerate}
-\item ওয়েব পেজ ও ওয়েবসাইটের পার্থক্য লেখ।
-\item Static website ও dynamic website তুলনা কর।
-\item ভালো ওয়েব পেজের চারটি বৈশিষ্ট্য লেখ।
+\item ওয়েবপেজ তৈরিতে কোন ভাষা বেশি ব্যবহৃত হয়?\\
+ক) Python \quad খ) HTML \quad গ) COBOL \quad ঘ) FORTRAN\\
+\textbf{উত্তর:} খ) HTML
+
+\item একই domain-এর অধীনে একাধিক web page-এর সমষ্টিকে কী বলে?\\
+ক) Web browser \quad খ) Website \quad গ) Search engine \quad ঘ) Web server\\
+\textbf{উত্তর:} খ) Website
+
+\item ওয়েবসাইট দেখার জন্য কোন software ব্যবহার করা হয়?\\
+ক) Compiler \quad খ) Browser \quad গ) Assembler \quad ঘ) Spreadsheet\\
+\textbf{উত্তর:} খ) Browser
+
+\item HTML-এর পূর্ণরূপ কী?\\
+ক) HighText Machine Language \quad খ) HyperText Markup Language\\
+গ) Hyper Tool Mark Language \quad ঘ) Home Text Markup Language\\
+\textbf{উত্তর:} খ) HyperText Markup Language
 \end{enumerate}
+
+\subsection{Activity}
+
+\begin{practicebox}
+তোমার কলেজের জন্য একটি ওয়েবসাইট কল্পনা করো। সেখানে কোন কোন page থাকবে লিখো।
+
+\textbf{Sample answer:}
+\begin{itemize}
+\item Home
+\item About College
+\item Teachers
+\item Notice
+\item Admission
+\item Result
+\item Contact
+\end{itemize}
 \end{practicebox}
+
+\subsection{মনে রাখবে}
+
+\begin{recapbox}
+\begin{itemize}
+\item ওয়েব ডিজাইন হলো ওয়েবপেজ বা ওয়েবসাইট সাজানোর প্রক্রিয়া।
+\item ওয়েবপেজ হলো browser-এ দেখা যায় এমন web document।
+\item ওয়েবসাইট হলো একই domain-এর অধীনে থাকা একাধিক linked webpage-এর সমষ্টি।
+\item HTML ওয়েবপেজের structure তৈরি করে।
+\item ভালো ওয়েব ডিজাইনের প্রধান লক্ষ্য হলো তথ্যকে সহজ, সুন্দর ও ব্যবহারবান্ধবভাবে উপস্থাপন করা।
+\end{itemize}
+\end{recapbox}

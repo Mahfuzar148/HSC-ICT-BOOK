@@ -1,62 +1,680 @@
-% ৪.৯ টেবিল ও ডেটা উপস্থাপন
-\section{টেবিল ও ডেটা উপস্থাপন}
+% Topic 14: Table in HTML
+\section{Table in HTML}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML table তৈরির tagগুলো ব্যবহার করতে।
-\item row, column, header cell ও data cell ব্যাখ্যা করতে।
-\item \texttt{rowspan} ও \texttt{colspan} attribute-এর ব্যবহার বুঝতে।
+\item HTML table কী এবং ওয়েবপেজে table কখন ব্যবহার করা হয় তা ব্যাখ্যা করতে।
+\item \texttt{<table>}, \texttt{<tr>}, \texttt{<th>} ও \texttt{<td>} tag-এর কাজ লিখতে।
+\item \texttt{border}, \texttt{cellspacing}, \texttt{cellpadding}, \texttt{align} ও \texttt{width} attribute ব্যবহার করতে।
+\item table-এর ভিতরে text, link, image ও list ব্যবহার করতে।
+\item figure দেখে board-style HTML table code লিখতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Table tag}
-সারণি আকারে তথ্য দেখাতে HTML table ব্যবহার করা হয়। marksheet, routine, price list, comparison chart ইত্যাদিতে table দরকার হয়।
+ওয়েবপেজে অনেক সময় তথ্য সারি ও কলাম আকারে দেখাতে হয়। যেমন--রেজাল্ট শিট, ক্লাস রুটিন, পণ্যের মূল্য তালিকা, শিক্ষার্থীর তথ্য, salary sheet, bill summary ইত্যাদি। এই ধরনের তথ্য সুন্দরভাবে সাজানোর জন্য HTML-এ table ব্যবহার করা হয়। HSC ICT Chapter 4-এ table একটি খুব গুরুত্বপূর্ণ practical topic, কারণ CQ ও practical question-এ প্রায়ই result table, marks sheet, image-সহ table, hyperlink-সহ table ইত্যাদি তৈরি করতে বলা হয়।
+
+\subsection{HTML Table কী?}
+
+\begin{definitionbox}{HTML Table}
+HTML document-এ তথ্যকে সারি ও কলাম আকারে প্রদর্শনের জন্য যে কাঠামো ব্যবহার করা হয়, তাকে HTML Table বলে।
+\end{definitionbox}
+
+Table মূলত tabular data বা row-column আকারের তথ্য দেখানোর জন্য ব্যবহার করা হয়। একটি table বুঝতে তিনটি বিষয় মনে রাখা দরকার: row, column এবং cell।
 
 \begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.46\textwidth}|p{0.20\textwidth}|}
+\begin{tabular}{|p{0.22\textwidth}|p{0.58\textwidth}|}
 \hline
-\textbf{Tag} & \textbf{কাজ} & \textbf{নোট} \\
+\textbf{অংশ} & \textbf{অর্থ} \\
 \hline
-\texttt{<table>} & পুরো table তৈরি করে & parent tag \\
+Row & আড়াআড়ি সারি \\
 \hline
-\texttt{<tr>} & table row তৈরি করে & row \\
+Column & লম্বালম্বি কলাম \\
 \hline
-\texttt{<th>} & heading cell তৈরি করে & bold/center default হতে পারে \\
-\hline
-\texttt{<td>} & data cell তৈরি করে & সাধারণ cell \\
-\hline
-\texttt{<caption>} & table caption দেয় & table title \\
+Cell & row ও column মিলিত হয়ে যে ঘর তৈরি হয় \\
 \hline
 \end{tabular}
 \end{center}
 
+\begin{examplebox}{ধারণা}
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\textbf{HTML table example placeholder}\\[4pt]
-\texttt{<table>}\\
-\texttt{<tr><th>Name</th><th>Marks</th></tr>}\\
-\texttt{<tr><td>Asha</td><td>85</td></tr>}\\
-\texttt{</table>}
-}}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Roll} & \textbf{Name} & \textbf{GPA} \\
+\hline
+101 & Rafi & 5.00 \\
+\hline
+102 & Sakib & 4.75 \\
+\hline
+\end{tabular}
+\end{center}
+এখানে Roll, Name, GPA হলো heading cell; 101, Rafi, 5.00 হলো data cell; প্রতিটি horizontal line একটি row এবং প্রতিটি vertical section একটি column বোঝায়।
+\end{examplebox}
+
+\subsection{Table তৈরির প্রধান Tag}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.22\textwidth}|p{0.42\textwidth}|}
+\hline
+\textbf{Tag} & \textbf{পূর্ণরূপ/অর্থ} & \textbf{কাজ} \\
+\hline
+\texttt{<table>} & Table & table শুরু ও শেষ করে \\
+\hline
+\texttt{<tr>} & Table Row & table-এর row বা সারি তৈরি করে \\
+\hline
+\texttt{<th>} & Table Header & heading cell তৈরি করে \\
+\hline
+\texttt{<td>} & Table Data & data cell তৈরি করে \\
+\hline
+\texttt{<caption>} & Caption & table-এর title বা শিরোনাম দেখায় \\
+\hline
+\end{tabular}
 \end{center}
 
-\begin{keypointbox}{Attribute}
-\begin{itemize}
-\item \texttt{rowspan}: একটি cell একাধিক row জুড়ে থাকবে।
-\item \texttt{colspan}: একটি cell একাধিক column জুড়ে থাকবে।
-\item Modern HTML-এ table styling সাধারণত CSS দিয়ে করা ভালো।
-\end{itemize}
+\subsection{\texttt{<table>} Tag}
+
+\begin{definitionbox}{\texttt{<table>} tag}
+HTML document-এ table বা ছক তৈরি করার জন্য ব্যবহৃত container tag হলো \texttt{<table>} tag।
+\end{definitionbox}
+
+Table-এর সব row ও cell এই tag-এর ভিতরে লেখা হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table>
+  ...
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{\texttt{<tr>} Tag}
+
+\begin{definitionbox}{\texttt{<tr>} tag}
+HTML table-এর একটি row বা সারি তৈরি করার জন্য \texttt{<tr>} tag ব্যবহার করা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tr>
+  ...
+</tr>
+\end{verbatim}
+\end{examplebox}
+
+প্রতিটি \texttt{<tr>} tag-এর ভিতরে এক বা একাধিক \texttt{<th>} অথবা \texttt{<td>} লেখা হয়।
+
+\subsection{\texttt{<th>} Tag}
+
+\begin{definitionbox}{\texttt{<th>} tag}
+HTML table-এর heading cell তৈরি করার জন্য ব্যবহৃত tag হলো \texttt{<th>} tag।
+\end{definitionbox}
+
+Browser সাধারণত \texttt{<th>} tag-এর text bold ও center aligned করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<th>Name</th>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{\texttt{<td>} Tag}
+
+\begin{definitionbox}{\texttt{<td>} tag}
+HTML table-এর data cell বা তথ্যের ঘর তৈরি করার জন্য ব্যবহৃত tag হলো \texttt{<td>} tag।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>Rafi</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Basic Table Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table>
+  <tr>
+    <th>Heading 1</th>
+    <th>Heading 2</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{Structure মনে রাখো}
+\texttt{<table>} পুরো table তৈরি করে, \texttt{<tr>} একটি row তৈরি করে, \texttt{<th>} heading cell তৈরি করে এবং \texttt{<td>} data cell তৈরি করে।
 \end{keypointbox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Table drawing প্রশ্নে \texttt{table}, \texttt{tr}, \texttt{th}, \texttt{td} tag-এর nesting ঠিক রাখতে হবে। row-এর ভিতরে cell বসে, cell-এর ভিতরে content বসে।
+\subsection{Simple Table Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Table</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>Roll</th>
+      <th>Name</th>
+      <th>GPA</th>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>Rafi</td>
+      <td>5.00</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>Sakib</td>
+      <td>4.75</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Roll} & \textbf{Name} & \textbf{GPA} \\
+\hline
+101 & Rafi & 5.00 \\
+\hline
+102 & Sakib & 4.75 \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\subsection{\texttt{border} Attribute}
+
+\begin{definitionbox}{\texttt{border} attribute}
+HTML table-এর চারপাশে ও cell-এর চারপাশে border প্রদর্শনের জন্য \texttt{border} attribute ব্যবহার করা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <th>Subject</th>
+    <th>Mark</th>
+  </tr>
+  <tr>
+    <td>ICT</td>
+    <td>95</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষায় মনে রাখবে}
+HSC practical code-এ table-এর রেখা দেখাতে সাধারণত \texttt{border="1"} ব্যবহার করা হয়। Border না দিলে browser table-এর cell boundary সবসময় স্পষ্টভাবে দেখায় না।
 \end{boardbox}
 
-\begin{practicebox}
+\subsection{\texttt{cellspacing} Attribute}
+
+\begin{definitionbox}{\texttt{cellspacing} attribute}
+Table-এর এক cell-এর border থেকে পাশের cell-এর border পর্যন্ত ফাঁকা জায়গা নির্ধারণ করতে \texttt{cellspacing} attribute ব্যবহার করা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" cellspacing="0">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" cellspacing="0">
+  <tr>
+    <th>Name</th>
+    <th>Class</th>
+  </tr>
+  <tr>
+    <td>Rafi</td>
+    <td>XI</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{সহজ কথা}
+\texttt{cellspacing="0"} দিলে cell-এর মাঝখানের gap কমে যায় বা borderগুলো একসাথে লেগে থাকে।
+\end{keypointbox}
+
+\subsection{\texttt{cellpadding} Attribute}
+
+\begin{definitionbox}{\texttt{cellpadding} attribute}
+Table cell-এর content এবং cell border-এর মাঝখানের ভিতরের ফাঁকা জায়গা নির্ধারণ করতে \texttt{cellpadding} attribute ব্যবহার করা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" cellpadding="5">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Subject</th>
+    <th>GPA</th>
+  </tr>
+  <tr>
+    <td>Bangla</td>
+    <td>5.00</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\begin{boardbox}{MCQ point}
+\texttt{cellpadding="5"} অর্থ cell content এবং cell border-এর মাঝখানে 5 pixel ভিতরের ফাঁকা জায়গা রাখা।
+\end{boardbox}
+
+\subsection{\texttt{cellspacing} ও \texttt{cellpadding}-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{\texttt{cellspacing}} & \textbf{\texttt{cellpadding}} \\
+\hline
+কাজ & cell থেকে cell-এর মাঝের gap নির্ধারণ করে & cell content থেকে border-এর ভিতরের gap নির্ধারণ করে \\
+\hline
+অবস্থান & cell-এর বাইরে & cell-এর ভিতরে \\
+\hline
+Example & \texttt{cellspacing="0"} & \texttt{cellpadding="5"} \\
+\hline
+প্রভাব & border-এর মাঝের দূরত্ব কমায় বা বাড়ায় & content-এর চারপাশে space দেয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{সহজ মনে রাখার উপায়}
+Spacing মানে cell ও cell-এর মাঝে space। Padding মানে cell-এর ভিতরে content-এর চারপাশে space।
+\end{keypointbox}
+
+\subsection{\texttt{align} Attribute}
+
+Table, row বা cell-এর content left, right বা center-এ রাখতে \texttt{align} attribute ব্যবহার করা হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td align="center">ICT</td>
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{Value} & \textbf{কাজ} \\
+\hline
+\texttt{left} & বামে রাখে \\
+\hline
+\texttt{center} & মাঝখানে রাখে \\
+\hline
+\texttt{right} & ডানে রাখে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{\texttt{width} Attribute}
+
+Table বা cell-এর প্রস্থ নির্ধারণ করতে \texttt{width} attribute ব্যবহার করা যায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" width="400">
+  <tr>
+    <th>Name</th>
+    <th>GPA</th>
+  </tr>
+  <tr>
+    <td>Rafi</td>
+    <td>5.00</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{Modern note}
+Professional web design-এ table-এর border, spacing, padding, width ও alignment সাধারণত CSS দিয়ে নিয়ন্ত্রণ করা হয়। তবে HSC ICT basic HTML অংশে এই HTML attribute-গুলো পরীক্ষার জন্য গুরুত্বপূর্ণ।
+\end{keypointbox}
+
+\subsection{\texttt{<caption>} Tag}
+
+\begin{definitionbox}{\texttt{<caption>} tag}
+HTML table-এর শিরোনাম বা title প্রদর্শনের জন্য \texttt{<caption>} tag ব্যবহার করা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <caption>Student Information</caption>
+  <tr>
+    <th>Roll</th>
+    <th>Name</th>
+  </tr>
+  <tr>
+    <td>101</td>
+    <td>Rafi</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Table-এর ভিতরে Formatting, Link ও Image}
+
+Table cell-এর ভিতরে শুধু text নয়, HTML-এর অন্য element-ও রাখা যায়।
+
+\subsubsection{Underline text}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td><u>ICT</u></td>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Hyperlink}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td><a href="https://www.board.edu.bd">Board</a></td>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Image}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td><img src="map.jpg" width="100" height="40"></td>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Full Example: Result Table}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <caption>Result Sheet</caption>
+    <tr>
+      <th>Roll</th>
+      <th>Name</th>
+      <th>Bangla</th>
+      <th>English</th>
+      <th>ICT</th>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>Rafi</td>
+      <td>85</td>
+      <td>90</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>Sakib</td>
+      <td>80</td>
+      <td>88</td>
+      <td>92</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Roll} & \textbf{Name} & \textbf{Bangla} & \textbf{English} & \textbf{ICT} \\
+\hline
+101 & Rafi & 85 & 90 & 95 \\
+\hline
+102 & Sakib & 80 & 88 & 92 \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\subsection{Line-by-line Explanation}
+
+\begin{center}
+\begin{tabular}{|p{0.42\textwidth}|p{0.42\textwidth}|}
+\hline
+\textbf{Code} & \textbf{কাজ} \\
+\hline
+\texttt{<table border="1" cellspacing="0" cellpadding="5">} & border সহ table তৈরি করে; cell gap 0, cell padding 5 \\
+\hline
+\texttt{<caption>Result Sheet</caption>} & table-এর title দেখায় \\
+\hline
+\texttt{<tr>} & নতুন row শুরু করে \\
+\hline
+\texttt{<th>} & heading cell তৈরি করে \\
+\hline
+\texttt{<td>} & data cell তৈরি করে \\
+\hline
+\texttt{</tr>} & row শেষ করে \\
+\hline
+\texttt{</table>} & table শেষ করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Table Design করার ধাপ}
+
+HSC exam-এ figure দেখে table code লিখতে হলে আগে table-টি বিশ্লেষণ করতে হবে।
+
 \begin{enumerate}
-\item \texttt{<th>} ও \texttt{<td>} tag-এর পার্থক্য লেখ।
-\item \texttt{colspan} কী কাজে লাগে?
-\item তিন row ও দুই column-এর একটি routine table-এর HTML structure লেখ।
+\item মোট কয়টি row আছে দেখো।
+\item মোট কয়টি column আছে দেখো।
+\item heading cell আছে কি না দেখো।
+\item কোনো cell merge আছে কি না দেখো।
+\item border দরকার কি না দেখো।
+\item content center, left বা right alignment দরকার কি না দেখো।
+\item image, link বা list আছে কি না দেখো।
+\item তারপর code লিখো।
 \end{enumerate}
+
+\subsection{Table Code লেখার সহজ নিয়ম}
+
+প্রথমে skeleton লিখবে:
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <tr>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+তারপর row অনুযায়ী cell বসাবে:
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tr>
+  <th>Heading</th>
+  <th>Heading</th>
+</tr>
+<tr>
+  <td>Data</td>
+  <td>Data</td>
+</tr>
+\end{verbatim}
+\end{examplebox}
+
+সবশেষে দরকার হলে attribute যোগ করবে:
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Board/Exam Focus}
+
+\begin{boardbox}{বেশি গুরুত্বপূর্ণ}
+\begin{itemize}
+\item \texttt{<table>} tag table তৈরির জন্য ব্যবহৃত হয়।
+\item \texttt{<tr>} row তৈরি করে।
+\item \texttt{<th>} heading cell তৈরি করে।
+\item \texttt{<td>} data cell তৈরি করে।
+\item \texttt{border} table border দেখায়।
+\item \texttt{cellspacing} cell-এর মাঝের gap নির্ধারণ করে।
+\item \texttt{cellpadding} cell-এর ভিতরের gap নির্ধারণ করে।
+\item \texttt{caption} table-এর title দেয়।
+\item table-এর ভিতরে link, image ও list ব্যবহার করা যায়।
+\item figure দেখে HTML table code লিখতে পারা খুব গুরুত্বপূর্ণ।
+\end{itemize}
+\end{boardbox}
+
+\subsection{Exam-style Short Answer}
+
+\begin{enumerate}
+\item \textbf{HTML table কী?}\\
+উত্তর: HTML document-এ তথ্যকে সারি ও কলাম আকারে প্রদর্শনের জন্য যে কাঠামো ব্যবহার করা হয়, তাকে HTML table বলে। Table তৈরির জন্য \texttt{<table>} tag ব্যবহার করা হয়।
+
+\item \textbf{\texttt{<tr>} tag-এর কাজ কী?}\\
+উত্তর: HTML table-এর একটি row বা সারি তৈরি করার জন্য \texttt{<tr>} tag ব্যবহার করা হয়।
+
+\item \textbf{\texttt{<th>} ও \texttt{<td>} tag-এর পার্থক্য লেখ।}\\
+উত্তর: \texttt{<th>} tag table-এর heading cell তৈরি করে এবং browser সাধারণত এর text bold ও center aligned করে দেখায়। অন্যদিকে \texttt{<td>} tag table-এর সাধারণ data cell তৈরি করে।
+
+\item \textbf{\texttt{border} attribute-এর কাজ কী?}\\
+উত্তর: HTML table-এর চারপাশে এবং cell-এর চারপাশে border বা রেখা প্রদর্শনের জন্য \texttt{border} attribute ব্যবহার করা হয়।
+
+\item \textbf{\texttt{cellspacing} ও \texttt{cellpadding}-এর পার্থক্য লেখ।}\\
+উত্তর: \texttt{cellspacing} cell থেকে cell-এর মাঝের gap নির্ধারণ করে। অন্যদিকে \texttt{cellpadding} cell-এর content এবং cell border-এর মাঝের ভিতরের gap নির্ধারণ করে।
+\end{enumerate}
+
+\subsection{Practice MCQ}
+
+\begin{enumerate}
+\item HTML-এ table তৈরির tag কোনটি?\\
+ক) \texttt{<tr>} \quad খ) \texttt{<td>} \quad গ) \texttt{<table>} \quad ঘ) \texttt{<th>}
+
+\item Table row তৈরি করতে কোন tag ব্যবহার হয়?\\
+ক) \texttt{<td>} \quad খ) \texttt{<tr>} \quad গ) \texttt{<th>} \quad ঘ) \texttt{<caption>}
+
+\item Table heading cell তৈরির tag কোনটি?\\
+ক) \texttt{<td>} \quad খ) \texttt{<tr>} \quad গ) \texttt{<th>} \quad ঘ) \texttt{<br>}
+
+\item Table data cell তৈরির tag কোনটি?\\
+ক) \texttt{<td>} \quad খ) \texttt{<tr>} \quad গ) \texttt{<table>} \quad ঘ) \texttt{<hr>}
+
+\item Table-এর border দেখাতে কোন attribute ব্যবহার করা হয়?\\
+ক) \texttt{src} \quad খ) \texttt{href} \quad গ) \texttt{border} \quad ঘ) \texttt{target}
+
+\item \texttt{cellpadding="5"} এর অর্থ কী?\\
+ক) cell-এর ভিতরে content ও border-এর মাঝে 5 pixel space\\
+খ) দুই cell-এর মাঝে 5 meter space\\
+গ) table-এর height 5\\
+ঘ) table-এর row সংখ্যা 5
+\end{enumerate}
+
+\begin{boardbox}{MCQ Answer Key}
+১-গ, ২-খ, ৩-গ, ৪-ক, ৫-গ, ৬-ক
+\end{boardbox}
+
+\subsection{CQ Practice}
+
+\begin{practicebox}
+\textbf{উদ্দীপক:} একটি webpage-এ Result Sheet table দেখাতে হবে। Table-এ border থাকবে, cell-এর ভিতরে ৫ pixel space থাকবে এবং cellগুলোর মাঝের gap থাকবে না।
+
+\textbf{প্রশ্ন}\\
+ক. HTML table কী?\\
+খ. \texttt{<th>} ও \texttt{<td>} tag-এর কাজ লেখ।\\
+গ. উদ্দীপকের জন্য HTML code লেখ।\\
+ঘ. \texttt{border}, \texttt{cellspacing} ও \texttt{cellpadding} attribute-এর ব্যবহার বিশ্লেষণ কর।
 \end{practicebox}
+
+\subsubsection{গ. Code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th colspan="3">Result Sheet</th>
+    </tr>
+    <tr>
+      <th>Roll</th>
+      <th>Name</th>
+      <th>GPA</th>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>Rafi</td>
+      <td>5.00</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>Sakib</td>
+      <td>4.75</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ঘ. বিশ্লেষণ}
+
+\texttt{border="1"} table ও cell-এর চারপাশে border দেখায়। \texttt{cellspacing="0"} cellগুলোর মাঝের gap দূর করে। \texttt{cellpadding="5"} cell-এর ভিতরে content ও border-এর মাঝে ৫ pixel space তৈরি করে, ফলে table পড়তে সহজ হয়।
+
+\subsection{Common Mistake}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item \texttt{<table>} tag close না করা।
+\item \texttt{<tr>} ছাড়া সরাসরি \texttt{<td>} লেখা।
+\item heading cell-এ \texttt{<td>} ব্যবহার করা, যেখানে \texttt{<th>} ভালো।
+\item \texttt{<td>}-এর spelling ভুল করে \texttt{<tb>} লেখা।
+\item \texttt{cellpadding} ও \texttt{cellspacing} গুলিয়ে ফেলা।
+\item border না দিলে table-এর রেখা দেখা যাবে না--এটা ভুলে যাওয়া।
+\item table row ও column সংখ্যা figure-এর সাথে না মেলানো।
+\item \texttt{<caption>} ভুল জায়গায় লেখা।
+\item table-এর ভিতরে image/link লিখতে syntax ভুল করা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{recapbox}
+Table তৈরি হয় row ও column দিয়ে। \texttt{<table>} পুরো table তৈরি করে, \texttt{<tr>} table row তৈরি করে, \texttt{<th>} heading cell তৈরি করে এবং \texttt{<td>} data cell তৈরি করে। \texttt{border} table border দেখায়, \texttt{cellspacing} cell-এর মাঝের gap নিয়ন্ত্রণ করে এবং \texttt{cellpadding} cell-এর ভিতরের gap নিয়ন্ত্রণ করে। \texttt{<caption>} table-এর title দেয়। HSC CQ-তে table figure দেখে code লেখা খুব গুরুত্বপূর্ণ।
+\end{recapbox}
+
+
+\begin{boardbox}{পরবর্তী টপিক}
+পরের টপিক: \texttt{rowspan} ও \texttt{colspan}--Table cell merge করার নিয়ম।
+\end{boardbox}

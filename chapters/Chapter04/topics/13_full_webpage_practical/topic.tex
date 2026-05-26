@@ -1,0 +1,352 @@
+% Topic 18: Full Webpage Designing Practical
+\section{Full Webpage Designing Practical}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item একটি পূর্ণাঙ্গ webpage-এর প্রধান অংশগুলো শনাক্ত করতে।
+\item header, menu, main content, image, list, table ও footer ব্যবহার করে webpage তৈরি করতে।
+\item \texttt{<div>}, \texttt{<a>}, \texttt{<img>}, \texttt{<ul>}, \texttt{<li>} ও table tag একসাথে ব্যবহার করতে।
+\item full webpage code-এর প্রতিটি অংশের কাজ ব্যাখ্যা করতে।
+\item HSC practical/CQ question-এর জন্য সম্পূর্ণ webpage design code লিখতে।
+\end{itemize}
+\end{learningbox}
+
+এই পর্যন্ত আমরা HTML-এর basic tag, heading, paragraph, list, hyperlink, image, table, rowspan/colspan, div/span ও style attribute শিখেছি। এখন এগুলো একসাথে ব্যবহার করে একটি সম্পূর্ণ webpage তৈরি করা শিখব। HSC ICT Chapter 4-এ webpage designing একটি practical-based topic, কারণ এখানে আলাদা আলাদা tag মুখস্থ করার পাশাপাশি সেগুলো একসাথে ব্যবহার করে একটি ব্যবহারযোগ্য page তৈরি করতে হয়।
+
+\subsection{Full Webpage Design কী?}
+
+\begin{definitionbox}{Full Webpage Designing}
+HTML tag ব্যবহার করে webpage-এর header, navigation menu, content, image, list, table, hyperlink ও footer অংশ পরিকল্পিতভাবে সাজানোর প্রক্রিয়াকে full webpage designing বলে।
+\end{definitionbox}
+
+একটি full webpage-এ সাধারণত website-এর পরিচয়, page navigation, মূল content, প্রয়োজনীয় image/list/table এবং footer থাকে। এতে page তথ্যবহুল ও ব্যবহারবান্ধব হয়।
+
+\subsection{একটি ভালো Webpage-এর প্রধান অংশ}
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{কাজ} \\
+\hline
+Header & ওয়েবসাইটের নাম, logo, title দেখায় \\
+\hline
+Navigation/Menu & অন্য page-এ যাওয়ার link রাখে \\
+\hline
+Main Content & মূল লেখা, image, list, table থাকে \\
+\hline
+Sidebar & অতিরিক্ত link বা notice রাখা যায় \\
+\hline
+Footer & copyright, contact, address ইত্যাদি থাকে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Webpage Design করার আগে পরিকল্পনা}
+
+Code লেখার আগে page-এর layout পরিকল্পনা করা দরকার। উদাহরণ হিসেবে একটি college website-এর layout হতে পারে:
+
+\begin{enumerate}
+\item \textbf{Header}: College name ও subtitle
+\item \textbf{Menu}: Home, About, Notice, Result, Contact
+\item \textbf{Main Content}: Welcome paragraph, campus image, subject list, result table
+\item \textbf{Footer}: Copyright ও contact email
+\end{enumerate}
+
+\begin{keypointbox}{পরীক্ষার কৌশল}
+CQ বা practical exam-এ figure দেখে code লিখতে হলে আগে page-এর section ভাগ করে নাও। তারপর প্রতিটি section-এর tag আলাদা করে লিখলে ভুল কম হবে।
+\end{keypointbox}
+
+\subsection{Webpage Design করার ধাপ}
+
+\subsubsection{ধাপ ১: Basic HTML structure লিখবে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ABC College</title>
+</head>
+<body>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ধাপ ২: Header section তৈরি করবে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div>
+  <h1>ABC College</h1>
+  <p>Official Website</p>
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ধাপ ৩: Menu বা Navigation তৈরি করবে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About</a> |
+  <a href="notice.html">Notice</a> |
+  <a href="result.html">Result</a> |
+  <a href="contact.html">Contact</a>
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ধাপ ৪: Main content তৈরি করবে}
+
+Main content অংশে প্রয়োজন অনুযায়ী paragraph, image, list, table ও hyperlink ব্যবহার করবে।
+
+\subsubsection{ধাপ ৫: Footer তৈরি করবে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div>
+  <p>&copy; 2026 ABC College</p>
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Full Webpage Example Code}
+
+নিচের code-টি HSC ICT practical section-এর জন্য একটি সম্পূর্ণ webpage design example হিসেবে ব্যবহারযোগ্য।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ABC College Website</title>
+</head>
+<body>
+
+  <div style="background-color:#003366; color:white; padding:15px; text-align:center;">
+    <h1>ABC College</h1>
+    <p>Official Website for HSC Students</p>
+  </div>
+
+  <div style="background-color:#eeeeee; padding:10px; text-align:center;">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="notice.html">Notice</a> |
+    <a href="result.html">Result</a> |
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div style="padding:15px;">
+    <h2>Welcome to ABC College</h2>
+    <p>
+      ABC College is a reputed educational institution. This website is designed
+      for students, teachers and guardians.
+    </p>
+
+    <h2>Our Campus</h2>
+    <img src="campus.jpg" alt="ABC College Campus" width="400" height="250">
+
+    <h2>Available Subjects</h2>
+    <ul type="square">
+      <li>Bangla</li>
+      <li>English</li>
+      <li>ICT</li>
+      <li>Physics</li>
+      <li>Chemistry</li>
+    </ul>
+
+    <h2>Result Sheet</h2>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th colspan="3">HSC Test Result</th>
+      </tr>
+      <tr>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>GPA</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Rafi</td>
+        <td>5.00</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Sakib</td>
+        <td>4.75</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="background-color:#222222; color:white; padding:10px; text-align:center;">
+    <p>&copy; 2026 ABC College | Email: info@abccollege.edu.bd</p>
+  </div>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Code Explanation}
+
+\subsubsection{Header অংশ}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="background-color:#003366; color:white; padding:15px; text-align:center;">
+  <h1>ABC College</h1>
+  <p>Official Website for HSC Students</p>
+</div>
+\end{verbatim}
+\end{examplebox}
+
+এখানে \texttt{<div>} দিয়ে header section তৈরি করা হয়েছে। \texttt{background-color} দিয়ে background color, \texttt{color} দিয়ে text color, \texttt{padding} দিয়ে ভিতরের space এবং \texttt{text-align:center} দিয়ে text center করা হয়েছে।
+
+\subsubsection{Menu অংশ}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<a href="index.html">Home</a>
+\end{verbatim}
+\end{examplebox}
+
+এখানে \texttt{<a>} tag দিয়ে hyperlink তৈরি করা হয়েছে। \texttt{href} attribute link-এর destination নির্ধারণ করে।
+
+\subsubsection{Image অংশ}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="campus.jpg" alt="ABC College Campus" width="400" height="250">
+\end{verbatim}
+\end{examplebox}
+
+এখানে \texttt{<img>} tag দিয়ে image দেখানো হয়েছে। \texttt{src} image-এর source/path নির্ধারণ করে, \texttt{alt} alternative text দেয়, আর \texttt{width} ও \texttt{height} image size নির্ধারণ করে।
+
+\subsubsection{List অংশ}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<ul type="square">
+  <li>Bangla</li>
+  <li>English</li>
+  <li>ICT</li>
+</ul>
+\end{verbatim}
+\end{examplebox}
+
+এখানে \texttt{<ul>} দিয়ে unordered list এবং \texttt{<li>} দিয়ে প্রতিটি list item তৈরি করা হয়েছে।
+
+\subsubsection{Table অংশ}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+\end{verbatim}
+\end{examplebox}
+
+এখানে table-এর border দেওয়া হয়েছে, cell-এর মাঝের gap \texttt{cellspacing="0"} দিয়ে কমানো হয়েছে এবং cell content-এর চারপাশে ৫ pixel space \texttt{cellpadding="5"} দিয়ে দেওয়া হয়েছে।
+
+\subsection{Output কেমন হবে?}
+
+\begin{examplebox}{Output Preview}
+\begin{enumerate}
+\item উপরে dark blue header থাকবে।
+\item Header-এ ``ABC College'' ও subtitle থাকবে।
+\item তার নিচে menu link থাকবে।
+\item Main section-এ welcome text থাকবে।
+\item Campus image দেখা যাবে।
+\item Subject list square bullet সহ দেখা যাবে।
+\item Result table border সহ দেখা যাবে।
+\item নিচে footer থাকবে।
+\end{enumerate}
+\end{examplebox}
+
+\subsection{Book Design Tip}
+
+এই practical topic বইয়ে তিন ভাগে দিলে শিক্ষার্থীরা ভালোভাবে বুঝবে:
+
+\begin{enumerate}
+\item \textbf{Code}: সম্পূর্ণ HTML code।
+\item \textbf{Output Preview}: Code run করলে কী দেখা যাবে--লেখা বা diagram দিয়ে বোঝানো।
+\item \textbf{Explanation}: প্রতিটি tag-এর কাজ line-by-line বোঝানো।
+\end{enumerate}
+
+এভাবে দিলে student শুধু code মুখস্থ করবে না, বরং বুঝে লিখতে পারবে।
+
+\subsection{Exam-style Short Answer}
+
+\begin{enumerate}
+\item \textbf{একটি webpage-এর প্রধান অংশগুলো কী কী?}\\
+উত্তর: একটি webpage-এর প্রধান অংশ হলো header, navigation/menu, main content, sidebar এবং footer। Header-এ website-এর নাম বা logo থাকে, menu-তে বিভিন্ন page-এর link থাকে, main content-এ মূল তথ্য থাকে এবং footer-এ copyright/contact information থাকে।
+
+\item \textbf{Webpage-এ menu তৈরি করতে কোন tag ব্যবহার করা হয়?}\\
+উত্তর: Webpage-এ menu তৈরি করতে সাধারণত \texttt{<a>} tag ব্যবহার করে hyperlink তৈরি করা হয়। একাধিক link একসাথে লিখে navigation menu তৈরি করা যায়।
+
+\item \textbf{Full webpage design-এ \texttt{<div>} tag কেন ব্যবহার করা হয়?}\\
+উত্তর: \texttt{<div>} tag webpage-এর header, menu, content ও footer-এর মতো বড় section আলাদা করে group করতে ব্যবহৃত হয়। এর মাধ্যমে CSS style প্রয়োগ করে webpage সুন্দরভাবে সাজানো যায়।
+\end{enumerate}
+
+\subsection{Practice Task}
+
+\begin{practicebox}
+\textbf{Task 1: Personal Webpage তৈরি করো}\\
+নিচের বিষয়গুলো থাকবে: Name heading, short paragraph, profile image, skill list, contact link।
+
+\textbf{Task 2: College Webpage তৈরি করো}\\
+নিচের section থাকবে: Header, Menu, Notice, Subject list, Result table, Footer।
+
+\textbf{Task 3: Product Webpage তৈরি করো}\\
+নিচের section থাকবে: Product name, product image, feature list, price table, buy link।
+\end{practicebox}
+
+\subsection{CQ Practice}
+
+\begin{practicebox}
+\textbf{উদ্দীপক:} তানভীর তার কলেজের জন্য একটি webpage তৈরি করতে চায়। Page-এর উপরে কলেজের নাম থাকবে। এরপর Home, About, Notice, Result ও Contact link থাকবে। Main content অংশে কলেজের একটি image, subject list এবং result table থাকবে। নিচে footer-এ copyright information থাকবে।
+
+\textbf{প্রশ্ন}\\
+ক. Full webpage design কী?\\
+খ. Webpage-এ \texttt{<div>} tag ব্যবহারের প্রয়োজনীয়তা ব্যাখ্যা কর।\\
+গ. উদ্দীপকের জন্য HTML code লেখ।\\
+ঘ. Header, menu, image, list ও table একসাথে ব্যবহার করলে webpage-এর মান কীভাবে বৃদ্ধি পায়--বিশ্লেষণ কর।
+\end{practicebox}
+
+\subsubsection{উত্তর নির্দেশনা}
+
+\textbf{ক.} HTML tag ব্যবহার করে webpage-এর বিভিন্ন section ও content পরিকল্পিতভাবে সাজিয়ে একটি পূর্ণাঙ্গ webpage তৈরি করাকে full webpage design বলে।
+
+\textbf{খ.} \texttt{<div>} tag দিয়ে webpage-এর বড় section--যেমন header, menu, content ও footer--group করা যায়। এতে style প্রয়োগ ও layout তৈরি সহজ হয়।
+
+\textbf{গ.} উপরের ``Full Webpage Example Code'' অনুসরণ করে code লেখা যাবে।
+
+\textbf{ঘ.} Header website-এর পরিচিতি দেয়, menu navigation সহজ করে, image page-কে আকর্ষণীয় করে, list তথ্যকে সংক্ষিপ্তভাবে সাজায় এবং table তথ্যকে row-column আকারে পরিষ্কারভাবে উপস্থাপন করে। তাই এগুলো একসাথে ব্যবহার করলে webpage ব্যবহারবান্ধব, তথ্যবহুল ও professional হয়।
+
+\subsection{Common Mistake}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item \texttt{<body>} tag-এর বাইরে content লেখা।
+\item \texttt{<div>} close না করা।
+\item Menu link-এ \texttt{href} না দেওয়া।
+\item Image path ভুল দেওয়া।
+\item Table row ও column সংখ্যা মিল না রাখা।
+\item \texttt{cellpadding} ও \texttt{cellspacing} গুলিয়ে ফেলা।
+\item Header, menu, content, footer আলাদা না করা।
+\item Inline style syntax ভুল লেখা, যেমন \texttt{color=red}।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{recapbox}
+Full webpage design-এ অনেক HTML tag একসাথে ব্যবহার হয়। \texttt{<div>} দিয়ে webpage section ভাগ করা যায়। \texttt{<a>} দিয়ে menu link তৈরি হয়। \texttt{<img>} দিয়ে image দেখানো হয়। \texttt{<ul>}/\texttt{<ol>} ও \texttt{<li>} দিয়ে list তৈরি হয়। \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} দিয়ে table তৈরি হয়। HSC practical/CQ-তে figure দেখে full webpage code লিখতে practice করতে হবে।
+\end{recapbox}
+
+
+\begin{boardbox}{পরবর্তী টপিক}
+পরের টপিক: Multi-page Website--\texttt{index.html}, \texttt{about.html}, \texttt{contact.html} link করে website তৈরি।
+\end{boardbox}

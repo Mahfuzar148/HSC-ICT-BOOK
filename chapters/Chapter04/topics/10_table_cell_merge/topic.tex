@@ -1,0 +1,723 @@
+% Topic 15: Rowspan and Colspan
+\section{Rowspan ও Colspan}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item HTML table cell merge কী তা ব্যাখ্যা করতে।
+\item \texttt{colspan} attribute ব্যবহার করে cell-কে একাধিক column জুড়ে দেখাতে।
+\item \texttt{rowspan} attribute ব্যবহার করে cell-কে একাধিক row জুড়ে দেখাতে।
+\item figure দেখে \texttt{rowspan} ও \texttt{colspan} নির্ধারণ করতে।
+\item merged cell-এর জন্য অতিরিক্ত \texttt{<td>} বা \texttt{<th>} না লেখার নিয়ম বুঝতে।
+\end{itemize}
+\end{learningbox}
+
+HTML table তৈরি করার সময় অনেক সময় একটি cell-কে একাধিক column বা একাধিক row জুড়ে দেখাতে হয়। যেমন--একটি table-এর উপরে ``Result Sheet'' title পুরো ৩টি column জুড়ে থাকতে পারে, অথবা ``Phone'' cell-এর অধীনে দুইটি phone number থাকতে পারে। এই ধরনের cell merge করার জন্য HTML-এ \texttt{colspan} ও \texttt{rowspan} attribute ব্যবহার করা হয়।
+
+\subsection{Cell Merge কী?}
+
+\begin{definitionbox}{Cell Merge}
+HTML table-এ একাধিক row বা column জুড়ে একটি cell প্রদর্শনের জন্য cell merge করা হয়। এই কাজের জন্য \texttt{rowspan} ও \texttt{colspan} attribute ব্যবহার করা হয়।
+\end{definitionbox}
+
+সহজভাবে, table-এর দুই বা ততোধিক cell-এর জায়গা একত্র করে একটি বড় cell তৈরি করাই cell merge।
+
+\begin{examplebox}{সহজ উদাহরণ}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Result Sheet}} \\
+\hline
+\textbf{Roll} & \textbf{Name} & \textbf{GPA} \\
+\hline
+\end{tabular}
+\end{center}
+এখানে \textbf{Result Sheet} cell-টি ৩টি column জুড়ে আছে। তাই HTML code-এ \texttt{colspan="3"} ব্যবহার করতে হবে।
+\end{examplebox}
+
+\subsection{\texttt{colspan} কী?}
+
+\begin{definitionbox}{\texttt{colspan}}
+HTML table-এ কোনো cell-কে একাধিক column জুড়ে প্রদর্শনের জন্য \texttt{colspan} attribute ব্যবহার করা হয়।
+\end{definitionbox}
+
+\texttt{colspan} শব্দের অর্থ হলো column span বা column জুড়ে বিস্তৃত হওয়া। এটি সাধারণত \texttt{<th>} বা \texttt{<td>} tag-এর ভিতরে লেখা হয়।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<th colspan="number">Heading</th>
+<td colspan="number">Data</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<th colspan="2">Subject</th>
+\end{verbatim}
+\end{examplebox}
+
+এর অর্থ: \textbf{Subject} cell-টি ২টি column জুড়ে থাকবে।
+
+\subsection{Colspan Example: Subject Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Name} & \multicolumn{2}{c|}{\textbf{Subject}} \\
+\hline
+Kabir & Math & ICT \\
+\hline
+\end{tabular}
+\end{center}
+এখানে \textbf{Subject} heading দুইটি column--Math ও ICT--এর উপর বসেছে। তাই \texttt{Subject} cell-এ \texttt{colspan="2"} ব্যবহার হবে।
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colspan Example</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Subject</th>
+    </tr>
+    <tr>
+      <td>Kabir</td>
+      <td>Math</td>
+      <td>ICT</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষায় মনে রাখবে}
+একটি heading যদি দুইটি column-এর উপর বসে, তাহলে \texttt{colspan="2"} লিখতে হয়। তিনটি column হলে \texttt{colspan="3"} লিখতে হয়।
+\end{boardbox}
+
+\subsection{\texttt{rowspan} কী?}
+
+\begin{definitionbox}{\texttt{rowspan}}
+HTML table-এ কোনো cell-কে একাধিক row জুড়ে প্রদর্শনের জন্য \texttt{rowspan} attribute ব্যবহার করা হয়।
+\end{definitionbox}
+
+\texttt{rowspan} শব্দের অর্থ হলো row span বা row জুড়ে বিস্তৃত হওয়া। এটি \texttt{<th>} অথবা \texttt{<td>} tag-এর সাথে ব্যবহার করা যায়।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<th rowspan="number">Heading</th>
+<td rowspan="number">Data</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<th rowspan="2">Phone</th>
+\end{verbatim}
+\end{examplebox}
+
+এর অর্থ: \textbf{Phone} cell-টি ২টি row জুড়ে থাকবে।
+
+\subsection{Rowspan Example: Phone Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Name} & Kabir \\
+\hline
+\textbf{Phone} & 8942318 \\
+\cline{2-2}
+ & 1750181 \\
+\hline
+\end{tabular}
+\end{center}
+এখানে \textbf{Phone} cell-টি দুইটি phone number-এর পাশে দুইটি row জুড়ে আছে। তাই \texttt{rowspan="2"} ব্যবহার হবে।
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rowspan Example</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <td>Kabir</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Phone</th>
+      <td>8942318</td>
+    </tr>
+    <tr>
+      <td>1750181</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Rowspan ও Colspan-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{\texttt{colspan}} & \textbf{\texttt{rowspan}} \\
+\hline
+কাজ & cell-কে একাধিক column জুড়ে দেয় & cell-কে একাধিক row জুড়ে দেয় \\
+\hline
+দিক & আড়াআড়ি বা horizontal & লম্বালম্বি বা vertical \\
+\hline
+ব্যবহার & heading কয়েকটি column-এর উপর বসাতে & একটি label কয়েকটি row-এর পাশে বসাতে \\
+\hline
+Example & \texttt{<th colspan="3">Result</th>} & \texttt{<td rowspan="2">ICT</td>} \\
+\hline
+মনে রাখার উপায় & Column span & Row span \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Rowspan ও Colspan কোথায় লেখা হয়?}
+
+\texttt{rowspan} ও \texttt{colspan} সাধারণত \texttt{<td>} অথবা \texttt{<th>} tag-এর ভিতরে লেখা হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<th colspan="3">Result Sheet</th>
+<td rowspan="2">ICT</td>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{মূল নিয়ম}
+\texttt{colspan} বা \texttt{rowspan}-এর value হিসেবে একটি পূর্ণ সংখ্যা লিখতে হয়। যেমন \texttt{colspan="3"} মানে ৩টি column এবং \texttt{rowspan="2"} মানে ২টি row।
+\end{keypointbox}
+
+\subsection{Colspan ব্যবহার করে Result Title}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Result Sheet}} \\
+\hline
+\textbf{Roll} & \textbf{Name} & \textbf{GPA} \\
+\hline
+101 & Rafi & 5.00 \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Sheet</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th colspan="3">Result Sheet</th>
+    </tr>
+    <tr>
+      <th>Roll</th>
+      <th>Name</th>
+      <th>GPA</th>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>Rafi</td>
+      <td>5.00</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{Explanation}
+Table-এ মোট ৩টি column আছে: Roll, Name, GPA। Result Sheet heading পুরো ৩টি column জুড়ে থাকবে। তাই \texttt{<th colspan="3">Result Sheet</th>} লেখা হয়েছে।
+\end{keypointbox}
+
+\subsection{Rowspan ব্যবহার করে Subject Marks Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Subject} & \textbf{Type} & \textbf{Marks} \\
+\hline
+ICT & CQ & 45 \\
+\cline{2-3}
+ & MCQ & 25 \\
+\hline
+English & Total & 95 \\
+\hline
+\end{tabular}
+\end{center}
+এখানে \textbf{ICT} cell-টি CQ ও MCQ--দুইটি row জুড়ে আছে। তাই \texttt{rowspan="2"} ব্যবহার হবে।
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marks Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Subject</th>
+      <th>Type</th>
+      <th>Marks</th>
+    </tr>
+    <tr>
+      <td rowspan="2">ICT</td>
+      <td>CQ</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>MCQ</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td>Total</td>
+      <td>95</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Rowspan ও Colspan একসাথে ব্যবহার}
+
+Complex table-এ একই table-এর মধ্যে \texttt{rowspan} ও \texttt{colspan}--দুটিই ব্যবহার হতে পারে।
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Marks Sheet}} \\
+\hline
+\textbf{Roll No.} & \multicolumn{2}{c|}{\textbf{Bangla}} & \multicolumn{2}{c|}{\textbf{English}} \\
+\cline{2-5}
+ & \textbf{1st} & \textbf{2nd} & \textbf{1st} & \textbf{2nd} \\
+\hline
+001 & 85 & 67 & 58 & 70 \\
+\hline
+002 & 65 & 75 & 60 & 55 \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{ব্যাখ্যা:} Marks Sheet ৫টি column জুড়ে আছে, Roll No. দুইটি row জুড়ে আছে, Bangla দুইটি column জুড়ে আছে এবং English দুইটি column জুড়ে আছে।
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marks Sheet</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th colspan="5">Marks Sheet</th>
+    </tr>
+    <tr>
+      <th rowspan="2">Roll No.</th>
+      <th colspan="2">Bangla</th>
+      <th colspan="2">English</th>
+    </tr>
+    <tr>
+      <th>1st</th>
+      <th>2nd</th>
+      <th>1st</th>
+      <th>2nd</th>
+    </tr>
+    <tr>
+      <td>001</td>
+      <td>85</td>
+      <td>67</td>
+      <td>58</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>65</td>
+      <td>75</td>
+      <td>60</td>
+      <td>55</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Rowspan/Colspan বের করার সহজ নিয়ম}
+
+Table figure দেখে code লেখার সময় এই নিয়ম follow করবে:
+
+\begin{enumerate}
+\item মোট কয়টি column আছে গুনে নাও।
+\item কোনো cell ডানদিকে কয়টি column জুড়ে আছে দেখো।
+\item cell ডানদিকে ২টি column জুড়লে \texttt{colspan="2"}।
+\item cell ডানদিকে ৩টি column জুড়লে \texttt{colspan="3"}।
+\item কোনো cell নিচের দিকে কয়টি row জুড়ে আছে দেখো।
+\item cell নিচের দিকে ২টি row জুড়লে \texttt{rowspan="2"}।
+\item cell নিচের দিকে ৩টি row জুড়লে \texttt{rowspan="3"}।
+\item যে row বা column merge হয়ে গেছে, সেই জায়গার জন্য আলাদা \texttt{<td>} বা \texttt{<th>} আর লিখবে না।
+\end{enumerate}
+
+\subsection{সবচেয়ে গুরুত্বপূর্ণ নিয়ম}
+
+\subsubsection{Colspan হলে কী কমবে?}
+
+যদি কোনো row-তে একটি cell \texttt{colspan="2"} হয়, তাহলে সেই row-তে ১টি extra cell কম লিখতে হবে।
+
+\textbf{ভুল:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tr>
+  <th colspan="2">Subject</th>
+  <th>Math</th>
+  <th>ICT</th>
+</tr>
+\end{verbatim}
+\end{examplebox}
+
+\textbf{সঠিক:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tr>
+  <th>Name</th>
+  <th colspan="2">Subject</th>
+</tr>
+<tr>
+  <td>Kabir</td>
+  <td>Math</td>
+  <td>ICT</td>
+</tr>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Rowspan হলে কী কমবে?}
+
+যদি একটি cell \texttt{rowspan="2"} হয়, তাহলে পরের row-তে সেই cell-এর জায়গায় আর \texttt{<td>} বা \texttt{<th>} লিখবে না।
+
+\textbf{Correct:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tr>
+  <th rowspan="2">Phone</th>
+  <td>8942318</td>
+</tr>
+<tr>
+  <td>1750181</td>
+</tr>
+\end{verbatim}
+\end{examplebox}
+
+\textbf{Wrong:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tr>
+  <th rowspan="2">Phone</th>
+  <td>8942318</td>
+</tr>
+<tr>
+  <th>Phone</th>
+  <td>1750181</td>
+</tr>
+\end{verbatim}
+\end{examplebox}
+
+দ্বিতীয় row-তে আবার Phone লিখলে \texttt{rowspan}-এর অর্থ নষ্ট হবে, কারণ merged cell আগে থেকেই সেই জায়গা দখল করে আছে।
+
+\subsection{Empty Cell থাকলে কী করবে?}
+
+কোনো table cell ফাঁকা থাকলে অনেক সময় browser cell ঠিকভাবে দেখায় না। HSC-style code-এ ফাঁকা cell দেখাতে \texttt{<br>} দেওয়া যায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td><br></td>
+\end{verbatim}
+\end{examplebox}
+
+Modern/common practice হিসেবে non-breaking space \texttt{\&nbsp;} ব্যবহার করা যায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>&nbsp;</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Full Practice Example: Student Subject Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Student}} \\
+\hline
+\textbf{Name} & \multicolumn{2}{c|}{\textbf{Subject}} \\
+\hline
+Sakib & Bangla & English \\
+\hline
+Asraful & Math & ICT \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Subject Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th colspan="3">Student</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Subject</th>
+    </tr>
+    <tr>
+      <td>Sakib</td>
+      <td>Bangla</td>
+      <td>English</td>
+    </tr>
+    <tr>
+      <td>Asraful</td>
+      <td>Math</td>
+      <td>ICT</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Full Practice Example: Employee Salary Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Emp. Information}} \\
+\hline
+\textbf{ID No} & \textbf{Emp. Name} & \textbf{Salary} \\
+\hline
+1001 & Sakib & 50,000 \\
+\cline{1-2}
+1002 & Asraful & \\
+\cline{1-2}
+ & & \\
+\hline
+\end{tabular}
+\end{center}
+এখানে Salary cell কয়েকটি row জুড়ে থাকতে পারে, তাই \texttt{rowspan} ব্যবহার করা যাবে।
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <caption>Emp. Information</caption>
+    <tr>
+      <th>ID No</th>
+      <th>Emp. Name</th>
+      <th>Salary</th>
+    </tr>
+    <tr>
+      <td>1001</td>
+      <td>Sakib</td>
+      <td rowspan="3">50,000</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>Asraful</td>
+    </tr>
+    <tr>
+      <td><br></td>
+      <td><br></td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{HSC Board/Exam Focus}
+
+\begin{boardbox}{বেশি গুরুত্বপূর্ণ}
+\begin{itemize}
+\item \texttt{colspan} দিয়ে column merge করা হয়।
+\item \texttt{rowspan} দিয়ে row merge করা হয়।
+\item \texttt{<th>} ও \texttt{<td>}--দুটিতেই \texttt{rowspan}/\texttt{colspan} ব্যবহার করা যায়।
+\item \texttt{colspan="3"} মানে cell ৩টি column জুড়ে থাকবে।
+\item \texttt{rowspan="2"} মানে cell ২টি row জুড়ে থাকবে।
+\item merge cell-এর জন্য অতিরিক্ত \texttt{<td>} লিখলে table structure নষ্ট হয়।
+\item result table, marks sheet, phone table ও subject table বেশি practice করতে হবে।
+\end{itemize}
+\end{boardbox}
+
+\subsection{Exam-style Short Answer}
+
+\begin{enumerate}
+\item \textbf{\texttt{colspan} কী?}\\
+উত্তর: HTML table-এ কোনো cell-কে একাধিক column জুড়ে প্রদর্শনের জন্য \texttt{colspan} attribute ব্যবহার করা হয়। যেমন \texttt{<th colspan="3">Result</th>} লিখলে Result cell-টি ৩টি column জুড়ে থাকবে।
+
+\item \textbf{\texttt{rowspan} কী?}\\
+উত্তর: HTML table-এ কোনো cell-কে একাধিক row জুড়ে প্রদর্শনের জন্য \texttt{rowspan} attribute ব্যবহার করা হয়। যেমন \texttt{<td rowspan="2">ICT</td>} লিখলে ICT cell-টি ২টি row জুড়ে থাকবে।
+
+\item \textbf{\texttt{rowspan} ও \texttt{colspan}-এর পার্থক্য লেখ।}\\
+উত্তর: \texttt{rowspan} কোনো cell-কে লম্বালম্বি একাধিক row জুড়ে বিস্তৃত করে। অন্যদিকে \texttt{colspan} কোনো cell-কে আড়াআড়ি একাধিক column জুড়ে বিস্তৃত করে।
+
+\item \textbf{\texttt{<th colspan="3">Result</th>} এর অর্থ কী?}\\
+উত্তর: এর অর্থ হলো Result heading cell-টি table-এর ৩টি column জুড়ে প্রদর্শিত হবে।
+
+\item \textbf{\texttt{<td rowspan="2">Phone</td>} এর অর্থ কী?}\\
+উত্তর: এর অর্থ হলো Phone data cell-টি table-এর ২টি row জুড়ে প্রদর্শিত হবে।
+\end{enumerate}
+
+\subsection{Practice MCQ}
+
+\begin{enumerate}
+\item Table cell-কে একাধিক column জুড়ে দিতে কোন attribute ব্যবহার হয়?\\
+ক) \texttt{rowspan} \quad খ) \texttt{colspan} \quad গ) \texttt{cellpadding} \quad ঘ) \texttt{cellspacing}
+
+\item Table cell-কে একাধিক row জুড়ে দিতে কোন attribute ব্যবহার হয়?\\
+ক) \texttt{rowspan} \quad খ) \texttt{colspan} \quad গ) \texttt{border} \quad ঘ) \texttt{src}
+
+\item \texttt{<th colspan="4">Title</th>} এর অর্থ কী?\\
+ক) Title ৪টি row জুড়ে থাকবে\\
+খ) Title ৪টি column জুড়ে থাকবে\\
+গ) Title ৪ pixel হবে\\
+ঘ) Title ৪ বার দেখা যাবে
+
+\item \texttt{<td rowspan="3">Phone</td>} এর অর্থ কী?\\
+ক) Phone ৩টি column জুড়ে থাকবে\\
+খ) Phone ৩টি row জুড়ে থাকবে\\
+গ) Phone ৩ pixel হবে\\
+ঘ) Phone ৩ বার print হবে
+
+\item নিচের কোন tag-এর সাথে \texttt{rowspan}/\texttt{colspan} ব্যবহার করা যায়?\\
+ক) \texttt{<td>} ও \texttt{<th>}\\
+খ) \texttt{<br>} ও \texttt{<hr>}\\
+গ) \texttt{<img>} ও \texttt{<a>}\\
+ঘ) \texttt{<html>} ও \texttt{<body>}
+\end{enumerate}
+
+\begin{boardbox}{MCQ Answer Key}
+১-খ, ২-ক, ৩-খ, ৪-খ, ৫-ক
+\end{boardbox}
+
+\subsection{CQ Practice}
+
+\begin{practicebox}
+\textbf{উদ্দীপক:} একটি webpage-এ Result table দেখাতে হবে। Result heading পুরো ৩টি column জুড়ে থাকবে এবং English-এর 95 marks CQ ও MCQ--দুইটি column জুড়ে থাকবে।
+
+\textbf{প্রশ্ন}\\
+ক. \texttt{colspan} কী?\\
+খ. \texttt{rowspan} কেন ব্যবহার করা হয়?\\
+গ. উদ্দীপকের জন্য HTML code লেখ।\\
+ঘ. table figure দেখে \texttt{rowspan} ও \texttt{colspan} নির্ধারণের নিয়ম বিশ্লেষণ কর।
+\end{practicebox}
+
+\subsubsection{গ. Code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th colspan="3">Result</th>
+    </tr>
+    <tr>
+      <th>Subject</th>
+      <th>CQ</th>
+      <th>MCQ</th>
+    </tr>
+    <tr>
+      <td>ICT</td>
+      <td>45</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td colspan="2">95</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ঘ. বিশ্লেষণ}
+
+Table figure দেখে প্রথমে মোট column সংখ্যা গুনতে হয়। কোনো cell যদি ডানদিকে একাধিক column জুড়ে থাকে, সেখানে \texttt{colspan} ব্যবহার করতে হয়। আবার কোনো cell যদি নিচের দিকে একাধিক row জুড়ে থাকে, সেখানে \texttt{rowspan} ব্যবহার করতে হয়। Merge করা cell-এর জায়গায় পরবর্তী row বা column-এ অতিরিক্ত \texttt{<td>} বা \texttt{<th>} লেখা যাবে না; কারণ merged cell আগে থেকেই সেই জায়গা দখল করে নেয়।
+
+\subsection{Common Mistake}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item \texttt{rowspan} ও \texttt{colspan} গুলিয়ে ফেলা।
+\item column merge করতে \texttt{rowspan} ব্যবহার করা।
+\item row merge করতে \texttt{colspan} ব্যবহার করা।
+\item \texttt{colspan="2"} দেওয়ার পরও একই row-তে অতিরিক্ত cell লিখে ফেলা।
+\item \texttt{rowspan="2"} দেওয়ার পরও পরের row-তে একই cell আবার লিখে ফেলা।
+\item value quote ছাড়া লেখা, যেমন \texttt{colspan=2}।
+\item \texttt{<tr>} tag-এর সাথে \texttt{colspan} লেখা।
+\item \texttt{<table>} tag-এর সাথে \texttt{rowspan} লেখা।
+\item figure-এর মোট row/column না গুনে সরাসরি code লেখা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{recapbox}
+\texttt{colspan} মানে column span বা আড়াআড়ি merge। \texttt{rowspan} মানে row span বা লম্বালম্বি merge। \texttt{colspan} ও \texttt{rowspan} সাধারণত \texttt{<td>} বা \texttt{<th>} tag-এর সাথে ব্যবহৃত হয়। \texttt{colspan="3"} মানে cell ৩টি column জুড়ে থাকবে এবং \texttt{rowspan="2"} মানে cell ২টি row জুড়ে থাকবে। Merge cell-এর জায়গায় অতিরিক্ত cell লিখবে না।
+\end{recapbox}
+
+
+\begin{boardbox}{পরবর্তী টপিক}
+পরের টপিক: Table-এর ভিতরে List, Image, Hyperlink ও Nested Table।
+\end{boardbox}

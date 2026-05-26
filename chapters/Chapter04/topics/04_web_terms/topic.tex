@@ -1,0 +1,543 @@
+% ৪.৪ IP Address, Domain Name, DNS, URL ও HTTP/HTTPS
+\section{IP Address, Domain Name, DNS, URL ও HTTP/HTTPS}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item IP Address, Domain Name, DNS ও URL-এর সংজ্ঞা লিখতে।
+\item IPv4 ও IPv6-এর মৌলিক পার্থক্য বুঝতে।
+\item Domain name-এর অংশ ও TLD ব্যাখ্যা করতে।
+\item URL-এর বিভিন্ন অংশ আলাদা করতে।
+\item HTTP ও HTTPS-এর পার্থক্য লিখতে।
+\item FTP-এর পূর্ণরূপ ও website publishing-এ এর ব্যবহার বলতে।
+\item browser-এ URL লিখলে কীভাবে webpage দেখা যায় তা ব্যাখ্যা করতে।
+\end{itemize}
+\end{learningbox}
+
+\subsection{ভূমিকা}
+
+ওয়েবসাইট দেখতে আমরা সাধারণত browser-এ একটি সহজ address লিখি, যেমন একটি domain name বা URL। কিন্তু computer বা server মানুষের মতো নাম দিয়ে যোগাযোগ করে না; তারা IP address ব্যবহার করে। মানুষের সুবিধার জন্য IP address-এর পরিবর্তে domain name ব্যবহার করা হয়। আর domain name-কে IP address-এ রূপান্তর করার কাজ করে DNS।
+
+এই topic-এ IP address, domain name ও DNS শেখানো হবে। একই সঙ্গে URL এবং HTTP/HTTPS-ও বোঝানো হবে। এগুলো website visit করার সময় একসাথে কাজ করে, তাই ওয়েব ডিজাইন ও website publishing শেখার আগে বিষয়গুলো পরিষ্কারভাবে বোঝা প্রয়োজন।
+
+\subsection{IP Address}
+
+\subsubsection{IP Address কী?}
+
+\begin{definitionbox}{IP Address}
+ইন্টারনেটে সংযুক্ত প্রতিটি computer, server বা device-কে শনাক্ত করার জন্য ব্যবহৃত unique numerical address-কে IP Address বলে।
+\end{definitionbox}
+
+IP Address-এর পূর্ণরূপ হলো \textbf{Internet Protocol Address}। Internet-এ কোটি কোটি device যুক্ত থাকে। কোনো website visit করলে browser-কে জানতে হয় website-টি কোন server-এ আছে। Server শনাক্ত করার জন্য IP address ব্যবহার করা হয়।
+
+\begin{examplebox}{উদাহরণ}
+IPv4 address: \texttt{192.168.1.1}\\
+Public server address: \texttt{216.58.207.238}
+\end{examplebox}
+
+\subsubsection{IP Address কেন দরকার?}
+
+\begin{itemize}
+\item network-এ device বা server শনাক্ত করতে।
+\item data সঠিক destination-এ পাঠাতে।
+\item browser যেন নির্দিষ্ট web server-এ request পাঠাতে পারে।
+\item internet communication ঠিকভাবে পরিচালনা করতে।
+\end{itemize}
+
+\begin{boardbox}{সহজ ব্যাখ্যা}
+মানুষ বাড়ির ঠিকানা ব্যবহার করে কোনো জায়গা খুঁজে পায়। Internet-এ device বা server খুঁজে পেতে IP address ব্যবহার করা হয়।
+\end{boardbox}
+
+\subsection{IPv4}
+
+\begin{definitionbox}{IPv4}
+IPv4 হলো IP address-এর একটি version, যেখানে 32-bit address ব্যবহার করা হয় এবং সাধারণত চারটি decimal অংশ dot দিয়ে আলাদা করে লেখা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{IPv4 example}
+\texttt{192.168.1.10}
+\end{examplebox}
+
+\begin{keypointbox}{IPv4-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item 32-bit address।
+\item চারটি octet থাকে।
+\item প্রতিটি octet dot (\texttt{.}) দিয়ে আলাদা থাকে।
+\item প্রতিটি octet 8-bit।
+\item সাধারণত decimal আকারে লেখা হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{Octet} \\
+\hline
+\texttt{192} & 1st octet \\
+\hline
+\texttt{168} & 2nd octet \\
+\hline
+\texttt{1} & 3rd octet \\
+\hline
+\texttt{10} & 4th octet \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{IPv6}
+
+\begin{definitionbox}{IPv6}
+IPv6 হলো IP address-এর নতুন version, যেখানে 128-bit address ব্যবহার করা হয়।
+\end{definitionbox}
+
+Internet-এ device-এর সংখ্যা দ্রুত বাড়ার কারণে IPv4 address যথেষ্ট নয়। তাই অনেক বেশি address তৈরি করার জন্য IPv6 ব্যবহার করা হয়।
+
+\begin{examplebox}{IPv6 example}
+\texttt{2001:0db8:85a3:0000:0000:8a2e:0370:7334}
+\end{examplebox}
+
+\begin{keypointbox}{IPv6-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item 128-bit address।
+\item IPv4-এর তুলনায় অনেক বেশি address তৈরি করা যায়।
+\item সাধারণত hexadecimal group দিয়ে লেখা হয়।
+\item বড় network ও modern Internet-এর জন্য গুরুত্বপূর্ণ।
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{IPv4} & \textbf{IPv6} \\
+\hline
+Bit size & 32-bit & 128-bit \\
+\hline
+লেখার ধরন & dotted decimal & hexadecimal group \\
+\hline
+উদাহরণ & \texttt{192.168.1.1} & \texttt{2001:db8::1} \\
+\hline
+Address সংখ্যা & কম & অনেক বেশি \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Domain Name}
+
+\subsubsection{Domain Name কী?}
+
+\begin{definitionbox}{Domain Name}
+IP address-এর পরিবর্তে সহজে মনে রাখার জন্য ব্যবহৃত অক্ষর, সংখ্যা বা চিহ্নসমন্বিত website address-কে domain name বলে।
+\end{definitionbox}
+
+মানুষের জন্য সংখ্যা মনে রাখা কঠিন, কিন্তু নাম মনে রাখা সহজ। তাই \texttt{142.250.190.78}-এর মতো IP address মনে রাখার পরিবর্তে \texttt{www.google.com}-এর মতো domain name ব্যবহার করা হয়।
+
+\begin{examplebox}{উদাহরণ}
+\texttt{www.google.com}, \texttt{www.educationboard.gov.bd}, \texttt{example.com}
+\end{examplebox}
+
+\subsubsection{Domain Name কেন দরকার?}
+
+\begin{itemize}
+\item website address সহজে মনে রাখার জন্য।
+\item IP address-এর পরিবর্তে meaningful নাম ব্যবহার করার জন্য।
+\item institution, business বা organization-এর online পরিচিতি তৈরির জন্য।
+\item DNS-এর মাধ্যমে সঠিক server খুঁজে পাওয়ার জন্য।
+\end{itemize}
+
+\subsubsection{Domain Name-এর অংশ}
+
+উদাহরণ: \texttt{www.example.com}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.28\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{নাম} & \textbf{ব্যাখ্যা} \\
+\hline
+\texttt{www} & Subdomain/host & web service নির্দেশ করে \\
+\hline
+\texttt{example} & Second-level domain & মূল domain name \\
+\hline
+\texttt{.com} & Top-level domain & domain-এর ধরন নির্দেশ করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Top-Level Domain বা TLD}
+
+Domain name-এর শেষ অংশকে Top-Level Domain বা TLD বলা হয়। TLD website-এর ধরন বা দেশ নির্দেশ করতে পারে।
+
+\subsubsection{Generic TLD}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.52\textwidth}|}
+\hline
+\textbf{TLD} & \textbf{ব্যবহার} \\
+\hline
+\texttt{.com} & বাণিজ্যিক প্রতিষ্ঠান বা সাধারণ website \\
+\hline
+\texttt{.org} & organization বা non-profit প্রতিষ্ঠান \\
+\hline
+\texttt{.edu}, \texttt{.ac} & শিক্ষা প্রতিষ্ঠান \\
+\hline
+\texttt{.gov} & সরকারি প্রতিষ্ঠান \\
+\hline
+\texttt{.net} & network service \\
+\hline
+\texttt{.mil} & সামরিক বা প্রতিরক্ষা সংস্থা \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Country-code TLD}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.52\textwidth}|}
+\hline
+\textbf{TLD} & \textbf{দেশ} \\
+\hline
+\texttt{.bd} & বাংলাদেশ \\
+\hline
+\texttt{.uk} & যুক্তরাজ্য \\
+\hline
+\texttt{.us} & যুক্তরাষ্ট্র \\
+\hline
+\texttt{.in} & ভারত \\
+\hline
+\texttt{.jp} & জাপান \\
+\hline
+\texttt{.cn} & চীন \\
+\hline
+\texttt{.pk} & পাকিস্তান \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{DNS}
+
+\subsubsection{DNS কী?}
+
+\begin{definitionbox}{DNS}
+যে পদ্ধতির মাধ্যমে domain name-কে সংশ্লিষ্ট IP address-এ রূপান্তর করে website খুঁজে পাওয়া যায়, তাকে DNS বা Domain Name System বলে।
+\end{definitionbox}
+
+User browser-এ \texttt{www.example.com} লিখলে DNS সেই domain name-এর IP address খুঁজে বের করে। এরপর browser সেই IP address-এর web server-এ request পাঠায়।
+
+\subsubsection{DNS কীভাবে কাজ করে?}
+
+\begin{enumerate}
+\item User browser-এ domain name লেখে।
+\item Browser DNS server-এর কাছে domain-এর IP address জানতে চায়।
+\item DNS server সংশ্লিষ্ট IP address খুঁজে বের করে।
+\item Browser সেই IP address-এর web server-এ request পাঠায়।
+\item Server webpage পাঠায়।
+\item Browser webpage display করে।
+\end{enumerate}
+
+\begin{center}
+\fbox{\parbox{0.80\textwidth}{
+\centering
+Domain name $\rightarrow$ DNS lookup $\rightarrow$ IP address\\
+$\rightarrow$ Web server $\rightarrow$ Webpage
+}}
+\end{center}
+
+\begin{boardbox}{সহজ line}
+DNS হলো Internet-এর phonebook বা address book - এটি website-এর নামকে server address-এ রূপান্তর করে।
+\end{boardbox}
+
+\subsection{URL}
+
+\subsubsection{URL কী?}
+
+\begin{definitionbox}{URL}
+ইন্টারনেটে কোনো নির্দিষ্ট webpage বা resource প্রদর্শনের জন্য web browser-এ ব্যবহৃত পূর্ণ ঠিকানাকে URL বা Uniform Resource Locator বলে।
+\end{definitionbox}
+
+URL-এর পূর্ণরূপ হলো \textbf{Uniform Resource Locator}। URL শুধু website-এর নাম নয়; এটি নির্দিষ্ট page, file বা resource-এর সম্পূর্ণ address।
+
+\begin{examplebox}{URL example}
+\texttt{https://www.example.com/folder/page.html}
+\end{examplebox}
+
+\subsubsection{URL-এর অংশ}
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.24\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{নাম} & \textbf{কাজ} \\
+\hline
+\texttt{https://} & Protocol/Scheme & data transfer পদ্ধতি \\
+\hline
+\texttt{www} & Subdomain/Host & web service নির্দেশ করে \\
+\hline
+\texttt{example.com} & Domain name & website-এর নাম \\
+\hline
+\texttt{/folder/} & Path/Directory & server folder location \\
+\hline
+\texttt{page.html} & File name & নির্দিষ্ট webpage file \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{URL Breakdown Example}
+
+ধরা যাক URL হলো \texttt{https://www.college.edu.bd/notice/result.html}
+
+\begin{center}
+\begin{tabular}{|p{0.30\textwidth}|p{0.48\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{ব্যাখ্যা} \\
+\hline
+\texttt{https://} & secure web protocol \\
+\hline
+\texttt{www} & web host/subdomain \\
+\hline
+\texttt{college} & domain name \\
+\hline
+\texttt{.edu} & education-related TLD \\
+\hline
+\texttt{.bd} & Bangladesh country domain \\
+\hline
+\texttt{/notice/} & server directory \\
+\hline
+\texttt{result.html} & webpage file \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{URL, Domain Name ও IP Address-এর সম্পর্ক}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{উদাহরণ} & \textbf{কাজ} \\
+\hline
+IP Address & \texttt{192.0.2.10} & server/device শনাক্ত করে \\
+\hline
+Domain Name & \texttt{example.com} & IP address-এর সহজ নাম \\
+\hline
+URL & \texttt{https://}\newline\texttt{www.example.com/}\newline\texttt{index.html} & নির্দিষ্ট webpage/resource-এর পূর্ণ ঠিকানা \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{সহজ analogy}
+IP address হলো বাড়ির actual location, domain name হলো বাড়ির সহজ নাম, আর URL হলো বাড়ির নির্দিষ্ট room বা page-এর পূর্ণ ঠিকানা।
+\end{examplebox}
+
+\subsection{HTTP ও HTTPS}
+
+\subsubsection{HTTP কী?}
+
+\begin{definitionbox}{HTTP}
+Web browser ও web server-এর মধ্যে HTML document বা web resource আদান-প্রদানের জন্য ব্যবহৃত protocol-কে HTTP বলে।
+\end{definitionbox}
+
+HTTP-এর পূর্ণরূপ হলো \textbf{HyperText Transfer Protocol}। Website visit করার সময় browser server-এর কাছে HTTP request পাঠায় এবং server response হিসেবে webpage-এর file পাঠায়।
+
+\subsubsection{HTTPS কী?}
+
+\begin{definitionbox}{HTTPS}
+HTTP protocol-এর secure বা encrypted version-কে HTTPS বলে, যার মাধ্যমে client ও server-এর মধ্যে data নিরাপদে আদান-প্রদান করা যায়।
+\end{definitionbox}
+
+HTTPS-এর পূর্ণরূপ হলো \textbf{HyperText Transfer Protocol Secure}। এতে encryption ব্যবহৃত হয়, ফলে login, payment, banking বা personal data transfer তুলনামূলকভাবে নিরাপদ হয়।
+
+\subsubsection{HTTP ও HTTPS-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{HTTP} & \textbf{HTTPS} \\
+\hline
+পূর্ণরূপ & HyperText Transfer Protocol & HyperText Transfer Protocol Secure \\
+\hline
+নিরাপত্তা & encryption নেই বা কম & encryption থাকে \\
+\hline
+ব্যবহার & সাধারণ data transfer & login, payment, banking, sensitive data \\
+\hline
+URL শুরু & \texttt{http://} & \texttt{https://} \\
+\hline
+Exam note & তুলনামূলক কম secure & বেশি secure \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{Exam note}
+Online banking, login page, payment page এবং personal information নেওয়া website-এ HTTPS ব্যবহার করা উচিত।
+\end{boardbox}
+
+\subsection{FTP}
+
+\begin{definitionbox}{FTP}
+Internet-এর মাধ্যমে এক computer/server থেকে অন্য computer/server-এ file transfer করার protocol-কে FTP বা File Transfer Protocol বলে।
+\end{definitionbox}
+
+Website publishing-এর সময় HTML file, image, CSS file বা অন্য resource local computer থেকে web server-এ upload করতে FTP ব্যবহার করা যায়। আধুনিক hosting-এ security-এর জন্য FTP-এর secure version হিসেবে SFTP/FTPS বেশি ব্যবহৃত হয়।
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.58\textwidth}|}
+\hline
+\textbf{Protocol} & \textbf{কাজ} \\
+\hline
+\texttt{HTTP} & browser ও server-এর মধ্যে webpage/resource transfer করে \\
+\hline
+\texttt{HTTPS} & secure/encrypted webpage/resource transfer করে \\
+\hline
+\texttt{FTP} & server-এ file upload/download করতে ব্যবহৃত হয় \\
+\hline
+\texttt{SFTP} & secure file transfer-এর জন্য ব্যবহৃত হয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{Exam note}
+FTP-এর পূর্ণরূপ \textbf{File Transfer Protocol}। Website publish করতে file server-এ upload করার প্রসঙ্গে FTP গুরুত্বপূর্ণ।
+\end{boardbox}
+
+\subsection{Browser-এ একটি URL লিখলে কী ঘটে?}
+
+একটি website visit করার সম্পূর্ণ process:
+
+\begin{enumerate}
+\item User browser-এ URL লেখে।
+\item Browser URL থেকে domain name আলাদা করে।
+\item DNS domain name-এর IP address খুঁজে দেয়।
+\item Browser server-এ HTTP/HTTPS request পাঠায়।
+\item Server HTML, CSS, image file ইত্যাদি পাঠায়।
+\item Browser fileগুলো render করে webpage দেখায়।
+\end{enumerate}
+
+\begin{center}
+\fbox{\parbox{0.84\textwidth}{
+\centering
+URL typed $\rightarrow$ Domain extracted $\rightarrow$ DNS lookup\\
+$\rightarrow$ IP address found $\rightarrow$ HTTP/HTTPS request\\
+$\rightarrow$ Server response $\rightarrow$ Webpage displayed
+}}
+\end{center}
+
+\subsection{Board/Exam Focus}
+
+\begin{keypointbox}{Important points}
+\begin{itemize}
+\item IP Address = Internet Protocol Address।
+\item IPv4 = 32-bit।
+\item IPv6 = 128-bit।
+\item Domain name হলো IP address-এর text-based form।
+\item DNS domain name-কে IP address-এ convert করে।
+\item URL = Uniform Resource Locator।
+\item URL-এর অংশ: protocol, server/domain name, directory/path, file name।
+\item HTTP webpage transfer protocol।
+\item HTTPS secure protocol।
+\item FTP = File Transfer Protocol; website file upload/download-এ ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Exam-style Short Answer}
+
+\subsubsection{প্রশ্ন ১: IP Address কী?}
+
+\begin{boardbox}{উত্তর}
+ইন্টারনেটে সংযুক্ত প্রতিটি computer বা device-কে শনাক্ত করার জন্য ব্যবহৃত unique numerical address-কে IP Address বলে। IP Address-এর পূর্ণরূপ Internet Protocol Address।
+\end{boardbox}
+
+\subsubsection{প্রশ্ন ২: Domain Name কী?}
+
+\begin{boardbox}{উত্তর}
+IP address-এর পরিবর্তে সহজে মনে রাখার জন্য ব্যবহৃত অক্ষর, সংখ্যা বা চিহ্নসমন্বিত website address-কে domain name বলে। যেমন \texttt{example.com} একটি domain name।
+\end{boardbox}
+
+\subsubsection{প্রশ্ন ৩: DNS কী?}
+
+\begin{boardbox}{উত্তর}
+যে পদ্ধতির মাধ্যমে domain name-কে সংশ্লিষ্ট IP address-এ রূপান্তর করে website খুঁজে পাওয়া যায়, তাকে DNS বা Domain Name System বলে।
+\end{boardbox}
+
+\subsubsection{প্রশ্ন ৪: URL কী?}
+
+\begin{boardbox}{উত্তর}
+ইন্টারনেটে কোনো নির্দিষ্ট webpage বা resource প্রদর্শনের জন্য web browser-এ ব্যবহৃত পূর্ণ ঠিকানাকে URL বা Uniform Resource Locator বলে।
+\end{boardbox}
+
+\subsubsection{প্রশ্ন ৫: HTTPS কেন HTTP-এর চেয়ে নিরাপদ?}
+
+\begin{boardbox}{উত্তর}
+HTTPS হলো HTTP-এর secure version। এতে encryption ব্যবহৃত হয়, ফলে browser ও server-এর মধ্যে আদান-প্রদান হওয়া data তৃতীয় পক্ষ সহজে পড়তে বা পরিবর্তন করতে পারে না। তাই login, online payment ও banking service-এ HTTPS নিরাপদ।
+\end{boardbox}
+
+\subsection{Practice MCQ}
+
+\begin{enumerate}
+\item IP Address-এর পূর্ণরূপ কী?\\
+ক) Internet Program Address \quad খ) Internal Protocol Address\\
+গ) Internet Protocol Address \quad ঘ) Internet Page Address\\
+\textbf{উত্তর:} গ) Internet Protocol Address
+
+\item IPv4 address কত bit-এর?\\
+ক) 16-bit \quad খ) 32-bit \quad গ) 64-bit \quad ঘ) 128-bit\\
+\textbf{উত্তর:} খ) 32-bit
+
+\item IPv6 address কত bit-এর?\\
+ক) 32-bit \quad খ) 64-bit \quad গ) 128-bit \quad ঘ) 256-bit\\
+\textbf{উত্তর:} গ) 128-bit
+
+\item DNS-এর কাজ কী?\\
+ক) webpage design করা \quad খ) domain name-কে IP address-এ রূপান্তর করা\\
+গ) HTML code লেখা \quad ঘ) table তৈরি করা\\
+\textbf{উত্তর:} খ) domain name-কে IP address-এ রূপান্তর করা
+
+\item URL-এর পূর্ণরূপ কী?\\
+ক) Uniform Resource Locator \quad খ) Universal Resource Link\\
+গ) Uniform Register Location \quad ঘ) User Resource Locator\\
+\textbf{উত্তর:} ক) Uniform Resource Locator
+
+\item Secure web browsing-এর জন্য কোন protocol ব্যবহৃত হয়?\\
+ক) HTTP \quad খ) FTP \quad গ) HTTPS \quad ঘ) SMTP\\
+\textbf{উত্তর:} গ) HTTPS
+\end{enumerate}
+
+\subsection{CQ Practice}
+
+\begin{practicebox}
+\textbf{উদ্দীপক:} রাফি browser-এ \texttt{https://www.abccollege.edu.bd/}\linebreak\texttt{result/index.html} লিখে তার কলেজের result page দেখল। সে আগে IP address জানত না, তবুও website খুলে গেল। তার বন্ধু বলল, এর পেছনে DNS কাজ করেছে।
+
+\begin{enumerate}
+\item ক. IP Address কী?
+\item খ. DNS কেন প্রয়োজন?
+\item গ. উদ্দীপকের URL-এর অংশগুলো ব্যাখ্যা কর।
+\item ঘ. HTTPS ব্যবহার করলে website ব্যবহারকারীর নিরাপত্তা কীভাবে বৃদ্ধি পায় - বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\begin{boardbox}{সমাধান নির্দেশনা}
+\textbf{ক.} Internet-connected device বা server শনাক্ত করার unique numerical address হলো IP Address।\\
+\textbf{খ.} মানুষ domain name মনে রাখতে পারে, কিন্তু server খুঁজতে IP address দরকার; DNS domain name থেকে IP address বের করে।\\
+\textbf{গ.} \texttt{https://} protocol, \texttt{www} subdomain, \texttt{abccollege.edu.bd} domain name, \texttt{/result/} directory এবং \texttt{index.html} file name।\\
+\textbf{ঘ.} HTTPS encryption ব্যবহার করে browser ও server-এর communication secure করে; তাই login, result, personal data ও payment information বেশি নিরাপদ থাকে।
+\end{boardbox}
+
+\subsection{Common Mistake}
+
+\begin{itemize}
+\item Domain name ও URL এক মনে করা।
+\item DNS-কে browser মনে করা।
+\item HTTP ও HTTPS-এর পার্থক্য না বোঝা।
+\item IP address-এর bit সংখ্যা গুলিয়ে ফেলা।
+\item \texttt{.com} ও \texttt{.bd} একই ধরনের domain মনে করা।
+\item URL-এর path ও file name আলাদা না করা।
+\end{itemize}
+
+\subsection{মনে রাখবে}
+
+\begin{recapbox}
+\begin{itemize}
+\item IP Address হলো Internet-connected device/server-এর unique address।
+\item Domain Name হলো IP address-এর সহজে মনে রাখার মতো নাম।
+\item DNS domain name-কে IP address-এ রূপান্তর করে।
+\item URL হলো কোনো specific webpage বা resource-এর পূর্ণ address।
+\item HTTP web resource transfer করে।
+\item HTTPS HTTP-এর secure version।
+\item IPv4 = 32-bit, IPv6 = 128-bit।
+\end{itemize}
+\end{recapbox}

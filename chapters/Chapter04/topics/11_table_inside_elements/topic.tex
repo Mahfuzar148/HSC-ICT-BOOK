@@ -1,0 +1,643 @@
+% Topic 16: Elements inside HTML Table
+\section{Table-এর ভিতরে List, Image, Hyperlink ও Nested Table}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item HTML table cell-এর ভিতরে list, image, hyperlink ও formatting tag ব্যবহার করতে।
+\item table cell-এর ভিতরে ordered list ও unordered list বসাতে।
+\item image hyperlink তৈরি করতে।
+\item Nested Table কী তা ব্যাখ্যা করতে এবং basic nested table code লিখতে।
+\item HSC CQ/practical question-এ table-এর ভিতরে multiple HTML element ব্যবহার করে code লিখতে।
+\end{itemize}
+\end{learningbox}
+
+HTML table-এর cell-এর ভিতরে শুধু text রাখা যায় না; সেখানে list, image, hyperlink, formatting tag, এমনকি আরেকটি table-ও রাখা যায়। তাই HSC ICT Chapter 4-এর practical/CQ অংশে table-এর ভিতরে list, image, link, underline text, rowspan/colspan--এসব একসাথে ব্যবহার করে code লিখতে বলা হয়।
+
+\subsection{Table Cell-এর ভিতরে কী কী রাখা যায়?}
+
+HTML table-এর \texttt{<td>} বা \texttt{<th>} cell-এর ভিতরে অনেক ধরনের HTML element রাখা যায়।
+
+\begin{center}
+\begin{tabular}{|p{0.30\textwidth}|p{0.52\textwidth}|}
+\hline
+\textbf{Cell-এর ভিতরে রাখা যায়} & \textbf{Example} \\
+\hline
+সাধারণ text & \texttt{<td>ICT</td>} \\
+\hline
+Bold/underline text & \texttt{<td><u>ICT</u></td>} \\
+\hline
+Hyperlink & \texttt{<td><a href="board.html">Board</a></td>} \\
+\hline
+Image & \texttt{<td><img src="book.jpg" width="100"></td>} \\
+\hline
+Ordered list & \texttt{<td><ol><li>Book</li></ol></td>} \\
+\hline
+Unordered list & \texttt{<td><ul><li>Pen</li></ul></td>} \\
+\hline
+Nested table & \texttt{<td><table>...</table></td>} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{মূল ধারণা}
+Table cell-এর ভিতরে content রাখার সময় content অবশ্যই \texttt{<td>} বা \texttt{<th>} tag-এর ভিতরে রাখতে হবে। \texttt{<table>} tag-এর ভিতরে সরাসরি \texttt{<ol>}, \texttt{<ul>}, \texttt{<img>} বা \texttt{<a>} লেখা ঠিক নয়।
+\end{keypointbox}
+
+\subsection{Table-এর ভিতরে List}
+
+কোনো table cell-এর ভিতরে ordered list বা unordered list বসাতে হলে \texttt{<td>} tag-এর ভিতরে \texttt{<ol>} বা \texttt{<ul>} লিখতে হয়।
+
+\subsubsection{সাধারণ Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ol>
+</td>
+\end{verbatim}
+\end{examplebox}
+
+অথবা--
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Example: Ordered List ও Unordered List Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|p{0.36\textwidth}|p{0.36\textwidth}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{A \& H Company Ltd.}} \\
+\hline
+\textbf{Order List} & \textbf{Unorder List} \\
+\hline
+i. Book \newline ii. Paper \newline iii. Note Book & Marker \newline Ink \newline Pencil \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML List in Table</title>
+</head>
+<body>
+  <table border="2" cellspacing="0" cellpadding="5">
+    <tr>
+      <th colspan="2" align="center">A & H Company Ltd.</th>
+    </tr>
+    <tr>
+      <th>Order List</th>
+      <th>Unorder List</th>
+    </tr>
+    <tr>
+      <td>
+        <ol type="i">
+          <li>Book</li>
+          <li>Paper</li>
+          <li>Note Book</li>
+        </ol>
+      </td>
+      <td>
+        <ul type="square">
+          <li>Marker</li>
+          <li>Ink</li>
+          <li>Pencil</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{boardbox}{Exam note}
+HSC board-style CQ practice-এ table-এর cell-এর ভিতরে ordered list ও unordered list বসিয়ে code লিখতে বলা হয়। তাই \texttt{<td>} tag-এর ভিতরে \texttt{<ol>} বা \texttt{<ul>} বসানোর নিয়ম ভালোভাবে practice করতে হবে।
+\end{boardbox}
+
+\subsection{Table-এর ভিতরে Hyperlink}
+
+Table cell-এর ভিতরে link বসাতে \texttt{<td>} tag-এর ভিতরে \texttt{<a href="">...</a>} লিখতে হয়।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <a href="url">Link Text</a>
+</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <a href="https://www.educationboard.gov.bd">Board</a>
+</td>
+\end{verbatim}
+\end{examplebox}
+
+নতুন tab/window-এ link open করতে \texttt{target="\_blank"} attribute ব্যবহার করা হয়।
+
+\subsection{Example: Table Cell-এর ভিতরে Link}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Subject} & \textbf{Board} \\
+\hline
+ICT & Board \\
+\hline
+\end{tabular}
+\end{center}
+Board text-এ click করলে নির্দিষ্ট website open হবে।
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link in Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Subject</th>
+      <th>Board</th>
+    </tr>
+    <tr>
+      <td>ICT</td>
+      <td>
+        <a href="https://www.educationboard.gov.bd" target="_blank">
+          Board
+        </a>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Table-এর ভিতরে Image}
+
+Table cell-এর ভিতরে image বসাতে \texttt{<td>} tag-এর ভিতরে \texttt{<img>} tag লিখতে হয়।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <img src="image.jpg" alt="Image" width="100" height="80">
+</td>
+\end{verbatim}
+\end{examplebox}
+
+এখানে \texttt{src} দ্বারা ছবির source নির্ধারণ করা হয়, \texttt{alt} দ্বারা বিকল্প text দেওয়া হয় এবং \texttt{width}, \texttt{height} দ্বারা ছবির প্রস্থ ও উচ্চতা নির্ধারণ করা হয়।
+
+\subsection{Example: Book Image in Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Book} & \textbf{Image} \\
+\hline
+ICT Book & book.jpg \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image in Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Book</th>
+      <th>Image</th>
+    </tr>
+    <tr>
+      <td>ICT Book</td>
+      <td>
+        <img src="book.jpg" alt="ICT Book" width="100" height="80">
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Table-এর ভিতরে Image Hyperlink}
+
+যদি table cell-এর ভিতরের image-এ click করলে কোনো page বা website open হয়, তাহলে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হবে।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <a href="url">
+    <img src="image.jpg" alt="Image">
+  </a>
+</td>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Example: Book Image-এ Click করলে Website Open}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Link in Table</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Book</th>
+      <th>Image Link</th>
+    </tr>
+    <tr>
+      <td>ICT Book</td>
+      <td>
+        <a href="https://www.book.com" target="_blank">
+          <img src="book.jpg" alt="ICT Book" width="100" height="80">
+        </a>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{মনে রাখবে}
+Clickable text তৈরি করতে \texttt{<a>} tag-এর ভিতরে text লিখতে হয়। Clickable image তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag লিখতে হয়।
+\end{keypointbox}
+
+\subsection{Table-এর ভিতরে List + Hyperlink একসাথে}
+
+List item-এর ভিতরেও link বসানো যায়। যেমন Fruits item-এ click করলে কোনো website নতুন tab-এ open হবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List and Link</title>
+</head>
+<body>
+  <ul type="circle">
+    <li>Vegetables</li>
+    <li>
+      <a href="https://www.fruitbox.com" target="_blank">Fruits</a>
+      <ol type="i" start="4">
+        <li>Ripe</li>
+        <li>Dried</li>
+      </ol>
+    </li>
+  </ul>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Nested Table কী?}
+
+\begin{definitionbox}{Nested Table}
+HTML document-এ একটি table-এর \texttt{<td>} বা \texttt{<th>} cell-এর ভিতরে আরেকটি table তৈরি করা হলে তাকে Nested Table বলে।
+\end{definitionbox}
+
+Nested table technically করা যায়। তবে বেশি nested table ব্যবহার করলে code জটিল হয় এবং accessibility ও responsive design-এ সমস্যা হতে পারে। তাই প্রয়োজন ছাড়া nested table ব্যবহার করা উচিত নয়।
+
+\subsection{Nested Table-এর Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <td>
+      Outer Table Cell
+    </td>
+    <td>
+      <table border="1">
+        <tr>
+          <td>Inner Table Cell</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Example: Student Info with Nested Marks Table}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Student} & \textbf{Marks} \\
+\hline
+Rafi & Bangla 85 \newline English 90 \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nested Table Example</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Student</th>
+      <th>Marks</th>
+    </tr>
+    <tr>
+      <td>Rafi</td>
+      <td>
+        <table border="1" cellspacing="0" cellpadding="5">
+          <tr>
+            <th>Subject</th>
+            <th>Mark</th>
+          </tr>
+          <tr>
+            <td>Bangla</td>
+            <td>85</td>
+          </tr>
+          <tr>
+            <td>English</td>
+            <td>90</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Nested Table ব্যবহারে সতর্কতা}
+
+\begin{mistakebox}{সতর্কতা}
+\begin{itemize}
+\item Nested table code পড়া কঠিন হয়।
+\item ভুল closing tag দিলে layout নষ্ট হয়।
+\item accessibility সমস্যা হতে পারে।
+\item mobile responsive design-এ সমস্যা হতে পারে।
+\item শুধুমাত্র tabular data-এর ভিতরে sub-table দরকার হলে ব্যবহার করা উচিত।
+\end{itemize}
+\end{mistakebox}
+
+\begin{boardbox}{Book note}
+HSC exam-এর জন্য nested table জানা ভালো, কিন্তু professional web design-এ layout তৈরির জন্য table ব্যবহার না করে CSS layout ব্যবহার করা উত্তম।
+\end{boardbox}
+
+\subsection{Table-এর ভিতরে Multiple Elements}
+
+একটি cell-এর ভিতরে একাধিক element একসাথে থাকতে পারে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<td>
+  <h3>ICT Book</h3>
+  <img src="book.jpg" alt="ICT Book" width="100">
+  <p>Price: 300 Tk</p>
+  <a href="book.html">Details</a>
+</td>
+\end{verbatim}
+\end{examplebox}
+
+এখানে একই cell-এর ভিতরে heading, image, paragraph ও link আছে।
+
+\subsection{Full Practice Example: Table + List + Image + Link}
+
+\begin{examplebox}{Output ধারণা}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Item} & \textbf{Details} \\
+\hline
+Book & image + link \\
+\hline
+Subjects & ordered list \\
+\hline
+\end{tabular}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table with Multiple Elements</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <caption>ICT Learning Materials</caption>
+    <tr>
+      <th>Item</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>Book</td>
+      <td>
+        <a href="https://www.book.com" target="_blank">
+          <img src="book.jpg" alt="ICT Book" width="100" height="80">
+        </a>
+        <br>
+        <a href="https://www.book.com" target="_blank">Buy Book</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Subjects</td>
+      <td>
+        <ol type="1">
+          <li>Web Design</li>
+          <li>HTML</li>
+          <li>Database</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Board/Exam Focus}
+
+\begin{boardbox}{বেশি গুরুত্বপূর্ণ}
+\begin{itemize}
+\item Table-এর cell-এর ভিতরে ordered/unordered list বসানো।
+\item Table-এর cell-এর ভিতরে hyperlink তৈরি করা।
+\item Table-এর cell-এর ভিতরে image বসানো।
+\item Image-কে link হিসেবে ব্যবহার করা।
+\item Table-এর cell-এর ভিতরে underline/bold formatting ব্যবহার করা।
+\item \texttt{rowspan}, \texttt{colspan}, \texttt{align}, \texttt{target}, \texttt{src}, \texttt{width}, \texttt{height} একসাথে ব্যবহার করা।
+\item Figure দেখে HTML code লেখা।
+\end{itemize}
+\end{boardbox}
+
+\subsection{Exam-style Short Answer}
+
+\begin{enumerate}
+\item \textbf{Table-এর cell-এর ভিতরে list কীভাবে লেখা যায়?}\\
+উত্তর: Table-এর \texttt{<td>} বা \texttt{<th>} tag-এর ভিতরে \texttt{<ol>} অথবা \texttt{<ul>} tag ব্যবহার করে list লেখা যায়। প্রতিটি item লেখার জন্য \texttt{<li>} tag ব্যবহার করতে হয়।
+
+\item \textbf{Table-এর ভিতরে hyperlink কীভাবে তৈরি করা যায়?}\\
+উত্তর: Table cell-এর ভিতরে \texttt{<a href="url">Link Text</a>} লিখে hyperlink তৈরি করা যায়। যেমন: \texttt{<td><a href="board.html">Board</a></td>}।
+
+\item \textbf{Table-এর ভিতরে image কীভাবে বসানো যায়?}\\
+উত্তর: Table cell-এর ভিতরে \texttt{<img>} tag ব্যবহার করে image বসানো যায়। যেমন: \texttt{<td><img src="book.jpg" alt="Book" width="100"></td>}।
+
+\item \textbf{Nested Table কী?}\\
+উত্তর: একটি table-এর \texttt{<td>} বা \texttt{<th>} cell-এর ভিতরে আরেকটি সম্পূর্ণ table তৈরি করা হলে তাকে Nested Table বলে।
+
+\item \textbf{Image hyperlink কীভাবে তৈরি করা যায়?}\\
+উত্তর: Image hyperlink তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়। যেমন: \texttt{<a href="index.html"><img src="logo.png" alt="Logo"></a>}।
+\end{enumerate}
+
+\subsection{Practice MCQ}
+
+\begin{enumerate}
+\item Table cell-এর ভিতরে image বসাতে কোন tag ব্যবহার হয়?\\
+ক) \texttt{<a>} \quad খ) \texttt{<img>} \quad গ) \texttt{<ol>} \quad ঘ) \texttt{<tr>}
+
+\item Table cell-এর ভিতরে link তৈরি করতে কোন tag ব্যবহার হয়?\\
+ক) \texttt{<a>} \quad খ) \texttt{<td>} \quad গ) \texttt{<br>} \quad ঘ) \texttt{<hr>}
+
+\item Table cell-এর ভিতরে ordered list বসাতে কোন tag ব্যবহার হবে?\\
+ক) \texttt{<ul>} \quad খ) \texttt{<ol>} \quad গ) \texttt{<img>} \quad ঘ) \texttt{<caption>}
+
+\item Image hyperlink তৈরির সঠিক structure কোনটি?\\
+ক) \texttt{<img href="home.html">}\\
+খ) \texttt{<a href="home.html"><img src="logo.png" alt="Logo"></a>}\\
+গ) \texttt{<a src="logo.png">Home</a>}\\
+ঘ) \texttt{<table img="logo.png">}
+
+\item একটি table-এর cell-এর ভিতরে আরেকটি table থাকলে তাকে কী বলে?\\
+ক) Empty Table \quad খ) Nested Table \quad গ) Ordered Table \quad ঘ) External Table
+\end{enumerate}
+
+\begin{boardbox}{MCQ Answer Key}
+১-খ, ২-ক, ৩-খ, ৪-খ, ৫-খ
+\end{boardbox}
+
+\subsection{CQ Practice}
+
+\begin{practicebox}
+\textbf{উদ্দীপক:} একটি webpage-এ ``ICT Learning Materials'' নামে একটি table তৈরি করতে হবে। Table-এ দুইটি column থাকবে: Item ও Details। Book row-এর Details cell-এ \texttt{book.jpg} image থাকবে এবং image-এ click করলে \texttt{book.html} page open হবে। Subjects row-এর Details cell-এ ordered list হিসেবে HTML, CSS, JavaScript থাকবে।
+
+\textbf{প্রশ্ন}\\
+ক. Nested Table কী?\\
+খ. Image hyperlink তৈরির নিয়ম ব্যাখ্যা কর।\\
+গ. উদ্দীপকের জন্য HTML code লেখ।\\
+ঘ. Table-এর cell-এর ভিতরে list, image ও hyperlink ব্যবহারের সুবিধা বিশ্লেষণ কর।
+\end{practicebox}
+
+\subsubsection{গ. Code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ICT Learning Materials</title>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <caption>ICT Learning Materials</caption>
+    <tr>
+      <th>Item</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>Book</td>
+      <td>
+        <a href="book.html">
+          <img src="book.jpg" alt="ICT Book" width="100" height="80">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Subjects</td>
+      <td>
+        <ol>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ঘ. বিশ্লেষণ}
+
+Table-এর cell-এর ভিতরে list ব্যবহার করলে তথ্য category-wise সুন্দরভাবে সাজানো যায়। Image ব্যবহার করলে table visual ও আকর্ষণীয় হয়। Hyperlink ব্যবহার করলে table থেকেই অন্য page বা resource-এ যাওয়া যায়। তাই table-এর ভিতরে list, image ও hyperlink ব্যবহার করলে webpage আরও তথ্যবহুল, ব্যবহারবান্ধব ও practical হয়।
+
+\subsection{Common Mistake}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item \texttt{<td>} tag-এর বাইরে list লিখে ফেলা।
+\item \texttt{<td>} close করার আগে \texttt{<ol>} বা \texttt{<ul>} ঠিকভাবে close না করা।
+\item Image link করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} না রাখা।
+\item \texttt{href} ও \texttt{src} attribute গুলিয়ে ফেলা।
+\item \texttt{<table>} tag-এর ভিতরে সরাসরি \texttt{<ol>} লিখে ফেলা; cell দরকার।
+\item Nested table-এর closing tag ভুল করা।
+\item Table cell-এর ভিতরে content বেশি দিলে layout অগোছালো করা।
+\item External link-এ \texttt{target="\_blank"} লিখতে ভুল করা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{recapbox}
+Table cell-এর ভিতরে list, image, hyperlink ও formatting tag রাখা যায়। List বসাতে \texttt{<td>}-এর ভিতরে \texttt{<ol>} বা \texttt{<ul>} লিখবে। Image বসাতে \texttt{<td>}-এর ভিতরে \texttt{<img>} লিখবে। Link বসাতে \texttt{<td>}-এর ভিতরে \texttt{<a href="">...</a>} লিখবে। Image link করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাবে। Nested table হলো table-এর cell-এর ভিতরে আরেকটি table।
+\end{recapbox}
+
+
+\begin{boardbox}{পরবর্তী টপিক}
+পরের টপিক: Division, Span ও Style Attribute--\texttt{<div>}, \texttt{<span>} এবং inline CSS basic।
+\end{boardbox}

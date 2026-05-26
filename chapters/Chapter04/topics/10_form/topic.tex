@@ -1,66 +1,682 @@
-% ৪.১০ ফর্ম ও ডেটা সংগ্রহ
-\section{ফর্ম ও ডেটা সংগ্রহ}
+% 4.x HTML Form
+\section{HTML Form}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML form-এর কাজ ও মৌলিক tag লিখতে।
-\item input type, textarea, select, button ব্যবহার করতে।
-\item GET ও POST method-এর পার্থক্য ব্যাখ্যা করতে।
+\item HTML form কী এবং কেন ব্যবহার করা হয় তা ব্যাখ্যা করতে।
+\item \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}, \texttt{<option>}, \texttt{<button>} ও \texttt{<label>} tag ব্যবহার করতে।
+\item text field, password field, radio button, checkbox, textarea, dropdown, submit ও reset button তৈরি করতে।
+\item \texttt{action}, \texttt{method}, \texttt{name}, \texttt{value}, \texttt{placeholder}, \texttt{checked} ও \texttt{required} attribute-এর কাজ বুঝতে।
+\item HSC practical ও board exam-এর form-related প্রশ্নের উত্তর দিতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Form}
-ব্যবহারকারীর কাছ থেকে data নেওয়ার জন্য HTML form ব্যবহৃত হয়। registration, login, search, feedback, admission application ইত্যাদি form-এর উদাহরণ।
+Table দিয়ে web page-এ data সাজিয়ে দেখানো যায়। কিন্তু user-এর কাছ থেকে data নিতে হলে HTML form ব্যবহার করতে হয়। Online registration, login, contact message, search box, feedback, admission application, order form বা survey form - এসব ক্ষেত্রে form খুব গুরুত্বপূর্ণ।
 
-\begin{definitionbox}{Form}
-যে HTML structure ব্যবহারকারীর input গ্রহণ করে server বা script-এর কাছে পাঠাতে পারে, তাকে form বলা হয়।
+\subsection{HTML Form কী?}
+
+\begin{definitionbox}{HTML Form}
+HTML Form হলো web page-এর এমন একটি অংশ, যার মাধ্যমে user-এর কাছ থেকে তথ্য নেওয়া যায়।
 \end{definitionbox}
 
+Form-এর মাধ্যমে user নাম, ঠিকানা, email, password, gender, subject choice, comment, admission information, login information ইত্যাদি লিখতে বা নির্বাচন করতে পারে। Form submit করলে সেই data server file বা script-এর কাছে পাঠানো যায়।
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+HTML Form হলো web page-এর user input নেওয়ার একটি ব্যবস্থা, যার মাধ্যমে user-এর দেওয়া data server-এ পাঠানো যায়।
+\end{boardbox}
+
+\subsection{Form কেন ব্যবহার করা হয়?}
+
+Form ব্যবহার করা হয়:
+\begin{itemize}
+\item Login করার জন্য।
+\item Registration করার জন্য।
+\item Contact message পাঠানোর জন্য।
+\item Search করার জন্য।
+\item Online admission form পূরণ করার জন্য।
+\item Feedback নেওয়ার জন্য।
+\item Order বা payment information নেওয়ার জন্য।
+\item Survey বা quiz answer নেওয়ার জন্য।
+\end{itemize}
+
+\subsection{\texttt{<form>} Tag}
+
+\begin{definitionbox}{\texttt{<form>} tag}
+\texttt{<form>} tag HTML document-এ একটি form area তৈরি করার জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+Form-এর ভিতরে বিভিন্ন input control রাখা হয়। যেমন: text field, password field, radio button, checkbox, dropdown, textarea, submit button।
+
+\subsubsection{Basic Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<form action="submit.php" method="post">
+  Form controls go here
+</form>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{ব্যাখ্যা}
+\texttt{<form>} হলো form container। এর ভিতরের input field গুলো user data গ্রহণ করে। \texttt{action} data কোথায় যাবে তা নির্ধারণ করে এবং \texttt{method} data পাঠানোর পদ্ধতি নির্ধারণ করে।
+\end{examplebox}
+
+\subsection{Form-এর গুরুত্বপূর্ণ Attribute}
+
 \begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.42\textwidth}|p{0.22\textwidth}|}
+\begin{tabular}{|p{0.24\textwidth}|p{0.56\textwidth}|}
 \hline
-\textbf{Tag/Attribute} & \textbf{কাজ} & \textbf{উদাহরণ} \\
+\textbf{Attribute} & \textbf{কাজ} \\
 \hline
-\texttt{<form>} & form container & action, method থাকে \\
+\texttt{action} & form submit হলে data কোথায় যাবে তা নির্ধারণ করে \\
 \hline
-\texttt{<input>} & এক লাইনের input & text, password, email \\
+\texttt{method} & data পাঠানোর পদ্ধতি নির্ধারণ করে \\
 \hline
-\texttt{<textarea>} & বহু লাইনের text & comment/message \\
+\texttt{name} & form বা input field-এর নাম নির্ধারণ করে \\
 \hline
-\texttt{<select>} & dropdown list & option list \\
-\hline
-\texttt{required} & input বাধ্যতামূলক করে & validation \\
+\texttt{target} & response কোথায় open হবে তা নির্ধারণ করতে পারে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\textbf{Form example placeholder}\\[4pt]
-\texttt{<form action="submit.php" method="post">}\\
-\texttt{<input type="text" name="name" required>}\\
-\texttt{<input type="email" name="email">}\\
-\texttt{<button type="submit">Send</button>}\\
-\texttt{</form>}
-}}
-\end{center}
+\subsubsection{\texttt{action} Attribute}
 
-\subsection{GET ও POST}
+\texttt{action} attribute form-এর data কোন server file বা URL-এ পাঠানো হবে তা নির্ধারণ করে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<form action="form_action.php">
+\end{verbatim}
+\end{examplebox}
+
+User submit button click করলে form-এর content \texttt{action} attribute-এ দেওয়া file বা script-এর কাছে যায়।
+
+\subsubsection{\texttt{method} Attribute}
+
+\texttt{method} attribute form data কীভাবে server-এ পাঠানো হবে তা নির্ধারণ করে।
+
 \begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\begin{tabular}{|p{0.18\textwidth}|p{0.62\textwidth}|}
 \hline
-\textbf{ভিত্তি} & \textbf{GET} & \textbf{POST} \\
+\textbf{Method} & \textbf{ব্যবহার} \\
 \hline
-Data পাঠানো & URL-এর সাথে query হিসেবে & request body-তে \\
+\texttt{get} & ছোট data বা search query পাঠাতে ব্যবহার করা যায়; data URL-এ দেখা যেতে পারে। \\
 \hline
-ব্যবহার & search, filter & login, registration, sensitive data \\
-\hline
-গোপনীয়তা & কম & তুলনামূলক ভালো, তবে HTTPS দরকার \\
+\texttt{post} & sensitive বা বড় data পাঠাতে ব্যবহার করা ভালো; data URL-এ সরাসরি দেখা যায় না। \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Client-side validation সুবিধাজনক, কিন্তু নিরাপত্তার জন্য server-side validation দরকার। শুধু browser validation-এর উপর নির্ভর করা ঠিক নয়।
+\begin{examplebox}{Code}
+\begin{verbatim}
+<form action="submit.php" method="post">
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{HSC note}
+Search form-এর জন্য \texttt{get} এবং login, registration, password বা private information-এর জন্য \texttt{post} বেশি উপযোগী।
+\end{keypointbox}
+
+\subsection{\texttt{<input>} Tag}
+
+\begin{definitionbox}{\texttt{<input>} tag}
+\texttt{<input>} tag form-এর ভিতরে বিভিন্ন ধরনের input field তৈরি করতে ব্যবহৃত হয়।
+\end{definitionbox}
+
+\texttt{<input>} একটি empty tag। এর closing tag নেই। \texttt{type} attribute-এর value অনুযায়ী input field-এর ধরন পরিবর্তিত হয়।
+
+\subsubsection{Basic Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<input type="text" name="username">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Common Input Attributes}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{Attribute} & \textbf{কাজ} \\
+\hline
+\texttt{type} & input field-এর ধরন নির্ধারণ করে \\
+\hline
+\texttt{name} & server-এ data পাঠানোর field name নির্ধারণ করে \\
+\hline
+\texttt{value} & default value বা button text নির্ধারণ করে \\
+\hline
+\texttt{placeholder} & input field-এর hint text দেখায় \\
+\hline
+\texttt{checked} & radio বা checkbox আগে থেকেই selected রাখে \\
+\hline
+\texttt{maxlength} & maximum character limit নির্ধারণ করে \\
+\hline
+\texttt{size} & field-এর visual width নির্ধারণ করে \\
+\hline
+\texttt{required} & field পূরণ বাধ্যতামূলক করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Text Field}
+
+\begin{definitionbox}{\texttt{type="text"}}
+Text field হলো এমন input field যেখানে user text, number বা সাধারণ তথ্য লিখতে পারে।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<form>
+  Name: <input type="text" name="student_name">
+</form>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Modern Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<label for="name">Name:</label>
+<input type="text" id="name" name="name"
+       placeholder="Enter your name">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+Browser-এ একটি single-line text box দেখা যাবে। User সেখানে নিজের নাম লিখতে পারবে।
+\end{examplebox}
+
+\subsection{Password Field}
+
+\begin{definitionbox}{\texttt{type="password"}}
+Password field হলো এমন input field যেখানে user-এর লেখা character গুলো সাধারণত dot বা asterisk আকারে দেখা যায়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+Password: <input type="password" name="pwd">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+User password লিখলে browser character গুলো সরাসরি না দেখিয়ে dot বা bullet আকারে দেখাতে পারে।
+\end{examplebox}
+
+\subsection{Radio Button}
+
+\begin{definitionbox}{\texttt{type="radio"}}
+Radio button হলো এমন input control, যেখানে user কয়েকটি option-এর মধ্যে শুধু একটি option নির্বাচন করতে পারে।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+Gender:
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{Important rule}
+এক group-এর radio button-এর \texttt{name} একই হতে হবে। \texttt{name} একই না হলে user একাধিক radio option select করতে পারে।
+\end{keypointbox}
+
+\subsubsection{Group Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+Group:
+<input type="radio" name="group" value="Science"> Science
+<input type="radio" name="group" value="Business"> Business
+<input type="radio" name="group" value="Humanities"> Humanities
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Checkbox}
+
+\begin{definitionbox}{\texttt{type="checkbox"}}
+Checkbox হলো এমন input control, যেখানে user একাধিক option নির্বাচন করতে পারে।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+Subjects:
+<input type="checkbox" name="subject" value="ICT"> ICT
+<input type="checkbox" name="subject" value="English"> English
+<input type="checkbox" name="subject" value="Bangla"> Bangla
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Radio Button ও Checkbox-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.28\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Radio Button} & \textbf{Checkbox} \\
+\hline
+Selection & একটি option & একাধিক option \\
+\hline
+Example & Gender, group & Favourite subjects \\
+\hline
+Type & \texttt{radio} & \texttt{checkbox} \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Submit Button}
+
+\begin{definitionbox}{\texttt{type="submit"}}
+Submit button হলো এমন button, যেটিতে click করলে form-এর data \texttt{action} attribute-এ দেওয়া server file বা URL-এ পাঠানো হয়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<input type="submit" value="Submit">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Button Tag Version}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<button type="submit">Submit</button>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Reset Button}
+
+\begin{definitionbox}{\texttt{type="reset"}}
+Reset button form-এর input field গুলোকে আগের default অবস্থায় ফিরিয়ে দেয়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<input type="reset" value="Reset">
+\end{verbatim}
+\end{examplebox}
+
+User ভুল input দিলে form clear করার জন্য reset button ব্যবহার করা যায়।
+
+\subsection{Normal Button}
+
+\begin{definitionbox}{\texttt{type="button"}}
+Normal button নিজে form submit করে না; সাধারণত JavaScript action-এর জন্য ব্যবহার করা হয়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<input type="button" value="Click Me">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Button Tag Version}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<button type="button">Click Me</button>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{\texttt{<textarea>} Tag}
+
+\begin{definitionbox}{\texttt{<textarea>} tag}
+\texttt{<textarea>} tag multi-line text input নেওয়ার জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+যখন user বড় message, comment, address বা feedback লিখবে, তখন textarea ব্যবহার করা হয়।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<textarea rows="4" cols="30">
+Write your message here
+</textarea>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Modern Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<label for="message">Message:</label><br>
+<textarea id="message" name="message"
+          rows="4" cols="40"></textarea>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+Browser-এ বড় multi-line box দেখা যাবে। User সেখানে address, comment বা message লিখতে পারবে।
+\end{examplebox}
+
+\subsection{Dropdown List}
+
+\begin{definitionbox}{\texttt{<select>} ও \texttt{<option>}}
+\texttt{<select>} tag dropdown list তৈরি করে এবং \texttt{<option>} tag dropdown-এর প্রতিটি option নির্ধারণ করে।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<select name="group">
+  <option value="science">Science</option>
+  <option value="business">Business Studies</option>
+  <option value="humanities">Humanities</option>
+</select>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ব্যবহার}
+
+\begin{itemize}
+\item Group selection
+\item District selection
+\item Subject selection
+\item Blood group selection
+\item Category selection
+\end{itemize}
+
+\subsection{\texttt{<button>} Tag}
+
+\begin{definitionbox}{\texttt{<button>} tag}
+\texttt{<button>} tag clickable button তৈরি করতে ব্যবহৃত হয়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<button type="button">Click</button>
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.26\textwidth}|p{0.54\textwidth}|}
+\hline
+\textbf{Button Type} & \textbf{কাজ} \\
+\hline
+\texttt{submit} & form submit করে \\
+\hline
+\texttt{reset} & form reset করে \\
+\hline
+\texttt{button} & সাধারণ clickable button তৈরি করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{\texttt{<label>} Tag}
+
+\begin{definitionbox}{\texttt{<label>} tag}
+\texttt{<label>} tag input field-এর label বা নাম দেওয়ার জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{কেন দরকার?}
+
+\begin{itemize}
+\item Form readable হয়।
+\item Accessibility ভালো হয়।
+\item Label-এ click করলে related input focus হতে পারে।
+\item Professional coding practice গড়ে ওঠে।
+\end{itemize}
+
+\subsection{Complete Example: Student Registration Form}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+</head>
+<body>
+
+  <h1>Student Registration Form</h1>
+
+  <form action="submit.php" method="post">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"
+           placeholder="Enter your name">
+    <br><br>
+
+    <label for="roll">Roll:</label>
+    <input type="text" id="roll" name="roll"
+           placeholder="Enter your roll">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    Subjects:
+    <input type="checkbox" name="subject" value="ICT"> ICT
+    <input type="checkbox" name="subject" value="English"> English
+    <input type="checkbox" name="subject" value="Bangla"> Bangla
+    <br><br>
+
+    <label for="group">Group:</label>
+    <select id="group" name="group">
+      <option value="science">Science</option>
+      <option value="business">Business Studies</option>
+      <option value="humanities">Humanities</option>
+    </select>
+    <br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address"
+              rows="4" cols="35"></textarea>
+    <br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+  </form>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+Browser-এ Student Registration Form heading, Name ও Roll text field, Password field, Gender radio button, Subjects checkbox, Group dropdown, Address textarea, Submit ও Reset button দেখা যাবে।
+\end{examplebox}
+
+\subsection{Form Tag Table}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{Tag} & \textbf{কাজ} \\
+\hline
+\texttt{<form>} & form area তৈরি করে \\
+\hline
+\texttt{<input>} & input field বা control তৈরি করে \\
+\hline
+\texttt{<textarea>} & multi-line text box তৈরি করে \\
+\hline
+\texttt{<select>} & dropdown list তৈরি করে \\
+\hline
+\texttt{<option>} & dropdown-এর option তৈরি করে \\
+\hline
+\texttt{<button>} & button তৈরি করে \\
+\hline
+\texttt{<label>} & input-এর label তৈরি করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Input Type Table}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.56\textwidth}|}
+\hline
+\textbf{Input Type} & \textbf{কাজ} \\
+\hline
+\texttt{text} & text field তৈরি করে \\
+\hline
+\texttt{password} & password field তৈরি করে \\
+\hline
+\texttt{radio} & single option selection \\
+\hline
+\texttt{checkbox} & multiple option selection \\
+\hline
+\texttt{submit} & form data submit করে \\
+\hline
+\texttt{reset} & form reset করে \\
+\hline
+\texttt{button} & normal button তৈরি করে \\
+\hline
+\texttt{email} & email input নেয় \\
+\hline
+\texttt{number} & number input নেয় \\
+\hline
+\texttt{date} & date input নেয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{HSC focus}
+\texttt{text}, \texttt{password}, \texttt{radio}, \texttt{checkbox}, \texttt{submit}, \texttt{reset} এবং \texttt{button} input type বেশি গুরুত্বপূর্ণ।
+\end{keypointbox}
+
+\subsection{সাধারণ ভুল}
+
+\begin{mistakebox}{Common Mistake}
+\begin{itemize}
+\item \texttt{<form>} tag না দিয়ে input field লেখা।
+\item \texttt{name} attribute না দেওয়া।
+\item Radio button-এর \texttt{name} আলাদা আলাদা দেওয়া।
+\item Submit button না দেওয়া।
+\item \texttt{action} attribute ভুল দেওয়া।
+\item Password field-এ \texttt{type="text"} লেখা।
+\item Checkbox ও radio button গুলিয়ে ফেলা।
+\item \texttt{<select>}-এর ভিতরে \texttt{<option>} না দেওয়া।
+\item \texttt{<textarea>} closing tag না দেওয়া।
+\item \texttt{label for} এবং input \texttt{id} মিল না রাখা।
+\end{itemize}
 \end{mistakebox}
+
+\subsubsection{ভুল Radio Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<input type="radio" name="male" value="Male"> Male
+<input type="radio" name="female" value="Female"> Female
+\end{verbatim}
+\end{examplebox}
+
+এতে দুইটাই select করা যেতে পারে।
+
+\subsubsection{সঠিক Radio Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+\end{verbatim}
+\end{examplebox}
+
+\subsection{বইয়ে ব্যবহারযোগ্য সারাংশ}
+
+\begin{recapbox}
+HTML form user-এর কাছ থেকে তথ্য সংগ্রহ করার জন্য ব্যবহৃত হয়। Form তৈরি করতে \texttt{<form>} tag ব্যবহার করা হয় এবং এর ভিতরে text field, password field, radio button, checkbox, dropdown list, textarea, submit button ও reset button রাখা যায়। \texttt{<input>} tag বিভিন্ন ধরনের input control তৈরি করে এবং এর \texttt{type} attribute input-এর ধরন নির্ধারণ করে। বড় text নেওয়ার জন্য \texttt{<textarea>}, dropdown list তৈরির জন্য \texttt{<select>} এবং option তৈরির জন্য \texttt{<option>} tag ব্যবহার করা হয়। Form submit হলে \texttt{action} attribute-এ দেওয়া server file বা URL-এ data পাঠানো হয়। তাই online registration, login, feedback, search এবং contact system তৈরিতে HTML form খুব গুরুত্বপূর্ণ।
+\end{recapbox}
+
+\subsection{ছোট প্রশ্নোত্তর}
+
+\begin{enumerate}
+\item \textbf{HTML Form কী?}\\
+উত্তর: User input নেওয়ার জন্য web page-এ ব্যবহৃত কাঠামোকে HTML Form বলে।
+
+\item \textbf{Form তৈরির tag কোনটি?}\\
+উত্তর: \texttt{<form>}।
+
+\item \textbf{Input field তৈরির tag কোনটি?}\\
+উত্তর: \texttt{<input>}।
+
+\item \textbf{Password field তৈরির code কী?}\\
+উত্তর: \texttt{<input type="password">}।
+
+\item \textbf{একাধিক option নির্বাচন করতে কোন input type ব্যবহার হয়?}\\
+উত্তর: \texttt{checkbox}।
+
+\item \textbf{একাধিক option থেকে একটি option নির্বাচন করতে কোন input type ব্যবহার হয়?}\\
+উত্তর: \texttt{radio}।
+
+\item \textbf{Multi-line text input নিতে কোন tag ব্যবহার হয়?}\\
+উত্তর: \texttt{<textarea>}।
+
+\item \textbf{Dropdown list তৈরির tag কোনটি?}\\
+উত্তর: \texttt{<select>}।
+
+\item \textbf{Dropdown-এর option তৈরির tag কোনটি?}\\
+উত্তর: \texttt{<option>}।
+
+\item \textbf{Form data server-এ পাঠাতে কোন button ব্যবহার হয়?}\\
+উত্তর: Submit button।
+\end{enumerate}
+
+\subsection{Exam Focus MCQ}
+
+\begin{enumerate}
+\item HTML form তৈরি করতে কোন tag ব্যবহৃত হয়?\\
+ক) \texttt{<table>} \quad খ) \texttt{<form>} \quad গ) \texttt{<img>} \quad ঘ) \texttt{<a>}
+
+\item Input field তৈরির tag কোনটি?\\
+ক) \texttt{<input>} \quad খ) \texttt{<select>} \quad গ) \texttt{<option>} \quad ঘ) \texttt{<caption>}
+
+\item Password field তৈরির জন্য কোন code সঠিক?\\
+ক) \texttt{<input type="text">}\\
+খ) \texttt{<input type="password">}\\
+গ) \texttt{<input type="radio">}\\
+ঘ) \texttt{<input type="checkbox">}
+
+\item একাধিক option select করতে কোনটি ব্যবহৃত হয়?\\
+ক) Radio button \quad খ) Checkbox \quad গ) Submit button \quad ঘ) Password field
+
+\item Dropdown list তৈরির tag কোনটি?\\
+ক) \texttt{<textarea>} \quad খ) \texttt{<select>} \quad গ) \texttt{<input>} \quad ঘ) \texttt{<label>}
+
+\item Form submit হলে data কোথায় যাবে তা কোন attribute নির্ধারণ করে?\\
+ক) \texttt{src} \quad খ) \texttt{href} \quad গ) \texttt{action} \quad ঘ) \texttt{alt}
+
+\item Multi-line text input নিতে কোন tag ব্যবহৃত হয়?\\
+ক) \texttt{<textarea>} \quad খ) \texttt{<input type="text">} \quad গ) \texttt{<option>} \quad ঘ) \texttt{<tr>}
+\end{enumerate}
+
+\begin{boardbox}{MCQ Answer Key}
+১-খ, ২-ক, ৩-খ, ৪-খ, ৫-খ, ৬-গ, ৭-ক
+\end{boardbox}

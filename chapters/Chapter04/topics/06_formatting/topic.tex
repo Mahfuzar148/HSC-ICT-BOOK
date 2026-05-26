@@ -1,63 +1,671 @@
-% ৪.৬ টেক্সট ও কনটেন্ট ফরম্যাটিং
-\section{টেক্সট ও কনটেন্ট ফরম্যাটিং}
+% ৪.x HTML-এ Text Formatting
+\section{HTML-এ Text Formatting}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item heading, paragraph, line break ও horizontal rule ব্যবহার করতে।
-\item basic formatting tag ও style attribute চিনতে।
-\item list ব্যবহার করে content সাজাতে।
+\item HTML text formatting কী তা ব্যাখ্যা করতে।
+\item heading, paragraph, line break ও horizontal rule tag ব্যবহার করতে।
+\item bold, italic, underline, inserted, deleted, subscript, superscript ও preformatted text tag লিখতে।
+\item \texttt{<font>} tag-এর \texttt{size}, \texttt{color}, \texttt{face} attribute ব্যাখ্যা করতে।
+\item color, background color ও text alignment-এর basic HTML/CSS style ব্যবহার বুঝতে।
+\item HSC practical code-এ text formatting tag প্রয়োগ করতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Heading, Paragraph ও Line Break}
-HTML-এ heading-এর জন্য \texttt{<h1>} থেকে \texttt{<h6>} tag ব্যবহৃত হয়। paragraph-এর জন্য \texttt{<p>} এবং line break-এর জন্য \texttt{<br>} ব্যবহৃত হয়।
+\subsection{Text Formatting কী?}
+
+\begin{definitionbox}{Text Formatting}
+HTML-এ text formatting হলো বিভিন্ন HTML tag ব্যবহার করে web page-এর text-এর আকার, style ও উপস্থাপন পরিবর্তন করার প্রক্রিয়া।
+\end{definitionbox}
+
+Text formatting ব্যবহার করে web page-এর text bold, italic, underline, small, big, subscript, superscript, deleted, inserted বা preformatted আকারে দেখানো যায়। এতে web page পড়তে সহজ হয় এবং গুরুত্বপূর্ণ অংশ আলাদা করে বোঝানো যায়।
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+HTML-এ text formatting হলো বিভিন্ন HTML tag ব্যবহার করে text-এর আকার, style ও উপস্থাপন পরিবর্তন করার প্রক্রিয়া।
+\end{boardbox}
+
+\subsection{Heading Tag: \texttt{<h1>} থেকে \texttt{<h6>}}
+
+\begin{definitionbox}{Heading tag}
+Heading tag web page-এ শিরোনাম বা heading প্রদর্শনের জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+HTML-এ মোট ৬ ধরনের heading tag আছে। \texttt{<h1>} সবচেয়ে বড় এবং গুরুত্বপূর্ণ heading, আর \texttt{<h6>} সবচেয়ে ছোট heading।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{ব্যবহার}
+Page title, section title, subsection title, chapter heading বা article heading দেখাতে heading tag ব্যবহার করা হয়।
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Heading 1 সবচেয়ে বড়, এরপর Heading 2, Heading 3 ক্রমান্বয়ে ছোট হতে থাকে।\\
+\textbf{ব্যাখ্যা:} \texttt{<h1>} সাধারণত page-এর প্রধান শিরোনাম, \texttt{<h2>} section heading এবং \texttt{<h3>} subsection heading হিসেবে ব্যবহার করা হয়।
+\end{examplebox}
+
+\subsection{Paragraph Tag: \texttt{<p>}}
+
+\begin{definitionbox}{Paragraph tag}
+\texttt{<p>} tag web page-এ paragraph বা অনুচ্ছেদ লেখার জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} দুইটি paragraph আলাদা block হিসেবে দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{<p>} tag browser-কে জানায় যে text-টি একটি অনুচ্ছেদ। Paragraph-এর আগে ও পরে browser সাধারণত কিছু vertical space রাখে।
+\end{examplebox}
+
+\begin{keypointbox}{Important note}
+Browser সাধারণত HTML source code-এর extra space বা line break ignore করে। তাই আলাদা paragraph লেখার জন্য \texttt{<p>} এবং একই paragraph-এর ভিতরে line break দরকার হলে \texttt{<br>} ব্যবহার করা হয়।
+\end{keypointbox}
+
+\subsection{Line Break Tag: \texttt{<br>}}
+
+\begin{definitionbox}{Line break}
+\texttt{<br>} tag নতুন line তৈরি করার জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+\texttt{<br>} একটি empty tag; এর আলাদা closing tag নেই।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>
+ICT College<br>
+Dhaka, Bangladesh<br>
+Class: HSC
+</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+ICT College, Dhaka, Bangladesh এবং Class: HSC - তিনটি text আলাদা line-এ দেখা যাবে।
+\end{examplebox}
+
+\begin{keypointbox}{ব্যাখ্যা}
+\texttt{<br>} paragraph ভাঙে না; একই paragraph-এর ভিতরে শুধু নতুন line তৈরি করে। তাই address, poem line বা short line break দেখাতে এটি ব্যবহার করা যায়।
+\end{keypointbox}
+
+\subsection{Horizontal Rule: \texttt{<hr>}}
+
+\begin{definitionbox}{Horizontal line}
+\texttt{<hr>} tag web page-এ একটি horizontal line বা অনুভূমিক রেখা তৈরি করে।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<h1>HSC ICT</h1>
+<hr>
+<p>Chapter 4: HTML</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{itemize}
+\item section আলাদা করতে ব্যবহার করা যায়।
+\item title-এর নিচে line দিতে ব্যবহার করা যায়।
+\item content division বোঝাতে ব্যবহার করা যায়।
+\end{itemize}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} \texttt{HSC ICT} heading-এর নিচে একটি horizontal line দেখা যাবে, তারপর paragraph দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{<hr>} একটি empty tag; এটি content-এর thematic break বা section division বোঝাতে সাহায্য করে।
+\end{examplebox}
 
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\textbf{Example placeholder}\\[4pt]
-\texttt{<h1>ICT Chapter 4</h1>}\\
-\texttt{<p>}HTML দিয়ে ওয়েব পেজ তৈরি করা যায়।\texttt{</p>}\\
-\texttt{<br>} line break তৈরি করে।
-}}
-\end{center}
-
-\subsection{Formatting tag}
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.38\textwidth}|p{0.24\textwidth}|}
+\begin{tabular}{|p{0.18\textwidth}|p{0.30\textwidth}|p{0.16\textwidth}|p{0.28\textwidth}|}
 \hline
-\textbf{Tag} & \textbf{কাজ} & \textbf{নোট} \\
+\textbf{Tag} & \textbf{কাজ} & \textbf{Type} & \textbf{স্মরণযোগ্য কথা} \\
 \hline
-\texttt{<b>} & bold করে & visual bold \\
+\texttt{<h1>--<h6>} & heading বা শিরোনাম তৈরি করে & container tag & structure বোঝাতে ব্যবহার হয়; \texttt{<h1>} সবচেয়ে বড় \\
 \hline
-\texttt{<strong>} & গুরুত্বপূর্ণ text বোঝায় & semantic গুরুত্ব \\
+\texttt{<p>} & paragraph বা অনুচ্ছেদ তৈরি করে & container tag & নতুন idea/block লেখার জন্য \\
 \hline
-\texttt{<i>} & italic করে & visual italic \\
+\texttt{<br>} & forced line break দেয় & empty tag & একই block-এর মধ্যে line ভাঙে \\
 \hline
-\texttt{<em>} & emphasis বোঝায় & semantic emphasis \\
-\hline
-\texttt{<u>} & underline করে & কম ব্যবহার করা ভালো \\
+\texttt{<hr>} & thematic/section break দেয় & empty tag & বিষয় আলাদা করতে visual divider \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{List}
-\begin{keypointbox}{List tag}
-\begin{itemize}
-\item Ordered list: \texttt{<ol>} এবং \texttt{<li>}
-\item Unordered list: \texttt{<ul>} এবং \texttt{<li>}
-\item Definition list: \texttt{<dl>}, \texttt{<dt>}, \texttt{<dd>}
-\end{itemize}
+\subsection{Common Text Formatting Tags}
+
+\subsubsection{Bold Text: \texttt{<b>} ও \texttt{<strong>}}
+
+\texttt{<b>} tag text bold করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>This is <b>bold</b> text.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} This is \textbf{bold} text.\\
+\textbf{ব্যাখ্যা:} \texttt{<b>} শুধু text visually bold করে; এটি text গুরুত্বপূর্ণ কি না, সেই অর্থ সবসময় প্রকাশ করে না।
+\end{examplebox}
+
+\texttt{<strong>} tag গুরুত্বপূর্ণ text বোঝাতে ব্যবহৃত হয়। সাধারণত browser এটিকে bold করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p><strong>Warning:</strong> Read the notice carefully.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} \textbf{Warning:} Read the notice carefully.\\
+\textbf{ব্যাখ্যা:} \texttt{<strong>} গুরুত্বপূর্ণ, জরুরি বা সতর্কতামূলক text বোঝাতে ব্যবহৃত হয়। Browser সাধারণত এটিকে bold করে দেখায়।
+\end{examplebox}
+
+\begin{keypointbox}{HSC note}
+Simple visual bold দেখাতে \texttt{<b>} ব্যবহার করা যায়। গুরুত্বপূর্ণ অর্থ বোঝাতে \texttt{<strong>} ব্যবহার করা ভালো।
 \end{keypointbox}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Heading tag শুধু text বড় করার জন্য নয়। Page structure বোঝাতে heading level ঠিকভাবে ব্যবহার করা উচিত।
+\subsubsection{Italic Text: \texttt{<i>} ও \texttt{<em>}}
+
+\texttt{<i>} tag text italic করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>This is <i>italic</i> text.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} This is \textit{italic} text.\\
+\textbf{ব্যাখ্যা:} \texttt{<i>} text visually italic করে। বিশেষ term, foreign word বা alternate voice দেখাতে এটি ব্যবহার করা যায়।
+\end{examplebox}
+
+\texttt{<em>} tag emphasized text বোঝাতে ব্যবহৃত হয়। সাধারণত browser এটিকে italic করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>You must <em>practice</em> HTML regularly.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} You must \textit{practice} HTML regularly.\\
+\textbf{ব্যাখ্যা:} \texttt{<em>} emphasized text বোঝায়। অর্থাৎ লেখক কোনো word-এ জোর দিতে চাইলে এটি ব্যবহার করা হয়।
+\end{examplebox}
+
+\subsubsection{Underline Text: \texttt{<u>}}
+
+\texttt{<u>} tag text-এর নিচে underline দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>This is <u>underlined</u> text.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} This is \underline{underlined} text.\\
+\textbf{ব্যাখ্যা:} \texttt{<u>} text-এর নিচে line দেখায়। Link-এর সাথে confusion এড়াতে web page-এ underline ব্যবহার বুঝে করা উচিত।
+\end{examplebox}
+
+\subsubsection{Inserted Text: \texttt{<ins>}}
+
+\texttt{<ins>} tag inserted বা নতুন যোগ করা text বোঝাতে ব্যবহার করা হয়। সাধারণত browser এটিকে underline আকারে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>New topic: <ins>HTML5</ins></p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} New topic: \underline{HTML5}\\
+\textbf{ব্যাখ্যা:} \texttt{<ins>} document-এ নতুন যোগ করা text বোঝায়। Browser সাধারণত inserted text underline করে দেখায়।
+\end{examplebox}
+
+\subsubsection{Deleted Text: \texttt{<del>}, \texttt{<s>}, \texttt{<strike>}}
+
+\texttt{<del>} tag deleted text বোঝাতে ব্যবহৃত হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>Old price: <del>500</del> New price: 400</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Old price: \sout{500} New price: 400\\
+\textbf{ব্যাখ্যা:} \texttt{<del>} deleted বা বাতিল করা text বোঝাতে ব্যবহৃত হয়। Notice update, old price বা removed information দেখাতে কাজে লাগে।
+\end{examplebox}
+
+\texttt{<s>} tag text-এর মাঝখানে line-through দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p><s>Old notice</s></p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} \sout{Old notice}\\
+\textbf{ব্যাখ্যা:} \texttt{<s>} এমন text দেখাতে ব্যবহৃত হয় যা আর সঠিক বা প্রযোজ্য নয়, কিন্তু delete history বোঝানো মূল উদ্দেশ্য নয়।
+\end{examplebox}
+
+\texttt{<strike>} পুরনো HTML-এ strikethrough text দেখাতে ব্যবহার করা হতো।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p><strike>Old text</strike></p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} \sout{Old text}\\
+\textbf{ব্যাখ্যা:} \texttt{<strike>} পুরনো strikethrough tag। HSC exam-এ চিনে রাখা দরকার, তবে modern code-এ \texttt{<s>} বা \texttt{<del>} উত্তম।
+\end{examplebox}
+
+\begin{mistakebox}{Modern note}
+Modern HTML-এ \texttt{<strike>} না ব্যবহার করে \texttt{<s>} বা \texttt{<del>} ব্যবহার করা ভালো। তবে HSC বই/PDF-এ \texttt{<strike>} থাকলে পরীক্ষার জন্য tag-টি চিনে রাখা দরকার।
 \end{mistakebox}
 
-\begin{practicebox}
+\subsubsection{Small ও Big Text: \texttt{<small>} ও \texttt{<big>}}
+
+\texttt{<small>} tag text ছোট করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p><small>This is small text.</small></p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} {\small This is small text.}\\
+\textbf{ব্যাখ্যা:} \texttt{<small>} secondary note, copyright note বা less-important side comment ছোট করে দেখাতে ব্যবহার করা যায়।
+\end{examplebox}
+
+\texttt{<big>} tag text বড় করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p><big>This is big text.</big></p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} {\large This is big text.}\\
+\textbf{ব্যাখ্যা:} \texttt{<big>} text বড় করে দেখায়। এটি পুরনো HTML tag; modern design-এ CSS দিয়ে font size নিয়ন্ত্রণ করা ভালো।
+\end{examplebox}
+
+\begin{mistakebox}{Modern note}
+\texttt{<big>} modern HTML-এ obsolete হিসেবে ধরা হয়। বাস্তব web design-এ font size পরিবর্তনের জন্য CSS ব্যবহার করা ভালো। HSC exam-এর জন্য \texttt{<big>} tag-এর কাজ জানা দরকার।
+\end{mistakebox}
+
+\subsubsection{Subscript Text: \texttt{<sub>}}
+
+\texttt{<sub>} tag text-কে নিচের দিকে ছোট করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>H<sub>2</sub>O</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+H\textsubscript{2}O
+\end{examplebox}
+
+\begin{keypointbox}{ব্যাখ্যা}
+\texttt{<sub>} chemical formula, footnote marker বা নিচের index লেখার জন্য দরকার হয়। যেমন, \texttt{H<sub>2</sub>O} browser-এ H\textsubscript{2}O দেখা যায়।
+\end{keypointbox}
+
+\subsubsection{Superscript Text: \texttt{<sup>}}
+
+\texttt{<sup>} tag text-কে উপরের দিকে ছোট করে দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>a<sup>2</sup> + b<sup>2</sup></p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+a\textsuperscript{2} + b\textsuperscript{2}
+\end{examplebox}
+
+\begin{keypointbox}{ব্যাখ্যা}
+\texttt{<sup>} power, exponent, ordinal marker বা উপরের index লেখার জন্য ব্যবহৃত হয়। যেমন, \texttt{a<sup>2</sup>} browser-এ a\textsuperscript{2} দেখা যায়।
+\end{keypointbox}
+
+\subsubsection{Preformatted Text: \texttt{<pre>}}
+
+\texttt{<pre>} tag text-কে source code-এ যেভাবে line break ও spacing সহ লেখা হয়েছে, browser-এ প্রায় সেভাবেই দেখায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<pre>
+Name      Roll
+Sakib     01
+Asraful   02
+</pre>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Name ও Roll-এর spacing source code-এর মতো ধরে রেখে table-like text দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{<pre>} tag line break ও multiple space preserve করে। Code block, ASCII table বা fixed spacing text দেখাতে এটি ব্যবহার করা যায়।
+\end{examplebox}
+
+\subsection{Font Tag: \texttt{<font>}}
+
+\begin{definitionbox}{Font tag}
+\texttt{<font>} tag text-এর font size, color ও face নির্ধারণ করতে ব্যবহৃত হয়।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<font size="5" color="red" face="Arial">
+  HSC ICT
+</font>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} \texttt{HSC ICT} text বড় size-এ, red color-এ এবং Arial font style-এ দেখানোর চেষ্টা করবে।\\
+\textbf{ব্যাখ্যা:} \texttt{size} font size, \texttt{color} text color এবং \texttt{face} font family নির্দেশ করে। Browser-এ font available না থাকলে fallback font ব্যবহার হতে পারে।
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.58\textwidth}|}
+\hline
+\textbf{Attribute} & \textbf{কাজ} \\
+\hline
+\texttt{size} & font size নির্ধারণ করে \\
+\hline
+\texttt{color} & text color নির্ধারণ করে \\
+\hline
+\texttt{face} & font type/name নির্ধারণ করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{Modern note}
+\texttt{<font>} tag modern HTML-এ deprecated/obsolete। বাস্তবে CSS ব্যবহার করা ভালো। তবে HSC exam-এ \texttt{<font>} tag-এর \texttt{size}, \texttt{color}, \texttt{face} attribute গুরুত্বপূর্ণ।
+\end{mistakebox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p style="color:red; font-size:24px; font-family:Arial;">
+  HSC ICT
+</p>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Color ব্যবহার}
+
+Web page-এ color value সাধারণত তিনভাবে লেখা যায়: color name, hexadecimal code এবং RGB code।
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{পদ্ধতি} & \textbf{Example} \\
+\hline
+Color name & \texttt{red} \\
+\hline
+Hexadecimal code & \texttt{\#ff0000} \\
+\hline
+RGB code & \texttt{rgb(255,0,0)} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p style="color:red;">This is red text.</p>
+<p style="color:#ff0000;">This is also red text.</p>
+<p style="color:rgb(255,0,0);">This is red text too.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} তিনটি paragraph-ই red color-এ দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} Color name, hexadecimal code এবং RGB code - তিনভাবে একই color নির্দেশ করা যায়। HSC practical-এ color name সহজ, কিন্তু professional design-এ hex/RGB বেশি ব্যবহৃত হয়।
+\end{examplebox}
+
+\subsection{Background Color: \texttt{bgcolor} attribute}
+
+\texttt{bgcolor} attribute ব্যবহার করে web page-এর background color নির্ধারণ করা যায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<html>
+<body bgcolor="#E6E6FA">
+  <h1>Hello World!</h1>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Web page-এর background light lavender color হবে এবং body-তে Hello World heading দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{bgcolor} attribute পুরনো HTML style হলেও HSC প্রশ্নে আসতে পারে। Modern HTML/CSS-এ \texttt{background-color} ব্যবহার করা ভালো।
+\end{examplebox}
+
+Modern CSS version:
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<body style="background-color:#E6E6FA;">
+  <h1>Hello World!</h1>
+</body>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Text Alignment: \texttt{align} attribute}
+
+Text বা paragraph left, right, center, justify করতে HSC book-style code-এ \texttt{align} attribute ব্যবহার করা হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p align="center">ICT College, Dhaka</p>
+<p align="right">Date: 26 May 2026</p>
+<p align="justify">This is a justified paragraph.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} প্রথম paragraph center-এ, দ্বিতীয়টি right side-এ এবং তৃতীয়টি justify alignment-এ দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{align} attribute HSC-style basic code-এ দেখা যায়। Modern design-এ same কাজ CSS-এর \texttt{text-align} property দিয়ে করা হয়।
+\end{examplebox}
+
+Modern CSS version:
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p style="text-align:center;">ICT College, Dhaka</p>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Text Formatting Tag Table}
+
+\begin{center}
+\small
+\begin{tabular}{|p{0.17\textwidth}|p{0.30\textwidth}|p{0.37\textwidth}|}
+\hline
+\textbf{Tag} & \textbf{কাজ} & \textbf{Example} \\
+\hline
+\texttt{<h1>--<h6>} & heading তৈরি করে & \texttt{<h1>Title</h1>} \\
+\hline
+\texttt{<p>} & paragraph তৈরি করে & \texttt{<p>Text</p>} \\
+\hline
+\texttt{<br>} & নতুন line তৈরি করে & \texttt{Line 1<br>Line 2} \\
+\hline
+\texttt{<hr>} & horizontal line তৈরি করে & \texttt{<hr>} \\
+\hline
+\texttt{<b>} & bold text & \texttt{<b>Bold</b>} \\
+\hline
+\texttt{<strong>} & important text & \texttt{<strong>Important</strong>} \\
+\hline
+\texttt{<i>} & italic text & \texttt{<i>Italic</i>} \\
+\hline
+\texttt{<em>} & emphasized text & \texttt{<em>Emphasis</em>} \\
+\hline
+\texttt{<u>} & underline text & \texttt{<u>Underline</u>} \\
+\hline
+\texttt{<ins>} & inserted text & \texttt{<ins>New</ins>} \\
+\hline
+\texttt{<del>} & deleted text & \texttt{<del>Old</del>} \\
+\hline
+\texttt{<s>} & strikethrough & \texttt{<s>Old</s>} \\
+\hline
+\texttt{<strike>} & strikethrough পুরনো tag & \texttt{<strike>Old</strike>} \\
+\hline
+\texttt{<small>} & small text & \texttt{<small>Small</small>} \\
+\hline
+\texttt{<big>} & big text & \texttt{<big>Big</big>} \\
+\hline
+\texttt{<sub>} & subscript & \texttt{H<sub>2</sub>O} \\
+\hline
+\texttt{<sup>} & superscript & \texttt{a<sup>2</sup>} \\
+\hline
+\texttt{<pre>} & preformatted text & \texttt{<pre>Text</pre>} \\
+\hline
+\texttt{<font>} & font size/color/face & \texttt{<font color="red">Text</font>} \\
+\hline
+\end{tabular}
+\normalsize
+\end{center}
+
+\subsection{Complete Example Code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Text Formatting</title>
+</head>
+<body bgcolor="#F5F5F5">
+
+  <h1 align="center">HSC ICT Chapter 4</h1>
+  <hr>
+
+  <p>This is a normal paragraph.</p>
+  <p><b>This is bold text.</b></p>
+  <p><strong>This is important text.</strong></p>
+  <p><i>This is italic text.</i></p>
+  <p><em>This text is emphasized.</em></p>
+  <p><u>This is underline text.</u></p>
+  <p><small>This is small text.</small></p>
+  <p><big>This is big text.</big></p>
+
+  <p>Water formula: H<sub>2</sub>O</p>
+  <p>Math formula: a<sup>2</sup> + b<sup>2</sup></p>
+
+  <p><del>Old Notice</del> <ins>New Notice</ins></p>
+  <p><s>Cancelled class</s></p>
+  <p><strike>Old HTML tag</strike></p>
+
+  <font size="5" color="blue" face="Arial">
+    This text uses font tag.
+  </font>
+
+  <pre>
+Name      Roll
+Sakib     01
+Asraful   02
+  </pre>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+Browser-এ center aligned heading, horizontal line, bold/italic/underline text, H\textsubscript{2}O subscript, a\textsuperscript{2}+b\textsuperscript{2} superscript, deleted/inserted text, blue Arial font text এবং preformatted table-like text দেখা যাবে।
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item \texttt{<br>} tag-কে container tag মনে করা।
+\item \texttt{<title>} আর \texttt{<h1>} একই মনে করা।
+\item \texttt{<b>} ও \texttt{<strong>} tag-এর meaning পার্থক্য না বোঝা।
+\item \texttt{<i>} ও \texttt{<em>} tag-এর semantic পার্থক্য না বোঝা।
+\item \texttt{<sub>} আর \texttt{<sup>} উল্টো করে ফেলা।
+\item \texttt{<font>} tag modern HTML-এ obsolete - এই note না দেওয়া।
+\item বাংলা text ঠিক দেখাতে \texttt{UTF-8} না দেওয়া।
+\item tag ঠিকভাবে close না করা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}
+
+HTML text formatting tag ব্যবহার করে web page-এর text সুন্দরভাবে সাজানো যায়। Heading দেখানোর জন্য \texttt{<h1>} থেকে \texttt{<h6>}, paragraph লেখার জন্য \texttt{<p>}, line break-এর জন্য \texttt{<br>} এবং horizontal line-এর জন্য \texttt{<hr>} ব্যবহৃত হয়। Text bold, italic, underline, small, big, subscript, superscript, deleted বা inserted আকারে দেখাতে বিভিন্ন formatting tag ব্যবহার করা যায়। HSC ICT পরীক্ষার জন্য \texttt{<b>}, \texttt{<i>}, \texttt{<u>}, \texttt{<sub>}, \texttt{<sup>}, \texttt{<br>}, \texttt{<hr>} এবং \texttt{<font>} tag খুব গুরুত্বপূর্ণ। তবে modern web design-এ color, font size, alignment ও background control করার জন্য CSS ব্যবহার করা বেশি standard।
+
+\subsection{ছোট প্রশ্নোত্তর}
+
 \begin{enumerate}
-\item \texttt{<p>} ও \texttt{<br>} tag-এর পার্থক্য লেখ।
-\item Ordered list তৈরির tag লেখ।
-\item \texttt{<strong>} ও \texttt{<b>} tag-এর ব্যবহার ব্যাখ্যা কর।
+\item Heading tag কয়টি?\\
+\textbf{উত্তর:} ৬টি - \texttt{<h1>} থেকে \texttt{<h6>}।
+
+\item Paragraph লেখার tag কোনটি?\\
+\textbf{উত্তর:} \texttt{<p>}।
+
+\item Line break করার tag কোনটি?\\
+\textbf{উত্তর:} \texttt{<br>}।
+
+\item Horizontal line তৈরির tag কোনটি?\\
+\textbf{উত্তর:} \texttt{<hr>}।
+
+\item Text bold করতে কোন tag ব্যবহার হয়?\\
+\textbf{উত্তর:} \texttt{<b>} অথবা \texttt{<strong>}।
+
+\item Text italic করতে কোন tag ব্যবহার হয়?\\
+\textbf{উত্তর:} \texttt{<i>} অথবা \texttt{<em>}।
+
+\item H\textsubscript{2}O লেখার জন্য কোন tag ব্যবহার হবে?\\
+\textbf{উত্তর:} \texttt{<sub>} tag।
+
+\item a\textsuperscript{2} লেখার জন্য কোন tag ব্যবহার হবে?\\
+\textbf{উত্তর:} \texttt{<sup>} tag।
+
+\item \texttt{<font>} tag-এর attribute কী কী?\\
+\textbf{উত্তর:} \texttt{size}, \texttt{color}, \texttt{face}।
 \end{enumerate}
-\end{practicebox}
+
+\subsection{Exam Focus MCQ}
+
+\begin{enumerate}
+\item সবচেয়ে বড় heading কোনটি?\\
+ক) \texttt{<h6>} \quad খ) \texttt{<h3>} \quad গ) \texttt{<h1>} \quad ঘ) \texttt{<head>}
+
+\item Paragraph tag কোনটি?\\
+ক) \texttt{<para>} \quad খ) \texttt{<p>} \quad গ) \texttt{<br>} \quad ঘ) \texttt{<hr>}
+
+\item নতুন line তৈরি করতে কোন tag ব্যবহৃত হয়?\\
+ক) \texttt{<br>} \quad খ) \texttt{<b>} \quad গ) \texttt{<i>} \quad ঘ) \texttt{<u>}
+
+\item H\textsubscript{2}O লেখার জন্য কোন tag দরকার?\\
+ক) \texttt{<sup>} \quad খ) \texttt{<sub>} \quad গ) \texttt{<small>} \quad ঘ) \texttt{<big>}
+
+\item a\textsuperscript{2} লেখার জন্য কোন tag দরকার?\\
+ক) \texttt{<sub>} \quad খ) \texttt{<sup>} \quad গ) \texttt{<del>} \quad ঘ) \texttt{<ins>}
+
+\item \texttt{<font>} tag-এর attribute কোনগুলো?\\
+ক) size, color, face \quad খ) src, alt, width \quad গ) href, target, title \quad ঘ) rowspan, colspan, border
+\end{enumerate}
+
+\begin{boardbox}{Answer key}
+১-গ, ২-খ, ৩-ক, ৪-খ, ৫-খ, ৬-ক
+\end{boardbox}

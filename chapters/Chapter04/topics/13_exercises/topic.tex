@@ -62,6 +62,245 @@
 \end{enumerate}
 \end{practicebox}
 
+\subsection{Final Tag Reference}
+
+Chapter 4-এর HTML practical অংশে tag মুখস্থ করার চেয়ে tag-এর কাজ, syntax, output এবং problem-solving use বুঝে শেখা বেশি গুরুত্বপূর্ণ। নিচের tableটি final revision হিসেবে ব্যবহার করা যাবে।
+
+\begin{center}
+\begin{tabular}{|p{0.14\textwidth}|p{0.24\textwidth}|p{0.23\textwidth}|p{0.25\textwidth}|}
+\hline
+\textbf{Tag/Attribute} & \textbf{Definition/কাজ} & \textbf{Common syntax} & \textbf{কী কী করা যায়} \\
+\hline
+\texttt{<html>} & সম্পূর্ণ HTML document ধরে & \texttt{<html>...</html>} & page-এর root structure তৈরি \\
+\hline
+\texttt{<head>} & page-related information রাখে & \texttt{<head>...</head>} & title, meta, style, link রাখা \\
+\hline
+\texttt{<title>} & browser tab title দেখায় & \texttt{<title>Page</title>} & page title নির্ধারণ \\
+\hline
+\texttt{<body>} & visible content রাখে & \texttt{<body>...</body>} & heading, paragraph, image, table, form দেখানো \\
+\hline
+\texttt{<h1>-<h6>} & heading তৈরি করে & \texttt{<h1>Title</h1>} & বড়/ছোট শিরোনাম তৈরি \\
+\hline
+\texttt{<p>} & paragraph তৈরি করে & \texttt{<p>Text</p>} & লেখা paragraph আকারে দেখানো \\
+\hline
+\texttt{<br>} & line break দেয় & \texttt{Line 1<br>Line 2} & একই paragraph-এ নতুন line \\
+\hline
+\texttt{<a>} & hyperlink তৈরি করে & \texttt{<a href="url">Text</a>} & page, website, email, file বা image link \\
+\hline
+\texttt{<img>} & image দেখায় & \texttt{<img src="a.jpg" alt="A">} & picture, logo, clickable image \\
+\hline
+\texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} & list তৈরি করে & \texttt{<ul><li>Item</li></ul>} & unordered, ordered, nested list \\
+\hline
+\texttt{<table>} & table তৈরি করে & \texttt{<table>...</table>} & result sheet, routine, price list \\
+\hline
+\texttt{<tr>} & table row তৈরি করে & \texttt{<tr>...</tr>} & table-এ নতুন row \\
+\hline
+\texttt{<th>} & heading cell তৈরি করে & \texttt{<th>Name</th>} & table heading \\
+\hline
+\texttt{<td>} & data cell তৈরি করে & \texttt{<td>Rafi</td>} & table data, image/list/link cell \\
+\hline
+\texttt{rowspan} & cell-কে row জুড়ে দেয় & \texttt{rowspan="2"} & vertical merge \\
+\hline
+\texttt{colspan} & cell-কে column জুড়ে দেয় & \texttt{colspan="3"} & horizontal merge \\
+\hline
+\texttt{<div>} & block section group করে & \texttt{<div>...</div>} & header, menu, content, footer section \\
+\hline
+\texttt{<span>} & inline text group করে & \texttt{<span>Text</span>} & নির্দিষ্ট word/phrase style \\
+\hline
+\texttt{style} & inline CSS দেয় & \texttt{style="color:red;"} & color, background, border, margin, padding \\
+\hline
+\texttt{<form>} & input form তৈরি করে & \texttt{<form>...</form>} & login, registration, feedback form \\
+\hline
+\texttt{<input>} & input field তৈরি করে & \texttt{<input type="text">} & text, password, radio, checkbox, submit \\
+\hline
+\texttt{<textarea>} & বড় text input দেয় & \texttt{<textarea></textarea>} & message/comment box \\
+\hline
+\texttt{<select>} ও \texttt{<option>} & dropdown তৈরি করে & \texttt{<select><option>...</option></select>} & class, subject, district selection \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Tag Selection Tree}
+
+Output দেখে code লেখার সময় আগে বুঝতে হবে কোন content-এর জন্য কোন tag দরকার। নিচের tree follow করলে tag select করা সহজ হবে।
+
+\begin{center}
+\begin{tikzpicture}[
+  level distance=1.15cm,
+  level 1/.style={sibling distance=3.35cm},
+  level 2/.style={sibling distance=1.65cm},
+  every node/.style={draw, rounded corners, align=center, fill=green!5, inner sep=3pt, font=\scriptsize}
+]
+\node {Output কী দেখাচ্ছে?}
+  child { node {Text}
+    child { node {Heading\\\texttt{<h1>-<h6>}} }
+    child { node {Paragraph\\\texttt{<p>}} }
+  }
+  child { node {Media/Link}
+    child { node {Image\\\texttt{<img>}} }
+    child { node {Link\\\texttt{<a>}} }
+  }
+  child { node {Structured Data}
+    child { node {List\\\texttt{<ul>/<ol>}} }
+    child { node {Table\\\texttt{<table>}} }
+  }
+  child { node {Input/Section}
+    child { node {Form\\\texttt{<form>}} }
+    child { node {Section\\\texttt{<div>}} }
+  };
+\end{tikzpicture}
+\end{center}
+
+\begin{examplebox}{Mermaid diagram idea}
+\begin{verbatim}
+flowchart TD
+    A[Output দেখে tag select] --> B{Content type?}
+    B --> C[Text: h1, p, br, span]
+    B --> D[Media/Link: img, a]
+    B --> E[List/Table: ul, ol, li, table, tr, th, td]
+    B --> F[Form/Section: form, input, div]
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Problem Solution Format}
+
+Board practical বা CQ-তে output দেখে code লিখতে হলে নিচের format follow করবে।
+
+\begin{practicebox}
+\textbf{Problem:} নিচের output তৈরি করো--একটি college webpage যেখানে heading, menu link, image, subject list এবং result table থাকবে।
+
+\textbf{Step 1: Output analyze করো}\\
+Heading আছে, menu link আছে, image আছে, list আছে, table আছে।
+
+\textbf{Step 2: Tag select করো}\\
+\texttt{<h1>} heading-এর জন্য, \texttt{<a>} menu link-এর জন্য, \texttt{<img>} image-এর জন্য, \texttt{<ul>} ও \texttt{<li>} list-এর জন্য, \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} table-এর জন্য।
+
+\textbf{Step 3: Skeleton লেখো}\\
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Page</title>
+</head>
+<body>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\textbf{Step 4: Section অনুযায়ী code বসাও}\\
+প্রথমে header, তারপর menu, তারপর image/list/table, শেষে footer লিখবে।
+
+\textbf{Step 5: Output verify করো}\\
+Browser-এ দেখে row/column, image path, link address, spelling ও closing tag মিলিয়ে নেবে।
+\end{practicebox}
+
+\subsection{Find the Mistake}
+
+\begin{practicebox}
+\textbf{ভুল code:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <td>Name</td>
+  <td>Roll</td>
+</table>
+
+<image src="photo.jpg">
+<a src="index.html">Home</a>
+\end{verbatim}
+\end{examplebox}
+
+\textbf{সমাধান:}
+\begin{itemize}
+\item \texttt{<td>} সরাসরি \texttt{<table>} tag-এর ভিতরে লেখা যাবে না; \texttt{<tr>} দরকার।
+\item image দেখানোর tag \texttt{<image>} নয়, সঠিক tag হলো \texttt{<img>}.
+\item hyperlink-এর জন্য \texttt{src} নয়, \texttt{href} attribute ব্যবহার করতে হয়।
+\end{itemize}
+
+\textbf{সঠিক code:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Roll</td>
+  </tr>
+</table>
+
+<img src="photo.jpg" alt="Photo">
+<a href="index.html">Home</a>
+\end{verbatim}
+\end{examplebox}
+\end{practicebox}
+
+\subsection{Source PDF মিলিয়ে CQ Pattern}
+
+২০২৩-২০২৫ board-style CQ-তে Chapter 4 থেকে বারবার কয়েক ধরনের practical problem এসেছে। এগুলো আলাদা করে practice করলে output দেখে code লেখা সহজ হয়।
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.34\textwidth}|p{0.25\textwidth}|}
+\hline
+\textbf{Pattern} & \textbf{যা করতে হয়} & \textbf{প্রধান tag/attribute} \\
+\hline
+Nested list & category-এর ভিতরে subcategory দেখানো & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>}, \texttt{type}, \texttt{start} \\
+\hline
+List থেকে table & list item গুলো row/column আকারে দেখানো & \texttt{<table>}, \texttt{<tr>}, \texttt{<td>}, \texttt{rowspan} \\
+\hline
+Result/marks table & title, heading, marks, merged cell & \texttt{colspan}, \texttt{rowspan}, \texttt{cellpadding}, \texttt{cellspacing} \\
+\hline
+Image link & image-এ click করলে website/page open & \texttt{<a href="">}, \texttt{<img src="">} \\
+\hline
+Full webpage & header, menu, image, list, table, footer & \texttt{<div>}, \texttt{<a>}, \texttt{<img>}, \texttt{<table>} \\
+\hline
+Publishing issue & website নির্দিষ্ট সময় পর দেখা যাচ্ছে না কেন & domain expiry, hosting expiry, DNS/server problem \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{practicebox}
+\textbf{CQ Pattern Practice: List থেকে Table}\\
+Output-এ River cell তিনটি row জুড়ে থাকবে এবং পাশে Padma, Jamuna, Meghna থাকবে। Flower cell তিনটি row জুড়ে থাকবে এবং পাশে Adenium, Rose, Lily থাকবে।
+
+\textbf{Code:}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <td rowspan="3" align="center">River</td>
+      <td>Padma</td>
+    </tr>
+    <tr>
+      <td>Jamuna</td>
+    </tr>
+    <tr>
+      <td>Meghna</td>
+    </tr>
+    <tr>
+      <td rowspan="3" align="center">Flower</td>
+      <td>Adenium</td>
+    </tr>
+    <tr>
+      <td>Rose</td>
+    </tr>
+    <tr>
+      <td>Lily</td>
+    </tr>
+  </table>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\textbf{কেন \texttt{rowspan="3"}?}\\
+River-এর পাশে তিনটি river name আছে, তাই River cell তিনটি row জুড়ে থাকবে। Flower-এর ক্ষেত্রেও একই কারণে \texttt{rowspan="3"} ব্যবহার করা হয়েছে।
+\end{practicebox}
+
 \begin{recapbox}
 \begin{itemize}
 \item HTML structure দেয়, CSS style দেয়, JavaScript behavior যোগ করে।
@@ -71,7 +310,3 @@
 \item Publish করার আগে link, image, form, mobile view ও browser compatibility test করতে হয়।
 \end{itemize}
 \end{recapbox}
-
-\begin{sourcebox}
-Chapter 04 handnote/main sheet, HSC ICT chapter outline এবং standard HTML/web design terminology অনুসরণ করে এই অংশগুলো নতুনভাবে রচিত হয়েছে; কোনো বইয়ের দীর্ঘ অংশ হুবহু ব্যবহার করা হয়নি।
-\end{sourcebox}

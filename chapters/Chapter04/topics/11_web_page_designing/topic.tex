@@ -1,53 +1,1276 @@
-% ৪.১১ ওয়েব পেজ ডিজাইন পদ্ধতি
-\section{ওয়েব পেজ ডিজাইন পদ্ধতি}
+% 4.x Mini Project / Web Page Designing Practice
+\section{ব্যবহারিক অনুশীলন: Mini Project}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item web page design workflow লিখতে।
-\item wireframe, prototype ও mockup আলাদা করতে।
-\item একটি simple web page-এর HTML structure পরিকল্পনা করতে।
+\item HTML ব্যবহার করে একটি simple static website-এর পরিকল্পনা করতে।
+\item Home, About, Notice, Result ও Contact page-এর structure বুঝতে।
+\item heading, paragraph, image, hyperlink, list, table ও form একসাথে ব্যবহার করতে।
+\item file/folder structure ঠিক রেখে website project তৈরি করতে।
+\item HSC practical-style web page design task সমাধান করতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Design workflow}
-একটি page সরাসরি code করার আগে কী content থাকবে, কোন অংশ কোথায় থাকবে এবং ব্যবহারকারী কীভাবে page ব্যবহার করবে, তা পরিকল্পনা করতে হয়। এতে ভুল কমে এবং page maintain করা সহজ হয়।
+HSC ICT বইয়ে অনেক সময় ``Mini Project'' নামে আলাদা section না থাকলেও Chapter 4-এ web page designing, HTML tag, hyperlink, image, table, form এবং website publishing শেখানো হয়। তাই Chapter 4-এর শেষে একটি ব্যবহারিক mini project রাখা খুব উপযোগী। এটি নতুন theory topic নয়; বরং পুরো chapter-এর tag ও concept practice করার একটি practical exercise।
 
-\begin{keypointbox}{ধাপ}
-\begin{itemize}
-\item Requirement: page-এর উদ্দেশ্য ও target user নির্ধারণ।
-\item Sitemap: page সম্পর্ক ও navigation নির্ধারণ।
-\item Wireframe: layout-এর rough sketch।
-\item Prototype/mockup: visual design পরীক্ষা।
-\item HTML/CSS coding: structure ও style তৈরি।
-\item Testing: browser, link, form, mobile layout যাচাই।
-\end{itemize}
+\begin{keypointbox}{Book placement}
+এই অংশটি chapter শেষে \textbf{ব্যবহারিক অনুশীলন: Mini Project} বা \textbf{Chapter Project} নামে রাখা ভালো। এতে শিক্ষার্থী HTML tag মুখস্থ করার পাশাপাশি একটি বাস্তব web page তৈরি করার অভ্যাস পাবে।
 \end{keypointbox}
 
+\subsection{Project Title}
+
+\begin{definitionbox}{Project}
+\textbf{``আমার কলেজ'' ওয়েবসাইট তৈরি} - এটি একটি simple static website project, যেখানে HTML-এর basic tag ব্যবহার করে কয়েকটি page তৈরি করা হবে।
+\end{definitionbox}
+
+\subsection{Project Objective}
+
+এই project শেষে শিক্ষার্থীরা HTML ব্যবহার করে একটি simple static website তৈরি করতে পারবে। Website-এ heading, paragraph, image, hyperlink, list, table এবং form ব্যবহার থাকবে।
+
+\subsection{Project Type}
+
+\begin{itemize}
+\item Static Website
+\item Local Web Page Project
+\item HSC ICT Chapter 4 Practical Practice
+\end{itemize}
+
+\subsection{Required Knowledge}
+
+এই project করার আগে শিক্ষার্থীর জানা দরকার:
+\begin{itemize}
+\item Basic HTML document structure
+\item Heading ও paragraph
+\item Text formatting
+\item List
+\item Hyperlink
+\item Image
+\item Table
+\item Form
+\item Internal page link
+\item HTML file save করা: \texttt{.html}
+\end{itemize}
+
+\subsection{Project Description}
+
+শিক্ষার্থীকে \textbf{``আমার কলেজ''} নামে একটি simple website তৈরি করতে হবে। Website-এ কয়েকটি page থাকবে এবং প্রতিটি page একে অপরের সাথে hyperlink দ্বারা যুক্ত থাকবে।
+
+\subsection{Website Pages}
+
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Wireframe placeholder: Student profile page}\\[4pt]
-Header with title\\
-Profile image + short bio\\
-Education table\\
-Contact form\\
-Footer
-}}
+\begin{tabular}{|p{0.24\textwidth}|p{0.24\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{File Name} & \textbf{Page Name} & \textbf{কাজ} \\
+\hline
+\texttt{index.html} & Home Page & কলেজের পরিচিতি \\
+\hline
+\texttt{about.html} & About Page & কলেজ সম্পর্কে তথ্য \\
+\hline
+\texttt{notice.html} & Notice Page & notice list \\
+\hline
+\texttt{result.html} & Result Page & student result table \\
+\hline
+\texttt{contact.html} & Contact Page & contact form \\
+\hline
+\end{tabular}
 \end{center}
 
-\begin{examplebox}{Mini page plan}
-``আমার কলেজ'' page-এ heading, কলেজের সংক্ষিপ্ত পরিচিতি, একটি campus image, notice link, একটি routine table এবং contact form রাখা যেতে পারে। এতে Chapter 4-এর প্রায় সব core tag একসাথে practice হয়।
+\subsection{Folder Structure}
+
+Project folder এভাবে সাজাবে:
+
+\begin{verbatim}
+college-website/
+  index.html
+  about.html
+  notice.html
+  result.html
+  contact.html
+  images/
+    logo.png
+    college.jpg
+\end{verbatim}
+
+\begin{keypointbox}{Note}
+\texttt{college.jpg} এবং \texttt{logo.png} image file \texttt{images} folder-এর ভিতরে রাখতে হবে। HTML file থেকে image দেখাতে \texttt{src="images/college.jpg"} ধরনের path ব্যবহার করতে হবে।
+\end{keypointbox}
+
+\subsection{Page Requirements}
+
+\subsubsection{Page 1: Home Page - \texttt{index.html}}
+
+\texttt{index.html} page-এ থাকবে:
+\begin{itemize}
+\item College name heading
+\item College logo ও college image
+\item Short welcome paragraph
+\item Navigation link: Home, About, Notice, Result, Contact
+\item Unordered list দিয়ে facilities
+\item Ordered list দিয়ে important links
+\item Footer
+\end{itemize}
+
+\subsubsection{Page 2: About Page - \texttt{about.html}}
+
+\texttt{about.html} page-এ থাকবে:
+\begin{itemize}
+\item College history
+\item Mission and vision
+\item Department/group list
+\item Back to Home link
+\end{itemize}
+
+\subsubsection{Page 3: Notice Page - \texttt{notice.html}}
+
+\texttt{notice.html} page-এ থাকবে:
+\begin{itemize}
+\item Notice heading
+\item Ordered list বা unordered list
+\item PDF download link example
+\item Back to Home link
+\end{itemize}
+
+\subsubsection{Page 4: Result Page - \texttt{result.html}}
+
+\texttt{result.html} page-এ student result table থাকবে।
+
+\begin{center}
+\begin{tabular}{|c|c|p{0.30\textwidth}|c|}
+\hline
+\textbf{Roll} & \textbf{Name} & \textbf{Group} & \textbf{GPA} \\
+\hline
+101 & Sakib & Science & 5.00 \\
+\hline
+102 & Asraful & Business Studies & 4.75 \\
+\hline
+103 & Sumaiya & Humanities & 4.50 \\
+\hline
+\end{tabular}
+\end{center}
+
+এই অংশে \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>}, \texttt{border} ও \texttt{<caption>} ব্যবহার practice হবে।
+
+\subsubsection{Page 5: Contact Page - \texttt{contact.html}}
+
+\texttt{contact.html} page-এ simple form থাকবে:
+\begin{itemize}
+\item Name
+\item Email
+\item Gender
+\item Group
+\item Message
+\item Submit button
+\item Reset button
+\end{itemize}
+
+এই অংশে \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}, \texttt{<option>} ও \texttt{<button>} ব্যবহার practice হবে।
+
+\subsection{Project Requirements}
+
+\begin{itemize}
+\item কমপক্ষে 5টি page থাকবে।
+\item প্রতিটি page-এ navigation menu থাকবে।
+\item অন্তত 1টি image ব্যবহার করতে হবে।
+\item অন্তত 1টি list ব্যবহার করতে হবে।
+\item অন্তত 1টি table ব্যবহার করতে হবে।
+\item অন্তত 1টি form ব্যবহার করতে হবে।
+\item সব page internal hyperlink দিয়ে connected থাকতে হবে।
+\item File ও folder name ঠিকভাবে রাখতে হবে।
+\end{itemize}
+
+\subsection{Step-by-step Instruction}
+
+\begin{enumerate}
+\item একটি folder তৈরি করো: \texttt{college-website}
+\item \texttt{index.html} file তৈরি করো।
+\item অন্য page তৈরি করো: \texttt{about.html} ও \texttt{notice.html}
+\item এরপর তৈরি করো: \texttt{result.html} ও \texttt{contact.html}
+\item \texttt{images} folder তৈরি করে \texttt{logo.png} ও \texttt{college.jpg} রাখো।
+\item সব page-এ navigation link দাও।
+\item Browser-এ \texttt{index.html} open করে output দেখো।
+\item Link, image, table ও form কাজ করছে কিনা পরীক্ষা করো।
+\item ভুল থাকলে code edit করে আবার browser-এ refresh করো।
+\end{enumerate}
+
+\subsection{Page 1: Home Page Code}
+
+নিচের code \texttt{index.html} file-এ লিখবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ABC College - Home</title>
+</head>
+<body bgcolor="#F5F7FA">
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td width="80">
+        <img src="images/logo.png"
+             alt="ABC College Logo"
+             width="70" height="70">
+      </td>
+      <td>
+        <font color="white" size="6" face="Arial">
+          <b>ABC College</b>
+        </font>
+        <br>
+        <font color="white" size="3" face="Arial">
+          Education, Discipline and Success
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#DBEAFE">
+    <tr align="center">
+      <td><a href="index.html">Home</a></td>
+      <td><a href="about.html">About</a></td>
+      <td><a href="notice.html">Notice</a></td>
+      <td><a href="result.html">Result</a></td>
+      <td><a href="contact.html">Contact</a></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <center>
+    <img src="images/college.jpg"
+         alt="ABC College Building"
+         width="700" height="300" border="1">
+  </center>
+
+  <br>
+
+  <table width="85%" align="center" border="0"
+         cellpadding="12" cellspacing="0"
+         bgcolor="white">
+    <tr>
+      <td>
+        <h1 align="center">Welcome to ABC College</h1>
+
+        <p align="justify">
+          ABC College is one of the well-known educational
+          institutions in Bangladesh. This website provides
+          important information about the college, notices,
+          results, admission updates and contact information.
+          Students, guardians and teachers can use this
+          website to get necessary information easily.
+        </p>
+
+        <h2>Our Facilities</h2>
+        <ul type="square">
+          <li>Science, Business Studies and Humanities groups</li>
+          <li>Modern ICT lab</li>
+          <li>Rich library facilities</li>
+          <li>Experienced teachers</li>
+          <li>Online notice and result information</li>
+        </ul>
+
+        <h2>Important Links</h2>
+        <ol type="1">
+          <li>
+            <a href="notice.html">View Latest Notices</a>
+          </li>
+          <li>
+            <a href="result.html">Check Student Result</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact College Office</a>
+          </li>
+        </ol>
+
+        <h2>About This Project</h2>
+        <p align="justify">
+          This is a simple static website project created by
+          using basic HTML tags. In this project, heading,
+          paragraph, image, hyperlink, list, table and form
+          will be used. This project will help students
+          practise the important topics of HSC ICT Chapter 4.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td align="center">
+        <font color="white" face="Arial">
+          &copy; 2026 ABC College. All Rights Reserved.
+        </font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+\end{verbatim}
 \end{examplebox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-প্রশ্নে web page design চাইলে শুধু code নয়, page-এর expected output বা layout ধারণাও লিখলে উত্তর ভালো হয়।
-\end{boardbox}
+\subsection{Home Page Output ধারণা}
 
-\begin{practicebox}
-\begin{enumerate}
-\item Wireframe কী?
-\item Prototype ও final website-এর পার্থক্য লেখ।
-\item একটি school homepage-এর পাঁচটি অংশের নাম লেখ।
-\end{enumerate}
-\end{practicebox}
+Browser-এ দেখা যাবে:
+\begin{itemize}
+\item উপরে college logo ও college name সহ header।
+\item Home, About, Notice, Result, Contact navigation link।
+\item College building image।
+\item Welcome paragraph।
+\item Facilities list।
+\item Important links ordered list।
+\item Footer section।
+\end{itemize}
+
+\subsection{Home Page Code Explanation}
+
+\begin{itemize}
+\item \texttt{<!DOCTYPE html>} browser-কে জানায় যে document-টি HTML5 standard অনুসরণ করে।
+\item \texttt{<html>} থেকে \texttt{</html>} পর্যন্ত সম্পূর্ণ HTML document লেখা হয়েছে।
+\item \texttt{<head>} অংশে \texttt{meta charset} ও \texttt{title} রাখা হয়েছে।
+\item \texttt{<body bgcolor="\#F5F7FA">} page-এর background color নির্ধারণ করেছে।
+\item প্রথম \texttt{<table>} header section তৈরি করেছে, যেখানে logo ও college name আছে।
+\item \texttt{<img src="images/logo.png">} logo image দেখানোর জন্য ব্যবহৃত হয়েছে।
+\item \texttt{<a href="about.html">} ধরনের link ব্যবহার করে navigation menu তৈরি হয়েছে।
+\item \texttt{<center>} ও \texttt{align="center"} image ও text center-এ দেখাতে সাহায্য করেছে।
+\item \texttt{<ul>} facilities list এবং \texttt{<ol>} important links list তৈরি করেছে।
+\item শেষ \texttt{<table>} footer section তৈরি করেছে।
+\end{itemize}
+
+\subsection{Page 2: About Page Code}
+
+নিচের code \texttt{about.html} file-এ লিখবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ABC College - About</title>
+</head>
+<body bgcolor="#F5F7FA">
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td width="80">
+        <img src="images/logo.png"
+             alt="ABC College Logo"
+             width="70" height="70">
+      </td>
+      <td>
+        <font color="white" size="6" face="Arial">
+          <b>ABC College</b>
+        </font>
+        <br>
+        <font color="white" size="3" face="Arial">
+          Education, Discipline and Success
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#DBEAFE">
+    <tr align="center">
+      <td><a href="index.html">Home</a></td>
+      <td><a href="about.html">About</a></td>
+      <td><a href="notice.html">Notice</a></td>
+      <td><a href="result.html">Result</a></td>
+      <td><a href="contact.html">Contact</a></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="85%" align="center" border="0"
+         cellpadding="15" cellspacing="0"
+         bgcolor="white">
+    <tr>
+      <td>
+        <h1 align="center">About ABC College</h1>
+        <hr>
+
+        <h2>College Introduction</h2>
+        <p align="justify">
+          ABC College is a reputed educational institution
+          committed to providing quality education to higher
+          secondary students. The college focuses on academic
+          excellence, discipline, moral values and modern
+          technology-based learning.
+        </p>
+
+        <h2>History of the College</h2>
+        <p align="justify">
+          ABC College was established with the aim of spreading
+          quality education among young learners. Since its
+          establishment, the college has been working to develop
+          students' knowledge, creativity and practical skills.
+        </p>
+
+        <h2>Mission</h2>
+        <p align="justify">
+          The mission of ABC College is to provide modern,
+          practical and value-based education so that students
+          can become skilled and responsible citizens.
+        </p>
+
+        <h2>Vision</h2>
+        <p align="justify">
+          The vision of ABC College is to become a leading
+          educational institution where students can achieve
+          academic success and prepare for future careers.
+        </p>
+
+        <h2>Academic Groups</h2>
+        <ul type="square">
+          <li>Science Group</li>
+          <li>Business Studies Group</li>
+          <li>Humanities Group</li>
+        </ul>
+
+        <h2>College Facilities</h2>
+        <ol type="1">
+          <li>Modern ICT laboratory</li>
+          <li>Library with academic books</li>
+          <li>Experienced teachers</li>
+          <li>Clean classroom environment</li>
+          <li>Regular class tests and examinations</li>
+          <li>Online notice and result system</li>
+        </ol>
+
+        <h2>Institution Information</h2>
+        <table border="1" width="100%"
+               cellpadding="8" cellspacing="0">
+          <tr>
+            <th>Information</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Institution Name</td>
+            <td>ABC College</td>
+          </tr>
+          <tr>
+            <td>Established</td>
+            <td>2005</td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>Dhaka, Bangladesh</td>
+          </tr>
+          <tr>
+            <td>Groups</td>
+            <td>Science, Business Studies, Humanities</td>
+          </tr>
+          <tr>
+            <td>Website Type</td>
+            <td>Static Website</td>
+          </tr>
+        </table>
+
+        <br>
+
+        <p align="center">
+          <a href="index.html">Back to Home</a> |
+          <a href="notice.html">View Notice</a> |
+          <a href="contact.html">Contact Us</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td align="center">
+        <font color="white" face="Arial">
+          &copy; 2026 ABC College. All Rights Reserved.
+        </font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{About Page Output ধারণা}
+
+Browser-এ দেখা যাবে:
+\begin{itemize}
+\item একই header, navigation menu ও footer।
+\item কলেজের পরিচিতি, history, mission ও vision।
+\item academic group-এর unordered list।
+\item facilities-এর ordered list।
+\item institution information table।
+\item Back to Home, View Notice ও Contact Us link।
+\end{itemize}
+
+\subsection{About Page Code Explanation}
+
+\begin{itemize}
+\item এই page-এ Home page-এর মতো একই header, navigation menu ও footer রাখা হয়েছে, যাতে website-এর design consistent থাকে।
+\item \texttt{<h1>} main page heading দেখিয়েছে এবং \texttt{<h2>} দিয়ে ছোট ছোট section heading তৈরি হয়েছে।
+\item \texttt{<p align="justify">} paragraph text দুই পাশে সমানভাবে সাজাতে ব্যবহার করা হয়েছে।
+\item \texttt{<hr>} heading-এর নিচে horizontal line তৈরি করেছে।
+\item \texttt{<ul type="square">} academic groups bullet আকারে দেখিয়েছে।
+\item \texttt{<ol type="1">} college facilities serial number সহ দেখিয়েছে।
+\item institution information দেখাতে \texttt{<table>}, \texttt{<tr>}, \texttt{<th>} ও \texttt{<td>} ব্যবহার করা হয়েছে।
+\item \texttt{<th>} table heading cell তৈরি করেছে এবং \texttt{<td>} সাধারণ data cell তৈরি করেছে।
+\item নিচের \texttt{<a>} tag গুলো Back to Home, Notice ও Contact page-এ যাওয়ার internal link তৈরি করেছে।
+\end{itemize}
+
+\subsection{Page 3: Notice Page Code}
+
+নিচের code \texttt{notice.html} file-এ লিখবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ABC College - Notice</title>
+</head>
+<body bgcolor="#F5F7FA">
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td width="80">
+        <img src="images/logo.png"
+             alt="ABC College Logo"
+             width="70" height="70">
+      </td>
+      <td>
+        <font color="white" size="6" face="Arial">
+          <b>ABC College</b>
+        </font>
+        <br>
+        <font color="white" size="3" face="Arial">
+          Education, Discipline and Success
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#DBEAFE">
+    <tr align="center">
+      <td><a href="index.html">Home</a></td>
+      <td><a href="about.html">About</a></td>
+      <td><a href="notice.html">Notice</a></td>
+      <td><a href="result.html">Result</a></td>
+      <td><a href="contact.html">Contact</a></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="85%" align="center" border="0"
+         cellpadding="15" cellspacing="0"
+         bgcolor="white">
+    <tr>
+      <td>
+        <h1 align="center">Notice Board</h1>
+        <hr>
+
+        <p align="justify">
+          This notice board contains important academic notices,
+          examination updates, class routine information and
+          admission-related announcements for the students of
+          ABC College.
+        </p>
+
+        <h2>Latest Notices</h2>
+
+        <table border="1" width="100%"
+               cellpadding="8" cellspacing="0">
+          <caption><b>ABC College Notice List</b></caption>
+          <tr bgcolor="#DBEAFE">
+            <th>Serial No</th>
+            <th>Notice Title</th>
+            <th>Date</th>
+            <th>Download</th>
+          </tr>
+          <tr>
+            <td align="center">01</td>
+            <td>HSC Form Fill-up Notice</td>
+            <td align="center">05-06-2026</td>
+            <td align="center">
+              <a href="hsc-form-fillup.pdf">Download</a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">02</td>
+            <td>Class Routine Published</td>
+            <td align="center">10-06-2026</td>
+            <td align="center">
+              <a href="class-routine.pdf">Download</a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">03</td>
+            <td>ICT Practical Exam Notice</td>
+            <td align="center">15-06-2026</td>
+            <td align="center">
+              <a href="ict-practical.pdf">Download</a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">04</td>
+            <td>Admission Result Published</td>
+            <td align="center">20-06-2026</td>
+            <td align="center">
+              <a href="admission-result.pdf">Download</a>
+            </td>
+          </tr>
+        </table>
+
+        <br>
+
+        <h2>Important Instructions</h2>
+        <ol type="1">
+          <li>Students must read all notices carefully.</li>
+          <li>Students should follow the class routine regularly.</li>
+          <li>For examination notice, contact the office if needed.</li>
+          <li>Students must bring admit card during examinations.</li>
+        </ol>
+
+        <h2>Notice Categories</h2>
+        <ul type="square">
+          <li>Academic Notice</li>
+          <li>Examination Notice</li>
+          <li>Admission Notice</li>
+          <li>Result Notice</li>
+          <li>Holiday Notice</li>
+        </ul>
+
+        <p align="center">
+          <a href="index.html">Back to Home</a> |
+          <a href="result.html">Check Result</a> |
+          <a href="contact.html">Contact Office</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td align="center">
+        <font color="white" face="Arial">
+          &copy; 2026 ABC College. All Rights Reserved.
+        </font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Notice Page Output ধারণা}
+
+Browser-এ দেখা যাবে:
+\begin{itemize}
+\item Notice Board heading।
+\item notice list table, যেখানে serial, notice title, date ও download link থাকবে।
+\item important instructions ordered list।
+\item notice category unordered list।
+\item Result ও Contact page-এ যাওয়ার internal link।
+\end{itemize}
+
+\subsection{Notice Page Code Explanation}
+
+\begin{itemize}
+\item \texttt{Notice Board} heading page-এর উদ্দেশ্য বোঝায়।
+\item notice information row-column আকারে দেখানোর জন্য table ব্যবহার করা হয়েছে।
+\item \texttt{<table border="1">} table-এর border দেখিয়েছে।
+\item \texttt{<caption>} table-এর title হিসেবে \texttt{ABC College Notice List} দেখিয়েছে।
+\item \texttt{bgcolor="\#DBEAFE"} heading row-এর background color দিয়েছে।
+\item প্রতিটি notice আলাদা \texttt{<tr>} row-এর ভিতরে লেখা হয়েছে।
+\item serial, title, date ও download link আলাদা \texttt{<td>} cell-এ রাখা হয়েছে।
+\item \texttt{<a href="class-routine.pdf">} PDF file-এর address নির্দেশ করেছে।
+\item \texttt{Download} text-এ click করলে file open/download হতে পারে।
+\item \texttt{<ol>} important instructions serial number সহ দেখিয়েছে।
+\item \texttt{<ul type="square">} notice category bullet list হিসেবে দেখিয়েছে।
+\end{itemize}
+
+\subsection{Page 4: Result Page Code}
+
+নিচের code \texttt{result.html} file-এ লিখবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ABC College - Result</title>
+</head>
+<body bgcolor="#F5F7FA">
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td width="80">
+        <img src="images/logo.png"
+             alt="ABC College Logo"
+             width="70" height="70">
+      </td>
+      <td>
+        <font color="white" size="6" face="Arial">
+          <b>ABC College</b>
+        </font>
+        <br>
+        <font color="white" size="3" face="Arial">
+          Education, Discipline and Success
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#DBEAFE">
+    <tr align="center">
+      <td><a href="index.html">Home</a></td>
+      <td><a href="about.html">About</a></td>
+      <td><a href="notice.html">Notice</a></td>
+      <td><a href="result.html">Result</a></td>
+      <td><a href="contact.html">Contact</a></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="85%" align="center" border="0"
+         cellpadding="15" cellspacing="0"
+         bgcolor="white">
+    <tr>
+      <td>
+        <h1 align="center">Student Result</h1>
+        <hr>
+
+        <p align="justify">
+          This page contains sample student result information
+          of ABC College. The result table is created by using
+          HTML table tags such as table, tr, th and td.
+        </p>
+
+        <h2 align="center">HSC ICT Result Sheet</h2>
+
+        <table border="1" width="100%"
+               cellpadding="8" cellspacing="0">
+          <caption><b>Result of HSC ICT Examination</b></caption>
+          <tr bgcolor="#DBEAFE">
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>ICT Marks</th>
+            <th>GPA</th>
+            <th>Result</th>
+          </tr>
+          <tr>
+            <td align="center">101</td>
+            <td>Sakib Hasan</td>
+            <td>Science</td>
+            <td align="center">92</td>
+            <td align="center">5.00</td>
+            <td align="center">Passed</td>
+          </tr>
+          <tr>
+            <td align="center">102</td>
+            <td>Asraful Islam</td>
+            <td>Business Studies</td>
+            <td align="center">85</td>
+            <td align="center">4.75</td>
+            <td align="center">Passed</td>
+          </tr>
+          <tr>
+            <td align="center">103</td>
+            <td>Sumaiya Akter</td>
+            <td>Humanities</td>
+            <td align="center">78</td>
+            <td align="center">4.50</td>
+            <td align="center">Passed</td>
+          </tr>
+          <tr>
+            <td align="center">104</td>
+            <td>Tanvir Ahmed</td>
+            <td>Science</td>
+            <td align="center">67</td>
+            <td align="center">4.00</td>
+            <td align="center">Passed</td>
+          </tr>
+        </table>
+
+        <br>
+
+        <h2>Result Summary</h2>
+
+        <table border="1" width="70%" align="center"
+               cellpadding="8" cellspacing="0">
+          <tr bgcolor="#DBEAFE">
+            <th colspan="2">Examination Summary</th>
+          </tr>
+          <tr>
+            <td>Total Students</td>
+            <td align="center">04</td>
+          </tr>
+          <tr>
+            <td>Passed Students</td>
+            <td align="center">04</td>
+          </tr>
+          <tr>
+            <td>Failed Students</td>
+            <td align="center">00</td>
+          </tr>
+          <tr>
+            <td>Highest GPA</td>
+            <td align="center">5.00</td>
+          </tr>
+        </table>
+
+        <br>
+
+        <h2>Important Notes</h2>
+        <ul type="square">
+          <li>This is a sample result page for HTML practice.</li>
+          <li>The table uses caption, heading cells and data cells.</li>
+          <li>The summary table uses the colspan attribute.</li>
+          <li>Students can modify the table by adding more rows.</li>
+        </ul>
+
+        <p align="center">
+          <a href="index.html">Back to Home</a> |
+          <a href="notice.html">View Notice</a> |
+          <a href="contact.html">Contact Office</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td align="center">
+        <font color="white" face="Arial">
+          &copy; 2026 ABC College. All Rights Reserved.
+        </font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Result Page Output ধারণা}
+
+Browser-এ দেখা যাবে:
+\begin{itemize}
+\item Student Result heading।
+\item HSC ICT Result Sheet নামে main result table।
+\item table caption, table heading ও data cell।
+\item Result Summary table, যেখানে \texttt{colspan} ব্যবহার করা হয়েছে।
+\item Important Notes list।
+\item Notice ও Contact page-এ যাওয়ার link।
+\end{itemize}
+
+\subsection{Result Page Code Explanation}
+
+\begin{itemize}
+\item এই page-এ student result table আকারে দেখানো হয়েছে।
+\item \texttt{<caption>} result table-এর title দেখিয়েছে।
+\item first row-এ \texttt{<th>} ব্যবহার করে Roll No, Name, Group, ICT Marks, GPA ও Result heading তৈরি করা হয়েছে।
+\item প্রতিটি student-এর result একটি করে \texttt{<tr>} row-এর ভিতরে রাখা হয়েছে।
+\item \texttt{align="center"} roll, marks, GPA ও result data center-এ দেখিয়েছে।
+\item Result Summary table-এ \texttt{colspan="2"} ব্যবহার করে একটি heading cell দুইটি column জুড়ে দেখানো হয়েছে।
+\item \texttt{<ul type="square">} result page-এর important notes bullet আকারে দেখিয়েছে।
+\item নিচের link গুলো Home, Notice ও Contact page-এর সাথে page-টি যুক্ত করেছে।
+\end{itemize}
+
+\subsection{Page 5: Contact Page Code}
+
+নিচের code \texttt{contact.html} file-এ লিখবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ABC College - Contact</title>
+</head>
+<body bgcolor="#F5F7FA">
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td width="80">
+        <img src="images/logo.png"
+             alt="ABC College Logo"
+             width="70" height="70">
+      </td>
+      <td>
+        <font color="white" size="6" face="Arial">
+          <b>ABC College</b>
+        </font>
+        <br>
+        <font color="white" size="3" face="Arial">
+          Education, Discipline and Success
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#DBEAFE">
+    <tr align="center">
+      <td><a href="index.html">Home</a></td>
+      <td><a href="about.html">About</a></td>
+      <td><a href="notice.html">Notice</a></td>
+      <td><a href="result.html">Result</a></td>
+      <td><a href="contact.html">Contact</a></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="85%" align="center" border="0"
+         cellpadding="15" cellspacing="0"
+         bgcolor="white">
+    <tr>
+      <td>
+        <h1 align="center">Contact Us</h1>
+        <hr>
+
+        <p align="justify">
+          Students, guardians and visitors can contact ABC
+          College office for admission, result, notice and
+          academic information. Please fill up the contact form
+          below or use the contact information on this page.
+        </p>
+
+        <h2>College Contact Information</h2>
+
+        <table border="1" width="100%"
+               cellpadding="8" cellspacing="0">
+          <tr bgcolor="#DBEAFE">
+            <th>Information</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>College Name</td>
+            <td>ABC College</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>Dhaka, Bangladesh</td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>+880 1234-567890</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>
+              <a href="mailto:info@abccollege.edu.bd">
+                info@abccollege.edu.bd
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Office Time</td>
+            <td>Sunday to Thursday, 9:00 AM - 4:00 PM</td>
+          </tr>
+        </table>
+
+        <br>
+
+        <h2>Contact Form</h2>
+
+        <form action="submit.php" method="post">
+          <table border="0" cellpadding="8"
+                 cellspacing="0" width="100%">
+
+            <tr>
+              <td width="25%">
+                <label for="name">Name:</label>
+              </td>
+              <td>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your name" size="40">
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="email">Email:</label>
+              </td>
+              <td>
+                <input type="text" id="email" name="email"
+                       placeholder="Enter your email" size="40">
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="password">Password:</label>
+              </td>
+              <td>
+                <input type="password" id="password"
+                       name="password" size="40">
+              </td>
+            </tr>
+
+            <tr>
+              <td>Gender:</td>
+              <td>
+                <input type="radio" name="gender"
+                       value="Male"> Male
+                <input type="radio" name="gender"
+                       value="Female"> Female
+              </td>
+            </tr>
+
+            <tr>
+              <td>Group:</td>
+              <td>
+                <select name="group">
+                  <option value="Science">Science</option>
+                  <option value="Business Studies">
+                    Business Studies
+                  </option>
+                  <option value="Humanities">Humanities</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Interested Subjects:</td>
+              <td>
+                <input type="checkbox" name="subject"
+                       value="ICT"> ICT
+                <input type="checkbox" name="subject"
+                       value="English"> English
+                <input type="checkbox" name="subject"
+                       value="Bangla"> Bangla
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="message">Message:</label>
+              </td>
+              <td>
+                <textarea id="message" name="message"
+                          rows="5" cols="42"
+                          placeholder="Write your message here">
+                </textarea>
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+              </td>
+            </tr>
+
+          </table>
+        </form>
+
+        <br>
+
+        <h2>Important Notes</h2>
+        <ul type="square">
+          <li>This contact form is created for HTML practice.</li>
+          <li>The form uses text field and password field.</li>
+          <li>It also uses radio button, checkbox and dropdown.</li>
+          <li>The reset button clears the input fields.</li>
+        </ul>
+
+        <p align="center">
+          <a href="index.html">Back to Home</a> |
+          <a href="about.html">About College</a> |
+          <a href="notice.html">View Notice</a> |
+          <a href="result.html">Check Result</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table width="100%" border="0"
+         cellpadding="10" cellspacing="0"
+         bgcolor="#1E3A8A">
+    <tr>
+      <td align="center">
+        <font color="white" face="Arial">
+          &copy; 2026 ABC College. All Rights Reserved.
+        </font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Contact Page Output ধারণা}
+
+Browser-এ দেখা যাবে:
+\begin{itemize}
+\item Contact Us heading।
+\item college contact information table।
+\item email link, যেখানে click করলে mail application open হতে পারে।
+\item contact form: name, email, password, gender, group, checkbox ও message।
+\item Submit ও Reset button।
+\item অন্য page-এ যাওয়ার internal link।
+\end{itemize}
+
+\subsection{Contact Page Code Explanation}
+
+\begin{itemize}
+\item Contact page-এ contact information table এবং user input নেওয়ার form আছে।
+\item \texttt{mailto:info@abccollege.edu.bd} email address-এর সাথে clickable email link তৈরি করেছে।
+\item \texttt{<form action="submit.php" method="post">} form data পাঠানোর জন্য form area তৈরি করেছে।
+\item \texttt{action="submit.php"} form submit হলে data কোন file-এ যাবে তা নির্দেশ করে।
+\item \texttt{method="post"} form data পাঠানোর পদ্ধতি নির্ধারণ করে।
+\item \texttt{<input type="text">} name ও email নেওয়ার text field তৈরি করেছে।
+\item \texttt{<input type="password">} password field তৈরি করেছে, যেখানে লেখা character সাধারণত গোপন থাকে।
+\item \texttt{<input type="radio">} gender থেকে একটি option select করার সুযোগ দেয়।
+\item \texttt{<select>} ও \texttt{<option>} group selection-এর dropdown list তৈরি করেছে।
+\item \texttt{<input type="checkbox">} একাধিক subject select করার সুযোগ দেয়।
+\item \texttt{<textarea>} বড় message বা comment লেখার multi-line input field তৈরি করেছে।
+\item \texttt{type="submit"} form submit button এবং \texttt{type="reset"} form clear করার button তৈরি করেছে।
+\end{itemize}
+
+\subsection{Complete Project Output}
+
+সবগুলো file ঠিকভাবে তৈরি করলে website-টি browser-এ একটি simple static college website হিসেবে দেখা যাবে। Output যাচাই করার সময় নিচের বিষয়গুলো মিলিয়ে দেখবে:
+
+\begin{itemize}
+\item \texttt{index.html} open করলে Home page দেখা যাবে।
+\item সব page-এ একই header, navigation menu ও footer থাকবে।
+\item navigation menu থেকে Home, About, Notice, Result ও Contact page-এ যাওয়া যাবে।
+\item Home page-এ logo, college image, welcome text ও list থাকবে।
+\item About page-এ paragraph, list ও institution information table থাকবে।
+\item Notice page-এ notice table ও download link থাকবে।
+\item Result page-এ result table এবং summary table থাকবে।
+\item Contact page-এ contact information table, email link ও form থাকবে।
+\item image না দেখালে \texttt{images} folder এবং \texttt{src} path পরীক্ষা করতে হবে।
+\end{itemize}
+
+\begin{keypointbox}{Project complete}
+এই mini project-এ মোট 5টি HTML page আছে: \texttt{index.html}, \texttt{about.html}, \texttt{notice.html}, \texttt{result.html} এবং \texttt{contact.html}। এগুলো একসাথে Chapter 4-এর heading, paragraph, image, hyperlink, list, table ও form topic-এর practical revision হিসেবে কাজ করবে।
+\end{keypointbox}
+
+\subsection{এই Page-এ যা Practice হচ্ছে}
+
+\begin{center}
+\begin{tabular}{|p{0.34\textwidth}|p{0.46\textwidth}|}
+\hline
+\textbf{HTML Topic} & \textbf{ব্যবহার} \\
+\hline
+Basic structure & \texttt{html}, \texttt{head}, \texttt{title}, \texttt{body} \\
+\hline
+Image & \texttt{<img>} \\
+\hline
+Hyperlink & \texttt{<a href="about.html">} \\
+\hline
+List & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} \\
+\hline
+Table layout & \texttt{<table>}, \texttt{<tr>}, \texttt{<td>} \\
+\hline
+Text formatting & \texttt{<font>}, \texttt{<b>}, heading, paragraph \\
+\hline
+Page design & background color, alignment, footer \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Evaluation / Mark Distribution}
+
+\begin{center}
+\begin{tabular}{|p{0.58\textwidth}|r|}
+\hline
+\textbf{কাজ} & \textbf{Marks} \\
+\hline
+HTML structure ঠিক আছে & 10 \\
+\hline
+Navigation link কাজ করছে & 15 \\
+\hline
+Image ঠিকভাবে show করছে & 10 \\
+\hline
+List ব্যবহার & 10 \\
+\hline
+Table ব্যবহার & 15 \\
+\hline
+Form ব্যবহার & 15 \\
+\hline
+Page design ও clean layout & 10 \\
+\hline
+File/folder organization & 10 \\
+\hline
+\textbf{Total} & \textbf{95} \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Common Mistake}
+
+\begin{mistakebox}{Mini Project করার সময় সাধারণ ভুল}
+\begin{itemize}
+\item \texttt{index.html} file-এর নাম ভুল লেখা।
+\item \texttt{images} folder না বানিয়ে image path দেওয়া।
+\item \texttt{src="images/college.jpg"} path ভুল লেখা।
+\item Navigation link-এ file name ভুল লেখা।
+\item সব page একই folder-এ না রাখা।
+\item HTML tag ঠিকভাবে close না করা।
+\item Browser refresh না করে output check করা।
+\item Image file extension \texttt{.jpg}, \texttt{.png} ভুল লেখা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{Board-style Short Answer}
+
+\begin{boardbox}{Mini Project কেন উপযোগী?}
+HTML শেখার সবচেয়ে ভালো উপায় হলো নিজে web page তৈরি করা। Mini project-এর মাধ্যমে শিক্ষার্থী heading, paragraph, image, hyperlink, list, table ও form একসাথে ব্যবহার করতে পারে। ফলে Chapter 4-এর গুরুত্বপূর্ণ tag ও structure ব্যবহারিকভাবে practice হয়।
+\end{boardbox}

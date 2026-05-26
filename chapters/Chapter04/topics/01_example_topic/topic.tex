@@ -1,3 +1,36 @@
 % Chapter04 example topic
-\section{Example Topic for Chapter 04}
-Content here.
+\section{Simple Home Page Example}
+
+\begin{learningbox}
+এই উদাহরণে শিক্ষার্থী দেখবে কিভাবে একটি সাধারণ home page-এর HTML skeleton তৈরি করা যায় এবং কোন অংশগুলো থাকবে।
+\end{learningbox}
+
+\subsection{Page skeleton}
+\begin{examplebox}{Simple home page}
+\begin{verbatim}
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>College Home</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+	<header><h1>My College</h1></header>
+	<nav><ul><li><a href="index.html">Home</a></li><li><a href="notice.html">Notice</a></li></ul></nav>
+	<main>
+		<section><h2>Latest Notice</h2><p>Admission open for 2026.</p></section>
+		<aside>Contact: info@example.com</aside>
+	</main>
+	<footer>&copy; 2026 My College</footer>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item উপরোক্ত skeleton থেকে একটি local `index.html` তৈরি করে browser-এ খুলে দেখো।
+\item Navigation এ আরও তিনটি link যোগ করো এবং একটি sample `notice.html` পেজ তৈরি করো।
+\end{enumerate}
+\end{practicebox}

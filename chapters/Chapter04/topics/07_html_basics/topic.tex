@@ -1,0 +1,87 @@
+% ৪.৭ HTML-এর প্রাথমিক ধারণা
+\section{HTML-এর প্রাথমিক ধারণা}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী HTML-এর সংজ্ঞা, পূর্ণরূপ, ইতিহাস, HTML5, file extension, tag/element/attribute-এর মৌলিক ধারণা ব্যাখ্যা করতে পারবে।
+\end{learningbox}
+
+\subsection{ভূমিকা}
+ইন্টারনেটে দেখা web page-এর structure ও content presentation তৈরি করতে HTML ব্যবহার করা হয়। HTML tag browser-কে বলে কোন অংশ heading, কোন অংশ paragraph, কোন অংশ image বা link হবে।
+
+\subsection{HTML-এর পূর্ণরূপ}
+\begin{definitionbox}{HTML}
+HTML = HyperText Markup Language
+\end{definitionbox}
+
+\begin{keypointbox}{HyperText, Markup, Language}
+\begin{itemize}
+\item HyperText: এমন text যাতে link থাকে এবং এক page থেকে অন্য page-এ যাওয়া যায়।
+\item Markup: tag ব্যবহার করে content চিহ্নিত ও format করা।
+\item Language: web page তৈরির জন্য ব্যবহৃত markup system।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{HTML কি programming language?}
+\begin{mistakebox}{উল্লেখ্য}
+HTML programming language নয়; এটি একটি markup language। HTML কোন logic বা calculation করে না; presentation ও behaviour-এর জন্য CSS ও JavaScript ব্যবহৃত হয়।
+\end{mistakebox}
+
+\subsection{HTML দিয়ে কী করা যায় ও না করা যায়}
+\begin{keypointbox}{কি করা যায়}
+\begin{itemize}
+\item Heading, paragraph, image, hyperlink, list, table, form তৈরি করা।
+\item Page-এর basic structure নির্ধারণ করা।
+\end{itemize}
+\end{keypointbox}
+
+\begin{keypointbox}{কি করা যায় না (এককভাবে)}
+HTML দিয়ে single-handedly dynamic features, database connection, authentication বা complex logic করা যায় না; এসবের জন্য server-side language, database ও client-side scripting প্রয়োজন।
+\end{keypointbox}
+
+\subsection{সংক্ষিপ্ত ইতিহাস}
+Tim Berners-Lee 1990-এর দিকে HTML-এর প্রাথমিক ভাবনা উপস্থাপন করেন। পরবর্তীতে HTML-এর বিভিন্ন সংস্করণ আসে; আধুনিক সময়ের কাজগুলো HTML5 ও HTML Living Standard-এ রূপ নেয়।
+
+\subsection{HTML5}
+HTML5 হল HTML-এর আধুনিক মান/সংস্করণ, যা multimedia (audio/video), semantic elements (header, nav, main, article, footer), improved form controls ইত্যাদি সমর্থন করে।
+
+\subsection{File extension}
+HTML file সাধারণত \texttt{.html} বা \texttt{.htm} extension দিয়ে সংরক্ষণ করা হয়। প্রাথমিক পেজের নাম সাধারণত \texttt{index.html} হয়।
+
+\subsection{HTML Tag, Element ও Attribute (সংক্ষেপ)}
+\begin{description}
+\item[Tag] Angle bracket \(< >\) এর মধ্যে লেখা keyword, যেমন \texttt{<p>}।
+\item[Element] Opening tag, content ও closing tag মিলে element গঠন করে, উদাহরণ: \texttt{<p>This is a paragraph.</p>}।
+\item[Attribute] Tag-এর অতিরিক্ত তথ্য, যেমন \texttt{src}, \texttt{alt}, \texttt{width} ইত্যাদি: \texttt{<img src="photo.jpg" alt="Photo">}।
+\end{description}
+
+\subsection{Simple HTML example}
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Web Page</title>
+  </head>
+  <body>
+    <h1>Welcome to HSC ICT</h1>
+    <p>This is my first HTML web page.</p>
+  </body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Common mistakes}
+\begin{itemize}
+\item Closing tag ভুলে যাওয়া
+\item Tag-এর জন্য angle bracket নয় অন্য bracket ব্যবহার করা
+\item File extension ভুল (\texttt{.txt} হিসেবে save করা)
+\item Attribute value-তে quotation না দেওয়া
+\end{itemize}
+
+\begin{practicebox}
+\begin{enumerate}
+\item HTML-এর পূর্ণরূপ লেখ।
+\item একটি ছোট HTML skeleton লিখে browser-এ খুলে দেখো।
+\item HTML, CSS ও JavaScript-এর ভূমিকা সংক্ষেপে লেখো।
+\end{enumerate}
+\end{practicebox}

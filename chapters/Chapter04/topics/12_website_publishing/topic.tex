@@ -1,33 +1,95 @@
-% ৪.১২ ওয়েবসাইট প্রকাশ ও হোস্টিং
-\section{ওয়েবসাইট প্রকাশ ও হোস্টিং}
+% Topic: Website Publishing and Hosting
+\section{Website Publishing ও Hosting}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item domain, hosting, URL ও web server ব্যাখ্যা করতে।
+\item domain, hosting, URL, DNS ও web server ব্যাখ্যা করতে।
+\item website publishing কী তা সংজ্ঞাসহ লিখতে।
 \item website publish করার ধাপ লিখতে।
-\item FTP/SFTP, control panel ও version-based deployment-এর ধারণা বুঝতে।
+\item FTP/SFTP, control panel ও static hosting-এর ধারণা বুঝতে।
+\item website publish করার পর common problem শনাক্ত করতে।
 \end{itemize}
 \end{learningbox}
 
+\subsection{Website Publishing কী?}
+
+\begin{definitionbox}{Website Publishing}
+তৈরি করা webpage বা website-এর file web server-এ upload করে domain/URL-এর মাধ্যমে internet ব্যবহারকারীদের জন্য দেখার উপযোগী করার প্রক্রিয়াকে website publishing বলে।
+\end{definitionbox}
+
+Local computer-এ \texttt{index.html} file open করলে শুধু নিজের device থেকে website দেখা যায়। কিন্তু website publish করলে internet-এর মাধ্যমে অন্য user-ও URL লিখে website দেখতে পারে।
+
 \subsection{Domain ও Hosting}
-ওয়েবসাইট তৈরি করার পর সেটি internet-এ দেখা যাওয়ার জন্য server-এ রাখতে হয়। ব্যবহারকারী domain name বা URL লিখে সেই server থেকে page দেখতে পায়।
+
+Website তৈরি করার পর সেটি internet-এ দেখানোর জন্য server-এ রাখতে হয়। ব্যবহারকারী domain name বা URL লিখে সেই server থেকে page দেখতে পায়।
 
 \begin{definitionbox}{Domain name}
-Internet-এ কোনো website-কে সহজে চেনার জন্য ব্যবহৃত human-readable address-কে domain name বলা হয়। যেমন \texttt{example.com}।
+Internet-এ কোনো website-কে সহজে চেনার জন্য ব্যবহৃত human-readable address-কে domain name বলে। যেমন \texttt{example.com}।
 \end{definitionbox}
 
 \begin{definitionbox}{Web hosting}
-ওয়েবসাইটের file, image, database ইত্যাদি internet-connected server-এ সংরক্ষণ করে ব্যবহারকারীর কাছে পৌঁছে দেওয়ার সেবাকে web hosting বলা হয়।
+Website-এর file, image, CSS, JavaScript, database ইত্যাদি internet-connected server-এ সংরক্ষণ করে user-এর কাছে পৌঁছে দেওয়ার সেবাকে web hosting বলে।
 \end{definitionbox}
 
+\subsection{Publishing-এর জন্য যা যা দরকার}
+
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Publishing flow diagram placeholder}\\[4pt]
-HTML/CSS files $\rightarrow$ Test locally $\rightarrow$ Buy domain/hosting $\rightarrow$ Upload files $\rightarrow$ DNS points to server $\rightarrow$ Website live
-}}
+\begin{tabular}{|p{0.26\textwidth}|p{0.56\textwidth}|}
+\hline
+\textbf{উপাদান} & \textbf{কাজ} \\
+\hline
+HTML/CSS/JS file & website-এর মূল content, style ও behavior \\
+\hline
+Image/media file & logo, photo, PDF বা অন্য resource \\
+\hline
+Domain name & user-friendly website address \\
+\hline
+Hosting/server & website file রাখার internet-connected server \\
+\hline
+DNS & domain name-কে hosting server-এর সাথে যুক্ত করে \\
+\hline
+FTP/SFTP বা control panel & file upload ও manage করার উপায় \\
+\hline
+SSL/HTTPS & secure connection নিশ্চিত করে \\
+\hline
+\end{tabular}
 \end{center}
+
+\subsection{Publishing Workflow}
+
+\begin{center}
+\begin{tikzpicture}[
+  node distance=0.9cm,
+  every node/.style={draw, rounded corners, align=center, fill=cyan!6, inner sep=4pt, font=\small},
+  arrow/.style={->, thick}
+]
+\node (a) {HTML file তৈরি};
+\node (b) [right=of a] {Local test};
+\node (c) [right=of b] {Domain/hosting};
+\node (d) [below=of c] {Upload files};
+\node (e) [left=of d] {DNS setup};
+\node (f) [left=of e] {Website live};
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\draw[arrow] (d) -- (e);
+\draw[arrow] (e) -- (f);
+\end{tikzpicture}
+\end{center}
+
+\begin{examplebox}{Mermaid diagram idea}
+\begin{verbatim}
+flowchart LR
+    A[HTML/CSS files] --> B[Test locally]
+    B --> C[Buy domain and hosting]
+    C --> D[Upload files]
+    D --> E[Configure DNS]
+    E --> F[Website live]
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Hosting-এর ধরন}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
@@ -45,6 +107,27 @@ Static hosting & HTML/CSS/JS file serve করে & portfolio, documentation \\
 \end{tabular}
 \end{center}
 
+\subsection{Domain, Hosting, URL ও DNS-এর সম্পর্ক}
+
+\begin{keypointbox}{সহজ ব্যাখ্যা}
+\begin{itemize}
+\item \textbf{Domain name} হলো website-এর নাম/ঠিকানা।
+\item \textbf{Hosting} হলো যেখানে website-এর file রাখা হয়।
+\item \textbf{URL} হলো নির্দিষ্ট webpage বা resource-এর পূর্ণ address।
+\item \textbf{DNS} domain name-কে server IP address-এর সাথে map করে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{Example}
+\begin{itemize}
+\item Domain: \texttt{abccollege.edu.bd}
+\item Hosting: যে server-এ \texttt{index.html}, image, CSS file রাখা আছে
+\item URL: \texttt{https://abccollege.edu.bd/notice.html}
+\end{itemize}
+\end{examplebox}
+
+\subsection{Publish Checklist}
+
 \begin{keypointbox}{Publish checklist}
 \begin{itemize}
 \item Home page file সাধারণত \texttt{index.html} নাম রাখা।
@@ -52,13 +135,87 @@ Static hosting & HTML/CSS/JS file serve করে & portfolio, documentation \\
 \item mobile view ও browser compatibility দেখা।
 \item domain DNS ঠিকভাবে hosting server-এর দিকে point করা।
 \item security-এর জন্য HTTPS ব্যবহার করা।
+\item upload করার আগে file/folder structure ঠিক রাখা।
 \end{itemize}
 \end{keypointbox}
+
+\subsection{Website দেখা না গেলে সম্ভাব্য কারণ}
+
+Website publish করার পর কখনো কখনো URL লিখলেও website দেখা যায় না। সম্ভাব্য কারণগুলো হলো:
+
+\begin{itemize}
+\item Domain name-এর মেয়াদ শেষ হয়ে যাওয়া।
+\item Hosting account-এর মেয়াদ শেষ বা suspend হওয়া।
+\item Web server down থাকা।
+\item DNS configuration ভুল হওয়া বা DNS update complete না হওয়া।
+\item Bandwidth limit শেষ হয়ে যাওয়া।
+\item \texttt{index.html} file upload না করা বা ভুল folder-এ upload করা।
+\item HTML file, image path বা permission ভুল থাকা।
+\item HTTPS/SSL certificate সমস্যা হওয়া।
+\end{itemize}
+
+\subsection{Website Security Basic}
+
+Website publish করার পর basic security বজায় রাখা জরুরি।
+
+\begin{itemize}
+\item HTTPS/SSL certificate ব্যবহার করা।
+\item Hosting control panel-এর strong password রাখা।
+\item নিয়মিত backup রাখা।
+\item অপ্রয়োজনীয় file public folder-এ না রাখা।
+\item Form থাকলে user input validate করা।
+\item Hosting panel, CMS বা script update রাখা।
+\end{itemize}
+
+\subsection{Quick Publish Steps}
+
+\begin{examplebox}{Publish via FTP/SFTP}
+\begin{verbatim}
+1. Test locally (open index.html in browser)
+2. Connect to host via SFTP/FTP client
+3. Upload files to public_html or www directory
+4. Point domain DNS to hosting server IP
+5. Open URL in browser and test
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Problem Solution}
+
+\begin{practicebox}
+\textbf{Problem:} Rafi একটি college website তৈরি করেছে। তার computer-এ website ঠিক দেখা যায়, কিন্তু hosting server-এ upload করার পর image দেখা যাচ্ছে না এবং home page automatically open হচ্ছে না। সম্ভাব্য কারণ ও সমাধান লেখ।
+
+\textbf{Solution:}
+\begin{itemize}
+\item Home page automatically open না হলে file name \texttt{index.html} আছে কি না check করতে হবে।
+\item Image দেখা না গেলে image file upload হয়েছে কি না check করতে হবে।
+\item Image path case-sensitive কি না check করতে হবে; যেমন \texttt{Campus.jpg} ও \texttt{campus.jpg} ভিন্ন হতে পারে।
+\item HTML file ও image একই folder-এ না থাকলে correct folder path দিতে হবে।
+\item Browser cache clear করে আবার test করা যেতে পারে।
+\end{itemize}
+\end{practicebox}
+
+\begin{boardbox}{Exam focus}
+Website publish করার ধাপ লিখতে বললে: file তৈরি, local test, domain/hosting নেওয়া, server-এ upload, DNS setup, browser test--এই flow লিখবে। Website না দেখা গেলে domain expiry, hosting expiry, server down, DNS error, bandwidth limit, wrong file path ও missing \texttt{index.html} উল্লেখ করা যায়।
+\end{boardbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item home page-এর file name \texttt{index.html} না রাখা।
+\item image upload না করে শুধু HTML file upload করা।
+\item local computer-এর absolute path HTML code-এ ব্যবহার করা।
+\item domain কিনে hosting/DNS setup না করা।
+\item DNS update হতে কিছু সময় লাগতে পারে--এটা না বোঝা।
+\item HTTPS/SSL setup না করা।
+\item publish করার আগে link, image, form ও mobile view test না করা।
+\end{itemize}
+\end{mistakebox}
 
 \begin{practicebox}
 \begin{enumerate}
 \item Domain ও hosting-এর পার্থক্য লেখ।
 \item \texttt{index.html} file কেন গুরুত্বপূর্ণ?
-\item Website publish করার চারটি ধাপ লেখ।
+\item Website publish করার পাঁচটি ধাপ লেখ।
+\item DNS-এর কাজ কী?
+\item Website publish করার আগে কোন কোন জিনিস test করা উচিত?
 \end{enumerate}
 \end{practicebox}

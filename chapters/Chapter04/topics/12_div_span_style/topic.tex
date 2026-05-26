@@ -1,0 +1,705 @@
+% Topic 17: Division, Span and Style Attribute
+\section{Division, Span ও Style Attribute}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী পারবে:
+\begin{itemize}
+\item \texttt{<div>} tag-এর কাজ ও ব্যবহার ব্যাখ্যা করতে।
+\item \texttt{<span>} tag-এর কাজ ও ব্যবহার ব্যাখ্যা করতে।
+\item \texttt{<div>} ও \texttt{<span>}-এর পার্থক্য লিখতে।
+\item \texttt{style} attribute ব্যবহার করে inline CSS লিখতে।
+\item \texttt{color}, \texttt{background-color}, \texttt{font-size}, \texttt{text-align}, \texttt{margin}, \texttt{padding}, \texttt{border} ইত্যাদি basic CSS property ব্যবহার করতে।
+\end{itemize}
+\end{learningbox}
+
+আগের topic-গুলোতে আমরা HTML দিয়ে heading, paragraph, list, hyperlink, image ও table তৈরি করেছি। এখন ওয়েবপেজের বিভিন্ন অংশকে group করা এবং নির্দিষ্ট অংশে style প্রয়োগ করা শিখব। এই topic-এ তিনটি বিষয় সবচেয়ে গুরুত্বপূর্ণ: \texttt{<div>}, \texttt{<span>} এবং \texttt{style} attribute।
+
+\subsection{\texttt{<div>} Tag কী?}
+
+\begin{definitionbox}{\texttt{<div>} tag}
+HTML document-এর বিভিন্ন অংশ বা section-কে আলাদা block আকারে group করার জন্য ব্যবহৃত container tag-কে \texttt{<div>} tag বলে।
+\end{definitionbox}
+
+\texttt{<div>} হলো HTML-এর একটি generic container tag। এটি webpage-এর বড় অংশ, section, layout block বা একাধিক element একসাথে group করার জন্য ব্যবহার করা হয়। নিজে নিজে এটি বিশেষ design তৈরি করে না; তবে CSS style দিলে এটি section, box বা layout তৈরিতে খুব গুরুত্বপূর্ণ হয়ে ওঠে।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div>
+  Content here
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div>
+  <h2>About College</h2>
+  <p>ABC College is a reputed institution.</p>
+</div>
+\end{verbatim}
+\end{examplebox}
+
+এখানে heading ও paragraph একসাথে একটি section বা block হিসেবে group করা হয়েছে।
+
+\subsection{\texttt{<div>} Tag-এর ব্যবহার}
+
+\texttt{<div>} সাধারণত webpage-এর বড় অংশ ভাগ করতে ব্যবহৃত হয়।
+
+\begin{itemize}
+\item Header section তৈরি করতে
+\item Navigation/menu area group করতে
+\item Main content section তৈরি করতে
+\item Sidebar তৈরি করতে
+\item Footer section তৈরি করতে
+\item একাধিক element একসাথে style করতে
+\item webpage layout তৈরি করতে
+\end{itemize}
+
+\subsection{Example: Page Section}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Div Example</title>
+</head>
+<body>
+  <div style="background-color:lightblue; padding:10px;">
+    <h1>ABC College</h1>
+    <p>Welcome to our official website.</p>
+  </div>
+
+  <div style="background-color:lightyellow; padding:10px;">
+    <h2>Notice</h2>
+    <p>HSC ICT class will start from Sunday.</p>
+  </div>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+প্রথম \texttt{<div>} একটি light blue background section তৈরি করবে। দ্বিতীয় \texttt{<div>} একটি light yellow background section তৈরি করবে।
+\end{examplebox}
+
+\subsection{\texttt{<span>} Tag কী?}
+
+\begin{definitionbox}{\texttt{<span>} tag}
+HTML document-এর text বা inline content-এর নির্দিষ্ট অংশকে আলাদা করে style বা script প্রয়োগ করার জন্য ব্যবহৃত inline container tag-কে \texttt{<span>} tag বলে।
+\end{definitionbox}
+
+\texttt{<span>} হলো HTML-এর একটি inline container tag। এটি কোনো paragraph বা line-এর ভিতরে text-এর নির্দিষ্ট অংশ আলাদা করে style করার জন্য ব্যবহৃত হয়। \texttt{<span>} সাধারণত নতুন line তৈরি করে না।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<span>Text</span>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>This is normal text.
+  <span style="color:red;">This is red text.</span>
+</p>
+\end{verbatim}
+\end{examplebox}
+
+এখানে শুধু \textbf{This is red text.} অংশটি red color হবে।
+
+\subsection{\texttt{<div>} ও \texttt{<span>}-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{\texttt{<div>}} & \textbf{\texttt{<span>}} \\
+\hline
+Element type & Block-level container & Inline-level container \\
+\hline
+কাজ & বড় section বা block group করে & text/inline অংশ group করে \\
+\hline
+নতুন line তৈরি করে? & সাধারণত হ্যাঁ & না \\
+\hline
+ব্যবহার & layout, section, card, box & paragraph-এর ভিতরে নির্দিষ্ট word/phrase style \\
+\hline
+Example & header, footer, notice box & red word, highlighted text \\
+\hline
+Closing tag & আছে & আছে \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{সহজ মনে রাখার নিয়ম}
+\texttt{div} = division = বড় ভাগ বা section। \texttt{span} = ছোট inline অংশ।
+\end{keypointbox}
+
+\subsection{Style Attribute কী?}
+
+\begin{definitionbox}{style attribute}
+HTML element-এর opening tag-এর মধ্যে সরাসরি CSS property ও value ব্যবহার করে style প্রয়োগ করার পদ্ধতিকে style attribute বলা হয়।
+\end{definitionbox}
+
+\texttt{style} হলো HTML-এর একটি global attribute। এর মাধ্যমে কোনো element-এ সরাসরি CSS style দেওয়া যায়।
+
+\subsubsection{Basic Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<tag style="property:value;">Content</tag>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p style="color:red;">This text is red.</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.50\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{পরিচয়} \\
+\hline
+\texttt{style} & attribute \\
+\hline
+\texttt{color} & CSS property \\
+\hline
+\texttt{red} & property value \\
+\hline
+\texttt{color:red;} & CSS declaration \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Style Attribute-এর সঠিক নিয়ম}
+
+\texttt{style} attribute-এর ভিতরে CSS property ও value লিখতে হয়।
+
+\subsubsection{সঠিক structure}
+
+\begin{verbatim}
+style="property:value; property:value;"
+\end{verbatim}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="color:red; background-color:yellow;">
+  HSC ICT
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\begin{boardbox}{গুরুত্বপূর্ণ নিয়ম}
+\begin{itemize}
+\item Property ও value-এর মাঝে colon \texttt{:} দিতে হয়।
+\item একাধিক declaration-এর মাঝে semicolon \texttt{;} দিতে হয়।
+\item Attribute value quotation mark-এর মধ্যে লেখা ভালো।
+\item CSS property-value লেখার সময় \texttt{=} ব্যবহার করা যাবে না।
+\item comma দিয়ে CSS declaration আলাদা করা যাবে না।
+\end{itemize}
+\end{boardbox}
+
+\subsection{Correct vs Incorrect Style Syntax}
+
+\subsubsection{Correct}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="color:red; float:left;">
+  ICT
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Incorrect}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="color=red, float=left">
+  ICT
+</div>
+\end{verbatim}
+\end{examplebox}
+
+এটি ভুল, কারণ \texttt{color=red} নয়, সঠিক হলো \texttt{color:red}। আবার \texttt{float=left} নয়, সঠিক হলো \texttt{float:left}। CSS declaration আলাদা করতে comma নয়, semicolon ব্যবহার করতে হয়।
+
+\subsection{Inline CSS কী?}
+
+\begin{definitionbox}{Inline CSS}
+কোনো HTML element-এর opening tag-এর মধ্যে \texttt{style} attribute ব্যবহার করে সরাসরি CSS property-value লেখা হলে তাকে Inline CSS বলে।
+\end{definitionbox}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<h1 style="color:blue;">HSC ICT</h1>
+<p style="font-size:20px;">Web Design and HTML</p>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{গুরুত্বপূর্ণ CSS Property}
+
+HSC level-এ style attribute শেখার জন্য নিচের propertyগুলো বেশি গুরুত্বপূর্ণ।
+
+\begin{center}
+\begin{tabular}{|p{0.26\textwidth}|p{0.34\textwidth}|p{0.26\textwidth}|}
+\hline
+\textbf{Property} & \textbf{কাজ} & \textbf{Example} \\
+\hline
+\texttt{color} & text color নির্ধারণ করে & \texttt{color:red;} \\
+\hline
+\texttt{background-color} & background color নির্ধারণ করে & \texttt{background-color:yellow;} \\
+\hline
+\texttt{font-size} & font size নির্ধারণ করে & \texttt{font-size:20px;} \\
+\hline
+\texttt{font-family} & font style/family নির্ধারণ করে & \texttt{font-family:Arial;} \\
+\hline
+\texttt{text-align} & text alignment নির্ধারণ করে & \texttt{text-align:center;} \\
+\hline
+\texttt{width} & element-এর প্রস্থ নির্ধারণ করে & \texttt{width:200px;} \\
+\hline
+\texttt{height} & element-এর উচ্চতা নির্ধারণ করে & \texttt{height:100px;} \\
+\hline
+\texttt{margin} & element-এর বাইরের ফাঁকা জায়গা & \texttt{margin:10px;} \\
+\hline
+\texttt{padding} & element-এর ভিতরের ফাঁকা জায়গা & \texttt{padding:10px;} \\
+\hline
+\texttt{border} & border তৈরি করে & \texttt{border:1px solid black;} \\
+\hline
+\texttt{float} & element-কে left/right দিকে ভাসায় & \texttt{float:left;} \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{\texttt{<div>}-এ Style Attribute ব্যবহার}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Div Style Example</title>
+</head>
+<body>
+  <div style="background-color:lightyellow; border:1px solid black; padding:10px; width:300px;">
+    <h2>Notice</h2>
+    <p>ICT class will start at 10:00 AM.</p>
+  </div>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+একটি notice box দেখা যাবে। এর background light yellow হবে, border থাকবে, ভিতরে padding থাকবে এবং box-এর ভিতরে Notice heading ও paragraph থাকবে।
+\end{examplebox}
+
+\subsection{\texttt{<span>}-এ Style Attribute ব্যবহার}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Span Style Example</title>
+</head>
+<body>
+  <p>
+    HTML is used to create
+    <span style="color:red; font-weight:bold;">web pages</span>.
+  </p>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+পুরো paragraph normal থাকবে, কিন্তু \textbf{web pages} অংশটি red ও bold হবে।
+\end{examplebox}
+
+\subsection{\texttt{<div>} ও \texttt{<span>} একসাথে ব্যবহার}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Div and Span Example</title>
+</head>
+<body>
+  <div style="background-color:#eeeeee; padding:15px; border:1px solid gray;">
+    <h1>HSC ICT Book</h1>
+    <p>
+      This chapter is about
+      <span style="color:blue; font-weight:bold;">Web Design and HTML</span>.
+    </p>
+  </div>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{keypointbox}{Explanation}
+\texttt{<div>} পুরো section-টিকে gray background box করেছে। \texttt{<span>} শুধু ``Web Design and HTML'' অংশে blue bold style দিয়েছে।
+\end{keypointbox}
+
+\subsection{Margin ও Padding}
+
+\subsubsection{Margin কী?}
+
+\texttt{margin} element-এর বাইরের ফাঁকা জায়গা নির্ধারণ করে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="margin:20px;">Content</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Padding কী?}
+
+\texttt{padding} element-এর content ও border-এর মাঝের ভিতরের ফাঁকা জায়গা নির্ধারণ করে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="padding:20px;">Content</div>
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Margin} & \textbf{Padding} \\
+\hline
+অবস্থান & border-এর বাইরে & border-এর ভিতরে \\
+\hline
+কাজ & element-এর বাইরে space তৈরি করে & content-এর চারপাশে ভিতরের space তৈরি করে \\
+\hline
+Example & \texttt{margin:10px;} & \texttt{padding:10px;} \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Border}
+
+Element-এর চারপাশে border দিতে \texttt{border} property ব্যবহার করা হয়।
+
+\begin{verbatim}
+style="border:1px solid black;"
+\end{verbatim}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="border:2px solid blue; padding:10px;">
+  Important Note
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.48\textwidth}|}
+\hline
+\textbf{অংশ} & \textbf{অর্থ} \\
+\hline
+\texttt{2px} & border-এর পুরুত্ব \\
+\hline
+\texttt{solid} & border-এর ধরন \\
+\hline
+\texttt{blue} & border color \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Text Align}
+
+Text বাম, মাঝখান বা ডানে রাখতে \texttt{text-align} property ব্যবহার করা হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<h1 style="text-align:center;">ABC College</h1>
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.50\textwidth}|}
+\hline
+\textbf{Value} & \textbf{কাজ} \\
+\hline
+\texttt{left} & বামে রাখে \\
+\hline
+\texttt{center} & মাঝখানে রাখে \\
+\hline
+\texttt{right} & ডানে রাখে \\
+\hline
+\texttt{justify} & দুই পাশে সমানভাবে ছড়িয়ে দেয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Color Value}
+
+HTML/CSS-এ color কয়েকভাবে দেওয়া যায়।
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.50\textwidth}|}
+\hline
+\textbf{পদ্ধতি} & \textbf{Example} \\
+\hline
+Color name & \texttt{red}, \texttt{blue}, \texttt{green} \\
+\hline
+Hex code & \texttt{\#FF0000}, \texttt{\#FFFFFF} \\
+\hline
+RGB & \texttt{rgb(255, 0, 0)} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{MCQ point}
+\texttt{\#FFFFFF} সাদা color নির্দেশ করে।
+\end{boardbox}
+
+\subsection{Internal CSS: \texttt{<style>} Tag}
+
+যদি অনেক element-এ একই style দিতে হয়, তাহলে বারবার inline style না লিখে \texttt{<head>} section-এর ভিতরে \texttt{<style>} tag ব্যবহার করা যায়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internal CSS Example</title>
+  <style>
+    div {
+      background-color: lightblue;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div>First Box</div>
+  <div>Second Box</div>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+দুইটি \texttt{<div>} একই style পাবে।
+\end{examplebox}
+
+\subsection{Inline CSS বনাম Internal CSS}
+
+\begin{center}
+\begin{tabular}{|p{0.21\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Inline CSS} & \textbf{Internal CSS} \\
+\hline
+কোথায় লেখা হয় & element-এর opening tag-এ & \texttt{<head>}-এর ভিতরে \texttt{<style>} tag-এ \\
+\hline
+Syntax & \texttt{<p style="color:red;">} & \texttt{p \{ color:red; \}} \\
+\hline
+ব্যবহার & একক element দ্রুত style করা & একটি page-এর অনেক element style করা \\
+\hline
+সুবিধা & সহজ ও দ্রুত & code পরিষ্কার থাকে \\
+\hline
+সীমাবদ্ধতা & code messy হয় & CSS syntax জানা দরকার \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Full Example: Mini Webpage Layout}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Webpage Layout</title>
+</head>
+<body>
+  <div style="background-color:#004080; color:white; padding:15px; text-align:center;">
+    <h1>ABC College</h1>
+    <p>Official Website</p>
+  </div>
+
+  <div style="background-color:#eeeeee; padding:10px; margin-top:10px;">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="notice.html">Notice</a> |
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div style="padding:15px; border:1px solid #cccccc; margin-top:10px;">
+    <h2>Welcome</h2>
+    <p>
+      This website is designed for
+      <span style="color:red; font-weight:bold;">HSC ICT students</span>.
+    </p>
+  </div>
+
+  <div style="background-color:#222222; color:white; padding:10px; text-align:center; margin-top:10px;">
+    <p>&copy; 2026 ABC College</p>
+  </div>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output Explanation}
+প্রথম \texttt{<div>} header section, দ্বিতীয় \texttt{<div>} navigation section, তৃতীয় \texttt{<div>} main content section এবং শেষ \texttt{<div>} footer section। \texttt{<span>} দিয়ে নির্দিষ্ট text red bold করা হয়েছে।
+\end{examplebox}
+
+\subsection{HSC Board/Exam Focus}
+
+\begin{boardbox}{বেশি গুরুত্বপূর্ণ}
+\begin{itemize}
+\item Document-এর বিভিন্ন অংশ আলাদা করতে \texttt{<div>} ব্যবহার হয়।
+\item নির্দিষ্ট inline অংশ নির্বাচন করতে \texttt{<span>} ব্যবহার হয়।
+\item \texttt{<div>} block-level, \texttt{<span>} inline-level।
+\item \texttt{style} attribute দিয়ে inline CSS লেখা হয়।
+\item Style syntax: \texttt{property:value;}
+\item Multiple style declaration semicolon \texttt{;} দিয়ে আলাদা হয়।
+\item \texttt{color:red; float:left;} সঠিক style syntax।
+\item \texttt{color=red} ভুল syntax।
+\item \texttt{background-color}, \texttt{color}, \texttt{width}, \texttt{height}, \texttt{margin}, \texttt{padding}, \texttt{float} গুরুত্বপূর্ণ property।
+\end{itemize}
+\end{boardbox}
+
+\subsection{Exam-style Short Answer}
+
+\begin{enumerate}
+\item \textbf{\texttt{<div>} tag কী?}\\
+উত্তর: HTML document-এর বিভিন্ন অংশ বা section-কে আলাদা block আকারে group করার জন্য ব্যবহৃত container tag-কে \texttt{<div>} tag বলে। এটি header, menu, content, sidebar বা footer section তৈরি করতে ব্যবহার করা যায়।
+
+\item \textbf{\texttt{<span>} tag কী?}\\
+উত্তর: HTML document-এর text বা inline content-এর নির্দিষ্ট অংশকে আলাদা করে style বা script প্রয়োগ করার জন্য ব্যবহৃত inline container tag-কে \texttt{<span>} tag বলে। এটি paragraph-এর ভিতরে কোনো নির্দিষ্ট word বা phrase style করতে ব্যবহৃত হয়।
+
+\item \textbf{\texttt{<div>} ও \texttt{<span>}-এর পার্থক্য লেখ।}\\
+উত্তর: \texttt{<div>} একটি block-level container, যা webpage-এর বড় section বা block group করতে ব্যবহৃত হয়। অন্যদিকে \texttt{<span>} একটি inline-level container, যা text বা line-এর ভিতরে নির্দিষ্ট অংশ group করতে ব্যবহৃত হয়।
+
+\item \textbf{Style attribute কী?}\\
+উত্তর: HTML element-এর opening tag-এর মধ্যে সরাসরি CSS property ও value ব্যবহার করে style প্রয়োগ করার পদ্ধতিকে style attribute বলে। যেমন \texttt{<p style="color:red;">ICT</p>}।
+
+\item \textbf{\texttt{style="color:red; float:left;"} কেন সঠিক?}\\
+উত্তর: কারণ style attribute-এর ভিতরে CSS property ও value colon \texttt{:} দিয়ে লেখা হয় এবং একাধিক declaration semicolon \texttt{;} দিয়ে আলাদা করা হয়। এখানে \texttt{color:red;} এবং \texttt{float:left;}--দুটি declaration সঠিকভাবে লেখা হয়েছে।
+\end{enumerate}
+
+\subsection{Practice MCQ}
+
+\begin{enumerate}
+\item HTML document-এর বিভিন্ন অংশ আলাদা করতে কোন tag ব্যবহৃত হয়?\\
+ক) \texttt{<span>} \quad খ) \texttt{<div>} \quad গ) \texttt{<select>} \quad ঘ) \texttt{<option>}
+
+\item Text-এর নির্দিষ্ট inline অংশ style করতে কোন tag বেশি উপযোগী?\\
+ক) \texttt{<div>} \quad খ) \texttt{<span>} \quad গ) \texttt{<table>} \quad ঘ) \texttt{<hr>}
+
+\item \texttt{<div>} কোন ধরনের element?\\
+ক) Inline-level \quad খ) Block-level \quad গ) Empty tag \quad ঘ) Image tag
+
+\item \texttt{<span>} কোন ধরনের element?\\
+ক) Inline-level \quad খ) Block-level \quad গ) Table tag \quad ঘ) Empty tag
+
+\item নিচের কোন style attribute syntax সঠিক?\\
+ক) \texttt{<div style="color:red, float=left">}\\
+খ) \texttt{<div style="color=red; float:left">}\\
+গ) \texttt{<div style="color:red; float:left;">}\\
+ঘ) \texttt{<div style="color:red" "float:left">}
+
+\item \texttt{background-color} property-এর কাজ কী?\\
+ক) text color পরিবর্তন করা\\
+খ) background color পরিবর্তন করা\\
+গ) link তৈরি করা\\
+ঘ) image যোগ করা
+\end{enumerate}
+
+\begin{boardbox}{MCQ Answer Key}
+১-খ, ২-খ, ৩-খ, ৪-ক, ৫-গ, ৬-খ
+\end{boardbox}
+
+\subsection{CQ Practice}
+
+\begin{practicebox}
+\textbf{উদ্দীপক:} রাফি তার কলেজের homepage তৈরি করছে। সে page-এর উপরে একটি header section, তার নিচে menu section এবং পরে main content section তৈরি করতে চায়। Main content-এর paragraph-এর ভিতরে ``HSC ICT students'' অংশটি red ও bold করতে চায়।
+
+\textbf{প্রশ্ন}\\
+ক. \texttt{<div>} tag কী?\\
+খ. \texttt{<span>} tag inline element কেন?\\
+গ. উদ্দীপকের জন্য HTML code লেখ।\\
+ঘ. Webpage design-এ \texttt{<div>}, \texttt{<span>} ও \texttt{style} attribute-এর ভূমিকা বিশ্লেষণ কর।
+\end{practicebox}
+
+\subsubsection{গ. Code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ABC College</title>
+</head>
+<body>
+  <div style="background-color:navy; color:white; padding:15px; text-align:center;">
+    <h1>ABC College</h1>
+    <p>Official Website</p>
+  </div>
+
+  <div style="background-color:#eeeeee; padding:10px;">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="notice.html">Notice</a> |
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div style="padding:15px; border:1px solid gray; margin-top:10px;">
+    <h2>Welcome</h2>
+    <p>
+      This website is designed for
+      <span style="color:red; font-weight:bold;">HSC ICT students</span>.
+    </p>
+  </div>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{ঘ. বিশ্লেষণ}
+
+\texttt{<div>} webpage-এর বড় section যেমন header, menu, content ও footer আলাদা করতে সাহায্য করে। \texttt{<span>} paragraph বা line-এর নির্দিষ্ট ছোট অংশ style করতে ব্যবহৃত হয়। \texttt{style} attribute দিয়ে সরাসরি CSS property-value ব্যবহার করে color, background, padding, margin, border, alignment ইত্যাদি নিয়ন্ত্রণ করা যায়। তাই এই তিনটি ব্যবহার করলে webpage বেশি সাজানো, আকর্ষণীয় ও ব্যবহারবান্ধব হয়।
+
+\subsection{Common Mistake}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item নির্দিষ্ট word style করতে \texttt{<div>} ব্যবহার করা।
+\item পুরো section group করতে \texttt{<span>} ব্যবহার করা।
+\item \texttt{style="color=red"} লেখা; সঠিক \texttt{style="color:red;"}।
+\item CSS declaration-এর মাঝে comma ব্যবহার করা।
+\item \texttt{background color} লেখা; সঠিক \texttt{background-color}।
+\item semicolon \texttt{;} না দেওয়া।
+\item \texttt{<div>} ও \texttt{<span>} closing tag না দেওয়া।
+\item inline CSS বেশি ব্যবহার করে code অগোছালো করা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{recapbox}
+\texttt{<div>} বড় section বা block group করে। \texttt{<span>} text-এর ছোট inline অংশ group করে। \texttt{<div>} block-level এবং \texttt{<span>} inline-level। \texttt{style} attribute দিয়ে inline CSS লেখা যায়। Style syntax হলো \texttt{property:value;}। একাধিক style declaration semicolon দিয়ে আলাদা করতে হয়। Professional design-এ বারবার inline style না লিখে internal বা external CSS ব্যবহার করা ভালো।
+\end{recapbox}
+
+
+\begin{boardbox}{পরবর্তী টপিক}
+পরের টপিক: Full Webpage Designing Practical--Header, Menu, Image, Table, List ও Link দিয়ে সম্পূর্ণ page তৈরি।
+\end{boardbox}

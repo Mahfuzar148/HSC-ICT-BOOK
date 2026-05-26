@@ -1,53 +1,283 @@
-% ৪.৪ ট্যাগ ও সিনট্যাক্স
-\section{ট্যাগ ও সিনট্যাক্স}
+% ৪.৪ HTML ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট ও সিনট্যাক্স
+\section{HTML ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট ও সিনট্যাক্স}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item tag, element ও attribute-এর পার্থক্য লিখতে।
-\item paired tag ও empty tag শনাক্ত করতে।
-\item একটি valid HTML document-এর basic structure লিখতে।
+\item HTML tag, element, attribute, content ও attribute value আলাদা করতে।
+\item start tag, end tag, paired tag ও empty/void tag শনাক্ত করতে।
+\item valid HTML syntax ও common syntax mistake বোঝাতে।
+\item ছোট HTML code বিশ্লেষণ করে প্রতিটি অংশের কাজ বলতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Tag, Element ও Attribute}
+
+\subsection{HTML Tag কী}
 \begin{definitionbox}{Tag}
-angle bracket-এর মধ্যে লেখা HTML নির্দেশনাকে tag বলা হয়। যেমন \texttt{<p>} paragraph শুরু করে এবং \texttt{</p>} paragraph শেষ করে।
+HTML document-এ content-এর ধরন বা কাজ বোঝাতে angle bracket \texttt{< >}-এর মধ্যে যে keyword লেখা হয় তাকে tag বলে। যেমন \texttt{<p>} paragraph শুরু করে এবং \texttt{</p>} paragraph শেষ করে।
+\end{definitionbox}
+
+\begin{definitionbox}{Content}
+Start tag ও end tag-এর মাঝখানে যে text, image, link বা অন্য element থাকে তাকে content বলা হয়। যেমন \texttt{<h1>Welcome to ICT</h1>}-এ \texttt{Welcome to ICT} content।
 \end{definitionbox}
 
 \begin{definitionbox}{Element}
-start tag, content এবং end tag মিলিয়ে একটি HTML element তৈরি হয়। যেমন \texttt{<h1>Title</h1>} একটি heading element।
+Start tag, content এবং end tag মিলিয়ে একটি HTML element তৈরি হয়। যেমন \texttt{<h1>Title</h1>} একটি heading element।
 \end{definitionbox}
 
 \begin{definitionbox}{Attribute}
-tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে attribute ব্যবহৃত হয়। যেমন \texttt{<a href="page.html">Link</a>}-এ \texttt{href} attribute।
+Tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে attribute ব্যবহৃত হয়। Attribute সাধারণত opening tag-এর মধ্যে লেখা হয়। যেমন \texttt{<a href="page.html">Link</a>}-এ \texttt{href} attribute।
 \end{definitionbox}
+
+\begin{definitionbox}{Attribute value}
+Attribute-এর নির্দিষ্ট মানকে attribute value বলে। যেমন \texttt{<p align="center">ICT</p>}-এ \texttt{center} হলো \texttt{align} attribute-এর value।
+\end{definitionbox}
+
+\begin{keypointbox}{এক নজরে}
+\begin{itemize}
+\item Tag = নির্দেশনা
+\item Element = start tag + content + end tag
+\item Attribute = অতিরিক্ত তথ্য
+\item Value = attribute-এর মান
+\end{itemize}
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.16\textwidth}|p{0.25\textwidth}|p{0.43\textwidth}|}
+\hline
+\textbf{Term} & \textbf{সংক্ষিপ্ত অর্থ} & \textbf{উদাহরণ} \\
+\hline
+Tag & angle bracket-এর মধ্যে লেখা নির্দেশনা & \texttt{<p>}, \texttt{</p>}, \texttt{<a>} \\
+\hline
+Element & শুরু, content ও শেষ অংশের সমষ্টি & \texttt{<p>Text</p>} \\
+\hline
+Attribute & tag-এর অতিরিক্ত তথ্য & \texttt{href}, \texttt{src}, \texttt{alt}, \texttt{align} \\
+\hline
+Attribute value & attribute-এর নির্দিষ্ট মান & \texttt{"page.html"}, \texttt{"center"} \\
+\hline
+Content & tag-এর মাঝের লেখা বা nested অংশ & text, image, link text, list item \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  node distance=16mm and 20mm,
+  box/.style={draw, rounded corners, align=center, inner sep=5pt, text width=34mm, fill=gray!5}
+]
+\node[box] (element) {\textbf{HTML element}\\\texttt{<p align="center">Bangladesh</p>}};
+\node[box, above left=of element] (starttag) {\textbf{Start tag}\\\texttt{<p align="center">}};
+\node[box, above right=of element] (endtag) {\textbf{End tag}\\\texttt{</p>}};
+\node[box, below=of element] (attr) {\textbf{Attribute}\\\texttt{align="center"}};
+\draw[->, thick] (starttag) -- (element);
+\draw[->, thick] (endtag) -- (element);
+\draw[->, thick] (attr) -- (element);
+\end{tikzpicture}
+\caption{HTML tag, element ও attribute-এর সম্পর্ক}
+\label{fig:html-tag-element-attribute}
+\end{figure}
 
 \subsection{ট্যাগের ধরন}
 \begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
+\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.34\textwidth}|}
 \hline
 \textbf{ধরন} & \textbf{উদাহরণ} & \textbf{কাজ} \\
 \hline
-Paired tag & \texttt{<p>...</p>} & content ঘিরে রাখে \\
+Paired tag / container tag & \texttt{<p>...</p>} & content ঘিরে রাখে \\
 \hline
-Empty tag & \texttt{<br>}, \texttt{<img>} & end tag সাধারণত থাকে না \\
+Empty tag / void tag & \texttt{<br>}, \texttt{<img>} & end tag থাকে না; নিজেই কাজ সম্পন্ন করে \\
 \hline
 Attributeসহ tag & \texttt{<img src="a.jpg" alt="A">} & অতিরিক্ত তথ্য দেয় \\
 \hline
 \end{tabular}
 \end{center}
 
+\begin{definitionbox}{Paired tag}
+যে HTML tag-এর opening tag ও closing tag দু'টি অংশ থাকে এবং মাঝখানে content থাকে, তাকে paired tag বলে। যেমন \texttt{<p>Bangladesh</p>}।
+\end{definitionbox}
+
+\begin{definitionbox}{Empty tag}
+যে HTML tag-এর সাধারণত কোনো closing tag থাকে না এবং যা content ঘিরে রাখে না, তাকে empty tag বলে। আধুনিক HTML-এ এগুলোকেই প্রায়শ void element বলা হয়। যেমন \texttt{<br>}, \texttt{<hr>}, \texttt{<img>}।
+\end{definitionbox}
+
+\begin{keypointbox}{Source PDF মিলিয়ে important empty tag}
+HSC MCQ-তে empty tag শনাক্ত করতে বলা হয়। মনে রাখবে:
+\begin{itemize}
+\item \texttt{<br>} - line break
+\item \texttt{<hr>} - horizontal line
+\item \texttt{<img>} - image
+\item \texttt{<meta>} - metadata/charset
+\item \texttt{<link>} - external resource link, যেমন CSS file
+\item \texttt{<base>} - relative URL-এর base address
+\end{itemize}
+\end{keypointbox}
+
+\subsection{HTML Syntax}
+HTML code লেখার নিয়মকেই HTML syntax বলে। Syntax ঠিক না হলে browser অনেক সময় code-কে সঠিকভাবে বুঝতে পারে না।
+
+\begin{definitionbox}{Syntax}
+HTML document-এ tag, element, attribute ও content সঠিকভাবে লেখার নিয়মকে syntax বলে।
+\end{definitionbox}
+
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\textbf{HTML document structure placeholder}\\[4pt]
-\texttt{<!DOCTYPE html>} document type জানায়।\\
-\texttt{<html>} পুরো document ধরে।\\
-\texttt{<head>} metadata/title রাখে।\\
-\texttt{<body>} দৃশ্যমান content রাখে।
+\fbox{\parbox{0.92\textwidth}{
+\textbf{Basic syntax pattern}\\[4pt]
+\texttt{<tag>content</tag>}\\
+\texttt{<tag attribute="value">content</tag>}\\
+\texttt{<empty-tag>}\\[2pt]
+Tag সাধারণত angle bracket-এর মধ্যে থাকে, attribute opening tag-এর মধ্যে থাকে, আর closing tag-এ slash \texttt{/} ব্যবহার করা হয়।
 }}
 \end{center}
 
+\begin{keypointbox}{HTML syntax-এর প্রধান নিয়ম}
+\begin{itemize}
+\item Tag অবশ্যই \texttt{< >} angle bracket-এর মধ্যে লিখতে হবে।
+\item Closing tag-এ keyword-এর আগে \texttt{/} slash থাকবে।
+\item Attribute সাধারণত opening tag-এর মধ্যে লিখতে হবে।
+\item Attribute name ও value-এর মাঝে \texttt{=} চিহ্ন থাকবে।
+\item Attribute value quote-এর মধ্যে লেখা উত্তম।
+\item Tag nesting সঠিক order-এ থাকতে হবে।
+\item HTML tag case-insensitive, তবে lowercase tag ব্যবহার করা ভালো।
+\item Empty/void tag-এর সাধারণত closing tag থাকে না।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Nested HTML Element}
+
+\begin{definitionbox}{Nested element}
+একটি HTML element-এর content হিসেবে আরেকটি HTML element ব্যবহার করা হলে তাকে nested HTML element বলা হয়।
+\end{definitionbox}
+
+Nested element লিখতে হলে tag close করার order ঠিক রাখতে হয়। যে tag আগে শুরু হয়েছে, সাধারণত তার ভিতরের tag আগে close হবে, তারপর বাইরের tag close হবে।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<p>
+  This is <b><i>important</i></b> text.
+</p>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{ব্যাখ্যা}
+এখানে \texttt{<i>} tag \texttt{<b>} tag-এর ভিতরে আছে। তাই আগে \texttt{</i>} এবং পরে \texttt{</b>} লেখা হয়েছে। এটি correct nesting।
+\end{examplebox}
+
+\begin{mistakebox}{ভুল nesting}
+\texttt{<b><i>ICT</b></i>} ভুল, কারণ এখানে \texttt{<i>} tag আগে close হওয়ার কথা ছিল, কিন্তু \texttt{</b>} আগে লেখা হয়েছে। তাই nesting order ভুল।
+\end{mistakebox}
+
+\subsection{Correct ও Incorrect syntax}
+\begin{examplebox}{Syntax example}
+\textbf{১. Paragraph tag}
+\begin{verbatim}
+<p>ICT is an important subject.</p>
+\end{verbatim}
+সঠিক, কারণ opening tag, content এবং closing tag তিনটিই আছে।
+
+\vspace{6pt}
+\textbf{২. Attributeসহ tag}
+\begin{verbatim}
+<p align="center">ICT</p>
+\end{verbatim}
+এখানে \texttt{align} হলো attribute এবং \texttt{center} হলো attribute value। বইয়ের উদাহরণে এই ধরনের লেখা board question-এ খুবই দেখা যায়।
+
+\vspace{6pt}
+\textbf{৩. Hyperlink tag}
+\begin{verbatim}
+<a href="next.html" target="_blank">Next Page</a>
+\end{verbatim}
+এখানে \texttt{href} destination page নির্দেশ করে, আর \texttt{target} link কোথায় খুলবে তা বোঝায়।
+
+\vspace{6pt}
+\textbf{৪. Image tag}
+\begin{verbatim}
+<img src="images/photo.jpg" alt="Photo description" width="300">
+\end{verbatim}
+\texttt{img} একটি empty tag; তাই এর closing tag নেই। \texttt{src} image-এর location দেখায় এবং \texttt{alt} বিকল্প text দেয়।
+
+\vspace{6pt}
+\textbf{৫. ভুল nesting}
+\begin{verbatim}
+<b><i>ICT</b></i>
+\end{verbatim}
+এটি ভুল, কারণ tag বন্ধ করার order ঠিক নেই।
+\end{examplebox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item Tag ও element এক মনে করা।
+\item Attribute-কে content মনে করা।
+\item Attribute value quote ছাড়া লেখা।
+\item Closing tag-এ \texttt{/} না দেওয়া।
+\item Empty tag-এর closing tag লিখতে যাওয়া।
+\item Tag nesting উল্টে দেওয়া।
+\item \texttt{center} বা \texttt{photo.jpg}-এর মতো value-কে attribute বলে ভুল করা।
+\end{itemize}
+\end{mistakebox}
+
+\subsection{Common tag examples}
+\begin{examplebox}{Tag উদাহরণসমূহ}
+\textbf{Document skeleton}
+\begin{verbatim}
+<!DOCTYPE html>
+<html lang="en">
+\t<head>
+\t\t<meta charset="utf-8">
+\t\t<title>Page Title</title>
+\t</head>
+\t<body>
+\t\t<h1>Welcome to HTML</h1>
+\t\t<p>This is a simple page.</p>
+\t</body>
+</html>
+\end{verbatim}
+\texttt{<!DOCTYPE html>} browser-কে document type জানায়; \texttt{<html>} পুরো document ধরে; \texttt{<head>} metadata/title রাখে; \texttt{<body>} দৃশ্যমান content রাখে।
+
+\vspace{6pt}
+\textbf{Headings and paragraph}
+\begin{verbatim}
+<h1>Main heading</h1>
+<h2>Sub heading</h2>
+<p>This is a paragraph.</p>
+\end{verbatim}
+\texttt{<h1>} সবচেয়ে বড় heading, আর \texttt{<p>} paragraph তৈরি করে।
+
+\vspace{6pt}
+\textbf{Line break and horizontal rule}
+\begin{verbatim}
+Line 1<br>Line 2
+<hr>
+\end{verbatim}
+\texttt{<br>} নতুন line তৈরি করে; \texttt{<hr>} বিষয়কে আলাদা করতে একটি horizontal line দেয়।
+
+\vspace{6pt}
+\textbf{Comment}
+\begin{verbatim}
+<!-- This is a comment -->
+\end{verbatim}
+Comment ব্রাউজারে দেখা যায় না; এটি code বুঝতে সাহায্য করে।
+\end{examplebox}
+
 \begin{boardbox}{বোর্ড ফোকাস}
-Tag, element ও attribute-এর পার্থক্য উদাহরণসহ লিখলে উত্তর সহজে বোঝা যায়। শুধু সংজ্ঞা মুখস্থ করলে অনেক সময় নম্বর কমে।
+Tag, element, attribute ও syntax নিয়ে প্রশ্নে প্রথমে সংজ্ঞা, পরে একটি ছোট code example এবং শেষে প্রতিটি অংশের কাজ লিখলে উত্তর পরিষ্কার হয়। বিশেষ করে \texttt{<p align="center">ICT</p>} এবং \texttt{<img src="..." alt="...">} type example ভালোভাবে অনুশীলন করো।
 \end{boardbox}
+
+\begin{practicebox}
+\begin{enumerate}
+\item HTML tag, element ও attribute-এর পার্থক্য একটি উদাহরণসহ লেখো।
+\item \texttt{<p align="center">ICT</p>} code-এ tag, attribute, value ও content শনাক্ত করো।
+\item Empty tag কাকে বলে? দুটি উদাহরণ লেখো।
+\item নিচের code-এ কোন syntax ভুল আছে তা শনাক্ত করো: \texttt{<h1>Welcome<h1>}
+\end{enumerate}
+\end{practicebox}
+
+\begin{recapbox}
+\begin{itemize}
+\item Tag = angle bracket-এর মধ্যে লেখা নির্দেশনা।
+\item Element = opening tag + content + closing tag।
+\item Attribute = অতিরিক্ত তথ্য; value = attribute-এর মান।
+\item Syntax = code লেখার নিয়ম।
+\item Paired tag content ঘিরে রাখে, empty tag সাধারণত content ঘিরে রাখে না।
+\end{itemize}
+\end{recapbox}

@@ -1,54 +1,572 @@
-% ৪.৮ ইমেজ নিয়ন্ত্রণ ও ব্যবহার
-\section{ইমেজ নিয়ন্ত্রণ ও ব্যবহার}
+% 4.x Image in HTML
+\section{HTML-এ Image Add করা}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item \texttt{<img>} tag-এর syntax ও attribute ব্যবহার করতে।
-\item \texttt{src}, \texttt{alt}, \texttt{width}, \texttt{height} attribute ব্যাখ্যা করতে।
-\item image optimization ও accessibility-এর গুরুত্ব বুঝতে।
+\item HTML page-এ image যুক্ত করার নিয়ম ব্যাখ্যা করতে।
+\item \texttt{<img>} tag empty tag কেন তা লিখতে।
+\item \texttt{src}, \texttt{alt}, \texttt{width} ও \texttt{height} attribute ব্যবহার করতে।
+\item image path, image format, image alignment, border ও image link বুঝতে।
+\item responsive image hint যেমন \texttt{srcset}, \texttt{sizes} ও \texttt{loading} চিনতে।
+\item table cell-এর ভিতরে image বসানোর code লিখতে।
+\item HSC practical ও board exam-এর image-related প্রশ্নের উত্তর দিতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Image tag}
-HTML-এ image দেখাতে \texttt{<img>} tag ব্যবহার করা হয়। এটি সাধারণত empty tag, অর্থাৎ আলাদা closing tag থাকে না।
+Hyperlink শেখার পর image শেখা সহজ, কারণ web page-এ image শুধু দেখানোই নয়, image-এর ওপর link-ও দেওয়া যায়। কোনো college website-এ logo, banner, teacher photo, campus image, notice image বা gallery photo দেখাতে HTML-এর \texttt{<img>} tag ব্যবহার করা হয়।
 
-\begin{definitionbox}{\texttt{<img>} tag}
-\texttt{<img src="photo.jpg" alt="Description">} syntax ব্যবহার করে web page-এ image যুক্ত করা যায়। \texttt{src} image file-এর path এবং \texttt{alt} বিকল্প text নির্দেশ করে।
+\subsection{Image Tag কী?}
+
+\begin{definitionbox}{Image tag}
+HTML-এ web page-এ ছবি যুক্ত করার জন্য যে tag ব্যবহার করা হয়, তাকে image tag বলে। Image tag হলো \texttt{<img>}।
 \end{definitionbox}
 
+তবে শুধু \texttt{<img>} লিখলে image দেখা যাবে না। Browser-কে image file কোথায় আছে তা জানাতে \texttt{src} attribute ব্যবহার করতে হয়। Image load না হলে বিকল্প text দেখানোর জন্য \texttt{alt} attribute ব্যবহার করা হয়।
+
+\subsection{\texttt{<img>} Tag-এর সংজ্ঞা}
+
+\begin{definitionbox}{\texttt{<img>} tag}
+\texttt{<img>} tag হলো HTML-এর একটি empty tag, যার মাধ্যমে web page-এ image বা picture যুক্ত করা হয়।
+\end{definitionbox}
+
+\texttt{<img>} tag-কে empty tag বলা হয়, কারণ:
+
+\begin{itemize}
+\item এর closing tag নেই।
+\item এর ভিতরে text content থাকে না।
+\item এটি attribute ব্যবহার করে image প্রদর্শন করে।
+\end{itemize}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+\texttt{<img>} tag HTML page-এ image যুক্ত করার জন্য ব্যবহৃত হয়। এটি একটি empty tag, তাই এর কোনো closing tag নেই।
+\end{boardbox}
+
+\subsection{Image Add করার Basic Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="image-name">
+\end{verbatim}
+\end{examplebox}
+
+আরও standard syntax:
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="image-name.jpg" alt="Image description">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="flower.jpg" alt="Flower">
+\end{verbatim}
+\end{examplebox}
+
 \begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.24\textwidth}|}
+\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
 \hline
-\textbf{Attribute} & \textbf{কাজ} & \textbf{নোট} \\
+\textbf{অংশ} & \textbf{কাজ} \\
 \hline
-\texttt{src} & image file-এর path & আবশ্যক \\
+\texttt{<img>} & image tag \\
 \hline
-\texttt{alt} & image না দেখা গেলে text & accessibility-এর জন্য জরুরি \\
+\texttt{src} & image file-এর path বা name নির্দেশ করে \\
 \hline
-\texttt{width} & image-এর প্রস্থ & CSS দিয়ে করা ভালো \\
+\texttt{"flower.jpg"} & image file name \\
 \hline
-\texttt{height} & image-এর উচ্চতা & aspect ratio খেয়াল রাখতে হয় \\
+\texttt{alt} & image না দেখালে alternative text দেয় \\
+\hline
+\texttt{"Flower"} & alternative text \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Image placeholder}\\[4pt]
-একটি sample web page screenshot যেখানে image, caption এবং alt text note থাকবে।
-}}
-\end{center}
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Browser-এ \texttt{flower.jpg} image দেখা যাবে। Image load না হলে \textbf{Flower} text দেখা যেতে পারে।
 
-\begin{keypointbox}{Image optimization}
-\begin{itemize}
-\item প্রয়োজনের চেয়ে বড় image ব্যবহার করলে page load ধীর হয়।
-\item photograph-এর জন্য JPEG/WebP, transparent graphic-এর জন্য PNG ব্যবহার করা যায়।
-\item অর্থবহ alt text screen reader ও search engine-এর জন্য সহায়ক।
-\end{itemize}
+\textbf{ব্যাখ্যা:} \texttt{src} image file-এর location জানায় এবং \texttt{alt} image-এর বিকল্প text দেয়।
+\end{examplebox}
+
+\subsection{\texttt{src} Attribute}
+
+\begin{definitionbox}{\texttt{src}}
+\texttt{src} attribute image file-এর source বা অবস্থান নির্দেশ করে। অর্থাৎ image file কোথায় আছে তা browser-কে জানায়।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="rose.jpg" alt="Rose">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Browser একই folder থেকে \texttt{rose.jpg} image খুঁজে দেখাবে।
+
+\textbf{ব্যাখ্যা:} HTML file ও image একই folder-এ থাকলে শুধু image file name লিখলেই চলে। অন্য folder-এ থাকলে path দিতে হয়।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+\texttt{src} attribute image file-এর source বা path নির্দেশ করতে ব্যবহৃত হয়।
+\end{boardbox}
+
+\subsection{\texttt{alt} Attribute}
+
+\begin{definitionbox}{\texttt{alt}}
+\texttt{alt} attribute image-এর alternative text নির্ধারণ করে। Image load না হলে বা screen reader ব্যবহার করলে এই text কাজে লাগে।
+\end{definitionbox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="college.jpg" alt="ABC College Building">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} \texttt{college.jpg} image load হলে college building image দেখা যাবে। Image load না হলে \textbf{ABC College Building} text দেখা যেতে পারে।
+
+\textbf{ব্যাখ্যা:} \texttt{alt} শুধু decoration নয়; এটি accessibility, broken image এবং search context-এর জন্য গুরুত্বপূর্ণ।
+\end{examplebox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+\texttt{alt} attribute image-এর alternative text প্রদর্শনের জন্য ব্যবহৃত হয়।
+\end{boardbox}
+
+
+\subsection{\texttt{width} ও \texttt{height} Attribute}
+
+\begin{definitionbox}{\texttt{width} ও \texttt{height}}
+\texttt{width} image-এর প্রস্থ এবং \texttt{height} image-এর উচ্চতা নির্ধারণ করে।
+\end{definitionbox}
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="image.jpg" width="300" height="200" alt="Image">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="flower.png" width="400" height="200" alt="Flower">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+\textbf{Output:} Browser \texttt{flower.png} image 400 pixel প্রস্থ এবং 200 pixel উচ্চতায় দেখাবে।
+
+\textbf{ব্যাখ্যা:} \texttt{width} ও \texttt{height} attribute image-এর display size control করে। অনেক সময় শুধু width দিলে browser ratio অনুযায়ী height adjust করতে পারে।
+\end{examplebox}
+
+\begin{keypointbox}{Modern note}
+Responsive design-এর জন্য CSS ব্যবহার করা ভালো। তবে HSC practical ও board exam-এ \texttt{width} ও \texttt{height} attribute জানা খুব গুরুত্বপূর্ণ।
 \end{keypointbox}
 
-\begin{mistakebox}{সাধারণ ভুল}
-\texttt{alt} attribute image-এর title নয়; এটি image না দেখা গেলে বা screen reader-এ বিকল্প বর্ণনা হিসেবে ব্যবহৃত হয়।
+\subsection{Image File Format}
+
+Web page-এ সাধারণত বিভিন্ন image format ব্যবহার করা যায়। HSC পরীক্ষার জন্য \texttt{.jpg}, \texttt{.jpeg}, \texttt{.png}, \texttt{.gif}, \texttt{.bmp}, \texttt{.svg}, \texttt{.webp} ও \texttt{.avif} format মনে রাখা দরকার।
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{Format} & \textbf{ব্যবহার} \\
+\hline
+\texttt{.jpg} / \texttt{.jpeg} & photo image, camera picture \\
+\hline
+\texttt{.png} & transparent background image, screenshot, logo \\
+\hline
+\texttt{.gif} & simple animation বা ছোট graphic \\
+\hline
+\texttt{.svg} & vector image, logo, icon \\
+\hline
+\texttt{.bmp} & bitmap image; web-এ কম ব্যবহৃত \\
+\hline
+\texttt{.webp} & modern compressed still/animated image \\
+\hline
+\texttt{.avif} & high-compression image, modern web-এর জন্য উপযোগী \\
+\hline
+\end{tabular}
+\end{center}
+
+HTML standard নির্দিষ্ট image format বাধ্যতামূলক করে না; browser support ভিন্ন হতে পারে। MDN অনুসারে WebP ও AVIF modern web-এ ভালো choice, আর SVG বিভিন্ন size-এ sharp থাকে.
+
+\subsection{Image Path}
+
+Image file কোথায় রাখা আছে তার উপর \texttt{src} value নির্ভর করে।
+
+\subsubsection{একই folder-এ image থাকলে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="flower.jpg" alt="Flower">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+HTML file ও \texttt{flower.jpg} একই folder-এ থাকলে browser image দেখাবে।
+\end{examplebox}
+
+\subsubsection{Image আলাদা folder-এ থাকলে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="images/flower.jpg" alt="Flower">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+এখানে browser \texttt{images} folder-এর ভিতরে \texttt{flower.jpg} image খুঁজবে।
+\end{examplebox}
+
+\subsubsection{Online image হলে}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="https://example.com/flower.jpg" alt="Flower">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Browser internet থেকে image load করার চেষ্টা করবে। Online image ব্যবহার করলে address ঠিক থাকতে হবে এবং internet connection দরকার হতে পারে।
+\end{examplebox}
+
+\begin{mistakebox}{Image না দেখালে কী check করবে?}
+\begin{itemize}
+\item \texttt{src} path ভুল কি না।
+\item image file name ঠিক আছে কি না।
+\item extension \texttt{.jpg}, \texttt{.png}, \texttt{.gif} ঠিক আছে কি না।
+\item image file expected folder-এ আছে কি না।
+\item uppercase/lowercase spelling mismatch আছে কি না।
+\end{itemize}
 \end{mistakebox}
+
+\subsection{Image-এর Size Control}
+
+\subsubsection{Example: 300 by 200 image}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="nature.jpg" width="300" height="200" alt="Nature">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Browser \texttt{nature.jpg} image 300 pixel প্রস্থ এবং 200 pixel উচ্চতায় দেখাবে।
+\end{examplebox}
+
+\subsubsection{Responsive CSS version}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="nature.jpg" alt="Nature"
+     style="width:100%; max-width:500px; height:auto;">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Image screen size অনুযায়ী ছোট-বড় হবে, কিন্তু 500 pixel-এর বেশি বড় হবে না। \texttt{height:auto} রাখলে image-এর ratio নষ্ট হয় না।
+\end{examplebox}
+
+\subsection{Modern Responsive Image Hint}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="college-400.jpg"
+     srcset="college-400.jpg 400w, college-800.jpg 800w"
+     sizes="(max-width: 600px) 100vw, 50vw"
+     loading="lazy"
+     decoding="async"
+     width="400" height="250"
+     alt="ABC College Building">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Browser viewport অনুযায়ী উপযুক্ত image file বেছে নিতে পারে। \texttt{loading="lazy"} off-screen image পরে load করে, আর \texttt{width} ও \texttt{height} page-এ আগে থেকেই জায়গা reserve করতে সাহায্য করে।
+\end{examplebox}
+
+\subsection{Image Alignment}
+
+HSC book-style HTML-এ image-এর অবস্থান নির্ধারণের জন্য \texttt{align} attribute দেখা যায়। তবে modern web design-এ CSS ব্যবহার করা বেশি standard।
+
+\subsubsection{HSC style example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="z1.jpg" width="200" height="150"
+     align="left" alt="Sample Image">
+\end{verbatim}
+\end{examplebox}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{align value} & \textbf{কাজ} \\
+\hline
+\texttt{left} & image বাম পাশে রাখে \\
+\hline
+\texttt{right} & image ডান পাশে রাখে \\
+\hline
+\texttt{top} & surrounding text-এর top alignment নির্দেশ করে \\
+\hline
+\texttt{middle} & surrounding text-এর middle alignment নির্দেশ করে \\
+\hline
+\texttt{bottom} & surrounding text-এর bottom alignment নির্দেশ করে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Modern CSS version}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="z1.jpg" alt="Sample Image"
+     style="float:left; width:200px; height:150px;">
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Image Border}
+
+HSC/NCTB style code-এ image-এর চারপাশে border দিতে \texttt{border} attribute দেখা যায়।
+
+\subsubsection{HSC style example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="z1.jpg" width="200" height="150"
+     border="1" alt="Sample Image">
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Image-এর চারপাশে 1 pixel border দেখা যাবে।
+\end{examplebox}
+
+\subsubsection{Modern CSS version}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="z1.jpg" alt="Sample Image"
+     style="border:1px solid black;">
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Image Link}
+
+Image-এর উপর click করলে অন্য page বা website open করাতে চাইলে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়।
+
+\subsubsection{Syntax}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<a href="url">
+  <img src="image.jpg" alt="Image">
+</a>
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<a href="https://www.example.com">
+  <img src="banner.jpg" width="200" height="95"
+     alt="Visit Example website">
+</a>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Browser-এ banner image দেখা যাবে। Image-এ click করলে নির্দিষ্ট website open হবে।
+\end{examplebox}
+
+\begin{keypointbox}{Image link note}
+Image link-এর \texttt{alt} text image-এর appearance না বলে link-এর purpose বা destination বোঝানো ভালো।
+\end{keypointbox}
+
+\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
+Image link তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করা হয়।
+\end{boardbox}
+
+\subsection{Table-এর ভিতরে Image}
+
+HTML table cell-এর ভিতরেও image রাখা যায়। Result table, product table, profile table বা gallery layout-এ এটি কাজে লাগে।
+
+\subsubsection{Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <td><img src="rose.gif" alt="Rose" width="100"></td>
+    <td>Rose Image</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ও ব্যাখ্যা}
+Table-এর প্রথম cell-এ rose image এবং দ্বিতীয় cell-এ \textbf{Rose Image} text দেখা যাবে।
+\end{examplebox}
+
+\subsection{Image Add করার Complete Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Image Example</title>
+</head>
+<body>
+
+  <h1>My College</h1>
+
+  <p>Below is an image of our college:</p>
+
+  <img src="college.jpg"
+       alt="ABC College Building"
+       width="400" height="250">
+
+  <p>Click the banner below to visit our website:</p>
+
+  <a href="https://www.example.com">
+    <img src="banner.jpg"
+         alt="College Website Banner"
+         width="300" height="100">
+  </a>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{examplebox}{Output ধারণা}
+Browser-এ দেখা যাবে:
+\begin{itemize}
+\item \textbf{My College} heading।
+\item একটি college image।
+\item একটি banner image।
+\item banner image-এ click করলে নির্দিষ্ট website open হবে।
+\end{itemize}
+\end{examplebox}
+
+\subsection{সাধারণ ভুল}
+
+\begin{mistakebox}{Common Mistake}
+\begin{itemize}
+\item \texttt{<image>} tag লেখা; সঠিক tag হলো \texttt{<img>}।
+\item \texttt{src} attribute না দেওয়া।
+\item \texttt{src}-এর জায়গায় \texttt{href} লেখা।
+\item image file name ভুল লেখা।
+\item \texttt{.jpg} এর বদলে \texttt{.png} বা extension ভুল দেওয়া।
+\item image অন্য folder-এ থাকলেও শুধু file name লেখা।
+\item \texttt{alt} attribute না দেওয়া।
+\item \texttt{width} ও \texttt{height} উল্টো দেওয়া।
+\item image link করতে \texttt{<img>} tag \texttt{<a>} tag-এর বাইরে রাখা।
+\end{itemize}
+\end{mistakebox}
+
+\subsubsection{ভুল code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<image src="photo.jpg">
+\end{verbatim}
+\end{examplebox}
+
+\subsubsection{সঠিক code}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<img src="photo.jpg" alt="Photo">
+\end{verbatim}
+\end{examplebox}
+
+\subsection{বইয়ে ব্যবহারযোগ্য সারাংশ}
+
+\begin{recapbox}
+HTML web page-এ image যুক্ত করার জন্য \texttt{<img>} tag ব্যবহার করা হয়। এটি একটি empty tag, তাই এর কোনো closing tag নেই। Image file কোথায় আছে তা নির্দেশ করতে \texttt{src} attribute ব্যবহার করা হয়। Image load না হলে বা accessibility-এর জন্য alternative text দেখাতে \texttt{alt} attribute ব্যবহার করা হয়। Image-এর size নির্ধারণ করতে \texttt{width} ও \texttt{height} attribute ব্যবহার করা যায়। Image একই folder-এ থাকলে শুধু file name লিখলেই চলে, আর অন্য folder-এ থাকলে path লিখতে হয়। Image-এর উপর hyperlink দিতে চাইলে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করতে হয়।
+\end{recapbox}
+
+\subsection{ছোট প্রশ্নোত্তর}
+
+\begin{enumerate}
+\item \textbf{HTML-এ image যুক্ত করার tag কোনটি?}\\
+উত্তর: \texttt{<img>}।
+
+\item \textbf{\texttt{<img>} tag কি container tag?}\\
+উত্তর: না, এটি empty tag।
+
+\item \textbf{Image file-এর source নির্দেশ করতে কোন attribute ব্যবহার হয়?}\\
+উত্তর: \texttt{src} attribute।
+
+\item \textbf{Image-এর alternative text দিতে কোন attribute ব্যবহার হয়?}\\
+উত্তর: \texttt{alt} attribute।
+
+\item \textbf{Image-এর size নির্ধারণ করতে কোন attribute ব্যবহার হয়?}\\
+উত্তর: \texttt{width} ও \texttt{height}।
+
+\item \textbf{Image link তৈরি করতে কী করতে হয়?}\\
+উত্তর: \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়।
+
+\item \textbf{Web page-এ image-এর common format কী কী?}\\
+উত্তর: \texttt{.jpg}, \texttt{.jpeg}, \texttt{.png}, \texttt{.gif}, \texttt{.svg}, \texttt{.bmp}, \texttt{.webp}, \texttt{.avif}।
+
+\item \textbf{\texttt{src="images/logo.png"} মানে কী?}\\
+উত্তর: \texttt{logo.png} image টি \texttt{images} folder-এর ভিতরে আছে।
+
+\item \textbf{Responsive image selection-এ কোন দুটি attribute বেশি গুরুত্বপূর্ণ?}\\
+উত্তর: \texttt{srcset} এবং \texttt{sizes}।
+
+\item \textbf{Lazy loading-এর জন্য কোন attribute ব্যবহার হয়?}\\
+উত্তর: \texttt{loading="lazy"}।
+\end{enumerate}
+
+\subsection{Exam Focus MCQ}
+
+\begin{enumerate}
+\item HTML-এ ছবি যুক্ত করার tag কোনটি?\\
+ক) \texttt{<ul>} \quad খ) \texttt{<ol>} \quad গ) \texttt{<img>} \quad ঘ) \texttt{<li>}
+
+\item \texttt{<img>} tag-এর image source attribute কোনটি?\\
+ক) \texttt{href} \quad খ) \texttt{src} \quad গ) \texttt{alt} \quad ঘ) \texttt{link}
+
+\item Image-এর আকার নিয়ন্ত্রণ করতে কোন attribute ব্যবহৃত হয়?\\
+ক) \texttt{width} ও \texttt{height} \quad খ) \texttt{href} ও \texttt{target}\\
+গ) \texttt{rowspan} ও \texttt{colspan} \quad ঘ) \texttt{type} ও \texttt{start}
+
+\item নিচের কোনটি সঠিক syntax?\\
+ক) \texttt{<image src="image.jpg">} \quad খ) \texttt{<img> src="image.jpg"}\\
+গ) \texttt{<img src="image.jpg">} \quad ঘ) \texttt{<src img="image.jpg">}
+
+\item Image load না হলে যে text দেখা যায়, সেটি কোন attribute দিয়ে দেওয়া হয়?\\
+ক) \texttt{src} \quad খ) \texttt{alt} \quad গ) \texttt{width} \quad ঘ) \texttt{height}
+
+\item Image link তৈরি করতে কোনটি সঠিক?\\
+ক) \texttt{<a href="site.html"><img src="logo.png" alt="Logo"></a>}\\
+খ) \texttt{<img href="site.html" src="logo.png">}\\
+গ) \texttt{<a src="logo.png">site</a>}\\
+ঘ) \texttt{<image link="site.html">}
+
+\item Image lazy loading-এর জন্য কোন attribute ব্যবহৃত হয়?\\
+ক) \texttt{loading} \quad খ) \texttt{border} \quad গ) \texttt{align} \quad ঘ) \texttt{name}
+
+\item Responsive image selection-এ কোন pair ব্যবহৃত হয়?\\
+ক) \texttt{srcset} ও \texttt{sizes} \quad খ) \texttt{href} ও \texttt{target}\\
+গ) \texttt{width} ও \texttt{height} \quad ঘ) \texttt{alt} ও \texttt{title}
+\end{enumerate}
+
+\begin{boardbox}{MCQ Answer Key}
+১-গ, ২-খ, ৩-ক, ৪-গ, ৫-খ, ৬-ক, ৭-ক, ৮-ক
+\end{boardbox}

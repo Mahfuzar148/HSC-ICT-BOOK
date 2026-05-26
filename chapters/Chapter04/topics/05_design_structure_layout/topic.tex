@@ -1,61 +1,203 @@
-% ৪.৫ ডিজাইন: স্ট্রাকচার ও লেআউট
-\section{ডিজাইন: স্ট্রাকচার ও লেআউট}
+% Topic: Web Page Design, Structure and Layout
+\section{Design: Structure ও Layout}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item layout, wireframe ও responsive design-এর ধারণা ব্যাখ্যা করতে।
+\item webpage layout, wireframe ও responsive design ব্যাখ্যা করতে।
 \item fixed, fluid ও responsive layout আলাদা করতে।
-\item ভালো web layout-এর basic design principle লিখতে।
+\item header, menu, content, sidebar ও footer-এর কাজ বলতে।
+\item একটি simple webpage layout plan বা wireframe আঁকতে।
+\item HSC practical webpage design করার আগে layout পরিকল্পনা করতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{লেআউটের ধারণা}
-ওয়েব পেজে header, navigation, content, sidebar, image, footer ইত্যাদি অংশ কোথায় থাকবে, সেটির পরিকল্পনাকে layout বলা হয়। ভালো layout page-কে পরিষ্কার, পড়ার উপযোগী ও ব্যবহারকারী-বান্ধব করে।
+\subsection{Layout কী?}
+
+\begin{definitionbox}{Webpage Layout}
+ওয়েবপেজে header, navigation menu, main content, image, table, sidebar ও footer কোথায় থাকবে, সেই পরিকল্পিত বিন্যাসকে webpage layout বলে।
+\end{definitionbox}
+
+ভালো layout page-কে পরিষ্কার, পড়ার উপযোগী এবং ব্যবহারকারী-বান্ধব করে। HSC practical-এ full webpage design করার আগে layout বুঝে নিলে code লেখা সহজ হয়।
+
+\subsection{Webpage-এর প্রধান Layout অংশ}
 
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Page layout wireframe placeholder}\\[4pt]
-Header\\
-Navigation menu\\
-Main content \hspace{1cm} Sidebar\\
-Footer
-}}
-\end{center}
-
-\subsection{লেআউটের ধরন}
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.34\textwidth}|p{0.30\textwidth}|}
+\begin{tabular}{|p{0.24\textwidth}|p{0.58\textwidth}|}
 \hline
-\textbf{Layout} & \textbf{ধারণা} & \textbf{সীমাবদ্ধতা/সুবিধা} \\
+\textbf{অংশ} & \textbf{কাজ} \\
 \hline
-Fixed & width fixed থাকে & desktop-এ predictable, mobile-এ সমস্যা \\
+Header & website-এর নাম, logo, title বা slogan দেখায় \\
 \hline
-Fluid & width percentage ভিত্তিক & screen অনুযায়ী ছড়ায়, control কম \\
+Navigation/Menu & অন্য page বা section-এ যাওয়ার link রাখে \\
 \hline
-Responsive & screen size অনুযায়ী layout বদলায় & modern website-এর জন্য উপযোগী \\
+Main Content & মূল লেখা, image, list, table, form ইত্যাদি রাখে \\
+\hline
+Sidebar & notice, important link, advertisement বা extra information রাখে \\
+\hline
+Footer & copyright, contact, address, email, social link ইত্যাদি রাখে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{keypointbox}{Design principle}
+\subsection{Wireframe কী?}
+
+\begin{definitionbox}{Wireframe}
+Webpage তৈরি করার আগে page-এর কোন অংশ কোথায় থাকবে তা box বা rough sketch আকারে দেখানোর প্রাথমিক নকশাকে wireframe বলে।
+\end{definitionbox}
+
+\begin{center}
+\fbox{\parbox{0.86\textwidth}{
+\centering
+\textbf{Simple Webpage Wireframe}\\[5pt]
+\fbox{\parbox{0.74\textwidth}{\centering Header}}\\[4pt]
+\fbox{\parbox{0.74\textwidth}{\centering Navigation/Menu}}\\[4pt]
+\fbox{\parbox{0.46\textwidth}{\centering Main Content\\Text, Image, Table}}
+\hspace{0.03\textwidth}
+\fbox{\parbox{0.22\textwidth}{\centering Sidebar\\Notice/Links}}\\[4pt]
+\fbox{\parbox{0.74\textwidth}{\centering Footer}}
+}}
+\end{center}
+
+\begin{keypointbox}{Wireframe কেন দরকার?}
 \begin{itemize}
-\item Contrast: গুরুত্বপূর্ণ অংশ আলাদা করে দেখানো।
-\item Alignment: text ও element সুশৃঙ্খল রাখা।
-\item Repetition: একই style বারবার ব্যবহার করে consistency রাখা।
-\item Proximity: সম্পর্কিত বিষয় কাছাকাছি রাখা।
+\item code লেখার আগে page plan পরিষ্কার হয়।
+\item কোন content কোথায় থাকবে তা বোঝা যায়।
+\item header, menu, content ও footer আলাদা করা সহজ হয়।
+\item figure দেখে HTML code লেখার সময় ভুল কম হয়।
+\item বড় project-এ designer ও developer একই plan follow করতে পারে।
 \end{itemize}
 \end{keypointbox}
 
-\begin{examplebox}{বাস্তব প্রয়োগ}
-শিক্ষাপ্রতিষ্ঠানের website-এ top navigation-এ Home, Notice, Routine, Result, Contact রাখা যায়। Main area-তে latest notice এবং sidebar-এ important link রাখলে ব্যবহারকারী দ্রুত তথ্য পায়।
+\subsection{Layout-এর ধরন}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.34\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{Layout} & \textbf{ধারণা} & \textbf{সুবিধা/সীমাবদ্ধতা} \\
+\hline
+Fixed Layout & width fixed থাকে, যেমন 960px & desktop-এ predictable, mobile-এ সমস্যা হতে পারে \\
+\hline
+Fluid Layout & width percentage অনুযায়ী বদলায় & screen অনুযায়ী ছড়ায়, কিন্তু control কম \\
+\hline
+Responsive Layout & screen size অনুযায়ী layout পরিবর্তিত হয় & modern website-এর জন্য সবচেয়ে উপযোগী \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Responsive Design কী?}
+
+\begin{definitionbox}{Responsive Design}
+যে design-এ webpage-এর layout screen size অনুযায়ী পরিবর্তিত হয়ে desktop, tablet ও mobile-এ সুন্দরভাবে দেখা যায়, তাকে responsive design বলে।
+\end{definitionbox}
+
+Responsive design-এ সাধারণত flexible width, readable font, properly sized image, mobile-friendly menu এবং viewport meta tag ব্যবহার করা হয়।
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+\end{verbatim}
 \end{examplebox}
+
+\subsection{ভালো Web Layout-এর Design Principle}
+
+\begin{keypointbox}{Design principle}
+\begin{itemize}
+\item \textbf{Contrast:} গুরুত্বপূর্ণ অংশ আলাদা করে দেখানো।
+\item \textbf{Alignment:} text ও element সুশৃঙ্খল রাখা।
+\item \textbf{Repetition:} একই style বারবার ব্যবহার করে consistency রাখা।
+\item \textbf{Proximity:} সম্পর্কিত content কাছাকাছি রাখা।
+\item \textbf{Whitespace:} content-এর মাঝে পর্যাপ্ত ফাঁকা জায়গা রাখা।
+\item \textbf{Readability:} text যেন সহজে পড়া যায়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Layout Plan থেকে HTML Tag নির্বাচন}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{Layout অংশ} & \textbf{HTML tag} & \textbf{Example} \\
+\hline
+Header & \texttt{<div>}, \texttt{<h1>}, \texttt{<p>} & Website title \\
+\hline
+Menu & \texttt{<div>}, \texttt{<a>} & Home, About, Contact \\
+\hline
+Main content & \texttt{<div>}, \texttt{<h2>}, \texttt{<p>} & welcome text \\
+\hline
+Image area & \texttt{<img>} & campus image \\
+\hline
+List area & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} & subject list \\
+\hline
+Table area & \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} & result table \\
+\hline
+Footer & \texttt{<div>}, \texttt{<p>} & copyright \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Mini Layout Example}
+
+\begin{examplebox}{Code}
+\begin{verbatim}
+<div style="background-color:navy; color:white; padding:10px;">
+  <h1>ABC College</h1>
+</div>
+
+<div style="background-color:#eeeeee; padding:8px;">
+  <a href="index.html">Home</a> |
+  <a href="notice.html">Notice</a> |
+  <a href="contact.html">Contact</a>
+</div>
+
+<div style="padding:10px;">
+  <h2>Welcome</h2>
+  <p>This is the main content area.</p>
+</div>
+
+<div style="background-color:#222222; color:white; padding:8px;">
+  <p>Copyright ABC College</p>
+</div>
+\end{verbatim}
+\end{examplebox}
+
+\subsection{Problem Solution}
+
+\begin{practicebox}
+\textbf{Problem:} একটি college webpage-এর layout plan তৈরি করো যেখানে header, menu, notice, subject list, result table ও footer থাকবে।
+
+\textbf{Solution plan:}
+\begin{enumerate}
+\item Header অংশে \texttt{<div>} এর ভিতরে \texttt{<h1>} দিয়ে college name লিখবে।
+\item Menu অংশে \texttt{<a>} দিয়ে Home, Notice, Result, Contact link লিখবে।
+\item Main content অংশে notice paragraph লিখবে।
+\item Subject list-এর জন্য \texttt{<ul>} ও \texttt{<li>} ব্যবহার করবে।
+\item Result table-এর জন্য \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} ব্যবহার করবে।
+\item Footer অংশে copyright বা email লিখবে।
+\end{enumerate}
+\end{practicebox}
+
+\begin{boardbox}{Board focus}
+Webpage design practical-এ code শুরু করার আগে layout section identify করা খুব জরুরি। Header, menu, content, table/list/image ও footer আলাদা করলে code clean হয় এবং output figure-এর সাথে মেলানো সহজ হয়।
+\end{boardbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item layout plan না করে সরাসরি code লেখা।
+\item header, menu, content ও footer আলাদা না করা।
+\item সব content এক \texttt{<div>} tag-এর ভিতরে অগোছালোভাবে লেখা।
+\item mobile view চিন্তা না করা।
+\item image width বেশি দিয়ে page overflow করা।
+\item menu link-এ \texttt{href} না দেওয়া।
+\end{itemize}
+\end{mistakebox}
 
 \begin{practicebox}
 \begin{enumerate}
 \item Responsive design কী?
 \item Wireframe কেন দরকার?
 \item Fixed ও responsive layout-এর পার্থক্য লেখ।
+\item একটি college website-এর wireframe আঁকো।
+\item Header, menu ও footer-এর জন্য কোন tag ব্যবহার করা যায়?
 \end{enumerate}
 \end{practicebox}

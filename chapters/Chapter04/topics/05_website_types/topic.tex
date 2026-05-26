@@ -1,0 +1,204 @@
+﻿% ৪.৫ ওয়েবসাইটের প্রকারভেদ: Static, Dynamic, Local, Remote
+\section{ওয়েবসাইটের প্রকারভেদ}
+
+\begin{learningbox}
+এই টপিক শেষে শিক্ষার্থী Static ও Dynamic ওয়েবসাইটের মধ্যে পার্থক্য, এবং Local ও Remote ওয়েবসাইট কী তা ব্যাখ্যা করতে পারবে।
+\end{learningbox}
+
+\subsection{ভূমিকা}
+ওয়েবসাইট সবসময় একই ধরনের হয় না। কোনো ওয়েবসাইটে তথ্য স্থির থাকে; আবার কোনো ওয়েবসাইটে ব্যবহারকারীর input বা database-এর ওপর ভিত্তি করে তথ্য পরিবর্তিত হয়। অবস্থানের ভিত্তিতেও website local বা remote হতে পারে। এই টপিকটি HSC ICT-এ প্রাসঙ্গিক কনসেপ্টগুলো সরলভাবে তুলে ধরে।
+
+\subsection{Static Website}
+\begin{definitionbox}{Static Website}
+Static Website হলো এমন ওয়েবসাইট যার content সাধারণত fixed থাকে এবং ব্যবহারকারীভেদে স্বয়ংক্রিয়ভাবে পরিবর্তিত হয় না।
+\end{definitionbox}
+
+\begin{keypointbox}{Static ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{itemize}
+\item Content fixed থাকে; সাধারণত HTML/CSS দিয়ে তৈরি।
+\item Database connection থাকে না।
+\item দ্রুত load হয়; তৈরি ও maintain করা সহজ।
+\item উপযোগী: portfolio, brochure, notice page ইত্যাদি।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Dynamic Website}
+\begin{definitionbox}{Dynamic Website}
+Dynamic Website হলো এমন ওয়েবসাইট যার content user input, database বা অন্যান্য condition অনুযায়ী পরিবর্তিত হতে পারে।
+\end{definitionbox}
+
+\begin{keypointbox}{Dynamic ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{itemize}
+\item Content পরিবর্তনশীল; database ও server-side scripting ব্যবহার করে।
+\item Login, registration, comment, search, online order ইত্যাদি সম্ভব।
+\item উপযোগী: e-commerce, social media, online result system ইত্যাদি।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Static vs Dynamic (তালিকা)}
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.29\textwidth}|p{0.29\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Static} & \textbf{Dynamic} \\
+\hline
+Content & Fixed & পরিবর্তনশীল \\
+\hline
+Database & না & আছে \\
+\hline
+User interaction & কম & বেশি \\
+\hline
+Load speed & দ্রুত & তুলনামূলক ধীর \\
+\hline
+Use cases & Portfolio, brochure & E-commerce, portals \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Local Website}
+\begin{definitionbox}{Local Website}
+Local Website হলো এমন website বা web page যা নিজের computer বা local server-এ থাকে এবং সাধারণত development/testing-এর জন্য ব্যবহৃত হয়।
+\end{definitionbox}
+
+\begin{keypointbox}{Local ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{itemize}
+\item Offline বা local environment-এ test করা যায় (XAMPP, WAMP, Live Server ইত্যাদি)।
+\item Hosting cost লাগে না; ত্রুটি পরীক্ষা ও rapid development-এর জন্য উপযোগী।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Remote Website}
+\begin{definitionbox}{Remote Website}
+Remote Website হলো এমন website যা দূরবর্তী web server/hosting server-এ রাখা থাকে এবং internet-এর মাধ্যমে public access করা যায়।
+\end{definitionbox}
+
+\begin{keypointbox}{Remote ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{itemize}
+\item অনলাইনে public user access করতে পারে; domain ও hosting প্রয়োজন।
+\item Maintenance, backup ও security জরুরি।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Local vs Remote (তালিকা)}
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Local} & \textbf{Remote} \\
+\hline
+অবস্থান & নিজের computer/local server & hosting/remote server \\
+\hline
+Access & নিজের device থেকে & world-wide via internet \\
+\hline
+Use case & development/testing & production/public use \\
+\hline
+Cost & কম/নেই & hosting/domain cost লাগে \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}{Diagram ideas}
+Static: User → Browser → Web Server → Fixed HTML Page \\
+Dynamic: User → Browser → Web Server → Server Script → Database → Generated Page \\
+Local vs Remote: Computer → Browser → (Local file) / (Internet → Web Server)
+\end{examplebox}
+
+\subsection{Static Website কোথায় ব্যবহার করা ভালো?}
+
+যেসব website-এ তথ্য ঘন ঘন পরিবর্তন হয় না এবং user login/input দরকার হয় না, সেখানে static website যথেষ্ট। HSC practical-এ simple HTML page, college notice page, personal profile page, portfolio page ইত্যাদি static website হিসেবে দেখানো যায়।
+
+\begin{examplebox}{Static website example}
+\begin{itemize}
+\item Personal portfolio
+\item College notice page
+\item Product information page
+\item Event announcement page
+\item Basic company profile
+\end{itemize}
+\end{examplebox}
+
+\subsection{Dynamic Website কোথায় ব্যবহার করা ভালো?}
+
+যেসব website user input, login, search, database, online payment বা real-time content update ব্যবহার করে, সেগুলো dynamic website। এই ধরনের website সাধারণত HTML/CSS-এর পাশাপাশি server-side language, database ও security system ব্যবহার করে।
+
+\begin{examplebox}{Dynamic website example}
+\begin{itemize}
+\item Online admission system
+\item Online result system
+\item E-commerce website
+\item Social media platform
+\item News portal
+\item Online banking বা ticket booking system
+\end{itemize}
+\end{examplebox}
+
+\subsection{Static থেকে Dynamic হওয়ার উদাহরণ}
+
+একটি college website প্রথমে শুধু notice, image ও contact information দেখালে সেটি static হতে পারে। কিন্তু একই website-এ যদি student login, online result search, admission form submission বা database থেকে notice update করার system থাকে, তাহলে সেটি dynamic website হবে।
+
+\begin{keypointbox}{সহজ সিদ্ধান্ত নেওয়ার নিয়ম}
+\begin{itemize}
+\item শুধু fixed information দেখালে: Static website।
+\item user input নিয়ে result/search/login দেখালে: Dynamic website।
+\item নিজের computer-এ test করলে: Local website।
+\item internet server-এ upload করে public করলে: Remote website।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Website Type Selection Tree}
+
+\begin{center}
+\begin{tikzpicture}[
+  level distance=1.15cm,
+  level 1/.style={sibling distance=4.2cm},
+  level 2/.style={sibling distance=2.2cm},
+  every node/.style={draw, rounded corners, align=center, fill=yellow!8, inner sep=4pt, font=\small}
+]
+\node {Website কোন ধরনের?}
+  child { node {Content fixed?}
+    child { node {হ্যাঁ\\Static} }
+    child { node {না\\Dynamic} }
+  }
+  child { node {কোথায় রাখা?}
+    child { node {নিজ computer\\Local} }
+    child { node {Internet server\\Remote} }
+  };
+\end{tikzpicture}
+\end{center}
+
+\subsection{Problem Solution}
+
+\begin{practicebox}
+\textbf{Problem:} একটি college website-এ শুধু college পরিচিতি, image, subject list এবং contact address আছে। কিন্তু আরেকটি website-এ student roll দিলে database থেকে result দেখা যায়। কোনটি static এবং কোনটি dynamic?
+
+\textbf{Solution:}
+\begin{itemize}
+\item প্রথম website-এ শুধু fixed information আছে, তাই এটি static website।
+\item দ্বিতীয় website user input নেয় এবং database থেকে result দেখায়, তাই এটি dynamic website।
+\item যদি প্রথম website নিজের computer-এ test করা হয়, তাহলে সেটি local website।
+\item যদি server-এ upload করে internet-এ দেখা যায়, তাহলে সেটি remote website।
+\end{itemize}
+\end{practicebox}
+
+\begin{boardbox}{Board focus}
+Static vs Dynamic এবং Local vs Remote website-এর পার্থক্য HSC exam-এ short question, MCQ ও CQ reasoning হিসেবে আসতে পারে। উদাহরণসহ উত্তর লিখলে নম্বর ভালো পাওয়া যায়।
+\end{boardbox}
+
+\begin{mistakebox}{সাধারণ ভুল}
+\begin{itemize}
+\item শুধু online আছে বলেই website-কে dynamic বলা।
+\item database না থাকলেও সব website-কে dynamic ভাবা।
+\item local website মানে ছোট website মনে করা।
+\item remote website মানে শুধু বিদেশি website মনে করা।
+\item static website-এ কখনো image/link/table থাকতে পারে না--এমন ভুল ধারণা রাখা।
+\end{itemize}
+\end{mistakebox}
+
+
+\begin{practicebox}
+\begin{enumerate}
+\item একটি static ও একটি dynamic website-এর উদাহরণ লেখ।
+\item Local ও Remote website-এর মধ্যে ৩টি পার্থক্য লেখ।
+\item কেন dynamic website-এ security বেশি গুরুত্বপূর্ণ—সংক্ষিপ্ত ব্যাখ্যা কর।
+\item Online result system static না dynamic? কারণসহ লেখ।
+\item নিজের computer-এ \texttt{index.html} open করলে সেটি local না remote? ব্যাখ্যা কর।
+\end{enumerate}
+\end{practicebox}
