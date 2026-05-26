@@ -11,7 +11,7 @@
 - Practical ICT: web, programming, database, networking topic-এ hands-on task, code, output, screenshot/diagram রাখতে হবে।
 - Bangladesh context: উদাহরণে e-governance, mobile banking, telemedicine, outsourcing, local digital services, agriculture, education, disaster management ব্যবহার করা যাবে।
 - Ethical and inclusive: content gender, religion, region, culture, disability, profession ও economic background বিষয়ে neutral ও respectful হবে।
-- Source discipline: collected/adapted figure, table, quote, data, board question বা definition-এর source note রাখতে হবে।
+- Source discipline: collected/adapted figure, table, quote, data, board question বা definition-এর reference note রাখতে হবে।
 
 ## Repository Pattern
 
@@ -313,7 +313,7 @@ Use this order:
 - শহর-কেন্দ্রিক উদাহরণের পাশাপাশি গ্রাম, কৃষি, স্বাস্থ্য, শিক্ষা, ক্ষুদ্র ব্যবসা, freelancing উদাহরণ দিতে হবে।
 - Any adapted material must be acknowledged.
 - NCTB textbook থেকে হুবহু দীর্ঘ অংশ কপি করা যাবে না; নিজের ভাষায় ব্যাখ্যা করতে হবে।
-- Board question ব্যবহার করলে year/board/source note রাখবে।
+- Board question ব্যবহার করলে year/board/reference note রাখবে।
 
 ## Market-Quality Rules
 

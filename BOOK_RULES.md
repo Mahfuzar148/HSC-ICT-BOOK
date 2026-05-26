@@ -36,7 +36,6 @@ Write like a real Bangladeshi ICT textbook author, not like an AI assistant.
   - `mistakebox`
   - `practicebox`
   - `recapbox`
-  - `sourcebox`
 - Use `\section{}` for main topic files.
 - Use `\subsection{}` only when it improves readability.
 - Use tables when comparing concepts.
@@ -118,7 +117,6 @@ Avoid: photorealistic style, clutter, dark background, copyrighted logos.
 - Prefer official, educational, or primary sources.
 - Do not copy source text directly.
 - Summarize and paraphrase in original Bangla.
-- Mention source notes in `sourcebox` when useful.
 
 ## Output Format For New Topic Generation
 
