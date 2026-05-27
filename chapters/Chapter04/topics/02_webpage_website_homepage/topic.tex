@@ -79,7 +79,7 @@
 সম্পর্কটি সহজভাবে মনে রাখা যায়:
 
 \begin{center}
-\begin{tikzpicture}[
+\scaletikz{\begin{tikzpicture}[
   root/.style={draw, rounded corners, fill=green!10, minimum width=3.15cm, minimum height=0.82cm, align=center, font=\small\bfseries},
   page/.style={draw, rounded corners, fill=blue!6, minimum width=2.35cm, minimum height=0.72cm, align=center, font=\scriptsize},
   note/.style={font=\scriptsize, align=center},
@@ -98,7 +98,7 @@
 \draw[arrow] (contact) -- (result);
 \node[note, above=0.1cm of home] {প্রথম/প্রধান page};
 \node[note, below=0.1cm of notice] {প্রতিটি box একটি webpage};
-\end{tikzpicture}\\[3pt]
+\end{tikzpicture}}\\[3pt]
 \textit{চিত্র: অনেকগুলো webpage মিলে website, আর প্রথম page হলো homepage}
 \end{center}
 
@@ -156,7 +156,7 @@ URL & একটি নির্দিষ্ট URL থাকতে পারে 
 যে computer বা system-এ website-এর file সংরক্ষিত থাকে এবং client-এর request অনুযায়ী webpage পাঠায় তাকে server বলা হয়। Server HTML, CSS, image, video, script বা database response পাঠাতে পারে।
 
 \begin{center}
-\begin{tikzpicture}[
+\scaletikz{\begin{tikzpicture}[
   box/.style={draw, rounded corners, fill=green!6, minimum width=3cm, minimum height=0.82cm, align=center, font=\small},
   arrow/.style={->, thick}
 ]
@@ -166,7 +166,7 @@ URL & একটি নির্দিষ্ট URL থাকতে পারে 
 \draw[arrow] ([yshift=-0.16cm]server.west) -- node[below, font=\scriptsize]{response} ([yshift=-0.16cm]client.east);
 \node[font=\scriptsize, align=center, below=0.45cm of client] {User এখানে page দেখে};
 \node[font=\scriptsize, align=center, below=0.45cm of server] {HTML, image, CSS রাখা থাকে};
-\end{tikzpicture}\\[3pt]
+\end{tikzpicture}}\\[3pt]
 \textit{চিত্র: Client request পাঠায়, server response পাঠায়}
 \end{center}
 

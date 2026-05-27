@@ -19,59 +19,59 @@
 সংক্ষেপে বলা যায়, WWW হলো web resource-এর বিশাল ব্যবস্থা, browser হলো সেই resource দেখার software এবং search engine হলো WWW থেকে প্রয়োজনীয় তথ্য খুঁজে বের করার tool।
 
 \begin{center}
-\begin{tikzpicture}[
-  browser/.style={draw, rounded corners, fill=gray!4, minimum width=10.8cm, minimum height=5.7cm},
+\scaletikz{\begin{tikzpicture}[
+  browser/.style={draw, rounded corners, fill=gray!4, minimum width=10.5cm, minimum height=5.55cm},
   bar/.style={draw, rounded corners, fill=white, minimum height=0.45cm, align=left, font=\scriptsize},
   content/.style={draw, rounded corners, fill=blue!4, align=center, font=\scriptsize},
-  label/.style={draw, rounded corners, fill=yellow!15, align=center, font=\scriptsize},
-  arrow/.style={->, thick}
+  label/.style={draw, rounded corners, fill=yellow!15, align=center, font=\scriptsize, inner xsep=3pt, inner ysep=2pt},
+  arrow/.style={bookarrow}
 ]
 \node[browser] (win) {};
 \node[font=\small\bfseries] at ([yshift=2.55cm]win.center) {Web Browser Window};
-\node[bar, minimum width=7.6cm] (urlbar) at ([xshift=-0.75cm,yshift=2.05cm]win.center) {\texttt{https://www.abccollege.edu.bd}};
-\node[bar, minimum width=1.45cm] (reload) at ([xshift=4.55cm,yshift=2.05cm]win.center) {Go};
-\node[content, minimum width=2.2cm, minimum height=0.52cm] (logo) at ([xshift=-3.15cm,yshift=1.25cm]win.center) {ABC College};
-\node[content, minimum width=5.1cm, minimum height=0.52cm] (nav) at ([xshift=1.3cm,yshift=1.25cm]win.center) {Home \quad Notice \quad Result \quad Contact};
-\node[content, minimum width=8.7cm, minimum height=1.05cm] (hero) at ([yshift=0.3cm]win.center) {Homepage content\\welcome text, image/banner, important notice};
-\node[content, minimum width=4.1cm, minimum height=0.7cm] (link) at ([xshift=-2.35cm,yshift=-1.0cm]win.center) {Hyperlink: Result};
-\node[content, minimum width=4.1cm, minimum height=0.7cm] (page) at ([xshift=2.35cm,yshift=-1.0cm]win.center) {Webpage area};
-\node[bar, minimum width=6.1cm] (search) at ([yshift=-2.05cm]win.center) {Search box: \texttt{HSC ICT result}};
+\node[bar, minimum width=7.35cm] (urlbar) at ([xshift=-0.8cm,yshift=2.05cm]win.center) {\texttt{https://www.abccollege.edu.bd}};
+\node[bar, minimum width=1.35cm] (reload) at ([xshift=4.35cm,yshift=2.05cm]win.center) {Go};
+\node[content, minimum width=2.1cm, minimum height=0.52cm] (logo) at ([xshift=-3.0cm,yshift=1.25cm]win.center) {ABC College};
+\node[content, minimum width=4.85cm, minimum height=0.52cm] (nav) at ([xshift=1.15cm,yshift=1.25cm]win.center) {Home \quad Notice \quad Result \quad Contact};
+\node[content, minimum width=8.3cm, minimum height=1.0cm] (hero) at ([yshift=0.3cm]win.center) {Homepage content\\welcome text, image/banner, important notice};
+\node[content, minimum width=3.95cm, minimum height=0.7cm] (link) at ([xshift=-2.25cm,yshift=-1.0cm]win.center) {Hyperlink: Result};
+\node[content, minimum width=3.95cm, minimum height=0.7cm] (page) at ([xshift=2.25cm,yshift=-1.0cm]win.center) {Webpage area};
+\node[bar, minimum width=5.85cm] (search) at ([yshift=-2.0cm]win.center) {Search box: \texttt{HSC ICT result}};
 
-\node[label] (lbrowser) at ([xshift=-5.9cm,yshift=2.55cm]win.center) {Browser};
-\node[label] (lurl) at ([xshift=-5.55cm,yshift=1.55cm]win.center) {URL bar};
-\node[label] (lwebsite) at ([xshift=5.85cm,yshift=1.25cm]win.center) {Website name};
-\node[label] (lnav) at ([xshift=5.75cm,yshift=0.45cm]win.center) {Navigation};
-\node[label] (lhome) at ([xshift=-5.55cm,yshift=0.15cm]win.center) {Homepage};
-\node[label] (lsearch) at ([xshift=-5.55cm,yshift=-2.35cm]win.center) {Search bar};
-\node[label] (llink) at ([xshift=-5.65cm,yshift=-1.1cm]win.center) {Link};
+\node[label, anchor=east] (lbrowser) at ([xshift=-5.45cm,yshift=2.55cm]win.center) {Browser};
+\node[label, anchor=east] (lurl) at ([xshift=-5.2cm,yshift=1.55cm]win.center) {URL bar};
+\node[label, anchor=west] (lwebsite) at ([xshift=5.2cm,yshift=1.25cm]win.center) {Website name};
+\node[label, anchor=west] (lnav) at ([xshift=5.15cm,yshift=0.45cm]win.center) {Navigation};
+\node[label, anchor=east] (lhome) at ([xshift=-5.2cm,yshift=0.15cm]win.center) {Homepage};
+\node[label, anchor=east] (lsearch) at ([xshift=-5.2cm,yshift=-2.25cm]win.center) {Search bar};
+\node[label, anchor=east] (llink) at ([xshift=-5.3cm,yshift=-1.1cm]win.center) {Link};
 
-\draw[arrow] (lbrowser) -- (win.north west);
-\draw[arrow] (lurl) -- (urlbar.west);
-\draw[arrow] (lwebsite) -- (logo.east);
-\draw[arrow] (lnav) -- (nav.east);
-\draw[arrow] (lhome) -- (hero.west);
-\draw[arrow] (lsearch) -- (search.west);
-\draw[arrow] (llink) -- (link.west);
-\end{tikzpicture}\\[3pt]
+\draw[bookarrow] (lbrowser.east) -- (win.north west);
+\draw[bookarrow] (lurl.east) -- (urlbar.west);
+\draw[bookarrow] (lwebsite.west) -- (logo.east);
+\draw[bookarrow] (lnav.west) -- (nav.east);
+\draw[bookarrow] (lhome.east) -- (hero.west);
+\draw[bookarrow] (lsearch.east) -- (search.west);
+\draw[bookarrow] (llink.east) -- (link.west);
+\end{tikzpicture}}\\[3pt]
 \textit{চিত্র: Browser window-এ URL bar, website, homepage, navigation, hyperlink ও search bar}
 \end{center}
 
 \begin{center}
-\begin{tikzpicture}[
+\scaletikz{\begin{tikzpicture}[
   box/.style={draw, rounded corners, fill=green!6, minimum width=2.55cm, minimum height=0.78cm, align=center, font=\small},
   wide/.style={draw, rounded corners, fill=blue!6, minimum width=3.2cm, minimum height=0.78cm, align=center, font=\small},
-  arrow/.style={->, thick}
+  arrow/.style={bookarrow}
 ]
 \node[wide] (www) {WWW\\Web resources};
 \node[box, below left=0.95cm and 1.65cm of www] (browser) {Web Browser};
 \node[box, below right=0.95cm and 1.65cm of www] (search) {Search Engine};
 \node[wide, below=1.1cm of www] (site) {Website / Webpage};
-\draw[arrow] (browser) -- node[left, font=\scriptsize]{opens} (site);
-\draw[arrow] (search) -- node[right, font=\scriptsize]{finds} (site);
-\draw[arrow] (site) -- node[left, font=\scriptsize]{part of} (www);
-\draw[arrow] (browser) -- node[above, font=\scriptsize]{uses URL} (www);
-\draw[arrow] (search) -- node[above, font=\scriptsize]{indexes} (www);
-\end{tikzpicture}\\[3pt]
+\draw[bookarrow] (browser) -- node[left, font=\scriptsize]{opens} (site);
+\draw[bookarrow] (search) -- node[right, font=\scriptsize]{finds} (site);
+\draw[bookarrow] (site) -- node[left, font=\scriptsize]{part of} (www);
+\draw[bookarrow] (browser) -- node[above, font=\scriptsize]{uses URL} (www);
+\draw[bookarrow] (search) -- node[above, font=\scriptsize]{indexes} (www);
+\end{tikzpicture}}\\[3pt]
 \textit{চিত্র: WWW, browser ও search engine-এর সম্পর্ক}
 \end{center}
 

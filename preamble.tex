@@ -31,6 +31,20 @@
 \usepackage{booktabs}
 \usepackage[most]{tcolorbox}
 \usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+% Global TikZ helpers: use a compact arrow style and a helper to scale
+% large diagrams to the text width to avoid page overflow.
+\tikzset{
+  bookarrow/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt},
+  booknode/.style={draw, rounded corners, align=center},
+  arrow/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt},
+}
+% Make common arrow shorthand like '-latex' render with Stealth arrowheads too.
+\tikzset{-latex/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt}}
+% Helper to scale a tikzpicture to the current line width when needed.
+% This adapts inside parboxes, minipages, and normal text blocks.
+% Usage: \scaletikz{\begin{tikzpicture} ... \end{tikzpicture}}
+\newcommand{\scaletikz}[1]{\resizebox{0.97\linewidth}{!}{#1}}
 \usepackage{fvextra}
 \usepackage[unicode]{hyperref}
 \raggedbottom
