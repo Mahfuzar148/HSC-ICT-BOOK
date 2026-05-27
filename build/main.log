@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  26 MAY 2026 21:58
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  27 MAY 2026 03:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1132,15 +1132,17 @@ LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 7.59473pt on input line 2.
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 5.69604pt on input line 2.
- [3] [4] [5] [6] [7] [8] [9] [10] [11])
+ [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+[16] [17] [18] [19] [20])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [12]
+ [21] [22
+
+]
 \openout2 = `chapters/Chapter01/latex/chapter.aux'.
 
-
-(chapters/Chapter01/latex/chapter.tex
+ (chapters/Chapter01/latex/chapter.tex
 Chapter 1.
 
 Underfull \hbox (badness 4416) in paragraph at lines 9--10
@@ -1151,7 +1153,6 @@ ineering ও
 [1
 
 
-
 ] (chapters/Chapter01/topics/01_bishwogram/topic.tex
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 16.4046pt on input line 1.
@@ -1159,15 +1160,9 @@ LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 (Font)              scaled to size 16.4046pt on input line 1.
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 (Font)              scaled to size 13.6705pt on input line 14.
- [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-[4] [5] [6] [7] [8])
-(chapters/Chapter01/topics/02_bishwogramer_upadan_o_obodan/topic.tex [9]
+ [2] [3] [4] [5] [6]
+[7]) (chapters/Chapter01/topics/02_bishwogramer_upadan_o_obodan/topic.tex
+[8]
 Underfull \hbox (badness 6047) in paragraph at lines 30--31
 []|\TU/kalpurush(0)/b/n/12 computer, smart-
  []
@@ -1182,7 +1177,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 []|\TU/kalpurush(0)/b/n/12 internet, mobile
  []
 
-[10]) (chapters/Chapter01/topics/03_virtual_reality/topic.tex [11]
+[9]) (chapters/Chapter01/topics/03_virtual_reality/topic.tex [10]
 File: chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png 
 Graphic file (type bmp)
 <chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png>
@@ -1196,8 +1191,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
-[13]
+ [11]
+[12]
 File: chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.pn
 g Graphic file (type bmp)
 <chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.png>
@@ -1207,8 +1202,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [13]
+Underfull \vbox (badness 1199) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1199) has occurred while \output is active []
+
  [14]
-[15]
 Overfull \hbox (5.8916pt too wide) in paragraph at lines 88--89
  []\TU/kalpurush(0)/b/n/12 ২. Interaction[] Interaction হলো VR environment-এর স
 ঙ্গে ব্যবহারকারীর সক্রিয় অংশগ্রহণ।
@@ -1223,13 +1223,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [16]
-Underfull \vbox (badness 1742) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1742) has occurred while \output is active []
-
- [17]
 Underfull \hbox (badness 5147) in paragraph at lines 149--149
 []|\TU/kalpurush(0)/b/n/12 Computer / Graphics
  []
@@ -1239,7 +1239,7 @@ Underfull \hbox (badness 6978) in paragraph at lines 182--183
 []|\TU/kalpurush(0)/b/n/12 Headset, sensor, controller বা data glove
  []
 
-[18]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 234--234
 []|\TU/kalpurush(0)/b/n/12 ব্যবহারকারী শুধু দেখে;
  []
@@ -1274,12 +1274,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--238
 \TU/kalpurush(0)/b/n/12 করে interaction করতে
  []
 
-[19] [20]
+[18] [19]
 Underfull \hbox (badness 7116) in paragraph at lines 286--286
 []|\TU/kalpurush(0)/b/n/12 Head-Mounted Display
  []
 
-[21]
+[20]
 Underfull \hbox (badness 1796) in paragraph at lines 316--316
 \TU/kalpurush(0)/b/n/12 পরিবেশে ব্যবহারকারী প্রবেশ
  []
@@ -1299,7 +1299,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--321
 []|\TU/kalpurush(0)/b/n/12 traffic simulation,
  []
 
-[22]
+[21]
 Underfull \hbox (badness 5189) in paragraph at lines 355--356
 []|\TU/kalpurush(0)/b/n/12 CAVE (তিন মাত্রিক immersive
  []
@@ -1309,27 +1309,48 @@ Underfull \hbox (badness 3514) in paragraph at lines 361--362
 []|\TU/kalpurush(0)/b/n/12 Meta Quest 3S, Vision Pro,
  []
 
-[23] [24] [25]
+[22] [23] [24]
 Overfull \hbox (14.20688pt too wide) in paragraph at lines 473--490
  [] 
  []
 
-[26] [27] [28]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-[30] [31] [32] [33] [34]
+ [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
-[36] [37] [38] [39])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex
+ [27]
+[28] [29] [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+[32] [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+[35]) (chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
 Underfull \hbox (badness 7832) in paragraph at lines 26--27
 []|\TU/kalpurush(0)/b/n/12 diagnosis, chat-
  []
@@ -1350,91 +1371,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40]
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_budd
-himotta/topic.tex [41] [42] [43])
+himotta/topic.tex [37] [38] [39])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/02_robotics/top
 ic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2285) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2285) has occurred while \output is active []
 
- [44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
-Underfull \vbox (badness 1571) has occurred while \output is active []
+ [40]
+[41] [42])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/03_cryosurgery/
+topic.tex
+Underfull \vbox (badness 5119) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1571) has occurred while \output is active []
+Underfull \vbox (badness 5119) has occurred while \output is active []
+
+ [43]
+[44] [45])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/04_mohakash_ovi
+jan/topic.tex
+Underfull \vbox (badness 1132) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1132) has occurred while \output is active []
 
  [46]
 [47])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/03_cryosurgery/
-topic.tex [48] [49] [50])
-(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/04_mohakash_ovi
-jan/topic.tex
-Underfull \vbox (badness 1755) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1755) has occurred while \output is active []
-
- [51]
-[52] [53])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/05_ict_nirvor_u
-tpadon/topic.tex [54] [55])
+tpadon/topic.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Underfull \vbox (badness 1348) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1348) has occurred while \output is active []
+
+ [49]
+[50])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/06_protirokkha/
-topic.tex [56] [57] [58])
+topic.tex [51] [52])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/t
-opic.tex
+opic.tex [53]
 Overfull \hbox (19.13278pt too wide) in paragraph at lines 25--26
 \TU/kalpurush(0)/b/n/12 Mobile unlock, attendance system, passport/ID verificat
 ion এবং criminal investigation-
  []
 
-[59] [60])
+[54] [55])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/08_bioinformati
-cs/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61]
-[62] [63])
+cs/topic.tex [56] [57])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/09_genetic_engi
 neering/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1033) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1033) has occurred while \output is active []
 
- [64]
-[65] [66])
+ [58]
+[59] [60])
 (chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/10_nanotechnolo
-gy/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+gy/topic.tex [61] [62])
+Underfull \vbox (badness 1048) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1048) has occurred while \output is active []
 
- [67]
-[68] [69] [70])) (chapters/Chapter01/topics/05_noitikota/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71]
+ [63])
+(chapters/Chapter01/topics/05_noitikota/topic.tex [64]
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 []|\TU/kalpurush(0)/b/n/12 password/share
  []
@@ -1449,13 +1459,19 @@ Underfull \hbox (badness 5064) in paragraph at lines 30--31
 []|\TU/kalpurush(0)/b/n/12 আইন ও নিরাপত্তা
  []
 
-[72]) (chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex
+) (chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex
+Underfull \vbox (badness 1286) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1286) has occurred while \output is active []
+
+ [65]
 Overfull \hbox (2.86935pt too wide) in paragraph at lines 13--14
 \TU/kalpurush(0)/b/n/12 Mobile phone, email, instant messaging, video call ও so
 cial media মানুষের যোগাযোগকে
  []
 
-[73]
+
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
 []|\TU/kalpurush(0)/b/n/12 misinformation, pri-
  []
@@ -1465,28 +1481,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--33
 []|\TU/kalpurush(0)/b/n/12 freelancing, remote
  []
 
-) (chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic.tex [74]
+
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+ [66])
+(chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic.tex [67]
 Underfull \hbox (badness 7451) in paragraph at lines 38--39
 []|\TU/kalpurush(0)/b/n/12 mobile financial
  []
 
-[75])) [76]
+)) [68]
 \openout2 = `chapters/Chapter02/latex/chapter.aux'.
 
  (chapters/Chapter02/latex/chapter.tex
 Chapter 2.
-[77
+(chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic.tex
+[69
 
 
 
 
-] (chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic.tex [7
-8]
+] [70]
 Underfull \hbox (badness 2326) in paragraph at lines 72--73
 []|\TU/kalpurush(0)/b/n/12 electrical pulse, light,
  []
 
-[79] [80]
+[71] [72]
 Underfull \hbox (badness 6658) in paragraph at lines 144--144
 []|\TU/kalpurush(0)/b/n/12 মানুষের কণ্ঠস্বর পাঠানোর
  []
@@ -1496,26 +1519,19 @@ Underfull \hbox (badness 4266) in paragraph at lines 146--147
 []|\TU/kalpurush(0)/b/n/12 fiber internet, modern
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [81]
-[82]
-Underfull \hbox (badness 1097) in paragraph at lines 209--210
+[73]
+Underfull \hbox (badness 1097) in paragraph at lines 206--207
 []|\TU/kalpurush(0)/b/n/12 লাইভ ক্লাসে audio/video
  []
 
 ) (chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2229) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2229) has occurred while \output is active []
 
- [83]
-[84] [85]
+ [74]
+[75] [76]
 Overfull \hbox (3.20187pt too wide) in paragraph at lines 87--98
  [] 
  []
@@ -1526,33 +1542,27 @@ Underfull \hbox (badness 1721) in paragraph at lines 106--107
  বড় block,
  []
 
-[86]
-Underfull \hbox (badness 1038) in paragraph at lines 133--134
-[]\TU/kalpurush(0)/b/n/12 Chapter 02 handnote, Chapter 2 update CQ material এবং
- common
- []
+[77]
+Underfull \vbox (badness 3557) has occurred while \output is active []
 
-[87]) (chapters/Chapter02/topics/03_media_of_data_communication/topic.tex
-[88]
+
+Underfull \vbox (badness 3557) has occurred while \output is active []
+
+ [78])
+(chapters/Chapter02/topics/03_media_of_data_communication/topic.tex [79]
 Overfull \hbox (10.41315pt too wide) in paragraph at lines 39--40
 \TU/kalpurush(0)/b/n/12 Guided media-তে signal নির্দিষ্ট conductor-এর ভেতর দিয়ে
  যায়। এর সুবিধা হলো তুলনামূলকভাবে
  []
 
-[89] [90]
-Underfull \vbox (badness 1983) has occurred while \output is active []
+[80]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1983) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [91])
-(chapters/Chapter02/topics/04_wired_media/topic.tex [92]
-Underfull \vbox (badness 1189) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1189) has occurred while \output is active []
-
- [93]
+ [81])
+(chapters/Chapter02/topics/04_wired_media/topic.tex [82] [83]
 Underfull \hbox (badness 4832) in paragraph at lines 85--85
 []|\TU/kalpurush(0)/b/n/12 shielding, moder-
  []
@@ -1567,51 +1577,49 @@ Overfull \hbox (3.20187pt too wide) in paragraph at lines 79--90
  [] 
  []
 
-[94]
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 []|\TU/kalpurush(0)/b/n/12 দূরত্ব ও noise
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 153--153
+Underfull \hbox (badness 7030) in paragraph at lines 151--151
 []|\TU/kalpurush(0)/b/n/12 অত্যন্ত দ্রুত, EMI
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 []|\TU/kalpurush(0)/b/n/12 স্থাপন ও মেরামত
  []
 
 
-Overfull \hbox (18.7933pt too wide) in paragraph at lines 145--156
+Overfull \hbox (18.7933pt too wide) in paragraph at lines 143--154
  [] 
  []
 
-
-Underfull \vbox (badness 1092) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1092) has occurred while \output is active []
-
- [95])
-(chapters/Chapter02/topics/05_wireless_media_and_systems/topic.tex [96]
+[85]) (chapters/Chapter02/topics/05_wireless_media_and_systems/topic.tex
+[86]
 Underfull \hbox (badness 10000) in paragraph at lines 57--57
 []|\TU/kalpurush(0)/b/n/12 Wireless Personal
  []
 
-[97] [98]
-Underfull \hbox (badness 1902) in paragraph at lines 139--140
+[87] [88]
+Underfull \hbox (badness 1902) in paragraph at lines 137--138
 []|\TU/kalpurush(0)/b/n/12 long-distance link, cellular
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 []|\TU/kalpurush(0)/b/n/12 wide-area coverage,
  []
 
-[99])
-(chapters/Chapter02/topics/06_mobile_communication_and_generations/topic.tex
-[100]
+) (chapters/Chapter02/topics/06_mobile_communication_and_generations/topic.tex
+Underfull \vbox (badness 5288) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5288) has occurred while \output is active []
+
+ [89]
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []|\TU/kalpurush(0)/b/n/12 advanced broad-
  []
@@ -1621,39 +1629,38 @@ Underfull \hbox (badness 1466) in paragraph at lines 52--53
 []|\TU/kalpurush(0)/b/n/12 very low latency, IoT support,
  []
 
+[90] [91]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 1077) has occurred while \output is active []
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
- [101]
-[102]
-Underfull \hbox (badness 6510) in paragraph at lines 137--137
+ [92]
+Underfull \hbox (badness 6510) in paragraph at lines 135--135
 []|\TU/kalpurush(0)/b/n/12 SMS, MMS, basic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 []|\TU/kalpurush(0)/b/n/12 GSM, TDMA/CDMA,
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 139--139
+Underfull \hbox (badness 1917) in paragraph at lines 137--137
 []|\TU/kalpurush(0)/b/n/12 video call, mobile
  []
 
 
-Underfull \hbox (badness 4621) in paragraph at lines 143--143
+Underfull \hbox (badness 4621) in paragraph at lines 141--141
 []|\TU/kalpurush(0)/b/n/12 Advanced mobile
  []
 
 
-Overfull \hbox (10.99759pt too wide) in paragraph at lines 131--146
+Overfull \hbox (10.99759pt too wide) in paragraph at lines 129--144
  [] 
  []
 
-[103])
+)
 (chapters/Chapter02/topics/07_computer_networking_objectives_and_types/topic.te
 x
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1661,7 +1668,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [104]
+ [93]
+[94]
 Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\TU/kalpurush(0)/b/n/12 Personal Area
  []
@@ -1691,12 +1699,25 @@ Underfull \hbox (badness 2050) in paragraph at lines 59--59
 []|\TU/kalpurush(0)/b/n/12 Wide Area Net-
  []
 
-[105] [106] [107]
-Underfull \hbox (badness 2165) in paragraph at lines 155--156
+[95]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [96]
+Underfull \hbox (badness 2165) in paragraph at lines 153--154
 []|\TU/kalpurush(0)/b/n/12 mobile থেকে Bluetooth head-
  []
 
-) (chapters/Chapter02/topics/08_network_devices/topic.tex [108] [109]
+) (chapters/Chapter02/topics/08_network_devices/topic.tex
+Underfull \vbox (badness 3803) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3803) has occurred while \output is active []
+
+ [97]
+[98] [99]
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []|\TU/kalpurush(0)/b/n/12 MAC-based for-
  []
@@ -1726,74 +1747,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
 []|\TU/kalpurush(0)/b/n/12 internet connection-এ
  []
 
-[110]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [111]
-Underfull \hbox (badness 3471) in paragraph at lines 156--156
+[100]
+Underfull \hbox (badness 3471) in paragraph at lines 154--154
 []|\TU/kalpurush(0)/b/n/12 device-কে network-এ যুক্ত
  []
 
 
-Underfull \hbox (badness 3482) in paragraph at lines 160--160
+Underfull \hbox (badness 3482) in paragraph at lines 158--158
 []|\TU/kalpurush(0)/b/n/12 MAC address দেখে নির্দিষ্ট
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
 []|\TU/kalpurush(0)/b/n/12 ভিন্ন protocol/architecture
  []
 
 
-Underfull \hbox (badness 3525) in paragraph at lines 174--175
+Underfull \hbox (badness 3525) in paragraph at lines 172--173
 []\TU/kalpurush(0)/b/n/12 Switch বনাম hub, router বনাম gateway এবং modem-এর mod
 ula-
  []
 
-) (chapters/Chapter02/topics/09_network_topology/topic.tex
-Underfull \vbox (badness 4940) has occurred while \output is active []
-
-
-Underfull \vbox (badness 4940) has occurred while \output is active []
-
- [112]
-[113]
+) (chapters/Chapter02/topics/09_network_topology/topic.tex [101] [102]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [114]
+ [103]
 Underfull \vbox (badness 2027) has occurred while \output is active []
 
 
 Underfull \vbox (badness 2027) has occurred while \output is active []
 
- [115]
+ [104]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [116]
-[117]
+ [105]
+[106]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [118]
-[119] [120]
+ [107]
+[108] [109]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [121]
-[122]
+ [110]
+[111]
 Underfull \hbox (badness 5862) in paragraph at lines 386--387
 []\TU/kalpurush(0)/b/n/12 Tree topology-এর উত্তরে hierarchical structure, root/
 core switch,
@@ -1805,20 +1813,20 @@ Underfull \vbox (badness 1762) has occurred while \output is active []
 
 Underfull \vbox (badness 1762) has occurred while \output is active []
 
- [123]
-[124]
+ [112]
+[113]
 Underfull \vbox (badness 1776) has occurred while \output is active []
 
 
 Underfull \vbox (badness 1776) has occurred while \output is active []
 
- [125]
+ [114]
 Overfull \hbox (4.16553pt too wide) in paragraph at lines 506--507
 []\TU/kalpurush(0)/b/n/12 Star-Mesh Hybrid: user computer Star topology-তে এবং 
 গুরুত্বপূর্ণ server/router
  []
 
-[126]
+[115]
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
 (Font)              scaled to size 4.7467pt on input line 553.
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
@@ -1843,7 +1851,7 @@ Underfull \hbox (badness 1983) in paragraph at lines 565--565
 []|\TU/kalpurush(0)/b/n/8 জালের মতো multiple
  []
 
-[127]
+[116]
 LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
 (Font)              scaled to size 10.39528pt on input line 602.
 
@@ -1876,14 +1884,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--614
 []|\TU/kalpurush(0)/b/n/10.95 Tree hierarchical star-bus
  []
 
-[128]
+[117]
 Underfull \vbox (badness 3098) has occurred while \output is active []
 
 
 Underfull \vbox (badness 3098) has occurred while \output is active []
 
- [129]
-[130] [131]) (chapters/Chapter02/topics/10_cloud_computing/topic.tex [132]
+ [118]
+[119] [120]) (chapters/Chapter02/topics/10_cloud_computing/topic.tex
+Underfull \vbox (badness 3735) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3735) has occurred while \output is active []
+
+ [121]
 Underfull \hbox (badness 10000) in paragraph at lines 65--65
 []|\TU/kalpurush(0)/b/n/12 provider-managed
  []
@@ -1899,50 +1913,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--71
  []
 
 
-Underfull \vbox (badness 2103) has occurred while \output is active []
+Underfull \vbox (badness 5274) has occurred while \output is active []
 
 
-Underfull \vbox (badness 2103) has occurred while \output is active []
+Underfull \vbox (badness 5274) has occurred while \output is active []
 
- [133]
-[134]
-Underfull \hbox (badness 4739) in paragraph at lines 135--136
+ [122]
+[123]
+Underfull \hbox (badness 4739) in paragraph at lines 133--134
 []|\TU/kalpurush(0)/b/n/12 website hosting, backup
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 []|\TU/kalpurush(0)/b/n/12 web app deployment,
  []
 
 
-Underfull \hbox (badness 4205) in paragraph at lines 139--140
+Underfull \hbox (badness 4205) in paragraph at lines 137--138
 []|\TU/kalpurush(0)/b/n/12 email, online document,
  []
 
-[135]) (chapters/Chapter02/topics/11_exercises/topic.tex
+) (chapters/Chapter02/topics/11_exercises/topic.tex [124]
 Underfull \hbox (badness 6461) in paragraph at lines 14--15
 []\TU/kalpurush(0)/b/n/12 এই অধ্যায়ে communication system, transmission method,
  media,
  []
 
-[136] [137] [138])) [139]
+[125] [126])) [127]
 \openout2 = `chapters/Chapter03/latex/chapter.aux'.
 
- (chapters/Chapter03/latex/chapter.tex [140
+ (chapters/Chapter03/latex/chapter.tex [128
 
 
 
 
 ]
 Chapter 3.
-[141] (chapters/Chapter03/topics/01_history_of_numbers/topic.tex [142])
+(chapters/Chapter03/topics/01_history_of_numbers/topic.tex [129] [130])
 (chapters/Chapter03/topics/02_number_systems/topic.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[143]
+
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
@@ -1952,7 +1966,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-
+[131]
 Underfull \hbox (badness 10000) in paragraph at lines 44--45
 []|\TU/kalpurush(0)/b/n/12 computer circuit,
  []
@@ -1967,22 +1981,9 @@ Overfull \hbox (18.79926pt too wide) in paragraph at lines 40--53
  [] 
  []
 
-
-Underfull \vbox (badness 1496) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1496) has occurred while \output is active []
-
- [144])
-(chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex [145]
-Underfull \vbox (badness 2600) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2600) has occurred while \output is active []
-
- [146])
-(chapters/Chapter03/topics/04_binary_add_sub/topic.tex [147])
-(chapters/Chapter03/topics/05_signed_numbers/topic.tex [148]
+[132]) (chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex [133])
+(chapters/Chapter03/topics/04_binary_add_sub/topic.tex [134] [135])
+(chapters/Chapter03/topics/05_signed_numbers/topic.tex
 Underfull \hbox (badness 2521) in paragraph at lines 37--37
 []|\TU/kalpurush(0)/b/n/12 positive number-এর bit
  []
@@ -1992,15 +1993,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
 []|\TU/kalpurush(0)/b/n/12 arithmetic সহজ,
  []
 
-) (chapters/Chapter03/topics/06_twos_complement/topic.tex
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
- [149]
-[150]) (chapters/Chapter03/topics/07_codes_overview/topic.tex [151])
-(chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic.tex [152]
+[136]) (chapters/Chapter03/topics/06_twos_complement/topic.tex [137])
+(chapters/Chapter03/topics/07_codes_overview/topic.tex [138])
+(chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic.tex [139]
 Underfull \hbox (badness 2119) in paragraph at lines 42--42
 []|\TU/kalpurush(0)/b/n/12 decimal digit representa-
  []
@@ -2025,100 +2020,103 @@ Overfull \hbox (10.99164pt too wide) in paragraph at lines 38--51
  [] 
  []
 
-) (chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex [153]
-[154]) (chapters/Chapter03/topics/10_boolean_algebra/topic.tex [155])
-(chapters/Chapter03/topics/11_boolean_theorems/topic.tex [156])
-(chapters/Chapter03/topics/12_de_morgan/topic.tex [157])
-(chapters/Chapter03/topics/13_truth_table/topic.tex [158])
-(chapters/Chapter03/topics/14_basic_gates/topic.tex [159])
-(chapters/Chapter03/topics/15_universal_gates/topic.tex [160])
-(chapters/Chapter03/topics/16_special_gates/topic.tex [161])
-(chapters/Chapter03/topics/17_encoder/topic.tex [162])
-(chapters/Chapter03/topics/18_decoder/topic.tex [163])
-(chapters/Chapter03/topics/19_adder/topic.tex [164] [165])
-(chapters/Chapter03/topics/20_register/topic.tex [166])
-(chapters/Chapter03/topics/21_counter/topic.tex [167]
+[140]) (chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex
+Underfull \vbox (badness 3471) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3471) has occurred while \output is active []
+
+ [141])
+(chapters/Chapter03/topics/10_boolean_algebra/topic.tex [142])
+(chapters/Chapter03/topics/11_boolean_theorems/topic.tex [143])
+(chapters/Chapter03/topics/12_de_morgan/topic.tex [144])
+(chapters/Chapter03/topics/13_truth_table/topic.tex [145])
+(chapters/Chapter03/topics/14_basic_gates/topic.tex [146])
+(chapters/Chapter03/topics/15_universal_gates/topic.tex [147])
+(chapters/Chapter03/topics/16_special_gates/topic.tex [148])
+(chapters/Chapter03/topics/17_encoder/topic.tex [149])
+(chapters/Chapter03/topics/18_decoder/topic.tex [150])
+(chapters/Chapter03/topics/19_adder/topic.tex [151])
+(chapters/Chapter03/topics/20_register/topic.tex [152] [153])
+(chapters/Chapter03/topics/21_counter/topic.tex
 Underfull \hbox (badness 2253) in paragraph at lines 37--37
 []|\TU/kalpurush(0)/b/n/12 flip-flop একসাথে clock
  []
 
-) (chapters/Chapter03/topics/22_exercises/topic.tex [168] [169]
+
+Underfull \vbox (badness 4492) has occurred while \output is active []
+
+
+Underfull \vbox (badness 4492) has occurred while \output is active []
+
+ [154])
+(chapters/Chapter03/topics/22_exercises/topic.tex [155]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [170]))
-[171]
+ [156]))
+[157]
 \openout2 = `chapters/Chapter04/latex/chapter.aux'.
 
- (chapters/Chapter04/latex/chapter.tex [172
+ (chapters/Chapter04/latex/chapter.tex [158
 
 
 
 
 ]
 Chapter 4.
-[173] (chapters/Chapter04/topics/01_web_design_concept/topic.tex
-Underfull \vbox (badness 2903) has occurred while \output is active []
+(chapters/Chapter04/topics/01_web_design_concept/topic.tex [159] [160] [161]
+Underfull \hbox (badness 1259) in paragraph at lines 86--87
+[]|\TU/kalpurush(0)/b/n/12 World Wide Web, HTML, HTTP, প্রথম
+ []
 
-
-Underfull \vbox (badness 2903) has occurred while \output is active []
-
- [174]
-[175]
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
- [176]
-[177]
-Underfull \hbox (badness 1127) in paragraph at lines 157--158
+[162] [163]
+Underfull \hbox (badness 1127) in paragraph at lines 185--186
 []|\TU/kalpurush(0)/b/n/12 heading, paragraph, section, list, table,
  []
 
-[178] [179]
-Underfull \hbox (badness 3668) in paragraph at lines 229--230
+[164] [165]
+Underfull \hbox (badness 3668) in paragraph at lines 257--258
 []|\TU/kalpurush(0)/b/n/12 ওয়েবসাইটের functionality
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 231--232
+Underfull \hbox (badness 3068) in paragraph at lines 259--260
 []|\TU/kalpurush(0)/b/n/12 code, database, server,
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 233--234
+Underfull \hbox (badness 5622) in paragraph at lines 261--262
 []|\TU/kalpurush(0)/b/n/12 HTML, CSS, JavaScript,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\TU/kalpurush(0)/b/n/12 homepage সুন্দরভাবে
  []
 
 
-Underfull \hbox (badness 3557) in paragraph at lines 235--236
+Underfull \hbox (badness 3557) in paragraph at lines 263--264
 []|\TU/kalpurush(0)/b/n/12 login system বা result
  []
 
-
+[166] [167]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [180]
-[181] [182] [183] [184])
-(chapters/Chapter04/topics/02_webpage_website_homepage/topic.tex [185]
+ [168]
+[169]) (chapters/Chapter04/topics/02_webpage_website_homepage/topic.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [186]
-[187]
+ [170]
+[171] [172]
 Underfull \hbox (badness 1616) in paragraph at lines 113--113
 []|\TU/kalpurush(0)/b/n/12 একটি নির্দিষ্ট URL থাকতে
  []
@@ -2133,96 +2131,144 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\TU/kalpurush(0)/b/n/12 Contact page, Notice
  []
 
-[188] [189] [190] [191] [192] [193] [194])
-(chapters/Chapter04/topics/03_www_browser_search/topic.tex [195] [196] [197]
-Underfull \hbox (badness 1715) in paragraph at lines 83--83
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [173]
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+ [174]
+Underfull \vbox (badness 1675) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1675) has occurred while \output is active []
+
+ [175]
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+ [176]
+[177] [178] [179] [180])
+(chapters/Chapter04/topics/03_www_browser_search/topic.tex
+Underfull \vbox (badness 7030) has occurred while \output is active []
+
+
+Underfull \vbox (badness 7030) has occurred while \output is active []
+
+ [181]
+Underfull \hbox (badness 3872) in paragraph at lines 45--46
+[]|\TU/kalpurush(0)/b/n/12 WWW-এর ধারণা দেন; HTML,
+ []
+
+
+Underfull \hbox (badness 5119) in paragraph at lines 45--46
+\TU/kalpurush(0)/b/n/12 HTTP, URL ধারণা এবং প্রথম
+ []
+
+
+Underfull \hbox (badness 7704) in paragraph at lines 49--50
+[]|\TU/kalpurush(0)/b/n/12 WWW-এর জন্মস্থান; গবেষকদের
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[]|\TU/kalpurush(0)/b/n/12 Web standard উন্নয়ন,
+ []
+
+
+Underfull \hbox (badness 6188) in paragraph at lines 51--52
+\TU/kalpurush(0)/b/n/12 HTML/CSS/accessibility guide-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [182]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [183]
+Underfull \hbox (badness 1715) in paragraph at lines 125--125
 []|\TU/kalpurush(0)/b/n/12 বিশ্বব্যাপী সংযুক্ত computer
  []
 
 
-Underfull \hbox (badness 4193) in paragraph at lines 85--86
+Underfull \hbox (badness 4193) in paragraph at lines 127--128
 []|\TU/kalpurush(0)/b/n/12 Hypertext document ও
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 []|\TU/kalpurush(0)/b/n/12 WWW চালাতে Internet
  []
 
-
-Underfull \vbox (badness 2261) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2261) has occurred while \output is active []
-
- [198]
-[199]
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+[184] [185]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 []|\TU/kalpurush(0)/b/n/12 তথ্য খোঁজার online
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 []|\TU/kalpurush(0)/b/n/12 Google, Bing, Yahoo,
  []
 
 
-Underfull \vbox (badness 7451) has occurred while \output is active []
-
-
-Underfull \vbox (badness 7451) has occurred while \output is active []
-
- [200]
-[201] [202]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [203]
-[204] [205]) (chapters/Chapter04/topics/04_web_terms/topic.tex [206] [207]
-[208] [209] [210]
-Underfull \vbox (badness 2932) has occurred while \output is active []
+ [186]
+[187] [188]
+Underfull \vbox (badness 4132) has occurred while \output is active []
 
 
-Underfull \vbox (badness 2932) has occurred while \output is active []
+Underfull \vbox (badness 4132) has occurred while \output is active []
 
- [211]
-Underfull \hbox (badness 3930) in paragraph at lines 318--319
+ [189]
+[190] [191]) (chapters/Chapter04/topics/04_web_terms/topic.tex [192] [193]
+[194] [195] [196] [197]
+Underfull \hbox (badness 3930) in paragraph at lines 319--320
 []|\TU/kalpurush(0)/b/n/12 নির্দিষ্ট webpage/resource-
  []
 
-[212]
-Underfull \hbox (badness 1057) in paragraph at lines 356--357
+[198]
+Underfull \hbox (badness 1057) in paragraph at lines 357--358
 []|\TU/kalpurush(0)/b/n/12 login, payment, bank-
  []
 
-[213]
-Underfull \vbox (badness 1436) has occurred while \output is active []
+[199]
+Underfull \hbox (badness 1173) in paragraph at lines 385--386
+[]|\TU/kalpurush(0)/b/n/12 secure/encrypted webpage/resource transfer
+ []
 
-
-Underfull \vbox (badness 1436) has occurred while \output is active []
-
- [214]
-Underfull \vbox (badness 1931) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1931) has occurred while \output is active []
-
- [215]
-[216]
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
+[200] [201] [202]
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
 []\TU/kalpurush(0)/b/n/12 উদ্দীপক: রাফি browser-এ \TU/lmtt/m/n/12 https://www.a
 bccollege.edu.bd/
  []
 
-[217]) (chapters/Chapter04/topics/05_website_types/topic.tex [218]
-Underfull \vbox (badness 8189) has occurred while \output is active []
+
+Underfull \vbox (badness 3068) has occurred while \output is active []
 
 
-Underfull \vbox (badness 8189) has occurred while \output is active []
+Underfull \vbox (badness 3068) has occurred while \output is active []
 
- [219]
+ [203])
+(chapters/Chapter04/topics/05_website_types/topic.tex [204] [205]
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []|\TU/kalpurush(0)/b/n/12 নিজের computer/local
  []
@@ -2232,44 +2278,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--94
 []|\TU/kalpurush(0)/b/n/12 hosting/domain cost
  []
 
-
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [220])
-(chapters/Chapter04/topics/02_website_structure/topic.tex [221] [222]
-Underfull \vbox (badness 2080) has occurred while \output is active []
+[206] [207] [208]) (chapters/Chapter04/topics/02_website_structure/topic.tex
+Underfull \vbox (badness 2005) has occurred while \output is active []
 
 
-Underfull \vbox (badness 2080) has occurred while \output is active []
+Underfull \vbox (badness 2005) has occurred while \output is active []
 
- [223]
-[224]
-Underfull \vbox (badness 1983) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1983) has occurred while \output is active []
-
- [225]
+ [209]
+[210] [211] [212] [213]
 Underfull \hbox (badness 10000) in paragraph at lines 239--239
 []|\TU/kalpurush(0)/b/n/12 শিক্ষা প্রতিষ্ঠান ও organization
  []
 
-[226] [227]
+[214]
 Underfull \hbox (badness 1769) in paragraph at lines 306--306
 []|\TU/kalpurush(0)/b/n/12 information-rich website-এর জন্য
  []
 
-
-Underfull \vbox (badness 4429) has occurred while \output is active []
-
-
-Underfull \vbox (badness 4429) has occurred while \output is active []
-
- [228]
-[229]
+[215] [216]
 Underfull \hbox (badness 5607) in paragraph at lines 402--402
 []|\TU/kalpurush(0)/b/n/12 একটির পর একটি
  []
@@ -2294,153 +2320,204 @@ Underfull \hbox (badness 6125) in paragraph at lines 408--408
 []|\TU/kalpurush(0)/b/n/12 একাধিক structure
  []
 
+[217] [218]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 2662) has occurred while \output is active []
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [219]
+[220]) (chapters/Chapter04/topics/03_html_basic/topic.tex
+Underfull \vbox (badness 1314) has occurred while \output is active []
 
 
-Underfull \vbox (badness 2662) has occurred while \output is active []
+Underfull \vbox (badness 1314) has occurred while \output is active []
 
- [230]
-[231] [232] [233]) (chapters/Chapter04/topics/03_html_basic/topic.tex [234]
-Underfull \hbox (badness 8151) in paragraph at lines 71--72
+ [221]
+Underfull \hbox (badness 3179) in paragraph at lines 37--38
+[]|\TU/kalpurush(0)/b/n/12 World Wide Web-এর উদ্ভাবক;
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 37--38
+\TU/kalpurush(0)/b/n/12 HTML, HTTP, URL, প্রথম web
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+[]|\TU/kalpurush(0)/b/n/12 HTML, CSS, accessibility ও
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+[]|\TU/kalpurush(0)/b/n/12 HTML-এর প্রাথমিক specification/description
+ []
+
+[222]
+Underfull \hbox (badness 1127) in paragraph at lines 84--85
+[]\TU/kalpurush(0)/b/n/12 HTML web page-এর structure তৈরি করে; design-এর জন্য C
+SS এবং
+ []
+
+[223] [224]
+Underfull \hbox (badness 8151) in paragraph at lines 174--175
 []\TU/lmtt/m/n/12 <form>, <input>, <button>, <label>, <select>, <option> \TU/ka
 lpurush(0)/b/n/12 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 []\TU/lmtt/m/n/12 <header>, <nav>, <main>, <section>, <article>, <aside>,
  []
 
-[235]
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+[225]
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
-[236] [237] [238]) (chapters/Chapter04/topics/04_tag_syntax/topic.tex [239]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+Underfull \vbox (badness 2205) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2205) has occurred while \output is active []
+
+ [226]
+[227]
+Underfull \vbox (badness 8151) has occurred while \output is active []
+
+
+Underfull \vbox (badness 8151) has occurred while \output is active []
+
+ [228])
+(chapters/Chapter04/topics/04_tag_syntax/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 []\TU/kalpurush(0)/b/n/12 Tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে attribu
 te ব্যবহৃত
  []
 
 
-Underfull \hbox (badness 5008) in paragraph at lines 33--34
+Underfull \hbox (badness 5008) in paragraph at lines 29--30
 \TU/kalpurush(0)/b/n/12 হয়। Attribute সাধারণত opening tag-এর মধ্যে লেখা হয়। যেম
 ন \TU/lmtt/m/n/12 <a
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+[229]
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 []\TU/kalpurush(0)/b/n/12 Attribute-এর নির্দিষ্ট মানকে attribute value বলে। যেম
 ন \TU/lmtt/m/n/12 <p
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 []|\TU/kalpurush(0)/b/n/12 angle bracket-এর
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\TU/kalpurush(0)/b/n/12 Attribute
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\TU/kalpurush(0)/b/n/12 attribute-এর নির্দিষ্ট
  []
 
 
-Underfull \vbox (badness 2799) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2799) has occurred while \output is active []
-
- [240]
-Overfull \hbox (82.48064pt too wide) in paragraph at lines 73--73
+Overfull \hbox (82.48064pt too wide) in paragraph at lines 69--69
  \TU/lmtt/m/n/12 align="center">Bangladesh</p> 
  []
 
 
-Overfull \hbox (45.22903pt too wide) in paragraph at lines 80--81
+Overfull \hbox (45.22903pt too wide) in paragraph at lines 76--77
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [230]
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
 []|\TU/lmtt/m/n/12 <img src="a.jpg"
  []
 
-
+[231] [232] [233]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [241]
-[242] [243] [244]
-Underfull \vbox (badness 1735) has occurred while \output is active []
+ [234]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1735) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [245])
+ [235])
 (chapters/Chapter04/topics/09_basic_structure/topic.tex
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+ [236]
 Overfull \hbox (1.02403pt too wide) in paragraph at lines 19--20
 []\TU/kalpurush(0)/b/n/12 HSC ICT-তে basic HTML program লেখার সময় সাধারণত \TU/l
 mtt/m/n/12 <html>\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 <head>\TU/kalpurush(
@@ -2453,80 +2530,86 @@ Overfull \hbox (2.57707pt too wide) in paragraph at lines 19--20
 দেখানোর জন্য \TU/lmtt/m/n/12 <meta charset="UTF-8">
  []
 
-[246]
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 []\TU/lmtt/m/n/12 <meta name="viewport" content="width=device-width,
  []
 
-[247]
+
+Underfull \vbox (badness 1442) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1442) has occurred while \output is active []
+
+ [237]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 66.
- [248]
-Underfull \vbox (badness 3333) has occurred while \output is active []
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 59.
 
-
-Underfull \vbox (badness 3333) has occurred while \output is active []
-
- [249]
-[250]
-Underfull \hbox (badness 1577) in paragraph at lines 208--209
+[238] [239] [240]
+Underfull \hbox (badness 1577) in paragraph at lines 211--212
 []|\TU/kalpurush(0)/b/n/12 Page-এর visible content
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--212
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 []|\TU/lmtt/m/n/12 <title>\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 <meta>\TU/k
 alpurush(0)/b/n/12 ,
  []
 
-[251]
-Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[241]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [242]
+Underfull \hbox (badness 10000) in paragraph at lines 319--319
 []|\TU/lmtt/m/n/12 <meta
  []
 
-
-Underfull \vbox (badness 8170) has occurred while \output is active []
-
-
-Underfull \vbox (badness 8170) has occurred while \output is active []
-
- [252]
-[253] [254]) (chapters/Chapter04/topics/06_formatting/topic.tex [255]
+[243] [244]) (chapters/Chapter04/topics/06_formatting/topic.tex [245]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 37.
- [256]
-[257] [258]
-Underfull \hbox (badness 10000) in paragraph at lines 135--135
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 28.
+ [246]
+[247] [248]
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
 []|\TU/kalpurush(0)/b/n/12 container
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 []|\TU/kalpurush(0)/b/n/12 structure বোঝাতে
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 []|\TU/kalpurush(0)/b/n/12 container
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 141--141
+Underfull \hbox (badness 1895) in paragraph at lines 140--140
 []|\TU/kalpurush(0)/b/n/12 thematic/section break
  []
 
 
-Overfull \hbox (18.79926pt too wide) in paragraph at lines 131--144
+Overfull \hbox (18.79926pt too wide) in paragraph at lines 130--143
  [] 
  []
 
-[259] [260] [261] [262] [263] [264] [265]
-Overfull \hbox (5.16936pt too wide) in paragraph at lines 476--477
+[249] [250] [251] [252] [253]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [254]
+[255] [256]
+Overfull \hbox (5.16936pt too wide) in paragraph at lines 517--518
 []|\TU/lmtt/m/n/10.95 <strong>Important</strong>| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 []|\TU/lmtt/m/n/10.95 <font
  []
 
@@ -2536,28 +2619,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [257]
+[258] [259] [260]) (chapters/Chapter04/topics/07_list/topic.tex [261] [262]
+[263] [264] [265]
+Underfull \vbox (badness 2012) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2012) has occurred while \output is active []
+
  [266]
-[267] [268] [269]) (chapters/Chapter04/topics/07_list/topic.tex [270]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[267] [268]
+Underfull \vbox (badness 2865) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2865) has occurred while \output is active []
 
- [271]
-[272] [273] [274] [275] [276]
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
- [277]
-[278] [279]
-Underfull \hbox (badness 10000) in paragraph at lines 432--432
+ [269]
+[270]
+Underfull \hbox (badness 10000) in paragraph at lines 447--447
 []|\TU/kalpurush(0)/b/n/10.95 topic, feature,
  []
 
 
-Underfull \hbox (badness 6775) in paragraph at lines 434--435
+Underfull \hbox (badness 6775) in paragraph at lines 449--450
 []|\TU/kalpurush(0)/b/n/10.95 HTML - markup
  []
 
@@ -2567,97 +2651,238 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [280]
-[281] [282] [283]) (chapters/Chapter04/topics/07_hyperlink/topic.tex [284]
-[285] [286] [287]
-Underfull \vbox (badness 4156) has occurred while \output is active []
+ [271]
+[272]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 4156) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [288]
-[289]
-Overfull \hbox (18.95882pt too wide) in paragraph at lines 214--214
+ [273]
+[274]) (chapters/Chapter04/topics/07_hyperlink/topic.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [275]
+Underfull \vbox (badness 4886) has occurred while \output is active []
+
+
+Underfull \vbox (badness 4886) has occurred while \output is active []
+
+ [276]
+Underfull \vbox (badness 1796) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1796) has occurred while \output is active []
+
+ [277]
+[278] [279]
+Overfull \hbox (18.95882pt too wide) in paragraph at lines 200--200
 []|\TU/lmtt/m/n/12 https://www.google.com| 
  []
 
-[290] [291] [292] [293] [294] [295] [296] [297] [298] [299])
-(chapters/Chapter04/topics/08_image/topic.tex
-Underfull \vbox (badness 1264) has occurred while \output is active []
+[280] [281] [282]
+Underfull \vbox (badness 1454) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1264) has occurred while \output is active []
+Underfull \vbox (badness 1454) has occurred while \output is active []
 
- [300]
+ [283]
+Underfull \vbox (badness 5832) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5832) has occurred while \output is active []
+
+ [284]
+[285]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [301]
-[302] [303]
-Underfull \hbox (badness 6268) in paragraph at lines 138--139
-[]\TU/lmtt/m/n/12 loading="lazy" \TU/kalpurush(0)/b/n/12 off-screen image পরে l
-oad করতে পারে, আর
- []
-
-
+ [286]
+[287]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [304]
-Underfull \vbox (badness 5022) has occurred while \output is active []
+ [288]
+[289] [290] [291]) (chapters/Chapter04/topics/08_image/topic.tex [292]
+Underfull \vbox (badness 3460) has occurred while \output is active []
 
 
-Underfull \vbox (badness 5022) has occurred while \output is active []
+Underfull \vbox (badness 3460) has occurred while \output is active []
+
+ [293]
+[294] [295] [296] [297] [298]
+Underfull \vbox (badness 1127) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1127) has occurred while \output is active []
+
+ [299]
+[300] [301] [302] [303] [304]) (chapters/Chapter04/topics/09_table/topic.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [305]
-[306] [307] [308] [309] [310] [311] [312] [313])
-(chapters/Chapter04/topics/09_table/topic.tex [314] [315] [316] [317] [318]
-[319] [320] [321] [322] [323] [324] [325] [326] [327])
-(chapters/Chapter04/topics/10_form/topic.tex
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
- [328]
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
- [329]
-[330] [331] [332] [333]
-Underfull \vbox (badness 3601) has occurred while \output is active []
-
-
-Underfull \vbox (badness 3601) has occurred while \output is active []
-
- [334]
-[335] [336] [337] [338]
+[306] [307] [308] [309]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [339]
-[340] [341] [342])
-(chapters/Chapter04/topics/05_design_structure_layout/topic.tex
-Underfull \hbox (badness 7433) in paragraph at lines 33--34
-[]|\TU/kalpurush(0)/b/n/12 desktop-এ predictable,
+ [310]
+[311]
+Underfull \hbox (badness 1946) in paragraph at lines 305--306
+[]|\TU/kalpurush(0)/b/n/12 content-এর চারপাশে space
  []
 
-[343]) (chapters/Chapter04/topics/11_web_page_designing/topic.tex
+[312] [313] [314]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [344]
-[345] [346] [347] [348] [349] [350]
+ [315]
+Underfull \hbox (badness 10000) in paragraph at lines 471--471
+[]|\TU/lmtt/m/n/12 <table border="1"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--471
+\TU/lmtt/m/n/12 cellspacing="0"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]|\TU/lmtt/m/n/12 <caption>Result
+ []
+
+[316] [317]
+Overfull \hbox (12.5732pt too wide) in paragraph at lines 571--573
+\TU/kalpurush(0)/b/n/12 উত্তর: \TU/lmtt/m/n/12 cellspacing \TU/kalpurush(0)/b/n
+/12 cell থেকে cell-এর মাঝের gap নির্ধারণ করে। অন্যদিকে \TU/lmtt/m/n/12 cellpadd
+ing
+ []
+
+[318] [319]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [320])
+(chapters/Chapter04/topics/10_table_cell_merge/topic.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [321]
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+ [322]
+[323] [324]
+Underfull \hbox (badness 5607) in paragraph at lines 185--185
+[]|\TU/kalpurush(0)/b/n/12 cell-কে একাধিক column
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
+[]|\TU/lmtt/m/n/12 <th
+ []
+
+
+Overfull \hbox (17.33714pt too wide) in paragraph at lines 191--191
+\TU/lmtt/m/n/12 colspan="3">Result</th>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+[]|\TU/lmtt/m/n/12 <td
+ []
+
+[325] [326] [327]
+Underfull \vbox (badness 3364) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3364) has occurred while \output is active []
+
+ [328]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [329]
+[330]
+Underfull \vbox (badness 6477) has occurred while \output is active []
+
+
+Underfull \vbox (badness 6477) has occurred while \output is active []
+
+ [331]
+[332] [333]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [334]
+Overfull \hbox (4.17511pt too wide) in paragraph at lines 606--608
+\TU/kalpurush(0)/b/n/12 উত্তর: \TU/lmtt/m/n/12 rowspan \TU/kalpurush(0)/b/n/12 
+কোনো cell-কে লম্বালম্বি একাধিক row জুড়ে বিস্তৃত করে। অন্যদিকে \TU/lmtt/m/n/12 c
+olspan
+ []
+
+[335] [336]
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [337])
+(chapters/Chapter04/topics/11_table_inside_elements/topic.tex
+Overfull \hbox (38.21832pt too wide) in paragraph at lines 30--31
+[]|\TU/lmtt/m/n/12 <td><a href="board.html">Board</a></td>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+[]|\TU/lmtt/m/n/12 <td><img src="book.jpg"
+ []
+
+[338] [339] [340]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [341]
+[342] [343] [344] [345] [346] [347]
+Underfull \vbox (badness 5681) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5681) has occurred while \output is active []
+
+ [348]
+[349]
+Overfull \hbox (8.24419pt too wide) in paragraph at lines 527--529
+\TU/kalpurush(0)/b/n/12 উত্তর: Table cell-এর ভিতরে \TU/lmtt/m/n/12 <img> \TU/ka
+lpurush(0)/b/n/12 tag ব্যবহার করে image বসানো যায়। যেমন: \TU/lmtt/m/n/12 <td><i
+mg
+ []
+
+[350]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2669,126 +2894,545 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [352]
-[353] [354]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [352])
+(chapters/Chapter04/topics/12_div_span_style/topic.tex
+Underfull \hbox (badness 4024) in paragraph at lines 11--12
+[]\TU/lmtt/m/n/12 color\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 background-col
+or\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 font-size\TU/kalpurush(0)/b/n/12 , 
+\TU/lmtt/m/n/12 text-align\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 margin\TU/k
+alpurush(0)/b/n/12 ,
+ []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [355]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2197) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2197) has occurred while \output is active []
 
- [356]
-[357] [358]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [359]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [353]
+[354] [355]
+Underfull \hbox (badness 6316) in paragraph at lines 127--127
+[]|\TU/kalpurush(0)/b/n/12 বড় section বা block
+ []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1838) in paragraph at lines 127--128
+[]|\TU/kalpurush(0)/b/n/12 text/inline অংশ group
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 131--131
+[]|\TU/kalpurush(0)/b/n/12 layout, section, card,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[]|\TU/kalpurush(0)/b/n/12 paragraph-এর ভিতরে
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 133--133
+[]|\TU/kalpurush(0)/b/n/12 header, footer, notice
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 133--134
+[]|\TU/kalpurush(0)/b/n/12 red word, highlighted
+ []
+
+[356]
+Underfull \vbox (badness 2680) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2680) has occurred while \output is active []
+
+ [357]
+[358]
+Underfull \hbox (badness 5908) in paragraph at lines 262--262
+[]|\TU/kalpurush(0)/b/n/12 background color নির্ধারণ
+ []
+
+
+Overfull \hbox (46.92215pt too wide) in paragraph at lines 262--263
+[]|\TU/lmtt/m/n/12 background-color:yellow;| 
+ []
+
+
+Overfull \hbox (9.84215pt too wide) in paragraph at lines 266--267
+[]|\TU/lmtt/m/n/12 font-family:Arial;| 
+ []
+
+
+Overfull \hbox (9.84215pt too wide) in paragraph at lines 268--269
+[]|\TU/lmtt/m/n/12 text-align:center;| 
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 272--272
+[]|\TU/kalpurush(0)/b/n/12 element-এর উচ্চতা নির্ধারণ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
+[]|\TU/kalpurush(0)/b/n/12 element-এর বাইরের ফাঁকা
+ []
+
+
+Underfull \hbox (badness 6078) in paragraph at lines 276--276
+[]|\TU/kalpurush(0)/b/n/12 element-এর ভিতরের ফাঁকা
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
+[]|\TU/lmtt/m/n/12 border:1px solid
+ []
+
+[359]
+Underfull \vbox (badness 1048) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1048) has occurred while \output is active []
 
  [360]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[361]
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+[]|\TU/kalpurush(0)/b/n/12 content-এর চারপাশে
+ []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [361]
 [362] [363]
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
+[]|\TU/lmtt/m/n/12 <head>\TU/kalpurush(0)/b/n/12 -এর ভিতরে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--511
+[]|\TU/lmtt/m/n/12 <p
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [364]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[365] [366]
+Overfull \hbox (62.66083pt too wide) in paragraph at lines 592--594
+\TU/kalpurush(0)/b/n/12 করে style প্রয়োগ করার পদ্ধতিকে style attribute বলে। যেম
+ন \TU/lmtt/m/n/12 <p style="color:red;">ICT</p>\TU/kalpurush(0)/b/n/12 । 
+ []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [365]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [366]
-[367] [368]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [369]
+[367] [368] [369])
+(chapters/Chapter04/topics/13_full_webpage_practical/topic.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [370]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1910) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1910) has occurred while \output is active []
 
  [371]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2213) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2213) has occurred while \output is active []
 
  [372]
 [373] [374]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [375])
-(chapters/Chapter04/topics/12_website_publishing/topic.tex [376]
-Overfull \hbox (2.05899pt too wide) in paragraph at lines 14--15
-\TU/kalpurush(0)/b/n/12 ওয়েবসাইট তৈরি করার পর সেটি internet-এ দেখা যাওয়ার জন্য 
-server-এ রাখতে হয়। ব্যবহারকারী
+Overfull \hbox (59.63272pt too wide) in paragraph at lines 207--208
+\TU/kalpurush(0)/b/n/12 background color, \TU/lmtt/m/n/12 color \TU/kalpurush(0
+)/b/n/12 দিয়ে text color, \TU/lmtt/m/n/12 padding \TU/kalpurush(0)/b/n/12 দিয়ে 
+ভিতরের space এবং \TU/lmtt/m/n/12 text-align:center
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+ [375]
+[376] [377]
+Underfull \vbox (badness 7595) has occurred while \output is active []
+
+
+Underfull \vbox (badness 7595) has occurred while \output is active []
+
+ [378]
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+[]\TU/kalpurush(0)/b/n/12 পরের টপিক: Multi-page Website–\TU/lmtt/m/n/12 index.h
+tml\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 about.html\TU/kalpurush(0)/b/n/12 
+,
+ []
+
+) (chapters/Chapter04/topics/10_form/topic.tex [379] [380] [381] [382]
+Underfull \vbox (badness 3930) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3930) has occurred while \output is active []
+
+ [383]
+[384] [385] [386] [387] [388] [389]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [390]
+[391]
+Underfull \vbox (badness 4072) has occurred while \output is active []
+
+
+Underfull \vbox (badness 4072) has occurred while \output is active []
+
+ [392]
+[393]
+Underfull \vbox (badness 5637) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5637) has occurred while \output is active []
+
+ [394])
+(chapters/Chapter04/topics/05_design_structure_layout/topic.tex
+Overfull \hbox (8.81282pt too wide) in paragraph at lines 21--22
+[]\TU/kalpurush(0)/b/n/12 ভালো layout page-কে পরিষ্কার, পড়ার উপযোগী এবং ব্যবহার
+কারী-বান্ধব করে। HSC practical-
+ []
+
+[395]
+Underfull \hbox (badness 5175) in paragraph at lines 79--79
+[]|\TU/kalpurush(0)/b/n/12 width fixed থাকে, যেমন
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+[]|\TU/kalpurush(0)/b/n/12 desktop-এ predictable,
+ []
+
+
+Underfull \hbox (badness 4341) in paragraph at lines 81--81
+[]|\TU/kalpurush(0)/b/n/12 width percentage অনুযায়ী
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 83--84
+[]|\TU/kalpurush(0)/b/n/12 modern website-এর জন্য
+ []
+
+
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+ [396]
+Underfull \hbox (badness 10000) in paragraph at lines 132--132
+[]|\TU/lmtt/m/n/12 <table>\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 <tr>\TU/kal
+purush(0)/b/n/12 , \TU/lmtt/m/n/12 <th>\TU/kalpurush(0)/b/n/12 ,
+ []
+
+[397]
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [398])
+(chapters/Chapter04/topics/11_web_page_designing/topic.tex [399] [400] [401]
+[402] [403] [404] [405] [406] [407] [408] [409] [410] [411] [412]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [413]
+[414] [415] [416] [417] [418] [419] [420] [421] [422] [423] [424] [425]
+[426] [427] [428]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [429]
+[430]) (chapters/Chapter04/topics/12_website_publishing/topic.tex [431]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 []|\TU/kalpurush(0)/b/n/12 high traffic/modern
  []
 
-[377] [378]) (chapters/Chapter04/topics/13_exercises/topic.tex [379]
+[432] [433]
+Underfull \vbox (badness 2134) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2134) has occurred while \output is active []
+
+ [434]
+[435]) (chapters/Chapter04/topics/13_exercises/topic.tex [436]
+Overfull \hbox (11.03008pt too wide) in paragraph at lines 72--72
+[]|\TU/kalpurush(0)/b/n/12 Tag/Attribute| 
+ []
+
+
+Overfull \hbox (9.18167pt too wide) in paragraph at lines 74--74
+[]|\TU/lmtt/m/n/12 <html>...</html>| 
+ []
+
+
+Overfull \hbox (9.18167pt too wide) in paragraph at lines 76--76
+[]|\TU/lmtt/m/n/12 <head>...</head>| 
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 76--77
+[]|\TU/kalpurush(0)/b/n/12 title, meta, style,
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 78--78
+[]|\TU/kalpurush(0)/b/n/12 browser tab title
+ []
+
+
+Overfull \hbox (27.72166pt too wide) in paragraph at lines 78--78
+[]|\TU/lmtt/m/n/12 <title>Page</title>| 
+ []
+
+
+Overfull \hbox (9.18167pt too wide) in paragraph at lines 80--80
+[]|\TU/lmtt/m/n/12 <body>...</body>| 
+ []
+
+
+Overfull \hbox (1.00824pt too wide) in paragraph at lines 82--82
+[]|\TU/lmtt/m/n/12 <h1>-<h6>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+[]|\TU/kalpurush(0)/b/n/12 লেখা paragraph
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|\TU/lmtt/m/n/12 Line 1<br>Line
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+[]|\TU/kalpurush(0)/b/n/12 একই paragraph-এ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
+[]|\TU/lmtt/m/n/12 <a
+ []
+
+
+Overfull \hbox (27.72166pt too wide) in paragraph at lines 88--88
+\TU/lmtt/m/n/12 href="url">Text</a>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+[]|\TU/kalpurush(0)/b/n/12 page, website,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]|\TU/lmtt/m/n/12 <img
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+\TU/lmtt/m/n/12 src="a.jpg"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\TU/lmtt/m/n/12 <ul>\TU/kalpurush(0)/b/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+\TU/lmtt/m/n/12 <ol>\TU/kalpurush(0)/b/n/12 ,
+ []
+
+
+Overfull \hbox (46.26167pt too wide) in paragraph at lines 92--92
+[]|\TU/lmtt/m/n/12 <ul><li>Item</li></ul>| 
+ []
+
+
+Overfull \hbox (21.54167pt too wide) in paragraph at lines 94--94
+[]|\TU/lmtt/m/n/12 <table>...</table>| 
+ []
+
+
+Underfull \hbox (badness 2772) in paragraph at lines 94--95
+[]|\TU/kalpurush(0)/b/n/12 result sheet, rou-
+ []
+
+
+Underfull \hbox (badness 2538) in paragraph at lines 98--98
+[]|\TU/kalpurush(0)/b/n/12 heading cell তৈরি
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+[]|\TU/kalpurush(0)/b/n/12 table data, im-
+ []
+
+
+Underfull \hbox (badness 2126) in paragraph at lines 108--108
+[]|\TU/kalpurush(0)/b/n/12 inline text group
+ []
+
+
+Overfull \hbox (15.36166pt too wide) in paragraph at lines 108--108
+[]|\TU/lmtt/m/n/12 <span>Text</span>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+[]|\TU/kalpurush(0)/b/n/12 নির্দিষ্ট word/phrase
+ []
+
+
+Overfull \hbox (21.54167pt too wide) in paragraph at lines 110--110
+[]|\TU/lmtt/m/n/12 style="color:red;"| 
+ []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 110--111
+[]|\TU/kalpurush(0)/b/n/12 color, background,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+\TU/kalpurush(0)/b/n/12 border, margin,
+ []
+
+
+Overfull \hbox (9.18167pt too wide) in paragraph at lines 112--112
+[]|\TU/lmtt/m/n/12 <form>...</form>| 
+ []
+
+
+Underfull \hbox (badness 4013) in paragraph at lines 112--113
+[]|\TU/kalpurush(0)/b/n/12 login, registration,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]|\TU/lmtt/m/n/12 <input
+ []
+
+
+Overfull \hbox (7.20024pt too wide) in paragraph at lines 116--116
+[]|\TU/lmtt/m/n/12 <textarea>| 
+ []
+
+
+Overfull \hbox (40.08167pt too wide) in paragraph at lines 116--116
+[]|\TU/lmtt/m/n/12 <textarea></textarea>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+[]|\TU/kalpurush(0)/b/n/12 message/comment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]|\TU/lmtt/m/n/12 <select>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\TU/kalpurush(0)/b/n/12 ও
+ []
+
+
+Overfull \hbox (138.96167pt too wide) in paragraph at lines 118--118
+[]|\TU/lmtt/m/n/12 <select><option>...</option></select>| 
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 118--119
+[]|\TU/kalpurush(0)/b/n/12 class, subject, dis-
+ []
+
+
+Underfull \vbox (badness 3482) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3482) has occurred while \output is active []
+
+ [437]
+Overfull \vbox (199.42613pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (199.42613pt too high) has occurred while \output is active []
+
+
+[438]
+Underfull \hbox (badness 10000) in paragraph at lines 178--191
+
+ []
+
+[439] [440]
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+[]|\TU/lmtt/m/n/12 <table>\TU/kalpurush(0)/b/n/12 , \TU/lmtt/m/n/12 <tr>\TU/kal
+purush(0)/b/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
+[]|\TU/kalpurush(0)/b/n/12 title, heading, marks,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\TU/lmtt/m/n/12 cellpadding\TU/kalpurush(0)/b/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+[]|\TU/lmtt/m/n/12 <a href="">\TU/kalpurush(0)/b/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+[]|\TU/kalpurush(0)/b/n/12 domain expiry,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+\TU/kalpurush(0)/b/n/12 hosting expiry,
+ []
+
+[441]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [380]))
-[381]
+ [442]))
+[443]
 \openout2 = `chapters/Chapter05/latex/chapter.aux'.
 
- (chapters/Chapter05/latex/chapter.tex [382
+ (chapters/Chapter05/latex/chapter.tex [444
 
 
 
 
 ]
 Chapter 5.
-[383] (chapters/Chapter05/topics/01_overview/topic.tex)
+[445] (chapters/Chapter05/topics/01_overview/topic.tex)
 (chapters/Chapter05/topics/02_program_concept/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [384]
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
 []|\TU/kalpurush(0)/b/n/12 translated machine-level
  []
@@ -2798,14 +3442,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--21
 []|\TU/kalpurush(0)/b/n/12 Executable pro-
  []
 
-) (chapters/Chapter05/topics/03_programming_language_concept/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [385])
-(chapters/Chapter05/topics/04_generations_of_language/topic.tex
+[446]) (chapters/Chapter05/topics/03_programming_language_concept/topic.tex
+[447]) (chapters/Chapter05/topics/04_generations_of_language/topic.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 []|\TU/kalpurush(0)/b/n/12 human-readable, com-
  []
@@ -2815,92 +3453,92 @@ Underfull \hbox (badness 4156) in paragraph at lines 19--20
 []|\TU/kalpurush(0)/b/n/12 কম code, database/query
  []
 
-[386]
+
 Underfull \hbox (badness 3098) in paragraph at lines 35--36
 []\TU/kalpurush(0)/b/n/12 ভাষার প্রজন্মের উত্তরে generation, উদাহরণ, machine de
 pendency এবং
  []
 
-) (chapters/Chapter05/topics/05_low_level_language/topic.tex [387])
-(chapters/Chapter05/topics/06_machine_language/topic.tex)
-(chapters/Chapter05/topics/07_assembly_language/topic.tex [388])
-(chapters/Chapter05/topics/08_mid_level_language/topic.tex [389])
-(chapters/Chapter05/topics/09_high_level_language/topic.tex)
-(chapters/Chapter05/topics/10_4gl/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [390])
-(chapters/Chapter05/topics/11_translator_program/topic.tex
+) (chapters/Chapter05/topics/05_low_level_language/topic.tex [448])
+(chapters/Chapter05/topics/06_machine_language/topic.tex [449])
+(chapters/Chapter05/topics/07_assembly_language/topic.tex)
+(chapters/Chapter05/topics/08_mid_level_language/topic.tex [450])
+(chapters/Chapter05/topics/09_high_level_language/topic.tex [451])
+(chapters/Chapter05/topics/10_4gl/topic.tex)
+(chapters/Chapter05/topics/11_translator_program/topic.tex [452]
 Underfull \hbox (badness 1490) in paragraph at lines 25--25
 []|\TU/kalpurush(0)/b/n/12 পুরো program একসাথে translate
  []
 
-[391]) (chapters/Chapter05/topics/12_compiler/topic.tex [392])
-(chapters/Chapter05/topics/13_interpreter/topic.tex)
-(chapters/Chapter05/topics/14_assembler/topic.tex [393])
-(chapters/Chapter05/topics/15_program_organization/topic.tex [394])
+) (chapters/Chapter05/topics/12_compiler/topic.tex [453])
+(chapters/Chapter05/topics/13_interpreter/topic.tex [454])
+(chapters/Chapter05/topics/14_assembler/topic.tex)
+(chapters/Chapter05/topics/15_program_organization/topic.tex [455])
 (chapters/Chapter05/topics/16_steps_of_development/topic.tex
 Underfull \hbox (badness 2469) in paragraph at lines 5--6
 []\TU/kalpurush(0)/b/n/12 এই টপিক শেষে শিক্ষার্থী program development life cycl
 e-এর ধাপগুলো
  []
 
-) (chapters/Chapter05/topics/17_algorithm/topic.tex [395])
+[456]) (chapters/Chapter05/topics/17_algorithm/topic.tex)
 (chapters/Chapter05/topics/18_flowchart/topic.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3492) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3492) has occurred while \output is active []
 
- [396])
-(chapters/Chapter05/topics/19_program_design_model/topic.tex [397]
+ [457])
+(chapters/Chapter05/topics/19_program_design_model/topic.tex [458]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 []\TU/kalpurush(0)/b/n/12 Programming model-এর প্রশ্নে শুধু নাম লিখবে না; কোন ধ
 রনের
  []
 
-) (chapters/Chapter05/topics/20_structured_programming/topic.tex [398])
+) (chapters/Chapter05/topics/20_structured_programming/topic.tex [459])
 (chapters/Chapter05/topics/21_visual_programming/topic.tex)
-(chapters/Chapter05/topics/22_oop/topic.tex [399])
-(chapters/Chapter05/topics/23_event_driven_programming/topic.tex [400])
+(chapters/Chapter05/topics/22_oop/topic.tex [460])
+(chapters/Chapter05/topics/23_event_driven_programming/topic.tex [461])
 (chapters/Chapter05/topics/24_c_intro/topic.tex)
-(chapters/Chapter05/topics/25_c_characteristics/topic.tex [401])
-(chapters/Chapter05/topics/26_c_compiling/topic.tex [402])
-(chapters/Chapter05/topics/27_c_structure/topic.tex
+(chapters/Chapter05/topics/25_c_characteristics/topic.tex [462])
+(chapters/Chapter05/topics/26_c_compiling/topic.tex)
+(chapters/Chapter05/topics/27_c_structure/topic.tex [463]
 Underfull \hbox (badness 10000) in paragraph at lines 26--26
 []|\TU/lmtt/m/n/12 #include
  []
 
-) (chapters/Chapter05/topics/28_data_type/topic.tex [403]
+) (chapters/Chapter05/topics/28_data_type/topic.tex [464]
 Overfull \hbox (3.19592pt too wide) in paragraph at lines 13--26
  [] 
  []
 
 ) (chapters/Chapter05/topics/29_constant/topic.tex)
-(chapters/Chapter05/topics/30_variable/topic.tex [404])
-(chapters/Chapter05/topics/31_operator/topic.tex [405]
+(chapters/Chapter05/topics/30_variable/topic.tex
+Underfull \vbox (badness 1418) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1418) has occurred while \output is active []
+
+ [465])
+(chapters/Chapter05/topics/31_operator/topic.tex
 Overfull \hbox (12.1848pt too wide) in paragraph at lines 25--25
 []|\TU/kalpurush(0)/b/n/12 Increment/Decrement| 
  []
 
-) (chapters/Chapter05/topics/32_expression/topic.tex [406])
-(chapters/Chapter05/topics/33_keyword/topic.tex)
-(chapters/Chapter05/topics/34_io_statement/topic.tex [407])
-(chapters/Chapter05/topics/35_conditional_statement/topic.tex [408])
-(chapters/Chapter05/topics/36_loop_statement/topic.tex)
-(chapters/Chapter05/topics/37_array/topic.tex [409])
-(chapters/Chapter05/topics/38_function/topic.tex [410])
+[466]) (chapters/Chapter05/topics/32_expression/topic.tex)
+(chapters/Chapter05/topics/33_keyword/topic.tex [467])
+(chapters/Chapter05/topics/34_io_statement/topic.tex [468])
+(chapters/Chapter05/topics/35_conditional_statement/topic.tex)
+(chapters/Chapter05/topics/36_loop_statement/topic.tex [469])
+(chapters/Chapter05/topics/37_array/topic.tex [470])
+(chapters/Chapter05/topics/38_function/topic.tex [471])
 (chapters/Chapter05/topics/39_practical_program_practice/topic.tex
-Underfull \vbox (badness 1688) has occurred while \output is active []
+Underfull \vbox (badness 4060) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1688) has occurred while \output is active []
+Underfull \vbox (badness 4060) has occurred while \output is active []
 
- [411])
-(chapters/Chapter05/topics/40_exercises/topic.tex [412] [413])) [414]
+ [472])
+(chapters/Chapter05/topics/40_exercises/topic.tex [473])) [474]
 \openout2 = `chapters/Chapter06/latex/chapter.aux'.
 
 
@@ -2912,7 +3550,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [415
+ [475
 
 
 
@@ -2924,9 +3562,9 @@ Underfull \vbox (badness 5924) has occurred while \output is active []
 
 Underfull \vbox (badness 5924) has occurred while \output is active []
 
- [416])
-(chapters/Chapter06/topics/03_dbms/topic.tex [417] [418])
-(chapters/Chapter06/topics/04_rdbms/topic.tex
+ [476])
+(chapters/Chapter06/topics/03_dbms/topic.tex [477])
+(chapters/Chapter06/topics/04_rdbms/topic.tex [478]
 Underfull \hbox (badness 10000) in paragraph at lines 16--16
 []|\TU/kalpurush(0)/b/n/12 ফাইল/টেবিলসহ বিভিন্ন
  []
@@ -2941,43 +3579,61 @@ Underfull \hbox (badness 3746) in paragraph at lines 22--23
 []|\TU/kalpurush(0)/b/n/12 MySQL, Oracle, SQL
  []
 
-[419]) (chapters/Chapter06/topics/05_creating_database/topic.tex [420])
-(chapters/Chapter06/topics/06_data_type/topic.tex)
-(chapters/Chapter06/topics/07_query/topic.tex [421] [422])
-(chapters/Chapter06/topics/08_sorting/topic.tex [423])
-(chapters/Chapter06/topics/09_indexing/topic.tex)
-(chapters/Chapter06/topics/10_relation/topic.tex [424])
-(chapters/Chapter06/topics/11_form/topic.tex [425])
-(chapters/Chapter06/topics/12_report/topic.tex [426])
-(chapters/Chapter06/topics/13_corporate_database/topic.tex [427])
+) (chapters/Chapter06/topics/05_creating_database/topic.tex [479])
+(chapters/Chapter06/topics/06_data_type/topic.tex [480])
+(chapters/Chapter06/topics/07_query/topic.tex
+Underfull \vbox (badness 2119) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2119) has occurred while \output is active []
+
+ [481]
+[482]) (chapters/Chapter06/topics/08_sorting/topic.tex)
+(chapters/Chapter06/topics/09_indexing/topic.tex [483])
+(chapters/Chapter06/topics/10_relation/topic.tex [484])
+(chapters/Chapter06/topics/11_form/topic.tex
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+ [485])
+(chapters/Chapter06/topics/12_report/topic.tex [486])
+(chapters/Chapter06/topics/13_corporate_database/topic.tex
+Underfull \vbox (badness 1783) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1783) has occurred while \output is active []
+
+ [487])
 (chapters/Chapter06/topics/14_government_database/topic.tex
-Underfull \vbox (badness 4024) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 4024) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [428])
+ [488])
 (chapters/Chapter06/topics/15_data_security/topic.tex
-Underfull \vbox (badness 1484) has occurred while \output is active []
+Underfull \vbox (badness 2376) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1484) has occurred while \output is active []
+Underfull \vbox (badness 2376) has occurred while \output is active []
 
- [429])
+ [489])
 (chapters/Chapter06/topics/16_data_encryption/topic.tex
 Underfull \hbox (badness 10000) in paragraph at lines 24--24
 []|\TU/kalpurush(0)/b/n/12 Asymmetric encryp-
  []
 
-[430]) (chapters/Chapter06/topics/17_practical_tasks/topic.tex)
-(chapters/Chapter06/topics/18_exercises/topic.tex [431]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[490]) (chapters/Chapter06/topics/17_practical_tasks/topic.tex)
+(chapters/Chapter06/topics/18_exercises/topic.tex
+Underfull \vbox (badness 5667) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5667) has occurred while \output is active []
 
- [432]))
-[433] (main.aux (chapters/Chapter01/latex/chapter.aux)
+ [491]))
+[492] (main.aux (chapters/Chapter01/latex/chapter.aux)
 (chapters/Chapter02/latex/chapter.aux) (chapters/Chapter03/latex/chapter.aux)
 (chapters/Chapter04/latex/chapter.aux) (chapters/Chapter05/latex/chapter.aux)
 (chapters/Chapter06/latex/chapter.aux))
@@ -2986,17 +3642,17 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BFC1F10D2C4F718C5A8BC9455A7B2AE3;111118.
+(rerunfilecheck)             Checksum: 6DF21921AC700AE4E89A8E85DF79FF62;134942.
 
  ) 
 Here is how much of TeX's memory you used:
- 33641 strings out of 402983
- 754730 string characters out of 5448482
- 1177886 words of memory out of 5000000
- 61472 multiletter control sequences out of 15000+600000
- 637840 words of font info for 107 fonts, out of 8000000 for 9000
+ 34276 strings out of 402983
+ 767906 string characters out of 5448482
+ 1314008 words of memory out of 5000000
+ 62093 multiletter control sequences out of 15000+600000
+ 637848 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,15n,116p,821b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build\main.pdf (
-445 pages).
+514 pages).
