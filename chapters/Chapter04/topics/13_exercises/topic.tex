@@ -64,61 +64,92 @@
 
 \subsection{Final Tag Reference}
 
-Chapter 4-এর HTML practical অংশে tag মুখস্থ করার চেয়ে tag-এর কাজ, syntax, output এবং problem-solving use বুঝে শেখা বেশি গুরুত্বপূর্ণ। নিচের tableটি final revision হিসেবে ব্যবহার করা যাবে।
+Chapter 4-এর HTML practical অংশে tag মুখস্থ করার চেয়ে tag-এর কাজ, syntax, output এবং ব্যবহার বুঝে শেখা বেশি গুরুত্বপূর্ণ। নিচের ছোট ছোট reference table final revision হিসেবে ব্যবহার করা যাবে।
 
+\begin{keypointbox}{Important document ও text tag}
 \begin{center}
-\begin{tabular}{|p{0.14\textwidth}|p{0.24\textwidth}|p{0.23\textwidth}|p{0.25\textwidth}|}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{|p{0.22\textwidth}|p{0.37\textwidth}|p{0.31\textwidth}|}
 \hline
-\textbf{Tag/Attribute} & \textbf{Definition/কাজ} & \textbf{Common syntax} & \textbf{কী কী করা যায়} \\
+\textbf{Tag} & \textbf{কাজ} & \textbf{ছোট syntax} \\
 \hline
-\texttt{<html>} & সম্পূর্ণ HTML document ধরে & \texttt{<html>...</html>} & page-এর root structure তৈরি \\
+\texttt{<html>} & সম্পূর্ণ HTML document ধরে। & \texttt{<html>...</html>} \\
 \hline
-\texttt{<head>} & page-related information রাখে & \texttt{<head>...</head>} & title, meta, style, link রাখা \\
+\texttt{<head>} & title, meta, style, link ইত্যাদি page information রাখে। & \texttt{<head>...</head>} \\
 \hline
-\texttt{<title>} & browser tab title দেখায় & \texttt{<title>Page</title>} & page title নির্ধারণ \\
+\texttt{<title>} & browser tab-এ page title দেখায়। & \texttt{<title>Page</title>} \\
 \hline
-\texttt{<body>} & visible content রাখে & \texttt{<body>...</body>} & heading, paragraph, image, table, form দেখানো \\
+\texttt{<body>} & browser-এ visible content রাখে। & \texttt{<body>...</body>} \\
 \hline
-\texttt{<h1>-<h6>} & heading তৈরি করে & \texttt{<h1>Title</h1>} & বড়/ছোট শিরোনাম তৈরি \\
+\texttt{<h1>}--\texttt{<h6>} & বড় থেকে ছোট heading তৈরি করে। & \texttt{<h1>Title</h1>} \\
 \hline
-\texttt{<p>} & paragraph তৈরি করে & \texttt{<p>Text</p>} & লেখা paragraph আকারে দেখানো \\
+\texttt{<p>} & paragraph তৈরি করে। & \texttt{<p>Text</p>} \\
 \hline
-\texttt{<br>} & line break দেয় & \texttt{Line 1<br>Line 2} & একই paragraph-এ নতুন line \\
+\texttt{<br>} & একই paragraph-এর ভিতরে নতুন line দেয়। & \texttt{Line 1<br>Line 2} \\
 \hline
-\texttt{<a>} & hyperlink তৈরি করে & \texttt{<a href="url">Text</a>} & page, website, email, file বা image link \\
+\texttt{<div>} & বড় block/section group করে। & \texttt{<div>...</div>} \\
 \hline
-\texttt{<img>} & image দেখায় & \texttt{<img src="a.jpg" alt="A">} & picture, logo, clickable image \\
-\hline
-\texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} & list তৈরি করে & \texttt{<ul><li>Item</li></ul>} & unordered, ordered, nested list \\
-\hline
-\texttt{<table>} & table তৈরি করে & \texttt{<table>...</table>} & result sheet, routine, price list \\
-\hline
-\texttt{<tr>} & table row তৈরি করে & \texttt{<tr>...</tr>} & table-এ নতুন row \\
-\hline
-\texttt{<th>} & heading cell তৈরি করে & \texttt{<th>Name</th>} & table heading \\
-\hline
-\texttt{<td>} & data cell তৈরি করে & \texttt{<td>Rafi</td>} & table data, image/list/link cell \\
-\hline
-\texttt{rowspan} & cell-কে row জুড়ে দেয় & \texttt{rowspan="2"} & vertical merge \\
-\hline
-\texttt{colspan} & cell-কে column জুড়ে দেয় & \texttt{colspan="3"} & horizontal merge \\
-\hline
-\texttt{<div>} & block section group করে & \texttt{<div>...</div>} & header, menu, content, footer section \\
-\hline
-\texttt{<span>} & inline text group করে & \texttt{<span>Text</span>} & নির্দিষ্ট word/phrase style \\
-\hline
-\texttt{style} & inline CSS দেয় & \texttt{style="color:red;"} & color, background, border, margin, padding \\
-\hline
-\texttt{<form>} & input form তৈরি করে & \texttt{<form>...</form>} & login, registration, feedback form \\
-\hline
-\texttt{<input>} & input field তৈরি করে & \texttt{<input type="text">} & text, password, radio, checkbox, submit \\
-\hline
-\texttt{<textarea>} & বড় text input দেয় & \texttt{<textarea></textarea>} & message/comment box \\
-\hline
-\texttt{<select>} ও \texttt{<option>} & dropdown তৈরি করে & \texttt{<select><option>...</option></select>} & class, subject, district selection \\
+\texttt{<span>} & inline text বা word group করে। & \texttt{<span>Text</span>} \\
 \hline
 \end{tabular}
 \end{center}
+\end{keypointbox}
+
+\begin{keypointbox}{Important link, image, list ও table tag}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{|p{0.22\textwidth}|p{0.37\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{Tag/Attribute} & \textbf{কাজ} & \textbf{ছোট syntax} \\
+\hline
+\texttt{<a>} & hyperlink তৈরি করে। & \texttt{<a href="url">Text</a>} \\
+\hline
+\texttt{<img>} & image দেখায়। & \texttt{<img src="a.jpg" alt="A">} \\
+\hline
+\texttt{<ul>} & unordered বা bullet list তৈরি করে। & \texttt{<ul>...</ul>} \\
+\hline
+\texttt{<ol>} & ordered বা serial list তৈরি করে। & \texttt{<ol>...</ol>} \\
+\hline
+\texttt{<li>} & list item লেখে। & \texttt{<li>Item</li>} \\
+\hline
+\texttt{<table>} & row-column table তৈরি করে। & \texttt{<table>...</table>} \\
+\hline
+\texttt{<tr>} & table row তৈরি করে। & \texttt{<tr>...</tr>} \\
+\hline
+\texttt{<th>} & table heading cell তৈরি করে। & \texttt{<th>Name</th>} \\
+\hline
+\texttt{<td>} & table data cell তৈরি করে। & \texttt{<td>Rafi</td>} \\
+\hline
+\texttt{rowspan} & একটি cell একাধিক row জুড়ে দেখায়। & \texttt{rowspan="2"} \\
+\hline
+\texttt{colspan} & একটি cell একাধিক column জুড়ে দেখায়। & \texttt{colspan="3"} \\
+\hline
+\end{tabular}
+\end{center}
+\end{keypointbox}
+
+\begin{keypointbox}{Important form ও style tag}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{|p{0.22\textwidth}|p{0.37\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{Tag/Attribute} & \textbf{কাজ} & \textbf{ছোট syntax} \\
+\hline
+\texttt{style} & inline CSS style দেয়। & \texttt{style="color:red;"} \\
+\hline
+\texttt{<form>} & user input নেওয়ার form তৈরি করে। & \texttt{<form>...</form>} \\
+\hline
+\texttt{<input>} & text, password, radio, checkbox, submit ইত্যাদি input তৈরি করে। & \texttt{<input type="text">} \\
+\hline
+\texttt{<textarea>} & বড় message/comment box তৈরি করে। & \texttt{<textarea>...</textarea>} \\
+\hline
+\texttt{<select>} & dropdown list তৈরি করে। & \texttt{<select>...</select>} \\
+\hline
+\texttt{<option>} & dropdown-এর option তৈরি করে। & \texttt{<option>Science</option>} \\
+\hline
+\end{tabular}
+\end{center}
+\end{keypointbox}
 
 \subsection{Tag Selection Tree}
 
@@ -150,17 +181,6 @@ Output দেখে code লেখার সময় আগে বুঝতে হ
   };
 \end{tikzpicture}
 \end{center}
-
-\begin{examplebox}{Mermaid diagram idea}
-\begin{verbatim}
-flowchart TD
-    A[Output দেখে tag select] --> B{Content type?}
-    B --> C[Text: h1, p, br, span]
-    B --> D[Media/Link: img, a]
-    B --> E[List/Table: ul, ol, li, table, tr, th, td]
-    B --> F[Form/Section: form, input, div]
-\end{verbatim}
-\end{examplebox}
 
 \subsection{Problem Solution Format}
 
@@ -236,7 +256,7 @@ Browser-এ দেখে row/column, image path, link address, spelling ও clos
 \end{examplebox}
 \end{practicebox}
 
-\subsection{Source PDF মিলিয়ে CQ Pattern}
+\subsection{Important CQ Pattern}
 
 ২০২৩-২০২৫ board-style CQ-তে Chapter 4 থেকে বারবার কয়েক ধরনের practical problem এসেছে। এগুলো আলাদা করে practice করলে output দেখে code লেখা সহজ হয়।
 

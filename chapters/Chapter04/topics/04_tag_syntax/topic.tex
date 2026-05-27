@@ -63,13 +63,14 @@ Content & tag-এর মাঝের লেখা বা nested অংশ & text
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-  node distance=16mm and 20mm,
-  box/.style={draw, rounded corners, align=center, inner sep=5pt, text width=34mm, fill=gray!5}
+  node distance=14mm and 18mm,
+  box/.style={draw, rounded corners, align=center, inner sep=4pt, text width=31mm, fill=gray!5, font=\small},
+  elementbox/.style={draw, rounded corners, align=center, inner sep=4pt, text width=44mm, fill=gray!5, font=\small}
 ]
-\node[box] (element) {\textbf{HTML element}\\\texttt{<p align="center">Bangladesh</p>}};
-\node[box, above left=of element] (starttag) {\textbf{Start tag}\\\texttt{<p align="center">}};
+\node[elementbox] (element) {\textbf{HTML element}\\{\scriptsize\ttfamily <p align="center">}\\{\scriptsize\ttfamily Bangladesh}\\{\scriptsize\ttfamily </p>}};
+\node[box, above left=of element] (starttag) {\textbf{Start tag}\\{\scriptsize\ttfamily <p}\\{\scriptsize\ttfamily align="center">}};
 \node[box, above right=of element] (endtag) {\textbf{End tag}\\\texttt{</p>}};
-\node[box, below=of element] (attr) {\textbf{Attribute}\\\texttt{align="center"}};
+\node[box, below=of element] (attr) {\textbf{Attribute}\\{\scriptsize\ttfamily align="center"}};
 \draw[->, thick] (starttag) -- (element);
 \draw[->, thick] (endtag) -- (element);
 \draw[->, thick] (attr) -- (element);
@@ -101,7 +102,7 @@ Attributeসহ tag & \texttt{<img src="a.jpg" alt="A">} & অতিরিক্
 যে HTML tag-এর সাধারণত কোনো closing tag থাকে না এবং যা content ঘিরে রাখে না, তাকে empty tag বলে। আধুনিক HTML-এ এগুলোকেই প্রায়শ void element বলা হয়। যেমন \texttt{<br>}, \texttt{<hr>}, \texttt{<img>}।
 \end{definitionbox}
 
-\begin{keypointbox}{Source PDF মিলিয়ে important empty tag}
+\begin{keypointbox}{Important empty tags}
 HSC MCQ-তে empty tag শনাক্ত করতে বলা হয়। মনে রাখবে:
 \begin{itemize}
 \item \texttt{<br>} - line break
