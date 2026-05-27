@@ -62,6 +62,7 @@ Content & tag-এর মাঝের লেখা বা nested অংশ & text
 
 \begin{figure}[H]
 \centering
+\resizebox{0.96\linewidth}{!}{%
 \begin{tikzpicture}[
   node distance=14mm and 18mm,
   box/.style={draw, rounded corners, align=center, inner sep=4pt, text width=31mm, fill=gray!5, font=\small},
@@ -75,6 +76,7 @@ Content & tag-এর মাঝের লেখা বা nested অংশ & text
 \draw[->, thick] (endtag) -- (element);
 \draw[->, thick] (attr) -- (element);
 \end{tikzpicture}
+}
 \caption{HTML tag, element ও attribute-এর সম্পর্ক}
 \label{fig:html-tag-element-attribute}
 \end{figure}

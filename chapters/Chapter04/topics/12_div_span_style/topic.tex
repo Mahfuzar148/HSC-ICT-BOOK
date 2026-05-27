@@ -253,19 +253,20 @@ style="property:value; property:value;"
 HSC level-এ style attribute শেখার জন্য নিচের propertyগুলো বেশি গুরুত্বপূর্ণ।
 
 \begin{center}
-\begin{tabular}{|p{0.26\textwidth}|p{0.34\textwidth}|p{0.26\textwidth}|}
+\footnotesize
+\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
 \hline
 \textbf{Property} & \textbf{কাজ} & \textbf{Example} \\
 \hline
 \texttt{color} & text color নির্ধারণ করে & \texttt{color:red;} \\
 \hline
-\texttt{background-color} & background color নির্ধারণ করে & \texttt{background-color:yellow;} \\
+\texttt{background-color} & background color নির্ধারণ করে & {\scriptsize\ttfamily background-color:yellow;} \\
 \hline
 \texttt{font-size} & font size নির্ধারণ করে & \texttt{font-size:20px;} \\
 \hline
-\texttt{font-family} & font style/family নির্ধারণ করে & \texttt{font-family:Arial;} \\
+\texttt{font-family} & font style/family নির্ধারণ করে & {\scriptsize\ttfamily font-family:Arial;} \\
 \hline
-\texttt{text-align} & text alignment নির্ধারণ করে & \texttt{text-align:center;} \\
+\texttt{text-align} & text alignment নির্ধারণ করে & {\scriptsize\ttfamily text-align:center;} \\
 \hline
 \texttt{width} & element-এর প্রস্থ নির্ধারণ করে & \texttt{width:200px;} \\
 \hline
@@ -590,7 +591,7 @@ Syntax & \texttt{<p style="color:red;">} & \texttt{p \{ color:red; \}} \\
 উত্তর: \texttt{<div>} একটি block-level container, যা webpage-এর বড় section বা block group করতে ব্যবহৃত হয়। অন্যদিকে \texttt{<span>} একটি inline-level container, যা text বা line-এর ভিতরে নির্দিষ্ট অংশ group করতে ব্যবহৃত হয়।
 
 \item \textbf{Style attribute কী?}\\
-উত্তর: HTML element-এর opening tag-এর মধ্যে সরাসরি CSS property ও value ব্যবহার করে style প্রয়োগ করার পদ্ধতিকে style attribute বলে। যেমন \texttt{<p style="color:red;">ICT</p>}।
+উত্তর: HTML element-এর opening tag-এর মধ্যে সরাসরি CSS property ও value লিখে style প্রয়োগ করার পদ্ধতিকে style attribute বলে। যেমন \texttt{style="color:red;"}।
 
 \item \textbf{\texttt{style="color:red; float:left;"} কেন সঠিক?}\\
 উত্তর: কারণ style attribute-এর ভিতরে CSS property ও value colon \texttt{:} দিয়ে লেখা হয় এবং একাধিক declaration semicolon \texttt{;} দিয়ে আলাদা করা হয়। এখানে \texttt{color:red;} এবং \texttt{float:left;}--দুটি declaration সঠিকভাবে লেখা হয়েছে।

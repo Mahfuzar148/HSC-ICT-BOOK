@@ -234,11 +234,22 @@ User browser-এ \texttt{www.example.com} লিখলে DNS সেই domain n
 \end{enumerate}
 
 \begin{center}
-\fbox{\parbox{0.80\textwidth}{
-\centering
-Domain name $\rightarrow$ DNS lookup $\rightarrow$ IP address\\
-$\rightarrow$ Web server $\rightarrow$ Webpage
-}}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, fill=green!6, minimum width=2.35cm, minimum height=0.78cm, align=center, font=\small},
+  dnsbox/.style={draw, rounded corners, fill=yellow!15, minimum width=2.35cm, minimum height=0.78cm, align=center, font=\small\bfseries},
+  arrow/.style={->, thick}
+]
+\node[box] (domain) {Domain name\\\texttt{example.com}};
+\node[dnsbox, right=0.6cm of domain] (dns) {DNS\\lookup};
+\node[box, right=0.6cm of dns] (ip) {IP address\\\texttt{192.0.2.10}};
+\node[box, below=0.85cm of ip] (server) {Web Server};
+\node[box, left=0.6cm of server] (page) {Webpage\\display};
+\draw[arrow] (domain) -- node[above, font=\scriptsize]{name} (dns);
+\draw[arrow] (dns) -- node[above, font=\scriptsize]{convert} (ip);
+\draw[arrow] (ip) -- node[right, font=\scriptsize]{request} (server);
+\draw[arrow] (server) -- node[below, font=\scriptsize]{response} (page);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: DNS domain name-কে IP address-এ রূপান্তর করে}
 \end{center}
 
 \begin{boardbox}{সহজ line}
@@ -260,6 +271,30 @@ URL-এর পূর্ণরূপ হলো \textbf{Uniform Resource Locator}�
 \end{examplebox}
 
 \subsubsection{URL-এর অংশ}
+
+\begin{center}
+\begin{tikzpicture}[
+  seg/.style={draw, minimum height=0.78cm, align=center, font=\scriptsize},
+  label/.style={font=\scriptsize, align=center}
+]
+\node[seg, fill=green!10, minimum width=1.85cm] (proto) {\texttt{https://}};
+\node[seg, fill=blue!8, minimum width=1.45cm, right=0cm of proto] (www) {\texttt{www}};
+\node[seg, fill=yellow!12, minimum width=2.2cm, right=0cm of www] (domain) {\texttt{college.edu.bd}};
+\node[seg, fill=orange!10, minimum width=1.65cm, right=0cm of domain] (path) {\texttt{/notice/}};
+\node[seg, fill=red!8, minimum width=2.05cm, right=0cm of path] (file) {\texttt{result.html}};
+\node[label, below=0.35cm of proto] {Protocol};
+\node[label, below=0.35cm of www] {Host};
+\node[label, below=0.35cm of domain] {Domain};
+\node[label, below=0.35cm of path] {Path};
+\node[label, below=0.35cm of file] {File};
+\draw[->, thick] (proto.south) -- ++(0,-0.22);
+\draw[->, thick] (www.south) -- ++(0,-0.22);
+\draw[->, thick] (domain.south) -- ++(0,-0.22);
+\draw[->, thick] (path.south) -- ++(0,-0.22);
+\draw[->, thick] (file.south) -- ++(0,-0.22);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: URL-এর অংশগুলো আলাদা করে দেখানো}
+\end{center}
 
 \begin{center}
 \begin{tabular}{|p{0.28\textwidth}|p{0.24\textwidth}|p{0.30\textwidth}|}
@@ -409,12 +444,23 @@ FTP-এর পূর্ণরূপ \textbf{File Transfer Protocol}। Website p
 \end{enumerate}
 
 \begin{center}
-\fbox{\parbox{0.84\textwidth}{
-\centering
-URL typed $\rightarrow$ Domain extracted $\rightarrow$ DNS lookup\\
-$\rightarrow$ IP address found $\rightarrow$ HTTP/HTTPS request\\
-$\rightarrow$ Server response $\rightarrow$ Webpage displayed
-}}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, fill=green!6, minimum width=2.35cm, minimum height=0.72cm, align=center, font=\scriptsize},
+  arrow/.style={->, thick}
+]
+\node[box] (url) {URL typed};
+\node[box, right=0.45cm of url] (domain) {Domain\\extracted};
+\node[box, right=0.45cm of domain] (dns) {DNS\\lookup};
+\node[box, below=0.75cm of dns] (ip) {IP found};
+\node[box, left=0.45cm of ip] (req) {HTTP/HTTPS\\request};
+\node[box, left=0.45cm of req] (display) {Webpage\\displayed};
+\draw[arrow] (url) -- (domain);
+\draw[arrow] (domain) -- (dns);
+\draw[arrow] (dns) -- (ip);
+\draw[arrow] (ip) -- (req);
+\draw[arrow] (req) -- (display);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: Browser-এ URL লেখার পর webpage দেখা পর্যন্ত ধাপ}
 \end{center}
 
 \subsection{Board/Exam Focus}

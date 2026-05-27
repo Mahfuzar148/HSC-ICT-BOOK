@@ -18,6 +18,63 @@
 
 সংক্ষেপে বলা যায়, WWW হলো web resource-এর বিশাল ব্যবস্থা, browser হলো সেই resource দেখার software এবং search engine হলো WWW থেকে প্রয়োজনীয় তথ্য খুঁজে বের করার tool।
 
+\begin{center}
+\begin{tikzpicture}[
+  browser/.style={draw, rounded corners, fill=gray!4, minimum width=10.8cm, minimum height=5.7cm},
+  bar/.style={draw, rounded corners, fill=white, minimum height=0.45cm, align=left, font=\scriptsize},
+  content/.style={draw, rounded corners, fill=blue!4, align=center, font=\scriptsize},
+  label/.style={draw, rounded corners, fill=yellow!15, align=center, font=\scriptsize},
+  arrow/.style={->, thick}
+]
+\node[browser] (win) {};
+\node[font=\small\bfseries] at ([yshift=2.55cm]win.center) {Web Browser Window};
+\node[bar, minimum width=7.6cm] (urlbar) at ([xshift=-0.75cm,yshift=2.05cm]win.center) {\texttt{https://www.abccollege.edu.bd}};
+\node[bar, minimum width=1.45cm] (reload) at ([xshift=4.55cm,yshift=2.05cm]win.center) {Go};
+\node[content, minimum width=2.2cm, minimum height=0.52cm] (logo) at ([xshift=-3.15cm,yshift=1.25cm]win.center) {ABC College};
+\node[content, minimum width=5.1cm, minimum height=0.52cm] (nav) at ([xshift=1.3cm,yshift=1.25cm]win.center) {Home \quad Notice \quad Result \quad Contact};
+\node[content, minimum width=8.7cm, minimum height=1.05cm] (hero) at ([yshift=0.3cm]win.center) {Homepage content\\welcome text, image/banner, important notice};
+\node[content, minimum width=4.1cm, minimum height=0.7cm] (link) at ([xshift=-2.35cm,yshift=-1.0cm]win.center) {Hyperlink: Result};
+\node[content, minimum width=4.1cm, minimum height=0.7cm] (page) at ([xshift=2.35cm,yshift=-1.0cm]win.center) {Webpage area};
+\node[bar, minimum width=6.1cm] (search) at ([yshift=-2.05cm]win.center) {Search box: \texttt{HSC ICT result}};
+
+\node[label] (lbrowser) at ([xshift=-5.9cm,yshift=2.55cm]win.center) {Browser};
+\node[label] (lurl) at ([xshift=-5.55cm,yshift=1.55cm]win.center) {URL bar};
+\node[label] (lwebsite) at ([xshift=5.85cm,yshift=1.25cm]win.center) {Website name};
+\node[label] (lnav) at ([xshift=5.75cm,yshift=0.45cm]win.center) {Navigation};
+\node[label] (lhome) at ([xshift=-5.55cm,yshift=0.15cm]win.center) {Homepage};
+\node[label] (lsearch) at ([xshift=-5.55cm,yshift=-2.35cm]win.center) {Search bar};
+\node[label] (llink) at ([xshift=-5.65cm,yshift=-1.1cm]win.center) {Link};
+
+\draw[arrow] (lbrowser) -- (win.north west);
+\draw[arrow] (lurl) -- (urlbar.west);
+\draw[arrow] (lwebsite) -- (logo.east);
+\draw[arrow] (lnav) -- (nav.east);
+\draw[arrow] (lhome) -- (hero.west);
+\draw[arrow] (lsearch) -- (search.west);
+\draw[arrow] (llink) -- (link.west);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: Browser window-এ URL bar, website, homepage, navigation, hyperlink ও search bar}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, fill=green!6, minimum width=2.55cm, minimum height=0.78cm, align=center, font=\small},
+  wide/.style={draw, rounded corners, fill=blue!6, minimum width=3.2cm, minimum height=0.78cm, align=center, font=\small},
+  arrow/.style={->, thick}
+]
+\node[wide] (www) {WWW\\Web resources};
+\node[box, below left=0.95cm and 1.65cm of www] (browser) {Web Browser};
+\node[box, below right=0.95cm and 1.65cm of www] (search) {Search Engine};
+\node[wide, below=1.1cm of www] (site) {Website / Webpage};
+\draw[arrow] (browser) -- node[left, font=\scriptsize]{opens} (site);
+\draw[arrow] (search) -- node[right, font=\scriptsize]{finds} (site);
+\draw[arrow] (site) -- node[left, font=\scriptsize]{part of} (www);
+\draw[arrow] (browser) -- node[above, font=\scriptsize]{uses URL} (www);
+\draw[arrow] (search) -- node[above, font=\scriptsize]{indexes} (www);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: WWW, browser ও search engine-এর সম্পর্ক}
+\end{center}
+
 \subsection{World Wide Web বা WWW}
 
 \subsubsection{WWW কী?}
@@ -93,12 +150,23 @@ WHATWG & 2004 থেকে & আধুনিক HTML Living Standard উন্�
 WWW client-server পদ্ধতিতে কাজ করে। User browser-এ কোনো website address বা URL লিখলে browser web server-এ request পাঠায়। Server সেই request অনুযায়ী HTML, CSS, image, JavaScript ইত্যাদি file browser-এ পাঠায়। এরপর browser সেগুলো process করে user-এর সামনে webpage আকারে দেখায়।
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{WWW কাজ করার flow}\\[4pt]
-User $\rightarrow$ Web Browser $\rightarrow$ Request $\rightarrow$ Web Server\\
-Web Server $\rightarrow$ HTML/CSS/Image Response $\rightarrow$ Browser Output
-}}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, fill=green!6, minimum width=2.45cm, minimum height=0.78cm, align=center, font=\small},
+  data/.style={draw, rounded corners, fill=blue!6, minimum width=2.8cm, minimum height=0.78cm, align=center, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (user) {User};
+\node[box, right=0.65cm of user] (browser) {Browser};
+\node[box, right=0.65cm of browser] (server) {Web Server};
+\node[data, below=0.85cm of server] (res) {HTML/CSS/Image\\Response};
+\node[box, below=0.85cm of browser] (out) {Browser\\Output};
+\draw[arrow] (user) -- (browser);
+\draw[arrow] (browser) -- node[above, font=\scriptsize]{request} (server);
+\draw[arrow] (server) -- (res);
+\draw[arrow] (res) -- node[below, font=\scriptsize]{render} (out);
+\draw[arrow] (out) -- (user);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: WWW client-server পদ্ধতিতে কাজ করে}
 \end{center}
 
 \subsubsection{WWW-এর বৈশিষ্ট্য}
@@ -223,6 +291,32 @@ Search engine user-এর দেওয়া keyword অনুযায়ী internet
 \begin{examplebox}{উদাহরণ}
 Google, Bing, Yahoo, DuckDuckGo, Baidu ইত্যাদি search engine-এর উদাহরণ।
 \end{examplebox}
+
+\begin{center}
+\begin{tikzpicture}[
+  page/.style={draw, rounded corners, fill=gray!4, minimum width=9.8cm, minimum height=4.7cm},
+  bar/.style={draw, rounded corners, fill=white, minimum height=0.48cm, align=left, font=\scriptsize},
+  result/.style={draw, rounded corners, fill=blue!5, minimum width=7.1cm, minimum height=0.55cm, align=left, font=\scriptsize},
+  label/.style={draw, rounded corners, fill=yellow!15, align=center, font=\scriptsize},
+  arrow/.style={->, thick}
+]
+\node[page] (searchpage) {};
+\node[font=\small\bfseries] at ([yshift=2.1cm]searchpage.center) {Search Engine Page};
+\node[bar, minimum width=6.8cm] (query) at ([yshift=1.45cm]searchpage.center) {\texttt{ABC College notice}};
+\node[result] (r1) at ([yshift=0.55cm]searchpage.center) {\textbf{ABC College Notice Board}\\\texttt{www.abccollege.edu.bd/notice.html}};
+\node[result] (r2) at ([yshift=-0.25cm]searchpage.center) {\textbf{HSC ICT Practical Notice}\\\texttt{www.abccollege.edu.bd/ict-practical.pdf}};
+\node[result] (r3) at ([yshift=-1.05cm]searchpage.center) {\textbf{ABC College Contact}\\\texttt{www.abccollege.edu.bd/contact.html}};
+\node[label] (lquery) at ([xshift=-5.35cm,yshift=1.45cm]searchpage.center) {Keyword};
+\node[label] (lresult) at ([xshift=5.3cm,yshift=0.55cm]searchpage.center) {Search result};
+\node[label] (lurl) at ([xshift=5.2cm,yshift=-0.55cm]searchpage.center) {Result URL};
+\node[label] (lrank) at ([xshift=-5.35cm,yshift=-0.75cm]searchpage.center) {Ranking};
+\draw[arrow] (lquery) -- (query.west);
+\draw[arrow] (lresult) -- (r1.east);
+\draw[arrow] (lurl) -- ([yshift=-0.18cm]r2.east);
+\draw[arrow] (lrank) -- (r3.west);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: Search engine keyword নিয়ে ranked result দেখায়}
+\end{center}
 
 \subsubsection{Search Engine কীভাবে কাজ করে?}
 

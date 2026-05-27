@@ -139,12 +139,23 @@ Google Chrome, Mozilla Firefox, Microsoft Edge, Safari ও Opera হলো web b
 একটি ওয়েবপেজ তৈরি করার পর সেটি server-এ রাখা হয়। ব্যবহারকারী browser-এ website address বা URL লিখলে browser web server-এ request পাঠায়। Server সেই request অনুযায়ী web page-এর file পাঠায়। এরপর browser HTML/CSS/image file interpret করে user-এর সামনে webpage আকারে দেখায়।
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Web page load flow}\\[4pt]
-User $\rightarrow$ Browser $\rightarrow$ Internet $\rightarrow$ Web Server\\
-Web Server $\rightarrow$ HTML/CSS/Image Files $\rightarrow$ Browser Output
-}}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, fill=green!6, minimum width=2.35cm, minimum height=0.82cm, align=center, font=\small},
+  filebox/.style={draw, rounded corners, fill=blue!6, minimum width=2.65cm, minimum height=0.82cm, align=center, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (user) {User};
+\node[box, right=0.75cm of user] (browser) {Browser};
+\node[box, right=0.75cm of browser] (server) {Web Server};
+\node[filebox, below=0.82cm of server] (files) {HTML\\CSS\\Image};
+\node[box, below=0.82cm of browser] (output) {Webpage\\Output};
+\draw[arrow] (user) -- node[above, font=\scriptsize]{URL} (browser);
+\draw[arrow] (browser) -- node[above, font=\scriptsize]{request} (server);
+\draw[arrow] (server) -- node[right, font=\scriptsize]{send files} (files);
+\draw[arrow] (files) -- node[below, font=\scriptsize]{render} (output);
+\draw[arrow] (output) -- node[left, font=\scriptsize]{screen} (user);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: Browser কীভাবে server থেকে file এনে webpage দেখায়}
 \end{center}
 
 \begin{enumerate}

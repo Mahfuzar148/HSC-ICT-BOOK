@@ -90,6 +90,26 @@ HTML-এ web page-এ ছবি যুক্ত করার জন্য যে
 \textbf{ব্যাখ্যা:} \texttt{src} image file-এর location জানায় এবং \texttt{alt} image-এর বিকল্প text দেয়।
 \end{examplebox}
 
+\begin{center}
+\begin{tikzpicture}[
+  part/.style={draw, rounded corners, fill=green!6, minimum height=0.72cm, align=center, font=\scriptsize},
+  label/.style={draw, rounded corners, fill=blue!6, align=center, font=\scriptsize},
+  arrow/.style={->, thick}
+]
+\node[part, minimum width=1.25cm] (tag) {\texttt{<img}};
+\node[part, minimum width=2.65cm, right=0cm of tag] (src) {\texttt{src="flower.jpg"}};
+\node[part, minimum width=2.55cm, right=0cm of src] (alt) {\texttt{alt="Flower"}};
+\node[part, minimum width=0.7cm, right=0cm of alt] (end) {\texttt{>}};
+\node[label, below=0.7cm of tag] (ltag) {image tag\\empty tag};
+\node[label, below=0.7cm of src] (lsrc) {image file-এর\\path/name};
+\node[label, below=0.7cm of alt] (lalt) {image না দেখালে\\alternative text};
+\draw[arrow] (ltag) -- (tag);
+\draw[arrow] (lsrc) -- (src);
+\draw[arrow] (lalt) -- (alt);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: \texttt{<img>} tag-এর গুরুত্বপূর্ণ অংশ}
+\end{center}
+
 \subsection{\texttt{src} Attribute}
 
 \begin{definitionbox}{\texttt{src}}

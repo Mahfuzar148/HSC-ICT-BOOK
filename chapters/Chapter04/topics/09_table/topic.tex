@@ -51,6 +51,35 @@ Cell & row ও column মিলিত হয়ে যে ঘর তৈরি হ�
 এখানে Roll, Name, GPA হলো heading cell; 101, Rafi, 5.00 হলো data cell; প্রতিটি horizontal line একটি row এবং প্রতিটি vertical section একটি column বোঝায়।
 \end{examplebox}
 
+\begin{center}
+\begin{tikzpicture}[
+  cell/.style={draw, minimum width=1.7cm, minimum height=0.65cm, align=center, font=\scriptsize},
+  head/.style={cell, fill=green!12, font=\scriptsize\bfseries},
+  data/.style={cell, fill=blue!5},
+  label/.style={draw, rounded corners, fill=yellow!12, align=center, font=\scriptsize},
+  arrow/.style={->, thick}
+]
+\node[head] (h1) {Roll};
+\node[head, right=0cm of h1] (h2) {Name};
+\node[head, right=0cm of h2] (h3) {GPA};
+\node[data, below=0cm of h1] (r1c1) {101};
+\node[data, right=0cm of r1c1] (r1c2) {Rafi};
+\node[data, right=0cm of r1c2] (r1c3) {5.00};
+\node[data, below=0cm of r1c1] (r2c1) {102};
+\node[data, right=0cm of r2c1] (r2c2) {Sakib};
+\node[data, right=0cm of r2c2] (r2c3) {4.75};
+\node[label, above=0.55cm of h2] (caption) {Heading row};
+\node[label, left=0.8cm of r1c1] (row) {Row};
+\node[label, below=0.55cm of r2c2] (col) {Column};
+\node[label, right=0.8cm of r1c3] (celltxt) {Cell};
+\draw[arrow] (caption) -- (h2);
+\draw[arrow] (row) -- (r1c1);
+\draw[arrow] (col) -- (r2c2);
+\draw[arrow] (celltxt) -- (r1c3);
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: HTML table-এ row, column, cell ও heading}
+\end{center}
+
 \subsection{Table তৈরির প্রধান Tag}
 
 \begin{center}

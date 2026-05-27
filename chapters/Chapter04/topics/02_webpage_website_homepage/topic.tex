@@ -79,22 +79,27 @@
 সম্পর্কটি সহজভাবে মনে রাখা যায়:
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-অনেকগুলো ওয়েবপেজ $\rightarrow$ একসাথে মিলে ওয়েবসাইট\\[4pt]
-ওয়েবসাইটের প্রথম বা প্রধান page $\rightarrow$ হোমপেজ
-}}
-\end{center}
-
-\begin{center}
-\fbox{\parbox{0.80\textwidth}{
-\textbf{Website}\\
-$\mid$-- Home page\\
-$\mid$-- About page\\
-$\mid$-- Notice page\\
-$\mid$-- Result page\\
-$\mid$-- Contact page
-}}
+\begin{tikzpicture}[
+  root/.style={draw, rounded corners, fill=green!10, minimum width=3.15cm, minimum height=0.82cm, align=center, font=\small\bfseries},
+  page/.style={draw, rounded corners, fill=blue!6, minimum width=2.35cm, minimum height=0.72cm, align=center, font=\scriptsize},
+  note/.style={font=\scriptsize, align=center},
+  arrow/.style={->, thick}
+]
+\node[root] (site) {ABC College Website};
+\node[page, below left=1.05cm and 2.2cm of site] (home) {Home page\\\texttt{index.html}};
+\node[page, below=1.05cm of site] (notice) {Notice page\\\texttt{notice.html}};
+\node[page, below right=1.05cm and 2.2cm of site] (contact) {Contact page\\\texttt{contact.html}};
+\node[page, below=0.8cm of home] (about) {About page};
+\node[page, below=0.8cm of contact] (result) {Result page};
+\draw[arrow] (site) -- (home);
+\draw[arrow] (site) -- (notice);
+\draw[arrow] (site) -- (contact);
+\draw[arrow] (home) -- (about);
+\draw[arrow] (contact) -- (result);
+\node[note, above=0.1cm of home] {প্রথম/প্রধান page};
+\node[note, below=0.1cm of notice] {প্রতিটি box একটি webpage};
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: অনেকগুলো webpage মিলে website, আর প্রথম page হলো homepage}
 \end{center}
 
 এখানে Home page-ও একটি ওয়েবপেজ, কিন্তু এটি ওয়েবসাইটের প্রথম ও প্রধান পেজ। অন্য page গুলো website-এর information section হিসেবে কাজ করে।
@@ -151,12 +156,18 @@ URL & একটি নির্দিষ্ট URL থাকতে পারে 
 যে computer বা system-এ website-এর file সংরক্ষিত থাকে এবং client-এর request অনুযায়ী webpage পাঠায় তাকে server বলা হয়। Server HTML, CSS, image, video, script বা database response পাঠাতে পারে।
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Client-server flow}\\[4pt]
-Client/Browser $\rightarrow$ Request পাঠায় $\rightarrow$ Web Server\\
-Web Server $\rightarrow$ Response পাঠায় $\rightarrow$ Browser webpage দেখায়
-}}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, fill=green!6, minimum width=3cm, minimum height=0.82cm, align=center, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (client) {Client\\Browser/Device};
+\node[box, right=2.3cm of client] (server) {Server\\Website files};
+\draw[arrow] ([yshift=0.16cm]client.east) -- node[above, font=\scriptsize]{request} ([yshift=0.16cm]server.west);
+\draw[arrow] ([yshift=-0.16cm]server.west) -- node[below, font=\scriptsize]{response} ([yshift=-0.16cm]client.east);
+\node[font=\scriptsize, align=center, below=0.45cm of client] {User এখানে page দেখে};
+\node[font=\scriptsize, align=center, below=0.45cm of server] {HTML, image, CSS রাখা থাকে};
+\end{tikzpicture}\\[3pt]
+\textit{চিত্র: Client request পাঠায়, server response পাঠায়}
 \end{center}
 
 \begin{boardbox}{সৃজনশীল প্রশ্নে লেখার মতো}

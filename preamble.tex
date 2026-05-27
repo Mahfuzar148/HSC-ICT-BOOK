@@ -33,6 +33,7 @@
 \usetikzlibrary{positioning}
 \usepackage{fvextra}
 \usepackage[unicode]{hyperref}
+\raggedbottom
 % Disable colored boxes around links in the PDF (remove red boxes in TOC)
 \hypersetup{hidelinks, pdfborder={0 0 0}}
 \usepackage{amsmath,amssymb}
@@ -73,6 +74,15 @@
 % Document-level settings (fonts, margins) to be standardized here.
 \setlist[itemize]{leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt}
 \setlist[enumerate]{leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt}
+\tcbset{
+  before skip=4pt,
+  after skip=4pt,
+  boxsep=3pt,
+  left=5pt,
+  right=5pt,
+  top=4pt,
+  bottom=4pt
+}
 
 % Semantic boxes for the book. Writers should use these names instead of
 % manual colors so the whole book can be redesigned from one place.
