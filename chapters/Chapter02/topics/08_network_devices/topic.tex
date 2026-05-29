@@ -1,173 +1,837 @@
-\section{Network Devices}
+% Chapter 02.8: নেটওয়ার্ক ডিভাইস
+\section{নেটওয়ার্ক ডিভাইস}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item common network device চিনতে।
-\item hub, switch, router, bridge, gateway ও modem-এর কাজ বলতে।
-\item MAC address এবং IP routing-এর ধারণা বুঝতে।
-\item device comparison table লিখতে।
-\item network design-এ কোন device কেন লাগে তা বুঝতে।
+\item নেটওয়ার্ক ডিভাইস কী তা ব্যাখ্যা করতে।
+\item NIC, Modem, Hub, Switch, Router, Repeater, Bridge, Gateway, Access Point ও Firewall-এর কাজ বুঝতে।
+\item Hub, Switch ও Router-এর পার্থক্য লিখতে।
+\item কোন device কোন network layer-এ কাজ করে তা ধারণা নিতে।
+\item বাস্তব network scenario থেকে উপযুক্ত network device নির্বাচন করতে।
+\item বোর্ড পরীক্ষার জন্য সংক্ষিপ্ত, পার্থক্যভিত্তিক ও সৃজনশীল উত্তর লিখতে।
 \end{itemize}
 \end{learningbox}
 
-Network device হলো এমন hardware, যা network-এ data flow, connection, addressing বা protocol conversion-এর কাজ করে। কিছু device একই local segment-এর মধ্যে কাজ করে, আবার কিছু device different network-এর মধ্যে যোগাযোগ স্থাপন করে।
+\subsection{বাস্তব জীবনের শুরু}
 
-\begin{definitionbox}{Network device}
-যে hardware ডিভাইস network communication, forwarding, connecting বা conversion-এর কাজ করে, তাকে network device বলা হয়।
-\end{definitionbox}
+একটি computer lab কল্পনা করো। সেখানে অনেকগুলো computer আছে। সব computer-কে একসাথে network-এ যুক্ত করতে একটি \textbf{switch} ব্যবহার করা হয়। আবার lab-এর network-কে internet-এর সাথে যুক্ত করতে \textbf{router} ও \textbf{modem} ব্যবহার করা হয়। যদি wireless internet দিতে হয়, তাহলে \textbf{access point} বা Wi-Fi router দরকার হয়।
 
-\begin{center}
-\begin{tabular}{c}
-\textbf{Network Devices} \\
-\hline
-Hub, Switch, Bridge \hspace{0.5cm} Router, Gateway, Modem \\
-\end{tabular}
-\end{center}
+অর্থাৎ শুধু computer থাকলেই network তৈরি হয় না। Computer, server, printer, internet line এবং wireless device-গুলোকে যুক্ত, নিয়ন্ত্রণ, signal বৃদ্ধি, data forward এবং network নিরাপদ রাখতে বিভিন্ন hardware device প্রয়োজন হয়। এগুলোই হলো \textbf{network devices}।
 
-\begin{keypointbox}{ডিভাইসের কাজের দল}
+\begin{keypointbox}{মূল ধারণা}
+Network devices বুঝতে চারটি প্রশ্ন মনে রাখো:
 \begin{itemize}
-\item \textbf{Connecting devices}: hub, switch, bridge
-\item \textbf{Inter-networking devices}: router, gateway
-\item \textbf{Signal conversion device}: modem
+\item device-টি network-এর ভিতরে কাজ করছে, নাকি ভিন্ন network connect করছে?
+\item device-টি signal বাড়াচ্ছে, নাকি data ঠিক destination-এ পাঠাচ্ছে?
+\item device-টি wired connection দিচ্ছে, নাকি wireless connection দিচ্ছে?
+\item device-টি security বা filtering করছে কি না?
 \end{itemize}
 \end{keypointbox}
 
-\subsection{Hub}
+\subsection{নেটওয়ার্ক ডিভাইস}
 
-Hub হলো basic central connecting device। এটি একটি port-এ পাওয়া data সব port-এ পাঠিয়ে দেয়।
-
-\begin{definitionbox}{Hub}
-Hub হলো এমন network device, যা এক port থেকে পাওয়া signal network-এর সব active port-এ broadcast করে।
+\begin{definitionbox}{নেটওয়ার্ক ডিভাইস}
+কম্পিউটার নেটওয়ার্কে device, computer, server, printer বা বিভিন্ন network-কে সংযুক্ত করা, data আদান-প্রদান নিয়ন্ত্রণ করা, signal পুনরুদ্ধার করা, route নির্ধারণ করা এবং security নিশ্চিত করার জন্য ব্যবহৃত hardware বা hardware-software সমন্বিত উপাদানকে network device বলা হয়।
 \end{definitionbox}
 
-\subsection{Switch}
+Network device-কে networking hardware-ও বলা হয়। এগুলো ছাড়া LAN, MAN, WAN, internet connection বা wireless network কার্যকরভাবে পরিচালনা করা কঠিন।
 
-Switch hub-এর চেয়ে বেশি intelligent। এটি MAC address দেখে নির্দিষ্ট destination-এ frame পাঠায়।
+\begin{examplebox}{সহজ উদাহরণ}
+\begin{itemize}
+\item Computer lab-এ অনেক PC যুক্ত করতে switch ব্যবহার করা হয়।
+\item বাসার Wi-Fi network-এ router internet ভাগ করে দেয়।
+\item ISP line থেকে digital data নিতে modem ব্যবহার করা হয়।
+\item বড় cable distance-এ দুর্বল signal পুনরায় শক্তিশালী করতে repeater ব্যবহার করা হয়।
+\item ভিন্ন protocol বা ভিন্ন network system connect করতে gateway ব্যবহার করা হয়।
+\end{itemize}
+\end{examplebox}
 
-\begin{definitionbox}{Switch}
-Switch হলো এমন device, যা source ও destination MAC address দেখে নির্দিষ্ট port-এ data পাঠায়।
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/network_devices_overview.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/network_devices_overview.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.6cm}
+Network Devices\\[8pt]
+NIC \quad Modem \quad Hub \quad Switch \quad Router\\[6pt]
+Repeater \quad Bridge \quad Gateway \quad Access Point \quad Firewall
+\vspace{0.6cm}
+}}
+}
+\caption{নেটওয়ার্ক ডিভাইসের সারসংক্ষেপ}
+\end{figure}
+
+\subsection{Network Device কেন প্রয়োজন?}
+
+একটি network-এ data শুধু cable দিয়ে যায় না; data কোথায় যাবে, কোন device-এর কাছে যাবে, কোন network-এ যাবে, signal দুর্বল হলে কী হবে, unauthorized access আটকাবে কীভাবে—এসব কাজ network device দ্বারা সম্পন্ন হয়।
+
+\begin{keypointbox}{Network device-এর প্রয়োজনীয়তা}
+\begin{itemize}
+\item একাধিক computer বা device network-এ যুক্ত করে।
+\item data packet সঠিক destination-এ পৌঁছাতে সাহায্য করে।
+\item local network-কে internet বা অন্য network-এর সাথে যুক্ত করে।
+\item দুর্বল signal regenerate বা amplify করতে পারে।
+\item wireless device-কে network access দেয়।
+\item network traffic নিয়ন্ত্রণ করে performance বাড়ায়।
+\item unauthorized access ও malicious traffic filter করতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{OSI Layer অনুযায়ী Network Device}
+
+Network device-গুলো OSI model-এর বিভিন্ন layer-এ কাজ করে। HSC পরীক্ষায় layer অনুযায়ী device মনে রাখলে answer ভালো হয়।
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{OSI Layer} & \textbf{Device} & \textbf{প্রধান কাজ} \\
+\hline
+Physical Layer & Repeater, Hub, Modem & signal transmit, repeat বা convert করা \\
+\hline
+Data Link Layer & NIC, Bridge, Switch & MAC address অনুযায়ী frame forwarding \\
+\hline
+Network Layer & Router & IP address অনুযায়ী packet routing \\
+\hline
+Multiple Layer & Gateway, Firewall & protocol conversion, filtering, security \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/osi_layer_network_devices_map.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/osi_layer_network_devices_map.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.6cm}
+Physical Layer: Hub, Repeater, Modem\\[5pt]
+Data Link Layer: NIC, Bridge, Switch\\[5pt]
+Network Layer: Router\\[5pt]
+Multiple Layers: Gateway, Firewall
+\vspace{0.6cm}
+}}
+}
+\caption{OSI layer অনুযায়ী network device}
+\end{figure}
+
+\subsection{Network Interface Card বা NIC}
+
+\begin{definitionbox}{NIC}
+Network Interface Card বা NIC হলো এমন একটি hardware component যার মাধ্যমে computer বা device network-এর সাথে যুক্ত হয়।
 \end{definitionbox}
 
-\subsection{Router}
+NIC computer-কে network medium-এর সাথে connect করে। প্রতিটি NIC-এর সাধারণত একটি unique physical address থাকে, যাকে MAC address বলা হয়। Wired NIC Ethernet cable-এর মাধ্যমে network-এ যুক্ত হয়, আর wireless NIC Wi-Fi signal ব্যবহার করে।
 
-Router বিভিন্ন network-এর মধ্যে packet route করে। এটি IP address ও routing table ব্যবহার করে।
+\begin{keypointbox}{NIC-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item computer বা device-কে network-এ connect করে।
+\item wired বা wireless দুই ধরনের হতে পারে।
+\item MAC address ব্যবহার করে device identification করা যায়।
+\item LAN communication-এ গুরুত্বপূর্ণ ভূমিকা রাখে।
+\item motherboard-এ built-in থাকতে পারে বা আলাদা card/adapter হিসেবে থাকতে পারে।
+\end{itemize}
+\end{keypointbox}
 
-\begin{definitionbox}{Router}
-Router হলো এমন device, যা এক network থেকে অন্য network-এ data packet forward করতে routing decision নেয়।
-\end{definitionbox}
+\begin{examplebox}{বাস্তব উদাহরণ}
+Desktop computer-এর Ethernet port বা laptop-এর Wi-Fi adapter হলো NIC-এর উদাহরণ।
+\end{examplebox}
 
-\subsection{Bridge}
-
-Bridge দুটি একই ধরনের network segment সংযুক্ত করে এবং traffic reduce করতে সাহায্য করে।
-
-\subsection{Gateway}
-
-Gateway দুই ভিন্ন protocol বা network environment-এর মধ্যে translation করে।
-
-\begin{definitionbox}{Gateway}
-Gateway হলো এমন device বা node, যা ভিন্ন protocol-based network-এর মধ্যে communication সম্ভব করে।
-\end{definitionbox}
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/nic_connection_model.png}{
+\includegraphics[width=0.86\textwidth]{chapters/Chapter02/images/nic_connection_model.png}
+}{
+\fbox{
+\parbox{0.84\textwidth}{
+\centering
+\vspace{0.6cm}
+Computer \quad $\longrightarrow$ \quad NIC / Ethernet Port \quad $\longrightarrow$ \quad Network
+\vspace{0.6cm}
+}}
+}
+\caption{NIC দিয়ে computer network-এ যুক্ত হওয়া}
+\end{figure}
 
 \subsection{Modem}
 
-Modem digital signal এবং analog transmission medium-এর মধ্যে conversion করে।
-
 \begin{definitionbox}{Modem}
-Modem হলো এমন device, যা digital signal-কে modulation করে transmission-এর উপযোগী করে এবং demodulation করে আবার digital data-তে ফেরত আনে।
+Modem হলো এমন একটি network device যা analog signal-কে digital signal-এ এবং digital signal-কে analog signal-এ রূপান্তর করে data communication সম্ভব করে।
 \end{definitionbox}
 
+Modem শব্দটি এসেছে Modulator এবং Demodulator থেকে। Internet connection-এ modem ISP-এর signal গ্রহণ করে user-এর device বা router-এর জন্য উপযোগী data signal তৈরি করে।
+
+\begin{keypointbox}{Modem-এর কাজ}
+\begin{itemize}
+\item signal modulation ও demodulation করে।
+\item ISP line এবং local network/device-এর মধ্যে সংযোগ তৈরি করে।
+\item broadband, DSL, cable বা fiber connection-এর ক্ষেত্রে ভিন্ন ধরনের modem/ONT ব্যবহৃত হতে পারে।
+\item internet connection চালু করতে গুরুত্বপূর্ণ device।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+বাসায় broadband internet connection-এ ISP line থেকে signal এনে router বা computer-এ internet দেওয়ার জন্য modem/ONT ব্যবহার করা হয়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/modem_internet_connection_model.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/modem_internet_connection_model.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+ISP Line \quad $\longrightarrow$ \quad Modem / ONT \quad $\longrightarrow$ \quad Router / Computer
+\vspace{0.6cm}
+}}
+}
+\caption{Modem ব্যবহার করে internet connection}
+\end{figure}
+
+\subsection{Hub}
+
+\begin{definitionbox}{Hub}
+Hub হলো একটি basic network device যা একাধিক device-কে LAN-এ যুক্ত করে এবং received data signal সব port-এ পাঠিয়ে দেয়।
+\end{definitionbox}
+
+Hub সাধারণত Physical Layer device। এটি intelligent filtering করে না। Hub কোনো data কোন device-এর জন্য তা বুঝতে পারে না; তাই একটি port থেকে data পেলে বাকি সব port-এ পাঠিয়ে দেয়। এজন্য hub-এ traffic বেশি হয় এবং collision-এর সম্ভাবনা বাড়ে।
+
+\begin{keypointbox}{Hub-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item একাধিক device connect করতে ব্যবহৃত হয়।
+\item data সব connected device-এর দিকে পাঠায়।
+\item MAC address table ব্যবহার করে না।
+\item security ও efficiency কম।
+\item আধুনিক network-এ hub-এর পরিবর্তে switch বেশি ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{সহজ উদাহরণ}
+একটি পুরনো computer lab-এ ৫টি computer hub দিয়ে যুক্ত করলে, এক computer data পাঠালে hub সেটি অন্য সব computer-এর দিকে পাঠাবে।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/hub_broadcast_model.png}{
+\includegraphics[width=0.88\textwidth]{chapters/Chapter02/images/hub_broadcast_model.png}
+}{
+\fbox{
+\parbox{0.86\textwidth}{
+\centering
+\vspace{0.6cm}
+PC A sends data to Hub\\[6pt]
+Hub sends the same data to PC B, PC C, PC D, PC E\\[6pt]
+No filtering
+\vspace{0.6cm}
+}}
+}
+\caption{Hub সব port-এ data পাঠায়}
+\end{figure}
+
+\subsection{Switch}
+
+\begin{definitionbox}{Switch}
+Switch হলো একটি network device যা LAN-এর একাধিক device-কে যুক্ত করে এবং MAC address ব্যবহার করে data frame নির্দিষ্ট destination device-এর কাছে পাঠায়।
+\end{definitionbox}
+
+Switch hub-এর তুলনায় বেশি intelligent। Switch প্রতিটি connected device-এর MAC address শিখে একটি MAC address table তৈরি করে। এরপর data frame আসলে switch table দেখে নির্দিষ্ট port-এ frame পাঠায়। ফলে unnecessary traffic কমে এবং network performance বৃদ্ধি পায়।
+
+\begin{keypointbox}{Switch-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item LAN-এর device-গুলোকে connect করে।
+\item MAC address অনুযায়ী data forwarding করে।
+\item hub-এর মতো সব port-এ data পাঠায় না।
+\item collision কমায় এবং performance বাড়ায়।
+\item computer lab, office network ও campus LAN-এ বহুল ব্যবহৃত।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+School computer lab-এর ৩০টি computer একটি switch-এর সাথে যুক্ত থাকলে, এক PC থেকে printer-এ data গেলে switch নির্দিষ্ট port ব্যবহার করে data পাঠায়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/switch_mac_forwarding_model.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/switch_mac_forwarding_model.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+PC A \quad $\longrightarrow$ \quad Switch checks MAC table \quad $\longrightarrow$ \quad PC C\\[6pt]
+Only the correct port receives data
+\vspace{0.6cm}
+}}
+}
+\caption{Switch MAC address অনুযায়ী data forward করে}
+\end{figure}
+
+\subsection{Router}
+
+\begin{definitionbox}{Router}
+Router হলো একটি network device যা দুই বা ততোধিক network-কে সংযুক্ত করে এবং IP address ব্যবহার করে data packet-এর সঠিক পথ বা route নির্ধারণ করে।
+\end{definitionbox}
+
+Router LAN-কে WAN বা internet-এর সাথে যুক্ত করতে ব্যবহৃত হয়। এটি routing table ব্যবহার করে data packet কোন network path দিয়ে যাবে তা নির্ধারণ করে। বাসার Wi-Fi router সাধারণত LAN device-গুলোকে internet access দেয়।
+
+\begin{keypointbox}{Router-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item একাধিক network connect করে।
+\item IP address ব্যবহার করে packet forwarding করে।
+\item routing table ব্যবহার করে best path নির্ধারণ করতে পারে।
+\item LAN-কে internet-এর সাথে যুক্ত করে।
+\item NAT, DHCP, firewall feature ইত্যাদি অনেক router-এ থাকতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+বাসার Wi-Fi router laptop, mobile ও smart TV-কে local network-এ যুক্ত করে এবং modem/ISP-এর মাধ্যমে internet access দেয়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/router_connects_networks_model.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/router_connects_networks_model.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+LAN 1 \quad $\longleftrightarrow$ \quad Router \quad $\longleftrightarrow$ \quad Internet / LAN 2\\[6pt]
+IP-based packet routing
+\vspace{0.6cm}
+}}
+}
+\caption{Router এক network-কে অন্য network-এর সাথে যুক্ত করে}
+\end{figure}
+
+\subsection{Repeater}
+
+\begin{definitionbox}{Repeater}
+Repeater হলো এমন একটি network device যা দুর্বল বা বিকৃত signal গ্রহণ করে পুনরায় শক্তিশালী বা regenerate করে পরবর্তী অংশে পাঠায়।
+\end{definitionbox}
+
+দীর্ঘ distance অতিক্রম করলে signal attenuation-এর কারণে দুর্বল হয়ে যায়। Repeater সেই signal নতুন করে তৈরি করে বা শক্তিশালী করে network range বাড়াতে সাহায্য করে। Wired network ও wireless network—দুই ক্ষেত্রেই repeater ধারণা ব্যবহার করা যায়।
+
+\begin{keypointbox}{Repeater-এর কাজ}
+\begin{itemize}
+\item দুর্বল signal regenerate করে।
+\item network distance বা coverage বাড়ায়।
+\item Physical Layer-এ কাজ করে।
+\item data filtering বা routing করে না।
+\item long cable link বা Wi-Fi range extension-এ ব্যবহার করা যায়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+বড় building-এ Wi-Fi signal দুর্বল হলে Wi-Fi repeater/range extender ব্যবহার করে coverage বাড়ানো যায়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/repeater_signal_regeneration.png}{
+\includegraphics[width=0.88\textwidth]{chapters/Chapter02/images/repeater_signal_regeneration.png}
+}{
+\fbox{
+\parbox{0.86\textwidth}{
+\centering
+\vspace{0.6cm}
+Strong Signal \quad $\longrightarrow$ \quad Weak Signal \quad $\longrightarrow$ \quad Repeater \quad $\longrightarrow$ \quad Strong Signal
+\vspace{0.6cm}
+}}
+}
+\caption{Repeater দুর্বল signal পুনরায় শক্তিশালী করে}
+\end{figure}
+
+\subsection{Bridge}
+
+\begin{definitionbox}{Bridge}
+Bridge হলো একটি network device যা একই ধরনের network-এর দুই বা ততোধিক segment-কে যুক্ত করে এবং MAC address ব্যবহার করে traffic filter করে।
+\end{definitionbox}
+
+Bridge LAN segment ভাগ করতে ব্যবহৃত হয়। এটি কোন frame কোন segment-এ পাঠাতে হবে তা MAC address দেখে সিদ্ধান্ত নিতে পারে। ফলে unnecessary traffic কমে এবং network performance উন্নত হয়। Modern switch-কে অনেক সময় multiport bridge হিসেবেও বোঝানো হয়।
+
+\begin{keypointbox}{Bridge-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item LAN segment connect করে।
+\item MAC address দেখে frame filtering করে।
+\item unnecessary traffic কমায়।
+\item Data Link Layer-এ কাজ করে।
+\item ছোট network segment management-এ ব্যবহার করা যায়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{সহজ উদাহরণ}
+একটি office-এর accounts section ও admin section একই LAN-এর দুই segment হলে bridge ব্যবহার করে segment দুটিকে যুক্ত ও traffic control করা যায়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/bridge_network_segmentation.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/bridge_network_segmentation.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+LAN Segment A \quad $\longleftrightarrow$ \quad Bridge \quad $\longleftrightarrow$ \quad LAN Segment B\\[6pt]
+MAC-based filtering
+\vspace{0.6cm}
+}}
+}
+\caption{Bridge LAN segment যুক্ত করে}
+\end{figure}
+
+\subsection{Gateway}
+
+\begin{definitionbox}{Gateway}
+Gateway হলো এমন একটি network device বা node যা ভিন্ন protocol, ভিন্ন architecture বা ভিন্ন ধরনের network-এর মধ্যে data communication সম্ভব করে।
+\end{definitionbox}
+
+Gateway-কে protocol converter বলা হয়। Router সাধারণত IP network-এর মধ্যে packet path নির্ধারণ করে, কিন্তু gateway ভিন্ন ধরনের network বা protocol-এর মধ্যে translation করতে পারে। অনেক home network-এ router default gateway হিসেবে কাজ করে।
+
+\begin{keypointbox}{Gateway-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item ভিন্ন network বা protocol connect করে।
+\item protocol conversion করতে পারে।
+\item network-এর entry ও exit point হিসেবে কাজ করতে পারে।
+\item router-এর তুলনায় বেশি complex হতে পারে।
+\item internet access বা enterprise network integration-এ গুরুত্বপূর্ণ।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+Local network থেকে internet-এ data পাঠানোর সময় default gateway ব্যবহার করা হয়। আবার ভিন্ন protocol-ভিত্তিক দুই system connect করতেও gateway দরকার হতে পারে।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/gateway_protocol_conversion.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/gateway_protocol_conversion.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+Network A / Protocol A \quad $\longleftrightarrow$ \quad Gateway \quad $\longleftrightarrow$ \quad Network B / Protocol B\\[6pt]
+Protocol conversion
+\vspace{0.6cm}
+}}
+}
+\caption{Gateway ভিন্ন network বা protocol যুক্ত করে}
+\end{figure}
+
+\subsection{Access Point}
+
+\begin{definitionbox}{Access Point}
+Access Point বা AP হলো এমন একটি network device যা wireless device-গুলোকে wired network বা LAN-এর সাথে যুক্ত হওয়ার সুযোগ দেয়।
+\end{definitionbox}
+
+Access point Wi-Fi signal তৈরি করে। Mobile, laptop, tablet ইত্যাদি wireless device access point-এর মাধ্যমে network access পায়। অনেক home router-এর মধ্যে built-in access point থাকে।
+
+\begin{keypointbox}{Access Point-এর কাজ}
+\begin{itemize}
+\item wireless LAN তৈরি করে।
+\item Wi-Fi device-কে network access দেয়।
+\item wired network ও wireless user-এর মধ্যে connection point হিসেবে কাজ করে।
+\item school, office, library, campus ও home network-এ ব্যবহৃত হয়।
+\item coverage area বাড়াতে একাধিক access point ব্যবহার করা যায়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+একটি কলেজ campus-এ students-দের Wi-Fi internet দিতে বিভিন্ন জায়গায় access point বসানো হয়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/access_point_wireless_lan.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/access_point_wireless_lan.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+Switch / Router \quad $\longrightarrow$ \quad Access Point\\[6pt]
+$\swarrow$ \quad $\downarrow$ \quad $\searrow$\\[6pt]
+Laptop \quad Mobile \quad Tablet
+\vspace{0.6cm}
+}}
+}
+\caption{Access Point wireless device-কে network-এ যুক্ত করে}
+\end{figure}
+
+\subsection{Firewall}
+
+\begin{definitionbox}{Firewall}
+Firewall হলো network security device বা software system যা predefined security rules অনুযায়ী incoming ও outgoing network traffic monitor এবং filter করে।
+\end{definitionbox}
+
+Firewall unauthorized access, harmful traffic, suspicious connection বা unwanted data block করতে সাহায্য করে। এটি hardware firewall, software firewall বা router-integrated firewall হতে পারে।
+
+\begin{keypointbox}{Firewall-এর কাজ}
+\begin{itemize}
+\item network traffic monitor করে।
+\item security rules অনুযায়ী traffic allow বা block করে।
+\item unauthorized access কমাতে সাহায্য করে।
+\item malware, attack বা unwanted connection থেকে network রক্ষা করতে সাহায্য করে।
+\item home router, operating system এবং enterprise network-এ firewall ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+একটি office network-এ firewall ব্যবহার করে বাইরের unauthorized user বা harmful traffic server-এ ঢোকা থেকে আটকানো যায়।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/firewall_filtering_model.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/firewall_filtering_model.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.6cm}
+Internet \quad $\longrightarrow$ \quad Firewall checks rules \quad $\longrightarrow$ \quad LAN / Server\\[6pt]
+Allowed traffic passes, blocked traffic stops
+\vspace{0.6cm}
+}}
+}
+\caption{Firewall traffic filter করে}
+\end{figure}
+
+\subsection{Home Network-এ Network Device-এর ব্যবহার}
+
+একটি সাধারণ home network-এ modem/ONT, router, switch, access point এবং NIC একসাথে কাজ করতে পারে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/home_network_devices_layout.png}{
+\includegraphics[width=0.94\textwidth]{chapters/Chapter02/images/home_network_devices_layout.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.6cm}
+ISP \quad $\longrightarrow$ \quad Modem / ONT \quad $\longrightarrow$ \quad Wi-Fi Router\\[6pt]
+$\swarrow$ \quad $\downarrow$ \quad $\searrow$\\[6pt]
+Laptop via Wi-Fi \quad Desktop via Ethernet \quad Mobile via Wi-Fi
+\vspace{0.6cm}
+}}
+}
+\caption{Home network-এ network device-এর ব্যবহার}
+\end{figure}
+
+\begin{keypointbox}{Home network flow}
+\begin{itemize}
+\item ISP থেকে signal modem/ONT-এ আসে।
+\item Router local device-গুলোকে internet access দেয়।
+\item Router-এর built-in access point Wi-Fi signal দেয়।
+\item Desktop computer NIC/Ethernet port দিয়ে router-এ connect করে।
+\item Mobile ও laptop wireless NIC দিয়ে Wi-Fi network-এ connect করে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{School Computer Lab Network}
+
+School বা college computer lab-এ সাধারণত switch, router, modem/ONT, server, printer এবং PC ব্যবহৃত হয়।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/school_lab_network_devices_layout.png}{
+\includegraphics[width=0.94\textwidth]{chapters/Chapter02/images/school_lab_network_devices_layout.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.6cm}
+Internet / ISP \quad $\longrightarrow$ \quad Modem / ONT \quad $\longrightarrow$ \quad Router \quad $\longrightarrow$ \quad Switch\\[6pt]
+Switch connects: PC 1, PC 2, PC 3, Server, Printer
+\vspace{0.6cm}
+}}
+}
+\caption{School computer lab network layout}
+\end{figure}
+
+\subsection{Hub, Switch ও Router-এর পার্থক্য}
+
 \begin{center}
-\begin{tabular}{|p{0.16\textwidth}|p{0.23\textwidth}|p{0.31\textwidth}|}
+\begin{tabular}{|p{0.18\textwidth}|p{0.24\textwidth}|p{0.25\textwidth}|p{0.23\textwidth}|}
 \hline
-\textbf{Device} & \textbf{মূল কাজ} & \textbf{বিশেষ কথা} \\
+\textbf{বিষয়} & \textbf{Hub} & \textbf{Switch} & \textbf{Router} \\
 \hline
-Hub & broadcast & সবচেয়ে basic device \\
+প্রধান কাজ & device connect করে data সব port-এ পাঠায় & LAN device connect করে নির্দিষ্ট port-এ data পাঠায় & একাধিক network connect করে packet route করে \\
 \hline
-Switch & MAC-based forwarding & hub-এর চেয়ে efficient \\
+Address ব্যবহার & address বুঝে না & MAC address ব্যবহার করে & IP address ব্যবহার করে \\
 \hline
-Router & inter-network routing & IP address-based \\
+Layer & Physical Layer & Data Link Layer & Network Layer \\
 \hline
-Bridge & segment connect & traffic কমায় \\
+Traffic control & কম & বেশি & network-to-network routing করে \\
 \hline
-Gateway & protocol conversion & different systems link করে \\
+Efficiency & কম & hub-এর চেয়ে বেশি & ভিন্ন network communication-এ গুরুত্বপূর্ণ \\
 \hline
-Modem & modulation/demodulation & internet connection-এ ব্যবহৃত \\
+উদাহরণ & পুরনো LAN hub & computer lab switch & home/office router \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Hub vs switch, switch vs router, router vs gateway—এই তিন জোড়া comparison খুবই important। Table format-এ লিখলে answer দ্রুত এবং পরিষ্কার হয়।
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/hub_switch_router_comparison.png}{
+\includegraphics[width=0.94\textwidth]{chapters/Chapter02/images/hub_switch_router_comparison.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.6cm}
+Hub: sends to all ports\\[5pt]
+Switch: sends to selected port using MAC address\\[5pt]
+Router: connects networks using IP address
+\vspace{0.6cm}
+}}
+}
+\caption{Hub, Switch ও Router-এর তুলনা}
+\end{figure}
+
+\subsection{Switch ও Bridge-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Bridge} & \textbf{Switch} \\
+\hline
+Port সংখ্যা & সাধারণত কম port & অনেক port থাকতে পারে \\
+\hline
+প্রধান কাজ & LAN segment connect ও filter করে & অনেক device connect করে data নির্দিষ্ট port-এ পাঠায় \\
+\hline
+Address & MAC address ব্যবহার করে & MAC address ব্যবহার করে \\
+\hline
+Speed & তুলনামূলক কম হতে পারে & তুলনামূলক বেশি \\
+\hline
+ধারণা & segment-level device & multiport bridge হিসেবে ধরা যায় \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Router ও Gateway-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Router} & \textbf{Gateway} \\
+\hline
+প্রধান কাজ & network-to-network packet routing করে & ভিন্ন network/protocol-এর মধ্যে communication করে \\
+\hline
+Address/Protocol & IP address ব্যবহার করে route নির্ধারণ করে & protocol conversion করতে পারে \\
+\hline
+Complexity & তুলনামূলক কম complex & বেশি complex হতে পারে \\
+\hline
+ব্যবহার & LAN to internet, inter-network routing & ভিন্ন architecture/protocol integration \\
+\hline
+উদাহরণ & home router, office router & default gateway, protocol converter \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{কোন পরিস্থিতিতে কোন device ব্যবহার হবে?}
+
+\begin{center}
+\begin{tabular}{|p{0.36\textwidth}|p{0.24\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{পরিস্থিতি} & \textbf{উপযুক্ত device} & \textbf{কারণ} \\
+\hline
+এক computer-কে network-এ যুক্ত করা & NIC & computer-এর network interface দরকার \\
+\hline
+ISP line থেকে internet নেওয়া & Modem/ONT & ISP signal device/network-এর জন্য উপযোগী করে \\
+\hline
+Lab-এর অনেক PC connect করা & Switch & LAN device efficiently connect করে \\
+\hline
+দুর্বল signal দূরে পাঠানো & Repeater & signal regenerate করে range বাড়ায় \\
+\hline
+দুই LAN segment যুক্ত করা & Bridge & segment connect ও filter করে \\
+\hline
+LAN-কে internet-এর সাথে যুক্ত করা & Router & ভিন্ন network connect ও route করে \\
+\hline
+ভিন্ন protocol network connect করা & Gateway & protocol conversion করতে পারে \\
+\hline
+Wireless internet দেওয়া & Access Point & Wi-Fi device connect করে \\
+\hline
+Unauthorized access ঠেকানো & Firewall & traffic filter ও security দেয় \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Common Mistake Zone}
+
+\begin{mistakebox}{Common mistake ১}
+অনেকে switch ও router একই মনে করে। Switch একই LAN-এর device-গুলোর মধ্যে data forward করে, কিন্তু router ভিন্ন network connect করে এবং IP address অনুযায়ী route নির্ধারণ করে।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ২}
+Hub ও switch দেখতে একই রকম মনে হতে পারে, কিন্তু hub data সব port-এ পাঠায়; switch destination MAC address দেখে নির্দিষ্ট port-এ data পাঠায়।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৩}
+Modem ও router এক জিনিস নয়। Modem ISP signal convert করে, আর router local network-এর device-গুলোকে network/internet access দেয়।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৪}
+Gateway ও router অনেক সময় একই device-এ থাকতে পারে, কিন্তু concept আলাদা। Gateway ভিন্ন protocol বা ভিন্ন network-এর মধ্যে entry/exit point ও translator হিসেবে কাজ করতে পারে।
+\end{mistakebox}
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Network device কী?}
+কম্পিউটার নেটওয়ার্কে device বা network-কে সংযুক্ত করা, data আদান-প্রদান নিয়ন্ত্রণ করা, signal পুনরুদ্ধার করা, route নির্ধারণ করা এবং security নিশ্চিত করার জন্য ব্যবহৃত hardware বা hardware-software সমন্বিত উপাদানকে network device বলা হয়। যেমন—NIC, modem, hub, switch, router, repeater, bridge, gateway, access point ও firewall।
 \end{boardbox}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Router এবং switch এক নয়। Switch local network-এর ভেতরে device connect করে, আর router ভিন্ন network-এর মধ্যে packet পাঠায়।
-\end{mistakebox}
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: NIC কী?}
+NIC বা Network Interface Card হলো এমন একটি hardware component যার মাধ্যমে computer বা device network-এর সাথে যুক্ত হয়। NIC wired বা wireless হতে পারে এবং device identification-এর জন্য MAC address ব্যবহার করে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Modem কী?}
+Modem হলো এমন একটি network device যা analog signal-কে digital signal-এ এবং digital signal-কে analog signal-এ রূপান্তর করে data communication সম্ভব করে। Modem শব্দটি Modulator ও Demodulator থেকে এসেছে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Hub কী?}
+Hub হলো basic network device যা একাধিক device-কে LAN-এ যুক্ত করে এবং received data সব connected port-এ পাঠিয়ে দেয়। এটি address filtering করে না, তাই efficiency কম।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Switch কী?}
+Switch হলো LAN device connecting network device, যা MAC address ব্যবহার করে data frame নির্দিষ্ট destination device-এর port-এ পাঠায়। ফলে unnecessary traffic কমে এবং network performance বাড়ে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Router কী?}
+Router হলো network device যা দুই বা ততোধিক network-কে সংযুক্ত করে এবং IP address ব্যবহার করে data packet-এর সঠিক route নির্ধারণ করে। LAN-কে internet-এর সাথে যুক্ত করতে router ব্যবহৃত হয়।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Repeater কী?}
+Repeater হলো network device যা দুর্বল signal গ্রহণ করে পুনরায় শক্তিশালী বা regenerate করে পরবর্তী অংশে পাঠায়। এটি network range বাড়াতে ব্যবহৃত হয়।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Bridge কী?}
+Bridge হলো network device যা একই ধরনের network-এর দুই বা ততোধিক LAN segment যুক্ত করে এবং MAC address অনুযায়ী traffic filter করে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Gateway কী?}
+Gateway হলো network device বা node যা ভিন্ন protocol, ভিন্ন architecture বা ভিন্ন ধরনের network-এর মধ্যে data communication সম্ভব করে। Gateway-কে protocol converter-ও বলা হয়।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Access Point কী?}
+Access Point হলো network device যা wireless device-গুলোকে wired network বা LAN-এর সাথে যুক্ত হওয়ার সুযোগ দেয়। এটি Wi-Fi signal তৈরি করে mobile, laptop ও tablet-কে network access দেয়।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Firewall কী?}
+Firewall হলো network security device বা software system যা predefined security rules অনুযায়ী incoming ও outgoing network traffic monitor এবং filter করে। এটি unauthorized access ও harmful traffic থেকে network রক্ষা করতে সাহায্য করে।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: Hub ও Switch}
+Hub received data সব port-এ পাঠায় এবং address filtering করে না। তাই traffic ও collision বেশি হতে পারে। অন্যদিকে switch MAC address table ব্যবহার করে data নির্দিষ্ট destination port-এ পাঠায়। তাই switch বেশি efficient এবং আধুনিক LAN-এ hub-এর পরিবর্তে switch ব্যবহার করা হয়।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: Switch ও Router}
+Switch একই LAN-এর একাধিক device connect করে এবং MAC address অনুযায়ী frame forward করে। Router দুই বা ততোধিক network connect করে এবং IP address অনুযায়ী packet route নির্ধারণ করে। তাই switch LAN-এর ভিতরে বেশি ব্যবহৃত হয়, আর router LAN-কে internet বা অন্য network-এর সাথে যুক্ত করে।
+\end{boardbox}
+
+\subsection{Brainstorming Critical Question}
+
+\begin{practicebox}
+একটি কলেজ তাদের ICT lab modernize করতে চায়। Lab-এ ৪০টি computer, ১টি server, ২টি printer, campus Wi-Fi, internet connection এবং network security দরকার। ISP থেকে একটি fiber line এসেছে। Lab-এর কিছু অংশে signal দুর্বল হয়।
+
+\begin{enumerate}
+\item ক. Network device কী?
+\item খ. Switch hub-এর তুলনায় বেশি efficient কেন?
+\item গ. ৪০টি computer ও printer এক LAN-এ যুক্ত করতে কোন device ব্যবহার করা যুক্তিযুক্ত? ব্যাখ্যা কর।
+\item ঘ. internet connection, campus Wi-Fi, weak signal এবং security নিশ্চিত করতে কোন কোন network device ব্যবহার করা উচিত—বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\subsection{১ মিনিটে রিভিশন}
 
 \begin{recapbox}
 \begin{itemize}
-\item Hub সবদিকে পাঠায়, switch নির্দিষ্ট port-এ পাঠায়।
-\item Router network-to-network routing করে।
-\item Gateway ভিন্ন protocol-এর মধ্যে translation করে।
-\item Modem signal conversion করে।
+\item Network device network তৈরি, data forwarding, routing, signal regeneration ও security নিশ্চিত করতে ব্যবহৃত হয়।
+\item NIC computer বা device-কে network-এ যুক্ত করে।
+\item Modem signal modulation-demodulation করে।
+\item Hub data সব port-এ পাঠায়।
+\item Switch MAC address অনুযায়ী নির্দিষ্ট port-এ data পাঠায়।
+\item Router IP address অনুযায়ী packet route করে এবং network connect করে।
+\item Repeater দুর্বল signal regenerate করে।
+\item Bridge LAN segment connect ও filter করে।
+\item Gateway ভিন্ন network/protocol connect করে।
+\item Access Point wireless device-কে network access দেয়।
+\item Firewall traffic filter করে network security বাড়ায়।
+\item Hub, Repeater, Modem মূলত Physical Layer device হিসেবে বোঝানো যায়।
+\item Switch ও Bridge Data Link Layer-এ কাজ করে।
+\item Router Network Layer-এ কাজ করে।
 \end{itemize}
 \end{recapbox}
 
+\subsection{অনুশীলন}
+
 \begin{practicebox}
 \textbf{MCQ}
+
 \begin{enumerate}
-\item MAC address-based forwarding কোন device করে?\\
-ক. Hub \quad খ. Switch \quad গ. Modem \quad ঘ. Gateway
-\item ভিন্ন protocol-এর মধ্যে কাজ করাতে কোন device ব্যবহৃত হয়?\\
-ক. Bridge \quad খ. Router \quad গ. Gateway \quad ঘ. Hub
+\item Computer-কে network-এ যুক্ত করতে কোনটি দরকার?\\
+ক. NIC \quad খ. Monitor \quad গ. Scanner \quad ঘ. Speaker
+
+\item কোন device MAC address অনুযায়ী data forward করে?\\
+ক. Hub \quad খ. Switch \quad গ. Modem \quad ঘ. Keyboard
+
+\item কোন device IP address অনুযায়ী packet route করে?\\
+ক. Router \quad খ. Hub \quad গ. Repeater \quad ঘ. Mouse
+
+\item Hub data কোথায় পাঠায়?\\
+ক. শুধু নির্দিষ্ট port-এ \quad খ. সব connected port-এ \quad গ. শুধু internet-এ \quad ঘ. কোথাও না
+
+\item দুর্বল signal পুনরায় শক্তিশালী করতে কোন device ব্যবহৃত হয়?\\
+ক. Repeater \quad খ. Printer \quad গ. Scanner \quad ঘ. Monitor
+
+\item ভিন্ন protocol network connect করতে কোন device বেশি উপযোগী?\\
+ক. Gateway \quad খ. Keyboard \quad গ. Speaker \quad ঘ. Projector
+
+\item Wi-Fi device-কে network access দিতে কোন device ব্যবহৃত হয়?\\
+ক. Access Point \quad খ. Plotter \quad গ. Barcode reader \quad ঘ. Joystick
+
+\item Network traffic filter করে security দিতে কোন device ব্যবহৃত হয়?\\
+ক. Firewall \quad খ. Hub \quad গ. Mouse \quad ঘ. Monitor
 \end{enumerate}
+
+\textbf{উত্তরমালা:}
+১. ক, ২. খ, ৩. ক, ৪. খ, ৫. ক, ৬. ক, ৭. ক, ৮. ক
+
+\vspace{0.3cm}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item Hub ও switch-এর মধ্যে দুটি পার্থক্য লেখ।
-\item Modem-এর কাজ কী?
+\item Network device কী?
+\item NIC-এর কাজ লেখ।
+\item Modem কেন ব্যবহৃত হয়?
+\item Hub ও Switch-এর মধ্যে পার্থক্য লেখ।
+\item Router-এর কাজ কী?
+\item Repeater কীভাবে network range বাড়ায়?
+\item Bridge কী কাজে ব্যবহৃত হয়?
+\item Gateway-কে protocol converter বলা হয় কেন?
+\item Access Point-এর কাজ লেখ।
+\item Firewall কেন গুরুত্বপূর্ণ?
 \end{enumerate}
 
-\textbf{সৃজনশীল অনুশীলন}
-একটি office network-এ device sharing, internet access এবং branch office connection-এর জন্য ভিন্ন ভিন্ন network device ব্যবহার করা হচ্ছে। উদ্দীপকের আলোকে device selection বিশ্লেষণ করো।
+\textbf{সৃজনশীল প্রশ্ন}
+একটি hospital network-এ patient management server, doctors' chamber-এর desktop computer, Wi-Fi zone, internet connection এবং security system দরকার। Hospital building বড় হওয়ায় কিছু জায়গায় wireless signal দুর্বল।
+
+\begin{enumerate}
+\item ক. NIC কী?
+\item খ. Router ভিন্ন network connect করতে পারে কেন?
+\item গ. doctors' chamber-এর desktop computer ও server একই LAN-এ যুক্ত করতে কোন device প্রয়োজন? ব্যাখ্যা কর।
+\item ঘ. internet access, Wi-Fi coverage, weak signal এবং security নিশ্চিত করতে কোন কোন network device ব্যবহার যুক্তিযুক্ত—বিশ্লেষণ কর।
+\end{enumerate}
 \end{practicebox}
-
-
-
-\subsection{Network device map}
-
-\begin{center}
-\fbox{\parbox{0.92\textwidth}{
-\centering
-\textbf{Diagram placeholder: Small LAN}\\[4pt]
-Internet $\rightarrow$ Modem/ONT $\rightarrow$ Router $\rightarrow$ Switch $\rightarrow$ PCs/Printer/AP\\
-Switch-এর একটি port থেকে Access Point দেখিয়ে wireless users যুক্ত করতে হবে।
-}}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
-\hline
-\textbf{Device} & \textbf{মূল কাজ} & \textbf{পরীক্ষায় পার্থক্য} \\
-\hline
-NIC & device-কে network-এ যুক্ত করে & প্রতিটি networked device-এ থাকে \\
-\hline
-Hub & signal সব port-এ পাঠায় & কম বুদ্ধিমান, collision বেশি \\
-\hline
-Switch & MAC address দেখে নির্দিষ্ট port-এ পাঠায় & LAN-এ hub-এর উন্নত বিকল্প \\
-\hline
-Router & ভিন্ন network যুক্ত করে route নির্ধারণ করে & internet connection ভাগ করে \\
-\hline
-Bridge & দুই LAN segment যুক্ত/ফিল্টার করে & ছোট segment সংযোগে ব্যবহৃত \\
-\hline
-Gateway & ভিন্ন protocol/architecture যুক্ত করে & protocol conversion করতে পারে \\
-\hline
-Repeater & দুর্বল signal পুনরায় শক্তিশালী করে & distance বাড়াতে ব্যবহৃত \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Switch বনাম hub, router বনাম gateway এবং modem-এর modulation/demodulation কাজ—এই তিনটি তুলনা বারবার গুরুত্বপূর্ণ হয়।
-\end{boardbox}

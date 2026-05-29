@@ -8,7 +8,9 @@
   outer=18mm,
   top=22mm,
   bottom=22mm,
-  bindingoffset=5mm
+  bindingoffset=5mm,
+  includehead,
+  includefoot
 ]{geometry}
 \usepackage{fancyhdr}
 \usepackage{setspace}
@@ -37,6 +39,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{xcolor}
+% geometry already configured above (avoid option clash)
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{newunicodechar}
@@ -60,6 +63,10 @@
 \newcommand{\scaletikz}[1]{\resizebox{0.97\linewidth}{!}{#1}}
 \usepackage{fvextra}
 \usepackage[unicode]{hyperref}
+% Improve PDF outlines/bookmarks and ensure outlines regenerate correctly
+% `bookmark` provides robust bookmark handling (works with hyperref).
+\usepackage{bookmark}
+\bookmarksetup{open,numbered}
 \raggedbottom
 \linespread{1.15}
 % Disable colored boxes around links in the PDF (remove red boxes in TOC)
@@ -119,6 +126,8 @@
 % Header and Footer configuration
 \pagestyle{fancy}
 \fancyhf{}
+% Ensure header space is sufficient for fancyhdr to avoid warnings
+\setlength{\headheight}{18pt}
 \fancyhead[LE,RO]{\thepage}
 \fancyhead[RE]{\leftmark}
 \fancyhead[LO]{\rightmark}
@@ -131,6 +140,9 @@
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
+
+% Ensure headheight remains sufficient even after package/class adjustments
+\AtBeginDocument{\setlength{\headheight}{18pt}}
 
 % Semantic boxes for the book. Writers should use these names instead of
 % manual colors so the whole book can be redesigned from one place.

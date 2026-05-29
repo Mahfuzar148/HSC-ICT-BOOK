@@ -1,0 +1,5081 @@
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.2.25)  29 MAY 2026 17:38
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
+File: bk12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count271
+\c@chapter=\count272
+\c@section=\count273
+\c@subsection=\count274
+\c@subsubsection=\count275
+\c@paragraph=\count276
+\c@subparagraph=\count277
+\c@figure=\count278
+\c@table=\count279
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(preamble.tex
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count280
+\Gm@cntv=\count281
+\c@Gm@tempcnt=\count282
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip51
+\f@nch@offset@elh=\skip52
+\f@nch@offset@erh=\skip53
+\f@nch@offset@olh=\skip54
+\f@nch@offset@orh=\skip55
+\f@nch@offset@elf=\skip56
+\f@nch@offset@erf=\skip57
+\f@nch@offset@olf=\skip58
+\f@nch@offset@orf=\skip59
+\f@nch@height=\skip60
+\f@nch@footalignment=\skip61
+\f@nch@widthL=\skip62
+\f@nch@widthC=\skip63
+\f@nch@widthR=\skip64
+\@temptokenb=\toks19
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def
+File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
+\g__graphics_track_int=\count283
+\g__pdfannot_backend_int=\count284
+\g__pdfannot_backend_link_int=\count285
+))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty
+Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count286
+\l__fontspec_language_int=\count287
+\l__fontspec_strnum_int=\count288
+\l__fontspec_tmp_int=\count289
+\l__fontspec_tmpa_int=\count290
+\l__fontspec_tmpb_int=\count291
+\l__fontspec_tmpc_int=\count292
+\l__fontspec_em_int=\count293
+\l__fontspec_emdef_int=\count294
+\l__fontspec_strong_int=\count295
+\l__fontspec_strongdef_int=\count296
+\l__fontspec_tmpa_dim=\dimen157
+\l__fontspec_tmpb_dim=\dimen158
+\l__fontspec_tmpc_dim=\dimen159
+ (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+)
+
+Package fontspec Info: 
+(fontspec)             kalpurush scale = 0.9493363507272275.
+
+
+Package fontspec Info: 
+(fontspec)             kalpurush scale = 0.9493363507272275.
+
+
+Package fontspec Info: 
+(fontspec)             kalpurush scale = 0.9493363507272275.
+
+
+Package fontspec Info: 
+(fontspec)             kalpurush scale = 0.9493363507272275.
+
+
+Package fontspec Info: 
+(fontspec)             kalpurush scale = 0.9493363507272275.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'kalpurush(0)' created for font 'kalpurush'
+(fontspec)             with options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX,Path=C:/Windows/Fonts/,Exte
+nsion=.ttf,Script=Bengali,UprightFont
+(fontspec)             = *,BoldFont = *,ItalicFont = *,BoldItalicFont =
+(fontspec)             *,FakeBold=1.4,FakeSlant=0.18,Scale=MatchLowercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
+f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
+f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
+f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[0.9493363507272275]"[C:/Windows/Fonts/kalpurush.tt
+f]/OT:script=bng2;language=dflt;embolden=1.4;slant=0.18;mapping=tex-text;"
+
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 11.39209pt on input line 38.
+ (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
+) (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count297
+\float@exts=\toks20
+\float@box=\box53
+\@float@everytoks=\toks21
+\@floatcapt=\box54
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip65
+\enit@outerparindent=\dimen162
+\enit@toks=\toks22
+\enit@inbox=\box55
+\enit@count@id=\count298
+\enitdp@description=\count299
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunico
+dechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen163
+\ar@mcellbox=\box56
+\extrarowheight=\dimen164
+\NC@list=\toks23
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box57
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count300
+\@cmidlb=\count301
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count302
+\@lastruleclass=\count303
+\@thisrulewidth=\dimen177
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen178
+\pgfutil@tempdimb=\dimen179
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
+\pgfutil@abb=\box58
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks27
+))
+\pgf@x=\dimen180
+\pgf@y=\dimen181
+\pgf@xa=\dimen182
+\pgf@ya=\dimen183
+\pgf@xb=\dimen184
+\pgf@yb=\dimen185
+\pgf@xc=\dimen186
+\pgf@yc=\dimen187
+\pgf@xd=\dimen188
+\pgf@yd=\dimen189
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count304
+\c@pgf@countb=\count305
+\c@pgf@countc=\count306
+\c@pgf@countd=\count307
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+\pgf@sys@id@count=\count308
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-xetex.def
+File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)
+\pgfsys@objnum=\count309
+)))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count310
+\pgfsyssoftpath@bigbuffer@items=\count311
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
+\pgfmath@dimen=\dimen190
+\pgfmath@count=\count312
+\pgfmath@box=\box59
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count313
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen191
+\pgf@picmaxx=\dimen192
+\pgf@picminy=\dimen193
+\pgf@picmaxy=\dimen194
+\pgf@pathminx=\dimen195
+\pgf@pathmaxx=\dimen196
+\pgf@pathminy=\dimen197
+\pgf@pathmaxy=\dimen198
+\pgf@xx=\dimen199
+\pgf@xy=\dimen256
+\pgf@yx=\dimen257
+\pgf@yy=\dimen258
+\pgf@zx=\dimen259
+\pgf@zy=\dimen260
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen261
+\pgf@path@lasty=\dimen262
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen263
+\pgf@shorten@start@additional=\dimen264
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count314
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen265
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen266
+\pgf@pt@y=\dimen267
+\pgf@pt@temp=\dimen268
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen269
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen270
+\pgf@sys@shading@range@num=\count315
+\pgf@shadingcount=\count316
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box63
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box64
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen271
+\pgf@nodesepend=\dimen272
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen273
+\pgffor@skip=\dimen274
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count317
+\pgfplotmarksize=\dimen275
+)
+\tikz@lastx=\dimen276
+\tikz@lasty=\dimen277
+\tikz@lastxsaved=\dimen278
+\tikz@lastysaved=\dimen279
+\tikz@lastmovetox=\dimen280
+\tikz@lastmovetoy=\dimen281
+\tikzleveldistance=\dimen282
+\tikzsiblingdistance=\dimen283
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count318
+\tikznumberofchildren=\count319
+\tikznumberofcurrentchild=\count320
+\tikz@fig@count=\count321
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count322
+\pgfmatrixcurrentcolumn=\count323
+\pgf@matrix@numberofcolumns=\count324
+)
+\tikz@expandcount=\count325
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks36
+\verbatim@line=\toks37
+\verbatim@in@stream=\read3
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.s
+ty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks38
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count326
+)
+\tcb@titlebox=\box69
+\tcb@upperbox=\box70
+\tcb@lowerbox=\box71
+\tcb@phantombox=\box72
+\c@tcbbreakpart=\count327
+\c@tcblayer=\count328
+\c@tcolorbox@number=\count329
+\l__tcobox_tmpa_box=\box73
+\l__tcobox_tmpa_dim=\dimen284
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbraster.cod
+e.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.9.0'
+\c@tcbrastercolumn=\count330
+\c@tcbrasterrow=\count331
+\c@tcbrasternum=\count332
+\c@tcbraster=\count333
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.code
+.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.image
+.sty
+Package: tikzfill.image 2026/04/23 v1.2.0 Image filling library for TikZ
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryfil
+l.image.code.tex
+File: tikzlibraryfill.image.code.tex 2026/04/23 v1.2.0 Image filling library
+\l__tikzfill_tmpa_dim=\dimen285
+\l__tikzfill_tmpb_dim=\dimen286
+\l__tikzfill_img_box=\box78
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsa
+w.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakable.
+code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/pdfcol\pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
+)
+Package pdfcol Info: pdfTeX's color stacks are not available.
+\tcb@testbox=\box79
+\tcb@totalupperbox=\box80
+\tcb@totallowerbox=\box81
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbhooks.code
+.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbtheorems.c
+ode.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip68
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks39
+\ex@=\dimen287
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen288
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count334
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count335
+\leftroot@=\count336
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count337
+\DOTSCASE@=\count338
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box82
+\strutbox@=\box83
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen289
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count339
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count340
+\dotsspace@=\muskip17
+\c@parentequation=\count341
+\dspbrk@lvl=\count342
+\tag@help=\toks40
+\row@=\count343
+\column@=\count344
+\maxfields@=\count345
+\andhelp@=\toks41
+\eqnshift@=\dimen290
+\alignsep@=\dimen291
+\tagshift@=\dimen292
+\tagwidth@=\dimen293
+\totwidth@=\dimen294
+\lineht@=\dimen295
+\@envbody=\toks42
+\multlinegap=\skip69
+\multlinetaggap=\skip70
+\mathdisplay@stack=\toks43
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbfitting.co
+de.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.9.0'
+\tcbfitdim=\dimen296
+\tcb@lowerfitdim=\dimen297
+\tcb@upperfitdim=\dimen298
+\tcb@cur@hbadness=\count346
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistingsut
+f8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.9.0'
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistings.c
+ode.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.9.0'
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count347
+\lst@gtempboxa=\box84
+\lst@token=\toks44
+\lst@length=\count348
+\lst@currlwidth=\dimen299
+\lst@column=\count349
+\lst@pos=\count350
+\lst@lostspace=\dimen300
+\lst@width=\dimen301
+\lst@newlines=\count351
+\lst@lineno=\count352
+\lst@maxwidth=\dimen302
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count353
+\lst@skipnumbers=\count354
+\lst@framebox=\box85
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistingsco
+re.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.9.0'
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbprocessing
+.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.9.0'
+)
+\c@tcblisting=\count355
+))
+Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. 
+Library `listings` is loaded instead. on input line 29.
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbexternal.c
+ode.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.9.0'
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbmagazine.c
+ode.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.9.0'
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbvignette.c
+ode.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.9.0'
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryfadings.code.tex
+File: pgflibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbposter.cod
+e.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.9.0'
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen303
+\pgfarrowlength=\dimen304
+\pgfarrowwidth=\dimen305
+\pgfarrowlinewidth=\dimen306
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2026/02/25 v1.14.0 fvextra - extensions and patches for fancyv
+rb
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2026/04/16 4.6a verbatim text (tvz,hv)
+\FV@CodeLineNo=\count356
+\FV@InFile=\read4
+\FV@TabBox=\box86
+\c@FancyVerbLine=\count357
+\FV@StepNumber=\count358
+\FV@OutFile=\write4
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2026/03/08 line numbers on paragraphs v5.9
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+\linenopenalty=\count359
+\output=\toks45
+\linenoprevgraf=\count360
+\linenumbersep=\dimen307
+\linenumberwidth=\dimen308
+\c@linenumber=\count361
+\c@pagewiselinenumber=\count362
+\c@LN@truepage=\count363
+\c@internallinenumber=\count364
+\c@internallinenumbers=\count365
+\quotelinenumbersep=\dimen309
+\bframerule=\dimen310
+\bframesep=\dimen311
+\bframebox=\box87
+\@LN@amsmath@ams@eqpen=\count366
+)
+\c@FancyVerbWriteLine=\count367
+\c@FancyVerbBufferLine=\count368
+\c@FV@TrueTabGroupLevel=\count369
+\c@FV@TrueTabCounter=\count370
+\FV@TabBox@Group=\box88
+\FV@bgcolorstructbox=\box89
+\FV@TmpLength=\skip71
+\c@FV@HighlightLinesStart=\count371
+\c@FV@HighlightLinesStop=\count372
+\FV@LoopCount=\count373
+\FV@NCharsBox=\box90
+\FV@BreakIndent=\dimen312
+\FV@BreakIndentNChars=\count374
+\FV@BreakSymbolSepLeft=\dimen313
+\FV@BreakSymbolSepLeftNChars=\count375
+\FV@BreakSymbolSepRight=\dimen314
+\FV@BreakSymbolSepRightNChars=\count376
+\FV@BreakSymbolIndentLeft=\dimen315
+\FV@BreakSymbolIndentLeftNChars=\count377
+\FV@BreakSymbolIndentRight=\dimen316
+\FV@BreakSymbolIndentRightNChars=\count378
+\c@FancyVerbLineBreakLast=\count379
+\FV@LineBox=\box91
+\FV@LineIndentBox=\box92
+\c@FV@BreakBufferDepth=\count380
+\FV@LineWidth=\dimen317
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count381
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen318
+\Hy@linkcounter=\count382
+\Hy@pagecounter=\count383
+ (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+) (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count384
+ (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4072.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count385
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen319
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count386
+\Field@Width=\dimen320
+\Fld@charsize=\dimen321
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count387
+\c@Item=\count388
+\c@Hfootnote=\count389
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
+\pdfm@box=\box93
+\c@Hy@AnnotLevel=\count390
+\HyField@AnnotCount=\count391
+\Fld@listcount=\count392
+\c@bookmark@seq@number=\count393
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip72
+)
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-dvipdfm.de
+f
+File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
+\BKM@id=\count394
+))
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+\UL@box=\box94
+\UL@hyphenbox=\box95
+\UL@skip=\skip73
+\UL@hook=\toks46
+\UL@height=\dimen322
+\UL@pe=\count395
+\UL@pixel=\dimen323
+\ULC@box=\box96
+Package: ulem 2019/11/18
+\ULdepth=\dimen324
+)
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Segoe UI Symbol/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Segoe UI Symbol/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Segoe UI Symbol/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'SegoeUISymbol(0)' created for font 'Segoe
+(fontspec)             UI Symbol' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Segoe UI
+(fontspec)             Symbol/OT:script=latn;language=dflt;mapping=tex-text;"
+
+)
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 14.22636pt
+* modes: includehead includefoot twoside 
+* h-part:(L,W,R)=(51.21495pt, 367.04057pt, 51.21495pt)
+* v-part:(T,H,B)=(62.59605pt, 557.67403pt, 62.59605pt)
+* \paperwidth=483.69684pt
+* \paperheight=682.86613pt
+* \textwidth=367.04057pt
+* \textheight=495.80023pt
+* \oddsidemargin=-6.82867pt
+* \evensidemargin=-21.05504pt
+* \topmargin=-9.67393pt
+* \headheight=18.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=98.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 5.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 5.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 5.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 5.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 5.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 5.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 5.
+LaTeX Font Info:    Redeclaring math accent \check on input line 5.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 5.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 5.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 5.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 5.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/kalpurush(0)/m/n on input line 5.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/kalpurush(0)/m/n on input line 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/kalpurush(0)/m/n --> TU/kalpurush(0)/m/n on input li
+ne 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/kalpurush(0)/m/it on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/kalpurush(0)/b/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/kalpurush(0)/m/n --> TU/kalpurush(0)/b/n on input li
+ne 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/kalpurush(0)/b/it on input line 5.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 5.
+\c@lstlisting=\count396
+Package hyperref Info: Link coloring OFF on input line 5.
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 19.68933pt on input line 10.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 13.6705pt on input line 10.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 9.49341pt on input line 10.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 6.64539pt on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+
+
+(C:\Users\mahfu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[1
+
+
+
+] [2
+
+]
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 23.6196pt on input line 10.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 23.6196pt on input line 10.
+ (F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\main.toc)
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [3]
+[4
+
+]
+\openout2 = `chapters/Chapter01/latex/chapter.aux'.
+
+ (chapters/Chapter01/latex/chapter.tex
+Chapter 1.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 11.39209pt on input line 4.
+
+Underfull \hbox (badness 2158) in paragraph at lines 9--10
+[]\TU/kalpurush(0)/b/n/12 AI, robotics, biometrics, bioinformatics, genetic eng
+ineering ও
+ []
+
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 7.59473pt on input line 20.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 5.69604pt on input line 20.
+[1
+
+
+] (chapters/Chapter01/topics/01_bishwogram/topic.tex
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 16.4046pt on input line 1.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 16.4046pt on input line 1.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 13.6705pt on input line 14.
+ [2]
+Underfull \hbox (badness 1577) in paragraph at lines 26--27
+[]\TU/kalpurush(0)/b/n/12 যোগাযোগ অবকাঠামো: ইন্টারনেট, মোবাইল নেটওয়ার্ক, অপটিক্
+যাল ফাইবার,
+ []
+
+[3] [4] [5] [6] [7]
+Overfull \hbox (5.15285pt too wide) in paragraph at lines 168--169
+\TU/kalpurush(0)/b/n/12 Online news portal, live streaming, social media update
+ এবং citizen journalism-
+ []
+
+[8] [9]) (chapters/Chapter01/topics/02_bishwogramer_upadan_o_obodan/topic.tex
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+[]|\TU/kalpurush(0)/b/n/12 browser, app,
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 36--37
+[]|\TU/kalpurush(0)/b/n/12 internet, mobile
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 38--39
+[]|\TU/kalpurush(0)/b/n/12 programmer, op-
+ []
+
+[11] [12]) (chapters/Chapter01/topics/03_virtual_reality/topic.tex [13]
+Overfull \hbox (9.0801pt too wide) in paragraph at lines 20--21
+\TU/kalpurush(0)/b/n/12 স্পর্শের মতো feedback পাওয়া যায়। তাই VR-কে interactive,
+ immersive এবং computer-
+ []
+
+File: chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png 
+Graphic file (type bmp)
+<chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png>
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 10.39528pt on input line 34.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/it' will be
+(Font)              scaled to size 10.39528pt on input line 34.
+[14] [15]
+Overfull \hbox (9.49026pt too wide) in paragraph at lines 48--49
+[]\TU/kalpurush(0)/b/n/12 একজন engineer কোনো machine-এর parts virtualভাবে খুলে-
+জোড়া লাগানোর অনুশীলন
+ []
+
+File: chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.pn
+g Graphic file (type bmp)
+<chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.png>
+[16]
+Overfull \hbox (21.92346pt too wide) in paragraph at lines 80--81
+\TU/kalpurush(0)/b/n/12 তার চারপাশের বাস্তব পরিবেশকে সাময়িকভাবে ভুলে গিয়ে compu
+ter-generated environment-
+ []
+
+[17]
+File: chapters/Chapter01/topics/03_virtual_reality/images/vr_three_pillars.png 
+Graphic file (type bmp)
+<chapters/Chapter01/topics/03_virtual_reality/images/vr_three_pillars.png>
+ [18] [19] [20]
+Underfull \hbox (badness 2359) in paragraph at lines 182--183
+[]|\TU/kalpurush(0)/b/n/12 Headset, sensor, controller বা data glove
+ []
+
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]|\TU/kalpurush(0)/b/n/12 ব্যবহারকারী শুধু দেখে;
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 234--235
+[]|\TU/kalpurush(0)/b/n/12 YouTube video, docu-
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 236--236
+[]|\TU/kalpurush(0)/b/n/12 বাস্তব কোনো system-এর
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+[]|\TU/kalpurush(0)/b/n/12 Traffic simulation,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
+[]|\TU/kalpurush(0)/b/n/12 ব্যবহারকারী computer-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
+\TU/kalpurush(0)/b/n/12 generated 3D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
+\TU/kalpurush(0)/b/n/12 environment-এ প্রবেশ
+ []
+
+
+Underfull \hbox (badness 4441) in paragraph at lines 238--238
+\TU/kalpurush(0)/b/n/12 করে interaction করতে
+ []
+
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[]|\TU/kalpurush(0)/b/n/12 Controller বা data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]|\TU/kalpurush(0)/b/n/12 সম্পূর্ণ computer-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\TU/kalpurush(0)/b/n/12 generated পরিবেশে
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 318--318
+\TU/kalpurush(0)/b/n/12 ital object/information
+ []
+
+
+Underfull \hbox (badness 5563) in paragraph at lines 318--319
+[]|\TU/kalpurush(0)/b/n/12 mobile camera-তে 3D
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 320--320
+[]|\TU/kalpurush(0)/b/n/12 কোনো বাস্তব system-এর
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+[]|\TU/kalpurush(0)/b/n/12 traffic simulation,
+ []
+
+[25] [26]
+Underfull \hbox (badness 4013) in paragraph at lines 349--350
+[]|\TU/kalpurush(0)/b/n/12 Sensorama (প্রথম immersive
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 353--354
+[]|\TU/kalpurush(0)/b/n/12 DataGlove, EyePhone, com-
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 355--356
+[]|\TU/kalpurush(0)/b/n/12 CAVE (তিন মাত্রিক immersive
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 361--362
+[]|\TU/kalpurush(0)/b/n/12 Meta Quest 3S, Vision Pro,
+ []
+
+
+Overfull \hbox (0.89365pt too wide) in paragraph at lines 345--364
+ [] 
+ []
+
+[27] [28] [29] [30]
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+[]|\TU/kalpurush(0)/b/n/12 ব্যয়বহুল, space-
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 483--484
+[]|\TU/kalpurush(0)/b/n/12 HTC Vive, PlayStation
+ []
+
+
+Overfull \hbox (15.584pt too wide) in paragraph at lines 473--490
+ [] 
+ []
+
+[31]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32] [33] [34] [35] [36] [37]
+Overfull \hbox (3.8659pt too wide) in paragraph at lines 754--754
+[]\TU/kalpurush(0)/b/n/14.4 ভার্চুয়াল রিয়েলিটির স্বাস্থ্য ঝুঁকি এবং সতর্কতা (
+HSC এর জন্য গুরুত্বপূর্ণ) 
+ []
+
+[38] [39] [40] [41] [42] [43] [44] [45])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/topic.tex [46]
+Underfull \hbox (badness 1331) in paragraph at lines 26--26
+[]|\TU/kalpurush(0)/b/n/12 data/rule/model দিয়ে intelli-
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 26--27
+[]|\TU/kalpurush(0)/b/n/12 diagnosis, chat-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+\TU/kalpurush(0)/b/n/12 bot, decision
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+[]|\TU/kalpurush(0)/b/n/12 industry,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+\TU/kalpurush(0)/b/n/12 surgery, de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+[]|\TU/kalpurush(0)/b/n/12 attendance,
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 30--31
+\TU/kalpurush(0)/b/n/12 passport, secu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+[]|\TU/kalpurush(0)/b/n/12 genome,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+\TU/kalpurush(0)/b/n/12 medicine, re-
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 34--35
+[]|\TU/kalpurush(0)/b/n/12 medicine, elec-
+ []
+
+
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_budd
+himotta/topic.tex [47] [48] [49] [50])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/02_robotics/top
+ic.tex [51] [52] [53])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/03_cryosurgery/
+topic.tex [54]
+Overfull \hbox (17.1426pt too wide) in paragraph at lines 21--22
+[]\TU/kalpurush(0)/b/n/12 National Cancer Institute-এর cancer treatment diction
+ary অনুযায়ী cryosurgery-
+ []
+
+[55] [56] [57])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/04_mohakash_ovi
+jan/topic.tex [58] [59] [60])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/05_ict_nirvor_u
+tpadon/topic.tex [61] [62] [63])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/06_protirokkha/
+topic.tex [64]
+Overfull \hbox (6.64291pt too wide) in paragraph at lines 36--37
+\TU/kalpurush(0)/b/n/12 Satellite image ও communication system জাতীয় নিরাপত্তায়
+ গুরুত্বপূর্ণ। সীমান্ত পর্যবেক্ষণ,
+ []
+
+
+Overfull \hbox (17.5892pt too wide) in paragraph at lines 36--37
+\TU/kalpurush(0)/b/n/12 দুর্যোগ-পরবর্তী ক্ষয়ক্ষতি দেখা, সমুদ্রসীমা পর্যবেক্ষণ, 
+navigation এবং secure communication-
+ []
+
+[65] [66])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/t
+opic.tex [67]
+Overfull \hbox (9.25018pt too wide) in paragraph at lines 29--30
+\TU/kalpurush(0)/b/n/12 করে। Smartphone unlock, airport security, surveillance 
+এবং photo organization-
+ []
+
+[68] [69])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/08_bioinformati
+cs/topic.tex [70] [71] [72])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/09_genetic_engi
+neering/topic.tex [73] [74] [75])
+(chapters/Chapter01/topics/04_ict_samprotik_prabonota/subtopics/10_nanotechnolo
+gy/topic.tex [76] [77] [78] [79]))
+(chapters/Chapter01/topics/05_noitikota/topic.tex [80]
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+[]|\TU/kalpurush(0)/b/n/12 password/share
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]|\TU/kalpurush(0)/b/n/12 অনুমতি ছাড়া software
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+[]|\TU/kalpurush(0)/b/n/12 licensed/open-
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 30--31
+[]|\TU/kalpurush(0)/b/n/12 আইন ও নিরাপত্তা
+ []
+
+[81]) (chapters/Chapter01/topics/06_somaj_jibone_probhab/topic.tex [82]
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+[]|\TU/kalpurush(0)/b/n/12 distraction, plagia-
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 33--33
+[]|\TU/kalpurush(0)/b/n/12 freelancing, remote
+ []
+
+
+Underfull \hbox (badness 2538) in paragraph at lines 33--34
+[]|\TU/kalpurush(0)/b/n/12 skill gap, job dis-
+ []
+
+[83]) (chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic.tex [84]
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+[]|\TU/kalpurush(0)/b/n/12 weather, crop
+ []
+
+
+Overfull \hbox (12.59715pt too wide) in paragraph at lines 46--47
+\TU/kalpurush(0)/b/n/12 e-agriculture এবং ICT-based entrepreneurship বাংলাদেশের
+ অর্থনৈতিক উন্নয়নে গুরুত্বপূর্ণ
+ []
+
+[85])) [86]
+\openout2 = `chapters/Chapter02/latex/chapter.aux'.
+
+ (chapters/Chapter02/latex/chapter.tex
+Chapter 2.
+[87
+
+
+
+
+] [88]
+(chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic.tex
+[89] [90]
+File: chapters/Chapter02/images/communication_process_flow_diagram.png Graphic 
+file (type bmp)
+<chapters/Chapter02/images/communication_process_flow_diagram.png>
+ [91] [92] [93]
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+[]|\TU/kalpurush(0)/b/n/12 processing ও
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+[]|\TU/kalpurush(0)/b/n/12 electric pulse,
+ []
+
+[94]
+File: chapters/Chapter02/images/analog_vs_digital_signal_comparison.png Graphic
+ file (type bmp)
+<chapters/Chapter02/images/analog_vs_digital_signal_comparison.png>
+ [95]
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+[]|\TU/kalpurush(0)/b/n/12 অসংখ্য intermediate
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 200--201
+[]|\TU/kalpurush(0)/b/n/12 সাধারণত 0 ও 1 দ্বারা
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+[]|\TU/kalpurush(0)/b/n/12 computer, internet,
+ []
+
+[96]
+Underfull \hbox (badness 7308) in paragraph at lines 228--229
+[]|\TU/kalpurush(0)/b/n/12 এক sender থেকে অনেক
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--230
+[]|\TU/kalpurush(0)/b/n/12 Computer
+ []
+
+
+Underfull \hbox (badness 4254) in paragraph at lines 230--230
+[]|\TU/kalpurush(0)/b/n/12 Device-to-device data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+[]|\TU/kalpurush(0)/b/n/12 Mobile net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+[]|\TU/kalpurush(0)/b/n/12 Cellular communica-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]|\TU/kalpurush(0)/b/n/12 Internet-based stor-
+ []
+
+[97]
+File: chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png Graphic fi
+le (type bmp)
+<chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png>
+ [98] [99]
+Underfull \hbox (badness 3229) in paragraph at lines 332--333
+[]|\TU/kalpurush(0)/b/n/12 Telegraph, low-speed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--334
+[]|\TU/kalpurush(0)/b/n/12 voice communication-
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 334--334
+\TU/kalpurush(0)/b/n/12 এর জন্য উপযোগী band-
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 336--336
+\TU/kalpurush(0)/b/n/12 audio, video transmis-
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 336--337
+[]|\TU/kalpurush(0)/b/n/12 Fiber internet, cable
+ []
+
+[100] [101] [102] [103] [104])
+(chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic.tex
+[105]
+Underfull \hbox (badness 1221) in paragraph at lines 26--27
+[]\TU/kalpurush(0)/b/n/12 Data কখন/কোন নিয়মে যাচ্ছে? — Asynchronous, Synchronou
+s না
+ []
+
+[106]
+File: chapters/Chapter02/images/data_transmission_overview_tree.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/data_transmission_overview_tree.png>
+ [107]
+File: chapters/Chapter02/images/parallel_vs_serial_transmission.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/parallel_vs_serial_transmission.png>
+ [108] [109]
+Overfull \hbox (23.26321pt too wide) in paragraph at lines 124--125
+[]\TU/kalpurush(0)/b/n/12 Serial transmission-এ line কম লাগে, তাই cost কম। Long
+ distance communication-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+[]|\TU/kalpurush(0)/b/n/12 bit-by-bit একটির পর
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+[]|\TU/kalpurush(0)/b/n/12 modern technology-তে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]|\TU/kalpurush(0)/b/n/12 synchronization prob-
+ []
+
+[110] [111]
+File: chapters/Chapter02/images/asynchronous_transmission_frame.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/asynchronous_transmission_frame.png>
+ [112]
+File: chapters/Chapter02/images/synchronous_transmission_block.png Graphic file
+ (type bmp)
+<chapters/Chapter02/images/synchronous_transmission_block.png>
+ [113] [114]
+File: chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png Gra
+phic file (type bmp)
+<chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png>
+ [115]
+Overfull \hbox (6.77843pt too wide) in paragraph at lines 293--293
+[]\TU/kalpurush(0)/b/n/14.4 Asynchronous, Synchronous ও Isochronous Transmissio
+n-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--300
+[]|\TU/kalpurush(0)/b/n/12 Data পাঠানোর
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+[]|\TU/kalpurush(0)/b/n/12 clock synchro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+[]|\TU/kalpurush(0)/b/n/12 timing control
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+[]|\TU/kalpurush(0)/b/n/12 কম বা অনিয়মিত
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+[]|\TU/kalpurush(0)/b/n/12 audio-video/live
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|\TU/kalpurush(0)/b/n/12 keyboard/serial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|\TU/kalpurush(0)/b/n/12 network data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+[]|\TU/kalpurush(0)/b/n/12 video call/live
+ []
+
+
+Overfull \hbox (20.64163pt too wide) in paragraph at lines 296--311
+ [] 
+ []
+
+[116]
+Underfull \hbox (badness 1043) in paragraph at lines 340--341
+[]\TU/kalpurush(0)/b/n/12 Radio broadcast, TV broadcast, keyboard থেকে computer
+-এ input,
+ []
+
+[117]
+File: chapters/Chapter02/images/simplex_half_full_duplex_modes.png Graphic file
+ (type bmp)
+<chapters/Chapter02/images/simplex_half_full_duplex_modes.png>
+ [118]
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[]|\TU/kalpurush(0)/b/n/12 Same time
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\TU/kalpurush(0)/b/n/12 communica-
+ []
+
+
+Overfull \hbox (4.982pt too wide) in paragraph at lines 396--396
+[]|\TU/kalpurush(0)/b/n/12 Sender/Receiver
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+[]|\TU/kalpurush(0)/b/n/12 পালাক্রমে বদলাতে
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 398--398
+[]|\TU/kalpurush(0)/b/n/12 TV/Radio broad-
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 400--400
+[]|\TU/kalpurush(0)/b/n/12 one-way commu-
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 400--401
+\TU/kalpurush(0)/b/n/12 tive communica-
+ []
+
+
+Overfull \hbox (20.64163pt too wide) in paragraph at lines 388--403
+ [] 
+ []
+
+[119] [120] [121]
+File: chapters/Chapter02/images/unicast_broadcast_multicast.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/unicast_broadcast_multicast.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
+[]|\TU/kalpurush(0)/b/n/12 নির্দিষ্ট
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
+\TU/kalpurush(0)/b/n/12 communication-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+[]|\TU/kalpurush(0)/b/n/12 group
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+\TU/kalpurush(0)/b/n/12 communication-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--480
+[]|\TU/kalpurush(0)/b/n/12 personal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+[]|\TU/kalpurush(0)/b/n/12 online class
+ []
+
+
+Overfull \hbox (5.95683pt too wide) in paragraph at lines 470--483
+ [] 
+ []
+
+[122] [123] [124] [125])
+(chapters/Chapter02/topics/03_media_of_data_communication/topic.tex [126]
+[127]
+File: chapters/Chapter02/images/data_communication_medium_basic_model.png Graph
+ic file (type bmp)
+<chapters/Chapter02/images/data_communication_medium_basic_model.png>
+ [128] [129]
+File: chapters/Chapter02/images/transmission_media_classification_tree.png Grap
+hic file (type bmp)
+<chapters/Chapter02/images/transmission_media_classification_tree.png>
+ [130] [131]
+File: chapters/Chapter02/images/guided_media_types_overview.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/guided_media_types_overview.png>
+ [132] [133]
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]|\TU/kalpurush(0)/b/n/12 Unshielded Twisted
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+[]|\TU/kalpurush(0)/b/n/12 Interference
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 203--204
+[]|\TU/kalpurush(0)/b/n/12 noise-prone environ-
+ []
+
+[134] [135]
+Overfull \hbox (7.55049pt too wide) in paragraph at lines 260--261
+[]\TU/kalpurush(0)/b/n/12 Wireless media-তে cable লাগে না। ফলে mobility বেশি এব
+ং installation তুলনামূলক
+ []
+
+[136]
+File: chapters/Chapter02/images/unguided_media_types_overview.png Graphic file 
+(type bmp)
+<chapters/Chapter02/images/unguided_media_types_overview.png>
+ [137] [138]
+Underfull \hbox (badness 1038) in paragraph at lines 326--327
+[]\TU/kalpurush(0)/b/n/12 উচ্চ frequency-এর electromagnetic wave, যা point-to-p
+oint wireless
+ []
+
+[139]
+File: chapters/Chapter02/images/satellite_communication_medium.png Graphic file
+ (type bmp)
+<chapters/Chapter02/images/satellite_communication_medium.png>
+ [140]
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]|\TU/kalpurush(0)/b/n/12 নির্দিষ্ট physical cable
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 414--415
+[]|\TU/kalpurush(0)/b/n/12 interference বেশি হতে
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 416--416
+[]|\TU/kalpurush(0)/b/n/12 Twisted pair, Coaxial,
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 418--419
+[]|\TU/kalpurush(0)/b/n/12 mobile, Wi-Fi, Blue-
+ []
+
+[141] [142]
+Underfull \hbox (badness 1448) in paragraph at lines 447--448
+\TU/kalpurush(0)/b/n/12 lation, LAN-এর জন্য
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 449--449
+[]|\TU/kalpurush(0)/b/n/12 City-to-city internet
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 453--453
+[]|\TU/kalpurush(0)/b/n/12 Mobile phone com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--453
+[]|\TU/kalpurush(0)/b/n/12 Radio
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 453--454
+[]|\TU/kalpurush(0)/b/n/12 mobility ও wireless
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+[]|\TU/kalpurush(0)/b/n/12 video signal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+\TU/kalpurush(0)/b/n/12 distribution-এর
+ []
+
+[143] [144] [145] [146] [147])
+(chapters/Chapter02/topics/04_wired_media/topic.tex [148] [149]
+File: chapters/Chapter02/images/wired_media_overview.png Graphic file (type bmp
+)
+<chapters/Chapter02/images/wired_media_overview.png>
+ [150]
+File: chapters/Chapter02/images/wired_media_types_tree.png Graphic file (type b
+mp)
+<chapters/Chapter02/images/wired_media_types_tree.png>
+ [151]
+File: chapters/Chapter02/images/twisted_pair_cable_structure.png Graphic file (
+type bmp)
+<chapters/Chapter02/images/twisted_pair_cable_structure.png>
+
+[152] [153] [154]
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[]|\TU/kalpurush(0)/b/n/12 Unshielded Twisted
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+[]|\TU/kalpurush(0)/b/n/12 Interference
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]|\TU/kalpurush(0)/b/n/12 সাধারণ LAN, office,
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 188--189
+[]|\TU/kalpurush(0)/b/n/12 industry, noise-prone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+[]|\TU/kalpurush(0)/b/n/12 electromagnetic interference
+ []
+
+[155]
+File: chapters/Chapter02/images/coaxial_cable_structure.png Graphic file (type 
+bmp)
+<chapters/Chapter02/images/coaxial_cable_structure.png>
+ [156] [157] [158]
+File: chapters/Chapter02/images/optical_fiber_cable_structure.png Graphic file 
+(type bmp)
+<chapters/Chapter02/images/optical_fiber_cable_structure.png>
+ [159]
+File: chapters/Chapter02/images/optical_fiber_total_internal_reflection.png Gra
+phic file (type bmp)
+<chapters/Chapter02/images/optical_fiber_total_internal_reflection.png>
+ [160]
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+[]|\TU/kalpurush(0)/b/n/12 short/medium
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+\TU/kalpurush(0)/b/n/12 distance-এর জন্য
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 389--389
+[]|\TU/kalpurush(0)/b/n/12 equipment cost বেশি
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\TU/kalpurush(0)/b/n/12 backbone, long-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
+[]|\TU/kalpurush(0)/b/n/12 campus/LAN/data
+ []
+
+[161]
+Underfull \hbox (badness 10000) in paragraph at lines 407--407
+[]|\TU/kalpurush(0)/b/n/12 electromagnetic interference
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--427
+[]|\TU/kalpurush(0)/b/n/12 Central copper
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--429
+[]|\TU/kalpurush(0)/b/n/12 কম থেকে
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 429--429
+\TU/kalpurush(0)/b/n/12 মাঝারি/উচ্চ, cate-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
+[]|\TU/kalpurush(0)/b/n/12 Cable TV, old
+ []
+
+
+Underfull \hbox (badness 6927) in paragraph at lines 439--440
+[]|\TU/kalpurush(0)/b/n/12 FTTH, backbone,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
+[]|\TU/kalpurush(0)/b/n/12 Connector
+ []
+
+
+Overfull \hbox (5.95126pt too wide) in paragraph at lines 421--444
+ [] 
+ []
+
+[162]
+Underfull \hbox (badness 6445) in paragraph at lines 455--456
+\TU/kalpurush(0)/b/n/12 lation, LAN-এর জন্য
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]|\TU/kalpurush(0)/b/n/12 Industry area with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+[]|\TU/kalpurush(0)/b/n/12 interference protec-
+ []
+
+[163] [164] [165] [166] [167] [168])
+(chapters/Chapter02/topics/05_wireless_media_and_systems/topic.tex [169]
+Overfull \hbox (10.87013pt too wide) in paragraph at lines 40--41
+\TU/kalpurush(0)/b/n/12 communication, Wi-Fi, Bluetooth, radio broadcasting, sa
+tellite communication—
+ []
+
+File: chapters/Chapter02/images/wireless_media_overview.png Graphic file (type 
+bmp)
+<chapters/Chapter02/images/wireless_media_overview.png>
+[170] [171]
+File: chapters/Chapter02/images/wireless_media_types_tree.png Graphic file (typ
+e bmp)
+<chapters/Chapter02/images/wireless_media_types_tree.png>
+ [172]
+Overfull \hbox (3.57996pt too wide) in paragraph at lines 111--112
+\TU/kalpurush(0)/b/n/12 পারে। তাই radio broadcasting, mobile communication, Wi-
+Fi, Bluetooth ইত্যাদিতে
+ []
+
+File: chapters/Chapter02/images/radio_wave_communication.png Graphic file (type
+ bmp)
+<chapters/Chapter02/images/radio_wave_communication.png>
+[173] [174]
+File: chapters/Chapter02/images/microwave_line_of_sight.png Graphic file (type 
+bmp)
+<chapters/Chapter02/images/microwave_line_of_sight.png>
+ [175]
+File: chapters/Chapter02/images/infrared_short_range.png Graphic file (type bmp
+)
+<chapters/Chapter02/images/infrared_short_range.png>
+ [176] [177]
+File: chapters/Chapter02/images/satellite_wireless_system.png Graphic file (typ
+e bmp)
+<chapters/Chapter02/images/satellite_wireless_system.png>
+ [178]
+File: chapters/Chapter02/images/bluetooth_piconet_model.png Graphic file (type 
+bmp)
+<chapters/Chapter02/images/bluetooth_piconet_model.png>
+ [179] [180]
+File: chapters/Chapter02/images/wifi_hotspot_model.png Graphic file (type bmp)
+<chapters/Chapter02/images/wifi_hotspot_model.png>
+ [181]
+Overfull \hbox (6.41748pt too wide) in paragraph at lines 346--347
+[]\TU/kalpurush(0)/b/n/12 WiMAX শব্দটি Worldwide Interoperability for Microwave
+ Access থেকে এসেছে।
+ []
+
+File: chapters/Chapter02/images/wimax_coverage_model.png Graphic file (type bmp
+)
+<chapters/Chapter02/images/wimax_coverage_model.png>
+[182]
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+[]|\TU/kalpurush(0)/b/n/12 MAN/Wireless
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+[]|\TU/kalpurush(0)/b/n/12 earphone,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+\TU/kalpurush(0)/b/n/12 speaker, key-
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 387--387
+[]|\TU/kalpurush(0)/b/n/12 home/office in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[]|\TU/kalpurush(0)/b/n/12 Power con-
+ []
+
+[183] [184]
+Underfull \hbox (badness 10000) in paragraph at lines 433--433
+[]|\TU/kalpurush(0)/b/n/12 Wireless earphone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+[]|\TU/kalpurush(0)/b/n/12 short-range, low
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 435--436
+[]|\TU/kalpurush(0)/b/n/12 multiple device local
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+[]|\TU/kalpurush(0)/b/n/12 short-range line-of-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+[]|\TU/kalpurush(0)/b/n/12 point-to-point long-
+ []
+
+
+Underfull \hbox (badness 6675) in paragraph at lines 439--440
+\TU/kalpurush(0)/b/n/12 distance communica-
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 443--443
+[]|\TU/kalpurush(0)/b/n/12 Large area wireless
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+[]|\TU/kalpurush(0)/b/n/12 long-range wireless
+ []
+
+[185]
+Underfull \hbox (badness 1184) in paragraph at lines 459--460
+[]\TU/kalpurush(0)/b/n/12 Infrared ও radio wave এক নয়। Infrared short-range lin
+e-of-sight
+ []
+
+[186] [187] [188]
+Underfull \hbox (badness 1721) in paragraph at lines 534--536
+[]\TU/kalpurush(0)/b/n/12 Satellite communication-এ earth station থেকে satellit
+e-এ signal
+ []
+
+[189])
+(chapters/Chapter02/topics/06_mobile_communication_and_generations/topic.tex
+[190] [191]
+File: chapters/Chapter02/images/mobile_communication_basic_model.png Graphic fi
+le (type bmp)
+<chapters/Chapter02/images/mobile_communication_basic_model.png>
+ [192] [193]
+File: chapters/Chapter02/images/cellular_network_cell_structure.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/cellular_network_cell_structure.png>
+
+Underfull \hbox (badness 5862) in paragraph at lines 106--107
+[]\TU/kalpurush(0)/b/n/12 SIM: Subscriber Identity Module; user identity ও netw
+ork
+ []
+
+[194] [195]
+File: chapters/Chapter02/images/mobile_network_architecture.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/mobile_network_architecture.png>
+ [196]
+File: chapters/Chapter02/images/handoff_handover_process.png Graphic file (type
+ bmp)
+<chapters/Chapter02/images/handoff_handover_process.png>
+ [197]
+Overfull \hbox (5.4733pt too wide) in paragraph at lines 200--201
+[]\TU/kalpurush(0)/b/n/12 Roaming সাধারণত national বা international হতে পারে। I
+nternational roaming-
+ []
+
+File: chapters/Chapter02/images/mobile_roaming_concept.png Graphic file (type b
+mp)
+<chapters/Chapter02/images/mobile_roaming_concept.png>
+[198]
+File: chapters/Chapter02/images/mobile_generation_timeline.png Graphic file (ty
+pe bmp)
+<chapters/Chapter02/images/mobile_generation_timeline.png>
+ [199] [200]
+Underfull \hbox (badness 2261) in paragraph at lines 293--294
+[]\TU/kalpurush(0)/b/n/12 Button phone দিয়ে voice call ও SMS করার অভিজ্ঞতা 2G m
+obile
+ []
+
+[201] [202]
+Overfull \hbox (3.62415pt too wide) in paragraph at lines 348--349
+\TU/kalpurush(0)/b/n/12 tonomous vehicle, remote surgery, industrial automation
+, AR/VR এবং mission-
+ []
+
+[203]
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+[]|\TU/kalpurush(0)/b/n/12 mobile
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+\TU/kalpurush(0)/b/n/12 communication-এর
+ []
+
+
+Underfull \hbox (badness 3815) in paragraph at lines 390--390
+[]|\TU/kalpurush(0)/b/n/12 Mobile internet,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+[]|\TU/kalpurush(0)/b/n/12 multimedia service,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+[]|\TU/kalpurush(0)/b/n/12 IP-based
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 392--393
+[]|\TU/kalpurush(0)/b/n/12 high-speed data, low
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[]|\TU/kalpurush(0)/b/n/12 Advanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\TU/kalpurush(0)/b/n/12 broad-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[]|\TU/kalpurush(0)/b/n/12 IoT, AR/VR,
+ []
+
+[204]
+File: chapters/Chapter02/images/mobile_generation_comparison_chart.png Graphic 
+file (type bmp)
+<chapters/Chapter02/images/mobile_generation_comparison_chart.png>
+ [205]
+Underfull \hbox (badness 4242) in paragraph at lines 466--466
+[]|\TU/kalpurush(0)/b/n/12 Device Capabil-
+ []
+
+[206]
+Underfull \hbox (badness 1762) in paragraph at lines 488--489
+[]|\TU/kalpurush(0)/b/n/12 GPS navigation, ride sharing, vehicle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+[]|\TU/kalpurush(0)/b/n/12 emergency alert, location tracking,
+ []
+
+[207] [208] [209] [210] [211] [212])
+(chapters/Chapter02/topics/07_computer_networking_objectives_and_types/topic.te
+x [213] [214] [215]
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]|\TU/kalpurush(0)/b/n/12 Transmission
+ []
+
+[216]
+File: chapters/Chapter02/images/network_objectives_mindmap.png Graphic file (ty
+pe bmp)
+<chapters/Chapter02/images/network_objectives_mindmap.png>
+ [217] [218] [219] [220]
+Overfull \hbox (9.92389pt too wide) in paragraph at lines 200--201
+\TU/kalpurush(0)/b/n/12 computer নষ্ট হলেও server বা backup থেকে data restore ক
+রা সম্ভব। বড় organization-
+ []
+
+[221]
+File: chapters/Chapter02/images/network_types_by_area.png Graphic file (type bm
+p)
+<chapters/Chapter02/images/network_types_by_area.png>
+ [222]
+Underfull \hbox (badness 2762) in paragraph at lines 258--259
+[]\TU/kalpurush(0)/b/n/12 একজন ব্যক্তির নিকটবর্তী personal device-গুলোর মধ্যে স
+্বল্প দূরত্বে data
+ []
+
+[223] [224]
+Underfull \hbox (badness 1231) in paragraph at lines 314--315
+[]\TU/kalpurush(0)/b/n/12 city-wide broadband, cable TV network বা organization
+ branch
+ []
+
+[225]
+File: chapters/Chapter02/images/pan_lan_man_wan_scale.png Graphic file (type bm
+p)
+<chapters/Chapter02/images/pan_lan_man_wan_scale.png>
+ [226]
+Underfull \hbox (badness 10000) in paragraph at lines 363--363
+[]|\TU/kalpurush(0)/b/n/12 ব্যক্তিগত ছোট
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--363
+[]|\TU/kalpurush(0)/b/n/12 personal device
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 363--364
+[]|\TU/kalpurush(0)/b/n/12 Mobile, smartwatch,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+[]|\TU/kalpurush(0)/b/n/12 room, lab,
+ []
+
+
+Overfull \hbox (11.48688pt too wide) in paragraph at lines 367--367
+[]|\TU/kalpurush(0)/b/n/12 city/metropolitan
+ []
+
+
+Underfull \hbox (badness 5893) in paragraph at lines 367--367
+[]|\TU/kalpurush(0)/b/n/12 city-wide network
+ []
+
+
+Overfull \hbox (18.62971pt too wide) in paragraph at lines 369--369
+[]|\TU/kalpurush(0)/b/n/12 country/worldwide| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+[]|\TU/kalpurush(0)/b/n/12 Internet, interna-
+ []
+
+
+Overfull \hbox (5.95126pt too wide) in paragraph at lines 359--372
+ [] 
+ []
+
+[227] [228] [229]
+File: chapters/Chapter02/images/client_server_vs_peer_to_peer.png Graphic file 
+(type bmp)
+<chapters/Chapter02/images/client_server_vs_peer_to_peer.png>
+
+Underfull \hbox (badness 1622) in paragraph at lines 454--455
+[]|\TU/kalpurush(0)/b/n/12 ভালোভাবে control করা
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 456--457
+[]|\TU/kalpurush(0)/b/n/12 বড় organization net-
+ []
+
+
+Underfull \hbox (badness 5970) in paragraph at lines 460--461
+[]|\TU/kalpurush(0)/b/n/12 professional manage-
+ []
+
+[230]
+File: chapters/Chapter02/images/internet_intranet_extranet.png Graphic file (ty
+pe bmp)
+<chapters/Chapter02/images/internet_intranet_extranet.png>
+ [231]
+Underfull \hbox (badness 1320) in paragraph at lines 518--519
+[]|\TU/kalpurush(0)/b/n/12 personal device, short
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
+[]|\TU/kalpurush(0)/b/n/12 small area, resource
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 522--522
+[]|\TU/kalpurush(0)/b/n/12 এক শহরের বিভিন্ন bank
+ []
+
+
+Underfull \hbox (badness 6364) in paragraph at lines 524--524
+\TU/kalpurush(0)/b/n/12 এর country-to-country
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--526
+[]|\TU/kalpurush(0)/b/n/12 Office employee-only
+ []
+
+[232] [233] [234] [235] [236] [237])
+(chapters/Chapter02/topics/08_network_devices/topic.tex [238]
+File: chapters/Chapter02/images/network_devices_overview.png Graphic file (type
+ bmp)
+<chapters/Chapter02/images/network_devices_overview.png>
+ [239] [240]
+Underfull \hbox (badness 3803) in paragraph at lines 95--96
+[]|\TU/kalpurush(0)/b/n/12 MAC address অনুযায়ী
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]|\TU/kalpurush(0)/b/n/12 IP address অনুযায়ী
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]|\TU/kalpurush(0)/b/n/12 protocol conversion,
+ []
+
+File: chapters/Chapter02/images/osi_layer_network_devices_map.png Graphic file 
+(type bmp)
+<chapters/Chapter02/images/osi_layer_network_devices_map.png>
+[241] [242]
+File: chapters/Chapter02/images/nic_connection_model.png Graphic file (type bmp
+)
+<chapters/Chapter02/images/nic_connection_model.png>
+ [243]
+Overfull \hbox (7.07959pt too wide) in paragraph at lines 167--168
+[]\TU/kalpurush(0)/b/n/12 Modem শব্দটি এসেছে Modulator এবং Demodulator থেকে। In
+ternet connection-
+ []
+
+File: chapters/Chapter02/images/modem_internet_connection_model.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/modem_internet_connection_model.png>
+[244] [245]
+File: chapters/Chapter02/images/hub_broadcast_model.png Graphic file (type bmp)
+
+<chapters/Chapter02/images/hub_broadcast_model.png>
+ [246]
+File: chapters/Chapter02/images/switch_mac_forwarding_model.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/switch_mac_forwarding_model.png>
+ [247] [248]
+File: chapters/Chapter02/images/router_connects_networks_model.png Graphic file
+ (type bmp)
+<chapters/Chapter02/images/router_connects_networks_model.png>
+ [249]
+File: chapters/Chapter02/images/repeater_signal_regeneration.png Graphic file (
+type bmp)
+<chapters/Chapter02/images/repeater_signal_regeneration.png>
+ [250] [251]
+File: chapters/Chapter02/images/bridge_network_segmentation.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/bridge_network_segmentation.png>
+ [252]
+File: chapters/Chapter02/images/gateway_protocol_conversion.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/gateway_protocol_conversion.png>
+ [253] [254]
+File: chapters/Chapter02/images/access_point_wireless_lan.png Graphic file (typ
+e bmp)
+<chapters/Chapter02/images/access_point_wireless_lan.png>
+ [255]
+File: chapters/Chapter02/images/firewall_filtering_model.png Graphic file (type
+ bmp)
+<chapters/Chapter02/images/firewall_filtering_model.png>
+
+[256]
+File: chapters/Chapter02/images/home_network_devices_layout.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/home_network_devices_layout.png>
+ [257]
+Overfull \hbox (0.20108pt too wide) in paragraph at lines 545--546
+\TU/kalpurush(0)/b/n/12 School বা college computer lab-এ সাধারণত switch, router
+, modem/ONT, server,
+ []
+
+File: chapters/Chapter02/images/school_lab_network_devices_layout.png Graphic f
+ile (type bmp)
+<chapters/Chapter02/images/school_lab_network_devices_layout.png>
+[258]
+Underfull \hbox (badness 10000) in paragraph at lines 571--571
+[]|\TU/kalpurush(0)/b/n/12 device connect
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 571--571
+[]|\TU/kalpurush(0)/b/n/12 LAN device con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--571
+\TU/kalpurush(0)/b/n/12 nect করে নির্দিষ্ট
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 571--572
+[]|\TU/kalpurush(0)/b/n/12 একাধিক network
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
+\TU/kalpurush(0)/b/n/12 connect করে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--573
+[]|\TU/kalpurush(0)/b/n/12 Address
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--577
+[]|\TU/kalpurush(0)/b/n/12 Traffic con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
+[]|\TU/kalpurush(0)/b/n/12 network-to-
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 577--578
+\TU/kalpurush(0)/b/n/12 network routing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+[]|\TU/kalpurush(0)/b/n/12 ভিন্ন network
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+\TU/kalpurush(0)/b/n/12 communication-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--581
+[]|\TU/kalpurush(0)/b/n/12 computer lab
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
+[]|\TU/kalpurush(0)/b/n/12 home/office
+ []
+
+
+Overfull \hbox (13.29364pt too wide) in paragraph at lines 567--584
+ [] 
+ []
+
+[259]
+File: chapters/Chapter02/images/hub_switch_router_comparison.png Graphic file (
+type bmp)
+<chapters/Chapter02/images/hub_switch_router_comparison.png>
+ [260]
+Underfull \hbox (badness 6047) in paragraph at lines 613--614
+[]|\TU/kalpurush(0)/b/n/12 অনেক device connect
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 631--631
+[]|\TU/kalpurush(0)/b/n/12 network-to-network
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
+[]|\TU/kalpurush(0)/b/n/12 ভিন্ন network/protocol-
+ []
+
+
+Underfull \hbox (badness 1297) in paragraph at lines 633--633
+[]|\TU/kalpurush(0)/b/n/12 IP address ব্যবহার করে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
+[]|\TU/kalpurush(0)/b/n/12 protocol conversion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
+[]|\TU/kalpurush(0)/b/n/12 ভিন্ন architec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
+\TU/kalpurush(0)/b/n/12 ture/protocol inte-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--639
+[]|\TU/kalpurush(0)/b/n/12 home router, office
+ []
+
+[261]
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
+[]|\TU/kalpurush(0)/b/n/12 computer-এর net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+[]|\TU/kalpurush(0)/b/n/12 ISP signal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+\TU/kalpurush(0)/b/n/12 device/network-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+[]|\TU/kalpurush(0)/b/n/12 LAN device effi-
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 659--660
+[]|\TU/kalpurush(0)/b/n/12 segment connect ও
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 661--661
+[]|\TU/kalpurush(0)/b/n/12 LAN-কে internet-এর সাথে
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 663--664
+[]|\TU/kalpurush(0)/b/n/12 protocol conversion
+ []
+
+[262] [263] [264] [265] [266] [267] [268] [269])
+(chapters/Chapter02/topics/09_network_topology/topic.tex
+Overfull \hbox (24.26648pt too wide) in paragraph at lines 22--23
+[]\TU/kalpurush(0)/b/n/12 Network-এর device বা node-গুলো কীভাবে সাজানো ও সংযুক্
+ত থাকবে—এই arrangement-
+ []
+
+[270]
+File: chapters/Chapter02/images/network_topology_basic_concept.png Graphic file
+ (type bmp)
+<chapters/Chapter02/images/network_topology_basic_concept.png>
+ [271] [272]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.106 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.107 মানে &
+             device ও cable-এর বাস্তব arrangement & data flow-এর logical path \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.108 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[]|\TU/kalpurush(0)/b/n/12 data flow-এর logical
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.109 Focus & hardware connection &
+                                    data communication path \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.110 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 7759) in paragraph at lines 109--110
+[]|\TU/kalpurush(0)/b/n/12 data communica-
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.112 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 111--112
+[]|\TU/kalpurush(0)/b/n/12 protocol ও data flow
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.113 উদাহরণ &
+               Star layout, Bus cable, Ring connection & data switch দিয়ে fl...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.114 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 113--114
+[]|\TU/kalpurush(0)/b/n/12 data switch দিয়ে flow
+ []
+
+[273]
+File: chapters/Chapter02/images/physical_vs_logical_topology.png Graphic file (
+type bmp)
+<chapters/Chapter02/images/physical_vs_logical_topology.png>
+ [274]
+File: chapters/Chapter02/images/network_topology_classification_tree.png Graphi
+c file (type bmp)
+<chapters/Chapter02/images/network_topology_classification_tree.png>
+ [275]
+File: chapters/Chapter02/images/bus_topology_diagram.png Graphic file (type bmp
+)
+<chapters/Chapter02/images/bus_topology_diagram.png>
+ [276]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.217 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.218 cable কম লাগে &
+                      backbone cable নষ্ট হলে network বন্ধ হতে পারে \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.219 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.221 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.222 ছোট network-এ setup সহজ &
+                                fault খুঁজে বের করা কঠিন \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.223 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.225 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[277]
+File: chapters/Chapter02/images/star_topology_diagram.png Graphic file (type bm
+p)
+<chapters/Chapter02/images/star_topology_diagram.png>
+ [278]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.283 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.284 installation ও management সহজ &
+                                      central device নষ্ট হলে network বন্ধ হ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.285 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.287 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.288 fault finding সহজ &
+                          central device-এর cost থাকে \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.289 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.291 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.292 ...ালো হতে পারে, বিশেষ করে switch ব্যবহারে &
+                                                   বড় network-এ ভালো device ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.293 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[279] [280]
+File: chapters/Chapter02/images/ring_topology_diagram.png Graphic file (type bm
+p)
+<chapters/Chapter02/images/ring_topology_diagram.png>
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.345 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.346 data নির্দিষ্ট path ধরে flow করে &
+                                         একটি node/link failure network প্রভ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.347 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.349 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.350 traffic predictable হতে পারে &
+                                     নতুন node add করা তুলনামূলক কঠিন \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.351 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
+[]\TU/kalpurush(0)/b/n/12 small controlled network-এ
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.353 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[281] [282]
+File: chapters/Chapter02/images/mesh_topology_diagram.png Graphic file (type bm
+p)
+<chapters/Chapter02/images/mesh_topology_diagram.png>
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.414 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.415 reliability খুব বেশি &
+                             cable ও port বেশি লাগে \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.416 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.418 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.419 fault tolerance ভালো &
+                             design ও maintenance complex \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.420 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.422 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 7116) in paragraph at lines 421--422
+[]|\TU/kalpurush(0)/b/n/12 ছোট সাধারণ network-এর জন্য
+ []
+
+[283]
+File: chapters/Chapter02/images/tree_topology_diagram.png Graphic file (type bm
+p)
+<chapters/Chapter02/images/tree_topology_diagram.png>
+ [284]
+Underfull \hbox (badness 3769) in paragraph at lines 478--478
+[]|\TU/kalpurush(0)/b/n/12 department-wise network করা
+ []
+
+
+Underfull \hbox (badness 7451) in paragraph at lines 480--481
+[]|\TU/kalpurush(0)/b/n/12 configuration ও maintenance
+ []
+
+[285]
+Overfull \hbox (5.71936pt too wide) in paragraph at lines 493--494
+\TU/kalpurush(0)/b/n/12 pus network-এ computer lab-এ Star topology, building-to
+-building connection-
+ []
+
+File: chapters/Chapter02/images/hybrid_topology_diagram.png Graphic file (type 
+bmp)
+<chapters/Chapter02/images/hybrid_topology_diagram.png>
+[286]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.533 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.534 Bus &
+            common backbone cable & cost কম, সহজ setup & backbone failure-এ ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
+[]|\TU/kalpurush(0)/b/n/12 common
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
+\TU/kalpurush(0)/b/n/12 backbone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
+[]|\TU/kalpurush(0)/b/n/12 cost কম, সহজ
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.535 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+[]|\TU/kalpurush(0)/b/n/12 backbone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+\TU/kalpurush(0)/b/n/12 failure-এ net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--536
+[]|\TU/kalpurush(0)/b/n/12 central
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.536 Star & central switch/hub &
+                                  manage ও troubleshoot সহজ & central device...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--536
+[]|\TU/kalpurush(0)/b/n/12 manage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--536
+\TU/kalpurush(0)/b/n/12 ও trou-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--536
+\TU/kalpurush(0)/b/n/12 bleshoot
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.537 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
+[]|\TU/kalpurush(0)/b/n/12 central device
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--538
+[]|\TU/kalpurush(0)/b/n/12 ordered data
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.538 Ring & closed loop & ordered data flow &
+                                               node/link failure problem \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.539 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
+[]|\TU/kalpurush(0)/b/n/12 node/link
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
+\TU/kalpurush(0)/b/n/12 failure
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--540
+[]|\TU/kalpurush(0)/b/n/12 multiple inter-
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.541 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.542 Tree &
+             hierarchical structure & বড় network organize সহজ & backbone/roo...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+[]|\TU/kalpurush(0)/b/n/12 hierarchical
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.543 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+[]|\TU/kalpurush(0)/b/n/12 backbone/root
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.544 Hybrid & mixed topology &
+                                flexible ও practical & design complex, cost ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--544
+[]|\TU/kalpurush(0)/b/n/12 flexible ও
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.545 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 4120) in paragraph at lines 544--545
+[]|\TU/kalpurush(0)/b/n/12 design complex,
+ []
+
+[287]
+File: chapters/Chapter02/images/network_topology_comparison_chart.png Graphic f
+ile (type bmp)
+<chapters/Chapter02/images/network_topology_comparison_chart.png>
+ [288]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.572 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.573 ছোট পুরনো বা temporary network &
+                                       Bus & cable কম লাগে, setup সহজ \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.574 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
+[]|\TU/kalpurush(0)/b/n/12 cable কম লাগে,
+ []
+
+
+Underfull \hbox (badness 3977) in paragraph at lines 575--575
+[]\TU/kalpurush(0)/b/n/12 School computer
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.575 School computer lab & Star &
+                                   switch দিয়ে device manage সহজ \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.576 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.578 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.579 high reliability critical network &
+                                          Mesh & alternative path থাকে \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.580 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+[]|\TU/kalpurush(0)/b/n/12 alternative path
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.581 বড় office বা campus network & Tree &
+                                           hierarchy অনুযায়ী network organiz...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.582 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--583
+[]\TU/kalpurush(0)/b/n/12 university/corporate
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.584 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
+[]|\TU/kalpurush(0)/b/n/12 বিভিন্ন requirement
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 583--584
+\TU/kalpurush(0)/b/n/12 অনুযায়ী topology mix
+ []
+
+[289]
+File: chapters/Chapter02/images/topology_selection_scenario.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/topology_selection_scenario.png>
+ [290] [291] [292] [293] [294] [295] [296])
+(chapters/Chapter02/topics/10_cloud_computing/topic.tex [297] [298]
+File: chapters/Chapter02/images/cloud_computing_basic_model.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/cloud_computing_basic_model.png>
+ [299]
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+[]\TU/kalpurush(0)/b/n/12 Cloud computing-এর উত্তরে অবশ্যই “internet-এর মাধ্যমে
+ remote
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 70--71
+\TU/kalpurush(0)/b/n/12 server/resource ব্যবহার” কথাটি লিখবে। উদাহরণ হিসেবে Goo
+gle Drive,
+ []
+
+[300]
+File: chapters/Chapter02/images/cloud_computing_components.png Graphic file (ty
+pe bmp)
+<chapters/Chapter02/images/cloud_computing_components.png>
+ [301]
+File: chapters/Chapter02/images/cloud_computing_working_process.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/cloud_computing_working_process.png>
+
+Overfull \hbox (0.54814pt too wide) in paragraph at lines 139--140
+\TU/kalpurush(0)/b/n/12 Standard cloud computing বোঝার জন্য পাঁচটি essential ch
+aracteristic খুব গুরুত্বপূর্ণ। 
+ []
+
+[302]
+File: chapters/Chapter02/images/cloud_computing_characteristics.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/cloud_computing_characteristics.png>
+ [303]
+File: chapters/Chapter02/images/cloud_service_model_stack.png Graphic file (typ
+e bmp)
+<chapters/Chapter02/images/cloud_service_model_stack.png>
+ [304] [305] [306]
+Underfull \hbox (badness 10000) in paragraph at lines 281--281
+[]|\TU/kalpurush(0)/b/n/12 server, storage,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+[]|\TU/kalpurush(0)/b/n/12 OS/application
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+[]|\TU/kalpurush(0)/b/n/12 code/application
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 289--289
+[]|\TU/kalpurush(0)/b/n/12 app development
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+[]|\TU/kalpurush(0)/b/n/12 Gmail, Google
+ []
+
+
+Overfull \hbox (9.63087pt too wide) in paragraph at lines 275--292
+ [] 
+ []
+
+[307]
+File: chapters/Chapter02/images/iaas_paas_saas_comparison.png Graphic file (typ
+e bmp)
+<chapters/Chapter02/images/iaas_paas_saas_comparison.png>
+ [308]
+File: chapters/Chapter02/images/cloud_deployment_models.png Graphic file (type 
+bmp)
+<chapters/Chapter02/images/cloud_deployment_models.png>
+ [309] [310] [311]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.419 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.420 Public Cloud &
+                     বহু user internet দিয়ে access করে & provider-এর control...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
+[]|\TU/kalpurush(0)/b/n/12 বহু user
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
+[]|\TU/kalpurush(0)/b/n/12 provider-এর
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.421 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+[]|\TU/kalpurush(0)/b/n/12 সাধারণ service,
+ []
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 422--422
+[]|\TU/kalpurush(0)/b/n/12 একটি organiza-
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.422 ...e Cloud & একটি organization ব্যবহার করে &
+                                                   organization-এর control ব...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (1.13747pt too wide) in paragraph at lines 422--422
+[]|\TU/kalpurush(0)/b/n/12 organization-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--422
+\TU/kalpurush(0)/b/n/12 এর control
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.423 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+[]|\TU/kalpurush(0)/b/n/12 bank, govern-
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 422--423
+\TU/kalpurush(0)/b/n/12 ment, sensitive
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.424 ... public + private cloud & mixed control &
+                                                   sensitive data + scalable...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.425 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+[]|\TU/kalpurush(0)/b/n/12 sensitive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+\TU/kalpurush(0)/b/n/12 able public
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--426
+[]\TU/kalpurush(0)/b/n/12 Community
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--426
+[]|\TU/kalpurush(0)/b/n/12 shared gover-
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.427 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+[]|\TU/kalpurush(0)/b/n/12 education,
+ []
+
+
+Underfull \hbox (badness 6316) in paragraph at lines 426--427
+\TU/kalpurush(0)/b/n/12 healthcare, re-
+ []
+
+File: chapters/Chapter02/images/public_private_hybrid_cloud.png Graphic file (t
+ype bmp)
+<chapters/Chapter02/images/public_private_hybrid_cloud.png>
+[312] [313]
+File: chapters/Chapter02/images/cloud_storage_sync_model.png Graphic file (type
+ bmp)
+<chapters/Chapter02/images/cloud_storage_sync_model.png>
+ [314]
+File: chapters/Chapter02/images/cloud_computing_advantages.png Graphic file (ty
+pe bmp)
+<chapters/Chapter02/images/cloud_computing_advantages.png>
+ [315]
+File: chapters/Chapter02/images/cloud_security_risk_model.png Graphic file (typ
+e bmp)
+<chapters/Chapter02/images/cloud_security_risk_model.png>
+ [316]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.578 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.579 Resource location &
+                          local computer/server-এ থাকে & remote cloud server...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+[]|\TU/kalpurush(0)/b/n/12 local
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+\TU/kalpurush(0)/b/n/12 computer/server-
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.580 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+[]|\TU/kalpurush(0)/b/n/12 remote cloud
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+\TU/kalpurush(0)/b/n/12 server/data center-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--581
+[]|\TU/kalpurush(0)/b/n/12 নির্দিষ্ট device/network
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.581 ... & নির্দিষ্ট device/network থেকে access &
+                                                   internet দিয়ে যেকোনো জায়গ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.582 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
+[]|\TU/kalpurush(0)/b/n/12 internet দিয়ে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--583
+[]|\TU/kalpurush(0)/b/n/12 hardware/software
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.584 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.585 Scalability &
+                    resource বাড়ানো কঠিন ও সময়সাপেক্ষ & দ্রুত resource বাড়ান...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--585
+[]|\TU/kalpurush(0)/b/n/12 resource বাড়ানো
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.586 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
+[]|\TU/kalpurush(0)/b/n/12 দ্রুত resource
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.587 Maintenance & user/organization manage করে &
+                                                   provider অনেক অংশ manage ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.588 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.590 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.591 Dependency &
+                   local hardware-এর উপর নির্ভরশীল & internet ও provider-এর ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.592 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[317] [318]
+File: chapters/Chapter02/images/school_cloud_computing_use_case.png Graphic fil
+e (type bmp)
+<chapters/Chapter02/images/school_cloud_computing_use_case.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+[]|\TU/kalpurush(0)/b/n/12 একটি company virtual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
+[]|\TU/kalpurush(0)/b/n/12 infrastructure service
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 658--659
+[]|\TU/kalpurush(0)/b/n/12 cost কম ও scalability
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/kalpurush(0)/b/n/12 Organization sensitive
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 664--664
+[]|\TU/kalpurush(0)/b/n/12 Healthcare organizations
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/kalpurush(0)/b/n/12 common policy নিয়ে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+[]|\TU/kalpurush(0)/b/n/12 Community
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
+[]|\TU/kalpurush(0)/b/n/12 common requirement
+ []
+
+[319] [320] [321] [322] [323] [324] [325])
+(chapters/Chapter02/topics/11_exercises/topic.tex
+Overfull \hbox (23.64058pt too wide) in paragraph at lines 2--2
+[]\TU/kalpurush(0)/b/n/17.28 অধ্যায়ভিত্তিক অনুশীলন: কমিউনিকেশন সিস্টেম ও নেটওয়া
+র্কিং 
+ []
+
+[326] [327]
+Underfull \hbox (badness 7379) in paragraph at lines 42--43
+[]\TU/kalpurush(0)/b/n/12 Sender, receiver, message, medium ও protocol হলো data
+
+ []
+
+[328] [329]
+Underfull \hbox (badness 1052) in paragraph at lines 196--198
+[]\TU/kalpurush(0)/b/n/12 Star topology-তে central device হিসেবে সাধারণত কোনটি 
+থাকে? ক.
+ []
+
+[330] [331] [332] [333] [334] [335] [336] [337]
+Underfull \hbox (badness 1412) in paragraph at lines 387--388
+[]\TU/kalpurush(0)/b/n/12 ঘ: Wi-Fi indoor/classroom coverage; long-range wirele
+ss cam-
+ []
+
+[338] [339] [340] [341] [342]
+Underfull \hbox (badness 2318) in paragraph at lines 512--513
+[]\TU/kalpurush(0)/b/n/12 গ: virtual server = IaaS; app deployment platform = P
+aaS;
+ []
+
+[343] [344] [345] [346] [347])) [348]
+\openout2 = `chapters/Chapter03/latex/chapter.aux'.
+
+ (chapters/Chapter03/latex/chapter.tex
+Chapter 3.
+[349
+
+
+
+
+] (chapters/Chapter03/topics/01_history_of_numbers/topic.tex [350])
+(chapters/Chapter03/topics/02_number_systems/topic.tex [351]
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+[352]
+Underfull \hbox (badness 1496) in paragraph at lines 44--45
+[]|\TU/kalpurush(0)/b/n/12 computer circuit,
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 50--51
+[]|\TU/kalpurush(0)/b/n/12 memory address,
+ []
+
+
+Overfull \hbox (20.63602pt too wide) in paragraph at lines 40--53
+ [] 
+ []
+
+[353]) (chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex [354]
+[355]) (chapters/Chapter03/topics/04_binary_add_sub/topic.tex [356])
+(chapters/Chapter03/topics/05_signed_numbers/topic.tex [357]
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+[]|\TU/kalpurush(0)/b/n/12 arithmetic সহজ,
+ []
+
+[358]) (chapters/Chapter03/topics/06_twos_complement/topic.tex [359])
+(chapters/Chapter03/topics/07_codes_overview/topic.tex [360])
+(chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic.tex [361]
+Underfull \hbox (badness 1303) in paragraph at lines 42--42
+[]|\TU/kalpurush(0)/b/n/12 প্রতি digit 4-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\TU/kalpurush(0)/b/n/12 English letters, digits,
+ []
+
+
+Overfull \hbox (0.6361pt too wide) in paragraph at lines 48--48
+[]|\TU/kalpurush(0)/b/n/12 variable/fixed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\TU/kalpurush(0)/b/n/12 encoding
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+[]|\TU/kalpurush(0)/b/n/12 বাংলা support
+ []
+
+
+Overfull \hbox (13.28804pt too wide) in paragraph at lines 38--51
+ [] 
+ []
+
+[362]) (chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex
+[363]
+Underfull \hbox (badness 1448) in paragraph at lines 21--22
+[]$\OT1/cmr/m/n/12 (11010111)[]$ \TU/kalpurush(0)/b/n/12 কে octal-এ রূপান্তর: ড
+ান দিক থেকে 3-bit group করি,
+ []
+
+) (chapters/Chapter03/topics/10_boolean_algebra/topic.tex [364] [365])
+(chapters/Chapter03/topics/11_boolean_theorems/topic.tex [366])
+(chapters/Chapter03/topics/12_de_morgan/topic.tex [367])
+(chapters/Chapter03/topics/13_truth_table/topic.tex [368])
+(chapters/Chapter03/topics/14_basic_gates/topic.tex [369] [370])
+(chapters/Chapter03/topics/15_universal_gates/topic.tex [371])
+(chapters/Chapter03/topics/16_special_gates/topic.tex [372])
+(chapters/Chapter03/topics/17_encoder/topic.tex [373])
+(chapters/Chapter03/topics/18_decoder/topic.tex [374] [375])
+(chapters/Chapter03/topics/19_adder/topic.tex [376])
+(chapters/Chapter03/topics/20_register/topic.tex [377] [378])
+(chapters/Chapter03/topics/21_counter/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+[]|\TU/kalpurush(0)/b/n/12 Mod-10 decade
+ []
+
+[379]) (chapters/Chapter03/topics/22_exercises/topic.tex [380] [381] [382]))
+[383]
+\openout2 = `chapters/Chapter04/latex/chapter.aux'.
+
+ (chapters/Chapter04/latex/chapter.tex [384
+
+
+
+
+]
+Chapter 4.
+[385] (chapters/Chapter04/topics/01_web_design_concept/topic.tex [386] [387]
+[388] [389] [390]
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/it' will be
+(Font)              scaled to size 11.39209pt on input line 158.
+ [391] [392] [393]
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
+[]|\TU/kalpurush(0)/m/it/12 homepage সুন্দরভাবে
+ []
+
+[394]
+Overfull \hbox (2.95949pt too wide) in paragraph at lines 300--301
+\TU/kalpurush(0)/m/it/12 ওয়েবসাইটের content যদি সাধারণত fixed থাকে এবং user অনু
+যায়ী স্বয়ংক্রিয়ভাবে পরিবর্তিত
+ []
+
+[395] [396] [397] [398] [399])
+(chapters/Chapter04/topics/02_webpage_website_homepage/topic.tex [400] [401]
+[402]
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 10.39528pt on input line 101.
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+[]|\TU/kalpurush(0)/m/it/12 একাধিক webpage-এর
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 120--120
+[]|\TU/kalpurush(0)/m/it/12 Contact page, Notice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+[]|\TU/kalpurush(0)/m/it/12 ওয়েবপেজগুলোকে একত্র
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 124--125
+[]|\TU/kalpurush(0)/m/it/12 সম্পূর্ণ প্রতিষ্ঠান, ব্যক্তি বা
+ []
+
+[403]
+Overfull \hbox (9.08737pt too wide) in paragraph at lines 134--135
+[]\TU/kalpurush(0)/m/it/12 Domain name registration: website-এর address নেওয়া হ
+য়, যেমন \TU/lmtt/m/n/12 example.com
+ []
+
+[404] [405] [406] [407] [408] [409] [410] [411])
+(chapters/Chapter04/topics/03_www_browser_search/topic.tex [412] [413] [414]
+Underfull \hbox (badness 2103) in paragraph at lines 102--103
+[]|\TU/kalpurush(0)/m/it/12 WWW-এর ধারণা দেন; HTML,
+ []
+
+
+Underfull \hbox (badness 6910) in paragraph at lines 102--103
+\TU/kalpurush(0)/m/it/12 browser/server তৈরিতে প্রধান
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 104--105
+[]|\TU/kalpurush(0)/m/it/12 Web project-এর formal pro-
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 106--107
+[]|\TU/kalpurush(0)/m/it/12 WWW-এর জন্মস্থান; গবেষকদের
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+[]|\TU/kalpurush(0)/m/it/12 Web standard উন্নয়ন,
+ []
+
+[415] [416]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+[]|\TU/kalpurush(0)/m/it/12 Internet ব্যবহার করে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--197
+[]|\TU/kalpurush(0)/m/it/12 Email, file transfer,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--197
+\TU/kalpurush(0)/m/it/12 VoIP, web browsing
+ []
+
+
+Underfull \hbox (badness 3386) in paragraph at lines 199--199
+[]|\TU/kalpurush(0)/m/it/12 WWW চালাতে Internet
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 199--200
+[]|\TU/kalpurush(0)/m/it/12 Internet-এর একটি ser-
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 201--202
+[]|\TU/kalpurush(0)/m/it/12 website, webpage, hy-
+ []
+
+[417] [418] [419]
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+[]|\TU/kalpurush(0)/m/it/12 তথ্য খোঁজার online
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+[]|\TU/kalpurush(0)/m/it/12 keyword লিখে result
+ []
+
+
+Underfull \hbox (badness 4454) in paragraph at lines 270--271
+[]|\TU/kalpurush(0)/m/it/12 Google, Bing, Yahoo,
+ []
+
+
+Underfull \hbox (badness 7504) in paragraph at lines 272--272
+[]|\TU/kalpurush(0)/m/it/12 search engine access
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+[]|\TU/kalpurush(0)/m/it/12 browser-এর মাধ্যমে
+ []
+
+[420]
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 7.59473pt on input line 306.
+ [421] [422] [423] [424] [425] [426])
+(chapters/Chapter04/topics/04_web_terms/topic.tex
+Overfull \hbox (22.99467pt too wide) in paragraph at lines 2--2
+[]\TU/kalpurush(0)/b/n/17.28 IP Address, Domain Name, DNS, URL ও HTTP/HTTPS 
+ []
+
+[427] [428] [429]
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+[]|\TU/kalpurush(0)/m/it/12 hexadecimal
+ []
+
+[430]
+Overfull \hbox (4.02231pt too wide) in paragraph at lines 132--133
+[]\TU/kalpurush(0)/m/it/12 মানুষের জন্য সংখ্যা মনে রাখা কঠিন, কিন্তু নাম মনে রা
+খা সহজ। তাই \TU/lmtt/m/n/12 142.250.190.78\TU/kalpurush(0)/m/it/12 -
+ []
+
+[431] [432] [433] [434] [435]
+Overfull \hbox (20.95296pt too wide) in paragraph at lines 379--380
+\TU/kalpurush(0)/m/it/12 tion ব্যবহৃত হয়, ফলে login, payment, banking বা person
+al data transfer তুলনামূলকভাবে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[]|\TU/kalpurush(0)/m/it/12 HyperText Transfer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+[]|\TU/kalpurush(0)/m/it/12 HyperText Transfer
+ []
+
+[436] [437] [438] [439] [440]
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
+[]\TU/kalpurush(0)/m/it/12 উদ্দীপক: রাফি browser-এ \TU/lmtt/m/n/12 https://www.
+abccollege.edu.bd/
+ []
+
+[441]) (chapters/Chapter04/topics/05_website_types/topic.tex [442] [443]
+[444]
+Underfull \hbox (badness 3965) in paragraph at lines 87--87
+[]|\TU/kalpurush(0)/m/it/12 নিজের computer/local
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+[]|\TU/kalpurush(0)/m/it/12 hosting/domain cost
+ []
+
+[445] [446] [447] [448])
+(chapters/Chapter04/topics/02_website_structure/topic.tex [449] [450] [451]
+[452] [453]
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
+[]|\TU/kalpurush(0)/m/it/12 step-by-step learning-এর জন্য
+ []
+
+[454]
+Underfull \hbox (badness 8094) in paragraph at lines 239--239
+[]|\TU/kalpurush(0)/m/it/12 শিক্ষা প্রতিষ্ঠান ও organization
+ []
+
+[455] [456]
+Underfull \hbox (badness 3849) in paragraph at lines 304--305
+[]|\TU/kalpurush(0)/m/it/12 অতিরিক্ত link user-কে confuse
+ []
+
+[457] [458]
+Underfull \hbox (badness 6141) in paragraph at lines 384--384
+[]|\TU/kalpurush(0)/m/it/12 বাস্তব website design-এর জন্য
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 402--402
+[]|\TU/kalpurush(0)/m/it/12 একটির পর একটি
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+[]|\TU/kalpurush(0)/m/it/12 quiz, tutorial,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
+[]|\TU/kalpurush(0)/m/it/12 নির্দিষ্ট sequence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]|\TU/kalpurush(0)/m/it/12 school, college,
+ []
+
+[459] [460] [461] [462] [463])
+(chapters/Chapter04/topics/03_html_basic/topic.tex [464] [465]
+Underfull \hbox (badness 1454) in paragraph at lines 37--38
+[]|\TU/kalpurush(0)/m/it/12 World Wide Web-এর উদ্ভাবক;
+ []
+
+
+Underfull \hbox (badness 5359) in paragraph at lines 43--44
+[]|\TU/kalpurush(0)/m/it/12 HTML, CSS, accessibility ও
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+[]|\TU/kalpurush(0)/m/it/12 HTML-এর প্রাথমিক specification/description
+ []
+
+[466] [467] [468]
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[]|\TU/kalpurush(0)/m/it/12 heading, paragraph,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+[]|\TU/kalpurush(0)/m/it/12 validation, button
+ []
+
+[469]
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+[]\TU/lmtt/m/n/12 <form>, <input>, <button>, <label>, <select>, <option>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+[]\TU/lmtt/m/n/12 <header>, <nav>, <main>, <section>, <article>,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+[470] [471] [472] [473]) (chapters/Chapter04/topics/04_tag_syntax/topic.tex
+[474]
+Underfull \hbox (badness 5189) in paragraph at lines 29--30
+[]\TU/kalpurush(0)/m/it/12 Tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে attrib
+ute ব্যবহৃত
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 29--30
+\TU/kalpurush(0)/m/it/12 হয়। Attribute সাধারণত opening tag-এর মধ্যে লেখা হয়। যে
+মন \TU/lmtt/m/n/12 <a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+[]\TU/kalpurush(0)/m/it/12 Attribute-এর নির্দিষ্ট মানকে attribute value বলে। যে
+মন \TU/lmtt/m/n/12 <p
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+\TU/lmtt/m/n/12 align="center">ICT</p>\TU/kalpurush(0)/m/it/12 -এ \TU/lmtt/m/n/
+12 center \TU/kalpurush(0)/m/it/12 হলো \TU/lmtt/m/n/12 align \TU/kalpurush(0)/m
+/it/12 attribute-এর
+ []
+
+[475]
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]|\TU/kalpurush(0)/m/it/12 angle bracket-এর
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]|\TU/kalpurush(0)/m/it/12 Attribute
+ []
+
+
+Underfull \hbox (badness 2443) in paragraph at lines 56--56
+[]|\TU/kalpurush(0)/m/it/12 attribute-এর নির্দিষ্ট
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]|\TU/lmtt/m/n/12 <img src="a.jpg"
+ []
+
+[476] [477] [478] [479] [480] [481])
+(chapters/Chapter04/topics/09_basic_structure/topic.tex [482] [483]
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+[]\TU/lmtt/m/n/12 <meta name="viewport" content="width=device-width,
+ []
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 59.
+[484] [485] [486] [487]
+Underfull \hbox (badness 10000) in paragraph at lines 213--213
+[]|\TU/kalpurush(0)/m/it/12 Browser-এ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+[]|\TU/lmtt/m/n/12 <title>\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <meta>\TU/
+kalpurush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 6876) in paragraph at lines 217--217
+[]|\TU/kalpurush(0)/m/it/12 metadata, title, CSS,
+ []
+
+[488] [489] [490]
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|\TU/lmtt/m/n/12 <meta
+ []
+
+[491]
+Overfull \hbox (11.62233pt too wide) in paragraph at lines 356--357
+\TU/kalpurush(0)/m/it/12 HTML document একটি নির্দিষ্ট কাঠামো অনুসরণ করে লেখা হয়
+। আধুনিক HTML document-
+ []
+
+[492] [493]) (chapters/Chapter04/topics/06_formatting/topic.tex [494]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 28.
+ [495]
+[496] [497]
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/m/n' will be
+(Font)              scaled to size 4.7467pt on input line 131.
+LaTeX Font Info:    Font shape `TU/kalpurush(0)/b/n' will be
+(Font)              scaled to size 9.49341pt on input line 133.
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+[]|\TU/kalpurush(0)/b/n/10 thematic/section break
+ []
+
+[498] [499] [500] [501] [502] [503] [504] [505] [506]
+Overfull \hbox (0.6968pt too wide) in paragraph at lines 518--519
+[]|\TU/lmtt/m/n/10 <strong>Important</strong>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+[]|\TU/lmtt/m/n/10 <font
+ []
+
+[507] [508] [509] [510] [511]) (chapters/Chapter04/topics/07_list/topic.tex
+[512] [513] [514] [515] [516] [517] [518] [519] [520]
+Overfull \hbox (20.6142pt too wide) in paragraph at lines 308--309
+[]\TU/kalpurush(0)/m/it/12 Glossary, definition list, FAQ, product specificatio
+n, contact details, dictionary-
+ []
+
+[521] [522] [523]
+Underfull \hbox (badness 10000) in paragraph at lines 447--447
+[]|\TU/kalpurush(0)/b/n/10.95 topic, feature,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
+[]|\TU/kalpurush(0)/b/n/10.95 definition, glos-
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 449--450
+[]|\TU/kalpurush(0)/b/n/10.95 HTML - markup
+ []
+
+[524] [525] [526] [527] [528]
+Overfull \hbox (17.51791pt too wide) in paragraph at lines 589--591
+\TU/kalpurush(0)/m/it/12 ক) \TU/lmtt/m/n/12 <ul type="square">  \TU/kalpurush(0
+)/m/it/12 খ) \TU/lmtt/m/n/12 <ol type="square">  \TU/kalpurush(0)/m/it/12 গ) \T
+U/lmtt/m/n/12 <li type="A">
+ []
+
+) (chapters/Chapter04/topics/07_hyperlink/topic.tex [529] [530] [531]
+Overfull \hbox (5.92776pt too wide) in paragraph at lines 114--115
+[]\TU/kalpurush(0)/m/it/12 External link লিখতে সাধারণত website address-এর আগে \
+TU/lmtt/m/n/12 http:// \TU/kalpurush(0)/m/it/12 বা \TU/lmtt/m/n/12 https://
+ []
+
+[532] [533] [534]
+Overfull \hbox (1.12672pt too wide) in paragraph at lines 200--200
+[]|\TU/lmtt/m/n/12 https://google.com| 
+ []
+
+[535] [536]
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+[]\TU/kalpurush(0)/m/it/12 Output: Browser-এ Email Principal link দেখা যাবে। এত
+ে
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 263--264
+\TU/kalpurush(0)/m/it/12 click করলে email application খুলতে পারে এবং receiver হ
+িসেবে
+ []
+
+[537] [538] [539] [540] [541] [542] [543] [544] [545] [546]
+Overfull \hbox (1.42802pt too wide) in paragraph at lines 626--629
+\TU/kalpurush(0)/m/it/12 গ) \TU/lmtt/m/n/12 <href="url">Text</href>  \TU/kalpur
+ush(0)/m/it/12 ঘ) \TU/lmtt/m/n/12 <link href="url">Text</link> 
+ []
+
+[547]) (chapters/Chapter04/topics/08_image/topic.tex [548] [549] [550] [551]
+[552] [553] [554] [555] [556] [557]
+Underfull \hbox (badness 7981) in paragraph at lines 314--315
+[]\TU/kalpurush(0)/m/it/12 Browser viewport অনুযায়ী উপযুক্ত image file বেছে নিত
+ে পারে।
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 341--342
+[]|\TU/kalpurush(0)/m/it/12 surrounding text-এর middle alignment
+ []
+
+[558] [559] [560] [561] [562] [563] [564]
+Overfull \hbox (0.95627pt too wide) in paragraph at lines 576--581
+\TU/kalpurush(0)/m/it/12 ক) \TU/lmtt/m/n/12 <a href="site.html"><img src="logo.
+png" alt="Logo"></a> 
+ []
+
+[565]) (chapters/Chapter04/topics/09_table/topic.tex [566] [567] [568] [569]
+[570] [571] [572] [573]
+Underfull \hbox (badness 1484) in paragraph at lines 328--328
+[]|\TU/kalpurush(0)/m/it/12 cell থেকে cell-এর মাঝের
+ []
+
+[574] [575] [576] [577]
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+[]|\TU/lmtt/m/n/12 <table border="1"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+\TU/lmtt/m/n/12 cellspacing="0"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
+[]|\TU/lmtt/m/n/12 <caption>Result
+ []
+
+[578] [579] [580] [581] [582] [583] [584])
+(chapters/Chapter04/topics/10_table_cell_merge/topic.tex [585] [586] [587]
+[588] [589]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 184.
+
+Underfull \hbox (badness 1122) in paragraph at lines 190--190
+[]|\TU/kalpurush(0)/b/n/10 heading কয়েকটি column-এর
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 190--191
+[]|\TU/kalpurush(0)/b/n/10 একটি label কয়েকটি row-এর
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
+[]|\TU/lmtt/m/n/10 <th
+ []
+
+
+Overfull \hbox (3.29434pt too wide) in paragraph at lines 192--192
+\TU/lmtt/m/n/10 colspan="3">Result</th>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+[]|\TU/lmtt/m/n/10 <td
+ []
+
+[590] [591] [592] [593] [594] [595] [596] [597] [598] [599] [600] [601]
+Overfull \hbox (2.44604pt too wide) in paragraph at lines 601--603
+\TU/kalpurush(0)/m/it/12 উত্তর: HTML table-এ কোনো cell-কে একাধিক column জুড়ে প্
+রদর্শনের জন্য \TU/lmtt/m/n/12 colspan
+ []
+
+[602] [603] [604] [605])
+(chapters/Chapter04/topics/11_table_inside_elements/topic.tex [606]
+Overfull \hbox (13.88734pt too wide) in paragraph at lines 31--32
+[]|\TU/lmtt/m/n/10 <td><a href="board.html">Board</a></td>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+[]|\TU/lmtt/m/n/10 <td><img src="book.jpg"
+ []
+
+[607] [608] [609] [610] [611] [612] [613] [614] [615] [616] [617] [618]
+[619] [620]
+Overfull \hbox (5.13678pt too wide) in paragraph at lines 525--527
+\TU/kalpurush(0)/m/it/12 link তৈরি করা যায়। যেমন: \TU/lmtt/m/n/12 <td><a href="
+board.html">Board</a></td>\TU/kalpurush(0)/m/it/12 । 
+ []
+
+
+Overfull \hbox (26.91293pt too wide) in paragraph at lines 534--536
+\TU/kalpurush(0)/m/it/12 যেমন: \TU/lmtt/m/n/12 <a href="index.html"><img src="l
+ogo.png" alt="Logo"></a>\TU/kalpurush(0)/m/it/12 । 
+ []
+
+[621] [622] [623] [624]) (chapters/Chapter04/topics/12_div_span_style/topic.tex
+
+Underfull \hbox (badness 1406) in paragraph at lines 11--12
+[]\TU/lmtt/m/n/12 color\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 background-co
+lor\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 font-size\TU/kalpurush(0)/m/it/12
+ , \TU/lmtt/m/n/12 text-align\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 margin\
+TU/kalpurush(0)/m/it/12 ,
+ []
+
+[625] [626] [627] [628]
+Underfull \hbox (badness 2376) in paragraph at lines 127--127
+[]|\TU/kalpurush(0)/m/it/12 বড় section বা block
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[]|\TU/kalpurush(0)/m/it/12 paragraph-এর ভিতরে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+\TU/kalpurush(0)/m/it/12 নির্দিষ্ট word/phrase
+ []
+
+[629] [630] [631] [632]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+[]|\TU/lmtt/m/n/10 border:1px solid
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--281
+[]|\TU/kalpurush(0)/b/n/10 element-কে left/right দিকে
+ []
+
+[633] [634] [635]
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+[]|\TU/kalpurush(0)/m/it/12 content-এর চারপাশে
+ []
+
+[636] [637]
+Underfull \hbox (badness 10000) in paragraph at lines 510--510
+[]|\TU/kalpurush(0)/m/it/12 element-এর opening
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
+[]|\TU/lmtt/m/n/12 <head>\TU/kalpurush(0)/m/it/12 -এর ভিতরে
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 512--512
+[]|\TU/lmtt/m/n/12 <p
+ []
+
+
+Overfull \hbox (3.63832pt too wide) in paragraph at lines 512--512
+\TU/lmtt/m/n/12 style="color:red;">| 
+ []
+
+[638] [639] [640]
+Overfull \hbox (19.30353pt too wide) in paragraph at lines 593--595
+\TU/kalpurush(0)/m/it/12 লিখে style প্রয়োগ করার পদ্ধতিকে style attribute বলে। য
+েমন \TU/lmtt/m/n/12 style="color:red;"\TU/kalpurush(0)/m/it/12 । 
+ []
+
+[641] [642] [643] [644])
+(chapters/Chapter04/topics/13_full_webpage_practical/topic.tex [645] [646]
+[647] [648] [649] [650] [651] [652] [653]
+Overfull \hbox (1.35576pt too wide) in paragraph at lines 251--252
+\TU/kalpurush(0)/m/it/12 দিয়ে কমানো হয়েছে এবং cell content-এর চারপাশে ৫ pixel s
+pace \TU/lmtt/m/n/12 cellpadding="5"
+ []
+
+[654] [655] [656]
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+[]\TU/kalpurush(0)/m/it/12 পরের টপিক: Multi-page Website–\TU/lmtt/m/n/12 index.
+html\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 about.html\TU/kalpurush(0)/m/it/
+12 ,
+ []
+
+) (chapters/Chapter04/topics/10_form/topic.tex [657] [658] [659] [660] [661]
+[662] [663] [664] [665] [666] [667] [668] [669] [670] [671] [672] [673]
+[674] [675] [676] [677])
+(chapters/Chapter04/topics/05_design_structure_layout/topic.tex [678] [679]
+Underfull \hbox (badness 1694) in paragraph at lines 79--79
+[]|\TU/kalpurush(0)/m/it/12 width fixed থাকে, যেমন
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+[]|\TU/kalpurush(0)/m/it/12 desktop-এ predictable,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+[]|\TU/kalpurush(0)/m/it/12 Responsive
+ []
+
+[680]
+Underfull \hbox (badness 1077) in paragraph at lines 124--125
+[]|\TU/kalpurush(0)/m/it/12 Home, About, Con-
+ []
+
+
+Underfull \hbox (badness 2922) in paragraph at lines 132--132
+[]|\TU/lmtt/m/n/12 <table>\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <tr>\TU/ka
+lpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <th>\TU/kalpurush(0)/m/it/12 ,
+ []
+
+[681] [682]) (chapters/Chapter04/topics/11_web_page_designing/topic.tex
+[683] [684] [685] [686] [687] [688]
+Overfull \hbox (17.4659pt too wide) in paragraph at lines 167--168
+[]\TU/kalpurush(0)/m/it/12 এই অংশে \TU/lmtt/m/n/12 <form>\TU/kalpurush(0)/m/it/
+12 , \TU/lmtt/m/n/12 <input>\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <textare
+a>\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <select>\TU/kalpurush(0)/m/it/12 ,
+ \TU/lmtt/m/n/12 <option> \TU/kalpurush(0)/m/it/12 ও \TU/lmtt/m/n/12 <button>
+ []
+
+[689] [690] [691] [692] [693]
+Overfull \hbox (9.42825pt too wide) in paragraph at lines 338--339
+[]\TU/lmtt/m/n/12 <!DOCTYPE html> \TU/kalpurush(0)/m/it/12 browser-কে জানায় যে 
+document-টি HTML5 standard অনুসরণ
+ []
+
+[694] [695] [696] [697] [698] [699] [700] [701] [702] [703] [704] [705]
+[706] [707] [708] [709] [710] [711] [712]
+Overfull \hbox (14.13828pt too wide) in paragraph at lines 919--920
+[]\TU/lmtt/m/n/12 <ul type="square"> \TU/kalpurush(0)/m/it/12 result page-এর im
+portant notes bullet আকারে দেখিয়েছে। 
+ []
+
+[713] [714] [715] [716] [717] [718] [719] [720]
+Overfull \hbox (1.83438pt too wide) in paragraph at lines 1172--1173
+[]\TU/lmtt/m/n/12 mailto:info@abccollege.edu.bd \TU/kalpurush(0)/m/it/12 email 
+address-এর সাথে clickable email
+ []
+
+[721]
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+[]|\TU/kalpurush(0)/m/it/12 background color, alignment,
+ []
+
+[722] [723]) (chapters/Chapter04/topics/12_website_publishing/topic.tex
+Underfull \hbox (badness 1960) in paragraph at lines 18--19
+[]\TU/kalpurush(0)/m/it/12 তৈরি করা webpage বা website-এর file web server-এ upl
+oad করে
+ []
+
+[724]
+Overfull \hbox (4.99492pt too wide) in paragraph at lines 25--26
+\TU/kalpurush(0)/m/it/12 Website তৈরি করার পর সেটি internet-এ দেখানোর জন্য serv
+er-এ রাখতে হয়। ব্যবহারকারী
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 32--33
+[]\TU/kalpurush(0)/m/it/12 Website-এর file, image, CSS, JavaScript, database ইত
+্যাদি internet-
+ []
+
+[725]
+Underfull \hbox (badness 2913) in paragraph at lines 92--93
+[]|\TU/kalpurush(0)/m/it/12 high traffic/modern
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 94--94
+[]|\TU/kalpurush(0)/m/it/12 HTML/CSS/JS file serve
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 94--95
+[]|\TU/kalpurush(0)/m/it/12 portfolio, documen-
+ []
+
+[726] [727] [728]) (chapters/Chapter04/topics/13_exercises/topic.tex [729]
+[730] [731]
+Overfull \hbox (3.54338pt too wide) in paragraph at lines 81--82
+[]|\TU/lmtt/m/n/10 <title>...</title>| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[]|\TU/lmtt/m/n/10 <a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+[]|\TU/lmtt/m/n/10 <img src=""
+ []
+
+
+Overfull \hbox (3.54338pt too wide) in paragraph at lines 117--118
+[]|\TU/lmtt/m/n/10 <table>...</table>| 
+ []
+
+[732]
+Overfull \hbox (3.54338pt too wide) in paragraph at lines 141--142
+[]|\TU/lmtt/m/n/10 style="color:red;"| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+[]|\TU/lmtt/m/n/10 <input
+ []
+
+[733]
+Overfull \hbox (2.93594pt too wide) in paragraph at lines 185--186
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--214
+
+ []
+
+[734] [735] [736]
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+[]|\TU/lmtt/m/n/12 <table>\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <tr>\TU/ka
+lpurush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--275
+[]|\TU/kalpurush(0)/m/it/12 title, heading, marks,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+[]|\TU/lmtt/m/n/12 colspan\TU/kalpurush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\TU/lmtt/m/n/12 rowspan\TU/kalpurush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\TU/lmtt/m/n/12 cellpadding\TU/kalpurush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+[]|\TU/lmtt/m/n/12 <a href="">\TU/kalpurush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+[]|\TU/lmtt/m/n/12 <div>\TU/kalpurush(0)/m/it/12 , \TU/lmtt/m/n/12 <a>\TU/kalpu
+rush(0)/m/it/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+[]|\TU/kalpurush(0)/m/it/12 domain expiry,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\TU/kalpurush(0)/m/it/12 hosting expiry,
+ []
+
+
+Underfull \hbox (badness 4229) in paragraph at lines 281--282
+\TU/kalpurush(0)/m/it/12 DNS/server prob-
+ []
+
+[737] [738])) [739]
+\openout2 = `chapters/Chapter05/latex/chapter.aux'.
+
+ (chapters/Chapter05/latex/chapter.tex [740
+
+
+
+
+]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[]\TU/kalpurush(0)/m/it/12 Machine, assembly, high-level, 4GL এবং com-
+ []
+
+[741] (chapters/Chapter05/topics/01_overview/topic.tex)
+(chapters/Chapter05/topics/02_program_concept/topic.tex [742]
+Underfull \hbox (badness 2990) in paragraph at lines 19--19
+[]|\TU/kalpurush(0)/m/it/12 translated machine-level
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|\TU/kalpurush(0)/m/it/12 Executable pro-
+ []
+
+) (chapters/Chapter05/topics/03_programming_language_concept/topic.tex [743])
+(chapters/Chapter05/topics/04_generations_of_language/topic.tex [744]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+[]|\TU/kalpurush(0)/m/it/12 mnemonic, assembler
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]|\TU/kalpurush(0)/m/it/12 human-readable, com-
+ []
+
+
+Underfull \hbox (badness 3386) in paragraph at lines 21--22
+[]|\TU/kalpurush(0)/m/it/12 problem constraint দিলে
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 35--36
+[]\TU/kalpurush(0)/m/it/12 ভাষার প্রজন্মের উত্তরে generation, উদাহরণ, machine d
+ependency এবং
+ []
+
+) (chapters/Chapter05/topics/05_low_level_language/topic.tex [745])
+(chapters/Chapter05/topics/06_machine_language/topic.tex [746])
+(chapters/Chapter05/topics/07_assembly_language/topic.tex [747])
+(chapters/Chapter05/topics/08_mid_level_language/topic.tex)
+(chapters/Chapter05/topics/09_high_level_language/topic.tex [748])
+(chapters/Chapter05/topics/10_4gl/topic.tex [749])
+(chapters/Chapter05/topics/11_translator_program/topic.tex [750])
+(chapters/Chapter05/topics/12_compiler/topic.tex [751])
+(chapters/Chapter05/topics/13_interpreter/topic.tex)
+(chapters/Chapter05/topics/14_assembler/topic.tex [752])
+(chapters/Chapter05/topics/15_program_organization/topic.tex [753])
+(chapters/Chapter05/topics/16_steps_of_development/topic.tex
+Underfull \hbox (badness 1184) in paragraph at lines 5--6
+[]\TU/kalpurush(0)/m/it/12 এই টপিক শেষে শিক্ষার্থী program development life cyc
+le-এর ধাপগুলো
+ []
+
+[754]) (chapters/Chapter05/topics/17_algorithm/topic.tex [755])
+(chapters/Chapter05/topics/18_flowchart/topic.tex [756])
+(chapters/Chapter05/topics/19_program_design_model/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|\TU/kalpurush(0)/m/it/12 sequence, selection, loop;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+[]\TU/kalpurush(0)/m/it/12 Programming model-এর প্রশ্নে শুধু নাম লিখবে না; কোন 
+ধরনের
+ []
+
+) (chapters/Chapter05/topics/20_structured_programming/topic.tex [757])
+(chapters/Chapter05/topics/21_visual_programming/topic.tex [758])
+(chapters/Chapter05/topics/22_oop/topic.tex [759])
+(chapters/Chapter05/topics/23_event_driven_programming/topic.tex)
+(chapters/Chapter05/topics/24_c_intro/topic.tex [760])
+(chapters/Chapter05/topics/25_c_characteristics/topic.tex [761])
+(chapters/Chapter05/topics/26_c_compiling/topic.tex)
+(chapters/Chapter05/topics/27_c_structure/topic.tex [762]
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]|\TU/lmtt/m/n/12 #include
+ []
+
+) (chapters/Chapter05/topics/28_data_type/topic.tex [763]
+Overfull \hbox (5.95125pt too wide) in paragraph at lines 13--26
+ [] 
+ []
+
+) (chapters/Chapter05/topics/29_constant/topic.tex [764])
+(chapters/Chapter05/topics/30_variable/topic.tex)
+(chapters/Chapter05/topics/31_operator/topic.tex [765]
+Overfull \hbox (17.69519pt too wide) in paragraph at lines 25--25
+[]|\TU/kalpurush(0)/m/it/12 Increment/Decrement| 
+ []
+
+) (chapters/Chapter05/topics/32_expression/topic.tex [766])
+(chapters/Chapter05/topics/33_keyword/topic.tex [767])
+(chapters/Chapter05/topics/34_io_statement/topic.tex)
+(chapters/Chapter05/topics/35_conditional_statement/topic.tex [768])
+(chapters/Chapter05/topics/36_loop_statement/topic.tex [769])
+(chapters/Chapter05/topics/37_array/topic.tex [770])
+(chapters/Chapter05/topics/38_function/topic.tex [771])
+(chapters/Chapter05/topics/39_practical_program_practice/topic.tex [772])
+(chapters/Chapter05/topics/40_exercises/topic.tex [773] [774])) [775]
+\openout2 = `chapters/Chapter06/latex/chapter.aux'.
+
+
+(chapters/Chapter06/latex/chapter.tex [776
+
+
+
+
+]
+Chapter 6.
+[777] (chapters/Chapter06/topics/01_overview/topic.tex [778])
+(chapters/Chapter06/topics/02_basic_elements/topic.tex [779])
+(chapters/Chapter06/topics/03_dbms/topic.tex [780])
+(chapters/Chapter06/topics/04_rdbms/topic.tex
+Overfull \hbox (9.14436pt too wide) in paragraph at lines 2--2
+[]\TU/kalpurush(0)/b/n/17.28 Relational Database Management System (RDBMS) 
+ []
+
+[781]
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\TU/kalpurush(0)/m/it/12 ফাইল/টেবিলসহ বিভিন্ন
+ []
+
+
+Underfull \hbox (badness 6842) in paragraph at lines 18--19
+[]|\TU/kalpurush(0)/m/it/12 টেবিলের মধ্যে সম্পর্ক
+ []
+
+) (chapters/Chapter06/topics/05_creating_database/topic.tex [782] [783])
+(chapters/Chapter06/topics/06_data_type/topic.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|\TU/kalpurush(0)/m/it/12 Long
+ []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 15--16
+[]|\TU/kalpurush(0)/m/it/12 Marks, Quan-
+ []
+
+[784]) (chapters/Chapter06/topics/07_query/topic.tex [785])
+(chapters/Chapter06/topics/08_sorting/topic.tex [786])
+(chapters/Chapter06/topics/09_indexing/topic.tex [787])
+(chapters/Chapter06/topics/10_relation/topic.tex [788]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+[]|\TU/kalpurush(0)/m/it/12 Person–
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]|\TU/kalpurush(0)/m/it/12 Customer–
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+[]|\TU/kalpurush(0)/m/it/12 Student–
+ []
+
+) (chapters/Chapter06/topics/11_form/topic.tex [789])
+(chapters/Chapter06/topics/12_report/topic.tex [790]
+Overfull \hbox (0.89925pt too wide) in paragraph at lines 12--23
+ [] 
+ []
+
+) (chapters/Chapter06/topics/13_corporate_database/topic.tex [791])
+(chapters/Chapter06/topics/14_government_database/topic.tex [792])
+(chapters/Chapter06/topics/15_data_security/topic.tex [793])
+(chapters/Chapter06/topics/16_data_encryption/topic.tex [794]
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[]|\TU/kalpurush(0)/m/it/12 Symmetric encryp-
+ []
+
+
+Underfull \hbox (badness 1616) in paragraph at lines 24--24
+[]|\TU/kalpurush(0)/m/it/12 Asymmetric encryp-
+ []
+
+) (chapters/Chapter06/topics/17_practical_tasks/topic.tex [795])
+(chapters/Chapter06/topics/18_exercises/topic.tex [796])) [797]
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\main.aux
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\chapters/Chapter01/latex/c
+hapter.aux)
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\chapters/Chapter02/latex/c
+hapter.aux)
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\chapters/Chapter03/latex/c
+hapter.aux)
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\chapters/Chapter04/latex/c
+hapter.aux)
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\chapters/Chapter05/latex/c
+hapter.aux)
+(F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\chapters/Chapter06/latex/c
+hapter.aux))
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 38004 strings out of 402983
+ 856597 string characters out of 5448482
+ 1220037 words of memory out of 5000000
+ 65732 multiletter control sequences out of 15000+600000
+ 637864 words of font info for 110 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 103i,15n,116p,821b,1216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on F:\HSC ICT RESOURCES\HSC_ICT_BOOK_LATEX_CODE\build2\main.pdf 
+(801 pages).
