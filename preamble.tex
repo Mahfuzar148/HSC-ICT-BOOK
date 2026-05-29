@@ -69,6 +69,10 @@
 \newcommand{\scaletikz}[1]{\resizebox{0.97\linewidth}{!}{#1}}
 \usepackage{fvextra}
 \usepackage[unicode]{hyperref}
+% Improve PDF outlines/bookmarks and ensure outlines regenerate correctly
+% `bookmark` provides robust bookmark handling (works with hyperref).
+\usepackage{bookmark}
+\bookmarksetup{open,numbered}
 \raggedbottom
 \linespread{1.15}
 % Disable colored boxes around links in the PDF (remove red boxes in TOC)
@@ -128,6 +132,8 @@
 % Header and Footer configuration
 \pagestyle{fancy}
 \fancyhf{}
+% Ensure header space is sufficient for fancyhdr to avoid warnings
+\setlength{\headheight}{15pt}
 \fancyhead[LE,RO]{\thepage}
 \fancyhead[RE]{\leftmark}
 \fancyhead[LO]{\rightmark}
