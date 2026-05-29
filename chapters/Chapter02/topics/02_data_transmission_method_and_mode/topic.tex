@@ -1,173 +1,584 @@
-% Chapter 02.2: ডেটা ট্রান্সমিশন মেথড ও ডেটা ট্রান্সমিশন মোড
+% Chapter 02.2: ডেটা ট্রান্সমিশন মেথড ও মোড
 \section{ডেটা ট্রান্সমিশন মেথড ও মোড}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item asynchronous, synchronous ও isochronous transmission ব্যাখ্যা করতে।
-\item start bit, stop bit ও clock synchronization-এর ভূমিকা বুঝতে।
-\item simplex, half duplex ও full duplex mode আলাদা করতে।
-\item একটি table বা tree ব্যবহার করে transmission method compare করতে।
-\item board-style comparison question-এর উত্তর লিখতে।
+\item ডেটা ট্রান্সমিশন কী তা ব্যাখ্যা করতে।
+\item Parallel transmission ও Serial transmission-এর পার্থক্য বুঝতে।
+\item Asynchronous, Synchronous ও Isochronous transmission ব্যাখ্যা করতে।
+\item Simplex, Half-duplex ও Full-duplex transmission mode তুলনা করতে।
+\item Unicast, Broadcast ও Multicast data delivery mode শনাক্ত করতে।
+\item বোর্ড ও ভর্তি পরীক্ষার প্রশ্নে transmission method/mode প্রয়োগ করতে।
 \end{itemize}
 \end{learningbox}
 
+\subsection{বাস্তব জীবনের শুরু}
+
+আমরা যখন mobile দিয়ে message পাঠাই, computer থেকে file transfer করি, video call করি বা online class করি—তখন data এক device থেকে অন্য device-এ যায়। কিন্তু data সবসময় একইভাবে যায় না। কখনো data একসাথে অনেক bit আকারে যায়, কখনো একটির পর একটি bit যায়, আবার কখনো live audio-video stream-এর মতো নির্দিষ্ট সময় বজায় রেখে যায়।
+
+এই data যাওয়ার পদ্ধতিকে বলা হয় \textbf{Data Transmission Method}। আর data কোন direction-এ যাচ্ছে—একদিকে, পালাক্রমে, নাকি একই সাথে দুইদিকে—এটি বোঝায় \textbf{Transmission Mode}।
+
+\begin{keypointbox}{মূল ধারণা}
+Data transmission বুঝতে তিনটি প্রশ্ন মনে রাখো:
+\begin{itemize}
+\item Data কীভাবে যাচ্ছে? — Parallel না Serial?
+\item Data কখন/কোন নিয়মে যাচ্ছে? — Asynchronous, Synchronous না Isochronous?
+\item Data কোন direction-এ যাচ্ছে? — Simplex, Half-duplex না Full-duplex?
+\end{itemize}
+\end{keypointbox}
+
+\subsection{ডেটা ট্রান্সমিশন}
+
+\begin{definitionbox}{ডেটা ট্রান্সমিশন}
+এক device থেকে অন্য device-এ communication medium-এর মাধ্যমে data পাঠানোর প্রক্রিয়াকে data transmission বলা হয়।
+\end{definitionbox}
+
+Data transmission সাধারণত signal-এর মাধ্যমে সম্পন্ন হয়। Computer data binary আকারে অর্থাৎ 0 ও 1 হিসেবে সংরক্ষণ ও process করে। এই 0 ও 1 communication medium দিয়ে পাঠানোর সময় electrical signal, optical signal বা electromagnetic signal হিসেবে transmitted হয়।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/data_transmission_overview_tree.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/data_transmission_overview_tree.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Data Transmission\\[8pt]
+$\downarrow$\\[8pt]
+Method: Parallel, Serial\\[8pt]
+$\downarrow$\\[8pt]
+Timing: Asynchronous, Synchronous, Isochronous\\[8pt]
+$\downarrow$\\[8pt]
+Mode: Simplex, Half-duplex, Full-duplex
+\vspace{0.7cm}
+}}
+}
+\caption{ডেটা ট্রান্সমিশনের ধারণা মানচিত্র}
+\end{figure}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Data transmission question-এ method ও mode গুলিয়ে ফেলা যাবে না। Method বোঝায় data কীভাবে পাঠানো হচ্ছে, আর mode বোঝায় data কোন direction-এ আদান-প্রদান হচ্ছে।
+\end{boardbox}
+
 \subsection{ডেটা ট্রান্সমিশন মেথড}
-\subsubsection{Asynchronous Transmission}
+
+Data transmission method মূলত দুই ধরনের:
+
 \begin{itemize}
-\item Start bit, Stop bit
-\item Character by character transmission
-\item ব্যবহার-বর্ণনা, সুবিধা ও অসুবিধা
+\item Parallel Transmission
+\item Serial Transmission
 \end{itemize}
 
-\subsubsection{Synchronous Transmission}
+\subsection{Parallel Transmission}
+
+\begin{definitionbox}{Parallel Transmission}
+যে transmission পদ্ধতিতে একাধিক bit একই সময়ে আলাদা আলাদা channel বা line দিয়ে পাঠানো হয়, তাকে parallel transmission বলা হয়।
+\end{definitionbox}
+
+Parallel transmission-এ 8 bit data পাঠাতে চাইলে 8টি আলাদা line ব্যবহার করা যেতে পারে। ফলে একই সময়ে অনেক bit পাঠানো যায়। তাই short distance-এ এটি দ্রুত। তবে line বেশি লাগার কারণে cost বেশি হয় এবং দূরত্ব বাড়লে synchronization problem হতে পারে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/parallel_vs_serial_transmission.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/parallel_vs_serial_transmission.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.7cm}
+Parallel Transmission\\[4pt]
+Bit 1 $\longrightarrow$\\
+Bit 2 $\longrightarrow$\\
+Bit 3 $\longrightarrow$\\
+Bit 4 $\longrightarrow$\\[12pt]
+Serial Transmission\\[4pt]
+Bit 1 $\longrightarrow$ Bit 2 $\longrightarrow$ Bit 3 $\longrightarrow$ Bit 4
+\vspace{0.7cm}
+}}
+}
+\caption{প্যারালাল ও সিরিয়াল ট্রান্সমিশন}
+\end{figure}
+
+\begin{keypointbox}{Parallel transmission-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item Block by block transmission
-\item Clock synchronization
-\item উচ্চ গতির ডেটা প্রেরণ
+\item একাধিক bit একই সময়ে পাঠানো হয়।
+\item একাধিক channel বা wire প্রয়োজন হয়।
+\item short distance communication-এ কার্যকর।
+\item speed বেশি হলেও cost বেশি।
+\item দূরত্ব বেশি হলে timing mismatch বা synchronization problem হতে পারে।
 \end{itemize}
+\end{keypointbox}
 
-\subsubsection{Isochronous Transmission}
+\begin{examplebox}{উদাহরণ}
+Computer-এর internal bus বা পুরনো printer port-এ parallel transmission ব্যবহৃত হতো। কারণ এগুলো সাধারণত short distance-এর মধ্যে data transfer করত।
+\end{examplebox}
+
+\subsection{Serial Transmission}
+
+\begin{definitionbox}{Serial Transmission}
+যে transmission পদ্ধতিতে data bit-by-bit অর্থাৎ একটির পর একটি bit একই channel দিয়ে পাঠানো হয়, তাকে serial transmission বলা হয়।
+\end{definitionbox}
+
+Serial transmission-এ line কম লাগে, তাই cost কম। Long distance communication-এর জন্য এটি বেশি উপযোগী। Modern communication system, USB, Ethernet, mobile network এবং internet communication-এ serial transmission-এর ধারণা গুরুত্বপূর্ণ।
+
+\begin{keypointbox}{Serial transmission-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item Real-time audio/video transmission
-\item Multimedia communication-এ ব্যবহার
+\item data একটির পর একটি bit হিসেবে পাঠানো হয়।
+\item সাধারণত একটি channel বা কম line প্রয়োজন হয়।
+\item long distance communication-এর জন্য উপযোগী।
+\item cost তুলনামূলক কম।
+\item speed নির্ভর করে channel capacity, clocking, protocol ও technology-এর উপর।
 \end{itemize}
-
-\subsection{ডেটা ট্রান্সমিশন মোড}
-\subsubsection{Simplex}
-\begin{itemize}\item একমুখী ডেটা প্রেরণ; উদাহরণ: TV broadcasting\end{itemize}
-\subsubsection{Half Duplex}
-\begin{itemize}\item উভয় দিকে ডেটা যায়, কিন্তু একই সময়ে নয়; উদাহরণ: walkie-talkie\end{itemize}
-\subsubsection{Full Duplex}
-\begin{itemize}\item একই সময়ে উভয় দিকে data আদান-প্রদান; উদাহরণ: telephone\end{itemize}
-
-\subsection{ডেটা ট্রান্সমিশন মোড}
-
-\begin{definitionbox}{ডেটা ট্রান্সমিশন মোড}
-ডেটা প্রেরণ ও গ্রহণের দিক এবং একই সময়ে data flow-এর মাত্রাকে transmission mode বলা হয়।
-\end{definitionbox}
-
-\subsubsection{Simplex}
-
-Simplex mode-এ data শুধু একদিকে যায়। Receiver কোনো data ফেরত পাঠায় না।
-
-\begin{definitionbox}{সিম্প্লেক্স}
-যে transmission mode-এ data কেবল একদিকে প্রেরিত হয়, তাকে simplex mode বলে।
-\end{definitionbox}
+\end{keypointbox}
 
 \begin{examplebox}{উদাহরণ}
-TV broadcasting, radio broadcasting এবং digital notice board simplex-এর সহজ উদাহরণ।
+USB, Ethernet communication, modem communication এবং long-distance network communication-এ serial transmission বহুল ব্যবহৃত।
 \end{examplebox}
 
-\subsubsection{Half Duplex}
-
-Half duplex mode-এ দুই দিকেই data যেতে পারে, কিন্তু একই সময়ে নয়। এক পক্ষ কথা বললে অন্য পক্ষ শুনে।
-
-\begin{definitionbox}{হাফ ডুপ্লেক্স}
-যে transmission mode-এ উভয় দিকে data আদান-প্রদান সম্ভব, কিন্তু একই সময়ে নয়, তাকে half duplex বলে।
-\end{definitionbox}
-
-\begin{examplebox}{উদাহরণ}
-Walkie-talkie, old-style intercom এবং কিছু shared channel communication half duplex-এর উদাহরণ।
-\end{examplebox}
-
-\subsubsection{Full Duplex}
-
-Full duplex mode-এ একই সময়ে উভয় দিকে data আদান-প্রদান হয়। এটি সবচেয়ে কার্যকর এবং স্বাভাবিক conversation-like communication-এর জন্য উপযুক্ত।
-
-\begin{definitionbox}{ফুল ডুপ্লেক্স}
-যে transmission mode-এ উভয় দিকেই একই সময়ে data প্রেরণ ও গ্রহণ করা যায়, তাকে full duplex বলে।
-\end{definitionbox}
-
-\begin{examplebox}{উদাহরণ}
-Telephone call, video chat, modern internet communication এবং two-way live conferencing full duplex-এর উদাহরণ।
-\end{examplebox}
+\subsection{Parallel Transmission ও Serial Transmission-এর পার্থক্য}
 
 \begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\begin{tabular}{|p{0.22\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
 \hline
-\textbf{Mode} & \textbf{Direction} & \textbf{Same time?} & \textbf{উদাহরণ} \\
+\textbf{বিষয়} & \textbf{Parallel Transmission} & \textbf{Serial Transmission} \\
 \hline
-Simplex & একদিকে & না & TV broadcasting \\
+Data পাঠানোর ধরন & একাধিক bit একই সময়ে যায় & bit-by-bit একটির পর একটি যায় \\
 \hline
-Half duplex & দুইদিকে & না & Walkie-talkie \\
+Line/Channel & একাধিক line প্রয়োজন & সাধারণত একটি line বা কম line প্রয়োজন \\
 \hline
-Full duplex & দুইদিকে & হ্যাঁ & Telephone \\
+Distance & short distance-এ ভালো & long distance-এ ভালো \\
+\hline
+Cost & বেশি & তুলনামূলক কম \\
+\hline
+Speed ধারণা & short distance-এ দ্রুত & modern technology-তে খুব দ্রুত হতে পারে \\
+\hline
+Problem & synchronization problem হতে পারে & bit ordering ও timing control দরকার \\
+\hline
+উদাহরণ & internal bus, old printer port & USB, Ethernet, modem, internet \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{Common mistake}
+অনেকে মনে করে parallel transmission সবসময় serial transmission-এর চেয়ে ভালো। আসলে short distance-এ parallel দ্রুত হতে পারে, কিন্তু long distance ও modern networking-এ serial transmission বেশি practical ও reliable।
+\end{mistakebox}
+
+\subsection{Serial Transmission-এর ধরন}
+
+Serial transmission সাধারণত তিন ধরনের:
+
+\begin{itemize}
+\item Asynchronous Transmission
+\item Synchronous Transmission
+\item Isochronous Transmission
+\end{itemize}
+
+\subsection{Asynchronous Transmission}
+
+\begin{definitionbox}{Asynchronous Transmission}
+যে serial transmission পদ্ধতিতে data character বা small unit আকারে পাঠানো হয় এবং প্রতিটি unit-এর শুরুতে start bit ও শেষে stop bit থাকে, তাকে asynchronous transmission বলা হয়।
+\end{definitionbox}
+
+Asynchronous transmission-এ sender ও receiver-এর clock পুরো সময় synchronized থাকতে হয় না। প্রতিটি character বা byte আলাদাভাবে পাঠানো হয়। Receiver start bit দেখে বুঝতে পারে data শুরু হয়েছে এবং stop bit দেখে বুঝতে পারে data শেষ হয়েছে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/asynchronous_transmission_frame.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/asynchronous_transmission_frame.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Start Bit \quad $\rightarrow$ \quad Data Bits \quad $\rightarrow$ \quad Stop Bit
+\vspace{0.7cm}
+}}
+}
+\caption{অ্যাসিনক্রোনাস ট্রান্সমিশন ফ্রেম}
+\end{figure}
+
+\begin{keypointbox}{Asynchronous transmission-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item data ছোট unit বা character আকারে পাঠানো হয়।
+\item প্রতিটি unit-এর সাথে start bit ও stop bit থাকে।
+\item sender ও receiver-এর continuous clock synchronization দরকার হয় না।
+\item data কম হলে বা অনিয়মিতভাবে data পাঠাতে হলে উপযোগী।
+\item extra start/stop bit থাকার কারণে overhead বেশি হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+Keyboard input, পুরনো serial communication এবং কম পরিমাণ অনিয়মিত data পাঠানোর ক্ষেত্রে asynchronous transmission ব্যবহৃত হতে পারে।
+\end{examplebox}
+
+\subsection{Synchronous Transmission}
+
+\begin{definitionbox}{Synchronous Transmission}
+যে serial transmission পদ্ধতিতে sender ও receiver clock synchronization বজায় রেখে data block বা frame আকারে পাঠায়, তাকে synchronous transmission বলা হয়।
+\end{definitionbox}
+
+Synchronous transmission-এ data character-by-character না গিয়ে বড় block বা frame হিসেবে যায়। এখানে start/stop bit প্রতিটি character-এর সাথে থাকে না। ফলে large amount data দ্রুত ও দক্ষতার সাথে পাঠানো যায়। তবে sender ও receiver-এর timing বা clock synchronization গুরুত্বপূর্ণ।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/synchronous_transmission_block.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/synchronous_transmission_block.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Header \quad $\rightarrow$ \quad Data Block \quad $\rightarrow$ \quad Trailer
+\vspace{0.7cm}
+}}
+}
+\caption{সিনক্রোনাস ট্রান্সমিশন ব্লক}
+\end{figure}
+
+\begin{keypointbox}{Synchronous transmission-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item data block বা frame আকারে পাঠানো হয়।
+\item sender ও receiver-এর clock synchronization প্রয়োজন।
+\item বড় পরিমাণ data দ্রুত transfer-এর জন্য উপযোগী।
+\item overhead তুলনামূলক কম।
+\item network communication-এ বেশি কার্যকর।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+Network communication, high-speed data transfer, LAN communication ইত্যাদিতে synchronous transmission-এর ধারণা ব্যবহৃত হয়।
+\end{examplebox}
+
+\subsection{Isochronous Transmission}
+
+\begin{definitionbox}{Isochronous Transmission}
+যে transmission পদ্ধতিতে data নির্দিষ্ট সময় interval বজায় রেখে continuous stream হিসেবে পাঠানো হয়, তাকে isochronous transmission বলা হয়।
+\end{definitionbox}
+
+Isochronous transmission বিশেষভাবে audio ও video communication-এর জন্য গুরুত্বপূর্ণ। এখানে শুধু data পৌঁছানোই যথেষ্ট নয়; data নির্দিষ্ট সময়ের মধ্যে পৌঁছাতে হবে। কারণ video call, live class বা streaming-এ delay বেশি হলে sound ও video mismatch হতে পারে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Synchronous: Block \quad Block \quad Block\\[12pt]
+Isochronous: Stream \quad Stream \quad Stream
+\vspace{0.7cm}
+}}
+}
+\caption{সিনক্রোনাস ও আইসোক্রোনাস ট্রান্সমিশনের ধারণা}
+\end{figure}
+
+\begin{keypointbox}{Isochronous transmission-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item continuous data stream পাঠানো হয়।
+\item নির্দিষ্ট সময় interval বজায় রাখা গুরুত্বপূর্ণ।
+\item audio, video ও real-time communication-এর জন্য উপযোগী।
+\item delay বেশি হলে communication quality কমে যায়।
+\item live streaming, video conference, online class-এ এর ধারণা গুরুত্বপূর্ণ।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+Video call, live online class, IP TV, live audio-video streaming—এসব ক্ষেত্রে timing খুব গুরুত্বপূর্ণ, তাই isochronous transmission-এর ধারণা প্রযোজ্য।
+\end{examplebox}
+
+\subsection{Asynchronous, Synchronous ও Isochronous Transmission-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Asynchronous} & \textbf{Synchronous} & \textbf{Isochronous} \\
+\hline
+Data পাঠানোর ধরন & character বা small unit & block বা frame & continuous stream \\
+\hline
+Timing & start/stop bit দিয়ে control & clock synchronization দরকার & fixed time interval দরকার \\
+\hline
+Overhead & বেশি & তুলনামূলক কম & timing control গুরুত্বপূর্ণ \\
+\hline
+ব্যবহার & কম বা অনিয়মিত data & বড় পরিমাণ data & audio-video/live data \\
+\hline
+উদাহরণ & keyboard/serial input & network data transfer & video call/live class \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{boardbox}{বোর্ড ফোকাস}
-Transmission method-এর প্রশ্নে method ও mode গুলোর পার্থক্য খুব পরিষ্কার করে লিখতে হয়। Table, example এবং এক লাইনের conclusion দিলে answer strong হয়।
+Asynchronous transmission-এর প্রশ্নে start bit ও stop bit অবশ্যই লিখতে হবে। Synchronous transmission-এর ক্ষেত্রে block/frame ও clock synchronization লিখতে হবে। Isochronous transmission-এর ক্ষেত্রে real-time audio-video এবং fixed time interval লিখলে উত্তর পূর্ণাঙ্গ হয়।
 \end{boardbox}
 
-\begin{recapbox}
+\subsection{ডেটা ট্রান্সমিশন মোড}
+
+\begin{definitionbox}{Transmission Mode}
+Data sender ও receiver-এর মধ্যে কোন direction-এ আদান-প্রদান হবে, সেই পদ্ধতিকে transmission mode বলা হয়।
+\end{definitionbox}
+
+Transmission mode তিন ধরনের:
+
 \begin{itemize}
-\item Asynchronous-এ প্রতিটি character আলাদা, synchronous-এ বড় block, isochronous-এ নির্দিষ্ট সময়ভিত্তিক data যায়।
-\item Simplex একদিকে, half duplex দুইদিকে কিন্তু একই সময়ে নয়, full duplex দুইদিকে একই সময়ে।
-\item Real-time media-এর জন্য isochronous খুব গুরুত্বপূর্ণ।
-\item পরীক্ষায় compare table আঁকলে উত্তর দ্রুত বোঝা যায়।
+\item Simplex
+\item Half-duplex
+\item Full-duplex
 \end{itemize}
-\end{recapbox}
 
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item Start bit ও stop bit কোন transmission method-এ ব্যবহৃত হয়?\\
-ক. Synchronous \quad খ. Asynchronous \quad গ. Isochronous \quad ঘ. Full duplex
-\item একই সময়ে উভয় দিকে data আদান-প্রদান কোন mode-এ সম্ভব?\\
-ক. Simplex \quad খ. Half duplex \quad গ. Full duplex \quad ঘ. Broadcast
-\end{enumerate}
+\subsection{Simplex Mode}
 
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Asynchronous ও synchronous transmission-এর মধ্যে দুটি পার্থক্য লেখ।
-\item Half duplex mode-এর একটি বাস্তব উদাহরণ দাও।
-\end{enumerate}
+\begin{definitionbox}{Simplex Mode}
+যে transmission mode-এ data শুধু এক direction-এ যায়, অর্থাৎ sender শুধু পাঠায় এবং receiver শুধু গ্রহণ করে, তাকে simplex mode বলা হয়।
+\end{definitionbox}
 
-\textbf{সৃজনশীল অনুশীলন}
-একটি online class-এ শিক্ষক ভিডিও, audio ও slide একসঙ্গে পাঠাচ্ছেন; আবার শিক্ষার্থীরা প্রশ্ন পাঠাচ্ছে। উদ্দীপকের আলোকে transmission method ও mode বিশ্লেষণ করো।
-\end{practicebox}
+Simplex mode-এ receiver data পাঠাতে পারে না। এটি one-way communication system। Broadcasting system-এ এটি বেশি দেখা যায়।
 
+\begin{examplebox}{উদাহরণ}
+Radio broadcast, TV broadcast, keyboard থেকে computer-এ input, monitor-এ output display—এসব simplex communication-এর উদাহরণ।
+\end{examplebox}
 
-\subsection{শ্রেণিবিন্যাস ও চিত্র}
+\subsection{Half-duplex Mode}
 
-\begin{center}
-\fbox{\parbox{0.92\textwidth}{
+\begin{definitionbox}{Half-duplex Mode}
+যে transmission mode-এ data দুই direction-এ যেতে পারে, কিন্তু একই সময়ে দুই direction-এ যেতে পারে না, তাকে half-duplex mode বলা হয়।
+\end{definitionbox}
+
+Half-duplex mode-এ উভয় পক্ষ data পাঠাতে ও গ্রহণ করতে পারে, কিন্তু একসাথে নয়। একজন কথা বললে অন্যজন অপেক্ষা করে।
+
+\begin{examplebox}{উদাহরণ}
+Walkie-talkie half-duplex communication-এর সহজ উদাহরণ। একজন কথা বলার সময় অন্যজন শুনে, পরে অন্যজন কথা বলে।
+\end{examplebox}
+
+\subsection{Full-duplex Mode}
+
+\begin{definitionbox}{Full-duplex Mode}
+যে transmission mode-এ data একই সময়ে দুই direction-এ আদান-প্রদান করা যায়, তাকে full-duplex mode বলা হয়।
+\end{definitionbox}
+
+Full-duplex mode আধুনিক communication-এ খুব গুরুত্বপূর্ণ, কারণ এতে sender ও receiver একই সময়ে data পাঠাতে ও গ্রহণ করতে পারে। ফলে communication দ্রুত ও স্বাভাবিক হয়।
+
+\begin{examplebox}{উদাহরণ}
+Mobile phone call, video call এবং modern network communication full-duplex communication-এর উদাহরণ।
+\end{examplebox}
+
+\begin{figure}[H]
 \centering
-\textbf{Tree diagram placeholder: Data Transmission}\\[4pt]
-Data Transmission\\
-$\rightarrow$ Method: Parallel, Serial\\
-$\rightarrow$ Serial Synchronization: Asynchronous, Synchronous, Isochronous\\
-$\rightarrow$ Direction Mode: Simplex, Half Duplex, Full Duplex\\
-$\rightarrow$ Receiver-based Mode: Unicast, Broadcast, Multicast
+\IfFileExists{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.7cm}
+Simplex: A $\longrightarrow$ B\\[10pt]
+Half-duplex: A $\longleftrightarrow$ B \quad One at a time\\[10pt]
+Full-duplex: A $\Longleftrightarrow$ B \quad Same time
+\vspace{0.7cm}
 }}
-\end{center}
+}
+\caption{সিমপ্লেক্স, হাফ-ডুপ্লেক্স ও ফুল-ডুপ্লেক্স মোড}
+\end{figure}
 
-\begin{definitionbox}{Parallel transmission}
-যে পদ্ধতিতে একটি character বা data word-এর একাধিক bit একই সময়ে একাধিক line দিয়ে গন্তব্যে পাঠানো হয়, তাকে parallel transmission বলা হয়। এটি কাছাকাছি ডিভাইসের জন্য দ্রুত হলেও বেশি line দরকার হয়।
-\end{definitionbox}
-
-\begin{definitionbox}{Serial transmission}
-যে পদ্ধতিতে bit-গুলো একটির পর একটি ধারাবাহিকভাবে একটি channel দিয়ে পাঠানো হয়, তাকে serial transmission বলা হয়। দূরবর্তী যোগাযোগে এটি বেশি ব্যবহারযোগ্য।
-\end{definitionbox}
+\subsection{Simplex, Half-duplex ও Full-duplex-এর পার্থক্য}
 
 \begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\begin{tabular}{|p{0.20\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
 \hline
-\textbf{ভিত্তি} & \textbf{Parallel} & \textbf{Serial} \\
+\textbf{বিষয়} & \textbf{Simplex} & \textbf{Half-duplex} & \textbf{Full-duplex} \\
 \hline
-Bit flow & একসাথে একাধিক bit & একটির পর একটি bit \\
+Direction & একদিকে & দুইদিকে & দুইদিকে \\
 \hline
-দূরত্ব & কম দূরত্বে সুবিধাজনক & বেশি দূরত্বে সুবিধাজনক \\
+Same time communication & সম্ভব নয় & সম্ভব নয় & সম্ভব \\
 \hline
-ব্যয় & line বেশি, ব্যয় বেশি & line কম, ব্যয় কম \\
+Sender/Receiver ভূমিকা & নির্দিষ্ট & পালাক্রমে বদলাতে পারে & একই সাথে উভয় কাজ করতে পারে \\
 \hline
-উদাহরণ & internal bus, পুরনো printer port & USB, network link, modem communication \\
+উদাহরণ & TV/Radio broadcast & Walkie-talkie & Mobile call, video call \\
+\hline
+ব্যবহার & one-way communication & পালাক্রমিক communication & real-time interactive communication \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Synchronous transmission আর full duplex একই জিনিস নয়। Synchronous হলো timing/synchronization-এর পদ্ধতি; full duplex হলো একই সময়ে দুই দিকে data flow-এর mode।
+\begin{mistakebox}{Common mistake}
+Half-duplex ও full-duplex দুটোতেই data দুইদিকে যেতে পারে। পার্থক্য হলো half-duplex-এ একই সময়ে দুইদিকে যায় না, কিন্তু full-duplex-এ একই সময়ে দুইদিকে data আদান-প্রদান হয়।
 \end{mistakebox}
+
+\subsection{Data Delivery Mode: Unicast, Broadcast ও Multicast}
+
+Data transmission-এ কখনো data এক receiver-এর কাছে যায়, কখনো network-এর সব receiver-এর কাছে যায়, আবার কখনো নির্দিষ্ট group-এর কাছে যায়। এই ভিত্তিতে delivery mode তিন ধরনের:
+
+\begin{itemize}
+\item Unicast
+\item Broadcast
+\item Multicast
+\end{itemize}
+
+\subsection{Unicast}
+
+\begin{definitionbox}{Unicast}
+এক sender থেকে এক নির্দিষ্ট receiver-এর কাছে data পাঠানোর পদ্ধতিকে unicast বলা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+একজন বন্ধুকে email পাঠানো, এক ব্যক্তিকে WhatsApp message পাঠানো, একটি device থেকে নির্দিষ্ট server-এ request পাঠানো—unicast communication-এর উদাহরণ।
+\end{examplebox}
+
+\subsection{Broadcast}
+
+\begin{definitionbox}{Broadcast}
+এক sender থেকে network-এর সকল receiver-এর কাছে data পাঠানোর পদ্ধতিকে broadcast বলা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+TV broadcast, radio broadcast এবং local network-এ broadcast message—broadcast communication-এর উদাহরণ।
+\end{examplebox}
+
+\subsection{Multicast}
+
+\begin{definitionbox}{Multicast}
+এক sender থেকে নির্দিষ্ট একটি receiver group-এর কাছে data পাঠানোর পদ্ধতিকে multicast বলা হয়।
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+একটি online class link নির্দিষ্ট group-এর শিক্ষার্থীদের কাছে পাঠানো, group video streaming, IPTV multicast—multicast communication-এর উদাহরণ।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/unicast_broadcast_multicast.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/unicast_broadcast_multicast.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.7cm}
+Unicast: One Sender $\longrightarrow$ One Receiver\\[10pt]
+Broadcast: One Sender $\longrightarrow$ All Receivers\\[10pt]
+Multicast: One Sender $\longrightarrow$ Selected Group
+\vspace{0.7cm}
+}}
+}
+\caption{Unicast, Broadcast ও Multicast}
+\end{figure}
+
+\subsection{Unicast, Broadcast ও Multicast-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Unicast} & \textbf{Broadcast} & \textbf{Multicast} \\
+\hline
+Receiver সংখ্যা & একজন নির্দিষ্ট receiver & network-এর সবাই & নির্দিষ্ট group \\
+\hline
+Data flow & One-to-one & One-to-all & One-to-many selected \\
+\hline
+Efficiency & নির্দিষ্ট communication-এ efficient & সবার জন্য দরকার হলে efficient & group communication-এ efficient \\
+\hline
+উদাহরণ & personal email/message & TV/radio broadcast & online class group stream \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Transmission mode এবং delivery mode এক নয়। Simplex/Half-duplex/Full-duplex direction বোঝায়, আর Unicast/Broadcast/Multicast receiver group বোঝায়।
+\end{boardbox}
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Parallel transmission কী?}
+যে transmission পদ্ধতিতে একাধিক bit একই সময়ে আলাদা আলাদা line বা channel দিয়ে পাঠানো হয়, তাকে parallel transmission বলা হয়। এতে speed বেশি হলেও একাধিক line লাগে, তাই cost বেশি এবং long distance-এ synchronization problem হতে পারে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Serial transmission কেন long distance-এ উপযোগী?}
+Serial transmission-এ data bit-by-bit একই channel দিয়ে পাঠানো হয়। এতে line কম লাগে, cost কম হয় এবং long distance communication সহজ হয়। তাই modern network, USB, Ethernet ও internet communication-এ serial transmission বেশি ব্যবহৃত হয়।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Asynchronous transmission কী?}
+যে serial transmission পদ্ধতিতে data character বা small unit আকারে পাঠানো হয় এবং প্রতিটি unit-এর শুরুতে start bit ও শেষে stop bit থাকে, তাকে asynchronous transmission বলা হয়। এতে sender ও receiver-এর continuous clock synchronization প্রয়োজন হয় না।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: Simplex ও Full-duplex}
+Simplex mode-এ data শুধু একদিকে যায়; receiver data পাঠাতে পারে না। কিন্তু full-duplex mode-এ একই সময়ে দুই direction-এ data আদান-প্রদান করা যায়। TV broadcast simplex-এর উদাহরণ, আর mobile phone call full-duplex-এর উদাহরণ।
+\end{boardbox}
+
+\subsection{Brainstorming Critical Question}
+
+\begin{practicebox}
+একটি কলেজে online class নেওয়া হয়। শিক্ষক live video class নেন, শিক্ষার্থীরা chat করে প্রশ্ন করে, আবার class recording server-এ upload করা হয়।
+
+\begin{enumerate}
+\item ক. Serial transmission কী?
+\item খ. Asynchronous transmission-এ start bit ও stop bit কেন দরকার?
+\item গ. উদ্দীপকে live class-এর ক্ষেত্রে কোন transmission timing ধারণা বেশি গুরুত্বপূর্ণ? ব্যাখ্যা কর।
+\item ঘ. শিক্ষক ও শিক্ষার্থীদের live interaction full-duplex communication-এর সাথে কতটা সম্পর্কযুক্ত? বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{recapbox}
+\begin{itemize}
+\item Data transmission হলো এক device থেকে অন্য device-এ data পাঠানোর প্রক্রিয়া।
+\item Parallel transmission-এ একাধিক bit একই সময়ে যায়।
+\item Serial transmission-এ bit একটির পর একটি যায়।
+\item Asynchronous transmission-এ start bit ও stop bit থাকে।
+\item Synchronous transmission-এ data block/frame আকারে যায়।
+\item Isochronous transmission-এ fixed time interval বজায় রাখা গুরুত্বপূর্ণ।
+\item Simplex হলো one-way communication।
+\item Half-duplex হলো two-way but one at a time।
+\item Full-duplex হলো two-way at the same time।
+\item Unicast one-to-one, Broadcast one-to-all, Multicast one-to-selected group।
+\end{itemize}
+\end{recapbox}
+
+\subsection{অনুশীলন}
+
+\begin{practicebox}
+\textbf{MCQ}
+\begin{enumerate}
+\item Parallel transmission-এ data কীভাবে পাঠানো হয়?\\
+ক. একটির পর একটি bit \quad খ. একাধিক bit একই সময়ে \quad গ. শুধু wireless মাধ্যমে \quad ঘ. শুধু audio signal হিসেবে
+
+\item Serial transmission-এ data কীভাবে যায়?\\
+ক. একাধিক line দিয়ে একই সময়ে \quad খ. bit-by-bit \quad গ. শুধু broadcast আকারে \quad ঘ. কোনো medium ছাড়া
+
+\item Asynchronous transmission-এ কোন bit ব্যবহৃত হয়?\\
+ক. Start bit ও Stop bit \quad খ. Only parity bit \quad গ. IP bit \quad ঘ. Cloud bit
+
+\item Live video class-এ timing বজায় রাখার জন্য কোন transmission ধারণা বেশি সম্পর্কযুক্ত?\\
+ক. Asynchronous \quad খ. Isochronous \quad গ. Simplex \quad ঘ. Broadcast only
+
+\item Walkie-talkie কোন mode-এর উদাহরণ?\\
+ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Multicast
+
+\item Mobile phone call কোন mode-এর উদাহরণ?\\
+ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Broadcast
+
+\item একজন sender একজন receiver-কে message পাঠালে সেটি কী?\\
+ক. Broadcast \quad খ. Multicast \quad গ. Unicast \quad ঘ. Duplex
+\end{enumerate}
+
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+\begin{enumerate}
+\item Data transmission কী?
+\item Parallel ও Serial transmission-এর মধ্যে পার্থক্য লেখ।
+\item Asynchronous transmission কী? Start bit ও Stop bit-এর ভূমিকা লেখ।
+\item Synchronous transmission কেন large data transfer-এ উপযোগী?
+\item Isochronous transmission কোথায় ব্যবহৃত হয়?
+\item Simplex, Half-duplex ও Full-duplex-এর পার্থক্য লেখ।
+\item Unicast, Broadcast ও Multicast-এর পার্থক্য লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল প্রশ্ন}
+একটি প্রতিষ্ঠানে online meeting, file sharing এবং live training session পরিচালিত হয়। Meeting-এ সবাই একই সময়ে কথা শুনতে ও বলতে পারে, file server থেকে নির্দিষ্ট user file download করে, আর live training নির্দিষ্ট group-এর কাছে stream করা হয়।
+
+\begin{enumerate}
+\item ক. Transmission mode কী?
+\item খ. Serial transmission long distance communication-এ উপযোগী কেন?
+\item গ. উদ্দীপকে full-duplex ও unicast communication শনাক্ত করে ব্যাখ্যা কর।
+\item ঘ. live training session multicast ও isochronous transmission-এর সাথে কীভাবে সম্পর্কযুক্ত? বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}

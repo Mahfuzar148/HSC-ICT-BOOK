@@ -4,210 +4,476 @@
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item কমিউনিকেশন সিস্টেম, ডেটা কমিউনিকেশন এবং ডেটা সিগন্যালের পার্থক্য ব্যাখ্যা করতে।
-\item একটি সাধারণ কমিউনিকেশন মডেলের উপাদানগুলো চিহ্নিত করতে।
-\item Analog signal ও Digital signal-এর মৌলিক পার্থক্য লিখতে।
-\item ব্যান্ডউইডথ, ডেটা রেট এবং transmission capacity-এর সম্পর্ক বুঝতে।
-\item Narrow band, voice band ও broadband সম্পর্কে board-style উত্তর লিখতে।
+\item কমিউনিকেশন, কমিউনিকেশন সিস্টেম ও ডেটা কমিউনিকেশন ব্যাখ্যা করতে।
+\item কমিউনিকেশন সিস্টেমের প্রধান উপাদানগুলো শনাক্ত করতে।
+\item Data, Information ও Signal-এর পার্থক্য বুঝতে।
+\item Analog signal ও Digital signal-এর বৈশিষ্ট্য তুলনা করতে।
+\item Bandwidth, Data rate ও Latency-এর সম্পর্ক ব্যাখ্যা করতে।
+\item Narrow band, Voice band ও Broadband সম্পর্কে exam-standard উত্তর লিখতে।
+\item Bandwidth calculation করতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{কমিউনিকেশন সিস্টেমের ধারণা}
+\subsection{বাস্তব জীবনের শুরু}
 
+ধরা যাক, একজন শিক্ষার্থী laptop দিয়ে তার বন্ধুকে একটি email পাঠাল। Email পাঠানোর সময় শিক্ষার্থীর laptop হলো \textbf{Sender}, email-এর লেখা ও attachment হলো \textbf{Message/Data}, internet connection হলো \textbf{Medium}, আর email পাঠানোর নিয়ম হলো \textbf{Protocol}। বন্ধুর mobile বা laptop হলো \textbf{Receiver/Destination}।
+
+এই পুরো প্রক্রিয়াটিই একটি communication system-এর বাস্তব উদাহরণ। অর্থাৎ ICT-তে communication system মানে শুধু কথা বলা নয়; বরং যেকোনো data, text, image, audio, video বা file এক device থেকে অন্য device-এ পাঠানোর সম্পূর্ণ ব্যবস্থা।
+
+\begin{keypointbox}{মূল ধারণা}
+Communication system বুঝতে ৫টি প্রশ্ন মনে রাখলেই concept পরিষ্কার হয়:
 \begin{itemize}
-\item কমিউনিকেশন কী
-\item কমিউনিকেশন সিস্টেম কী
-\item তথ্য প্রেরণ ও গ্রহণের ধারণা
-\item ডেটা ও সিগন্যালের সম্পর্ক
-\item Analog signal ও Digital signal
+\item কে পাঠাচ্ছে? — Sender
+\item কী পাঠাচ্ছে? — Message/Data
+\item কোন পথে পাঠাচ্ছে? — Medium
+\item কোন নিয়মে পাঠাচ্ছে? — Protocol
+\item কে গ্রহণ করছে? — Receiver
 \end{itemize}
+\end{keypointbox}
 
-\subsection{কমিউনিকেশন মডেল}
+\subsection{কমিউনিকেশন}
 
-\begin{itemize}
-\item Source System
-\item Transmitter
-\item Transmission System / Medium
-\item Receiver
-\item Destination System
-\end{itemize}
-
-\subsection{ডেটা কমিউনিকেশনের ধারণা}
-
-\begin{itemize}
-\item Data communication কী
-\item ডেটা প্রেরণ ও গ্রহণ
-\item ডেটা কমিউনিকেশনের প্রয়োজনীয়তা
-\item Sender / Source, Receiver / Destination, Medium, Message, Protocol
-\end{itemize}
-
-\subsection{ব্যান্ডউইডথ}
-
-\begin{itemize}
-\item ব্যান্ডউইডথের ধারণা
-\item ডেটা প্রেরণের ক্ষমতা
-\item bps, Kbps, Mbps, Gbps
-\item Narrow Band, Voice Band, Broadband
-\end{itemize}
-
-\subsection{ডেটা ও সিগন্যাল}
-
-\begin{definitionbox}{ডেটা}
-ডেটা হলো এমন কাঁচা বা প্রক্রিয়াজাত তথ্য, যা কম্পিউটার বা মানুষ ব্যবহার করে সিদ্ধান্ত, গণনা বা communication-এর জন্য কাজে লাগাতে পারে।
+\begin{definitionbox}{কমিউনিকেশন}
+এক ব্যক্তি, যন্ত্র বা সিস্টেম থেকে অন্য ব্যক্তি, যন্ত্র বা সিস্টেমে তথ্য, ধারণা, বার্তা বা ডেটা আদান-প্রদানের প্রক্রিয়াকে কমিউনিকেশন বলা হয়।
 \end{definitionbox}
 
-\begin{definitionbox}{সিগন্যাল}
-সিগন্যাল হলো electrical, optical বা electromagnetic পরিবর্তন, যার মাধ্যমে তথ্য এক স্থান থেকে অন্য স্থানে প্রেরণ করা হয়।
+কমিউনিকেশন মানুষের মধ্যে হতে পারে, আবার যন্ত্রের মধ্যেও হতে পারে। যেমন—মানুষ mobile phone দিয়ে কথা বলে, computer server থেকে website data পাঠায়, router data packet forward করে, cloud server file সংরক্ষণ ও সরবরাহ করে। ICT-তে communication সাধারণত signal-এর মাধ্যমে সম্পন্ন হয়।
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+Mobile call, SMS, email, online class, video conference, website browsing, ATM transaction, bKash/Nagad transaction, cloud storage-এ file upload—সবই communication-এর উদাহরণ।
+\end{examplebox}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+“Communication কী?” প্রশ্নে শুধু তথ্য আদান-প্রদান বললে উত্তর ছোট হয়ে যায়। ভালো উত্তর লিখতে হলে sender, receiver, message এবং medium-এর ধারণা যুক্ত করা উচিত।
+\end{boardbox}
+
+\subsection{কমিউনিকেশন সিস্টেম}
+
+\begin{definitionbox}{কমিউনিকেশন সিস্টেম}
+Sender থেকে receiver-এর কাছে message বা data পাঠানোর জন্য sender, receiver, message, medium, protocol এবং প্রয়োজনীয় device নিয়ে গঠিত সম্পূর্ণ ব্যবস্থাকে communication system বলা হয়।
+\end{definitionbox}
+
+একটি communication system সফল হতে হলে data সঠিকভাবে, নির্দিষ্ট সময়ে এবং নির্ভরযোগ্যভাবে receiver-এর কাছে পৌঁছাতে হবে। Data যদি ভুলভাবে পৌঁছে, দেরিতে পৌঁছে, মাঝপথে হারিয়ে যায় বা unauthorized ব্যক্তি access করে, তাহলে communication system কার্যকর হয় না।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/communication_process_flow_diagram.png}{
+\includegraphics[width=0.95\textwidth]{chapters/Chapter02/images/communication_process_flow_diagram.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.8cm}
+Sender \quad $\longrightarrow$ \quad Encoder / Transmitter \quad $\longrightarrow$ \quad Medium \quad $\longrightarrow$ \quad Decoder / Receiver \quad $\longrightarrow$ \quad Destination
+\vspace{0.8cm}
+}}
+}
+\caption{সাধারণ কমিউনিকেশন মডেল}
+\end{figure}
+
+\begin{keypointbox}{কমিউনিকেশন সিস্টেমের উপাদান}
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.62\textwidth}|}
+\hline
+\textbf{উপাদান} & \textbf{কাজ} \\
+\hline
+Sender & যে ব্যক্তি, device বা system data পাঠায়। \\
+\hline
+Message & যে data, information, text, image, audio বা video পাঠানো হয়। \\
+\hline
+Medium & যে পথ দিয়ে data sender থেকে receiver-এর কাছে যায়। যেমন—cable, fiber, radio wave, internet। \\
+\hline
+Receiver & যে ব্যক্তি, device বা system data গ্রহণ করে। \\
+\hline
+Protocol & data আদান-প্রদানের নিয়ম, format ও procedure। \\
+\hline
+\end{tabular}
+\end{center}
+\end{keypointbox}
+
+\subsection{কমিউনিকেশন সিস্টেমের কার্যপ্রণালি}
+
+কমিউনিকেশন সিস্টেমে sender প্রথমে message তৈরি করে। Message সরাসরি medium দিয়ে যেতে পারে না; তাই অনেক ক্ষেত্রে message-কে signal-এ রূপান্তর করা হয়। এই কাজ encoder বা transmitter করে। এরপর signal medium দিয়ে receiver-এর দিকে যায়। Receiver side-এ decoder signal-কে আবার বুঝতে পারার মতো data বা information-এ রূপান্তর করে।
+
+\begin{examplebox}{Mobile message example}
+যখন একজন শিক্ষার্থী mobile থেকে message পাঠায়, তখন message digital data হিসেবে mobile network-এ যায়। Mobile network সেই data signal আকারে বহন করে। Receiver-এর mobile signal গ্রহণ করে আবার readable message হিসেবে দেখায়।
+\end{examplebox}
+
+\begin{mistakebox}{Common mistake}
+অনেকে Sender এবং Transmitter-কে একই মনে করে। Sender হলো যে data পাঠায়; Transmitter হলো যে data বা message-কে transmission-এর উপযোগী signal-এ রূপান্তর করে পাঠায়।
+\end{mistakebox}
+
+\subsection{ডেটা কমিউনিকেশন}
+
+\begin{definitionbox}{ডেটা কমিউনিকেশন}
+Digital বা analog data-কে নির্দিষ্ট communication medium ও protocol ব্যবহার করে এক device থেকে অন্য device-এ পাঠানো ও গ্রহণ করার প্রক্রিয়াকে data communication বলা হয়।
+\end{definitionbox}
+
+Data communication আধুনিক ICT-এর ভিত্তি। Internet, LAN, WAN, mobile network, online banking, cloud computing, e-mail, video call—সবকিছু data communication-এর উপর নির্ভরশীল। Computer network-এ data communication সাধারণত digital signal, protocol এবং network device-এর সাহায্যে সম্পন্ন হয়।
+
+\begin{keypointbox}{ভালো ডেটা কমিউনিকেশনের বৈশিষ্ট্য}
+\begin{itemize}
+\item \textbf{Delivery}: data সঠিক receiver-এর কাছে পৌঁছাতে হবে।
+\item \textbf{Accuracy}: data ভুল বা বিকৃত হওয়া যাবে না।
+\item \textbf{Timeliness}: data প্রয়োজনীয় সময়ের মধ্যে পৌঁছাতে হবে।
+\item \textbf{Security}: unauthorized access থেকে data নিরাপদ থাকতে হবে।
+\item \textbf{Reliability}: data loss কম হতে হবে এবং error হলে correction-এর ব্যবস্থা থাকতে হবে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{boardbox}{Exam-standard answer}
+ডেটা কমিউনিকেশন হলো এমন একটি প্রক্রিয়া যার মাধ্যমে digital বা analog data নির্দিষ্ট medium ও protocol ব্যবহার করে এক device থেকে অন্য device-এ পাঠানো ও গ্রহণ করা হয়। এতে sender, receiver, message, medium এবং protocol থাকে। যেমন—email পাঠানো, mobile message, online class ইত্যাদি।
+\end{boardbox}
+
+\subsection{Data, Information ও Signal}
+
+\begin{definitionbox}{Data}
+Data হলো কাঁচা fact, symbol, number, text, image, audio বা video, যা processing-এর আগে বা পরে communication-এ ব্যবহৃত হতে পারে।
+\end{definitionbox}
+
+\begin{definitionbox}{Information}
+Data প্রক্রিয়াকরণের ফলে যে অর্থপূর্ণ ফলাফল পাওয়া যায়, তাকে information বলা হয়।
+\end{definitionbox}
+
+\begin{definitionbox}{Signal}
+Signal হলো electrical, optical বা electromagnetic পরিবর্তন, যার মাধ্যমে data এক স্থান থেকে অন্য স্থানে বহন করা হয়।
 \end{definitionbox}
 
 \begin{center}
-\begin{tabular}{|p{0.26\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\begin{tabular}{|p{0.20\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{ডেটা} & \textbf{সিগন্যাল} \\
+\textbf{বিষয়} & \textbf{Data} & \textbf{Information} & \textbf{Signal} \\
 \hline
-প্রকৃতি & তথ্যের মূল রূপ & তথ্য বহনের রূপ \\
+প্রকৃতি & কাঁচা উপাদান & অর্থপূর্ণ ফলাফল & data বহনের রূপ \\
 \hline
-ব্যবহার & সংরক্ষণ, বিশ্লেষণ & প্রেরণ, গ্রহণ \\
+ব্যবহার & processing ও storage & decision making & transmission \\
 \hline
-উদাহরণ & text, image, file, number & electrical pulse, light, radio wave \\
+উদাহরণ & 85, Rifat, image file & GPA result, report & electric pulse, light wave \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Analog signal ও Digital signal}
-
-\begin{definitionbox}{Analog signal}
-Analog signal হলো এমন সিগন্যাল, যার মান সময়ের সঙ্গে ধীরে ধীরে continuousভাবে পরিবর্তিত হয়।
-\end{definitionbox}
-
-\begin{definitionbox}{Digital signal}
-Digital signal হলো এমন সিগন্যাল, যার মান নির্দিষ্ট discrete স্তরে থাকে, সাধারণত 0 এবং 1 দিয়ে প্রকাশ করা হয়।
-\end{definitionbox}
-
-\begin{keypointbox}{পার্থক্য}
-\begin{itemize}
-\item Analog signal continuous; digital signal discrete.
-\item Analog signal noise-এ বেশি প্রভাবিত হয়; digital signal তুলনামূলকভাবে স্থিতিশীল।
-\item Computer communication-এ digital signal বেশি ব্যবহৃত হয়।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{বাস্তব উদাহরণ}
-পুরনো radio broadcast analog signal-এর উদাহরণ। অন্যদিকে computer network, mobile data, USB communication এবং online chat digital signal-এর উপর বেশি নির্ভরশীল।
+\begin{examplebox}{সহজ উদাহরণ}
+পরীক্ষায় একজন শিক্ষার্থীর subject-wise নম্বরগুলো হলো data। সেই নম্বর থেকে GPA বের করলে সেটি information। আর এই result online server থেকে mobile-এ পাঠানোর সময় electrical বা electromagnetic signal ব্যবহৃত হয়।
 \end{examplebox}
 
-\subsection{ডেটা কমিউনিকেশন}
+\subsection{Analog Signal ও Digital Signal}
 
-ডেটা কমিউনিকেশন হলো sender ও receiver-এর মধ্যে device, medium এবং protocol ব্যবহার করে data আদান-প্রদানের প্রক্রিয়া। এটি modern ICT-এর ভিত্তি। internet, LAN, mobile network, cloud service, online payment—সব ক্ষেত্রেই data communication কাজ করে।
-
-\begin{definitionbox}{ডেটা কমিউনিকেশন}
-ডিজিটাল বা অ্যানালগ data-কে যোগাযোগ মাধ্যমের সাহায্যে এক স্থান থেকে অন্য স্থানে প্রেরণ ও গ্রহণ করার প্রক্রিয়াকে ডেটা কমিউনিকেশন বলা হয়।
+\begin{definitionbox}{Analog signal}
+যে signal-এর মান সময়ের সাথে continuousভাবে পরিবর্তিত হয়, তাকে analog signal বলা হয়।
 \end{definitionbox}
 
-\begin{keypointbox}{ডেটা কমিউনিকেশনের শর্ত}
+Analog signal সাধারণত smooth wave আকারে থাকে। মানুষের কণ্ঠস্বর, পুরনো telephone signal এবং radio wave analog signal-এর উদাহরণ হতে পারে। Analog signal continuous হওয়ায় noise বা disturbance দ্বারা বেশি প্রভাবিত হতে পারে।
+
+\begin{definitionbox}{Digital signal}
+যে signal-এর মান discrete বা নির্দিষ্ট স্তরে পরিবর্তিত হয় এবং সাধারণত 0 ও 1 দিয়ে প্রকাশ করা হয়, তাকে digital signal বলা হয়।
+\end{definitionbox}
+
+Digital signal computer system-এর জন্য বেশি উপযোগী, কারণ computer binary system অর্থাৎ 0 ও 1 ব্যবহার করে কাজ করে। Digital signal noise-এর বিরুদ্ধে তুলনামূলক বেশি reliable এবং error detection/correction সহজ।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.8cm}
+Analog Signal\\[6pt]
+Smooth Wave\\[14pt]
+Digital Signal\\[6pt]
+0 \quad 1 \quad 0 \quad 1 \quad 1 \quad 0
+\vspace{0.8cm}
+}}
+}
+\caption{অ্যানালগ ও ডিজিটাল সিগন্যালের ধারণা}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Analog Signal} & \textbf{Digital Signal} \\
+\hline
+প্রকৃতি & Continuous & Discrete \\
+\hline
+মান & অসংখ্য intermediate value থাকতে পারে & সাধারণত 0 ও 1 দ্বারা প্রকাশিত \\
+\hline
+Wave shape & Smooth wave & Pulse বা step-like wave \\
+\hline
+Noise effect & তুলনামূলক বেশি প্রভাবিত হয় & তুলনামূলক কম প্রভাবিত হয় \\
+\hline
+ব্যবহার & পুরনো radio/telephone system & computer, internet, mobile data \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{mistakebox}{Common mistake}
+Digital signal noise-এর বিরুদ্ধে reliable হলেও এটি সবসময় error-free নয়। বাস্তবে error detection, correction, encoding এবং protocol দরকার হয়।
+\end{mistakebox}
+
+\subsection{কমিউনিকেশন সিস্টেমের সংক্ষিপ্ত ইতিহাস}
+
+Communication system ধীরে ধীরে উন্নত হয়েছে। প্রথমে মানুষ চিঠি, সংকেত ও telegraph ব্যবহার করত। পরে telephone, radio, television, computer network, internet, Wi-Fi, mobile communication এবং cloud computing communication ব্যবস্থাকে দ্রুত ও বিশ্বব্যাপী করেছে।
+
+\begin{center}
+\begin{tabular}{|p{0.18\textwidth}|p{0.30\textwidth}|p{0.36\textwidth}|}
+\hline
+\textbf{সময়/ধাপ} & \textbf{ঘটনা/প্রযুক্তি} & \textbf{গুরুত্ব} \\
+\hline
+Telegraph যুগ & Electric signal দিয়ে বার্তা পাঠানো & দূরবর্তী communication দ্রুত হয়। \\
+\hline
+Telephone যুগ & Voice communication & সরাসরি কথা বলা সম্ভব হয়। \\
+\hline
+Radio/TV যুগ & Wireless broadcasting & এক sender থেকে অনেক receiver-এ বার্তা যায়। \\
+\hline
+Computer network & Device-to-device data sharing & LAN, WAN ও internet-এর ভিত্তি তৈরি হয়। \\
+\hline
+Mobile network & Cellular communication & চলমান অবস্থায় voice ও data service সম্ভব হয়। \\
+\hline
+Cloud যুগ & Internet-based storage/service & যেকোনো স্থান থেকে resource ব্যবহার সম্ভব হয়। \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{keypointbox}{গুরুত্বপূর্ণ অবদানকারী}
 \begin{itemize}
-\item sender ও receiver থাকতে হবে।
-\item transmission medium থাকতে হবে।
-\item message ও protocol থাকতে হবে।
-\item timing, accuracy ও security বজায় রাখতে হবে।
+\item \textbf{Claude Shannon}: Information theory ও communication theory-এর ভিত্তি তৈরিতে গুরুত্বপূর্ণ অবদান রাখেন।
+\item \textbf{Alexander Graham Bell}: Telephone উদ্ভাবনের সাথে যুক্ত অন্যতম গুরুত্বপূর্ণ ব্যক্তি।
+\item \textbf{Vint Cerf ও Robert Kahn}: TCP/IP ধারণা ও Internet architecture উন্নয়নে গুরুত্বপূর্ণ অবদান রাখেন।
+\item \textbf{Robert Metcalfe}: Ethernet প্রযুক্তির উন্নয়নে গুরুত্বপূর্ণ অবদান রাখেন।
 \end{itemize}
 \end{keypointbox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-“কমিউনিকেশন সিস্টেমের উপাদানগুলো চিহ্নিত করো” বা “ডেটা ও সিগন্যালের মধ্যে পার্থক্য লেখো”—এই ধরনের প্রশ্নে প্রতিটি উপাদানের কাজ ১ লাইনে লিখলে উত্তর পরিপূর্ণ হয়।
+\begin{boardbox}{পরীক্ষায় কীভাবে লিখবে}
+History বা contributor প্রশ্ন সাধারণত ছোট আকারে আসে। তাই বড় paragraph না লিখে নাম, অবদান এবং প্রযুক্তি—এই তিনটি বিষয় table আকারে লিখলে উত্তর পরিষ্কার হয়।
 \end{boardbox}
 
 \subsection{ব্যান্ডউইডথ}
 
-ব্যান্ডউইডথ বলতে কোনো communication channel কত দ্রুত data বহন করতে পারে, সেই সক্ষমতাকে বোঝায়। অনেক শিক্ষার্থী bandwith-কে শুধু frequency range ভাবে, কিন্তু HSC ICT-তে data communication context-এ bandwidth সাধারণত data transfer capacity বোঝায়।
-
-\begin{definitionbox}{ব্যান্ডউইডথ}
-ব্যান্ডউইডথ হলো নির্দিষ্ট সময়ের মধ্যে কোনো communication channel দিয়ে কত পরিমাণ data transfer করা যায়, তার পরিমাপ।
+\begin{definitionbox}{Bandwidth}
+কোনো communication channel নির্দিষ্ট সময়ে কত পরিমাণ data বহন করতে পারে, সেই ক্ষমতাকে bandwidth বলা হয়।
 \end{definitionbox}
 
-\begin{keypointbox}{ব্যান্ডউইডথের একক}
-\begin{itemize}
-\item bit per second (bps)
-\item kilobit per second (Kbps)
-\item megabit per second (Mbps)
-\item gigabit per second (Gbps)
-\end{itemize}
+Digital communication-এ bandwidth সাধারণত bits per second বা bps দিয়ে প্রকাশ করা হয়। Bandwidth বেশি হলে একই সময়ে বেশি data পাঠানো সম্ভব হয়। তবে bandwidth বেশি হলেই সবসময় user experience ভালো হবে—এমন নয়; latency, server capacity, network congestion, signal strength এবং device performance-ও speed-এর উপর প্রভাব ফেলে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}
+}{
+\fbox{
+\parbox{0.92\textwidth}{
+\centering
+\vspace{0.8cm}
+Low Bandwidth \quad $\longrightarrow$ \quad Small Data Flow\\[12pt]
+High Bandwidth \quad $\longrightarrow$ \quad Large Data Flow
+\vspace{0.8cm}
+}}
+}
+\caption{কম ও বেশি ব্যান্ডউইডথের ধারণা}
+\end{figure}
+
+\begin{keypointbox}{Bandwidth-এর একক}
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{একক} & \textbf{পূর্ণরূপ} & \textbf{মান} \\
+\hline
+bps & bits per second & প্রতি সেকেন্ডে bit \\
+\hline
+Kbps & kilobits per second & 1000 bps \\
+\hline
+Mbps & megabits per second & 1000 Kbps \\
+\hline
+Gbps & gigabits per second & 1000 Mbps \\
+\hline
+\end{tabular}
+\end{center}
 \end{keypointbox}
 
+\subsection{Bandwidth, Data Rate ও Latency}
+
+Bandwidth, data rate এবং latency কাছাকাছি concept হলেও এক নয়।
+
 \begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.32\textwidth}|}
+\begin{tabular}{|p{0.22\textwidth}|p{0.58\textwidth}|}
 \hline
-\textbf{Band} & \textbf{ধারণা} & \textbf{উদাহরণ} \\
+\textbf{Term} & \textbf{ব্যাখ্যা} \\
 \hline
-Narrow band & কম data rate, কম capacity & পুরনো low-speed communication \\
+Bandwidth & communication channel-এর সর্বোচ্চ data বহন ক্ষমতা। \\
 \hline
-Voice band & মানুষের কণ্ঠস্বর পাঠানোর উপযোগী & telephone system \\
+Data rate & বাস্তবে প্রতি সেকেন্ডে কত data transfer হচ্ছে। \\
 \hline
-Broadband & উচ্চ data rate, বৃহৎ capacity & fiber internet, modern mobile data \\
+Latency & data sender থেকে receiver-এ পৌঁছাতে যে বিলম্ব হয়। \\
+\hline
+Throughput & বাস্তবে সফলভাবে transfer হওয়া data-এর পরিমাণ। \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Bandwidth আর speed একেবারে একই জিনিস নয়। Speed বলতে অনেক সময় ব্যবহারকারীর অনুভূত দ্রুততা বোঝায়, কিন্তু bandwidth হলো channel-এর capacity। Latency ও congestion থাকলে high bandwidth থাকলেও experience ধীর হতে পারে।
+\begin{examplebox}{সহজ তুলনা}
+রাস্তার lane বেশি হলে একসাথে বেশি গাড়ি চলতে পারে—এটি bandwidth-এর মতো। কিন্তু গাড়ির গতি, traffic jam এবং signal delay বাস্তব speed কমাতে পারে—এগুলো data rate ও latency-এর সাথে তুলনীয়।
+\end{examplebox}
+
+\begin{mistakebox}{Common mistake}
+অনেকে bandwidth ও internet speed একই মনে করে। Bandwidth হলো capacity, আর actual speed নির্ভর করে bandwidth, latency, congestion, server response এবং device performance-এর উপর।
 \end{mistakebox}
+
+\subsection{Bandwidth-এর শ্রেণিবিভাগ}
+
+Bandwidth সাধারণত data বহনের ক্ষমতা অনুযায়ী বিভিন্ন ভাগে আলোচনা করা হয়। HSC পর্যায়ে Narrow band, Voice band এবং Broadband বেশি গুরুত্বপূর্ণ।
+
+\begin{center}
+\begin{tabular}{|p{0.23\textwidth}|p{0.32\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{ধারণা} & \textbf{উদাহরণ/ব্যবহার} \\
+\hline
+Narrow band & কম bandwidth; ধীরগতির data communication & Telegraph, low-speed sensor data \\
+\hline
+Voice band & voice communication-এর জন্য উপযোগী bandwidth & Telephone voice communication \\
+\hline
+Broadband & উচ্চ bandwidth; দ্রুত data, audio, video transmission & Fiber internet, cable broadband, 4G/5G \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{boardbox}{বোর্ড ফোকাস}
+Bandwidth-এর শ্রেণিবিভাগ লেখার সময় শুধু নাম লিখলে হবে না। প্রতিটির data বহন ক্ষমতা, ব্যবহার এবং উদাহরণ দিলে উত্তর পূর্ণাঙ্গ হবে।
+\end{boardbox}
+
+\subsection{Bandwidth Calculation}
+
+Data communication-এ bandwidth calculation খুব গুরুত্বপূর্ণ। সাধারণভাবে,
+
+\[
+\text{Bandwidth} = \frac{\text{Total transmitted data}}{\text{Time}}
+\]
+
+\begin{examplebox}{সমাধান ১}
+একটি channel দিয়ে ৪ সেকেন্ডে ৮০০০ bit data পাঠানো হলো। Bandwidth কত?
+
+\[
+\text{Bandwidth} = \frac{8000}{4} = 2000 \text{ bps}
+\]
+
+অতএব, bandwidth = 2000 bps।
+\end{examplebox}
+
+\begin{examplebox}{সমাধান ২}
+একটি file 20,000 bit এবং এটি 10 second-এ transfer হলো।
+
+\[
+\text{Bandwidth} = \frac{20000}{10} = 2000 \text{ bps}
+\]
+
+অতএব, channel-এর data transfer rate = 2000 bps।
+\end{examplebox}
+
+\begin{examplebox}{সমাধান ৩: Byte থেকে bit}
+একটি file-এর size 500 Byte এবং এটি 2 second-এ transfer হলো। Bandwidth কত?
+
+প্রথমে Byte থেকে bit-এ রূপান্তর করতে হবে।
+
+\[
+500 \text{ Byte} = 500 \times 8 = 4000 \text{ bit}
+\]
+
+\[
+\text{Bandwidth} = \frac{4000}{2} = 2000 \text{ bps}
+\]
+
+অতএব, bandwidth = 2000 bps।
+\end{examplebox}
+
+\begin{mistakebox}{Common mistake}
+Bandwidth calculation-এ অনেকেই Byte ও bit গুলিয়ে ফেলে। মনে রাখতে হবে: 1 Byte = 8 bits। প্রশ্নে যদি Byte দেওয়া থাকে, প্রথমে bit-এ convert করতে হবে।
+\end{mistakebox}
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: ডেটা কমিউনিকেশন কী?}
+ডিজিটাল বা অ্যানালগ data-কে নির্দিষ্ট communication medium ও protocol ব্যবহার করে এক device থেকে অন্য device-এ প্রেরণ ও গ্রহণ করার প্রক্রিয়াকে data communication বলা হয়। এতে sender, receiver, message, medium এবং protocol থাকে। যেমন—email পাঠানো, mobile message, online class ইত্যাদি।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Bandwidth কেন গুরুত্বপূর্ণ?}
+Bandwidth গুরুত্বপূর্ণ কারণ এটি নির্ধারণ করে কোনো communication channel নির্দিষ্ট সময়ে কত data বহন করতে পারবে। Bandwidth বেশি হলে audio, video, file transfer এবং internet browsing দ্রুত ও কার্যকর হয়। তবে বাস্তব speed latency, network congestion ও device performance-এর উপরও নির্ভর করে।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: Analog signal ও Digital signal}
+Analog signal continuousভাবে পরিবর্তিত হয়, কিন্তু digital signal discrete value ধারণ করে। Analog signal noise-এ বেশি প্রভাবিত হয়, আর digital signal তুলনামূলকভাবে reliable। পুরনো radio system analog signal ব্যবহার করে, কিন্তু computer network ও internet communication digital signal ব্যবহার করে।
+\end{boardbox}
+
+\subsection{Brainstorming Critical Question}
+
+\begin{practicebox}
+একজন শিক্ষার্থী গ্রামের বাড়ি থেকে online class করছে। তার internet connection 4G হলেও video মাঝে মাঝে আটকে যায়, audio delay হয় এবং file upload হতে সময় লাগে।
+
+\begin{enumerate}
+\item ক. Bandwidth কী?
+\item খ. Digital signal কেন computer communication-এ বেশি ব্যবহৃত হয়?
+\item গ. উদ্দীপকের সমস্যার সাথে bandwidth ও latency-এর সম্পর্ক ব্যাখ্যা কর।
+\item ঘ. শুধু 4G connection থাকলেই ভালো online class নিশ্চিত হয় কি? যুক্তিসহ বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\subsection{১ মিনিটে রিভিশন}
 
 \begin{recapbox}
 \begin{itemize}
-\item কমিউনিকেশন সিস্টেমে source, transmitter, medium, receiver ও destination থাকে।
-\item Data হলো তথ্য, signal হলো তার বহনের রূপ।
-\item Analog continuous, digital discrete।
-\item Bandwidth channel-এর data বহনের ক্ষমতা নির্দেশ করে।
-\item Board answer-এ diagram, definition ও example একসঙ্গে দিলে marks বাড়ে।
+\item Communication হলো তথ্য, বার্তা বা data আদান-প্রদানের প্রক্রিয়া।
+\item Communication system-এর প্রধান উপাদান: Sender, Receiver, Message, Medium, Protocol।
+\item Data হলো কাঁচা উপাদান, Information হলো অর্থপূর্ণ ফলাফল, Signal হলো data বহনের রূপ।
+\item Analog signal continuous, Digital signal discrete।
+\item Digital signal সাধারণত 0 ও 1 দ্বারা প্রকাশ করা হয়।
+\item Bandwidth হলো channel-এর data বহন ক্ষমতা।
+\item Bandwidth বেশি হলেও latency ও congestion থাকলে speed কম মনে হতে পারে।
+\item Bandwidth calculation: Total data ÷ Time।
+\item 1 Byte = 8 bits।
 \end{itemize}
 \end{recapbox}
+
+\subsection{অনুশীলন}
 
 \begin{practicebox}
 \textbf{MCQ}
 \begin{enumerate}
-\item কমিউনিকেশন সিস্টেমে তথ্য গ্রহণকারী অংশ কোনটি?\\
-ক. Source \quad খ. Transmitter \quad গ. Receiver \quad ঘ. Medium
-\item Digital signal সাধারণত কী দিয়ে প্রকাশ করা হয়?\\
-ক. 1 ও 2 \quad খ. A ও B \quad গ. 0 ও 1 \quad ঘ. + ও -
+\item কমিউনিকেশন সিস্টেমে data পাঠায় কোন অংশ?\\
+ক. Receiver \quad খ. Sender \quad গ. Medium \quad ঘ. Noise
+
+\item Digital signal সাধারণত কোন দুটি value দিয়ে প্রকাশ করা হয়?\\
+ক. A ও B \quad খ. 1 ও 2 \quad গ. 0 ও 1 \quad ঘ. X ও Y
+
+\item Bandwidth-এর একক কোনটি?\\
+ক. meter \quad খ. bps \quad গ. volt \quad ঘ. watt
+
+\item ৮০০০ bit data ৪ সেকেন্ডে transfer হলে bandwidth কত?\\
+ক. 500 bps \quad খ. 1000 bps \quad গ. 2000 bps \quad ঘ. 4000 bps
+
+\item Communication system-এ নিয়ম বা procedure নির্দেশ করে কোনটি?\\
+ক. Protocol \quad খ. Receiver \quad গ. Cable \quad ঘ. Noise
+
+\item Analog signal-এর প্রকৃতি কেমন?\\
+ক. Discrete \quad খ. Continuous \quad গ. Binary only \quad ঘ. Packet-based
 \end{enumerate}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item ডেটা কমিউনিকেশনের দুটি শর্ত লেখ।
-\item Bandwidth বলতে কী বোঝায়?
+\item Communication system-এর উপাদানগুলো লেখ।
+\item Data, Information ও Signal-এর মধ্যে পার্থক্য লেখ।
+\item Analog signal ও Digital signal-এর মধ্যে তিনটি পার্থক্য লেখ।
+\item Bandwidth কী? উদাহরণসহ ব্যাখ্যা কর।
+\item Narrow band, Voice band ও Broadband-এর ব্যবহার লেখ।
+\item Bandwidth ও latency-এর মধ্যে পার্থক্য লেখ।
 \end{enumerate}
 
-\textbf{সৃজনশীল অনুশীলন}
-একজন শিক্ষার্থী video class-এ অংশ নিচ্ছে। তার device data-কে signal-এ রূপান্তর করে ISP-এর মাধ্যমে teacher-এর কাছে পাঠাচ্ছে। উদ্দীপকের আলোকে communication system-এর উপাদানগুলো বিশ্লেষণ করো।
+\textbf{সৃজনশীল প্রশ্ন}
+একটি কলেজের শিক্ষার্থীরা online class, email, cloud storage এবং video conference ব্যবহার করে। কিন্তু internet speed কম থাকলে video quality খারাপ হয় এবং file upload দেরিতে হয়।
+
+\begin{enumerate}
+\item ক. Protocol কী?
+\item খ. Signal বলতে কী বোঝায়?
+\item গ. উদ্দীপকে কোন কোন communication system component আছে? ব্যাখ্যা কর।
+\item ঘ. Bandwidth ও latency উদ্দীপকের সমস্যাকে কীভাবে প্রভাবিত করে—বিশ্লেষণ কর।
+\end{enumerate}
 \end{practicebox}
-
-
-\subsection{চিত্র ও পরীক্ষামুখী উপস্থাপন}
-
-\begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{চিত্র placeholder: Data Communication Model}\\[4pt]
-Source/Sender $\rightarrow$ Transmitter $\rightarrow$ Medium/Channel $\rightarrow$ Receiver $\rightarrow$ Destination\\
-\smallskip
-নিচে Message ও Protocol-কে সহায়ক উপাদান হিসেবে দেখাতে হবে।
-}}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|p{0.28\textwidth}|p{0.28\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{কার্যকারিতা} & \textbf{অর্থ} & \textbf{উদাহরণ} \\
-\hline
-Delivery & ডেটা সঠিক গন্তব্যে পৌঁছানো & ইমেইল নির্দিষ্ট ঠিকানায় যাওয়া \\
-\hline
-Accuracy & ডেটা ভুল ছাড়া পৌঁছানো & ফাইল corrupt না হওয়া \\
-\hline
-Timeliness & প্রয়োজনীয় সময়ে পৌঁছানো & লাইভ ক্লাসে audio/video দেরি না হওয়া \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{boardbox}{উত্তর লেখার কৌশল}
-কমিউনিকেশন সিস্টেমের প্রশ্নে শুধু সংজ্ঞা লিখলেই উত্তর অসম্পূর্ণ থাকে। উপাদানগুলোর কাজ, একটি তীর-চিহ্নযুক্ত চিত্র এবং বাস্তব উদাহরণ দিলে উত্তরটি পূর্ণাঙ্গ হয়।
-\end{boardbox}

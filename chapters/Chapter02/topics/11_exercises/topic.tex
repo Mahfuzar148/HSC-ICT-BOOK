@@ -1,98 +1,662 @@
-\section{প্রশ্নাবলী ও অনুশীলনী}
+% Chapter 02.11: অধ্যায়ভিত্তিক অনুশীলন
+\section{অধ্যায়ভিত্তিক অনুশীলন: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং}
 
 \begin{learningbox}
-এই অনুশীলনী শেষে শিক্ষার্থী পারবে:
+এই অনুশীলন অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item Chapter 02-এর প্রধান ধারণাগুলো পুনরায় মনে করতে।
-\item board-style short question এবং CQ practice করতে।
-\item comparison-based answer লেখার অভ্যাস গড়তে।
-\item MCQ থেকে concept confusion চিহ্নিত করতে।
+\item Chapter 02-এর গুরুত্বপূর্ণ সব topic একসাথে revise করতে।
+\item MCQ, short question ও creative question-এর board-standard উত্তর লিখতে।
+\item data communication, transmission mode, medium, wireless technology, network, network devices, topology ও cloud computing থেকে প্রশ্ন solve করতে।
+\item scenario-based CQ-তে topic identify করে ব্যাখ্যা, বিশ্লেষণ ও মূল্যায়ন করতে।
+\item পরীক্ষার আগে দ্রুত final revision নিতে।
 \end{itemize}
 \end{learningbox}
 
-\begin{boardbox}{চ্যাপ্টার ২-এর পুনরালোচনা}
-এই অধ্যায়ে communication system, transmission method, media, wired/wireless channel, mobile communication, networking, device, topology এবং cloud computing—সবগুলো topic একসঙ্গে যুক্ত। তাই প্রশ্নের উত্তর দেওয়ার সময় concept আলাদা করে না লিখে সম্পর্কসহ লিখতে পারলে mark বাড়ে।
+\subsection{অধ্যায় ০২: গুরুত্বপূর্ণ Topic List}
+
+\begin{keypointbox}{যে topicগুলো থেকে প্রশ্ন বেশি হয়}
+\begin{itemize}
+\item Data communication system ও এর উপাদান
+\item Data transmission method: asynchronous, synchronous, isochronous
+\item Data transmission mode: simplex, half-duplex, full-duplex
+\item Data delivery mode: unicast, broadcast, multicast
+\item Data communication medium: guided ও unguided media
+\item Twisted pair, coaxial cable, optical fiber
+\item Radio wave, microwave, infrared, satellite communication
+\item Wi-Fi, Bluetooth, WiMAX
+\item Mobile communication, handoff, roaming, mobile generation
+\item Computer network, PAN, LAN, MAN, WAN
+\item Client-server ও peer-to-peer network
+\item Internet, intranet, extranet
+\item Network devices: NIC, modem, hub, switch, router, bridge, gateway, repeater, access point, firewall
+\item Network topology: bus, star, ring, mesh, tree, hybrid
+\item Cloud computing: characteristics, service model, deployment model, advantages, disadvantages, security
+\end{itemize}
+\end{keypointbox}
+
+\subsection{১ মিনিটে Full Chapter Revision}
+
+\begin{recapbox}
+\begin{itemize}
+\item Data communication হলো এক device থেকে অন্য device-এ data পাঠানোর প্রক্রিয়া।
+\item Sender, receiver, message, medium ও protocol হলো data communication-এর প্রধান উপাদান।
+\item Transmission mode data কোন direction-এ যাবে তা বোঝায়।
+\item Simplex একমুখী, half-duplex দুইমুখী কিন্তু একসাথে নয়, full-duplex দুইমুখী ও একই সময়ে।
+\item Guided media physical cable ব্যবহার করে; unguided media wireless wave ব্যবহার করে।
+\item Optical fiber light signal ব্যবহার করে high-speed data transmission করে।
+\item Radio wave mobile, Wi-Fi ও Bluetooth communication-এ ব্যবহৃত হয়।
+\item Computer network resource sharing, communication ও data sharing সহজ করে।
+\item LAN ছোট area, MAN city-level area, WAN large geographical area cover করে।
+\item Switch MAC address দেখে data forward করে; router network-to-network data path নির্ধারণ করে।
+\item Hub data broadcast করে, switch নির্দিষ্ট destination-এ data পাঠায়।
+\item Topology হলো network device বা node-এর arrangement।
+\item Star topology-তে central switch/hub থাকে; bus topology-তে backbone cable থাকে।
+\item Mesh topology reliable, কারণ multiple path থাকে।
+\item Cloud computing হলো internet-এর মাধ্যমে remote server, storage, software ও computing resource ব্যবহার।
+\item IaaS infrastructure, PaaS platform, SaaS ready software service দেয়।
+\item Public cloud shared, private cloud dedicated, hybrid cloud public ও private cloud-এর combination।
+\end{itemize}
+\end{recapbox}
+
+\subsection{Board Focus Short Notes}
+
+\begin{boardbox}{প্রশ্ন: Data communication system-এর উপাদানগুলো কী কী?}
+Data communication system-এর প্রধান উপাদান হলো sender, receiver, message, transmission medium এবং protocol। Sender data পাঠায়, receiver data গ্রহণ করে, message হলো পাঠানো data, medium হলো data চলাচলের path এবং protocol হলো communication-এর rules।
 \end{boardbox}
 
-\subsection{MCQ অনুশীলন}
+\begin{boardbox}{প্রশ্ন: Full-duplex mode কেন বেশি কার্যকর?}
+Full-duplex mode-এ sender ও receiver একই সময়ে data পাঠাতে ও গ্রহণ করতে পারে। ফলে communication দ্রুত ও কার্যকর হয়। Telephone, mobile phone ও video call full-duplex communication-এর উদাহরণ।
+\end{boardbox}
 
-\begin{enumerate}
-\item কমিউনিকেশন সিস্টেমে message গ্রহণকারী অংশ কোনটি?
-\item কোন signal সাধারণত 0 ও 1 দিয়ে প্রকাশ করা হয়?
-\item Start bit ও stop bit কোন transmission method-এ থাকে?
-\item সবচেয়ে বেশি bandwidth কোন medium-এ পাওয়া যায়?
-\item Bluetooth কোন network category-তে পড়ে?
-\item একটি central switch-এর সাথে সব node যুক্ত থাকলে কোন topology হয়?
-\item Full duplex-এর উদাহরণ কোনটি?
-\item Cloud-এ ready-to-use software service কোন model?
-\end{enumerate}
+\begin{boardbox}{প্রশ্ন: Optical fiber কেন high-speed communication-এ ব্যবহৃত হয়?}
+Optical fiber light signal ব্যবহার করে data পাঠায়। এতে bandwidth বেশি, long distance communication সম্ভব এবং electromagnetic interference-এর প্রভাব কম। তাই internet backbone, FTTH broadband ও data center connection-এ optical fiber ব্যবহৃত হয়।
+\end{boardbox}
 
-\subsection{সংক্ষিপ্ত প্রশ্ন}
+\begin{boardbox}{প্রশ্ন: Switch ও Hub-এর মধ্যে পার্থক্য কী?}
+Hub কোনো data পেলে সেটি সব port-এ broadcast করে। কিন্তু switch MAC address table ব্যবহার করে data নির্দিষ্ট destination port-এ forward করে। তাই switch hub-এর তুলনায় efficient, secure এবং collision কম হয়।
+\end{boardbox}
 
-\begin{enumerate}
-\item কমিউনিকেশন সিস্টেমের উপাদানগুলো লেখ।
-\item Data ও signal-এর মধ্যে পার্থক্য লেখ।
-\item Bandwidth কেন গুরুত্বপূর্ণ?
-\item Asynchronous transmission কী?
-\item Simplex, half duplex ও full duplex-এর একটি করে উদাহরণ দাও।
-\item UTP ও STP-এর মধ্যে পার্থক্য লেখ।
-\item WAN ও MAN-এর মধ্যে পার্থক্য লেখ।
-\item Hub ও switch-এর মধ্যে পার্থক্য লেখ।
-\item Cloud computing-এর দুটি সুবিধা লেখ।
-\item Handover বলতে কী বোঝায়?
-\end{enumerate}
+\begin{boardbox}{প্রশ্ন: Router-এর কাজ কী?}
+Router এক network-কে অন্য network-এর সাথে connect করে এবং data packet কোন route দিয়ে destination network-এ যাবে তা নির্ধারণ করে। Internet connection ও LAN-to-WAN communication-এ router গুরুত্বপূর্ণ device।
+\end{boardbox}
 
-\subsection{সৃজনশীল অনুশীলন}
+\begin{boardbox}{প্রশ্ন: Star topology computer lab-এর জন্য উপযোগী কেন?}
+Star topology-তে সব computer central switch বা hub-এর সাথে connected থাকে। নতুন computer add করা সহজ, fault finding সহজ এবং একটি computer বা cable নষ্ট হলে সাধারণত পুরো network বন্ধ হয় না। তাই school বা college computer lab-এর জন্য star topology উপযোগী।
+\end{boardbox}
 
-\begin{enumerate}
-\item একটি স্কুলের computer lab-এ LAN ব্যবহার করা হয়, শিক্ষক video class নেন, এবং cloud storage-এ assignment জমা দেওয়া হয়। উদ্দীপকের আলোকে communication system, networking এবং cloud computing-এর সম্পর্ক বিশ্লেষণ করো।
-\item একজন ব্যবহারকারী Wi-Fi, Bluetooth, mobile data এবং fiber internet ব্যবহার করছে। উদ্দীপকের আলোকে media, wireless system এবং bandwidth-এর ভূমিকা ব্যাখ্যা করো।
-\item একটি শহরে mobile user call চলাকালীন এক cell থেকে অন্য cell-এ যাচ্ছে। উদ্দীপকের আলোকে cellular concept, handover এবং roaming বিশ্লেষণ করো।
-\end{enumerate}
+\begin{boardbox}{প্রশ্ন: Cloud computing-এর সুবিধা কী?}
+Cloud computing-এর মাধ্যমে internet ব্যবহার করে remote server, storage ও software service ব্যবহার করা যায়। এতে hardware cost কমে, scalability বাড়ে, যেকোনো জায়গা থেকে access করা যায়, backup রাখা সহজ হয় এবং collaboration করা সহজ হয়।
+\end{boardbox}
 
-\subsection{বোর্ড টিপস}
-
-\begin{itemize}
-\item definition-এর সঙ্গে একটি বাস্তব example দিতে হবে।
-\item comparison প্রশ্নে table format ব্যবহার করা ভালো।
-\item diagram এলে clean arrow and label রাখতে হবে।
-\item same term বারবার না লিখে relation অনুযায়ী answer সাজাতে হবে।
-\end{itemize}
-
-
-
-\subsection{অতিরিক্ত সৃজনশীল অনুশীলন}
+\subsection{MCQ: Board Standard Practice}
 
 \begin{practicebox}
-\textbf{উদ্দীপক ১}\\
-একটি কলেজে computer lab-এর সব computer একটি switch-এর মাধ্যমে server ও printer-এর সাথে যুক্ত। শিক্ষার্থীরা Wi-Fi ব্যবহার করে mobile থেকে online class করে। কলেজের অন্য branch campus-এর সাথে video conference করার জন্য উচ্চগতির link দরকার।
+\textbf{নির্দেশনা: প্রতিটি প্রশ্নের সঠিক উত্তর নির্বাচন কর।}
 
 \begin{enumerate}
-\item ক. Bandwidth কী?
-\item খ. LAN ও WAN-এর মধ্যে পার্থক্য লেখ।
-\item গ. উদ্দীপকের lab network-এ কোন topology ব্যবহার করা যুক্তিযুক্ত? ব্যাখ্যা কর।
-\item ঘ. branch campus যুক্ত করতে wired ও wireless media-এর মধ্যে কোনটি ভালো হতে পারে? যুক্তিসহ বিশ্লেষণ কর।
+\item Data communication বলতে কী বোঝায়?\
+ক. শুধু data সংরক্ষণ \quad খ. data প্রেরণ ও গ্রহণ \quad গ. শুধু data delete \quad ঘ. monitor display
+
+\item Data communication system-এ rules বা নিয়মকে কী বলা হয়?\
+ক. Medium \quad খ. Protocol \quad গ. Cable \quad ঘ. Printer
+
+\item নিচের কোনটি data communication-এর উপাদান নয়?\
+ক. Sender \quad খ. Receiver \quad গ. Protocol \quad ঘ. Scanner
+
+\item Data transmission mode নির্দেশ করে—\
+ক. data কোন direction-এ যাবে \quad খ. data কোথায় store হবে \quad গ. monitor-এর size \quad ঘ. keyboard layout
+
+\item Television broadcasting কোন transmission mode-এর উদাহরণ?\
+ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Multiplex
+
+\item Walkie-talkie communication কোন mode-এর উদাহরণ?\
+ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Broadcast only
+
+\item Telephone conversation কোন mode-এর উদাহরণ?\
+ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Unicast
+
+\item এক sender থেকে এক receiver-এ data পাঠানোকে কী বলে?\
+ক. Broadcast \quad খ. Multicast \quad গ. Unicast \quad ঘ. Anycast
+
+\item এক sender থেকে network-এর সব receiver-এ data পাঠানোকে কী বলে?\
+ক. Unicast \quad খ. Broadcast \quad গ. Multicast \quad ঘ. Duplex
+
+\item Guided media-তে data কোন মাধ্যমে যায়?\
+ক. physical cable \quad খ. শুধু বাতাস \quad গ. light ছাড়া \quad ঘ. keyboard
+
+\item নিচের কোনটি guided media?\
+ক. Radio wave \quad খ. Microwave \quad গ. Optical fiber \quad ঘ. Infrared
+
+\item নিচের কোনটি unguided media?\
+ক. Coaxial cable \quad খ. Twisted pair \quad গ. Radio wave \quad ঘ. Fiber optic
+
+\item Twisted pair cable সাধারণত কোন network-এ বেশি ব্যবহৃত হয়?\
+ক. LAN \quad খ. Satellite only \quad গ. TV remote \quad ঘ. Bluetooth only
+
+\item Optical fiber cable কোন signal ব্যবহার করে?\
+ক. Sound signal \quad খ. Light signal \quad গ. Mechanical signal \quad ঘ. Magnetic signal only
+
+\item TV remote সাধারণত কোন medium ব্যবহার করে?\
+ক. Infrared \quad খ. Optical fiber \quad গ. Coaxial cable \quad ঘ. Twisted pair
+
+\item Microwave communication-এর জন্য সাধারণত কোনটি গুরুত্বপূর্ণ?\
+ক. Line-of-sight \quad খ. Paper storage \quad গ. Printer speed \quad ঘ. keyboard layout
+
+\item Bluetooth সাধারণত কোন ধরনের network তৈরি করে?\
+ক. PAN \quad খ. MAN \quad গ. WAN \quad ঘ. Internet backbone
+
+\item Wi-Fi কোন standard family-এর সাথে সম্পর্কিত?\
+ক. IEEE 802.11 \quad খ. IEEE 802.3 only \quad গ. ASCII \quad ঘ. Unicode
+
+\item একটি building বা office-এর মধ্যে network সাধারণত কোন ধরনের?\
+ক. LAN \quad খ. MAN \quad গ. WAN \quad ঘ. Satellite network
+
+\item City-wide network সাধারণত কোন ধরনের?\
+ক. PAN \quad খ. LAN \quad গ. MAN \quad ঘ. Bluetooth
+
+\item বড় geographical area cover করা network কোনটি?\
+ক. PAN \quad খ. LAN \quad গ. WAN \quad ঘ. Star
+
+\item Client-server network-এ server-এর কাজ কী?\
+ক. শুধু monitor চালানো \quad খ. service/resource provide করা \quad গ. cable twist করা \quad ঘ. keyboard control
+
+\item নিচের কোনটি network device?\
+ক. Switch \quad খ. Speaker only \quad গ. Keyboard only \quad ঘ. Mouse pad
+
+\item NIC-এর কাজ কী?\
+ক. computer-কে network-এ connect করা \quad খ. monitor bright করা \quad গ. paper print করা \quad ঘ. sound amplify করা
+
+\item Modem-এর কাজ কী?\
+ক. modulation ও demodulation \quad খ. শুধু printing \quad গ. keyboard input \quad ঘ. image editing
+
+\item Hub data পেলে কী করে?\
+ক. সব port-এ broadcast করে \quad খ. শুধু destination port-এ পাঠায় \quad গ. data delete করে \quad ঘ. cloud-এ store করে
+
+\item Switch সাধারণত কোন address ব্যবহার করে forwarding করে?\
+ক. MAC address \quad খ. house address \quad গ. postal code \quad ঘ. ISBN
+
+\item Router কী connect করে?\
+ক. network-to-network \quad খ. keyboard-to-monitor \quad গ. speaker-to-mouse \quad ঘ. scanner-to-paper
+
+\item Repeater-এর কাজ কী?\
+ক. signal regenerate করা \quad খ. software install করা \quad গ. file delete করা \quad ঘ. keyboard clean করা
+
+\item Gateway-এর কাজ কী?\
+ক. protocol conversion \quad খ. printer color change \quad গ. monitor setup \quad ঘ. hard disk format
+
+\item Firewall-এর কাজ কী?\
+ক. network traffic filtering \quad খ. cable twisting \quad গ. speaker output \quad ঘ. keyboard input
+
+\item Network topology কী নির্দেশ করে?\
+ক. node/device arrangement \quad খ. monitor size \quad গ. CPU brand \quad ঘ. file extension
+
+\item Bus topology-তে সব node কিসের সাথে connected থাকে?\
+ক. common backbone cable \quad খ. individual router only \quad গ. satellite dish \quad ঘ. scanner
+
+\item Star topology-তে central device হিসেবে সাধারণত কোনটি থাকে?\
+ক. Switch/Hub \quad খ. Keyboard \quad গ. Scanner \quad ঘ. Speaker
+
+\item Ring topology-তে node-গুলো কী গঠন করে?\
+ক. closed loop \quad খ. straight line only \quad গ. no link \quad ঘ. cloud storage
+
+\item Mesh topology কেন reliable?\
+ক. multiple path থাকে \quad খ. cable নেই \quad গ. only one node থাকে \quad ঘ. no connection থাকে
+
+\item দুই বা ততোধিক topology মিলে কোন topology তৈরি হয়?\
+ক. Hybrid \quad খ. Simplex \quad গ. Protocol \quad ঘ. Infrared
+
+\item Cloud computing কীসের মাধ্যমে ব্যবহার করা হয়?\
+ক. Internet \quad খ. only keyboard \quad গ. only printer \quad ঘ. offline chalkboard
+
+\item Google Drive কোন service-এর উদাহরণ?\
+ক. Cloud storage \quad খ. Scanner service \quad গ. Hub service \quad ঘ. Mouse service
+
+\item SaaS-এর পূর্ণরূপ কী?\
+ক. Software as a Service \quad খ. Storage as a Switch \quad গ. Server as Scanner \quad ঘ. System as Sound
+
+\item IaaS প্রধানত কী provide করে?\
+ক. Infrastructure \quad খ. Ready-made email only \quad গ. keyboard \quad ঘ. monitor
+
+\item PaaS বেশি উপযোগী কার জন্য?\
+ক. Developer \quad খ. Painter only \quad গ. Typist only \quad ঘ. Electrician
+
+\item Public ও Private cloud একত্রে ব্যবহার করলে কোন cloud model হয়?\
+ক. Hybrid cloud \quad খ. Ring cloud \quad গ. Bus cloud \quad ঘ. Simplex cloud
+
+\item Cloud security বাড়াতে কোনটি ব্যবহার করা ভালো?\
+ক. Strong password ও MFA \quad খ. weak password \quad গ. password share করা \quad ঘ. public login
+
+\item Data transfer speed সাধারণত কোন এককে প্রকাশ করা হয়?\
+ক. bps \quad খ. kg \quad গ. meter \quad ঘ. volt only
+
+\item Bandwidth বেশি হলে কী হয়?\
+ক. বেশি data transfer করা যায় \quad খ. monitor ছোট হয় \quad গ. keyboard slow হয় \quad ঘ. file delete হয়
+
+\item Protocol-এর উদাহরণ কোনটি?\
+ক. TCP/IP \quad খ. Monitor \quad গ. Speaker \quad ঘ. Scanner
+
+\item Internet কী ধরনের network?\
+ক. network of networks \quad খ. শুধু LAN \quad গ. শুধু PAN \quad ঘ. keyboard system
+
+\item Intranet সাধারণত কারা ব্যবহার করে?\
+ক. একটি organization-এর internal users \quad খ. পুরো public internet \quad গ. শুধু printer \quad ঘ. only scanner
+
+\item Extranet কী?\
+ক. controlled external accessসহ private network \quad খ. keyboard layout \quad গ. TV signal \quad ঘ. printer ink
+\end{enumerate}
+
+\textbf{উত্তরমালা:}\
+১. খ, ২. খ, ৩. ঘ, ৪. ক, ৫. ক, ৬. খ, ৭. গ, ৮. গ, ৯. খ, ১০. ক,\
+১১. গ, ১২. গ, ১৩. ক, ১৪. খ, ১৫. ক, ১৬. ক, ১৭. ক, ১৮. ক, ১৯. ক, ২০. গ,\
+২১. গ, ২২. খ, ২৩. ক, ২৪. ক, ২৫. ক, ২৬. ক, ২৭. ক, ২৮. ক, ২৯. ক, ৩০. ক,\
+৩১. ক, ৩২. ক, ৩৩. ক, ৩৪. ক, ৩৫. ক, ৩৬. ক, ৩৭. ক, ৩৮. ক, ৩৯. ক, ৪০. ক,\
+৪১. ক, ৪২. ক, ৪৩. ক, ৪৪. ক, ৪৫. ক, ৪৬. ক, ৪৭. ক, ৪৮. ক, ৪৯. ক, ৫০. ক
+\end{practicebox}
+
+\subsection{Board Standard Short Questions}
+
+\begin{practicebox}
+\textbf{সংক্ষিপ্ত প্রশ্ন}
+
+\begin{enumerate}
+\item Data communication কী?
+\item Data communication system-এর পাঁচটি উপাদান লেখ।
+\item Protocol কী? উদাহরণ দাও।
+\item Bandwidth বলতে কী বোঝায়?
+\item Simplex, half-duplex ও full-duplex mode-এর পার্থক্য লেখ।
+\item Unicast, broadcast ও multicast delivery mode-এর পার্থক্য লেখ।
+\item Guided media ও unguided media কী?
+\item Twisted pair cable-এর বৈশিষ্ট্য লেখ।
+\item Optical fiber cable কেন গুরুত্বপূর্ণ?
+\item Radio wave ও microwave-এর মধ্যে পার্থক্য লেখ।
+\item Infrared কোথায় ব্যবহৃত হয়?
+\item Satellite communication কী?
+\item Wi-Fi, Bluetooth ও WiMAX-এর মধ্যে পার্থক্য লেখ।
+\item Mobile handoff কী?
+\item Roaming বলতে কী বোঝায়?
+\item Computer network কী?
+\item LAN, MAN ও WAN-এর পার্থক্য লেখ।
+\item Client-server network কী?
+\item Peer-to-peer network কী?
+\item Internet, intranet ও extranet-এর পার্থক্য লেখ।
+\item NIC-এর কাজ কী?
+\item Modem-এর কাজ কী?
+\item Hub ও Switch-এর মধ্যে পার্থক্য লেখ।
+\item Router কীভাবে network connect করে?
+\item Repeater ও bridge-এর কাজ লেখ।
+\item Gateway কেন protocol conversion করে?
+\item Firewall কেন গুরুত্বপূর্ণ?
+\item Network topology কী?
+\item Bus ও Star topology-এর পার্থক্য লেখ।
+\item Mesh topology কেন reliable?
+\item Tree topology কোথায় ব্যবহার করা যায়?
+\item Hybrid topology কী?
+\item Cloud computing কী?
+\item Cloud storage কী?
+\item IaaS, PaaS ও SaaS-এর পার্থক্য লেখ।
+\item Public cloud ও Private cloud-এর পার্থক্য লেখ।
+\item Hybrid cloud কেন ব্যবহার করা হয়?
+\item Cloud computing-এর সুবিধা লেখ।
+\item Cloud computing-এর অসুবিধা লেখ।
+\item Cloud security practice লিখ।
 \end{enumerate}
 \end{practicebox}
 
+\subsection{Board CQ Practice Set}
+
 \begin{practicebox}
-\textbf{উদ্দীপক ২}\\
-একজন শিক্ষক live class নিচ্ছেন। video/audio real-time যেতে হচ্ছে, আবার শিক্ষার্থীরা chat message পাঠাচ্ছে। teacher-এর laptop cloud storage থেকে slide খুলে দেখাচ্ছে।
+\textbf{CQ-1: Data Communication System}
+
+একটি কলেজে online admission system চালু করা হলো। শিক্ষার্থী mobile দিয়ে form পূরণ করে submit করে। Form-এর data internet ব্যবহার করে college server-এ যায়। Server data গ্রহণ করে database-এ সংরক্ষণ করে। System-টি সঠিকভাবে কাজ করার জন্য নির্দিষ্ট communication rules follow করে।
 
 \begin{enumerate}
-\item ক. Isochronous transmission কী?
-\item খ. Full duplex mode কেন video conference-এ দরকার?
-\item গ. cloud service ব্যবহারের দুটি সুবিধা ব্যাখ্যা কর।
-\item ঘ. এই যোগাযোগ ব্যবস্থায় bandwidth, latency ও transmission mode-এর ভূমিকা বিশ্লেষণ কর।
+\item ক. Data communication কী?
+\item খ. Protocol কেন প্রয়োজন?
+\item গ. উদ্দীপকে data communication system-এর উপাদানগুলো শনাক্ত কর।
+\item ঘ. College online admission system-এ data communication system-এর গুরুত্ব বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: Sender থেকে receiver-এ data পাঠানোর প্রক্রিয়া।
+\item খ: Protocol communication-এর rules নির্ধারণ করে; sender ও receiver একই নিয়ম follow না করলে data বুঝতে সমস্যা হয়।
+\item গ: sender = student mobile, receiver/server = college server, message = form data, medium = internet, protocol = communication rules.
+\item ঘ: দ্রুত form submission, accurate data transfer, server storage, remote access, reduced paper work, reliable communication—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-2: Transmission Mode}
+
+একটি school-এ notice board display system, walkie-talkie security system এবং online video class system ব্যবহার করা হয়। Notice board-এ office থেকে notice পাঠানো হয়, কিন্তু board কোনো reply পাঠায় না। Security guards walkie-talkie দিয়ে কথা বলে, কিন্তু একই সময়ে দুইজন কথা বলতে পারে না। Online class-এ teacher ও student একই সময়ে কথা বলতে ও শুনতে পারে।
+
+\begin{enumerate}
+\item ক. Transmission mode কী?
+\item খ. Full-duplex mode বেশি কার্যকর কেন?
+\item গ. উদ্দীপকের তিনটি system কোন কোন transmission mode ব্যবহার করছে? ব্যাখ্যা কর।
+\item ঘ. Education system-এ full-duplex communication-এর প্রয়োজনীয়তা মূল্যায়ন কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: data কোন direction-এ transfer হয় তার ধরন।
+\item খ: একই সময়ে data send ও receive করা যায়।
+\item গ: notice board = simplex, walkie-talkie = half-duplex, online video class = full-duplex.
+\item ঘ: live class, question-answer, interaction, feedback, discussion, remote learning—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-3: Transmission Media}
+
+একটি hospital-এর doctor chamber-এ desktop computerগুলো switch-এর সাথে cable দিয়ে connected। Server room থেকে central database high-speed fiber connection ব্যবহার করে। Waiting area-তে Wi-Fi দেওয়া হয়েছে। Emergency department-এ short-range remote control device ব্যবহার করা হয়।
+
+\begin{enumerate}
+\item ক. Transmission medium কী?
+\item খ. Guided media ও unguided media-এর মূল পার্থক্য কী?
+\item গ. উদ্দীপকে ব্যবহৃত guided ও unguided media শনাক্ত কর।
+\item ঘ. Hospital database connection-এর জন্য optical fiber বেশি উপযোগী কি না—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: sender থেকে receiver-এ signal যাওয়ার path।
+\item খ: guided media cable-based; unguided media wireless wave-based।
+\item গ: desktop-switch cable = twisted pair/guided; fiber = guided; Wi-Fi = radio wave/unguided; remote control = infrared/unguided.
+\item ঘ: high bandwidth, low interference, long distance, reliable, secure; তবে cost ও maintenance বেশি—এগুলো লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-4: Wireless Communication}
+
+একটি campus-এ students mobile phone, Bluetooth headphone, Wi-Fi router এবং tower-based broadband wireless connection ব্যবহার করে। Mobile phone tower-এর সাথে communication করে, Bluetooth headphone স্বল্প দূরত্বে কাজ করে, Wi-Fi classroom area cover করে এবং broadband wireless system দূরবর্তী area-তে internet দেয়।
+
+\begin{enumerate}
+\item ক. Wireless communication কী?
+\item খ. Bluetooth PAN তৈরি করে কেন?
+\item গ. উদ্দীপকের Bluetooth, Wi-Fi ও tower-based wireless technology ব্যাখ্যা কর।
+\item ঘ. Campus network-এ Wi-Fi ও WiMAX/long-range wireless technology একসাথে ব্যবহার যুক্তিযুক্ত কি না—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: physical cable ছাড়া electromagnetic wave ব্যবহার করে communication।
+\item খ: Bluetooth স্বল্প দূরত্বে personal devices connect করে।
+\item গ: Bluetooth = short range PAN, Wi-Fi = WLAN, tower-based wireless = wider range wireless broadband.
+\item ঘ: Wi-Fi indoor/classroom coverage; long-range wireless campus/backbone/remote area coverage; cost, coverage, mobility, bandwidth point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-5: Computer Network}
+
+একটি coaching center-এ ২০টি computer, একটি printer, একটি file server এবং internet connection আছে। Students একই printer ব্যবহার করে, teachers file server-এ notes রাখে এবং সব computer internet ব্যবহার করে। Admin চান ভবিষ্যতে আরও computer add করা যাবে।
+
+\begin{enumerate}
+\item ক. Computer network কী?
+\item খ. Resource sharing বলতে কী বোঝায়?
+\item গ. উদ্দীপকে network ব্যবহারের উদ্দেশ্যগুলো ব্যাখ্যা কর।
+\item ঘ. Coaching center-এর জন্য LAN ব্যবহার কতটা যুক্তিযুক্ত—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: একাধিক computer/device সংযুক্ত হয়ে data ও resource share করার system।
+\item খ: printer, file, internet ইত্যাদি একাধিক user share করে।
+\item গ: printer sharing, file sharing, internet sharing, communication, centralized storage.
+\item ঘ: same building/limited area, speed, easy management, cost-effective, expansion possible—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-6: Network Devices}
+
+একটি school lab-এ সব computer একটি switch-এর সাথে connected। Internet connection-এর জন্য router ব্যবহৃত হয়। দূরের building-এ signal দুর্বল হওয়ায় repeater ব্যবহার করা হয়েছে। External attack ঠেকাতে firewall setup করা হয়েছে।
+
+\begin{enumerate}
+\item ক. Network device কী?
+\item খ. Router কেন প্রয়োজন?
+\item গ. উদ্দীপকে switch, router, repeater ও firewall-এর কাজ ব্যাখ্যা কর।
+\item ঘ. School lab network নিরাপদ ও কার্যকর করতে এসব device-এর ভূমিকা মূল্যায়ন কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: network connect, manage বা protect করতে ব্যবহৃত hardware device।
+\item খ: router LAN-কে অন্য network/internet-এর সাথে connect করে এবং path নির্ধারণ করে।
+\item গ: switch = local forwarding, router = network connection, repeater = signal regeneration, firewall = filtering/security.
+\item ঘ: efficient data flow, internet access, long distance signal improvement, security protection, scalability—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-7: Hub, Switch ও Router}
+
+একটি ছোট office প্রথমে hub ব্যবহার করত। এতে data সব computer-এ চলে যেত এবং traffic বেশি ছিল। পরে switch ব্যবহার করায় data নির্দিষ্ট computer-এ যাচ্ছে। Office network-কে internet-এর সাথে যুক্ত করতে router ব্যবহার করা হলো।
+
+\begin{enumerate}
+\item ক. Hub কী?
+\item খ. Switch hub-এর তুলনায় efficient কেন?
+\item গ. উদ্দীপকে hub, switch ও router-এর কাজ তুলনা কর।
+\item ঘ. Office network উন্নত করতে hub-এর পরিবর্তে switch ও router ব্যবহার কতটা যুক্তিযুক্ত—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: hub হলো central device যা data সব port-এ broadcast করে।
+\item খ: switch MAC address ব্যবহার করে নির্দিষ্ট destination-এ data পাঠায়।
+\item গ: hub = broadcast, switch = intelligent forwarding, router = network-to-network/internet connection.
+\item ঘ: traffic কমে, collision কমে, speed বাড়ে, security বাড়ে, internet connectivity হয়।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-8: Network Topology}
+
+একটি ICT lab-এ ৩০টি computer একটি central switch-এর সাথে connected। অন্যদিকে university campus-এর বিভিন্ন department switch আবার core switch-এর সাথে hierarchy আকারে connected। Research server-এর মধ্যে multiple path রাখা হয়েছে যাতে একটি link নষ্ট হলেও communication বন্ধ না হয়।
+
+\begin{enumerate}
+\item ক. Network topology কী?
+\item খ. Mesh topology reliable কেন?
+\item গ. উদ্দীপকের ICT lab, campus network ও research server-এর topology শনাক্ত কর।
+\item ঘ. বড় campus network-এর জন্য tree/hybrid topology ব্যবহার যুক্তিযুক্ত কি না—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: network node/device-এর arrangement।
+\item খ: multiple path থাকায় একটি link নষ্ট হলেও alternative path থাকে।
+\item গ: ICT lab = star, campus = tree, research server = mesh/partial mesh.
+\item ঘ: department-wise structure, scalability, management, fault isolation, backbone dependency, cost—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-9: Cloud Computing}
+
+একটি college Google Drive-এ notes share করে, students Google Docs-এ assignment করে এবং admin result database secure server-এ রাখে। Online class platform cloud server ব্যবহার করে, যাতে বেশি student login করলে resource বাড়ানো যায়।
+
+\begin{enumerate}
+\item ক. Cloud computing কী?
+\item খ. Cloud storage শিক্ষার্থীদের জন্য সুবিধাজনক কেন?
+\item গ. উদ্দীপকে SaaS ও cloud storage service শনাক্ত কর।
+\item ঘ. College management system-এ hybrid cloud ব্যবহার যুক্তিযুক্ত কি না—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: internet-এর মাধ্যমে remote server, storage, software ও computing resource ব্যবহার।
+\item খ: যেকোনো device থেকে access, sharing, backup, collaboration সহজ।
+\item গ: Google Drive = cloud storage; Google Docs = SaaS; online class platform = cloud application/SaaS.
+\item ঘ: notes/online class public cloud-এ; sensitive result data private cloud-এ; flexibility, scalability, security—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-10: Cloud Service Model}
+
+একটি software company তিন ধরনের cloud service ব্যবহার করে। তারা virtual server rent করে website host করে, developerরা online platform ব্যবহার করে app deploy করে এবং office employees browser দিয়ে email ও document editing software ব্যবহার করে।
+
+\begin{enumerate}
+\item ক. IaaS কী?
+\item খ. SaaS সাধারণ user-এর জন্য সহজ কেন?
+\item গ. উদ্দীপকে IaaS, PaaS ও SaaS service model শনাক্ত কর।
+\item ঘ. Software company-এর জন্য তিনটি cloud service model একসাথে ব্যবহার কতটা কার্যকর—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: virtual server, storage, network infrastructure service হিসেবে ব্যবহার।
+\item খ: install/update/maintenance provider করে; browser/app দিয়ে ব্যবহার করা যায়।
+\item গ: virtual server = IaaS; app deployment platform = PaaS; email/document software = SaaS.
+\item ঘ: infrastructure control, faster development, ready software, cost saving, scalability; তবে dependency/security/cost monitoring লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\subsection{Extra Board-style CQ for Final Practice}
+
+\begin{practicebox}
+\textbf{CQ-11: Internet, Intranet ও Extranet}
+
+একটি company-এর employees internal website দিয়ে notice, salary sheet ও leave application system ব্যবহার করে। Company-এর supplierদের নির্দিষ্ট login দিয়ে order status দেখার সুযোগ দেওয়া হয়েছে। একই সাথে customers public website থেকে product information দেখতে পারে।
+
+\begin{enumerate}
+\item ক. Intranet কী?
+\item খ. Extranet কেন controlled access ব্যবহার করে?
+\item গ. উদ্দীপকে internet, intranet ও extranet শনাক্ত কর।
+\item ঘ. Organization management-এ intranet ও extranet ব্যবহারের গুরুত্ব বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: organization-এর internal private network।
+\item খ: external authorized users-কে limited access দেওয়া হয়।
+\item গ: internal employee system = intranet; supplier login = extranet; public product website = internet.
+\item ঘ: security, information sharing, supplier coordination, customer access, efficiency—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\begin{practicebox}
+\textbf{CQ-12: Mobile Communication}
+
+একজন student চলন্ত bus-এ mobile internet ব্যবহার করছে। সে এক cell area থেকে অন্য cell area-তে গেলেও call disconnect হয়নি। বিদেশে গিয়ে সে একই SIM দিয়ে local operator-এর network ব্যবহার করেছে। তার phone 4G/5G network support করে।
+
+\begin{enumerate}
+\item ক. Cell কী?
+\item খ. Handoff call continuity বজায় রাখে কীভাবে?
+\item গ. উদ্দীপকে handoff ও roaming ব্যাখ্যা কর।
+\item ঘ. Modern mobile generation শিক্ষার্থীদের online learning-এ কীভাবে সহায়তা করে—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{উত্তর নির্দেশনা:}
+\begin{itemize}
+\item ক: cellular network-এর একটি coverage area।
+\item খ: mobile device এক base station থেকে অন্য base station-এ transfer হয়।
+\item গ: moving bus-এ cell change হলেও call চালু = handoff; বিদেশে local operator network ব্যবহার = roaming.
+\item ঘ: high-speed internet, video class, cloud access, online exam, collaboration, mobility—এসব point লিখবে।
+\end{itemize}
+\end{practicebox}
+
+\subsection{Case-based MCQ}
+
+\begin{practicebox}
+\textbf{নিচের উদ্দীপক পড়ে প্রশ্নগুলোর উত্তর দাও।}
+
+একটি college lab-এ ২৫টি computer একটি central switch-এর সাথে connected। Lab server cloud storage-এ backup রাখে। Internet connection-এর জন্য router ব্যবহার করা হয়েছে। Students Google Docs দিয়ে assignment submit করে।
+
+\begin{enumerate}
+\item Lab network-এর topology কোনটি?\
+ক. Bus \quad খ. Star \quad গ. Ring \quad ঘ. Mesh
+
+\item Google Docs কোন cloud service model-এর উদাহরণ?\
+ক. IaaS \quad খ. PaaS \quad গ. SaaS \quad ঘ. PAN
+
+\item Internet connection দিতে কোন device ব্যবহৃত হয়েছে?\
+ক. Router \quad খ. Keyboard \quad গ. Scanner \quad ঘ. Speaker
+
+\item Cloud storage ব্যবহারের প্রধান সুবিধা কোনটি?\
+ক. backup ও remote access \quad খ. monitor cleaning \quad গ. cable twisting \quad ঘ. no internet need
+
+\item Switch hub-এর তুলনায় ভালো কেন?\
+ক. destination অনুযায়ী forwarding করে \quad খ. সব port-এ broadcast করে \quad গ. শুধু sound দেয় \quad ঘ. data delete করে
+\end{enumerate}
+
+\textbf{উত্তরমালা:}
+১. খ, ২. গ, ৩. ক, ৪. ক, ৫. ক
+\end{practicebox}
+
+\subsection{Model Board Test: Chapter 02}
+
+\begin{practicebox}
+\textbf{সময়: ১ ঘণ্টা ৩০ মিনিট \quad পূর্ণমান: ৩০}
+
+\textbf{Part A: MCQ}
+
+\begin{enumerate}
+\item Protocol কী?\
+ক. communication rules \quad খ. cable type \quad গ. printer speed \quad ঘ. monitor size
+
+\item Full-duplex communication-এর উদাহরণ কোনটি?\
+ক. TV broadcast \quad খ. Telephone \quad গ. Keyboard input \quad ঘ. Radio broadcast
+
+\item Optical fiber কোন signal ব্যবহার করে?\
+ক. Light \quad খ. Sound \quad গ. Heat \quad ঘ. Mechanical
+
+\item Bluetooth সাধারণত কোন network-এর সাথে সম্পর্কিত?\
+ক. PAN \quad খ. MAN \quad গ. WAN \quad ঘ. Internet backbone
+
+\item Router-এর কাজ কী?\
+ক. network connect করা \quad খ. data print করা \quad গ. monitor display \quad ঘ. sound amplify
+
+\item Mesh topology reliable কেন?\
+ক. multiple path থাকে \quad খ. কোনো cable নেই \quad গ. শুধু one node থাকে \quad ঘ. data নেই
+
+\item IaaS কী দেয়?\
+ক. Infrastructure \quad খ. Ready software \quad গ. only document \quad ঘ. keyboard
+
+\item Public + Private cloud মিলে কী হয়?\
+ক. Hybrid cloud \quad খ. Bus cloud \quad গ. Star cloud \quad ঘ. PAN
+\end{enumerate}
+
+\textbf{MCQ উত্তর:}
+১. ক, ২. খ, ৩. ক, ৪. ক, ৫. ক, ৬. ক, ৭. ক, ৮. ক
+
+\vspace{0.3cm}
+
+\textbf{Part B: Creative Questions}
+
+\textbf{CQ-A}\
+একটি hospital network-এ doctors' chamber-এর computers switch-এর সাথে connected। Patient database cloud backup নেয়। Emergency department-এর deviceগুলো Wi-Fi ব্যবহার করে। External unauthorized access ঠেকাতে firewall ব্যবহার করা হয়েছে।
+
+\begin{enumerate}
+\item ক. Firewall কী?
+\item খ. Cloud backup কেন গুরুত্বপূর্ণ?
+\item গ. উদ্দীপকে ব্যবহৃত network device ও cloud service ব্যাখ্যা কর।
+\item ঘ. Hospital network secure ও reliable করতে firewall, switch ও cloud backup-এর ভূমিকা বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{CQ-B}\
+একটি university campus-এ প্রতিটি department-এর computer star topology-তে switch-এর সাথে connected। Department switch-গুলো core switch-এর সাথে tree structure-এ connected। Research serverগুলোর মধ্যে multiple link রাখা হয়েছে।
+
+\begin{enumerate}
+\item ক. Topology কী?
+\item খ. Star topology lab-এর জন্য সুবিধাজনক কেন?
+\item গ. উদ্দীপকে star, tree ও mesh topology শনাক্ত কর।
+\item ঘ. University campus network-এর জন্য hybrid topology ব্যবহার যুক্তিযুক্ত কি না—বিশ্লেষণ কর।
 \end{enumerate}
 \end{practicebox}
 
-\subsection{দ্রুত উত্তর-ইঙ্গিত}
+\subsection{Exam Writing Tips}
+
+\begin{keypointbox}{ভালো উত্তর লেখার কৌশল}
 \begin{itemize}
-\item Bandwidth: প্রতি সেকেন্ডে channel দিয়ে data বহনের ক্ষমতা।
-\item Asynchronous: character-by-character, start/stop bit থাকে।
-\item Synchronous: block-by-block, timing synchronized।
-\item Simplex: একমুখী; Half duplex: দুইমুখী কিন্তু একসাথে নয়; Full duplex: দুইমুখী একসাথে।
-\item Guided media: cable নির্ভর; Unguided media: electromagnetic wave নির্ভর।
-\item Router ভিন্ন network যুক্ত করে; Switch LAN-এর মধ্যে নির্দিষ্ট device-এ frame পাঠায়।
+\item definition প্রশ্নে প্রথম line-এ clear definition লিখবে।
+\item উদাহরণ দিলে answer বেশি exam-standard হয়।
+\item পার্থক্য প্রশ্নে table format ব্যবহার কর।
+\item CQ-এর গ অংশে উদ্দীপক থেকে topic identify করে ব্যাখ্যা কর।
+\item CQ-এর ঘ অংশে শুধু সুবিধা নয়, প্রয়োজনে limitation/condition লিখে balanced analysis কর।
+\item topology/device/cloud প্রশ্নে diagram reference দিতে পারলে উত্তর ভালো হয়।
+\item technical term English-এ রেখে Bangla explanation দিলে answer clear হয়।
 \end{itemize}
+\end{keypointbox}

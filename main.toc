@@ -1,0 +1,1166 @@
+\contentsline {chapter}{\numberline {1}তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}বিশ্বগ্রাম}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}বিশ্বগ্রামের ধারণা}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}যোগাযোগ ও টেলিকনফারেন্সিং}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}কর্মসংস্থান}{4}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}শিক্ষা}{4}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}চিকিৎসা ও টেলিমেডিসিন}{5}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}গবেষণা}{5}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.7}অফিস}{6}{subsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.1.8}বাসস্থান}{6}{subsection.1.1.8}%
+\contentsline {subsection}{\numberline {1.1.9}ব্যবসা-বাণিজ্য ও ই-কমার্স}{6}{subsection.1.1.9}%
+\contentsline {subsection}{\numberline {1.1.10}সংবাদ}{7}{subsection.1.1.10}%
+\contentsline {subsection}{\numberline {1.1.11}বিনোদন ও সামাজিক যোগাযোগ}{7}{subsection.1.1.11}%
+\contentsline {subsection}{\numberline {1.1.12}সাংস্কৃতিক বিনিময়}{7}{subsection.1.1.12}%
+\contentsline {section}{\numberline {1.2}বিশ্বগ্রাম প্রতিষ্ঠার উপাদান ও তথ্য ও যোগাযোগ প্রযুক্তির অবদান}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}বিশ্বগ্রাম প্রতিষ্ঠার প্রধান উপাদান}{9}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}শিক্ষায় ICT-এর অবদান}{9}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}চিকিৎসায় ICT-এর অবদান}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}ব্যবসা-বাণিজ্যে ICT-এর অবদান}{10}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}গবেষণা ও কর্মসংস্থানে ICT}{10}{subsection.1.2.5}%
+\contentsline {section}{\numberline {1.3}ভার্চুয়াল রিয়েলিটি}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}ভার্চুয়াল রিয়েলিটির ধারণা}{11}{subsection.1.3.1}%
+\contentsline {subsubsection}{সহজ ভাষায় VR}{13}{section*.2}%
+\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটির মূল ভিত্তি}{14}{section*.3}%
+\contentsline {paragraph}{১. Immersion}{14}{section*.4}%
+\contentsline {paragraph}{২. Interaction}{15}{section*.5}%
+\contentsline {paragraph}{৩. Presence}{15}{section*.6}%
+\contentsline {subsubsection}{VR System-এর প্রধান উপাদান}{17}{section*.7}%
+\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটি কীভাবে কাজ করে}{17}{section*.8}%
+\contentsline {subsubsection}{ভার্চুয়াল রিয়েলিটির প্রধান বৈশিষ্ট্য}{18}{section*.9}%
+\contentsline {subsubsection}{VR, সাধারণ ভিডিও এবং Simulation-এর পার্থক্য}{18}{section*.10}%
+\contentsline {subsubsection}{চিকিৎসা প্রশিক্ষণে VR-এর ধারণাগত গুরুত্ব}{19}{section*.11}%
+\contentsline {subsubsection}{VR কেন বাস্তব অনুভূতি দেয়}{19}{section*.12}%
+\contentsline {subsubsection}{বোর্ড পরীক্ষার জন্য মনে রাখো}{20}{section*.13}%
+\contentsline {subsection}{\numberline {1.3.2}ভার্চুয়াল রিয়েলিটির উপাদান}{20}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}VR, AR ও Simulation-এর পার্থক্য}{21}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}প্রাত্যহিক জীবনে ভার্চুয়াল রিয়েলিটির প্রভাব}{21}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}ভার্চুয়াল রিয়েলিটির ইতিহাস}{22}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}আধুনিক ভার্চুয়াল রিয়েলিটি হার্ডওয়্যার (VR Headsets)}{22}{subsection.1.3.6}%
+\contentsline {subsubsection}{VR হার্ডওয়্যার কম্পোনেন্ট বিস্তারিত}{24}{section*.14}%
+\contentsline {subsection}{\numberline {1.3.7}VR Tracking এবং Motion Capture সিস্টেম}{25}{subsection.1.3.7}%
+\contentsline {subsubsection}{Inside-Out vs Outside-In Tracking}{25}{section*.15}%
+\contentsline {subsubsection}{Motion Capture প্রযুক্তি}{25}{section*.16}%
+\contentsline {subsection}{\numberline {1.3.8}চিকিৎসা শিক্ষা এবং অস্ত্রোপচার প্রশিক্ষণে VR}{25}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}মেডিকেল রিহ্যাবিলিটেশন এবং থেরাপিতে VR}{26}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.10}পাইলট এবং ফ্লাইট সিমুলেটর প্রশিক্ষণ}{27}{subsection.1.3.10}%
+\contentsline {subsection}{\numberline {1.3.11}গেমিং এবং বিনোদনে ভার্চুয়াল রিয়েলিটি}{28}{subsection.1.3.11}%
+\contentsline {subsection}{\numberline {1.3.12}ডাটা গ্লাভ এবং মোশন ট্র্যাকিং ডিভাইস}{29}{subsection.1.3.12}%
+\contentsline {subsection}{\numberline {1.3.13}ভার্চুয়াল রিয়েলিটির গুরুত্বপূর্ণ পরামিতি এবং মেট্রিক্স}{29}{subsection.1.3.13}%
+\contentsline {subsection}{\numberline {1.3.14}ভার্চুয়াল রিয়েলিটির স্বাস্থ্য ঝুঁকি এবং সতর্কতা (HSC এর জন্য গুরুত্বপূর্ণ)}{30}{subsection.1.3.14}%
+\contentsline {subsection}{\numberline {1.3.15}ভবিষ্যতের ভার্চুয়াল রিয়েলিটি (HSC এর জন্য ভবিষ্যত দৃষ্টিভঙ্গি)}{31}{subsection.1.3.15}%
+\contentsline {subsection}{\numberline {1.3.16}ভার্চুয়াল রিয়েলিটি এবং সামাজিক প্রভাব (HSC সমাজ বিজ্ঞানের জন্য)}{33}{subsection.1.3.16}%
+\contentsline {subsection}{\numberline {1.3.17}ভার্চুয়াল রিয়েলিটির ব্যবহারক্ষেত্র}{33}{subsection.1.3.17}%
+\contentsline {subsection}{\numberline {1.3.18}ভার্চুয়াল রিয়েলিটির সুবিধা}{34}{subsection.1.3.18}%
+\contentsline {subsection}{\numberline {1.3.19}ভার্চুয়াল রিয়েলিটির অসুবিধা}{34}{subsection.1.3.19}%
+\contentsline {section}{\numberline {1.4}তথ্য ও যোগাযোগ প্রযুক্তির সাম্প্রতিক প্রবণতা}{36}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}কৃত্রিম বুদ্ধিমত্তা}{37}{subsection.1.4.1}%
+\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার ধারণা}{37}{section*.17}%
+\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার বৈশিষ্ট্য}{37}{section*.18}%
+\contentsline {subsubsection}{এক্সপার্ট সিস্টেম}{38}{section*.19}%
+\contentsline {subsubsection}{প্রাকৃতিক ভাষা প্রক্রিয়াকরণ}{38}{section*.20}%
+\contentsline {subsubsection}{মেশিন লার্নিং}{38}{section*.21}%
+\contentsline {subsubsection}{কৃত্রিম বুদ্ধিমত্তার ব্যবহারক্ষেত্র}{39}{section*.22}%
+\contentsline {subsection}{\numberline {1.4.2}রোবটিকস}{40}{subsection.1.4.2}%
+\contentsline {subsubsection}{রোবটিকসের ধারণা}{40}{section*.23}%
+\contentsline {subsubsection}{রোবটের প্রধান অংশ}{41}{section*.24}%
+\contentsline {subsubsection}{রোবটের বৈশিষ্ট্য}{41}{section*.25}%
+\contentsline {subsubsection}{রোবটের ব্যবহারক্ষেত্র}{41}{section*.26}%
+\contentsline {subsubsection}{রোবটিকসের সুবিধা}{42}{section*.27}%
+\contentsline {subsubsection}{রোবটিকসের সীমাবদ্ধতা}{42}{section*.28}%
+\contentsline {subsection}{\numberline {1.4.3}ক্রায়োসার্জারি}{43}{subsection.1.4.3}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির ধারণা}{43}{section*.29}%
+\contentsline {subsubsection}{ক্রায়োসার্জারিতে ব্যবহৃত উপাদান}{43}{section*.30}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির পদ্ধতি}{44}{section*.31}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির ব্যবহারক্ষেত্র}{44}{section*.32}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির সুবিধা}{44}{section*.33}%
+\contentsline {subsubsection}{ক্রায়োসার্জারির অসুবিধা}{44}{section*.34}%
+\contentsline {subsection}{\numberline {1.4.4}মহাকাশ অভিযান}{45}{subsection.1.4.4}%
+\contentsline {subsubsection}{মহাকাশ অভিযানে আইসিটির ভূমিকা}{45}{section*.35}%
+\contentsline {subsubsection}{স্যাটেলাইট যোগাযোগ}{46}{section*.36}%
+\contentsline {subsubsection}{রিমোট সেন্সিং}{46}{section*.37}%
+\contentsline {subsubsection}{জিপিএস}{46}{section*.38}%
+\contentsline {subsubsection}{আবহাওয়া পূর্বাভাস}{47}{section*.39}%
+\contentsline {subsubsection}{মহাকাশ গবেষণায় তথ্য বিশ্লেষণ}{47}{section*.40}%
+\contentsline {subsection}{\numberline {1.4.5}আইসিটি নির্ভর উৎপাদন ব্যবস্থা}{48}{subsection.1.4.5}%
+\contentsline {subsubsection}{স্বয়ংক্রিয় উৎপাদন}{48}{section*.41}%
+\contentsline {subsubsection}{কম্পিউটার-নিয়ন্ত্রিত যন্ত্র}{48}{section*.42}%
+\contentsline {subsubsection}{রোবট ব্যবহৃত উৎপাদন}{48}{section*.43}%
+\contentsline {subsubsection}{গুণগত মান নিয়ন্ত্রণ}{49}{section*.44}%
+\contentsline {subsubsection}{উৎপাদন ব্যবস্থায় আইসিটির সুবিধা}{49}{section*.45}%
+\contentsline {subsection}{\numberline {1.4.6}প্রতিরক্ষা}{50}{subsection.1.4.6}%
+\contentsline {subsubsection}{প্রতিরক্ষা ব্যবস্থায় আইসিটি}{50}{section*.46}%
+\contentsline {subsubsection}{রাডার ও সেন্সর}{50}{section*.47}%
+\contentsline {subsubsection}{স্যাটেলাইট নজরদারি}{51}{section*.48}%
+\contentsline {subsubsection}{সাইবার নিরাপত্তা}{51}{section*.49}%
+\contentsline {subsubsection}{ড্রোন ও রোবট}{51}{section*.50}%
+\contentsline {subsection}{\numberline {1.4.7}বায়োমেট্রিক্স}{52}{subsection.1.4.7}%
+\contentsline {subsubsection}{বায়োমেট্রিক্সের ধারণা}{53}{section*.51}%
+\contentsline {subsubsection}{ফিঙ্গারপ্রিন্ট শনাক্তকরণ}{53}{section*.52}%
+\contentsline {subsubsection}{মুখমণ্ডল শনাক্তকরণ}{53}{section*.53}%
+\contentsline {subsubsection}{আইরিস ও রেটিনা স্ক্যান}{53}{section*.54}%
+\contentsline {subsubsection}{ভয়েস রিকগনিশন}{53}{section*.55}%
+\contentsline {subsubsection}{বায়োমেট্রিক্সের ব্যবহারক্ষেত্র}{54}{section*.56}%
+\contentsline {subsection}{\numberline {1.4.8}বায়োইনফরমেটিক্স}{55}{subsection.1.4.8}%
+\contentsline {subsubsection}{বায়োইনফরমেটিক্সের ধারণা}{55}{section*.57}%
+\contentsline {subsubsection}{জৈব তথ্য সংরক্ষণ}{55}{section*.58}%
+\contentsline {subsubsection}{ডিএনএ বিশ্লেষণ}{56}{section*.59}%
+\contentsline {subsubsection}{প্রোটিন বিশ্লেষণ}{56}{section*.60}%
+\contentsline {subsubsection}{চিকিৎসা ও গবেষণায় ব্যবহার}{56}{section*.61}%
+\contentsline {subsubsection}{কৃষি গবেষণায় ব্যবহার}{56}{section*.62}%
+\contentsline {subsection}{\numberline {1.4.9}জেনেটিক ইঞ্জিনিয়ারিং}{57}{subsection.1.4.9}%
+\contentsline {subsubsection}{জেনেটিক ইঞ্জিনিয়ারিংয়ের ধারণা}{57}{section*.63}%
+\contentsline {subsubsection}{ডিএনএ ও জিন}{58}{section*.64}%
+\contentsline {subsubsection}{রিকম্বিন্যান্ট ডিএনএ}{58}{section*.65}%
+\contentsline {subsubsection}{জেনেটিক্যালি মডিফাইড অর্গানিজম}{58}{section*.66}%
+\contentsline {subsubsection}{চিকিৎসায় ব্যবহার}{58}{section*.67}%
+\contentsline {subsubsection}{কৃষিতে ব্যবহার}{59}{section*.68}%
+\contentsline {subsubsection}{নৈতিকতা ও ঝুঁকি}{59}{section*.69}%
+\contentsline {subsection}{\numberline {1.4.10}ন্যানো টেকনোলজি}{60}{subsection.1.4.10}%
+\contentsline {subsubsection}{ন্যানো টেকনোলজির ধারণা}{60}{section*.70}%
+\contentsline {subsubsection}{ন্যানোমিটার ও ন্যানো উপাদান}{60}{section*.71}%
+\contentsline {subsubsection}{চিকিৎসায় ব্যবহার}{61}{section*.72}%
+\contentsline {subsubsection}{ইলেকট্রনিক্সে ব্যবহার}{61}{section*.73}%
+\contentsline {subsubsection}{কৃষি ও শিল্পে ব্যবহার}{61}{section*.74}%
+\contentsline {subsubsection}{ন্যানো টেকনোলজির সুবিধা}{61}{section*.75}%
+\contentsline {subsubsection}{ন্যানো টেকনোলজির ঝুঁকি}{62}{section*.76}%
+\contentsline {section}{\numberline {1.5}তথ্য ও যোগাযোগ প্রযুক্তি ব্যবহারে নৈতিকতা}{63}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}নৈতিকতার ধারণা}{63}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}সমাজজীবনে তথ্য ও যোগাযোগ প্রযুক্তির প্রভাব}{64}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}যোগাযোগ ব্যবস্থার পরিবর্তন}{65}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}শিক্ষা ও জ্ঞানচর্চা}{65}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}স্বাস্থ্যসেবা}{65}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}কর্মসংস্থান ও বিনোদন}{65}{subsection.1.6.4}%
+\contentsline {section}{\numberline {1.7}তথ্য ও যোগাযোগ প্রযুক্তি এবং অর্থনৈতিক উন্নয়ন}{66}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}অর্থনীতিতে ICT-এর ভূমিকা}{66}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Digital Bangladesh প্রেক্ষিত}{67}{subsection.1.7.2}%
+\contentsline {chapter}{\numberline {2}কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং}{69}{chapter.2}%
+\contentsline {section}{\numberline {2.1}কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ}{71}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}বাস্তব জীবনের শুরু}{71}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}কমিউনিকেশন}{72}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}কমিউনিকেশন সিস্টেম}{72}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}কমিউনিকেশন সিস্টেমের কার্যপ্রণালি}{74}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}ডেটা কমিউনিকেশন}{74}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Data, Information ও Signal}{75}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Analog Signal ও Digital Signal}{76}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}কমিউনিকেশন সিস্টেমের সংক্ষিপ্ত ইতিহাস}{78}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}ব্যান্ডউইডথ}{79}{subsection.2.1.9}%
+\contentsline {subsection}{\numberline {2.1.10}Bandwidth, Data Rate ও Latency}{80}{subsection.2.1.10}%
+\contentsline {subsection}{\numberline {2.1.11}Bandwidth-এর শ্রেণিবিভাগ}{80}{subsection.2.1.11}%
+\contentsline {subsection}{\numberline {2.1.12}Bandwidth Calculation}{81}{subsection.2.1.12}%
+\contentsline {subsection}{\numberline {2.1.13}Exam-style প্রশ্ন ও উত্তর}{82}{subsection.2.1.13}%
+\contentsline {subsection}{\numberline {2.1.14}Brainstorming Critical Question}{83}{subsection.2.1.14}%
+\contentsline {subsection}{\numberline {2.1.15}১ মিনিটে রিভিশন}{83}{subsection.2.1.15}%
+\contentsline {subsection}{\numberline {2.1.16}অনুশীলন}{83}{subsection.2.1.16}%
+\contentsline {section}{\numberline {2.2}ডেটা ট্রান্সমিশন মেথড ও মোড}{84}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}বাস্তব জীবনের শুরু}{85}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}ডেটা ট্রান্সমিশন}{85}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}ডেটা ট্রান্সমিশন মেথড}{86}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Parallel Transmission}{87}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Serial Transmission}{88}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Parallel Transmission ও Serial Transmission-এর পার্থক্য}{89}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Serial Transmission-এর ধরন}{89}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Asynchronous Transmission}{89}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.2.9}Synchronous Transmission}{91}{subsection.2.2.9}%
+\contentsline {subsection}{\numberline {2.2.10}Isochronous Transmission}{93}{subsection.2.2.10}%
+\contentsline {subsection}{\numberline {2.2.11}Asynchronous, Synchronous ও Isochronous Transmission-এর পার্থক্য}{94}{subsection.2.2.11}%
+\contentsline {subsection}{\numberline {2.2.12}ডেটা ট্রান্সমিশন মোড}{95}{subsection.2.2.12}%
+\contentsline {subsection}{\numberline {2.2.13}Simplex Mode}{95}{subsection.2.2.13}%
+\contentsline {subsection}{\numberline {2.2.14}Half-duplex Mode}{95}{subsection.2.2.14}%
+\contentsline {subsection}{\numberline {2.2.15}Full-duplex Mode}{96}{subsection.2.2.15}%
+\contentsline {subsection}{\numberline {2.2.16}Simplex, Half-duplex ও Full-duplex-এর পার্থক্য}{97}{subsection.2.2.16}%
+\contentsline {subsection}{\numberline {2.2.17}Data Delivery Mode: Unicast, Broadcast ও Multicast}{98}{subsection.2.2.17}%
+\contentsline {subsection}{\numberline {2.2.18}Unicast}{98}{subsection.2.2.18}%
+\contentsline {subsection}{\numberline {2.2.19}Broadcast}{98}{subsection.2.2.19}%
+\contentsline {subsection}{\numberline {2.2.20}Multicast}{99}{subsection.2.2.20}%
+\contentsline {subsection}{\numberline {2.2.21}Unicast, Broadcast ও Multicast-এর পার্থক্য}{100}{subsection.2.2.21}%
+\contentsline {subsection}{\numberline {2.2.22}Exam-style প্রশ্ন ও উত্তর}{100}{subsection.2.2.22}%
+\contentsline {subsection}{\numberline {2.2.23}Brainstorming Critical Question}{101}{subsection.2.2.23}%
+\contentsline {subsection}{\numberline {2.2.24}১ মিনিটে রিভিশন}{101}{subsection.2.2.24}%
+\contentsline {subsection}{\numberline {2.2.25}অনুশীলন}{102}{subsection.2.2.25}%
+\contentsline {section}{\numberline {2.3}ডেটা কমিউনিকেশন মাধ্যম}{103}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}বাস্তব জীবনের শুরু}{103}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}ডেটা কমিউনিকেশন মাধ্যম}{104}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Transmission Medium-এর গুরুত্ব}{105}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}ডেটা কমিউনিকেশন মাধ্যমের শ্রেণিবিভাগ}{106}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Guided Media বা Wired Media}{107}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Guided Media-এর প্রকারভেদ}{108}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.7}Twisted Pair Cable}{109}{subsection.2.3.7}%
+\contentsline {subsection}{\numberline {2.3.8}UTP ও STP}{109}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.9}Coaxial Cable}{110}{subsection.2.3.9}%
+\contentsline {subsection}{\numberline {2.3.10}Optical Fiber Cable}{110}{subsection.2.3.10}%
+\contentsline {subsection}{\numberline {2.3.11}Unguided Media বা Wireless Media}{111}{subsection.2.3.11}%
+\contentsline {subsection}{\numberline {2.3.12}Unguided Media-এর প্রকারভেদ}{111}{subsection.2.3.12}%
+\contentsline {subsection}{\numberline {2.3.13}Radio Wave}{112}{subsection.2.3.13}%
+\contentsline {subsection}{\numberline {2.3.14}Microwave}{113}{subsection.2.3.14}%
+\contentsline {subsection}{\numberline {2.3.15}Infrared}{114}{subsection.2.3.15}%
+\contentsline {subsection}{\numberline {2.3.16}Satellite Communication}{114}{subsection.2.3.16}%
+\contentsline {subsection}{\numberline {2.3.17}Guided ও Unguided Media-এর পার্থক্য}{116}{subsection.2.3.17}%
+\contentsline {subsection}{\numberline {2.3.18}Transmission Medium নির্বাচনের বিষয়গুলো}{116}{subsection.2.3.18}%
+\contentsline {subsection}{\numberline {2.3.19}মাধ্যম নির্বাচন: বাস্তব উদাহরণ}{117}{subsection.2.3.19}%
+\contentsline {subsection}{\numberline {2.3.20}Common Mistake Zone}{117}{subsection.2.3.20}%
+\contentsline {subsection}{\numberline {2.3.21}Exam-style প্রশ্ন ও উত্তর}{118}{subsection.2.3.21}%
+\contentsline {subsection}{\numberline {2.3.22}Brainstorming Critical Question}{119}{subsection.2.3.22}%
+\contentsline {subsection}{\numberline {2.3.23}১ মিনিটে রিভিশন}{119}{subsection.2.3.23}%
+\contentsline {subsection}{\numberline {2.3.24}অনুশীলন}{120}{subsection.2.3.24}%
+\contentsline {section}{\numberline {2.4}তারযুক্ত মাধ্যম}{121}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}বাস্তব জীবনের শুরু}{121}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}তারযুক্ত মাধ্যম বা Guided Media}{122}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}তারযুক্ত মাধ্যমের প্রকারভেদ}{124}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Twisted Pair Cable}{125}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Twisted Pair Cable কেন পেঁচানো থাকে?}{126}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}UTP ও STP Cable}{126}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Twisted Pair Cable-এর সুবিধা ও অসুবিধা}{127}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Coaxial Cable}{128}{subsection.2.4.8}%
+\contentsline {subsection}{\numberline {2.4.9}Coaxial Cable-এর সুবিধা ও অসুবিধা}{129}{subsection.2.4.9}%
+\contentsline {subsection}{\numberline {2.4.10}Optical Fiber Cable}{130}{subsection.2.4.10}%
+\contentsline {subsection}{\numberline {2.4.11}Optical Fiber Cable কীভাবে কাজ করে?}{131}{subsection.2.4.11}%
+\contentsline {subsection}{\numberline {2.4.12}Single Mode ও Multimode Fiber}{132}{subsection.2.4.12}%
+\contentsline {subsection}{\numberline {2.4.13}Optical Fiber Cable-এর সুবিধা ও অসুবিধা}{133}{subsection.2.4.13}%
+\contentsline {subsection}{\numberline {2.4.14}Twisted Pair, Coaxial ও Optical Fiber-এর তুলনা}{134}{subsection.2.4.14}%
+\contentsline {subsection}{\numberline {2.4.15}তারযুক্ত মাধ্যম নির্বাচন করার কৌশল}{134}{subsection.2.4.15}%
+\contentsline {subsection}{\numberline {2.4.16}Common Mistake Zone}{135}{subsection.2.4.16}%
+\contentsline {subsection}{\numberline {2.4.17}Exam-style প্রশ্ন ও উত্তর}{135}{subsection.2.4.17}%
+\contentsline {subsection}{\numberline {2.4.18}Brainstorming Critical Question}{136}{subsection.2.4.18}%
+\contentsline {subsection}{\numberline {2.4.19}১ মিনিটে রিভিশন}{137}{subsection.2.4.19}%
+\contentsline {subsection}{\numberline {2.4.20}অনুশীলন}{137}{subsection.2.4.20}%
+\contentsline {section}{\numberline {2.5}তারবিহীন মাধ্যম ও সিস্টেম}{139}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}বাস্তব জীবনের শুরু}{139}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}তারবিহীন মাধ্যম বা Unguided Media}{140}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}তারবিহীন মাধ্যমের প্রকারভেদ}{141}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Radio Wave}{142}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Microwave}{144}{subsection.2.5.5}%
+\contentsline {subsection}{\numberline {2.5.6}Infrared}{145}{subsection.2.5.6}%
+\contentsline {subsection}{\numberline {2.5.7}Satellite Communication}{147}{subsection.2.5.7}%
+\contentsline {subsection}{\numberline {2.5.8}Bluetooth}{148}{subsection.2.5.8}%
+\contentsline {subsection}{\numberline {2.5.9}Wi-Fi}{150}{subsection.2.5.9}%
+\contentsline {subsection}{\numberline {2.5.10}WiMAX}{151}{subsection.2.5.10}%
+\contentsline {subsection}{\numberline {2.5.11}Bluetooth, Wi-Fi ও WiMAX-এর তুলনা}{153}{subsection.2.5.11}%
+\contentsline {subsection}{\numberline {2.5.12}Wireless Media-এর সুবিধা}{153}{subsection.2.5.12}%
+\contentsline {subsection}{\numberline {2.5.13}Wireless Media-এর অসুবিধা}{153}{subsection.2.5.13}%
+\contentsline {subsection}{\numberline {2.5.14}Wireless Medium নির্বাচন করার কৌশল}{154}{subsection.2.5.14}%
+\contentsline {subsection}{\numberline {2.5.15}Common Mistake Zone}{154}{subsection.2.5.15}%
+\contentsline {subsection}{\numberline {2.5.16}Exam-style প্রশ্ন ও উত্তর}{155}{subsection.2.5.16}%
+\contentsline {subsection}{\numberline {2.5.17}Brainstorming Critical Question}{156}{subsection.2.5.17}%
+\contentsline {subsection}{\numberline {2.5.18}১ মিনিটে রিভিশন}{156}{subsection.2.5.18}%
+\contentsline {subsection}{\numberline {2.5.19}অনুশীলন}{157}{subsection.2.5.19}%
+\contentsline {section}{\numberline {2.6}মোবাইল কমিউনিকেশন ও মোবাইল প্রজন্ম}{158}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}বাস্তব জীবনের শুরু}{158}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}মোবাইল কমিউনিকেশন}{159}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Cellular Network-এর ধারণা}{161}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Cellular Network কেন দরকার?}{162}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Mobile Network Architecture}{162}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}Handoff বা Handover}{163}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.7}Roaming}{164}{subsection.2.6.7}%
+\contentsline {subsection}{\numberline {2.6.8}মোবাইল প্রজন্ম বা Mobile Generation}{165}{subsection.2.6.8}%
+\contentsline {subsection}{\numberline {2.6.9}1G: First Generation}{166}{subsection.2.6.9}%
+\contentsline {subsection}{\numberline {2.6.10}2G: Second Generation}{167}{subsection.2.6.10}%
+\contentsline {subsection}{\numberline {2.6.11}3G: Third Generation}{167}{subsection.2.6.11}%
+\contentsline {subsection}{\numberline {2.6.12}4G: Fourth Generation}{168}{subsection.2.6.12}%
+\contentsline {subsection}{\numberline {2.6.13}5G: Fifth Generation}{169}{subsection.2.6.13}%
+\contentsline {subsection}{\numberline {2.6.14}1G থেকে 5G: তুলনামূলক ছক}{170}{subsection.2.6.14}%
+\contentsline {subsection}{\numberline {2.6.15}Mobile Communication-এর সুবিধা}{171}{subsection.2.6.15}%
+\contentsline {subsection}{\numberline {2.6.16}Mobile Communication-এর সীমাবদ্ধতা}{171}{subsection.2.6.16}%
+\contentsline {subsection}{\numberline {2.6.17}Bandwidth, Latency ও Signal Strength-এর সম্পর্ক}{171}{subsection.2.6.17}%
+\contentsline {subsection}{\numberline {2.6.18}Mobile Communication-এর ব্যবহার}{172}{subsection.2.6.18}%
+\contentsline {subsection}{\numberline {2.6.19}Common Mistake Zone}{172}{subsection.2.6.19}%
+\contentsline {subsection}{\numberline {2.6.20}Exam-style প্রশ্ন ও উত্তর}{173}{subsection.2.6.20}%
+\contentsline {subsection}{\numberline {2.6.21}Brainstorming Critical Question}{174}{subsection.2.6.21}%
+\contentsline {subsection}{\numberline {2.6.22}১ মিনিটে রিভিশন}{174}{subsection.2.6.22}%
+\contentsline {subsection}{\numberline {2.6.23}অনুশীলন}{175}{subsection.2.6.23}%
+\contentsline {section}{\numberline {2.7}কম্পিউটার নেটওয়ার্কিং: উদ্দেশ্য ও প্রকারভেদ}{176}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}বাস্তব জীবনের শুরু}{177}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}কম্পিউটার নেটওয়ার্ক}{177}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Networking}{178}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}নেটওয়ার্কের প্রধান উপাদান}{178}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5}কম্পিউটার নেটওয়ার্কের উদ্দেশ্য}{179}{subsection.2.7.5}%
+\contentsline {subsection}{\numberline {2.7.6}Resource Sharing}{180}{subsection.2.7.6}%
+\contentsline {subsection}{\numberline {2.7.7}Data Sharing}{181}{subsection.2.7.7}%
+\contentsline {subsection}{\numberline {2.7.8}Communication}{181}{subsection.2.7.8}%
+\contentsline {subsection}{\numberline {2.7.9}Centralized Management}{182}{subsection.2.7.9}%
+\contentsline {subsection}{\numberline {2.7.10}Cost Reduction}{182}{subsection.2.7.10}%
+\contentsline {subsection}{\numberline {2.7.11}Reliability ও Backup}{182}{subsection.2.7.11}%
+\contentsline {subsection}{\numberline {2.7.12}কম্পিউটার নেটওয়ার্কের সুবিধা}{183}{subsection.2.7.12}%
+\contentsline {subsection}{\numberline {2.7.13}কম্পিউটার নেটওয়ার্কের অসুবিধা}{183}{subsection.2.7.13}%
+\contentsline {subsection}{\numberline {2.7.14}কম্পিউটার নেটওয়ার্কের প্রকারভেদ}{183}{subsection.2.7.14}%
+\contentsline {subsection}{\numberline {2.7.15}PAN: Personal Area Network}{184}{subsection.2.7.15}%
+\contentsline {subsection}{\numberline {2.7.16}LAN: Local Area Network}{185}{subsection.2.7.16}%
+\contentsline {subsection}{\numberline {2.7.17}MAN: Metropolitan Area Network}{186}{subsection.2.7.17}%
+\contentsline {subsection}{\numberline {2.7.18}WAN: Wide Area Network}{186}{subsection.2.7.18}%
+\contentsline {subsection}{\numberline {2.7.19}PAN, LAN, MAN ও WAN-এর পার্থক্য}{187}{subsection.2.7.19}%
+\contentsline {subsection}{\numberline {2.7.20}Network Architecture-এর ভিত্তিতে প্রকারভেদ}{188}{subsection.2.7.20}%
+\contentsline {subsection}{\numberline {2.7.21}Peer-to-peer Network}{188}{subsection.2.7.21}%
+\contentsline {subsection}{\numberline {2.7.22}Client-server Network}{188}{subsection.2.7.22}%
+\contentsline {subsection}{\numberline {2.7.23}Client-server ও Peer-to-peer Network-এর পার্থক্য}{190}{subsection.2.7.23}%
+\contentsline {subsection}{\numberline {2.7.24}Internet, Intranet ও Extranet}{190}{subsection.2.7.24}%
+\contentsline {subsection}{\numberline {2.7.25}বাস্তব scenario অনুযায়ী network নির্বাচন}{192}{subsection.2.7.25}%
+\contentsline {subsection}{\numberline {2.7.26}Common Mistake Zone}{192}{subsection.2.7.26}%
+\contentsline {subsection}{\numberline {2.7.27}Exam-style প্রশ্ন ও উত্তর}{193}{subsection.2.7.27}%
+\contentsline {subsection}{\numberline {2.7.28}Brainstorming Critical Question}{194}{subsection.2.7.28}%
+\contentsline {subsection}{\numberline {2.7.29}১ মিনিটে রিভিশন}{194}{subsection.2.7.29}%
+\contentsline {subsection}{\numberline {2.7.30}অনুশীলন}{195}{subsection.2.7.30}%
+\contentsline {section}{\numberline {2.8}নেটওয়ার্ক ডিভাইস}{196}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}বাস্তব জীবনের শুরু}{196}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}নেটওয়ার্ক ডিভাইস}{197}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Network Device কেন প্রয়োজন?}{198}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}OSI Layer অনুযায়ী Network Device}{199}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.5}Network Interface Card বা NIC}{200}{subsection.2.8.5}%
+\contentsline {subsection}{\numberline {2.8.6}Modem}{202}{subsection.2.8.6}%
+\contentsline {subsection}{\numberline {2.8.7}Hub}{203}{subsection.2.8.7}%
+\contentsline {subsection}{\numberline {2.8.8}Switch}{205}{subsection.2.8.8}%
+\contentsline {subsection}{\numberline {2.8.9}Router}{206}{subsection.2.8.9}%
+\contentsline {subsection}{\numberline {2.8.10}Repeater}{208}{subsection.2.8.10}%
+\contentsline {subsection}{\numberline {2.8.11}Bridge}{209}{subsection.2.8.11}%
+\contentsline {subsection}{\numberline {2.8.12}Gateway}{211}{subsection.2.8.12}%
+\contentsline {subsection}{\numberline {2.8.13}Access Point}{212}{subsection.2.8.13}%
+\contentsline {subsection}{\numberline {2.8.14}Firewall}{214}{subsection.2.8.14}%
+\contentsline {subsection}{\numberline {2.8.15}Home Network-এ Network Device-এর ব্যবহার}{215}{subsection.2.8.15}%
+\contentsline {subsection}{\numberline {2.8.16}School Computer Lab Network}{216}{subsection.2.8.16}%
+\contentsline {subsection}{\numberline {2.8.17}Hub, Switch ও Router-এর পার্থক্য}{218}{subsection.2.8.17}%
+\contentsline {subsection}{\numberline {2.8.18}Switch ও Bridge-এর পার্থক্য}{219}{subsection.2.8.18}%
+\contentsline {subsection}{\numberline {2.8.19}Router ও Gateway-এর পার্থক্য}{220}{subsection.2.8.19}%
+\contentsline {subsection}{\numberline {2.8.20}কোন পরিস্থিতিতে কোন device ব্যবহার হবে?}{220}{subsection.2.8.20}%
+\contentsline {subsection}{\numberline {2.8.21}Common Mistake Zone}{221}{subsection.2.8.21}%
+\contentsline {subsection}{\numberline {2.8.22}Exam-style প্রশ্ন ও উত্তর}{221}{subsection.2.8.22}%
+\contentsline {subsection}{\numberline {2.8.23}Brainstorming Critical Question}{223}{subsection.2.8.23}%
+\contentsline {subsection}{\numberline {2.8.24}১ মিনিটে রিভিশন}{224}{subsection.2.8.24}%
+\contentsline {subsection}{\numberline {2.8.25}অনুশীলন}{225}{subsection.2.8.25}%
+\contentsline {section}{\numberline {2.9}নেটওয়ার্ক টপোলজি}{226}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}বাস্তব জীবনের শুরু}{226}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}নেটওয়ার্ক টপোলজি}{227}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Network Topology কেন গুরুত্বপূর্ণ?}{228}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Physical Topology ও Logical Topology}{229}{subsection.2.9.4}%
+\contentsline {subsection}{\numberline {2.9.5}নেটওয়ার্ক টপোলজির প্রকারভেদ}{230}{subsection.2.9.5}%
+\contentsline {subsection}{\numberline {2.9.6}Bus Topology}{231}{subsection.2.9.6}%
+\contentsline {subsection}{\numberline {2.9.7}Bus Topology-এর সুবিধা ও অসুবিধা}{233}{subsection.2.9.7}%
+\contentsline {subsection}{\numberline {2.9.8}Star Topology}{233}{subsection.2.9.8}%
+\contentsline {subsection}{\numberline {2.9.9}Star Topology-এর সুবিধা ও অসুবিধা}{235}{subsection.2.9.9}%
+\contentsline {subsection}{\numberline {2.9.10}Ring Topology}{235}{subsection.2.9.10}%
+\contentsline {subsection}{\numberline {2.9.11}Ring Topology-এর সুবিধা ও অসুবিধা}{236}{subsection.2.9.11}%
+\contentsline {subsection}{\numberline {2.9.12}Mesh Topology}{237}{subsection.2.9.12}%
+\contentsline {subsection}{\numberline {2.9.13}Mesh Topology-এর সুবিধা ও অসুবিধা}{238}{subsection.2.9.13}%
+\contentsline {subsection}{\numberline {2.9.14}Tree Topology}{239}{subsection.2.9.14}%
+\contentsline {subsection}{\numberline {2.9.15}Tree Topology-এর সুবিধা ও অসুবিধা}{241}{subsection.2.9.15}%
+\contentsline {subsection}{\numberline {2.9.16}Hybrid Topology}{241}{subsection.2.9.16}%
+\contentsline {subsection}{\numberline {2.9.17}প্রধান Topology-গুলোর তুলনা}{243}{subsection.2.9.17}%
+\contentsline {subsection}{\numberline {2.9.18}কোন পরিস্থিতিতে কোন topology ব্যবহার হবে?}{245}{subsection.2.9.18}%
+\contentsline {subsection}{\numberline {2.9.19}Topology নির্বাচন করার সময় বিবেচ্য বিষয়}{246}{subsection.2.9.19}%
+\contentsline {subsection}{\numberline {2.9.20}Common Mistake Zone}{247}{subsection.2.9.20}%
+\contentsline {subsection}{\numberline {2.9.21}Exam-style প্রশ্ন ও উত্তর}{247}{subsection.2.9.21}%
+\contentsline {subsection}{\numberline {2.9.22}Brainstorming Critical Question}{249}{subsection.2.9.22}%
+\contentsline {subsection}{\numberline {2.9.23}১ মিনিটে রিভিশন}{249}{subsection.2.9.23}%
+\contentsline {subsection}{\numberline {2.9.24}অনুশীলন}{250}{subsection.2.9.24}%
+\contentsline {section}{\numberline {2.10}ক্লাউড কম্পিউটিং}{251}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}বাস্তব জীবনের শুরু}{251}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}ক্লাউড কম্পিউটিং}{252}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}ক্লাউড কম্পিউটিং-এর মূল উপাদান}{253}{subsection.2.10.3}%
+\contentsline {subsection}{\numberline {2.10.4}Cloud Computing কীভাবে কাজ করে?}{254}{subsection.2.10.4}%
+\contentsline {subsection}{\numberline {2.10.5}Cloud Computing-এর Essential Characteristics}{255}{subsection.2.10.5}%
+\contentsline {subsubsection}{On-demand Self-service}{255}{section*.77}%
+\contentsline {subsubsection}{Broad Network Access}{255}{section*.78}%
+\contentsline {subsubsection}{Resource Pooling}{255}{section*.79}%
+\contentsline {subsubsection}{Rapid Elasticity}{256}{section*.80}%
+\contentsline {subsubsection}{Measured Service}{256}{section*.81}%
+\contentsline {subsection}{\numberline {2.10.6}Cloud Service Model}{256}{subsection.2.10.6}%
+\contentsline {subsection}{\numberline {2.10.7}IaaS}{257}{subsection.2.10.7}%
+\contentsline {subsection}{\numberline {2.10.8}PaaS}{258}{subsection.2.10.8}%
+\contentsline {subsection}{\numberline {2.10.9}SaaS}{258}{subsection.2.10.9}%
+\contentsline {subsection}{\numberline {2.10.10}IaaS, PaaS ও SaaS-এর পার্থক্য}{259}{subsection.2.10.10}%
+\contentsline {subsection}{\numberline {2.10.11}Cloud Deployment Model}{260}{subsection.2.10.11}%
+\contentsline {subsection}{\numberline {2.10.12}Public Cloud}{261}{subsection.2.10.12}%
+\contentsline {subsection}{\numberline {2.10.13}Private Cloud}{262}{subsection.2.10.13}%
+\contentsline {subsection}{\numberline {2.10.14}Hybrid Cloud}{262}{subsection.2.10.14}%
+\contentsline {subsection}{\numberline {2.10.15}Community Cloud}{263}{subsection.2.10.15}%
+\contentsline {subsection}{\numberline {2.10.16}Public, Private, Hybrid ও Community Cloud-এর পার্থক্য}{263}{subsection.2.10.16}%
+\contentsline {subsection}{\numberline {2.10.17}Cloud Storage}{264}{subsection.2.10.17}%
+\contentsline {subsection}{\numberline {2.10.18}Cloud Computing-এর সুবিধা}{265}{subsection.2.10.18}%
+\contentsline {subsection}{\numberline {2.10.19}Cloud Computing-এর অসুবিধা ও সীমাবদ্ধতা}{266}{subsection.2.10.19}%
+\contentsline {subsection}{\numberline {2.10.20}Cloud Security}{267}{subsection.2.10.20}%
+\contentsline {subsection}{\numberline {2.10.21}Traditional Computing ও Cloud Computing-এর পার্থক্য}{268}{subsection.2.10.21}%
+\contentsline {subsection}{\numberline {2.10.22}School বা College-এ Cloud Computing-এর ব্যবহার}{268}{subsection.2.10.22}%
+\contentsline {subsection}{\numberline {2.10.23}কোন পরিস্থিতিতে কোন Cloud Model ব্যবহার হবে?}{270}{subsection.2.10.23}%
+\contentsline {subsection}{\numberline {2.10.24}Common Mistake Zone}{270}{subsection.2.10.24}%
+\contentsline {subsection}{\numberline {2.10.25}Exam-style প্রশ্ন ও উত্তর}{271}{subsection.2.10.25}%
+\contentsline {subsection}{\numberline {2.10.26}Brainstorming Critical Question}{273}{subsection.2.10.26}%
+\contentsline {subsection}{\numberline {2.10.27}১ মিনিটে রিভিশন}{273}{subsection.2.10.27}%
+\contentsline {subsection}{\numberline {2.10.28}অনুশীলন}{274}{subsection.2.10.28}%
+\contentsline {section}{\numberline {2.11}অধ্যায়ভিত্তিক অনুশীলন: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং}{275}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}অধ্যায় ০২: গুরুত্বপূর্ণ Topic List}{276}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}১ মিনিটে Full Chapter Revision}{276}{subsection.2.11.2}%
+\contentsline {subsection}{\numberline {2.11.3}Board Focus Short Notes}{277}{subsection.2.11.3}%
+\contentsline {subsection}{\numberline {2.11.4}MCQ: Board Standard Practice}{278}{subsection.2.11.4}%
+\contentsline {subsection}{\numberline {2.11.5}Board Standard Short Questions}{282}{subsection.2.11.5}%
+\contentsline {subsection}{\numberline {2.11.6}Board CQ Practice Set}{283}{subsection.2.11.6}%
+\contentsline {subsection}{\numberline {2.11.7}Extra Board-style CQ for Final Practice}{289}{subsection.2.11.7}%
+\contentsline {subsection}{\numberline {2.11.8}Case-based MCQ}{290}{subsection.2.11.8}%
+\contentsline {subsection}{\numberline {2.11.9}Model Board Test: Chapter 02}{291}{subsection.2.11.9}%
+\contentsline {subsection}{\numberline {2.11.10}Exam Writing Tips}{292}{subsection.2.11.10}%
+\contentsline {chapter}{\numberline {3}সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস}{293}{chapter.3}%
+\contentsline {section}{\numberline {3.1}সংখ্যা আবিষ্কারের ইতিহাস}{294}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}সংখ্যার প্রয়োজনীয়তা}{294}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}গণনার প্রাচীন পদ্ধতি}{294}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}আধুনিক সংখ্যা পদ্ধতির বিকাশ}{294}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}সংখ্যা পদ্ধতি}{295}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}সংখ্যা পদ্ধতির ধারণা}{295}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}সংখ্যা পদ্ধতির প্রকারভেদ}{295}{subsection.3.2.2}%
+\contentsline {paragraph}{Decimal (Base 10)}{295}{section*.82}%
+\contentsline {paragraph}{Binary (Base 2)}{295}{section*.83}%
+\contentsline {paragraph}{Octal (Base 8) and Hexadecimal (Base 16)}{295}{section*.84}%
+\contentsline {section}{\numberline {3.3}সংখ্যা রূপান্তর (Conversion)}{297}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Decimal থেকে Binary}{297}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Binary থেকে Decimal}{297}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Decimal ও Octal/Hexadecimal এবং Binary ও Octal/Hex মধ্যে রূপান্তর}{297}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}বাইনারি যোগ ও বিয়োগ}{298}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Binary Addition}{298}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Binary Subtraction}{298}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}প্রশিক্ষণ সমস্যা}{299}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}চিহ্নযুক্ত সংখ্যা}{300}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}সংজ্ঞা}{300}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}প্রতিনিধিত্ব পদ্ধতি}{300}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}2's Complement}{301}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Complement ধারণা}{301}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}2's complement বের করার নিয়ম}{301}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}ব্যবহার}{301}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}কোড: ধারণা ও প্রয়োজন}{302}{section.3.7}%
+\contentsline {section}{\numberline {3.8}BCD, EBCDIC, ASCII এবং Unicode}{303}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}BCD}{303}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}EBCDIC}{303}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}ASCII}{303}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Unicode}{303}{subsection.3.8.4}%
+\contentsline {section}{\numberline {3.9}কিছু গাণিতিক সমস্যা ও সমাধান}{304}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Boolean Algebra}{305}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}পরিচিতি}{305}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Boolean Variable ও Operator}{305}{subsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.10.3}Boolean Expression}{306}{subsection.3.10.3}%
+\contentsline {section}{\numberline {3.11}Boolean Theorems}{306}{section.3.11}%
+\contentsline {section}{\numberline {3.12}ডি-মরগ্যানের উপপাদ্য}{307}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}প্রথম উপপাদ্য}{307}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}দ্বিতীয় উপপাদ্য}{307}{subsection.3.12.2}%
+\contentsline {subsection}{\numberline {3.12.3}ব্যাখ্যা ও উদাহরণ}{307}{subsection.3.12.3}%
+\contentsline {section}{\numberline {3.13}Truth Table}{308}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}সংজ্ঞা}{308}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}প্রশিক্ষণ}{308}{subsection.3.13.2}%
+\contentsline {section}{\numberline {3.14}মৌলিক গেট: AND, OR, NOT}{309}{section.3.14}%
+\contentsline {subsection}{\numberline {3.14.1}AND Gate}{309}{subsection.3.14.1}%
+\contentsline {subsection}{\numberline {3.14.2}OR Gate}{309}{subsection.3.14.2}%
+\contentsline {subsection}{\numberline {3.14.3}NOT Gate}{310}{subsection.3.14.3}%
+\contentsline {section}{\numberline {3.15}Universal Gates: NAND, NOR}{310}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}NAND}{310}{subsection.3.15.1}%
+\contentsline {subsection}{\numberline {3.15.2}NOR}{311}{subsection.3.15.2}%
+\contentsline {section}{\numberline {3.16}Special Gates}{311}{section.3.16}%
+\contentsline {subsection}{\numberline {3.16.1}XOR (Exclusive OR)}{311}{subsection.3.16.1}%
+\contentsline {subsection}{\numberline {3.16.2}XNOR}{312}{subsection.3.16.2}%
+\contentsline {section}{\numberline {3.17}Encoder}{312}{section.3.17}%
+\contentsline {subsection}{\numberline {3.17.1}সংজ্ঞা ও কাজ}{312}{subsection.3.17.1}%
+\contentsline {subsection}{\numberline {3.17.2}ব্যবহার}{312}{subsection.3.17.2}%
+\contentsline {section}{\numberline {3.18}Decoder}{313}{section.3.18}%
+\contentsline {subsection}{\numberline {3.18.1}সংজ্ঞা}{313}{subsection.3.18.1}%
+\contentsline {subsection}{\numberline {3.18.2}ব্যবহার}{313}{subsection.3.18.2}%
+\contentsline {section}{\numberline {3.19}Adder}{314}{section.3.19}%
+\contentsline {subsection}{\numberline {3.19.1}Half Adder}{314}{subsection.3.19.1}%
+\contentsline {subsection}{\numberline {3.19.2}Full Adder}{314}{subsection.3.19.2}%
+\contentsline {subsection}{\numberline {3.19.3}Half vs Full Adder}{315}{subsection.3.19.3}%
+\contentsline {section}{\numberline {3.20}Register}{316}{section.3.20}%
+\contentsline {subsection}{\numberline {3.20.1}সংজ্ঞা}{316}{subsection.3.20.1}%
+\contentsline {subsection}{\numberline {3.20.2}প্রকারভেদ}{316}{subsection.3.20.2}%
+\contentsline {subsection}{\numberline {3.20.3}ব্যবহার}{316}{subsection.3.20.3}%
+\contentsline {section}{\numberline {3.21}Counter}{317}{section.3.21}%
+\contentsline {subsection}{\numberline {3.21.1}সংজ্ঞা}{317}{subsection.3.21.1}%
+\contentsline {subsection}{\numberline {3.21.2}প্রকারভেদ}{317}{subsection.3.21.2}%
+\contentsline {subsection}{\numberline {3.21.3}ব্যবহার}{317}{subsection.3.21.3}%
+\contentsline {section}{\numberline {3.22}অনুশীলনী}{318}{section.3.22}%
+\contentsline {subsection}{\numberline {3.22.1}ধরন}{318}{subsection.3.22.1}%
+\contentsline {chapter}{\numberline {4}ওয়েব ডিজাইন পরিচিতি এবং HTML}{321}{chapter.4}%
+\contentsline {section}{\numberline {4.1}ওয়েব ডিজাইনের ধারণা}{322}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}ভূমিকা}{322}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}ওয়েব ডিজাইন কী?}{322}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}ওয়েব ডিজাইনের মূল উদ্দেশ্য}{323}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}ওয়েব ডিজাইনের সাথে সম্পর্কিত মৌলিক ধারণা}{323}{subsection.4.1.4}%
+\contentsline {subsubsection}{ওয়েবপেজ}{323}{section*.85}%
+\contentsline {subsubsection}{ওয়েবসাইট}{324}{section*.86}%
+\contentsline {subsubsection}{ওয়েব সার্ভার}{325}{section*.87}%
+\contentsline {subsubsection}{ওয়েব ব্রাউজার}{325}{section*.88}%
+\contentsline {subsection}{\numberline {4.1.5}ওয়েব ডিজাইন কীভাবে কাজ করে?}{325}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}ওয়েব ডিজাইনে HTML-এর ভূমিকা}{326}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}ওয়েব ডিজাইনের জন্য প্রয়োজনীয় উপাদান}{326}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}ওয়েব ডিজাইনের সুবিধা}{327}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}ওয়েব ডিজাইনের ব্যবহারক্ষেত্র}{327}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.10}ভালো ওয়েব ডিজাইনের বৈশিষ্ট্য}{328}{subsection.4.1.10}%
+\contentsline {subsection}{\numberline {4.1.11}ওয়েব ডিজাইন বনাম ওয়েব ডেভেলপমেন্ট}{328}{subsection.4.1.11}%
+\contentsline {subsection}{\numberline {4.1.12}ওয়েবসাইট তৈরির ধাপ}{329}{subsection.4.1.12}%
+\contentsline {subsection}{\numberline {4.1.13}Static ও Dynamic ওয়েবসাইট: প্রাথমিক ধারণা}{329}{subsection.4.1.13}%
+\contentsline {subsection}{\numberline {4.1.14}Simple HTML Skeleton}{329}{subsection.4.1.14}%
+\contentsline {subsection}{\numberline {4.1.15}পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}{331}{subsection.4.1.15}%
+\contentsline {subsubsection}{প্রশ্ন: ওয়েব ডিজাইন কী?}{331}{section*.89}%
+\contentsline {subsubsection}{প্রশ্ন: ওয়েব ডিজাইন কেন গুরুত্বপূর্ণ?}{331}{section*.90}%
+\contentsline {subsection}{\numberline {4.1.16}Board/Exam Focus}{331}{subsection.4.1.16}%
+\contentsline {subsection}{\numberline {4.1.17}Practice MCQ}{331}{subsection.4.1.17}%
+\contentsline {subsection}{\numberline {4.1.18}Activity}{332}{subsection.4.1.18}%
+\contentsline {subsection}{\numberline {4.1.19}মনে রাখবে}{332}{subsection.4.1.19}%
+\contentsline {section}{\numberline {4.2}ওয়েবপেজ, ওয়েবসাইট ও হোমপেজ}{333}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}ভূমিকা}{333}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}ওয়েবপেজ কী?}{333}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}ওয়েবসাইট কী?}{334}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}হোমপেজ কী?}{334}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}ওয়েবপেজ, ওয়েবসাইট ও হোমপেজের সম্পর্ক}{335}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}ওয়েবপেজ ও ওয়েবসাইটের পার্থক্য}{336}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}ওয়েবসাইট তৈরি করতে কী কী লাগে?}{336}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}ওয়েবসাইটের প্রধান দুই অংশ: Client ও Server}{336}{subsection.4.2.8}%
+\contentsline {subsubsection}{Client}{337}{section*.91}%
+\contentsline {subsubsection}{Server}{337}{section*.92}%
+\contentsline {subsection}{\numberline {4.2.9}ওয়েবপেজের প্রকারভেদ}{337}{subsection.4.2.9}%
+\contentsline {subsubsection}{Static Webpage}{338}{section*.93}%
+\contentsline {subsubsection}{Dynamic Webpage}{338}{section*.94}%
+\contentsline {subsection}{\numberline {4.2.10}ওয়েবসাইটের সুবিধা}{339}{subsection.4.2.10}%
+\contentsline {subsection}{\numberline {4.2.11}ওয়েবসাইটের ব্যবহার}{339}{subsection.4.2.11}%
+\contentsline {subsection}{\numberline {4.2.12}বইয়ে দেওয়ার মতো সুন্দর উদাহরণ}{339}{subsection.4.2.12}%
+\contentsline {subsection}{\numberline {4.2.13}পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}{340}{subsection.4.2.13}%
+\contentsline {subsubsection}{প্রশ্ন ১: ওয়েবপেজ কী?}{340}{section*.95}%
+\contentsline {subsubsection}{প্রশ্ন ২: ওয়েবসাইট কী?}{340}{section*.96}%
+\contentsline {subsubsection}{প্রশ্ন ৩: হোমপেজ কী?}{340}{section*.97}%
+\contentsline {subsubsection}{প্রশ্ন ৪: ওয়েবসাইটের দুটি অংশ ব্যাখ্যা কর।}{341}{section*.98}%
+\contentsline {subsection}{\numberline {4.2.14}Board/Exam Focus}{341}{subsection.4.2.14}%
+\contentsline {subsection}{\numberline {4.2.15}Practice MCQ}{341}{subsection.4.2.15}%
+\contentsline {subsection}{\numberline {4.2.16}CQ Practice}{342}{subsection.4.2.16}%
+\contentsline {subsection}{\numberline {4.2.17}Common Mistake}{342}{subsection.4.2.17}%
+\contentsline {subsection}{\numberline {4.2.18}মনে রাখবে}{343}{subsection.4.2.18}%
+\contentsline {section}{\numberline {4.3}World Wide Web, Web Browser ও Search Engine}{343}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}ভূমিকা}{343}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}World Wide Web বা WWW}{344}{subsection.4.3.2}%
+\contentsline {subsubsection}{WWW কী?}{344}{section*.99}%
+\contentsline {subsubsection}{WWW-এর উৎপত্তি}{345}{section*.100}%
+\contentsline {subsubsection}{WWW কীভাবে কাজ করে?}{346}{section*.101}%
+\contentsline {subsubsection}{WWW-এর বৈশিষ্ট্য}{347}{section*.102}%
+\contentsline {subsection}{\numberline {4.3.3}WWW ও Internet-এর পার্থক্য}{347}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Web Browser}{348}{subsection.4.3.4}%
+\contentsline {subsubsection}{Web Browser কী?}{348}{section*.103}%
+\contentsline {subsubsection}{Web Browser-এর কাজ}{348}{section*.104}%
+\contentsline {subsubsection}{Browser কীভাবে webpage দেখায়?}{348}{section*.105}%
+\contentsline {subsection}{\numberline {4.3.5}Browser ও Search Engine-এর পার্থক্য}{349}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Search Engine}{349}{subsection.4.3.6}%
+\contentsline {subsubsection}{Search Engine কী?}{349}{section*.106}%
+\contentsline {subsubsection}{Search Engine কীভাবে কাজ করে?}{350}{section*.107}%
+\contentsline {subsubsection}{Search Engine-এর ব্যবহার}{350}{section*.108}%
+\contentsline {subsubsection}{Search Engine-এর সুবিধা}{351}{section*.109}%
+\contentsline {subsubsection}{Search Engine ব্যবহারে সতর্কতা}{351}{section*.110}%
+\contentsline {subsection}{\numberline {4.3.7}WWW, Browser ও Search Engine-এর সম্পর্ক}{351}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Board/Exam Focus}{352}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Exam-style Short Answer}{352}{subsection.4.3.9}%
+\contentsline {subsubsection}{প্রশ্ন ১: WWW কী?}{352}{section*.111}%
+\contentsline {subsubsection}{প্রশ্ন ২: Web browser কী?}{353}{section*.112}%
+\contentsline {subsubsection}{প্রশ্ন ৩: Search engine কী?}{353}{section*.113}%
+\contentsline {subsubsection}{প্রশ্ন ৪: Browser ও search engine-এর মধ্যে পার্থক্য লেখ।}{353}{section*.114}%
+\contentsline {subsection}{\numberline {4.3.10}Practice MCQ}{353}{subsection.4.3.10}%
+\contentsline {subsection}{\numberline {4.3.11}CQ Practice}{354}{subsection.4.3.11}%
+\contentsline {subsection}{\numberline {4.3.12}Common Mistake}{354}{subsection.4.3.12}%
+\contentsline {subsection}{\numberline {4.3.13}মনে রাখবে}{355}{subsection.4.3.13}%
+\contentsline {section}{\numberline {4.4}IP Address, Domain Name, DNS, URL ও HTTP/HTTPS}{355}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}ভূমিকা}{355}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}IP Address}{356}{subsection.4.4.2}%
+\contentsline {subsubsection}{IP Address কী?}{356}{section*.115}%
+\contentsline {subsubsection}{IP Address কেন দরকার?}{356}{section*.116}%
+\contentsline {subsection}{\numberline {4.4.3}IPv4}{356}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}IPv6}{357}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Domain Name}{358}{subsection.4.4.5}%
+\contentsline {subsubsection}{Domain Name কী?}{358}{section*.117}%
+\contentsline {subsubsection}{Domain Name কেন দরকার?}{358}{section*.118}%
+\contentsline {subsubsection}{Domain Name-এর অংশ}{358}{section*.119}%
+\contentsline {subsection}{\numberline {4.4.6}Top-Level Domain বা TLD}{358}{subsection.4.4.6}%
+\contentsline {subsubsection}{Generic TLD}{359}{section*.120}%
+\contentsline {subsubsection}{Country-code TLD}{359}{section*.121}%
+\contentsline {subsection}{\numberline {4.4.7}DNS}{359}{subsection.4.4.7}%
+\contentsline {subsubsection}{DNS কী?}{359}{section*.122}%
+\contentsline {subsubsection}{DNS কীভাবে কাজ করে?}{359}{section*.123}%
+\contentsline {subsection}{\numberline {4.4.8}URL}{360}{subsection.4.4.8}%
+\contentsline {subsubsection}{URL কী?}{360}{section*.124}%
+\contentsline {subsubsection}{URL-এর অংশ}{360}{section*.125}%
+\contentsline {subsubsection}{URL Breakdown Example}{361}{section*.126}%
+\contentsline {subsection}{\numberline {4.4.9}URL, Domain Name ও IP Address-এর সম্পর্ক}{361}{subsection.4.4.9}%
+\contentsline {subsection}{\numberline {4.4.10}HTTP ও HTTPS}{362}{subsection.4.4.10}%
+\contentsline {subsubsection}{HTTP কী?}{362}{section*.127}%
+\contentsline {subsubsection}{HTTPS কী?}{362}{section*.128}%
+\contentsline {subsubsection}{HTTP ও HTTPS-এর পার্থক্য}{362}{section*.129}%
+\contentsline {subsection}{\numberline {4.4.11}FTP}{363}{subsection.4.4.11}%
+\contentsline {subsection}{\numberline {4.4.12}Browser-এ একটি URL লিখলে কী ঘটে?}{363}{subsection.4.4.12}%
+\contentsline {subsection}{\numberline {4.4.13}Board/Exam Focus}{364}{subsection.4.4.13}%
+\contentsline {subsection}{\numberline {4.4.14}Exam-style Short Answer}{364}{subsection.4.4.14}%
+\contentsline {subsubsection}{প্রশ্ন ১: IP Address কী?}{364}{section*.130}%
+\contentsline {subsubsection}{প্রশ্ন ২: Domain Name কী?}{364}{section*.131}%
+\contentsline {subsubsection}{প্রশ্ন ৩: DNS কী?}{365}{section*.132}%
+\contentsline {subsubsection}{প্রশ্ন ৪: URL কী?}{365}{section*.133}%
+\contentsline {subsubsection}{প্রশ্ন ৫: HTTPS কেন HTTP-এর চেয়ে নিরাপদ?}{365}{section*.134}%
+\contentsline {subsection}{\numberline {4.4.15}Practice MCQ}{365}{subsection.4.4.15}%
+\contentsline {subsection}{\numberline {4.4.16}CQ Practice}{366}{subsection.4.4.16}%
+\contentsline {subsection}{\numberline {4.4.17}Common Mistake}{366}{subsection.4.4.17}%
+\contentsline {subsection}{\numberline {4.4.18}মনে রাখবে}{367}{subsection.4.4.18}%
+\contentsline {section}{\numberline {4.5}ওয়েবসাইটের প্রকারভেদ}{367}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}ভূমিকা}{367}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Static Website}{368}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Dynamic Website}{368}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Static vs Dynamic (তালিকা)}{368}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Local Website}{369}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}Remote Website}{369}{subsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.5.7}Local vs Remote (তালিকা)}{369}{subsection.4.5.7}%
+\contentsline {subsection}{\numberline {4.5.8}Static Website কোথায় ব্যবহার করা ভালো?}{370}{subsection.4.5.8}%
+\contentsline {subsection}{\numberline {4.5.9}Dynamic Website কোথায় ব্যবহার করা ভালো?}{370}{subsection.4.5.9}%
+\contentsline {subsection}{\numberline {4.5.10}Static থেকে Dynamic হওয়ার উদাহরণ}{370}{subsection.4.5.10}%
+\contentsline {subsection}{\numberline {4.5.11}Website Type Selection Tree}{371}{subsection.4.5.11}%
+\contentsline {subsection}{\numberline {4.5.12}Problem Solution}{371}{subsection.4.5.12}%
+\contentsline {section}{\numberline {4.6}ওয়েবসাইটের কাঠামো}{372}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}ভূমিকা}{373}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}ওয়েবসাইটের কাঠামো কী?}{373}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}ওয়েবসাইটের কাঠামো কেন গুরুত্বপূর্ণ?}{373}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}ওয়েবসাইটের কাঠামোর প্রধান উপাদান}{374}{subsection.4.6.4}%
+\contentsline {subsubsection}{Home Page}{374}{section*.135}%
+\contentsline {subsubsection}{Main Section Page}{374}{section*.136}%
+\contentsline {subsubsection}{Subsection Page}{374}{section*.137}%
+\contentsline {subsubsection}{Navigation}{374}{section*.138}%
+\contentsline {subsection}{\numberline {4.6.5}ওয়েবসাইটের কাঠামোর প্রকারভেদ}{375}{subsection.4.6.5}%
+\contentsline {subsection}{\numberline {4.6.6}Linear বা Sequential Structure}{375}{subsection.4.6.6}%
+\contentsline {subsubsection}{Linear Structure কী?}{375}{section*.139}%
+\contentsline {subsubsection}{বৈশিষ্ট্য}{375}{section*.140}%
+\contentsline {subsubsection}{ব্যবহার}{375}{section*.141}%
+\contentsline {subsubsection}{সুবিধা ও অসুবিধা}{376}{section*.142}%
+\contentsline {subsection}{\numberline {4.6.7}Tree বা Hierarchical Structure}{376}{subsection.4.6.7}%
+\contentsline {subsubsection}{Tree Structure কী?}{376}{section*.143}%
+\contentsline {subsubsection}{বৈশিষ্ট্য}{376}{section*.144}%
+\contentsline {subsubsection}{ব্যবহার}{377}{section*.145}%
+\contentsline {subsubsection}{সুবিধা ও অসুবিধা}{377}{section*.146}%
+\contentsline {subsection}{\numberline {4.6.8}Network বা Web-linked Structure}{377}{subsection.4.6.8}%
+\contentsline {subsubsection}{Network Structure কী?}{377}{section*.147}%
+\contentsline {subsubsection}{বৈশিষ্ট্য}{378}{section*.148}%
+\contentsline {subsubsection}{ব্যবহার}{378}{section*.149}%
+\contentsline {subsubsection}{সুবিধা ও অসুবিধা}{379}{section*.150}%
+\contentsline {subsection}{\numberline {4.6.9}Hybrid Structure}{379}{subsection.4.6.9}%
+\contentsline {subsubsection}{Hybrid Structure কী?}{379}{section*.151}%
+\contentsline {subsubsection}{বৈশিষ্ট্য}{380}{section*.152}%
+\contentsline {subsubsection}{ব্যবহার}{381}{section*.153}%
+\contentsline {subsubsection}{সুবিধা ও অসুবিধা}{381}{section*.154}%
+\contentsline {subsection}{\numberline {4.6.10}চার ধরনের কাঠামোর তুলনা}{381}{subsection.4.6.10}%
+\contentsline {subsection}{\numberline {4.6.11}Website Structure ও Navigation}{381}{subsection.4.6.11}%
+\contentsline {subsection}{\numberline {4.6.12}বইয়ে কোন structure সবচেয়ে গুরুত্বপূর্ণ?}{382}{subsection.4.6.12}%
+\contentsline {subsection}{\numberline {4.6.13}Exam-style Short Answer}{382}{subsection.4.6.13}%
+\contentsline {subsection}{\numberline {4.6.14}Board-style Analysis Answer}{383}{subsection.4.6.14}%
+\contentsline {subsection}{\numberline {4.6.15}Practice MCQ}{383}{subsection.4.6.15}%
+\contentsline {subsection}{\numberline {4.6.16}CQ Practice}{384}{subsection.4.6.16}%
+\contentsline {subsection}{\numberline {4.6.17}Common Mistake}{384}{subsection.4.6.17}%
+\contentsline {subsection}{\numberline {4.6.18}মনে রাখবে}{385}{subsection.4.6.18}%
+\contentsline {section}{\numberline {4.7}HTML-এর মৌলিক বিষয়}{385}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}HTML কী}{385}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}HTML ব্যবহারের সুবিধা}{387}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}HTML, CSS ও JavaScript}{388}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}HTML ট্যাগের তালিকা ও উদাহরণ}{389}{subsection.4.7.4}%
+\contentsline {section}{\numberline {4.8}HTML ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট ও সিনট্যাক্স}{393}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}HTML Tag কী}{393}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}ট্যাগের ধরন}{395}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}HTML Syntax}{396}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Nested HTML Element}{397}{subsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.8.5}Correct ও Incorrect syntax}{397}{subsection.4.8.5}%
+\contentsline {subsection}{\numberline {4.8.6}Common tag examples}{399}{subsection.4.8.6}%
+\contentsline {section}{\numberline {4.9}HTML Document-এর মৌলিক কাঠামো}{400}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}ভূমিকা}{401}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Basic HTML Structure}{401}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Structure-এর প্রধান অংশ}{402}{subsection.4.9.3}%
+\contentsline {subsubsection}{\texttt {<!DOCTYPE html>}}{402}{section*.155}%
+\contentsline {subsubsection}{\texttt {<html>} tag}{402}{section*.156}%
+\contentsline {subsubsection}{\texttt {<head>} tag}{403}{section*.157}%
+\contentsline {subsubsection}{\texttt {<meta charset="UTF-8">}}{403}{section*.158}%
+\contentsline {subsubsection}{\texttt {<title>} tag}{404}{section*.159}%
+\contentsline {subsubsection}{\texttt {<body>} tag}{404}{section*.160}%
+\contentsline {subsection}{\numberline {4.9.4}Head ও Body-এর পার্থক্য}{405}{subsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.9.5}HTML Structure Diagram}{405}{subsection.4.9.5}%
+\contentsline {subsection}{\numberline {4.9.6}Complete Example: College Web Page}{406}{subsection.4.9.6}%
+\contentsline {subsection}{\numberline {4.9.7}HTML File Save করার নিয়ম}{407}{subsection.4.9.7}%
+\contentsline {subsection}{\numberline {4.9.8}পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}{408}{subsection.4.9.8}%
+\contentsline {subsection}{\numberline {4.9.9}ছোট প্রশ্নোত্তর}{408}{subsection.4.9.9}%
+\contentsline {subsection}{\numberline {4.9.10}Exam Focus MCQ}{408}{subsection.4.9.10}%
+\contentsline {section}{\numberline {4.10}HTML-এ Text Formatting}{409}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Text Formatting কী?}{409}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Heading Tag: \texttt {<h1>} থেকে \texttt {<h6>}}{410}{subsection.4.10.2}%
+\contentsline {subsection}{\numberline {4.10.3}Paragraph Tag: \texttt {<p>}}{411}{subsection.4.10.3}%
+\contentsline {subsection}{\numberline {4.10.4}Line Break Tag: \texttt {<br>}}{411}{subsection.4.10.4}%
+\contentsline {subsection}{\numberline {4.10.5}Horizontal Rule: \texttt {<hr>}}{412}{subsection.4.10.5}%
+\contentsline {subsection}{\numberline {4.10.6}Common Text Formatting Tags}{413}{subsection.4.10.6}%
+\contentsline {subsubsection}{Bold Text: \texttt {<b>} ও \texttt {<strong>}}{413}{section*.161}%
+\contentsline {subsubsection}{Italic Text: \texttt {<i>} ও \texttt {<em>}}{413}{section*.162}%
+\contentsline {subsubsection}{Underline Text: \texttt {<u>}}{414}{section*.163}%
+\contentsline {subsubsection}{Inserted Text: \texttt {<ins>}}{414}{section*.164}%
+\contentsline {subsubsection}{Deleted Text: \texttt {<del>}, \texttt {<s>}, \texttt {<strike>}}{415}{section*.165}%
+\contentsline {subsubsection}{Small ও Big Text: \texttt {<small>} ও \texttt {<big>}}{416}{section*.166}%
+\contentsline {subsubsection}{Subscript Text: \texttt {<sub>}}{416}{section*.167}%
+\contentsline {subsubsection}{Superscript Text: \texttt {<sup>}}{417}{section*.168}%
+\contentsline {subsubsection}{Preformatted Text: \texttt {<pre>}}{417}{section*.169}%
+\contentsline {subsection}{\numberline {4.10.7}Font Tag: \texttt {<font>}}{418}{subsection.4.10.7}%
+\contentsline {subsection}{\numberline {4.10.8}Color ব্যবহার}{418}{subsection.4.10.8}%
+\contentsline {subsection}{\numberline {4.10.9}Background Color: \texttt {bgcolor} attribute}{419}{subsection.4.10.9}%
+\contentsline {subsection}{\numberline {4.10.10}Text Alignment: \texttt {align} attribute}{420}{subsection.4.10.10}%
+\contentsline {subsection}{\numberline {4.10.11}Text Formatting Tag Table}{421}{subsection.4.10.11}%
+\contentsline {subsection}{\numberline {4.10.12}Complete Example Code}{421}{subsection.4.10.12}%
+\contentsline {subsection}{\numberline {4.10.13}পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}{423}{subsection.4.10.13}%
+\contentsline {subsection}{\numberline {4.10.14}ছোট প্রশ্নোত্তর}{423}{subsection.4.10.14}%
+\contentsline {subsection}{\numberline {4.10.15}Exam Focus MCQ}{424}{subsection.4.10.15}%
+\contentsline {section}{\numberline {4.11}HTML List}{424}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}HTML List কী?}{425}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}HTML List-এর প্রকারভেদ}{425}{subsection.4.11.2}%
+\contentsline {subsection}{\numberline {4.11.3}Ordered List: \texttt {<ol>}}{426}{subsection.4.11.3}%
+\contentsline {subsubsection}{Syntax}{426}{section*.170}%
+\contentsline {subsubsection}{Example}{426}{section*.171}%
+\contentsline {subsection}{\numberline {4.11.4}Ordered List-এর Attribute}{427}{subsection.4.11.4}%
+\contentsline {subsubsection}{\texttt {type} attribute}{427}{section*.172}%
+\contentsline {subsubsection}{\texttt {start} attribute}{428}{section*.173}%
+\contentsline {subsection}{\numberline {4.11.5}Unordered List: \texttt {<ul>}}{429}{subsection.4.11.5}%
+\contentsline {subsubsection}{Syntax}{429}{section*.174}%
+\contentsline {subsubsection}{Example}{429}{section*.175}%
+\contentsline {subsection}{\numberline {4.11.6}Unordered List-এর \texttt {type} Attribute}{430}{subsection.4.11.6}%
+\contentsline {subsection}{\numberline {4.11.7}List Item: \texttt {<li>}}{431}{subsection.4.11.7}%
+\contentsline {subsection}{\numberline {4.11.8}Description List: \texttt {<dl>}, \texttt {<dt>}, \texttt {<dd>}}{432}{subsection.4.11.8}%
+\contentsline {subsubsection}{Syntax}{432}{section*.176}%
+\contentsline {subsubsection}{Example}{432}{section*.177}%
+\contentsline {subsection}{\numberline {4.11.9}Nested List}{433}{subsection.4.11.9}%
+\contentsline {subsection}{\numberline {4.11.10}Ordered, Unordered ও Description List-এর পার্থক্য}{435}{subsection.4.11.10}%
+\contentsline {subsection}{\numberline {4.11.11}Complete Example Code}{435}{subsection.4.11.11}%
+\contentsline {subsection}{\numberline {4.11.12}পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}{437}{subsection.4.11.12}%
+\contentsline {subsection}{\numberline {4.11.13}ছোট প্রশ্নোত্তর}{437}{subsection.4.11.13}%
+\contentsline {subsection}{\numberline {4.11.14}Exam Focus MCQ}{438}{subsection.4.11.14}%
+\contentsline {section}{\numberline {4.12}Hyperlink in HTML}{439}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Hyperlink কী?}{439}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Anchor Tag: \texttt {<a>}}{440}{subsection.4.12.2}%
+\contentsline {subsubsection}{Basic Syntax}{440}{section*.178}%
+\contentsline {subsection}{\numberline {4.12.3}\texttt {href} Attribute}{441}{subsection.4.12.3}%
+\contentsline {subsection}{\numberline {4.12.4}Hyperlink-এর প্রকারভেদ}{441}{subsection.4.12.4}%
+\contentsline {subsection}{\numberline {4.12.5}Mermaid Study Diagram}{441}{subsection.4.12.5}%
+\contentsline {subsection}{\numberline {4.12.6}External Link}{441}{subsection.4.12.6}%
+\contentsline {subsubsection}{Example}{442}{section*.179}%
+\contentsline {subsection}{\numberline {4.12.7}Internal Link}{442}{subsection.4.12.7}%
+\contentsline {subsubsection}{Example}{442}{section*.180}%
+\contentsline {subsubsection}{Complete Example: \texttt {index.html}}{443}{section*.181}%
+\contentsline {subsection}{\numberline {4.12.8}Absolute URL ও Relative URL}{443}{subsection.4.12.8}%
+\contentsline {subsection}{\numberline {4.12.9}Same Page Link বা Bookmark Link}{444}{subsection.4.12.9}%
+\contentsline {subsubsection}{Example}{444}{section*.182}%
+\contentsline {subsection}{\numberline {4.12.10}Email Link}{445}{subsection.4.12.10}%
+\contentsline {subsubsection}{Syntax}{445}{section*.183}%
+\contentsline {subsubsection}{Example}{445}{section*.184}%
+\contentsline {subsection}{\numberline {4.12.11}Image Link}{445}{subsection.4.12.11}%
+\contentsline {subsubsection}{Syntax}{446}{section*.185}%
+\contentsline {subsubsection}{Example}{446}{section*.186}%
+\contentsline {subsection}{\numberline {4.12.12}Download বা File Link}{446}{subsection.4.12.12}%
+\contentsline {subsubsection}{Example}{447}{section*.187}%
+\contentsline {subsubsection}{\texttt {download} Attribute}{447}{section*.188}%
+\contentsline {subsection}{\numberline {4.12.13}New Tab Link}{447}{subsection.4.12.13}%
+\contentsline {subsubsection}{Example}{447}{section*.189}%
+\contentsline {subsubsection}{Common \texttt {target} Values}{448}{section*.190}%
+\contentsline {subsection}{\numberline {4.12.14}Link-এর Default Color}{448}{subsection.4.12.14}%
+\contentsline {subsection}{\numberline {4.12.15}Hyperlink-এর সুবিধা}{449}{subsection.4.12.15}%
+\contentsline {subsection}{\numberline {4.12.16}Hyperlink Syntax Table}{449}{subsection.4.12.16}%
+\contentsline {subsection}{\numberline {4.12.17}Complete Example Code}{450}{subsection.4.12.17}%
+\contentsline {subsection}{\numberline {4.12.18}সাধারণ ভুল}{451}{subsection.4.12.18}%
+\contentsline {subsubsection}{ভুল}{452}{section*.191}%
+\contentsline {subsubsection}{সঠিক}{452}{section*.192}%
+\contentsline {subsection}{\numberline {4.12.19}বইয়ে ব্যবহারযোগ্য সারাংশ}{452}{subsection.4.12.19}%
+\contentsline {subsection}{\numberline {4.12.20}ছোট প্রশ্নোত্তর}{452}{subsection.4.12.20}%
+\contentsline {subsection}{\numberline {4.12.21}বোর্ডভিত্তিক সৃজনশীল প্রশ্ন}{453}{subsection.4.12.21}%
+\contentsline {subsection}{\numberline {4.12.22}Exam Focus MCQ}{454}{subsection.4.12.22}%
+\contentsline {section}{\numberline {4.13}HTML-এ Image Add করা}{455}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Image Tag কী?}{455}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}\texttt {<img>} Tag-এর সংজ্ঞা}{456}{subsection.4.13.2}%
+\contentsline {subsection}{\numberline {4.13.3}Image Add করার Basic Syntax}{456}{subsection.4.13.3}%
+\contentsline {subsubsection}{Example}{456}{section*.193}%
+\contentsline {subsection}{\numberline {4.13.4}\texttt {src} Attribute}{457}{subsection.4.13.4}%
+\contentsline {subsubsection}{Example}{457}{section*.194}%
+\contentsline {subsection}{\numberline {4.13.5}\texttt {alt} Attribute}{458}{subsection.4.13.5}%
+\contentsline {subsubsection}{Example}{458}{section*.195}%
+\contentsline {subsection}{\numberline {4.13.6}\texttt {width} ও \texttt {height} Attribute}{458}{subsection.4.13.6}%
+\contentsline {subsubsection}{Syntax}{459}{section*.196}%
+\contentsline {subsubsection}{Example}{459}{section*.197}%
+\contentsline {subsection}{\numberline {4.13.7}Image File Format}{459}{subsection.4.13.7}%
+\contentsline {subsection}{\numberline {4.13.8}Image Path}{460}{subsection.4.13.8}%
+\contentsline {subsubsection}{একই folder-এ image থাকলে}{460}{section*.198}%
+\contentsline {subsubsection}{Image আলাদা folder-এ থাকলে}{460}{section*.199}%
+\contentsline {subsubsection}{Online image হলে}{460}{section*.200}%
+\contentsline {subsection}{\numberline {4.13.9}Image-এর Size Control}{461}{subsection.4.13.9}%
+\contentsline {subsubsection}{Example: 300 by 200 image}{461}{section*.201}%
+\contentsline {subsubsection}{Responsive CSS version}{461}{section*.202}%
+\contentsline {subsection}{\numberline {4.13.10}Modern Responsive Image Hint}{461}{subsection.4.13.10}%
+\contentsline {subsection}{\numberline {4.13.11}Image Alignment}{462}{subsection.4.13.11}%
+\contentsline {subsubsection}{HSC style example}{462}{section*.203}%
+\contentsline {subsubsection}{Modern CSS version}{462}{section*.204}%
+\contentsline {subsection}{\numberline {4.13.12}Image Border}{462}{subsection.4.13.12}%
+\contentsline {subsubsection}{HSC style example}{463}{section*.205}%
+\contentsline {subsubsection}{Modern CSS version}{463}{section*.206}%
+\contentsline {subsection}{\numberline {4.13.13}Image Link}{463}{subsection.4.13.13}%
+\contentsline {subsubsection}{Syntax}{463}{section*.207}%
+\contentsline {subsubsection}{Example}{463}{section*.208}%
+\contentsline {subsection}{\numberline {4.13.14}Table-এর ভিতরে Image}{464}{subsection.4.13.14}%
+\contentsline {subsubsection}{Example}{464}{section*.209}%
+\contentsline {subsection}{\numberline {4.13.15}Image Add করার Complete Example}{465}{subsection.4.13.15}%
+\contentsline {subsection}{\numberline {4.13.16}সাধারণ ভুল}{466}{subsection.4.13.16}%
+\contentsline {subsubsection}{ভুল code}{466}{section*.210}%
+\contentsline {subsubsection}{সঠিক code}{466}{section*.211}%
+\contentsline {subsection}{\numberline {4.13.17}বইয়ে ব্যবহারযোগ্য সারাংশ}{466}{subsection.4.13.17}%
+\contentsline {subsection}{\numberline {4.13.18}ছোট প্রশ্নোত্তর}{467}{subsection.4.13.18}%
+\contentsline {subsection}{\numberline {4.13.19}Exam Focus MCQ}{467}{subsection.4.13.19}%
+\contentsline {section}{\numberline {4.14}Table in HTML}{468}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}HTML Table কী?}{469}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.2}Table তৈরির প্রধান Tag}{470}{subsection.4.14.2}%
+\contentsline {subsection}{\numberline {4.14.3}\texttt {<table>} Tag}{470}{subsection.4.14.3}%
+\contentsline {subsection}{\numberline {4.14.4}\texttt {<tr>} Tag}{470}{subsection.4.14.4}%
+\contentsline {subsection}{\numberline {4.14.5}\texttt {<th>} Tag}{471}{subsection.4.14.5}%
+\contentsline {subsection}{\numberline {4.14.6}\texttt {<td>} Tag}{471}{subsection.4.14.6}%
+\contentsline {subsection}{\numberline {4.14.7}Basic Table Syntax}{471}{subsection.4.14.7}%
+\contentsline {subsection}{\numberline {4.14.8}Simple Table Example}{472}{subsection.4.14.8}%
+\contentsline {subsection}{\numberline {4.14.9}\texttt {border} Attribute}{473}{subsection.4.14.9}%
+\contentsline {subsection}{\numberline {4.14.10}\texttt {cellspacing} Attribute}{473}{subsection.4.14.10}%
+\contentsline {subsection}{\numberline {4.14.11}\texttt {cellpadding} Attribute}{474}{subsection.4.14.11}%
+\contentsline {subsection}{\numberline {4.14.12}\texttt {cellspacing} ও \texttt {cellpadding}-এর পার্থক্য}{475}{subsection.4.14.12}%
+\contentsline {subsection}{\numberline {4.14.13}\texttt {align} Attribute}{475}{subsection.4.14.13}%
+\contentsline {subsection}{\numberline {4.14.14}\texttt {width} Attribute}{475}{subsection.4.14.14}%
+\contentsline {subsection}{\numberline {4.14.15}\texttt {<caption>} Tag}{476}{subsection.4.14.15}%
+\contentsline {subsection}{\numberline {4.14.16}Table-এর ভিতরে Formatting, Link ও Image}{477}{subsection.4.14.16}%
+\contentsline {subsubsection}{Underline text}{477}{section*.212}%
+\contentsline {subsubsection}{Hyperlink}{477}{section*.213}%
+\contentsline {subsubsection}{Image}{477}{section*.214}%
+\contentsline {subsection}{\numberline {4.14.17}Full Example: Result Table}{477}{subsection.4.14.17}%
+\contentsline {subsection}{\numberline {4.14.18}Line-by-line Explanation}{479}{subsection.4.14.18}%
+\contentsline {subsection}{\numberline {4.14.19}Table Design করার ধাপ}{479}{subsection.4.14.19}%
+\contentsline {subsection}{\numberline {4.14.20}Table Code লেখার সহজ নিয়ম}{479}{subsection.4.14.20}%
+\contentsline {subsection}{\numberline {4.14.21}Board/Exam Focus}{480}{subsection.4.14.21}%
+\contentsline {subsection}{\numberline {4.14.22}Exam-style Short Answer}{481}{subsection.4.14.22}%
+\contentsline {subsection}{\numberline {4.14.23}Practice MCQ}{481}{subsection.4.14.23}%
+\contentsline {subsection}{\numberline {4.14.24}CQ Practice}{482}{subsection.4.14.24}%
+\contentsline {subsubsection}{গ. Code}{482}{section*.215}%
+\contentsline {subsubsection}{ঘ. বিশ্লেষণ}{483}{section*.216}%
+\contentsline {subsection}{\numberline {4.14.25}Common Mistake}{483}{subsection.4.14.25}%
+\contentsline {subsection}{\numberline {4.14.26}১ মিনিটে রিভিশন}{484}{subsection.4.14.26}%
+\contentsline {section}{\numberline {4.15}Rowspan ও Colspan}{484}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Cell Merge কী?}{484}{subsection.4.15.1}%
+\contentsline {subsection}{\numberline {4.15.2}\texttt {colspan} কী?}{485}{subsection.4.15.2}%
+\contentsline {subsubsection}{Syntax}{485}{section*.217}%
+\contentsline {subsubsection}{Example}{485}{section*.218}%
+\contentsline {subsection}{\numberline {4.15.3}Colspan Example: Subject Table}{486}{subsection.4.15.3}%
+\contentsline {subsection}{\numberline {4.15.4}\texttt {rowspan} কী?}{487}{subsection.4.15.4}%
+\contentsline {subsubsection}{Syntax}{487}{section*.219}%
+\contentsline {subsubsection}{Example}{487}{section*.220}%
+\contentsline {subsection}{\numberline {4.15.5}Rowspan Example: Phone Table}{487}{subsection.4.15.5}%
+\contentsline {subsection}{\numberline {4.15.6}Rowspan ও Colspan-এর পার্থক্য}{488}{subsection.4.15.6}%
+\contentsline {subsection}{\numberline {4.15.7}Rowspan ও Colspan কোথায় লেখা হয়?}{488}{subsection.4.15.7}%
+\contentsline {subsection}{\numberline {4.15.8}Colspan ব্যবহার করে Result Title}{489}{subsection.4.15.8}%
+\contentsline {subsection}{\numberline {4.15.9}Rowspan ব্যবহার করে Subject Marks Table}{490}{subsection.4.15.9}%
+\contentsline {subsection}{\numberline {4.15.10}Rowspan ও Colspan একসাথে ব্যবহার}{491}{subsection.4.15.10}%
+\contentsline {subsection}{\numberline {4.15.11}Rowspan/Colspan বের করার সহজ নিয়ম}{492}{subsection.4.15.11}%
+\contentsline {subsection}{\numberline {4.15.12}সবচেয়ে গুরুত্বপূর্ণ নিয়ম}{493}{subsection.4.15.12}%
+\contentsline {subsubsection}{Colspan হলে কী কমবে?}{493}{section*.221}%
+\contentsline {subsubsection}{Rowspan হলে কী কমবে?}{494}{section*.222}%
+\contentsline {subsection}{\numberline {4.15.13}Empty Cell থাকলে কী করবে?}{494}{subsection.4.15.13}%
+\contentsline {subsection}{\numberline {4.15.14}Full Practice Example: Student Subject Table}{495}{subsection.4.15.14}%
+\contentsline {subsection}{\numberline {4.15.15}Full Practice Example: Employee Salary Table}{496}{subsection.4.15.15}%
+\contentsline {subsection}{\numberline {4.15.16}HSC Board/Exam Focus}{497}{subsection.4.15.16}%
+\contentsline {subsection}{\numberline {4.15.17}Exam-style Short Answer}{497}{subsection.4.15.17}%
+\contentsline {subsection}{\numberline {4.15.18}Practice MCQ}{498}{subsection.4.15.18}%
+\contentsline {subsection}{\numberline {4.15.19}CQ Practice}{499}{subsection.4.15.19}%
+\contentsline {subsubsection}{গ. Code}{499}{section*.223}%
+\contentsline {subsubsection}{ঘ. বিশ্লেষণ}{500}{section*.224}%
+\contentsline {subsection}{\numberline {4.15.20}Common Mistake}{500}{subsection.4.15.20}%
+\contentsline {subsection}{\numberline {4.15.21}১ মিনিটে রিভিশন}{501}{subsection.4.15.21}%
+\contentsline {section}{\numberline {4.16}Table-এর ভিতরে List, Image, Hyperlink ও Nested Table}{501}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Table Cell-এর ভিতরে কী কী রাখা যায়?}{501}{subsection.4.16.1}%
+\contentsline {subsection}{\numberline {4.16.2}Table-এর ভিতরে List}{502}{subsection.4.16.2}%
+\contentsline {subsubsection}{সাধারণ Syntax}{502}{section*.225}%
+\contentsline {subsection}{\numberline {4.16.3}Example: Ordered List ও Unordered List Table}{503}{subsection.4.16.3}%
+\contentsline {subsection}{\numberline {4.16.4}Table-এর ভিতরে Hyperlink}{504}{subsection.4.16.4}%
+\contentsline {subsubsection}{Syntax}{504}{section*.226}%
+\contentsline {subsubsection}{Example}{504}{section*.227}%
+\contentsline {subsection}{\numberline {4.16.5}Example: Table Cell-এর ভিতরে Link}{505}{subsection.4.16.5}%
+\contentsline {subsection}{\numberline {4.16.6}Table-এর ভিতরে Image}{505}{subsection.4.16.6}%
+\contentsline {subsubsection}{Syntax}{506}{section*.228}%
+\contentsline {subsection}{\numberline {4.16.7}Example: Book Image in Table}{506}{subsection.4.16.7}%
+\contentsline {subsection}{\numberline {4.16.8}Table-এর ভিতরে Image Hyperlink}{507}{subsection.4.16.8}%
+\contentsline {subsubsection}{Syntax}{507}{section*.229}%
+\contentsline {subsection}{\numberline {4.16.9}Example: Book Image-এ Click করলে Website Open}{507}{subsection.4.16.9}%
+\contentsline {subsection}{\numberline {4.16.10}Table-এর ভিতরে List + Hyperlink একসাথে}{508}{subsection.4.16.10}%
+\contentsline {subsection}{\numberline {4.16.11}Nested Table কী?}{509}{subsection.4.16.11}%
+\contentsline {subsection}{\numberline {4.16.12}Nested Table-এর Syntax}{509}{subsection.4.16.12}%
+\contentsline {subsection}{\numberline {4.16.13}Example: Student Info with Nested Marks Table}{509}{subsection.4.16.13}%
+\contentsline {subsection}{\numberline {4.16.14}Nested Table ব্যবহারে সতর্কতা}{511}{subsection.4.16.14}%
+\contentsline {subsection}{\numberline {4.16.15}Table-এর ভিতরে Multiple Elements}{511}{subsection.4.16.15}%
+\contentsline {subsection}{\numberline {4.16.16}Full Practice Example: Table + List + Image + Link}{511}{subsection.4.16.16}%
+\contentsline {subsection}{\numberline {4.16.17}Board/Exam Focus}{513}{subsection.4.16.17}%
+\contentsline {subsection}{\numberline {4.16.18}Exam-style Short Answer}{513}{subsection.4.16.18}%
+\contentsline {subsection}{\numberline {4.16.19}Practice MCQ}{513}{subsection.4.16.19}%
+\contentsline {subsection}{\numberline {4.16.20}CQ Practice}{514}{subsection.4.16.20}%
+\contentsline {subsubsection}{গ. Code}{515}{section*.230}%
+\contentsline {subsubsection}{ঘ. বিশ্লেষণ}{516}{section*.231}%
+\contentsline {subsection}{\numberline {4.16.21}Common Mistake}{516}{subsection.4.16.21}%
+\contentsline {subsection}{\numberline {4.16.22}১ মিনিটে রিভিশন}{516}{subsection.4.16.22}%
+\contentsline {section}{\numberline {4.17}Division, Span ও Style Attribute}{517}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}\texttt {<div>} Tag কী?}{517}{subsection.4.17.1}%
+\contentsline {subsubsection}{Syntax}{517}{section*.232}%
+\contentsline {subsubsection}{Example}{518}{section*.233}%
+\contentsline {subsection}{\numberline {4.17.2}\texttt {<div>} Tag-এর ব্যবহার}{518}{subsection.4.17.2}%
+\contentsline {subsection}{\numberline {4.17.3}Example: Page Section}{518}{subsection.4.17.3}%
+\contentsline {subsection}{\numberline {4.17.4}\texttt {<span>} Tag কী?}{519}{subsection.4.17.4}%
+\contentsline {subsubsection}{Syntax}{519}{section*.234}%
+\contentsline {subsubsection}{Example}{519}{section*.235}%
+\contentsline {subsection}{\numberline {4.17.5}\texttt {<div>} ও \texttt {<span>}-এর পার্থক্য}{520}{subsection.4.17.5}%
+\contentsline {subsection}{\numberline {4.17.6}Style Attribute কী?}{520}{subsection.4.17.6}%
+\contentsline {subsubsection}{Basic Syntax}{520}{section*.236}%
+\contentsline {subsubsection}{Example}{520}{section*.237}%
+\contentsline {subsection}{\numberline {4.17.7}Style Attribute-এর সঠিক নিয়ম}{521}{subsection.4.17.7}%
+\contentsline {subsubsection}{সঠিক structure}{521}{section*.238}%
+\contentsline {subsubsection}{Example}{521}{section*.239}%
+\contentsline {subsection}{\numberline {4.17.8}Correct vs Incorrect Style Syntax}{522}{subsection.4.17.8}%
+\contentsline {subsubsection}{Correct}{522}{section*.240}%
+\contentsline {subsubsection}{Incorrect}{522}{section*.241}%
+\contentsline {subsection}{\numberline {4.17.9}Inline CSS কী?}{522}{subsection.4.17.9}%
+\contentsline {subsection}{\numberline {4.17.10}গুরুত্বপূর্ণ CSS Property}{522}{subsection.4.17.10}%
+\contentsline {subsection}{\numberline {4.17.11}\texttt {<div>}-এ Style Attribute ব্যবহার}{523}{subsection.4.17.11}%
+\contentsline {subsection}{\numberline {4.17.12}\texttt {<span>}-এ Style Attribute ব্যবহার}{524}{subsection.4.17.12}%
+\contentsline {subsection}{\numberline {4.17.13}\texttt {<div>} ও \texttt {<span>} একসাথে ব্যবহার}{524}{subsection.4.17.13}%
+\contentsline {subsection}{\numberline {4.17.14}Margin ও Padding}{525}{subsection.4.17.14}%
+\contentsline {subsubsection}{Margin কী?}{525}{section*.242}%
+\contentsline {subsubsection}{Padding কী?}{525}{section*.243}%
+\contentsline {subsection}{\numberline {4.17.15}Border}{525}{subsection.4.17.15}%
+\contentsline {subsection}{\numberline {4.17.16}Text Align}{526}{subsection.4.17.16}%
+\contentsline {subsection}{\numberline {4.17.17}Color Value}{526}{subsection.4.17.17}%
+\contentsline {subsection}{\numberline {4.17.18}Internal CSS: \texttt {<style>} Tag}{527}{subsection.4.17.18}%
+\contentsline {subsection}{\numberline {4.17.19}Inline CSS বনাম Internal CSS}{528}{subsection.4.17.19}%
+\contentsline {subsection}{\numberline {4.17.20}Full Example: Mini Webpage Layout}{528}{subsection.4.17.20}%
+\contentsline {subsection}{\numberline {4.17.21}HSC Board/Exam Focus}{529}{subsection.4.17.21}%
+\contentsline {subsection}{\numberline {4.17.22}Exam-style Short Answer}{529}{subsection.4.17.22}%
+\contentsline {subsection}{\numberline {4.17.23}Practice MCQ}{530}{subsection.4.17.23}%
+\contentsline {subsection}{\numberline {4.17.24}CQ Practice}{531}{subsection.4.17.24}%
+\contentsline {subsubsection}{গ. Code}{531}{section*.244}%
+\contentsline {subsubsection}{ঘ. বিশ্লেষণ}{532}{section*.245}%
+\contentsline {subsection}{\numberline {4.17.25}Common Mistake}{532}{subsection.4.17.25}%
+\contentsline {subsection}{\numberline {4.17.26}১ মিনিটে রিভিশন}{533}{subsection.4.17.26}%
+\contentsline {section}{\numberline {4.18}Full Webpage Designing Practical}{533}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Full Webpage Design কী?}{534}{subsection.4.18.1}%
+\contentsline {subsection}{\numberline {4.18.2}একটি ভালো Webpage-এর প্রধান অংশ}{534}{subsection.4.18.2}%
+\contentsline {subsection}{\numberline {4.18.3}Webpage Design করার আগে পরিকল্পনা}{534}{subsection.4.18.3}%
+\contentsline {subsection}{\numberline {4.18.4}Webpage Design করার ধাপ}{535}{subsection.4.18.4}%
+\contentsline {subsubsection}{ধাপ ১: Basic HTML structure লিখবে}{535}{section*.246}%
+\contentsline {subsubsection}{ধাপ ২: Header section তৈরি করবে}{535}{section*.247}%
+\contentsline {subsubsection}{ধাপ ৩: Menu বা Navigation তৈরি করবে}{535}{section*.248}%
+\contentsline {subsubsection}{ধাপ ৪: Main content তৈরি করবে}{536}{section*.249}%
+\contentsline {subsubsection}{ধাপ ৫: Footer তৈরি করবে}{536}{section*.250}%
+\contentsline {subsection}{\numberline {4.18.5}Full Webpage Example Code}{536}{subsection.4.18.5}%
+\contentsline {subsection}{\numberline {4.18.6}Code Explanation}{538}{subsection.4.18.6}%
+\contentsline {subsubsection}{Header অংশ}{538}{section*.251}%
+\contentsline {subsubsection}{Menu অংশ}{538}{section*.252}%
+\contentsline {subsubsection}{Image অংশ}{539}{section*.253}%
+\contentsline {subsubsection}{List অংশ}{539}{section*.254}%
+\contentsline {subsubsection}{Table অংশ}{539}{section*.255}%
+\contentsline {subsection}{\numberline {4.18.7}Output কেমন হবে?}{539}{subsection.4.18.7}%
+\contentsline {subsection}{\numberline {4.18.8}Book Design Tip}{540}{subsection.4.18.8}%
+\contentsline {subsection}{\numberline {4.18.9}Exam-style Short Answer}{540}{subsection.4.18.9}%
+\contentsline {subsection}{\numberline {4.18.10}Practice Task}{540}{subsection.4.18.10}%
+\contentsline {subsection}{\numberline {4.18.11}CQ Practice}{541}{subsection.4.18.11}%
+\contentsline {subsubsection}{উত্তর নির্দেশনা}{541}{section*.256}%
+\contentsline {subsection}{\numberline {4.18.12}Common Mistake}{541}{subsection.4.18.12}%
+\contentsline {subsection}{\numberline {4.18.13}১ মিনিটে রিভিশন}{542}{subsection.4.18.13}%
+\contentsline {section}{\numberline {4.19}HTML Form}{542}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}HTML Form কী?}{543}{subsection.4.19.1}%
+\contentsline {subsection}{\numberline {4.19.2}Form কেন ব্যবহার করা হয়?}{543}{subsection.4.19.2}%
+\contentsline {subsection}{\numberline {4.19.3}\texttt {<form>} Tag}{543}{subsection.4.19.3}%
+\contentsline {subsubsection}{Basic Syntax}{544}{section*.257}%
+\contentsline {subsection}{\numberline {4.19.4}Form-এর গুরুত্বপূর্ণ Attribute}{544}{subsection.4.19.4}%
+\contentsline {subsubsection}{\texttt {action} Attribute}{544}{section*.258}%
+\contentsline {subsubsection}{\texttt {method} Attribute}{545}{section*.259}%
+\contentsline {subsection}{\numberline {4.19.5}\texttt {<input>} Tag}{545}{subsection.4.19.5}%
+\contentsline {subsubsection}{Basic Syntax}{545}{section*.260}%
+\contentsline {subsubsection}{Common Input Attributes}{546}{section*.261}%
+\contentsline {subsection}{\numberline {4.19.6}Text Field}{546}{subsection.4.19.6}%
+\contentsline {subsubsection}{Example}{546}{section*.262}%
+\contentsline {subsubsection}{Modern Example}{546}{section*.263}%
+\contentsline {subsection}{\numberline {4.19.7}Password Field}{547}{subsection.4.19.7}%
+\contentsline {subsubsection}{Example}{547}{section*.264}%
+\contentsline {subsection}{\numberline {4.19.8}Radio Button}{547}{subsection.4.19.8}%
+\contentsline {subsubsection}{Example}{547}{section*.265}%
+\contentsline {subsubsection}{Group Example}{548}{section*.266}%
+\contentsline {subsection}{\numberline {4.19.9}Checkbox}{548}{subsection.4.19.9}%
+\contentsline {subsubsection}{Example}{548}{section*.267}%
+\contentsline {subsubsection}{Radio Button ও Checkbox-এর পার্থক্য}{548}{section*.268}%
+\contentsline {subsection}{\numberline {4.19.10}Submit Button}{548}{subsection.4.19.10}%
+\contentsline {subsubsection}{Example}{549}{section*.269}%
+\contentsline {subsubsection}{Button Tag Version}{549}{section*.270}%
+\contentsline {subsection}{\numberline {4.19.11}Reset Button}{549}{subsection.4.19.11}%
+\contentsline {subsubsection}{Example}{549}{section*.271}%
+\contentsline {subsection}{\numberline {4.19.12}Normal Button}{549}{subsection.4.19.12}%
+\contentsline {subsubsection}{Example}{549}{section*.272}%
+\contentsline {subsubsection}{Button Tag Version}{550}{section*.273}%
+\contentsline {subsection}{\numberline {4.19.13}\texttt {<textarea>} Tag}{550}{subsection.4.19.13}%
+\contentsline {subsubsection}{Syntax}{550}{section*.274}%
+\contentsline {subsubsection}{Modern Example}{550}{section*.275}%
+\contentsline {subsection}{\numberline {4.19.14}Dropdown List}{551}{subsection.4.19.14}%
+\contentsline {subsubsection}{Example}{551}{section*.276}%
+\contentsline {subsubsection}{ব্যবহার}{551}{section*.277}%
+\contentsline {subsection}{\numberline {4.19.15}\texttt {<button>} Tag}{551}{subsection.4.19.15}%
+\contentsline {subsubsection}{Example}{552}{section*.278}%
+\contentsline {subsection}{\numberline {4.19.16}\texttt {<label>} Tag}{552}{subsection.4.19.16}%
+\contentsline {subsubsection}{Example}{552}{section*.279}%
+\contentsline {subsubsection}{কেন দরকার?}{552}{section*.280}%
+\contentsline {subsection}{\numberline {4.19.17}Complete Example: Student Registration Form}{553}{subsection.4.19.17}%
+\contentsline {subsection}{\numberline {4.19.18}Form Tag Table}{555}{subsection.4.19.18}%
+\contentsline {subsection}{\numberline {4.19.19}Input Type Table}{555}{subsection.4.19.19}%
+\contentsline {subsection}{\numberline {4.19.20}সাধারণ ভুল}{556}{subsection.4.19.20}%
+\contentsline {subsubsection}{ভুল Radio Example}{556}{section*.281}%
+\contentsline {subsubsection}{সঠিক Radio Example}{556}{section*.282}%
+\contentsline {subsection}{\numberline {4.19.21}বইয়ে ব্যবহারযোগ্য সারাংশ}{557}{subsection.4.19.21}%
+\contentsline {subsection}{\numberline {4.19.22}ছোট প্রশ্নোত্তর}{557}{subsection.4.19.22}%
+\contentsline {subsection}{\numberline {4.19.23}Exam Focus MCQ}{558}{subsection.4.19.23}%
+\contentsline {section}{\numberline {4.20}Design: Structure ও Layout}{558}{section.4.20}%
+\contentsline {subsection}{\numberline {4.20.1}Layout কী?}{559}{subsection.4.20.1}%
+\contentsline {subsection}{\numberline {4.20.2}Webpage-এর প্রধান Layout অংশ}{559}{subsection.4.20.2}%
+\contentsline {subsection}{\numberline {4.20.3}Wireframe কী?}{559}{subsection.4.20.3}%
+\contentsline {subsection}{\numberline {4.20.4}Layout-এর ধরন}{560}{subsection.4.20.4}%
+\contentsline {subsection}{\numberline {4.20.5}Responsive Design কী?}{560}{subsection.4.20.5}%
+\contentsline {subsection}{\numberline {4.20.6}ভালো Web Layout-এর Design Principle}{561}{subsection.4.20.6}%
+\contentsline {subsection}{\numberline {4.20.7}Layout Plan থেকে HTML Tag নির্বাচন}{561}{subsection.4.20.7}%
+\contentsline {subsection}{\numberline {4.20.8}Mini Layout Example}{561}{subsection.4.20.8}%
+\contentsline {subsection}{\numberline {4.20.9}Problem Solution}{562}{subsection.4.20.9}%
+\contentsline {section}{\numberline {4.21}ব্যবহারিক অনুশীলন: Mini Project}{563}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Project Title}{564}{subsection.4.21.1}%
+\contentsline {subsection}{\numberline {4.21.2}Project Objective}{564}{subsection.4.21.2}%
+\contentsline {subsection}{\numberline {4.21.3}Project Type}{564}{subsection.4.21.3}%
+\contentsline {subsection}{\numberline {4.21.4}Required Knowledge}{564}{subsection.4.21.4}%
+\contentsline {subsection}{\numberline {4.21.5}Project Description}{565}{subsection.4.21.5}%
+\contentsline {subsection}{\numberline {4.21.6}Website Pages}{565}{subsection.4.21.6}%
+\contentsline {subsection}{\numberline {4.21.7}Folder Structure}{565}{subsection.4.21.7}%
+\contentsline {subsection}{\numberline {4.21.8}Page Requirements}{565}{subsection.4.21.8}%
+\contentsline {subsubsection}{Page 1: Home Page - \texttt {index.html}}{565}{section*.283}%
+\contentsline {subsubsection}{Page 2: About Page - \texttt {about.html}}{566}{section*.284}%
+\contentsline {subsubsection}{Page 3: Notice Page - \texttt {notice.html}}{566}{section*.285}%
+\contentsline {subsubsection}{Page 4: Result Page - \texttt {result.html}}{566}{section*.286}%
+\contentsline {subsubsection}{Page 5: Contact Page - \texttt {contact.html}}{567}{section*.287}%
+\contentsline {subsection}{\numberline {4.21.9}Project Requirements}{567}{subsection.4.21.9}%
+\contentsline {subsection}{\numberline {4.21.10}Step-by-step Instruction}{567}{subsection.4.21.10}%
+\contentsline {subsection}{\numberline {4.21.11}Page 1: Home Page Code}{568}{subsection.4.21.11}%
+\contentsline {subsection}{\numberline {4.21.12}Home Page Output ধারণা}{571}{subsection.4.21.12}%
+\contentsline {subsection}{\numberline {4.21.13}Home Page Code Explanation}{571}{subsection.4.21.13}%
+\contentsline {subsection}{\numberline {4.21.14}Page 2: About Page Code}{572}{subsection.4.21.14}%
+\contentsline {subsection}{\numberline {4.21.15}About Page Output ধারণা}{576}{subsection.4.21.15}%
+\contentsline {subsection}{\numberline {4.21.16}About Page Code Explanation}{576}{subsection.4.21.16}%
+\contentsline {subsection}{\numberline {4.21.17}Page 3: Notice Page Code}{577}{subsection.4.21.17}%
+\contentsline {subsection}{\numberline {4.21.18}Notice Page Output ধারণা}{581}{subsection.4.21.18}%
+\contentsline {subsection}{\numberline {4.21.19}Notice Page Code Explanation}{581}{subsection.4.21.19}%
+\contentsline {subsection}{\numberline {4.21.20}Page 4: Result Page Code}{582}{subsection.4.21.20}%
+\contentsline {subsection}{\numberline {4.21.21}Result Page Output ধারণা}{586}{subsection.4.21.21}%
+\contentsline {subsection}{\numberline {4.21.22}Result Page Code Explanation}{586}{subsection.4.21.22}%
+\contentsline {subsection}{\numberline {4.21.23}Page 5: Contact Page Code}{587}{subsection.4.21.23}%
+\contentsline {subsection}{\numberline {4.21.24}Contact Page Output ধারণা}{593}{subsection.4.21.24}%
+\contentsline {subsection}{\numberline {4.21.25}Contact Page Code Explanation}{593}{subsection.4.21.25}%
+\contentsline {subsection}{\numberline {4.21.26}Complete Project Output}{594}{subsection.4.21.26}%
+\contentsline {subsection}{\numberline {4.21.27}এই Page-এ যা Practice হচ্ছে}{595}{subsection.4.21.27}%
+\contentsline {subsection}{\numberline {4.21.28}Evaluation / Mark Distribution}{595}{subsection.4.21.28}%
+\contentsline {subsection}{\numberline {4.21.29}Common Mistake}{595}{subsection.4.21.29}%
+\contentsline {subsection}{\numberline {4.21.30}Board-style Short Answer}{596}{subsection.4.21.30}%
+\contentsline {section}{\numberline {4.22}Website Publishing ও Hosting}{596}{section.4.22}%
+\contentsline {subsection}{\numberline {4.22.1}Website Publishing কী?}{596}{subsection.4.22.1}%
+\contentsline {subsection}{\numberline {4.22.2}Domain ও Hosting}{597}{subsection.4.22.2}%
+\contentsline {subsection}{\numberline {4.22.3}Publishing-এর জন্য যা যা দরকার}{597}{subsection.4.22.3}%
+\contentsline {subsection}{\numberline {4.22.4}Publishing Workflow}{597}{subsection.4.22.4}%
+\contentsline {subsection}{\numberline {4.22.5}Hosting-এর ধরন}{598}{subsection.4.22.5}%
+\contentsline {subsection}{\numberline {4.22.6}Domain, Hosting, URL ও DNS-এর সম্পর্ক}{598}{subsection.4.22.6}%
+\contentsline {subsection}{\numberline {4.22.7}Publish Checklist}{598}{subsection.4.22.7}%
+\contentsline {subsection}{\numberline {4.22.8}Website দেখা না গেলে সম্ভাব্য কারণ}{598}{subsection.4.22.8}%
+\contentsline {subsection}{\numberline {4.22.9}Website Security Basic}{599}{subsection.4.22.9}%
+\contentsline {subsection}{\numberline {4.22.10}Quick Publish Steps}{599}{subsection.4.22.10}%
+\contentsline {subsection}{\numberline {4.22.11}Problem Solution}{600}{subsection.4.22.11}%
+\contentsline {section}{\numberline {4.23}অনুশীলনী}{601}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Final Tag Reference}{602}{subsection.4.23.1}%
+\contentsline {subsection}{\numberline {4.23.2}Tag Selection Tree}{604}{subsection.4.23.2}%
+\contentsline {subsection}{\numberline {4.23.3}Problem Solution Format}{604}{subsection.4.23.3}%
+\contentsline {subsection}{\numberline {4.23.4}Find the Mistake}{605}{subsection.4.23.4}%
+\contentsline {subsection}{\numberline {4.23.5}Important CQ Pattern}{606}{subsection.4.23.5}%
+\contentsline {chapter}{\numberline {5}প্রোগ্রামিং ভাষা}{611}{chapter.5}%
+\contentsline {section}{\numberline {5.1}প্রোগ্রামিং ভাষা — পরিচিতি}{612}{section.5.1}%
+\contentsline {section}{\numberline {5.2}প্রোগ্রামের ধারণা}{612}{section.5.2}%
+\contentsline {section}{\numberline {5.3}প্রোগ্রামিং ভাষার ধারণা}{613}{section.5.3}%
+\contentsline {section}{\numberline {5.4}বিভিন্ন প্রজন্মের প্রোগ্রামিং ভাষা}{614}{section.5.4}%
+\contentsline {section}{\numberline {5.5}নিম্নস্তরের ভাষা}{614}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Machine Language}{615}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Assembly Language}{616}{section.5.7}%
+\contentsline {section}{\numberline {5.8}মধ্যস্তরের ভাষা}{616}{section.5.8}%
+\contentsline {section}{\numberline {5.9}উচ্চস্তরের ভাষা}{617}{section.5.9}%
+\contentsline {section}{\numberline {5.10}চতুর্থ প্রজন্মের ভাষা (4GL)}{617}{section.5.10}%
+\contentsline {section}{\numberline {5.11}অনুবাদক (Translator) প্রোগ্রাম}{618}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Compiler}{619}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Interpreter}{619}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Assembler}{620}{section.5.14}%
+\contentsline {section}{\numberline {5.15}প্রোগ্রামের সংগঠন}{621}{section.5.15}%
+\contentsline {section}{\numberline {5.16}প্রোগ্রাম উন্নয়নের ধাপসমূহ}{621}{section.5.16}%
+\contentsline {section}{\numberline {5.17}অ্যালগরিদম}{622}{section.5.17}%
+\contentsline {section}{\numberline {5.18}ফ্লোচার্ট}{623}{section.5.18}%
+\contentsline {section}{\numberline {5.19}প্রোগ্রাম ডিজাইন মডেল}{624}{section.5.19}%
+\contentsline {section}{\numberline {5.20}Structured Programming}{624}{section.5.20}%
+\contentsline {section}{\numberline {5.21}Visual Programming}{625}{section.5.21}%
+\contentsline {section}{\numberline {5.22}Object Oriented Programming}{625}{section.5.22}%
+\contentsline {section}{\numberline {5.23}Event Driven Programming}{626}{section.5.23}%
+\contentsline {section}{\numberline {5.24}C প্রোগ্রামিং — প্রাথমিক ধারণা}{626}{section.5.24}%
+\contentsline {section}{\numberline {5.25}C ভাষার বৈশিষ্ট্য}{627}{section.5.25}%
+\contentsline {section}{\numberline {5.26}C Program Compiling}{628}{section.5.26}%
+\contentsline {section}{\numberline {5.27}C Program-এর গঠন}{628}{section.5.27}%
+\contentsline {section}{\numberline {5.28}Data Type}{629}{section.5.28}%
+\contentsline {section}{\numberline {5.29}Constant}{630}{section.5.29}%
+\contentsline {section}{\numberline {5.30}Variable}{630}{section.5.30}%
+\contentsline {section}{\numberline {5.31}Operator}{631}{section.5.31}%
+\contentsline {section}{\numberline {5.32}Expression}{631}{section.5.32}%
+\contentsline {section}{\numberline {5.33}Keyword}{632}{section.5.33}%
+\contentsline {section}{\numberline {5.34}Input/Output Statement}{632}{section.5.34}%
+\contentsline {section}{\numberline {5.35}Conditional Statement}{633}{section.5.35}%
+\contentsline {section}{\numberline {5.36}Loop Statement}{634}{section.5.36}%
+\contentsline {section}{\numberline {5.37}Array}{635}{section.5.37}%
+\contentsline {section}{\numberline {5.38}Function}{635}{section.5.38}%
+\contentsline {section}{\numberline {5.39}Practical Program Practice}{636}{section.5.39}%
+\contentsline {section}{\numberline {5.40}অনুশীলনী}{637}{section.5.40}%
+\contentsline {chapter}{\numberline {6}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}{639}{chapter.6}%
+\contentsline {section}{\numberline {6.1}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম --- পরিচিতি}{640}{section.6.1}%
+\contentsline {section}{\numberline {6.2}ডেটাবেজের মৌলিক উপাদান}{640}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Field}{641}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Record, Table, File}{641}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Entity, Attribute, Tuple, Domain}{641}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}{641}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}DBMS কী}{642}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}DBMS-এর কাজ}{642}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}সুবিধা ও অসুবিধা}{642}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Relational Database Management System (RDBMS)}{642}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}RDBMS কী}{643}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}বৈশিষ্ট্য ও ব্যবহার}{643}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}জনপ্রিয় সফটওয়্যার}{643}{subsection.6.4.3}%
+\contentsline {section}{\numberline {6.5}ডেটাবেজ তৈরি}{643}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}তৈরির ধাপ}{644}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Table ও Field ডিজাইন}{644}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}ডেটা টাইপ}{644}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}প্রয়োগ}{645}{subsection.6.6.1}%
+\contentsline {section}{\numberline {6.7}Query}{645}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Query কী}{645}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Query-এর ধরন ও Condition}{646}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3}প্র্যাকটিক্যাল উদাহরণ}{646}{subsection.6.7.3}%
+\contentsline {section}{\numberline {6.8}Sorting}{646}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Sorting কী}{647}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}ব্যবহার}{647}{subsection.6.8.2}%
+\contentsline {section}{\numberline {6.9}Indexing}{647}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Indexing কী}{647}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}সুবিধা ও অসুবিধা}{648}{subsection.6.9.2}%
+\contentsline {section}{\numberline {6.10}Database Relation}{648}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Relation কী ও দরকারি ধরন}{648}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Junction table আলোচনা}{649}{subsection.6.10.2}%
+\contentsline {section}{\numberline {6.11}Form}{649}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Form কী}{649}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Form view ও Design view}{649}{subsection.6.11.2}%
+\contentsline {section}{\numberline {6.12}Report}{650}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Report কী}{650}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}প্রকারভেদ ও ব্যবহার}{650}{subsection.6.12.2}%
+\contentsline {section}{\numberline {6.13}Corporate Database}{650}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}সম্প্রসারণ ও ব্যবহার}{651}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}সফটওয়্যার ও সুবিধা}{651}{subsection.6.13.2}%
+\contentsline {section}{\numberline {6.14}সরকারি প্রতিষ্ঠানে ডেটাবেজ}{651}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}ধারণা ও ব্যবহার}{651}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}সুবিধা}{652}{subsection.6.14.2}%
+\contentsline {section}{\numberline {6.15}Data Security}{652}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Security কী ও প্রয়োজনীয়তা}{652}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Security পদ্ধতি}{652}{subsection.6.15.2}%
+\contentsline {section}{\numberline {6.16}Data Encryption}{653}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Encryption ও Decryption}{653}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}ধরন ও ব্যবহার}{653}{subsection.6.16.2}%
+\contentsline {section}{\numberline {6.17}Practical Database Task}{654}{section.6.17}%
+\contentsline {section}{\numberline {6.18}অনুশীলনী}{655}{section.6.18}%

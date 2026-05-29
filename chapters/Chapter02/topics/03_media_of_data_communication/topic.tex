@@ -1,136 +1,581 @@
-\section{ডেটা কমিউনিকেশন মিডিয়া (Overview)}
+% Chapter 02.3: ডেটা কমিউনিকেশন মাধ্যম
+\section{ডেটা কমিউনিকেশন মাধ্যম}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item transmission media কী এবং কেন দরকার তা ব্যাখ্যা করতে।
-\item guided media ও unguided media আলাদা করতে।
-\item wired ও wireless channel-এর উদাহরণ দিতে।
-\item media selection-এর ভিত্তিতে বাস্তব ব্যবহার ব্যাখ্যা করতে।
-\item tree diagram বা comparison table ব্যবহার করে media শ্রেণিবিভাগ লিখতে।
+\item ডেটা কমিউনিকেশন মাধ্যম বা transmission medium কী তা ব্যাখ্যা করতে।
+\item Guided/Wired media এবং Unguided/Wireless media-এর পার্থক্য বুঝতে।
+\item Twisted pair, Coaxial cable, Optical fiber, Radio wave, Microwave ও Infrared-এর ধারণা নিতে।
+\item মাধ্যম নির্বাচনের ক্ষেত্রে bandwidth, cost, distance, security, noise ও installation factor বিশ্লেষণ করতে।
+\item বাস্তব জীবনের উদাহরণ থেকে উপযুক্ত communication medium শনাক্ত করতে।
+\item বোর্ড ও ভর্তি পরীক্ষার জন্য medium-based comparison answer লিখতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Transmission Media}
+\subsection{বাস্তব জীবনের শুরু}
 
-ডেটা এক স্থান থেকে অন্য স্থানে পাঠাতে যে পথ ব্যবহার করা হয়, তাকে transmission media বলা হয়। এই মাধ্যম physical cable হতে পারে আবার radio wave-এর মতো অবিকল অদৃশ্য wave-ও হতে পারে। Network design-এ media নির্বাচন খুব গুরুত্বপূর্ণ, কারণ speed, distance, cost, security এবং reliability—সবকিছুর উপর এর প্রভাব পড়ে।
+একজন শিক্ষার্থী যখন Wi-Fi দিয়ে online class করে, তখন data বাতাসের মাধ্যমে electromagnetic wave আকারে router পর্যন্ত যায়। আবার router থেকে ISP network-এ data যেতে পারে fiber optic cable বা অন্য কোনো cable দিয়ে। অর্থাৎ data এক device থেকে অন্য device-এ যেতে একটি পথ বা মাধ্যম প্রয়োজন হয়।
 
-\begin{definitionbox}{Transmission media}
-যে মাধ্যমের মাধ্যমে data signal এক প্রান্ত থেকে অন্য প্রান্তে যায়, তাকে transmission media বলা হয়।
+এই পথ বা মাধ্যমই হলো \textbf{ডেটা কমিউনিকেশন মাধ্যম}। Medium ছাড়া sender-এর data receiver-এর কাছে পৌঁছাতে পারে না।
+
+\begin{keypointbox}{মূল ধারণা}
+Data communication medium বুঝতে তিনটি প্রশ্ন মনে রাখো:
+\begin{itemize}
+\item data কোন পথে যাচ্ছে?
+\item পথটি cable-based, নাকি wireless?
+\item medium-এর speed, distance, cost ও security কেমন?
+\end{itemize}
+\end{keypointbox}
+
+\subsection{ডেটা কমিউনিকেশন মাধ্যম}
+
+\begin{definitionbox}{ডেটা কমিউনিকেশন মাধ্যম}
+Sender থেকে receiver-এর কাছে data বা signal পাঠানোর জন্য যে physical বা wireless path ব্যবহৃত হয়, তাকে data communication medium বা transmission medium বলা হয়।
 \end{definitionbox}
 
-\begin{keypointbox}{মিডিয়ার প্রধান ধরন}
+Communication system-এ sender message তৈরি করে এবং transmitter সেই message-কে signal-এ রূপান্তর করে। এরপর signal কোনো medium দিয়ে receiver-এর কাছে যায়। এই medium হতে পারে copper cable, fiber optic cable, radio wave, microwave, infrared ray বা satellite link।
+
+\begin{examplebox}{সহজ উদাহরণ}
 \begin{itemize}
-\item \textbf{Guided media}: signal নির্দিষ্ট path বা cable দিয়ে যায়।
-\item \textbf{Unguided media}: signal বায়ু বা space দিয়ে ছড়িয়ে পড়ে।
+\item Computer lab-এ PC থেকে switch-এ data গেলে twisted pair cable medium হিসেবে কাজ করে।
+\item Broadband internet-এ ISP থেকে বাসা পর্যন্ত fiber optic cable medium হিসেবে কাজ করতে পারে।
+\item Mobile phone থেকে tower-এ signal গেলে radio wave medium হিসেবে কাজ করে।
+\item TV remote থেকে TV-তে signal গেলে infrared medium হিসেবে কাজ করে।
 \end{itemize}
-\end{keypointbox}
-
-\begin{center}
-\begin{tabular}{c}
-\textbf{Transmission Media} \\
-\hline
-Guided Media \hspace{1.5cm} Unguided Media \\
-\end{tabular}
-\end{center}
-
-\subsection{Guided Media}
-
-Guided media-তে signal নির্দিষ্ট conductor-এর ভেতর দিয়ে যায়। এর সুবিধা হলো তুলনামূলকভাবে বেশি control, কম interference এবং বেশি security।
-
-\begin{keypointbox}{Guided media-এর ধরন}
-\begin{itemize}
-\item Twisted pair cable
-\item Coaxial cable
-\item Fiber optic cable
-\end{itemize}
-\end{keypointbox}
-
-\subsection{Unguided Media}
-
-Unguided media-তে signal কোনো cable ছাড়াই electromagnetic wave আকারে যায়। এটি mobility দেয়, কিন্তু interference, weather এবং security issue তুলনামূলক বেশি হতে পারে।
-
-\begin{keypointbox}{Unguided media-এর ধরন}
-\begin{itemize}
-\item Radio wave
-\item Microwave
-\item Infrared
-\item Satellite link
-\end{itemize}
-\end{keypointbox}
-
-\begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{ধরন} & \textbf{বৈশিষ্ট্য} & \textbf{উদাহরণ} \\
-\hline
-Guided media & নির্দিষ্ট পথ, বেশি control & UTP, coaxial, fiber optic \\
-\hline
-Unguided media & wireless, mobility support & radio, microwave, satellite \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{examplebox}{মাধ্যম নির্বাচন}
-Office LAN-এর জন্য cable-based guided media ভালো, কারণ speed ও security দরকার। দূরবর্তী mobile communication-এর জন্য wireless media দরকার, কারণ mobility and coverage বেশি গুরুত্বপূর্ণ।
 \end{examplebox}
 
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/data_communication_medium_basic_model.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/data_communication_medium_basic_model.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Sender \quad $\longrightarrow$ \quad Medium \quad $\longrightarrow$ \quad Receiver\\[8pt]
+Cable / Fiber / Radio Wave / Microwave / Infrared
+\vspace{0.7cm}
+}}
+}
+\caption{ডেটা কমিউনিকেশন মাধ্যমে ডেটা প্রবাহ}
+\end{figure}
+
 \begin{boardbox}{বোর্ড ফোকাস}
-“Guided ও unguided media-এর মধ্যে পার্থক্য লেখ” প্রশ্নে definition, classification এবং ব্যবহার একসঙ্গে লিখলে উত্তর পূর্ণ হয়।
+Medium-এর প্রশ্নে শুধু “data যাওয়ার পথ” লিখলে উত্তর ছোট হয়। ভালো উত্তর লিখতে হলে medium কীভাবে signal বহন করে এবং wired/wireless উদাহরণ দিতে হবে।
 \end{boardbox}
+
+\subsection{Transmission Medium-এর গুরুত্ব}
+
+Communication medium network performance-এর উপর সরাসরি প্রভাব ফেলে। একই data যদি নিম্নমানের medium দিয়ে পাঠানো হয়, তাহলে speed কমতে পারে, noise বাড়তে পারে, error হতে পারে এবং data loss ঘটতে পারে। তাই network design করার সময় medium নির্বাচন খুব গুরুত্বপূর্ণ।
+
+\begin{keypointbox}{Medium গুরুত্বপূর্ণ কেন?}
+\begin{itemize}
+\item data কত দ্রুত যাবে তা medium-এর bandwidth-এর উপর নির্ভর করে।
+\item data কত দূর যাবে তা medium-এর attenuation ও range-এর উপর নির্ভর করে।
+\item data কতটা নিরাপদ থাকবে তা medium-এর security ও signal leakage-এর উপর নির্ভর করে।
+\item network installation cost medium-এর ধরন অনুযায়ী পরিবর্তিত হয়।
+\item noise, interference ও weather condition কিছু medium-কে বেশি প্রভাবিত করতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{ডেটা কমিউনিকেশন মাধ্যমের শ্রেণিবিভাগ}
+
+ডেটা কমিউনিকেশন মাধ্যম প্রধানত দুই ধরনের:
+
+\begin{itemize}
+\item \textbf{Guided Media বা Wired Media}
+\item \textbf{Unguided Media বা Wireless Media}
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/transmission_media_classification_tree.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/transmission_media_classification_tree.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Transmission Media\\[8pt]
+$\downarrow$\\[8pt]
+Guided / Wired Media \qquad Unguided / Wireless Media\\[8pt]
+$\downarrow$ \qquad \qquad \qquad $\downarrow$\\[8pt]
+Twisted Pair, Coaxial, Optical Fiber \qquad Radio Wave, Microwave, Infrared
+\vspace{0.7cm}
+}}
+}
+\caption{ট্রান্সমিশন মিডিয়ার শ্রেণিবিভাগ}
+\end{figure}
+
+\subsection{Guided Media বা Wired Media}
+
+\begin{definitionbox}{Guided Media}
+যে communication medium-এ signal কোনো নির্দিষ্ট physical path বা cable-এর মাধ্যমে sender থেকে receiver-এর কাছে যায়, তাকে guided media বা wired media বলা হয়।
+\end{definitionbox}
+
+Guided media-তে signal নির্দিষ্ট cable-এর ভিতর দিয়ে যায়। তাই signal path controlled থাকে এবং security তুলনামূলক বেশি হয়। তবে cable বসাতে installation cost ও সময় লাগে।
+
+\begin{keypointbox}{Guided media-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item physical cable বা wire ব্যবহার করা হয়।
+\item signal নির্দিষ্ট path দিয়ে যায়।
+\item সাধারণত security বেশি।
+\item interference তুলনামূলক কম হতে পারে।
+\item installation করতে cable laying দরকার হয়।
+\item building, office, school lab, data center ও backbone network-এ বেশি ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Guided Media-এর প্রকারভেদ}
+
+HSC ICT-তে guided media হিসেবে তিনটি বিষয় সবচেয়ে গুরুত্বপূর্ণ:
+
+\begin{itemize}
+\item Twisted Pair Cable
+\item Coaxial Cable
+\item Optical Fiber Cable
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/guided_media_types_overview.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/guided_media_types_overview.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Guided Media\\[8pt]
+Twisted Pair Cable \quad Coaxial Cable \quad Optical Fiber Cable
+\vspace{0.7cm}
+}}
+}
+\caption{Guided media-এর প্রধান ধরন}
+\end{figure}
+
+\subsection{Twisted Pair Cable}
+
+\begin{definitionbox}{Twisted Pair Cable}
+দুটি insulated copper wire পরস্পর পেঁচিয়ে তৈরি cable-কে twisted pair cable বলা হয়।
+\end{definitionbox}
+
+Twisted pair cable-এ দুটি copper wire পরস্পর twist করা থাকে। এই twisting electromagnetic interference কমাতে সাহায্য করে। Local Area Network বা LAN-এ এটি খুব বেশি ব্যবহৃত হয়। সাধারণ office, school lab, computer lab, router-to-PC connection ইত্যাদিতে twisted pair cable দেখা যায়।
+
+\begin{keypointbox}{Twisted pair cable-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item copper wire দিয়ে তৈরি।
+\item installation সহজ এবং cost কম।
+\item LAN connection-এ ব্যাপকভাবে ব্যবহৃত।
+\item distance বেশি হলে signal দুর্বল হতে পারে।
+\item electromagnetic interference দ্বারা প্রভাবিত হতে পারে।
+\item UTP এবং STP—এই দুই ধরনের হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+বাড়ির router থেকে computer বা office switch থেকে desktop PC-তে যে Ethernet cable ব্যবহার করা হয়, সেটি সাধারণত twisted pair cable।
+\end{examplebox}
+
+\subsection{UTP ও STP}
+
+Twisted pair cable দুই ধরনের:
+
+\begin{itemize}
+\item \textbf{UTP}: Unshielded Twisted Pair
+\item \textbf{STP}: Shielded Twisted Pair
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{UTP} & \textbf{STP} \\
+\hline
+পূর্ণরূপ & Unshielded Twisted Pair & Shielded Twisted Pair \\
+\hline
+Shielding & অতিরিক্ত shield থাকে না & অতিরিক্ত shield থাকে \\
+\hline
+Cost & কম & তুলনামূলক বেশি \\
+\hline
+Interference protection & কম & বেশি \\
+\hline
+ব্যবহার & সাধারণ LAN & noise-prone environment \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Coaxial Cable}
+
+\begin{definitionbox}{Coaxial Cable}
+একটি central copper conductor, insulating layer, metallic shield এবং outer jacket নিয়ে গঠিত cable-কে coaxial cable বলা হয়।
+\end{definitionbox}
+
+Coaxial cable-এ মাঝখানে copper conductor থাকে। এর চারপাশে insulation, metallic shield এবং outer cover থাকে। Metallic shield external noise থেকে signal-কে কিছুটা সুরক্ষা দেয়। Cable TV, broadband cable network এবং পুরনো Ethernet network-এ coaxial cable ব্যবহৃত হয়েছে।
+
+\begin{keypointbox}{Coaxial cable-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item central conductor দিয়ে signal যায়।
+\item metallic shield noise কমাতে সাহায্য করে।
+\item twisted pair-এর তুলনায় interference কম হতে পারে।
+\item cable TV network-এ বহুল ব্যবহৃত।
+\item installation twisted pair-এর তুলনায় কিছুটা কঠিন হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+Cable TV line বা পুরনো broadband cable connection-এ coaxial cable ব্যবহৃত হতে দেখা যায়।
+\end{examplebox}
+
+\subsection{Optical Fiber Cable}
+
+\begin{definitionbox}{Optical Fiber Cable}
+যে cable-এ glass বা plastic fiber-এর মাধ্যমে light signal ব্যবহার করে data পাঠানো হয়, তাকে optical fiber cable বলা হয়।
+\end{definitionbox}
+
+Optical fiber cable modern communication system-এর অন্যতম গুরুত্বপূর্ণ medium। এতে electrical signal নয়, light signal ব্যবহৃত হয়। ফলে high bandwidth, long distance এবং low interference পাওয়া যায়। Internet backbone, submarine cable, FTTH broadband এবং data center connection-এ optical fiber খুব গুরুত্বপূর্ণ।
+
+\begin{keypointbox}{Optical fiber cable-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item light signal ব্যবহার করে data পাঠায়।
+\item bandwidth খুব বেশি।
+\item long distance communication-এর জন্য উপযোগী।
+\item electromagnetic interference দ্বারা প্রভাবিত হয় না।
+\item security তুলনামূলক বেশি।
+\item installation ও maintenance cost তুলনামূলক বেশি।
+\item cable ভেঙে গেলে repair করা তুলনামূলক কঠিন।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+FTTH broadband, intercity internet backbone, submarine cable এবং data center connection-এ optical fiber ব্যবহার করা হয়।
+\end{examplebox}
+
+\subsection{Unguided Media বা Wireless Media}
+
+\begin{definitionbox}{Unguided Media}
+যে communication medium-এ signal কোনো physical cable ছাড়াই বাতাস, মহাকাশ বা free space-এর মাধ্যমে electromagnetic wave আকারে sender থেকে receiver-এর কাছে যায়, তাকে unguided media বা wireless media বলা হয়।
+\end{definitionbox}
+
+Wireless media-তে cable লাগে না। ফলে mobility বেশি এবং installation তুলনামূলক সহজ। তবে wireless signal interference, obstacle, distance, weather ও security risk দ্বারা বেশি প্রভাবিত হতে পারে।
+
+\begin{keypointbox}{Unguided media-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item physical cable ছাড়াই data transmission হয়।
+\item electromagnetic wave ব্যবহার করা হয়।
+\item mobility বেশি।
+\item installation flexible।
+\item interference ও obstacle দ্বারা প্রভাবিত হতে পারে।
+\item security নিশ্চিত করতে encryption প্রয়োজন।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Unguided Media-এর প্রকারভেদ}
+
+HSC ICT-তে unguided media হিসেবে নিচের বিষয়গুলো বেশি গুরুত্বপূর্ণ:
+
+\begin{itemize}
+\item Radio Wave
+\item Microwave
+\item Infrared
+\item Satellite Communication
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/unguided_media_types_overview.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/unguided_media_types_overview.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Unguided Media\\[8pt]
+Radio Wave \quad Microwave \quad Infrared \quad Satellite Link
+\vspace{0.7cm}
+}}
+}
+\caption{Unguided media-এর প্রধান ধরন}
+\end{figure}
+
+\subsection{Radio Wave}
+
+\begin{definitionbox}{Radio Wave}
+যে electromagnetic wave তুলনামূলকভাবে দীর্ঘ wavelength ব্যবহার করে wireless communication-এ data বা signal বহন করে, তাকে radio wave বলা হয়।
+\end{definitionbox}
+
+Radio wave সাধারণত সহজে চারদিকে ছড়িয়ে পড়ে এবং obstacle কিছুটা অতিক্রম করতে পারে। Radio broadcasting, mobile communication, Wi-Fi, Bluetooth ইত্যাদির সাথে radio wave-এর ধারণা সম্পর্কিত।
+
+\begin{keypointbox}{Radio wave-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item wireless communication-এ ব্যবহৃত হয়।
+\item তুলনামূলকভাবে বড় area cover করতে পারে।
+\item obstacle কিছুটা অতিক্রম করতে পারে।
+\item antenna ব্যবহার করা হয়।
+\item interference ও noise দ্বারা প্রভাবিত হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+FM radio, mobile phone communication, Wi-Fi signal ও Bluetooth communication—radio wave-এর বাস্তব ব্যবহার।
+\end{examplebox}
+
+\subsection{Microwave}
+
+\begin{definitionbox}{Microwave}
+উচ্চ frequency-এর electromagnetic wave, যা point-to-point wireless communication-এ ব্যবহৃত হয়, তাকে microwave বলা হয়।
+\end{definitionbox}
+
+Microwave communication সাধারণত line-of-sight transmission-এর উপর নির্ভর করে। অর্থাৎ transmitter ও receiver-এর মধ্যে সরাসরি path থাকা দরকার। Tower-to-tower communication, satellite communication, cellular backbone ইত্যাদিতে microwave ব্যবহৃত হতে পারে।
+
+\begin{keypointbox}{Microwave-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item উচ্চ frequency electromagnetic wave ব্যবহার করে।
+\item point-to-point communication-এ ব্যবহৃত হয়।
+\item line-of-sight path দরকার হতে পারে।
+\item long distance communication-এ tower বা repeater ব্যবহার করা হয়।
+\item weather condition ও obstacle দ্বারা প্রভাবিত হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+Mobile tower-to-tower link, satellite link এবং long-distance wireless backbone communication-এ microwave ব্যবহৃত হয়।
+\end{examplebox}
+
+\subsection{Infrared}
+
+\begin{definitionbox}{Infrared}
+Infrared হলো এমন electromagnetic radiation যা short-range wireless communication-এ ব্যবহৃত হয় এবং সাধারণত line-of-sight প্রয়োজন হয়।
+\end{definitionbox}
+
+Infrared signal সাধারণত wall বা obstacle অতিক্রম করতে পারে না। তাই এটি short distance communication-এ ব্যবহৃত হয়। TV remote control infrared-এর খুব পরিচিত উদাহরণ।
+
+\begin{keypointbox}{Infrared-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item short-range communication-এ ব্যবহৃত হয়।
+\item line-of-sight দরকার।
+\item wall বা obstacle অতিক্রম করতে পারে না।
+\item cost কম এবং সহজ ব্যবহারযোগ্য।
+\item TV remote, AC remote ইত্যাদিতে ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Satellite Communication}
+
+\begin{definitionbox}{Satellite Communication}
+যে communication system-এ earth station থেকে signal satellite-এ পাঠানো হয় এবং satellite সেই signal অন্য earth station-এ retransmit করে, তাকে satellite communication বলা হয়।
+\end{definitionbox}
+
+Satellite communication মূলত microwave signal ব্যবহার করে। এটি বড় area coverage, international communication, weather forecasting, TV broadcasting, GPS এবং remote area communication-এর জন্য গুরুত্বপূর্ণ।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/satellite_communication_medium.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/satellite_communication_medium.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Earth Station \quad $\longrightarrow$ \quad Satellite \quad $\longrightarrow$ \quad Earth Station
+\vspace{0.7cm}
+}}
+}
+\caption{স্যাটেলাইট কমিউনিকেশন মাধ্যম}
+\end{figure}
+
+\begin{keypointbox}{Satellite communication-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item বড় geographical area cover করতে পারে।
+\item remote area communication-এ কার্যকর।
+\item TV broadcasting ও international communication-এ ব্যবহৃত হয়।
+\item weather condition ও delay বা latency থাকতে পারে।
+\item installation ও operation cost বেশি।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Guided ও Unguided Media-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Guided/Wired Media} & \textbf{Unguided/Wireless Media} \\
+\hline
+Path & নির্দিষ্ট physical cable থাকে & বাতাস/space দিয়ে signal যায় \\
+\hline
+Signal type & electrical বা optical signal & electromagnetic wave \\
+\hline
+Security & তুলনামূলক বেশি & encryption ছাড়া ঝুঁকি বেশি \\
+\hline
+Mobility & mobility কম & mobility বেশি \\
+\hline
+Installation & cable laying দরকার & cable laying কম বা নেই \\
+\hline
+Interference & তুলনামূলক কম হতে পারে & interference বেশি হতে পারে \\
+\hline
+উদাহরণ & Twisted pair, Coaxial, Fiber optic & Radio wave, Microwave, Infrared, Satellite \\
+\hline
+ব্যবহার & LAN, backbone, broadband & mobile, Wi-Fi, Bluetooth, satellite \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Transmission Medium নির্বাচনের বিষয়গুলো}
+
+সব network-এর জন্য একই medium best নয়। কোথায় কোন medium ব্যবহার হবে তা নির্ভর করে ব্যবহার, cost, distance, bandwidth, security এবং environment-এর উপর।
+
+\begin{keypointbox}{Medium নির্বাচন করার সময় বিবেচ্য বিষয়}
+\begin{itemize}
+\item \textbf{Bandwidth}: কত বেশি data বহন করতে হবে?
+\item \textbf{Distance}: কত দূর পর্যন্ত communication দরকার?
+\item \textbf{Cost}: installation ও maintenance cost কত?
+\item \textbf{Security}: data কতটা sensitive?
+\item \textbf{Noise/Interference}: environment-এ electromagnetic noise আছে কি?
+\item \textbf{Mobility}: user চলাচল করবে কি না?
+\item \textbf{Reliability}: connection কতটা stable দরকার?
+\item \textbf{Scalability}: ভবিষ্যতে network বড় করা লাগবে কি না?
+\end{itemize}
+\end{keypointbox}
+
+\subsection{মাধ্যম নির্বাচন: বাস্তব উদাহরণ}
+
+\begin{center}
+\begin{tabular}{|p{0.28\textwidth}|p{0.30\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{পরিস্থিতি} & \textbf{উপযুক্ত মাধ্যম} & \textbf{কারণ} \\
+\hline
+School computer lab & Twisted pair cable & কম খরচ, সহজ installation, LAN-এর জন্য উপযোগী \\
+\hline
+City-to-city internet backbone & Optical fiber & high bandwidth, long distance, low interference \\
+\hline
+TV remote control & Infrared & short distance, line-of-sight communication \\
+\hline
+Mobile phone communication & Radio wave/Microwave & mobility ও wireless coverage \\
+\hline
+Remote island communication & Satellite link & বড় area coverage ও দূরবর্তী অঞ্চলে সংযোগ \\
+\hline
+Cable TV network & Coaxial cable & video signal distribution-এর জন্য উপযোগী \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Common Mistake Zone}
+
+\begin{mistakebox}{Common mistake ১}
+অনেকে medium ও mode গুলিয়ে ফেলে। Medium হলো data যাওয়ার পথ, যেমন cable বা radio wave। Mode হলো data কোন direction-এ যাচ্ছে, যেমন simplex, half-duplex, full-duplex।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ২}
+Wireless মানেই সবসময় faster—এটি সঠিক নয়। Wireless flexible হলেও interference, distance, obstacle ও signal strength speed কমাতে পারে।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৩}
+Fiber optic cable-কে অনেকেই electric signal বহন করে মনে করে। আসলে fiber optic cable light signal ব্যবহার করে data পাঠায়।
+\end{mistakebox}
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: ডেটা কমিউনিকেশন মাধ্যম কী?}
+Sender থেকে receiver-এর কাছে data বা signal পাঠানোর জন্য যে physical বা wireless path ব্যবহৃত হয়, তাকে data communication medium বা transmission medium বলা হয়। যেমন—twisted pair cable, coaxial cable, optical fiber cable, radio wave, microwave ইত্যাদি।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Guided media কী?}
+যে communication medium-এ signal নির্দিষ্ট physical cable বা wire-এর মাধ্যমে sender থেকে receiver-এর কাছে যায়, তাকে guided media বা wired media বলা হয়। যেমন—twisted pair cable, coaxial cable ও optical fiber cable।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Unguided media কী?}
+যে communication medium-এ signal physical cable ছাড়াই বাতাস, মহাকাশ বা free space দিয়ে electromagnetic wave আকারে পাঠানো হয়, তাকে unguided media বা wireless media বলা হয়। যেমন—radio wave, microwave, infrared ও satellite link।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: Guided media ও Unguided media}
+Guided media-তে signal নির্দিষ্ট cable বা physical path দিয়ে যায়, কিন্তু unguided media-তে signal বাতাস বা space দিয়ে electromagnetic wave আকারে যায়। Guided media-এর security তুলনামূলক বেশি, কিন্তু mobility কম। Unguided media mobility বেশি দেয়, তবে interference ও security risk বেশি হতে পারে। Twisted pair, coaxial ও fiber optic guided media-এর উদাহরণ; radio wave, microwave ও infrared unguided media-এর উদাহরণ।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Optical fiber কেন high-speed communication-এ ব্যবহৃত হয়?}
+Optical fiber cable light signal ব্যবহার করে data পাঠায়। এতে bandwidth খুব বেশি, long distance communication সম্ভব এবং electromagnetic interference-এর প্রভাব নেই। তাই internet backbone, FTTH broadband ও data center communication-এ optical fiber ব্যবহৃত হয়।
+\end{boardbox}
+
+\subsection{Brainstorming Critical Question}
+
+\begin{practicebox}
+একটি কলেজে তিন ধরনের communication প্রয়োজন: computer lab-এর PC-গুলোকে network-এ যুক্ত করা, campus-wide wireless internet দেওয়া এবং online class-এর video server-কে high-speed backbone-এর সাথে যুক্ত করা।
+
+\begin{enumerate}
+\item ক. Transmission medium কী?
+\item খ. Guided media ও Unguided media-এর মূল পার্থক্য কী?
+\item গ. computer lab-এর জন্য কোন medium ব্যবহার করা যুক্তিযুক্ত? ব্যাখ্যা কর।
+\item ঘ. video server-এর high-speed backbone connection-এর জন্য optical fiber কেন সবচেয়ে উপযোগী হতে পারে? বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\subsection{১ মিনিটে রিভিশন}
 
 \begin{recapbox}
 \begin{itemize}
-\item Transmission media হলো data signal বহনের পথ।
-\item Guided media cable-based, unguided media wireless-based।
-\item Media choice নির্ভর করে distance, speed, security ও cost-এর উপর।
-\item এই topic-এ tree diagram লিখতে পারলে exam answer দেখতে সুন্দর হয়।
+\item Data communication medium হলো sender থেকে receiver-এ data যাওয়ার path।
+\item Medium দুই ধরনের: Guided/Wired এবং Unguided/Wireless।
+\item Guided media physical cable ব্যবহার করে।
+\item Guided media-এর উদাহরণ: Twisted pair, Coaxial cable, Optical fiber।
+\item Unguided media electromagnetic wave ব্যবহার করে।
+\item Unguided media-এর উদাহরণ: Radio wave, Microwave, Infrared, Satellite link।
+\item Twisted pair কম খরচে LAN-এর জন্য উপযোগী।
+\item Coaxial cable cable TV ও broadband distribution-এ ব্যবহৃত হতে পারে।
+\item Optical fiber high bandwidth ও long distance communication-এর জন্য best।
+\item Radio wave mobile, Wi-Fi ও Bluetooth-এর সাথে সম্পর্কিত।
+\item Microwave point-to-point এবং satellite communication-এ গুরুত্বপূর্ণ।
+\item Infrared short-range line-of-sight communication-এ ব্যবহৃত হয়।
 \end{itemize}
 \end{recapbox}
+
+\subsection{অনুশীলন}
 
 \begin{practicebox}
 \textbf{MCQ}
 \begin{enumerate}
-\item কোনটি guided media-এর উদাহরণ?\\
-ক. Radio wave \quad খ. Microwave \quad গ. Fiber optic cable \quad ঘ. Satellite
-\item Wireless communication-এ কোনটি ব্যবহার হয়?\\
-ক. Twisted pair \quad খ. Unguided media \quad গ. Coaxial cable \quad ঘ. Copper bus
+\item ডেটা কমিউনিকেশন মাধ্যমে data কীভাবে যায়?\\
+ক. শুধু storage device দিয়ে \quad খ. sender থেকে receiver-এর path দিয়ে \quad গ. শুধু printer দিয়ে \quad ঘ. কোনো signal ছাড়া
+
+\item নিচের কোনটি guided media?\\
+ক. Radio wave \quad খ. Microwave \quad গ. Twisted pair cable \quad ঘ. Infrared
+
+\item নিচের কোনটি unguided media?\\
+ক. Coaxial cable \quad খ. Optical fiber \quad গ. Radio wave \quad ঘ. Twisted pair
+
+\item Optical fiber cable কোন signal ব্যবহার করে?\\
+ক. Sound signal \quad খ. Light signal \quad গ. Mechanical signal \quad ঘ. Magnetic tape
+
+\item TV remote সাধারণত কোন medium ব্যবহার করে?\\
+ক. Infrared \quad খ. Coaxial cable \quad গ. Optical fiber \quad ঘ. Twisted pair
+
+\item LAN-এ সাধারণত কোন cable বেশি ব্যবহৃত হয়?\\
+ক. Twisted pair \quad খ. Satellite cable \quad গ. Infrared cable \quad ঘ. Radio tube
+
+\item Microwave communication-এর জন্য সাধারণত কোনটি গুরুত্বপূর্ণ?\\
+ক. Line-of-sight \quad খ. Paper storage \quad গ. Printer speed \quad ঘ. Keyboard layout
+
+\item Guided media-এর প্রধান সুবিধা কোনটি?\\
+ক. mobility বেশি \quad খ. cable লাগে না \quad গ. controlled path ও security বেশি \quad ঘ. সবসময় free
 \end{enumerate}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item Guided media কী? একটি উদাহরণ দাও।
-\item Unguided media-এর দুটি সুবিধা লেখ।
+\item Data communication medium কী?
+\item Guided media ও Unguided media বলতে কী বোঝায়?
+\item Twisted pair cable-এর বৈশিষ্ট্য লেখ।
+\item Coaxial cable-এর গঠন ও ব্যবহার লেখ।
+\item Optical fiber cable কেন গুরুত্বপূর্ণ?
+\item Radio wave ও Microwave-এর মধ্যে পার্থক্য লেখ।
+\item Infrared কোথায় ব্যবহৃত হয়?
+\item Medium নির্বাচন করার সময় কোন কোন বিষয় বিবেচনা করতে হয়?
 \end{enumerate}
 
-\textbf{সৃজনশীল অনুশীলন}
-একটি শিক্ষা প্রতিষ্ঠানে computer lab-এ wired LAN এবং মাঠ পর্যায়ে mobile-based communication ব্যবহৃত হচ্ছে। উদ্দীপকের আলোকে guided ও unguided media বিশ্লেষণ করো।
+\textbf{সৃজনশীল প্রশ্ন}
+একটি হাসপাতাল তাদের রোগী ব্যবস্থাপনা system digital করতে চায়। ডাক্তারদের chamber-এ desktop computer থাকবে, রোগীদের waiting area-তে Wi-Fi থাকবে, server room থেকে internet backbone-এ high-speed connection থাকবে এবং emergency remote area service-এর জন্য satellite link বিবেচনা করা হচ্ছে।
+
+\begin{enumerate}
+\item ক. Guided media কী?
+\item খ. Wireless media mobility দিতে পারে কেন?
+\item গ. chamber-এর desktop computer network-এর জন্য কোন medium উপযোগী? ব্যাখ্যা কর।
+\item ঘ. server room-এর high-speed connection ও remote area service-এর জন্য কোন কোন medium ব্যবহার যুক্তিযুক্ত—বিশ্লেষণ কর।
+\end{enumerate}
 \end{practicebox}
-
-
-
-\subsection{মিডিয়া নির্বাচন করার নিয়ম}
-
-\begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Tree diagram placeholder: Transmission Media}\\[4pt]
-Transmission Media\\
-$\rightarrow$ Guided/Wired: Twisted Pair, Coaxial, Optical Fiber\\
-$\rightarrow$ Unguided/Wireless: Radio Wave, Microwave, Infrared, Satellite
-}}
-\end{center}
-
-\begin{keypointbox}{মিডিয়া বাছাইয়ের মানদণ্ড}
-\begin{itemize}
-\item \textbf{দূরত্ব}: বেশি দূরত্বে fiber optic, microwave বা satellite বেশি কার্যকর।
-\item \textbf{গতি}: high bandwidth দরকার হলে optical fiber ভালো।
-\item \textbf{নিরাপত্তা}: cable-based link সাধারণত wireless-এর তুলনায় নিয়ন্ত্রণযোগ্য।
-\item \textbf{খরচ}: ছোট LAN-এ twisted pair কম খরচে ব্যবহারযোগ্য।
-\item \textbf{mobility}: চলমান ব্যবহারকারীর জন্য wireless media দরকার।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{বাস্তব সিদ্ধান্ত}
-একটি কলেজের computer lab-এ স্থায়ী desktop সংযোগের জন্য UTP cable ব্যবহার করা যায়। একই প্রতিষ্ঠানের campus-wide student internet-এর জন্য Wi-Fi দরকার, আর দূরের branch campus যুক্ত করতে fiber বা microwave link বিবেচনা করা যায়।
-\end{examplebox}

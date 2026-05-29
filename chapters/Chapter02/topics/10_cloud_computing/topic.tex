@@ -1,153 +1,832 @@
-\section{Cloud Computing}
+% Chapter 02.10: ক্লাউড কম্পিউটিং
+\section{ক্লাউড কম্পিউটিং}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item cloud computing-এর মৌলিক ধারণা বলতে।
-\item on-demand resource, scalability এবং internet-based service ব্যাখ্যা করতে।
-\item IaaS, PaaS ও SaaS compare করতে।
-\item public, private, hybrid ও community cloud আলাদা করতে।
-\item cloud service model-এর tree diagram লিখতে।
+\item ক্লাউড কম্পিউটিং কী তা ব্যাখ্যা করতে।
+\item ক্লাউড কম্পিউটিং কীভাবে কাজ করে তা বুঝতে।
+\item Cloud storage, cloud application, cloud server ও data center-এর ধারণা নিতে।
+\item IaaS, PaaS ও SaaS service model-এর পার্থক্য লিখতে।
+\item Public, Private, Hybrid ও Community cloud deployment model ব্যাখ্যা করতে।
+\item ক্লাউড কম্পিউটিং-এর সুবিধা, অসুবিধা ও নিরাপত্তা ঝুঁকি বিশ্লেষণ করতে।
+\item বাস্তব উদাহরণ থেকে cloud computing service শনাক্ত করতে।
+\item বোর্ড পরীক্ষার জন্য short answer, comparison answer ও CQ answer লিখতে।
 \end{itemize}
 \end{learningbox}
 
-Cloud computing হলো এমন একটি model, যেখানে local device-এ সব resource না রেখে internet-এর মাধ্যমে remote server থেকে storage, software, processing ও platform ব্যবহার করা হয়। এতে cost কমে, flexibility বাড়ে এবং collaboration সহজ হয়।
+\subsection{বাস্তব জীবনের শুরু}
 
-\begin{definitionbox}{Cloud computing}
-ইন্টারনেটের মাধ্যমে demand অনুযায়ী computing resource, storage, software এবং platform ব্যবহার করার পদ্ধতিকে cloud computing বলা হয়।
-\end{definitionbox}
+ধরো, তুমি Google Drive-এ একটি file upload করলে। এরপর mobile, laptop বা অন্য কোনো computer থেকে internet ব্যবহার করে সেই file access করতে পারো। File-টি তোমার নিজের computer-এর hard disk-এ না থেকে কোনো cloud provider-এর server বা data center-এ সংরক্ষিত থাকে।
 
-\begin{keypointbox}{Cloud computing-এর বৈশিষ্ট্য}
+আবার Gmail, Google Docs, Microsoft OneDrive, Dropbox, YouTube, Facebook, online class platform, online exam system—এসব service ব্যবহার করার সময় আমরা সরাসরি cloud computing-এর সুবিধা নিচ্ছি।
+
+অর্থাৎ cloud computing হলো এমন ব্যবস্থা যেখানে storage, software, server, database, networking বা computing power নিজের local computer-এ না রেখে internet-এর মাধ্যমে remote server থেকে ব্যবহার করা যায়।
+
+\begin{keypointbox}{মূল ধারণা}
+Cloud computing বুঝতে তিনটি প্রশ্ন মনে রাখো:
 \begin{itemize}
-\item on-demand access
-\item scalability
-\item resource pooling
-\item pay-as-you-go model
-\item device-independent access
+\item data বা software কোথায় আছে? Local computer-এ, নাকি remote server-এ?
+\item user কীভাবে access করছে? Internet-এর মাধ্যমে।
+\item user কি নিজের hardware কিনছে, নাকি service হিসেবে ব্যবহার করছে?
 \end{itemize}
 \end{keypointbox}
 
-\subsection{Cloud Service Models}
+\subsection{ক্লাউড কম্পিউটিং}
 
-\begin{center}
-\begin{tabular}{c}
-\textbf{Cloud Service Models} \\
-\hline
-IaaS \hspace{1.0cm} PaaS \hspace{1.0cm} SaaS \\
-\end{tabular}
-\end{center}
+\begin{definitionbox}{ক্লাউড কম্পিউটিং}
+Internet-এর মাধ্যমে remote server, storage, database, networking, software, platform ও computing resource প্রয়োজন অনুযায়ী ব্যবহার করার প্রযুক্তিকে cloud computing বলা হয়।
+\end{definitionbox}
 
-\begin{center}
-\begin{tabular}{|p{0.14\textwidth}|p{0.24\textwidth}|p{0.40\textwidth}|}
-\hline
-\textbf{Model} & \textbf{Full form} & \textbf{কাজ} \\
-\hline
-IaaS & Infrastructure as a Service & virtual server, storage, network resource \\
-\hline
-PaaS & Platform as a Service & application build/test platform \\
-\hline
-SaaS & Software as a Service & ready-to-use software via web \\
-\hline
-\end{tabular}
-\end{center}
+সহজভাবে, cloud computing হলো \textbf{internet-based computing service}। এখানে user নিজে server, storage বা software infrastructure তৈরি না করেও cloud provider-এর resource ব্যবহার করতে পারে।
 
-\begin{examplebox}{উদাহরণ}
-Cloud storage IaaS-এর কাছাকাছি service দিতে পারে, developer platform PaaS-এর উদাহরণ, আর Gmail, Google Docs, Office 365 ধরনের service SaaS-এর উদাহরণ।
+\begin{examplebox}{সহজ উদাহরণ}
+\begin{itemize}
+\item Google Drive-এ file রাখা হলো cloud storage।
+\item Gmail ব্যবহার করা হলো cloud-based email service।
+\item Google Docs ব্যবহার করে online document edit করা হলো cloud application।
+\item কোনো website AWS, Azure বা Google Cloud server-এ host করা হলো cloud hosting।
+\end{itemize}
 \end{examplebox}
 
-\subsection{Deployment Models}
-
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.26\textwidth}|p{0.34\textwidth}|}
-\hline
-\textbf{Model} & \textbf{Ownership / access} & \textbf{Use} \\
-\hline
-Public cloud & provider-managed shared platform & general public, startups \\
-\hline
-Private cloud & single organization use & bank, government, enterprise \\
-\hline
-Hybrid cloud & public + private mix & flexible workload management \\
-\hline
-Community cloud & shared by related organizations & education, research consortium \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{examplebox}{বাংলাদেশ প্রেক্ষিত}
-অনলাইন class platform, document sharing, backup storage এবং software subscription cloud computing-এর বাস্তব উদাহরণ। এ ধরনের service remote work, freelancing এবং institutional collaboration সহজ করে।
-\end{examplebox}
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_computing_basic_model.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_basic_model.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+User Device \quad $\longleftrightarrow$ \quad Internet \quad $\longleftrightarrow$ \quad Cloud Server / Data Center[8pt]
+Storage \quad Software \quad Database \quad Computing Power
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud computing-এর basic model}
+\end{figure}
 
 \begin{boardbox}{বোর্ড ফোকাস}
-Cloud computing প্রশ্নে definition-এর পরে service model আর deployment model আলাদা করে লিখতে হয়। IaaS, PaaS, SaaS গুলোর role mix না করে লিখতে হবে।
+Cloud computing-এর উত্তরে অবশ্যই “internet-এর মাধ্যমে remote server/resource ব্যবহার” কথাটি লিখবে। উদাহরণ হিসেবে Google Drive, Gmail বা online software উল্লেখ করলে উত্তর ভালো হয়।
 \end{boardbox}
+
+\subsection{ক্লাউড কম্পিউটিং-এর মূল উপাদান}
+
+Cloud computing system সাধারণত কয়েকটি গুরুত্বপূর্ণ component নিয়ে গঠিত।
+
+\begin{keypointbox}{Cloud computing components}
+\begin{itemize}
+\item \textbf{Client device}: user-এর mobile, laptop, desktop বা tablet।
+\item \textbf{Internet}: user ও cloud server-এর মধ্যে connection path।
+\item \textbf{Cloud server}: remote server যেখানে application বা service চলে।
+\item \textbf{Cloud storage}: data, file, image, video বা backup রাখার জায়গা।
+\item \textbf{Data center}: অনেক server, storage ও networking device নিয়ে তৈরি বড় infrastructure।
+\item \textbf{Virtualization}: physical hardware-কে virtual resource হিসেবে ভাগ করে ব্যবহার করার প্রযুক্তি।
+\item \textbf{Cloud application}: browser বা app দিয়ে ব্যবহার করা cloud-based software।
+\end{itemize}
+\end{keypointbox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_computing_components.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_components.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Client Device \quad Internet \quad Cloud Data Center[8pt]
+Server \quad Storage \quad Database \quad Application \quad Virtualization
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud computing-এর প্রধান উপাদান}
+\end{figure}
+
+\subsection{Cloud Computing কীভাবে কাজ করে?}
+
+Cloud computing-এ user কোনো service ব্যবহার করতে চাইলে request internet-এর মাধ্যমে cloud provider-এর server-এ যায়। Server request process করে data বা result user device-এ পাঠিয়ে দেয়।
+
+\begin{keypointbox}{কাজের ধাপ}
+\begin{enumerate}
+\item user mobile/computer থেকে internet ব্যবহার করে cloud service access করে।
+\item request cloud provider-এর server বা data center-এ যায়।
+\item cloud server required software, database বা storage ব্যবহার করে request process করে।
+\item processed result বা file user device-এ ফিরে আসে।
+\item user local device-এ সব resource install না করেও service ব্যবহার করতে পারে।
+\end{enumerate}
+\end{keypointbox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_computing_working_process.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_working_process.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+User Request $\rightarrow$ Internet $\rightarrow$ Cloud Server[6pt]
+Cloud Processing $\rightarrow$ Data / Result $\rightarrow$ User Device
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud computing-এর working process}
+\end{figure}
+
+\subsection{Cloud Computing-এর Essential Characteristics}
+
+Standard cloud computing বোঝার জন্য পাঁচটি essential characteristic খুব গুরুত্বপূর্ণ।
+
+\subsubsection{On-demand Self-service}
+
+User প্রয়োজন অনুযায়ী storage, processing power বা software service নিজে request করে ব্যবহার করতে পারে। প্রতিবার service provider-এর সাথে manual যোগাযোগ করার প্রয়োজন হয় না।
+
+\subsubsection{Broad Network Access}
+
+Cloud service internet বা network-এর মাধ্যমে mobile, laptop, desktop, tablet ইত্যাদি বিভিন্ন device থেকে access করা যায়।
+
+\subsubsection{Resource Pooling}
+
+Cloud provider অনেক user-এর জন্য server, storage, database, network ইত্যাদি resource pool করে রাখে। User প্রয়োজন অনুযায়ী সেই shared resource ব্যবহার করে।
+
+\subsubsection{Rapid Elasticity}
+
+User-এর চাহিদা বাড়লে resource দ্রুত বাড়ানো যায় এবং চাহিদা কমলে resource কমানো যায়। যেমন website-এ visitor বেশি হলে server capacity বাড়ানো।
+
+\subsubsection{Measured Service}
+
+Cloud resource ব্যবহার পরিমাপ করা যায়। User কত storage, bandwidth বা computing power ব্যবহার করল তা monitor করা যায় এবং অনেক ক্ষেত্রে usage অনুযায়ী bill হয়।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_computing_characteristics.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_characteristics.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+On-demand Self-service \quad Broad Network Access[6pt]
+Resource Pooling \quad Rapid Elasticity \quad Measured Service
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud computing-এর essential characteristics}
+\end{figure}
+
+\subsection{Cloud Service Model}
+
+Cloud computing service ব্যবহারকারীর control ও responsibility অনুযায়ী প্রধানত তিন ধরনের:
+
+\begin{itemize}
+\item \textbf{IaaS}: Infrastructure as a Service
+\item \textbf{PaaS}: Platform as a Service
+\item \textbf{SaaS}: Software as a Service
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_service_model_stack.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/cloud_service_model_stack.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.7cm}
+SaaS: Software[8pt]
+PaaS: Platform[8pt]
+IaaS: Infrastructure
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud service model stack}
+\end{figure}
+
+\subsection{IaaS}
+
+\begin{definitionbox}{IaaS}
+IaaS বা Infrastructure as a Service হলো cloud service model যেখানে user virtual server, storage, network এবং computing infrastructure internet-এর মাধ্যমে service হিসেবে ব্যবহার করে।
+\end{definitionbox}
+
+IaaS-এ provider hardware infrastructure দেয়, আর user operating system, application, database ইত্যাদি নিজের প্রয়োজন অনুযায়ী configure করতে পারে।
+
+\begin{keypointbox}{IaaS-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item virtual machine, server, storage ও network resource পাওয়া যায়।
+\item physical server কিনতে হয় না।
+\item user-এর control তুলনামূলক বেশি।
+\item website hosting, backup server, testing server ইত্যাদিতে ব্যবহার করা যায়।
+\item technical knowledge বেশি প্রয়োজন হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+AWS EC2, Microsoft Azure Virtual Machines, Google Compute Engine—এসব IaaS ধারণার উদাহরণ হিসেবে বোঝানো যায়।
+\end{examplebox}
+
+\subsection{PaaS}
+
+\begin{definitionbox}{PaaS}
+PaaS বা Platform as a Service হলো cloud service model যেখানে application তৈরি, test, deploy ও run করার জন্য required platform, runtime, database ও development tools service হিসেবে দেওয়া হয়।
+\end{definitionbox}
+
+PaaS-এ developer server manage করার ঝামেলা ছাড়াই application develop করতে পারে। Provider infrastructure ও platform manage করে।
+
+\begin{keypointbox}{PaaS-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item application development-এর platform দেয়।
+\item server ও operating system management provider করে।
+\item developer coding, testing ও deployment-এ focus করতে পারে।
+\item web application ও mobile application development-এ উপযোগী।
+\item user-এর control IaaS-এর তুলনায় কম, কিন্তু ease of use বেশি।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+Google App Engine, Microsoft Azure App Service, Heroku—এসব PaaS ধারণার উদাহরণ হিসেবে ব্যাখ্যা করা যায়।
+\end{examplebox}
+
+\subsection{SaaS}
+
+\begin{definitionbox}{SaaS}
+SaaS বা Software as a Service হলো cloud service model যেখানে software internet-এর মাধ্যমে ready-to-use service হিসেবে ব্যবহার করা যায়।
+\end{definitionbox}
+
+SaaS-এ user সাধারণত browser বা mobile app দিয়ে software ব্যবহার করে। Software install, update, maintenance—এসব কাজ provider manage করে।
+
+\begin{keypointbox}{SaaS-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item ready-made software service পাওয়া যায়।
+\item local computer-এ software install না করেও ব্যবহার করা যায়।
+\item update ও maintenance provider করে।
+\item সাধারণ user-এর জন্য সবচেয়ে সহজ cloud service model।
+\item internet connection প্রয়োজন।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+Gmail, Google Docs, Microsoft 365, Dropbox, Canva, Zoom—এসব SaaS-এর উদাহরণ হিসেবে ব্যবহার করা যায়।
+\end{examplebox}
+
+\subsection{IaaS, PaaS ও SaaS-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.17\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
+\hline
+	\textbf{বিষয়} & \textbf{IaaS} & \textbf{PaaS} & \textbf{SaaS} \\
+\hline
+পূর্ণরূপ & Infrastructure as a Service & Platform as a Service & Software as a Service \\
+\hline
+মূল সেবা & server, storage, network & development platform & ready software \\
+\hline
+User control & বেশি & মাঝারি & কম \\
+\hline
+ব্যবহারকারী & system admin, developer & developer & সাধারণ user \\
+\hline
+Management & OS/application user manage করে & code/application user manage করে & software provider manage করে \\
+\hline
+উদাহরণ & virtual server & app development platform & Gmail, Google Docs \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/iaas_paas_saas_comparison.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/iaas_paas_saas_comparison.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+IaaS: Infrastructure Control[6pt]
+PaaS: Development Platform[6pt]
+SaaS: Ready Software
+\vspace{0.7cm}
+}}
+}
+\caption{IaaS, PaaS ও SaaS-এর তুলনা}
+\end{figure}
+
+\subsection{Cloud Deployment Model}
+
+Cloud infrastructure ownership, access ও use-এর ভিত্তিতে deployment model কয়েক ধরনের হতে পারে:
+
+\begin{itemize}
+\item Public Cloud
+\item Private Cloud
+\item Hybrid Cloud
+\item Community Cloud
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_deployment_models.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_deployment_models.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Cloud Deployment Models[8pt]
+Public Cloud \quad Private Cloud \quad Hybrid Cloud \quad Community Cloud
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud deployment model}
+\end{figure}
+
+\subsection{Public Cloud}
+
+\begin{definitionbox}{Public Cloud}
+যে cloud infrastructure কোনো third-party cloud provider পরিচালনা করে এবং internet-এর মাধ্যমে বহু user বা organization service হিসেবে ব্যবহার করে, তাকে public cloud বলা হয়।
+\end{definitionbox}
+
+Public cloud সাধারণত cost-effective এবং scalable। তবে sensitive data-এর ক্ষেত্রে security ও compliance carefully manage করতে হয়।
+
+\begin{keypointbox}{Public cloud-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item third-party provider দ্বারা operated হয়।
+\item internet-এর মাধ্যমে access করা যায়।
+\item অনেক user shared infrastructure ব্যবহার করে।
+\item cost তুলনামূলক কম হতে পারে।
+\item scalability বেশি।
+\item user-এর control private cloud-এর তুলনায় কম।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Private Cloud}
+
+\begin{definitionbox}{Private Cloud}
+যে cloud infrastructure একটি নির্দিষ্ট organization বা প্রতিষ্ঠানের জন্য dedicated থাকে এবং সেই organization-ই মূলত ব্যবহার করে, তাকে private cloud বলা হয়।
+\end{definitionbox}
+
+Private cloud-এ control ও security বেশি হতে পারে। ব্যাংক, বড় corporate office, government বা sensitive data-based organization private cloud ব্যবহার করতে পারে।
+
+\begin{keypointbox}{Private cloud-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item একটি নির্দিষ্ট organization-এর জন্য dedicated।
+\item control ও customization বেশি।
+\item sensitive data management-এ উপযোগী।
+\item cost public cloud-এর তুলনায় বেশি হতে পারে।
+\item skilled maintenance team দরকার হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Hybrid Cloud}
+
+\begin{definitionbox}{Hybrid Cloud}
+Public cloud ও private cloud একত্রে ব্যবহার করে যে cloud environment তৈরি হয়, তাকে hybrid cloud বলা হয়।
+\end{definitionbox}
+
+Hybrid cloud-এ organization sensitive data private cloud-এ রাখতে পারে এবং high scalability বা public service-এর জন্য public cloud ব্যবহার করতে পারে।
+
+\begin{keypointbox}{Hybrid cloud-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item public ও private cloud-এর combination।
+\item flexibility বেশি।
+\item sensitive workload private cloud-এ রাখা যায়।
+\item scalable service public cloud-এ রাখা যায়।
+\item design ও management তুলনামূলক complex হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Community Cloud}
+
+\begin{definitionbox}{Community Cloud}
+যে cloud infrastructure একই ধরনের উদ্দেশ্য, policy বা security requirement থাকা একাধিক organization একসাথে ব্যবহার করে, তাকে community cloud বলা হয়।
+\end{definitionbox}
+
+Community cloud সাধারণত education, healthcare, government বা research-based organizations-এর মধ্যে shared requirement থাকলে ব্যবহার করা যেতে পারে।
+
+\begin{keypointbox}{Community cloud-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item common interest থাকা organizations একসাথে ব্যবহার করে।
+\item cost share করা যায়।
+\item common policy ও security requirement follow করা যায়।
+\item public cloud-এর চেয়ে controlled হতে পারে।
+\item management agreement দরকার হয়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Public, Private, Hybrid ও Community Cloud-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.17\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{Model} & \textbf{Access} & \textbf{Control} & \textbf{ব্যবহার} \
+\hline
+Public Cloud & বহু user internet দিয়ে access করে & provider-এর control বেশি & সাধারণ service, startup, scalable app \
+\hline
+Private Cloud & একটি organization ব্যবহার করে & organization-এর control বেশি & bank, government, sensitive data \
+\hline
+Hybrid Cloud & public + private cloud & mixed control & sensitive data + scalable public service \
+\hline
+Community Cloud & common interest group ব্যবহার করে & shared governance & education, healthcare, research group \
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/public_private_hybrid_cloud.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/public_private_hybrid_cloud.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Public Cloud \quad Private Cloud \quad Hybrid Cloud[8pt]
+Shared Access \quad Dedicated Access \quad Combined Access
+\vspace{0.7cm}
+}}
+}
+\caption{Public, Private ও Hybrid cloud}
+\end{figure}
+
+\subsection{Cloud Storage}
+
+\begin{definitionbox}{Cloud Storage}
+Internet-এর মাধ্যমে remote server বা cloud data center-এ data, file, image, video বা backup সংরক্ষণ করার ব্যবস্থাকে cloud storage বলা হয়।
+\end{definitionbox}
+
+Cloud storage-এ file upload করলে user internet connection থাকলে যেকোনো জায়গা থেকে file access করতে পারে। File share, sync ও backup করার জন্য cloud storage খুব useful।
+
+\begin{keypointbox}{Cloud storage-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item remote server-এ data সংরক্ষণ করা হয়।
+\item যেকোনো device থেকে data access করা যায়।
+\item file sharing ও synchronization সহজ।
+\item automatic backup রাখা যায়।
+\item internet না থাকলে access problem হতে পারে।
+\item privacy ও security setting ঠিকভাবে manage করতে হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{উদাহরণ}
+Google Drive, Microsoft OneDrive, Dropbox, iCloud—এসব cloud storage service-এর উদাহরণ।
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_storage_sync_model.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_storage_sync_model.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Laptop \quad Mobile \quad Tablet[6pt]
+$\updownarrow$ \quad $\updownarrow$ \quad $\updownarrow$[6pt]
+Cloud Storage
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud storage ও device sync}
+\end{figure}
+
+\subsection{Cloud Computing-এর সুবিধা}
+
+Cloud computing modern ICT system-এ খুব গুরুত্বপূর্ণ, কারণ এটি কম খরচে দ্রুত, scalable এবং flexible computing service ব্যবহার করতে সাহায্য করে।
+
+\begin{keypointbox}{Cloud computing-এর সুবিধা}
+\begin{itemize}
+\item \textbf{Cost saving}: server, storage ও hardware কিনতে কম খরচ হতে পারে।
+\item \textbf{Scalability}: প্রয়োজন অনুযায়ী resource বাড়ানো বা কমানো যায়।
+\item \textbf{Accessibility}: internet থাকলে যেকোনো জায়গা থেকে service access করা যায়।
+\item \textbf{Backup}: data backup রাখা সহজ।
+\item \textbf{Collaboration}: একই file বা document অনেক user একসাথে কাজ করতে পারে।
+\item \textbf{Automatic update}: software update provider manage করতে পারে।
+\item \textbf{Disaster recovery}: data center-based backup থাকলে data recovery সহজ হতে পারে।
+\item \textbf{Flexibility}: user device বা location independent service ব্যবহার করতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_computing_advantages.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_advantages.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Cost Saving \quad Scalability \quad Accessibility[6pt]
+Backup \quad Collaboration \quad Automatic Update
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud computing-এর সুবিধা}
+\end{figure}
+
+\subsection{Cloud Computing-এর অসুবিধা ও সীমাবদ্ধতা}
+
+Cloud computing সুবিধাজনক হলেও কিছু limitation ও risk আছে।
+
+\begin{keypointbox}{Cloud computing-এর অসুবিধা}
+\begin{itemize}
+\item internet connection ছাড়া service ব্যবহার করা কঠিন হতে পারে।
+\item data privacy ও security risk থাকতে পারে।
+\item provider-এর server down হলে service disruption হতে পারে।
+\item long-term usage cost ঠিকভাবে monitor না করলে খরচ বাড়তে পারে।
+\item data অন্য provider-এ স্থানান্তর করা কঠিন হতে পারে।
+\item sensitive data cloud-এ রাখলে legal/compliance issue থাকতে পারে।
+\item user-এর full control সব ক্ষেত্রে থাকে না।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Cloud Security}
+
+Cloud computing-এ data remote server-এ থাকে। তাই security খুব গুরুত্বপূর্ণ। Password, encryption, access control, backup, multi-factor authentication এবং proper sharing permission cloud security নিশ্চিত করতে সাহায্য করে।
+
+\begin{keypointbox}{Cloud security practice}
+\begin{itemize}
+\item strong password ব্যবহার করা।
+\item multi-factor authentication চালু রাখা।
+\item file sharing permission carefully manage করা।
+\item sensitive data encrypt করা।
+\item regular backup রাখা।
+\item trusted cloud provider ব্যবহার করা।
+\item public Wi-Fi থেকে sensitive cloud account login এড়িয়ে চলা।
+\end{itemize}
+\end{keypointbox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_security_risk_model.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_security_risk_model.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+User Account \quad $\longrightarrow$ \quad Cloud Data[6pt]
+Password \quad MFA \quad Encryption \quad Access Control
+\vspace{0.7cm}
+}}
+}
+\caption{Cloud security risk ও protection}
+\end{figure}
+
+\subsection{Traditional Computing ও Cloud Computing-এর পার্থক্য}
+
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Traditional Computing} & \textbf{Cloud Computing} \
+\hline
+Resource location & local computer/server-এ থাকে & remote cloud server/data center-এ থাকে \
+\hline
+Access & নির্দিষ্ট device/network থেকে access & internet দিয়ে যেকোনো জায়গা থেকে access \
+\hline
+Cost & hardware/software আগে কিনতে হয় & service হিসেবে ব্যবহার করা যায় \
+\hline
+Scalability & resource বাড়ানো কঠিন ও সময়সাপেক্ষ & দ্রুত resource বাড়ানো/কমানো যায় \
+\hline
+Maintenance & user/organization manage করে & provider অনেক অংশ manage করে \
+\hline
+Backup & manual backup দরকার হতে পারে & cloud backup সহজ হতে পারে \
+\hline
+Dependency & local hardware-এর উপর নির্ভরশীল & internet ও provider-এর উপর নির্ভরশীল \
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/cloud_vs_traditional_computing.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_vs_traditional_computing.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Traditional: Local Server / Local Software[6pt]
+Cloud: Internet + Remote Server + Online Service
+\vspace{0.7cm}
+}}
+}
+\caption{Traditional computing ও Cloud computing}
+\end{figure}
+
+\subsection{School বা College-এ Cloud Computing-এর ব্যবহার}
+
+Education sector-এ cloud computing অত্যন্ত গুরুত্বপূর্ণ। Online class, digital content, attendance system, result management, file sharing, online exam এবং collaborative learning cloud service-এর মাধ্যমে সহজ করা যায়।
+
+\begin{examplebox}{College cloud use case}
+\begin{itemize}
+\item Teacher Google Drive-এ class note upload করেন।
+\item Students online form দিয়ে assignment submit করে।
+\item ICT lab-এর files cloud storage-এ backup রাখা হয়।
+\item Online class platform cloud server ব্যবহার করে।
+\item Result processing system cloud database ব্যবহার করতে পারে।
+\end{itemize}
+\end{examplebox}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/school_cloud_computing_use_case.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/school_cloud_computing_use_case.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Teacher \quad Student \quad Admin[6pt]
+$\updownarrow$ \quad $\updownarrow$ \quad $\updownarrow$[6pt]
+Cloud Platform: Notes, Assignment, Result, Backup
+\vspace{0.7cm}
+}}
+}
+\caption{Education sector-এ cloud computing ব্যবহার}
+\end{figure}
+
+\subsection{কোন পরিস্থিতিতে কোন Cloud Model ব্যবহার হবে?}
+
+\begin{center}
+\begin{tabular}{|p{0.34\textwidth}|p{0.23\textwidth}|p{0.31\textwidth}|}
+\hline
+	\textbf{পরিস্থিতি} & \textbf{উপযুক্ত model} & \textbf{কারণ} \\
+\hline
+একজন student online document edit করছে & SaaS & ready software browser দিয়ে ব্যবহার করছে \\
+\hline
+একজন developer web app deploy করছে & PaaS & development ও deployment platform দরকার \\
+\hline
+একটি company virtual server rent করছে & IaaS & infrastructure service হিসেবে নিচ্ছে \\
+\hline
+ছোট startup দ্রুত website host করছে & Public Cloud & cost কম ও scalability বেশি \\
+\hline
+Bank sensitive customer data manage করছে & Private Cloud & control ও security বেশি দরকার \\
+\hline
+Organization sensitive data private cloud-এ রেখে public app চালাচ্ছে & Hybrid Cloud & public ও private দুই environment ব্যবহার করছে \\
+\hline
+Healthcare organizations common policy নিয়ে shared cloud ব্যবহার করছে & Community Cloud & common requirement থাকা group ব্যবহার করছে \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Common Mistake Zone}
+
+\begin{mistakebox}{Common mistake ১}
+অনেকে cloud computing মানেই শুধু online storage মনে করে। আসলে cloud computing-এর মধ্যে storage ছাড়াও server, database, software, platform, networking ও computing power অন্তর্ভুক্ত।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ২}
+Google Drive cloud storage, কিন্তু Gmail/Google Docs cloud application বা SaaS service হিসেবেও বোঝানো যায়।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৩}
+Public cloud মানে data public হয়ে যায়—এটি ভুল। Public cloud shared infrastructure হলেও user data logical security ও access control দ্বারা আলাদা রাখা হয়।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৪}
+Cloud computing ব্যবহার করলে security দরকার নেই—এটি ভুল। Strong password, MFA, access control ও encryption জরুরি।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৫}
+IaaS, PaaS ও SaaS একই নয়। IaaS infrastructure দেয়, PaaS development platform দেয়, SaaS ready software দেয়।
+\end{mistakebox}
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Cloud computing কী?}
+Internet-এর মাধ্যমে remote server, storage, database, networking, software, platform ও computing resource প্রয়োজন অনুযায়ী ব্যবহার করার প্রযুক্তিকে cloud computing বলা হয়। এতে user নিজের local computer-এ সব resource না রেখেও online service ব্যবহার করতে পারে। যেমন—Google Drive, Gmail, Google Docs, Dropbox ইত্যাদি।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Cloud storage কী?}
+Internet-এর মাধ্যমে remote server বা cloud data center-এ data, file, image, video বা backup সংরক্ষণ করার ব্যবস্থাকে cloud storage বলা হয়। যেমন—Google Drive, OneDrive, Dropbox, iCloud।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: IaaS কী?}
+IaaS বা Infrastructure as a Service হলো cloud service model যেখানে user virtual server, storage, network ও computing infrastructure internet-এর মাধ্যমে service হিসেবে ব্যবহার করে। এতে physical server কিনতে হয় না।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: PaaS কী?}
+PaaS বা Platform as a Service হলো cloud service model যেখানে application তৈরি, test, deploy ও run করার জন্য development platform, runtime ও tools service হিসেবে দেওয়া হয়। এটি developer-দের জন্য উপযোগী।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: SaaS কী?}
+SaaS বা Software as a Service হলো cloud service model যেখানে software internet-এর মাধ্যমে ready-to-use service হিসেবে ব্যবহার করা যায়। user সাধারণত browser বা app দিয়ে software ব্যবহার করে। যেমন—Gmail, Google Docs, Microsoft 365।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Public cloud কী?}
+যে cloud infrastructure কোনো third-party cloud provider পরিচালনা করে এবং internet-এর মাধ্যমে বহু user বা organization service হিসেবে ব্যবহার করে, তাকে public cloud বলা হয়। এটি scalable ও cost-effective হতে পারে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Private cloud কী?}
+যে cloud infrastructure একটি নির্দিষ্ট organization বা প্রতিষ্ঠানের জন্য dedicated থাকে এবং সেই organization-ই মূলত ব্যবহার করে, তাকে private cloud বলা হয়। sensitive data ও বেশি control দরকার হলে private cloud ব্যবহার করা যায়।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Hybrid cloud কী?}
+Public cloud ও private cloud একত্রে ব্যবহার করে যে cloud environment তৈরি হয়, তাকে hybrid cloud বলা হয়। এতে sensitive data private cloud-এ রাখা যায় এবং scalable service public cloud-এ চালানো যায়।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: IaaS, PaaS ও SaaS}
+IaaS infrastructure যেমন virtual server, storage ও network service হিসেবে দেয়। PaaS application development ও deployment-এর platform দেয়। SaaS ready-made software internet-এর মাধ্যমে ব্যবহার করতে দেয়। IaaS-এ user control বেশি, PaaS-এ development সহজ, আর SaaS সাধারণ user-এর জন্য সবচেয়ে সহজ।
+\end{boardbox}
+
+\begin{boardbox}{পার্থক্য: Public cloud ও Private cloud}
+Public cloud third-party provider পরিচালনা করে এবং বহু user internet-এর মাধ্যমে shared infrastructure ব্যবহার করে। Private cloud নির্দিষ্ট একটি organization-এর জন্য dedicated থাকে, তাই control ও customization বেশি হয়। Public cloud cost-effective ও scalable, কিন্তু private cloud sensitive data management-এর জন্য বেশি উপযোগী হতে পারে।
+\end{boardbox}
+
+\subsection{Brainstorming Critical Question}
+
+\begin{practicebox}
+একটি কলেজ online class, digital note sharing, assignment submission এবং result management system চালু করতে চায়। শিক্ষকরা class note Google Drive-এ upload করবেন, students online document edit করবে এবং কলেজের result database secure environment-এ রাখতে চায়।
+
+\begin{enumerate}
+\item ক. Cloud computing কী?
+\item খ. Cloud storage শিক্ষার্থীদের জন্য সুবিধাজনক কেন?
+\item গ. students online document edit করার ক্ষেত্রে কোন cloud service model ব্যবহৃত হচ্ছে? ব্যাখ্যা কর।
+\item ঘ. কলেজের note sharing, online class ও secure result database পরিচালনায় public, private বা hybrid cloud model কীভাবে ব্যবহার করা যেতে পারে—বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\subsection{১ মিনিটে রিভিশন}
 
 \begin{recapbox}
 \begin{itemize}
-\item Cloud computing internet-based resource access।
-\item IaaS infrastructure, PaaS platform, SaaS software দেয়।
-\item Public, private, hybrid ও community deployment model আছে।
-\item On-demand এবং scalable হওয়াই cloud-এর বড় শক্তি।
+\item Cloud computing হলো internet-এর মাধ্যমে remote computing resource ব্যবহার।
+\item Cloud resource-এর মধ্যে server, storage, database, software, platform ও network থাকতে পারে।
+\item Cloud storage remote server-এ data সংরক্ষণ করে।
+\item Cloud computing-এর essential characteristics: on-demand self-service, broad network access, resource pooling, rapid elasticity, measured service।
+\item IaaS infrastructure service দেয়।
+\item PaaS application development platform দেয়।
+\item SaaS ready software service দেয়।
+\item Public cloud shared infrastructure এবং third-party provider-based।
+\item Private cloud একটি organization-এর জন্য dedicated।
+\item Hybrid cloud public ও private cloud-এর combination।
+\item Community cloud common interest থাকা organizations ব্যবহার করে।
+\item Cloud computing cost saving, scalability, accessibility, backup ও collaboration সুবিধা দেয়।
+\item Cloud computing-এর risk: internet dependency, privacy issue, security risk, provider dependency।
+\item Cloud security-এর জন্য strong password, MFA, encryption ও access control জরুরি।
 \end{itemize}
 \end{recapbox}
 
+\subsection{অনুশীলন}
+
 \begin{practicebox}
 \textbf{MCQ}
+
 \begin{enumerate}
-\item Ready-to-use web software কোন model-এর উদাহরণ?\\
-ক. IaaS \quad খ. PaaS \quad গ. SaaS \quad ঘ. LAN
-\item কোন deployment model সাধারণত একটি প্রতিষ্ঠানের নিজস্ব ব্যবহারের জন্য থাকে?\\
-ক. Public cloud \quad খ. Private cloud \quad গ. Community cloud \quad ঘ. Open cloud
+\item Cloud computing কীসের মাধ্যমে ব্যবহার করা হয়?\
+ক. শুধু printer দিয়ে \quad খ. internet-এর মাধ্যমে \quad গ. শুধু keyboard দিয়ে \quad ঘ. offline cable ছাড়া
+
+\item Google Drive কোন ধরনের service-এর উদাহরণ?\
+ক. Cloud storage \quad খ. Scanner service \quad গ. Monitor service \quad ঘ. Keyboard service
+
+\item SaaS-এর পূর্ণরূপ কী?\
+ক. Storage as a Service \quad খ. Software as a Service \quad গ. System as a Switch \quad ঘ. Server and Scanner
+
+\item IaaS প্রধানত কী দেয়?\
+ক. Ready software \quad খ. Infrastructure \quad গ. Keyboard layout \quad ঘ. Monitor brightness
+
+\item PaaS বেশি উপযোগী কার জন্য?\
+ক. developer \quad খ. শুধু typist \quad গ. painter \quad ঘ. electrician
+
+\item Public cloud কে পরিচালনা করে?\
+ক. সাধারণত third-party provider \quad খ. শুধু student \quad গ. printer \quad ঘ. mouse
+
+\item Public ও Private cloud একত্রে ব্যবহার করলে কোন cloud হয়?\
+ক. Hybrid cloud \quad খ. Bus cloud \quad গ. Ring cloud \quad ঘ. Simplex cloud
+
+\item Cloud computing-এর একটি সুবিধা কোনটি?\
+ক. scalability \quad খ. শুধু offline use \quad গ. cable twisting \quad ঘ. monitor cleaning
+
+\item Cloud computing-এর একটি risk কোনটি?\
+ক. security risk \quad খ. printer color \quad গ. keyboard size \quad ঘ. mouse pad
+
+\item Cloud security বাড়াতে কোনটি ব্যবহার করা ভালো?\
+ক. weak password \quad খ. MFA \quad গ. password share করা \quad ঘ. public login
 \end{enumerate}
+
+\textbf{উত্তরমালা:}
+১. খ, ২. ক, ৩. খ, ৪. খ, ৫. ক, ৬. ক, ৭. ক, ৮. ক, ৯. ক, ১০. খ
+
+\vspace{0.3cm}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
 \item Cloud computing কী?
-\item SaaS ও PaaS-এর মধ্যে পার্থক্য লেখ।
+\item Cloud storage বলতে কী বোঝায়?
+\item IaaS, PaaS ও SaaS-এর মধ্যে পার্থক্য লেখ।
+\item Public cloud ও Private cloud-এর মধ্যে পার্থক্য লেখ।
+\item Hybrid cloud কেন ব্যবহার করা হয়?
+\item Cloud computing-এর পাঁচটি বৈশিষ্ট্য লেখ।
+\item Cloud computing-এর পাঁচটি সুবিধা লেখ।
+\item Cloud computing-এর তিনটি অসুবিধা লেখ।
+\item Cloud security কেন গুরুত্বপূর্ণ?
+\item Education sector-এ cloud computing-এর ব্যবহার লেখ।
 \end{enumerate}
 
-\textbf{সৃজনশীল অনুশীলন}
-একটি কলেজের শিক্ষার্থী online document, remote assignment submission এবং cloud storage ব্যবহার করছে। উদ্দীপকের আলোকে cloud computing-এর service model ও সুবিধা বিশ্লেষণ করো।
+\textbf{সৃজনশীল প্রশ্ন}
+একটি hospital patient report, appointment system, doctors' online consultation এবং emergency data backup cloud system-এ নিতে চায়। Patient report sensitive হওয়ায় hospital authority security বেশি রাখতে চায়। কিন্তু online consultation system অনেক user একসাথে ব্যবহার করবে, তাই scalability দরকার।
+
+\begin{enumerate}
+\item ক. Cloud storage কী?
+\item খ. SaaS সাধারণ user-এর জন্য সহজ কেন?
+\item গ. doctors' online consultation platform কোন cloud model ব্যবহার করতে পারে? ব্যাখ্যা কর।
+\item ঘ. sensitive patient report ও scalable consultation system-এর জন্য hybrid cloud ব্যবহার যুক্তিযুক্ত কি না—বিশ্লেষণ কর।
+\end{enumerate}
 \end{practicebox}
-
-
-
-\subsection{Cloud service model}
-
-\begin{center}
-\fbox{\parbox{0.92\textwidth}{
-\centering
-\textbf{Layer diagram placeholder}\\[4pt]
-User/Application\\
-SaaS: ready software\\
-PaaS: development platform\\
-IaaS: virtual machine, storage, network\\
-Data Center: server, storage, power, cooling
-}}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
-\hline
-\textbf{Model} & \textbf{ব্যবহারকারী কী পায়} & \textbf{উদাহরণধর্মী ব্যবহার} \\
-\hline
-IaaS & virtual server, storage, network & website hosting, backup server \\
-\hline
-PaaS & app তৈরি/চালানোর platform & web app deployment, database platform \\
-\hline
-SaaS & ready-to-use software & email, online document, LMS \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{keypointbox}{Cloud-এর সুবিধা}
-\begin{itemize}
-\item প্রয়োজন অনুযায়ী resource বাড়ানো-কমানো যায়।
-\item শুরুতে hardware কেনার খরচ কমে।
-\item internet থাকলে যেকোনো জায়গা থেকে access করা যায়।
-\item backup, collaboration ও maintenance সহজ হয়।
-\end{itemize}
-\end{keypointbox}
-
-\begin{mistakebox}{সাধারণ ভুল}
-Cloud মানে শুধু online storage নয়। Cloud computing-এ server, storage, platform, software, network resource—সবই service হিসেবে পাওয়া যায়।
-\end{mistakebox}

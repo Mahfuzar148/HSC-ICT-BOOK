@@ -1,148 +1,565 @@
-\section{Wireless Media and Systems}
+% Chapter 02.5: তারবিহীন মাধ্যম ও সিস্টেম
+\section{তারবিহীন মাধ্যম ও সিস্টেম}
 
 \begin{learningbox}
 এই টপিক শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item wireless media-এর প্রধান ধরন বলতে।
-\item WLAN, WPAN ও WWAN-এর ব্যবহার ব্যাখ্যা করতে।
-\item radio, microwave, infrared ও satellite link আলাদা করতে।
-\item wireless communication-এর সুবিধা ও সীমাবদ্ধতা তুলনা করতে।
-\item network design-এ media choice যুক্তিসহ লিখতে।
+\item তারবিহীন মাধ্যম বা unguided media কী তা ব্যাখ্যা করতে।
+\item Radio wave, Microwave, Infrared ও Satellite communication-এর বৈশিষ্ট্য বুঝতে।
+\item Bluetooth, Wi-Fi ও WiMAX-এর ধারণা ও ব্যবহার ব্যাখ্যা করতে।
+\item Wireless communication-এর সুবিধা, অসুবিধা ও সীমাবদ্ধতা বিশ্লেষণ করতে।
+\item Line-of-sight, interference, coverage, mobility ও security-এর ধারণা বুঝতে।
+\item বাস্তব scenario থেকে উপযুক্ত wireless medium বা system নির্বাচন করতে।
+\item বোর্ড ও ভর্তি পরীক্ষার জন্য wireless media-based উত্তর লিখতে।
 \end{itemize}
 \end{learningbox}
 
-Wireless media-তে cable লাগে না; signal electromagnetic wave হিসেবে ছড়িয়ে পড়ে। এটি mobility, quick setup এবং flexible networking দেয়। তবে security, interference এবং environmental effect-এর দিকে সতর্ক থাকতে হয়।
+\subsection{বাস্তব জীবনের শুরু}
 
-\begin{definitionbox}{Wireless media}
-যে transmission media-তে কোনো physical cable ছাড়াই data signal বায়ু, space বা atmosphere দিয়ে প্রেরিত হয়, তাকে wireless media বলা হয়।
+একজন শিক্ষার্থী mobile phone দিয়ে internet ব্যবহার করছে, Bluetooth দিয়ে earphone connect করছে, Wi-Fi দিয়ে online class করছে এবং TV remote দিয়ে television control করছে। এই সব communication-এ কোনো physical cable ব্যবহার করা হচ্ছে না। Data বা signal বাতাসের মাধ্যমে electromagnetic wave আকারে যাচ্ছে।
+
+এই ধরনের communication-কে বলা হয় wireless communication, আর যে মাধ্যমের মাধ্যমে signal cable ছাড়া বাতাস, মহাকাশ বা free space দিয়ে যায় তাকে বলা হয় unguided media বা wireless media।
+
+\begin{keypointbox}{মূল ধারণা}
+Wireless media বুঝতে ৫টি বিষয় মনে রাখো:
+\begin{itemize}
+\item কোনো physical cable লাগে না।
+\item electromagnetic wave ব্যবহার করে data পাঠানো হয়।
+\item mobility বেশি।
+\item interference ও obstacle দ্বারা প্রভাবিত হতে পারে।
+\item security নিশ্চিত করতে encryption দরকার।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{তারবিহীন মাধ্যম বা Unguided Media}
+
+\begin{definitionbox}{তারবিহীন মাধ্যম}
+যে communication medium-এ data বা signal কোনো physical cable ছাড়াই বাতাস, মহাকাশ বা free space-এর মাধ্যমে electromagnetic wave আকারে sender থেকে receiver-এর কাছে যায়, তাকে তারবিহীন মাধ্যম বা unguided media বলা হয়।
 \end{definitionbox}
 
-\begin{center}
-\begin{tabular}{c}
-\textbf{Wireless Media} \\
-\hline
-Radio Waves \hspace{0.8cm} Microwaves \hspace{0.8cm} Infrared \hspace{0.8cm} Satellite Links \\
-\end{tabular}
-\end{center}
+Wireless communication-এ sender একটি antenna বা transmitter ব্যবহার করে signal পাঠায়। Receiver side-এ antenna বা receiver সেই signal গ্রহণ করে। Mobile communication, Wi-Fi, Bluetooth, radio broadcasting, satellite communication—সবই wireless communication-এর উদাহরণ।
 
-\subsection{Wireless Media Types}
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/wireless_media_overview.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/wireless_media_overview.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Sender Antenna \quad $\longrightarrow$ \quad Electromagnetic Wave \quad $\longrightarrow$ \quad Receiver Antenna
+\vspace{0.7cm}
+}}
+}
+\caption{তারবিহীন মাধ্যমে সিগন্যাল প্রবাহ}
+\end{figure}
 
-\begin{keypointbox}{Radio wave}
-Radio wave তুলনামূলক low-frequency এবং wide coverage-এর জন্য ব্যবহার হয়। Broadcasting, communication tower এবং some IoT devices-এ এর ব্যবহার দেখা যায়।
+\begin{keypointbox}{Wireless media-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item physical cable ছাড়াই data communication করা যায়।
+\item electromagnetic wave ব্যবহার করা হয়।
+\item mobile device ও portable device-এর জন্য উপযোগী।
+\item large area coverage দেওয়া সম্ভব।
+\item installation দ্রুত ও flexible।
+\item obstacle, weather, interference ও distance signal quality কমাতে পারে।
+\item unauthorized access ঠেকাতে security mechanism দরকার।
+\end{itemize}
 \end{keypointbox}
 
-\begin{keypointbox}{Microwave}
-Microwave directional communication-এর জন্য ভালো। Point-to-point link, cellular backhaul এবং satellite uplink-এ এর ব্যবহার গুরুত্বপূর্ণ।
+\begin{boardbox}{বোর্ড ফোকাস}
+Unguided media-এর উত্তরে অবশ্যই লিখবে: physical cable লাগে না, electromagnetic wave ব্যবহার করে, mobility বেশি, কিন্তু interference ও security risk থাকতে পারে।
+\end{boardbox}
+
+\subsection{তারবিহীন মাধ্যমের প্রকারভেদ}
+
+HSC ICT-তে তারবিহীন মাধ্যম হিসেবে নিচের বিষয়গুলো বেশি গুরুত্বপূর্ণ:
+
+\begin{itemize}
+\item Radio Wave
+\item Microwave
+\item Infrared
+\item Satellite Communication
+\end{itemize}
+
+এছাড়া wireless system হিসেবে Bluetooth, Wi-Fi ও WiMAX গুরুত্বপূর্ণ।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/wireless_media_types_tree.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/wireless_media_types_tree.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Wireless Media / System\\[8pt]
+Radio Wave \quad Microwave \quad Infrared \quad Satellite\\[8pt]
+Bluetooth \quad Wi-Fi \quad WiMAX
+\vspace{0.7cm}
+}}
+}
+\caption{তারবিহীন মাধ্যম ও সিস্টেমের শ্রেণিবিভাগ}
+\end{figure}
+
+\subsection{Radio Wave}
+
+\begin{definitionbox}{Radio Wave}
+যে electromagnetic wave তুলনামূলকভাবে কম frequency ও বেশি wavelength ব্যবহার করে wireless communication-এ signal বহন করে, তাকে radio wave বলা হয়।
+\end{definitionbox}
+
+Radio wave সাধারণত চারদিকে ছড়িয়ে পড়ে এবং obstacle কিছুটা অতিক্রম করতে পারে। তাই radio broadcasting, mobile communication, Wi-Fi, Bluetooth ইত্যাদিতে radio wave-এর ধারণা গুরুত্বপূর্ণ।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/radio_wave_communication.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/radio_wave_communication.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.7cm}
+Radio Tower \quad $\sim\sim\sim$ \quad Radio / Mobile / Wi-Fi Device
+\vspace{0.7cm}
+}}
+}
+\caption{Radio wave communication}
+\end{figure}
+
+\begin{keypointbox}{Radio wave-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item antenna ব্যবহার করে signal পাঠানো ও গ্রহণ করা হয়।
+\item large area coverage দিতে পারে।
+\item obstacle কিছুটা অতিক্রম করতে পারে।
+\item broadcasting communication-এর জন্য উপযোগী।
+\item interference ও noise দ্বারা প্রভাবিত হতে পারে।
+\item security না থাকলে signal অন্য device capture করতে পারে।
+\end{itemize}
 \end{keypointbox}
 
-\begin{keypointbox}{Infrared}
-Infrared short-range line-of-sight communication-এর জন্য ব্যবহৃত হয়। TV remote, short device connection এবং some sensor system-এ এটি দেখা যায়।
-\end{keypointbox}
-
-\begin{keypointbox}{Satellite link}
-Satellite communication পৃথিবীর খুব দূরের এলাকাতেও signal পৌঁছাতে পারে। Weather condition, long distance broadcast এবং global communication-এ এটি কার্যকর।
-\end{keypointbox}
-
-\subsection{Wireless Systems}
-
-Wireless system-এর মধ্যে area-based classification খুব গুরুত্বপূর্ণ।
-
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.26\textwidth}|p{0.34\textwidth}|}
-\hline
-\textbf{System} & \textbf{Full form} & \textbf{Use} \\
-\hline
-WLAN & Wireless Local Area Network & home, office, campus Wi-Fi \\
-\hline
-WPAN & Wireless Personal Area Network & Bluetooth, personal device connection \\
-\hline
-WWAN & Wireless Wide Area Network & cellular network, mobile internet \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{examplebox}{বাস্তব চিত্র}
-Laptop Wi-Fi router-এর সাথে যুক্ত হলে WLAN কাজ করছে। Earbud Bluetooth দিয়ে ফোনের সাথে যুক্ত হলে WPAN কাজ করছে। মোবাইল data দিয়ে জেলা শহর থেকে অনলাইনে কাজ করলে WWAN কাজ করছে।
+\begin{examplebox}{বাস্তব উদাহরণ}
+FM radio, television broadcast, mobile phone communication, Wi-Fi এবং Bluetooth—এসব ক্ষেত্রে radio wave-এর ধারণা ব্যবহার করা হয়।
 \end{examplebox}
 
-\subsection{Advantages and Limitations}
+\subsection{Microwave}
+
+\begin{definitionbox}{Microwave}
+উচ্চ frequency ও তুলনামূলকভাবে ছোট wavelength-এর electromagnetic wave, যা point-to-point wireless communication-এ ব্যবহৃত হয়, তাকে microwave বলা হয়।
+\end{definitionbox}
+
+Microwave communication সাধারণত line-of-sight communication-এর উপর নির্ভর করে। অর্থাৎ transmitter ও receiver-এর মধ্যে সরাসরি path থাকা দরকার। Tower-to-tower communication, satellite communication, mobile network backbone ইত্যাদিতে microwave ব্যবহৃত হয়।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/microwave_line_of_sight.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/microwave_line_of_sight.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.7cm}
+Microwave Tower \quad $\longrightarrow$ \quad Line of Sight \quad $\longrightarrow$ \quad Microwave Tower
+\vspace{0.7cm}
+}}
+}
+\caption{Microwave line-of-sight communication}
+\end{figure}
+
+\begin{keypointbox}{Microwave-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item high frequency electromagnetic wave ব্যবহার করে।
+\item point-to-point communication-এর জন্য উপযোগী।
+\item line-of-sight path প্রয়োজন হতে পারে।
+\item long distance communication-এ tower বা repeater ব্যবহার করা হয়।
+\item obstacle, rain, weather condition ও alignment problem signal quality কমাতে পারে।
+\item satellite communication-এ microwave signal ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+Mobile tower-to-tower link, satellite link, long-distance wireless backbone এবং radar system-এ microwave ব্যবহৃত হয়।
+\end{examplebox}
+
+\begin{mistakebox}{Common mistake}
+অনেকে microwave মানেই microwave oven মনে করে। ICT-তে microwave বলতে wireless communication-এ ব্যবহৃত high frequency electromagnetic wave বোঝায়।
+\end{mistakebox}
+
+\subsection{Infrared}
+
+\begin{definitionbox}{Infrared}
+Infrared হলো এমন electromagnetic radiation যা short-range wireless communication-এ ব্যবহৃত হয় এবং সাধারণত line-of-sight প্রয়োজন হয়।
+\end{definitionbox}
+
+Infrared signal wall বা obstacle অতিক্রম করতে পারে না। তাই এটি সাধারণত short distance communication-এ ব্যবহৃত হয়। TV remote, AC remote, কিছু sensor-based device ইত্যাদিতে infrared ব্যবহৃত হয়।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/infrared_short_range.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/infrared_short_range.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.7cm}
+Remote Control \quad $\longrightarrow$ \quad Infrared Signal \quad $\longrightarrow$ \quad TV / AC
+\vspace{0.7cm}
+}}
+}
+\caption{Infrared short-range communication}
+\end{figure}
+
+\begin{keypointbox}{Infrared-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item short-range communication-এ ব্যবহৃত হয়।
+\item line-of-sight দরকার।
+\item wall বা obstacle অতিক্রম করতে পারে না।
+\item cost কম।
+\item interference তুলনামূলক কম হতে পারে কারণ signal নির্দিষ্ট direction-এ যায়।
+\item TV remote, AC remote ও কিছু sensor device-এ ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Satellite Communication}
+
+\begin{definitionbox}{Satellite Communication}
+যে communication system-এ earth station থেকে signal satellite-এ পাঠানো হয় এবং satellite সেই signal অন্য earth station-এ retransmit করে, তাকে satellite communication বলা হয়।
+\end{definitionbox}
+
+Satellite communication সাধারণত microwave signal ব্যবহার করে। Earth station থেকে satellite-এ signal পাঠানোকে uplink এবং satellite থেকে earth station-এ signal পাঠানোকে downlink বলা হয়। এটি বড় area coverage, international communication, TV broadcasting, GPS, weather forecasting এবং remote area communication-এর জন্য গুরুত্বপূর্ণ।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/satellite_wireless_system.png}{
+\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/satellite_wireless_system.png}
+}{
+\fbox{
+\parbox{0.90\textwidth}{
+\centering
+\vspace{0.7cm}
+Earth Station \quad $\longrightarrow$ \quad Uplink \quad $\longrightarrow$ \quad Satellite\\[8pt]
+Satellite \quad $\longrightarrow$ \quad Downlink \quad $\longrightarrow$ \quad Earth Station
+\vspace{0.7cm}
+}}
+}
+\caption{Satellite wireless communication system}
+\end{figure}
+
+\begin{keypointbox}{Satellite communication-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item খুব বড় geographical area cover করতে পারে।
+\item remote area communication-এর জন্য কার্যকর।
+\item TV broadcasting, GPS ও international communication-এ ব্যবহৃত হয়।
+\item uplink ও downlink signal থাকে।
+\item delay বা latency থাকতে পারে।
+\item installation ও operation cost বেশি।
+\item weather condition signal quality প্রভাবিত করতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Bluetooth}
+
+\begin{definitionbox}{Bluetooth}
+Bluetooth হলো short-range wireless communication technology, যার মাধ্যমে কাছাকাছি থাকা device-গুলোর মধ্যে data আদান-প্রদান করা যায়।
+\end{definitionbox}
+
+Bluetooth সাধারণত personal area network বা PAN তৈরি করতে ব্যবহৃত হয়। Mobile phone, wireless earphone, speaker, keyboard, mouse, smartwatch ইত্যাদি device Bluetooth ব্যবহার করে connect হতে পারে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/bluetooth_piconet_model.png}{
+\includegraphics[width=0.88\textwidth]{chapters/Chapter02/images/bluetooth_piconet_model.png}
+}{
+\fbox{
+\parbox{0.86\textwidth}{
+\centering
+\vspace{0.7cm}
+Smartphone \quad $\sim$ \quad Earphone\\[8pt]
+Smartwatch \quad $\sim$ \quad Speaker \quad $\sim$ \quad Keyboard
+\vspace{0.7cm}
+}}
+}
+\caption{Bluetooth piconet model}
+\end{figure}
+
+\begin{keypointbox}{Bluetooth-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item short-range communication-এর জন্য ব্যবহৃত হয়।
+\item low power consumption।
+\item personal device connection-এর জন্য উপযোগী।
+\item PAN তৈরি করতে পারে।
+\item speed ও range Wi-Fi-এর তুলনায় কম।
+\item file sharing ও peripheral connection-এ ব্যবহৃত হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+Mobile phone থেকে wireless earphone, smartwatch, Bluetooth speaker, wireless keyboard বা mouse connect করা Bluetooth-এর ব্যবহার।
+\end{examplebox}
+
+\subsection{Wi-Fi}
+
+\begin{definitionbox}{Wi-Fi}
+Wi-Fi হলো wireless local area network technology, যার মাধ্যমে device-গুলো access point বা router ব্যবহার করে local network বা internet-এর সাথে যুক্ত হয়।
+\end{definitionbox}
+
+Wi-Fi সাধারণত home, school, college, office, library, airport, restaurant ইত্যাদি জায়গায় wireless internet access দিতে ব্যবহৃত হয়। Wi-Fi system-এ একটি router বা access point থাকে, যা wireless signal ছড়িয়ে device-গুলোকে network-এ যুক্ত করে।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/wifi_hotspot_model.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/wifi_hotspot_model.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.7cm}
+Internet \quad $\longrightarrow$ \quad Wi-Fi Router / Access Point\\[8pt]
+Laptop \quad Mobile \quad Tablet \quad Smart TV
+\vspace{0.7cm}
+}}
+}
+\caption{Wi-Fi hotspot model}
+\end{figure}
+
+\begin{keypointbox}{Wi-Fi-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item WLAN বা Wireless LAN তৈরি করে।
+\item router বা access point ব্যবহার করে।
+\item multiple device একসাথে connect হতে পারে।
+\item home, office ও campus network-এ ব্যবহৃত হয়।
+\item range সীমিত।
+\item wall, distance, interference ও user সংখ্যা speed কমাতে পারে।
+\item password ও encryption ব্যবহার করে security নিশ্চিত করা হয়।
+\end{itemize}
+\end{keypointbox}
+
+\begin{examplebox}{বাস্তব উদাহরণ}
+বাসা, school computer lab, college campus, office network এবং public hotspot-এ Wi-Fi ব্যবহৃত হয়।
+\end{examplebox}
+
+\subsection{WiMAX}
+
+\begin{definitionbox}{WiMAX}
+WiMAX হলো long-range wireless broadband technology, যা বড় area-তে wireless internet service দিতে ব্যবহৃত হয়।
+\end{definitionbox}
+
+WiMAX শব্দটি Worldwide Interoperability for Microwave Access থেকে এসেছে। এটি Wi-Fi-এর তুলনায় বেশি area cover করতে পারে। Metropolitan area বা বড় area-তে wireless broadband access দেওয়ার জন্য WiMAX ধারণাটি ব্যবহৃত হয়।
+
+\begin{figure}[H]
+\centering
+\IfFileExists{chapters/Chapter02/images/wimax_coverage_model.png}{
+\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/wimax_coverage_model.png}
+}{
+\fbox{
+\parbox{0.88\textwidth}{
+\centering
+\vspace{0.7cm}
+WiMAX Base Station\\[8pt]
+Home \quad Office \quad School \quad Mobile User
+\vspace{0.7cm}
+}}
+}
+\caption{WiMAX coverage model}
+\end{figure}
+
+\begin{keypointbox}{WiMAX-এর বৈশিষ্ট্য}
+\begin{itemize}
+\item long-range wireless broadband access দিতে পারে।
+\item Metropolitan Area Network বা MAN ধারণার সাথে সম্পর্কযুক্ত।
+\item base station ব্যবহার করে বড় area cover করতে পারে।
+\item Wi-Fi-এর তুলনায় coverage area বেশি।
+\item internet service provider wireless broadband দিতে ব্যবহার করতে পারে।
+\item বাস্তবে availability ও ব্যবহার দেশ/অঞ্চলভেদে ভিন্ন হতে পারে।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Bluetooth, Wi-Fi ও WiMAX-এর তুলনা}
+
+\begin{center}
+\begin{tabular}{|p{0.20\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Bluetooth} & \textbf{Wi-Fi} & \textbf{WiMAX} \\
+\hline
+Coverage & খুব কম range & local area & বড় area \\
+\hline
+Network type & PAN & WLAN & MAN/Wireless broadband \\
+\hline
+ব্যবহার & earphone, speaker, keyboard & home/office internet & long-range wireless broadband \\
+\hline
+Power consumption & কম & মাঝারি & তুলনামূলক বেশি \\
+\hline
+Device connection & personal device & multiple LAN device & wide-area users \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Wireless Media-এর সুবিধা}
 
 \begin{keypointbox}{সুবিধা}
 \begin{itemize}
-\item দ্রুত স্থাপন করা যায়।
-\item mobility পাওয়া যায়।
-\item cable maintenance কম লাগে।
-\item দূরবর্তী জায়গায়ও যোগাযোগ সম্ভব।
+\item cable ছাড়া communication করা যায়।
+\item mobility বেশি।
+\item installation flexible ও দ্রুত।
+\item remote area-তে communication দেওয়া সম্ভব।
+\item temporary network তৈরি সহজ।
+\item mobile device, IoT device ও portable device-এর জন্য উপযোগী।
+\item বড় area coverage দেওয়া যায়, বিশেষ করে satellite ও cellular network-এ।
 \end{itemize}
 \end{keypointbox}
 
-\begin{mistakebox}{সীমাবদ্ধতা}
-Wireless communication সব সময় বেশি নিরাপদ নয়। Interference, signal loss, weather effect, limited range এবং unauthorized access-এর ঝুঁকি থাকে।
+\subsection{Wireless Media-এর অসুবিধা}
+
+\begin{keypointbox}{অসুবিধা}
+\begin{itemize}
+\item interference দ্বারা signal quality কমতে পারে।
+\item wall, building, tree, weather ও distance signal দুর্বল করতে পারে।
+\item security risk বেশি, কারণ signal বাতাসে ছড়ায়।
+\item encryption না থাকলে data intercept হওয়ার ঝুঁকি থাকে।
+\item bandwidth অনেক ক্ষেত্রে wired media-এর তুলনায় কম বা unstable হতে পারে।
+\item network congestion হলে speed কমে যেতে পারে।
+\item battery-powered device-এ power management গুরুত্বপূর্ণ।
+\end{itemize}
+\end{keypointbox}
+
+\subsection{Wireless Medium নির্বাচন করার কৌশল}
+
+সব wireless technology একই কাজের জন্য নয়। কাজের ধরন অনুযায়ী medium বা system নির্বাচন করতে হয়।
+
+\begin{center}
+\begin{tabular}{|p{0.30\textwidth}|p{0.26\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{পরিস্থিতি} & \textbf{উপযুক্ত প্রযুক্তি} & \textbf{কারণ} \\
+\hline
+Wireless earphone connect & Bluetooth & short-range, low power, personal device connection \\
+\hline
+বাসায় internet sharing & Wi-Fi & multiple device local wireless access \\
+\hline
+TV remote control & Infrared & short-range line-of-sight control \\
+\hline
+Tower-to-tower link & Microwave & point-to-point long-distance communication \\
+\hline
+Remote island communication & Satellite & বড় area coverage ও remote access \\
+\hline
+Large area wireless broadband & WiMAX & long-range wireless broadband coverage \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Common Mistake Zone}
+
+\begin{mistakebox}{Common mistake ১}
+অনেকে Bluetooth ও Wi-Fi একই মনে করে। Bluetooth সাধারণত short-range personal device connection-এর জন্য, আর Wi-Fi local area internet/network access-এর জন্য ব্যবহৃত হয়।
 \end{mistakebox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Wireless media-এর comparison-এ শুধু definition নয়, use-case লিখতে হয়। Wi-Fi, Bluetooth, mobile network এবং satellite-এর example দিলে উত্তর richer হয়।
+\begin{mistakebox}{Common mistake ২}
+Wireless মানেই সবসময় faster—এটি ভুল। Wireless connection distance, wall, interference, user সংখ্যা ও signal strength দ্বারা প্রভাবিত হয়।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৩}
+Infrared ও radio wave এক নয়। Infrared short-range line-of-sight communication-এ ব্যবহৃত হয়, আর radio wave বড় area cover করতে পারে।
+\end{mistakebox}
+
+\begin{mistakebox}{Common mistake ৪}
+Microwave communication-এ অনেক ক্ষেত্রে line-of-sight দরকার। মাঝখানে obstacle থাকলে communication problem হতে পারে।
+\end{mistakebox}
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Wireless media কী?}
+যে communication medium-এ data বা signal কোনো physical cable ছাড়া বাতাস, মহাকাশ বা free space-এর মাধ্যমে electromagnetic wave আকারে sender থেকে receiver-এর কাছে যায়, তাকে wireless media বা unguided media বলা হয়। যেমন—radio wave, microwave, infrared ও satellite communication।
 \end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Microwave communication-এ line-of-sight কেন দরকার?}
+Microwave উচ্চ frequency electromagnetic wave ব্যবহার করে point-to-point communication করে। অনেক microwave signal সরল পথে চলতে চায় এবং obstacle দ্বারা বাধাগ্রস্ত হতে পারে। তাই transmitter ও receiver-এর মধ্যে সরাসরি path বা line-of-sight থাকা গুরুত্বপূর্ণ।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Wi-Fi ও Bluetooth-এর পার্থক্য লেখ।}
+Bluetooth short-range personal device connection-এর জন্য ব্যবহৃত হয়, যেমন earphone, speaker, keyboard। Wi-Fi wireless local area network তৈরি করে এবং router/access point ব্যবহার করে multiple device-কে internet বা network access দেয়। Bluetooth সাধারণত কম power ব্যবহার করে, Wi-Fi তুলনামূলক বেশি range ও speed দিতে পারে।
+\end{boardbox}
+
+\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Satellite communication-এর সুবিধা লেখ।}
+Satellite communication বড় geographical area cover করতে পারে, remote area communication-এ কার্যকর, TV broadcasting, GPS, weather forecasting এবং international communication-এ ব্যবহৃত হয়। তবে এতে cost বেশি এবং latency থাকতে পারে।
+\end{boardbox}
+
+\subsection{Brainstorming Critical Question}
+
+\begin{practicebox}
+একটি শিক্ষা প্রতিষ্ঠান campus-এ wireless internet দিতে চায়। Classroom-এ Wi-Fi থাকবে, auditorium-এ live streaming হবে, দূরবর্তী গ্রামের শিক্ষার্থীদের জন্য satellite-based backup link বিবেচনা করা হচ্ছে এবং শিক্ষকরা Bluetooth microphone ব্যবহার করবেন।
+
+\begin{enumerate}
+\item ক. Wireless media কী?
+\item খ. Bluetooth কেন personal area communication-এর জন্য উপযোগী?
+\item গ. Classroom wireless internet-এর জন্য Wi-Fi কেন ব্যবহারযোগ্য? ব্যাখ্যা কর।
+\item ঘ. দূরবর্তী গ্রামের শিক্ষার্থীদের জন্য satellite link ব্যবহার কতটা যুক্তিযুক্ত? সুবিধা ও সীমাবদ্ধতা বিশ্লেষণ কর।
+\end{enumerate}
+\end{practicebox}
+
+\subsection{১ মিনিটে রিভিশন}
 
 \begin{recapbox}
 \begin{itemize}
-\item Wireless media cable ছাড়াই signal পাঠায়।
-\item Radio, microwave, infrared ও satellite link প্রধান ধরন।
-\item WLAN, WPAN, WWAN area-based wireless system।
-\item সুবিধার পাশাপাশি interference ও security risk থাকে।
+\item Wireless media physical cable ছাড়া data পাঠায়।
+\item Wireless communication electromagnetic wave ব্যবহার করে।
+\item Radio wave broadcasting ও mobile/Wi-Fi/Bluetooth communication-এর সাথে সম্পর্কিত।
+\item Microwave point-to-point এবং satellite communication-এ গুরুত্বপূর্ণ।
+\item Infrared short-range line-of-sight communication-এ ব্যবহৃত হয়।
+\item Satellite communication uplink ও downlink ব্যবহার করে।
+\item Bluetooth PAN-এর জন্য ব্যবহৃত হয়।
+\item Wi-Fi WLAN তৈরি করে।
+\item WiMAX long-range wireless broadband ধারণার সাথে সম্পর্কিত।
+\item Wireless media mobility দেয়, তবে interference ও security risk থাকতে পারে।
 \end{itemize}
 \end{recapbox}
+
+\subsection{অনুশীলন}
 
 \begin{practicebox}
 \textbf{MCQ}
 \begin{enumerate}
-\item Bluetooth কোন ধরনের network-এর উদাহরণ?\\
-ক. WLAN \quad খ. WPAN \quad গ. WWAN \quad ঘ. LAN
-\item Wi-Fi সাধারণত কোন category-তে পড়ে?\\
-ক. Wireless LAN \quad খ. Wired PAN \quad গ. Satellite WAN \quad ঘ. Optical MAN
+\item নিচের কোনটি wireless media?\\
+ক. Twisted pair cable \quad খ. Optical fiber \quad গ. Radio wave \quad ঘ. Coaxial cable
+
+\item TV remote সাধারণত কোন technology ব্যবহার করে?\\
+ক. Infrared \quad খ. Coaxial \quad গ. Fiber optic \quad ঘ. UTP
+
+\item Bluetooth সাধারণত কোন network-এর সাথে সম্পর্কিত?\\
+ক. PAN \quad খ. WAN \quad গ. MAN \quad ঘ. Internet backbone
+
+\item Wi-Fi কোন ধরনের network তৈরি করে?\\
+ক. Wired LAN \quad খ. Wireless LAN \quad গ. Satellite WAN \quad ঘ. Optical backbone
+
+\item Microwave communication-এ কোনটি গুরুত্বপূর্ণ?\\
+ক. Line-of-sight \quad খ. Paper size \quad গ. Printer speed \quad ঘ. Keyboard layout
+
+\item Satellite communication-এ earth station থেকে satellite-এ signal পাঠানোকে কী বলা হয়?\\
+ক. Downlink \quad খ. Uplink \quad গ. Bluetooth \quad ঘ. Infrared
+
+\item Wireless media-এর একটি বড় সুবিধা কোনটি?\\
+ক. cable বাধ্যতামূলক \quad খ. mobility বেশি \quad গ. physical wire লাগে \quad ঘ. সবসময় interference-free
+
+\item Bluetooth-এর উপযুক্ত ব্যবহার কোনটি?\\
+ক. Submarine cable \quad খ. Wireless earphone \quad গ. Coaxial TV line \quad ঘ. Fiber backbone
 \end{enumerate}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item Wireless media-এর দুটি সুবিধা লেখ।
-\item WLAN ও WPAN-এর মধ্যে পার্থক্য লেখ।
+\item Wireless media কী?
+\item Radio wave-এর বৈশিষ্ট্য লেখ।
+\item Microwave communication কী?
+\item Infrared কোথায় ব্যবহৃত হয়?
+\item Satellite communication-এ uplink ও downlink কী?
+\item Bluetooth ও Wi-Fi-এর মধ্যে পার্থক্য লেখ।
+\item WiMAX কী?
+\item Wireless media-এর সুবিধা ও অসুবিধা লেখ।
 \end{enumerate}
 
-\textbf{সৃজনশীল অনুশীলন}
-একজন শিক্ষার্থী ঘরে Wi-Fi, কানে Bluetooth earbud এবং ভ্রমণের সময় mobile data ব্যবহার করে। উদ্দীপকের আলোকে wireless media ও wireless systems বিশ্লেষণ করো।
+\textbf{সৃজনশীল প্রশ্ন}
+একটি smart campus network তৈরি করা হচ্ছে। Students Wi-Fi দিয়ে internet ব্যবহার করবে, teachers Bluetooth device ব্যবহার করবে, campus security camera wireless link ব্যবহার করবে এবং দূরবর্তী branch campus-এর সাথে satellite backup link রাখা হবে।
+
+\begin{enumerate}
+\item ক. Wi-Fi কী?
+\item খ. Wireless communication-এ security কেন গুরুত্বপূর্ণ?
+\item গ. Students-এর internet access-এর জন্য Wi-Fi কীভাবে কাজ করবে? ব্যাখ্যা কর।
+\item ঘ. Bluetooth, Wi-Fi ও Satellite link—এই তিনটির ব্যবহার scenario অনুযায়ী বিশ্লেষণ কর।
+\end{enumerate}
 \end{practicebox}
-
-
-
-\subsection{তারবিহীন মাধ্যম ও সিস্টেমের শ্রেণি}
-
-\begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Diagram placeholders}\\[4pt]
-Radio wave: broadcasting tower থেকে receiver।\\
-Terrestrial microwave: দুইটি line-of-sight antenna।\\
-Satellite microwave: earth station $\rightarrow$ satellite $\rightarrow$ earth station।\\
-Infrared: room-এর মধ্যে remote/device-to-device link।
-}}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.28\textwidth}|p{0.36\textwidth}|}
-\hline
-\textbf{মাধ্যম} & \textbf{বৈশিষ্ট্য} & \textbf{ব্যবহার} \\
-\hline
-Radio wave & তুলনামূলক দীর্ঘ coverage, obstacle আংশিক অতিক্রম করতে পারে & radio/TV broadcast, mobile communication \\
-\hline
-Microwave & high frequency, line-of-sight দরকার & long-distance link, cellular backhaul \\
-\hline
-Satellite & wide-area coverage, delay তুলনামূলক বেশি & TV broadcast, remote internet, disaster communication \\
-\hline
-Infrared & স্বল্প দূরত্ব, wall অতিক্রম করে না & remote control, short-range device link \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{mistakebox}{সাধারণ ভুল}
-Wi-Fi, Bluetooth ও WiMAX মাধ্যম নয়; এগুলো wireless communication technology/standard। এগুলো data পাঠাতে radio/microwave frequency ব্যবহার করে।
-\end{mistakebox}
