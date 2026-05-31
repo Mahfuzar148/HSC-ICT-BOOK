@@ -1,0 +1,40 @@
+# LaTeX build artifacts
+build/
+build2/
+*.aux
+*.log
+*.pdf
+*.toc
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+*.synctex(busy)
+*.fdb_latexmk
+*.fls
+*.gz
+*.pdf
+*.xdv
+
+# VS Code
+.vscode/
+
+# Backup files
+*.bak
+*.old
+
+# Temporary files
+chapter06_only.synctex(busy)
+untracked_files.txt.bak
+done.txt
+git_status_all.txt
+merge_conflicts.txt
+modified_files.txt
+out_bak_list.txt
+stash_list.txt
+untracked_files.txt
+build_run_output.txt
+chapter04_direct.log
+chapter04_test.log
+chapter06_only.log
+test.log
