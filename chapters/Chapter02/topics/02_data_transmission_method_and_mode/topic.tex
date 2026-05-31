@@ -36,10 +36,10 @@ Data transmission বুঝতে তিনটি প্রশ্ন মনে �
 
 Data transmission সাধারণত signal-এর মাধ্যমে সম্পন্ন হয়। Computer data binary আকারে অর্থাৎ 0 ও 1 হিসেবে সংরক্ষণ ও process করে। এই 0 ও 1 communication medium দিয়ে পাঠানোর সময় electrical signal, optical signal বা electromagnetic signal হিসেবে transmitted হয়।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/data_transmission_overview_tree.png}{
-\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/data_transmission_overview_tree.png}
+\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/data_transmission_overview_tree.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -79,10 +79,10 @@ Data transmission method মূলত দুই ধরনের:
 
 Parallel transmission-এ 8 bit data পাঠাতে চাইলে 8টি আলাদা line ব্যবহার করা যেতে পারে। ফলে একই সময়ে অনেক bit পাঠানো যায়। তাই short distance-এ এটি দ্রুত। তবে line বেশি লাগার কারণে cost বেশি হয় এবং দূরত্ব বাড়লে synchronization problem হতে পারে।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/parallel_vs_serial_transmission.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/parallel_vs_serial_transmission.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/parallel_vs_serial_transmission.png}
 }{
 \fbox{
 \parbox{0.92\textwidth}{
@@ -161,7 +161,7 @@ Problem & synchronization problem হতে পারে & bit ordering ও timi
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{Common mistake}
+\begin{mistakebox}{Parallel বনাম serial}
 অনেকে মনে করে parallel transmission সবসময় serial transmission-এর চেয়ে ভালো। আসলে short distance-এ parallel দ্রুত হতে পারে, কিন্তু long distance ও modern networking-এ serial transmission বেশি practical ও reliable।
 \end{mistakebox}
 
@@ -183,10 +183,10 @@ Serial transmission সাধারণত তিন ধরনের:
 
 Asynchronous transmission-এ sender ও receiver-এর clock পুরো সময় synchronized থাকতে হয় না। প্রতিটি character বা byte আলাদাভাবে পাঠানো হয়। Receiver start bit দেখে বুঝতে পারে data শুরু হয়েছে এবং stop bit দেখে বুঝতে পারে data শেষ হয়েছে।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/asynchronous_transmission_frame.png}{
-\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/asynchronous_transmission_frame.png}
+\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/asynchronous_transmission_frame.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -221,10 +221,10 @@ Keyboard input, পুরনো serial communication এবং কম পরি�
 
 Synchronous transmission-এ data character-by-character না গিয়ে বড় block বা frame হিসেবে যায়। এখানে start/stop bit প্রতিটি character-এর সাথে থাকে না। ফলে large amount data দ্রুত ও দক্ষতার সাথে পাঠানো যায়। তবে sender ও receiver-এর timing বা clock synchronization গুরুত্বপূর্ণ।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/synchronous_transmission_block.png}{
-\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/synchronous_transmission_block.png}
+\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/synchronous_transmission_block.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -259,10 +259,10 @@ Network communication, high-speed data transfer, LAN communication ইত্য�
 
 Isochronous transmission বিশেষভাবে audio ও video communication-এর জন্য গুরুত্বপূর্ণ। এখানে শুধু data পৌঁছানোই যথেষ্ট নয়; data নির্দিষ্ট সময়ের মধ্যে পৌঁছাতে হবে। কারণ video call, live class বা streaming-এ delay বেশি হলে sound ও video mismatch হতে পারে।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}{
-\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}
+\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -364,10 +364,10 @@ Full-duplex mode আধুনিক communication-এ খুব গুরুত�
 Mobile phone call, video call এবং modern network communication full-duplex communication-এর উদাহরণ।
 \end{examplebox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}
 }{
 \fbox{
 \parbox{0.92\textwidth}{
@@ -402,7 +402,7 @@ Sender/Receiver ভূমিকা & নির্দিষ্ট & পালা�
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{Common mistake}
+\begin{mistakebox}{Half-duplex বনাম full-duplex}
 Half-duplex ও full-duplex দুটোতেই data দুইদিকে যেতে পারে। পার্থক্য হলো half-duplex-এ একই সময়ে দুইদিকে যায় না, কিন্তু full-duplex-এ একই সময়ে দুইদিকে data আদান-প্রদান হয়।
 \end{mistakebox}
 
@@ -446,10 +446,10 @@ TV broadcast, radio broadcast এবং local network-এ broadcast message—br
 একটি online class link নির্দিষ্ট group-এর শিক্ষার্থীদের কাছে পাঠানো, group video streaming, IPTV multicast—multicast communication-এর উদাহরণ।
 \end{examplebox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/unicast_broadcast_multicast.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/unicast_broadcast_multicast.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/unicast_broadcast_multicast.png}
 }{
 \fbox{
 \parbox{0.92\textwidth}{
