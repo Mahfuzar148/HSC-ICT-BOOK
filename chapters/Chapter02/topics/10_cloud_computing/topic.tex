@@ -49,10 +49,10 @@ Internet-এর মাধ্যমে remote server, storage, database, networki
 \end{itemize}
 \end{examplebox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_computing_basic_model.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_basic_model.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_computing_basic_model.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -86,10 +86,10 @@ Cloud computing system সাধারণত কয়েকটি গুরুত�
 \end{itemize}
 \end{keypointbox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_computing_components.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_components.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_computing_components.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -117,10 +117,10 @@ Cloud computing-এ user কোনো service ব্যবহার করতে
 \end{enumerate}
 \end{keypointbox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_computing_working_process.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_working_process.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_computing_working_process.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -136,7 +136,7 @@ Cloud Processing $\rightarrow$ Data / Result $\rightarrow$ User Device
 
 \subsection{Cloud Computing-এর Essential Characteristics}
 
-Standard cloud computing বোঝার জন্য পাঁচটি essential characteristic খুব গুরুত্বপূর্ণ।
+Standard cloud computing বোঝার জন্য পাঁচটি essential characteristic খুব গুরুত্বপূর্ণ। NIST-এর cloud definition অনুযায়ী cloud হলো এমন model যেখানে network-এর মাধ্যমে shared configurable computing resources প্রয়োজন অনুযায়ী দ্রুত provision ও release করা যায়।
 
 \subsubsection{On-demand Self-service}
 
@@ -158,10 +158,10 @@ User-এর চাহিদা বাড়লে resource দ্রুত বা�
 
 Cloud resource ব্যবহার পরিমাপ করা যায়। User কত storage, bandwidth বা computing power ব্যবহার করল তা monitor করা যায় এবং অনেক ক্ষেত্রে usage অনুযায়ী bill হয়।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_computing_characteristics.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_characteristics.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_computing_characteristics.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -185,10 +185,12 @@ Cloud computing service ব্যবহারকারীর control ও respons
 \item \textbf{SaaS}: Software as a Service
 \end{itemize}
 
-\begin{figure}[H]
+\remember{NIST standard cloud model-এ পাঁচটি essential characteristics, তিনটি service model এবং চারটি deployment model থাকে। তাই cloud computing-এর board answer-এ characteristics, service model ও deployment model আলাদা করে লিখলে উত্তর সম্পূর্ণ হয়।}
+
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_service_model_stack.png}{
-\includegraphics[width=0.90\textwidth]{chapters/Chapter02/images/cloud_service_model_stack.png}
+\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_service_model_stack.png}
 }{
 \fbox{
 \parbox{0.88\textwidth}{
@@ -291,10 +293,10 @@ Management & OS/application user manage করে & code/application user manage
 \end{tabular}
 \end{center}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/iaas_paas_saas_comparison.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/iaas_paas_saas_comparison.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/iaas_paas_saas_comparison.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -320,10 +322,10 @@ Cloud infrastructure ownership, access ও use-এর ভিত্তিতে d
 \item Community Cloud
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_deployment_models.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_deployment_models.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_deployment_models.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -415,23 +417,23 @@ Community cloud সাধারণত education, healthcare, government বা r
 \begin{center}
 \begin{tabular}{|p{0.17\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
 \hline
-\textbf{Model} & \textbf{Access} & \textbf{Control} & \textbf{ব্যবহার} \
+\textbf{Model} & \textbf{Access} & \textbf{Control} & \textbf{ব্যবহার} \\
 \hline
-Public Cloud & বহু user internet দিয়ে access করে & provider-এর control বেশি & সাধারণ service, startup, scalable app \
+Public Cloud & বহু user internet দিয়ে access করে & provider-এর control বেশি & সাধারণ service, startup, scalable app \\
 \hline
-Private Cloud & একটি organization ব্যবহার করে & organization-এর control বেশি & bank, government, sensitive data \
+Private Cloud & একটি organization ব্যবহার করে & organization-এর control বেশি & bank, government, sensitive data \\
 \hline
-Hybrid Cloud & public + private cloud & mixed control & sensitive data + scalable public service \
+Hybrid Cloud & public + private cloud & mixed control & sensitive data + scalable public service \\
 \hline
-Community Cloud & common interest group ব্যবহার করে & shared governance & education, healthcare, research group \
+Community Cloud & common interest group ব্যবহার করে & shared governance & education, healthcare, research group \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/public_private_hybrid_cloud.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/public_private_hybrid_cloud.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/public_private_hybrid_cloud.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -468,10 +470,10 @@ Cloud storage-এ file upload করলে user internet connection থাকল
 Google Drive, Microsoft OneDrive, Dropbox, iCloud—এসব cloud storage service-এর উদাহরণ।
 \end{examplebox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_storage_sync_model.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_storage_sync_model.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_storage_sync_model.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -503,10 +505,10 @@ Cloud computing modern ICT system-এ খুব গুরুত্বপূর�
 \end{itemize}
 \end{keypointbox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_computing_advantages.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_computing_advantages.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_computing_advantages.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -552,10 +554,10 @@ Cloud computing-এ data remote server-এ থাকে। তাই security �
 \end{itemize}
 \end{keypointbox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_security_risk_model.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_security_risk_model.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_security_risk_model.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -574,29 +576,29 @@ Password \quad MFA \quad Encryption \quad Access Control
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Traditional Computing} & \textbf{Cloud Computing} \
+\textbf{বিষয়} & \textbf{Traditional Computing} & \textbf{Cloud Computing} \\
 \hline
-Resource location & local computer/server-এ থাকে & remote cloud server/data center-এ থাকে \
+Resource location & local computer/server-এ থাকে & remote cloud server/data center-এ থাকে \\
 \hline
-Access & নির্দিষ্ট device/network থেকে access & internet দিয়ে যেকোনো জায়গা থেকে access \
+Access & নির্দিষ্ট device/network থেকে access & internet দিয়ে যেকোনো জায়গা থেকে access \\
 \hline
-Cost & hardware/software আগে কিনতে হয় & service হিসেবে ব্যবহার করা যায় \
+Cost & hardware/software আগে কিনতে হয় & service হিসেবে ব্যবহার করা যায় \\
 \hline
-Scalability & resource বাড়ানো কঠিন ও সময়সাপেক্ষ & দ্রুত resource বাড়ানো/কমানো যায় \
+Scalability & resource বাড়ানো কঠিন ও সময়সাপেক্ষ & দ্রুত resource বাড়ানো/কমানো যায় \\
 \hline
-Maintenance & user/organization manage করে & provider অনেক অংশ manage করে \
+Maintenance & user/organization manage করে & provider অনেক অংশ manage করে \\
 \hline
-Backup & manual backup দরকার হতে পারে & cloud backup সহজ হতে পারে \
+Backup & manual backup দরকার হতে পারে & cloud backup সহজ হতে পারে \\
 \hline
-Dependency & local hardware-এর উপর নির্ভরশীল & internet ও provider-এর উপর নির্ভরশীল \
+Dependency & local hardware-এর উপর নির্ভরশীল & internet ও provider-এর উপর নির্ভরশীল \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/cloud_vs_traditional_computing.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/cloud_vs_traditional_computing.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cloud_vs_traditional_computing.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -624,10 +626,10 @@ Education sector-এ cloud computing অত্যন্ত গুরুত্ব
 \end{itemize}
 \end{examplebox}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/school_cloud_computing_use_case.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/school_cloud_computing_use_case.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/school_cloud_computing_use_case.png}
 }{
 \fbox{
 \parbox{0.90\textwidth}{
@@ -668,25 +670,20 @@ Healthcare organizations common policy নিয়ে shared cloud ব্যবহ
 
 \subsection{Common Mistake Zone}
 
-\begin{mistakebox}{Common mistake ১}
+\smallhead{১. Cloud computing মানেই শুধু online storage মনে করা}
 অনেকে cloud computing মানেই শুধু online storage মনে করে। আসলে cloud computing-এর মধ্যে storage ছাড়াও server, database, software, platform, networking ও computing power অন্তর্ভুক্ত।
-\end{mistakebox}
 
-\begin{mistakebox}{Common mistake ২}
+\smallhead{২. Google Drive, Gmail ও Google Docs একই service type মনে করা}
 Google Drive cloud storage, কিন্তু Gmail/Google Docs cloud application বা SaaS service হিসেবেও বোঝানো যায়।
-\end{mistakebox}
 
-\begin{mistakebox}{Common mistake ৩}
+\smallhead{৩. Public cloud মানে data public হয়ে যায় মনে করা}
 Public cloud মানে data public হয়ে যায়—এটি ভুল। Public cloud shared infrastructure হলেও user data logical security ও access control দ্বারা আলাদা রাখা হয়।
-\end{mistakebox}
 
-\begin{mistakebox}{Common mistake ৪}
+\smallhead{৪. Cloud ব্যবহার করলে security দরকার নেই মনে করা}
 Cloud computing ব্যবহার করলে security দরকার নেই—এটি ভুল। Strong password, MFA, access control ও encryption জরুরি।
-\end{mistakebox}
 
-\begin{mistakebox}{Common mistake ৫}
+\smallhead{৫. IaaS, PaaS ও SaaS একই মনে করা}
 IaaS, PaaS ও SaaS একই নয়। IaaS infrastructure দেয়, PaaS development platform দেয়, SaaS ready software দেয়।
-\end{mistakebox}
 
 \subsection{Exam-style প্রশ্ন ও উত্তর}
 

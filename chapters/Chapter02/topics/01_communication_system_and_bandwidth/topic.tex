@@ -55,10 +55,10 @@ Sender থেকে receiver-এর কাছে message বা data পাঠ�
 
 একটি communication system সফল হতে হলে data সঠিকভাবে, নির্দিষ্ট সময়ে এবং নির্ভরযোগ্যভাবে receiver-এর কাছে পৌঁছাতে হবে। Data যদি ভুলভাবে পৌঁছে, দেরিতে পৌঁছে, মাঝপথে হারিয়ে যায় বা unauthorized ব্যক্তি access করে, তাহলে communication system কার্যকর হয় না।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/communication_process_flow_diagram.png}{
-\includegraphics[width=0.95\textwidth]{chapters/Chapter02/images/communication_process_flow_diagram.png}
+\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/communication_process_flow_diagram.png}
 }{
 \fbox{
 \parbox{0.92\textwidth}{
@@ -99,7 +99,7 @@ Protocol & data আদান-প্রদানের নিয়ম, format ও p
 যখন একজন শিক্ষার্থী mobile থেকে message পাঠায়, তখন message digital data হিসেবে mobile network-এ যায়। Mobile network সেই data signal আকারে বহন করে। Receiver-এর mobile signal গ্রহণ করে আবার readable message হিসেবে দেখায়।
 \end{examplebox}
 
-\begin{mistakebox}{Common mistake}
+\begin{mistakebox}{Sender বনাম Transmitter}
 অনেকে Sender এবং Transmitter-কে একই মনে করে। Sender হলো যে data পাঠায়; Transmitter হলো যে data বা message-কে transmission-এর উপযোগী signal-এ রূপান্তর করে পাঠায়।
 \end{mistakebox}
 
@@ -171,10 +171,10 @@ Analog signal সাধারণত smooth wave আকারে থাকে। 
 
 Digital signal computer system-এর জন্য বেশি উপযোগী, কারণ computer binary system অর্থাৎ 0 ও 1 ব্যবহার করে কাজ করে। Digital signal noise-এর বিরুদ্ধে তুলনামূলক বেশি reliable এবং error detection/correction সহজ।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}
 }{
 \fbox{
 \parbox{0.92\textwidth}{
@@ -208,7 +208,7 @@ Noise effect & তুলনামূলক বেশি প্রভাবিত
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{Common mistake}
+\begin{mistakebox}{Digital signal}
 Digital signal noise-এর বিরুদ্ধে reliable হলেও এটি সবসময় error-free নয়। বাস্তবে error detection, correction, encoding এবং protocol দরকার হয়।
 \end{mistakebox}
 
@@ -257,10 +257,10 @@ History বা contributor প্রশ্ন সাধারণত ছোট �
 
 Digital communication-এ bandwidth সাধারণত bits per second বা bps দিয়ে প্রকাশ করা হয়। Bandwidth বেশি হলে একই সময়ে বেশি data পাঠানো সম্ভব হয়। তবে bandwidth বেশি হলেই সবসময় user experience ভালো হবে—এমন নয়; latency, server capacity, network congestion, signal strength এবং device performance-ও speed-এর উপর প্রভাব ফেলে।
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \IfFileExists{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}{
-\includegraphics[width=0.92\textwidth]{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}
+\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}
 }{
 \fbox{
 \parbox{0.92\textwidth}{
@@ -316,7 +316,7 @@ Throughput & বাস্তবে সফলভাবে transfer হওয়া d
 রাস্তার lane বেশি হলে একসাথে বেশি গাড়ি চলতে পারে—এটি bandwidth-এর মতো। কিন্তু গাড়ির গতি, traffic jam এবং signal delay বাস্তব speed কমাতে পারে—এগুলো data rate ও latency-এর সাথে তুলনীয়।
 \end{examplebox}
 
-\begin{mistakebox}{Common mistake}
+\begin{mistakebox}{Bandwidth বনাম speed}
 অনেকে bandwidth ও internet speed একই মনে করে। Bandwidth হলো capacity, আর actual speed নির্ভর করে bandwidth, latency, congestion, server response এবং device performance-এর উপর।
 \end{mistakebox}
 
@@ -386,7 +386,7 @@ Data communication-এ bandwidth calculation খুব গুরুত্বপ�
 অতএব, bandwidth = 2000 bps।
 \end{examplebox}
 
-\begin{mistakebox}{Common mistake}
+\begin{mistakebox}{Byte বনাম bit}
 Bandwidth calculation-এ অনেকেই Byte ও bit গুলিয়ে ফেলে। মনে রাখতে হবে: 1 Byte = 8 bits। প্রশ্নে যদি Byte দেওয়া থাকে, প্রথমে bit-এ convert করতে হবে।
 \end{mistakebox}
 

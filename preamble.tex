@@ -1,81 +1,250 @@
-% Shared preamble for HSC ICT book
-% Compile with XeLaTeX or LuaLaTeX to render Bangla text correctly.
+% ==========================================================
+% Shared Preamble for Premium HSC ICT Book
+% Compile with XeLaTeX or LuaLaTeX for Bangla text.
+% Style goal:
+% - Dense textbook page
+% - Narrow margin
+% - More explanation per page
+% - No box for questions / advantages / disadvantages / features
+% - Important items highlighted
+% - Image clear and readable, not inside heavy box
+% ==========================================================
+
 \usepackage{iftex}
+
+% ==========================================================
+% Page Setup: compact textbook layout
+% ==========================================================
+
 \usepackage[
   paperwidth=170mm,
   paperheight=240mm,
-  inner=18mm,
-  outer=18mm,
-  top=22mm,
-  bottom=22mm,
-  bindingoffset=5mm,
+  inner=12mm,
+  outer=10mm,
+  top=12mm,
+  bottom=13mm,
+  bindingoffset=4mm,
   includehead,
   includefoot
 ]{geometry}
-\usepackage{fancyhdr}
-\usepackage{setspace}
-\setstretch{1.3} % Better line spacing for Bengali text
+
+% ==========================================================
+% Fonts
+% ==========================================================
+
 \ifPDFTeX
   \usepackage[utf8]{inputenc}
   \usepackage[T1]{fontenc}
 \else
   \usepackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX}
-  % Primary Bangla font (Kalpurush). Progitvide fallbacks for missing shapes
-  % and fake bold/slant when the font lacks those variants.
-  \setmainfont[
-    Path=C:/Windows/Fonts/,
-    Extension=.ttf,
-    Script=Bengali,
-    UprightFont = * ,
-    BoldFont = * ,
-    ItalicFont = * ,
-    BoldItalicFont = * ,
-    FakeBold=1.4,
-    FakeSlant=0.18,
-    Scale=MatchLowercase
-  ]{kalpurush}
+
+  % Primary Bangla font: Kalpurush from Windows font folder.
+  % If this font is not found, change the name/path according to your PC.
+  \IfFontExistsTF{Kalpurush}{%
+    \setmainfont[
+      Script=Bengali,
+      FakeBold=1.25,
+      FakeSlant=0.12,
+      Scale=MatchLowercase
+    ]{Kalpurush}
+  }{%
+    \IfFileExists{C:/Windows/Fonts/kalpurush.ttf}{%
+      \setmainfont[
+        Path=C:/Windows/Fonts/,
+        Extension=.ttf,
+        Script=Bengali,
+        UprightFont=kalpurush,
+        BoldFont=kalpurush,
+        ItalicFont=kalpurush,
+        BoldItalicFont=kalpurush,
+        FakeBold=1.25,
+        FakeSlant=0.12,
+        Scale=MatchLowercase
+      ]{kalpurush}
+    }{%
+      \IfFontExistsTF{Noto Serif Bengali}{%
+        \setmainfont[Script=Bengali,Scale=MatchLowercase]{Noto Serif Bengali}
+      }{%
+        \IfFontExistsTF{SolaimanLipi}{%
+          \setmainfont[Script=Bengali,Scale=MatchLowercase]{SolaimanLipi}
+        }{%
+          \setmainfont[Script=Bengali,Scale=MatchLowercase]{Vrinda}
+        }%
+      }%
+    }%
+  }%
+
+  \IfFontExistsTF{Times New Roman}{%
+    \newfontfamily\englishfont{Times New Roman}
+  }{%
+    \newfontfamily\englishfont{TeX Gyre Termes}
+  }%
 \fi
+
+% ==========================================================
+% Core Packages
+% ==========================================================
+
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{xcolor}
-% geometry already configured above (avoid option clash)
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{newunicodechar}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage[normalem]{ulem}
+\usepackage{tikz}
 \usepackage[most]{tcolorbox}
+\usepackage{fvextra}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage{bookmark}
+
+% ==========================================================
+% TikZ Setup
+% ==========================================================
+
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows.meta}
-% Global TikZ helpers: use a compact arrow style and a helper to scale
-% large diagrams to the text width to avoid page overflow.
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+
 \tikzset{
   bookarrow/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt},
   booknode/.style={draw, rounded corners, align=center},
   arrow/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt},
 }
-% Make common arrow shorthand like '-latex' render with Stealth arrowheads too.
-\tikzset{-latex/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt}}
-% Helper to scale a tikzpicture to the current line width when needed.
-% This adapts inside parboxes, minipages, and normal text blocks.
-% Usage: \scaletikz{\begin{tikzpicture} ... \end{tikzpicture}}
-\newcommand{\scaletikz}[1]{\resizebox{0.97\linewidth}{!}{#1}}
-\usepackage{fvextra}
-\usepackage[unicode]{hyperref}
-% Improve PDF outlines/bookmarks and ensure outlines regenerate correctly
-% `bookmark` provides robust bookmark handling (works with hyperref).
-\usepackage{bookmark}
-\bookmarksetup{open,numbered}
-\raggedbottom
-\linespread{1.15}
-% Disable colored boxes around links in the PDF (remove red boxes in TOC)
-\hypersetup{hidelinks, pdfborder={0 0 0}}
-\usepackage{amsmath,amssymb}
-\usepackage[normalem]{ulem}
 
-% Wrap long code lines in HTML/C/SQL examples so code blocks do not overflow
-% the page or tcolorbox width in the printed PDF.
+\tikzset{-latex/.style={-{Stealth[length=3mm,width=2mm]}, thick, shorten >=1pt, shorten <=1pt}}
+
+\newcommand{\scaletikz}[1]{\resizebox{0.97\linewidth}{!}{#1}}
+
+% ==========================================================
+% Hyperref / Bookmark
+% ==========================================================
+
+\bookmarksetup{open,numbered}
+\hypersetup{
+  hidelinks,
+  pdfborder={0 0 0}
+}
+
+% ==========================================================
+% Dense Text Layout
+% ==========================================================
+
+\raggedbottom
+\emergencystretch=3em
+
+% Dense but readable Bangla line spacing
+\linespread{0.96}
+
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{1.6pt}
+
+% Compact lists
+\setlist[itemize]{
+  leftmargin=*,
+  topsep=1pt,
+  itemsep=0.5pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\setlist[enumerate]{
+  leftmargin=*,
+  topsep=1pt,
+  itemsep=0.5pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+% Compact headings
+\titleformat{\chapter}[block]
+  {\Large\bfseries\color{blue!60!black}}
+  {\thechapter.}
+  {0.6em}
+  {}
+
+\titlespacing*{\chapter}{0pt}{-4pt}{7pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{blue!60!black}}
+  {\thesection}
+  {0.6em}
+  {}
+
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{red!60!black}}
+  {\thesubsection}
+  {0.5em}
+  {}
+
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+
+\titleformat{\subsubsection}
+  {\small\bfseries\color{green!35!black}}
+  {\thesubsubsection}
+  {0.4em}
+  {}
+
+\titlespacing*{\subsubsection}{0pt}{4pt}{1pt}
+
+% Caption compact
+\captionsetup{
+  font=footnotesize,
+  labelfont=bf,
+  justification=centering,
+  skip=2pt
+}
+
+% Keep figure/table spacing tight so pages carry more content without looking crowded.
+\setlength{\floatsep}{4pt plus 1pt minus 1pt}
+\setlength{\textfloatsep}{5pt plus 1pt minus 1pt}
+\setlength{\intextsep}{4pt plus 1pt minus 1pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{0pt}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+
+% ==========================================================
+% Header and Footer
+% ==========================================================
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\small\leftmark}
+\fancyhead[LO]{\small\rightmark}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\AtBeginDocument{\setlength{\headheight}{15pt}}
+
+% ==========================================================
+% Verbatim / Code Block Fix
+% ==========================================================
+
 \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
   breaklines=true,
   breakanywhere=true,
@@ -83,153 +252,567 @@
   formatcom=\normalfont
 }
 
-% Lightweight helper for English terms inside Bangla text.
-\newcommand{\textenglish}[1]{#1}
+% ==========================================================
+% English Helper
+% ==========================================================
 
-% Use a system symbol font for common bullets/glyphs missing in Bengali font.
-% Try the Windows 'Segoe UI Symbol' first, fall back to a safe sans-serif.
-\IfFontExistsTF{Segoe UI Symbol}{%
-  \newfontfamily\symbolfont{Segoe UI Symbol}%
-}{%
-  \newfontfamily\symbolfont{DejaVu Sans}%
-}
+\newcommand{\textenglish}[1]{\ifPDFTeX #1\else{\englishfont #1}\fi}
 
-% Map common Unicode characters to LaTeX-safe equivalents using the symbol
-% font for bullets so they render even when the main Bengali font lacks them.
-\newunicodechar{•}{{\symbolfont\textbullet}}
-% Common Unicode -> LaTeX mappings to avoid missing-glyph warnings
+% ==========================================================
+% Symbol Font and Unicode Fix
+% ==========================================================
+
+\ifPDFTeX
+  % no symbol font setup needed for pdfTeX fallback
+\else
+  \IfFontExistsTF{Segoe UI Symbol}{%
+    \newfontfamily\symbolfont{Segoe UI Symbol}%
+  }{%
+    \newfontfamily\symbolfont{DejaVu Sans}%
+  }%
+\fi
+
+\newunicodechar{•}{{\ifPDFTeX\textbullet\else\symbolfont\textbullet\fi}}
 \newunicodechar{→}{\ensuremath{\rightarrow}}
 \newunicodechar{±}{\ensuremath{\pm}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{°}{\ensuremath{^\circ}}
 
-% Force itemize bullets to use the symbol font (avoids missing glyph boxes)
-\renewcommand{\labelitemi}{{\symbolfont\textbullet}}
-\renewcommand{\labelitemii}{{\symbolfont\textendash}}
-\renewcommand{\labelitemiii}{{\symbolfont\textperiodcentered}}
+\renewcommand{\labelitemi}{{\ifPDFTeX\textbullet\else\symbolfont\textbullet\fi}}
+\renewcommand{\labelitemii}{--}
+\renewcommand{\labelitemiii}{\ensuremath{\circ}}
 
-% Document-level settings (fonts, margins) to be standardized here.
-\setlist[itemize]{leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt}
-\setlist[enumerate]{leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt}
+% ==========================================================
+% Image Paths
+% ==========================================================
+
+\newcommand{\chaponeimg}{chapters/Chapter01/images}
+\newcommand{\chaptwoimg}{chapters/Chapter02/images}
+\newcommand{\chapthreeimg}{chapters/Chapter03/images}
+\newcommand{\chapfourimg}{chapters/Chapter04/images}
+\newcommand{\chapfiveimg}{chapters/Chapter05/images}
+\newcommand{\chapsiximg}{chapters/Chapter06/images}
+
+% Backward compatible old command
+\newcommand{\chapimgpath}{chapters/Chapter01/images}
+
+% ==========================================================
+% Highlight Commands: use these instead of heavy boxes
+% ==========================================================
+
+\newcommand{\term}[1]{\textcolor{blue!58!black}{\textbf{#1}}}
+\newcommand{\examword}[1]{\textcolor{red!60!black}{\textbf{#1}}}
+\newcommand{\greenword}[1]{\textcolor{green!35!black}{\textbf{#1}}}
+\newcommand{\purpleword}[1]{\textcolor{purple!70!black}{\textbf{#1}}}
+
+\newcommand{\important}[1]{%
+  \par\noindent
+  {\color{red!62!black}\textbf{গুরুত্বপূর্ণ:}} #1
+  \par\vspace{1pt}
+}
+
+\newcommand{\examfocus}[1]{%
+  \par\noindent
+  {\color{blue!65!black}\textbf{বোর্ড ফোকাস:}} #1
+  \par\vspace{1pt}
+}
+
+\newcommand{\remember}[1]{%
+  \par\noindent
+  {\color{green!38!black}\textbf{মনে রাখো:}} #1
+  \par\vspace{1pt}
+}
+
+\newcommand{\warningline}[1]{%
+  \par\noindent
+  {\color{red!70!black}\textbf{সতর্কতা:}} #1
+  \par\vspace{1pt}
+}
+
+\newcommand{\definition}[2]{%
+  \Needspace{3\baselineskip}
+  \par\noindent
+  {\color{red!60!black}\textbf{#1:}} #2
+  \par\vspace{1pt}
+}
+
+\newcommand{\exampleline}[1]{%
+  \par\noindent
+  {\color{purple!70!black}\textbf{উদাহরণ:}} #1
+  \par\vspace{1pt}
+}
+
+% ==========================================================
+% Compact Highlighted Headings and Lists
+% No box for features / advantages / disadvantages / uses
+% ==========================================================
+
+\newcommand{\topichead}[1]{%
+  \par\noindent
+  {\color{blue!62!black}\large\bfseries #1}
+  \par\vspace{2pt}
+}
+
+\newcommand{\subtopichead}[1]{%
+  \par\noindent
+  {\color{red!62!black}\normalsize\bfseries #1}
+  \par\vspace{1pt}
+}
+
+\newcommand{\smallhead}[1]{%
+  \par\noindent
+  {\color{green!35!black}\bfseries #1}
+  \par\vspace{1pt}
+}
+
+\newenvironment{compactpoints}
+{
+  \begin{itemize}[leftmargin=*, topsep=1pt, itemsep=0.5pt, parsep=0pt, partopsep=0pt]
+}
+{
+  \end{itemize}
+}
+
+\newenvironment{compactenum}
+{
+  \begin{enumerate}[leftmargin=*, topsep=1pt, itemsep=0.5pt, parsep=0pt, partopsep=0pt]
+}
+{
+  \end{enumerate}
+}
+
+% ==========================================================
+% Image Layout: no heavy image box
+% ==========================================================
+
+% Detailed figure: use for text-heavy/table/chart images.
+% Example:
+% \bigfigure[0.82\textwidth]{\chaponeimg/data_to_information_model.png}{ডেটা থেকে তথ্য}
+\newcommand{\bigfigure}[3][0.78\textwidth]{%
+  \begin{figure}[!htbp]
+  \centering
+  \vspace{-2pt}
+  \IfFileExists{#2}{%
+    \includegraphics[width=#1,height=0.27\textheight,keepaspectratio]{#2}%
+  }{%
+    \fbox{\parbox{0.66\textwidth}{\centering
+      \vspace{0.22cm}
+      \scriptsize Image placeholder\\
+      \texttt{#2}
+      \vspace{0.22cm}
+    }}%
+  }%
+  \caption{#3}
+  \vspace{-4pt}
+  \end{figure}
+}
+
+% Medium centered image: use for simple but important figure.
+% Example:
+% \midfigure[0.55\textwidth]{\chaponeimg/global_village_basic_concept.png}{বিশ্বগ্রাম}
+\newcommand{\midfigure}[3][0.56\textwidth]{%
+  \begin{center}
+  \vspace{-2pt}
+  \IfFileExists{#2}{%
+    \includegraphics[width=#1,height=0.21\textheight,keepaspectratio]{#2}%
+  }{%
+    \fbox{\parbox{0.50\textwidth}{\centering
+      \vspace{0.20cm}
+      \scriptsize Image placeholder\\
+      \texttt{#2}
+      \vspace{0.20cm}
+    }}%
+  }%
+  \par\vspace{1pt}
+  {\scriptsize\textbf{চিত্র:} #3}
+  \vspace{-3pt}
+  \end{center}
+}
+
+% Text left + image right as an environment.
+% Best for long paragraphs because it avoids macro argument problems.
+% Usage:
+% \begin{rightimageblock}{\chaponeimg/image.png}{caption}
+% text...
+% \end{rightimageblock}
+\newenvironment{rightimageblock}[2]{%
+  \def\rightimagepath{#1}%
+  \def\rightimagecaption{#2}%
+  \par\noindent
+  \begin{minipage}[t]{0.60\textwidth}
+  \vspace{0pt}
+}{%
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.35\textwidth}
+  \vspace{0pt}
+  \centering
+  \IfFileExists{\rightimagepath}{%
+    \includegraphics[width=\linewidth,height=4.1cm,keepaspectratio]{\rightimagepath}%
+  }{%
+    \fbox{\parbox{0.90\linewidth}{\centering
+      \vspace{0.18cm}
+      \scriptsize Image placeholder\\
+      \texttt{\rightimagepath}
+      \vspace{0.18cm}
+    }}%
+  }%
+  \par\vspace{1pt}
+  {\scriptsize\textbf{চিত্র:} \rightimagecaption}
+  \end{minipage}
+  \par\vspace{2pt}
+}
+
+% Short macro version for simple text.
+% Usage:
+% \rightimage{text}{image-path}{caption}
+\newcommand{\rightimage}[3]{%
+  \begin{rightimageblock}{#2}{#3}
+  #1
+  \end{rightimageblock}
+}
+
+% Small inline image, no box.
+\newcommand{\smallimage}[3][0.42\textwidth]{%
+  \begin{center}
+  \vspace{-2pt}
+  \IfFileExists{#2}{%
+    \includegraphics[width=#1,height=0.18\textheight,keepaspectratio]{#2}%
+  }{%
+    \fbox{\parbox{0.40\textwidth}{\centering
+      \vspace{0.16cm}
+      \scriptsize Image placeholder\\
+      \texttt{#2}
+      \vspace{0.16cm}
+    }}%
+  }%
+  \par\vspace{1pt}
+  {\scriptsize\textbf{চিত্র:} #3}
+  \vspace{-3pt}
+  \end{center}
+}
+
+% Image first + information below. Use when the image is wide/detailed but
+% should not consume a full page.
+\newenvironment{imagefirstblock}[3][0.82\textwidth]{%
+  \par\noindent
+  \begin{center}
+  \vspace{-2pt}
+  \IfFileExists{#2}{%
+    \includegraphics[width=#1,height=0.24\textheight,keepaspectratio]{#2}%
+  }{%
+    \fbox{\parbox{0.58\textwidth}{\centering
+      \vspace{0.18cm}
+      \scriptsize Image placeholder\\
+      \texttt{#2}
+      \vspace{0.18cm}
+    }}%
+  }%
+  \par\vspace{1pt}
+  {\scriptsize\textbf{চিত্র:} #3}
+  \vspace{-3pt}
+  \end{center}
+  \par\noindent
+}{%
+  \par\vspace{2pt}
+}
+
+% Information first + image below. Use when the text must introduce the image.
+\newcommand{\infothenimage}[4][0.76\textwidth]{%
+  \par\noindent #2\par\vspace{1pt}
+  \midfigure[#1]{#3}{#4}
+}
+
+% ==========================================================
+% Compact Table Helpers
+% ==========================================================
+
+\newenvironment{compacttable}
+{
+  \begin{center}
+  \small
+  \renewcommand{\arraystretch}{1.08}
+}
+{
+  \end{center}
+}
+
+\newcommand{\smalltabletext}{\small}
+\newcommand{\tinytablenote}{\scriptsize}
+
+% Example:
+% \begin{compacttable}
+% \begin{tabular}{|p{0.25\textwidth}|p{0.60\textwidth}|}
+% \hline
+% ...
+% \end{tabular}
+% \end{compacttable}
+
+% ==========================================================
+% Question Style: no box
+% ==========================================================
+
+\newcommand{\qhead}[1]{%
+  \par\noindent
+  {\color{blue!60!black}\bfseries #1}
+  \par\vspace{1pt}
+}
+
+\newcommand{\boardanswer}[2]{%
+  \Needspace{4\baselineskip}
+  \par\noindent
+  {\color{red!62!black}\textbf{প্রশ্ন:}} #1\par
+  {\textbf{উত্তর:}} #2
+  \par\vspace{3pt}
+}
+
+\newcommand{\mcqoption}[4]{%
+  ক. #1 \quad খ. #2 \quad গ. #3 \quad ঘ. #4
+}
+
+% ==========================================================
+% Backward-Compatible tcolorboxes
+% Use rarely. New chapters should avoid boxes except learning
+% outcome or very important notes.
+% ==========================================================
+
 \tcbset{
-  before skip=4pt,
-  after skip=4pt,
-  boxsep=3pt,
-  left=5pt,
-  right=5pt,
-  top=4pt,
-  bottom=4pt
-}
-
-% --- Professional Book Formatting ---
-\setlength{\parindent}{1.5em}
-\setlength{\parskip}{0.4em}
-
-% Header and Footer configuration
-\pagestyle{fancy}
-\fancyhf{}
-% Ensure header space is sufficient for fancyhdr to avoid warnings
-\setlength{\headheight}{18pt}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\leftmark}
-\fancyhead[LO]{\rightmark}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Fix for chapter pages having no headers
-\fancypagestyle{plain}{
-  \fancyhf{}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0pt}
-}
-
-% Ensure headheight remains sufficient even after package/class adjustments
-\AtBeginDocument{\setlength{\headheight}{18pt}}
-
-% Semantic boxes for the book. Writers should use these names instead of
-% manual colors so the whole book can be redesigned from one place.
-\newtcolorbox{learningbox}{
+  enhanced,
   breakable,
-  colback=blue!4!white,
-  colframe=blue!55!black,
-  coltitle=white,
+  frame hidden,
+  borderline={0pt}{0pt}{white},
+  colback=white,
+  colframe=white,
+  colbacktitle=white,
+  boxrule=0pt,
+  boxsep=0pt,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=1pt,
+  toptitle=0pt,
+  bottomtitle=1pt,
+  before skip=2pt,
+  after skip=2pt
+}
+
+\newtcolorbox{learningbox}{
+  coltitle=blue!60!black,
   title={শিখনফল},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{definitionbox}[1]{
-  breakable,
-  colback=cyan!4!white,
-  colframe=cyan!45!black,
-  coltitle=white,
+  coltitle=red!62!black,
   title={#1},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{keypointbox}[1]{
-  breakable,
-  colback=gray!8!white,
-  colframe=gray!60!black,
-  coltitle=white,
+  coltitle=blue!62!black,
   title={#1},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{examplebox}[1]{
-  breakable,
-  colback=green!5!white,
-  colframe=green!45!black,
-  coltitle=white,
+  coltitle=purple!70!black,
   title={#1},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{boardbox}[1]{
-  breakable,
-  colback=yellow!10!white,
-  colframe=orange!70!black,
-  coltitle=black,
+  coltitle=blue!65!black,
   title={#1},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{mistakebox}[1]{
-  breakable,
-  colback=red!5!white,
-  colframe=red!55!black,
-  coltitle=white,
+  coltitle=red!70!black,
   title={#1},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{practicebox}{
-  breakable,
-  colback=purple!4!white,
-  colframe=purple!55!black,
-  coltitle=white,
+  coltitle=blue!60!black,
   title={অনুশীলন},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
 
 \newtcolorbox{recapbox}{
-  breakable,
-  colback=gray!7!white,
-  colframe=gray!55!black,
-  coltitle=white,
+  coltitle=green!35!black,
   title={১ মিনিটে রিভিশন},
-  fonttitle=\bfseries,
-  arc=2mm,
-  boxrule=0.6pt
+  fonttitle=\bfseries\small,
+  fontupper=\small
 }
+
+% ==========================================================
+% Deprecated old side-box styles
+% Kept only so older topic.tex files compile.
+% Do not use in new chapter writing.
+% ==========================================================
+
+\newcommand{\compactsideimage}[2]{%
+  \centering
+  \IfFileExists{#1}{%
+    \includegraphics[width=0.98\linewidth,height=2.45cm,keepaspectratio]{#1}%
+  }{%
+    \fbox{\parbox{0.90\linewidth}{\centering
+      \vspace{0.20cm}
+      \scriptsize Image placeholder\\#2
+      \vspace{0.20cm}
+    }}%
+  }%
+  \par\vspace{1pt}{\scriptsize\textbf{চিত্র:} #2}\par
+}
+
+\newtcolorbox{compactsidebox}[2]{%
+  enhanced,
+  frame hidden,
+  colback=white,
+  colframe=white,
+  colbacktitle=white,
+  coltitle=blue!62!black,
+  boxrule=0pt,
+  arc=0mm,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=1pt,
+  before skip=2pt,
+  after skip=2pt,
+  sidebyside,
+  sidebyside gap=2mm,
+  righthand width=#2,
+  lower separated=false,
+  title={#1},
+  fonttitle=\bfseries\small,
+  fontupper=\small,
+  fontlower=\scriptsize
+}
+
+\newcommand{\sidebookimage}[2]{%
+  \centering
+  \IfFileExists{#1}{%
+    \includegraphics[width=0.96\linewidth,height=0.24\textheight,keepaspectratio]{#1}%
+  }{%
+    \fbox{\parbox{0.86\linewidth}{\centering
+      \vspace{0.25cm}
+      \scriptsize Image placeholder\\#2
+      \vspace{0.25cm}
+    }}%
+  }%
+  \par\vspace{1pt}{\scriptsize\textbf{চিত্র:} #2}\par
+}
+
+\newtcolorbox{sidepicbox}[2]{%
+  enhanced,
+  frame hidden,
+  colback=white,
+  colframe=white,
+  colbacktitle=white,
+  coltitle=blue!62!black,
+  title={#1},
+  fonttitle=\bfseries\small,
+  fontupper=\small,
+  arc=0mm,
+  boxrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=1pt,
+  sidebyside,
+  sidebyside gap=3mm,
+  righthand width=#2,
+  lower separated=false
+}
+
+% ==========================================================
+% Compact Mini Boxes
+% Kept for old files. Use rarely in new writing.
+% ==========================================================
+
+\newtcolorbox{mininotebox}[1]{
+  colback=white,
+  colframe=white,
+  colbacktitle=white,
+  coltitle=blue!60!black,
+  title={#1},
+  fonttitle=\bfseries\small,
+  fontupper=\small,
+  arc=0mm,
+  boxrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=1pt,
+  before skip=2pt,
+  after skip=2pt
+}
+
+\newtcolorbox{miniboardbox}[1]{
+  colback=white,
+  colframe=white,
+  colbacktitle=white,
+  coltitle=blue!65!black,
+  title={#1},
+  fonttitle=\bfseries\small,
+  fontupper=\small,
+  arc=0mm,
+  boxrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=1pt,
+  before skip=2pt,
+  after skip=2pt
+}
+
+\newtcolorbox{minitablebox}[1]{
+  colback=white,
+  colframe=white,
+  colbacktitle=white,
+  coltitle=green!35!black,
+  title={#1},
+  fonttitle=\bfseries\small,
+  fontupper=\small,
+  arc=0mm,
+  boxrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=1pt,
+  before skip=2pt,
+  after skip=2pt
+}
+
+% ==========================================================
+% Dense Topic Body Environment
+% Optional: use in topic files for more text per page.
+%
+% Usage:
+% \begin{topicbody}
+% ... topic content ...
+% \end{topicbody}
+% ==========================================================
+
+\newenvironment{topicbody}
+{
+  \begingroup
+  \fontsize{9.6}{10.8}\selectfont
+}
+{
+  \endgroup
+}
+
+% ==========================================================
+% End of preamble
+% ==========================================================
