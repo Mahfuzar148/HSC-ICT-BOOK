@@ -1,116 +1,1290 @@
-\subsection{কৃত্রিম বুদ্ধিমত্তা}
 
-\begin{learningbox}
-এই অংশ শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item কৃত্রিম বুদ্ধিমত্তার ধারণা ব্যাখ্যা করতে।
-\item AI, machine learning, expert system ও natural language processing-এর সম্পর্ক বুঝতে।
-\item শিক্ষা, চিকিৎসা, কৃষি, ব্যবসা ও নিরাপত্তায় AI-এর ব্যবহার লিখতে।
-\item AI ব্যবহারের সুবিধা, সীমাবদ্ধতা ও নৈতিক ঝুঁকি বিশ্লেষণ করতে।
-\end{itemize}
-\end{learningbox}
+```latex
+% Chapter 01.4.1: কৃত্রিম বুদ্ধিমত্তা
+% Premium HSC ICT Book style
+% Image rule: image-এর ভিতরে শুধু short label থাকবে; বিস্তারিত ব্যাখ্যা image-এর নিচে থাকবে।
 
-\subsubsection{কৃত্রিম বুদ্ধিমত্তার ধারণা}
+\begin{topicbody}
 
-মানুষ অভিজ্ঞতা থেকে শেখে, সমস্যা বুঝে সিদ্ধান্ত নেয় এবং ভাষা ব্যবহার করে যোগাযোগ করে। কম্পিউটারকে যখন এমনভাবে তৈরি করা হয় যে সে তথ্য বিশ্লেষণ করে শিখতে, যুক্তি প্রয়োগ করতে, সিদ্ধান্ত দিতে বা মানুষের ভাষা বুঝতে পারে, তখন সেটিকে কৃত্রিম বুদ্ধিমত্তা বলা হয়।
+\section{কৃত্রিম বুদ্ধিমত্তা}
 
-\begin{definitionbox}{সংজ্ঞা}
-কৃত্রিম বুদ্ধিমত্তা বা Artificial Intelligence হলো কম্পিউটার বিজ্ঞানভিত্তিক এমন প্রযুক্তি, যার মাধ্যমে যন্ত্রকে মানুষের মতো শেখা, যুক্তি প্রয়োগ, সমস্যা সমাধান, ভাষা বোঝা, pattern শনাক্ত করা এবং সিদ্ধান্ত গ্রহণের ক্ষমতা দেওয়া হয়।
-\end{definitionbox}
+\topichead{শিখনফল}
+এই টপিক শেষে শিক্ষার্থী—
+\begin{compactpoints}
+\item কৃত্রিম বুদ্ধিমত্তা বা Artificial Intelligence-এর ধারণা ও সংজ্ঞা ব্যাখ্যা করতে পারবে।
+\item AI-এর ইতিহাস, বৈশিষ্ট্য, কাজের ধাপ, ধরন ও branch বুঝতে পারবে।
+\item AI, Machine Learning, Deep Learning, NLP, Expert System ও Generative AI-এর সম্পর্ক লিখতে পারবে।
+\item শিক্ষা, চিকিৎসা, কৃষি, ব্যবসা, নিরাপত্তা, পরিবহন, গবেষণা ও দৈনন্দিন জীবনে AI-এর ব্যবহার ব্যাখ্যা করতে পারবে।
+\item বাংলাদেশ প্রেক্ষিতে AI-এর ব্যবহার ও সম্ভাবনা আলোচনা করতে পারবে।
+\item AI-এর সুবিধা, সীমাবদ্ধতা, নেতিবাচক প্রভাব ও নৈতিক ঝুঁকি বিশ্লেষণ করতে পারবে।
+\item বোর্ড পরীক্ষার MCQ, short question ও CQ-এর জন্য exam-standard উত্তর প্রস্তুত করতে পারবে।
+\end{compactpoints}
 
-AI সবসময় মানুষের মতো চিন্তা করে না; বরং data, rule, algorithm ও model ব্যবহার করে সম্ভাব্য সঠিক ফল বের করে। যেমন, একটি spam filter হাজারো ই-মেইলের pattern দেখে কোনটি spam হতে পারে তা অনুমান করে।
+\important{এই টপিকটি ICT-এর সাম্প্রতিক প্রবণতার সবচেয়ে গুরুত্বপূর্ণ অংশগুলোর একটি। AI বোঝার সময় শুধু robot মনে করলে ভুল হবে। AI software, model, algorithm, data এবং decision system—সবকিছুর সঙ্গে সম্পর্কিত।}
 
-\subsubsection{কৃত্রিম বুদ্ধিমত্তার বৈশিষ্ট্য}
+% ==========================================================
+% 1. Concept and Definition
+% ==========================================================
 
-\begin{keypointbox}{AI-এর গুরুত্বপূর্ণ বৈশিষ্ট্য}
-\begin{itemize}
-\item \textbf{Learning}: data থেকে pattern শেখে।
-\item \textbf{Reasoning}: rule বা model ব্যবহার করে সিদ্ধান্ত দেয়।
-\item \textbf{Problem solving}: জটিল সমস্যার সম্ভাব্য সমাধান খুঁজে।
-\item \textbf{Perception}: image, sound, speech বা sensor data বুঝতে পারে।
-\item \textbf{Language understanding}: মানুষের ভাষা বিশ্লেষণ ও response তৈরি করতে পারে।
-\item \textbf{Adaptation}: নতুন data পেলে performance উন্নত করতে পারে।
-\end{itemize}
-\end{keypointbox}
+\subsection{কৃত্রিম বুদ্ধিমত্তার ধারণা}
 
-\subsubsection{এক্সপার্ট সিস্টেম}
+মানুষ অভিজ্ঞতা থেকে শেখে, সমস্যা বুঝে সিদ্ধান্ত নেয়, ভাষা ব্যবহার করে যোগাযোগ করে এবং নতুন পরিস্থিতির সঙ্গে নিজেকে মানিয়ে নেয়। কম্পিউটার বা যন্ত্রকে যখন এমনভাবে তৈরি করা হয় যে সেটি data বিশ্লেষণ করে শেখা, যুক্তি প্রয়োগ করা, সিদ্ধান্ত দেওয়া, ভাষা বোঝা, ছবি চিনতে পারা বা সমস্যা সমাধান করতে পারে, তখন সেটিকে কৃত্রিম বুদ্ধিমত্তা বলা হয়।
 
-Expert system হলো AI-এর এমন একটি শাখা যেখানে কোনো বিশেষজ্ঞের জ্ঞান ও সিদ্ধান্তের নিয়ম computer program-এ সংরক্ষণ করা হয়। ব্যবহারকারী প্রশ্ন করলে system knowledge base ও inference engine ব্যবহার করে উত্তর বা পরামর্শ দেয়।
+কৃত্রিম বুদ্ধিমত্তা বা \term{Artificial Intelligence (AI)} হলো computer science-এর এমন একটি শাখা, যেখানে computer system বা machine-কে intelligent কাজ করার ক্ষমতা দেওয়া হয়। যেমন—chatbot মানুষের প্রশ্নের উত্তর দেয়, mobile face unlock মুখ চিনতে পারে, Google Maps route suggest করে, YouTube/Netflix video recommend করে, bank fraud detection system সন্দেহজনক transaction শনাক্ত করে এবং doctor decision support system রোগ নির্ণয়ে সহায়তা করে।
 
-\begin{examplebox}{চিকিৎসা ক্ষেত্রে উদাহরণ}
-একটি medical expert system রোগীর উপসর্গ, test report ও medical rule বিশ্লেষণ করে সম্ভাব্য রোগের তালিকা বা পরবর্তী test-এর পরামর্শ দিতে পারে। তবে এটি ডাক্তারের বিকল্প নয়; বরং decision support tool।
-\end{examplebox}
+\definition{কৃত্রিম বুদ্ধিমত্তা}{কৃত্রিম বুদ্ধিমত্তা বা Artificial Intelligence হলো কম্পিউটার বিজ্ঞানভিত্তিক এমন প্রযুক্তি, যার মাধ্যমে যন্ত্রকে মানুষের মতো শেখা, যুক্তি প্রয়োগ, সমস্যা সমাধান, ভাষা বোঝা, pattern শনাক্তকরণ এবং সিদ্ধান্ত গ্রহণের ক্ষমতা দেওয়া হয়।}
 
-\subsubsection{প্রাকৃতিক ভাষা প্রক্রিয়াকরণ}
+\definition{সহজ সংজ্ঞা}{যে প্রযুক্তির মাধ্যমে computer বা machine data, rule বা model ব্যবহার করে মানুষের মতো intelligent কাজ করতে পারে, তাকে কৃত্রিম বুদ্ধিমত্তা বা AI বলে।}
 
-Natural Language Processing বা NLP হলো AI-এর একটি অংশ, যা মানুষের ভাষা computer দিয়ে বোঝা, বিশ্লেষণ, অনুবাদ, summary তৈরি বা response দেওয়ার কাজ করে। Search engine, voice assistant, machine translation, chatbot, spelling correction এবং text summarization NLP-এর উদাহরণ।
+\midfigure[0.76\textwidth]{\chaponeimg/ai_basic_concept_model.png}{কৃত্রিম বুদ্ধিমত্তার মৌলিক ধারণা}
 
-\begin{mistakebox}{সাধারণ ভুল}
-AI মানেই robot নয়। Robot একটি physical machine হতে পারে, কিন্তু AI একটি software-based decision বা learning technology। অনেক AI system কোনো robot ছাড়াই mobile app, website বা server-এ কাজ করে।
-\end{mistakebox}
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Data, Algorithm/Model, Learning, Decision এবং Action—এই ধারাটি দেখানো হবে। AI system প্রথমে data গ্রহণ করে, তারপর algorithm বা model ব্যবহার করে pattern শেখে, নতুন input বিশ্লেষণ করে সিদ্ধান্ত নেয় এবং সেই সিদ্ধান্ত অনুযায়ী output বা action দেয়।
 
-\subsubsection{মেশিন লার্নিং}
-
-Machine Learning হলো AI-এর এমন পদ্ধতি যেখানে computer সরাসরি প্রতিটি rule লিখে না দিয়েও data থেকে pattern শেখে। উদাহরণস্বরূপ, অনেক ছবি দেখে model শিখতে পারে কোন ছবিতে handwritten digit আছে, অথবা কোন transaction fraud হতে পারে।
-
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.56\textwidth}|}
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compacttable}
+\begin{tabular}{|p{0.24\textwidth}|p{0.62\textwidth}|}
 \hline
-\textbf{ধারণা} & \textbf{ব্যাখ্যা} \\
+\textbf{Component} & \textbf{ব্যাখ্যা} \\
 \hline
-AI & যন্ত্রকে intelligent কাজ করানোর বিস্তৃত ক্ষেত্র \\
+Data & AI শেখার প্রধান উপাদান। text, image, voice, video, sensor data, transaction record ইত্যাদি data হিসেবে ব্যবহৃত হয়। \\
 \hline
-Machine Learning & data থেকে pattern শেখার পদ্ধতি \\
+Algorithm/Model & data বিশ্লেষণ করে pattern শেখার নিয়ম বা mathematical structure। \\
 \hline
-Deep Learning & neural network ব্যবহার করে জটিল pattern শেখা \\
+Learning & AI model data থেকে rule বা pattern শেখে। \\
 \hline
-NLP & মানুষের ভাষা বোঝা ও তৈরি করার প্রযুক্তি \\
+Decision & নতুন input পেলে শেখা pattern ব্যবহার করে prediction বা সিদ্ধান্ত দেয়। \\
+\hline
+Action & decision-এর ভিত্তিতে answer, recommendation, warning, control signal বা automated কাজ সম্পন্ন হয়। \\
 \hline
 \end{tabular}
-\end{center}
+\end{compacttable}
 
-\subsubsection{কৃত্রিম বুদ্ধিমত্তার ব্যবহারক্ষেত্র}
+\examfocus{AI-এর সংজ্ঞায় তিনটি keyword লিখলে উত্তর শক্তিশালী হয়: \term{মানুষের মতো শেখা}, \term{যুক্তি/সিদ্ধান্ত গ্রহণ}, \term{data/model-based intelligent task}.}
 
-\begin{keypointbox}{ব্যবহারক্ষেত্র}
-\begin{itemize}
-\item \textbf{শিক্ষা}: adaptive learning, automated quiz checking, personalized feedback।
-\item \textbf{চিকিৎসা}: disease prediction, medical image analysis, patient triage।
-\item \textbf{কৃষি}: crop disease detection, weather-based advisory, smart irrigation।
-\item \textbf{ব্যবসা}: recommendation system, fraud detection, chatbot।
-\item \textbf{পরিবহন}: route optimization, traffic prediction, driver assistance।
-\item \textbf{নিরাপত্তা}: face recognition, anomaly detection, cyber threat analysis।
-\end{itemize}
-\end{keypointbox}
+\subsection{AI মানে কী নয়}
 
-\begin{examplebox}{বাংলাদেশ প্রেক্ষিত}
-বাংলাদেশে কৃষি পরামর্শ app, mobile banking fraud detection, online customer support chatbot, e-learning platform এবং traffic monitoring system-এ AI-ভিত্তিক ধারণা ব্যবহার করা যেতে পারে বা আংশিকভাবে ব্যবহৃত হচ্ছে।
-\end{examplebox}
+\begin{compactpoints}
+\item AI মানেই robot নয়। অনেক AI system mobile app, website, server বা software model হিসেবে কাজ করে।
+\item AI মানেই magic নয়। এটি data, algorithm, model এবং training-এর উপর নির্ভর করে।
+\item AI সবসময় সঠিক নয়। ভুল data, biased data বা ভুল model হলে AI ভুল সিদ্ধান্ত দিতে পারে।
+\item AI মানুষের সম্পূর্ণ বিকল্প নয়। অনেক ক্ষেত্রে AI decision support দেয়, final decision মানুষের হতে পারে।
+\end{compactpoints}
 
-\begin{keypointbox}{সুবিধা ও ঝুঁকি}
-\begin{itemize}
-\item সুবিধা: দ্রুত data analysis, repetitive কাজ automation, decision support, personalized service।
-\item ঝুঁকি: data bias, privacy problem, ভুল সিদ্ধান্ত, job displacement, misinformation।
-\item দায়িত্বশীল ব্যবহার: human supervision, transparent data use, privacy protection, fairness checking।
-\end{itemize}
-\end{keypointbox}
+% ==========================================================
+% 2. History
+% ==========================================================
 
-\begin{boardbox}{বোর্ড ফোকাস}
-AI-এর প্রশ্নে সংজ্ঞা, বৈশিষ্ট্য, expert system, NLP, machine learning এবং ব্যবহারক্ষেত্র আলাদা করে লিখলে উত্তর পূর্ণ হয়। “AI মানেই robot”—এমন ভুল ধারণা এড়িয়ে চলবে।
-\end{boardbox}
+\subsection{কৃত্রিম বুদ্ধিমত্তার সংক্ষিপ্ত ইতিহাস}
 
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item Machine Learning কোন কাজের সঙ্গে সবচেয়ে বেশি সম্পর্কিত?\\
-ক. Printer control \quad খ. data থেকে pattern শেখা \quad গ. শুধু typing \quad ঘ. monitor display
-\item মানুষের ভাষা বোঝা ও বিশ্লেষণের AI শাখা কোনটি?\\
-ক. NLP \quad খ. CAD \quad গ. GPS \quad ঘ. DBMS
-\end{enumerate}
+AI-এর ধারণা আধুনিক হলেও এর পেছনে দীর্ঘ গবেষণার ইতিহাস আছে। মানুষ অনেক আগে থেকেই ভেবেছে—যন্ত্র কি মানুষের মতো চিন্তা করতে পারে? এই চিন্তা থেকেই logic, mathematics, computing, machine learning এবং modern AI-এর বিকাশ হয়েছে।
 
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Expert system কী?
-\item AI ব্যবহারের দুটি নৈতিক ঝুঁকি লেখ।
-\end{enumerate}
-\end{practicebox}
+\midfigure[0.78\textwidth]{\chaponeimg/ai_history_timeline.png}{কৃত্রিম বুদ্ধিমত্তার সংক্ষিপ্ত ইতিহাস}
 
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে AI-এর গুরুত্বপূর্ণ milestone timeline আকারে দেখানো হবে: 1950 Turing Test, 1956 Dartmouth, 1980s Expert System, 1997 Deep Blue, 2012 Deep Learning এবং 2020s Generative AI. Image-এর ভিতরে শুধু year/name label থাকবে; বিস্তারিত ব্যাখ্যা নিচে থাকবে।
+
+\subtopichead{AI ইতিহাসের গুরুত্বপূর্ণ milestone}
+\begin{compacttable}
+\begin{tabular}{|p{0.17\textwidth}|p{0.30\textwidth}|p{0.40\textwidth}|}
+\hline
+\textbf{সময়} & \textbf{ঘটনা/ব্যক্তি} & \textbf{গুরুত্ব} \\
+\hline
+1950 & Alan Turing ও Turing Test & যন্ত্র মানুষের মতো বুদ্ধিমত্তা প্রদর্শন করতে পারে কি না—এই ধারণা মূল্যায়নের ভিত্তি তৈরি করে। \\
+\hline
+1956 & Dartmouth Conference; John McCarthy & Artificial Intelligence term formal হয় এবং AI research field-এর জন্ম হিসেবে বিবেচিত হয়। \\
+\hline
+1960s--1970s & Symbolic AI ও rule-based system & logic, rule ও symbol ব্যবহার করে intelligent system তৈরি করার চেষ্টা হয়। \\
+\hline
+1980s & Expert System boom & বিশেষজ্ঞের knowledge ব্যবহার করে diagnosis, business decision ও fault detection-এর মতো কাজ করা হয়। \\
+\hline
+1997 & IBM Deep Blue & chess champion Garry Kasparov-কে হারিয়ে game AI-এর বড় milestone তৈরি করে। \\
+\hline
+2012 & Deep Learning breakthrough & image recognition-এ deep neural network-এর সাফল্যের কারণে modern AI দ্রুত এগোয়। \\
+\hline
+2016 & AlphaGo & complex game Go-তে human champion-কে হারিয়ে reinforcement learning/deep learning-এর শক্তি দেখায়। \\
+\hline
+2020s & Generative AI & text, image, audio, video ও code তৈরি করার AI mass adoption শুরু করে। \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\remember{বোর্ড MCQ-তে “AI-এর জনক কে?” প্রশ্নে উত্তর সাধারণত \term{John McCarthy}. আর Turing Test-এর সঙ্গে \term{Alan Turing} সম্পর্কিত।}
+
+% ==========================================================
+% 3. Features
+% ==========================================================
+
+\subsection{AI-এর প্রধান বৈশিষ্ট্য}
+
+AI system সাধারণ computer program-এর মতো শুধু fixed instruction follow করে না; এটি data, rule, model এবং feedback ব্যবহার করে intelligent কাজ করতে পারে। AI-এর কিছু বৈশিষ্ট্য নিচে দেওয়া হলো।
+
+\midfigure[0.74\textwidth]{\chaponeimg/ai_features_mindmap.png}{AI-এর প্রধান বৈশিষ্ট্য}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে AI-এর প্রধান বৈশিষ্ট্য—Learning, Reasoning, Problem Solving, NLP, Vision, Prediction এবং Automation—mind map আকারে দেখানো হবে। এগুলো AI system-এর intelligent task বোঝাতে সাহায্য করবে।
+
+\begin{compactpoints}
+\item \term{শেখার ক্ষমতা}: AI data থেকে pattern শেখে এবং নতুন input পেলে সেই শেখা ব্যবহার করে।
+\item \term{যুক্তি প্রয়োগ}: rule, probability বা model ব্যবহার করে সিদ্ধান্তে পৌঁছাতে পারে।
+\item \term{সমস্যা সমাধান}: complex problem বিশ্লেষণ করে সম্ভাব্য solution দিতে পারে।
+\item \term{ভাষা বোঝা}: NLP-এর মাধ্যমে মানুষের ভাষা process করতে পারে।
+\item \term{দৃষ্টি বা perception}: image, video, face, object, handwriting বা medical image চিনতে পারে।
+\item \term{Prediction}: পূর্বের data দেখে ভবিষ্যৎ trend বা সম্ভাব্য ফলাফল অনুমান করতে পারে।
+\item \term{Automation}: repetitive বা routine কাজ স্বয়ংক্রিয়ভাবে করতে পারে।
+\item \term{Adaptation}: নতুন data বা feedback পেলে performance উন্নত করতে পারে।
+\item \term{Decision Support}: doctor, banker, teacher, farmer, businessman বা manager-কে সিদ্ধান্তে সহায়তা করে।
+\end{compactpoints}
+
+% ==========================================================
+% 4. Working Process
+% ==========================================================
+
+\subsection{AI কীভাবে কাজ করে}
+
+AI সাধারণত data-driven পদ্ধতিতে কাজ করে। প্রথমে data সংগ্রহ করা হয়, তারপর data পরিষ্কার ও প্রক্রিয়াজাত করা হয়, algorithm/model সেই data থেকে pattern শেখে, এরপর নতুন input পেলে prediction বা decision দেয়। Feedback পেলে model আরও improve করা যায়।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_working_process.png}{AI system-এর কাজের ধাপ}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Data Collection → Data Processing → Training → Model → Prediction/Decision → Feedback—এই ধারাটি দেখানো হবে। এতে বোঝা যাবে AI শুধু command follow করে না; বরং data থেকে pattern শিখে decision দেয়।
+
+\subtopichead{AI কাজ করার ধাপ}
+\begin{compactenum}
+\item \term{Data Collection}: text, image, voice, video, sensor, transaction বা user behavior data সংগ্রহ করা হয়।
+\item \term{Data Processing}: data clean, sort, label, normalize বা format করা হয়।
+\item \term{Training/Learning}: algorithm processed data থেকে pattern শেখে।
+\item \term{Model Creation}: শেখা pattern model-এর ভেতরে সংরক্ষিত থাকে।
+\item \term{Prediction/Decision}: নতুন input পেলে model prediction, recommendation বা decision দেয়।
+\item \term{Feedback}: ভুল output সংশোধন করে model improve করা যায়।
+\end{compactenum}
+
+\exampleline{একটি spam detection AI অনেক e-mail দেখে শেখে কোন ধরনের e-mail spam হতে পারে। পরে নতুন e-mail এলে model সেটি spam কি না prediction দেয়।}
+
+% ==========================================================
+% 5. AI, ML, DL and Generative AI
+% ==========================================================
+
+\subsection{AI, Machine Learning, Deep Learning ও Generative AI-এর সম্পর্ক}
+
+AI, Machine Learning, Deep Learning ও Generative AI সম্পর্কিত হলেও এক নয়। AI হলো সবচেয়ে বড় ক্ষেত্র। Machine Learning হলো AI-এর একটি পদ্ধতি। Deep Learning হলো Machine Learning-এর advanced অংশ, যেখানে neural network ব্যবহৃত হয়। Generative AI হলো এমন AI, যা training data থেকে শেখা pattern ব্যবহার করে নতুন content তৈরি করতে পারে।
+
+\midfigure[0.76\textwidth]{\chaponeimg/ai_ml_dl_genai_relation.png}{AI, ML, DL ও Generative AI-এর সম্পর্ক}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে nested relation দেখানো হবে: AI-এর ভিতরে Machine Learning, Machine Learning-এর ভিতরে Deep Learning এবং Deep Learning/foundation model-এর মাধ্যমে Generative AI. এর মাধ্যমে শিক্ষার্থী বুঝবে, ML বা DL আলাদা subject হলেও AI-এর অংশ।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.46\textwidth}|p{0.22\textwidth}|}
+\hline
+\textbf{ধারণা} & \textbf{ব্যাখ্যা} & \textbf{উদাহরণ} \\
+\hline
+AI & যন্ত্রকে intelligent কাজ করানোর বিস্তৃত ক্ষেত্র & chatbot, expert system \\
+\hline
+Machine Learning & data থেকে pattern শেখার পদ্ধতি & spam detection, prediction \\
+\hline
+Deep Learning & neural network ব্যবহার করে complex pattern শেখা & image recognition \\
+\hline
+Generative AI & prompt অনুযায়ী নতুন text, image, audio, video বা code তৈরি করা & AI writing/image/code tool \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\remember{সব Machine Learning AI-এর অংশ, কিন্তু সব AI Machine Learning নয়। Expert System rule-based AI হতে পারে, যেখানে ML ব্যবহার নাও থাকতে পারে।}
+
+% ==========================================================
+% Extra Premium Expansion: ML, DL, NLP, LLM, CV, GenAI
+% ==========================================================
+
+\subsection{AI system-এ Training ও Inference}
+
+AI system বুঝতে হলে দুটি গুরুত্বপূর্ণ ধাপ বুঝতে হবে: \term{Training} এবং \term{Inference}। Training হলো AI model-কে data দিয়ে শেখানোর ধাপ। Inference হলো শেখা model ব্যবহার করে নতুন input-এর উত্তর, prediction বা decision দেওয়ার ধাপ।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_training_vs_inference.png}{AI Training ও Inference}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Training Data → Learning Algorithm → Trained Model → New Input → Output/Decision দেখানো হবে। Training ধাপে model data থেকে pattern শেখে। Inference ধাপে সেই trained model নতুন input বিশ্লেষণ করে output দেয়।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{Training Data}: model শেখার জন্য ব্যবহার করা example, label, text, image বা record।
+\item \term{Learning Algorithm}: data থেকে pattern শেখার mathematical পদ্ধতি।
+\item \term{Trained Model}: training শেষে তৈরি model, যেখানে শেখা pattern সংরক্ষিত থাকে।
+\item \term{New Input}: ব্যবহারকারীর নতুন প্রশ্ন, image, voice, transaction বা sensor data।
+\item \term{Output/Decision}: answer, prediction, recommendation, warning বা automated action।
+\end{compactpoints}
+
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.38\textwidth}|p{0.28\textwidth}|}
+\hline
+\textbf{ধাপ} & \textbf{কাজ} & \textbf{উদাহরণ} \\
+\hline
+Training & data দিয়ে model শেখানো & হাজার ছবি দিয়ে face recognition শেখানো \\
+\hline
+Validation/Testing & model কতটা ভালো কাজ করছে তা যাচাই & নতুন ছবি দিয়ে accuracy check \\
+\hline
+Inference & trained model দিয়ে নতুন input-এর output দেওয়া & camera-তে মুখ দেখে unlock করা \\
+\hline
+Feedback & ভুল হলে data/model improve করা & ভুল prediction correction করা \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\remember{Training মানে AI শেখে; Inference মানে শেখা AI নতুন প্রশ্ন/input-এর উত্তর দেয়।}
+
+\subsection{Machine Learning}
+
+\definition{Machine Learning}{Machine Learning হলো AI-এর একটি পদ্ধতি, যেখানে computer বা machine-কে প্রতিটি rule আলাদা করে না লিখে data থেকে pattern শেখানো হয় এবং সেই pattern ব্যবহার করে নতুন data সম্পর্কে prediction বা decision দেওয়া হয়।}
+
+Traditional programming-এ programmer rule লিখে দেয়, তারপর computer input নিয়ে output দেয়। কিন্তু Machine Learning-এ input data ও expected output বা label ব্যবহার করে model নিজে pattern শেখে। এরপর নতুন input পেলে model শেখা pattern ব্যবহার করে output দেয়।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_machine_learning_workflow.png}{Machine Learning কীভাবে কাজ করে}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Dataset → Feature Extraction → Training Algorithm → ML Model → Prediction → Feedback দেখানো হবে। Dataset থেকে feature নেওয়া হয়, algorithm model train করে, trained model নতুন input দেখে prediction দেয়।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{Dataset}: model শেখার জন্য raw data; যেমন e-mail, image, transaction, health record।
+\item \term{Feature Extraction}: data থেকে গুরুত্বপূর্ণ বৈশিষ্ট্য বের করা; যেমন শব্দ, রং, shape, transaction pattern।
+\item \term{Training Algorithm}: selected feature ব্যবহার করে pattern শেখে।
+\item \term{ML Model}: শেখা pattern ধরে রাখে এবং নতুন data-তে apply করে।
+\item \term{Prediction}: নতুন input দেখে class, score, warning বা recommendation দেয়।
+\item \term{Feedback}: ভুল prediction সংশোধন করে model উন্নত করার সুযোগ দেয়।
+\end{compactpoints}
+
+\subtopichead{Machine Learning কাজ করার ধাপ}
+\begin{compactenum}
+\item \term{Data Collection}: problem অনুযায়ী image, text, transaction, sensor বা user behavior data সংগ্রহ করা হয়।
+\item \term{Data Cleaning}: ভুল, duplicate, missing বা irrelevant data ঠিক করা হয়।
+\item \term{Feature Selection}: model শেখার জন্য গুরুত্বপূর্ণ বৈশিষ্ট্য নির্বাচন করা হয়।
+\item \term{Training}: algorithm data থেকে pattern শেখে।
+\item \term{Model Evaluation}: accuracy, precision, recall ইত্যাদি দিয়ে performance যাচাই করা হয়।
+\item \term{Prediction}: নতুন data দেখে model output দেয়।
+\item \term{Feedback}: ভুল prediction হলে model improve করা হয়।
+\end{compactenum}
+
+\subtopichead{Machine Learning-এর ধরন}
+\begin{compacttable}
+\begin{tabular}{|p{0.25\textwidth}|p{0.42\textwidth}|p{0.25\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{ব্যাখ্যা} & \textbf{উদাহরণ} \\
+\hline
+Supervised Learning & labelled data থেকে শেখে & disease prediction, spam detection \\
+\hline
+Unsupervised Learning & label ছাড়া data থেকে pattern/group খুঁজে & customer segmentation \\
+\hline
+Reinforcement Learning & reward/punishment থেকে শেখে & game AI, robot control \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\exampleline{E-mail spam filter অনেক spam ও non-spam e-mail দেখে শেখে। পরে নতুন e-mail এলে সেটি spam কি না prediction দেয়।}
+
+\subsection{Deep Learning}
+
+\definition{Deep Learning}{Deep Learning হলো Machine Learning-এর একটি advanced শাখা, যেখানে artificial neural network-এর বহু layer ব্যবহার করে complex data থেকে pattern শেখা হয়।}
+
+Deep Learning মানুষের brain-এর neuron ধারণা থেকে inspired, তবে এটি human brain-এর exact copy নয়। Deep Learning model image, speech, text, video এবং complex pattern recognition-এ খুব কার্যকর। Face recognition, voice assistant, language model, medical image analysis, self-driving car এবং generative AI-তে deep learning বেশি ব্যবহৃত হয়।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_deep_learning_workflow.png}{Deep Learning কীভাবে কাজ করে}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Input Layer → Hidden Layers → Feature Learning → Output Layer দেখানো হবে। Input layer data গ্রহণ করে, hidden layer ধাপে ধাপে complex feature শেখে এবং output layer final class, text, score বা decision দেয়।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{Input Layer}: raw input যেমন image pixel, word token বা audio signal গ্রহণ করে।
+\item \term{Hidden Layers}: বহু layer data থেকে simple থেকে complex feature শেখে।
+\item \term{Weights}: neuron connection-এর strength; training-এর সময় এগুলো adjust হয়।
+\item \term{Feature Learning}: model নিজে important pattern শিখতে পারে।
+\item \term{Output Layer}: final prediction, label, text বা decision দেয়।
+\end{compactpoints}
+
+\subtopichead{Deep Learning কাজ করার ধাপ}
+\begin{compactenum}
+\item বড় dataset সংগ্রহ করা হয়।
+\item data neural network-এর input layer-এ দেওয়া হয়।
+\item hidden layer data থেকে feature শেখে।
+\item training-এর সময় error কমাতে weight update করা হয়।
+\item trained model নতুন input দেখে prediction দেয়।
+\end{compactenum}
+
+\subsection{Machine Learning ও Deep Learning-এর পার্থক্য}
+
+\midfigure[0.76\textwidth]{\chaponeimg/ml_vs_dl_comparison.png}{Machine Learning ও Deep Learning-এর পার্থক্য}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে ML ও DL-এর পার্থক্য side-by-side দেখানো হবে। ML সাধারণত selected feature ও comparatively smaller data দিয়ে কাজ করতে পারে; DL বড় data, neural network ও automatic feature learning ব্যবহার করে complex task ভালোভাবে করতে পারে।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{বিষয়} & \textbf{Machine Learning} & \textbf{Deep Learning} \\
+\hline
+সম্পর্ক & AI-এর subset & ML-এর subset \\
+\hline
+Data need & তুলনামূলক কম data-তেও কাজ করতে পারে & সাধারণত বেশি data দরকার \\
+\hline
+Feature & human-selected feature লাগে & নিজে feature শিখতে পারে \\
+\hline
+Model & decision tree, SVM, regression ইত্যাদি & neural network-এর বহু layer \\
+\hline
+Hardware & কম computational power-এও চলতে পারে & GPU/TPU বেশি দরকার হতে পারে \\
+\hline
+ব্যাখ্যাযোগ্যতা & তুলনামূলক বেশি explainable হতে পারে & অনেক model black-box ধরনের \\
+\hline
+ব্যবহার & spam detection, sales prediction & image recognition, speech, LLM \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\examfocus{MCQ-তে মনে রাখবে: Deep Learning সাধারণত Neural Network ব্যবহার করে এবং এটি Machine Learning-এর subset।}
+
+\subsection{NLP কীভাবে কাজ করে}
+
+Natural Language Processing বা NLP মানুষের ভাষা computer-এর বোঝার উপযোগী করে। মানুষের ভাষা অস্পষ্ট, context-based এবং grammar-dependent হতে পারে। তাই NLP system text বা speech input নিয়ে tokenization, language understanding, intent detection, model processing এবং response generation করে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_nlp_working_process.png}{NLP কীভাবে কাজ করে}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Text/Speech Input → Tokenization → Language Understanding → Intent/Meaning → Model/Knowledge → Response দেখানো হবে।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{Text/Speech Input}: user question, command, message বা spoken language।
+\item \term{Tokenization}: sentence-কে word/subword/token-এ ভাগ করা।
+\item \term{Language Understanding}: grammar, meaning, context ও intent বিশ্লেষণ করা।
+\item \term{Model/Knowledge}: language model বা knowledge base input process করে।
+\item \term{Response}: answer, translation, summary, correction বা command output।
+\end{compactpoints}
+
+\subtopichead{NLP কাজ করার ধাপ}
+\begin{compactenum}
+\item \term{Input}: user text বা speech দেয়।
+\item \term{Speech-to-Text}: speech হলে আগে text-এ রূপান্তর করা হয়।
+\item \term{Tokenization}: বাক্যকে word/subword/token-এ ভাগ করা হয়।
+\item \term{Language Understanding}: grammar, meaning, context ও intent বিশ্লেষণ করা হয়।
+\item \term{Model Processing}: model বা knowledge base input process করে।
+\item \term{Response Generation}: text, translation, answer, summary বা command output দেয়।
+\end{compactenum}
+
+\subsection{Large Language Model বা LLM}
+
+\definition{Large Language Model}{Large Language Model বা LLM হলো বড় আকারের deep learning language model, যা বিপুল text data থেকে language pattern শেখে এবং user prompt অনুযায়ী text generate, question answer, summary, translation, reasoning বা coding task করতে পারে।}
+
+LLM সাধারণত Transformer architecture ব্যবহার করে। এটি text-কে token-এ ভাগ করে, context বুঝে এবং probability অনুযায়ী পরবর্তী token predict করে response তৈরি করে। LLM মানুষের মতো চিন্তা করে না; এটি শেখা pattern ও context ব্যবহার করে সবচেয়ে সম্ভাব্য output তৈরি করে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_llm_working_process.png}{LLM কীভাবে কাজ করে}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Prompt → Tokenization → Transformer Layers → Context Understanding → Next Token Prediction → Response দেখানো হবে। এতে বোঝানো হবে, LLM prompt থেকে context বুঝে ধাপে ধাপে response তৈরি করে।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{Prompt}: user-এর question, instruction বা task description।
+\item \term{Token}: text-এর ছোট অংশ, যা model process করে।
+\item \term{Embedding}: token-এর numerical representation।
+\item \term{Transformer Layers}: attention mechanism দিয়ে context ও token relationship বিশ্লেষণ করে।
+\item \term{Next-token Prediction}: সম্ভাব্য পরবর্তী token অনুমান করে।
+\item \term{Response}: অনেক token মিলিয়ে generated answer তৈরি হয়।
+\end{compactpoints}
+
+\subtopichead{LLM কাজ করার ধাপ}
+\begin{compactenum}
+\item \term{Prompt}: user প্রশ্ন বা instruction দেয়।
+\item \term{Tokenization}: text ছোট token-এ ভাগ হয়।
+\item \term{Embedding}: token numerical vector-এ রূপান্তরিত হয়।
+\item \term{Transformer Processing}: attention mechanism context ও token সম্পর্ক বিশ্লেষণ করে।
+\item \term{Next Token Prediction}: model সম্ভাব্য পরবর্তী token predict করে।
+\item \term{Response Generation}: অনেক token মিলিয়ে final answer তৈরি হয়।
+\item \term{Post-processing/Safety}: কিছু system harmful বা unsafe output filter করে।
+\end{compactenum}
+
+\warningline{LLM কখনো ভুল তথ্য আত্মবিশ্বাসের সঙ্গে দিতে পারে, যাকে hallucination বলা হয়। তাই গুরুত্বপূর্ণ তথ্য source দিয়ে যাচাই করতে হবে।}
+
+\subsection{Computer Vision কীভাবে কাজ করে}
+
+Computer Vision image বা video থেকে object, face, text, scene বা pattern চিনতে সাহায্য করে। Computer নিজে image মানুষের মতো দেখে না; image pixel value বা numerical data হিসেবে process করে। Deep learning model image-এর edge, shape, texture, object part এবং final object class শিখতে পারে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_computer_vision_working_process.png}{Computer Vision কীভাবে কাজ করে}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Image/Video Input → Preprocessing → Feature Detection → Object Recognition → Decision/Action দেখানো হবে।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{Image/Video Input}: camera, image file, CCTV বা medical scan থেকে input আসে।
+\item \term{Preprocessing}: image resize, noise reduction, brightness/contrast adjustment করা হয়।
+\item \term{Feature Detection}: edge, color, texture, shape বা pattern detect করা হয়।
+\item \term{Object Recognition}: trained model object, face, text বা disease pattern শনাক্ত করে।
+\item \term{Decision/Action}: face unlock, traffic alert, medical warning বা crop disease advice দেয়।
+\end{compactpoints}
+
+\exampleline{Mobile face unlock-এ camera মুখের image নেয়, model facial features শনাক্ত করে এবং registered face-এর সঙ্গে match হলে phone unlock করে।}
+
+\subsection{Generative AI কীভাবে কাজ করে}
+
+Generative AI এমন AI, যা prompt অনুযায়ী নতুন text, image, audio, video, design বা code তৈরি করতে পারে। এটি training data থেকে pattern শেখে এবং user prompt অনুযায়ী সেই pattern ব্যবহার করে নতুন output generate করে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_generative_ai_working_process.png}{Generative AI কীভাবে কাজ করে}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে User Prompt → Foundation Model → Content Generation → Output → Human Review/Refinement দেখানো হবে। এতে বোঝা যাবে, Generative AI prompt বুঝে নতুন content তৈরি করে, কিন্তু output যাচাই ও refine করা মানুষের দায়িত্ব।
+
+\subtopichead{চিত্রের component ব্যাখ্যা}
+\begin{compactpoints}
+\item \term{User Prompt}: user কী তৈরি করতে চায় তা instruction হিসেবে দেয়।
+\item \term{Foundation Model}: বড় training data থেকে শেখা model prompt process করে।
+\item \term{Content Generation}: text, image, audio, video বা code তৈরি হয়।
+\item \term{Output}: generated answer, design, script, code বা media পাওয়া যায়।
+\item \term{Human Review}: ভুল, bias, copyright বা harmful content আছে কি না যাচাই করা হয়।
+\item \term{Refinement}: user feedback দিয়ে output উন্নত করা হয়।
+\end{compactpoints}
+
+\subtopichead{Generative AI-এর ব্যবহার}
+\begin{compactpoints}
+\item essay, summary, report, caption, script লেখা।
+\item poster, image, logo concept বা illustration তৈরি।
+\item coding, debugging ও documentation।
+\item voiceover, subtitle, translation ও content localization।
+\item education material, quiz, lesson plan তৈরি।
+\end{compactpoints}
+
+\subtopichead{Generative AI-এর ঝুঁকি}
+\begin{compactpoints}
+\item ভুল তথ্য বা hallucination।
+\item deepfake ও misinformation।
+\item copyright/IP issue।
+\item academic dishonesty।
+\item bias বা harmful content।
+\end{compactpoints}
+
+\subsection{বর্তমান AI model ও tool-এর উদাহরণ}
+
+বর্তমান বিশ্বে অনেক ধরনের AI model ও tool ব্যবহার হচ্ছে। এগুলো exam answer-এ উদাহরণ হিসেবে লেখা যায়, তবে মনে রাখতে হবে model name ও feature সময়ের সঙ্গে পরিবর্তিত হতে পারে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_current_models_examples.png}{বর্তমান AI model ও tool-এর উদাহরণ}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে ChatGPT, Claude, Gemini, DeepSeek, GitHub Copilot, Perplexity এবং Llama—এই model/tool family-গুলো label হিসেবে দেখানো হবে। এগুলো text generation, reasoning, coding, research, search, image generation বা open model ecosystem-এর উদাহরণ।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.43\textwidth}|p{0.25\textwidth}|}
+\hline
+\textbf{Model/Tool} & \textbf{কাজের ধরন} & \textbf{ব্যবহার} \\
+\hline
+ChatGPT & conversational AI, data analysis, voice, writing/coding help & learning, writing, analysis \\
+\hline
+Claude & knowledge work, writing, coding ও agentic task support & research, coding, document work \\
+\hline
+Gemini & multimodal assistant, productivity, research ও creative task & search, writing, image-related task \\
+\hline
+DeepSeek & reasoning model ও API-based AI access & reasoning, coding, application integration \\
+\hline
+GitHub Copilot & AI coding assistant ও agentic coding support & code completion, chat, code review \\
+\hline
+Perplexity & AI search/answer engine & research ও source-based answer \\
+\hline
+Llama & open model family & research, local/custom AI application \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\examfocus{Current AI model উদাহরণ লিখলে সতর্ক থাকবে: এগুলো AI-এর উদাহরণ, কিন্তু AI-এর সংজ্ঞা নয়। Exam answer-এ model name-এর চেয়ে concept, branch ও use case বেশি গুরুত্বপূর্ণ।}
+
+\subsection{Resource-based clear explanation: AI কোথায় কীভাবে কাজ করে}
+
+বিভিন্ন technology resource-এ AI-কে সাধারণত data, model, inference, automation এবং responsible use-এর দৃষ্টিতে ব্যাখ্যা করা হয়। IBM-এর AI/ML ব্যাখ্যায় machine learning ও deep learning-কে AI-এর মূল ভিত্তি হিসেবে দেখানো হয়; Google Cloud-এর AI service example-এ NLP, Vision ও prediction service বাস্তব কাজে ব্যবহারের কথা দেখা যায়; NIST ও OECD AI guidance-এ trustworthy, secure, fair এবং human-centered AI ব্যবহারের গুরুত্ব দেওয়া হয়। তাই exam answer-এ শুধু definition নয়, \term{কোন data লাগে}, \term{model কীভাবে কাজ করে}, \term{output কী}, \term{মানুষ কীভাবে benefit পায়} এবং \term{risk control কীভাবে হয়}—এই পাঁচ দিক লিখলে উত্তর clear হয়।
+
+\subtopichead{AI system-এর master working flow}
+\begin{compacttable}
+\begin{tabular}{|p{0.18\textwidth}|p{0.34\textwidth}|p{0.38\textwidth}|}
+\hline
+\textbf{ধাপ} & \textbf{কী ঘটে} & \textbf{বাস্তব উদাহরণ} \\
+\hline
+Problem define & কোন সমস্যা solve করতে হবে তা ঠিক করা & রোগ prediction, fraud detection, chatbot support \\
+\hline
+Data collect & relevant data সংগ্রহ করা & X-ray image, customer message, transaction history \\
+\hline
+Data prepare & clean, label, normalize, feature তৈরি & ভুল entry বাদ দেওয়া, image label করা \\
+\hline
+Model train & algorithm data থেকে pattern শেখে & spam/non-spam e-mail দেখে rule শেখা \\
+\hline
+Evaluate & model কতটা ঠিক কাজ করছে যাচাই & accuracy, precision, recall, error analysis \\
+\hline
+Inference & নতুন input পেলে output দেওয়া & নতুন X-ray দেখে warning, নতুন message-এর reply \\
+\hline
+Human review & গুরুত্বপূর্ণ output মানুষ যাচাই করে & doctor final diagnosis দেন \\
+\hline
+Improve & feedback দিয়ে model update করা & ভুল prediction correct করে পুনরায় training \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\remember{AI project-এর সবচেয়ে গুরুত্বপূর্ণ বিষয় শুধু model নয়; ভালো data, clear problem, evaluation, human review এবং ethical safeguard সমান গুরুত্বপূর্ণ।}
+
+\subsection{বাস্তব জীবনে AI, ML, DL, LLM, NLP, CV ও Expert System}
+
+\subtopichead{১. সাধারণ AI কীভাবে help করে}
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\hline
+\textbf{ক্ষেত্র} & \textbf{কীভাবে কাজ করে} & \textbf{কীভাবে help করে} \\
+\hline
+Education & student performance, quiz result ও learning behavior বিশ্লেষণ করে & personalized lesson, quick feedback, weak topic শনাক্ত \\
+\hline
+Healthcare & symptom, report, image ও history analysis করে & doctor-কে decision support, early warning, triage \\
+\hline
+Business & customer behavior ও sales data বিশ্লেষণ করে & recommendation, sales forecast, customer support \\
+\hline
+Security & face, activity, login ও network pattern দেখে & suspicious activity detect, fraud/cyber alert \\
+\hline
+Transport & route, traffic, sensor ও map data ব্যবহার করে & route optimization, accident risk warning \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subtopichead{২. Machine Learning বাস্তবে কীভাবে use হচ্ছে}
+Machine Learning এমন জায়গায় বেশি ব্যবহৃত হয় যেখানে past data দেখে future prediction বা classification দরকার। Bank transaction দেখে fraud detection, online shop-এ recommendation, কৃষিতে yield prediction, student result দেখে dropout risk prediction—এসব ML-এর practical use।
+
+\begin{compactpoints}
+\item \term{Banking}: transaction amount, location, device, time pattern দেখে fraud risk score দেয়।
+\item \term{E-commerce}: user কোন product দেখেছে বা কিনেছে তা দেখে recommendation দেয়।
+\item \term{Agriculture}: weather, soil, previous yield data দেখে crop yield বা disease risk predict করে।
+\item \term{Education}: quiz score, attendance, practice pattern দেখে weak student শনাক্ত করে।
+\item \term{Healthcare}: patient history ও lab data দেখে disease probability বা readmission risk দেখায়।
+\end{compactpoints}
+
+\subtopichead{৩. Deep Learning বাস্তবে কীভাবে use হচ্ছে}
+Deep Learning বড় data ও neural network ব্যবহার করে complex pattern শেখে। Image, speech, video, language ও medical scan-এর মতো high-dimensional data-তে DL বেশি কার্যকর।
+
+\begin{compactpoints}
+\item \term{Face recognition}: মুখের চোখ, নাক, jawline, distance pattern শেখে এবং registered face-এর সঙ্গে match করে।
+\item \term{Medical imaging}: X-ray/MRI/CT image থেকে suspicious region বা disease pattern highlight করে।
+\item \term{Voice assistant}: speech signal থেকে শব্দ ও command বুঝতে সাহায্য করে।
+\item \term{Self-driving/driver assistance}: road lane, traffic sign, pedestrian ও obstacle শনাক্ত করে।
+\item \term{Generative AI}: text/image/audio/code তৈরি করার foundation model-এ deep learning ব্যবহৃত হয়।
+\end{compactpoints}
+
+\subtopichead{৪. LLM বাস্তবে কীভাবে use হচ্ছে}
+LLM text বা prompt বুঝে response তৈরি করে। এটি next-token prediction করলেও বাস্তব কাজে writing assistant, tutoring, customer support, coding assistant, document analysis ও research support হিসেবে ব্যবহৃত হয়।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.38\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ব্যবহার} & \textbf{কাজের flow} & \textbf{সতর্কতা} \\
+\hline
+Study assistant & question → context বুঝে explanation → example দেয় & ভুল উত্তর verify করতে হবে \\
+\hline
+Writing & prompt → draft → revise → tone adjust & plagiarism ও source issue দেখবে \\
+\hline
+Coding & requirement → code suggestion → debugging help & code test করতে হবে \\
+\hline
+Document analysis & file/text → summary → key point → Q\&A & sensitive data share করা যাবে না \\
+\hline
+Customer support & user query → intent detection → answer/template & complex case human agent-এ যাবে \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subtopichead{৫. NLP বাস্তবে কীভাবে use হচ্ছে}
+NLP মানুষের ভাষা নিয়ে কাজ করে। Chatbot, translation, spelling correction, voice assistant, sentiment analysis, search query understanding, Bangla OCR correction—এসব NLP-এর ব্যবহার।
+
+\begin{compactpoints}
+\item \term{Chatbot}: user-এর প্রশ্ন থেকে intent বের করে relevant answer দেয়।
+\item \term{Translation}: source language-এর meaning ধরে target language-এ output দেয়।
+\item \term{Sentiment analysis}: review/comment positive, negative না neutral তা বোঝে।
+\item \term{Voice assistant}: speech-to-text, intent detection ও command execution করে।
+\item \term{Bangla NLP}: বাংলা spelling correction, search, chatbot, speech-to-text ও text summarization-এ কাজে লাগে।
+\end{compactpoints}
+
+\subtopichead{৬. Computer Vision বাস্তবে কীভাবে use হচ্ছে}
+Computer Vision image/video থেকে visual meaning বের করে। এখানে camera input numerical pixel data হিসেবে model process করে।
+
+\begin{compactpoints}
+\item \term{Mobile face unlock}: face feature match করে device unlock করে।
+\item \term{CCTV analytics}: unusual movement, crowd, intrusion বা suspicious object detect করে।
+\item \term{Medical image}: X-ray/MRI/CT image থেকে abnormal pattern mark করে।
+\item \term{Agriculture}: পাতার ছবি থেকে disease spot, color change বা pest damage চিনতে পারে।
+\item \term{OCR}: image-এর printed/handwritten text digital text-এ রূপান্তর করে।
+\item \term{Traffic system}: vehicle count, lane violation, number plate বা accident risk শনাক্ত করে।
+\end{compactpoints}
+
+\subtopichead{৭. Expert System বাস্তবে কীভাবে use হচ্ছে}
+Expert System rule, knowledge base এবং inference engine ব্যবহার করে নির্দিষ্ট বিষয়ের expert advice দেয়। এটি ML model না হলেও AI-এর গুরুত্বপূর্ণ classical branch।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.22\textwidth}|p{0.38\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{ক্ষেত্র} & \textbf{Knowledge Base-এ থাকে} & \textbf{Advice/Output} \\
+\hline
+Medical & symptom, disease rule, test result relation & সম্ভাব্য disease ও test suggestion \\
+\hline
+Agriculture & crop disease sign, pest, fertilizer rule & রোগ শনাক্ত ও প্রতিকার suggestion \\
+\hline
+Machine fault & error code, sound, temperature, failure rule & fault cause ও repair step \\
+\hline
+Banking/Tax & policy, rule, threshold, compliance condition & risk warning বা tax advice \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subtopichead{৮. Robotics, Speech Recognition, Planning ও Generative AI}
+\begin{compactpoints}
+\item \term{Robotics}: sensor environment দেখে, AI decision নেয়, actuator physical কাজ করে। Factory robot product assemble, warehouse robot item move, service robot delivery করতে পারে।
+\item \term{Speech Recognition}: microphone voice নেয়, audio signal text/command-এ convert করে। Voice typing, call center analytics, accessibility tool-এ ব্যবহৃত হয়।
+\item \term{Planning}: goal অনুযায়ী action sequence তৈরি করে। Google Maps route planning, delivery route optimization, game AI, robot navigation-এ ব্যবহৃত হয়।
+\item \term{Generative AI}: prompt বুঝে নতুন content তৈরি করে। Student lesson summary, business poster, software code, video script, voiceover, design idea তৈরি করতে পারে।
+\end{compactpoints}
+
+\subtopichead{৯. Real-life answer pattern}
+CQ-তে real-life use লিখতে এই pattern follow করা যায়:
+\begin{compactenum}
+\item technology/branch identify কর: ML, DL, NLP, CV, Expert System, LLM বা GenAI।
+\item input data লিখ: text, image, speech, sensor, transaction, knowledge rule।
+\item processing লিখ: training, tokenization, feature detection, inference engine, neural network।
+\item output লিখ: prediction, answer, warning, recommendation, diagnosis support।
+\item benefit লিখ: faster decision, lower cost, personalized support, risk reduction।
+\item risk লিখ: wrong output, bias, privacy, over-dependence, human oversight needed।
+\end{compactenum}
+
+% ==========================================================
+% 6. Types of AI
+% ==========================================================
+
+\subsection{AI-এর ধরন}
+
+AI-কে সাধারণত দুইভাবে শ্রেণিবদ্ধ করা যায়: capability বা সক্ষমতার ভিত্তিতে এবং functionality বা কাজের ধরন অনুযায়ী।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_types_classification.png}{AI-এর ধরন}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে capability-based type হিসেবে Narrow AI, General AI, Super AI এবং functionality-based type হিসেবে Reactive Machine, Limited Memory, Theory of Mind, Self-aware AI দেখানো হবে। Image-এর ভিতরে শুধু label থাকবে; বিস্তারিত নিচে থাকবে।
+
+\subtopichead{সক্ষমতার ভিত্তিতে AI}
+\begin{compacttable}
+\begin{tabular}{|p{0.23\textwidth}|p{0.44\textwidth}|p{0.23\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{ব্যাখ্যা} & \textbf{বর্তমান অবস্থা} \\
+\hline
+Narrow AI / Weak AI & নির্দিষ্ট একটি বা কিছু কাজ ভালোভাবে করতে পারে & বর্তমানে ব্যবহৃত \\
+\hline
+General AI / Strong AI & মানুষের মতো বিভিন্ন ধরনের বুদ্ধিবৃত্তিক কাজ করতে পারবে & এখনো বাস্তব হয়নি \\
+\hline
+Super AI & মানুষের বুদ্ধিমত্তার চেয়েও বেশি সক্ষম হবে & theoretical/future concept \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subtopichead{কাজের ধরন অনুযায়ী AI}
+\begin{compacttable}
+\begin{tabular}{|p{0.25\textwidth}|p{0.60\textwidth}|}
+\hline
+\textbf{ধরন} & \textbf{ব্যাখ্যা} \\
+\hline
+Reactive Machine & শুধু বর্তমান input দেখে কাজ করে; অতীত অভিজ্ঞতা সংরক্ষণ করে না। \\
+\hline
+Limited Memory & অতীত data বা recent experience ব্যবহার করে decision নেয়। বর্তমান AI-এর অনেক system এই ধরনের। \\
+\hline
+Theory of Mind & মানুষের emotion, belief, intention বুঝতে পারবে—research level ধারণা। \\
+\hline
+Self-aware AI & নিজের consciousness বা self-awareness থাকবে—এটি theoretical ধারণা। \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\examfocus{বর্তমান পৃথিবীতে মূলত Narrow AI ব্যবহৃত হয়। General AI ও Super AI এখনো বাস্তব ব্যবহারযোগ্য AI নয়।}
+
+% ==========================================================
+% 7. Branches
+% ==========================================================
+
+\subsection{AI-এর প্রধান Branch}
+
+AI অনেকগুলো branch বা উপশাখা নিয়ে গঠিত। প্রতিটি branch আলাদা ধরনের intelligent task নিয়ে কাজ করে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_branches_mindmap.png}{AI-এর প্রধান branch}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে ML, DL, NLP, Computer Vision, Expert System, Robotics, Speech Recognition, Planning এবং Generative AI—এই branch-গুলো mind map আকারে দেখানো হবে।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.24\textwidth}|p{0.38\textwidth}|p{0.26\textwidth}|}
+\hline
+\textbf{Branch} & \textbf{কাজ} & \textbf{উদাহরণ} \\
+\hline
+Machine Learning & data থেকে pattern শেখা & fraud detection \\
+\hline
+Deep Learning & neural network দিয়ে complex pattern শেখা & image recognition \\
+\hline
+Natural Language Processing & মানুষের ভাষা বোঝা ও তৈরি করা & chatbot, translation \\
+\hline
+Computer Vision & image/video থেকে object, face বা pattern চিনতে পারা & face unlock \\
+\hline
+Expert System & expert knowledge ব্যবহার করে সিদ্ধান্ত দেওয়া & medical diagnosis \\
+\hline
+Robotics & sensor, actuator ও AI দিয়ে physical কাজ করা & industrial robot \\
+\hline
+Speech Recognition & spoken language বুঝে text/command তৈরি করা & voice assistant \\
+\hline
+Planning & goal অনুযায়ী action plan তৈরি করা & route planning \\
+\hline
+Generative AI & নতুন content তৈরি করা & text/image/code generation \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+% ==========================================================
+% 8. Expert System
+% ==========================================================
+
+\subsection{Expert System}
+
+\definition{Expert System}{যে AI-ভিত্তিক computer system কোনো নির্দিষ্ট বিষয়ের বিশেষজ্ঞ জ্ঞান ব্যবহার করে সমস্যা বিশ্লেষণ করে সিদ্ধান্ত বা পরামর্শ দিতে পারে, তাকে Expert System বলা হয়।}
+
+Expert System-এ মানুষের বিশেষজ্ঞ জ্ঞান knowledge base-এ সংরক্ষণ করা হয়। Inference engine সেই knowledge এবং user-এর দেওয়া তথ্য বিশ্লেষণ করে সিদ্ধান্ত বা advice দেয়। চিকিৎসা, কৃষি, fault detection, banking, legal advisory, tax advisory ইত্যাদিতে expert system ব্যবহৃত হতে পারে।
+
+\midfigure[0.76\textwidth]{\chaponeimg/ai_expert_system_model.png}{Expert System-এর গঠন}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে User → User Interface → Inference Engine → Knowledge Base → Advice/Decision—এই flow দেখানো হবে। User problem input দেয়, inference engine knowledge base থেকে rule/knowledge ব্যবহার করে advice দেয়।
+
+\subtopichead{Expert System-এর component}
+\begin{compacttable}
+\begin{tabular}{|p{0.26\textwidth}|p{0.60\textwidth}|}
+\hline
+\textbf{Component} & \textbf{কাজ} \\
+\hline
+Knowledge Base & বিশেষজ্ঞের knowledge, fact, rule ও experience সংরক্ষণ করে। \\
+\hline
+Inference Engine & knowledge base-এর rule ব্যবহার করে reasoning ও decision করে। \\
+\hline
+User Interface & user system-এর সঙ্গে প্রশ্ন-উত্তর বা input-output করতে পারে। \\
+\hline
+Explanation Facility & system কেন এমন সিদ্ধান্ত দিল তা ব্যাখ্যা করতে পারে। \\
+\hline
+Knowledge Acquisition & expert থেকে knowledge সংগ্রহ ও update করার প্রক্রিয়া। \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subtopichead{Expert System-এর উদাহরণ}
+\begin{compactpoints}
+\item medical diagnosis support system
+\item crop disease advisory system
+\item machine fault detection system
+\item banking risk analysis system
+\item legal/tax advisory system
+\end{compactpoints}
+
+\examfocus{Expert System প্রশ্নে Knowledge Base এবং Inference Engine—এই দুইটি component অবশ্যই লিখবে।}
+
+% ==========================================================
+% 9. NLP and Chatbot
+% ==========================================================
+
+\subsection{Natural Language Processing ও Chatbot}
+
+\definition{Natural Language Processing}{AI-এর যে branch computer-কে মানুষের ভাষা বুঝতে, বিশ্লেষণ করতে, অনুবাদ করতে এবং ভাষাভিত্তিক response দিতে সাহায্য করে, তাকে Natural Language Processing বা NLP বলা হয়।}
+
+NLP ব্যবহার করে computer মানুষের লেখা বা বলা ভাষা process করতে পারে। Chatbot, machine translation, spelling correction, grammar checking, text summarization, voice assistant, sentiment analysis—সব NLP-এর উদাহরণ।
+
+\midfigure[0.76\textwidth]{\chaponeimg/ai_nlp_chatbot_flow.png}{NLP chatbot-এর কাজের ধাপ}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে User Question → NLP → Intent Detection → Knowledge/Model → Response—এই ধাপ দেখানো হবে। এতে বোঝা যাবে chatbot user-এর ভাষা বুঝে অর্থ নির্ণয় করে এবং knowledge/model ব্যবহার করে উত্তর দেয়।
+
+\subtopichead{NLP-এর ব্যবহার}
+\begin{compactpoints}
+\item chatbot ও customer support
+\item Bangla-English translation
+\item spelling ও grammar correction
+\item voice assistant
+\item text summarization
+\item sentiment analysis
+\item search engine query understanding
+\item education assistant ও tutoring system
+\end{compactpoints}
+
+% ==========================================================
+% 10. Computer Vision
+% ==========================================================
+
+\subsection{Computer Vision}
+
+\definition{Computer Vision}{AI-এর যে branch image বা video থেকে object, face, text, pattern বা scene বুঝতে সাহায্য করে, তাকে Computer Vision বলা হয়।}
+
+Computer Vision camera, image, video বা medical scan থেকে visual information বিশ্লেষণ করে। এটি face unlock, CCTV analysis, self-driving car, medical image analysis, OCR, agriculture disease detection, traffic monitoring ইত্যাদিতে ব্যবহৃত হয়।
+
+\midfigure[0.76\textwidth]{\chaponeimg/ai_computer_vision_model.png}{Computer Vision-এর ধারণা}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Image/Video → Feature Detection → Object Recognition → Decision—এই flow দেখানো হবে। AI প্রথমে image থেকে feature শনাক্ত করে, তারপর object বা pattern চিনে decision দেয়।
+
+\subtopichead{Computer Vision-এর ব্যবহার}
+\begin{compactpoints}
+\item face unlock ও face recognition
+\item medical X-ray/MRI/CT image analysis
+\item CCTV surveillance ও suspicious activity detection
+\item self-driving car-এর road/lane/object detection
+\item OCR বা printed/handwritten text recognition
+\item crop leaf image থেকে রোগ শনাক্তকরণ
+\end{compactpoints}
+
+% ==========================================================
+% 11. Present World Impact
+% ==========================================================
+
+\subsection{বর্তমান বিশ্বে AI দিয়ে কী কী হচ্ছে}
+
+বর্তমান বিশ্বে AI শুধু research lab-এ সীমাবদ্ধ নয়; শিক্ষা, চিকিৎসা, কৃষি, ব্যবসা, ব্যাংকিং, নিরাপত্তা, পরিবহন, শিল্প, গবেষণা, মিডিয়া, software development এবং দৈনন্দিন জীবনে AI ব্যবহৃত হচ্ছে। AI অনেক ক্ষেত্রে সিদ্ধান্ত সহায়তা, prediction, automation, personalization এবং data analysis-এর মাধ্যমে কাজ দ্রুত করছে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_present_world_impact_map.png}{বর্তমান বিশ্বে AI-এর ব্যবহার}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Education, Healthcare, Agriculture, Business, Security, Transport, Research, Media—এই ক্ষেত্রগুলোকে AI use case হিসেবে দেখানো হবে। প্রতিটি ক্ষেত্রের বিস্তারিত ব্যাখ্যা নিচে থাকবে।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.24\textwidth}|p{0.62\textwidth}|}
+\hline
+\textbf{ক্ষেত্র} & \textbf{AI দিয়ে কী হচ্ছে} \\
+\hline
+শিক্ষা & personalized learning, automated quiz checking, AI tutor, feedback, content generation। \\
+\hline
+চিকিৎসা & disease prediction, medical image analysis, patient triage, drug discovery, decision support। \\
+\hline
+কৃষি & crop disease detection, weather-based advisory, smart irrigation, yield prediction। \\
+\hline
+ব্যবসা & recommendation system, customer support chatbot, sales forecasting, fraud detection। \\
+\hline
+ব্যাংকিং & credit scoring, risk analysis, transaction monitoring, suspicious activity detection। \\
+\hline
+নিরাপত্তা & face recognition, CCTV analytics, anomaly detection, cyber threat detection। \\
+\hline
+পরিবহন & route optimization, traffic prediction, driver assistance, autonomous vehicle research। \\
+\hline
+শিল্প & predictive maintenance, quality control, robot-based automation। \\
+\hline
+গবেষণা & large data analysis, simulation, drug/material discovery, research assistant। \\
+\hline
+মিডিয়া & subtitle, translation, video editing, image generation, content recommendation। \\
+\hline
+Software & code generation, debugging, testing, documentation support। \\
+\hline
+দৈনন্দিন জীবন & voice assistant, smart home, search, recommendation, camera AI, spam filter। \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subsection{বাংলাদেশ প্রেক্ষিতে AI-এর ব্যবহার}
+
+বাংলাদেশেও শিক্ষা, ব্যাংকিং, agriculture advisory, e-governance, digital security, Bangla NLP, freelancing, content creation এবং health service-এ AI ব্যবহারের সুযোগ বাড়ছে। বাংলা ভাষাভিত্তিক AI system, chatbot, OCR, voice recognition, smart surveillance এবং fraud detection বাংলাদেশ প্রেক্ষিতে গুরুত্বপূর্ণ।
+
+\midfigure[0.76\textwidth]{\chaponeimg/ai_bangladesh_use_cases.png}{বাংলাদেশ প্রেক্ষিতে AI-এর ব্যবহার}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Education, Health, Agriculture, Banking, E-governance, Security এবং Bangla NLP—এই ক্ষেত্রগুলো দেখানো হবে। এগুলো বাংলাদেশে AI ব্যবহারের practical direction বোঝাবে।
+
+\subtopichead{বাংলাদেশে সম্ভাব্য use case}
+\begin{compactpoints}
+\item Bangla chatbot ও online citizen support।
+\item mobile banking fraud detection।
+\item crop disease image analysis ও কৃষি পরামর্শ।
+\item online education assistant ও personalized feedback।
+\item hospital triage, report analysis ও appointment support।
+\item traffic monitoring ও smart surveillance।
+\item e-governance service automation।
+\item Bangla OCR, speech-to-text ও text-to-speech।
+\item freelancing, coding, content creation ও digital marketing support।
+\end{compactpoints}
+
+% ==========================================================
+% 12. Benefits
+% ==========================================================
+
+\subsection{AI-এর সুবিধা}
+
+\begin{compactpoints}
+\item \term{দ্রুত সিদ্ধান্ত সহায়তা}: বড় data বিশ্লেষণ করে দ্রুত suggestion দিতে পারে।
+\item \term{Automation}: repetitive কাজ স্বয়ংক্রিয় করে সময় ও শ্রম বাঁচায়।
+\item \term{Error reduction}: সঠিক data ও model থাকলে human error কমাতে সাহায্য করে।
+\item \term{Large data analysis}: মানুষের পক্ষে কঠিন বড় data থেকে pattern বের করতে পারে।
+\item \term{২৪/৭ service}: chatbot বা automated system সবসময় support দিতে পারে।
+\item \term{Personalization}: user অনুযায়ী learning, recommendation বা service customize করতে পারে।
+\item \term{Prediction}: disease, weather, sales, fraud বা risk prediction করতে পারে।
+\item \term{Cost saving}: routine কাজ automate হলে খরচ কমতে পারে।
+\item \term{Risk-free simulation}: training বা testing-এ real-world risk কমায়।
+\item \term{Disability support}: speech-to-text, text-to-speech, vision assistance ইত্যাদিতে সাহায্য করে।
+\end{compactpoints}
+
+% ==========================================================
+% 13. Negative Impact and Ethics
+% ==========================================================
+
+\subsection{AI-এর নেতিবাচক প্রভাব}
+
+AI যত শক্তিশালী হচ্ছে, তার ঝুঁকিও তত গুরুত্বপূর্ণ হয়ে উঠছে। AI ব্যবহার করার আগে শুধু সুবিধা নয়, job, privacy, fairness, security, misinformation, education ethics এবং human oversight—এসব দিকও বিবেচনা করতে হবে।
+
+\midfigure[0.78\textwidth]{\chaponeimg/ai_benefit_risk_balance.png}{AI-এর সুবিধা ও ঝুঁকি}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে এক পাশে Benefits: Speed, Automation, Prediction, Personalization এবং অন্য পাশে Risks: Bias, Privacy, Job Loss, Deepfake, Cyber Risk—এই label থাকবে। এর মাধ্যমে বোঝানো হবে, AI ব্যবহারে সুযোগ ও ঝুঁকি দুই দিকই আছে।
+
+\begin{compacttable}
+\begin{tabular}{|p{0.25\textwidth}|p{0.61\textwidth}|}
+\hline
+\textbf{ঝুঁকি} & \textbf{ব্যাখ্যা} \\
+\hline
+Job displacement & routine বা repetitive কাজ automate হলে কিছু চাকরি কমতে পারে। \\
+\hline
+Skill gap & AI skill না থাকলে শিক্ষার্থী, worker বা institution পিছিয়ে পড়তে পারে। \\
+\hline
+Bias/Discrimination & training data biased হলে AI unfair বা ভুল decision দিতে পারে। \\
+\hline
+Privacy risk & personal data, face, voice, location বা behavior data misuse হতে পারে। \\
+\hline
+Deepfake & fake image, video বা voice তৈরি করে misinformation ছড়ানো যায়। \\
+\hline
+Cybercrime & phishing, malware, automated scam বা social engineering attack বাড়তে পারে। \\
+\hline
+Hallucination & AI আত্মবিশ্বাসের সঙ্গে ভুল তথ্য দিতে পারে। \\
+\hline
+Over-dependence & শিক্ষার্থী বা worker নিজের চিন্তা, creativity ও problem solving কম ব্যবহার করতে পারে। \\
+\hline
+Academic dishonesty & assignment, report বা exam cheating-এর ঝুঁকি বাড়তে পারে। \\
+\hline
+Copyright/IP issue & AI-generated content-এর মালিকানা ও source নিয়ে সমস্যা তৈরি হতে পারে। \\
+\hline
+Accountability problem & AI ভুল সিদ্ধান্ত দিলে দায় কার—developer, user, company নাকি organization—এ প্রশ্ন তৈরি হয়। \\
+\hline
+Digital divide & AI access ও AI skill না থাকলে বৈষম্য বাড়তে পারে। \\
+\hline
+Energy concern & বড় AI model train ও run করতে অনেক computational power ও energy লাগতে পারে। \\
+\hline
+\end{tabular}
+\end{compacttable}
+
+\subsection{AI ব্যবহারে নৈতিকতা ও নিরাপত্তা}
+
+Responsible AI বা দায়িত্বশীল AI ব্যবহার বলতে বোঝায়—AI যেন মানুষের অধিকার, privacy, fairness, security এবং social wellbeing ক্ষতিগ্রস্ত না করে। AI system ব্যবহার করার আগে data source, bias, explainability, human oversight এবং security যাচাই করা উচিত।
+
+\midfigure[0.76\textwidth]{\chaponeimg/ai_ethics_risk_model.png}{AI ব্যবহারে নৈতিকতা ও নিরাপত্তা}
+
+\subtopichead{চিত্র ব্যাখ্যা}
+চিত্রে Fairness, Privacy, Transparency, Accountability, Human Oversight এবং Security—এই ছয়টি নৈতিক principle দেখানো হবে। এগুলো responsible AI ব্যবহারের মূল বিষয়।
+
+\subtopichead{AI ethics-এর মূল দিক}
+\begin{compactpoints}
+\item \term{Fairness}: AI যেন কোনো group বা ব্যক্তি সম্পর্কে পক্ষপাতদুষ্ট সিদ্ধান্ত না দেয়।
+\item \term{Privacy}: personal data নিরাপদ রাখা এবং অনুমতি ছাড়া ব্যবহার না করা।
+\item \term{Transparency}: AI কীভাবে সিদ্ধান্ত দিচ্ছে তা বোঝার সুযোগ থাকা।
+\item \term{Accountability}: ভুল সিদ্ধান্ত বা ক্ষতির দায় নির্ধারণের ব্যবস্থা থাকা।
+\item \term{Human Oversight}: গুরুত্বপূর্ণ সিদ্ধান্তে মানুষের তত্ত্বাবধান রাখা।
+\item \term{Security}: AI system, model ও data cyber attack থেকে সুরক্ষিত রাখা।
+\end{compactpoints}
+
+\examfocus{AI-এর negative impact প্রশ্নে শুধু job loss লিখলে হবে না। Bias, privacy, deepfake, misinformation, cyber risk, over-dependence এবং human oversight—এই দিকগুলো লিখলে উত্তর premium হবে।}
+
+% ==========================================================
+% 14. Image Component Explanation
+% ==========================================================
+
+\subsection{চিত্রভিত্তিক Component Explanation}
+
+\important{এই অংশে প্রতিটি image-এর component ব্যাখ্যা দেওয়া হলো। Image-এর ভিতরে শুধু short label থাকবে; detailed explanation এখানে থাকবে।}
+
+\subtopichead{১. \texttt{ai\_basic\_concept\_model.png}}
+\begin{compactpoints}
+\item \term{Data}: AI শেখার raw material।
+\item \term{Algorithm/Model}: data থেকে pattern শেখার পদ্ধতি।
+\item \term{Learning}: model training-এর মাধ্যমে rule/pattern শেখে।
+\item \term{Decision}: নতুন input বিশ্লেষণ করে output দেয়।
+\item \term{Action}: recommendation, answer, warning বা automated কাজ।
+\end{compactpoints}
+
+\subtopichead{২. \texttt{ai\_history\_timeline.png}}
+\begin{compactpoints}
+\item \term{1950 Turing}: machine intelligence বিচার করার ধারণা।
+\item \term{1956 Dartmouth}: AI term ও research field formal হয়।
+\item \term{1980s Expert System}: rule-based decision support জনপ্রিয় হয়।
+\item \term{1997 Deep Blue}: game AI milestone।
+\item \term{2012 Deep Learning}: modern AI revolution ত্বরান্বিত হয়।
+\item \term{2020s Generative AI}: AI content creation mass adoption শুরু করে।
+\end{compactpoints}
+
+\subtopichead{৩. \texttt{ai\_ml\_dl\_genai\_relation.png}}
+\begin{compactpoints}
+\item \term{AI}: সবচেয়ে বিস্তৃত ক্ষেত্র।
+\item \term{ML}: data থেকে শেখে।
+\item \term{DL}: neural network দিয়ে complex pattern শেখে।
+\item \term{Generative AI}: prompt অনুযায়ী নতুন content তৈরি করে।
+\end{compactpoints}
+
+\subtopichead{৪. \texttt{ai\_expert\_system\_model.png}}
+\begin{compactpoints}
+\item \term{User}: problem বা question দেয়।
+\item \term{User Interface}: user ও system-এর যোগাযোগ মাধ্যম।
+\item \term{Inference Engine}: rule ব্যবহার করে reasoning করে।
+\item \term{Knowledge Base}: expert knowledge সংরক্ষণ করে।
+\item \term{Advice}: system-এর decision বা recommendation।
+\end{compactpoints}
+
+% ==========================================================
+% 15. Board Focus
+% ==========================================================
+
+\subsection{বোর্ড উত্তরে ব্যবহারযোগ্য keyword}
+
+\begin{compactpoints}
+\item Artificial Intelligence, intelligent task, learning, reasoning, decision making
+\item data, algorithm, model, training, prediction, feedback
+\item Machine Learning, Deep Learning, Natural Language Processing
+\item Expert System, Knowledge Base, Inference Engine
+\item Computer Vision, face recognition, medical image analysis
+\item Generative AI, text/image/audio/video/code generation
+\item education, healthcare, agriculture, business, banking, security, transport
+\item bias, privacy, deepfake, misinformation, job displacement, human oversight
+\item fairness, transparency, accountability, responsible AI
+\end{compactpoints}
+
+\subsection{Common Mistake Zone}
+
+\smallhead{১. AI মানেই robot নয়}
+Robot physical machine হতে পারে; AI software/model/algorithm হিসেবেও কাজ করতে পারে। Chatbot, recommendation system ও fraud detection system robot নয়, কিন্তু AI ব্যবহার করে।
+
+\smallhead{২. AI, ML, DL এক নয়}
+AI সবচেয়ে বড় field; ML AI-এর subset; DL ML-এর subset। সব AI system deep learning ব্যবহার করে না।
+
+\smallhead{৩. AI সবসময় সঠিক নয়}
+AI ভুল data, biased data বা incomplete data থেকে ভুল সিদ্ধান্ত দিতে পারে। তাই human oversight জরুরি।
+
+\smallhead{৪. Generative AI মানেই সত্য তথ্য নয়}
+Generative AI text বা image তৈরি করতে পারে, কিন্তু কখনো confidentভাবে ভুল তথ্যও দিতে পারে। তাই source verification দরকার।
+
+\smallhead{৫. Expert System ও Search Engine এক নয়}
+Search engine information খুঁজে দেয়; Expert System knowledge base ও inference engine ব্যবহার করে problem-specific advice দিতে পারে।
+
+% ==========================================================
+% 16. Exam-style Questions and Answers
+% ==========================================================
+
+\subsection{Exam-style প্রশ্ন ও উত্তর}
+
+\boardanswer
+{কৃত্রিম বুদ্ধিমত্তা কী?}
+{কৃত্রিম বুদ্ধিমত্তা বা Artificial Intelligence হলো কম্পিউটার বিজ্ঞানভিত্তিক এমন প্রযুক্তি, যার মাধ্যমে যন্ত্রকে মানুষের মতো শেখা, যুক্তি প্রয়োগ, সমস্যা সমাধান, ভাষা বোঝা, pattern শনাক্তকরণ এবং সিদ্ধান্ত গ্রহণের ক্ষমতা দেওয়া হয়।}
+
+\boardanswer
+{AI-এর প্রধান বৈশিষ্ট্য লেখ।}
+{AI data থেকে শেখে, যুক্তি প্রয়োগ করে, সমস্যা সমাধান করে, ভাষা বুঝতে পারে, image/video থেকে pattern শনাক্ত করতে পারে, prediction দিতে পারে এবং repetitive কাজ automate করতে পারে।}
+
+\boardanswer
+{Machine Learning কী?}
+{Machine Learning হলো AI-এর এমন একটি পদ্ধতি যেখানে computer প্রত্যেক rule আলাদা করে লিখে না দিয়েও training data থেকে pattern শেখে এবং নতুন data দেখে prediction বা decision দিতে পারে।}
+
+\boardanswer
+{NLP কী?}
+{Natural Language Processing বা NLP হলো AI-এর এমন branch, যা computer-কে মানুষের ভাষা বোঝা, বিশ্লেষণ, অনুবাদ, summary তৈরি বা response দেওয়ার ক্ষমতা দেয়। Chatbot, translation ও voice assistant NLP-এর উদাহরণ।}
+
+\boardanswer
+{Expert System-এর গঠন ব্যাখ্যা কর।}
+{Expert System সাধারণত Knowledge Base, Inference Engine, User Interface, Explanation Facility এবং Knowledge Acquisition অংশ নিয়ে গঠিত। Knowledge Base-এ expert knowledge থাকে, Inference Engine সেই knowledge ব্যবহার করে reasoning করে এবং User Interface-এর মাধ্যমে user advice পায়।}
+
+\boardanswer
+{AI, ML ও DL-এর সম্পর্ক লেখ।}
+{AI হলো যন্ত্রকে intelligent কাজ করানোর বিস্তৃত ক্ষেত্র। Machine Learning হলো AI-এর subset, যেখানে data থেকে pattern শেখা হয়। Deep Learning হলো Machine Learning-এর subset, যেখানে neural network ব্যবহার করে complex pattern শেখা হয়।}
+
+\boardanswer
+{চিকিৎসাক্ষেত্রে AI-এর ব্যবহার লেখ।}
+{চিকিৎসাক্ষেত্রে AI disease prediction, medical image analysis, patient triage, drug discovery, appointment support, decision support এবং health record analysis-এ ব্যবহৃত হয়। তবে final medical decision-এ doctor-এর তত্ত্বাবধান প্রয়োজন।}
+
+\boardanswer
+{AI-এর নেতিবাচক প্রভাব লেখ।}
+{AI-এর নেতিবাচক প্রভাবের মধ্যে job displacement, skill gap, bias, privacy risk, deepfake, misinformation, cybercrime, over-dependence, academic dishonesty, copyright issue ও accountability problem উল্লেখযোগ্য। তাই AI ব্যবহারে responsible AI, human oversight ও data security দরকার।}
+
+% ==========================================================
+% 17. Practice
+% ==========================================================
+
+\subsection{অনুশীলন}
+
+\qhead{MCQ}
+
+\begin{compactenum}
+\item AI-এর পূর্ণরূপ কোনটি?\\
+\mcqoption{Artificial Intelligence}{Automatic Internet}{Applied Information}{Advanced Input}
+
+\item কৃত্রিম বুদ্ধিমত্তা বলতে বোঝায়—\\
+\mcqoption{মানুষের মতো intelligent কাজ করতে সক্ষম প্রযুক্তি}{শুধু keyboard ব্যবহার}{শুধু printer control}{শুধু monitor চালু করা}
+
+\item AI-এর জনক হিসেবে পরিচিত কে? [সকল বোর্ড-২০২২]\\
+\mcqoption{John McCarthy}{Alan Turing}{Isaac Asimov}{Marshall McLuhan}
+
+\item Turing Test কার সঙ্গে সম্পর্কিত?\\
+\mcqoption{Alan Turing}{John McCarthy}{Bill Gates}{Charles Babbage}
+
+\item AI term formal হওয়ার সঙ্গে কোন conference সম্পর্কিত?\\
+\mcqoption{Dartmouth Conference}{Paris Climate Conference}{Geneva Convention}{HTML Conference}
+
+\item AI-এর কোন branch মানুষের ভাষা বুঝতে সাহায্য করে?\\
+\mcqoption{NLP}{Robotics}{Hardware}{Cryosurgery}
+
+\item Machine Learning হলো—\\
+\mcqoption{AI-এর subset}{printer-এর অংশ}{keyboard layout}{operating system}
+
+\item Deep Learning সাধারণত কোনটি ব্যবহার করে?\\
+\mcqoption{Neural network}{Only paper}{Manual file}{Typewriter}
+
+\item Generative AI কী তৈরি করতে পারে?\\
+\mcqoption{text, image, audio, video বা code}{শুধু cable}{শুধু battery}{শুধু paper}
+
+\item Expert System-এর প্রধান component কোনটি?\\
+\mcqoption{Knowledge Base ও Inference Engine}{Mouse ও Keyboard}{Monitor ও Printer}{Cable ও Switch}
+
+\item Computer Vision কোন data নিয়ে কাজ করে?\\
+\mcqoption{image/video}{শুধু sound}{শুধু paper}{শুধু cable}
+
+\item Face unlock কোন branch-এর উদাহরণ?\\
+\mcqoption{Computer Vision}{Data Entry}{Word Processing}{Spreadsheet}
+
+\item Chatbot কোন প্রযুক্তি ব্যবহার করে?\\
+\mcqoption{NLP}{Coaxial cable}{Cryosurgery}{Satellite dish}
+
+\item Narrow AI বলতে বোঝায়—\\
+\mcqoption{নির্দিষ্ট কাজের জন্য তৈরি AI}{মানুষের মতো সব কাজ করা AI}{conscious AI}{AI নয়}
+
+\item বর্তমানে সবচেয়ে বেশি ব্যবহৃত AI কোনটি?\\
+\mcqoption{Narrow AI}{Super AI}{Self-aware AI}{Theory of Mind AI}
+
+\item AI risk কোনটি?\\
+\mcqoption{Bias ও privacy risk}{monitor brightness}{printer paper}{keyboard stand}
+
+\item Deepfake কোন ধরনের ঝুঁকির উদাহরণ?\\
+\mcqoption{misinformation}{data backup}{database indexing}{cloud storage}
+
+\item AI ethics-এ Human Oversight কেন দরকার?\\
+\mcqoption{গুরুত্বপূর্ণ সিদ্ধান্তে মানুষের তত্ত্বাবধান রাখতে}{printer চালাতে}{cable কাটতে}{keyboard বদলাতে}
+
+\item কৃষিতে AI-এর ব্যবহার কোনটি?\\
+\mcqoption{crop disease detection}{paper folding}{manual register}{chalk writing}
+
+\item ব্যবসায় AI-এর ব্যবহার কোনটি?\\
+\mcqoption{recommendation system}{paper cutting}{manual stamp}{fan control}
+\end{compactenum}
+
+\smallhead{উত্তরমালা}
+১. ক \quad ২. ক \quad ৩. ক \quad ৪. ক \quad ৫. ক \quad
+৬. ক \quad ৭. ক \quad ৮. ক \quad ৯. ক \quad ১০. ক \quad
+১১. ক \quad ১২. ক \quad ১৩. ক \quad ১৪. ক \quad ১৫. ক \quad
+১৬. ক \quad ১৭. ক \quad ১৮. ক \quad ১৯. ক \quad ২০. ক
+
+\qhead{সংক্ষিপ্ত প্রশ্ন}
+\begin{compactenum}
+\item কৃত্রিম বুদ্ধিমত্তা কী?
+\item AI-এর জনক কে?
+\item Turing Test কী?
+\item AI-এর তিনটি বৈশিষ্ট্য লেখ।
+\item AI কীভাবে কাজ করে?
+\item Machine Learning কী?
+\item AI, ML ও DL-এর সম্পর্ক লেখ।
+\item Generative AI কী?
+\item NLP কী?
+\item Computer Vision কী?
+\item Expert System কী?
+\item Expert System-এর component লেখ।
+\item শিক্ষা ও চিকিৎসায় AI-এর ব্যবহার লেখ।
+\item কৃষি ও ব্যবসায় AI-এর ব্যবহার লেখ।
+\item AI-এর তিনটি সুবিধা লেখ।
+\item AI-এর তিনটি নেতিবাচক প্রভাব লেখ।
+\item Responsible AI বলতে কী বোঝায়?
+\end{compactenum}
+
+\qhead{CQ Practice ১: AI chatbot ও NLP}
+একজন শিক্ষার্থী AI chatbot ব্যবহার করে grammar correction, translation, summary এবং প্রশ্নের উত্তর নিচ্ছে। Chatbot শিক্ষার্থীর লেখা text বুঝে প্রয়োজন অনুযায়ী response দিচ্ছে।
+
+\begin{compactenum}
+\item ক. AI কী?
+\item খ. NLP কেন AI-এর গুরুত্বপূর্ণ branch?
+\item গ. উদ্দীপকে AI-এর কোন কোন বৈশিষ্ট্য প্রকাশ পেয়েছে? ব্যাখ্যা কর।
+\item ঘ. শিক্ষাক্ষেত্রে AI chatbot ব্যবহারের সুবিধা ও ঝুঁকি বিশ্লেষণ কর।
+\end{compactenum}
+
+\smallhead{সমাধানের নির্দেশনা}
+গ নম্বরে NLP, language understanding, response generation, learning support লিখবে। ঘ নম্বরে personalized learning, quick feedback, over-dependence, wrong answer, academic dishonesty লিখবে।
+
+\qhead{CQ Practice ২: Expert System ও কৃষি}
+একজন কৃষক mobile app-এ ধানের পাতার ছবি upload করল। system পাতার দাগ বিশ্লেষণ করে রোগ শনাক্ত করল এবং সম্ভাব্য প্রতিকার দেখাল।
+
+\begin{compactenum}
+\item ক. Expert System কী?
+\item খ. Knowledge Base-এর কাজ কী?
+\item গ. উদ্দীপকে AI কীভাবে decision support দিচ্ছে? ব্যাখ্যা কর।
+\item ঘ. কৃষিতে AI ব্যবহারের সুবিধা ও সীমাবদ্ধতা বিশ্লেষণ কর।
+\end{compactenum}
+
+\smallhead{সমাধানের নির্দেশনা}
+গ নম্বরে image analysis, crop disease detection, knowledge base/advice লিখবে। ঘ নম্বরে দ্রুত পরামর্শ, উৎপাদন বৃদ্ধি, ভুল diagnosis, data quality, farmer skill gap লিখবে।
+
+\qhead{CQ Practice ৩: Healthcare AI}
+একটি hospital AI system X-ray ও MRI image বিশ্লেষণ করে doctor-কে সম্ভাব্য disease সম্পর্কে warning দেয়। তবে final diagnosis doctor করেন।
+
+\begin{compactenum}
+\item ক. Computer Vision কী?
+\item খ. AI doctor-এর সম্পূর্ণ বিকল্প নয় কেন?
+\item গ. উদ্দীপকে AI-এর কোন branch ব্যবহার হয়েছে? ব্যাখ্যা কর।
+\item ঘ. চিকিৎসায় AI ব্যবহারের সুবিধা, privacy ও accountability issue বিশ্লেষণ কর।
+\end{compactenum}
+
+\smallhead{সমাধানের নির্দেশনা}
+Computer Vision, medical image analysis, decision support, patient data privacy, human oversight, accountability লিখবে।
+
+\qhead{CQ Practice ৪: AI bias ও ethics}
+একটি company recruitment AI ব্যবহার করে candidate shortlist করে। পরে দেখা গেল system নির্দিষ্ট group-এর candidate-দের কম select করছে।
+
+\begin{compactenum}
+\item ক. Bias কী?
+\item খ. Fairness কেন AI ethics-এর অংশ?
+\item গ. উদ্দীপকে AI-এর কোন negative impact দেখা যাচ্ছে?
+\item ঘ. AI ব্যবহারে transparency, accountability ও human oversight-এর প্রয়োজনীয়তা বিশ্লেষণ কর।
+\end{compactenum}
+
+\smallhead{সমাধানের নির্দেশনা}
+biased data, unfair decision, discrimination, explainability, audit, human review লিখবে।
+
+\qhead{CQ Practice ৫: Generative AI}
+একজন designer AI tool ব্যবহার করে poster, caption, voiceover ও video script তৈরি করছে। সে এগুলো social media marketing-এ ব্যবহার করছে।
+
+\begin{compactenum}
+\item ক. Generative AI কী?
+\item খ. AI-generated content-এ copyright issue কেন হতে পারে?
+\item গ. উদ্দীপকে Generative AI-এর ব্যবহার ব্যাখ্যা কর।
+\item ঘ. content creation-এ AI-এর সুবিধা ও অপব্যবহার বিশ্লেষণ কর।
+\end{compactenum}
+
+\smallhead{সমাধানের নির্দেশনা}
+text/image/audio/script generation, time saving, creativity support, deepfake, misinformation, copyright issue লিখবে।
+
+% ==========================================================
+% 18. One-minute Revision
+% ==========================================================
+
+\subsection{১ মিনিটে রিভিশন}
+
+\begin{compactpoints}
+\item AI হলো computer/machine-কে মানুষের মতো intelligent কাজ করানোর প্রযুক্তি।
+\item AI-এর জনক হিসেবে John McCarthy পরিচিত; Turing Test Alan Turing-এর সঙ্গে সম্পর্কিত।
+\item AI data, algorithm/model, learning, prediction/decision এবং feedback-এর মাধ্যমে কাজ করে।
+\item AI-এর বৈশিষ্ট্য: learning, reasoning, problem solving, NLP, vision, prediction, automation।
+\item ML হলো AI-এর subset; DL হলো ML-এর subset; Generative AI নতুন content তৈরি করে।
+\item AI-এর branch: ML, DL, NLP, Computer Vision, Expert System, Robotics, Speech Recognition, Planning, GenAI।
+\item Expert System-এর মূল component: Knowledge Base ও Inference Engine।
+\item NLP language বোঝে; Computer Vision image/video বোঝে।
+\item বর্তমান বিশ্বে AI education, healthcare, agriculture, business, banking, security, transport, research ও media-তে ব্যবহৃত।
+\item AI-এর সুবিধা: দ্রুত decision support, automation, prediction, personalization, 24/7 service।
+\item AI-এর ঝুঁকি: job displacement, bias, privacy risk, deepfake, cybercrime, hallucination, over-dependence।
+\item Responsible AI-এর মূলনীতি: fairness, privacy, transparency, accountability, human oversight, security।
+\end{compactpoints}
+
+\end{topicbody}
+```
