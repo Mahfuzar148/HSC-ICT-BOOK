@@ -359,7 +359,7 @@ Table-এর ভিতরে সরাসরি text লেখা উচিত �
 
 \subsection{Table Attribute}
 
-PDF-এ table তৈরি করার সময় কয়েকটি attribute বারবার ব্যবহার করা হয়েছে। HSC practical exam-এ এগুলো গুরুত্বপূর্ণ।
+PDF-এ table তৈরি করার সময় কয়েকটি attribute বারবার ব্যবহার করা হয়েছে। HSC practical exam-এ এগুলো গুরুত্বপূর্ণ। Table-level attribute যেমন \texttt{border}, \texttt{width}, \texttt{align}, \texttt{cellspacing}, \texttt{cellpadding} পুরো table-এর appearance নিয়ন্ত্রণ করে। আবার cell-level attribute যেমন \texttt{align}, \texttt{valign}, \texttt{bgcolor}, \texttt{rowspan}, \texttt{colspan}, \texttt{width}, \texttt{height} নির্দিষ্ট \texttt{<td>} বা \texttt{<th>} cell-এর আচরণ নিয়ন্ত্রণ করে।
 
 \begin{center}
 \begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.25\textwidth}|}
@@ -368,11 +368,11 @@ PDF-এ table তৈরি করার সময় কয়েকটি attribute �
 \hline
 \texttt{border} & table ও cell-এর চারপাশে রেখা দেখায় & \texttt{border="1"} \\
 \hline
-\texttt{width} & table-এর প্রস্থ নির্ধারণ করে & \texttt{width="400"} \\
+\texttt{width} & table বা cell-এর প্রস্থ pixel/percentage-এ নির্ধারণ করে & \texttt{width="400"} \\
 \hline
-\texttt{align} & table বা cell-এর alignment নির্ধারণ করে & \texttt{align="center"} \\
+\texttt{align} & table বা cell-এর left/right/center position নির্ধারণ করে & \texttt{align="center"} \\
 \hline
-\texttt{cellspacing} & cell থেকে cell-এর মাঝের gap নির্ধারণ করে & \texttt{cellspacing="0"} \\
+\texttt{cellspacing} & cell থেকে cell-এর মাঝের বাইরের gap নির্ধারণ করে & \texttt{cellspacing="0"} \\
 \hline
 \texttt{cellpadding} & cell content ও border-এর মাঝের ভিতরের gap নির্ধারণ করে & \texttt{cellpadding="5"} \\
 \hline
@@ -380,6 +380,10 @@ PDF-এ table তৈরি করার সময় কয়েকটি attribute �
 \hline
 \end{tabular}
 \end{center}
+
+\begin{keypointbox}{PDF থেকে গুরুত্বপূর্ণ point}
+\texttt{border} attribute না দিলে table-এর রেখা সবসময় দেখা যায় না। বইয়ের example-গুলোতে single-line border দেখাতে বেশিরভাগ সময় \texttt{border="1"}-এর সাথে \texttt{cellspacing="0"} ব্যবহার করা হয়েছে। \texttt{width="75\%"} দিলে table parent area-এর 75\% জায়গা নেয়, আর \texttt{width="400"} বা \texttt{width="400px"} দিলে fixed pixel width বোঝায়।
+\end{keypointbox}
 
 \conceptimagerow{chapters/Chapter04/topics/images/3d_table_attributes.png}{
 \begin{keypointbox}{চিত্র ব্যাখ্যা}
@@ -418,12 +422,14 @@ HTML table-এর চারপাশে ও cell-এর চারপাশে bo
 \end{examplebox}
 
 \begin{boardbox}{পরীক্ষায় মনে রাখবে}
-HSC practical code-এ table-এর রেখা দেখাতে সাধারণত \texttt{border="1"} ব্যবহার করা হয়। Border না দিলে browser table-এর cell boundary সবসময় স্পষ্টভাবে দেখায় না।
+HSC practical code-এ table-এর রেখা দেখাতে সাধারণত \texttt{border="1"} ব্যবহার করা হয়। Border না দিলে browser table-এর cell boundary সবসময় স্পষ্টভাবে দেখায় না। Border-এর মান 1, 2, 3 ইত্যাদি হলে রেখার thickness বাড়ে; তবে neat table-এর জন্য \texttt{border="1"} এবং \texttt{cellspacing="0"} সবচেয়ে বেশি ব্যবহৃত।
 \end{boardbox}
 
 \subsection{\texttt{width} Attribute}
 
 Table বা cell-এর প্রস্থ নির্ধারণ করতে \texttt{width} attribute ব্যবহার করা যায়। Width pixel বা percentage আকারে দেওয়া যায়।
+
+Pixel width fixed size দেয়, তাই \texttt{width="400"} দিলে table প্রায় 400 pixel জায়গা নেবে। Percentage width flexible; \texttt{width="75\%"} দিলে browser window বা parent container-এর 75\% জায়গা ব্যবহার করবে। Cell-এর \texttt{width} দিলে নির্দিষ্ট column তুলনামূলক বড় বা ছোট করা যায়।
 
 \begin{examplebox}{কোড}
 \begin{verbatim}
@@ -476,6 +482,8 @@ Table বা cell-এর প্রস্থ নির্ধারণ করত�
 
 Table, row বা cell-এর content left, right বা center-এ রাখতে \texttt{align} attribute ব্যবহার করা হয়।
 
+\texttt{<table align="center">} লিখলে পুরো table page-এর মাঝখানে চলে আসে। কিন্তু \texttt{<td align="center">} লিখলে শুধু ওই cell-এর content মাঝখানে থাকে। তাই table-এর position এবং cell-এর ভিতরের text alignment আলাদা বিষয়।
+
 \begin{examplebox}{কোড}
 \begin{verbatim}
 <!DOCTYPE html>
@@ -511,6 +519,8 @@ Table, row বা cell-এর content left, right বা center-এ রাখত
 \subsection{\texttt{valign} Attribute}
 
 Cell-এর ভিতরের content vertical direction-এ কোথায় থাকবে তা নির্ধারণ করতে \texttt{valign} attribute ব্যবহার করা যায়।
+
+কোনো cell-এর height বেশি হলে content উপরে, মাঝখানে বা নিচে রাখা দরকার হতে পারে। শুধু \texttt{<br>} দিয়ে content নিচে নামানো যায়, কিন্তু board-style পরিষ্কার code-এর জন্য \texttt{valign="top"}, \texttt{valign="middle"} বা \texttt{valign="bottom"} ব্যবহার করা ভালো।
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
@@ -563,7 +573,7 @@ Table-এর এক cell-এর border থেকে পাশের cell-এর 
 \end{examplebox}
 
 \begin{keypointbox}{সহজ কথা}
-\texttt{cellspacing="0"} দিলে cell-এর মাঝখানের gap কমে যায় বা borderগুলো একসাথে লেগে থাকে।
+Browser অনেক সময় default হিসেবে cell-এর মাঝে সামান্য gap রাখে। \texttt{cellspacing="0"} দিলে cell-এর মাঝখানের gap কমে যায় বা borderগুলো একসাথে লেগে থাকে। আবার \texttt{cellspacing="10"} দিলে দুই cell-এর border-এর মাঝে 10 pixel দূরত্ব তৈরি হয়।
 \end{keypointbox}
 
 \subsection{\texttt{cellpadding} Attribute}
@@ -596,7 +606,7 @@ Table cell-এর content এবং cell border-এর মাঝখানের 
 \end{examplebox}
 
 \begin{boardbox}{MCQ point}
-\texttt{cellpadding="5"} অর্থ cell content এবং cell border-এর মাঝখানে 5 pixel ভিতরের ফাঁকা জায়গা রাখা।
+\texttt{cellpadding="5"} অর্থ cell content এবং cell border-এর মাঝখানে 5 pixel ভিতরের ফাঁকা জায়গা রাখা। অনেক browser-এ default cellpadding খুব কম থাকে; তাই text border-এর সাথে লেগে গেলে \texttt{cellpadding} বাড়ালে table পড়তে সহজ হয়।
 \end{boardbox}
 
 \subsection{\texttt{cellspacing} ও \texttt{cellpadding}-এর পার্থক্য}
@@ -670,6 +680,8 @@ Table বা cell-এর background color দিতে \texttt{bgcolor} attribut
 
 Cell-এর উপর আলাদা control দেওয়ার জন্য \texttt{<td>} বা \texttt{<th>} tag-এর ভিতরে attribute ব্যবহার করা যায়।
 
+PDF-এর table অংশে \texttt{<th>} ও \texttt{<td>} cell-এর জন্য আলাদা attribute দেখানো হয়েছে। একই table-এর সব cell একরকম নাও হতে পারে; কোনো cell center aligned, কোনো cell green background, কোনো cell বেশি wide, আবার কোনো cell একাধিক row বা column জুড়ে থাকতে পারে।
+
 \begin{center}
 \begin{tabular}{|p{0.18\textwidth}|p{0.46\textwidth}|p{0.25\textwidth}|}
 \hline
@@ -691,6 +703,10 @@ Cell-এর উপর আলাদা control দেওয়ার জন্য \t
 \hline
 \end{tabular}
 \end{center}
+
+\begin{keypointbox}{Color value}
+\texttt{bgcolor} attribute-এ color name, hexadecimal value বা RGB ধরনের value ব্যবহার করা যায়। HSC practical-এ সাধারণত \texttt{yellow}, \texttt{green}, \texttt{silver} ধরনের color name বেশি দেখা যায়।
+\end{keypointbox}
 
 \subsection{\texttt{rowspan} ও \texttt{colspan}}
 
@@ -789,7 +805,7 @@ Merged cell হলো এমন cell, যা একাধিক row বা colum
 
 Table-এর কোনো cell খালি রাখতে চাইলে অনেক সময় browser cell-এর border ঠিকভাবে দেখাতে সমস্যা করতে পারে। তাই খালি cell-এ non-breaking space বা \texttt{\&nbsp;} ব্যবহার করা হয়।
 
-খালি cell রাখা দরকার হলে শুধু blank space না দিয়ে \texttt{\&nbsp;} লেখা ভালো, কারণ এটি একটি invisible character হিসেবে কাজ করে। ফলে cell-এর height, width এবং border ঠিক থাকে। Board practical-এ empty cell দেখলে \texttt{<td>\&nbsp;</td>} লিখলে layout বেশি নির্ভরযোগ্য হয়।
+খালি cell রাখা দরকার হলে শুধু blank space না দিয়ে \texttt{\&nbsp;} লেখা ভালো, কারণ এটি একটি invisible character হিসেবে কাজ করে। ফলে cell-এর height, width এবং border ঠিক থাকে। Board practical-এ empty cell দেখলে \texttt{<td>\&nbsp;</td>} লিখলে layout বেশি নির্ভরযোগ্য হয়। পুরনো বইয়ের example-এ খালি cell দেখাতে অনেক সময় \texttt{<br>} ব্যবহারও দেখা যায়, তবে পরীক্ষায় পরিষ্কারভাবে empty cell বোঝাতে \texttt{\&nbsp;} বেশি নির্ভরযোগ্য।
 
 \begin{examplebox}{কোড}
 \begin{verbatim}
@@ -825,7 +841,7 @@ Table-এর কোনো cell খালি রাখতে চাইলে অ�
 HTML table-এর শিরোনাম বা title প্রদর্শনের জন্য \texttt{<caption>} tag ব্যবহার করা হয়।
 \end{definitionbox}
 
-\texttt{<caption>} tag সবসময় \texttt{<table>} tag-এর ভিতরে এবং প্রথম row-এর আগে লেখা উচিত। এতে browser table-এর উপরে title দেখায়। Result sheet, routine, admission list বা product table-এর মতো table-এ caption দিলে table-এর উদ্দেশ্য দ্রুত বোঝা যায়।
+\texttt{<caption>} tag সবসময় \texttt{<table>} tag-এর ভিতরে এবং প্রথম row-এর আগে লেখা উচিত। এতে browser সাধারণত table-এর উপরে title দেখায়। Result sheet, routine, admission list বা product table-এর মতো table-এ caption দিলে table-এর উদ্দেশ্য দ্রুত বোঝা যায়। পুরনো HSC-style code-এ caption-এর position বোঝাতে \texttt{align="bottom"} ধরনের legacy attribute দেখা যেতে পারে, তবে modern HTML-এ caption position CSS দিয়ে নিয়ন্ত্রণ করা ভালো।
 
 \begin{examplebox}{কোড}
 \begin{verbatim}
@@ -864,9 +880,9 @@ HTML table-এর শিরোনাম বা title প্রদর্শনে
 Table-এর এক বা একাধিক column-এর জন্য একসাথে style বা property নির্ধারণ করতে \texttt{<colgroup>} tag ব্যবহার করা হয়।
 \end{definitionbox}
 
-\texttt{colgroup} ব্যবহার করলে কোনো নির্দিষ্ট column বা column group-কে আলাদা color/style দেওয়া যায়।
+\texttt{colgroup} ব্যবহার করলে কোনো নির্দিষ্ট column বা column group-কে আলাদা color/style দেওয়া যায়। এটি table-এর row শুরু হওয়ার আগে লেখা হয়, কারণ column style আগে ঠিক করে তারপর row data বসানো হয়।
 
-একই ধরনের একাধিক column একসাথে style করতে \texttt{<col span="2">} ব্যবহার করা যায়। যেমন প্রথম দুই column এক color এবং পরের দুই column আরেক color করতে চাইলে \texttt{span} attribute helpful। তবে \texttt{colgroup} সাধারণত table-এর row লেখার আগে বসানো হয়।
+একই ধরনের একাধিক column একসাথে style করতে \texttt{<col span="2">} ব্যবহার করা যায়। যেমন প্রথম দুই column এক color এবং পরের দুই column আরেক color করতে চাইলে \texttt{span} attribute helpful। প্রতিটি column আলাদা style চাইলে আলাদা আলাদা \texttt{<col>} tag লেখা হয়।
 
 \begin{examplebox}{কোড}
 \begin{verbatim}
@@ -902,7 +918,7 @@ Table-এর এক বা একাধিক column-এর জন্য এক�
 
 \subsection{Table-এর ভিতরে Formatting, Link, Image ও List}
 
-Table cell-এর ভিতরে শুধু text নয়, HTML-এর অন্য element-ও রাখা যায়। তাই table ব্যবহার করে result sheet-এর সাথে photo, product list-এর সাথে buy link, course plan-এর সাথে ordered list বা nested information দেখানো সম্ভব।
+Table cell-এর ভিতরে শুধু text নয়, HTML-এর অন্য element-ও রাখা যায়। PDF-এর table discussion-এ cell-এর ভিতরে text, image, photograph, list, form, horizontal line, hyperlink এবং আরেকটি table রাখার ধারণা আছে। তাই table ব্যবহার করে result sheet-এর সাথে photo, product list-এর সাথে buy link, course plan-এর সাথে ordered list বা nested information দেখানো সম্ভব।
 
 \begin{keypointbox}{Cell-এর ভিতরে content রাখার নিয়ম}
 Cell-এর ভিতরে content রাখতে হলে content অবশ্যই \texttt{<td>} বা \texttt{<th>} tag-এর opening ও closing tag-এর মাঝখানে লিখতে হবে। যেমন image বসাতে \texttt{<td><img src="photo.jpg"></td>} এবং link বসাতে \texttt{<td><a href="page.html">Open</a></td>} লিখতে হবে।
@@ -920,6 +936,10 @@ Image & \texttt{<td><img src="a.jpg"></td>} & \texttt{<img>} \\
 Link & \texttt{<td><a href="a.html">Open</a></td>} & \texttt{<a>} \\
 \hline
 List & \texttt{<td><ol>...</ol></td>} & \texttt{<ol>}, \texttt{<li>} \\
+\hline
+Horizontal line & \texttt{<td><hr></td>} & \texttt{<hr>} \\
+\hline
+Form control & \texttt{<td><input type="text"></td>} & \texttt{<input>} \\
 \hline
 Nested table & \texttt{<td><table>...</table></td>} & \texttt{<table>} \\
 \hline
