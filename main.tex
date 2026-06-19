@@ -1,13 +1,15 @@
 % !TeX program = xelatex
 % main.tex - root file that includes chapters
-\documentclass[10pt, twoside, openright]{book}
+\documentclass[10pt, twoside, openany]{book}
 \input{preamble.tex}
+\let\cleardoublepage\clearpage
 \begin{document}
 \frontmatter
 \title{তথ্য ও যোগাযোগ প্রযুক্তি}
 \author{একাদশ-দ্বাদশ শ্রেণি}
 \maketitle
 \input{frontmatter_page_indexes.tex}
+\renewcommand{\contentsname}{সূচিপত্র}
 \tableofcontents
 \mainmatter
 

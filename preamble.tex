@@ -43,9 +43,10 @@
   % If this font is not found, change the name/path according to your PC.
   \IfFontExistsTF{Kalpurush}{%
     \setmainfont[
+      Renderer=HarfBuzz,
       Script=Bengali,
+      Language=Bengali,
       FakeBold=1.25,
-      FakeSlant=0.12,
       Scale=MatchLowercase
     ]{Kalpurush}
   }{%
@@ -53,23 +54,24 @@
       \setmainfont[
         Path=C:/Windows/Fonts/,
         Extension=.ttf,
+        Renderer=HarfBuzz,
         Script=Bengali,
+        Language=Bengali,
         UprightFont=kalpurush,
         BoldFont=kalpurush,
         ItalicFont=kalpurush,
         BoldItalicFont=kalpurush,
         FakeBold=1.25,
-        FakeSlant=0.12,
         Scale=MatchLowercase
       ]{kalpurush}
     }{%
       \IfFontExistsTF{Noto Serif Bengali}{%
-        \setmainfont[Script=Bengali,Scale=MatchLowercase]{Noto Serif Bengali}
+        \setmainfont[Renderer=HarfBuzz,Script=Bengali,Language=Bengali,Scale=MatchLowercase]{Noto Serif Bengali}
       }{%
         \IfFontExistsTF{SolaimanLipi}{%
-          \setmainfont[Script=Bengali,Scale=MatchLowercase]{SolaimanLipi}
+          \setmainfont[Renderer=HarfBuzz,Script=Bengali,Language=Bengali,Scale=MatchLowercase]{SolaimanLipi}
         }{%
-          \setmainfont[Script=Bengali,Scale=MatchLowercase]{Vrinda}
+          \setmainfont[Renderer=HarfBuzz,Script=Bengali,Language=Bengali,Scale=MatchLowercase]{Vrinda}
         }%
       }%
     }%
@@ -206,6 +208,7 @@
   justification=centering,
   skip=2pt
 }
+\renewcommand{\figurename}{চিত্র}
 
 % Keep figure/table spacing tight so pages carry more content without looking crowded.
 \setlength{\floatsep}{4pt plus 1pt minus 1pt}
@@ -216,7 +219,10 @@
 \renewcommand{\topfraction}{0.92}
 \renewcommand{\bottomfraction}{0.85}
 \renewcommand{\textfraction}{0.08}
-\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\floatpagefraction}{0.65}
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{8}
 
 % ==========================================================
 % Header and Footer
@@ -248,7 +254,7 @@
 \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
   breaklines=true,
   breakanywhere=true,
-  fontsize=\small,
+  fontsize=\tiny,
   formatcom=\normalfont
 }
 
@@ -525,6 +531,48 @@
   \midfigure[#1]{#3}{#4}
 }
 
+% Compact concept layout: explanation on the left, related image on the right.
+% Useful for small theory images so a large blank area is not created before an image.
+\newcommand{\conceptimagerow}[3]{%
+  \par\noindent
+  \begin{minipage}[t]{0.55\textwidth}
+  \vspace{0pt}
+  #2
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.40\textwidth}
+  \vspace{-6pt}
+  \centering
+  \IfFileExists{#1}{%
+    \includegraphics[width=0.98\linewidth,height=0.24\textheight,keepaspectratio]{#1}%
+  }{%
+    \fbox{\parbox{0.92\linewidth}{\centering\scriptsize চিত্র পাওয়া যায়নি}}%
+  }%
+  \par\vspace{1pt}
+  {\scriptsize\captionof{figure}{#3}}%
+  \end{minipage}
+  \par\vspace{2pt}
+}
+
+% Wrapped concept image: keeps image on the right while nearby text continues
+% around it, reducing blank areas on sparse theory pages.
+\newcommand{\conceptwrapimage}[3]{%
+  \par\smallskip
+  \begin{wrapfigure}{r}{0.40\textwidth}
+    \vspace{-8pt}
+    \centering
+    \IfFileExists{#1}{%
+      \includegraphics[width=0.94\linewidth,height=0.14\textheight,keepaspectratio]{#1}%
+    }{%
+      \fbox{\parbox{0.90\linewidth}{\centering\scriptsize চিত্র পাওয়া যায়নি}}%
+    }%
+    \par\vspace{1pt}
+    {\scriptsize\caption{#3}}%
+    \vspace{-6pt}
+  \end{wrapfigure}
+  \par\noindent{\color{blue!62!black}\bfseries চিত্র ব্যাখ্যা:} #2\par\vspace{2pt}
+}
+
 % ==========================================================
 % Compact Table Helpers
 % ==========================================================
@@ -650,6 +698,20 @@
 \newtcolorbox{recapbox}{
   coltitle=green!35!black,
   title={১ মিনিটে রিভিশন},
+  fonttitle=\bfseries\small,
+  fontupper=\small
+}
+
+\newtcolorbox{explanationbox}[1]{
+  coltitle=teal!55!black,
+  title={#1},
+  fonttitle=\bfseries\small,
+  fontupper=\small
+}
+
+\newtcolorbox{examanswerbox}[1]{
+  coltitle=green!35!black,
+  title={#1},
   fonttitle=\bfseries\small,
   fontupper=\small
 }

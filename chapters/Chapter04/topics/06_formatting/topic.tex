@@ -1,4 +1,4 @@
-% ৪.x HTML-এ Text Formatting
+﻿% ৪.x HTML-এ Text Formatting
 \section{HTML-এ Text Formatting}
 
 \begin{learningbox}
@@ -10,6 +10,7 @@
 \item \texttt{<font>} tag-এর \texttt{size}, \texttt{color}, \texttt{face} attribute ব্যাখ্যা করতে।
 \item color, background color ও text alignment-এর basic HTML/CSS style ব্যবহার বুঝতে।
 \item HSC practical code-এ text formatting tag প্রয়োগ করতে।
+\item \texttt{<marquee>} tag-এর basic direction attribute চিনতে।
 \end{itemize}
 \end{learningbox}
 
@@ -496,6 +497,53 @@ Modern CSS version:
 <p style="text-align:center;">ICT College, Dhaka</p>
 \end{verbatim}
 \end{examplebox}
+
+\subsection{Marquee Tag: \texttt{<marquee>}}
+
+\begin{definitionbox}{Marquee tag}
+\texttt{<marquee>} একটি পুরনো HTML tag, যা text বা image-কে নির্দিষ্ট দিকে চলমানভাবে দেখাতে ব্যবহৃত হত।
+\end{definitionbox}
+
+\begin{boardbox}{Concept}
+HSC basic question-এ \texttt{<marquee>} tag-এর direction attribute দেখা যেতে পারে। \texttt{direction="left"}, \texttt{direction="right"}, \texttt{direction="up"} এবং \texttt{direction="down"} দিয়ে চলার দিক নির্ধারণ করা হয়।
+\end{boardbox}
+
+\begin{center}
+\IfFileExists{chapters/Chapter04/topics/images/3d_marquee_direction.png}{
+\includegraphics[width=0.82\textwidth]{chapters/Chapter04/topics/images/3d_marquee_direction.png}
+}{
+\fbox{\parbox{0.78\textwidth}{\centering\vspace{0.4cm}
+\textbf{চিত্র}\\
+File: \texttt{chapters/Chapter04/topics/images/3d\_marquee\_direction.png}
+\vspace{0.4cm}}}
+}
+\captionof{figure}{Marquee tag-এর direction attribute}
+\end{center}
+
+\begin{keypointbox}{চিত্র ব্যাখ্যা}
+চিত্রে marquee text চারদিকে চলতে পারে তা দেখানো হয়েছে। Left direction text-কে বামে, right direction ডানে, up direction উপরে এবং down direction নিচে move করায়।
+\end{keypointbox}
+
+\begin{keypointbox}{চিত্র দেখে code লেখার ধাপ}
+প্রথমে moving text লিখবে। তারপর \texttt{<marquee>} tag ব্যবহার করবে। text কোন দিকে চলবে তা দেখে \texttt{direction} attribute বসাবে।
+\end{keypointbox}
+
+\begin{examplebox}{Highlighted HTML Code}
+\begin{verbatim}
+<html>
+<body>
+<marquee direction="left">Welcome to HSC ICT</marquee>
+<marquee direction="right">HTML Marquee Example</marquee>
+<marquee direction="up" height="80">Move Up</marquee>
+<marquee direction="down" height="80">Move Down</marquee>
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\begin{mistakebox}{Modern সতর্কতা}
+\texttt{marquee} old/non-standard tag। HSC basic concept হিসেবে জানা দরকার, কিন্তু modern website-এ CSS animation ব্যবহার করা ভালো।
+\end{mistakebox}
 
 \subsection{Text Formatting Tag Table}
 
