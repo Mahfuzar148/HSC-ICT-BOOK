@@ -1,87 +1,36 @@
-\subsection{বায়োইনফরমেটিক্স}
-
-\begin{learningbox}
-এই অংশ শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item বায়োইনফরমেটিক্সের ধারণা ব্যাখ্যা করতে।
-\item DNA, protein sequence, database ও computational analysis-এর সম্পর্ক বুঝতে।
-\item চিকিৎসা, কৃষি ও গবেষণায় বায়োইনফরমেটিক্সের ব্যবহার লিখতে।
-\end{itemize}
-\end{learningbox}
-
-\subsubsection{বায়োইনফরমেটিক্সের ধারণা}
-
-জীববিজ্ঞানের গবেষণায় DNA sequence, protein structure, gene expression, disease data এবং organism information বিপুল পরিমাণে তৈরি হয়। এই biological data computer, database, algorithm ও statistical method দিয়ে সংরক্ষণ, বিশ্লেষণ ও ব্যাখ্যা করার ক্ষেত্র হলো বায়োইনফরমেটিক্স।
-
-\begin{definitionbox}{সংজ্ঞা}
-বায়োইনফরমেটিক্স হলো জীববিজ্ঞান, কম্পিউটার বিজ্ঞান, গণিত ও পরিসংখ্যানের সমন্বিত ক্ষেত্র, যেখানে biological data সংরক্ষণ, অনুসন্ধান, বিশ্লেষণ ও ব্যাখ্যার জন্য computational পদ্ধতি ব্যবহার করা হয়।
-\end{definitionbox}
-
-NCBI ও NIH-ভিত্তিক bioinformatics resources-এ sequence database, alignment, genome analysis এবং protein information গুরুত্বপূর্ণ বিষয় হিসেবে বিবেচিত।
-
-\subsubsection{জৈব তথ্য সংরক্ষণ}
-
-Biological data database-এ সংরক্ষণ করা হয়, যাতে researcher দ্রুত data খুঁজে পেতে পারে। DNA sequence database, protein database, gene expression database এবং disease database গবেষণায় ব্যবহৃত হয়।
-
-\begin{keypointbox}{জৈব তথ্যের ধরন}
-\begin{itemize}
-\item DNA ও RNA sequence।
-\item protein sequence ও structure।
-\item gene ও chromosome information।
-\item organism classification data।
-\item disease mutation ও drug response data।
-\end{itemize}
-\end{keypointbox}
-
-\subsubsection{ডিএনএ বিশ্লেষণ}
-
-DNA sequence analysis করে gene শনাক্ত, mutation খোঁজা, রোগের genetic কারণ বোঝা এবং organism-এর evolutionary relation বিশ্লেষণ করা যায়। Sequence alignment হলো দুটি বা ততোধিক sequence তুলনা করার সাধারণ পদ্ধতি।
-
-\subsubsection{প্রোটিন বিশ্লেষণ}
-
-Protein analysis-এ protein-এর sequence, folding, structure ও function বোঝার চেষ্টা করা হয়। Drug design ও disease research-এ protein structure গুরুত্বপূর্ণ।
-
-\subsubsection{চিকিৎসা ও গবেষণায় ব্যবহার}
-
-\begin{examplebox}{চিকিৎসা গবেষণায় ব্যবহার}
-কোনো রোগীর gene mutation জানা থাকলে চিকিৎসক personalized medicine বা targeted therapy নিয়ে ভাবতে পারেন। আবার virus genome analysis করে variant শনাক্ত করা যায়।
-\end{examplebox}
-
-\begin{keypointbox}{ব্যবহারক্ষেত্র}
-\begin{itemize}
-\item disease gene শনাক্তকরণ।
-\item vaccine ও drug design research।
-\item pathogen বা virus variant analysis।
-\item forensic DNA analysis।
-\item evolutionary biology research।
-\end{itemize}
-\end{keypointbox}
-
-\subsubsection{কৃষি গবেষণায় ব্যবহার}
-
-ফসলের disease resistance, drought tolerance, yield improvement এবং genetic diversity বোঝার জন্য bioinformatics ব্যবহৃত হয়। উদ্ভিদের genome data বিশ্লেষণ করে উন্নত জাত উদ্ভাবনে সহায়তা করা যায়।
-
-\begin{mistakebox}{সাধারণ ভুল}
-Bioinformatics শুধু biology নয়, আবার শুধু computer science-ও নয়। এটি biological problem সমাধানে computational method ব্যবহারের ক্ষেত্র।
-\end{mistakebox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-বায়োইনফরমেটিক্সের প্রশ্নে “biological data + computer analysis” এই সম্পর্কটি পরিষ্কার করো। DNA, protein, database, drug design ও কৃষি গবেষণা—এই শব্দগুলো exam-friendly।
-\end{boardbox}
-
+\subsection{বায়োইনফরমেটিক্স}
+\label{sec:ch1-bioinformatics}
+কম্পিউটারে জৈবতথ্য বিশ্লেষণ, মডেল তৈরি ও সিমুলেশন করার গবেষণাকে ড্রাইল্যাব (Dry Lab) কাজ বলা হয়। পরীক্ষাগারে জীবন্ত নমুনা, রাসায়নিক বা যন্ত্র দিয়ে পরীক্ষা করা ওয়েটল্যাব (Wet Lab) কাজ। কম্পিউটারের বিশ্লেষণে পাওয়া সম্ভাব্য ফল পরীক্ষাগারে যাচাই করতে হয়।
+\subsubsection{ধারণা ও তথ্যের ধরন}
+\definition{বায়োইনফরমেটিক্স}{জীববিজ্ঞান, কম্পিউটার বিজ্ঞান, গণিত ও পরিসংখ্যানের সমন্বয়ে জৈব তথ্য সংরক্ষণ, অনুসন্ধান, বিশ্লেষণ ও ব্যাখ্যা করার ক্ষেত্রকে বায়োইনফরমেটিক্স (Bioinformatics) বলে।}
+জীববিজ্ঞান তথ্য ও প্রশ্ন দেয়; কম্পিউটার বিজ্ঞান অ্যালগরিদম ও সফটওয়্যার দেয়। গণিত ও পরিসংখ্যান তুলনা, অনিশ্চয়তা ও ফল বুঝতে সাহায্য করে। শুধু জীববিজ্ঞান বা শুধু কম্পিউটার নয়, জৈব সমস্যায় গণনাভিত্তিক পদ্ধতি প্রয়োগই এই ক্ষেত্রের কাজ। Ben Hesper ও Paulien Hogeweg 1970 সালের লেখায় পরিভাষাটি প্রবর্তন করেন।
+DNA ও RNA-এর ক্রম, প্রোটিনের ক্রম ও গঠন, জিনের প্রকাশ, ক্রোমোজোম, জীবের শ্রেণি, রোগের পরিবর্তন ও ওষুধের প্রতিক্রিয়া তথ্যভান্ডারে রাখা হয়। উপাদানের ধারাবাহিক ক্রমকে Sequence বলে; DNA-এর A, T, C ও G-এর ক্রম ডিজিটালভাবে রাখা যায়। জিন ও DNA-এর গঠন পরের জেনেটিক ইঞ্জিনিয়ারিং অংশে আছে।
+\subsubsection{বিশ্লেষণের ধাপ ও পরিভাষা}
+প্রথমে গবেষণার প্রশ্ন এবং উপযুক্ত পরীক্ষার তথ্য নেওয়া হয়। মান যাচাই ও সংরক্ষণের পরে অ্যালগরিদমে তুলনা করে জৈবিক অর্থ ব্যাখ্যা করা হয়। কম্পিউটারে মিল পাওয়া একাই রোগের কারণ বা চিকিৎসার কার্যকারিতার প্রমাণ নয়।
+\chOnePair{\chOneNative{Bioinformatics}}{তথ্য সংগ্রহ থেকে গণনাভিত্তিক তুলনা ও জৈবিক ব্যাখ্যার ধারা দেখানো হয়েছে।}
+\begin{compactpoints}
+\item \term{Sequence Alignment}: ক্রমগুলো উপযুক্তভাবে সাজিয়ে মিল ও অমিল তুলনা করা। পরিবর্তন, বিবর্তন, আত্মীয়তা ও সম্ভাব্য কাজ বুঝতে সাহায্য করে।
+\item \term{GenBank}: NCBI পরিচালিত প্রকাশ্য nucleotide sequence তথ্যভান্ডার। \term{BLAST (Basic Local Alignment Search Tool)} প্রশ্নের ক্রমের সঙ্গে তথ্যভান্ডারের স্থানীয় মিল খোঁজে। ভান্ডার তথ্য রাখে; টুল বিশ্লেষণ করে।
+\item \term{Gene Finding}: ক্রম থেকে সম্ভাব্য জিন শনাক্ত করা। \term{Gene/DNA Mapping}: ক্রোমোজোম বা জিনোমে জিন ও marker-এর অবস্থান ও সম্পর্ক নির্ণয় করা। মানচিত্র করা মানেই DNA বদলানো নয়।
+\item \term{Genomics}: জিনোম নিয়ে গবেষণা। \term{Proteomics}: প্রোটিনের সমষ্টি ও কাজ নিয়ে গবেষণা।
+\item \term{Molecular Modelling}: অণুর গঠন ও পারস্পরিক ক্রিয়া কম্পিউটারে বিশ্লেষণ করা। প্রোটিনের ভাঁজ, গঠন ও কাজ ওষুধের প্রার্থী বাছাইয়ে গুরুত্বপূর্ণ।
+\item Data Mining ও ML-এ বিপুল জৈব তথ্যে সম্পর্ক ও সম্ভাব্য শ্রেণি খোঁজা যায়। রোগী ও সুস্থ ব্যক্তির জিনের প্রকাশ তুলনা গবেষণার সূত্র দিতে পারে; সম্পর্ক পাওয়া কারণ প্রমাণ করে না।
+\end{compactpoints}
+\subsubsection{চিকিৎসা, কৃষি ও গবেষণা}
+রোগসংশ্লিষ্ট জিন, পরিবর্তন ও বিবর্তন; ভাইরাসের জিনোম থেকে variant; টিকা ও ওষুধের গবেষণা; ফরেনসিক DNA বিশ্লেষণে ব্যবহার আছে। রোগীর পরিবর্তনের তথ্য ব্যক্তিভেদে চিকিৎসা বা লক্ষ্যভিত্তিক চিকিৎসা ভাবতে সাহায্য করে। অণু বা প্রোটিনের গণনাভিত্তিক ফলের পর পরীক্ষাগার ও ক্লিনিক্যাল পরীক্ষা দরকার। AI-তে প্রোটিনের গঠন অনুমানের উদাহরণ AI অংশে আছে।
+ধান ও অন্যান্য ফসলের জিনোম তুলনা করে রোগ প্রতিরোধ, খরা সহ্য, ফলন ও জিনগত বৈচিত্র্যের গবেষণা করা যায়। সম্ভাব্য জিন বাছাই করলে পরীক্ষার লক্ষ্য, সময় ও ব্যয় নির্ধারণ সহজ হয়; বিশ্লেষণ নিজে থেকে জিন পরিবর্তন করে না।
+মাকসুদুল আলমের নেতৃত্বে গবেষকদল পাটের জিনোম উন্মোচনে কাজ করেন। 2010 সালে তোষা পাটের জিন-নকশা উন্মোচনের সাফল্য ঘোষণা হয়। সংগৃহীত ছোট অংশ জুড়ে Genome Assembly, জিন শনাক্ত এবং কাজের পরিচয় বা Annotation-এ কম্পিউটার লাগে। এটি দলের গবেষণা; এক ব্যক্তির সব কাজ নয়। পরিচয় মেলানো বায়োমেট্রিক্স, জৈব তথ্য বিশ্লেষণ বায়োইনফরমেটিক্স এবং DNA পরিবর্তন জেনেটিক ইঞ্জিনিয়ারিং---একই প্রকল্পে একাধিকটির ব্যবহার হতে পারে।
 \begin{practicebox}
 \textbf{MCQ}
-\begin{enumerate}
-\item DNA sequence বিশ্লেষণে computer ব্যবহার কোন ক্ষেত্রের উদাহরণ?\\
-ক. Bioinformatics \quad খ. Desktop publishing \quad গ. Animation only \quad ঘ. Printing
-\item Sequence alignment কী কাজে ব্যবহৃত হয়?\\
-ক. sequence তুলনা \quad খ. monitor cleaning \quad গ. file delete \quad ঘ. font install
-\end{enumerate}
+\begin{multicols}{2}\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}DNA sequence বিশ্লেষণে computer ব্যবহার কোন ক্ষেত্রের উদাহরণ?\par \mcqoption{Bioinformatics}{Desktop publishing}{Animation only}{Printing}\chOneAnswerBox{ক}\par\end{minipage}
+\item \begin{minipage}[t]{\linewidth}Sequence alignment কী কাজে ব্যবহৃত হয়?\par \mcqoption{monitor cleaning}{sequence তুলনা}{file delete}{font install}\chOneAnswerBox{খ}\par\end{minipage}
+\end{enumerate}\end{multicols}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item বায়োইনফরমেটিক্স কী?
-\item কৃষি গবেষণায় বায়োইনফরমেটিক্সের দুটি ব্যবহার লেখ।
+\item বায়োইনফরমেটিক্স কী?
+\item কৃষি গবেষণায় বায়োইনফরমেটিক্সের দুটি ব্যবহার লেখ।
 \end{enumerate}
 \end{practicebox}
 

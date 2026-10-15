@@ -1,165 +1,882 @@
-% MCQ Questions for Chapter 06
-\section{বহুনির্বাচনি প্রশ্ন (MCQ)}
+\Needspace{10\baselineskip}
+\section{বহুনির্বাচনি প্রশ্ন}
 
-\subsection*{\textbf{\underline{ডেটাবেস বেসিক ও মডেল}}}
+৯০টি প্রশ্নে মৌলিক ধারণা, প্রয়োগ ও ধারণার সূক্ষ্ম পার্থক্য যাচাই করো। প্রশ্নগুলোর সঠিক উত্তর শেষে বক্সে দেওয়া আছে। প্রতিটি প্রশ্নের দেওয়া ডেটা সেই প্রশ্নের স্বাধীন নমুনা; একই নামের অন্য টেবিলের মান এখানে ব্যবহার করবে না।
 
 \begin{multicols}{2}
+\small
+\subsection{ধারণা যাচাই}
+\setlist[enumerate]{itemsep=0pt,parsep=0pt,topsep=2pt}
 \begin{enumerate}
 
-\item ডেটাবেস (Database) এর প্রধান কাজ কোনটি? \textbf{[ঢাকা-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item তথ্য সংগ্রহ ও ব্যবস্থাপনা \checkmark
-\item শুধু ডেটা ডিলিট করা
-\item হার্ডওয়্যার নিয়ন্ত্রণ
-\item কোনোটিই নয়
+\item \begin{minipage}[t]{\linewidth}
+DBMS-এর পূর্ণরূপ কী?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Digital Binary Memory System & খ. Database Machine Service \\
+গ. Data Backup Main System & ঘ. Database Management System \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+টেবিলের একটি সম্পূর্ণ সারি কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ফিল্ড & খ. অ্যাট্রিবিউট \\
+গ. রেকর্ড & ঘ. ডোমেইন \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+এন্টিটির বৈশিষ্ট্যকে কী বলে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. অ্যাট্রিবিউট & খ. ফাইল \\
+গ. ব্যাকআপ & ঘ. টাপল \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+ফিল্ডের গ্রহণযোগ্য মানের সমষ্টি কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ইনডেক্স & খ. ডোমেইন \\
+গ. ফর্ম & ঘ. রিপোর্ট \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+নির্বাচিত প্রধান অনন্য শনাক্তকারী কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ফরেন কী & খ. প্রাইমারি কী \\
+গ. রিপোর্ট & ঘ. সর্টিং \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+কম্পোজিট কী গঠিত হয় কীভাবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. একাধিক ফিল্ড মিলিয়ে & খ. শুধু NULL দিয়ে \\
+গ. শুধু একটি মানে & ঘ. সব রেকর্ড মুছে \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+SQL-এর পূর্ণরূপ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. System Query Link & খ. Simple Question List \\
+গ. Structured Query Language & ঘ. Sorted Quick Language \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+নতুন রেকর্ড যোগ করার নির্দেশ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ORDER BY & খ. INSERT INTO \\
+গ. UPDATE & ঘ. SELECT \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+টেবিলের কাঠামো পরিবর্তনের নির্দেশ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ALTER TABLE & খ. ORDER BY \\
+গ. COUNT & ঘ. SELECT \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+শর্তভিত্তিক রেকর্ড নির্বাচনের clause কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. WHERE & খ. ORDER BY \\
+গ. AS & ঘ. FROM \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+লেনদেনের সব কাজ হবে অথবা কোনোটিই স্থায়ী হবে না—কোন বৈশিষ্ট্য?
+\par\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Consistency & খ. Atomicity \\
+গ. Isolation & ঘ. Durability \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+সিস্টেম অচল হওয়ার পর পুনরুদ্ধার করলেও সফল COMMIT-এর পরিবর্তন বহাল থাকা কোন বৈশিষ্ট্য?
+\par\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Atomicity & খ. Durability \\
+গ. Variety & ঘ. Velocity \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+সরকারি আবেদন খুঁজতে নাগরিকের পরিচিতি ব্যবহার কোন কাজের উদাহরণ?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ডেটাবেজ অনুসন্ধান & খ. ডিকোডার নকশা \\
+গ. কম্পাইলেশন & ঘ. অ্যানিমেশন \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+ব্যবহারকারী কে তা যাচাই করার প্রক্রিয়া কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Indexing & খ. Authentication \\
+গ. Authorization & ঘ. Sorting \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+হারানো ডেটা ফেরাতে সবচেয়ে সরাসরি প্রাসঙ্গিক কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ফর্মের রং & খ. ফন্ট \\
+গ. ব্যাকআপ ও রিকভারি & ঘ. কলামের প্রস্থ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+Ciphertext থেকে মূল বার্তায় ফেরার প্রক্রিয়া কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Encryption & খ. Indexing \\
+গ. Decryption & ঘ. Sorting \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
 \end{enumerate}
-
-\item DBMS এর পূর্ণরূপ কী? \textbf{[চট্টগ্রাম-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item Database Management System \checkmark
-\item Data Base Maintenance System
-\item Digital Base Management System
-\item Data Block Management System
-\end{enumerate}
-
-\item ডেটাবেস টেবিলের প্রতিটি সারিকে (Row) কী বলে? \textbf{[রাজশাহী-২০২২]}
-\begin{enumerate}[label=\alph*)]
-\item রেকর্ড (Record) \checkmark
-\item ফিল্ড (Field)
-\item অ্যাট্রিবিউট
-\item রিলেশন
-\end{enumerate}
-
-\item ডেটাবেস টেবিলের প্রতিটি কলামকে (Column) কী বলে? \textbf{[সিলেট-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item ফিল্ড (Field) \checkmark
-\item রেকর্ড
-\item টাপল
-\item রিলেশন
-\end{enumerate}
-
-\item প্রাইমারি কি (Primary Key) এর প্রধান বৈশিষ্ট্য কোনটি? \textbf{[বরিশাল-২০২২]}
-\begin{enumerate}[label=\alph*)]
-\item ইউনিক এবং নাল হতে পারবে না \checkmark
-\item ডুপ্লিকেট হতে পারবে
-\item নাল হতে পারবে
-\item কোনোটিই নয়
-\end{enumerate}
-
-\end{enumerate}
-\end{multicols}
-
-\subsection*{\textbf{\underline{রিলেশন ও SQL বেসিক}}}
-
-\begin{multicols}{2}
+\subsection{প্রয়োগ}
 \begin{enumerate}[resume]
 
-\item দুটি টেবিলের মধ্যে সম্পর্ক স্থাপনের জন্য কোন কি (Key) ব্যবহৃত হয়? \textbf{[ঢাকা-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item ফরেন কি (Foreign Key) \checkmark
-\item প্রাইমারি কি
-\item ক্যান্ডিডেট কি
-\item সুপার কি
+\item \begin{minipage}[t]{\linewidth}
+একটি টেবিলে ৬টি কলাম ও ২০টি ডেটার সারি। এর ফিল্ডসংখ্যা কত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ১২০ & খ. ২৬ \\
+গ. ৬ & ঘ. ২০ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+৫টি রেকর্ডের টেবিলে একটি নতুন রেকর্ড যোগ হলো। এখন রেকর্ডসংখ্যা কত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ৬ & খ. ৫ \\
+গ. ফিল্ডের সমান & ঘ. অপরিবর্তিত \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+একই রোল বিভিন্ন শিক্ষাবর্ষে ব্যবহৃত হয়। সবার তথ্য একত্রে রাখলে কোনটি উপযুক্ত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. শুধু Name & খ. শুধু GPA \\
+গ. অনন্য StudentID & ঘ. শুধু Roll \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+শুরুতে ০-সহ মোবাইল নম্বর রাখার Access টাইপ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. AutoNumber & খ. Date/Time \\
+গ. Currency & ঘ. Short Text \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+Salary=12500.50 রাখার উপযুক্ত Access টাইপ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Yes/No & খ. AutoNumber \\
+গ. Currency & ঘ. Hyperlink \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+GPA-তে ৬ লেখা ঠেকাতে কোনটি প্রয়োজন?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ০ থেকে ৫-এর Validation Rule & খ. বড় ফন্ট \\
+গ. শুধু Number টাইপ & ঘ. Descending sort \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+এক বিভাগে অনেক শিক্ষার্থী, প্রত্যেক শিক্ষার্থীর একটি বিভাগ। Department থেকে Student কী সম্পর্ক?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. 1:N & খ. N:1 \\
+গ. সম্পর্ক নেই & ঘ. 1:1 \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+এক শিক্ষার্থী বহু কোর্স নেয়, প্রতিটি কোর্সে বহু শিক্ষার্থী। বাস্তবায়নে কোনটি সহায়ক?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. শুধু Sort & খ. Enrollment সংযোগ টেবিল \\
+গ. একটি Password & ঘ. শুধু Report \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+Name ফিল্ডে Nusrat লেখা আছে। SQLite-এর কোন শর্তটির সঙ্গে এই রেকর্ডটি মিলবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Name LIKE 'X\%' & খ. Name LIKE 'N\%' \\
+গ. Name IS NULL & ঘ. Name = 'N\%' \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+একটি টেবিলের তিন রেকর্ডের GPA হলো 4.75, 5.00 ও 4.50। \texttt{WHERE GPA BETWEEN 4.75 AND 5.00} কয়টি রেকর্ড নির্বাচন করবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ১ & খ. ২ \\
+গ. ০ & ঘ. ৩ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+Science এবং GPA=5 দুটো শর্তই পূরণ করতে কোন অপারেটর লাগবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. NOT & খ. AND \\
+গ. OR & ঘ. LIKE \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+GPA বেশি থেকে কম এবং সমান GPA-তে Roll ছোট থেকে বড় সাজাতে কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. GPA DESC, Roll ASC & খ. GPA ASC, Roll DESC \\
+গ. GPA DESC, Roll DESC & ঘ. GPA ASC, Roll ASC \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+সাত রেকর্ডের মধ্যে দুইটির Mobile NULL। COUNT(Mobile) কত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ৭ & খ. ০ \\
+গ. ২ & ঘ. ৫ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+প্যারেন্ট টেবিলে StudentID=9 নেই। কার্যকর ফরেন কী বিধি থাকা চাইল্ড টেবিলে এই StudentID যোগ করলে কী হওয়া উচিত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সবসময় গ্রহণ & খ. রেফারেন্সের নিয়মে প্রত্যাখ্যান \\
+গ. ইনডেক্স মুছে ফেলা & ঘ. নতুন প্যারেন্ট তৈরি \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+একটি টেবিলে ফলের পাঁচটি রেকর্ড আছে। চলমান লেনদেনে একটি রেকর্ড DELETE করার পরে COMMIT-এর আগে ROLLBACK করলে কয়টি রেকর্ড থাকবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ৬ & খ. ৪ \\
+গ. ৫ & ঘ. ০ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+নাম দিয়ে বারবার খোঁজার গতি বাড়াতে সম্ভাব্য সহায়ক কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Report Header & খ. ফর্মের আকার \\
+গ. Name-এর ইনডেক্স & ঘ. পাসওয়ার্ড বদল \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
 \end{enumerate}
-
-\item SQL এর পূর্ণরূপ নিচের কোনটি? \textbf{[চট্টগ্রাম-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item Structured Query Language \checkmark
-\item Standard Query Language
-\item Simple Query Language
-\item System Query Language
-\end{enumerate}
-
-\item ডেটাবেস থেকে তথ্য খোঁজার কমান্ড কোনটি? \textbf{[রাজশাহী-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item SELECT \checkmark
-\item INSERT
-\item UPDATE
-\item DELETE
-\end{enumerate}
-
-\item নতুন রেকর্ড যুক্ত করার কমান্ড কোনটি? \textbf{[সিলেট-২০২২]}
-\begin{enumerate}[label=\alph*)]
-\item INSERT INTO \checkmark
-\item ADD INTO
-\item CREATE TABLE
-\item ALTER TABLE
-\end{enumerate}
-
-\item টেবিলের সব তথ্য দেখার কমান্ড কোনটি? \textbf{[বরিশাল-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item SELECT * FROM table\_name; \checkmark
-\item SELECT ALL FROM table\_name;
-\item GET * FROM table\_name;
-\item SHOW * FROM table\_name;
-\end{enumerate}
-
-\end{enumerate}
-\end{multicols}
-
-\subsection*{\textbf{\underline{ডেটা সিকিউরিটি ও এনক্রিপশন}}}
-
-\begin{multicols}{2}
+\subsection{ভুল ধারণা যাচাই}
 \begin{enumerate}[resume]
 
-\item ডেটা এনক্রিপশনের উদ্দেশ্য কী? \textbf{[ঢাকা-২০২২]}
-\begin{enumerate}[label=\alph*)]
-\item তথ্য গোপন রাখা বা নিরাপত্তা \checkmark
-\item তথ্যের আকার কমানো
-\item তথ্য মুছে ফেলা
-\item তথ্য কপি করা
+\item \begin{minipage}[t]{\linewidth}
+RDBMS ও DBMS নিয়ে সঠিক বক্তব্য কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সব RDBMS-ই DBMS & খ. সব DBMS-ই RDBMS \\
+গ. কোনো RDBMS-ই DBMS নয় & ঘ. DBMS মানেই নিরাপত্তাহীন \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+প্রাইমারি কী সম্পর্কে সঠিক কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সবসময় Name & খ. ডুপ্লিকেট চলবে \\
+গ. একাধিক ফিল্ডের হতে পারে & ঘ. NULL হওয়া বাধ্যতামূলক \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+ফরেন কী সম্পর্কে সঠিক কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সবসময় NULL & খ. নিয়ম অনুমতি দিলে পুনরাবৃত্ত \\
+গ. সবসময় অনন্য & ঘ. সবসময় AutoNumber \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+একটি ফিল্ডের মান NULL হলে কোন বক্তব্য সঠিক?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. মান অবশ্যই ০ & খ. মান অবশ্যই ভুল \\
+গ. মান অবশ্যই ফাঁকা স্ট্রিং & ঘ. মান অনুপস্থিত/অজানা \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+ইনডেক্স আছে। ফলের ক্রম নিশ্চিত করতে কী লিখবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. কিছুই দরকার নেই & খ. ROLLBACK \\
+গ. DROP TABLE & ঘ. ORDER BY \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+দুটি টেবিলের সংযোগকারী ফিল্ডের নাম ভিন্ন। সম্পর্ক সম্ভব?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. শুধু রিপোর্টে সম্ভব & খ. কখনো নয় \\
+গ. সামঞ্জস্যপূর্ণ টাইপ ও বৈধ কী হলে সম্ভব & ঘ. শুধু নাম বদলালেই সম্ভব \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+StudentID অনন্য, কিন্তু Name পুনরাবৃত্ত হতে পারে। প্রাইমারি কী হিসেবে কোনটি উপযুক্ত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. StudentID & খ. শুধু Name \\
+গ. শুধু সারির অবস্থান & ঘ. একই নামের সংখ্যা \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
+\item \begin{minipage}[t]{\linewidth}
+এনক্রিপ্ট করা ফাইল হারিয়ে গেছে। কোন বক্তব্য সঠিক?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ফর্ম খুললেই ফিরবে & খ. এনক্রিপশন নিজেই ফেরাবে \\
+গ. পুনরুদ্ধারযোগ্য অনুলিপি দরকার & ঘ. কী থাকলেই ফাইল তৈরি হবে \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+
 \end{enumerate}
-
-\item ডিবিএ (DBA) এর কাজ কী? \textbf{[চট্টগ্রাম-২০২২]}
-\begin{enumerate}[label=\alph*)]
-\item ডেটাবেস নিয়ন্ত্রণ ও রক্ষণাবেক্ষণ \checkmark
-\item শুধু ডেটা এন্ট্রি
-\item হার্ডওয়্যার মেরামত
-\item কোনোটিই নয়
-\end{enumerate}
-
-\item ডেটাবেস রিলেশন কত প্রকার? \textbf{[রাজশাহী-২০২৩]}
-\begin{enumerate}[label=\alph*)]
-\item ৪ প্রকার \checkmark
-\item ৩ প্রকার
-\item ২ প্রকার
-\item ৫ প্রকার
-\end{enumerate}
-
-\end{enumerate}
-\end{multicols}
-
-\subsection*{\textbf{\underline{বহুপদী সমাপ্তিসূচক ও অভিন্ন তথ্যভিত্তিক প্রশ্ন}}}
-
-\begin{multicols}{2}
+\subsection{সমন্বিত ধারণা ও প্রয়োগ}
 \begin{enumerate}[resume]
+\item \begin{minipage}[t]{\linewidth}
+একটি এন্ট্রির প্রকৃত নম্বর 85, কিন্তু 58 লেখা হলো। 0--100 সীমার যাচাইয়ে কী হবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. স্বয়ংক্রিয়ভাবে 85 হবে & খ. টেবিল মুছে যাবে \\
+গ. ভুলটি অবশ্যই ধরা পড়বে & ঘ. 58 গ্রহণযোগ্য সীমায় থাকবে \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+একটি কলামের শিরোনাম Name, মান Rupa। Name এখানে কী?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ডেটাবেজ & খ. রেকর্ড \\
+গ. ফিল্ডের নাম & ঘ. কার্ডিনালিটি \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+হায়ারার্কিক্যাল মডেলের বিন্যাস কোনটির মতো?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. এলোমেলো লেখা & খ. গাছের স্তরবিন্যাস \\
+গ. শুধু সমতল ছবি & ঘ. একটি পাসওয়ার্ড \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+প্রাইমারি কী ফিল্ড থেকে একটি রেকর্ডের মান মুছে NULL রাখা হলে কোন বিধি ভাঙে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. প্রাইমারি কীতে NULL নিষিদ্ধ & খ. প্রতিটি মান ছবি হবে \\
+গ. সব ফিল্ড একই নামের হবে & ঘ. সব রেকর্ড একই হবে \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+ClassName ও Roll মিলিয়ে unique index আছে। কোন জোড়া অবৈধ পুনরাবৃত্তি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. XII,1 এবং XII,2 & খ. XI,1 এবং XI,2 \\
+গ. XI,1 এবং XII,1 & ঘ. XI,1 এবং XI,1 \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Access-এর Short Text-এর সর্বোচ্চ ক্যারেক্টার কত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. 32768 & খ. 8 \\
+গ. 255 & ঘ. 1 \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+0 থেকে 255 পর্যন্ত পূর্ণসংখ্যার Access Field Size কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Currency & খ. Long Text \\
+গ. Double & ঘ. Byte \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+GPA-এর ভগ্নাংশ রাখতে কোন Field Size অনুপযুক্ত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Single & খ. Double \\
+গ. Integer & ঘ. Decimal \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+AutoNumber-এ একটি রেকর্ড মুছে গেছে। কোনটি সঠিক?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সর্বশেষ মানই রেকর্ডসংখ্যা & খ. ফরেন কী আর দরকার নেই \\
+গ. পরিচিতির ধারায় ফাঁক থাকতে পারে & ঘ. সব পরিচিতি আবার সাজবেই \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+শিক্ষার্থীর দীর্ঘ মন্তব্যের Access টাইপ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Long Text & খ. Yes/No \\
+গ. AutoNumber & ঘ. Date/Time \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Lookup Wizard-এর প্রধান সুবিধা কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. তালিকা থেকে মান নির্বাচন & খ. প্রাইমারি কী মুছে ফেলা \\
+গ. ফাইল ছোট করা & ঘ. সমস্ত ডেটা এনক্রিপ্ট \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+একই তারিখকে ভিন্নভাবে দেখাবে কোন property?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Required & খ. Primary Key \\
+গ. Validation Text & ঘ. Format \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+GPA-এর নিয়ম ভাঙলে ব্যাখ্যামূলক বার্তা দেখাবে কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Field Size & খ. Caption \\
+গ. Validation Text & ঘ. Default Value \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Required=Yes-এর সরাসরি উদ্দেশ্য কী?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সব বানান ঠিক করা & খ. সব মান অনন্য করা \\
+গ. NULL প্রতিরোধ & ঘ. শুধু ছবি রাখা \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+SQLite-এর বাইনারি ডেটার storage class কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Memo & খ. Currency \\
+গ. Lookup & ঘ. BLOB \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+বারবার ভিন্ন রোল লিখে একই কুয়েরি চালাতে কোন ধারণা উপযোগী?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Ciphertext & খ. Drop Query \\
+গ. Parameter Query & ঘ. Page Header \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+বিভাগকে সারি, বছরকে কলাম এবং ভর্তির সংখ্যাকে ঘরে দেখাবে কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Form Footer & খ. Unmatched Query \\
+গ. Crosstab Query & ঘ. AutoNumber \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+যাদের ফি পরিশোধের কোনো রেকর্ড নেই তাদের খুঁজতে কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. শুধু Format & খ. Unmatched Query \\
+গ. Caption & ঘ. শুধু Descending Sort \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+বিদ্যমান শিক্ষার্থীর ফি পরিবর্তন কোন Action Query?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Update & খ. Append \\
+গ. Make-table & ঘ. Select \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+কুয়েরির ফল দিয়ে নতুন টেবিল তৈরির ধারণা কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Parameter & খ. Decryption \\
+গ. Lookup & ঘ. Make-table \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+SQL-এ Fee*12 AS AnnualFee কী করে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সব ফি মুছে দেয় & খ. টেবিলের নাম বদলায় \\
+গ. অবশ্যই নতুন স্থায়ী ফিল্ড যোগ করে & ঘ. ফলে হিসাবের কলাম দেখায় \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+গ্রুপভিত্তিক COUNT-এর ওপর শর্ত দিতে কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Caption & খ. INSERT \\
+গ. DROP & ঘ. HAVING \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+GPA অজানা এমন রেকর্ড খোঁজার সঠিক শর্ত কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. GPA = 5 & খ. GPA IS NULL \\
+গ. GPA = NULL & ঘ. GPA = 0 \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+SQLite-এর LIKE-এ একটি মাত্র অক্ষর বোঝায় কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. \texttt{*} & খ. \texttt{=} \\
+গ. \texttt{\%} & ঘ. \texttt{\_} \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+WHERE ছাড়া DELETE FROM Student চালালে কী থাকে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. টেবিলের কাঠামো থাকে & খ. প্রাইমারি কী নতুন করে তৈরি হয় \\
+গ. শুধু শেষ রেকর্ড থাকে & ঘ. সব রেকর্ড থাকে \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+চলমান সফল লেনদেন স্থায়ী করার নির্দেশ কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. LIKE & খ. COMMIT \\
+গ. SELECT & ঘ. ROLLBACK \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+SQLite-এর সাধারণ SQL-এ কোনটি নেই?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. INSERT INTO & খ. SELECT \\
+গ. CREATE TABLE & ঘ. CREATE DATABASE \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Name দিয়ে অনেক অনুসন্ধান হয়, একই নামও থাকতে পারে। কোন ইনডেক্স?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Non-unique & খ. কোনো ইনডেক্স অসম্ভব \\
+গ. Unique অবশ্যই & ঘ. প্রাইমারি কী অবশ্যই \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+রেকর্ডের ইনডেক্সকৃত মান বদলালে কী প্রয়োজন?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. সব ব্যবহারকারী বাদ & খ. সব টেবিল বাদ \\
+গ. ইনডেক্সও হালনাগাদ & ঘ. সব তথ্য প্রকাশ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+এক কর্মীর একাধিক ফোন-রেকর্ড আছে। Phone থেকে Staff-এর সম্পর্ক কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. 1:1 & খ. M:N \\
+গ. কোনো সম্পর্ক নয় & ঘ. M:1 \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+একজন শিক্ষার্থী অনেক কোর্স নেয়, একটি কোর্সে অনেক শিক্ষার্থী থাকে। সংযোগ টেবিলের প্রতি সারি কী বোঝায়?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. একটি শিক্ষার্থী–কোর্স জোড়া & খ. সব শিক্ষার্থীর সমষ্টি \\
+গ. কেবল একটি কোর্সের নাম & ঘ. সম্পূর্ণ ডেটাবেজ \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+পণ্যভেদে ভিন্ন বৈশিষ্ট্যের JSON-আকারের তথ্যের উপযোগী NoSQL মডেল কোনটি?
+\par\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Graph & খ. Document \\
+গ. শুধু SQL syntax & ঘ. সাধারণ চার্ট \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+NoSQL সম্পর্কে কোন বক্তব্যটি সঠিক?
+\par\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. কিছু ব্যবস্থায় ACID transaction আছে & খ. কখনো সম্পর্ক প্রকাশ করা যায় না \\
+গ. সবসময় RDBMS-এর চেয়ে দ্রুত & ঘ. একটি নির্দিষ্ট query language \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+অনলাইন দোকানে প্রতি সেকেন্ডে বিপুল নতুন click আসা কোন V-কে জোর দেয়?
+\par\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Velocity & খ. Veracity \\
+গ. Value & ঘ. Variety \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+বিপুল review-এর মধ্যে ভুয়া review শনাক্ত করা কোন বৈশিষ্ট্যের সঙ্গে সম্পর্কিত?
+\par\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Volume & খ. Veracity \\
+গ. Velocity & ঘ. শুধু Value \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+কর্মীর ছুটি ও প্রশিক্ষণের তথ্য কোন ব্যবস্থার বিষয়?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. শুধু CRM & খ. শুধু Crosstab \\
+গ. শুধু Encryption & ঘ. HRMS \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+গ্রাহকের অভিযোগ ও সেবার ইতিহাসের ব্যবস্থা কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. শুধু AutoNumber & খ. শুধু Field Size \\
+গ. শুধু Report Footer & ঘ. CRM \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+সার্ভার অচল হওয়ায় অনুমোদিত ব্যবহারকারী তথ্য পাচ্ছেন না। কোন লক্ষ্য ক্ষতিগ্রস্ত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Availability & খ. শুধু Degree \\
+গ. শুধু Caption & ঘ. শুধু অক্ষরের বিন্যাস \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+একটি বার্তা এনক্রিপ্ট ও ডিক্রিপ্টে একই গোপন কী ব্যবহৃত। পদ্ধতি কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. Sorting & খ. Indexing \\
+গ. Asymmetric অবশ্যই & ঘ. Symmetric \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Caesar পদ্ধতিতে তিন ঘর সরালে ICT-এর রূপ কী?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. JDU & খ. ICT \\
+গ. HBS & ঘ. LFW \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
 
-\item \textbf{নিচের উদ্দীপকটি পড়ো এবং প্রশ্নের উত্তর দাও:}
-
-\textit{একটি স্কুলের ছাত্র এবং লাইব্রেরির বইয়ের মধ্যে সম্পর্ক স্থাপনের জন্য একটি ডেটাবেস ডিজাইন করা হলো। যেখানে একজন ছাত্র অনেকগুলো বই নিতে পারে এবং একটি বই অনেক ছাত্র নিতে পারে।}
-
-\item উদ্দীপকের রিলেশনটি হলো—
-\begin{enumerate}[label=\alph*)]
-\item One to One
-\item One to Many
-\item Many to Many \checkmark
-\item Many to One
-\end{enumerate}
-
-\item রিলেশনাল ডেটাবেসের বৈশিষ্ট্য হলো—
-\begin{enumerate}[label=\Roman*.]
-\item ডেটা টেবিলে সংরক্ষিত থাকে
-\item টেবিলগুলোর মধ্যে সম্পর্ক থাকে
-\item ডেটা ডুপ্লিকেট হয় না
-\end{enumerate}
-
-নিচের কোনটি সঠিক?
-\begin{enumerate}[label=\alph*)]
-\item i ও ii \checkmark
-\item i ও iii
-\item ii ও iii
-\item i, ii ও iii
-\end{enumerate}
-
+\item \begin{minipage}[t]{\linewidth}
+প্রাইমারি কী সম্পর্কে সঠিক বক্তব্য কোনগুলো?\\ i. প্রতিটি রেকর্ডকে অনন্যভাবে শনাক্ত করে।\\ ii. NULL গ্রহণ করে না।\\ iii. সব সময় একটি মাত্র ফিল্ড নিয়ে গঠিত হয়।
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. i ও ii & খ. i ও iii \\
+গ. ii ও iii & ঘ. i, ii ও iii \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+ফিল্ড নির্ধারণের ক্ষেত্রে সঠিক সিদ্ধান্ত কোনগুলো?\\ i. ফোন নম্বর Short Text হতে পারে।\\ ii. অর্থের মান Currency হতে পারে।\\ iii. জন্মতারিখ Yes/No হওয়া উচিত।
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. i ও iii & খ. ii ও iii \\
+গ. i ও ii & ঘ. i, ii ও iii \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+রেফারেনশিয়াল ইন্টেগ্রিটি প্রয়োগ করা হয়েছে। কোন বক্তব্যগুলো সঠিক?\\ i. অ-NULL FK প্যারেন্টের বিদ্যমান কী নির্দেশ করে।\\ ii. একই প্যারেন্টকে অনেক চাইল্ড নির্দেশ করতে পারে।\\ iii. FK সব সময় চাইল্ড টেবিলে অনন্য হতে হয়।
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. i ও iii & খ. i ও ii \\
+গ. ii ও iii & ঘ. i, ii ও iii \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+কোন কাজগুলো সরাসরি ডেটার গোপনীয়তা রক্ষায় সহায়তা করে?\\ i. অনুমতি অনুযায়ী প্রবেশাধিকার নির্ধারণ।\\ ii. কী ব্যবহার করে এনক্রিপশন।\\ iii. শুধু নামের বর্ণক্রমে রেকর্ড সাজানো।
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. i ও ii & খ. i ও iii \\
+গ. ii ও iii & ঘ. i, ii ও iii \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Student টেবিলে (Roll, GPA) হলো (21, 4.5), (22, 5.0), (23, 5.0)। \texttt{ORDER BY GPA DESC, Roll ASC} দিলে Roll-এর ক্রম কোনটি?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. 21, 22, 23 & খ. 23, 22, 21 \\
+গ. 22, 21, 23 & ঘ. 22, 23, 21 \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+আগের Student টেবিলে \texttt{WHERE GPA > 4.5 AND GPA < 5} দিলে কয়টি রেকর্ড পাওয়া যাবে?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. ১টি & খ. ২টি \\
+গ. ০টি & ঘ. ৩টি \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Customer(CID, Name) এবং Orders(OID, CID) টেবিলে একজন গ্রাহক অনেক অর্ডার দিতে পারেন; প্রতিটি অর্ডার একজন গ্রাহকের। Orders থেকে Customer-এর সম্পর্ক কী?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. 1:1 & খ. M:1 \\
+গ. 1:M & ঘ. M:N \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+আগের উদ্দীপকে CID সম্পর্কে সঠিক বক্তব্য কোনগুলো?\\ i. Customer-এ CID প্রাইমারি কী হতে পারে।\\ ii. Orders-এ CID ফরেন কী হতে পারে।\\ iii. সম্পর্ক স্থাপনে দুটি টেবিলের প্রথম সারি মেলানোই যথেষ্ট।
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. i ও iii & খ. ii ও iii \\
+গ. i, ii ও iii & ঘ. i ও ii \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+Employee টেবিলে ID 7-এর Salary 28000 থেকে 30000 করতে কোন নির্দেশ উপযুক্ত?
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. \texttt{UPDATE Employee SET Salary=30000 WHERE ID=7;} & খ. \texttt{ALTER TABLE Employee ADD Salary;} \\
+গ. \texttt{DELETE FROM Employee WHERE ID=7;} & ঘ. \texttt{SELECT Salary FROM Employee;} \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
+\item \begin{minipage}[t]{\linewidth}
+সিমেট্রিক এনক্রিপশন সম্পর্কে কোন বক্তব্যগুলো সঠিক?\\ i. প্রেরক ও প্রাপককে গোপন কী সুরক্ষিত রাখতে হয়।\\ ii. একই গোপন কী দিয়ে এনক্রিপশন ও ডিক্রিপশন করা হয়।\\ iii. Public ও Private Key-এর জোড়া ব্যবহারই এর সংজ্ঞা।
+\par
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+ক. i ও iii & খ. i ও ii \\
+গ. ii ও iii & ঘ. i, ii ও iii \\
+\end{tabularx}
+\end{minipage}
+\vspace{1pt}
 \end{enumerate}
 \end{multicols}
+\Needspace{9\baselineskip}
+\subsection{উত্তরমালা}
+\chSixMCQAnswer{%
+\par
+\begingroup\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\linewidth}{@{}*{15}{Y}@{}}
+\mbox{1. ঘ} & \mbox{2. গ} & \mbox{3. ক} & \mbox{4. খ} & \mbox{5. খ} & \mbox{6. ক} & \mbox{7. গ} & \mbox{8. খ} & \mbox{9. ক} & \mbox{10. ক} & \mbox{11. খ} & \mbox{12. খ} & \mbox{13. ক} & \mbox{14. খ} & \mbox{15. গ} \\
+\mbox{16. গ} & \mbox{17. গ} & \mbox{18. ক} & \mbox{19. গ} & \mbox{20. ঘ} & \mbox{21. গ} & \mbox{22. ক} & \mbox{23. ক} & \mbox{24. খ} & \mbox{25. খ} & \mbox{26. খ} & \mbox{27. খ} & \mbox{28. ক} & \mbox{29. ঘ} & \mbox{30. খ} \\
+\mbox{31. গ} & \mbox{32. গ} & \mbox{33. ক} & \mbox{34. গ} & \mbox{35. খ} & \mbox{36. ঘ} & \mbox{37. ঘ} & \mbox{38. গ} & \mbox{39. ক} & \mbox{40. গ} & \mbox{41. ঘ} & \mbox{42. গ} & \mbox{43. খ} & \mbox{44. ক} & \mbox{45. ঘ} \\
+\mbox{46. গ} & \mbox{47. ঘ} & \mbox{48. গ} & \mbox{49. গ} & \mbox{50. ক} & \mbox{51. ক} & \mbox{52. ঘ} & \mbox{53. গ} & \mbox{54. গ} & \mbox{55. ঘ} & \mbox{56. গ} & \mbox{57. গ} & \mbox{58. খ} & \mbox{59. ক} & \mbox{60. ঘ} \\
+\mbox{61. ঘ} & \mbox{62. ঘ} & \mbox{63. খ} & \mbox{64. ঘ} & \mbox{65. ক} & \mbox{66. খ} & \mbox{67. ঘ} & \mbox{68. ক} & \mbox{69. গ} & \mbox{70. ঘ} & \mbox{71. ক} & \mbox{72. খ} & \mbox{73. ক} & \mbox{74. ক} & \mbox{75. খ} \\
+\mbox{76. ঘ} & \mbox{77. ঘ} & \mbox{78. ক} & \mbox{79. ঘ} & \mbox{80. ঘ} & \mbox{81. ক} & \mbox{82. গ} & \mbox{83. খ} & \mbox{84. ক} & \mbox{85. ঘ} & \mbox{86. গ} & \mbox{87. খ} & \mbox{88. ঘ} & \mbox{89. ক} & \mbox{90. খ} \\
+\end{tabularx}\endgroup}

@@ -1,0 +1,97 @@
+% Source types: Mahbubur Rahman, Chapter 5 PDF pp.84,87--88.
+\booksubheading{Nested List-এ সারি, কলাম ও স্তর}
+
+একটি list দিয়ে এক সারির data এবং list-এর ভেতরে list দিয়ে সারি–কলামে
+সাজানো data রাখা যায়। প্রতিটি inner list একটি সারি। নিচের উদাহরণে তিনজন
+শিক্ষার্থীর তিন বিষয়ের নম্বর রাখা হয়েছে; roll আলাদা data হিসেবে আছে।
+
+\begin{pythoncode}
+rolls = [201, 202, 203]
+marks = [[72, 81, 90], [65, 76, 84], [88, 79, 93]]
+print(marks[1][2])
+for row in range(len(marks)):
+    total = 0
+    for column in range(len(marks[row])):
+        total += marks[row][column]
+    print(rolls[row], total)
+\end{pythoncode}
+\textbf{Output:}
+\begin{codebox}\begin{english}\ttfamily
+84\\
+201 243\\
+202 225\\
+203 260
+\end{english}\end{codebox}
+
+\begin{center}
+\begin{tikzpicture}[x=15mm,y=9mm,>=Stealth,
+  every node/.style={font=\small},cell/.style={draw=lineGray,minimum width=15mm,minimum height=9mm}]
+\foreach \r/\a/\b/\c in {0/72/81/90,1/65/76/84,2/88/79/93}{
+  \node[cell] (m\r0) at (0,-\r) {\a};
+  \node[cell] (m\r1) at (1,-\r) {\b};
+  \node[cell,fill=softBlue] (m\r2) at (2,-\r) {\c};
+  \node[anchor=east] at (-.7,-\r) {সারি \r};
+}
+\foreach \c in {0,1,2}{\node at (\c,.9) {কলাম \c};}
+\node[anchor=west,font=\small\ttfamily] (label) at (3.8,-1) {marks[1][2] = 84};
+\draw[->,thick,color=darkTeal] (label.west)--(m12.east);
+\end{tikzpicture}
+\end{center}
+দুটি index শূন্য থেকে শুরু হয়। \py{marks[1][2]}-তে প্রথম index দ্বিতীয়
+সারি এবং দ্বিতীয় index তৃতীয় কলাম বোঝায়। প্রতিটি সারিতে নতুন করে
+\py{total = 0} করা হয়েছে। সমান দৈর্ঘ্যের \(r\) সারি ও \(c\) কলামে
+সংখ্যামান থাকে \(r\times c\)টি; এখানে \(3\times3=9\)টি।
+
+\textbf{তিন স্তরের data।} দুই সপ্তাহে দুই দোকানের প্রতিদিনের তিনটি করে
+বিক্রয়মান রাখা হলে তিনটি index লাগে: সপ্তাহ, দোকান ও দিন।
+\begin{pythoncode}
+sales = [
+    [[10, 12, 14], [20, 22, 24]],
+    [[11, 13, 15], [21, 23, 25]]
+]
+print(sales[1][0][2])
+print(len(sales), len(sales[0]), len(sales[0][0]))
+\end{pythoncode}
+\textbf{Output:} প্রথম লাইনে \py{15}, দ্বিতীয় লাইনে \py{2 2 3}।
+মোট সংখ্যামান \(2\times2\times3=12\)টি। Outer list-এর \py{len()}
+শুধু বাইরের item গোনে; সব স্তরের সংখ্যা একসঙ্গে গোনে না।
+Python-এর nested list-এর সব সারির দৈর্ঘ্য সমান হওয়া বাধ্যতামূলক নয়;
+উপরের গুণের হিসাব সমান আকারের data-র জন্য।
+
+\booksubheading{List Assign করা ও Copy করার পার্থক্য}
+
+\py{b = a} লিখলে list-এর নতুন copy তৈরি হয় না; দুই নাম একই list-কে
+নির্দেশ করে। নতুন বাইরের list তৈরি করতে \py{a.copy()} ব্যবহার করা যায়।
+\begin{pythoncode}
+a = [4, 7, 9]
+b = a
+c = a.copy()
+b[0] = 40
+print(a)
+print(c)
+\end{pythoncode}
+\textbf{Output:} \py{[40, 7, 9]} এবং \py{[4, 7, 9]}।
+\py{b}-এর মাধ্যমে পরিবর্তনটি \py{a}-তেও দেখা যায়; \py{c}-এর ওই item
+বদলায়নি। \py{copy()} একটি shallow copy: nested list থাকলে ভেতরের list
+স্বয়ংক্রিয়ভাবে আলাদা copy হয় না।
+
+\textbf{Nested list তৈরিতে একটি সাধারণ ভুল।}
+\begin{pythoncode}
+wrong = [[0, 0]] * 3
+wrong[0][1] = 5
+print(wrong)
+
+right = []
+for row in range(3):
+    right.append([0, 0])
+right[0][1] = 5
+print(right)
+\end{pythoncode}
+\textbf{Output:}
+\begin{codebox}\begin{english}\ttfamily
+[[0, 5], [0, 5], [0, 5]]\\\relax
+[[0, 5], [0, 0], [0, 0]]
+\end{english}\end{codebox}
+প্রথম ক্ষেত্রে একই inner list তিনবার নির্দেশ করা হয়েছে। দ্বিতীয় ক্ষেত্রে
+প্রতি iteration-এ নতুন inner list তৈরি হওয়ায় সারিগুলো স্বাধীনভাবে বদলায়।
+

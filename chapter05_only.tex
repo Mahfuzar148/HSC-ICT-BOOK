@@ -1,0 +1,17 @@
+% !TeX program = lualatex
+% Chapter 5 master: all lesson text lives in topics/, styles in latex/.
+\documentclass[10pt,a4paper]{article}
+% Resolve both workspace-root and Chapter05 working directories.
+\IfFileExists{chapters/Chapter05/latex/preamble.tex}{%
+  \def\chFiveRoot{chapters/Chapter05}%
+}{\def\chFiveRoot{.}}
+\newcommand{\chFiveInput}[1]{\input{\chFiveRoot/#1}}
+\makeatletter
+\edef\input@path{{\chFiveRoot/}}
+\makeatother
+\chFiveInput{latex/preamble.tex}
+\newcommand{\chFiveStandaloneLayout}{}
+\begin{document}
+\chFiveInput{latex/frontmatter.tex}%
+\chFiveInput{latex/chapter.tex}%
+\end{document}

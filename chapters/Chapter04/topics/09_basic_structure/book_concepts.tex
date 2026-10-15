@@ -1,0 +1,24 @@
+\subsubsection{বাংলা পেজে ভাষা ও এনকোডিং আলাদা কেন?}
+\texttt{lang="bn"} জানায় নথির প্রধান ভাষা বাংলা; সহায়ক পাঠযন্ত্রের উচ্চারণ ও ভাষাভিত্তিক কাজের জন্য এটি দরকার। \texttt{charset="UTF-8"} জানায় ফাইলের বাইট কীভাবে অক্ষর হিসেবে পড়তে হবে। ভাষা ঘোষণা নিজে থেকে ফাইলের এনকোডিং বদলায় না বা লেখা অনুবাদ করে না।
+
+\par\noindent\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড: বাংলা নোটিশ}\par
+\begin{chFourBanglaCode}
+\begin{verbatim}
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>বিজ্ঞান ক্লাব</title>
+</head>
+<body><p>সভা শুক্রবার।</p></body>
+</html>
+\end{verbatim}
+\end{chFourBanglaCode}
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও করণীয়}\par
+ব্রাউজারের ট্যাবে বিজ্ঞান ক্লাব; পেজে সভা শুক্রবার।\par
+ফাইলটি সত্যিই UTF-8-এ সংরক্ষণ করবে। বাংলা ভেঙে এলে প্রথমে সংরক্ষণের এনকোডিং ও ঘোষণার মিল দেখবে; পরে উপযুক্ত বাংলা ফন্ট আছে কি না দেখবে।
+\end{minipage}\par
+শুধু \texttt{lang="bn"} দিলে ভুল এনকোডিংয়ের বাংলা ঠিক হয় না। ভাষার পরিচয় এবং বাইট পড়ে অক্ষর শনাক্ত করার নিয়ম আলাদা তথ্য।

@@ -1,70 +1,867 @@
-% ৩.৪ বাইনারি যোগ ও বিয়োগ
-\section{বাইনারি যোগ ও বিয়োগ}
+% =========================================================
+% Topic 3.4
+% সংখ্যা পদ্ধতিতে যোগ ও বিয়োগ
+% Addition and Subtraction in Number Systems
+% =========================================================
 
-\subsection{Binary Addition}
-\begin{itemize}
-\item 0+0=0, 0+1=1, 1+1=10 (carry)
-\item Carry ধারণা ও multi-bit যোগ
-\end{itemize}
+\section{সংখ্যা পদ্ধতিতে যোগ ও বিয়োগ
+(\textenglish{Addition and Subtraction in Number Systems})}
 
-\subsection{Binary Subtraction}
-\begin{itemize}
-\item 0-0=0, 1-0=1, 1-1=0, 0-1= borrow
-\item Borrow ধারণা
-\end{itemize}
+যোগ-বিয়োগে প্রথমে সংখ্যাগুলোকে একই ভিত্তিতে আনতে হয়। তারপর র‍্যাডিক্স পয়েন্টের নিচে র‍্যাডিক্স পয়েন্ট এবং একই ওজনের অঙ্ক একই কলামে বসাও। প্রয়োজন হলে পূর্ণাংশের বামে ও ভগ্নাংশের ডানে ০ দিয়ে দৈর্ঘ্য মিলিয়ে নাও।
 
-\subsection{প্রশিক্ষণ সমস্যা}
-\begin{itemize}
-\item পরীক্ষার ধাঁচের উদাহরণ
-\end{itemize}
+\smallhead{ক্যারি ও ধার: সব ভিত্তির সাধারণ নিয়ম}
+ভিত্তি $b$-তে একটি কলামের অঙ্ক ও আগের ক্যারি মিলে মোট $s$ হলে সেখানে $s\bmod b$ লিখে বামে $\lfloor s/b\rfloor$ ক্যারি দাও। বিয়োগে ওপরের অঙ্ক ছোট হলে বামের পরের স্থান থেকে ১ ধার নাও; বর্তমান স্থানে সেটির মান $b$। তাই বাইনারিতে এক ধার মানে ২, অক্টালে ৮, হেক্সাডেসিমালে ১৬।
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item binary addition ও subtraction-এর basic rule লিখতে।
-\item carry ও borrow ব্যবহার করে multi-bit অংক করতে।
-\item binary arithmetic-এ common mistake এড়াতে।
-\end{itemize}
-\end{learningbox}
+\textbf{উদাহরণ:} বাইনারিতে $1+1+1=3_{10}=11_2$; নিচে ১, বামে ক্যারি ১। অক্টালে $6+7+1=14_{10}=16_8$; নিচে ৬, ক্যারি ১। হেক্সাডেসিমালে $A+9=19_{10}=13_{16}$; নিচে ৩, ক্যারি ১। বিয়োগে $(10)_2-1=1$, $(10)_8-1=7$ এবং $(10)_{16}-1=F$।
+
+ক্যারি বা ধার সংখ্যার পূর্ণাংশ ও ভগ্নাংশের সীমানা পার হতে পারে। যেমন ভগ্নাংশের শেষ কলাম থেকে শুরু করে বামে হিসাব করলে ভগ্নাংশের ক্যারি এককের ঘরে পৌঁছায়। সাধারণ পূর্ণসংখ্যার হিসাবে প্রয়োজনীয় অতিরিক্ত ঘর রাখা হয়; নির্দিষ্ট বিটের রেজিস্টারে তার বাইরে ক্যারি থাকলে সেটি আলাদাভাবে বিবেচ্য।
+
+% =========================================================
+% 3.4.1 Binary Addition
+% =========================================================
+
+\subsection{বাইনারি যোগ
+(\textenglish{Binary Addition})}
+
+বাইনারি সংখ্যা পদ্ধতিতে মাত্র দুটি অঙ্ক ব্যবহৃত হয়—
+\textbf{০ এবং ১}।
+তাই যোগ করার সময় ২ বা তার বেশি হলে
+\textenglish{carry} তৈরি হয়।
+
+\subsubsection*{বাইনারি যোগের মৌলিক নিয়ম}
 
 \begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.30\textwidth}|}
+\begin{tabular}{|c|c|}
 \hline
-\textbf{Addition} & \textbf{ফল} & \textbf{নোট} \\
+\rowcolor{ICTLightBlue}
+\textbf{যোগ} & \textbf{ফলাফল} \\
 \hline
-$0+0$ & 0 & carry 0 \\
+$0+0$ & $0$ \\
 \hline
-$0+1$ বা $1+0$ & 1 & carry 0 \\
+$0+1$ & $1$ \\
 \hline
-$1+1$ & 10 & sum 0, carry 1 \\
+$1+0$ & $1$ \\
 \hline
-$1+1+1$ & 11 & sum 1, carry 1 \\
+$1+1$ & $10$ \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Binary যোগ}
+অর্থাৎ,
+
+\[
+1+1=10_2
+\]
+
+এখানে ০ লেখা হয় এবং ১
+\textenglish{carry} যায়।
+
+\textenglish{Carry} থাকলে—
+
+\[
+1+1+1=11_2
+\]
+
+\par\begingroup
+
+\textbf{বাইনারি যোগের ধাপ}
+
+\begin{enumerate}
+    \item সংখ্যাগুলোকে ডান দিক থেকে একই অবস্থানে সাজাতে হবে।
+    \item ডান দিকের অঙ্ক থেকে যোগ শুরু করতে হবে।
+    \item $1+1$ হলে ০ লিখে ১ \textenglish{carry} দিতে হবে।
+    \item পরবর্তী ঘরে \textenglish{carry} যোগ করতে হবে।
+    \item এভাবে বাম দিকে যেতে হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
 \[
 \begin{array}{r}
-  1011\\
-+ 0110\\ \hline
- 10001
+1011\\
++1101\\
+\hline
+11000
 \end{array}
 \]
-এখানে ডান দিক থেকে bit যোগ করে carry পরের column-এ নেওয়া হয়েছে।
-\end{examplebox}
 
-\begin{examplebox}{Binary বিয়োগ}
+অতএব,
+
+\[
+\boxed{1011_2+1101_2=11000_2}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
 \[
 \begin{array}{r}
-  10110\\
-- 01011\\ \hline
-  01011
+10101\\
++01111\\
+\hline
+100100
 \end{array}
 \]
-যেখানে $0-1$ এসেছে, সেখানে বাম পাশের bit থেকে borrow নেওয়া হয়েছে।
-\end{examplebox}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Binary addition-এ $1+1=2$ লেখা যাবে না; binary-তে 2 প্রকাশ হয় $10$ হিসেবে। তাই ফল 0 এবং carry 1।
-\end{mistakebox}
+অতএব,
+
+\[
+\boxed{10101_2+01111_2=100100_2}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+\begin{array}{r}
+110101\\
++101011\\
+\hline
+1100000
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{110101_2+101011_2=1100000_2}
+\]
+
+\subsubsection*{উদাহরণ--৪}
+
+\[
+\begin{array}{r}
+1011011\\
++1101101\\
+\hline
+11001000
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{1011011_2+1101101_2=11001000_2}
+\]
+
+% =========================================================
+% 3.4.2 Binary Subtraction
+% =========================================================
+
+\subsection{বাইনারি বিয়োগ
+(\textenglish{Binary Subtraction})}
+
+\subsubsection*{বাইনারি বিয়োগের মৌলিক নিয়ম}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{বিয়োগ} & \textbf{ফলাফল} \\
+\hline
+$0-0$ & $0$ \\
+\hline
+$1-0$ & $1$ \\
+\hline
+$1-1$ & $0$ \\
+\hline
+$10-1$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+একই ঘরে ০ থেকে ১ বিয়োগ করতে ধার নিতে হয়।
+তাই বাম পাশের পরবর্তী অঙ্ক থেকে
+\textenglish{borrow} নিতে হয়।
+
+\par\begingroup
+
+\textbf{বাইনারি বিয়োগের ধাপ}
+
+\begin{enumerate}
+    \item সংখ্যাগুলোকে ডান দিক বরাবর সাজাতে হবে।
+    \item ডান দিক থেকে বিয়োগ শুরু করতে হবে।
+    \item উপরের অঙ্ক বড় বা সমান হলে সরাসরি বিয়োগ করতে হবে।
+    \item $0-1$ হলে বাম পাশ থেকে ১ \textenglish{borrow} নিতে হবে।
+    \item বাইনারিতে \textenglish{borrow} নেওয়ার পর বর্তমান ঘরের
+    ০-এর মান হয় $10_2$।
+    \item এভাবে বাম দিকে বিয়োগ চালিয়ে যেতে হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
+\[
+\begin{array}{r}
+1011\\
+-0110\\
+\hline
+0101
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{1011_2-0110_2=0101_2}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
+\[
+\begin{array}{r}
+11010\\
+-01011\\
+\hline
+01111
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{11010_2-01011_2=01111_2}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+\begin{array}{r}
+101101\\
+-011011\\
+\hline
+010010
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{101101_2-011011_2=010010_2}
+\]
+
+\subsubsection*{উদাহরণ--৪}
+
+\[
+\begin{array}{r}
+1101100\\
+-1010111\\
+\hline
+0010101
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{1101100_2-1010111_2=0010101_2}
+\]
+
+% =========================================================
+% 3.4.3 Octal Addition
+% =========================================================
+
+\subsection{অক্টাল যোগ
+(\textenglish{Octal Addition})}
+
+অক্টাল সংখ্যা পদ্ধতির
+\textenglish{Base} হলো ৮।
+তাই কোনো ঘরের যোগফল
+\textbf{৮ বা তার বেশি হলে}
+\textenglish{carry} হবে।
+
+\par\begingroup
+
+\textbf{অক্টাল যোগের ধাপ}
+
+\begin{enumerate}
+    \item সংখ্যাগুলোকে ডান দিক বরাবর সাজাতে হবে।
+    \item ডান দিক থেকে যোগ করতে হবে।
+    \item যোগফল ৮-এর কম হলে সরাসরি লিখতে হবে।
+    \item যোগফল ৮ বা তার বেশি হলে ৮ দিয়ে ভাগ করে
+    ভাগশেষ লিখতে হবে।
+    \item ভাগফল পরবর্তী ঘরে
+    \textenglish{carry} হিসেবে যোগ করতে হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
+\[
+\begin{array}{r}
+25_8\\
++32_8\\
+\hline
+57_8
+\end{array}
+\]
+
+\[
+\boxed{25_8+32_8=57_8}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
+\[
+\begin{array}{r}
+57_8\\
++26_8\\
+\hline
+105_8
+\end{array}
+\]
+
+কারণ,
+
+\[
+7+6=13_{10}=15_8
+\]
+
+অর্থাৎ ৫ লিখে ১
+\textenglish{carry} হবে।
+
+তাই,
+
+\[
+\boxed{57_8+26_8=105_8}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+\begin{array}{r}
+345_8\\
++267_8\\
+\hline
+634_8
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{345_8+267_8=634_8}
+\]
+
+\subsubsection*{উদাহরণ--৪}
+
+\[
+\begin{array}{r}
+756_8\\
++367_8\\
+\hline
+1345_8
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{756_8+367_8=1345_8}
+\]
+
+% =========================================================
+% 3.4.4 Octal Subtraction
+% =========================================================
+
+\subsection{অক্টাল বিয়োগ
+(\textenglish{Octal Subtraction})}
+
+অক্টাল পদ্ধতিতে কোনো ঘরে উপরের অঙ্ক ছোট হলে
+বাম পাশের ঘর থেকে ১
+\textenglish{borrow} নিতে হয়।
+
+অক্টালে ১
+\textenglish{borrow}-এর মান—
+
+\[
+8_{10}
+\]
+
+অর্থাৎ বর্তমান ঘরের অঙ্কের সঙ্গে ৮ যোগ হবে।
+
+\par\begingroup
+
+\textbf{অক্টাল বিয়োগের ধাপ}
+
+\begin{enumerate}
+    \item ডান দিক থেকে বিয়োগ শুরু করতে হবে।
+    \item উপরের অঙ্ক বড় বা সমান হলে সরাসরি বিয়োগ করতে হবে।
+    \item উপরের অঙ্ক ছোট হলে বাম পাশের ঘর থেকে
+    ১ \textenglish{borrow} নিতে হবে।
+    \item \textenglish{Borrow} নেওয়ার ফলে বর্তমান ঘরের
+    অঙ্কের সঙ্গে ৮ যোগ হবে।
+    \item এরপর বিয়োগ করতে হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
+\[
+\begin{array}{r}
+57_8\\
+-24_8\\
+\hline
+33_8
+\end{array}
+\]
+
+\[
+\boxed{57_8-24_8=33_8}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
+\[
+\begin{array}{r}
+102_8\\
+-047_8\\
+\hline
+033_8
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{102_8-47_8=33_8}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+\begin{array}{r}
+625_8\\
+-347_8\\
+\hline
+256_8
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{625_8-347_8=256_8}
+\]
+
+\subsubsection*{উদাহরণ--৪}
+
+\[
+\begin{array}{r}
+1000_8\\
+-0357_8\\
+\hline
+0421_8
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{1000_8-357_8=421_8}
+\]
+
+% =========================================================
+% 3.4.5 Hexadecimal Addition
+% =========================================================
+
+\subsection{হেক্সাডেসিমাল যোগ
+(\textenglish{Hexadecimal Addition})}
+
+হেক্সাডেসিমাল সংখ্যা পদ্ধতির
+\textenglish{Base} হলো ১৬।
+
+এখানে ব্যবহৃত প্রতীকগুলো হলো—
+
+\[
+0,1,2,\ldots,9,
+\text{\textenglish{A}},
+\text{\textenglish{B}},
+\text{\textenglish{C}},
+\text{\textenglish{D}},
+\text{\textenglish{E}},
+\text{\textenglish{F}}
+\]
+
+যেখানে,
+
+\[
+\text{\textenglish{A}}=10,\quad
+\text{\textenglish{B}}=11,\quad
+\text{\textenglish{C}}=12,\quad
+\text{\textenglish{D}}=13,\quad
+\text{\textenglish{E}}=14,\quad
+\text{\textenglish{F}}=15
+\]
+
+\par\begingroup
+
+\textbf{হেক্সাডেসিমাল যোগের ধাপ}
+
+\begin{enumerate}
+    \item সংখ্যাগুলোকে ডান দিক বরাবর সাজাতে হবে।
+    \item ডান দিক থেকে যোগ করতে হবে।
+    \item যোগফল ১৬-এর কম হলে সরাসরি সংশ্লিষ্ট
+    \textenglish{Hexadecimal digit} লিখতে হবে।
+    \item যোগফল ১৬ বা তার বেশি হলে ১৬ দিয়ে ভাগ করে
+    ভাগশেষ লিখতে হবে।
+    \item ভাগফল পরবর্তী ঘরে
+    \textenglish{carry} হিসেবে যোগ হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
+\[
+\begin{array}{r}
+25_{16}\\
++13_{16}\\
+\hline
+38_{16}
+\end{array}
+\]
+
+\[
+\boxed{25_{16}+13_{16}=38_{16}}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
+\[
+\begin{array}{r}
+2\text{\textenglish{A}}_{16}\\
++15_{16}\\
+\hline
+3\text{\textenglish{F}}_{16}
+\end{array}
+\]
+
+কারণ,
+
+\[
+\text{\textenglish{A}}+5
+=
+10+5
+=
+15
+=
+\text{\textenglish{F}}
+\]
+
+তাই,
+
+\[
+\boxed{
+2\text{\textenglish{A}}_{16}
++
+15_{16}
+=
+3\text{\textenglish{F}}_{16}
+}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+\begin{array}{r}
+57_{16}\\
++2\text{\textenglish{D}}_{16}\\
+\hline
+84_{16}
+\end{array}
+\]
+
+কারণ,
+
+\[
+7+\text{\textenglish{D}}
+=
+7+13
+=
+20
+\]
+
+\[
+20=16+4
+\]
+
+তাই ৪ লিখে ১
+\textenglish{carry} হবে।
+
+অতএব,
+
+\[
+\boxed{
+57_{16}
++
+2\text{\textenglish{D}}_{16}
+=
+84_{16}
+}
+\]
+
+\subsubsection*{উদাহরণ--৪}
+
+\[
+\begin{array}{r}
+3\text{\textenglish{A}}7_{16}\\
++2\text{\textenglish{BF}}_{16}\\
+\hline
+666_{16}
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{
+3\text{\textenglish{A}}7_{16}
++
+2\text{\textenglish{BF}}_{16}
+=
+666_{16}
+}
+\]
+
+% =========================================================
+% 3.4.6 Hexadecimal Subtraction
+% =========================================================
+
+\subsection{হেক্সাডেসিমাল বিয়োগ
+(\textenglish{Hexadecimal Subtraction})}
+
+হেক্সাডেসিমালে কোনো ঘরে বিয়োগ করার সময়
+উপরের অঙ্ক ছোট হলে বাম পাশ থেকে
+১ \textenglish{borrow} নিতে হয়।
+
+একটি হেক্সাডেসিমাল
+\textenglish{borrow}-এর মান—
+
+\[
+16_{10}
+\]
+
+\par\begingroup
+
+\textbf{হেক্সাডেসিমাল বিয়োগের ধাপ}
+
+\begin{enumerate}
+    \item ডান দিক থেকে বিয়োগ শুরু করতে হবে।
+    \item উপরের অঙ্ক বড় বা সমান হলে সরাসরি বিয়োগ করতে হবে।
+    \item উপরের অঙ্ক ছোট হলে বাম পাশ থেকে
+    ১ \textenglish{borrow} নিতে হবে।
+    \item \textenglish{Borrow} নেওয়ার ফলে বর্তমান ঘরের
+    মানের সঙ্গে ১৬ যোগ হবে।
+    \item এরপর বিয়োগ করতে হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
+\[
+\begin{array}{r}
+5\text{\textenglish{A}}_{16}\\
+-24_{16}\\
+\hline
+36_{16}
+\end{array}
+\]
+
+\[
+\boxed{
+5\text{\textenglish{A}}_{16}
+-
+24_{16}
+=
+36_{16}
+}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
+\[
+\begin{array}{r}
+8\text{\textenglish{F}}_{16}\\
+-2\text{\textenglish{A}}_{16}\\
+\hline
+65_{16}
+\end{array}
+\]
+
+কারণ,
+
+\[
+\text{\textenglish{F}}
+-
+\text{\textenglish{A}}
+=
+15-10
+=
+5
+\]
+
+এবং,
+
+\[
+8-2=6
+\]
+
+তাই,
+
+\[
+\boxed{
+8\text{\textenglish{F}}_{16}
+-
+2\text{\textenglish{A}}_{16}
+=
+65_{16}
+}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+\begin{array}{r}
+\text{\textenglish{A}}3_{16}\\
+-4\text{\textenglish{F}}_{16}\\
+\hline
+54_{16}
+\end{array}
+\]
+
+এখানে এককের ঘরে
+
+\[
+3<\text{\textenglish{F}}
+\]
+
+তাই \textenglish{borrow} নিতে হবে।
+
+\[
+3+16=19
+\]
+
+\[
+19-\text{\textenglish{F}}(15)=4
+\]
+
+তারপর,
+
+\[
+\text{\textenglish{A}}-1-4
+=
+10-1-4
+=
+5
+\]
+
+অতএব,
+
+\[
+\boxed{
+\text{\textenglish{A}}3_{16}
+-
+4\text{\textenglish{F}}_{16}
+=
+54_{16}
+}
+\]
+
+\subsubsection*{উদাহরণ--৪}
+
+\[
+\begin{array}{r}
+5\text{\textenglish{C}}2_{16}\\
+-2\text{\textenglish{D}}7_{16}\\
+\hline
+2\text{\textenglish{EB}}_{16}
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{
+5\text{\textenglish{C}}2_{16}
+-
+2\text{\textenglish{D}}7_{16}
+=
+2\text{\textenglish{EB}}_{16}
+}
+\]
+
+% =========================================================
+% Summary Table
+% =========================================================
+
+\subsection{তিনটি সংখ্যা পদ্ধতির যোগ-বিয়োগ একসঙ্গে}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|Y|C{0.13\textwidth}|Y|Y|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{সংখ্যা পদ্ধতি} &
+\textbf{\textenglish{Base}} &
+\textbf{যোগে \textenglish{Carry}} &
+\textbf{বিয়োগে \textenglish{Borrow}} \\
+\hline
+
+\textenglish{Binary} &
+2 &
+২ হলে &
+২ \\
+\hline
+
+\textenglish{Octal} &
+8 &
+৮ হলে &
+৮ \\
+\hline
+
+\textenglish{Hexadecimal} &
+16 &
+১৬ হলে &
+১৬ \\
+\hline
+
+\end{tabularx}
+\end{center}
+
+% =========================================================
+% Final Remember Box
+% =========================================================
+
+\par\begingroup
+
+\textbf{মনে রাখার সহজ নিয়ম}
+
+\textbf{\textenglish{Binary}:}
+২ হলেই \textenglish{Carry},
+\textenglish{Borrow} করলে ২।
+
+\textbf{\textenglish{Octal}:}
+৮ হলেই \textenglish{Carry},
+\textenglish{Borrow} করলে ৮।
+
+\textbf{\textenglish{Hexadecimal}:}
+১৬ হলেই \textenglish{Carry},
+\textenglish{Borrow} করলে ১৬।
+\par\endgroup
+
+
+\par\begingroup
+
+\textbf{নোট:}
+
+উদাহরণগুলোতে প্রতিটি ফলাফল একই
+\textenglish{Base}-এর মধ্যে রাখা হয়েছে।
+তাই আগে \textenglish{Decimal}-এ রূপান্তর না করেও
+সরাসরি যোগ-বিয়োগ করা যায়।
+\par\endgroup
+
+\input{chapters/Chapter03/topics/04_binary_add_sub/applied_examples.tex}

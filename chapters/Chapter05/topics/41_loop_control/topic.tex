@@ -1,0 +1,1304 @@
+\sectionheading{5.41 Loop Control Statement}
+
+Loop সাধারণত নির্ধারিত নিয়মে এক Iteration থেকে পরবর্তী Iteration-এ যায়।
+কিন্তু প্রয়োজন অনুযায়ী Loop মাঝপথে বন্ধ করা, বর্তমান Iteration বাদ দেওয়া
+বা কোনো কাজ না করে Placeholder রাখার জন্য
+\textbf{Loop Control Statement} ব্যবহার করা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Loop Control Statement কী?}
+
+\begin{definitionbox}
+
+Loop-এর স্বাভাবিক Execution Flow নিয়ন্ত্রণ বা পরিবর্তনের জন্য
+ব্যবহৃত Statement-কে \textbf{Loop Control Statement} বলে।
+
+\end{definitionbox}
+
+Python-এ গুরুত্বপূর্ণ Loop Control Statement—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.24\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Statement}
+&
+\textbf{প্রধান কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily break}
+&
+Loop সম্পূর্ণ বন্ধ করে।
+\\
+\hline
+
+\textenglish{\ttfamily continue}
+&
+বর্তমান Iteration-এর বাকি অংশ Skip করে পরবর্তী Iteration-এ যায়।
+\\
+\hline
+
+\textenglish{\ttfamily pass}
+&
+কোনো কাজ না করে Normal Execution চালিয়ে যেতে দেয়।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% BREAK
+%================================================
+
+\booksubheading{১. \textenglish{\ttfamily break} Statement}
+
+Loop চলাকালে নির্দিষ্ট Condition পূরণ হলে Loop-কে
+\textbf{সঙ্গে সঙ্গে বন্ধ} করার জন্য
+\textenglish{\ttfamily break}
+ব্যবহার করা হয়।
+
+\begin{center}
+
+\textbf{Condition পূরণ}
+\(\longrightarrow\)
+\textenglish{\ttfamily break}
+\(\longrightarrow\)
+\textbf{Loop থেকে বের হও}
+
+\end{center}
+
+%------------------------------------------------
+% break in for
+%------------------------------------------------
+
+\begin{codeoutputbox}{\textenglish{\ttfamily for} Loop-এ \textenglish{\ttfamily break}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}if i == 4:\\
+\hspace*{8mm}break\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3}
+\end{center}
+
+\textenglish{\ttfamily i == 4}
+হলে
+\textenglish{\ttfamily break}
+Execute হয়।
+
+তাই 4 Print না হয়ে পুরো Loop বন্ধ হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%------------------------------------------------
+% break in while
+%------------------------------------------------
+
+\begin{codeoutputbox}{\textenglish{\ttfamily while} Loop-এ \textenglish{\ttfamily break}}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}if i == 4:\\
+\hspace*{8mm}break\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3}
+\end{center}
+
+\textenglish{\ttfamily i}
+এর Value 4 হলে
+\textenglish{\ttfamily break}
+Loop-কে সঙ্গে সঙ্গে বন্ধ করে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% After break
+%================================================
+
+\booksubheading{\textenglish{\ttfamily break}-এর পরে কী হয়?}
+
+\begin{codeoutputbox}{Loop-এর পরের Statement}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}if i == 2:\\
+\hspace*{8mm}break\\[0.4mm]
+print("Finished")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily Finished}
+\end{center}
+
+\textenglish{\ttfamily break}
+Loop থেকে বের করে।
+
+তারপর Loop-এর পরের Statement Execute হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% CONTINUE
+%================================================
+
+\booksubheading{২. \textenglish{\ttfamily continue} Statement}
+
+বর্তমান Iteration-এর বাকি Statementগুলো Skip করে সরাসরি
+পরবর্তী Iteration-এ যাওয়ার জন্য
+\textenglish{\ttfamily continue}
+ব্যবহার করা হয়।
+
+\begin{center}
+
+\textbf{Condition পূরণ}
+\(\longrightarrow\)
+\textenglish{\ttfamily continue}
+\(\longrightarrow\)
+\textbf{Current Iteration Skip}
+\(\longrightarrow\)
+\textbf{Next Iteration}
+
+\end{center}
+
+%------------------------------------------------
+% continue in for
+%------------------------------------------------
+
+\begin{codeoutputbox}{\textenglish{\ttfamily for} Loop-এ \textenglish{\ttfamily continue}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 4 \quad 5}
+\end{center}
+
+\textenglish{\ttfamily i == 3}
+হলে শুধু ওই Iteration-এর
+\textenglish{\ttfamily print(i)}
+Skip হয়।
+
+Loop বন্ধ হয় না।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%------------------------------------------------
+% continue in while
+%------------------------------------------------
+
+\begin{codeoutputbox}{\textenglish{\ttfamily while} Loop-এ \textenglish{\ttfamily continue}}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+i = 0\\
+while i < 5:\\
+\hspace*{4mm}i += 1\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 4 \quad 5}
+\end{center}
+
+Counter আগে Update হয়েছে।
+
+তাই
+\textenglish{\ttfamily continue}
+হলেও Counter-এর বৃদ্ধি বন্ধ হয় না।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Continue Warning
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while + continue}-এ বিশেষ সতর্কতা}
+
+\begin{codeoutputbox}{ভুল Code}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\textenglish{\ttfamily i == 3}
+হলে
+\textenglish{\ttfamily continue}
+Execute হয়।
+
+তাই নিচের—
+
+\begin{center}
+\textenglish{\ttfamily i += 1}
+\end{center}
+
+Execute হয় না।
+
+ফলে
+\textenglish{\ttfamily i}
+3-এই আটকে গিয়ে Infinite Loop হতে পারে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{সঠিক Code}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}i += 1\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\textenglish{\ttfamily continue}
+-এর আগে Counter Update করা হয়েছে।
+
+তাই
+\textenglish{\ttfamily i = 3}
+অবস্থায় আটকে থাকবে না।
+
+\medskip
+
+\textbf{\color{deepOrange}MCQ Trap:}
+
+\textenglish{\ttfamily while}
+Loop-এ
+\textenglish{\ttfamily continue}
+ব্যবহারের সময় Counter Update Skip হচ্ছে কি না দেখতে হবে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% PASS
+%================================================
+
+\booksubheading{৩. \textenglish{\ttfamily pass} Statement}
+
+Syntax অনুযায়ী Statement প্রয়োজন, কিন্তু বর্তমানে কোনো কাজ করতে না চাইলে
+\textenglish{\ttfamily pass}
+ব্যবহার করা হয়।
+
+\textenglish{\ttfamily pass}
+কোনো Operation সম্পন্ন করে না।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily pass} Example}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}if i == 2:\\
+\hspace*{8mm}pass\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 0 \quad 1 \quad 2 \quad 3 \quad 4}
+\end{center}
+
+\textenglish{\ttfamily pass}
+কিছুই করেনি।
+
+তাই
+\textenglish{\ttfamily i == 2}
+হলেও
+\textenglish{\ttfamily print(i)}
+স্বাভাবিকভাবে Execute হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Why pass
+%================================================
+
+\booksubheading{\textenglish{\ttfamily pass} কেন ব্যবহার করা হয়?}
+
+Python-এ Empty Code Block রাখা যায় না। কোনো Block-এর Code পরে লেখা হবে
+এমন অবস্থায় Temporary Placeholder হিসেবে
+\textenglish{\ttfamily pass}
+ব্যবহার করা যায়।
+
+\begin{codeoutputbox}{Placeholder হিসেবে \textenglish{\ttfamily pass}}
+
+\noindent
+\begin{minipage}[t]{0.50\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+if marks >= 80:\\
+\hspace*{4mm}pass
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily pass}
+=
+\textbf{Do Nothing Statement}
+\end{center}
+
+এটি Loop বন্ধ করে না এবং Current Iteration-ও Skip করে না।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Core comparison
+%================================================
+
+\booksubheading{\textenglish{\ttfamily break}, \textenglish{\ttfamily continue} ও \textenglish{\ttfamily pass}-এর পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.21\linewidth}
+|>{\centering\arraybackslash}p{0.17\linewidth}
+|>{\centering\arraybackslash}p{0.23\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Statement}
+&
+\textbf{Loop বন্ধ?}
+&
+\textbf{Iteration Skip?}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily break}
+&
+হ্যাঁ
+&
+পরবর্তী Iteration নেই
+&
+Loop থেকে বের হয়।
+\\
+\hline
+
+\textenglish{\ttfamily continue}
+&
+না
+&
+হ্যাঁ
+&
+পরবর্তী Iteration-এ যায়।
+\\
+\hline
+
+\textenglish{\ttfamily pass}
+&
+না
+&
+না
+&
+কোনো Operation করে না।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily break}
+\(\longrightarrow\)
+\textbf{Loop শেষ}
+
+\qquad
+
+\textenglish{\ttfamily continue}
+\(\longrightarrow\)
+\textbf{এই Iteration বাদ}
+
+\qquad
+
+\textenglish{\ttfamily pass}
+\(\longrightarrow\)
+\textbf{কিছুই নয়}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Same Example Comparison
+%================================================
+
+\booksubheading{একই Example-এ তিনটির পার্থক্য}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily break}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}break\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+\textenglish{\ttfamily 1 \quad 2}
+
+\medskip
+
+3 পাওয়ার সঙ্গে সঙ্গে পুরো Loop শেষ।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily continue}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+\textenglish{\ttfamily 1 \quad 2 \quad 4 \quad 5}
+
+\medskip
+
+শুধু 3-এর Iteration Skip হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily pass}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}pass\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\textenglish{\ttfamily 1 \quad 2 \quad 3 \quad 4 \quad 5}
+
+\medskip
+
+\textenglish{\ttfamily pass}
+কোনো পরিবর্তন করেনি।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% break with else
+%================================================
+
+\booksubheading{\textenglish{\ttfamily break} এবং Loop-এর \textenglish{\ttfamily else}}
+
+গুরুত্বপূর্ণ নিয়ম—
+
+\begin{center}
+
+\textbf{Loop স্বাভাবিকভাবে শেষ}
+\(\longrightarrow\)
+\textenglish{\ttfamily else}
+Execute
+
+\qquad
+
+\textenglish{\ttfamily break}
+\textbf{ দিয়ে শেষ}
+\(\longrightarrow\)
+\textenglish{\ttfamily else}
+Execute হয় না
+
+\end{center}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily break} থাকলে}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}if i == 2:\\
+\hspace*{8mm}break\\
+else:\\
+\hspace*{4mm}print("Completed")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textenglish{\ttfamily i == 2}
+হলে
+\textenglish{\ttfamily break}
+Execute হয়।
+
+তাই
+\textenglish{\ttfamily Completed}
+Print হবে না।
+
+\medskip
+
+\textbf{\color{deepOrange}MCQ তথ্য:}
+
+Loop-এর
+\textenglish{\ttfamily else}
+তখনই Execute হয় যখন Loop
+\textenglish{\ttfamily break}
+ছাড়া শেষ হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Continue with else
+%================================================
+
+\booksubheading{\textenglish{\ttfamily continue} কি Loop-এর \textenglish{\ttfamily else} বন্ধ করে?}
+
+না।
+\textenglish{\ttfamily continue}
+শুধু Current Iteration Skip করে।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily continue} ও \textenglish{\ttfamily else}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}if i == 1:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)\\
+else:\\
+\hspace*{4mm}print("Finished")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{english}
+\ttfamily
+0 2\\
+Finished
+\end{english}
+
+\medskip
+
+Loop
+\textenglish{\ttfamily break}
+দিয়ে বন্ধ হয়নি।
+
+তাই
+\textenglish{\ttfamily else}
+Execute হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Nested break
+%================================================
+
+\booksubheading{Nested Loop-এ \textenglish{\ttfamily break}}
+
+Nested Loop-এ
+\textenglish{\ttfamily break}
+যে Loop-এর সরাসরি ভিতরে থাকে,
+সাধারণত শুধু সেই \textbf{Nearest/Innermost Loop} বন্ধ করে।
+
+\begin{codeoutputbox}{Nested Loop-এ \textenglish{\ttfamily break}}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(2):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}if j == 1:\\
+\hspace*{12mm}break\\
+\hspace*{8mm}print(i, j)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{english}
+\ttfamily
+0 0\\
+1 0
+\end{english}
+
+\medskip
+
+Inner Loop-এ
+\textenglish{\ttfamily break}
+হয়েছে।
+
+Outer Loop কিন্তু চলেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Nested Loop-এর}
+\textenglish{\ttfamily break}
+\(\longrightarrow\)
+\textbf{Nearest / Innermost Loop বন্ধ}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Nested continue
+%================================================
+
+\booksubheading{Nested Loop-এ \textenglish{\ttfamily continue}}
+
+Inner Loop-এর মধ্যে
+\textenglish{\ttfamily continue}
+থাকলে Inner Loop-এর বর্তমান Iteration Skip হয়।
+
+\begin{codeoutputbox}{Nested Loop-এ \textenglish{\ttfamily continue}}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(2):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}if j == 1:\\
+\hspace*{12mm}continue\\
+\hspace*{8mm}print(i, j)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{english}
+\ttfamily
+0 0\\
+0 2\\
+1 0\\
+1 2
+\end{english}
+
+\medskip
+
+প্রতিবার
+\textenglish{\ttfamily j == 1}
+হলে শুধু সেই Inner Iteration Skip হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Searching
+%================================================
+
+\booksubheading{Searching-এ \textenglish{\ttfamily break}}
+
+কোনো Item পাওয়া গেলে আর Searching চালানোর প্রয়োজন না থাকলে
+\textenglish{\ttfamily break}
+উপযোগী।
+
+\begin{codeoutputbox}{Searching Example}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40]\\
+for x in numbers:\\
+\hspace*{4mm}if x == 30:\\
+\hspace*{8mm}print("Found")\\
+\hspace*{8mm}break
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily Found}
+\end{center}
+
+30 পাওয়া গেছে।
+
+তাই পরবর্তী Item Search না করে Loop বন্ধ হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% continue use
+%================================================
+
+\booksubheading{নির্দিষ্ট Value বাদ দিতে \textenglish{\ttfamily continue}}
+
+\begin{codeoutputbox}{একটি Value Skip}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}if i == 3:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 4 \quad 5}
+\end{center}
+
+নির্দিষ্ট Value বা Case বাদ দিয়ে বাকিগুলো Process করতে
+\textenglish{\ttfamily continue}
+উপযোগী।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% pass outside loop
+%================================================
+
+\booksubheading{\textenglish{\ttfamily pass} কোথায় ব্যবহার হতে পারে?}
+
+\textenglish{\ttfamily pass}
+শুধু Loop-এ নয়; অন্যান্য Python Code Block-এও Placeholder হিসেবে
+ব্যবহার করা যায়।
+
+\begin{codeoutputbox}{বিভিন্ন Block-এ \textenglish{\ttfamily pass}}
+
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+if condition:\\
+\hspace*{4mm}pass\\[1mm]
+def my\_function():\\
+\hspace*{4mm}pass\\[1mm]
+class Student:\\
+\hspace*{4mm}pass
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\outputheading
+
+এগুলোতে
+\textenglish{\ttfamily pass}
+Temporary Placeholder হিসেবে কাজ করছে।
+
+\medskip
+
+Function ও Class-এর বিস্তারিত পরে আলোচনা করা হবে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Full comparison
+%================================================
+
+\booksubheading{তিনটি Statement এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textenglish{\ttfamily break}
+&
+\textenglish{\ttfamily continue}
+&
+\textenglish{\ttfamily pass}
+\\
+\hline
+
+Loop সম্পূর্ণ বন্ধ
+&
+হ্যাঁ
+&
+না
+&
+না
+\\
+\hline
+
+Current Iteration-এর বাকি অংশ
+&
+Loop-সহ শেষ
+&
+Skip
+&
+স্বাভাবিক
+\\
+\hline
+
+Next Iteration
+&
+না
+&
+হ্যাঁ
+&
+স্বাভাবিকভাবে
+\\
+\hline
+
+Placeholder
+&
+না
+&
+না
+&
+হ্যাঁ
+\\
+\hline
+
+Loop-এর \textenglish{\ttfamily else}
+&
+Execute হয় না
+&
+হতে পারে
+&
+হতে পারে
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Flow
+%================================================
+
+\booksubheading{Loop Control-এর সহজ Flow}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{\textenglish{\ttfamily break}:}
+Loop
+\(\longrightarrow\)
+Condition
+\(\longrightarrow\)
+\textenglish{\ttfamily break}
+\(\longrightarrow\)
+\textbf{Loop-এর বাইরে}
+
+\medskip
+
+\textbf{\textenglish{\ttfamily continue}:}
+Loop
+\(\longrightarrow\)
+Condition
+\(\longrightarrow\)
+\textenglish{\ttfamily continue}
+\(\longrightarrow\)
+\textbf{Next Iteration}
+
+\medskip
+
+\textbf{\textenglish{\ttfamily pass}:}
+Loop
+\(\longrightarrow\)
+\textenglish{\ttfamily pass}
+\(\longrightarrow\)
+\textbf{কোনো কাজ নয়}
+\(\longrightarrow\)
+\textbf{Normal Execution}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily break}
+ও
+\textenglish{\ttfamily continue}
+-কে একই মনে করা।
+
+\item
+\textenglish{\ttfamily continue}
+Loop সম্পূর্ণ বন্ধ করে—এমন ধারণা করা।
+
+\item
+\textenglish{\ttfamily pass}
+কে
+\textenglish{\ttfamily continue}
+মনে করা।
+
+\item
+\textenglish{\ttfamily while}
+Loop-এ
+\textenglish{\ttfamily continue}
+-এর কারণে Counter Update Skip করা।
+
+\item Nested Loop-এর Inner
+\textenglish{\ttfamily break}
+দিয়ে সব Loop বন্ধ হবে মনে করা।
+
+\item
+\textenglish{\ttfamily break}
+হওয়ার পরও Loop-এর
+\textenglish{\ttfamily else}
+Execute হবে মনে করা।
+
+\item
+\textenglish{\ttfamily pass}
+ব্যবহার করলে Current Iteration Skip হবে মনে করা।
+
+\item
+\textenglish{\ttfamily break},
+\textenglish{\ttfamily continue}
+বা
+\textenglish{\ttfamily pass}
+-এর Indentation ভুল করা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+}
+
+\textenglish{\ttfamily break}
+&
+Loop সম্পূর্ণ বন্ধ
+&
+\textenglish{\ttfamily continue}
+&
+Current Iteration Skip
+\\[0.5mm]
+
+\textenglish{\ttfamily pass}
+&
+কোনো Operation নয়
+&
+\textenglish{\ttfamily break}
+&
+Next Iteration নেই
+\\[0.5mm]
+
+\textenglish{\ttfamily continue}
+&
+Next Iteration হয়
+&
+\textenglish{\ttfamily pass}
+&
+Normal Execution চলে
+\\[0.5mm]
+
+Loop \textenglish{\ttfamily else}
+&
+\textenglish{\ttfamily break}
+হলে চলে না
+&
+Nested \textenglish{\ttfamily break}
+&
+Nearest Loop বন্ধ
+\\[0.5mm]
+
+\textenglish{\ttfamily while + continue}
+&
+Counter Update খেয়াল করতে হবে
+&
+Placeholder
+&
+\textenglish{\ttfamily pass}
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textenglish{\ttfamily break}
+=
+\textbf{Exit Loop}
+
+\qquad
+
+\textenglish{\ttfamily continue}
+=
+\textbf{Skip This Iteration}
+
+\qquad
+
+\textenglish{\ttfamily pass}
+=
+\textbf{Do Nothing}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.42 Loop Pattern
+%================================================
+

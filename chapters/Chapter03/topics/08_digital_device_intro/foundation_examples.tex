@@ -1,0 +1,18 @@
+\subsection{অ্যানালগ থেকে ডিজিটাল এবং সার্কিটের উপাদান}
+অ্যানালগ সংকেতে মান ধারাবাহিকভাবে বদলাতে পারে; ডিজিটাল সংকেতে নির্দিষ্ট বিচ্ছিন্ন মান ব্যবহার হয়। বাস্তব শব্দ বা তাপমাত্রা নিজে বাইনারি বিট নয়। সেন্সর থেকে পাওয়া অ্যানালগ সংকেতকে প্রয়োজনমতো sampling ও মানের ধাপ নির্ধারণের পরে digital code-এ প্রকাশ করা হয়। এই রূপান্তরের সার্কিট হলো ADC; বিপরীত কাজের সার্কিট DAC।
+
+\begin{center}\begin{tabularx}{\linewidth}{|L{.2\linewidth}|Y|Y|}\hline
+বিষয় & অ্যানালগ & ডিজিটাল\\\hline
+মান & নির্দিষ্ট সীমায় ধারাবাহিক & নির্ধারিত বিচ্ছিন্ন মান\\\hline
+উদাহরণ & মাইক্রোফোনের voltage & digitized audio samples\\\hline
+প্রক্রিয়াকরণ & অ্যানালগ সার্কিটে & logic gate/processor-এ\\\hline
+সীমা & noise ও যন্ত্রের নির্ভুলতা & noise margin, sampling ও bit resolution\\\hline
+\end{tabularx}\end{center}
+
+\smallhead{ট্রানজিস্টর, switch ও IC}
+\textbf{ট্রানজিস্টর} একটি semiconductor উপাদান; নিয়ন্ত্রণ সংকেত দিয়ে বিদ্যুৎ প্রবাহ চালু বা বন্ধ করার switch হিসেবে ব্যবহার করা যায়। কয়েকটি ট্রানজিস্টরের উপযুক্ত সংযোগে logic gate তৈরি হয়। বহু উপাদান ও সংযোগ একটি ছোট semiconductor chip-এ তৈরি হলে তাকে \textbf{সমন্বিত বর্তনী (Integrated Circuit, IC)} বলে। একটি IC-তে gate, flip-flop বা আরও জটিল circuit থাকতে পারে; IC একটি নির্দিষ্ট gate-এর নাম নয়।
+
+Logic ০ মানে সবসময় শূন্য volt বা বিদ্যুৎ নেই, এবং logic ১ মানে সব যন্ত্রে একই নির্দিষ্ট voltage—এমন নয়। গেটের নির্ধারিত LOW/HIGH voltage range এবং polarity অনুযায়ী binary অর্থ নির্ধারিত হয়।
+
+\chThreeExample{১}{ডিজিটাল থার্মোমিটারে তথ্যের পথ}
+\chThreeAnswer সেন্সর তাপমাত্রা অনুযায়ী একটি বৈদ্যুতিক সংকেত দেয়। ADC সেটি digital মানে বদলায়; প্রসেসিং circuit মান গণনা করে; register সাময়িকভাবে রাখে; display circuit সংখ্যা দেখায়। ডিসপ্লেতে সংখ্যা দেখা গেলেই ভেতরের সেন্সর সরাসরি binary তথ্য দিচ্ছে—এ সিদ্ধান্ত ঠিক নয়।

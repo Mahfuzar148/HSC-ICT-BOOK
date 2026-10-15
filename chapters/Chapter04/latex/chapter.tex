@@ -1,35 +1,46 @@
 % chapter.tex (Chapter 04)
-\chapter{ওয়েব ডিজাইন পরিচিতি এবং HTML}
+\ifdefined\chFourStandaloneLayout\else
+  \input{chapters/Chapter04/latex/page_layout}
+  \savegeometry{chFourPreviousLayout}
+  \chFourGeometry{\newgeometry}
+\fi
+\begingroup
+\input{chapters/Chapter04/latex/visual_style}
+\setlength{\headwidth}{\textwidth}
+\chapter{ওয়েব ডিজাইনের পরিচিতি এবং HTML}
+
+একটি কলেজের ওয়েবসাইটে ভর্তি বিজ্ঞপ্তি, ক্লাসের রুটিন, পরীক্ষার ফলাফল, নোটিশ ও যোগাযোগের তথ্য প্রকাশ করা যায়। ব্যবহারকারী যেন প্রয়োজনীয় পেজ খুঁজে পান এবং লেখা, ছবি, লিংক, সারণি ও ফর্ম সহজে ব্যবহার করতে পারেন, সেভাবে সাইট সাজাতে হয়।
+
+ওয়েবে তথ্য প্রকাশের পাশাপাশি তার গঠন ও উপস্থাপন পরিকল্পনা করা প্রয়োজন। কোন তথ্য কোথায় থাকবে, মেনুর কোন লিংক কোন পেজে নিয়ে যাবে এবং লেখা ও ছবি কীভাবে সাজানো হবে—এসব সিদ্ধান্ত ওয়েব ডিজাইনের অংশ। মোবাইল, ট্যাবলেট ও কম্পিউটারের ভিন্ন পর্দায় সাইটের ব্যবহারযোগ্যতাও বিবেচনা করতে হয়।
+
+এই অধ্যায়ে ওয়েব, ওয়েবপেজ ও ওয়েবসাইটের ধারণা, সাইটের ধরন ও কাঠামো এবং সংশ্লিষ্ট ঠিকানা ও সেবাগুলো আলোচনা করা হয়েছে। এরপর HTML নথির গঠন, ট্যাগ, এলিমেন্ট ও অ্যাট্রিবিউট শিখে লেখা, তালিকা, হাইপারলিংক, ছবি, সারণি ও ফর্ম তৈরি করা হবে। উদাহরণ ও কোডের মাধ্যমে প্রতিটি উপাদানের ব্যবহার বুঝে পূর্ণাঙ্গ ওয়েবপেজ তৈরি, পরীক্ষা ও প্রকাশের কাজ শেখা যাবে।
 
 \begin{learningbox}
-এই অধ্যায় শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item ওয়েব পেজ, ওয়েবসাইট, ব্রাউজার, সার্ভার ও ওয়েব ডিজাইনের ধারণা ব্যাখ্যা করতে।
-\item website structure, navigation, layout এবং responsive design বুঝতে।
-\item HTML document structure, tag, attribute, element ও syntax ব্যবহার করতে।
-\item heading, paragraph, formatting, hyperlink, image, table ও form তৈরি করতে।
-\item একটি basic website তৈরি, test এবং publish করার ধাপ লিখতে।
-\end{itemize}
+এই অধ্যায় শেষে শিক্ষার্থী পারবে—
+\begin{enumerate}
+\item ওয়েব ডিজাইনের ধারণা এবং ওয়েবপেজ, ওয়েবসাইট ও হোমপেজ-এর পার্থক্য ব্যাখ্যা করতে।
+\item ক্লায়েন্ট–সার্ভার পরিবেশে ব্রাউজার ও ওয়েব সার্ভারের কাজ এবং ব্রাউজার ও সার্চ ইঞ্জিনের পার্থক্য ব্যাখ্যা করতে।
+\item স্ট্যাটিক ও ডাইনামিক সাইটের বৈশিষ্ট্য, পার্থক্য ও উপযোগিতা এবং লিনিয়ার, স্তরভিত্তিক, নেটওয়ার্ক ও মিশ্র কাঠামোর বৈশিষ্ট্য ও ব্যবহার ব্যাখ্যা করতে।
+\item URL, ডোমেইন নাম, DNS ও প্রোটোকল-এর ভূমিকা এবং ওয়েব ব্যবহারের সঙ্গে সম্পর্ক ব্যাখ্যা করতে।
+\item HTML নথির মৌলিক গঠন, Tag, Element ও Attribute-এর সম্পর্ক এবং Container ও Empty Element-এর পার্থক্য ব্যাখ্যা করতে।
+\item লেখা, তালিকা, Hyperlink, ছবি, Table ও Form তৈরি করতে; প্রয়োজন অনুযায়ী Tag ও Attribute নির্বাচন করতে।
+\item \texttt{<a>}, \texttt{<img>}, \texttt{<table>} ও \texttt{<form>}-এর ব্যবহার ও গুরুত্বপূর্ণ Attribute ব্যাখ্যা করতে।
+\item সাধারণ ওয়েবপেজ তৈরি ও ব্রাউজারে পরীক্ষা করতে; ডোমেইন নাম, Web Hosting ও ফাইল স্থানান্তর ব্যবহার করে সাইট প্রকাশের মৌলিক ধাপ ব্যাখ্যা করতে।
+\end{enumerate}
 \end{learningbox}
 
 \begin{center}
-\fbox{\parbox{0.92\textwidth}{
+\fbox{\parbox{.94\linewidth}{
 \centering
-\textbf{অধ্যায় মানচিত্র}\\[4pt]
-Web concept $\rightarrow$ Webpage/Website $\rightarrow$ Web terms $\rightarrow$ Website types/structure $\rightarrow$ HTML basics $\rightarrow$ Text/link/image/table/form $\rightarrow$ Page design $\rightarrow$ Publishing
+\textbf{অধ্যায় মানচিত্র}\\[2pt]
+ওয়েবের মৌলিক ধারণা $\rightarrow$ ওয়েবপেজ ও ওয়েবসাইট
+$\rightarrow$ ওয়েবসাইট-এর ধরন ও কাঠামো
+$\rightarrow$ URL, ডোমেইন নাম, ওয়েব ব্রাউজার ও ওয়েব সার্ভার
+$\rightarrow$ HTML নথি, ট্যাগ, এলিমেন্ট ও অ্যাট্রিবিউট
+$\rightarrow$ লেখা, তালিকা, হাইপারলিংক, ছবি, সারণি ও ফর্ম
+$\rightarrow$ পূর্ণাঙ্গ ওয়েবপেজ তৈরি $\rightarrow$ ওয়েবসাইট প্রকাশ
 }}
 \end{center}
-
-\begin{keypointbox}{High-yield অংশ}
-\begin{itemize}
-\item Static vs dynamic website, webpage vs website, client-server ধারণা।
-\item IP address, domain name, DNS, URL, HTTP/HTTPS, browser ও search engine।
-\item HTML tag, element, attribute, paired/empty tag।
-\item \texttt{<a>}, \texttt{<img>}, \texttt{<table>}, \texttt{<form>} tag-এর syntax ও attribute।
-\item Linear, tree, network/hybrid website structure।
-\item Domain, hosting, URL, FTP/SFTP ও website publishing।
-\end{itemize}
-\end{keypointbox}
 
 \input{chapters/Chapter04/topics/01_web_design_concept/topic}
 \input{chapters/Chapter04/topics/02_webpage_website_homepage/topic}
@@ -48,10 +59,15 @@ Web concept $\rightarrow$ Webpage/Website $\rightarrow$ Web terms $\rightarrow$ 
 \input{chapters/Chapter04/topics/10_table_cell_merge/topic}
 \input{chapters/Chapter04/topics/11_table_inside_elements/topic}
 \input{chapters/Chapter04/topics/12_div_span_style/topic}
-\input{chapters/Chapter04/topics/13_full_webpage_practical/topic}
 \input{chapters/Chapter04/topics/10_form/topic}
 \input{chapters/Chapter04/topics/05_design_structure_layout/topic}
+\input{chapters/Chapter04/topics/13_full_webpage_practical/topic}
 \input{chapters/Chapter04/topics/11_web_page_designing/topic}
 \input{chapters/Chapter04/topics/12_website_publishing/topic}
 \input{chapters/Chapter04/topics/13_exercises/topic}
 \input{chapters/Chapter04/topics/mcq_questions/topic}
+\clearpage
+\endgroup
+\ifdefined\chFourStandaloneLayout\else
+  \loadgeometry{chFourPreviousLayout}
+\fi

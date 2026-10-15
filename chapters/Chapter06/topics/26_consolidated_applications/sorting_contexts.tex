@@ -1,0 +1,155 @@
+\subsection{শ্রেণি, শাখা ও তারিখসহ বিস্তৃত উদাহরণ}
+পরের স্বাধীন Student নমুনায় Roll, Class ও GPA সংখ্যামান; Name ও Section লেখা এবং BirthDate তারিখ। সারণিতে তারিখ দিন-মাস-বছর আকারে দেখানো হয়েছে। এখানে প্রতিটি Roll অনন্য।
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright\small
+\begin{tabular}{|l|l|l|l|l|l|}\hline
+Roll & Name & Class & Section & GPA & BirthDate\\\hline
+105 & Rahim & 12 & Day & 5.00 & 12-03-2008\\\hline
+102 & Karim & 11 & Morning & 4.75 & 05-11-2007\\\hline
+103 & Nusrat & 12 & Day & 5.00 & 21-01-2008\\\hline
+101 & Arif & 11 & Day & 4.50 & 09-07-2007\\\hline
+104 & Sumi & 12 & Morning & 4.75 & 17-08-2008\\\hline
+106 & Bithi & 11 & Morning & 5.00 & 25-12-2007\\\hline
+\end{tabular}
+\captionof{table}{সর্টিংয়ের নমুনা Student টেবিল}
+\end{minipage}\end{flushleft}
+SELECT-এর ফল সাজাতে \texttt{ORDER BY} ব্যবহার করা হয়। SELECT-এ কোন কলাম দেখাব, FROM-এ কোন টেবিল নেব এবং ORDER BY-তে কোন ফিল্ডে কী ক্রমে সাজাব তা লেখা হয়। নিচের নির্দেশে রোল ছোট থেকে বড় সাজবে।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\begin{minipage}[c]{.54\linewidth}
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+ORDER BY Roll ASC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}$\Rightarrow$\end{minipage}\hfill
+\begin{minipage}[c]{.39\linewidth}\raggedright\small
+\begin{tabular}{|l|l|}\hline
+Roll & Name\\\hline
+101 & Arif\\\hline102 & Karim\\\hline103 & Nusrat\\\hline
+104 & Sumi\\\hline105 & Rahim\\\hline106 & Bithi\\\hline
+\end{tabular}
+\captionof{table}{রোল অনুযায়ী ঊর্ধ্বক্রমে সাজানোর ফল}
+\end{minipage}
+\end{minipage}\par\smallskip
+ফিল্ডের পরে ASC বা DESC না লিখলে সাধারণ SQL নিয়মে ASC ধরা হয়। তাই \texttt{ORDER BY Roll} এবং \texttt{ORDER BY Roll ASC} একই ক্রম দেয়। বিপরীত ফল চাইলে \texttt{ORDER BY Roll DESC} লিখতে হবে। তবে ORDER BY-ই না থাকলে রোলক্রম বা এন্ট্রির ক্রমে ফল আসার নিশ্চয়তা নেই। নির্দিষ্ট ফলক্রমের জন্য নির্দেশটি স্পষ্টভাবে লেখা প্রয়োজন।
+
+\subsection{সংখ্যা ও লেখার ওপর Sorting}
+নমুনার GPA বেশি থেকে কম সাজাতে নিচের নির্দেশ ব্যবহার করা যায়। ফলাফলে প্রথমে 5.00 পাওয়া তিনজন, তারপর 4.75 পাওয়া দুজন এবং শেষে 4.50 পাওয়া শিক্ষার্থী থাকবে। কেবল GPA দেওয়া হয়েছে বলে একই GPA-এর শিক্ষার্থীদের নিজেদের মধ্যকার ক্রম নির্ধারিত নয়।
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC;
+\end{verbatim}
+নাম বর্ণানুক্রমে দেখতে নিচের প্রথম নির্দেশ এবং বিপরীত বর্ণানুক্রমে দেখতে দ্বিতীয় নির্দেশ ব্যবহার করা যায়। এখানে ব্যবহৃত নামগুলোর প্রথম অক্ষর আলাদা, তাই ফলক্রম সহজে মিলিয়ে দেখা যায়।
+\begin{verbatim}
+SELECT Roll, Name FROM Student ORDER BY Name ASC;
+SELECT Roll, Name FROM Student ORDER BY Name DESC;
+\end{verbatim}
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright\small
+\begin{tabular}{|l|l|l|}\hline
+অবস্থান & Name ASC & Name DESC\\\hline
+1 & Arif & Sumi\\\hline2 & Bithi & Rahim\\\hline
+3 & Karim & Nusrat\\\hline4 & Nusrat & Karim\\\hline
+5 & Rahim & Bithi\\\hline6 & Sumi & Arif\\\hline
+\end{tabular}
+\captionof{table}{একই নামের তালিকার দুটি বিপরীত বিন্যাস}
+\end{minipage}\end{flushleft}
+
+\subsection{তারিখের ক্রম ও বয়স}
+প্রকৃত তারিখের ক্রম নির্ণয়ে বছর, মাস ও দিন একসঙ্গে বিবেচিত হয়। BirthDate DESC-এ সবচেয়ে নতুন জন্মতারিখ আগে আসে; একই নির্দিষ্ট দিনে বয়স তুলনা করলে তিনি কম বয়সী। BirthDate ASC-এ পুরোনো জন্মতারিখ, অর্থাৎ বেশি বয়সী ব্যক্তি আগে আসেন। Age নামের সংখ্যামান ফিল্ড থাকলে কম বয়সী আগে দেখাতে Age ASC লাগবে। তাই BirthDate-এর ক্রম ও বয়সের সংখ্যামানের ক্রম বিপরীত।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\begin{minipage}[c]{.54\linewidth}
+\begin{verbatim}
+SELECT Name, BirthDate
+FROM Student
+ORDER BY BirthDate DESC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}$\Rightarrow$\end{minipage}\hfill
+\begin{minipage}[c]{.39\linewidth}\raggedright\small
+\begin{tabular}{|l|l|}\hline
+Name & BirthDate\\\hline
+Sumi & 17-08-2008\\\hline Rahim & 12-03-2008\\\hline
+Nusrat & 21-01-2008\\\hline Bithi & 25-12-2007\\\hline
+Karim & 05-11-2007\\\hline Arif & 09-07-2007\\\hline
+\end{tabular}
+\captionof{table}{নতুন জন্মতারিখ থেকে পুরোনো জন্মতারিখ}
+\end{minipage}
+\end{minipage}\par\smallskip
+Access-এ Date/Time ফিল্ডে তারিখ রেখে প্রদর্শনের ফরম্যাট দিন-মাস-বছর করা যায়। একই লেখা সাধারণ Text হলে অক্ষরক্রমে সাজিয়ে ভুল কালক্রম পাওয়া সম্ভব। SQLite-এ তারিখ Text হিসেবে রাখলে সব মান একই \texttt{YYYY-MM-DD} বিন্যাসে রাখার সুবিধা আছে; যেমন 2007-11-05-এর আগে 2007-07-09 আসে। কেবল পর্দায় তারিখের মতো দেখাচ্ছে বলে তার সংরক্ষণপদ্ধতি সঠিক ধরে নেওয়া যাবে না।
+
+উদাহরণস্বরূপ 2008-02-10, 2007-12-20 ও 2008-01-05 তারিখ তিনটির ঊর্ধ্বক্রম হলো 2007-12-20, 2008-01-05, 2008-02-10। এখানে আগে জন্মানো ব্যক্তি বয়সে বড়।
+
+\subsection{একাধিক ফিল্ডের অগ্রাধিকার}
+এক ফিল্ডের মান সমান হলে পরবর্তী ফিল্ড দিয়ে ক্রম নির্ণয় করাকে একাধিক ফিল্ডের সর্টিং বলে। ORDER BY-তে বাম থেকে ডানে অগ্রাধিকার কাজ করে। প্রথমটির মান সমান হলে দ্বিতীয়টি; প্রথম দুটি সমান হলে তৃতীয়টি বিবেচিত হয়। পরের ফিল্ড দিয়ে গোটা তালিকা নতুন করে সাজানো হয় না।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\begin{minipage}[c]{.54\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC, Roll ASC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}$\Rightarrow$\end{minipage}\hfill
+\begin{minipage}[c]{.39\linewidth}\raggedright\small
+\begin{tabular}{|l|l|l|}\hline
+Roll & Name & GPA\\\hline
+103 & Nusrat & 5.00\\\hline105 & Rahim & 5.00\\\hline106 & Bithi & 5.00\\\hline
+102 & Karim & 4.75\\\hline104 & Sumi & 4.75\\\hline101 & Arif & 4.50\\\hline
+\end{tabular}
+\captionof{table}{GPA নিম্নক্রম; সমান GPA-তে রোল ঊর্ধ্বক্রম}
+\end{minipage}
+\end{minipage}\par\smallskip
+প্রথম তিনজনের GPA 5.00 সমান বলে তাঁদের Roll 103, 105 ও 106 অনুসারে ক্রম হয়েছে। Arif-এর Roll সবচেয়ে ছোট হলেও GPA কম হওয়ায় তিনি শেষে। প্রতিটি ফিল্ডের ক্রম আলাদা: \texttt{ORDER BY GPA, Roll DESC}-এ GPA-এর ক্রম ASC, কেবল Roll-এর ক্রম DESC। শেষে একটি DESC লিখলে আগের সব ফিল্ড DESC হয়ে যায় না।
+
+\subsection{শ্রেণি, শাখা ও রোলের বিন্যাস}
+শ্রেণি বড় থেকে ছোট এবং একই শ্রেণিতে রোল ছোট থেকে বড় চাইলে প্রথম নির্দেশে Class DESC, Roll ASC লিখি। এবার শাখা আগে চাইলে দ্বিতীয় নির্দেশে Section প্রথমে আসে। তৃতীয় নির্দেশে Class আবার প্রথম অগ্রাধিকার পায়।
+\begin{verbatim}
+SELECT Roll, Name, Class, GPA
+FROM Student ORDER BY Class DESC, Roll ASC;
+
+SELECT Roll, Name, Section, Class
+FROM Student ORDER BY Section ASC, Class DESC, Roll ASC;
+
+SELECT Roll, Name, Class, Section
+FROM Student ORDER BY Class DESC, Section ASC, Roll ASC;
+\end{verbatim}
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright\small
+\begin{tabularx}{\linewidth}{|X|l|}\hline
+অগ্রাধিকার & ফলাফলের Roll-ক্রম\\\hline
+Class DESC, Roll ASC & 103, 104, 105, 101, 102, 106\\\hline
+Section ASC, Class DESC, Roll ASC & 103, 105, 101, 104, 102, 106\\\hline
+Class DESC, Section ASC, Roll ASC & 103, 105, 104, 101, 102, 106\\\hline
+\end{tabularx}
+\captionof{table}{ফিল্ডের অগ্রাধিকার বদলালে ফলের ক্রম}
+\end{minipage}\end{flushleft}
+দ্বিতীয় নির্দেশে Day-এর সব শিক্ষার্থী Morning-এর আগে। তাই Day-এর একাদশ শ্রেণির Arif, Morning-এর দ্বাদশ শ্রেণির Sumi-র আগে এসেছেন। তৃতীয় নির্দেশে শ্রেণি প্রথম অগ্রাধিকার হওয়ায় দ্বাদশের Sumi একাদশের Arif-এর আগে। দুই নির্দেশে একই ফিল্ড থাকলেও তাদের অবস্থান বদলেছে বলে ফল বদলেছে।
+
+\subsection{সংখ্যার মতো লেখা, শূন্য ও NULL}
+সংখ্যামান 1, 2, 10, 20 ঊর্ধ্বক্রমে সাজালে একই ক্রম পাওয়া যায়। কিন্তু মানগুলো Text হলে অক্ষর ধরে তুলনায় 1, 10, 2, 20 হতে পারে: 10-এর প্রথম অক্ষর 1 বলে তা 2-এর আগে আসে। গাণিতিক হিসাব ও সংখ্যাক্রম দরকার হলে উপযুক্ত Number টাইপ জরুরি। পরিচিতি কোডে শুরুর শূন্য রাখতে Text প্রয়োজন হতে পারে; সেই সিদ্ধান্ত ফিল্ডের অর্থ অনুযায়ী নিতে হয়।
+\begin{flushleft}\small
+\begin{tabular}{|l|l|}\hline
+সংরক্ষণের ধরন & ঊর্ধ্বক্রমের নমুনা\\\hline
+Number & 1, 2, 10, 20\\\hline
+অসম দৈর্ঘ্যের Text & 1, 10, 2, 20\\\hline
+সমান দৈর্ঘ্যের শূন্যযুক্ত Text & 001, 002, 010, 020\\\hline
+\end{tabular}
+\end{flushleft}
+NULL অনুপস্থিত বা অজানা মান বোঝায়। এটি সংখ্যা 0 কিংবা শূন্য দৈর্ঘ্যের লেখা \texttt{\textquotesingle\textquotesingle} নয়। সর্টিংয়ে NULL কোন অবস্থানে থাকবে, তা DBMS-এর নিয়মের ওপর নির্ভর করে। তাই NULL-কে 0 ধরে সাজানো ঠিক নয়; ব্যবহৃত সফটওয়্যারের নিয়ম অনুসারে ফল বুঝতে হয়।
+
+\subsection{Sorting, সম্পাদনা ও ফিল্টারিংয়ের পার্থক্য}
+সর্টিং Rahim-এর GPA 5.00 পরিবর্তন করে না; শুধু ফলাফলে তাঁর রেকর্ডের অবস্থান বদলায়। কেবল রোল কলাম সাজিয়ে নাম ও GPA আগের জায়গায় রাখলে এক ব্যক্তির নামের সঙ্গে অন্যের নম্বর মিলে যেতে পারে। সঠিক সর্টিংয়ে পুরো রেকর্ড অক্ষুণ্ণ থাকে। SELECT-এর ORDER BY সংরক্ষিত মান সংশোধন করে না।
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{23mm}|X|X|}\hline
+কাজ & পরিবর্তন & উদাহরণ\\\hline
+Sorting & নির্বাচিত রেকর্ডের ক্রম & GPA বেশি থেকে কম\\\hline
+Filtering & কোন রেকর্ড ফলাফলে থাকবে & কেবল Day শাখা\\\hline
+Editing & সংরক্ষিত মান & ভুল GPA সংশোধন\\\hline
+\end{tabularx}
+\end{flushleft}
+ফিল্টারিংয়ে কোনো রেকর্ড ফল থেকে বাদ পড়লেও মূল টেবিল থেকে তা মুছে যায় না। একই নির্দেশে WHERE দিয়ে বাছাই এবং ORDER BY দিয়ে সাজানো যায়। যেমন Day শাখার শিক্ষার্থীদের GPA বেশি থেকে কম, সমান হলে রোল ছোট থেকে বড় দেখাতে নিচের নির্দেশটি ব্যবহার করি।
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE Section = 'Day'
+ORDER BY GPA DESC, Roll ASC;
+\end{verbatim}
+ফলে Nusrat (103, 5.00), Rahim (105, 5.00) এবং Arif (101, 4.50) আসবে। এখানে Section শাখা বোঝায়; Science বিভাগের শর্তের বদলে Day শাখার শর্ত বসানো যাবে না। শর্তের ভাষা ও সংশ্লিষ্ট ফিল্ডের অর্থ মিলতে হবে। ইনডেক্সিং আলাদা অনুসন্ধান-সহায়ক ব্যবস্থা; ইনডেক্স আছে বলেই ORDER BY ছাড়া ফলের নির্দিষ্ট ক্রম নিশ্চিত হয় না।
+

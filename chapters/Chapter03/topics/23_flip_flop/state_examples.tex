@@ -1,0 +1,50 @@
+\subsection{Latch, সক্রিয় ক্লক ও অবস্থা পরিবর্তন}
+\textbf{ল্যাচ} নিয়ন্ত্রণের একটি স্তর সক্রিয় থাকা পর্যন্ত ইনপুটের পরিবর্তন গ্রহণ করতে পারে। \textbf{এজ-ট্রিগার্ড ফ্লিপ-ফ্লপ} ক্লকের নির্দিষ্ট ওঠা বা নামার মুহূর্তে নতুন মান গ্রহণ করে। দুইটি cross-coupled NOR গেটের সাধারণ SR latch-এ ক্লক নেই; তাকে ক্লক-নিয়ন্ত্রিত D flip-flop-এর সঙ্গে এক করে দেখানো যাবে না।
+
+\smallhead{NOR দিয়ে active-high SR latch}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\node[nor gate US,chgate] (g1) at (1,1) {};
+\node[nor gate US,chgate] (g2) at (1,-1) {};
+\draw (g1.input 1)--++(-1,0) node[left] {$R$};
+\draw (g2.input 2)--++(-1,0) node[left] {$S$};
+\draw (g1.output)--(3,1) node[right] {$Q$};
+\draw (g2.output)--(3,-1) node[right] {$\overline Q$};
+\draw (2.3,1) to[out=-90,in=0] (2,-.15) --(-.4,-.15)|-(g2.input 1);
+\draw (2.6,-1) to[out=90,in=0] (2,.15) --(-.7,.15)|-(g1.input 2);
+\fill (2.3,1) circle(1.5pt);\fill (2.6,-1) circle(1.5pt);
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{এক NOR-এর আউটপুট অন্য NOR-এর ইনপুটে ফিরে এসে অবস্থা ধরে রাখে।}
+
+\end{minipage}
+\end{center}
+$S=1,R=0$-তে Q সেট হয়; $S=0,R=1$-তে রিসেট। $S=R=0$-তে feedback আগের মান ধরে রাখে। $S=R=1$-এ দুই আউটপুটই ০ হয়; এই নিষিদ্ধ অবস্থায় পরস্পরের পূরক থাকার নিয়ম ভেঙে যায়। NAND latch-এ active-low $\overline S,\overline R$ ব্যবহৃত হয় এবং নিষিদ্ধ ইনপুট 00; দুটি সারণি একই নয়।
+
+\smallhead{ক্লক-নিয়ন্ত্রিত ফ্লিপ-ফ্লপের কার্যসারণি}
+সারণির $Q$ বর্তমান মান, $Q^+$ পরের মান। SR-তে active-high ইনপুট ধরা হয়েছে; নিচের নিয়মগুলো প্রযোজ্য সক্রিয় ক্লক মুহূর্তে এবং asynchronous preset/clear নিষ্ক্রিয় অবস্থায়।
+\begin{center}\begin{tabularx}{\linewidth}{|l|c|c|Y|}\hline
+ধরন & ইনপুট & $Q^+$ & কাজ\\\hline
+SR & 00 & $Q$ & অপরিবর্তিত\\\hline
+SR & 01 & 0 & R সক্রিয়, reset\\\hline
+SR & 10 & 1 & S সক্রিয়, set\\\hline
+SR & 11 & --- & নিষিদ্ধ\\\hline
+JK & 00 & $Q$ & অপরিবর্তিত\\\hline
+JK & 01 & 0 & reset\\\hline
+JK & 10 & 1 & set\\\hline
+JK & 11 & $\overline Q$ & toggle\\\hline
+D & 0/1 & $D$ & ইনপুট বিট সংরক্ষণ\\\hline
+T & 0 & $Q$ & অপরিবর্তিত\\\hline
+T & 1 & $\overline Q$ & toggle\\\hline
+\end{tabularx}\end{center}
+
+\chThreeExample{১}{D flip-flop-এ তিন ক্লক}
+শুরুতে $Q=0$। সক্রিয় ওঠা প্রান্তে D-এর মান যথাক্রমে ১, ০, ১।
+\chThreeAnswer ক্লকের পরে Q যথাক্রমে ১, ০, ১। দুই সক্রিয় প্রান্তের মাঝখানে D বদলালেও Q নিজের থেকে বদলাবে না।
+
+\chThreeExample{২}{JK ও T-তে toggle}
+JK-তে $J=K=1$ এবং শুরুতে $Q=0$। চার সক্রিয় ক্লকের পর Q কত?
+\chThreeAnswer $0\to1\to0\to1\to0$; Q=০। T=১ করে একই ক্রম পাওয়া যায়। প্রতি দুই ইনপুট ক্লকে একটি পূর্ণ output cycle; আদর্শভাবে $f_Q=f_{CLK}/2$।
+
+\chThreeExample{৩}{এক বিট কেন, দুই বিট নয়?}
+Q ও $\overline Q$ দুটি output থাকলেও একটি flip-flop এক বিট রাখে।
+\chThreeAnswer দুটি output স্বাধীন নয়; Q-এর মান নির্ধারিত হলেই অন্যটি নির্ধারিত। বৈধ স্থিতিশীল অবস্থা মাত্র দুটি, তাই ধারণক্ষমতা এক বিট।

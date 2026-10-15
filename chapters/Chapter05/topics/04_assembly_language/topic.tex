@@ -1,0 +1,232 @@
+\sectionheading{5.4 অ্যাসেম্বলি ভাষা (Assembly Language)}
+Machine Language-এ 0 ও 1 ব্যবহার করে Program লেখা মানুষের জন্য অত্যন্ত কঠিন ছিল। Binary Instruction মনে রাখা, Error খুঁজে বের করা এবং বড় Program লেখা ছিল সময়সাপেক্ষ।
+
+এই অসুবিধা কমানোর জন্য Binary Code-এর পরিবর্তে সহজে মনে রাখা যায় এমন \textbf{সংক্ষিপ্ত প্রতীকী শব্দ বা Mnemonic Code} ব্যবহার করে Instruction লেখার ব্যবস্থা চালু হয়। এই ভাষাই হলো \textbf{Assembly Language}।
+
+\booksubheading{অ্যাসেম্বলি ভাষা কাকে বলে?}
+\begin{definitionbox}
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Low Level Programming Language-এ Machine Language-এর 0 ও 1-এর পরিবর্তে \textbf{Mnemonic Code বা প্রতীকী Instruction} ব্যবহার করে Program লেখা হয়, তাকে \textbf{অ্যাসেম্বলি ভাষা (Assembly Language)} বলে।
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+\begin{center}
+\textbf{Binary Code-এর পরিবর্তে Mnemonic Code \(\;=\;\) Assembly Language}
+\end{center}
+Assembly Language Machine Language-এর তুলনায় মানুষের জন্য অনেক সহজ হলেও এটি এখনও Hardware-এর খুব কাছাকাছি একটি \textbf{Low Level Language}।
+
+\booksubheading{Mnemonic Code কী?}
+\begin{definitionbox}
+\textbf{\color{darkTeal}Mnemonic Code}
+
+Machine Language-এর জটিল Binary Instruction-এর পরিবর্তে কোনো Operation সহজে বোঝা ও মনে রাখার জন্য ব্যবহৃত সংক্ষিপ্ত প্রতীকী শব্দকে \textbf{Mnemonic Code} বলা হয়।
+\end{definitionbox}
+
+যেমন—
+\begin{center}
+\begin{tabularx}{0.72\linewidth}{|C{0.22\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\textbf{Mnemonic} & \multicolumn{1}{c|}{\textbf{সাধারণ কাজের ধারণা}}\\
+\hline
+\textenglish{\ttfamily ADD} & যোগ করা\\ \hline
+\textenglish{\ttfamily SUB} & বিয়োগ করা\\ \hline
+\textenglish{\ttfamily MUL} & গুণ করা\\ \hline
+\textenglish{\ttfamily DIV} & ভাগ করা\\ \hline
+\textenglish{\ttfamily JMP} & নির্দিষ্ট স্থানে Jump করা\\ \hline
+\textenglish{\ttfamily LDA} & Data/Value Load করার ধারণা\\ \hline
+\end{tabularx}
+\end{center}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Mnemonic Code-এর উদ্দেশ্য হলো Binary Instruction-এর পরিবর্তে \textbf{সহজে মনে রাখা যায় এমন অর্থবোধক সংক্ষিপ্ত Code} ব্যবহার করা।
+\end{rememberbox}
+
+\begin{examplebox}{Machine Language ও Assembly Language-এর ধারণামূলক উদাহরণ}
+Machine Language-এ কোনো Operation হতে পারে—
+\begin{center}
+{\large\textenglish{\ttfamily 00010001 00000101}}
+\end{center}
+একই ধরনের কাজ Assembly Language-এ Mnemonic ব্যবহার করে ধারণামূলকভাবে লেখা যেতে পারে—
+\begin{center}
+{\large\textenglish{\ttfamily ADD A, B}}
+\end{center}
+এখানে \textenglish{\ttfamily ADD} দেখে Programmer সহজেই বুঝতে পারে যে যোগসংক্রান্ত Operation করা হবে।
+
+অর্থাৎ Assembly Language Binary Instruction-কে মানুষের জন্য তুলনামূলকভাবে সহজ ও পাঠযোগ্য করে।
+\end{examplebox}
+
+\booksubheading{Assembly Language-এর জন্য Assembler কেন প্রয়োজন?}
+কম্পিউটার Assembly Language-এর Mnemonic Code সরাসরি বুঝতে পারে না। Processor মূলত Machine Code বুঝতে পারে।
+
+তাই Assembly Language-এ লেখা Program-কে Machine Language-এ রূপান্তর করার জন্য \textbf{Assembler} নামক Translator Program ব্যবহার করা হয়।
+
+\begin{definitionbox}
+\textbf{\color{darkTeal}Assembler}
+
+যে Translator Program Assembly Language-এ লেখা Program-কে Machine Language বা Machine Code-এ রূপান্তর করে, তাকে \textbf{Assembler} বলে।
+\end{definitionbox}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\flowblue{Assembly Program}{Mnemonic Code}
+\hspace{2mm}\(\longrightarrow\)\hspace{2mm}
+\flowgreen{Assembler}{অনুবাদ}
+\hspace{2mm}\(\longrightarrow\)\hspace{2mm}
+\flowblue{Machine Code}{0 ও 1}
+\end{adjustbox}
+\end{center}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}Shortcut}
+\begin{center}
+\textbf{Assembly Language \(\rightarrow\) Assembler \(\rightarrow\) Machine Language}
+\end{center}
+\end{rememberbox}
+
+\booksubheading{Assembly Instruction-এর অংশ}
+একটি Assembly Program-এর Instruction Line-এ সাধারণত প্রয়োজন অনুযায়ী কয়েকটি অংশ থাকতে পারে—
+\begin{center}
+\begin{tabularx}{\linewidth}{|C{0.18\linewidth}|C{0.19\linewidth}|C{0.23\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\textbf{Label} & \textbf{Opcode} & \textbf{Operand} & \multicolumn{1}{c|}{\textbf{Comment}}\\
+\hline
+\textenglish{\ttfamily START} & \textenglish{\ttfamily ADD} & \textenglish{\ttfamily A, B} & Instruction সম্পর্কে ব্যাখ্যা\\
+\hline
+\end{tabularx}
+\end{center}
+
+এগুলোর কাজ—
+\begin{itemize}
+\item \textbf{Label:} Program-এর কোনো Instruction বা Location শনাক্ত করার জন্য প্রতীকী নাম হিসেবে ব্যবহার করা যেতে পারে।
+\item \textbf{Opcode:} কোন Operation করতে হবে তা নির্দেশ করে। যেমন—\textenglish{\ttfamily ADD, SUB, JMP}।
+\item \textbf{Operand:} যে Data, Register বা Memory Location-এর ওপর Operation হবে, তার তথ্য প্রকাশ করে।
+\item \textbf{Comment:} Programmer-এর বোঝার সুবিধার জন্য Instruction সম্পর্কে ব্যাখ্যা লেখা হয়; এটি মূল Operation-এর অংশ নয়।
+\end{itemize}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}মনে রাখবে}
+
+সব Assembly Instruction-এ সব অংশ থাকা বাধ্যতামূলক নয়। Processor ও Assembler অনুযায়ী Instruction-এর গঠন বা Syntax ভিন্ন হতে পারে।
+\end{rememberbox}
+
+\begin{examplebox}{একটি Assembly Instruction সহজভাবে বোঝো}
+ধরা যাক—
+\begin{center}
+{\large\textenglish{\ttfamily ADD A, B}}
+\end{center}
+এখানে—
+\begin{itemize}
+\item \textenglish{\ttfamily ADD} হলো \textbf{Opcode}।
+\item \textenglish{\ttfamily A, B} হলো \textbf{Operand}-এর ধারণামূলক উদাহরণ।
+\item Instruction-এর কাজ হলো সংশ্লিষ্ট Data-এর ওপর যোগ Operation করা।
+\end{itemize}
+Machine Language-এ একই ধরনের নির্দেশ 0 ও 1-এর Pattern দিয়ে প্রকাশ করতে হতো।
+\end{examplebox}
+
+\booksubheading{Assembly Language-এর বৈশিষ্ট্য}
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}} & \multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}\\
+\hline
+Mnemonic ভিত্তিক & 0 ও 1-এর পরিবর্তে অর্থবোধক সংক্ষিপ্ত Code ব্যবহার করা হয়।\\ \hline
+Low Level Language & Hardware ও Processor-এর Instruction Set-এর কাছাকাছি থাকে।\\ \hline
+Assembler প্রয়োজন & Assembly Program-কে Machine Code-এ রূপান্তর করতে Assembler লাগে।\\ \hline
+Machine Dependent & নির্দিষ্ট Processor Architecture-এর Instruction Set-এর ওপর নির্ভরশীল।\\ \hline
+Binary-এর তুলনায় সহজ & Machine Language-এর তুলনায় লেখা, পড়া ও বুঝতে সুবিধা।\\ \hline
+Hardware Control & Register, Memory এবং Processor Instruction-এর কাছাকাছি কাজ করা যায়।\\ \hline
+\end{tabularx}
+
+\booksubheading{Assembly Language কেন Machine Dependent?}
+Assembly Language-এর Mnemonic Instruction সরাসরি নির্দিষ্ট Processor-এর Instruction Set-এর সঙ্গে সম্পর্কিত।
+
+এক ধরনের Processor-এ ব্যবহৃত Mnemonic, Register বা Instruction অন্য ধরনের Processor Architecture-এ একইভাবে নাও থাকতে পারে।
+
+তাই একটি Processor-এর জন্য লেখা Assembly Program অন্য Processor-এ সরাসরি ব্যবহার করা সবসময় সম্ভব নয়।
+
+\begin{examplebox}{Machine Dependence সহজভাবে বোঝো}
+ধরা যাক, দুটি Computer-এ ভিন্ন Architecture-এর Processor রয়েছে।
+
+প্রথম Processor-এর জন্য লেখা কোনো Assembly Instruction দ্বিতীয় Processor-এর Instruction Set-এ না থাকলে Program-টি সরাসরি সেখানে চলবে না।
+
+এই কারণেই Assembly Language-ও \textbf{Machine Dependent Language}।
+\end{examplebox}
+
+\booksubheading{Assembly Language-এর সুবিধা}
+Machine Language-এর তুলনায় Assembly Language Programmer-এর জন্য অনেক সুবিধাজনক।
+\begin{itemize}
+\item \textbf{Mnemonic ব্যবহৃত হয়—} Binary Code মনে রাখার প্রয়োজন কমে যায়।
+\item \textbf{Program তুলনামূলক সহজে লেখা যায়—} Machine Language-এর 0 ও 1-এর তুলনায় Instruction বোঝা সহজ।
+\item \textbf{Program সংক্ষিপ্ত ও পাঠযোগ্য হয়—} অর্থবোধক Mnemonic-এর কারণে Logic অনুসরণ করা সহজ।
+\item \textbf{Error তুলনামূলক সহজে শনাক্ত করা যায়—} Binary Code-এর তুলনায় ভুল খুঁজে বের করা সুবিধাজনক।
+\item \textbf{Debugging তুলনামূলক সহজ—} Instruction অর্থবোধক হওয়ায় Program পরীক্ষা ও সংশোধন সহজ হয়।
+\item \textbf{Hardware-এর কাছাকাছি কাজ করা যায়—} Register, Memory ও Processor Instruction-এর ওপর সূক্ষ্ম নিয়ন্ত্রণ পাওয়া যায়।
+\item \textbf{Machine-এর অভ্যন্তরীণ কার্যপ্রণালি বোঝা সহজ হয়।}
+\end{itemize}
+
+\booksubheading{Assembly Language-এর অসুবিধা}
+Machine Language-এর তুলনায় সহজ হলেও Assembly Language-এর কিছু সীমাবদ্ধতা রয়েছে—
+\begin{itemize}
+\item \textbf{Machine Dependent—} এক Processor-এর Program অন্য Processor-এ সরাসরি চলতে নাও পারে।
+\item \textbf{Assembler প্রয়োজন—} কম্পিউটার Mnemonic সরাসরি বুঝতে পারে না।
+\item \textbf{Hardware সম্পর্কে ধারণা প্রয়োজন—} Register, Memory ও Processor Instruction সম্পর্কে জ্ঞান থাকা দরকার।
+\item \textbf{High Level Language-এর তুলনায় Program লেখা কঠিন—} বড় Program তৈরি করতে অনেক Instruction প্রয়োজন হতে পারে।
+\item \textbf{Development সময়সাপেক্ষ—} জটিল Application Assembly Language-এ তৈরি করা তুলনামূলক কঠিন।
+\item \textbf{Portability কম—} Processor পরিবর্তিত হলে Program-এর অনেক অংশ পরিবর্তন করতে হতে পারে।
+\end{itemize}
+
+\booksubheading{Machine Language ও Assembly Language-এর পার্থক্য}
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.19\linewidth}|Y|Y|}
+\hline
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}} & \multicolumn{1}{c|}{\textbf{Machine Language}} & \multicolumn{1}{c|}{\textbf{Assembly Language}}\\
+\hline
+নির্দেশের রূপ & 0 ও 1-এর Binary Code & Mnemonic Code বা প্রতীকী Instruction\\ \hline
+বোঝার সুবিধা & মানুষের জন্য খুব কঠিন & তুলনামূলক সহজ\\ \hline
+কম্পিউটার বুঝতে পারে & সরাসরি & সরাসরি নয়\\ \hline
+Translator & প্রয়োজন নেই & Assembler প্রয়োজন\\ \hline
+Error শনাক্ত & কঠিন & তুলনামূলক সহজ\\ \hline
+Machine Dependence & Machine Dependent & Machine Dependent\\ \hline
+Generation & 1GL & 2GL\\ \hline
+\end{tabularx}
+
+\booksubheading{Assembly Language ও Second Generation Language}
+Programming Language-এর Generation অনুযায়ী Assembly Language-কে সাধারণত \textbf{Second Generation Language (2GL)} বলা হয়।
+\begin{center}
+\textbf{Assembly Language \(\;=\;\) Second Generation Language (2GL)}
+\end{center}
+Machine Language-এর 0 ও 1-এর পরিবর্তে Mnemonic ব্যবহারের কারণে Programming মানুষের জন্য এক ধাপ সহজ হয়।
+
+\booksubheading{Assembly Language থেকেও নতুন ভাষার প্রয়োজন কেন হলো?}
+Assembly Language Machine Language-এর তুলনায় সহজ হলেও Programmer-কে এখনও Processor, Register, Memory এবং Hardware-এর অনেক বিষয় সম্পর্কে জানতে হয়।
+
+তাছাড়া বড় ও জটিল Program Assembly Language-এ লেখা সময়সাপেক্ষ। এই সীমাবদ্ধতা কমিয়ে মানুষের ভাষার কাছাকাছি আরও সহজভাবে Program লেখার প্রয়োজন থেকেই পরবর্তীতে High Level Language-এর বিকাশ ঘটে।
+
+\begin{center}
+\textbf{Machine Language \(\rightarrow\) Assembly Language \(\rightarrow\) Programming আরও সহজ \(\rightarrow\) High Level Language}
+\end{center}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}মনে রাখবে}
+\begin{itemize}
+\item Assembly Language-এ \textbf{Mnemonic Code} ব্যবহার করা হয়।
+\item এটি একটি \textbf{Low Level Language}।
+\item Assembly Language হলো \textbf{Second Generation Language (2GL)}।
+\item Assembly Program কম্পিউটার সরাসরি বুঝতে পারে না।
+\item Assembly Language-কে Machine Language-এ রূপান্তর করে \textbf{Assembler}।
+\item একটি Assembly Instruction Line-এ প্রয়োজন অনুযায়ী \textbf{Label, Opcode, Operand ও Comment} থাকতে পারে।
+\item Assembly Language \textbf{Machine Dependent}।
+\item Machine Language-এর তুলনায় Assembly Language লেখা, পড়া ও Debug করা সহজ।
+\end{itemize}
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.5 Middle Level Language
+%================================================

@@ -1,0 +1,39 @@
+% Replace exercise 6's PNG figure AND its existing figure-explanation box.
+% Exact cell text and spans follow the adjacent unchanged HTML code.
+\begin{center}
+\begin{tikzpicture}[x=.30\linewidth,y=6mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \node[font=\scriptsize\bfseries] at (1.5,4.6) {Colspan};
+  \fill[chFourTint] (0,3) rectangle (3,4);
+  \fill[chFourRose!10] (1,2) rectangle (3,3);
+  \draw (0,0) rectangle (3,4);
+  \draw (0,1)--(3,1) (0,2)--(3,2) (0,3)--(3,3);
+  \draw (1,0)--(1,3) (2,0)--(2,2);
+  \node[font=\scriptsize\bfseries] at (1.5,3.5) {Colspan};
+  \node at (.5,2.5) {A1};
+  \node at (2,2.5) {Merged Cell};
+  \node at (.5,1.5) {B1}; \node at (1.5,1.5) {B2}; \node at (2.5,1.5) {B3};
+  \node at (.5,.5) {C1}; \node at (1.5,.5) {C2}; \node at (2.5,.5) {C3};
+  \node at (1.5,-.6) {\texttt{colspan="2"}};
+\end{tikzpicture}
+\par\smallskip
+\begin{tikzpicture}[x=.30\linewidth,y=6mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \node[font=\scriptsize\bfseries] at (1.5,4.6) {Rowspan};
+  \fill[chFourTint] (0,3) rectangle (3,4);
+  \fill[chFourRose!10] (1,1) rectangle (2,3);
+  \draw (0,0) rectangle (3,4);
+  \draw (1,0)--(1,3) (2,0)--(2,3);
+  \draw (0,1)--(3,1) (0,3)--(3,3);
+  \draw (0,2)--(1,2) (2,2)--(3,2);
+  \node[font=\scriptsize\bfseries] at (1.5,3.5) {Rowspan};
+  \node at (.5,2.5) {A1}; \node at (1.5,2) {Merged\\Cell}; \node at (2.5,2.5) {A3};
+  \node at (.5,1.5) {B1}; \node at (2.5,1.5) {B3};
+  \node at (.5,.5) {C1}; \node at (1.5,.5) {C2}; \node at (2.5,.5) {C3};
+  \node at (1.5,-.6) {\texttt{rowspan="2"}};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 6: ঘরের বিস্তার: colspan ও rowspan}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+প্রথম ছকে A1-এর পাশের Merged Cell দুই কলামের জায়গা নিয়েছে; তাই ওই সারিতে A3 নেই। দ্বিতীয় ছকে Merged Cell শুধু A ও B সারি জুড়ে আছে। C সারিতে C1, C2 ও C3 আলাদা ঘর। দুই ছকেই মূল কলামসংখ্যা তিন।
+

@@ -1,628 +1,292 @@
 % Chapter 02.6: মোবাইল কমিউনিকেশন ও মোবাইল প্রজন্ম
+\begingroup
+\chTwoReadableTopicStyle
 \section{মোবাইল কমিউনিকেশন ও মোবাইল প্রজন্ম}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item মোবাইল কমিউনিকেশন কী তা ব্যাখ্যা করতে।
-\item Cellular network, cell, base station, BTS, BSC ও MSC-এর ধারণা বুঝতে।
-\item Handoff বা handover এবং roaming ব্যাখ্যা করতে।
-\item 1G, 2G, 3G, 4G ও 5G mobile generation-এর বৈশিষ্ট্য তুলনা করতে।
-\item Mobile communication-এ voice, SMS, MMS, internet, video call ও IoT-এর ভূমিকা বুঝতে।
-\item বাস্তব scenario থেকে mobile generation, network coverage, bandwidth ও latency বিশ্লেষণ করতে।
-\item বোর্ড ও ভর্তি পরীক্ষার জন্য mobile communication-based উত্তর লিখতে।
-\end{itemize}
-\end{learningbox}
+\subsection{বাস্তব সমস্যা ও প্রয়োজন}
 
-\subsection{বাস্তব জীবনের শুরু}
+একজন শিক্ষার্থী বাসায় মোবাইল ডেটা দিয়ে অনলাইন ক্লাস করছে। সে শিক্ষকের কথা শুনছে, ভিডিও দেখছে এবং চ্যাট বক্সে প্রশ্ন পাঠাচ্ছে। ফোনটি বেতার সংকেত দিয়ে উপযুক্ত মোবাইল টাওয়ারে যুক্ত থাকে। এরপর মোবাইল নেটওয়ার্ক, সুইচিং কেন্দ্র ও ইন্টারনেট হয়ে অনলাইন ক্লাসের সার্ভারের সঙ্গে যোগাযোগ হয়।
 
-একজন শিক্ষার্থী বাসা থেকে mobile phone দিয়ে online class করছে। সে mobile data ব্যবহার করছে, teacher-এর voice শুনছে, video দেখছে এবং chat box-এ question পাঠাচ্ছে। এই communication-এর সময় শিক্ষার্থীর mobile phone কাছের mobile tower-এর সাথে wireless signal ব্যবহার করে connected থাকে। এরপর সেই signal mobile network, switching center এবং internet-এর মাধ্যমে online class server-এর সাথে যুক্ত হয়।
-
-এটাই mobile communication-এর একটি বাস্তব উদাহরণ। এখানে user চলমান অবস্থায় থেকেও communication করতে পারে। তাই mobile communication-এর মূল শক্তি হলো \textbf{mobility}।
+এই যোগাযোগ চলার সময় শিক্ষার্থী স্থান বদলাতে পারে। চলমান অবস্থায়ও যোগাযোগ করতে পারা মোবাইল কমিউনিকেশনের প্রধান সুবিধা। একে \textbf{চলাচলের সুবিধা বা Mobility} বলে।
 
 \begin{keypointbox}{মূল ধারণা}
-Mobile communication বুঝতে ৫টি বিষয় মনে রাখো:
+মোবাইল যোগাযোগের মূল বিষয় ৫টি:
 \begin{itemize}
-\item Mobile phone wireless signal ব্যবহার করে।
-\item Mobile tower বা base station network access দেয়।
-\item পুরো coverage area ছোট ছোট cell-এ ভাগ করা থাকে।
-\item চলমান অবস্থায় user এক cell থেকে অন্য cell-এ যেতে পারে।
-\item network generation অনুযায়ী speed, service ও latency পরিবর্তিত হয়।
+\item মোবাইল ফোন বেতার সংকেত ব্যবহার করে।
+\item মোবাইল টাওয়ার বা বেস স্টেশন নেটওয়ার্কে যুক্ত হওয়ার সুযোগ দেয়।
+\item পুরো সেবার এলাকা ছোট ছোট সেলে ভাগ করা থাকে।
+\item চলমান অবস্থায় ব্যবহারকারী এক সেল থেকে অন্য সেলে যেতে পারেন।
+\item নেটওয়ার্কের প্রজন্ম অনুযায়ী গতি, সেবা ও বিলম্ব পরিবর্তিত হয়।
 \end{itemize}
 \end{keypointbox}
 
 \subsection{মোবাইল কমিউনিকেশন}
 
 \begin{definitionbox}{মোবাইল কমিউনিকেশন}
-যে communication system-এ mobile device wireless signal ব্যবহার করে চলমান অবস্থায় voice, data, text, image, audio, video বা internet service আদান-প্রদান করতে পারে, তাকে mobile communication বলা হয়।
+যে যোগাযোগব্যবস্থায় মোবাইল যন্ত্র বেতার সংকেত দিয়ে চলমান অবস্থায় কথোপকথন, ডেটা, লেখা, ছবি, অডিও, ভিডিও বা ইন্টারনেট সেবা আদান-প্রদান করতে পারে, তাকে মোবাইল কমিউনিকেশন বলে।
 \end{definitionbox}
 
-Mobile communication modern ICT-এর গুরুত্বপূর্ণ অংশ। এর মাধ্যমে voice call, SMS, MMS, mobile internet, video call, online banking, ride sharing, GPS navigation, social media, cloud service ও IoT-based service ব্যবহার করা যায়।
+আধুনিক ICT-তে মোবাইল কমিউনিকেশন গুরুত্বপূর্ণ। ফোনে কথা বলা, SMS, MMS, মোবাইল ইন্টারনেট, ভিডিও কল, অনলাইন ব্যাংকিং, রাইড শেয়ারিং, GPS দিয়ে পথনির্দেশ, সামাজিক যোগাযোগ, ক্লাউড এবং IoT-ভিত্তিক সেবা এই ব্যবস্থায় ব্যবহার করা যায়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/mobile_communication_basic_model.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/mobile_communication_basic_model.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Mobile Phone \quad $\longleftrightarrow$ \quad Cell Tower / BTS \quad $\longleftrightarrow$ \quad Mobile Network \quad $\longleftrightarrow$ \quad Internet / Other Phone
-\vspace{0.7cm}
-}}
-}
-\caption{মোবাইল কমিউনিকেশনের সাধারণ মডেল}
-\end{figure}
 
-\begin{keypointbox}{Mobile communication-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Mobile communication-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item wireless radio signal ব্যবহার করে।
-\item user চলমান অবস্থায় communication করতে পারে।
-\item voice ও data service প্রদান করে।
-\item cellular network structure ব্যবহার করে।
-\item network coverage area অনুযায়ী service quality পরিবর্তিত হয়।
-\item bandwidth, signal strength, latency ও congestion service quality প্রভাবিত করে।
+\item বেতার সংকেত ব্যবহার করে।
+\item ব্যবহারকারী চলমান অবস্থায় যোগাযোগ করতে পারেন।
+\item কথোপকথন ও ডেটা সেবা দেয়।
+\item সেলুলার নেটওয়ার্কের গঠন ব্যবহার করে।
+\item নেটওয়ার্কের সেবার আওতা অনুযায়ী সেবার মান বদলায়।
+\item ব্যান্ডউইথ, সংকেতের শক্তি, বিলম্ব ও নেটওয়ার্কের ভিড় সেবার মানকে প্রভাবিত করে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/mobile_communication_basic_model.png}{মোবাইল কমিউনিকেশনের সাধারণ মডেল}}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-মোবাইল কমিউনিকেশনের সংজ্ঞায় “wireless”, “mobile device”, “চলমান অবস্থায় communication” এবং “voice/data service”—এই শব্দগুলো ব্যবহার করলে উত্তর exam-standard হয়।
-\end{boardbox}
+
 
 \subsection{Cellular Network-এর ধারণা}
 
 \begin{definitionbox}{Cellular Network}
-যে mobile network-এ একটি বড় geographical area-কে ছোট ছোট cell-এ ভাগ করে প্রতিটি cell-এ base station বা tower-এর মাধ্যমে mobile service দেওয়া হয়, তাকে cellular network বলা হয়।
+বড় ভৌগোলিক এলাকাকে ছোট ছোট সেলে ভাগ করে প্রতিটি সেলে বেস স্টেশন বা টাওয়ার দিয়ে মোবাইল সেবা দেওয়ার নেটওয়ার্ককে সেলুলার নেটওয়ার্ক বলে।
 \end{definitionbox}
 
-Mobile network একটি বড় area সরাসরি এক tower দিয়ে cover করে না। বরং area-কে অনেকগুলো ছোট cell-এ ভাগ করা হয়। প্রতিটি cell-এর মধ্যে একটি base station বা BTS থাকে। Mobile phone নিকটবর্তী BTS-এর সাথে radio wave ব্যবহার করে যোগাযোগ করে।
+মোবাইল সেবা দেওয়ার জন্য বড় এলাকাকে ছোট ছোট সেলে ভাগ করা হয়। এই সরল মডেলে প্রতিটি সেলে একটি বেস স্টেশন বা BTS দেখানো হয়। ফোনটি উপযুক্ত সেবাদানকারী BTS-এর সঙ্গে রেডিও তরঙ্গ দিয়ে যোগাযোগ করে। পুরো এলাকা একটি টাওয়ার দিয়ে সরাসরি ঢেকে দেওয়াই এই ব্যবস্থার নকশা নয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/cellular_network_cell_structure.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/cellular_network_cell_structure.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Cell 1 \quad Cell 2 \quad Cell 3\\[8pt]
-BTS \quad BTS \quad BTS\\[8pt]
-Mobile User
-\vspace{0.7cm}
-}}
-}
-\caption{Cellular network-এর cell structure}
-\end{figure}
 
-\begin{keypointbox}{Cellular network-এর গুরুত্বপূর্ণ term}
+\chTwoPair{\begin{keypointbox}{Cellular network-এর গুরুত্বপূর্ণ term}
 \begin{itemize}
-\item \textbf{Cell}: একটি নির্দিষ্ট ছোট coverage area।
-\item \textbf{Base Station}: cell-এর মধ্যে mobile device-এর সাথে wireless communication করে।
-\item \textbf{BTS}: Base Transceiver Station; mobile phone-এর সাথে radio signal আদান-প্রদান করে।
-\item \textbf{BSC}: Base Station Controller; একাধিক BTS নিয়ন্ত্রণ করতে পারে।
-\item \textbf{MSC}: Mobile Switching Center; call switching, routing ও network management-এর গুরুত্বপূর্ণ অংশ।
-\item \textbf{SIM}: Subscriber Identity Module; user identity ও network authentication-এর জন্য ব্যবহৃত।
+\item \textbf{Cell}: নির্দিষ্ট ছোট সেবার এলাকা।
+\item \textbf{Base Station}: সেলের মোবাইল যন্ত্রগুলোর সঙ্গে বেতার যোগাযোগ করে।
+\item \textbf{SIM}: গ্রাহকের পরিচয় যাচাইয়ে ব্যবহৃত হয়। SIM ও হ্যান্ডসেটের পরিচয়ের পার্থক্য পরের Multiple Access আলোচনায় আছে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/cellular_network_cell_structure.png}{সেলুলার নেটওয়ার্কের সেল বিন্যাস}}
+
 
 \subsection{Cellular Network কেন দরকার?}
 
-একটি বড় শহর বা দেশের mobile service দিতে হলে পুরো area-তে signal coverage দরকার। যদি একটাই powerful tower ব্যবহার করা হয়, তাহলে frequency reuse, capacity ও quality সমস্যা তৈরি হবে। তাই cellular network-এ area ছোট ছোট cell-এ ভাগ করা হয়। এতে একই frequency ভিন্ন দূরবর্তী cell-এ reuse করা যায় এবং বেশি user-কে service দেওয়া যায়।
+বড় শহর বা দেশে মোবাইল সেবা দিতে সর্বত্র কার্যকর সংকেত প্রয়োজন। একটি শক্তিশালী টাওয়ার দিয়ে পুরো এলাকা ঢাকতে গেলে ফ্রিকোয়েন্সি পুনর্ব্যবহার, বহনক্ষমতা ও সেবার মানে সমস্যা হয়। ছোট সেলে ভাগ করলে দূরের সেলে একই ফ্রিকোয়েন্সি আবার ব্যবহার করা যায়। এতে বেশি ব্যবহারকারীকে সেবা দেওয়া সম্ভব হয়।
 
 \begin{keypointbox}{Cellular network-এর সুবিধা}
 \begin{itemize}
-\item বড় area coverage দেওয়া যায়।
-\item frequency reuse করা যায়।
-\item network capacity বাড়ানো যায়।
-\item বেশি user একসাথে service পেতে পারে।
-\item movement-এর সময় handoff-এর মাধ্যমে connection চলমান রাখা যায়।
-\item tower planning করে signal quality উন্নত করা যায়।
+\item বড় এলাকায় সেবা দেওয়া যায়।
+\item ফ্রিকোয়েন্সি পুনর্ব্যবহার করা যায়।
+\item নেটওয়ার্কের বহনক্ষমতা বাড়ানো যায়।
+\item বেশি ব্যবহারকারী একসঙ্গে সেবা পেতে পারেন।
+\item চলাচলের সময় হ্যান্ডঅফ দিয়ে সংযোগ সচল রাখা যায়।
+\item উপযুক্ত টাওয়ার পরিকল্পনায় সংকেতের মান বাড়ানো যায়।
 \end{itemize}
 \end{keypointbox}
 
 \begin{mistakebox}{Mobile call path}
-অনেকে ভাবে mobile phone সরাসরি অন্য mobile phone-এর সাথে communicate করে। বাস্তবে সাধারণ mobile call-এ phone প্রথমে nearest tower বা BTS-এর সাথে connect হয়, এরপর mobile network call route করে।
+সাধারণ মোবাইল কলে একটি ফোন সরাসরি অন্য ফোনে কথা পাঠায় না। ফোন প্রথমে উপযুক্ত সেবাদানকারী টাওয়ার বা BTS-এ যুক্ত হয়। এরপর মোবাইল নেটওয়ার্ক কলের পথ নির্ধারণ করে।
 \end{mistakebox}
 
 \subsection{Mobile Network Architecture}
 
-Mobile communication-এ শুধু mobile phone ও tower থাকলেই হয় না। এর পেছনে BTS, BSC, MSC, core network, internet gateway ইত্যাদি থাকে। সহজভাবে mobile network architecture হলো:
+মোবাইল যোগাযোগে ফোন ও টাওয়ারের পাশাপাশি BTS, BSC, MSC, মূল নেটওয়ার্ক এবং ইন্টারনেট গেটওয়ের মতো অংশ কাজ করে। এই অংশগুলোর গঠন ও পারস্পরিক কাজ নিয়ে মোবাইল নেটওয়ার্কের আর্কিটেকচার তৈরি হয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/mobile_network_architecture.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/mobile_network_architecture.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Mobile Phone \quad $\longleftrightarrow$ \quad BTS \quad $\longleftrightarrow$ \quad BSC \quad $\longleftrightarrow$ \quad MSC / Core Network \quad $\longleftrightarrow$ \quad Internet / PSTN
-\vspace{0.7cm}
-}}
-}
-\caption{মোবাইল নেটওয়ার্ক আর্কিটেকচারের সরল রূপ}
-\end{figure}
 
-\begin{keypointbox}{প্রধান অংশগুলোর কাজ}
+\chTwoPair{\begin{keypointbox}{প্রধান অংশগুলোর কাজ}
 \begin{itemize}
-\item \textbf{Mobile Station}: user-এর mobile phone বা SIM-enabled device।
-\item \textbf{BTS}: mobile phone-এর সাথে radio signal আদান-প্রদান করে।
-\item \textbf{BSC}: একাধিক BTS manage করে এবং handoff control করতে সাহায্য করে।
-\item \textbf{MSC}: call setup, switching, routing ও mobility management করে।
-\item \textbf{Core Network}: data service, authentication, billing ও internet connection manage করে।
+\item \textbf{Mobile Station}: ব্যবহারকারীর মোবাইল ফোন বা SIM-সমর্থিত যন্ত্র।
+\item \textbf{BTS (Base Transceiver Station)}: মোবাইল ফোনের সঙ্গে বেতার সংকেত আদান-প্রদান করে।
+\item \textbf{BSC (Base Station Controller)}: একাধিক BTS নিয়ন্ত্রণ করে এবং হ্যান্ডঅফের সমন্বয়ে সাহায্য করে।
+\item \textbf{MSC (Mobile Switching Centre)}: কল স্থাপন, সুইচিং, পথ নির্ধারণ ও ব্যবহারকারীর চলাচল ব্যবস্থাপনা করে।
+\item \textbf{Core Network}: ডেটা সেবা, পরিচয় যাচাই, বিল ও ইন্টারনেট সংযোগ পরিচালনা করে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/mobile_network_architecture.png}{মোবাইল নেটওয়ার্ক আর্কিটেকচারের সরল রূপ}}
+
 
 \subsection{Handoff বা Handover}
 
 \begin{definitionbox}{Handoff বা Handover}
-মোবাইল user চলমান অবস্থায় এক cell-এর coverage area থেকে অন্য cell-এর coverage area-তে গেলে call বা data connection বিচ্ছিন্ন না করে network connection এক base station থেকে অন্য base station-এ স্থানান্তর করার প্রক্রিয়াকে handoff বা handover বলা হয়।
+চলমান ব্যবহারকারী এক সেলের সেবার পরিসর থেকে অন্য সেলে গেলে কল বা ডেটা সংযোগ বজায় রেখে এক বেস স্টেশন থেকে অন্যটিতে সংযোগ স্থানান্তরের প্রক্রিয়াকে Handoff বা Handover বলে।
 \end{definitionbox}
 
-যেমন, একজন ব্যক্তি bus-এ বসে mobile call করছে। Bus চলতে চলতে এক tower-এর coverage থেকে অন্য tower-এর coverage-এ চলে যায়। তখন call যেন কেটে না যায়, সেজন্য network automatically connection নতুন tower-এ transfer করে। এটিই handoff।
+যেমন, একজন ব্যক্তি বাসে বসে ফোনে কথা বলছেন। বাস চলতে চলতে এক টাওয়ারের সেবার পরিসর থেকে অন্য টাওয়ারের পরিসরে যায়। কল সচল রাখতে নেটওয়ার্ক স্বয়ংক্রিয়ভাবে নতুন টাওয়ারে সংযোগ স্থানান্তর করে। এই স্থানান্তরই Handoff।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/handoff_handover_process.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/handoff_handover_process.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Cell A / BTS A \quad $\longrightarrow$ \quad Moving Mobile User \quad $\longrightarrow$ \quad Cell B / BTS B\\[8pt]
-Connection Transfer
-\vspace{0.7cm}
-}}
-}
-\caption{Handoff বা handover process}
-\end{figure}
 
-\begin{keypointbox}{Handoff-এর প্রয়োজনীয়তা}
+\chTwoPair{\begin{keypointbox}{Handoff-এর প্রয়োজনীয়তা}
 \begin{itemize}
-\item চলমান অবস্থায় call/data session বজায় রাখে।
-\item user এক cell থেকে অন্য cell-এ গেলে connection transfer করে।
-\item dropped call কমাতে সাহায্য করে।
-\item mobile communication-এ mobility নিশ্চিত করে।
-\item high-speed movement, যেমন bus/train/car-এ এটি গুরুত্বপূর্ণ।
+\item চলাচলের সময় কল বা ডেটা আদান-প্রদানের পর্ব সচল রাখতে সাহায্য করে।
+\item ব্যবহারকারী এক সেল থেকে অন্য সেলে গেলে সংযোগ স্থানান্তর করে।
+\item কল বিচ্ছিন্ন হওয়ার ঘটনা কমাতে সাহায্য করে।
+\item মোবাইল যোগাযোগে চলাচলের সুবিধা বজায় রাখতে সাহায্য করে।
+\item বাস, ট্রেন বা গাড়িতে দ্রুত চলাচলের সময় এটি গুরুত্বপূর্ণ।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/handoff_handover_process.png}{হ্যান্ডঅফ বা হ্যান্ডওভারের প্রক্রিয়া}}
+
 
 \subsection{Roaming}
 
 \begin{definitionbox}{Roaming}
-নিজের home network-এর coverage area-এর বাইরে অন্য operator বা partner network ব্যবহার করে mobile service নেওয়ার সুবিধাকে roaming বলা হয়।
+নিজস্ব নেটওয়ার্কের সেবার পরিসরের বাইরে অন্য অপারেটর বা সহযোগী নেটওয়ার্ক ব্যবহার করে মোবাইল সেবা নেওয়ার সুবিধাকে Roaming বলে।
 \end{definitionbox}
 
-Roaming সাধারণত national বা international হতে পারে। International roaming-এর মাধ্যমে একজন user অন্য দেশে গিয়েও mobile service ব্যবহার করতে পারে, যদি operator-এর roaming agreement থাকে।
+রোমিং দেশের মধ্যে বা আন্তর্জাতিক পর্যায়ে হতে পারে। অপারেটরের রোমিং চুক্তি থাকলে ব্যবহারকারী অন্য দেশে গিয়েও আন্তর্জাতিক রোমিং দিয়ে মোবাইল সেবা নিতে পারেন।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/mobile_roaming_concept.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/mobile_roaming_concept.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Home Network \quad $\longrightarrow$ \quad Visitor Network\\[8pt]
-Mobile User uses service outside home coverage
-\vspace{0.7cm}
-}}
-}
-\caption{Roaming-এর ধারণা}
-\end{figure}
 
-\begin{keypointbox}{Roaming-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Roaming-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item home network-এর বাইরে service নেওয়া যায়।
-\item national বা international roaming হতে পারে।
-\item operator agreement দরকার।
-\item call, SMS ও data service ব্যবহার করা যায়।
-\item roaming charge সাধারণত বেশি হতে পারে।
+\item নিজস্ব নেটওয়ার্কের বাইরে সেবা নেওয়া যায়।
+\item দেশের মধ্যে বা আন্তর্জাতিক পর্যায়ে রোমিং হতে পারে।
+\item অপারেটরগুলোর মধ্যে চুক্তি প্রয়োজন।
+\item কল, SMS ও ডেটা সেবা ব্যবহার করা যায়।
+\item রোমিংয়ের খরচ সাধারণত বেশি হতে পারে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/mobile_roaming_concept.png}{রোমিংয়ের ধারণা}}
+
 
 \subsection{মোবাইল প্রজন্ম বা Mobile Generation}
 
 \begin{definitionbox}{Mobile Generation}
-Mobile communication technology-এর ধারাবাহিক উন্নয়নের প্রতিটি ধাপকে mobile generation বলা হয়। যেমন—1G, 2G, 3G, 4G ও 5G।
+মোবাইল যোগাযোগ প্রযুক্তির ধারাবাহিক উন্নয়নের প্রতিটি ধাপকে মোবাইল প্রজন্ম বলে। যেমন—1G, 2G, 3G, 4G ও 5G।
 \end{definitionbox}
 
-প্রতিটি generation-এ নতুন technology, বেশি speed, উন্নত service, কম latency এবং বেশি capacity যুক্ত হয়েছে। 1G শুধু analog voice communication-এর জন্য ছিল। 2G digital voice ও SMS এনেছে। 3G mobile internet ও multimedia service জনপ্রিয় করেছে। 4G high-speed IP-based data service দিয়েছে। 5G low latency, high capacity ও IoT-based communication-এর জন্য গুরুত্বপূর্ণ।
+\chTwoPair{প্রজন্ম শনাক্ত করতে সংকেতের রূপ, বেতার প্রযুক্তি, ডেটা সেবা, বহনক্ষমতা ও বিলম্ব বিবেচনা করতে হয়। একই অনলাইন কাজ একাধিক প্রজন্মে চলতে পারে। তাই একটি অ্যাপ্লিকেশনের নাম দিয়ে প্রজন্ম নিশ্চিত করা যায় না। নিচের ছকে প্রজন্মগুলোর পরিবর্তন দেখানো হয়েছে।}{\chTwoImage{chapters/Chapter02/images/mobile_generation_timeline.png}{মোবাইল প্রজন্মের ক্রমবিকাশ}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/mobile_generation_timeline.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/mobile_generation_timeline.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-1G \quad $\longrightarrow$ \quad 2G \quad $\longrightarrow$ \quad 3G \quad $\longrightarrow$ \quad 4G \quad $\longrightarrow$ \quad 5G\\[8pt]
-Analog Voice \quad Digital Voice/SMS \quad Mobile Internet \quad High-speed Data \quad IoT/Low Latency
-\vspace{0.7cm}
-}}
-}
-\caption{মোবাইল প্রজন্মের timeline}
-\end{figure}
 
-\subsection{1G: First Generation}
 
-\begin{definitionbox}{1G}
-First generation বা 1G হলো mobile communication-এর প্রথম প্রজন্ম, যেখানে analog voice communication ব্যবহৃত হতো।
-\end{definitionbox}
+\subsection{1G থেকে 5G: পরিবর্তন, প্রযুক্তি ও সেবা}
+\begin{longtable}{|p{\dimexpr .12\linewidth-7pt\relax}|p{\dimexpr .31\linewidth-7pt\relax}|p{\dimexpr .57\linewidth-7pt\relax}|}\hline
+\textbf{পর্যায়} & \textbf{Signal ও চেনার সূত্র} & \textbf{পরিবর্তন, ব্যবহার ও সীমা}\\\hline
+\endfirsthead\hline\textbf{পর্যায়} & \textbf{Signal ও চেনার সূত্র} & \textbf{পরিবর্তন, ব্যবহার ও সীমা}\\\hline\endhead
+1G & অ্যানালগ কথোপকথন; AMPS/NMT/TACS, FDMA & প্রাথমিক সেলুলার কথোপকথন; SMS ও ইন্টারনেট ছিল না। নয়েজ ও দুর্বল নিরাপত্তা; তুলনামূলক বড় যন্ত্র এবং ব্যাটারির কম কার্যদক্ষতা।\\\hline
+2G & ডিজিটাল কথোপকথন; GSM/CDMA পরিবার & কথোপকথন ও SMS; উন্নত এনকোডিং, নিরাপত্তা ও বহনক্ষমতা। পরের উন্নয়নে MMS ও ডেটা যোগ হয়। সার্কিটভিত্তিক কলের পাশাপাশি প্যাকেট ডেটা আসে। বোতামযুক্ত ফোনে কল ও SMS পরিচিত ব্যবহার।\\\hline
+2.5G / পরবর্তী 2G উন্নয়ন & GPRS; EDGE-কে প্রায়ই 2.75G বলা হয় & GPRS-এ প্যাকেট ডেটা এবং EDGE-এ উন্নত ডেটা হার পাওয়া যায়। মূল 2G থেকে 3G-তে যাওয়ার মধ্যবর্তী ধাপ; পৃথক পূর্ণ IMT প্রজন্ম নয়।\\\hline
+3G & UMTS/WCDMA, HSPA; IMT-2000 & উন্নত মোবাইল ইন্টারনেট, ভিডিও কল, ই-মেইল ও মাল্টিমিডিয়া। স্মার্টফোনে ব্যাংকিং ও ই-কমার্স সহজ হয়। 2G-এর তুলনায় ডেটা হার বাড়ে।\\\hline
+4G & LTE/LTE-Advanced; IP ব্রডব্যান্ড; IMT-Advanced & দ্রুত ইন্টারনেট, HD ভিডিও স্ট্রিমিং ও সম্মেলন, অনলাইন ক্লাস ও গেম। IP নেটওয়ার্কে VoLTE দিয়ে কল; 3G-এর তুলনায় কম বিলম্ব ও বেশি বহনক্ষমতা।\\\hline
+5G & NR; IMT-2020 & বেশি বহনক্ষমতা, কম বিলম্ব ও বিপুল যন্ত্রের সংযোগ। স্মার্ট শহর, সেন্সর, স্বয়ংক্রিয় ব্যবস্থা, AR/VR ও উন্নত ব্রডব্যান্ডের চাহিদা পূরণের লক্ষ্য। অবকাঠামো ও সেবার আওতার সীমা রয়েছে।\\\hline
+\end{longtable}
+\textbf{ঐতিহাসিক নাম:} AMPS = Advanced Mobile Phone System; NMT = Nordic Mobile Telephone; TACS = Total Access Communication System। এগুলো 1G-এর পরিচিত ব্যবস্থা। জাপানে NTT-এর বাণিজ্যিক সেলুলার সেবা চালু হয় ১৯৭৯ সালে। যুক্তরাষ্ট্রে AMPS চালু হয় ১৯৮৩ সালে। দুটি ঘটনা পৃথক। D-AMPS (Digital AMPS) পরের ডিজিটাল ধারার নাম। নামের AMPS অংশ দেখে একে অ্যানালগ 1G বলা যায় না।
 
-1G system মূলত voice call-এর জন্য ব্যবহৃত হতো। এতে analog signal ব্যবহার করা হতো। Data service, SMS বা internet সুবিধা ছিল না। Security কম ছিল এবং call quality noise দ্বারা বেশি প্রভাবিত হতো।
-
-\begin{keypointbox}{1G-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item analog voice communication।
-\item data service বা SMS ছিল না।
-\item security কম।
-\item call quality noise দ্বারা প্রভাবিত হতো।
-\item device বড় ও battery efficiency কম ছিল।
-\item mobile communication-এর সূচনা করে।
-\end{itemize}
-\end{keypointbox}
-
-\subsection{2G: Second Generation}
-
-\begin{definitionbox}{2G}
-Second generation বা 2G হলো digital mobile communication system, যেখানে digital voice, SMS এবং কিছু basic data service চালু হয়।
-\end{definitionbox}
-
-2G mobile communication-এ analog থেকে digital system-এ পরিবর্তন আসে। এর ফলে call quality, security ও network capacity উন্নত হয়। GSM, CDMA, SMS, MMS, GPRS, EDGE ইত্যাদি 2G/2.5G ধারার সাথে সম্পর্কিত।
-
-\begin{keypointbox}{2G-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item digital voice communication।
-\item SMS ও MMS service চালু হয়।
-\item 1G-এর তুলনায় security উন্নত।
-\item network capacity বাড়ে।
-\item GPRS/EDGE-এর মাধ্যমে basic mobile internet service পাওয়া যায়।
-\item circuit switching ও packet data service-এর ধারণা যুক্ত হয়।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{বাস্তব উদাহরণ}
-Button phone দিয়ে voice call ও SMS করার অভিজ্ঞতা 2G mobile communication-এর সাথে সম্পর্কিত।
-\end{examplebox}
-
-\subsection{3G: Third Generation}
-
-\begin{definitionbox}{3G}
-Third generation বা 3G হলো এমন mobile communication system, যেখানে voice-এর পাশাপাশি mobile internet, video call ও multimedia data service উন্নতভাবে ব্যবহার করা যায়।
-\end{definitionbox}
-
-3G mobile communication-এ data service আরও শক্তিশালী হয়। Mobile phone দিয়ে internet browsing, video call, email, mobile banking, multimedia service ব্যবহার সহজ হয়। International standard হিসেবে 3G-এর সাথে IMT-2000 ধারণা সম্পর্কিত।
-
-\begin{keypointbox}{3G-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item mobile internet service উন্নত হয়।
-\item video call ও multimedia service ব্যবহার করা যায়।
-\item voice ও data service একসাথে উন্নত হয়।
-\item 2G-এর তুলনায় data rate বেশি।
-\item e-commerce, mobile banking ও internet-based service সহজ হয়।
-\item smartphone ব্যবহার জনপ্রিয় হতে শুরু করে।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-3G-এর উত্তরে “mobile internet”, “video call”, “multimedia service” এবং “2G-এর তুলনায় বেশি data rate”—এই pointগুলো লিখলে ভালো marks পাওয়া যায়।
-\end{boardbox}
-
-\subsection{4G: Fourth Generation}
-
-\begin{definitionbox}{4G}
-Fourth generation বা 4G হলো high-speed mobile broadband communication system, যেখানে IP-based data service, HD video streaming, video conference ও fast internet access সুবিধা পাওয়া যায়।
-\end{definitionbox}
-
-4G mobile network high-speed data communication-এর জন্য গুরুত্বপূর্ণ। এতে voice communication-ও data network-এর মাধ্যমে করা যায়, যেমন VoLTE। 4G-এর সাথে LTE ও IMT-Advanced ধারণা সম্পর্কিত।
-
-\begin{keypointbox}{4G-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item high-speed mobile broadband।
-\item IP-based communication।
-\item HD video streaming, video conference ও online gaming সহজ হয়।
-\item 3G-এর তুলনায় latency কম।
-\item VoLTE-এর মাধ্যমে উন্নত voice service পাওয়া যায়।
-\item smartphone-based internet service ব্যাপকভাবে জনপ্রিয় হয়।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{বাস্তব উদাহরণ}
-YouTube video দেখা, online class করা, mobile hotspot ব্যবহার করা, video conference করা—এসব 4G mobile broadband-এর সাধারণ ব্যবহার।
-\end{examplebox}
-
-\subsection{5G: Fifth Generation}
-
-\begin{definitionbox}{5G}
-Fifth generation বা 5G হলো modern mobile communication system, যা খুব উচ্চ data rate, কম latency, massive device connectivity এবং IoT-based smart service-এর জন্য তৈরি।
-\end{definitionbox}
-
-5G শুধু mobile internet speed বাড়ানোর জন্য নয়; বরং smart city, IoT, autonomous vehicle, remote surgery, industrial automation, AR/VR এবং mission-critical communication-এর জন্য গুরুত্বপূর্ণ। 3GPP Release 15 থেকে 5G system standardization শুরু হয়। 5G-এর core ধারণার মধ্যে আছে New Radio বা NR, 5G Core, network slicing, edge computing এবং different service requirement অনুযায়ী flexible network operation।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/five_g_use_case_model.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/five_g_use_case_model.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-5G Network\\[8pt]
-Smartphone \quad IoT Device \quad Smart City \quad Autonomous Vehicle \quad AR/VR
-\vspace{0.7cm}
-}}
-}
-\caption{5G network-এর ব্যবহারক্ষেত্র}
-\end{figure}
-
-\begin{keypointbox}{5G-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item \textbf{eMBB}: high-speed mobile broadband, 4K/8K video, cloud gaming, AR/VR।
-\item \textbf{URLLC/Critical Communication}: low latency ও high reliability দরকার এমন industrial automation, remote control, autonomous vehicle।
-\item \textbf{Massive IoT}: smart city, agriculture sensor, logistics tracking-এর মতো অনেক device একসাথে connect করা।
-\item network slicing ব্যবহার করে একই physical network-এর উপর ভিন্ন service-এর জন্য virtual network তৈরি করা যায়।
-\item edge computing ব্যবহার করলে user-এর কাছাকাছি data process করা যায়, ফলে response time কমে।
-\item advanced antenna, beamforming এবং dense cell deployment ব্যবহৃত হতে পারে।
-\item coverage ও infrastructure deployment একটি বড় challenge।
-\end{itemize}
-\end{keypointbox}
-
-\examfocus{5G-এর উত্তরে শুধু “speed বেশি” লিখবে না; eMBB, low latency/URLLC, massive IoT এবং network slicing—এই keywordগুলো লিখলে উত্তর বেশি শক্তিশালী হবে।}
-
-\subsection{1G থেকে 5G: তুলনামূলক ছক}
-
-\begin{center}
-\begin{tabular}{|p{0.12\textwidth}|p{0.18\textwidth}|p{0.23\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{প্রজন্ম} & \textbf{Signal/ধারণা} & \textbf{প্রধান সেবা} & \textbf{বিশেষ বৈশিষ্ট্য} \\
-\hline
-1G & Analog & Voice call & mobile communication-এর সূচনা, security কম \\
-\hline
-2G & Digital & Voice, SMS, MMS & digital voice, SMS, basic data service \\
-\hline
-3G & Digital data & Mobile internet, video call & multimedia service, বেশি data rate \\
-\hline
-4G & IP-based broadband & Fast internet, HD video, VoLTE & high-speed data, low latency, LTE \\
-\hline
-5G & Advanced broadband/IoT & IoT, AR/VR, smart city & খুব কম latency, massive connectivity \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/mobile_generation_comparison_chart.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/mobile_generation_comparison_chart.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-1G: Analog Voice\\[4pt]
-2G: Digital Voice + SMS\\[4pt]
-3G: Mobile Internet + Video Call\\[4pt]
-4G: High-speed Broadband\\[4pt]
-5G: IoT + Low Latency
-\vspace{0.7cm}
-}}
-}
-\caption{1G থেকে 5G-এর তুলনা}
-\end{figure}
-
-\subsection{Mobile Communication-এর সুবিধা}
-
-\begin{keypointbox}{সুবিধা}
-\begin{itemize}
-\item চলমান অবস্থায় communication করা যায়।
-\item voice, SMS, internet, video call ও online service ব্যবহার করা যায়।
-\item emergency communication সহজ হয়।
-\item mobile banking, e-commerce ও digital service সহজ হয়।
-\item remote education ও telemedicine-এ সহায়ক।
-\item GPS ও location-based service ব্যবহার করা যায়।
-\item IoT ও smart device communication সম্ভব হয়।
-\end{itemize}
-\end{keypointbox}
-
+\subsection{5G-এর প্রয়োজনভিত্তিক ব্যবহার}
+3GPP Release 15 থেকে প্রথম 5G মান নির্ধারণের ভিত্তি তৈরি হয়। NR বেতার সংযোগ এবং 5G Core সেবার প্রয়োজন অনুযায়ী নেটওয়ার্ক পরিচালনায় সাহায্য করে।
+\chTwoPair{\begin{keypointbox}{বেশি Rate, কম Delay ও বেশি Device}
+\textbf{eMBB:} উন্নত ব্রডব্যান্ড, 4K/8K ভিডিও, ক্লাউড গেমিং ও AR/VR।\par
+\textbf{URLLC/Critical Communication:} কম বিলম্ব ও বেশি নির্ভরযোগ্যতা প্রয়োজন এমন শিল্প নিয়ন্ত্রণ, দূরনিয়ন্ত্রণ ও যানবাহনের সমন্বয়।\par
+\textbf{Massive IoT:} কৃষির সেন্সর, স্মার্ট শহর ও পণ্য পরিবহনের গতিবিধি পর্যবেক্ষণে বহু ডিভাইসের সংযোগ।
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/five_g_use_case_model..png}{প্রয়োজন অনুযায়ী 5G-এর ব্যবহার}}
+\textbf{সহায়ক নকশা:} Network Slicing একই ভৌত নেটওয়ার্কে ভিন্ন সেবার জন্য পৃথক ভার্চুয়াল নেটওয়ার্কের ব্যবস্থা করে। Edge Computing-এ ব্যবহারকারীর কাছাকাছি ডেটা প্রক্রিয়াকরণ করা হয়। উন্নত অ্যান্টেনা, Beamforming ও বেশি সেলও ব্যবহার করা যায়। স্বয়ংচালিত গাড়ি বা দূর থেকে অস্ত্রোপচার চালাতে নেটওয়ার্কের পাশাপাশি নিরাপদ নিয়ন্ত্রণ, উপযুক্ত যন্ত্র ও পর্যাপ্ত নির্ভরযোগ্যতা প্রয়োজন।
+\chTwoImage{chapters/Chapter02/images/mobile_generation_comparison_chart.png}{মোবাইল প্রজন্মের তুলনামূলক ধারণা}
 \subsection{Mobile Communication-এর সীমাবদ্ধতা}
 
 \begin{keypointbox}{সীমাবদ্ধতা}
 \begin{itemize}
-\item signal coverage দুর্বল হলে service quality কমে।
-\item network congestion হলে speed কমে যায়।
-\item tower থেকে দূরে গেলে signal weak হতে পারে।
-\item building, weather ও obstacle signal প্রভাবিত করতে পারে।
-\item battery consumption বেশি হতে পারে।
-\item data security ও privacy risk থাকে।
-\item high-speed network deployment cost বেশি।
+\item সংকেত দুর্বল হলে সেবার মান কমে।
+\item নেটওয়ার্কে ভিড় বাড়লে গতি কমে যায়।
+\item টাওয়ার থেকে দূরে গেলে সংকেত দুর্বল হতে পারে।
+\item ভবন, আবহাওয়া ও বাধা সংকেতকে প্রভাবিত করতে পারে।
+\item ব্যাটারির শক্তি বেশি ব্যয় হতে পারে।
+\item ডেটার নিরাপত্তা ও ব্যক্তিগত গোপনীয়তার ঝুঁকি থাকে।
+\item উচ্চগতির নেটওয়ার্ক স্থাপনের খরচ বেশি।
 \end{itemize}
 \end{keypointbox}
 
 \subsection{Bandwidth, Latency ও Signal Strength-এর সম্পর্ক}
 
-Mobile communication-এ শুধু generation ভালো হলেই ভালো service নিশ্চিত হয় না। Service quality নির্ভর করে bandwidth, latency, signal strength, network congestion, tower distance এবং device capability-এর উপর।
+নতুন প্রজন্ম ব্যবহার করলেই উন্নত মোবাইল সেবা নিশ্চিত হয় না। ব্যান্ডউইথ, বিলম্ব, সংকেতের শক্তি, নেটওয়ার্কের ভিড়, টাওয়ারের দূরত্ব ও যন্ত্রের সক্ষমতার ওপর সেবার মান নির্ভর করে।
 
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.62\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.22\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.62\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{বিষয়} & \textbf{প্রভাব} \\
 \hline
-Bandwidth & বেশি bandwidth হলে বেশি data transfer করা যায়। \\
+\endfirsthead
 \hline
-Latency & latency কম হলে video call, online game ও live class ভালো হয়। \\
+\textbf{বিষয়} & \textbf{প্রভাব} \\
 \hline
-Signal Strength & signal শক্তিশালী হলে connection stable হয়। \\
+\endhead
+
+Bandwidth & ব্যান্ডউইথ বেশি হলে একই সময়ে বেশি ডেটা পাঠানোর সুযোগ থাকে। \\
 \hline
-Congestion & user বেশি হলে speed কমতে পারে। \\
+Latency & বিলম্ব কম হলে ভিডিও কল, অনলাইন গেম ও সরাসরি ক্লাসের মান উন্নত হতে পারে। \\
 \hline
-Tower Distance & tower দূরে হলে signal দুর্বল হতে পারে। \\
+Signal Strength & শক্তিশালী সংকেত সংযোগ স্থিতিশীল রাখতে সাহায্য করে। \\
 \hline
-Device Capability & পুরনো device high-speed network পুরোপুরি ব্যবহার করতে নাও পারে। \\
+Congestion & ব্যবহারকারী বেশি হলে গতি কমতে পারে। \\
 \hline
-\end{tabular}
-\end{center}
+Tower Distance & টাওয়ার দূরে হলে সংকেত দুর্বল হতে পারে। \\
+\hline
+Device Capability & পুরোনো যন্ত্র উচ্চগতির নেটওয়ার্কের সুবিধা পুরোপুরি ব্যবহার করতে নাও পারে। \\
+\hline
+\end{longtable}
+\endgroup
 
 \begin{mistakebox}{4G/5G speed}
-অনেকে মনে করে 4G/5G লেখা থাকলেই সবসময় internet দ্রুত হবে। বাস্তবে signal strength, bandwidth, latency, network congestion, device quality ও server response speed-কে প্রভাবিত করে।
+ফোনে 4G/5G লেখা থাকলেই ইন্টারনেট সবসময় দ্রুত হয় না। সংকেতের শক্তি, ব্যান্ডউইথ, বিলম্ব, নেটওয়ার্কের ভিড়, যন্ত্রের মান এবং সার্ভারের সাড়া দেওয়ার সময় গতিকে প্রভাবিত করে।
 \end{mistakebox}
 
 \subsection{Mobile Communication-এর ব্যবহার}
 
-\begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.25\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.55\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{ক্ষেত্র} & \textbf{ব্যবহার} \\
 \hline
-Education & online class, digital content, e-learning \\
+\endfirsthead
 \hline
-Health & telemedicine, emergency call, health monitoring \\
+\textbf{ক্ষেত্র} & \textbf{ব্যবহার} \\
 \hline
-Business & mobile banking, e-commerce, online payment \\
-\hline
-Transport & GPS navigation, ride sharing, vehicle tracking \\
-\hline
-Entertainment & video streaming, online gaming, social media \\
-\hline
-Security & emergency alert, location tracking, surveillance support \\
-\hline
-Smart system & IoT, smart home, smart city, automation \\
-\hline
-\end{tabular}
-\end{center}
+\endhead
 
-\subsection{Common Mistake Zone}
+শিক্ষা & অনলাইন ক্লাস, ডিজিটাল উপকরণ, ই-লার্নিং \\
+\hline
+স্বাস্থ্য & টেলিমেডিসিন, জরুরি কল, স্বাস্থ্য পর্যবেক্ষণ \\
+\hline
+ব্যবসা & মোবাইল ব্যাংকিং, ই-কমার্স, অনলাইন লেনদেন \\
+\hline
+পরিবহন & GPS দিয়ে পথনির্দেশ, রাইড শেয়ারিং, যানবাহনের অবস্থান জানা \\
+\hline
+বিনোদন & ভিডিও স্ট্রিমিং, অনলাইন গেম, সামাজিক যোগাযোগ \\
+\hline
+নিরাপত্তা & জরুরি সতর্কবার্তা, অবস্থান জানা, নজরদারিতে সহায়তা \\
+\hline
+স্মার্ট ব্যবস্থা & IoT, স্মার্ট বাসা, স্মার্ট শহর, স্বয়ংক্রিয় ব্যবস্থা \\
+\hline
+\end{longtable}
+\endgroup
+
+\input{chapters/Chapter02/topics/06_mobile_communication_and_generations/concept_enrichment.tex}
+\input{chapters/Chapter02/topics/06_mobile_communication_and_generations/applied_examples.tex}
+
+\subsection{সাধারণ ভুল ও সংশোধন}
 
 \smallhead{১. 1G ও 2G শুধু speed দিয়ে আলাদা করা}
-1G ও 2G-এর মূল পার্থক্য হলো 1G analog, আর 2G digital। শুধু speed দিয়ে পার্থক্য লিখলে answer incomplete হয়।
+1G ও 2G-এর মূল পার্থক্য সংকেতের ধরনে। 1G-তে অ্যানালগ এবং 2G-তে ডিজিটাল যোগাযোগ ব্যবহৃত হয়। এই পার্থক্য বাদ দিয়ে শুধু গতি উল্লেখ করলে ব্যাখ্যা অসম্পূর্ণ থাকে।
 
 \smallhead{২. Handoff ও roaming এক মনে করা}
-Handoff ও roaming এক নয়। Handoff হলো চলমান user-এর connection এক tower থেকে অন্য tower-এ transfer করা। Roaming হলো home network-এর বাইরে অন্য network ব্যবহার করা।
+Handoff-এ চলমান ব্যবহারকারীর সংযোগ এক টাওয়ার থেকে অন্য টাওয়ারে স্থানান্তরিত হয়। Roaming-এ নিজস্ব নেটওয়ার্কের বাইরে অন্য নেটওয়ার্কের সেবা নেওয়া হয়। দুটি প্রক্রিয়া আলাদা।
 
 \smallhead{৩. 3G মানেই শুধু video call মনে করা}
-3G মানেই শুধু video call নয়। 3G mobile internet, multimedia service, email, browsing ও data service উন্নত করে।
+3G শুধু ভিডিও কলের জন্য নয়। 3G-তে মোবাইল ইন্টারনেট, মাল্টিমিডিয়া, ই-মেইল, ব্রাউজিং ও ডেটা সেবাও উন্নত হয়।
 
 \smallhead{৪. 5G শুধু বেশি speed মনে করা}
-5G শুধু বেশি speed নয়; কম latency, massive connectivity এবং IoT support 5G-এর বড় বৈশিষ্ট্য।
+5G-তে বেশি গতি গুরুত্বপূর্ণ। কম বিলম্ব, বিপুল যন্ত্র সংযোগ এবং IoT সেবার সমর্থনও 5G-এর উল্লেখযোগ্য বৈশিষ্ট্য।
 
-\subsection{Exam-style প্রশ্ন ও উত্তর}
+\subsection{MCQ অনুশীলন}
 
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Mobile communication কী?}
-যে communication system-এ mobile device wireless signal ব্যবহার করে চলমান অবস্থায় voice, data, text, image, audio, video বা internet service আদান-প্রদান করতে পারে, তাকে mobile communication বলা হয়। এতে mobile phone, SIM, BTS, mobile network এবং wireless radio signal ব্যবহৃত হয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Cellular network কী?}
-যে mobile network-এ একটি বড় geographical area-কে ছোট ছোট cell-এ ভাগ করে প্রতিটি cell-এ base station বা tower-এর মাধ্যমে mobile service দেওয়া হয়, তাকে cellular network বলা হয়। এতে frequency reuse, বেশি coverage এবং বেশি user capacity নিশ্চিত করা যায়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Handoff কী?}
-মোবাইল user চলমান অবস্থায় এক cell থেকে অন্য cell-এ গেলে call বা data connection বিচ্ছিন্ন না করে network connection এক base station থেকে অন্য base station-এ স্থানান্তর করার প্রক্রিয়াকে handoff বা handover বলা হয়।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: Handoff ও Roaming}
-Handoff হলো একই network বা cellular system-এর মধ্যে চলমান user-এর connection এক cell বা base station থেকে অন্য cell বা base station-এ transfer করা। Roaming হলো user নিজের home network-এর coverage area-এর বাইরে অন্য operator বা partner network ব্যবহার করে mobile service নেওয়া।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: 4G ও 5G-এর পার্থক্য লেখ।}
-4G high-speed IP-based mobile broadband service দেয়, যেখানে HD video streaming, video conference ও VoLTE ব্যবহার করা যায়। 5G আরও বেশি data rate, কম latency, massive device connectivity এবং IoT/smart city/automation service-এর জন্য উপযোগী। তাই 5G শুধু speed নয়, low-latency ও smart device communication-এর জন্য গুরুত্বপূর্ণ।
-\end{boardbox}
-
-\subsection{Brainstorming Critical Question}
-
-\begin{practicebox}
-একজন শিক্ষার্থী গ্রামের বাড়ি থেকে mobile data দিয়ে online class করে। তার phone-এ 4G দেখালেও video মাঝে মাঝে আটকে যায়। বাসে করে শহরে যাওয়ার সময় call না কেটে tower পরিবর্তন হয়। বিদেশে গেলে সে একই SIM দিয়ে অন্য network ব্যবহার করতে পারে।
-
-\begin{enumerate}
-\item ক. Mobile communication কী?
-\item খ. Handoff কেন প্রয়োজন?
-\item গ. উদ্দীপকে handoff ও roaming শনাক্ত করে ব্যাখ্যা কর।
-\item ঘ. 4G লেখা থাকলেই online class ভালো হবে কি? bandwidth, latency, signal strength ও congestion-এর আলোকে বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\begin{itemize}
-\item Mobile communication wireless signal ব্যবহার করে চলমান অবস্থায় communication করতে দেয়।
-\item Cellular network বড় area-কে ছোট ছোট cell-এ ভাগ করে।
-\item BTS mobile phone-এর সাথে radio signal আদান-প্রদান করে।
-\item MSC call switching ও routing-এর গুরুত্বপূর্ণ অংশ।
-\item Handoff হলো connection এক tower/cell থেকে অন্য tower/cell-এ transfer।
-\item Roaming হলো home network-এর বাইরে অন্য network ব্যবহার।
-\item 1G analog voice।
-\item 2G digital voice, SMS, MMS।
-\item 3G mobile internet, video call, multimedia।
-\item 4G high-speed IP-based broadband।
-\item 5G low latency, high speed, IoT ও massive connectivity।
-\item ভালো service নির্ভর করে bandwidth, latency, signal strength, congestion ও device capability-এর উপর।
-\end{itemize}
-\end{recapbox}
-
-\subsection{অনুশীলন}
-
-\begin{practicebox}
+\par
 \textbf{MCQ}
-\begin{enumerate}
-\item Mobile communication-এর প্রধান বৈশিষ্ট্য কোনটি?\\
-ক. শুধুই wired connection \quad খ. mobility \quad গ. শুধু printer sharing \quad ঘ. শুধু storage
-
-\item Cellular network-এ বড় area কীভাবে ভাগ করা হয়?\\
-ক. File হিসেবে \quad খ. Cell হিসেবে \quad গ. Folder হিসেবে \quad ঘ. Packet হিসেবে
-
-\item BTS-এর কাজ কী?\\
-ক. শুধু printing \quad খ. mobile phone-এর সাথে radio signal আদান-প্রদান \quad গ. database sorting \quad ঘ. image editing
-
-\item 1G system কেমন ছিল?\\
-ক. Digital SMS only \quad খ. Analog voice \quad গ. 5G IoT \quad ঘ. Fiber optic
-
-\item 2G-এর একটি গুরুত্বপূর্ণ service কোনটি?\\
-ক. SMS \quad খ. Virtual reality only \quad গ. Quantum computing \quad ঘ. Blockchain mining
-
-\item 3G-এর সাথে কোন service বেশি সম্পর্কিত?\\
-ক. Mobile internet ও video call \quad খ. শুধু analog voice \quad গ. শুধু TV remote \quad ঘ. Coaxial cable
-
-\item 4G-এর একটি বৈশিষ্ট্য কোনটি?\\
-ক. High-speed mobile broadband \quad খ. শুধু analog call \quad গ. no internet \quad ঘ. only infrared
-
-\item 5G-এর একটি গুরুত্বপূর্ণ বৈশিষ্ট্য কোনটি?\\
-ক. Low latency \quad খ. No data \quad গ. Only SMS \quad ঘ. No device connectivity
-
-\item চলমান অবস্থায় call না কেটে tower পরিবর্তনের প্রক্রিয়া কী?\\
-ক. Roaming \quad খ. Handoff \quad গ. Formatting \quad ঘ. Encoding
-
-\item Home network-এর বাইরে অন্য network ব্যবহার করে service নেওয়াকে কী বলে?\\
-ক. Handoff \quad খ. Roaming \quad গ. Switching off \quad ঘ. Uploading
-\end{enumerate}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Mobile communication কী?
-\item Cellular network বলতে কী বোঝায়?
-\item Cell, BTS, BSC ও MSC-এর কাজ লেখ।
-\item Handoff বা handover কী?
-\item Roaming কী?
-\item 1G ও 2G-এর মধ্যে পার্থক্য লেখ।
-\item 3G ও 4G-এর মধ্যে পার্থক্য লেখ।
-\item 5G-এর বৈশিষ্ট্য লেখ।
-\item Mobile communication-এর সুবিধা ও সীমাবদ্ধতা লেখ।
-\item Bandwidth, latency ও signal strength mobile communication-এ কীভাবে প্রভাব ফেলে?
-\end{enumerate}
-
-\textbf{সৃজনশীল প্রশ্ন}
-একটি শহরে mobile network উন্নত করা হচ্ছে। শহরের বিভিন্ন এলাকায় নতুন tower বসানো হচ্ছে। user চলমান অবস্থায় call করলে tower পরিবর্তন হলেও call কেটে যাচ্ছে না। শহরে 4G service আছে, তবে crowded area-তে speed কমে যায়। ভবিষ্যতে smart traffic system ও IoT device চালুর জন্য 5G network পরিকল্পনা করা হচ্ছে।
-
-\begin{enumerate}
-\item ক. BTS কী?
-\item খ. Cellular network-এ area cell-এ ভাগ করা হয় কেন?
-\item গ. উদ্দীপকে handoff-এর ভূমিকা ব্যাখ্যা কর।
-\item ঘ. crowded area-তে 4G speed কমার কারণ এবং 5G smart city service-এ কীভাবে সহায়ক হতে পারে—বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
+\begin{multicols}{2}\begin{enumerate}
+\item\chTwoMCQBlock{মোবাইল যোগাযোগের প্রধান বৈশিষ্ট্য কোনটি?
+\par ক. শুধু তারযুক্ত সংযোগ \quad খ. চলাচলের সময় যোগাযোগের সুযোগ \par গ. শুধু প্রিন্টার ভাগাভাগি \quad ঘ. শুধু ডেটা সংরক্ষণ }
+\item\chTwoMCQBlock{সেলুলার নেটওয়ার্কে বড় এলাকাকে কী হিসেবে ভাগ করা হয়?
+\par ক. ফাইল \quad খ. সেল \par গ. ফোল্ডার \quad ঘ. প্যাকেট }
+\item\chTwoMCQBlock{BTS-এর কাজ কী?
+\par ক. শুধু মুদ্রণ \par খ. মোবাইল ফোনের সঙ্গে রেডিও সংকেত আদান-প্রদান \par গ. ডেটাবেজের তথ্য সাজানো \quad ঘ. ছবি সম্পাদনা }
+\item\chTwoMCQBlock{1G-তে যোগাযোগের প্রধান ধরন কী ছিল?
+\par ক. শুধু ডিজিটাল SMS \quad খ. অ্যানালগ ভয়েস \par গ. 5G IoT \quad ঘ. ফাইবার অপটিক }
+\item\chTwoMCQBlock{2G-এর গুরুত্বপূর্ণ সেবার উদাহরণ কোনটি?
+\par ক. SMS \quad খ. শুধু ভার্চুয়াল রিয়েলিটি \par গ. কোয়ান্টাম কম্পিউটিং \quad ঘ. ব্লকচেইন মাইনিং }
+\item\chTwoMCQBlock{3G-এর সঙ্গে কোন সেবার উন্নয়ন বেশি সম্পর্কিত?
+\par ক. মোবাইল ইন্টারনেট ও ভিডিও কল \quad খ. শুধু অ্যানালগ ভয়েস \par গ. শুধু টিভি রিমোট \quad ঘ. কোঅ্যাক্সিয়াল কেবল }
+\item\chTwoMCQBlock{4G-এর একটি বৈশিষ্ট্য কোনটি?
+\par ক. উচ্চগতির মোবাইল ব্রডব্যান্ড \quad খ. শুধু অ্যানালগ কল \par গ. ইন্টারনেট নেই \quad ঘ. শুধু অবলোহিত যোগাযোগ }
+\item\chTwoMCQBlock{5G-এর একটি গুরুত্বপূর্ণ বৈশিষ্ট্য কোনটি?
+\par ক. স্বল্প বিলম্ব \quad খ. ডেটা পাঠানো যায় না \par গ. শুধু SMS \quad ঘ. ডিভাইস সংযুক্ত করা যায় না }
+\item\chTwoMCQBlock{চলাচলের সময় কল সচল রেখে সেবাদানকারী বেস স্টেশন বদলানোর প্রক্রিয়া কী?
+\par ক. Roaming \quad খ. Handoff \par গ. Formatting \quad ঘ. Encoding }
+\item\chTwoMCQBlock{নিজস্ব নেটওয়ার্কের বাইরে অন্য সমর্থিত নেটওয়ার্কের সেবা নেওয়াকে কী বলে?
+\par ক. Handoff \quad খ. Roaming \par গ. ফোন বন্ধ করা \quad ঘ. আপলোড করা }
+\end{enumerate}\end{multicols}
+\textbf{উত্তরমালা: ১. খ, ২. খ, ৩. খ, ৪. খ, ৫. ক, ৬. ক, ৭. ক, ৮. ক, ৯. খ, ১০. খ}
+\endgroup

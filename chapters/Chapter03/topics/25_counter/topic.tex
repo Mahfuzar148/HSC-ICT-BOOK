@@ -1,0 +1,678 @@
+% =========================================================
+% 3.13 Counter
+% =========================================================
+
+\section{কাউন্টার
+(\textenglish{Counter})}
+
+\subsection{কাউন্টার কী?}
+
+যে সিকুয়েন্সিয়াল লজিক সার্কিট ক্লক পালস গণনা করে এবং
+নির্দিষ্ট ক্রমে এক অবস্থা থেকে অন্য অবস্থায় পরিবর্তিত হয়,
+তাকে \textbf{\textenglish{Counter}} বলে।
+
+সহজভাবে, কোনো ডিজিটাল সার্কিটে কতটি
+\textenglish{Clock Pulse} এসেছে তা গণনা করার জন্য
+\textenglish{Counter} ব্যবহার করা হয়।
+
+একটি \(3\)-\textenglish{bit Binary Counter} সাধারণত এভাবে গণনা করতে পারে—
+
+\[
+000\rightarrow001\rightarrow010\rightarrow011
+\rightarrow100\rightarrow101\rightarrow110\rightarrow111
+\rightarrow000
+\]
+
+অর্থাৎ \(3\)-বিট কাউন্টার মোট \(8\)টি ভিন্ন অবস্থা ধারণ করতে পারে।
+
+
+% =========================================================
+% 3.13.2 Construction and counting capacity
+% =========================================================
+
+\subsection{কাউন্টারের গঠন ও গণনা ক্ষমতা}
+
+কাউন্টার তৈরির প্রধান উপাদান হলো
+\textenglish{Flip-Flop}।
+প্রতিটি \textenglish{Flip-Flop} একটি বাইনারি বিট সংরক্ষণ করে।
+
+সাধারণভাবে \(n\)টি \textenglish{Flip-Flop} ব্যবহার করলে
+সর্বোচ্চ—
+
+\[
+\boxed{
+N=2^n
+}
+\]
+
+টি ভিন্ন বাইনারি অবস্থা পাওয়া যায়।
+
+এখানে,
+
+\[
+n=\text{ফ্লিপ-ফ্লপের সংখ্যা}
+\]
+
+এবং,
+
+\[
+N=\text{মোট সম্ভাব্য অবস্থা}
+\]
+
+কাউন্টারের প্রধান অংশগুলো হলো—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textbf{\textenglish{Flip-Flop}:}
+    বাইনারি অবস্থা সংরক্ষণ করে।
+
+    \item \textbf{\textenglish{Clock Input}:}
+    কখন কাউন্টার পরবর্তী অবস্থায় যাবে তা নিয়ন্ত্রণ করে।
+
+    \item \textbf{\textenglish{Combinational Logic}:}
+    প্রয়োজন অনুযায়ী পরবর্তী অবস্থা নির্ধারণ করে।
+
+    \item \textbf{\textenglish{Reset Circuit}:}
+    কাউন্টারকে প্রাথমিক অবস্থায় ফিরিয়ে আনে।
+
+    \item \textbf{\textenglish{Output}:}
+    কাউন্টারের বর্তমান বাইনারি অবস্থা প্রকাশ করে।
+
+\end{enumerate}
+
+\subsubsection*{উদাহরণ: ৩-বিট কাউন্টার}
+
+একটি \(3\)-বিট কাউন্টারে—
+
+\[
+n=3
+\]
+
+তাই,
+
+\[
+N=2^3=8
+\]
+
+অর্থাৎ এটি \(0\) থেকে \(7\) পর্যন্ত মোট \(8\)টি ভিন্ন অবস্থা প্রকাশ করতে পারে।
+
+
+% =========================================================
+% 3-bit State Flow Diagram
+% =========================================================
+
+\subsubsection*{৩-বিট কাউন্টারের অবস্থা পরিবর্তন}
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    node distance=1.55cm,
+    state/.style={
+        draw,
+        rounded corners=2pt,
+        fill=ICTLightBlue,
+        minimum width=1.35cm,
+        minimum height=0.75cm,
+        align=center
+    }
+]
+
+\node[state] (s0) {\(000\)};
+\node[state, right=of s0] (s1) {\(001\)};
+\node[state, right=of s1] (s2) {\(010\)};
+\node[state, right=of s2] (s3) {\(011\)};
+
+\node[state, below=1.3cm of s3] (s4) {\(100\)};
+\node[state, left=of s4] (s5) {\(101\)};
+\node[state, left=of s5] (s6) {\(110\)};
+\node[state, left=of s6] (s7) {\(111\)};
+
+\draw[->] (s0) -- (s1);
+\draw[->] (s1) -- (s2);
+\draw[->] (s2) -- (s3);
+
+\draw[->] (s3) -- (s4);
+
+\draw[->] (s4) -- (s5);
+\draw[->] (s5) -- (s6);
+\draw[->] (s6) -- (s7);
+
+\draw[->]
+(s7.west)
+to[out=180,in=180]
+node[left,font=\small]{\textenglish{Repeat}}
+(s0.west);
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\par\begingroup
+
+একটি \(n\)-বিট বাইনারি কাউন্টার সর্বোচ্চ
+\(2^n\)টি অবস্থা গণনা করতে পারে।
+\par\endgroup
+
+
+
+% =========================================================
+% 3.13.3 Working
+% =========================================================
+
+\subsection{কাউন্টার কীভাবে কাজ করে?}
+
+প্রতিটি সক্রিয় \textenglish{Clock Pulse}-এ কাউন্টার
+নির্ধারিত নিয়ম অনুযায়ী তার বর্তমান অবস্থা পরিবর্তন করে।
+
+একটি \(3\)-বিট \textenglish{Up Counter}-এর গণনা সারণি—
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+
+\rowcolor{ICTLightBlue}
+
+\textbf{ক্লক পালস}
+&
+\(\boldsymbol{Q_2}\)
+&
+\(\boldsymbol{Q_1}\)
+&
+\(\boldsymbol{Q_0}\)
+&
+\textbf{দশমিক মান}
+\\
+\hline
+
+0 & 0 & 0 & 0 & 0 \\
+\hline
+
+1 & 0 & 0 & 1 & 1 \\
+\hline
+
+2 & 0 & 1 & 0 & 2 \\
+\hline
+
+3 & 0 & 1 & 1 & 3 \\
+\hline
+
+4 & 1 & 0 & 0 & 4 \\
+\hline
+
+5 & 1 & 0 & 1 & 5 \\
+\hline
+
+6 & 1 & 1 & 0 & 6 \\
+\hline
+
+7 & 1 & 1 & 1 & 7 \\
+\hline
+
+8 & 0 & 0 & 0 & 0 \\
+\hline
+
+\end{tabular}
+\end{center}
+
+অর্থাৎ \(111\) অবস্থার পর পরবর্তী ক্লক পালসে আবার—
+
+\[
+000
+\]
+
+অবস্থায় ফিরে আসে।
+
+তাই এই কাউন্টারটি—
+
+\[
+\boxed{
+\text{\textenglish{Modulo-8 Counter}}
+}
+\]
+
+হিসেবে কাজ করে।
+
+
+% =========================================================
+% 3.13.4 Classification
+% =========================================================
+
+\subsection{কাউন্টারের শ্রেণিবিভাগ
+(\textenglish{Classification of Counter})}
+
+কাউন্টারকে বিভিন্ন বৈশিষ্ট্যের ভিত্তিতে শ্রেণিবিভাগ করা যায়।
+
+\subsubsection*{ক্লক সরবরাহের পদ্ধতি অনুযায়ী}
+
+\begin{enumerate}[leftmargin=*,itemsep=3pt]
+
+    \item \textenglish{Asynchronous Counter}
+    \item \textenglish{Synchronous Counter}
+
+\end{enumerate}
+
+
+% =========================================================
+% Asynchronous Counter
+% =========================================================
+
+\paragraph{\textenglish{Asynchronous Counter}:}
+
+যে কাউন্টারে সব \textenglish{Flip-Flop} একই বাহ্যিক
+\textenglish{Clock} সংকেত সরাসরি গ্রহণ করে না,
+তাকে \textenglish{Asynchronous Counter} বলে।
+
+এখানে প্রথম \textenglish{Flip-Flop} বাহ্যিক ক্লক পায় এবং
+পরবর্তী \textenglish{Flip-Flop} সাধারণত পূর্ববর্তী
+\textenglish{Flip-Flop}-এর আউটপুট দ্বারা ট্রিগার হয়।
+
+একে \textenglish{Ripple Counter}-ও বলা হয়।
+
+\textbf{বৈশিষ্ট্য:}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item গঠন তুলনামূলক সহজ।
+    \item অতিরিক্ত লজিক কম লাগে।
+    \item \textenglish{Propagation Delay} জমা হয়।
+    \item তুলনামূলক কম গতির সার্কিটে উপযোগী।
+\end{itemize}
+
+
+% =========================================================
+% Synchronous Counter
+% =========================================================
+
+\paragraph{\textenglish{Synchronous Counter}:}
+
+যে কাউন্টারে সব \textenglish{Flip-Flop} একই
+\textenglish{Clock} সংকেত গ্রহণ করে,
+তাকে \textenglish{Synchronous Counter} বলে।
+
+এতে প্রয়োজনীয় \textenglish{Combinational Logic}
+প্রতিটি \textenglish{Flip-Flop}-এর পরবর্তী অবস্থা নির্ধারণ করে।
+
+\textbf{বৈশিষ্ট্য:}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item সব \textenglish{Flip-Flop} একই ক্লক গ্রহণ করে।
+    \item তুলনামূলক দ্রুত কাজ করে।
+    \item \textenglish{Ripple Delay} কম।
+    \item অতিরিক্ত লজিক সার্কিট প্রয়োজন হতে পারে।
+\end{itemize}
+
+
+% =========================================================
+% Conceptual Diagram
+% =========================================================
+
+\subsubsection*{\textenglish{Asynchronous} ও
+\textenglish{Synchronous Counter}-এর ধারণাগত পার্থক্য}
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    ff/.style={
+        draw,
+        rounded corners=2pt,
+        fill=ICTLightBlue,
+        minimum width=1.7cm,
+        minimum height=1.05cm,
+        align=center
+    }
+]
+
+% -------------------------
+% Asynchronous
+% -------------------------
+
+\node[font=\bfseries] at (2.8,2.1)
+{\textenglish{Asynchronous Counter}};
+
+\node[ff] (a0) at (0,0) {\textenglish{FF0}};
+\node[ff] (a1) at (2.8,0) {\textenglish{FF1}};
+\node[ff] (a2) at (5.6,0) {\textenglish{FF2}};
+
+\draw[->] (-1.5,0) -- (a0.west);
+\node[above] at (-0.9,0.1) {\textenglish{CLK}};
+
+\draw[->] (a0.east) -- (a1.west);
+\draw[->] (a1.east) -- (a2.west);
+
+\node[below,font=\small] at (2.8,-0.9)
+{\textenglish{Clock ripples from one stage to next}};
+
+% -------------------------
+% Synchronous
+% -------------------------
+
+\node[font=\bfseries] at (9.5,2.1)
+{\textenglish{Synchronous Counter}};
+
+\node[ff, fill=ICTLightGreen] (s0) at (7.0,0) {\textenglish{FF0}};
+\node[ff, fill=ICTLightGreen] (s1) at (9.5,0) {\textenglish{FF1}};
+\node[ff, fill=ICTLightGreen] (s2) at (12.0,0) {\textenglish{FF2}};
+
+\draw (6.2,-1.2) -- (12.8,-1.2);
+\node[left] at (6.2,-1.2) {\textenglish{CLK}};
+
+\foreach \x in {7.0,9.5,12.0}
+{
+    \draw[->] (\x,-1.2) -- (\x,-0.55);
+    \fill (\x,-1.2) circle (1.6pt);
+}
+
+\node[below,font=\small] at (9.5,-1.8)
+{\textenglish{Common clock to all stages}};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+
+% =========================================================
+% By Counting Direction
+% =========================================================
+
+\subsubsection*{গণনার দিক অনুযায়ী}
+
+\paragraph{\textenglish{Up Counter}:}
+
+যে কাউন্টার ক্রমান্বয়ে গণনার মান বৃদ্ধি করে,
+তাকে \textenglish{Up Counter} বলে।
+
+উদাহরণ—
+
+\[
+000\rightarrow001\rightarrow010\rightarrow011
+\rightarrow100\rightarrow\cdots
+\]
+
+\paragraph{\textenglish{Down Counter}:}
+
+যে কাউন্টার ক্রমান্বয়ে গণনার মান হ্রাস করে,
+তাকে \textenglish{Down Counter} বলে।
+
+উদাহরণ—
+
+\[
+111\rightarrow110\rightarrow101\rightarrow100
+\rightarrow011\rightarrow\cdots
+\]
+
+\paragraph{\textenglish{Up-Down Counter}:}
+
+যে কাউন্টার নিয়ন্ত্রণ সংকেত অনুযায়ী ঊর্ধ্বক্রমে বা নিম্নক্রমে
+উভয়ভাবেই গণনা করতে পারে,
+তাকে \textenglish{Up-Down Counter} বলে।
+
+
+% =========================================================
+% Modulus Based
+% =========================================================
+
+\subsubsection*{মডুলাস বা গণনা-ক্রম অনুযায়ী}
+
+\paragraph{\textenglish{Modulo-N Counter}:}
+
+যে কাউন্টার মোট \(N\)টি অবস্থা অতিক্রম করার পর আবার
+প্রাথমিক অবস্থায় ফিরে আসে,
+তাকে \textenglish{Modulo-N Counter} বলে।
+
+উদাহরণ—
+
+\[
+0\rightarrow1\rightarrow2\rightarrow\cdots
+\rightarrow(N-1)\rightarrow0
+\]
+
+
+% =========================================================
+% Decade
+% =========================================================
+
+\paragraph{\textenglish{Decade Counter}:}
+
+\textenglish{Decade Counter} হলো একটি বিশেষ
+\textenglish{Modulo-10 Counter}।
+
+এটি—
+
+\[
+0\rightarrow1\rightarrow2\rightarrow\cdots
+\rightarrow9\rightarrow0
+\]
+
+ক্রমে গণনা করে।
+
+এর জন্য সাধারণত \(4\)টি \textenglish{Flip-Flop} প্রয়োজন, কারণ—
+
+\[
+2^3=8<10\leq16=2^4
+\]
+
+চারটি \textenglish{Flip-Flop}-এ \(16\)টি সম্ভাব্য অবস্থা থাকলেও
+\textenglish{Decade Counter} কেবল \(10\)টি অবস্থা ব্যবহার করে।
+
+
+% =========================================================
+% Ring
+% =========================================================
+
+\paragraph{\textenglish{Ring Counter}:}
+
+\textenglish{Ring Counter} একটি
+\textenglish{Shift Register}-ভিত্তিক কাউন্টার,
+যেখানে শেষ \textenglish{Flip-Flop}-এর আউটপুট
+প্রথমটির ইনপুটে ফিরিয়ে দেওয়া হয়।
+
+একটি \(4\)-বিট \textenglish{Ring Counter}-এর উদাহরণ—
+
+\[
+1000\rightarrow0100\rightarrow0010
+\rightarrow0001\rightarrow1000
+\]
+
+এখানে একটি \(1\) ধারাবাহিকভাবে এক অবস্থান থেকে অন্য অবস্থানে যায়।
+
+
+% =========================================================
+% Johnson
+% =========================================================
+
+\paragraph{\textenglish{Johnson Counter}:}
+
+\textenglish{Johnson Counter} একটি
+\textenglish{Shift Register}-ভিত্তিক কাউন্টার,
+যেখানে শেষ \textenglish{Flip-Flop}-এর বিপরীত আউটপুট
+প্রথম \textenglish{Flip-Flop}-এর ইনপুটে দেওয়া হয়।
+
+একটি \(n\)-বিট \textenglish{Johnson Counter}-এ সাধারণত—
+
+\[
+\boxed{
+2n
+}
+\]
+
+টি ভিন্ন অবস্থা পাওয়া যায়।
+
+
+% =========================================================
+% 3.13.5 Comparison
+% =========================================================
+
+\subsection{অ্যাসিঙ্ক্রোনাস ও সিঙ্ক্রোনাস কাউন্টারের পার্থক্য}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}
+{\textwidth}
+{|L{0.21\textwidth}|Y|Y|}
+
+\hline
+
+\rowcolor{ICTLightBlue}
+
+\textbf{বিষয়}
+&
+\textbf{\textenglish{Asynchronous Counter}}
+&
+\textbf{\textenglish{Synchronous Counter}}
+\\
+\hline
+
+ক্লক সংযোগ
+&
+সব \textenglish{Flip-Flop} একই বাহ্যিক ক্লক সরাসরি পায় না।
+&
+সব \textenglish{Flip-Flop} একই ক্লক সংকেত পায়।
+\\
+\hline
+
+ট্রিগার
+&
+এক ধাপের আউটপুট পরবর্তী ধাপকে ট্রিগার করে।
+&
+সব ধাপ একই ক্লকে কাজ করে।
+\\
+\hline
+
+গতি
+&
+তুলনামূলক কম।
+&
+তুলনামূলক বেশি।
+\\
+\hline
+
+বিলম্ব
+&
+\textenglish{Ripple Delay} বেশি।
+&
+তুলনামূলক কম।
+\\
+\hline
+
+সার্কিট
+&
+তুলনামূলক সহজ।
+&
+তুলনামূলক জটিল।
+\\
+\hline
+
+ব্যবহার
+&
+কম গতির সাধারণ গণনা ও
+\textenglish{Frequency Divider}-এ।
+&
+উচ্চগতির ডিজিটাল সিস্টেমে।
+\\
+\hline
+
+\end{tabularx}
+\end{center}
+
+
+% =========================================================
+% 3.13.6 Applications
+% =========================================================
+
+\subsection{কাউন্টারের ব্যবহার
+(\textenglish{Applications})}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textbf{ডিজিটাল ঘড়ি:}
+    সেকেন্ড, মিনিট ও ঘণ্টা গণনা করতে।
+
+    \item \textbf{\textenglish{Frequency Counter}:}
+    নির্দিষ্ট সময়ে কতটি পালস এসেছে তা গণনা করতে।
+
+    \item \textbf{\textenglish{Frequency Divider}:}
+    ক্লক ফ্রিকোয়েন্সি ভাগ বা কমাতে।
+
+    \item \textbf{\textenglish{Event Counting}:}
+    কোনো ঘটনা বা বস্তু কতবার ঘটেছে তা গণনা করতে।
+
+    \item \textbf{\textenglish{Timer} ও \textenglish{Countdown Circuit}:}
+    নির্দিষ্ট সময় বা গণনা নিয়ন্ত্রণ করতে।
+
+    \item \textbf{ডিজিটাল পরিমাপক যন্ত্র:}
+    পালস-ভিত্তিক পরিমাপে।
+
+    \item \textbf{\textenglish{Processor} ও
+    \textenglish{Control Circuit}:}
+    টাইমিং ও ধাপভিত্তিক কার্যক্রম নিয়ন্ত্রণ করতে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.13.7 Advantages and Limitations
+% =========================================================
+
+\subsection{কাউন্টারের সুবিধা ও সীমাবদ্ধতা}
+
+\textbf{সুবিধা:}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item স্বয়ংক্রিয়ভাবে \textenglish{Clock Pulse} গণনা করতে পারে।
+
+    \item ডিজিটাল গণনা ও টাইমিং ব্যবস্থা সহজ করে।
+
+    \item প্রয়োজন অনুযায়ী বিভিন্ন গণনা-ক্রম তৈরি করা যায়।
+
+    \item \textenglish{Frequency Division} ও
+    \textenglish{Event Counting}-এ ব্যবহার করা যায়।
+
+\end{itemize}
+
+\textbf{সীমাবদ্ধতা:}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+    \item \textenglish{Flip-Flop} সংখ্যা বাড়লে সার্কিট জটিল হতে পারে।
+
+    \item \textenglish{Asynchronous Counter}-এ
+    \textenglish{Ripple Delay} তৈরি হয়।
+
+    \item নির্দিষ্ট \textenglish{Modulo Counter} তৈরিতে
+    অতিরিক্ত লজিক প্রয়োজন হতে পারে।
+
+    \item সঠিক \textenglish{Reset} ও প্রাথমিক অবস্থা নির্ধারণ না করলে
+    প্রত্যাশিত গণনা-ক্রম পাওয়া নাও যেতে পারে।
+
+\end{itemize}
+
+\par\begingroup
+
+\textbf{মনে রাখবে:}
+
+\[
+\boxed{
+n\text{টি }\text{\textenglish{Flip-Flop}}
+\Rightarrow
+2^n\text{টি সর্বোচ্চ অবস্থা}
+}
+\]
+
+এবং,
+
+\[
+\boxed{
+\text{\textenglish{Decade Counter}}
+=
+\text{\textenglish{Modulo-10 Counter}}
+}
+\]
+
+\par\endgroup
+
+\input{chapters/Chapter03/topics/25_counter/circuit_lessons.tex}

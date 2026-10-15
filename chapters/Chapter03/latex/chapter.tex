@@ -1,57 +1,41 @@
-% chapter.tex (Chapter 03)
+\begingroup
+\providecommand{\chThreeRoot}{}
+\input{chapters/Chapter03/latex/visual_style.tex}
 \chapter{সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস}
-
+একই পরিমাণকে দশমিক, বাইনারি, অক্টাল বা হেক্সাডেসিমালে লেখা যায়। ডিজিটাল সার্কিট সেই তথ্যের ওপর যৌক্তিক ও গাণিতিক কাজ করে; আবার প্রয়োজন হলে তথ্য বা গণনার অবস্থা ধরে রাখে। এই অধ্যায়ে সংখ্যা প্রকাশ থেকে শুরু করে এসব সার্কিটের কাজ পর্যন্ত ধারাবাহিকভাবে শেখা হবে।
 \begin{learningbox}
-এই অধ্যায় শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item সংখ্যা পদ্ধতির ভিত্তি, digit, place value এবং positional system ব্যাখ্যা করতে।
-\item binary, octal, decimal ও hexadecimal সংখ্যার মধ্যে রূপান্তর করতে।
-\item signed number, 1's complement, 2's complement এবং binary arithmetic প্রয়োগ করতে।
-\item BCD, ASCII, EBCDIC ও Unicode-এর কাজ ও পার্থক্য ব্যাখ্যা করতে।
-\item Boolean algebra, truth table, logic gate ও মৌলিক digital circuit বিশ্লেষণ করতে।
-\end{itemize}
+\textbf{এই অধ্যায় পড়ে যা করতে পারবে}
+\begin{compactpoints}
+\item বিভিন্ন ভিত্তিতে সংখ্যা প্রকাশ, রূপান্তর এবং যোগ-বিয়োগ করতে।
+\item বিটের দৈর্ঘ্য ও চিহ্ন বিবেচনা করে পরিপূরকের সাহায্যে গণনা করতে।
+\item সংখ্যার কোড ও ক্যারেক্টার কোডের কাজ আলাদা করে বুঝতে।
+\item বুলিয়ান রাশি, সত্যক সারণি এবং লজিক সার্কিটের মধ্যে রূপান্তর করতে।
+\item এনকোডার, ডিকোডার ও অ্যাডারের কাজ ব্যাখ্যা করতে।
+\item ফ্লিপ-ফ্লপ, বিভিন্ন রেজিস্টার ও কাউন্টারের সার্কিট এবং অবস্থা পরিবর্তন বিশ্লেষণ করতে।
+\end{compactpoints}
 \end{learningbox}
-
-\begin{center}
-\fbox{\parbox{0.92\textwidth}{
-\centering
-\textbf{অধ্যায় মানচিত্র}\\[4pt]
-সংখ্যা পদ্ধতি $\rightarrow$ রূপান্তর ও binary arithmetic $\rightarrow$ code $\rightarrow$ Boolean algebra $\rightarrow$ logic gates $\rightarrow$ encoder/decoder/adder/register/counter
-}}
-\end{center}
-
-\begin{keypointbox}{High-yield অংশ}
-\begin{itemize}
-\item Binary, octal, decimal, hexadecimal conversion এবং 2's complement।
-\item BCD, ASCII, EBCDIC ও Unicode-এর তুলনা।
-\item Boolean theorem, De Morgan, truth table ও logic function simplification।
-\item AND, OR, NOT, NAND, NOR, XOR, XNOR gate-এর truth table।
-\item Half adder, full adder, encoder, decoder, register ও counter।
-\end{itemize}
-\end{keypointbox}
-
-\input{chapters/Chapter03/topics/01_history_of_numbers/topic}
-\input{chapters/Chapter03/topics/02_number_systems/topic}
-\input{chapters/Chapter03/topics/03_conversion_of_numbers/topic}
-\input{chapters/Chapter03/topics/04_binary_add_sub/topic}
-\input{chapters/Chapter03/topics/05_signed_numbers/topic}
-\input{chapters/Chapter03/topics/06_twos_complement/topic}
-\input{chapters/Chapter03/topics/07_codes_overview/topic}
-\input{chapters/Chapter03/topics/08_bcd_ebcdic_ascii_unicode/topic}
-\input{chapters/Chapter03/topics/09_math_problems_and_solutions/topic}
-\input{chapters/Chapter03/topics/10_boolean_algebra/topic}
-\input{chapters/Chapter03/topics/11_boolean_theorems/topic}
-\input{chapters/Chapter03/topics/12_de_morgan/topic}
-\input{chapters/Chapter03/topics/13_truth_table/topic}
-\input{chapters/Chapter03/topics/14_basic_gates/topic}
-\input{chapters/Chapter03/topics/15_universal_gates/topic}
-\input{chapters/Chapter03/topics/16_special_gates/topic}
-\input{chapters/Chapter03/topics/17_encoder/topic}
-\input{chapters/Chapter03/topics/18_decoder/topic}
-\input{chapters/Chapter03/topics/19_adder/topic}
-\input{chapters/Chapter03/topics/20_register/topic}
-\input{chapters/Chapter03/topics/21_counter/topic}
-\input{chapters/Chapter03/topics/22_exercises/topic}
-\input{chapters/Chapter03/topics/mcq_questions/topic}
-
-% Resource linked: resources/HSC ICT Sheet- Chapter 03 (2)- F.pdf
+\input{chapters/Chapter03/topics/01_history_of_numbers/topic.tex}
+\input{chapters/Chapter03/topics/02_number_systems/topic.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex}
+\input{chapters/Chapter03/topics/04_binary_add_sub/topic.tex}
+\input{chapters/Chapter03/topics/05_signed_numbers/topic.tex}
+\input{chapters/Chapter03/topics/07_codes_overview/topic.tex}
+\input{chapters/Chapter03/topics/08_digital_device_intro/topic.tex}
+\input{chapters/Chapter03/topics/10_boolean_algebra/topic.tex}
+\input{chapters/Chapter03/topics/11_simplification/topic.tex}
+\input{chapters/Chapter03/topics/14_basic_gates/topic.tex}
+\input{chapters/Chapter03/topics/15_universal_gates/topic.tex}
+\input{chapters/Chapter03/topics/16_examples/topic.tex}
+\input{chapters/Chapter03/topics/17_encoder/topic.tex}
+\input{chapters/Chapter03/topics/18_decoder/topic.tex}
+\input{chapters/Chapter03/topics/19_adder/topic.tex}
+\input{chapters/Chapter03/topics/20_full_adder/topic.tex}
+\input{chapters/Chapter03/topics/21_full_adder_implementation/topic.tex}
+\input{chapters/Chapter03/topics/22_binary_adder/topic.tex}
+\input{chapters/Chapter03/topics/23_flip_flop/topic.tex}
+\input{chapters/Chapter03/topics/24_register/topic.tex}
+\input{chapters/Chapter03/topics/25_counter/topic.tex}
+\input{chapters/Chapter03/topics/26_digital_device_porichiti/topic.tex}
+\input{chapters/Chapter03/topics/09_math_problems_and_solutions/topic.tex}
+\input{chapters/Chapter03/topics/mcq_questions/topic.tex}
+\endgroup

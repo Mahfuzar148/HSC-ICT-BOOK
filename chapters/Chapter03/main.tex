@@ -1,0 +1,19 @@
+﻿% !TeX program = lualatex
+\documentclass[12pt,twoside,openany]{book}
+\IfFileExists{../../preamble.tex}{\def\chThreeRoot{../../}}{\def\chThreeRoot{}}
+\makeatletter
+\edef\input@path{{\chThreeRoot}}
+\makeatother
+\input{\chThreeRoot preamble.tex}
+\input{\chThreeRoot chapters/Chapter03/latex/text_font.tex}
+\geometry{a4paper,left=16mm,right=16mm,top=16mm,bottom=16mm,bindingoffset=0mm,headheight=22pt,includehead,includefoot}
+\renewcommand{\contentsname}{সূচিপত্র}
+\setcounter{tocdepth}{1}
+\AtBeginDocument{\setlength{\headwidth}{\textwidth}\setlength{\headheight}{30pt}}
+\begin{document}
+\frontmatter
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{2}
+\input{chapters/Chapter03/latex/chapter.tex}
+\end{document}

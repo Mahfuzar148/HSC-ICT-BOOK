@@ -1,7 +1,16 @@
 % chapter.tex (Chapter 01)
 % Do not compile standalone; included from main.tex
 
+\input{chapters/Chapter01/latex/page_layout}
+\savegeometry{chOneBefore}
+\chOneGeometry{\newgeometry}
+\begingroup
+\input{chapters/Chapter01/latex/visual_style}
+\input{chapters/Chapter01/latex/composition}
+\setlength{\headwidth}{\textwidth}
 \chapter{তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত}
+
+\input{chapters/Chapter01/latex/opening}
 
 % Chapter 01 topic files
 \input{chapters/Chapter01/topics/01_bishwogram/topic}
@@ -13,4 +22,9 @@
 \input{chapters/Chapter01/topics/07_orthonoitik_unnoyon/topic}
 \input{chapters/Chapter01/topics/08_mcq_questions/topic}
 
+\input{chapters/Chapter01/latex/solved_cq}
+% Author references remain in latex/sources.tex and the audit reports.
+
 % Resource linked: resources/HSC ICT Chapter 01 Handnote.pdf
+
+\par\clearpage\endgroup\loadgeometry{chOneBefore}

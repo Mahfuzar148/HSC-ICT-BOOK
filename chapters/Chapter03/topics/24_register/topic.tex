@@ -1,0 +1,684 @@
+% =========================================================
+% 3.12 Register
+% =========================================================
+
+\section{রেজিস্টার
+(\textenglish{Register})}
+
+\subsection{রেজিস্টার কী?}
+
+একাধিক \textenglish{Flip-Flop} একত্রে সংযুক্ত করে যে ডিজিটাল সার্কিটে
+একাধিক বিটের বাইনারি তথ্য সাময়িকভাবে সংরক্ষণ করা যায়,
+তাকে \textbf{\textenglish{Register}} বলে।
+
+প্রতিটি \textenglish{Flip-Flop} সাধারণত একটি বিট তথ্য সংরক্ষণ করতে পারে।
+তাই \(n\)-বিট তথ্য সংরক্ষণের জন্য সাধারণত \(n\)টি
+\textenglish{Flip-Flop} প্রয়োজন হয়।
+
+অর্থাৎ,
+
+\[
+\boxed{
+n\text{টি }\text{\textenglish{Flip-Flop}}
+\Rightarrow
+n\text{-}\text{\textenglish{bit}}\text{ তথ্য সংরক্ষণ}
+}
+\]
+
+উদাহরণস্বরূপ, একটি \(4\)-\textenglish{bit Register}-এ
+
+\[
+1011
+\]
+
+সংরক্ষণ করতে চারটি \textenglish{Flip-Flop} ব্যবহার করা যায়।
+
+
+% =========================================================
+% 3.12.2 Construction
+% =========================================================
+
+\subsection{রেজিস্টারের গঠন
+(\textenglish{Construction of Register})}
+
+রেজিস্টার সাধারণত একাধিক \textenglish{Flip-Flop} দিয়ে তৈরি করা হয়।
+ডিজিটাল সিস্টেমে \textenglish{D Flip-Flop} ব্যবহার করে Register তৈরি করা
+খুবই প্রচলিত।
+
+একটি \(4\)-\textenglish{bit Register}-এ চারটি
+\textenglish{Flip-Flop} ব্যবহার করলে প্রতিটি
+\textenglish{Flip-Flop} একটি করে বিট সংরক্ষণ করে।
+
+\[
+\boxed{
+FF_3+FF_2+FF_1+FF_0
+=
+4\text{-}\text{\textenglish{bit Register}}
+}
+\]
+
+রেজিস্টারের প্রধান অংশগুলো হলো—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textbf{\textenglish{Flip-Flop}:}
+    প্রতিটি বিট সংরক্ষণ করে।
+
+    \item \textbf{\textenglish{Clock Input}:}
+    কখন তথ্য গ্রহণ বা পরিবর্তন হবে তা নিয়ন্ত্রণ করে।
+
+    \item \textbf{\textenglish{Data Input/Output}:}
+    বাইনারি তথ্য গ্রহণ ও সরবরাহ করে।
+
+    \item \textbf{\textenglish{Control Logic}:}
+    প্রয়োজন অনুযায়ী তথ্য লোড, স্থানান্তর বা ধরে রাখার কাজ নিয়ন্ত্রণ করে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.12.3 Applications
+% =========================================================
+
+\subsection{রেজিস্টারের ব্যবহার}
+
+রেজিস্টার বিভিন্ন ডিজিটাল ডিভাইসে ব্যবহৃত হয়। যেমন—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textenglish{CPU}-তে নির্দেশনা, ডেটা ও মধ্যবর্তী ফলাফল
+    সাময়িকভাবে সংরক্ষণ করতে।
+
+    \item বাইনারি তথ্য এক স্থান থেকে অন্য স্থানে স্থানান্তর করতে।
+
+    \item \textenglish{Serial} ও \textenglish{Parallel Data}-এর মধ্যে
+    রূপান্তর করতে।
+
+    \item ডিজিটাল সার্কিটে তথ্য সাময়িকভাবে ধরে রাখতে।
+
+    \item গাণিতিক ও লজিক্যাল অপারেশনের সময় তথ্য সংরক্ষণ করতে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.12.4 Shift Register
+% =========================================================
+
+\subsection{শিফট রেজিস্টার
+(\textenglish{Shift Register})}
+
+যে রেজিস্টারে \textenglish{Clock Pulse}-এর সাহায্যে সংরক্ষিত বাইনারি তথ্য
+এক বিট করে বাম বা ডান দিকে স্থানান্তর করা যায়,
+তাকে \textbf{\textenglish{Shift Register}} বলে।
+
+\subsubsection*{গঠন ও কার্যপদ্ধতি}
+
+\textenglish{Shift Register} সাধারণত একাধিক
+\textenglish{D Flip-Flop} ধারাবাহিকভাবে সংযুক্ত করে তৈরি করা হয়।
+
+একটি \textenglish{Flip-Flop}-এর \(Q\) আউটপুট পরবর্তী
+\textenglish{Flip-Flop}-এর \(D\) ইনপুটের সঙ্গে যুক্ত থাকে।
+সবগুলো \textenglish{Flip-Flop} একই \textenglish{Clock} সংকেত গ্রহণ করে।
+
+প্রতিটি \textenglish{Clock Pulse}-এ সংরক্ষিত বিটগুলো এক ধাপ করে
+পরবর্তী অবস্থানে স্থানান্তরিত হয়।
+
+
+% =========================================================
+% 4-bit Shift Register Diagram
+% =========================================================
+
+\subsubsection*{৪-বিট শিফট রেজিস্টারের গঠন
+(\textenglish{4-bit Shift Register})}
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    ff/.style={
+        draw,
+        rounded corners=2pt,
+        fill=ICTLightBlue,
+        minimum width=2.1cm,
+        minimum height=1.55cm,
+        align=center
+    }
+]
+
+% Flip-Flops
+\node[ff] (ff3) at (0,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_3\)
+};
+
+\node[ff] (ff2) at (3.4,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_2\)
+};
+
+\node[ff] (ff1) at (6.8,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_1\)
+};
+
+\node[ff] (ff0) at (10.2,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_0\)
+};
+
+% Serial input
+\draw[->] (-2.0,0) -- (ff3.west);
+\node[above] at (-1.15,0.1)
+{\textenglish{Serial Input}};
+
+% Data links
+\draw[->] (ff3.east) -- (ff2.west);
+\draw[->] (ff2.east) -- (ff1.west);
+\draw[->] (ff1.east) -- (ff0.west);
+
+% Serial output
+\draw[->] (ff0.east) -- ++(1.8,0);
+\node[above] at (12.0,0.1)
+{\textenglish{Serial Output}};
+
+% Clock line
+\draw (-1.4,-2.0) -- (11.0,-2.0);
+\node[left] at (-1.4,-2.0) {\textenglish{CLK}};
+
+\foreach \x in {0,3.4,6.8,10.2}
+{
+    \draw (\x,-2.0) -- (\x,-0.78);
+    \fill (\x,-2.0) circle (1.7pt);
+}
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\par\begingroup
+
+প্রতিটি \textenglish{Clock Pulse}-এ একটি
+\textenglish{Flip-Flop}-এর বিট পরবর্তী
+\textenglish{Flip-Flop}-এ স্থানান্তরিত হয়।
+\par\endgroup
+
+
+
+% =========================================================
+% Right Shift Example
+% =========================================================
+
+\subsubsection*{রাইট শিফটের উদাহরণ
+(\textenglish{Right Shift Example})}
+
+ধরা যাক, একটি \(4\)-\textenglish{bit Register}-এ—
+
+\[
+Q_3Q_2Q_1Q_0=1011
+\]
+
+সংরক্ষিত আছে।
+
+এখন বাম প্রান্ত দিয়ে নতুন বিট \(0\) প্রবেশ করছে এবং
+একটি \textenglish{Clock Pulse}-এ তথ্য এক ধাপ ডান দিকে
+\textenglish{Shift} হচ্ছে।
+
+\[
+1011
+\longrightarrow
+0101
+\]
+
+নিচের চিত্রে বিষয়টি দেখানো হলো—
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    bit/.style={
+        draw,
+        rounded corners=2pt,
+        fill=ICTLightGreen,
+        minimum width=1.25cm,
+        minimum height=0.9cm,
+        align=center
+    }
+]
+
+% Before
+\node at (-2.0,1.2) {\textbf{আগে}};
+
+\node[bit] (b3) at (0,1.2) {\Large \(1\)};
+\node[bit] (b2) at (1.45,1.2) {\Large \(0\)};
+\node[bit] (b1) at (2.90,1.2) {\Large \(1\)};
+\node[bit] (b0) at (4.35,1.2) {\Large \(1\)};
+
+\node[above,font=\small] at (0,1.78) {\(Q_3\)};
+\node[above,font=\small] at (1.45,1.78) {\(Q_2\)};
+\node[above,font=\small] at (2.90,1.78) {\(Q_1\)};
+\node[above,font=\small] at (4.35,1.78) {\(Q_0\)};
+
+% New bit
+\node at (-1.15,1.2) {\(0\)};
+\draw[->] (-0.85,1.2) -- (-0.65,1.2);
+
+\node[above,font=\scriptsize] at (-1.15,1.62)
+{\textenglish{New Bit}};
+
+% Clock arrow
+\draw[->] (5.15,1.2) -- (6.85,1.2);
+\node[above,font=\small] at (6.0,1.35)
+{\textenglish{1 Clock Pulse}};
+
+% After
+\node at (7.6,1.2) {\textbf{পরে}};
+
+\node[bit] at (8.85,1.2) {\Large \(0\)};
+\node[bit] at (10.30,1.2) {\Large \(1\)};
+\node[bit] at (11.75,1.2) {\Large \(0\)};
+\node[bit] at (13.20,1.2) {\Large \(1\)};
+
+\node[above,font=\small] at (8.85,1.78) {\(Q_3\)};
+\node[above,font=\small] at (10.30,1.78) {\(Q_2\)};
+\node[above,font=\small] at (11.75,1.78) {\(Q_1\)};
+\node[above,font=\small] at (13.20,1.78) {\(Q_0\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+এখানে—
+
+\[
+Q_3\leftarrow0
+\]
+
+\[
+Q_2\leftarrow Q_3
+\]
+
+\[
+Q_1\leftarrow Q_2
+\]
+
+\[
+Q_0\leftarrow Q_1
+\]
+
+অতএব,
+
+\[
+\boxed{
+1011
+\xrightarrow{\text{\textenglish{1 Clock Pulse}}}
+0101
+}
+\]
+
+\par\begingroup
+
+\textenglish{Shift}-এর দিক এবং নতুন বিট কোন প্রান্ত দিয়ে প্রবেশ করবে,
+তা সার্কিটের সংযোগের ওপর নির্ভর করে।
+এখানে \textenglish{Right Shift} দেখানো হয়েছে।
+\par\endgroup
+
+
+
+% =========================================================
+% Types of Shift Register
+% =========================================================
+
+\subsection{শিফট রেজিস্টারের প্রকারভেদ}
+
+ডেটা কীভাবে প্রবেশ করে এবং কীভাবে বের হয় তার ভিত্তিতে
+\textenglish{Shift Register} প্রধানত চার প্রকার—
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}
+{\textwidth}
+{|L{0.14\textwidth}|L{0.29\textwidth}|Y|}
+
+\hline
+
+\rowcolor{ICTLightBlue}
+
+\textbf{প্রকার}
+&
+\textbf{পূর্ণরূপ}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{SISO}
+&
+\textenglish{Serial-In Serial-Out}
+&
+সিরিয়ালভাবে তথ্য গ্রহণ এবং সিরিয়ালভাবে তথ্য প্রদান করে।
+\\
+\hline
+
+\textenglish{SIPO}
+&
+\textenglish{Serial-In Parallel-Out}
+&
+সিরিয়ালভাবে তথ্য গ্রহণ করে প্যারালাল আউটপুট প্রদান করে।
+\\
+\hline
+
+\textenglish{PISO}
+&
+\textenglish{Parallel-In Serial-Out}
+&
+একসঙ্গে একাধিক বিট গ্রহণ করে সিরিয়ালভাবে আউটপুট দেয়।
+\\
+\hline
+
+\textenglish{PIPO}
+&
+\textenglish{Parallel-In Parallel-Out}
+&
+একসঙ্গে একাধিক বিট গ্রহণ ও প্রদান করে।
+\\
+\hline
+
+\end{tabularx}
+\end{center}
+
+
+% =========================================================
+% Shift Register Applications
+% =========================================================
+
+\subsubsection*{শিফট রেজিস্টারের ব্যবহার}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textenglish{Serial} ও \textenglish{Parallel Data}-এর মধ্যে
+    রূপান্তর করতে।
+
+    \item ডিজিটাল যোগাযোগ ব্যবস্থায় তথ্য স্থানান্তর করতে।
+
+    \item বাইনারি তথ্য সাময়িকভাবে সংরক্ষণ করতে।
+
+    \item নির্দিষ্ট ডিজিটাল সার্কিটে তথ্য বিলম্বিত করতে।
+
+    \item কিছু \textenglish{Counter} ও
+    \textenglish{Sequence Generator} তৈরিতে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.12.6 Buffer Register
+% =========================================================
+
+\subsection{বাফার রেজিস্টার
+(\textenglish{Buffer Register})}
+
+যে রেজিস্টার ডেটা এক ডিজিটাল অংশ থেকে অন্য অংশে স্থানান্তরের সময়
+সাময়িকভাবে ধরে রাখে, তাকে
+\textbf{\textenglish{Buffer Register}} বলে।
+
+এটি মূলত তথ্যের একটি অস্থায়ী সংরক্ষণস্থান হিসেবে কাজ করে।
+
+\subsubsection*{কার্যপদ্ধতি}
+
+ডেটা রেজিস্টারে লোড হওয়ার পর পরবর্তী নির্দেশ বা নিয়ন্ত্রণ সংকেত
+না আসা পর্যন্ত সেটি সেখানে ধরে রাখা যায়।
+
+এর ফলে দুটি ডিজিটাল ইউনিটের মধ্যে তথ্য আদান-প্রদানের সময়
+ডেটা সাময়িকভাবে সংরক্ষণ করা সম্ভব হয়।
+
+\subsubsection*{বাফার রেজিস্টারের ব্যবহার}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textenglish{CPU} ও অন্যান্য ডিজিটাল ইউনিটের মধ্যে
+    ডেটা সাময়িকভাবে ধরে রাখতে।
+
+    \item ডেটা স্থানান্তরের সময় দুই সার্কিটের কাজের সময়ের পার্থক্য
+    সামলাতে।
+
+    \item ইনপুট বা আউটপুট ডেটা সাময়িকভাবে সংরক্ষণ করতে।
+
+    \item প্রসেসিংয়ের আগে বা পরে ডেটা ধরে রাখতে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.12.7 Parallel Load Register
+% =========================================================
+
+\subsection{প্যারালাল লোড রেজিস্টার
+(\textenglish{Parallel Load Register})}
+
+যে রেজিস্টারে একাধিক বিটের বাইনারি তথ্য একই সময়ে পৃথক ইনপুটের মাধ্যমে
+গ্রহণ ও সংরক্ষণ করা যায়, তাকে
+\textbf{\textenglish{Parallel Load Register}} বলে।
+
+একটি \(4\)-\textenglish{bit Parallel Load Register}-এ
+চারটি \textenglish{Flip-Flop} থাকে এবং প্রতিটি বিটের জন্য
+একটি করে আলাদা ডেটা ইনপুট থাকে।
+
+একই সক্রিয় \textenglish{Clock}-এ চারটি ইনপুট বিট
+একসঙ্গে সংশ্লিষ্ট \textenglish{Flip-Flop}-এ সংরক্ষিত হয়।
+
+
+% =========================================================
+% Parallel Load Diagram
+% =========================================================
+
+\subsubsection*{৪-বিট প্যারালাল লোড রেজিস্টারের গঠন}
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    ff/.style={
+        draw,
+        rounded corners=2pt,
+        fill=ICTLightGreen,
+        minimum width=2.05cm,
+        minimum height=1.55cm,
+        align=center
+    }
+]
+
+% Flip-Flops
+\node[ff] (ff3) at (0,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_3\)
+};
+
+\node[ff] (ff2) at (3.4,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_2\)
+};
+
+\node[ff] (ff1) at (6.8,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_1\)
+};
+
+\node[ff] (ff0) at (10.2,0) {
+    \textbf{\textenglish{D FF}}\\[1mm]
+    \(Q_0\)
+};
+
+% Data inputs
+\draw[->] (0,2.0) -- (0,0.78);
+\node[above] at (0,2.0) {\(D_3\)};
+
+\draw[->] (3.4,2.0) -- (3.4,0.78);
+\node[above] at (3.4,2.0) {\(D_2\)};
+
+\draw[->] (6.8,2.0) -- (6.8,0.78);
+\node[above] at (6.8,2.0) {\(D_1\)};
+
+\draw[->] (10.2,2.0) -- (10.2,0.78);
+\node[above] at (10.2,2.0) {\(D_0\)};
+
+% Outputs
+\draw[->] (ff3.south) -- ++(0,-1.1);
+\node[below] at (0,-1.1) {\(Q_3\)};
+
+\draw[->] (ff2.south) -- ++(0,-1.1);
+\node[below] at (3.4,-1.1) {\(Q_2\)};
+
+\draw[->] (ff1.south) -- ++(0,-1.1);
+\node[below] at (6.8,-1.1) {\(Q_1\)};
+
+\draw[->] (ff0.south) -- ++(0,-1.1);
+\node[below] at (10.2,-1.1) {\(Q_0\)};
+
+% Common clock
+\draw (-1.2,-2.0) -- (11.2,-2.0);
+\node[left] at (-1.2,-2.0) {\textenglish{CLK}};
+
+\foreach \x in {0,3.4,6.8,10.2}
+{
+    \draw (\x,-2.0) -- (\x,-0.78);
+    \fill (\x,-2.0) circle (1.7pt);
+}
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+এখানে,
+
+\[
+D_3D_2D_1D_0
+\]
+
+হলো চারটি প্যারালাল ইনপুট এবং,
+
+\[
+Q_3Q_2Q_1Q_0
+\]
+
+হলো চারটি সংরক্ষিত বিট।
+
+যদি,
+
+\[
+D_3D_2D_1D_0=1101
+\]
+
+হয়, তাহলে সক্রিয় \textenglish{Clock}-এর পর—
+
+\[
+Q_3Q_2Q_1Q_0=1101
+\]
+
+হবে।
+
+অর্থাৎ,
+
+\[
+D_3=1\Rightarrow Q_3=1
+\]
+
+\[
+D_2=1\Rightarrow Q_2=1
+\]
+
+\[
+D_1=0\Rightarrow Q_1=0
+\]
+
+\[
+D_0=1\Rightarrow Q_0=1
+\]
+
+সুতরাং,
+
+\[
+\boxed{
+1101
+\xrightarrow{\text{\textenglish{Parallel Load}}}
+1101
+}
+\]
+
+
+% =========================================================
+% Buffer vs Parallel Load
+% =========================================================
+
+\subsection{বাফার ও প্যারালাল লোড রেজিস্টারের সম্পর্ক}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}
+{\textwidth}
+{|L{0.21\textwidth}|Y|Y|}
+
+\hline
+
+\rowcolor{ICTLightBlue}
+
+\textbf{বিষয়}
+&
+\textbf{\textenglish{Buffer Register}}
+&
+\textbf{\textenglish{Parallel Load Register}}
+\\
+\hline
+
+প্রধান উদ্দেশ্য
+&
+ডেটা সাময়িকভাবে ধরে রাখা।
+&
+একাধিক বিট একই সময়ে সংরক্ষণ করা।
+\\
+\hline
+
+ডেটা গ্রহণ
+&
+সার্কিটের নকশা অনুযায়ী।
+&
+একাধিক ইনপুট থেকে একই সময়ে।
+\\
+\hline
+
+নিয়ন্ত্রণ
+&
+\textenglish{Load} বা \textenglish{Enable} সংকেত থাকতে পারে।
+&
+প্যারালাল ডেটা গ্রহণের ব্যবস্থা থাকে।
+\\
+\hline
+
+ব্যবহার
+&
+ডেটা স্থানান্তরের মধ্যবর্তী ধাপে।
+&
+দ্রুত একাধিক বিট সংরক্ষণে।
+\\
+\hline
+
+\end{tabularx}
+\end{center}
+
+\par\begingroup
+
+\textbf{মনে রাখবে:}
+\textenglish{Buffer Register} এবং
+\textenglish{Parallel Load Register} সম্পূর্ণ আলাদা শ্রেণি নয়।
+একটি \textenglish{Buffer Register}-ও প্যারালালভাবে ডেটা লোড করার
+সুবিধাসহ তৈরি হতে পারে।
+\par\endgroup
+
+\input{chapters/Chapter03/topics/24_register/circuit_lessons.tex}
+
+\input{chapters/Chapter03/topics/24_register/bidirectional_buffer.tex}

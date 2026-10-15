@@ -1,0 +1,36 @@
+% Source types: Mahbubur Rahman, Chapter 5 PDF pp.43--45; Python literals.
+\booksubheading{Literal: কোডে সরাসরি লেখা মান}
+
+কোডে সরাসরি লেখা \py{13}, \py{2.5}, \py{"ICT"} প্রভৃতি মানকে
+literal বলা হয়। \py{marks = 75}-এ \py{marks} একটি নাম এবং
+\py{75} একটি integer literal। একটি পূর্ণসংখ্যা বিভিন্ন ভিত্তিতে লেখা গেলেও
+তার data type \py{int} থাকে।
+
+\begin{tabularx}{\linewidth}{|l|Y|Y|}
+\hline
+\rowcolor{softBlue}\textbf{ধরন} & \textbf{Python-এ লেখা} & \textbf{দশমিক মান}\\\hline
+দশমিক & \py{13} & 13\\\hline
+বাইনারি & \py{0b1101} & 13\\\hline
+অক্টাল & \py{0o15} & 13\\\hline
+হেক্সাডেসিমাল & \py{0xD} & 13\\\hline
+Scientific notation & \py{2.5e-3} & \(2.5\times10^{-3}=0.0025\)\\\hline
+\end{tabularx}
+
+\begin{pythoncode}
+print(13, 0b1101, 0o15, 0xD)
+print(2.5e-3, 1.2e4)
+print(type(0xD).__name__, type(1.2e4).__name__)
+\end{pythoncode}
+\textbf{Output:}
+\begin{codebox}\begin{english}\ttfamily
+13 13 13 13\\
+0.0025 12000.0\\
+int float
+\end{english}\end{codebox}
+
+\textbf{পরীক্ষায় মনে রাখবে:} \py{0b}, \py{0o} ও \py{0x} হলো
+integer literal-এর ভিত্তি নির্দেশক prefix। বৈজ্ঞানিক রূপে \py{e} বা
+\py{E}-এর পরের পূর্ণসংখ্যাটি 10-এর ঘাত বোঝায়। \py{1.2e4} লেখায়
+দশমিক বিন্দু আছে এবং মানটি \py{float}। String হিসেবে লেখা
+\py{"0b1101"} এবং সংখ্যামান \py{0b1101} এক ধরনের data নয়।
+

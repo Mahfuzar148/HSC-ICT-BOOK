@@ -1,40 +1,38 @@
-% ৩.৯ কিছু গাণিতিক সমস্যা ও সমাধান
-\section{কিছু গাণিতিক সমস্যা ও সমাধান}
+\section{সমন্বিত সমস্যা ও নিজের দক্ষতা যাচাই}
+প্রতিটি প্রশ্নে ভিত্তি, বিটের দৈর্ঘ্য এবং input/output-এর অর্থ আগে নির্ধারণ করো। পরে নিচের সমাধানের সঙ্গে নিজের ধাপ মিলিয়ে দেখো।
 
-\begin{itemize}
-\item সংখ্যা রূপান্তর অংক
-\item বাইনারি যোগ-বিয়োগ সমস্যা
-\item 1's এবং 2's complement সমস্যা
-\item কোড রূপান্তর সমস্যা
-\end{itemize}
+\chThreeExample{১}{মূল্য রূপান্তর ও যোগের মাধ্যমে বিয়োগ}
+মিলি $(59)_{16}$ টাকা এবং রাফি $(106)_8$ টাকা দিয়ে বই কিনল। কে বেশি খরচ করেছে? আট বিটে ২-এর পরিপূরক দিয়ে ব্যবধান বের করো।
+\chThreeAnswer মিলির খরচ $5\times16+9=89$; রাফির $1\times64+6=70$। আট বিটে $89=01011001$, $70=01000110$। ৭০-এর ২-এর পরিপূরক $10111010$।
+\[01011001+10111010=1\;00010011.\]
+ক্যারি বাদ দিয়ে $00010011=19$; মিলি ১৯ টাকা বেশি খরচ করেছে। দুই সংখ্যা ও ফল আট বিটের signed পরিসরের মধ্যে আছে।
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item board-style number conversion step-by-step সমাধান করতে।
-\item binary addition/subtraction ও complement problem সাজিয়ে লিখতে।
-\item উত্তর যাচাই করার shortcut ব্যবহার করতে।
-\end{itemize}
-\end{learningbox}
+\chThreeExample{২}{মিশ্র ভিত্তি, BCD এবং ক্যারেক্টার}
+যন্ত্রে $(2D)_{16}$ দেখানো আছে। সেটিকে decimal, binary এবং BCD-তে লেখো।
+\chThreeAnswer $2\times16+13=45$; binary 101101; BCD $0100\;0101$। display-এ লেখা ৪ ও ৫ দুটি ক্যারেক্টার; সংখ্যার binary pattern-এর সঙ্গে তাদের character code এক নয়।
 
-\begin{examplebox}{সমস্যা ১: Binary থেকে Octal}
-$(11010111)_2$ কে octal-এ রূপান্তর: ডান দিক থেকে 3-bit group করি, $011\ 010\ 111$। তাই $011=3$, $010=2$, $111=7$। উত্তর: $(327)_8$।
-\end{examplebox}
+\chThreeExample{৩}{কয়েকটি গেটের সমতুল্য সার্কিট}
+$Y=AB+A\overline B+\overline AB$। সরল রাশি বের করে একটি gate-এ বাস্তবায়ন করো।
+\chThreeAnswer $Y=A(B+\overline B)+\overline AB=A+\overline AB=A+B$। একটি OR যথেষ্ট। $A=B=0$-তে Y=০ এবং অন্য তিন সারিতে ১; মূল রাশির সঙ্গেও সব সারি মেলে।
 
-\begin{examplebox}{সমস্যা ২: Hex থেকে Binary}
-$(2F)_{16}$-এ $2=0010$ এবং $F=1111$। তাই $(2F)_{16}=(00101111)_2$ বা leading zero বাদে $(101111)_2$।
-\end{examplebox}
+\chThreeExample{৪}{কন্ট্রোল সার্কিটের গ অংশের মতো প্রয়োগ}
+এক পরীক্ষাগারে মূল অনুমতি A থাকলে কাজ চলবে। অনুমতি না থাকলেও emergency switch B চালু হলে কাজ চলবে।
+\chThreeAnswer মূল শর্ত $Y=A+\overline AB$। সরল করলে $Y=A+B$। A ও B-এর OR-এ output নেওয়া যায়। সমীকরণের ``অনুমতি নেই'' অংশটি আলাদা NOT-AND দিয়ে করলে একই সত্যক সারণি পাওয়া যায়, কিন্তু বেশি gate লাগে।
 
-\begin{examplebox}{সমস্যা ৩: BCD}
-$(407)_{10}$-এর BCD: $4=0100$, $0=0000$, $7=0111$। তাই BCD = $0100\ 0000\ 0111$।
-\end{examplebox}
+\chThreeExample{৫}{এনকোডার–ডিকোডার দিয়ে নির্বাচিত লাইন}
+একটি আদর্শ one-hot 8-to-3 encoder-এ $D_5=1$। আউটপুট একটি enabled active-high 3-to-8 decoder-এ দেওয়া হলো।
+\chThreeAnswer encoder-এর কোড 101; decoder-এর $Y_5=1$, অন্য line ০। এটি লাইন নির্বাচনের বিপরীত কাজের উদাহরণ; যেকোনো text/code encoding এবং display decoding একই তিন-bit circuit দিয়ে হয়—এ কথা বোঝায় না।
 
-\begin{practicebox}
-\textbf{অনুশীলন}
-\begin{enumerate}
-\item $(76)_{10}$ কে binary ও hexadecimal-এ রূপান্তর কর।
-\item $(1010110)_2$ কে octal-এ রূপান্তর কর।
-\item 8-bit-এ $-21$-এর 2's complement form বের কর।
-\item $(95)_{10}$-এর BCD লেখ।
-\end{enumerate}
-\end{practicebox}
+\chThreeExample{৬}{সময়মতো ডেটা ধরে রাখা}
+এক sensor একবারে চার বিট 1011 তৈরি করে; পরের অংশ প্রতি ক্লকে একটি বিট নিতে পারে।
+\chThreeAnswer PISO-তে এক ক্লকে 1011 load করে ধারাবাহিক SO পড়ো। ডান শিফটের সংযোগে এবং শিফটের আগে SO পড়লে বিট ১, ১, ০, ১। পরে আবার চার বিট একসঙ্গে দরকার হলে SIPO-তে একই order ও shift direction মেনে লোড করতে হবে।
+
+\subsection{সংক্ষিপ্ত অনুধাবন যাচাই}
+\begin{compactenum}
+\item \textbf{বাইনারি কেন ডিজিটাল সার্কিটে সুবিধাজনক?} দুইটি পৃথক voltage range শনাক্ত করা সহজ। নির্ধারিত noise margin-এর মধ্যে সামান্য পরিবর্তন হলেও একই logic value শনাক্ত করা যায়; একেবারে noise-মুক্ত নয়।
+\item \textbf{BCD কি সংখ্যা পদ্ধতি?} এটি প্রতিটি decimal digit-এর কোড; সাধারণ base-2 positional সংখ্যার পুরো মানের রূপান্তর নয়।
+\item \textbf{একটি NOT কি universal gate?} NOT দিয়ে ইনপুট উল্টানো যায়, কিন্তু দুই ইনপুট AND/OR তৈরি করা যায় না। তাই একা universal নয়।
+\item \textbf{Half adder-এর সীমা কী?} আগের ঘরের carry গ্রহণের তৃতীয় ইনপুট নেই। বহু বিটের ওপরের ঘরে full adder লাগে।
+\item \textbf{Register ও counter কেন sequential?} তাদের বর্তমান stored state এবং নতুন input/control মিলে পরের state নির্ধারণ করে। শুধু বর্তমান input দিয়ে সব output নির্ধারিত হয় না।
+\item \textbf{নাম Mod-10 হলেই synchronous কেন নয়?} ১০টি state-এর cycle modulus বোঝায়; synchronous/asynchronous নাম clock সংযোগ বোঝায়। দুটি শ্রেণিবিভাগ আলাদা।
+\end{compactenum}

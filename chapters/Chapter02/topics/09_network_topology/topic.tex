@@ -1,262 +1,54 @@
-% Chapter 02.9: নেটওয়ার্ক টপোলজি
+% Each C09 concept has one theory home; chapter questions contain no solutions.
+\begingroup
+\chTwoReadableTopicStyle
+\widowpenalty=10000\clubpenalty=10000
 \section{নেটওয়ার্ক টপোলজি}
-
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী network topology-এর ধারণা, physical ও logical topology-এর পার্থক্য, Bus, Star, Ring, Mesh, Tree ও Hybrid topology-এর বৈশিষ্ট্য, সুবিধা-অসুবিধা এবং ব্যবহারক্ষেত্র ব্যাখ্যা করতে পারবে।
-\end{learningbox}
-
+\subsection{Topology: সংযোগের বিন্যাস ও ডেটার পথ}
+\label{ch2:c09-01}
 \begin{definitionbox}{Network Topology}
-নেটওয়ার্কে computer, server, switch, router ইত্যাদি node কীভাবে একে অপরের সাথে সংযুক্ত থাকে এবং data কোন পথে চলাচল করে, সেই বিন্যাসকে network topology বলা হয়।
+নেটওয়ার্কের নোডগুলোর সংযোগ এবং তাদের মধ্যে ডেটা চলাচলের বিন্যাসকে Network Topology বলে। কম্পিউটার, সার্ভার, সুইচ বা রাউটার একেকটি নোড হতে পারে। নোডগুলোর সংযোগকে লিংক বলে।
 \end{definitionbox}
+একই সংখ্যক কম্পিউটার বিভিন্নভাবে যুক্ত করলে কেবল ও পোর্টের খরচ, পরিচালনা, সম্প্রসারণ এবং সংযোগ নষ্ট হওয়ার প্রভাব বদলায়। তাই দ্রুত যন্ত্রের পাশাপাশি উপযুক্ত সংযোগবিন্যাসও প্রয়োজন।
+\chTwoPair{\textbf{ভৌত টপোলজি (Physical Topology)}\par যন্ত্র ও কেবলের বাস্তব সংযোগবিন্যাস। কোন নোড অন্য কোন নোডের সঙ্গে সরাসরি যুক্ত, তা এই বিন্যাসে দেখা যায়।}{\textbf{যৌক্তিক টপোলজি (Logical Topology)}\par প্রোটোকল অনুযায়ী ডেটা চলাচলের নিয়ম ও পথ। কেবলের বিন্যাস একই হলেও হাবের সংকেত ছড়ানো ও সুইচের ফ্রেম পাঠানোর আচরণ আলাদা।}
+হাবের জায়গায় সুইচ বসালেও কেন্দ্রের সঙ্গে পৃথক কেবলে যুক্ত কম্পিউটারগুলোর ভৌত Star বিন্যাস থাকে; যোগাযোগের আচরণ বদলায়। LAN/MAN/WAN এলাকার শ্রেণি, Client–Server সেবা প্রদানের সম্পর্ক এবং Topology সংযোগের বিন্যাস বোঝায়। একই LAN-এ Client–Server ও Star দুটিই প্রযোজ্য হতে পারে।
+\textbf{চিত্রের অর্থ:} চিহ্নিত বৃত্ত বা বাক্স নোড এবং সংযোগরেখা লিংক বোঝায়। দুটি রেখার ছেদবিন্দু নিজে থেকে নতুন নোড হয় না। তীর ডেটার দিক নির্দেশ করে। তীর ছাড়া রেখা দেখে একমুখী প্রবাহ ধরে নেওয়া যায় না। কেন্দ্রে আঁকা যন্ত্রকে শুধু অবস্থান দেখে সার্ভার বলা যায় না।
 
-সহজভাবে, topology হলো network-এর layout বা connection pattern। একই সংখ্যক computer দিয়ে ভিন্ন ভিন্ন topology তৈরি করলে network-এর cost, speed, reliability, fault finding এবং future expansion আলাদা হতে পারে।
+\subsection{Bus: একটি ভাগ করা Backbone}
+\label{ch2:c09-02}
+\chTwoPair{সব নোড একটি সাধারণ প্রধান কেবল বা ব্যাকবোনে যুক্ত থাকলে Bus Topology হয়। প্রচলিত কো-অ্যাক্সিয়াল বাসে একটি নোডের সংকেত একই ব্যাকবোন দিয়ে ছড়ায়। ঠিকানা মিলে গেলে প্রাপক ডেটা গ্রহণ করে। একই মাধ্যম ব্যবহার করে একসঙ্গে পাঠানোর চেষ্টা করলে সংঘর্ষ হতে পারে।}{\centering\chTwoNative{Bus}}
+\textbf{টার্মিনেটরের কাজ:} প্রচলিত বাসের দুই প্রান্তের টার্মিনেটর সংকেত শোষণ করে প্রতিফলন কমায়। সঠিকভাবে টার্মিনেটর না বসালে প্রতিফলিত সংকেত যোগাযোগে বাধা দেয়। ব্যাকবোন ছিঁড়ে যাওয়া বা ভুল টার্মিনেশন পুরো ভাগাভাগি করা বাসকে প্রভাবিত করতে পারে। একটি কম্পিউটার বন্ধ হওয়ার প্রভাব একই নয়।
+ছোট পুরোনো নকশায় কম কেবল ও কেন্দ্রীয় সুইচ ছাড়াই বাস তৈরি করায় খরচ কম হতে পারে। নোড ও ট্রাফিক বাড়লে সবাই একই বহনক্ষমতা ভাগ করে। ত্রুটি খুঁজে পাওয়া কঠিন হয় এবং যোগাযোগ ব্যাকবোনের ওপর নির্ভর করে। আধুনিক ল্যাবে সুইচভিত্তিক Star বেশি উপযোগী। সব নতুন ছোট নেটওয়ার্কে Bus বেছে নেওয়া আবশ্যক নয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/network_topology_basic_concept.png}{
-\includegraphics[width=0.82\textwidth,height=0.24\textheight,keepaspectratio]{chapters/Chapter02/images/network_topology_basic_concept.png}
-}{
-\fbox{\parbox{0.78\textwidth}{\centering
-\vspace{0.35cm}
-Node \quad Link \quad Data Path\\[4pt]
-Computer \quad Switch \quad Router \quad Server
-\vspace{0.35cm}
-}}
-}
-\caption{নেটওয়ার্ক টপোলজির মৌলিক ধারণা}
-\end{figure}
+\subsection{Star: কেন্দ্রের সঙ্গে আলাদা Link}
+\label{ch2:c09-03}
+\chTwoPair{প্রতিটি প্রান্তিক নোড পৃথক লিংকে একটি কেন্দ্রীয় যন্ত্রের সঙ্গে যুক্ত থাকলে Star Topology হয়। কেন্দ্রে সাধারণত সুইচ বা হাব থাকে। এক প্রান্তিক নোড থেকে অন্যটিতে যোগাযোগ কেন্দ্র হয়ে যায়। কেন্দ্রীয় যন্ত্রগুলোর কাজের পার্থক্য বিষয় ২.৮-এ আছে।}{\centering\chTwoNative{Star}}
+একটি প্রান্তিক লিংক নষ্ট হলে সাধারণত সেই নোড বিচ্ছিন্ন হয়; অন্য প্রান্তিক সংযোগগুলো সচল থাকে। একমাত্র কেন্দ্রীয় যন্ত্র বিকল হলে তার ওপর নির্ভরশীল দলের যোগাযোগ বন্ধ হতে পারে। প্রান্তিক সংযোগ ও কেন্দ্রীয় যন্ত্রের ত্রুটির প্রভাব তাই আলাদা। বাড়তি কেন্দ্র বা বিকল্প সংযোগ থাকলে ফল নকশা অনুযায়ী বদলায়।
+নতুন কম্পিউটার যুক্ত করতে সাধারণত একটি কেবল ও কেন্দ্রের একটি খালি পোর্ট লাগে। পোর্ট দেখে ত্রুটি খুঁজে পাওয়া এবং পৃথক নোডের সংযোগ মেরামত সহজ। বিদ্যালয়ের ল্যাব, অফিস ও স্থানীয় প্রিন্টার ভাগাভাগিতে এই সুবিধা কাজে লাগে। Bus-এর তুলনায় কেবল বেশি লাগতে পারে। কেন্দ্রীয় যন্ত্রের পোর্টসংখ্যা, বহনক্ষমতা, বিদ্যুৎ ও খরচও বিবেচ্য। সুইচভিত্তিক পৃথক ফুল-ডুপ্লেক্স সংযোগের সুবিধা যন্ত্র ও লিংকের কাজ থেকে পাওয়া যায়; শুধু আকৃতি থেকে নয়।
 
-\subsection{Physical ও Logical Topology}
+\subsection{Ring: বন্ধ চক্রে সংযোগ}
+\label{ch2:c09-04}
+\chTwoPair{নোডগুলো বন্ধ চক্রে যুক্ত এবং প্রতিটি নোডের দুই পাশের প্রতিবেশীর সঙ্গে সংযোগ থাকলে সাধারণ Ring বিন্যাস হয়। ডেটা এক নোড থেকে পরবর্তী নোড হয়ে গন্তব্যে পৌঁছায়। চিত্রে একক রিংয়ের একমুখী মডেল দেখানো হয়েছে।}{\centering\chTwoNative{Ring}}
+\textbf{Token Passing:} পুরোনো Token Ring-এ ছোট একটি টোকেন নির্ধারিত ক্রমে ঘোরে। টোকেন পাওয়া নোড ডেটা পাঠানোর অনুমতি পায়। এতে একই মাধ্যমে পাঠানোর সংঘর্ষ এড়ানো এবং পালাক্রমে সুযোগ দেওয়া যায়। টোকেন অনুমতির নিয়ন্ত্রণবার্তা; ব্যবহারকারীর পুরো ডেটা নয়।
+\textbf{পথের একটি হিসাব:} একমুখী মডেলে $A\to B\to C\to D\to E\to A$। A থেকে D-এর পথে তিনটি লিংক বা Hop আছে: AB, BC ও CD। মাঝখানে B ও C দুটি নোড। গন্তব্যসহ ঠিকানা পরীক্ষা করা নোড তিনটি: B, C ও D। এই গ্রহণকারী নোডের হিসাবে প্রেরককে ধরা হয়নি। বিপরীত দিকের পথ অনুমোদিত হলে $A\to E\to D$ দুই ধাপের পথ। তাই চিত্রের দিক এবং কী গোনা হচ্ছে, তা অনুযায়ী ফল বদলায়।
+সাধারণ একক রিংয়ের একটি লিংক বা নোড নষ্ট হলে চক্র ভেঙে যোগাযোগ ব্যাহত হতে পারে। নোড যোগ বা বাদ দিলে চক্রের সংযোগ বদলাতে হয়। তবে সব রিং একমুখী নয় এবং একটি ত্রুটিতে সব ধরনের রিং বন্ধ হয় না। Dual Ring, Bypass বা Recovery ব্যবস্থা বিকল্প পথ দিতে পারে। ঘড়ির কাঁটার দিক বা বিপরীত দিক রিংয়ের সংজ্ঞার আবশ্যিক শর্ত নয়।
 
-\begin{compacttable}
-\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Physical topology} & \textbf{Logical topology} \\
-\hline
-অর্থ & device ও cable বাস্তবে কীভাবে বসানো হয়েছে & data বাস্তবে কোন পথে চলাচল করে \\
-\hline
-কেন্দ্র & hardware layout & data flow path \\
-\hline
-দেখা যায় & diagram বা cable layout দেখে বোঝা যায় & protocol ও data transmission দেখে বোঝা যায় \\
-\hline
-উদাহরণ & Star cable layout, Bus backbone & switch forwarding, token passing \\
-\hline
-\end{tabular}
-\end{compacttable}
+\subsection{Tree: স্তর ও শাখায় বিস্তার}
+\label{ch2:c09-05}
+\chTwoDiagramRow{tree}{কেন্দ্র থেকে বিভাগ ও কম্পিউটার}{Tree-তে নোডগুলো স্তরভিত্তিক শাখায় সংযুক্ত থাকে। Core/Root থেকে বিভাগীয় সুইচ এবং সেখান থেকে প্রান্তিক কম্পিউটার যুক্ত করে বড় নেটওয়ার্ক ভাগ করা যায়। Root সংযোগের কেন্দ্রীয় ভূমিকা নেয়; এটি সবসময় সার্ভার কম্পিউটার নয়।}
+ক্যাম্পাস বা বহু বিভাগের অফিসে পৃথক শাখা পরিচালনা এবং নতুন শাখা যুক্ত করা সহজ। প্রান্তিক লিংক নষ্ট হলে সংশ্লিষ্ট কম্পিউটার বিচ্ছিন্ন হয়। বিভাগীয় সুইচ বিকল হলে সেই শাখা এবং Core/Backbone নষ্ট হলে তার ওপর নির্ভরশীল অনেক শাখা প্রভাবিত হতে পারে। প্রভাব নির্ভর করে ত্রুটির অবস্থান ও বিকল্প সংযোগের ওপর। উঁচু স্তরে ট্রাফিক জমা হওয়ায় যথেষ্ট বহনক্ষমতা প্রয়োজন।
+একাধিক Star দল স্তরভিত্তিকভাবে যুক্ত করে Tree-সদৃশ নকশা করা যায়। বাড়তি বিকল্প লিংক থাকলে বাস্তব নেটওয়ার্কটি আর নিখুঁত গাছের একটিমাত্র পথের মডেল থাকে না। Tree-এর সঙ্গে Mesh অংশের সমন্বয়ে Hybrid হতে পারে।
 
-\examfocus{Topology-এর উত্তরে layout, node, link, connection pattern এবং data path শব্দগুলো ব্যবহার করলে উত্তর বেশি board-standard হয়।}
+\subsection{Mesh: সরাসরি Link ও বিকল্প পথ}
+\label{ch2:c09-06}
+\chTwoDiagramRow{mesh}{পাঁচটি নোডের Full Mesh}{Full Mesh-এ প্রতিটি নোড অন্য প্রতিটি নোডের সঙ্গে সরাসরি যুক্ত। Partial Mesh-এ সব জোড়ায় সরাসরি সংযোগ থাকে না। নির্বাচিত বাড়তি লিংক দিয়ে বিকল্প পথ রাখা হয়। লিংক ও পোর্টের হিসাব অংশ \ref{ch2:c09-08}-এ আছে। সরাসরি লিংকে মধ্যবর্তী নোডের ফরওয়ার্ড করার ধাপ কমতে পারে। গতি লিংকের ডেটা হার ও ট্রাফিকের ওপরও নির্ভর করে।\par একটি লিংক নষ্ট হলে অন্য পথে যোগাযোগ চালানোর সুযোগ থাকায় নির্ভরযোগ্যতা বাড়ে। এজন্য সচল বিকল্প পথ ও প্রয়োজনীয় রাউটিং বা ফরওয়ার্ডিং ব্যবস্থা থাকতে হয়। শুধু বেশি কেবল নিরবচ্ছিন্ন সেবার নিশ্চয়তা দেয় না। Full Mesh-এ নোড বাড়লে কেবল, পোর্ট, স্থাপন ও রক্ষণাবেক্ষণের খরচ দ্রুত বাড়ে। জরুরি সার্ভার বা ব্যাকবোনে নির্বাচিত বিকল্প সংযোগ উপকারী। তবে ল্যাবের সব কম্পিউটার Full Mesh-এ যুক্ত করা ব্যয়বহুল হতে পারে।}
 
-\subsection{প্রধান Topology}
+\subsection{Hybrid: প্রয়োজনমতো বিন্যাসের সমন্বয়}
+\label{ch2:c09-07}
+\chTwoDiagramRow{hybrid}{দুটি Star দল একটি Bus ব্যাকবোনে}{দুই বা ততোধিক ধরনের টপোলজি সমন্বয় করে একটি সংযুক্ত নেটওয়ার্ক গঠন করলে Hybrid Topology হয়। এখানে প্রতিটি দল Star বিন্যাসে এবং দলের সুইচগুলো সাধারণ Bus-এ যুক্ত। বিচ্ছিন্ন কয়েকটি চিত্র পাশাপাশি রাখলে সমন্বিত নেটওয়ার্ক হয় না।}
+ক্যাম্পাসে বিভাগীয় Star-এর সঙ্গে ব্যাকবোনের Tree/Partial Mesh অথবা ISP-এর স্তরভিত্তিক ও বিকল্প রাউটার সংযোগ ব্যবহার করা যায়। Hybrid প্রয়োজন অনুযায়ী সম্প্রসারণ ও নির্ভরযোগ্যতা বাড়ানোর সুযোগ দেয়। তবে নকশা, সংযোগের সামঞ্জস্য ও ত্রুটি খুঁজে পাওয়ার কাজ জটিল হয়। ত্রুটির প্রভাব সংশ্লিষ্ট অংশ ও বিকল্প পথ অনুযায়ী বিচার করতে হয়।
+\textbf{মিশ্র নেটওয়ার্কের পথ ও ত্রুটি:} $P\to S_1\to K\to S_2\to Q$ পথে P ও Q দুটি PC, $S_1,S_2$ দুটি সুইচ এবং K একটি কেন্দ্রীয় ডিভাইস। এই পথে ৪টি লিংক, মাঝখানে ৩টি ডিভাইস ও প্রান্তসহ ৫টি নোড আছে। তাই কম্পিউটারের সংখ্যা ও সংযোগ অতিক্রমের ধাপসংখ্যা এক নয়। $S_1K$ বিচ্ছিন্ন হলে বিকল্প পথ ছাড়া দুই দলের যোগাযোগ বন্ধ হয়। তবে সচল $S_1$-এর স্থানীয় PC-গুলো নিজেদের মধ্যে যোগাযোগ করতে পারে। ভাগাভাগি করা বাসে সংকেত অনেক নোডে পৌঁছায়। সুইচের পরিচিত গন্তব্যের ইউনিকাস্ট ফ্রেম নির্বাচিত পোর্টে যায়। পুরো Hybrid চিত্র দেখে সব কম্পিউটার প্রতিটি বার্তা পরীক্ষা করে বলে ধরে নেওয়া যায় না।
+ইন্টারনেট বহু নেটওয়ার্ক ও নানা সংযোগবিন্যাসের সমন্বয়; এর সামগ্রিক বিন্যাস Hybrid-এর উদাহরণ। গুরুত্বপূর্ণ রাউটার ও ব্যাকবোনে Partial Mesh থাকতে পারে। ইন্টারনেটের প্রতিটি ডিভাইস অন্য প্রতিটির সঙ্গে সরাসরি Full Mesh-এ যুক্ত নয়। Hybrid Topology সংযোগের বিন্যাস এবং Hybrid Cloud পৃথক ক্লাউড অবকাঠামোর সমন্বয় বোঝায়। একই শব্দ হলেও ধারণা আলাদা।
 
-HSC ICT-তে সাধারণত Bus, Star, Ring, Mesh, Tree ও Hybrid topology বেশি গুরুত্বপূর্ণ।
-
-\begin{compacttable}
-\begin{tabular}{|p{0.15\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
-\hline
-\textbf{Topology} & \textbf{Structure} & \textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-Bus & common backbone cable & cable কম, setup সহজ & backbone failure হলে network বন্ধ \\
-\hline
-Star & central switch/hub & manage ও troubleshoot সহজ & central device-এর উপর নির্ভরশীল \\
-\hline
-Ring & closed loop & ordered data flow & node/link failure সমস্যা তৈরি করতে পারে \\
-\hline
-Mesh & multiple path & reliability বেশি & cost ও complexity বেশি \\
-\hline
-Tree & hierarchical & বড় network organize সহজ & backbone/root dependency থাকে \\
-\hline
-Hybrid & mixed topology & flexible ও practical & design ও maintenance জটিল \\
-\hline
-\end{tabular}
-\end{compacttable}
-
-\subsection{Bus Topology}
-
-\definition{Bus Topology}{যে topology-তে সব node একটি common communication line বা backbone cable-এর সাথে যুক্ত থাকে, তাকে Bus topology বলা হয়।}
-
-Bus topology-তে data main cable দিয়ে travel করে। কোনো node data পাঠালে signal backbone cable দিয়ে যায় এবং destination node সেটি গ্রহণ করে। ছোট বা temporary network বোঝাতে এই topology সহজ, কিন্তু backbone cable নষ্ট হলে পুরো network প্রভাবিত হতে পারে।
-
-\begin{rightimageblock}{chapters/Chapter02/images/bus_topology_diagram.png}{Bus topology}
-\subtopichead{বৈশিষ্ট্য}
-\begin{compactpoints}
-\item একটি common backbone cable থাকে।
-\item cable কম লাগে, তাই cost কম হতে পারে।
-\item node বেশি হলে traffic ও collision বাড়তে পারে।
-\item fault finding তুলনামূলক কঠিন।
-\item backbone cable failure হলে পুরো network বন্ধ হতে পারে।
-\end{compactpoints}
-\end{rightimageblock}
-
-\subsection{Star Topology}
-
-\definition{Star Topology}{যে topology-তে সব node একটি central device যেমন switch বা hub-এর সাথে আলাদাভাবে connected থাকে, তাকে Star topology বলা হয়।}
-
-Star topology আধুনিক LAN-এ সবচেয়ে বেশি ব্যবহৃত topology-এর একটি। এখানে প্রতিটি computer আলাদা cable দিয়ে switch বা hub-এর সাথে যুক্ত থাকে। কোনো একটি node-এর cable নষ্ট হলে সাধারণত শুধু সেই node affected হয়; তবে central device নষ্ট হলে পুরো network বন্ধ হতে পারে।
-
-\begin{rightimageblock}{chapters/Chapter02/images/star_topology_diagram.png}{Star topology}
-\subtopichead{বৈশিষ্ট্য}
-\begin{compactpoints}
-\item central device থাকে।
-\item management ও troubleshooting সহজ।
-\item নতুন node add করা সহজ।
-\item cable bus topology-এর চেয়ে বেশি লাগতে পারে।
-\item switch ব্যবহারে performance ভালো হয়।
-\end{compactpoints}
-\end{rightimageblock}
-
-\subsection{Ring Topology}
-
-\definition{Ring Topology}{যে topology-তে প্রতিটি node পাশের দুইটি node-এর সাথে connected থাকে এবং সব node মিলে closed loop তৈরি করে, তাকে Ring topology বলা হয়।}
-
-Ring topology-তে data সাধারণত নির্দিষ্ট direction-এ node থেকে node-এ যায়। একটি node data receive করে দেখে সেটি তার জন্য কি না; না হলে পরবর্তী node-এ forward করে।
-
-\begin{compactpoints}
-\item ordered data flow থাকে।
-\item collision কম হতে পারে।
-\item node বা link failure হলে network প্রভাবিত হতে পারে।
-\item নতুন node add করা তুলনামূলক কঠিন।
-\end{compactpoints}
-
-\smallimage[0.48\textwidth]{chapters/Chapter02/images/ring_topology_diagram.png}{Ring topology}
-
-\subsection{Mesh Topology}
-
-\definition{Mesh Topology}{যে topology-তে প্রতিটি node অন্য node-গুলোর সাথে সরাসরি বা একাধিক path দ্বারা connected থাকে, তাকে Mesh topology বলা হয়।}
-
-Mesh topology reliability-এর জন্য গুরুত্বপূর্ণ। কোনো একটি path নষ্ট হলেও alternative path দিয়ে communication চলতে পারে। তাই critical network, backbone বা high availability system-এ mesh concept ব্যবহার করা হয়।
-
-\begin{compacttable}
-\begin{tabular}{|p{0.28\textwidth}|p{0.29\textwidth}|p{0.29\textwidth}|}
-\hline
-\textbf{ধরন} & \textbf{ধারণা} & \textbf{ব্যবহার} \\
-\hline
-Full Mesh & প্রতিটি node অন্য সব node-এর সাথে connected & খুব high reliability দরকার হলে \\
-\hline
-Partial Mesh & প্রয়োজনীয় node-গুলোর মধ্যে multiple path থাকে & practical large network \\
-\hline
-\end{tabular}
-\end{compacttable}
-
-\remember{Mesh topology reliable হলেও cable, device port, configuration ও maintenance cost বেশি।}
-
-\subsection{Tree Topology}
-
-\definition{Tree Topology}{Star topology-এর মতো বিভিন্ন group যখন hierarchical বা parent-child structure-এ যুক্ত হয়, তখন তাকে Tree topology বলা হয়।}
-
-Tree topology বড় office, campus বা institution network organize করতে সুবিধাজনক। এখানে root বা backbone অংশ থাকে, যার সাথে বিভিন্ন branch network যুক্ত হয়।
-
-\begin{compactpoints}
-\item hierarchical structure থাকে।
-\item বড় network section অনুযায়ী organize করা যায়।
-\item expansion তুলনামূলক সহজ।
-\item backbone/root failure হলে বড় অংশ affected হতে পারে।
-\end{compactpoints}
-
-\subsection{Hybrid Topology}
-
-\definition{Hybrid Topology}{দুই বা ততোধিক topology মিলিয়ে যে practical network design তৈরি হয়, তাকে Hybrid topology বলা হয়।}
-
-বাস্তব বড় network-এ প্রায়ই pure topology ব্যবহার করা হয় না। যেমন একটি campus network-এ department-wise Star topology থাকতে পারে, আর department-গুলো backbone-এর সাথে Tree বা Mesh structure-এ যুক্ত থাকতে পারে।
-
-\begin{imagefirstblock}[0.74\textwidth]{chapters/Chapter02/images/hybrid_topology_diagram.png}{Hybrid topology}
-Hybrid topology-তে network designer প্রয়োজন অনুযায়ী একাধিক topology combine করে। যেমন একটি school বা college campus-এ প্রতিটি lab-এ Star topology, building-to-building backbone-এ Tree topology এবং important server connection-এ Mesh-like redundant path থাকতে পারে। ফলে network একই সঙ্গে manageable, expandable এবং তুলনামূলক reliable হয়।
-\end{imagefirstblock}
-
-\subtopichead{Hybrid topology-এর বৈশিষ্ট্য}
-\begin{compactpoints}
-\item এটি fixed single pattern নয়; প্রয়োজন অনুযায়ী Bus, Star, Ring, Mesh বা Tree topology mix করা যায়।
-\item বড় organization, campus, bank, ISP বা data center network-এ practical design হিসেবে বেশি দেখা যায়।
-\item network-এর এক অংশ নষ্ট হলেও অন্য অংশ অনেক ক্ষেত্রে চলতে পারে, যদি redundant path থাকে।
-\item design, installation এবং troubleshooting pure topology-এর তুলনায় complex হতে পারে।
-\item ভবিষ্যতে নতুন department, floor, lab বা branch add করা তুলনামূলক flexible।
-\end{compactpoints}
-
-\begin{compacttable}
-\begin{tabular}{|p{0.28\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{উদাহরণ} & \textbf{মিশ্রণ} & \textbf{কারণ} \\
-\hline
-School/college lab network & Star + Tree & প্রতিটি lab switch-based, lab-গুলো backbone-এর সাথে hierarchical \\
-\hline
-Bank branch network & Star + Mesh & branch LAN সহজ, main server বা data center link reliable \\
-\hline
-ISP/campus backbone & Tree + Mesh & বড় area organize করা যায়, important route-এ alternative path থাকে \\
-\hline
-\end{tabular}
-\end{compacttable}
-
-\important{Hybrid topology বাস্তব network design-এ সবচেয়ে practical, কারণ এটি প্রয়োজন অনুযায়ী বিভিন্ন topology-এর সুবিধা একত্র করে।}
-
-\subsection{Topology তুলনা}
-
-\begin{compacttable}
-\begin{tabular}{|p{0.16\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|}
-\hline
-\textbf{Topology} & \textbf{Cost} & \textbf{Reliability} & \textbf{Expansion} & \textbf{Fault finding} \\
-\hline
-Bus & কম & কম & সীমিত & কঠিন \\
-\hline
-Star & মাঝারি & ভালো & সহজ & সহজ \\
-\hline
-Ring & মাঝারি & মাঝারি & কঠিন & কঠিন \\
-\hline
-Mesh & বেশি & খুব ভালো & জটিল & মাঝারি \\
-\hline
-Tree & মাঝারি/বেশি & ভালো & সহজ & মাঝারি \\
-\hline
-Hybrid & design অনুযায়ী & ভালো & flexible & design অনুযায়ী \\
-\hline
-\end{tabular}
-\end{compacttable}
-
-\subsection{পরিস্থিতি অনুযায়ী নির্বাচন}
-
-\begin{compacttable}
-\begin{tabular}{|p{0.34\textwidth}|p{0.24\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{পরিস্থিতি} & \textbf{উপযুক্ত topology} & \textbf{কারণ} \\
-\hline
-ছোট temporary network & Bus & cable কম লাগে, setup সহজ \\
-\hline
-School computer lab & Star & switch দিয়ে manage সহজ \\
-\hline
-High reliability critical network & Mesh & alternative path থাকে \\
-\hline
-Campus বা বড় office & Tree/Hybrid & hierarchy ও flexibility থাকে \\
-\hline
-Mixed requirement corporate network & Hybrid & প্রয়োজন অনুযায়ী topology combine করা যায় \\
-\hline
-\end{tabular}
-\end{compacttable}
-
-\subsection{Common Mistake}
-
-\warningline{LAN, MAN, WAN হলো area অনুযায়ী network type; Bus, Star, Ring, Mesh, Tree, Hybrid হলো topology বা connection layout।}
-
-\warningline{Star topology-তে একটি node নষ্ট হলে পুরো network বন্ধ হয় না, কিন্তু central switch/hub নষ্ট হলে পুরো network প্রভাবিত হতে পারে।}
-
-\subsection{অনুশীলন}
-
-\qhead{MCQ}
-\begin{compactenum}
-\item Network topology কী নির্দেশ করে?\\
-\mcqoption{network layout}{internet speed}{file size}{software version}
-\item Star topology-তে central device হিসেবে সাধারণত কোনটি ব্যবহৃত হয়?\\
-\mcqoption{Switch}{Printer}{Scanner}{Monitor}
-\item কোন topology-তে reliability বেশি কিন্তু cost বেশি?\\
-\mcqoption{Mesh}{Bus}{Ring}{Star}
-\end{compactenum}
-
-\qhead{সংক্ষিপ্ত প্রশ্ন}
-\begin{compactenum}
-\item Network topology কী?
-\item Physical topology ও Logical topology-এর পার্থক্য লেখ।
-\item Bus topology-এর দুটি সুবিধা ও দুটি অসুবিধা লেখ।
-\item Star topology school lab-এর জন্য কেন উপযোগী?
-\item Hybrid topology বলতে কী বোঝায়?
-\end{compactenum}
-
-\qhead{বোর্ড স্টাইল উত্তর}
-\boardanswer
-{Star topology বলতে কী বোঝায়?}
-{যে network topology-তে সব node একটি central device যেমন switch বা hub-এর সাথে আলাদাভাবে connected থাকে, তাকে Star topology বলা হয়। এতে node add করা, management এবং troubleshooting সহজ হয়; তবে central device নষ্ট হলে পুরো network প্রভাবিত হতে পারে।}
+\input{chapters/Chapter02/topics/09_network_topology/concept_enrichment}
+\input{chapters/Chapter02/topics/09_network_topology/applied_examples}
+\endgroup

@@ -1,0 +1,439 @@
+\sectionheading{5.18 প্রোগ্রাম ডিজাইনের কৌশল (Program Design Techniques)}
+
+কোনো Problem-এর Solution সরাসরি Code করা শুরু করলে বড় Program
+দ্রুত জটিল হয়ে যেতে পারে।
+
+তাই Program তৈরির আগে সমস্যাটি কীভাবে বিভিন্ন অংশে সাজানো হবে
+এবং কোন অংশ আগে তৈরি করা হবে, তা পরিকল্পনা করা প্রয়োজন।
+
+এই পরিকল্পিত পদ্ধতিগুলোকে
+\textbf{Program Design Techniques} বলা হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Program Design Technique কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Problem-এর Solution-কে সুশৃঙ্খলভাবে পরিকল্পনা করে
+Program-এর বিভিন্ন অংশ কীভাবে গঠন ও বাস্তবায়ন করা হবে,
+তার পদ্ধতিকে \textbf{Program Design Technique} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Problem
+\(\longrightarrow\)
+পরিকল্পনা
+\(\longrightarrow\)
+অংশে বিন্যাস
+\(\longrightarrow\)
+Program তৈরি
+}
+
+\end{center}
+
+Program Design-এর দুটি গুরুত্বপূর্ণ কৌশল হলো—
+
+\begin{itemize}
+
+\item \textbf{Top-down Approach}
+
+\item \textbf{Bottom-up Approach}
+
+\end{itemize}
+
+%================================================
+% Top-down
+%================================================
+\booksubheading{১. Top-down Approach}
+
+\begin{definitionbox}
+
+যে পদ্ধতিতে প্রথমে \textbf{সম্পূর্ণ Problem বা Main Task}
+বিবেচনা করা হয় এবং পরে সেটিকে ধাপে ধাপে ছোট ছোট
+Subproblem বা Module-এ ভাগ করা হয়, তাকে
+\textbf{Top-down Approach} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে—}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{বড়\\Problem}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.23\linewidth}{
+        \centering\textbf{ছোট ছোট\\Problem}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{আরও ছোট\\Task}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+অর্থাৎ Main Problem থেকে কাজ শুরু করে প্রয়োজন অনুযায়ী
+প্রতিটি অংশকে আরও ছোট অংশে ভাগ করা হয়।
+
+%================================================
+% Stepwise Refinement
+%================================================
+\booksubheading{Stepwise Refinement}
+
+Top-down Design-এ একটি বড় কাজকে ধাপে ধাপে আরও ছোট ও
+বিস্তারিত কাজে ভাঙার প্রক্রিয়াকে
+\textbf{Stepwise Refinement} বলা হয়।
+
+\begin{center}
+
+\textbf{
+Main Problem
+\(\longrightarrow\)
+Subproblem
+\(\longrightarrow\)
+আরও ছোট Task
+}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ-এর জন্য মনে রাখবে}
+
+\textbf{Stepwise Refinement} মূলত
+\textbf{Top-down Approach}-এর সঙ্গে সম্পর্কিত।
+
+\end{rememberbox}
+
+%================================================
+% Top-down Example
+%================================================
+\begin{examplebox}{Top-down Approach-এর উদাহরণ}
+
+একটি \textbf{Student Result Program} তৈরি করতে হলে প্রথমে
+পুরো Problem-টিকে এভাবে ভাগ করা যেতে পারে—
+
+\begin{center}
+
+\textbf{
+Student Result Program
+}
+
+\(\downarrow\)
+
+\textbf{
+Input Marks
+\quad + \quad
+Calculate Result
+\quad + \quad
+Display Result
+}
+
+\end{center}
+
+আবার \textbf{Calculate Result} অংশকে আরও ভাগ করা যায়—
+
+\begin{center}
+
+\textbf{
+Total Calculate
+\quad + \quad
+Average Calculate
+\quad + \quad
+Grade Determine
+}
+
+\end{center}
+
+অর্থাৎ বড় Problem ধাপে ধাপে ছোট ও সহজ কাজে বিভক্ত হয়েছে।
+
+\end{examplebox}
+
+%================================================
+% Bottom-up
+%================================================
+\booksubheading{২. Bottom-up Approach}
+
+\begin{definitionbox}
+
+যে পদ্ধতিতে প্রথমে প্রয়োজনীয়
+\textbf{ছোট ছোট Module বা Component} তৈরি করা হয় এবং পরে
+সেগুলোকে একত্রিত করে সম্পূর্ণ Program তৈরি করা হয়,
+তাকে \textbf{Bottom-up Approach} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে—}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.23\linewidth}{
+        \centering\textbf{ছোট ছোট\\Module}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{Module\\Combine}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{সম্পূর্ণ\\Program}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+%================================================
+% Bottom-up Example
+%================================================
+\begin{examplebox}{Bottom-up Approach-এর উদাহরণ}
+
+Student Result Program-এর ক্ষেত্রে প্রথমে আলাদাভাবে—
+
+\begin{itemize}
+
+\item Input Module
+\item Total Calculation Module
+\item Grade Module
+\item Output Module
+
+\end{itemize}
+
+তৈরি ও পরীক্ষা করা হলো।
+
+এরপর Moduleগুলো একত্রিত করে সম্পূর্ণ
+\textbf{Student Result Program} তৈরি করা হলো।
+
+\end{examplebox}
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Top-down ও Bottom-up Approach-এর তুলনা}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Top-down Approach}}
+&
+\multicolumn{1}{c|}{\textbf{Bottom-up Approach}}
+\\
+\hline
+
+শুরু হয়
+&
+সম্পূর্ণ Problem থেকে
+&
+ছোট Module বা Component থেকে
+\\
+\hline
+
+অগ্রগতি
+&
+বড় থেকে ছোট
+&
+ছোট থেকে বড়
+\\
+\hline
+
+মূল কাজ
+&
+Problem-কে ছোট অংশে ভাগ করা
+&
+ছোট Moduleগুলো একত্র করা
+\\
+\hline
+
+গুরুত্ব
+&
+Overall Design ও Decomposition
+&
+Module তৈরি ও Integration
+\\
+\hline
+
+সহজ সূত্র
+&
+Whole \(\rightarrow\) Parts
+&
+Parts \(\rightarrow\) Whole
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Relationship with Modular Programming
+%================================================
+\booksubheading{Modular Programming-এর সঙ্গে সম্পর্ক}
+
+Program Design Technique এবং Modular Programming
+পরস্পরের সঙ্গে সম্পর্কিত হলেও একই বিষয় নয়।
+
+\textbf{Top-down Approach}-এ বড় Problem-কে ছোট Module-এ
+ভাগ করা যায়।
+
+\textbf{Bottom-up Approach}-এ ছোট Moduleগুলোকে যুক্ত করে
+বড় Program তৈরি করা যায়।
+
+\begin{center}
+
+\textbf{
+Top-down
+\(\longrightarrow\)
+Divide
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Bottom-up
+\(\longrightarrow\)
+Combine
+}
+
+\end{center}
+
+আগের Topic-এ Modular Programming বিস্তারিত আলোচনা করা হয়েছে,
+তাই এখানে সেটি পুনরায় বিস্তারিত করা হলো না।
+
+%================================================
+% When Useful
+%================================================
+\booksubheading{কোন পদ্ধতি কখন সুবিধাজনক?}
+
+\textbf{\color{darkTeal}Top-down Approach সুবিধাজনক যখন—}
+
+\begin{itemize}
+
+\item প্রথমে পুরো Problem-এর Structure বোঝা প্রয়োজন।
+
+\item বড় Problem-কে ছোট অংশে ভাগ করতে হয়।
+
+\item Main Task থেকে বিস্তারিত Design তৈরি করতে হয়।
+
+\end{itemize}
+
+\textbf{\color{darkTeal}Bottom-up Approach সুবিধাজনক যখন—}
+
+\begin{itemize}
+
+\item আগে থেকেই কিছু Module বা Component রয়েছে।
+
+\item ছোট অংশগুলো আলাদাভাবে তৈরি ও Test করা সুবিধাজনক।
+
+\item Reusable Component ব্যবহার করে বড় Program তৈরি করা হয়।
+
+\end{itemize}
+
+বাস্তব Program Development-এ প্রয়োজন অনুযায়ী
+দুটি পদ্ধতির ধারণাই ব্যবহার করা যেতে পারে।
+
+%================================================
+% Quick Comparison
+%================================================
+\booksubheading{দ্রুত মনে রাখার তুলনা}
+
+\begin{center}
+
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][13mm][c]{0.40\linewidth}{
+        \centering
+        \textbf{Top-down}\\[0.6mm]
+        Whole \(\rightarrow\) Divide \(\rightarrow\) Submodules
+    }
+}
+\qquad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][13mm][c]{0.40\linewidth}{
+        \centering
+        \textbf{Bottom-up}\\[0.6mm]
+        Modules \(\rightarrow\) Combine \(\rightarrow\) Whole
+    }
+}
+
+\end{center}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item \textbf{Program Design Technique} হলো Program তৈরির
+পরিকল্পিত পদ্ধতি।
+
+\item প্রধান দুটি কৌশল—
+\textbf{Top-down এবং Bottom-up Approach}।
+
+\item \textbf{Top-down = বড় থেকে ছোট}।
+
+\item \textbf{Bottom-up = ছোট থেকে বড়}।
+
+\item Top-down-এ Problem-কে ছোট অংশে
+\textbf{ভাগ করা হয়}।
+
+\item Bottom-up-এ ছোট Module বা Component
+\textbf{একত্র করা হয়}।
+
+\item \textbf{Stepwise Refinement} Top-down Approach-এর
+সঙ্গে সম্পর্কিত।
+
+\item Modular Programming-এর সঙ্গে দুই Design Technique-এর
+ঘনিষ্ঠ সম্পর্ক রয়েছে।
+
+\item সবচেয়ে সহজ Shortcut—
+
+\begin{center}
+
+\textbf{
+Top-down = Divide
+\qquad\qquad
+Bottom-up = Combine
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.19 Computational Thinking
+%================================================

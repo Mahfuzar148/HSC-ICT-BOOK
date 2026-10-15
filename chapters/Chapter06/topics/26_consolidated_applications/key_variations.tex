@@ -1,0 +1,45 @@
+\subsection{Field থেকে Key নির্বাচন}
+ধরা যাক, Employee টেবিলে EmpID, NationalCode, Name ও DeptID ফিল্ড আছে। প্রতিষ্ঠানের নিয়মে EmpID ও NationalCode বাধ্যতামূলক, স্থিতিশীল ও অনন্য। তবে একই নামের একাধিক কর্মী থাকতে পারেন এবং একই বিভাগে অনেক কর্মী কাজ করেন। তাই EmpID প্রধান পরিচিতি হিসেবে উপযুক্ত; NationalCode দিয়েও নির্দিষ্ট কর্মীকে খুঁজে পাওয়া সম্ভব। EmpID একাই পরিচয় নিশ্চিত করে বলে তার সঙ্গে Name যোগ করার প্রয়োজন নেই।
+
+DeptID বিভাগ টেবিলের কী-কে নির্দেশ করলে ফরেন কী, কিন্তু একা কর্মী শনাক্ত করতে পারে না। কোনো কর্মীর নাম সংশোধন করলে তাঁর EmpID না বদলিয়েও একই রেকর্ড চেনা যায়। এই কারণে নামের মতো পরিবর্তনশীল বৈশিষ্ট্যের বদলে পরিকল্পিত স্থিতিশীল পরিচিতি ব্যবহার সুবিধাজনক।
+
+\subsection{সাধারণ ও Relational বিন্যাসের তুলনা}
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{27mm}|Y|Y|}\hline\chSixHeader
+বিবেচনা & সরল সাধারণ বিন্যাস & Relational বিন্যাস\\\hline
+তথ্য রাখা & একটি টেবিলে তথ্য রাখা বা একাধিক টেবিল পৃথকভাবে ব্যবহার করা & সারি-কলামের টেবিল, কী ও শুদ্ধতার বিধি মেনে প্রয়োজনীয় তথ্য যুক্ত করা\\\hline
+শিক্ষার্থী ও ফি & পরিচয় ও মাসিক ফি এক বড় সারণিতে রাখলে প্রতি মাসে নাম-ঠিকানা পুনরায় লিখতে হয় & Student-এ পরিচয় এবং Payment-এ StudentID, Month ও Amount রেখে বিভিন্ন মাসের লেনদেন যুক্ত করা যায়\\\hline
+\end{tabularx}
+\end{flushleft}
+\textbf{মনে রাখবে:} শুধু টেবিলের সংখ্যা গুনে রিলেশনাল মডেল নির্ধারণ করা ঠিক নয়; উপাত্তের কাঠামো ও পরিচালনার নিয়ম বিবেচ্য।
+
+\subsection{সারণি থেকে Single-field ও Composite Key নির্বাচন}
+\begin{chSixSideBySide}[.30]
+\raggedright\small
+\begin{tabular}{|l|l|l|}\hline
+\chSixHeader EmpID & Name & Salary\\\hline
+E11 & Rima & 18000\\\hline E12 & Nabil & 22000\\\hline E13 & Tania & 18000\\\hline
+\end{tabular}
+\captionof{table}{বেতনের বদলে স্থায়ী পরিচিতি দিয়ে কর্মী শনাক্তকরণ}
+\chSixNextColumn
+একই প্রতিষ্ঠানে কর্মীর স্থায়ী পরিচিতি আলাদা রাখা হলে সমান বেতনের দুই ব্যক্তিকেও পৃথক করা যায়। সারণিতে Salary 18000 দুইবার আছে; তাই Salary প্রাইমারি কী হতে পারে না। EmpID প্রত্যেক কর্মীর জন্য অনন্য ও বাধ্যতামূলক ধরা হয়েছে। Salary দিয়ে খুঁজলে Rima ও Tania দুজনই মিলবে, কিন্তু EmpID E11 একটি নির্দিষ্ট রেকর্ড চিহ্নিত করে। কোনো নমুনায় Salary আলাদা থাকলেও ভবিষ্যতে একই বেতন হতে পারে; কী নির্বাচনে প্রতিষ্ঠানের স্থায়ী নিয়ম দেখতে হবে।
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.58]
+\raggedright\small
+\begin{tabular}{|l|l|l|l|l|}\hline
+\chSixHeader Session & GroupName & Roll & Name & TotalMarks\\\hline
+2024--25 & Science & 1 & Rupa & 850\\\hline
+2024--25 & Humanities & 1 & Nabil & 820\\\hline
+2025--26 & Science & 1 & Tania & 830\\\hline
+\end{tabular}
+\captionof{table}{Session, GroupName ও Roll দিয়ে যৌগিক পরিচিতি}
+\chSixNextColumn
+এবার ধরা যাক, শিক্ষাবর্ষ ও বিভাগভেদে একই Roll থাকতে পারে। প্রতিটি শিক্ষাবর্ষের প্রতিটি বিভাগে একটি Roll একজন শিক্ষার্থীর জন্য নির্ধারিত। পাশের সারণিতে একা Roll, একা Session কিংবা একা GroupName যথেষ্ট নয়; তিনটি একত্রে নির্দিষ্ট শিক্ষার্থীকে শনাক্ত করে।
+\end{chSixSideBySide}
+
+(2024--25, Science, 1) সম্পূর্ণ মানটি আবার বসালে একই শিক্ষার্থীর পরিচিতি পুনরাবৃত্ত হবে। যৌগিক প্রাইমারি কীতে প্রতিটি অংশ আলাদাভাবে অনন্য হওয়া জরুরি নয়; সম্পূর্ণ সমন্বয় অনন্য এবং কোনো অংশ NULL নয়। একই শিক্ষাবর্ষে বিভাগভেদে একাধিক শাখায় একই Roll দেওয়ার নিয়ম থাকলে পরিচিতির নকশায় শাখাও বিবেচনা করতে হবে।
+
+লেনদেনের নির্ভরযোগ্যতার \textbf{ACID (Atomicity, Consistency, Isolation, Durability)} বৈশিষ্ট্য ও পূর্ণ ব্যাংক-স্থানান্তরের উদাহরণ \ref{sec:ch06-transaction} অংশে আছে।
+
+
+

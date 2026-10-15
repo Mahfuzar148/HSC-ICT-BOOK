@@ -1,0 +1,140 @@
+\subsection{বাইনারি থেকে দশমিক}
+বিন্দুর বামে ওজন $b^0,b^1,\ldots$; ডানে $b^{-1},b^{-2},\ldots$। প্রতিটি অঙ্কের সঙ্গে তার ওজন গুণ করে অবদানগুলো যোগ করো।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (101101)_{2} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC017}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-10) {$ 2^{5} $};
+\node[vcnum] (v0) at (0,-25) {$ 32 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 0 $};
+\node[vcnum] (w1) at (19,-10) {$ 2^{4} $};
+\node[vcnum] (v1) at (19,-25) {$ 0 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 1 $};
+\node[vcnum] (w2) at (38,-10) {$ 2^{3} $};
+\node[vcnum] (v2) at (38,-25) {$ 8 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (57,0) {$ 1 $};
+\node[vcnum] (w3) at (57,-10) {$ 2^{2} $};
+\node[vcnum] (v3) at (57,-25) {$ 4 $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] (d4) at (76,0) {$ 0 $};
+\node[vcnum] (w4) at (76,-10) {$ 2^{1} $};
+\node[vcnum] (v4) at (76,-25) {$ 0 $};
+\draw[vc arrow] (d4.south)--(w4.north);
+\draw[vc arrow] (w4.south)--(v4.north);
+\node[vc digit] (d5) at (95,0) {$ 1 $};
+\node[vcnum] (w5) at (95,-10) {$ 2^{0} $};
+\node[vcnum] (v5) at (95,-25) {$ 1 $};
+\draw[vc arrow] (d5.south)--(w5.north);
+\draw[vc arrow] (w5.south)--(v5.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 2^{5}+0\times 2^{4}+1\times 2^{3}+1\times 2^{2}+0\times 2^{1}+1\times 2^{0}\\&=32+8+4+1=45.\end{aligned}\]
+\[\therefore\ (101101)_{2}=(45)_{10}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.1011)_{2} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC018}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 0 $};
+\node[vcnum] (w0) at (0,-10) {$ 2^{0} $};
+\node[vcnum] (v0) at (0,-25) {$ 0 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (27,0) {$ 1 $};
+\node[vcnum] (w1) at (27,-10) {$ 2^{-1} $};
+\node[vcnum] (v1) at (27,-25) {$ \frac{1}{2} $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (46,0) {$ 0 $};
+\node[vcnum] (w2) at (46,-10) {$ 2^{-2} $};
+\node[vcnum] (v2) at (46,-25) {$ 0 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (65,0) {$ 1 $};
+\node[vcnum] (w3) at (65,-10) {$ 2^{-3} $};
+\node[vcnum] (v3) at (65,-25) {$ \frac{1}{8} $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] (d4) at (84,0) {$ 1 $};
+\node[vcnum] (w4) at (84,-10) {$ 2^{-4} $};
+\node[vcnum] (v4) at (84,-25) {$ \frac{1}{16} $};
+\draw[vc arrow] (d4.south)--(w4.north);
+\draw[vc arrow] (w4.south)--(v4.north);
+\node[vc digit] at (13.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=0\times 2^{0}+1\times 2^{-1}+0\times 2^{-2}+1\times 2^{-3}+1\times 2^{-4}\\&=\frac{1}{2}+\frac{1}{8}+\frac{1}{16}=0.6875.\end{aligned}\]
+\[\therefore\ (0.1011)_{2}=(0.6875)_{10}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (110101.011)_{2} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC019}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0.0,0) {$ 1 $};
+\node[vcnum] (w0) at (0.0,-10) {$ 2^{5} $};
+\node[vcnum] (v0) at (0.0,-25) {$ 32 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (16.666666666666668,0) {$ 1 $};
+\node[vcnum] (w1) at (16.666666666666668,-10) {$ 2^{4} $};
+\node[vcnum] (v1) at (16.666666666666668,-25) {$ 16 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (33.333333333333336,0) {$ 0 $};
+\node[vcnum] (w2) at (33.333333333333336,-10) {$ 2^{3} $};
+\node[vcnum] (v2) at (33.333333333333336,-25) {$ 0 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (50.0,0) {$ 1 $};
+\node[vcnum] (w3) at (50.0,-10) {$ 2^{2} $};
+\node[vcnum] (v3) at (50.0,-25) {$ 4 $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] (d4) at (66.66666666666667,0) {$ 0 $};
+\node[vcnum] (w4) at (66.66666666666667,-10) {$ 2^{1} $};
+\node[vcnum] (v4) at (66.66666666666667,-25) {$ 0 $};
+\draw[vc arrow] (d4.south)--(w4.north);
+\draw[vc arrow] (w4.south)--(v4.north);
+\node[vc digit] (d5) at (83.33333333333334,0) {$ 1 $};
+\node[vcnum] (w5) at (83.33333333333334,-10) {$ 2^{0} $};
+\node[vcnum] (v5) at (83.33333333333334,-25) {$ 1 $};
+\draw[vc arrow] (d5.south)--(w5.north);
+\draw[vc arrow] (w5.south)--(v5.north);
+\node[vc digit] (d6) at (108.0,0) {$ 0 $};
+\node[vcnum] (w6) at (108.0,-10) {$ 2^{-1} $};
+\node[vcnum] (v6) at (108.0,-25) {$ 0 $};
+\draw[vc arrow] (d6.south)--(w6.north);
+\draw[vc arrow] (w6.south)--(v6.north);
+\node[vc digit] (d7) at (124.66666666666667,0) {$ 1 $};
+\node[vcnum] (w7) at (124.66666666666667,-10) {$ 2^{-2} $};
+\node[vcnum] (v7) at (124.66666666666667,-25) {$ \frac{1}{4} $};
+\draw[vc arrow] (d7.south)--(w7.north);
+\draw[vc arrow] (w7.south)--(v7.north);
+\node[vc digit] (d8) at (141.33333333333334,0) {$ 1 $};
+\node[vcnum] (w8) at (141.33333333333334,-10) {$ 2^{-3} $};
+\node[vcnum] (v8) at (141.33333333333334,-25) {$ \frac{1}{8} $};
+\draw[vc arrow] (d8.south)--(w8.north);
+\draw[vc arrow] (w8.south)--(v8.north);
+\node[vc digit] at (95.66666666666667,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 2^{5}+1\times 2^{4}+0\times 2^{3}+1\times 2^{2}+0\times 2^{1}+1\times 2^{0}+0\times 2^{-1}+1\times 2^{-2}+1\times 2^{-3}\\&=32+16+4+1+\frac{1}{4}+\frac{1}{8}=53.375.\end{aligned}\]
+\[\therefore\ (110101.011)_{2}=(53.375)_{10}.\]
+\end{minipage}\par

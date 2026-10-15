@@ -1,0 +1,28 @@
+\subsection{নয়টি দুই-ইনপুট গেটে পূর্ণযোগকের ধাপ}
+নিচের মধ্যবর্তী সংকেতগুলো অনুসরণ করলে শুধু একই ধরনের গেট দিয়ে যোগফল ও ক্যারি তৈরি করা যায়। $C_i$ ক্যারি ইনপুট এবং $C_o$ ক্যারি আউটপুট।
+
+\smallhead{শুধু NAND}
+\[\begin{aligned}
+P&=\overline{AB},&Q&=\overline{AP},&R&=\overline{BP},\\
+X&=\overline{QR},&U&=\overline{XC_i},&V&=\overline{XU},\\
+W&=\overline{C_iU},&S&=\overline{VW},&C_o&=\overline{PU}.
+\end{aligned}\]
+প্রথম চার গেটে $X=A\oplus B$। পরের চার গেটে $S=X\oplus C_i$। শেষ গেটে $C_o=\overline{\overline{AB}\cdot\overline{XC_i}}=AB+XC_i$। অতএব একই নয় গেটের সংযোগ পূর্ণযোগক।
+
+\smallhead{শুধু NOR}
+\[\begin{aligned}
+P&=\overline{A+B},&Q&=\overline{A+P},&R&=\overline{B+P},\\
+X&=\overline{Q+R},&U&=\overline{X+C_i},&V&=\overline{X+U},\\
+W&=\overline{C_i+U},&S&=\overline{V+W},&C_o&=\overline{P+U}.
+\end{aligned}\]
+প্রথম চার গেটে X হলো A ও B-এর XNOR। পরের চার গেট X ও $C_i$-এর XNOR করলে দুইবার পূরক হয়ে $S=A\oplus B\oplus C_i$ পাওয়া যায়। শেষ NOR-এর ফল $C_o=(A+B)(X+C_i)=AB+AC_i+BC_i$। এখানে X-এর অর্থ NAND নির্মাণের X থেকে আলাদা।
+
+\chThreeExample{১}{দুই half adder-এর মধ্যবর্তী মান}
+$A=1,B=0,C_i=1$।
+\chThreeAnswer প্রথম half adder-এ $S_1=1,C_1=0$। দ্বিতীয়টিতে $S=S_1\oplus C_i=0,C_2=S_1C_i=1$। শেষ OR-এ $C_o=C_1+C_2=1$। ফল $C_oS=10_2$, যা $1+0+1$-এর সঠিক যোগফল।
+
+\chThreeExample{২}{অ্যাডার দিয়ে বিয়োগ}
+চার বিটে $9-5$ নির্ণয় করতে $A=1001$, $B=0101$।
+\chThreeAnswer B-এর বিট উল্টে $1010$ এবং প্রথম carry-in ১ দাও।
+\[1001+1010+1=1\;0100.\]
+অতিরিক্ত ক্যারি বাদ দিলে চার বিটে $0100=4$। এই উদাহরণে A ও B চিহ্নবিহীন মান; চার বিট signed হিসেবে ৯ লেখা যায় না।

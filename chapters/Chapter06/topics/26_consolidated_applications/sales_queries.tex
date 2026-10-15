@@ -1,0 +1,79 @@
+\subsection{Sales টেবিলে গাণিতিক রাশি ও সমষ্টিগত হিসাব}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+SaleID & Product & UnitPrice & Quantity & SalesPerson\\
+\hline
+S01 & Keyboard & 1200 & 2 & Rafi\\\hline
+S02 & Mouse & 650 & 5 & Nila\\\hline
+S03 & Headphone & 1800 & 3 & Rafi\\\hline
+S04 & PenDrive & 900 & 4 & Sami\\\hline
+S05 & Speaker & 2200 & 2 & Nila\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Sales Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭০}{প্রতিটি বিক্রয়ের TotalPrice দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Product,
+       UnitPrice*Quantity AS TotalPrice
+FROM Sales;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Product, TotalPrice}{\mbox{Keyboard, 2400}; \mbox{Mouse, 3250}; \mbox{Headphone, 5400}; \mbox{PenDrive, 3600}; \mbox{Speaker, 4400}}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭১}{সব বিক্রয়ের মূল্য যোগ করে মোট বিক্রয়মূল্য বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SUM(UnitPrice*Quantity)
+       AS TotalSales
+FROM Sales;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+TotalSales\\\hline
+19050\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭২}{প্রত্যেক SalesPerson-এর মোট বিক্রয়মূল্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SalesPerson,
+       SUM(UnitPrice*Quantity) AS TotalSales
+FROM Sales
+GROUP BY SalesPerson;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+SalesPerson & TotalSales\\\hline
+Nila & 7650\\\hline
+Rafi & 7800\\\hline
+Sami & 3600\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+

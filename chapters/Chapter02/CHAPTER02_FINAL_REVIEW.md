@@ -1,4 +1,12 @@
+> বর্তমান প্রকাশিত সংস্করণ — ৮ অক্টোবর ২০২৬: **সম্পূর্ণ Chapter 2-এর বাংলা ভাষা সম্পাদনা শেষ**। সূচিপত্রসহ ১০৮ PDF পৃষ্ঠা (১০৭ মুদ্রিত পৃষ্ঠা)। [সংশোধিত PDF](../../chapter02_only.pdf), [পূর্ণ সংশোধিত পাঠ](CHAPTER02_FULL_REVISED_TEXT.md), [Before → After ও তথ্য সংরক্ষণ](CHAPTER02_FULL_PROSE_REVIEW.md), [১৯৭টি MCQ যাচাই](chapter02_final_mcq_answer_validation.md)। নিচের Section 2.1-এ থামার নির্দেশ, পুরোনো পৃষ্ঠাসংখ্যা ও পূর্ববর্তী পর্বের সিদ্ধান্তগুলো ঐতিহাসিক রেকর্ড; বর্তমান কাজের অবস্থা উপরের পূর্ণ অধ্যায়ের রিপোর্টে রয়েছে।
+
+> সর্বশেষ বাংলা গদ্য সম্পাদনা (৮ অক্টোবর ২০২৬): **শুধু Section 2.1**। পূর্ণ PDF 108 পৃষ্ঠা; সংশোধিত অংশ PDF 2–9। [সম্পূর্ণ সংশোধিত লেখা](CHAPTER02_SECTION21_REVISED_TEXT.md), [তুলনা ও যাচাই](CHAPTER02_SECTION21_PROSE_REVIEW.md)। পরবর্তী Section 2.2-এর সম্পাদনা অনুমোদনসাপেক্ষ। নিচের পূর্ববর্তী অডিটের তথ্য ঐতিহাসিক।
+
+> বর্তমান PDF ও যাচাই (৮ অক্টোবর ২০২৬): ১০৭ পৃষ্ঠা। [চূড়ান্ত অডিট](CHAPTER02_AUDIT.md), [MCQ coverage](CHAPTER02_MCQ_COVERAGE.md)। নিচের পুরোনো review/page count ঐতিহাসিক।
+
 # Chapter 02 Final Review
+
+Current completion status (5 October 2026): the later concept, book-comparison and all-page layout pass is complete. See [CHAPTER02_COMPLETION.md](CHAPTER02_COMPLETION.md) and [BOOK_COMPARISON.md](BOOK_COMPARISON.md) for the final 146-page PDF and validation. The earlier review notes below are retained as historical findings.
 
 Chapter title: কমিউনিকেশন সিস্টেমস ও কম্পিউটার নেটওয়ার্কিং
 

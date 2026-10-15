@@ -1,0 +1,103 @@
+\section{Database-এর মৌলিক উপাদান}
+\subsection{Field, Field Name ও Field Value}
+\begin{definitionbox}{}
+টেবিলের একই বৈশিষ্ট্যের ডেটা রাখার জন্য নির্ধারিত কলামকে \textbf{Field} বলে।
+\end{definitionbox}
+\input{chapters/Chapter06/latex/table_anatomy}
+
+এখানে Roll, Name, Group, GPA ও Age পাঁচটি ফিল্ড। একটি কলামে বিভিন্ন রেকর্ডের একই বৈশিষ্ট্যের মান থাকে।
+
+কলামের পরিচিতিমূলক নাম হলো \textbf{Field Name}; ওই কলামের কোনো নির্দিষ্ট ঘরে থাকা ডেটা হলো \textbf{Field Value}। যেমন Name নামের ফিল্ডে Rahim, Karim ও Nila পৃথক মান। Roll-এর মান 101, Name-এর মান Rahim, Group-এর মান Science এবং GPA-এর মান 4.75—এগুলো নাম ও মানের পার্থক্য দেখায়। \texttt{101}, \texttt{Rahim}, \texttt{Science}, \texttt{5.00} ও \texttt{17} প্রত্যেকটি পৃথক Data Value; Data-এর সাধারণ সংজ্ঞা আগের অংশে আছে।
+
+\subsection{Record ও Table}
+\begin{definitionbox}{}
+একটি নির্দিষ্ট ব্যক্তি, বস্তু বা বিষয়ের বিভিন্ন ফিল্ডের মান নিয়ে গঠিত সম্পূর্ণ ডেটা সারিকে \textbf{Record} বলে।
+\end{definitionbox}
+Rahim-এর রেকর্ড (101, Rahim, Science, 5.00, 17); Karim-এর রেকর্ড (102, Karim, Business Studies, 4.75, 18); Nila-এর রেকর্ড (103, Nila, Humanities, 4.50, 17)। প্রত্যেক সারিতে পাঁচটি ফিল্ডের মান আছে; মোট রেকর্ড তিনটি।
+
+\begin{definitionbox}{Table (টেবিল)}
+একই ধরনের রেকর্ডকে নির্ধারিত ফিল্ড অনুসারে সারি–কলামে সংরক্ষণের কাঠামোকে \textbf{Table} বলে।
+\end{definitionbox}
+College ডেটাবেজে Student, Teacher, Result, Subject ও Attendance পৃথক টেবিল হতে পারে। নতুন টেবিলে কোনো রেকর্ড না থাকলেও তার কাঠামো নির্ধারিত থাকতে পারে। ফিল্ড হলো কলাম; রেকর্ড হলো সারি—একটিকে অন্যটি ভাবা যাবে না।
+
+\begin{flushleft}
+\begin{tikzpicture}[
+    node distance=7mm,
+    every node/.style={font=\small}
+]
+\node[booknode,text width=23mm,minimum height=11mm] (d)
+{\textbf{Data}\\Rahim};
+\node[booknode,right=of d,text width=23mm,minimum height=11mm] (f)
+{\textbf{Field}\\Name};
+\node[booknode,right=of f,text width=27mm,minimum height=11mm] (r)
+{\textbf{Record}\\Rahim-এর Row};
+\node[booknode,right=of r,text width=25mm,minimum height=11mm] (t)
+{\textbf{Table}\\Student};
+\draw[bookarrow] (d) -- (f);
+\draw[bookarrow] (f) -- (r);
+\draw[bookarrow] (r) -- (t);
+\end{tikzpicture}
+\captionof{figure}{Data থেকে Table গঠনের ধারণা}
+\end{flushleft}
+
+\subsection{Attribute ও Relation}
+\begin{definitionbox}{}
+কোনো Entity-এর বৈশিষ্ট্যকে \textbf{Attribute} বলে।
+\end{definitionbox}
+Relational টেবিলে এটি সাধারণত কলাম বা ফিল্ড হিসেবে প্রকাশিত হয়। Student-এর Roll, Name, Group, GPA ও Age তার Attribute।
+
+সম্পূর্ণ Relational টেবিলকে \textbf{Relation} বলা হয়। টেবিলের কোনো ঘরের মান হলো সংশ্লিষ্ট Attribute Value। Relation ও দুটি টেবিলের Relationship পৃথক ধারণা।
+
+\subsection{Entity ও Entity Set}
+\begin{definitionbox}{}
+যে বাস্তব ব্যক্তি, বস্তু, স্থান বা বিষয় সম্পর্কে ডেটাবেজে ডেটা রাখা হয়, তাকে \textbf{Entity} বলে।
+\end{definitionbox}
+বাস্তব Rahim একটি Entity; তার তথ্যের (101, Rahim, Science, 5.00, 17) সারিটি Record।
+
+\begin{definitionbox}{Entity Set (এন্টিটি সেট)}
+একই ধরনের Entity-এর সমষ্টি হলো \textbf{Entity Set}।
+\end{definitionbox}
+Rahim, Karim ও Nila প্রত্যেকে Student Entity; কলেজের সব Student একত্রে Student Entity Set।
+
+\subsection{Data Hierarchy}
+Bit হলো Binary Digit-এর সংক্ষিপ্ত রূপ; মান 0 অথবা 1। Byte সাধারণভাবে 8 Bit। Character হলো অক্ষর, সংখ্যা বা বিশেষ চিহ্নের প্রতীক। সম্পর্কিত Character বা ডেটা দিয়ে Field, সম্পর্কিত Field দিয়ে Record এবং একই ধরনের Record-এর সংগ্রহ দিয়ে File/Table-এর ধারণাগত স্তর বোঝানো হয়। সম্পর্কিত টেবিল বা ডেটা কাঠামো নিয়ে Database গঠিত হয়।
+
+\begin{flushleft}
+\begin{tikzpicture}[
+    node distance=7mm,
+    every node/.style={font=\small}
+]
+\node[booknode,text width=14mm,minimum height=10mm] (bit)
+{\textbf{Bit}\\0/1};
+\node[booknode,right=of bit,text width=15mm,minimum height=10mm] (byte)
+{\textbf{Byte}\\8 Bits};
+\node[booknode,right=of byte,text width=18mm,minimum height=10mm] (char)
+{\textbf{Character}\\A, 5};
+\node[booknode,right=of char,text width=17mm,minimum height=10mm] (field)
+{\textbf{Field}\\Name};
+\node[booknode,below=of field,text width=22mm,minimum height=10mm] (record)
+{\textbf{Record}\\One Row};
+\node[booknode,left=of record,text width=22mm,minimum height=10mm] (file)
+{\textbf{File/Table}\\Students};
+\node[booknode,left=of file,text width=22mm,minimum height=10mm] (db)
+{\textbf{Database}\\College};
+\draw[bookarrow] (bit) -- (byte);
+\draw[bookarrow] (byte) -- (char);
+\draw[bookarrow] (char) -- (field);
+\draw[bookarrow] (field) -- (record);
+\draw[bookarrow] (record) -- (file);
+\draw[bookarrow] (file) -- (db);
+\end{tikzpicture}
+\captionof{figure}{Data Hierarchy-এর ধারণাগত ক্রম}
+\end{flushleft}
+এখানে File (legacy concept) / Table (relational model) ধারণাগত স্তর বোঝায়। ভৌত Database File ও একটি Table একই বস্তু নয়; একটি ফাইলে একাধিক টেবিল থাকতে পারে।
+
+\subsection{এক নজরে: একই Student টেবিল}
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{35mm}|Y|}\hline
+\chSixHeader পরিভাষা & উদাহরণ\\\hline
+Field / Attribute & Name; Roll, Group, GPA ও Age-ও ফিল্ড\\\hline
+Field Name / Value & GPA / 4.75\\\hline
+Record & Karim-এর (102, Karim, Business Studies, 4.75, 18) সারি\\\hline
+Entity & বাস্তব শিক্ষার্থী Karim\\\hline
+\end{tabularx}\end{flushleft}

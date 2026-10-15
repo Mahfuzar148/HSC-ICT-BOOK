@@ -1,30 +1,133 @@
-% ১৭. Practical Database Task
-\section{Practical Database Task}
-এই অধ্যায়ের ব্যবহারিক অংশে সাধারণত MS Access বা সমজাতীয় DBMS ব্যবহার করে ডেটাবেজ, টেবিল, কুয়েরি, ফর্ম ও রিপোর্ট তৈরি করতে বলা হয়।
+\section{ব্যবহারিক কাজ: Access ও SQLite}
 
-\begin{practicebox}
-\textbf{কাজ: StudentDB তৈরি}
+এখানে Access-এ টেবিল ও কুয়েরি তৈরি এবং SQLite-এ SQL চালানোর অনুশীলন দেওয়া হয়েছে। শিক্ষকের নির্দেশ অনুযায়ী উপযুক্ত পরিবেশ বেছে নাও। Access ও SQLite-এর নির্দেশে পার্থক্য আছে; একটির সব নির্দেশ অন্যটিতে হুবহু চলে না।
+
+\subsection{StudentDB তৈরি}
+\textbf{উদ্দেশ্য:} টেবিল তৈরি, ডেটা এন্ট্রি এবং শর্ত অনুযায়ী ফল নির্বাচন।
+\textbf{প্রয়োজনীয় সফটওয়্যার:} Microsoft Access অথবা SQLite চালানোর উপযুক্ত পরিবেশ।
+\textbf{কাজের ধাপ:}
 \begin{enumerate}
     \item StudentDB নামে একটি ডেটাবেজ তৈরি করো।
     \item Student নামে একটি টেবিল তৈরি করো।
     \item ফিল্ড দাও: StudentID, Roll, Name, GroupName, GPA, Mobile।
     \item StudentID-কে Primary Key করো।
     \item অন্তত ৫টি রেকর্ড এন্ট্রি করো।
-    \item GPA 5.00 পাওয়া ছাত্রদের দেখানোর জন্য Select query তৈরি করো।
-    \item Name অনুযায়ী Ascending sort করো।
-    \item Student Entry Form এবং GPA Report তৈরি করো।
+    \item GPA 5.00 পাওয়া শিক্ষার্থীদের দেখানোর জন্য Select Query তৈরি করো।
+    \item Name অনুযায়ী ঊর্ধ্বক্রমে (Ascending) সাজাও।
+    \item নির্বাচিত শিক্ষার্থীদের GPA অনুযায়ী সাজানো কুয়েরি তৈরি করো।
 \end{enumerate}
-\end{practicebox}
 
-\begin{examplebox}{নমুনা কুয়েরি}
-\begin{verbatim}
+\noindent\textbf{নমুনা কুয়েরি।} \begin{verbatim}
 SELECT Roll, Name, GPA
 FROM Student
 WHERE GPA = 5.00
 ORDER BY Name ASC;
 \end{verbatim}
-\end{examplebox}
 
-\begin{keypointbox}{ব্যবহারিক খাতার জন্য}
-প্রতিটি কাজের শেষে স্ক্রিনশট/চিত্রের স্থানধারক রাখা যেতে পারে: Table Design View, Datasheet View, Query Design, Form View, Report Preview।
-\end{keypointbox}
+\textbf{ফলাফল ও যাচাই:} StudentID 1--5, Roll 101--105, Name যথাক্রমে Rahim, Karim, Nusrat, Nila, Mim এবং GPA যথাক্রমে 5.00, 4.75, 5.00, 4.50, 4.25 ব্যবহার করো। GroupName ও Mobile-এ উপযুক্ত কাল্পনিক মান দাও। ওপরের কুয়েরিতে নামের ক্রম হবে Nusrat, Rahim; মোট ২টি রেকর্ড।
+\textbf{খাতায় রাখবে:} উদ্দেশ্য, ব্যবহৃত সফটওয়্যার, ফিল্ডের নকশা, কাজের ধাপ, নিজে তৈরি টেবিল/কুয়েরির ছবি এবং ফলের ব্যাখ্যা।
+
+
+\subsection{Access-এ নকশা ও ফল যাচাই}
+\textbf{উদ্দেশ্য:} সঠিক টাইপ ও কী দিয়ে টেবিল তৈরি, তথ্য যাচাই, সম্পর্ক স্থাপন এবং কুয়েরির ফল যাচাই শেখা। StudentID-এ AutoNumber, Name ও Mobile-এ Short Text, Roll-এ প্রতিষ্ঠানের নিয়মমাফিক পরিচিতি টাইপ, GroupName-এ Short Text এবং GPA-এ ভগ্নাংশসমর্থিত Number নির্ধারণ করো। GPA-এর Validation Rule হবে \texttt{Between 0 And 5}।
+
+\textbf{এন্ট্রি ও সংশোধন:} নমুনা পাঁচ রেকর্ড লিখে Datasheet View-তে মোট রেকর্ডসংখ্যা মিলাও। একটি মোবাইল নম্বর বদলে পুনরায় খুলে মানটি ঠিক আছে কি না দেখো। অনুশীলনের জন্য ষষ্ঠ একটি কাল্পনিক রেকর্ড যোগ করে শুধু সেটি মুছে ফেলো; আগের পাঁচটি যেন থাকে। GPA 6 লিখলে নিয়ম প্রত্যাখ্যান করছে কি না পরীক্ষা করো। সঠিক সীমার মধ্যে ভুল মান দিলে তা ধরা নাও পড়তে পারে---মূল তালিকার সঙ্গে মিলাও।
+
+\textbf{কুয়েরি ও সর্টিং:} Query Design-এ Roll, Name ও GPA ফিল্ড নাও এবং GPA-এর Criteria ঘরে 5 দাও। Name-এর Sort ঘরে Ascending দিয়ে ফল দেখো। SQL View-এর নির্দেশ মিলিয়ে দেখো এবং ফলে Nusrat, Rahim এই ক্রমে নাম এসেছে কি না যাচাই করো। এরপর GPA কম থেকে বেশি দেখানোর কুয়েরি তৈরি করো। কোন ফিল্ডের সর্টিংয়ের ক্রম বদলালে ফলের সাজানো ক্রম বদলায়, তা লিখে রাখো।
+
+\textbf{ইনডেক্স:} Name দিয়ে নিয়মিত খোঁজার জন্য Indexed=Yes (Duplicates OK) ব্যবহার করা যায়। একই নামের দুজন গ্রহণযোগ্য কি না যাচাই করো। অনন্য Roll-এর নিয়ম দিলে Yes (No Duplicates) নির্বাচন করতে পারো; তবে সব শ্রেণির রোল একসঙ্গে থাকলে শুধু Roll অনন্য নাও হতে পারে। আগে নকশার শর্ত নির্ধারণ করো।
+
+\subsection{Access-এ সম্পর্ক ও নিরাপত্তা যাচাই}
+Result টেবিলে ResultID AutoNumber প্রাইমারি কী, StudentID Number--Long Integer ফরেন কী, ExamName Short Text এবং ICTMark Number রাখো। StudentID=1-এর Annual ও HalfYearly নামে দুটি ফল লেখো। Relationships-এ Student.StudentID থেকে Result.StudentID যুক্ত করে referential integrity নির্বাচন করো। অজানা শিক্ষার্থীর ফল যোগ করতে গেলে তা প্রত্যাখ্যাত হওয়া উচিত।
+
+অনুশীলনের ডেটাবেজ ফাইল খোলার জন্য পাসওয়ার্ড নির্ধারণ করো। ফাইল বন্ধ করে সঠিক পাসওয়ার্ড দিয়ে আবার খোলো। তারপর ভুল পাসওয়ার্ড দিলে ফাইলটি খোলা যায় কি না পরীক্ষা করো। ব্যাকআপের একটি কপি খুলে মূল ডেটাবেজের সঙ্গে তার রেকর্ডসংখ্যা মিলিয়ে দেখো। বাস্তব প্রতিষ্ঠানের পাসওয়ার্ড বা ব্যক্তিগত ডেটা অনুশীলনের খাতায় লিখবে না।
+
+\textbf{মৌখিক যাচাই:} (১) StudentID-এর ফরেন কী কেন দ্বিতীয় AutoNumber নয়? (২) একই শিক্ষার্থীর দুটি ফল কী সম্পর্ক দেখায়? (৩) কুয়েরি ও Report-এর ভূমিকা কী? (৪) পাসওয়ার্ড জানা থাকলেও ব্যাকআপ দরকার কেন?
+
+\input{chapters/Chapter06/topics/17_practical_tasks/sqlite_design}
+\subsection{SQLite-এ সম্পূর্ণ অনুশীলন}
+\textbf{উদ্দেশ্য:} শিক্ষার্থী ও একাধিক পরীক্ষার ফল তৈরি করে কী, CHECK, JOIN এবং লেনদেনের ফল যাচাই করা।
+\textbf{প্রস্তুতি:} নতুন খালি resultdb.db ফাইল খোলো। SQLite-এর কমান্ডলাইন ইন্টারফেস (Command-Line Interface বা CLI) থাকলে টার্মিনালে \texttt{sqlite3 resultdb.db} লিখতে পারো; DB Browser for SQLite-এ New Database এবং Execute SQL ব্যবহার করতে পারো। SQLite-এ \texttt{CREATE DATABASE} ও \texttt{USE} নেই।
+
+নিচের নির্দেশগুলো দিয়ে দুটি টেবিল তৈরি করো। এরপর চারজন শিক্ষার্থী ও পাঁচটি পরীক্ষার ফল যোগ করে কুয়েরি চালাও।
+\begin{verbatim}
+PRAGMA foreign_keys = ON;
+CREATE TABLE Student (
+  StudentID INTEGER PRIMARY KEY,
+  Roll INTEGER NOT NULL UNIQUE,
+  Name TEXT NOT NULL,
+  GroupName TEXT NOT NULL,
+  SessionYear TEXT NOT NULL
+);
+CREATE TABLE Result (
+  ResultID INTEGER PRIMARY KEY,
+  StudentID INTEGER NOT NULL,
+  ExamName TEXT NOT NULL,
+  ICTMark INTEGER NOT NULL
+    CHECK (ICTMark BETWEEN 0 AND 100),
+  GPA REAL NOT NULL CHECK (GPA BETWEEN 0 AND 5),
+  UNIQUE (StudentID, ExamName),
+  FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+);
+\end{verbatim}
+SQLite-এ মানের প্রধান storage class হলো INTEGER, REAL, TEXT, BLOB ও NULL। এর টাইপ ব্যবস্থা নমনীয়; তাই Access-এর ডেটা টাইপের নাম সরাসরি ব্যবহার করা ঠিক নয়। প্রতিটি নতুন সংযোগে ফরেন কী প্রয়োগ চালু করতে \texttt{PRAGMA foreign\_keys = ON;} নির্দেশ দাও.
+
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|l|l|}\hline
+ResultID & StudentID & ExamName & ICTMark & GPA\\ \hline
+101 & 1 & Annual & 92 & 5.00\\\hline
+102 & 2 & Annual & 78 & 4.50\\\hline
+103 & 3 & Annual & 88 & 5.00\\\hline
+104 & 4 & Annual & 65 & 3.75\\\hline
+105 & 1 & HalfYearly & 84 & 4.50\\ \hline
+\end{tabular}
+\end{flushleft}
+নিচের INSERT নির্দেশগুলো চালিয়ে চারটি শিক্ষার্থীর তথ্য ও পাঁচটি ফল সংরক্ষণ করো।
+\begin{verbatim}
+INSERT INTO Student VALUES
+(1, 1201, 'Ayesha', 'Science', '2025-26'),
+(2, 1202, 'Sabbir', 'Business', '2025-26'),
+(3, 1203, 'Mim', 'Science', '2025-26'),
+(4, 1204, 'Hasan', 'Humanities', '2025-26');
+
+INSERT INTO Result VALUES
+(101, 1, 'Annual', 92, 5.00),
+(102, 2, 'Annual', 78, 4.50),
+(103, 3, 'Annual', 88, 5.00),
+(104, 4, 'Annual', 65, 3.75),
+(105, 1, 'HalfYearly', 84, 4.50);
+\end{verbatim}
+ এখানে GPA আগে থেকে দেওয়া ফলের মান; শুধু ICTMark থেকে সামগ্রিক GPA গণনা করা হয়নি।
+\begin{verbatim}
+SELECT s.Roll, s.Name, r.ICTMark, r.GPA
+FROM Student AS s
+INNER JOIN Result AS r ON s.StudentID = r.StudentID
+WHERE s.GroupName = 'Science'
+  AND r.ExamName = 'Annual' AND r.GPA = 5.00
+ORDER BY s.Roll;
+\end{verbatim}
+\textbf{ফল:} 1201--Ayesha--92--5.00 ও 1203--Mim--88--5.00। \texttt{INNER JOIN}-এ মিল আছে এমন রেকর্ড জোড়া হয়। সংযোগের শর্ত বাদ দিলে ভুলভাবে বহু জোড়া তৈরি হতে পারে।
+
+\subsection{নিজে যাচাই করো}
+\begin{enumerate}
+\item StudentID=1-এর ফল দেখাও। দুটি ফল পাবে: Annual--92 এবং HalfYearly--84। এটি 1:N সম্পর্ক দেখায়।
+\item শুধু Annual-এর \texttt{COUNT(*)} ও \texttt{AVG(ICTMark)} বের করো। ফল ৪ এবং ৮০.৭৫।
+\item পরীক্ষামূলকভাবে অজানা StudentID=99-এর ফল যোগ করতে চাও। ফরেন কী প্রয়োগ চালু থাকলে প্রত্যাখ্যাত হবে।
+\item ICTMark=101 বা GPA=6 দিতে চাও। CHECK নিয়মের কারণে প্রত্যাখ্যাত হবে।
+\item একই StudentID ও ExamName-এর দ্বিতীয় ফল যোগ করতে চাও। UNIQUE নিয়ম ভাঙবে।
+\item নিচের লেনদেনে ResultID=103-এর নম্বর বদলানো এবং ResultID=104 বাদ দেওয়ার পর ফলের সংখ্যা ৪; ROLLBACK-এর পরে আবার ৫ হবে।
+\end{enumerate}
+\begin{verbatim}
+BEGIN TRANSACTION;
+UPDATE Result SET ICTMark = 90 WHERE ResultID = 103;
+DELETE FROM Result WHERE ResultID = 104;
+SELECT COUNT(*) AS Remaining FROM Result;
+ROLLBACK;
+SELECT COUNT(*) AS Restored FROM Result;
+\end{verbatim}
+এখানে \ref{sec:ch06-transaction} অংশের লেনদেন-বাতিলের ধারণা প্রয়োগ হয়েছে। সব DBMS-এ সব ধরনের নির্দেশের লেনদেন-আচরণ এক নয়; এখানে SQLite-এর দেওয়া উদাহরণটি অনুসরণ করো।
+
+\textbf{মৌখিক প্রশ্ন:} ResultID ও StudentID কেন আলাদা? ExamName না রাখলে কোন সমস্যা হয়? WHERE ও JOIN-এর শর্তের কাজ কী? প্রাইমারি কী-এর ভুল এবং ফরেন কী-এর ভুল কীভাবে আলাদা করবে?
+
+\input{chapters/Chapter06/topics/17_practical_tasks/access_workflow}

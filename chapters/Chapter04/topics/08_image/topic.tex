@@ -1,69 +1,78 @@
-% 4.x Image in HTML
-\section{HTML-এ Image Add করা}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% 4.x ছবি in HTML
+\section{HTML-এ ছবি যুক্ত করা}
+
+% Composition pass 2026-10-04
+কলেজের পরিচিতি বা দোকানের পণ্য শুধু লেখা দিয়ে দেখালে চেনা কঠিন হতে পারে।
+
+\chFourMotivation{দৃশ্যমান পরিচয় $\rightarrow$ img $\rightarrow$ src থেকে ছবির রিসোর্স লোড ও alt দিয়ে বিকল্প অর্থ $\rightarrow$ ক্যাম্পাসের ছবি, ব্যানার ও পণ্য প্রদর্শন।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML page-এ image যুক্ত করার নিয়ম ব্যাখ্যা করতে।
-\item \texttt{<img>} tag empty tag কেন তা লিখতে।
-\item \texttt{src}, \texttt{alt}, \texttt{width} ও \texttt{height} attribute ব্যবহার করতে।
-\item image path, image format, image alignment, border ও image link বুঝতে।
-\item responsive image hint যেমন \texttt{srcset}, \texttt{sizes} ও \texttt{loading} চিনতে।
-\item table cell-এর ভিতরে image বসানোর code লিখতে।
-\item HSC practical ও board exam-এর image-related প্রশ্নের উত্তর দিতে।
+\item HTML পেজে ছবি যুক্ত করার নিয়ম ব্যাখ্যা করতে।
+\item \texttt{<img>} ট্যাগ এম্পটি ট্যাগ কেন তা লিখতে।
+\item \texttt{src}, \texttt{alt}, \texttt{width} ও \texttt{height} অ্যাট্রিবিউট ব্যবহার করতে।
+\item ছবির অবস্থানের পথ, ছবির ফরম্যাট, ছবির অবস্থান, বর্ডার ও ছবিতে লিংক বুঝতে।
+\item ধারকের মাপ অনুযায়ী ছবি ইঙ্গিত যেমন \texttt{srcset}, \texttt{sizes} ও \texttt{loading} চিনতে।
+\item সারণির ঘরের ভিতরে ছবি বসানোর কোড লিখতে।
+\item HSC ব্যবহারিক অনুশীলন ও বোর্ড পরীক্ষার ছবি সম্পর্কিত প্রশ্নের উত্তর দিতে।
 \end{itemize}
 \end{learningbox}
 
-Hyperlink শেখার পর image শেখা সহজ, কারণ web page-এ image শুধু দেখানোই নয়, image-এর ওপর link-ও দেওয়া যায়। কোনো college website-এ logo, banner, teacher photo, campus image, notice image বা gallery photo দেখাতে HTML-এর \texttt{<img>} tag ব্যবহার করা হয়।
+হাইপারলিংক শেখার পর ছবি শেখা সহজ, কারণ ওয়েবপেজে ছবি শুধু দেখানোই নয়, ছবির ওপর লিংকও দেওয়া যায়। কোনো কলেজের ওয়েবসাইটে লোগো, ব্যানার, শিক্ষকের ছবি, ক্যাম্পাসের ছবি, বিজ্ঞপ্তি বা ছবির সংগ্রহ দেখাতে HTML-এর \texttt{<img>} ট্যাগ ব্যবহার করা হয়।
 
-\subsection{Image Tag কী?}
+\subsection{ছবি ট্যাগ কী?}
 
-\begin{definitionbox}{Image tag}
-HTML-এ web page-এ ছবি যুক্ত করার জন্য যে tag ব্যবহার করা হয়, তাকে image tag বলে। Image tag হলো \texttt{<img>}।
+\begin{definitionbox}{ছবির ট্যাগ (Image Tag)}
+ওয়েবপেজে ছবি যুক্ত করতে \texttt{<img>} ট্যাগ ব্যবহার করা হয়। এটি ছবির ট্যাগ।
 \end{definitionbox}
 
-তবে শুধু \texttt{<img>} লিখলে image দেখা যাবে না। Browser-কে image file কোথায় আছে তা জানাতে \texttt{src} attribute ব্যবহার করতে হয়। Image load না হলে বিকল্প text দেখানোর জন্য \texttt{alt} attribute ব্যবহার করা হয়।
+তবে শুধু \texttt{<img>} লিখলে ছবি দেখা যাবে না। ব্রাউজারকে ছবির ফাইল কোথায় আছে তা জানাতে \texttt{src} অ্যাট্রিবিউট ব্যবহার করতে হয়। ছবির বিকল্প লেখা দেওয়ার জন্য \texttt{alt} অ্যাট্রিবিউট ব্যবহার করা হয়। ছবি দেখানো না গেলে এই লেখা দেখা যেতে পারে; স্ক্রিন রিডারও এটি ব্যবহার করে।
 
-\subsection{\texttt{<img>} Tag-এর সংজ্ঞা}
+\subsection{\texttt{<img>} কেন এম্পটি ট্যাগ?}
 
-\begin{definitionbox}{\texttt{<img>} tag}
-\texttt{<img>} tag হলো HTML-এর একটি empty tag, যার মাধ্যমে web page-এ image বা picture যুক্ত করা হয়।
-\end{definitionbox}
+\texttt{<img>} ওয়েবপেজে ছবি যুক্ত করে। এটি ভয়েড এলিমেন্টের শুরুর ট্যাগ; পাঠ্যবইয়ে এম্পটি ট্যাগ নামে পরিচিত।
 
-\texttt{<img>} tag-কে empty tag বলা হয়, কারণ:
+\texttt{<img>} ট্যাগকে এম্পটি ট্যাগ বলা হয়, কারণ:
 
 \begin{itemize}
-\item এর closing tag নেই।
-\item এর ভিতরে text content থাকে না।
-\item এটি attribute ব্যবহার করে image প্রদর্শন করে।
+\item এর শেষের ট্যাগ নেই।
+\item এর ভিতরে লেখা বিষয়বস্তু থাকে না।
+\item এটি অ্যাট্রিবিউট ব্যবহার করে ছবি প্রদর্শন করে।
 \end{itemize}
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-\texttt{<img>} tag HTML page-এ image যুক্ত করার জন্য ব্যবহৃত হয়। এটি একটি empty tag, তাই এর কোনো closing tag নেই।
-\end{boardbox}
 
-\subsection{Image Add করার Basic Syntax}
 
-\begin{examplebox}{Code}
+\subsection{ছবি যুক্ত করার সাধারণ রূপ}
+
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="image-name">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-আরও standard syntax:
+আরও মানসম্মত সিনট্যাক্স:
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="image-name.jpg" alt="Image description">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="flower.jpg" alt="Flower">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
 \begin{center}
@@ -71,23 +80,23 @@ HTML-এ web page-এ ছবি যুক্ত করার জন্য যে
 \hline
 \textbf{অংশ} & \textbf{কাজ} \\
 \hline
-\texttt{<img>} & image tag \\
+\texttt{<img>} & ছবি ট্যাগ \\
 \hline
-\texttt{src} & image file-এর path বা name নির্দেশ করে \\
+\texttt{src} & ছবির ফাইলের পথ বা নাম নির্দেশ করে \\
 \hline
-\texttt{"flower.jpg"} & image file name \\
+\texttt{"flower.jpg"} & ছবির ফাইলের নাম \\
 \hline
-\texttt{alt} & image না দেখালে alternative text দেয় \\
+\texttt{alt} & ছবি না দেখালে বিকল্প লেখা দেয় \\
 \hline
-\texttt{"Flower"} & alternative text \\
+\texttt{"Flower"} & বিকল্প লেখা \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \texttt{flower.jpg} image দেখা যাবে। Image load না হলে \textbf{Flower} text দেখা যেতে পারে।
+\begin{examplebox}{ফল ও ব্যাখ্যা}
+\textbf{ফল:} ব্রাউজারে \texttt{flower.jpg} ছবি দেখা যাবে। ছবি লোড না হলে \textbf{Flower} লেখা দেখা যেতে পারে।
 
-\textbf{ব্যাখ্যা:} \texttt{src} image file-এর location জানায় এবং \texttt{alt} image-এর বিকল্প text দেয়।
+\textbf{ব্যাখ্যা:} \texttt{src} ছবির ফাইলের অবস্থান জানায় এবং \texttt{alt} ছবির বিকল্প লেখা দেয়।
 \end{examplebox}
 
 \begin{center}
@@ -107,198 +116,248 @@ HTML-এ web page-এ ছবি যুক্ত করার জন্য যে
 \draw[arrow] (lsrc) -- (src);
 \draw[arrow] (lalt) -- (alt);
 \end{tikzpicture}\\[3pt]
-\textit{চিত্র: \texttt{<img>} tag-এর গুরুত্বপূর্ণ অংশ}
+\textit{চিত্র: \texttt{<img>} ট্যাগের গুরুত্বপূর্ণ অংশ}
 \end{center}
 
-\subsection{\texttt{src} Attribute}
+\subsection{\texttt{src} অ্যাট্রিবিউট}
 
 \begin{definitionbox}{\texttt{src}}
-\texttt{src} attribute image file-এর source বা অবস্থান নির্দেশ করে। অর্থাৎ image file কোথায় আছে তা browser-কে জানায়।
+\texttt{src} অ্যাট্রিবিউট ছবির ফাইলের ঠিকানা জানায়। ব্রাউজার ওই ঠিকানা থেকে ছবিটি সংগ্রহ করে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <img src="rose.jpg" alt="Rose">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser একই folder থেকে \texttt{rose.jpg} image খুঁজে দেখাবে।
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} ব্রাউজার একই ফোল্ডার থেকে \texttt{rose.jpg} ছবি খুঁজে দেখাবে।
+\end{minipage}
+\chFourWhy{HTML ফাইল ও ছবি একই ফোল্ডারে থাকলে শুধু ছবির ফাইলের নাম লিখলেই চলে। অন্য ফোল্ডারে থাকলে পথ দিতে হয়।}
+\end{chFourWholeExample}
 
-\textbf{ব্যাখ্যা:} HTML file ও image একই folder-এ থাকলে শুধু image file name লিখলেই চলে। অন্য folder-এ থাকলে path দিতে হয়।
-\end{examplebox}
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-\texttt{src} attribute image file-এর source বা path নির্দেশ করতে ব্যবহৃত হয়।
-\end{boardbox}
 
-\subsection{\texttt{alt} Attribute}
+\subsection{\texttt{alt} অ্যাট্রিবিউট}
 
 \begin{definitionbox}{\texttt{alt}}
-\texttt{alt} attribute image-এর alternative text নির্ধারণ করে। Image load না হলে বা screen reader ব্যবহার করলে এই text কাজে লাগে।
+\texttt{alt} অ্যাট্রিবিউট ছবির বিকল্প লেখা নির্ধারণ করে। ছবি লোড না হলে বা স্ক্রিন রিডার ব্যবহার করলে এই লেখা কাজে লাগে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="college.jpg" alt="ABC College Building">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \texttt{college.jpg} image load হলে college building image দেখা যাবে। Image load না হলে \textbf{ABC College Building} text দেখা যেতে পারে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} \texttt{college.jpg} ছবি লোড হলে কলেজ ভবনের ছবি দেখা যাবে। ছবি লোড না হলে \textbf{ABC College Building} লেখা দেখা যেতে পারে।
 
-\textbf{ব্যাখ্যা:} \texttt{alt} শুধু decoration নয়; এটি accessibility, broken image এবং search context-এর জন্য গুরুত্বপূর্ণ।
-\end{examplebox}
-
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-\texttt{alt} attribute image-এর alternative text প্রদর্শনের জন্য ব্যবহৃত হয়।
-\end{boardbox}
+\textbf{ব্যাখ্যা:} ছবির উদ্দেশ্য অনুযায়ী বিকল্প লেখা দিলে ছবি দেখতে না পাওয়া ব্যবহারকারীও তথ্য বুঝতে পারেন। কেবল সাজানোর জন্য ব্যবহৃত ছবিতে \texttt{alt=""} দিয়ে তা বোঝানো যায়।
+\par\smallskip
+\end{minipage}\par
 
 
-\subsection{\texttt{width} ও \texttt{height} Attribute}
+
+
+
+\subsection{\texttt{width} ও \texttt{height} অ্যাট্রিবিউট}
 
 \begin{definitionbox}{\texttt{width} ও \texttt{height}}
-\texttt{width} image-এর প্রস্থ এবং \texttt{height} image-এর উচ্চতা নির্ধারণ করে।
+\texttt{width} ছবির প্রস্থ এবং \texttt{height} ছবির উচ্চতা নির্ধারণ করে।
 \end{definitionbox}
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="image.jpg" width="300" height="200" alt="Image">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="flower.png" width="400" height="200" alt="Flower">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser \texttt{flower.png} image 400 pixel প্রস্থ এবং 200 pixel উচ্চতায় দেখাবে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} ব্রাউজার \texttt{flower.png} ছবি 400 পিক্সেল প্রস্থ এবং 200 পিক্সেল উচ্চতায় দেখাবে।
 
-\textbf{ব্যাখ্যা:} \texttt{width} ও \texttt{height} attribute image-এর display size control করে। অনেক সময় শুধু width দিলে browser ratio অনুযায়ী height adjust করতে পারে।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} \texttt{width} ও \texttt{height} অ্যাট্রিবিউট ছবির প্রদর্শিত আকার নিয়ন্ত্রণ করে। শুধু প্রস্থ দিলে ব্রাউজার স্বাভাবিকভাবে অনুপাত ধরে উচ্চতা নির্ধারণ করতে পারে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{keypointbox}{Modern note}
-Responsive design-এর জন্য CSS ব্যবহার করা ভালো। তবে HSC practical ও board exam-এ \texttt{width} ও \texttt{height} attribute জানা খুব গুরুত্বপূর্ণ।
+
+\begin{keypointbox}{আধুনিক HTML-এর নিয়ম}
+ধারকের মাপ অনুযায়ী বদলানো নকশার জন্য CSS ব্যবহার করা ভালো। \texttt{width} ও \texttt{height} দিয়ে ছবির প্রদর্শিত প্রস্থ ও উচ্চতাও নির্ধারণ করা যায়।
 \end{keypointbox}
 
-\subsection{Image File Format}
+\subsection{ছবির ফাইলের ফরম্যাট}
 
-Web page-এ সাধারণত বিভিন্ন image format ব্যবহার করা যায়। HSC পরীক্ষার জন্য \texttt{.jpg}, \texttt{.jpeg}, \texttt{.png}, \texttt{.gif}, \texttt{.bmp}, \texttt{.svg}, \texttt{.webp} ও \texttt{.avif} format মনে রাখা দরকার।
+ওয়েবপেজে \texttt{.jpg}, \texttt{.jpeg}, \texttt{.png}, \texttt{.gif} ও \texttt{.bmp} ফরম্যাটের ছবি ব্যবহার করা যায়। \texttt{.svg}, \texttt{.webp} ও \texttt{.avif}-ও আধুনিক ওয়েবে ব্যবহৃত হয়। ফরম্যাটভেদে ফাইলের আকার, স্বচ্ছতা ও সংকোচনের ধরন আলাদা হয়।
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
 \hline
-\textbf{Format} & \textbf{ব্যবহার} \\
+\textbf{ফরম্যাট} & \textbf{ব্যবহার} \\
 \hline
-\texttt{.jpg} / \texttt{.jpeg} & photo image, camera picture \\
+\texttt{.jpg} / \texttt{.jpeg} & ফটোগ্রাফ ও ক্যামেরায় তোলা ছবি \\
 \hline
-\texttt{.png} & transparent background image, screenshot, logo \\
+\texttt{.png} & স্বচ্ছ পটভূমির ছবি, স্ক্রিনশট ও লোগো \\
 \hline
-\texttt{.gif} & simple animation বা ছোট graphic \\
+\texttt{.gif} & সহজ অ্যানিমেশন বা ছোট গ্রাফিক \\
 \hline
-\texttt{.svg} & vector image, logo, icon \\
+\texttt{.svg} & ভেক্টর ছবি, লোগো ও আইকন \\
 \hline
-\texttt{.bmp} & bitmap image; web-এ কম ব্যবহৃত \\
+\texttt{.bmp} & বিটম্যাপ ছবি; ওয়েবে কম ব্যবহৃত \\
 \hline
-\texttt{.webp} & modern compressed still/animated image \\
+\texttt{.webp} & সংকুচিত স্থির বা অ্যানিমেটেড ছবি \\
 \hline
-\texttt{.avif} & high-compression image, modern web-এর জন্য উপযোগী \\
+\texttt{.avif} & বেশি সংকোচনের সুবিধাযুক্ত ছবি \\
 \hline
 \end{tabular}
 \end{center}
 
-HTML standard নির্দিষ্ট image format বাধ্যতামূলক করে না; browser support ভিন্ন হতে পারে। MDN অনুসারে WebP ও AVIF modern web-এ ভালো choice, আর SVG বিভিন্ন size-এ sharp থাকে.
+HTML মানে একটি নির্দিষ্ট ছবির ফরম্যাট বাধ্যতামূলক নয়; ব্রাউজারের সমর্থন ভিন্ন হতে পারে। WebP ও AVIF-এ সংকুচিত ছবি রাখা যায়, আর SVG ভেক্টর ছবির আকার পরিবর্তনেও রেখা স্পষ্ট রাখতে পারে। ছবির ধরন, আকার ও প্রয়োজনীয় ব্রাউজারের সমর্থন দেখে ফরম্যাট বেছে নিতে হয়।
 
-\subsection{Image Path}
+\subsection{ছবির অবস্থানের পথ}
 
-Image file কোথায় রাখা আছে তার উপর \texttt{src} value নির্ভর করে।
+ছবির ফাইল কোথায় রাখা আছে তার উপর \texttt{src} মান নির্ভর করে।
 
-\subsubsection{একই folder-এ image থাকলে}
+\subsubsection{একই ফোল্ডারে ছবি থাকলে}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <img src="flower.jpg" alt="Flower">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-HTML file ও \texttt{flower.jpg} একই folder-এ থাকলে browser image দেখাবে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+HTML ফাইল ও \texttt{flower.jpg} একই ফোল্ডারে থাকলে ব্রাউজার ছবি দেখাবে।
+\end{minipage}
 
-\subsubsection{Image আলাদা folder-এ থাকলে}
+\end{chFourWholeExample}
 
-\begin{examplebox}{Code}
+\subsubsection{ছবি আলাদা ফোল্ডারে থাকলে}
+
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <img src="images/flower.jpg" alt="Flower">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-এখানে browser \texttt{images} folder-এর ভিতরে \texttt{flower.jpg} image খুঁজবে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+এখানে ব্রাউজার \texttt{images} ফোল্ডারের ভিতরে \texttt{flower.jpg} ছবি খুঁজবে।
+\end{minipage}
 
-\subsubsection{Online image হলে}
+\end{chFourWholeExample}
 
-\begin{examplebox}{Code}
+\subsubsection{অনলাইন ছবি হলে}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="https://example.com/flower.jpg" alt="Flower">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Browser internet থেকে image load করার চেষ্টা করবে। Online image ব্যবহার করলে address ঠিক থাকতে হবে এবং internet connection দরকার হতে পারে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+ব্রাউজার ইন্টারনেট থেকে ছবি লোড করার চেষ্টা করবে। অনলাইন ছবি ব্যবহার করলে ঠিকানা ঠিক থাকতে হবে এবং ইন্টারনেট সংযোগ দরকার হতে পারে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{mistakebox}{Image না দেখালে কী check করবে?}
+
+\begin{mistakebox}{ছবি না দেখালে কী যাচাই করবে?}
 \begin{itemize}
-\item \texttt{src} path ভুল কি না।
-\item image file name ঠিক আছে কি না।
-\item extension \texttt{.jpg}, \texttt{.png}, \texttt{.gif} ঠিক আছে কি না।
-\item image file expected folder-এ আছে কি না।
-\item uppercase/lowercase spelling mismatch আছে কি না।
+\item \texttt{src} পথ ভুল কি না।
+\item ছবির ফাইলের নাম ঠিক আছে কি না।
+\item এক্সটেনশন \texttt{.jpg}, \texttt{.png}, \texttt{.gif} ঠিক আছে কি না।
+\item ছবির ফাইল নির্ধারিত ফোল্ডারে আছে কি না।
+\item ইংরেজি বড় বা ছোট হাতের অক্ষর ও বানানে অমিল আছে কি না।
 \end{itemize}
 \end{mistakebox}
 
-\subsection{Image-এর Size Control}
+\Needspace{7\baselineskip}
+\subsection{ছবির আকার নিয়ন্ত্রণ}
 
-\subsubsection{Example: 300 by 200 image}
+\subsubsection{উদাহরণ: 300 পিক্সেল প্রস্থ ও 200 পিক্সেল উচ্চতার ছবি}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="nature.jpg" width="300" height="200" alt="Nature">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Browser \texttt{nature.jpg} image 300 pixel প্রস্থ এবং 200 pixel উচ্চতায় দেখাবে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+ব্রাউজার \texttt{nature.jpg} ছবি 300 পিক্সেল প্রস্থ এবং 200 পিক্সেল উচ্চতায় দেখাবে।
+\par\smallskip
+\end{minipage}\par
 
-\subsubsection{Responsive CSS version}
 
-\begin{examplebox}{Code}
+\subsubsection{পর্দার মাপ অনুযায়ী CSS-এর রূপ}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="nature.jpg" alt="Nature"
      style="width:100%; max-width:500px; height:auto;">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Image screen size অনুযায়ী ছোট-বড় হবে, কিন্তু 500 pixel-এর বেশি বড় হবে না। \texttt{height:auto} রাখলে image-এর ratio নষ্ট হয় না।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+ছবিটি তার ধারক অংশের প্রস্থ অনুযায়ী ছোট-বড় হবে, তবে 500 CSS পিক্সেলের বেশি চওড়া হবে না। ধারক অংশের মাপ সাধারণত পর্দার মাপের সঙ্গে বদলায়। \texttt{height:auto} ছবির প্রস্থ-উচ্চতার অনুপাত ধরে রাখে।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{Modern Responsive Image Hint}
 
-\begin{examplebox}{Code}
+\subsection{পর্দা অনুযায়ী ছবি বাছাইয়ের আধুনিক ইঙ্গিত}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="college-400.jpg"
      srcset="college-400.jpg 400w, college-800.jpg 800w"
@@ -308,122 +367,152 @@ Image screen size অনুযায়ী ছোট-বড় হবে, কিন্
      width="400" height="250"
      alt="ABC College Building">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Browser viewport অনুযায়ী উপযুক্ত image file বেছে নিতে পারে। \texttt{loading="lazy"} off-screen image পরে load করে, আর \texttt{width} ও \texttt{height} page-এ আগে থেকেই জায়গা reserve করতে সাহায্য করে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+ব্রাউজার দেখার এলাকার মাপ, ছবির প্রদর্শিত মাপ ও যন্ত্রের পিক্সেলের ঘনত্ব বিবেচনা করে উপযুক্ত ফাইল বেছে নিতে পারে। \texttt{loading="lazy"} দিয়ে প্রয়োজনের কাছাকাছি সময়ে ছবি লোড করার ইঙ্গিত দেওয়া হয়; \texttt{decoding="async"} ছবি ডিকোডের জন্য অন্য বিষয়বস্তুর প্রদর্শন অপেক্ষায় না রাখার ইঙ্গিত দেয়। \texttt{width} ও \texttt{height} আগে থেকে জায়গা রাখতে সাহায্য করে।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{Image Alignment}
 
-HSC book-style HTML-এ image-এর অবস্থান নির্ধারণের জন্য \texttt{align} attribute দেখা যায়। তবে modern web design-এ CSS ব্যবহার করা বেশি standard।
+\subsection{ছবির অবস্থান}
 
-\subsubsection{HSC style example}
+পরীক্ষায় পরিচিত পুরোনো HTML-এ ছবির অবস্থান নির্ধারণের জন্য \texttt{align} অ্যাট্রিবিউট দেখা যায়। তবে আধুনিক ওয়েব নকশায় CSS ব্যবহার করা বেশি মানসম্মত।
 
-\begin{examplebox}{Code}
+
+\input{chapters/Chapter04/topics/08_image/enrichment}
+
+\subsubsection{পরীক্ষায় পরিচিত উদাহরণ}
+
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="z1.jpg" width="200" height="150"
      align="left" alt="Sample Image">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
 \hline
-\textbf{align value} & \textbf{কাজ} \\
+\textbf{align-এর মান} & \textbf{কাজ} \\
 \hline
-\texttt{left} & image বাম পাশে রাখে \\
+\texttt{left} & ছবি বাম পাশে রাখে \\
 \hline
-\texttt{right} & image ডান পাশে রাখে \\
+\texttt{right} & ছবি ডান পাশে রাখে \\
 \hline
-\texttt{top} & surrounding text-এর top alignment নির্দেশ করে \\
+\texttt{top} & আশপাশের লেখার ওপরের অংশের সঙ্গে অবস্থান নির্দেশ করে \\
 \hline
-\texttt{middle} & surrounding text-এর middle alignment নির্দেশ করে \\
+\texttt{middle} & আশপাশের লেখার মাঝের অংশের সঙ্গে অবস্থান নির্দেশ করে \\
 \hline
-\texttt{bottom} & surrounding text-এর bottom alignment নির্দেশ করে \\
+\texttt{bottom} & আশপাশের লেখার নিচের অংশের সঙ্গে অবস্থান নির্দেশ করে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsubsection{Modern CSS version}
+\subsubsection{আধুনিক CSS-এর রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="z1.jpg" alt="Sample Image"
      style="float:left; width:200px; height:150px;">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Image Border}
+\subsection{ছবির বর্ডার}
 
-HSC/NCTB style code-এ image-এর চারপাশে border দিতে \texttt{border} attribute দেখা যায়।
+পাঠ্যবইয়ের পুরোনো রীতির কোডে ছবির চারপাশে বর্ডার দিতে \texttt{border} অ্যাট্রিবিউট দেখা যায়।
 
-\subsubsection{HSC style example}
+\subsubsection{পরীক্ষায় পরিচিত উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <img src="z1.jpg" width="200" height="150"
      border="1" alt="Sample Image">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Image-এর চারপাশে 1 pixel border দেখা যাবে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+ছবির চারপাশে 1 পিক্সেল বর্ডার দেখা যাবে।
+\end{minipage}
+\chFourWhy{\textbf{src} থেকে ছবি লোড হয়; \textbf{alt} সেই ছবির বিকল্প অর্থ দেয়। ফাইলের পথ সঠিক হতে হবে।}
+\end{chFourWholeExample}
 
-\subsubsection{Modern CSS version}
+\subsubsection{আধুনিক CSS-এর রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="z1.jpg" alt="Sample Image"
      style="border:1px solid black;">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Image Link}
+\subsection{ছবিতে লিংক}
 
-Image-এর উপর click করলে অন্য page বা website open করাতে চাইলে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়।
+ছবিতে ক্লিক করে অন্য পেজ বা ওয়েবসাইট খোলার ব্যবস্থা করতে চাইলে \texttt{<a>} ট্যাগের ভিতরে \texttt{<img>} ট্যাগ বসাতে হয়।
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="url">
   <img src="image.jpg" alt="Image">
 </a>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="https://www.example.com">
   <img src="banner.jpg" width="200" height="95"
      alt="Visit Example website">
 </a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Browser-এ banner image দেখা যাবে। Image-এ click করলে নির্দিষ্ট website open হবে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+ব্রাউজারে ব্যানারের ছবি দেখা যাবে। ছবিতে ক্লিক করলে নির্দিষ্ট ওয়েবসাইট খুলবে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{keypointbox}{Image link note}
-Image link-এর \texttt{alt} text image-এর appearance না বলে link-এর purpose বা destination বোঝানো ভালো।
+
+\begin{keypointbox}{ছবিতে লিংকের নিয়ম}
+ছবিতে লিংকের \texttt{alt} লেখা ছবির চেহারার বর্ণনার চেয়ে লিংকের উদ্দেশ্য বা গন্তব্য বোঝানো ভালো।
 \end{keypointbox}
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-Image link তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করা হয়।
-\end{boardbox}
 
-\subsection{Table-এর ভিতরে Image}
 
-HTML table cell-এর ভিতরেও image রাখা যায়। Result table, product table, profile table বা gallery layout-এ এটি কাজে লাগে।
+\input{chapters/Chapter04/topics/08_image/book_concepts}
 
-\subsubsection{Example}
+\subsection{সারণির ভিতরে ছবি}
 
-\begin{examplebox}{Code}
+HTML সারণির ঘরের ভিতরেও ছবি রাখা যায়। ফলের সারণি, পণ্যের সারণি, ব্যক্তির পরিচিতির সারণি বা ছবির সংগ্রহের বিন্যাসে এটি কাজে লাগে।
+
+\subsubsection{উদাহরণ}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <table border="1">
   <tr>
@@ -432,15 +521,21 @@ HTML table cell-এর ভিতরেও image রাখা যায়। Result
   </tr>
 </table>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-Table-এর প্রথম cell-এ rose image এবং দ্বিতীয় cell-এ \textbf{Rose Image} text দেখা যাবে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+সারণির প্রথম ঘরে গোলাপের ছবি এবং দ্বিতীয় ঘরে \textbf{Rose Image} লেখা দেখা যাবে।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{Image Add করার Complete Example}
 
-\begin{examplebox}{Code}
+\subsection{ছবি যুক্ত করার পূর্ণাঙ্গ উদাহরণ}
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -449,144 +544,211 @@ Table-এর প্রথম cell-এ rose image এবং দ্বিতীয়
   <title>Image Example</title>
 </head>
 <body>
-
   <h1>My College</h1>
-
   <p>Below is an image of our college:</p>
-
   <img src="college.jpg"
        alt="ABC College Building"
        width="400" height="250">
-
   <p>Click the banner below to visit our website:</p>
-
   <a href="https://www.example.com">
     <img src="banner.jpg"
          alt="College Website Banner"
          width="300" height="100">
   </a>
-
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ দেখা যাবে:
+
+\textbf{\color{chFourTeal}ফল কী হবে?}\par
+ব্রাউজারে দেখা যাবে:
 \begin{itemize}
-\item \textbf{My College} heading।
-\item একটি college image।
-\item একটি banner image।
-\item banner image-এ click করলে নির্দিষ্ট website open হবে।
+\item \textbf{My College} শিরোনাম।
+\item একটি কলেজ ছবি।
+\item একটি ব্যানারের ছবি।
+\item ব্যানারের ছবিতে ক্লিক করলে নির্দিষ্ট ওয়েবসাইট খুলবে।
 \end{itemize}
-\end{examplebox}
+\par\smallskip
+
+
 
 \subsection{সাধারণ ভুল}
 
-\begin{mistakebox}{Common Mistake}
+\begin{multicols}{2}
+\small
 \begin{itemize}
-\item \texttt{<image>} tag লেখা; সঠিক tag হলো \texttt{<img>}।
-\item \texttt{src} attribute না দেওয়া।
+\item \texttt{<image>} ট্যাগ লেখা; সঠিক ট্যাগ হলো \texttt{<img>}।
+\item \texttt{src} অ্যাট্রিবিউট না দেওয়া।
 \item \texttt{src}-এর জায়গায় \texttt{href} লেখা।
-\item image file name ভুল লেখা।
-\item \texttt{.jpg} এর বদলে \texttt{.png} বা extension ভুল দেওয়া।
-\item image অন্য folder-এ থাকলেও শুধু file name লেখা।
-\item \texttt{alt} attribute না দেওয়া।
+\item ছবির ফাইলের নাম ভুল লেখা।
+\item \texttt{.jpg} এর বদলে \texttt{.png} বা এক্সটেনশন ভুল দেওয়া।
+\item ছবি অন্য ফোল্ডারে থাকলেও শুধু ফাইলের নাম লেখা।
+\item \texttt{alt} অ্যাট্রিবিউট না দেওয়া।
 \item \texttt{width} ও \texttt{height} উল্টো দেওয়া।
-\item image link করতে \texttt{<img>} tag \texttt{<a>} tag-এর বাইরে রাখা।
+\item ছবিতে লিংক করতে \texttt{<img>} ট্যাগ \texttt{<a>} ট্যাগের বাইরে রাখা।
 \end{itemize}
-\end{mistakebox}
+\end{multicols}
 
-\subsubsection{ভুল code}
 
-\begin{examplebox}{Code}
+\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\textbf{\color{chFourRose}ভুল কোড}\par
 \begin{verbatim}
 <image src="photo.jpg">
 \end{verbatim}
-\end{examplebox}
-
-\subsubsection{সঠিক code}
-
-\begin{examplebox}{Code}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\textbf{\color{chFourTeal}সঠিক কোড}\par
 \begin{verbatim}
 <img src="photo.jpg" alt="Photo">
 \end{verbatim}
-\end{examplebox}
+\end{minipage}
 
-\subsection{বইয়ে ব্যবহারযোগ্য সারাংশ}
+\subsection{পাঠের সারাংশ}
 
-\begin{recapbox}
-HTML web page-এ image যুক্ত করার জন্য \texttt{<img>} tag ব্যবহার করা হয়। এটি একটি empty tag, তাই এর কোনো closing tag নেই। Image file কোথায় আছে তা নির্দেশ করতে \texttt{src} attribute ব্যবহার করা হয়। Image load না হলে বা accessibility-এর জন্য alternative text দেখাতে \texttt{alt} attribute ব্যবহার করা হয়। Image-এর size নির্ধারণ করতে \texttt{width} ও \texttt{height} attribute ব্যবহার করা যায়। Image একই folder-এ থাকলে শুধু file name লিখলেই চলে, আর অন্য folder-এ থাকলে path লিখতে হয়। Image-এর উপর hyperlink দিতে চাইলে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করতে হয়।
-\end{recapbox}
 
-\subsection{ছোট প্রশ্নোত্তর}
 
-\begin{enumerate}
-\item \textbf{HTML-এ image যুক্ত করার tag কোনটি?}\\
-উত্তর: \texttt{<img>}।
+\input{chapters/Chapter04/topics/08_image/board_concepts}
 
-\item \textbf{\texttt{<img>} tag কি container tag?}\\
-উত্তর: না, এটি empty tag।
+\input{chapters/Chapter04/topics/08_image/clarity}
 
-\item \textbf{Image file-এর source নির্দেশ করতে কোন attribute ব্যবহার হয়?}\\
-উত্তর: \texttt{src} attribute।
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\item \textbf{Image-এর alternative text দিতে কোন attribute ব্যবহার হয়?}\\
-উত্তর: \texttt{alt} attribute।
+% Each question keeps its answer beneath it in the same column.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{HTML-এ ছবি যুক্ত করার ট্যাগ কোনটি?}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{<img>} ট্যাগ কি কন্টেইনার ট্যাগ?}}
+\end{minipage}
+\par\smallskip
 
-\item \textbf{Image-এর size নির্ধারণ করতে কোন attribute ব্যবহার হয়?}\\
-উত্তর: \texttt{width} ও \texttt{height}।
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ছবির ফাইলের উৎস নির্দেশ করতে কোন অ্যাট্রিবিউট ব্যবহার হয়?}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ছবির বিকল্প লেখা দিতে কোন অ্যাট্রিবিউট ব্যবহার হয়?}}
+\end{minipage}
+\par\smallskip
 
-\item \textbf{Image link তৈরি করতে কী করতে হয়?}\\
-উত্তর: \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়।
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ছবির আকার নির্ধারণ করতে কোন অ্যাট্রিবিউট ব্যবহার হয়?}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ছবিতে লিংক তৈরি করতে কী করতে হয়?}}
+\end{minipage}
+\par\smallskip
 
-\item \textbf{Web page-এ image-এর common format কী কী?}\\
-উত্তর: \texttt{.jpg}, \texttt{.jpeg}, \texttt{.png}, \texttt{.gif}, \texttt{.svg}, \texttt{.bmp}, \texttt{.webp}, \texttt{.avif}।
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ওয়েবপেজে ছবির পরিচিত ফরম্যাট কী কী?}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{src="images/logo.png"} মানে কী?}}
+\end{minipage}
+\par\smallskip
 
-\item \textbf{\texttt{src="images/logo.png"} মানে কী?}\\
-উত্তর: \texttt{logo.png} image টি \texttt{images} folder-এর ভিতরে আছে।
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ধারকের মাপ অনুযায়ী ছবি নির্বাচনে কোন দুটি অ্যাট্রিবিউট বেশি গুরুত্বপূর্ণ?}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{প্রয়োজনের কাছাকাছি সময়ে ছবি লোড করার ইঙ্গিত দিতে কোন অ্যাট্রিবিউট ব্যবহার হয়?}}
+\end{minipage}
+\par\smallskip
 
-\item \textbf{Responsive image selection-এ কোন দুটি attribute বেশি গুরুত্বপূর্ণ?}\\
-উত্তর: \texttt{srcset} এবং \texttt{sizes}।
 
-\item \textbf{Lazy loading-এর জন্য কোন attribute ব্যবহার হয়?}\\
-উত্তর: \texttt{loading="lazy"}।
+\Needspace{10\baselineskip}
+\subsection{পরীক্ষাভিত্তিক বহুনির্বাচনি প্রশ্ন}
+
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=1,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item HTML-এ ছবি যুক্ত করার ট্যাগ কোনটি?
+\par ক) \texttt{<ul>}
+\par খ) \texttt{<ol>}
+\par গ) \texttt{<img>}
+\par ঘ) \texttt{<li>}
 \end{enumerate}
-
-\subsection{Exam Focus MCQ}
-
-\begin{enumerate}
-\item HTML-এ ছবি যুক্ত করার tag কোনটি?\\
-ক) \texttt{<ul>} \quad খ) \texttt{<ol>} \quad গ) \texttt{<img>} \quad ঘ) \texttt{<li>}
-
-\item \texttt{<img>} tag-এর image source attribute কোনটি?\\
-ক) \texttt{href} \quad খ) \texttt{src} \quad গ) \texttt{alt} \quad ঘ) \texttt{link}
-
-\item Image-এর আকার নিয়ন্ত্রণ করতে কোন attribute ব্যবহৃত হয়?\\
-ক) \texttt{width} ও \texttt{height} \quad খ) \texttt{href} ও \texttt{target}\\
-গ) \texttt{rowspan} ও \texttt{colspan} \quad ঘ) \texttt{type} ও \texttt{start}
-
-\item নিচের কোনটি সঠিক syntax?\\
-ক) \texttt{<image src="image.jpg">} \quad খ) \texttt{<img> src="image.jpg"}\\
-গ) \texttt{<img src="image.jpg">} \quad ঘ) \texttt{<src img="image.jpg">}
-
-\item Image load না হলে যে text দেখা যায়, সেটি কোন attribute দিয়ে দেওয়া হয়?\\
-ক) \texttt{src} \quad খ) \texttt{alt} \quad গ) \texttt{width} \quad ঘ) \texttt{height}
-
-\item Image link তৈরি করতে কোনটি সঠিক?\\
-ক) \texttt{<a href="site.html"><img src="logo.png" alt="Logo"></a>}\\
-খ) \texttt{<img href="site.html" src="logo.png">}\\
-গ) \texttt{<a src="logo.png">site</a>}\\
-ঘ) \texttt{<image link="site.html">}
-
-\item Image lazy loading-এর জন্য কোন attribute ব্যবহৃত হয়?\\
-ক) \texttt{loading} \quad খ) \texttt{border} \quad গ) \texttt{align} \quad ঘ) \texttt{name}
-
-\item Responsive image selection-এ কোন pair ব্যবহৃত হয়?\\
-ক) \texttt{srcset} ও \texttt{sizes} \quad খ) \texttt{href} ও \texttt{target}\\
-গ) \texttt{width} ও \texttt{height} \quad ঘ) \texttt{alt} ও \texttt{title}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=2,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item \texttt{<img>} ট্যাগের ছবি উৎস অ্যাট্রিবিউট কোনটি?
+\par ক) \texttt{href}
+\par খ) \texttt{src}
+\par গ) \texttt{alt}
+\par ঘ) \texttt{link}
 \end{enumerate}
+\end{minipage}
+\par
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=3,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item ছবির আকার নিয়ন্ত্রণ করতে কোন অ্যাট্রিবিউট ব্যবহৃত হয়?
+\par ক) \texttt{width} ও \texttt{height}
+\par খ) \texttt{href} ও \texttt{target}
+\par গ) \texttt{rowspan} ও \texttt{colspan}
+\par ঘ) \texttt{type} ও \texttt{start}
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=4,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item নিচের কোনটি সঠিক সিনট্যাক্স?
+\par ক) \texttt{<image src="image.jpg">}
+\par খ) \texttt{<img> src="image.jpg"}
+\par গ) \texttt{<img src="image.jpg">}
+\par ঘ) \texttt{<src img="image.jpg">}
+\end{enumerate}
+\end{minipage}
+\par
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=5,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item ছবি লোড না হলে যে লেখা দেখা যায়, সেটি কোন অ্যাট্রিবিউট দিয়ে দেওয়া হয়?
+\par ক) \texttt{src}
+\par খ) \texttt{alt}
+\par গ) \texttt{width}
+\par ঘ) \texttt{height}
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=6,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item ছবিতে লিংক তৈরি করতে কোনটি সঠিক?
+\par ক) \texttt{<a href="site.html"><img src="logo.png" alt="Logo"></a>}
+\par খ) \texttt{<img href="site.html" src="logo.png">}
+\par গ) \texttt{<a src="logo.png">site</a>}
+\par ঘ) \texttt{<image link="site.html">}
+\end{enumerate}
+\end{minipage}
+\par
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=7,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item প্রয়োজনের কাছাকাছি সময়ে ছবি লোড করার ইঙ্গিত দিতে কোন অ্যাট্রিবিউট ব্যবহৃত হয়?
+\par ক) \texttt{loading}
+\par খ) \texttt{border}
+\par গ) \texttt{align}
+\par ঘ) \texttt{name}
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=8,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item ধারকের মাপ অনুযায়ী ছবি নির্বাচনে কোন জোড়া অ্যাট্রিবিউট ব্যবহৃত হয়?
+\par ক) \texttt{srcset} ও \texttt{sizes}
+\par খ) \texttt{href} ও \texttt{target}
+\par গ) \texttt{width} ও \texttt{height}
+\par ঘ) \texttt{alt} ও \texttt{title}
+\end{enumerate}
+\end{minipage}
+\par
 
-\begin{boardbox}{MCQ Answer Key}
-১-গ, ২-খ, ৩-ক, ৪-গ, ৫-খ, ৬-ক, ৭-ক, ৮-ক
-\end{boardbox}
+\chFourMCQAnswer{১-গ, ২-খ, ৩-ক, ৪-গ, ৫-খ, ৬-ক, ৭-ক, ৮-ক}

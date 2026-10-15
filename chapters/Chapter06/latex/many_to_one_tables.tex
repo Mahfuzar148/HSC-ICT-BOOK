@@ -1,0 +1,25 @@
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\footnotesize},
+  chSixRelationMatrix/.style={matrix of nodes,nodes in empty cells,
+    nodes={draw=black,line width=.6pt,align=left,inner xsep=3pt,inner ysep=2pt,minimum height=7mm,anchor=center,text height=2.7mm,text depth=.8mm},
+    column sep=-.6pt,row sep=-.6pt,row 1/.style={nodes={fill=chSixTint}}}]
+\matrix (p) [chSixRelationMatrix,column 1/.style={nodes={text width=23mm}},column 2/.style={nodes={text width=23mm}},column 3/.style={nodes={text width=26mm}}] {
+PhoneID (PK) & StaffID (FK) & PhoneNo\\
+P01 & S11 & 01700000001\\
+P02 & S11 & 01800000002\\
+P03 & S12 & 01900000003\\
+};
+\matrix (s) [chSixRelationMatrix,anchor=north west,column 1/.style={nodes={text width=22mm}},column 2/.style={nodes={text width=15mm}}]
+at ([xshift=18mm]p.north east) {
+StaffID (PK) & Name\\
+S11 & Rima\\
+S12 & Fahim\\
+};
+\node[anchor=south west,font=\small] at ([yshift=2mm]p.north west) {\textbf{Phone: M}};
+\node[anchor=south west,font=\small] at ([yshift=2mm]s.north west) {\textbf{Staff: 1}};
+\draw[bookarrow] (p-2-3.east)--(s-2-1.west);
+\draw[bookarrow] (p-3-3.east)--(s-2-1.west);
+\draw[bookarrow] (p-4-3.east)--(s-3-1.west);
+\end{tikzpicture}
+\captionof{table}{StaffID মিলিয়ে একাধিক Phone Record থেকে একই Staff Record}
+\end{flushleft}

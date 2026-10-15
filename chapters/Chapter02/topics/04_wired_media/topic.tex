@@ -1,155 +1,47 @@
 % Chapter 02.4: তারযুক্ত মাধ্যম
+\begingroup
+\chTwoReadableTopicStyle
 \section{তারযুক্ত মাধ্যম}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item তারযুক্ত মাধ্যম বা guided media কী তা ব্যাখ্যা করতে।
-\item Twisted Pair Cable, Coaxial Cable ও Optical Fiber Cable-এর গঠন ও কাজ বুঝতে।
-\item UTP ও STP cable-এর পার্থক্য করতে।
-\item Fiber optic cable-এ core, cladding, coating/jacket এবং light signal-এর ভূমিকা ব্যাখ্যা করতে।
-\item Total internal reflection-এর সহজ ধারণা বুঝতে।
-\item Wired media নির্বাচন করার ক্ষেত্রে cost, speed, distance, security ও interference বিশ্লেষণ করতে।
-\item বোর্ড ও ভর্তি পরীক্ষার জন্য cable-based comparison answer লিখতে।
-\end{itemize}
-\end{learningbox}
-
-\subsection{বাস্তব জীবনের শুরু}
-
-একটি school computer lab কল্পনা করো। Lab-এর প্রতিটি computer একটি switch-এর সাথে cable দিয়ে connected। আবার school-এর internet line ISP থেকে fiber optic cable দিয়ে আসতে পারে। বাসায় router থেকে desktop computer-এ যে Ethernet cable ব্যবহার করা হয়, সেটিও তারযুক্ত communication-এর উদাহরণ।
-
-অর্থাৎ data যদি কোনো physical cable বা wire-এর ভিতর দিয়ে sender থেকে receiver-এর কাছে যায়, তাহলে সেটি wired বা guided communication medium।
-
-\begin{keypointbox}{মূল ধারণা}
-তারযুক্ত মাধ্যম বুঝতে ৪টি বিষয় মনে রাখো:
-\begin{itemize}
-\item data নির্দিষ্ট cable path দিয়ে যায়।
-\item cable-এর type অনুযায়ী speed, distance ও cost ভিন্ন হয়।
-\item copper cable সাধারণত electrical signal বহন করে।
-\item fiber optic cable light signal বহন করে।
-\end{itemize}
-\end{keypointbox}
-
-\subsection{তারযুক্ত মাধ্যম বা Guided Media}
-
-\begin{definitionbox}{তারযুক্ত মাধ্যম}
-যে communication medium-এ data বা signal কোনো নির্দিষ্ট physical cable, wire বা guided path-এর মাধ্যমে sender থেকে receiver-এর কাছে যায়, তাকে তারযুক্ত মাধ্যম বা guided media বলা হয়।
-\end{definitionbox}
-
-Guided media-তে signal একটি নির্দিষ্ট পথ অনুসরণ করে। তাই signal ছড়িয়ে পড়ে না এবং communication path তুলনামূলক controlled থাকে। Computer network, broadband connection, data center, office LAN, school lab এবং internet backbone-এ guided media ব্যাপকভাবে ব্যবহৃত হয়।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/wired_media_overview.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/wired_media_overview.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Guided / Wired Media\\[8pt]
-Twisted Pair Cable \quad Coaxial Cable \quad Optical Fiber Cable
-\vspace{0.7cm}
-}}
-}
-\caption{তারযুক্ত মাধ্যমের প্রধান ধরন}
-\end{figure}
-
-\begin{keypointbox}{Guided media-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item physical cable বা wire ব্যবহার করা হয়।
-\item signal নির্দিষ্ট path দিয়ে যায়।
-\item security তুলনামূলক বেশি।
-\item interference তুলনামূলক কম হতে পারে, বিশেষ করে shielded cable ও fiber optic-এ।
-\item installation করতে cable laying দরকার হয়।
-\item long-term stable connection-এর জন্য উপযোগী।
-\item mobility কম, কারণ device cable-এর সাথে যুক্ত থাকতে হয়।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Guided media-এর সংজ্ঞা লেখার সময় “physical path/cable” এবং “signal নির্দিষ্ট পথে যায়”—এই দুইটি point অবশ্যই লিখবে। উদাহরণ হিসেবে Twisted Pair, Coaxial Cable এবং Optical Fiber লিখলে উত্তর পূর্ণাঙ্গ হয়।
-\end{boardbox}
-
-\subsection{তারযুক্ত মাধ্যমের প্রকারভেদ}
-
-HSC ICT-তে তারযুক্ত মাধ্যম হিসেবে তিনটি cable সবচেয়ে গুরুত্বপূর্ণ:
-
-\begin{itemize}
-\item Twisted Pair Cable
-\item Coaxial Cable
-\item Optical Fiber Cable
-\end{itemize}
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/wired_media_types_tree.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/wired_media_types_tree.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Wired Media\\[6pt]
-$\downarrow$\\[6pt]
-Twisted Pair \qquad Coaxial Cable \qquad Optical Fiber
-\vspace{0.7cm}
-}}
-}
-\caption{তারযুক্ত মাধ্যমের শ্রেণিবিভাগ}
-\end{figure}
-
+\subsection{Lab থেকে Backbone: তিন ধরনের Cable}
+কলেজের কম্পিউটার থেকে সুইচ পর্যন্ত কম খরচে টুইস্টেড পেয়ার ব্যবহার করা যায়। কেবল টিভির বিতরণে কোঅ্যাক্সিয়াল এবং ভবনের মধ্যে বা দূরের প্রধান সংযোগে অপটিক্যাল ফাইবার ব্যবহৃত হয়। তারযুক্ত মাধ্যমের শ্রেণিবিভাগ আগের অংশে আছে। এখানে প্রতিটি কেবলের গঠন, কাজ ও সীমাবদ্ধতা ব্যাখ্যা করা হয়েছে।
+\chTwoPair{\chTwoImage{chapters/Chapter02/images/wired_media_overview.png}{কেবলের গঠন ও আলোকপথ}}{\chTwoImage{chapters/Chapter02/images/wired_media_types_tree.png}{তারযুক্ত মাধ্যমের তিনটি পরিচিত ধরন}}
 \subsection{Twisted Pair Cable}
 
 \begin{definitionbox}{Twisted Pair Cable}
-দুটি insulated copper wire পরস্পর পেঁচিয়ে তৈরি যে cable data communication-এ ব্যবহৃত হয়, তাকে twisted pair cable বলা হয়।
+দুটি অন্তরক আবরণযুক্ত তামার তার পরস্পর পেঁচিয়ে তৈরি ডেটা যোগাযোগের কেবলকে টুইস্টেড পেয়ার কেবল বলে।
 \end{definitionbox}
 
-Twisted pair cable হলো computer networking-এ সবচেয়ে পরিচিত copper cable। এতে দুটি copper wire জোড়ায় জোড়ায় পেঁচানো থাকে। Wire পেঁচানো থাকার কারণে electromagnetic interference এবং crosstalk কমে। Office LAN, school computer lab, router-to-PC connection এবং telephone line-এ twisted pair cable ব্যবহৃত হয়।
+কম্পিউটার নেটওয়ার্কে টুইস্টেড পেয়ার বহুল ব্যবহৃত তামার কেবল। এতে তামার তারগুলো জোড়ায় জোড়ায় পেঁচানো থাকে। পেঁচানো বিন্যাস বিদ্যুৎচৌম্বক বিঘ্ন ও পাশের জোড়ার সংকেতের প্রভাব বা ক্রসটক কমায়। অফিসের LAN, বিদ্যালয়ের কম্পিউটার ল্যাব, রাউটার থেকে কম্পিউটারের সংযোগ এবং টেলিফোন লাইনে এই কেবল ব্যবহৃত হয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/twisted_pair_cable_structure.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/twisted_pair_cable_structure.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.7cm}
-Twisted Pair Cable\\[8pt]
-Insulated Copper Wire \quad Twisted Pair \quad Outer Jacket \quad RJ45 Connector
-\vspace{0.7cm}
-}}
-}
-\caption{Twisted pair cable-এর গঠন}
-\end{figure}
 
-\begin{keypointbox}{Twisted pair cable-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Twisted pair cable-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item copper wire দিয়ে তৈরি।
-\item wire জোড়ায় জোড়ায় twist করা থাকে।
-\item installation সহজ এবং cost কম।
-\item LAN-এ সবচেয়ে বেশি ব্যবহৃত cable।
-\item RJ45 connector-এর সাথে commonly ব্যবহৃত হয়।
-\item short to medium distance communication-এ উপযোগী।
-\item electromagnetic interference দ্বারা প্রভাবিত হতে পারে।
+\item তামার তার দিয়ে তৈরি।
+\item তারগুলো জোড়ায় জোড়ায় পেঁচানো থাকে।
+\item স্থাপন সহজ এবং খরচ কম।
+\item LAN-এ সবচেয়ে বেশি ব্যবহৃত কেবল।
+\item সাধারণত RJ45 কানেক্টরের সঙ্গে ব্যবহৃত হয়।
+\item স্বল্প থেকে মাঝারি দূরত্বের যোগাযোগে উপযোগী।
+\item বিদ্যুৎচৌম্বক বিঘ্নে প্রভাবিত হতে পারে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/twisted_pair_cable_structure.png}{টুইস্টেড পেয়ার কেবলের গঠন}}
+
 
 \begin{examplebox}{বাস্তব উদাহরণ}
-বাড়ির Wi-Fi router থেকে desktop computer-এ যে Ethernet cable ব্যবহার করা হয়, সেটি সাধারণত twisted pair cable। Computer lab-এর PC থেকে switch পর্যন্ত connection-এও twisted pair cable ব্যবহৃত হয়।
+বাড়ির Wi-Fi রাউটার থেকে ডেস্কটপ কম্পিউটারে ব্যবহৃত Ethernet কেবল সাধারণত টুইস্টেড পেয়ার। কম্পিউটার ল্যাবে কম্পিউটার থেকে সুইচের সংযোগেও এই কেবল ব্যবহৃত হয়।
 \end{examplebox}
 
 \subsection{Twisted Pair Cable কেন পেঁচানো থাকে?}
 
-দুটি copper wire পাশাপাশি সোজা থাকলে external electromagnetic interference এবং crosstalk বেশি হতে পারে। Wire দুইটি পেঁচিয়ে রাখলে এক wire-এর electromagnetic effect অন্য wire-এর effect-এর সাথে আংশিকভাবে cancel হতে পারে। ফলে signal quality তুলনামূলক ভালো থাকে।
+ক্রসটক হলো একটি তারের জোড়া বা চ্যানেলের সংকেত অনাকাঙ্ক্ষিতভাবে পাশের জোড়া বা চ্যানেলে যুক্ত হওয়া। পেঁচানো দুটি তামার তারে ভারসাম্যযুক্ত সংকেত বহন করা হয়। প্রাপক দুই তারের সংকেতের পার্থক্য পড়ে। ফলে দুই তারে প্রায় সমানভাবে আসা নয়েজের প্রভাব অনেকটা বাদ যায়। তার পেঁচানোর বিন্যাস ক্রসটকও কমায়। EMI-এর মূল ধারণা সংকেতের বিঘ্ন অংশে (অনুচ্ছেদ~\ref{ch2:c01-07}) আছে। শিল্পকারখানার যন্ত্রের পাশে কেবল বসালে ধাতব সুরক্ষা আবরণ ও সঠিক গ্রাউন্ডিংয়ের প্রয়োজন আলাদাভাবে বিচার করতে হয়।
 
 \begin{keypointbox}{পেঁচানোর সুবিধা}
 \begin{itemize}
-\item crosstalk কমায়।
-\item electromagnetic interference কমাতে সাহায্য করে।
-\item signal distortion কম হয়।
-\item cable flexible ও সহজে install করা যায়।
+\item ক্রসটক কমায়।
+\item বিদ্যুৎচৌম্বক বিঘ্ন কমাতে সাহায্য করে।
+\item সংকেতের বিকৃতি কম হয়।
+\item কেবল নমনীয় এবং সহজে স্থাপন করা যায়।
 \end{itemize}
 \end{keypointbox}
 
@@ -163,426 +55,243 @@ Twisted pair cable দুই ধরনের:
 \end{itemize}
 
 \begin{definitionbox}{UTP Cable}
-যে twisted pair cable-এ wire pair-এর চারপাশে অতিরিক্ত metallic shielding থাকে না, তাকে UTP বা Unshielded Twisted Pair cable বলা হয়।
+যে টুইস্টেড পেয়ার কেবলে তারের জোড়ার চারপাশে অতিরিক্ত ধাতব সুরক্ষা আবরণ থাকে না, তাকে UTP বা Unshielded Twisted Pair কেবল বলে।
 \end{definitionbox}
 
 \begin{definitionbox}{STP Cable}
-যে twisted pair cable-এ electromagnetic interference কমানোর জন্য অতিরিক্ত metallic shielding থাকে, তাকে STP বা Shielded Twisted Pair cable বলা হয়।
+বিদ্যুৎচৌম্বক বিঘ্ন কমানোর জন্য অতিরিক্ত ধাতব সুরক্ষা আবরণযুক্ত টুইস্টেড পেয়ার কেবলকে STP বা Shielded Twisted Pair কেবল বলে।
 \end{definitionbox}
 
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.22\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.30\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.30\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{বিষয়} & \textbf{UTP} & \textbf{STP} \\
 \hline
+\endfirsthead
+\hline
+\textbf{বিষয়} & \textbf{UTP} & \textbf{STP} \\
+\hline
+\endhead
+
 পূর্ণরূপ & Unshielded Twisted Pair & Shielded Twisted Pair \\
 \hline
-Shielding & অতিরিক্ত metallic shield নেই & metallic shield থাকে \\
+সুরক্ষা আবরণ & বাড়তি ধাতব আবরণ নেই & ধাতব আবরণ আছে \\
 \hline
-Cost & কম & তুলনামূলক বেশি \\
+খরচ & কম & তুলনামূলক বেশি \\
 \hline
-Installation & সহজ & কিছুটা জটিল \\
+স্থাপন & সহজ & কিছুটা জটিল \\
 \hline
-Interference protection & কম & বেশি \\
+বিঘ্ন থেকে সুরক্ষা & তুলনামূলক কম & সঠিক স্থাপনে তুলনামূলক বেশি \\
 \hline
-ব্যবহার & সাধারণ LAN, office, home network & industry, noise-prone area \\
+ব্যবহার & সাধারণ LAN, অফিস ও বাসার নেটওয়ার্ক & শিল্পকারখানা ও বিঘ্নপ্রবণ এলাকা \\
 \hline
-\end{tabular}
-\end{center}
+\end{longtable}
+\endgroup
 
 \begin{mistakebox}{UTP বনাম STP}
-অনেকে UTP ও STP-কে আলাদা cable family মনে করে। আসলে দুটিই twisted pair cable-এর ধরন; পার্থক্য হলো shielding আছে কি নেই।
+UTP ও STP একই কেবল পরিবারের দুটি ধরন। উভয়ই টুইস্টেড পেয়ার; পার্থক্য হলো অতিরিক্ত ধাতব সুরক্ষা আবরণ আছে কি না।
 \end{mistakebox}
 
-\subsection{Twisted Pair Cable-এর সুবিধা ও অসুবিধা}
-
-\begin{center}
-\begin{tabular}{|p{0.42\textwidth}|p{0.42\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-কম খরচে পাওয়া যায় & distance বেশি হলে signal দুর্বল হতে পারে \\
-\hline
-installation সহজ & electromagnetic interference দ্বারা প্রভাবিত হতে পারে \\
-\hline
-LAN-এর জন্য উপযোগী & fiber optic-এর তুলনায় bandwidth কম \\
-\hline
-cable flexible & security fiber optic-এর তুলনায় কম \\
-\hline
-RJ45 connector দিয়ে সহজে connect করা যায় & physical damage হলে connection নষ্ট হতে পারে \\
-\hline
-\end{tabular}
-\end{center}
+টুইস্টেড পেয়ার নমনীয় এবং RJ45 দিয়ে সহজে সংযুক্ত করা যায়। বাইরে থেকে কেবল ক্ষতিগ্রস্ত হলে সংযোগ নষ্ট হয়। গুরুত্বপূর্ণ ডেটা রক্ষায় ব্যবহারকারীর প্রবেশাধিকার নিয়ন্ত্রণও প্রয়োজন।
 
 \subsection{Coaxial Cable}
 
 \begin{definitionbox}{Coaxial Cable}
-একটি central conductor, insulating layer, metallic shield এবং outer jacket নিয়ে গঠিত cable-কে coaxial cable বলা হয়।
+কেন্দ্রীয় পরিবাহী, অন্তরক স্তর, ধাতব সুরক্ষা আবরণ ও বাইরের আবরণ নিয়ে গঠিত কেবলকে কোঅ্যাক্সিয়াল কেবল বলে।
 \end{definitionbox}
 
-Coaxial cable-এ signal central copper conductor দিয়ে যায়। এর চারপাশে insulation থাকে এবং insulation-এর বাইরে metallic shield থাকে। এই shield external noise বা electromagnetic interference কমাতে সাহায্য করে। Cable TV, broadband cable distribution এবং পুরনো Ethernet network-এ coaxial cable ব্যবহৃত হয়েছে।
+কোঅ্যাক্সিয়াল কেবলের কেন্দ্রীয় পরিবাহী ও বাইরের ধাতব সুরক্ষা আবরণ একই অক্ষ বরাবর থাকে। এই গঠন থেকেই নামটি এসেছে। কেন্দ্রীয় তামার পরিবাহী সংকেত বহন করে। তার চারপাশে অন্তরক এবং অন্তরকের বাইরে ধাতব সুরক্ষা আবরণ থাকে। সুরক্ষা আবরণ বাইরের নয়েজ ও বিদ্যুৎচৌম্বক বিঘ্ন কমায়। কেবল টিভি, ব্রডব্যান্ড কেবল বিতরণ এবং পুরোনো Ethernet নেটওয়ার্কে কোঅ্যাক্সিয়াল ব্যবহৃত হয়েছে।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/coaxial_cable_structure.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/coaxial_cable_structure.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.7cm}
-Coaxial Cable\\[8pt]
-Central Conductor \quad Insulator \quad Metallic Shield \quad Outer Jacket \quad BNC Connector
-\vspace{0.7cm}
-}}
-}
-\caption{Coaxial cable-এর গঠন}
-\end{figure}
 
-\begin{keypointbox}{Coaxial cable-এর গঠন}
+\chTwoPair{\begin{keypointbox}{Coaxial cable-এর গঠন}
 \begin{itemize}
-\item \textbf{Central conductor}: signal বহন করে।
-\item \textbf{Insulator}: conductor-কে shield থেকে আলাদা রাখে।
-\item \textbf{Metallic shield}: external noise ও interference কমায়।
-\item \textbf{Outer jacket}: cable-কে বাইরের ক্ষতি থেকে রক্ষা করে।
+\item \textbf{Central conductor}: সংকেত বহন করে।
+\item \textbf{Insulator}: পরিবাহীকে ধাতব সুরক্ষা আবরণ থেকে আলাদা রাখে।
+\item \textbf{Metallic shield}: বাইরের নয়েজ ও বিঘ্ন কমায়।
+\item \textbf{Outer jacket}: কেবলকে বাইরের ক্ষতি থেকে রক্ষা করে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/coaxial_cable_structure.png}{কোঅ্যাক্সিয়াল কেবলের গঠন}}
+
 
 \begin{keypointbox}{Coaxial cable-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item copper conductor ব্যবহার করে।
-\item shielding থাকার কারণে twisted pair-এর তুলনায় noise কম হতে পারে।
-\item cable TV ও broadband distribution-এ ব্যবহৃত হয়।
-\item twisted pair-এর তুলনায় কিছু ক্ষেত্রে বেশি bandwidth দিতে পারে।
-\item installation twisted pair-এর তুলনায় কিছুটা কঠিন।
-\item modern LAN-এ twisted pair ও fiber optic বেশি ব্যবহৃত হওয়ায় coaxial-এর ব্যবহার কমেছে।
+\item তামার পরিবাহী ব্যবহার করে।
+\item ধাতব সুরক্ষা আবরণ থাকায় টুইস্টেড পেয়ারের তুলনায় নয়েজ কম হতে পারে।
+\item কেবল টিভি ও ব্রডব্যান্ড বিতরণে ব্যবহৃত হয়।
+\item কিছু ক্ষেত্রে টুইস্টেড পেয়ারের তুলনায় বেশি ব্যান্ডউইথ দিতে পারে।
+\item টুইস্টেড পেয়ারের তুলনায় স্থাপন কিছুটা কঠিন।
+\item আধুনিক LAN-এ টুইস্টেড পেয়ার ও অপটিক্যাল ফাইবার বেশি ব্যবহৃত হওয়ায় কোঅ্যাক্সিয়ালের ব্যবহার কমেছে।
 \end{itemize}
 \end{keypointbox}
 
 \begin{examplebox}{বাস্তব উদাহরণ}
-Cable TV connection, পুরনো broadband cable line এবং পুরনো bus topology Ethernet network-এ coaxial cable ব্যবহৃত হতো।
+কেবল টিভির সংযোগ, পুরোনো ব্রডব্যান্ড কেবল লাইন এবং পুরোনো বাস টপোলজির Ethernet নেটওয়ার্কে কোঅ্যাক্সিয়াল কেবল ব্যবহৃত হতো।
 \end{examplebox}
 
-\subsection{Coaxial Cable-এর সুবিধা ও অসুবিধা}
-
-\begin{center}
-\begin{tabular}{|p{0.42\textwidth}|p{0.42\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-metallic shield থাকার কারণে noise protection ভালো & twisted pair-এর তুলনায় installation কঠিন \\
-\hline
-cable TV signal distribution-এ কার্যকর & cable তুলনামূলক মোটা ও কম flexible \\
-\hline
-twisted pair-এর তুলনায় কিছু ক্ষেত্রে বেশি bandwidth & modern LAN-এ ব্যবহার কম \\
-\hline
-durable structure & fiber optic-এর মতো high bandwidth নয় \\
-\hline
-\end{tabular}
-\end{center}
+কোঅ্যাক্সিয়াল কেবল টেকসই, তবে তুলনামূলক মোটা ও কম নমনীয়। ফাইবারের মতো উচ্চ বহনক্ষমতা প্রয়োজন হলে শুধু কোঅ্যাক্সিয়ালের ধাতব সুরক্ষা আবরণ দিয়ে সেই চাহিদা মেটে না।
 
 \subsection{Optical Fiber Cable}
 
 \begin{definitionbox}{Optical Fiber Cable}
-Glass বা plastic fiber-এর মাধ্যমে light signal ব্যবহার করে data পাঠানোর cable-কে optical fiber cable বলা হয়।
+কাচ বা প্লাস্টিকের তন্তু দিয়ে আলোক সংকেতের সাহায্যে ডেটা পাঠানোর কেবলকে অপটিক্যাল ফাইবার কেবল বলে।
 \end{definitionbox}
 
-Optical fiber cable আধুনিক high-speed communication-এর সবচেয়ে গুরুত্বপূর্ণ wired medium। এতে electrical signal-এর পরিবর্তে light signal ব্যবহার করা হয়। Light signal core-এর ভিতর দিয়ে total internal reflection-এর মাধ্যমে এগিয়ে যায়। তাই long distance communication, high bandwidth এবং low interference-এর জন্য optical fiber খুব কার্যকর।
+দূরের প্রধান সংযোগ, FTTH এবং সমুদ্রতলের কেবলে অপটিক্যাল ফাইবার গুরুত্বপূর্ণ। বাইরের EMI ফাইবারের আলোকপথে সরাসরি প্রভাব ফেলে না। কোর ও ক্ল্যাডিংয়ের গঠন আলোকে নির্দিষ্ট পথে পরিচালনা করে।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/optical_fiber_cable_structure.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/optical_fiber_cable_structure.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.7cm}
-Optical Fiber Cable\\[8pt]
-Core \quad Cladding \quad Coating \quad Jacket \quad Light Signal
-\vspace{0.7cm}
-}}
-}
-\caption{Optical fiber cable-এর গঠন}
-\end{figure}
 
-\begin{keypointbox}{Optical fiber cable-এর গঠন}
+\chTwoPair{\begin{keypointbox}{Optical fiber cable-এর গঠন}
 \begin{itemize}
-\item \textbf{Core}: light signal চলাচলের প্রধান পথ।
-\item \textbf{Cladding}: core-এর চারপাশে থাকে এবং light-কে core-এর ভিতরে রাখতে সাহায্য করে।
-\item \textbf{Coating}: fiber-কে mechanical damage থেকে রক্ষা করে।
-\item \textbf{Outer jacket}: cable-এর বাইরের protective layer।
+\item \textbf{Core}: আলোক সংকেত চলাচলের প্রধান পথ।
+\item \textbf{Cladding}: কোরের চারপাশে থাকে এবং আলোকে কোরের মধ্যে রাখতে সাহায্য করে।
+\item \textbf{Coating}: ফাইবারকে চাপ, আঘাত ও অন্যান্য যান্ত্রিক ক্ষতি থেকে রক্ষা করে।
+\item \textbf{Outer jacket}: কেবলের বাইরের সুরক্ষা স্তর।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/optical_fiber_cable_structure.png}{অপটিক্যাল ফাইবার কেবলের গঠন}}
+
 
 \subsection{Optical Fiber Cable কীভাবে কাজ করে?}
 
-Optical fiber cable data-কে light pulse আকারে পাঠায়। Sender side-এ electrical data signal light signal-এ convert হয়। এই light signal fiber core-এর ভিতর দিয়ে চলতে থাকে। Core এবং cladding-এর refractive index ভিন্ন হওয়ায় light core থেকে বেরিয়ে না গিয়ে বারবার প্রতিফলিত হয়ে সামনে এগোয়। এই ঘটনাকে সহজভাবে total internal reflection বলা হয়।
+প্রেরকের LED বা লেজার বৈদ্যুতিক ডেটাকে আলোক স্পন্দনে রূপান্তর করে। ফাইবার ওই আলো বহন করে। গ্রাহকের ফটোডিটেক্টর আলো থেকে বৈদ্যুতিক সংকেত উদ্ধার করে।
+\textbf{পূর্ণ অভ্যন্তরীণ প্রতিফলন:} কোরের প্রতিসরণাঙ্ক ক্ল্যাডিংয়ের চেয়ে বেশি। কোর থেকে সীমানায় আপতিত আলোর কোণ অভিলম্বের সঙ্গে মাপা হয়। এই কোণ সংকট কোণের চেয়ে বেশি হলে আলো কোরের মধ্যে প্রতিফলিত হয়। ফাইবারের আলোকপথ বোঝাতে এই সহজ রশ্মি মডেল ব্যবহৃত হয়। মোড হলো আলো বহনের অনুমোদিত ধরন। কোর ছোট হলেই আলো কেবল একটি সোজা সরু রেখায় চলে—মোডের অর্থ এমন নয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/optical_fiber_total_internal_reflection.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/optical_fiber_total_internal_reflection.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.7cm}
-Light Signal\\[8pt]
-Core \quad $\longrightarrow$ \quad Reflection Path \quad $\longrightarrow$ \quad Receiver\\[8pt]
-Cladding
-\vspace{0.7cm}
-}}
-}
-\caption{Optical fiber-এ total internal reflection}
-\end{figure}
+\chTwoPair{\textbf{Multicomponent Glass কেন?}\par
+একাধিক উপাদান মিশিয়ে তৈরি কাচকে Multicomponent Glass বলে। উপাদানের অনুপাত বদলে কাচের প্রতিসরণাঙ্ক নিয়ন্ত্রণ করা যায়। যেমন, সিলিকায় জার্মানিয়া যোগ করলে কোরের প্রতিসরণাঙ্ক বাড়ানো যায়। কোর ও ক্ল্যাডিংয়ের উপযুক্ত প্রতিসরণাঙ্কের পার্থক্য আলোকে পরিচালনা করে। Multicomponent বলতে একটি কেবলে অনেক ফাইবার বা একটি ফাইবারে অনেক মোড বোঝায় না।}{\textbf{তীক্ষ্ণ বাঁকে সমস্যা কেন?}\par
+খুব ছোট ব্যাসার্ধে ফাইবার বাঁকালে কোরে আলো আবদ্ধ থাকার শর্ত বদলায়। কিছু আলো বাইরে বেরিয়ে যাওয়ায় প্রাপকের কাছে কম আলো পৌঁছায়। অতিরিক্ত চাপ বা ভাঙনেও ক্ষতি হয়। তাই কেবল বাঁকানোর সময় নির্ধারিত ন্যূনতম ব্যাসার্ধ বা Minimum Bend Radius মানতে হয়। কেবল U-আকৃতি হলেই সংযোগ বন্ধ হয় না; বাঁকের ব্যাসার্ধ ও ফাইবারের নকশা গুরুত্বপূর্ণ। Bend-insensitive Fiber-এ বাঁকের কারণে ক্ষতি কমানো যায়।}
 
-\begin{keypointbox}{Optical fiber cable-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Optical fiber cable-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item light signal ব্যবহার করে data পাঠায়।
-\item bandwidth খুব বেশি।
-\item long distance communication-এর জন্য উপযোগী।
-\item electromagnetic interference দ্বারা প্রভাবিত হয় না।
-\item signal loss তুলনামূলক কম।
-\item data security তুলনামূলক বেশি।
-\item installation ও maintenance cost বেশি।
-\item cable bend বা break হলে সমস্যা হতে পারে।
+\item আলোক সংকেত দিয়ে ডেটা পাঠায়।
+\item ব্যান্ডউইথ খুব বেশি।
+\item দীর্ঘ দূরত্বের যোগাযোগে উপযোগী।
+\item বিদ্যুৎচৌম্বক বিঘ্নে প্রভাবিত হয় না।
+\item সংকেত ক্ষয় তুলনামূলক কম।
+\item ডেটার নিরাপত্তা তুলনামূলক বেশি।
+\item স্থাপন ও রক্ষণাবেক্ষণের খরচ বেশি।
+\item কেবল বাঁকা বা ভেঙে গেলে সমস্যা হতে পারে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/optical_fiber_total_internal_reflection.png}{অপটিক্যাল ফাইবারে পূর্ণ অভ্যন্তরীণ প্রতিফলন}}
+
 
 \begin{examplebox}{বাস্তব উদাহরণ}
-FTTH broadband, internet backbone, submarine cable, data center connection এবং mobile network backbone-এ optical fiber cable ব্যবহৃত হয়।
+FTTH ব্রডব্যান্ড, ইন্টারনেটের প্রধান সংযোগ, সমুদ্রতলের কেবল, ডেটা সেন্টারের সংযোগ এবং মোবাইল নেটওয়ার্কের প্রধান সংযোগে অপটিক্যাল ফাইবার ব্যবহৃত হয়।
 \end{examplebox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Optical fiber-এর উত্তরে অবশ্যই লিখবে: light signal, core, cladding, total internal reflection, high bandwidth, long distance, EMI-free।
-\end{boardbox}
 
-\subsection{Single Mode ও Multimode Fiber}
-
-Optical fiber cable সাধারণত দুই ধরনের হতে পারে:
-
-\begin{itemize}
-\item Single Mode Fiber
-\item Multimode Fiber
-\end{itemize}
-
-\begin{definitionbox}{Single Mode Fiber}
-যে optical fiber-এ light signal একটি মাত্র path বা mode দিয়ে travel করে, তাকে single mode fiber বলা হয়।
-\end{definitionbox}
-
-\begin{definitionbox}{Multimode Fiber}
-যে optical fiber-এ light signal একাধিক path বা mode দিয়ে travel করতে পারে, তাকে multimode fiber বলা হয়।
-\end{definitionbox}
-
-\begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.29\textwidth}|p{0.29\textwidth}|}
+\subsection{Single-mode ও Multimode: Core, Mode ও দূরত্ব}
+একটি অনুমোদিত আলোক মোড বহনকারী ফাইবারকে Single-mode এবং একাধিক আলোক মোড বহনকারী ফাইবারকে Multimode বলে। নিচের ছকে কোরের মাপ, আলোর উৎস ও উপযোগিতা তুলনা করা হয়েছে।
+\begin{tabularx}{\linewidth}{|p{.22\linewidth}|X|X|}
 \hline
-\textbf{বিষয়} & \textbf{Single Mode Fiber} & \textbf{Multimode Fiber} \\
-\hline
-Light path & একটি mode/path & একাধিক mode/path \\
-\hline
-Core size & তুলনামূলক ছোট & তুলনামূলক বড় \\
-\hline
-Distance & long distance-এর জন্য ভালো & short/medium distance-এর জন্য ভালো \\
-\hline
-Cost & equipment cost বেশি হতে পারে & short distance setup তুলনামূলক সহজ \\
-\hline
-ব্যবহার & backbone, long-distance link & campus/LAN/data center short link \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsection{Optical Fiber Cable-এর সুবিধা ও অসুবিধা}
-
-\begin{center}
-\begin{tabular}{|p{0.42\textwidth}|p{0.42\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-খুব বেশি bandwidth & installation cost বেশি \\
-\hline
-long distance communication-এ কার্যকর & skilled technician দরকার \\
-\hline
-electromagnetic interference নেই & cable খুব বেশি bend করলে signal loss হতে পারে \\
-\hline
-signal loss কম & repair করা তুলনামূলক কঠিন \\
-\hline
-security বেশি & device/equipment cost বেশি হতে পারে \\
-\hline
-lightweight ও thin cable & connector/splicing sensitive \\
-\hline
-\end{tabular}
-\end{center}
+\textbf{বিষয়} & \textbf{Single-mode} & \textbf{Multimode}\\\hline
+Core & ছোট; প্রচলিত প্রায় ৯ $\mu$m; পরীক্ষায় প্রচলিত মান ৮–১২ $\mu$m Range & বড়; প্রচলিত ৫০ বা ৬২.৫ $\mu$m; পরীক্ষায় প্রচলিত মান ৫০–১০০ $\mu$m Range\\\hline
+মোড & একটি পরিচালিত আলোক মোড & একাধিক পরিচালিত আলোক মোড\\\hline
+আলোর উৎস & সাধারণত লেজার & LED বা লেজার; আধুনিক দ্রুত সংযোগে লেজারও ব্যবহৃত হয়\\\hline
+উপযোগিতা & দীর্ঘ দূরত্ব ও ব্যাকবোন & তুলনামূলক স্বল্প দূরত্বে LAN বা ডেটা সেন্টার\\\hline
+সীমা & ট্রান্সসিভার ও সংযোগে দক্ষতা দরকার; যন্ত্রের খরচ বেশি হতে পারে & বিভিন্ন মোডের বিলম্বের পার্থক্যে পালস ছড়ায়; কাছের সংযোগ স্থাপন তুলনামূলক সহজ\\\hline
+\end{tabularx}
+ফাইবার হালকা ও সরু। তবে মেরামত, কানেক্টর বসানো ও ফাইবারের প্রান্ত জোড়া লাগানো বা Splicing-এর জন্য দক্ষতা লাগে। উপযুক্ত যন্ত্রের খরচও বিবেচনা করতে হয়।
 
 \subsection{Twisted Pair, Coaxial ও Optical Fiber-এর তুলনা}
 
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.23\textwidth}|p{0.23\textwidth}|p{0.24\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.18\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.23\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.23\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.24\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{বিষয়} & \textbf{Twisted Pair} & \textbf{Coaxial Cable} & \textbf{Optical Fiber} \\
 \hline
-Signal type & Electrical signal & Electrical signal & Light signal \\
+\endfirsthead
 \hline
-Material & Copper wire & Central copper conductor & Glass/plastic fiber \\
+\textbf{বিষয়} & \textbf{Twisted Pair} & \textbf{Coaxial Cable} & \textbf{Optical Fiber} \\
 \hline
-Bandwidth & কম থেকে মাঝারি/উচ্চ, category অনুযায়ী & মাঝারি & খুব বেশি \\
+\endhead
+
+সংকেতের ধরন & বৈদ্যুতিক সংকেত & বৈদ্যুতিক সংকেত & আলোক সংকেত \\
 \hline
-Distance & short/medium & medium & long distance \\
+উপাদান & তামার তার & কেন্দ্রীয় তামার পরিবাহী & কাচ বা প্লাস্টিকের ফাইবার \\
 \hline
-Interference & বেশি প্রভাবিত হতে পারে & shield থাকার কারণে কম & EMI দ্বারা প্রভাবিত নয় \\
+ব্যান্ডউইথ & কেবলের শ্রেণি অনুযায়ী কম থেকে মাঝারি বা উচ্চ & প্রচলিত তুলনায় মাঝারি & উচ্চ বহনক্ষমতা \\
 \hline
-Cost & কম & মাঝারি & বেশি \\
+দূরত্ব & স্বল্প বা মাঝারি & মাঝারি & দীর্ঘ দূরত্ব \\
 \hline
-Installation & সহজ & মাঝারি & তুলনামূলক কঠিন \\
+বিঘ্ন & বেশি প্রভাবিত হতে পারে & সুরক্ষা আবরণের কারণে কম & আলোকপথ EMI দ্বারা প্রভাবিত নয় \\
 \hline
-Common use & LAN, office, home network & Cable TV, old broadband & FTTH, backbone, data center \\
+খরচ & কম & মাঝারি & তুলনামূলক বেশি \\
 \hline
-Connector idea & RJ45 & BNC/F-type & Fiber connector \\
+স্থাপন & সহজ & মাঝারি জটিলতা & তুলনামূলক কঠিন \\
 \hline
-\end{tabular}
-\end{center}
+সাধারণ ব্যবহার & LAN, অফিস ও বাসার নেটওয়ার্ক & কেবল টিভি, পুরোনো ব্রডব্যান্ড & FTTH, ব্যাকবোন, ডেটা সেন্টার \\
+\hline
+কানেক্টরের পরিচয় & RJ45 & BNC/F-type & ফাইবার কানেক্টর \\
+\hline
+\end{longtable}
+\endgroup
 
 \subsection{তারযুক্ত মাধ্যম নির্বাচন করার কৌশল}
 
-সব পরিস্থিতিতে একই cable best নয়। Network design করার সময় প্রয়োজন অনুযায়ী cable নির্বাচন করতে হয়।
+সব পরিস্থিতিতে একই কেবল উপযুক্ত নয়। নেটওয়ার্কের নকশা করার সময় কাজের প্রয়োজন অনুযায়ী কেবল নির্বাচন করতে হয়।
 
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.26\textwidth}|p{0.30\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.30\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.26\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.30\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{পরিস্থিতি} & \textbf{উপযুক্ত Cable} & \textbf{কারণ} \\
 \hline
-School computer lab & Twisted pair cable & কম খরচ, সহজ installation, LAN-এর জন্য উপযোগী \\
+\endfirsthead
 \hline
-Cable TV distribution & Coaxial cable & video signal distribution ও shielding সুবিধা \\
+\textbf{পরিস্থিতি} & \textbf{উপযুক্ত Cable} & \textbf{কারণ} \\
 \hline
-High-speed broadband backbone & Optical fiber cable & high bandwidth, long distance, low interference \\
-\hline
-Industry area with noise & STP cable বা fiber optic & interference protection বেশি \\
-\hline
-Data center interconnection & Optical fiber cable & high speed ও reliable communication \\
-\hline
-Home router to PC & UTP cable & কম খরচে সহজ Ethernet connection \\
-\hline
-\end{tabular}
-\end{center}
+\endhead
 
-\subsection{Common Mistake Zone}
+বিদ্যালয়ের ল্যাব & Twisted pair cable & কম খরচ, সহজ স্থাপন, LAN-এর উপযোগী \\
+\hline
+কেবল টিভি বিতরণ & Coaxial cable & ভিডিও সংকেত বিতরণ ও সুরক্ষা আবরণের সুবিধা \\
+\hline
+উচ্চগতির ব্রডব্যান্ড ব্যাকবোন & Optical fiber cable & বেশি ব্যান্ডউইথ, দীর্ঘ দূরত্ব, কম বিঘ্ন \\
+\hline
+নয়েজযুক্ত শিল্প এলাকা & STP cable বা fiber optic & বিঘ্ন থেকে সুরক্ষা বেশি \\
+\hline
+ডেটা সেন্টারগুলোর সংযোগ & Optical fiber cable & উচ্চগতি ও নির্ভরযোগ্য যোগাযোগ \\
+\hline
+বাসার রাউটার থেকে কম্পিউটার & UTP cable & কম খরচে সহজ Ethernet সংযোগ \\
+\hline
+\end{longtable}
+\endgroup
+
+\input{chapters/Chapter02/topics/04_wired_media/concept_enrichment.tex}
+\input{chapters/Chapter02/topics/04_wired_media/applied_examples.tex}
+
+\subsection{সাধারণ ভুল ও সংশোধন}
 
 \smallhead{১. Twisted pair cable মানেই শুধু telephone cable মনে করা}
-অনেকে twisted pair cable মানেই শুধু telephone cable মনে করে। আসলে modern Ethernet LAN-এও twisted pair cable ব্যাপকভাবে ব্যবহৃত হয়।
+টুইস্টেড পেয়ার কেবল শুধু টেলিফোন লাইনে ব্যবহৃত হয় না। আধুনিক Ethernet LAN-এও এই কেবলের ব্যাপক ব্যবহার রয়েছে।
 
 \smallhead{২. Coaxial ও fiber optic এক মনে করা}
-Coaxial cable ও fiber optic cable এক নয়। Coaxial cable electrical signal বহন করে, কিন্তু fiber optic cable light signal বহন করে।
+কোঅ্যাক্সিয়াল কেবল বৈদ্যুতিক সংকেত এবং অপটিক্যাল ফাইবার আলোক সংকেত বহন করে। তাই দুটি কেবল এক নয়।
 
 \smallhead{৩. Fiber দ্রুত হওয়ার কারণ শুধু পাতলা হওয়া মনে করা}
-Fiber optic cable দ্রুত হওয়ার কারণ শুধু “পাতলা” হওয়া নয়; এর মূল কারণ হলো light signal, high bandwidth, কম interference এবং total internal reflection-based guided transmission।
+ফাইবার শুধু পাতলা হওয়ার কারণে দ্রুত ডেটা পাঠায় না। আলোক সংকেত, উচ্চ ব্যান্ডউইথ, কম বিঘ্ন এবং পূর্ণ অভ্যন্তরীণ প্রতিফলনের সাহায্যে নির্দিষ্ট পথে আলো বহন করা এর কার্যকারিতার মূল কারণ।
 
 \smallhead{৪. UTP সব পরিবেশে best মনে করা}
-UTP cable cheaper হলেও সব পরিবেশে best নয়। যেখানে electromagnetic noise বেশি, সেখানে STP বা fiber optic ভালো হতে পারে।
+UTP কম খরচের কেবল হলেও সব পরিবেশে উপযুক্ত নয়। বিদ্যুৎচৌম্বক নয়েজ বেশি হলে STP বা অপটিক্যাল ফাইবার ভালো হতে পারে।
 
-\subsection{Exam-style প্রশ্ন ও উত্তর}
+\subsection{MCQ অনুশীলন}
 
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Twisted pair cable কী?}
-দুটি insulated copper wire পরস্পর পেঁচিয়ে তৈরি যে cable data communication-এ ব্যবহৃত হয়, তাকে twisted pair cable বলা হয়। Wire পেঁচানো থাকার কারণে crosstalk ও electromagnetic interference কমে। এটি LAN, office network ও home Ethernet connection-এ ব্যবহৃত হয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Coaxial cable-এর গঠন লেখ।}
-Coaxial cable একটি central copper conductor, insulating layer, metallic shield এবং outer jacket নিয়ে গঠিত। Central conductor signal বহন করে, insulator conductor-কে আলাদা রাখে, metallic shield external noise কমায় এবং outer jacket cable-কে সুরক্ষা দেয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Optical fiber cable কেন high-speed communication-এ ব্যবহৃত হয়?}
-Optical fiber cable light signal ব্যবহার করে data পাঠায়। এতে bandwidth খুব বেশি, signal loss কম, electromagnetic interference নেই এবং long distance communication সম্ভব। তাই internet backbone, FTTH broadband, submarine cable ও data center communication-এ optical fiber ব্যবহৃত হয়।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: UTP ও STP cable}
-UTP বা Unshielded Twisted Pair cable-এ অতিরিক্ত metallic shielding থাকে না, তাই এটি কম খরচের ও সহজ installation-যোগ্য। STP বা Shielded Twisted Pair cable-এ metallic shielding থাকে, তাই এটি electromagnetic interference থেকে বেশি সুরক্ষা দেয়, তবে cost বেশি এবং installation তুলনামূলক জটিল।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: Twisted pair ও Optical fiber}
-Twisted pair cable copper wire দিয়ে তৈরি এবং electrical signal বহন করে। এটি কম খরচের এবং LAN-এ ব্যবহৃত হয়। Optical fiber cable glass/plastic fiber দিয়ে তৈরি এবং light signal বহন করে। এটি high bandwidth, long distance ও EMI-free communication-এর জন্য ব্যবহৃত হয়।
-\end{boardbox}
-
-\subsection{Brainstorming Critical Question}
-
-\begin{practicebox}
-একটি কলেজে নতুন ICT lab তৈরি করা হচ্ছে। Lab-এর ৫০টি computer switch-এর সাথে যুক্ত হবে। Principal office থেকে server room পর্যন্ত high-speed connection দরকার। Lab-এর পাশেই heavy electrical machine আছে, তাই interference-এর আশঙ্কা রয়েছে।
-
-\begin{enumerate}
-\item ক. Guided media কী?
-\item খ. Twisted pair cable-এ wire পেঁচানো থাকে কেন?
-\item গ. Lab-এর computer connection-এর জন্য কোন cable ব্যবহার করা যুক্তিযুক্ত? ব্যাখ্যা কর।
-\item ঘ. Principal office থেকে server room পর্যন্ত high-speed ও interference-free connection-এর জন্য কোন cable সবচেয়ে ভালো? যুক্তিসহ বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\begin{itemize}
-\item তারযুক্ত মাধ্যম physical cable ব্যবহার করে data পাঠায়।
-\item Guided media-এর উদাহরণ: Twisted pair, Coaxial cable, Optical fiber।
-\item Twisted pair cable copper wire দিয়ে তৈরি এবং LAN-এ ব্যবহৃত হয়।
-\item Twisted pair cable-এর wire পেঁচানো থাকে crosstalk ও interference কমানোর জন্য।
-\item UTP-তে shield নেই; STP-তে shield আছে।
-\item Coaxial cable central conductor, insulator, metallic shield ও outer jacket দিয়ে গঠিত।
-\item Coaxial cable cable TV ও পুরনো broadband network-এ ব্যবহৃত।
-\item Optical fiber cable light signal ব্যবহার করে data পাঠায়।
-\item Optical fiber-এর মূল অংশ: core, cladding, coating, jacket।
-\item Optical fiber total internal reflection-এর মাধ্যমে light signal guide করে।
-\item Fiber optic high bandwidth, long distance ও EMI-free communication-এর জন্য best।
-\end{itemize}
-\end{recapbox}
-
-\subsection{অনুশীলন}
-
-\begin{practicebox}
+\par
 \textbf{MCQ}
-\begin{enumerate}
-\item নিচের কোনটি তারযুক্ত মাধ্যম?\\
-ক. Radio wave \quad খ. Microwave \quad গ. Twisted pair cable \quad ঘ. Infrared
-
-\item Twisted pair cable সাধারণত কোন material দিয়ে তৈরি?\\
-ক. Copper wire \quad খ. Air wave \quad গ. Magnetic disk \quad ঘ. Satellite plate
-
-\item UTP-এর পূর্ণরূপ কী?\\
-ক. Universal Twisted Pair \quad খ. Unshielded Twisted Pair \quad গ. Unified Transfer Protocol \quad ঘ. Ultra Transmission Path
-
-\item Coaxial cable-এর central conductor কী বহন করে?\\
-ক. Signal \quad খ. Paper \quad গ. Sound only \quad ঘ. Heat only
-
-\item Optical fiber cable কোন signal ব্যবহার করে?\\
-ক. Light signal \quad খ. Sound signal \quad গ. Mechanical signal \quad ঘ. Water signal
-
-\item Fiber optic cable electromagnetic interference দ্বারা—\\
-ক. খুব বেশি প্রভাবিত হয় \quad খ. প্রভাবিত হয় না \quad গ. সবসময় নষ্ট হয় \quad ঘ. শুধু রাতে কাজ করে
-
-\item STP cable UTP-এর তুলনায় কোন দিক দিয়ে ভালো?\\
-ক. Shielding ও interference protection \quad খ. কোনো wire নেই \quad গ. light signal পাঠায় \quad ঘ. satellite ব্যবহার করে
-
-\item Internet backbone-এর জন্য সবচেয়ে উপযোগী cable কোনটি?\\
-ক. Optical fiber \quad খ. UTP only \quad গ. TV remote cable \quad ঘ. Infrared tube
-\end{enumerate}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item তারযুক্ত মাধ্যম কী?
-\item Twisted pair cable-এর গঠন ও ব্যবহার লেখ।
-\item Twisted pair cable-এ wire পেঁচানো থাকে কেন?
-\item UTP ও STP-এর মধ্যে পার্থক্য লেখ।
-\item Coaxial cable-এর গঠন লেখ।
-\item Optical fiber cable-এর গঠন ও কাজ লেখ।
-\item Optical fiber cable কেন long distance communication-এ উপযোগী?
-\item Twisted pair, coaxial ও optical fiber cable-এর তুলনা কর।
-\end{enumerate}
-
-\textbf{সৃজনশীল প্রশ্ন}
-একটি hospital network তৈরি করা হচ্ছে। Doctor room-এর computer-গুলো switch-এর সাথে connected হবে। Server room থেকে main internet backbone-এ high-speed connection দরকার। Hospital-এর কিছু জায়গায় electrical machine থাকায় interference-এর সমস্যা হতে পারে।
-
-\begin{enumerate}
-\item ক. STP কী?
-\item খ. Optical fiber electromagnetic interference দ্বারা প্রভাবিত হয় না কেন?
-\item গ. Doctor room-এর computer connection-এর জন্য কোন cable উপযোগী? ব্যাখ্যা কর।
-\item ঘ. Server room-এর high-speed backbone connection-এর জন্য optical fiber cable ব্যবহার করা কতটা যুক্তিযুক্ত? বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
+\begin{multicols}{2}\begin{enumerate}
+\item\chTwoMCQBlock{নিচের কোনটি তারযুক্ত মাধ্যম?
+\par ক. রেডিও তরঙ্গ \quad খ. মাইক্রোওয়েভ \par গ. টুইস্টেড পেয়ার কেবল \quad ঘ. অবলোহিত রশ্মি }
+\item\chTwoMCQBlock{টুইস্টেড পেয়ার কেবলের পরিবাহী তার সাধারণত কী দিয়ে তৈরি?
+\par ক. তামা \quad খ. বায়ু \par গ. চৌম্বক পদার্থের ডিস্ক \quad ঘ. উপগ্রহের প্লেট }
+\item\chTwoMCQBlock{UTP-এর পূর্ণরূপ কী?
+\par ক. Universal Twisted Pair \quad খ. Unshielded Twisted Pair \par গ. Unified Transfer Protocol \quad ঘ. Ultra Transmission Path }
+\item\chTwoMCQBlock{কোঅ্যাক্সিয়াল কেবলের কেন্দ্রীয় পরিবাহী কী বহন করে?
+\par ক. ডেটাবাহী বৈদ্যুতিক সংকেত \quad খ. কাগজ \par গ. শুধু শব্দতরঙ্গ \quad ঘ. শুধু তাপ }
+\item\chTwoMCQBlock{অপটিক্যাল ফাইবার কোন সংকেত ব্যবহার করে?
+\par ক. আলোকসংকেত \quad খ. শব্দসংকেত \par গ. যান্ত্রিক সংকেত \quad ঘ. জলের তরঙ্গ }
+\item\chTwoMCQBlock{ফাইবারের আলোকপথে বিদ্যুৎচৌম্বক বিঘ্নের প্রভাব কেমন?
+\par ক. খুব বেশি প্রভাবিত হয় \quad খ. প্রভাবিত হয় না \par গ. সবসময় নষ্ট হয় \quad ঘ. শুধু রাতে কাজ করে }
+\item\chTwoMCQBlock{UTP-এর তুলনায় STP-এর বাড়তি সুবিধা কোনটি?
+\par ক. আবরণ দিয়ে বিদ্যুৎচৌম্বক বিঘ্ন থেকে সুরক্ষা \quad খ. কোনো তার লাগে না \par গ. আলোকসংকেত পাঠায় \quad ঘ. স্যাটেলাইট ব্যবহার করে }
+\item\chTwoMCQBlock{উচ্চক্ষমতার ইন্টারনেট ব্যাকবোনের জন্য কোন কেবল সবচেয়ে উপযোগী?
+\par ক. অপটিক্যাল ফাইবার \quad খ. শুধু UTP \par গ. টিভি রিমোটের কেবল \quad ঘ. অবলোহিত রশ্মির নল }
+\end{enumerate}\end{multicols}
+\textbf{উত্তরমালা: ১. গ, ২. ক, ৩. খ, ৪. ক, ৫. ক, ৬. খ, ৭. ক, ৮. ক}
+\endgroup

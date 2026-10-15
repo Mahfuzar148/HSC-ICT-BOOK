@@ -1,0 +1,1001 @@
+\sectionheading{5.35 Input ও Output}
+
+Program-এর কাজ সম্পন্ন করতে অনেক সময় ব্যবহারকারীর কাছ থেকে
+Data গ্রহণ করতে হয় এবং Process শেষে Result প্রদর্শন করতে হয়।
+
+\begin{center}
+\textbf{Input}
+\(\longrightarrow\)
+\textbf{Processing}
+\(\longrightarrow\)
+\textbf{Output}
+\end{center}
+
+%================================================
+% Input
+%================================================
+
+\booksubheading{Input কী?}
+
+\begin{definitionbox}
+Program-এ বাইরে থেকে প্রয়োজনীয় Data গ্রহণ করার প্রক্রিয়াকে
+\textbf{Input} বলে।
+\end{definitionbox}
+
+Python-এ Keyboard থেকে Input নেওয়ার জন্য সাধারণত
+\textenglish{\ttfamily input()}
+Function ব্যবহার করা হয়।
+
+\textbf{সাধারণ Syntax—}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+variable = input("Message")
+\end{english}
+\end{codebox}
+
+%================================================
+% Input example + behavior side-by-side
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+\begin{examplebox}{\textenglish{\ttfamily input()}-এর উদাহরণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = input("Enter your name: ")\\
+print(name)
+\end{english}
+\end{codebox}
+
+Input:
+\begin{codebox}
+\begin{english}
+\ttfamily
+Enter your name: Mina
+\end{english}
+\end{codebox}
+
+Output:
+\begin{codebox}
+\begin{english}
+\ttfamily
+Mina
+\end{english}
+\end{codebox}
+
+\end{examplebox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\begin{examplebox}{\textenglish{\ttfamily input()} কীভাবে কাজ করে}
+
+Parentheses-এর ভিতরের Message Screen-এ দেখায় এবং Program
+User-এর Input-এর জন্য অপেক্ষা করে।
+
+\medskip
+
+\begin{center}
+\textenglish{\ttfamily input()}
+\(\longrightarrow\)
+\textbf{Data গ্রহণ}
+\end{center}
+
+Input করা Value Variable-এ সংরক্ষণ করা যায়।
+
+\end{examplebox}
+\end{minipage}
+
+%================================================
+% input returns str
+%================================================
+
+\booksubheading{\textenglish{\ttfamily input()}-এর Return Type}
+
+Python-এর একটি গুরুত্বপূর্ণ নিয়ম হলো—
+\textenglish{\ttfamily input()}
+দিয়ে গ্রহণ করা Data সাধারণত
+\textenglish{\ttfamily str}
+Type হিসেবে পাওয়া যায়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+age = input("Enter age: ")\\
+print(type(age))
+\end{english}
+\end{codebox}
+
+User Input:
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+18
+\end{english}
+\end{codebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+Output:
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+<class 'str'>
+\end{english}
+\end{codebox}
+
+অর্থাৎ—
+
+\begin{center}
+\textenglish{\ttfamily 18}
+\(\longrightarrow\)
+\textenglish{\ttfamily input()}
+\(\longrightarrow\)
+\textenglish{\ttfamily "18"}
+\end{center}
+
+\end{minipage}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}MCQ Trap:}
+User
+\textenglish{\ttfamily 18}
+লিখলেও
+\textenglish{\ttfamily input()}
+সাধারণত সেটিকে
+\textenglish{\ttfamily "18"}
+অর্থাৎ String হিসেবে দেয়।
+\end{rememberbox}
+
+%================================================
+% int and float side-by-side
+%================================================
+
+\booksubheading{Numeric Input নেওয়া}
+
+Number নিয়ে Calculation করতে হলে
+\textenglish{\ttfamily input()}
+থেকে পাওয়া String-কে প্রয়োজনীয় Numeric Type-এ Convert করতে হয়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Integer Input}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+age = int(input("Enter age: "))
+\end{english}
+\end{codebox}
+
+কার্যধারা—
+
+\begin{center}
+\textenglish{\ttfamily input()}
+\(\longrightarrow\)
+String
+\(\longrightarrow\)
+\textenglish{\ttfamily int()}
+\(\longrightarrow\)
+Integer
+\end{center}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = int(input("Enter number: "))\\
+print(a + 5)
+\end{english}
+\end{codebox}
+
+Input: \textenglish{\ttfamily 10}
+
+Output: \textenglish{\ttfamily 15}
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Floating-point Input}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+price = float(input("Enter price: "))
+\end{english}
+\end{codebox}
+
+কার্যধারা—
+
+\begin{center}
+\textenglish{\ttfamily input()}
+\(\longrightarrow\)
+String
+\(\longrightarrow\)
+\textenglish{\ttfamily float()}
+\(\longrightarrow\)
+Float
+\end{center}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = float(input("Enter number: "))\\
+print(x)
+\end{english}
+\end{codebox}
+
+Input: \textenglish{\ttfamily 12.5}
+
+Output: \textenglish{\ttfamily 12.5}
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}দ্রুত মনে রাখবে}
+
+\begin{center}
+
+\textbf{Text Input}
+\(\longrightarrow\)
+\textenglish{\ttfamily input()}
+\qquad
+\textbf{Integer}
+\(\longrightarrow\)
+\textenglish{\ttfamily int(input())}
+\qquad
+\textbf{Float}
+\(\longrightarrow\)
+\textenglish{\ttfamily float(input())}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Output
+%================================================
+
+\booksubheading{Output কী?}
+
+\begin{definitionbox}
+Program-এর Process করা Data, Message বা Result ব্যবহারকারীর
+সামনে প্রদর্শনের প্রক্রিয়াকে \textbf{Output} বলে।
+\end{definitionbox}
+
+Python-এ Output প্রদর্শনের জন্য সাধারণত
+\textenglish{\ttfamily print()}
+Function ব্যবহার করা হয়।
+
+\textbf{সাধারণ Syntax—}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print(value)
+\end{english}
+\end{codebox}
+
+%================================================
+% Print examples 2x2 compact
+%================================================
+
+\booksubheading{\textenglish{\ttfamily print()} Function-এর ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Text Output}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily Hello}
+
+\end{examplebox}
+
+\begin{examplebox}{Variable Output}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = "Rahim"\\
+print(name)
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily Rahim}
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Number Output}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print(100)
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily 100}
+
+\end{examplebox}
+
+\begin{examplebox}{Expression-এর Output}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print(10 + 20)
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily 30}
+
+\end{examplebox}
+
+\end{minipage}
+
+%================================================
+% Multiple output
+%================================================
+
+\booksubheading{Text ও Variable একসঙ্গে Output}
+
+একটি
+\textenglish{\ttfamily print()}
+Function-এ Comma দিয়ে একাধিক Value দেওয়া যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = "Mina"\\
+age = 18\\
+print("Name:", name)\\
+print("Age:", age)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\quad
+\textenglish{\ttfamily Name: Mina}
+\qquad
+\textenglish{\ttfamily Age: 18}
+
+%================================================
+% Full program
+%================================================
+
+\booksubheading{একটি সম্পূর্ণ Input--Output Program}
+
+\begin{examplebox}{নাম ও বয়স গ্রহণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = input("Enter your name: ")\\
+age = int(input("Enter your age: "))\\
+print("Name:", name)\\
+print("Age:", age)
+\end{english}
+\end{codebox}
+
+\textbf{Input:}
+\quad
+\textenglish{\ttfamily Rahim, 18}
+
+\qquad
+\textbf{Output:}
+\quad
+\textenglish{\ttfamily Name: Rahim, Age: 18}
+
+\end{examplebox}
+
+\begin{center}
+\textbf{Input}
+\(\longrightarrow\)
+\textbf{Variable}
+\(\longrightarrow\)
+\textbf{Processing}
+\(\longrightarrow\)
+\textenglish{\ttfamily print()}
+\(\longrightarrow\)
+\textbf{Output}
+\end{center}
+
+%================================================
+% Addition + trap side by side
+%================================================
+
+\booksubheading{Numeric Input-এ Conversion কেন গুরুত্বপূর্ণ?}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{সঠিক: Integer Conversion}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = int(input())\\
+b = int(input())\\
+print(a + b)
+\end{english}
+\end{codebox}
+
+Input:
+\textenglish{\ttfamily 10, 20}
+
+\medskip
+
+Output:
+\textenglish{\ttfamily 30}
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Conversion না করলে}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = input()\\
+b = input()\\
+print(a + b)
+\end{english}
+\end{codebox}
+
+Input:
+\textenglish{\ttfamily 10, 20}
+
+\medskip
+
+Output:
+\textenglish{\ttfamily 1020}
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily "10" + "20"}
+\(\longrightarrow\)
+\textenglish{\ttfamily "1020"}
+\qquad
+কিন্তু
+\qquad
+\textenglish{\ttfamily 10 + 20}
+\(\longrightarrow\)
+\textenglish{\ttfamily 30}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Complete addition
+%================================================
+
+\booksubheading{দুটি সংখ্যা Input নিয়ে যোগ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = int(input("Enter first number: "))\\
+b = int(input("Enter second number: "))\\
+total = a + b\\
+print("Sum =", total)
+\end{english}
+\end{codebox}
+
+Input:
+\textenglish{\ttfamily 10, 20}
+\qquad
+Output:
+\textenglish{\ttfamily Sum = 30}
+
+%================================================
+% sep and end side by side
+%================================================
+
+\booksubheading{\textenglish{\ttfamily sep} ও \textenglish{\ttfamily end} Parameter}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{\textenglish{\ttfamily sep}}
+
+একাধিক Value-এর \textbf{মাঝখানে} কী থাকবে তা নির্ধারণ করে।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print("ICT", "Python", "HSC", sep="-")
+\end{english}
+\end{codebox}
+
+Output:
+\begin{codebox}
+\begin{english}
+\ttfamily
+ICT-Python-HSC
+\end{english}
+\end{codebox}
+
+Default
+\textenglish{\ttfamily sep}
+হলো Space।
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{\textenglish{\ttfamily end}}
+
+\textenglish{\ttfamily print()}
+-এর \textbf{শেষে} কী থাকবে তা নির্ধারণ করে।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print("Hello", end=" ")\\
+print("Python")
+\end{english}
+\end{codebox}
+
+Output:
+\begin{codebox}
+\begin{english}
+\ttfamily
+Hello Python
+\end{english}
+\end{codebox}
+
+Default
+\textenglish{\ttfamily end}
+হলো Newline।
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+|Y
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textenglish{\ttfamily sep}}
+&
+\multicolumn{1}{c|}{\textenglish{\ttfamily end}}
+\\
+\hline
+
+কাজ
+&
+Valueগুলোর মাঝখানে কী থাকবে
+&
+\textenglish{\ttfamily print()}
+শেষে কী থাকবে
+\\
+\hline
+
+Default
+&
+Space
+&
+Newline
+\\
+\hline
+
+উদাহরণ
+&
+\textenglish{\ttfamily sep="-"}
+&
+\textenglish{\ttfamily end=" "}
+\\
+\hline
+\end{tabularx}
+
+%================================================
+% Escape sequences side-by-side
+%================================================
+
+\booksubheading{Escape Sequence}
+
+Output-এর বিশেষ Formatting-এর জন্য Backslash দিয়ে Escape Sequence
+ব্যবহার করা যায়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{New Line — \textenglish{\ttfamily \textbackslash n}}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print("ICT\textbackslash nPython")
+\end{english}
+\end{codebox}
+
+Output:
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+ICT\\
+Python
+\end{english}
+\end{codebox}
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Tab — \textenglish{\ttfamily \textbackslash t}}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print("Name\textbackslash tMarks")
+\end{english}
+\end{codebox}
+
+Output-এর ধারণা:
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+Name    Marks
+\end{english}
+\end{codebox}
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{tabularx}
+{\linewidth}
+{|>{\bfseries}p{0.30\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Escape Sequence}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+\textenglish{\ttfamily \textbackslash n}
+&
+নতুন Line তৈরি করে।
+\\
+\hline
+
+\textenglish{\ttfamily \textbackslash t}
+&
+Tab Space তৈরি করে।
+\\
+\hline
+\end{tabularx}
+
+%================================================
+% f-string
+%================================================
+
+\booksubheading{Formatted Output — f-string}
+
+Variable-এর Value Text-এর সঙ্গে সুন্দরভাবে প্রদর্শনের জন্য
+Python-এর \textbf{f-string} ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = "Rahim"\\
+age = 18\\
+print(f"My name is \{name\} and I am \{age\} years old.")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\quad
+\textenglish{\ttfamily My name is Rahim and I am 18 years old.}
+
+\begin{rememberbox}
+\textenglish{\ttfamily f"..."}
+-এর ভিতরে
+\textenglish{\ttfamily \{variable\}}
+ব্যবহার করলে Variable-এর Value Output-এ বসে যায়।
+\end{rememberbox}
+
+%================================================
+% Input vs Output
+%================================================
+
+\booksubheading{Input ও Output-এর পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+|Y
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Input}}
+&
+\multicolumn{1}{c|}{\textbf{Output}}
+\\
+\hline
+
+উদ্দেশ্য
+&
+Data গ্রহণ
+&
+Result প্রদর্শন
+\\
+\hline
+
+প্রধান Function
+&
+\textenglish{\ttfamily input()}
+&
+\textenglish{\ttfamily print()}
+\\
+\hline
+
+Data Flow
+&
+User \(\longrightarrow\) Program
+&
+Program \(\longrightarrow\) User
+\\
+\hline
+
+উদাহরণ
+&
+নাম, বয়স, সংখ্যা গ্রহণ
+&
+Message বা Result দেখানো
+\\
+\hline
+\end{tabularx}
+
+%================================================
+% Important functions
+%================================================
+
+\booksubheading{গুরুত্বপূর্ণ Function এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{|>{\bfseries\RaggedRight\arraybackslash}p{0.30\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Function}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+\textenglish{\ttfamily input()}
+&
+User-এর কাছ থেকে Input গ্রহণ
+\\
+\hline
+
+\textenglish{\ttfamily print()}
+&
+Output প্রদর্শন
+\\
+\hline
+
+\textenglish{\ttfamily int()}
+&
+Integer-এ Convert
+\\
+\hline
+
+\textenglish{\ttfamily float()}
+&
+Float-এ Convert
+\\
+\hline
+
+\textenglish{\ttfamily type()}
+&
+Data Type নির্ণয়
+\\
+\hline
+\end{tabularx}
+
+%================================================
+% Common mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item
+\textenglish{\ttfamily input()}
+থেকে পাওয়া Numeric-looking Value-কে সরাসরি Number মনে করা।
+
+\item Calculation-এর আগে প্রয়োজনীয়
+\textenglish{\ttfamily int()}
+বা
+\textenglish{\ttfamily float()}
+Conversion না করা।
+
+\item
+\textenglish{\ttfamily print("a")}
+ও
+\textenglish{\ttfamily print(a)}
+-কে একই মনে করা।
+
+\item
+\textenglish{\ttfamily sep}
+ও
+\textenglish{\ttfamily end}
+-এর কাজ গুলিয়ে ফেলা।
+
+\item
+\textenglish{\ttfamily \textbackslash n}
+ও
+\textenglish{\ttfamily \textbackslash t}
+-এর কাজ গুলিয়ে ফেলা।
+
+\item Input Prompt-এর Message-কে User-এর Input Value-এর অংশ মনে করা।
+
+\item Text লেখার Quotation Mark ভুলে যাওয়া।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily input()}
+\(\longrightarrow\)
+User-এর কাছ থেকে Data গ্রহণ।
+
+\item
+\textenglish{\ttfamily input()}
+-এর Result সাধারণত
+\textenglish{\ttfamily str}।
+
+\item
+Integer Input
+\(\longrightarrow\)
+\textenglish{\ttfamily int(input())}
+
+\item
+Float Input
+\(\longrightarrow\)
+\textenglish{\ttfamily float(input())}
+
+\item
+\textenglish{\ttfamily print()}
+\(\longrightarrow\)
+Output প্রদর্শন।
+
+\item
+Comma দিয়ে
+\textenglish{\ttfamily print()}
+-এ একাধিক Value দেওয়া যায়।
+
+\item
+\textenglish{\ttfamily sep}
+\(\longrightarrow\)
+Value-এর মাঝে কী থাকবে।
+
+\item
+\textenglish{\ttfamily end}
+\(\longrightarrow\)
+Output-এর শেষে কী থাকবে।
+
+\item
+\textenglish{\ttfamily \textbackslash n}
+\(\longrightarrow\)
+New Line।
+
+\item
+\textenglish{\ttfamily \textbackslash t}
+\(\longrightarrow\)
+Tab Space।
+
+\item
+f-string
+\(\longrightarrow\)
+Formatted Output।
+
+\end{itemize}
+
+\begin{center}
+
+\textbf{Input}
+\(\longrightarrow\)
+\textenglish{\ttfamily input()}
+\qquad
+\textbf{Output}
+\(\longrightarrow\)
+\textenglish{\ttfamily print()}
+
+\medskip
+
+\textenglish{\ttfamily sep}
+\(\longrightarrow\)
+\textbf{মাঝে}
+\qquad
+\textenglish{\ttfamily end}
+\(\longrightarrow\)
+\textbf{শেষে}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.36 Python Operator
+%================================================
+

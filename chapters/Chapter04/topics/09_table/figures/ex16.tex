@@ -1,0 +1,25 @@
+% Replace exercise 16's PNG figure and its figure-explanation box.
+% Biodata is a colspan="2" table row, not an external heading.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=6.5mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (0,6) rectangle (.92,7);
+  \draw (0,0) rectangle (.92,7);
+  \foreach \y in {1,2,3,4,5,6} {\draw (0,\y)--(.92,\y);}
+  \draw (.34,0)--(.34,6);
+  \node[font=\scriptsize\bfseries] at (.46,6.5) {Biodata};
+  \foreach \y/\label in {5.5/Name,4.5/Father,3.5/Mother,2.5/Class,1.5/Hobby,.5/Website} {
+    \node[font=\scriptsize\bfseries] at (.17,\y) {\label};
+  }
+  \node[anchor=west,inner sep=0pt] at (.355,5.5) {Rahul Sharma};
+  \node[anchor=west,inner sep=0pt] at (.355,4.5) {Amit Sharma};
+  \node[anchor=west,inner sep=0pt] at (.355,3.5) {Sunita Sharma};
+  \node[anchor=west,inner sep=0pt] at (.355,2.5) {Class 8};
+  \node[anchor=west,inner sep=0pt] at (.355,1.5) {Reading Books};
+  \node[anchor=west,inner sep=0pt,text=blue] at (.355,.5) {\underline{Visit Profile}};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 16: জীবনবৃত্তান্তে লিংক}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+Biodata টেবিলেরই প্রথম সারি; \texttt{colspan="2"} দিয়ে শিরোনামটি দুই কলাম জুড়ে আছে। Website সারির Visit Profile হলো দৃশ্যমান লিংকের লেখা; এতে ক্লিক করলে \texttt{profile.html} খোলার অনুরোধ করা হয়।
+

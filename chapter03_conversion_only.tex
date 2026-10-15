@@ -1,0 +1,12 @@
+% !TeX program = lualatex
+\documentclass[12pt,twoside,openany]{book}
+\input{preamble.tex}
+\input{chapters/Chapter03/latex/text_font.tex}
+\geometry{a4paper,left=16mm,right=16mm,top=16mm,bottom=16mm,headheight=30pt,includehead,includefoot,bindingoffset=0mm}
+\AtBeginDocument{\setlength{\headwidth}{\textwidth}\setlength{\headheight}{30pt}}
+\begin{document}
+\input{chapters/Chapter03/latex/visual_style.tex}
+\setcounter{chapter}{3}\setcounter{section}{1}
+\input{chapters/Chapter03/topics/02_number_systems/topic.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex}
+\end{document}  

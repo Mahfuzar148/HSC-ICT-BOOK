@@ -1,31 +1,701 @@
-% ১৬. Data Encryption
+% ============================================================
+% 16. DATA ENCRYPTION
+% Chapter 06 — Database Management System
+% Compact + Board/MCQ/CQ Focused Version
+% ============================================================
+
 \section{Data Encryption}
-এনক্রিপশন হলো ডেটাকে এমন গোপন সংকেতে রূপান্তর করা যাতে অনুমতি ছাড়া কেউ তা বুঝতে না পারে। ইন্টারনেট ব্যাংকিং, ই-কমার্স, মেসেজিং, পাসওয়ার্ড সংরক্ষণ এবং সরকারি সেবায় এনক্রিপশন অত্যন্ত গুরুত্বপূর্ণ।
+\label{sec:ch06-data-encryption}
+
+
+% ============================================================
+% LEARNING OUTCOME
+% ============================================================
+
+\textbf{এই অংশে:} Cryptography, Plaintext/Ciphertext, Algorithm/Key, Symmetric/Asymmetric ও Public/Private Key বোঝা হবে। Caesar Cipher ও প্রদত্ত নিয়মের হিসাব থেকে এনক্রিপশনের ব্যবহার, সীমাবদ্ধতা এবং পরীক্ষার বিভ্রান্তি চেনা হবে।
+
+
+\subsubsection{ফাইলের গোপনীয়তা রক্ষায় Encryption}
+ধরো, একটি বহনযোগ্য সংরক্ষণযন্ত্রে কলেজের ফলপত্রের কপি রাখা ছিল। যন্ত্রটি হারিয়ে গেলে যে সেটি পাবে, সে কলেজের লগইন পর্দা ব্যবহার না করেই ফাইলটি পড়ার চেষ্টা করতে পারে। তাই শুধু অ্যাকাউন্টের পাসওয়ার্ড দিয়ে ওই কপির গোপনীয়তা পুরোপুরি রক্ষা করা যায় না। উপযুক্ত এনক্রিপশন ব্যবহার করলে ফাইলের বিষয়বস্তু Ciphertext-এ রূপান্তরিত হয়; সঠিক কী ও পদ্ধতি ব্যবহার করে অনুমোদিত ব্যক্তি মূল তথ্য ফিরে পেতে পারেন।
+
+হাসপাতালের প্রতিবেদন, ব্যাংকের সংবেদনশীল নথি ও ওয়েবসেবায় তথ্য আদান-প্রদানের সময় এ ধরনের সুরক্ষা প্রয়োজন। তবে কী-ও একই সঙ্গে ফাঁস হলে গোপনীয়তা নষ্ট হতে পারে। আবার এনক্রিপশন হারানো ফাইল ফিরিয়ে দেয় না।
 
 \subsection{Encryption ও Decryption}
-\begin{definitionbox}{Encryption ও Decryption}
-পাঠযোগ্য ডেটাকে গোপন কোডে রূপান্তর করার প্রক্রিয়া হলো \textbf{Encryption}; গোপন কোড থেকে আবার পাঠযোগ্য ডেটায় ফিরিয়ে আনার প্রক্রিয়া হলো \textbf{Decryption}।
+
+\begin{definitionbox}{}
+
+অ্যালগরিদম ও কী প্রয়োগ করে মূল পাঠযোগ্য ডেটাকে সুরক্ষিত সংকেতরূপে রূপান্তরের প্রক্রিয়াকে \textbf{এনক্রিপশন} বলে। উপযুক্ত কী ও ডিক্রিপশন প্রক্রিয়া দিয়ে Ciphertext থেকে মূল ডেটা ফিরে পাওয়াকে \textbf{ডিক্রিপশন} বলে।
+
 \end{definitionbox}
 
-\begin{center}
-\fbox{\parbox{0.84\textwidth}{\centering
-Plain Text $\xrightarrow{\text{Encryption + Key}}$ Cipher Text $\xrightarrow{\text{Decryption + Key}}$ Plain Text}}
-\end{center}
-\textbf{চিত্রের স্থানধারক:} এনক্রিপশন-ডিক্রিপশন প্রবাহচিত্র।
 
-\subsection{ধরন ও ব্যবহার}
-\begin{center}
-\begin{tabular}{|p{0.28\textwidth}|p{0.58\textwidth}|}
-\hline
-ধরন & বৈশিষ্ট্য \\
-\hline
-Symmetric encryption & একই key দিয়ে encryption ও decryption হয়; দ্রুত, কিন্তু key নিরাপদে শেয়ার করতে হয়। \\
-\hline
-Asymmetric encryption & Public key ও Private key ব্যবহৃত হয়; নিরাপদ যোগাযোগে কার্যকর। \\
-\hline
-\end{tabular}
-\end{center}
+\begin{keypointbox}{সহজ ধারণা}
 
-\begin{examplebox}{বাস্তব প্রয়োগ}
-HTTPS ওয়েবসাইটে ব্যবহারকারীর ব্রাউজার ও সার্ভারের মধ্যে পাঠানো সংবেদনশীল তথ্য এনক্রিপ্টেড থাকে, ফলে মাঝপথে কেউ ডেটা পেলেও সহজে পড়তে পারে না।
-\end{examplebox}
+এনক্রিপশনের মূল উদ্দেশ্য হলো ডেটার
+\textbf{Confidentiality বা গোপনীয়তা} রক্ষা করা। অর্থাৎ ডেটা অন্যের হাতে গেলেও উপযুক্ত Key ছাড়া যেন সহজে
+বোধগম্য না হয়।
+
+\end{keypointbox}
+
+
+% ============================================================
+% 16.2 TERMS
+% ============================================================
+
+\subsubsection{Encryption-এর বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{ডেটার রূপান্তর:} ক্রিপ্টোগ্রাফিক Algorithm ও Key দিয়ে মূল ডেটা Ciphertext-এ রূপান্তর করে।
+\item \textbf{মূল ডেটা উদ্ধারের ব্যবস্থা:} উপযুক্ত Key ও Decryption প্রক্রিয়া দিয়ে মূল ডেটা পাওয়া যায়।
+\item \textbf{গোপনীয়তা:} অননুমোদিত ব্যক্তির কাছে ডেটার অর্থ গোপন রাখাই প্রধান উদ্দেশ্য।
+\end{enumerate}
+\textbf{মনে রাখবে:} ফাইলের নাম বদলানো, ফোল্ডার লুকানো বা লেখার রং সাদা করা Encryption নয়। Plaintext শুধু সাধারণ অক্ষরের লেখা নয়; রূপান্তরের আগের অন্যান্য ডেটাও হতে পারে। নিচের Caesar উদাহরণ শেখার জন্য; বাস্তব নিরাপত্তা Algorithm, Key-এর সুরক্ষা ও সঠিক প্রয়োগের ওপর নির্ভর করে।
+
+\subsection{Encryption-এর প্রধান উপাদান ও পরিভাষা}
+
+এনক্রিপশন বুঝতে কয়েকটি পরিভাষা খুব গুরুত্বপূর্ণ।
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabularx}{0.98\linewidth}{|p{31mm}|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{পরিভাষা}
+&
+\raggedright\arraybackslash\textbf{অর্থ}
+\\ \hline
+
+Plaintext
+&
+এনক্রিপশনের আগের মূল পাঠযোগ্য ডেটা বা বার্তা
+\\ \hline
+
+Ciphertext
+&
+এনক্রিপশনের পরে পাওয়া গোপন/অপাঠ্য রূপ
+\\ \hline
+
+Encryption Algorithm
+&
+Plaintext-কে Ciphertext-এ রূপান্তরের নিয়ম বা পদ্ধতি
+\\ \hline
+
+Key
+&
+Algorithm-এর কার্যক্রম নিয়ন্ত্রণে ব্যবহৃত বিশেষ মান
+\\ \hline
+
+Decryption Algorithm
+&
+Ciphertext থেকে Plaintext পুনরুদ্ধারের নিয়ম
+\\ \hline
+
+Cryptography
+&
+নিরাপদ যোগাযোগ, এনক্রিপশন এবং সংশ্লিষ্ট পদ্ধতির অধ্যয়ন
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{Encryption-এর গুরুত্বপূর্ণ পরিভাষা}
+\end{flushleft}
+
+
+\begin{keypointbox}{Key সম্পর্কে গুরুত্বপূর্ণ ধারণা}
+
+একই Plaintext-কে ভিন্ন কী দিয়ে এনক্রিপ্ট করলে ভিন্ন Ciphertext
+পাওয়া যেতে পারে। কী সবসময় ব্যবহারকারীর মনে রাখা সাধারণ পাসওয়ার্ডের সমার্থক নয়।
+কোনো কোনো ব্যবস্থায় পাসওয়ার্ড থেকে Cryptographic Key তৈরি করা
+হতে পারে।
+
+\end{keypointbox}
+
+
+সংরক্ষণের জায়গা কমানো (\textbf{Compression}) অথবা ডেটাকে শুধু
+অন্য বিন্যাসে লেখা (\textbf{Encoding})-কে এনক্রিপশন বলা যায় না। এনক্রিপশনের উদ্দেশ্য হলো \textbf{গোপনীয়তা} রক্ষা করা,
+এবং সাধারণত কী-এর ভূমিকা গুরুত্বপূর্ণ।
+
+
+% ============================================================
+% 16.3 GENERAL FLOW
+% ============================================================
+
+\subsection{Encryption-এর সাধারণ কার্যপ্রবাহ}
+
+\begin{flushleft}\centering\captionsetup{justification=centering}
+\begin{minipage}{0.96\linewidth}
+\raggedright
+\small
+
+\begin{tikzpicture}[
+    node distance=3mm,
+    every node/.style={font=\small,inner sep=2pt}
+]
+\node[
+    booknode,
+    text width=19mm,
+    minimum height=9mm
+] (plain1)
+{\textbf{Plaintext}};
+\node[
+    booknode,
+    text width=23mm,
+    minimum height=9mm,
+    right=of plain1
+] (enc)
+{\textbf{Encryption}\\Algorithm + Key};
+\node[
+    booknode,
+    text width=19mm,
+    minimum height=9mm,
+    right=of enc
+] (cipher)
+{\textbf{Ciphertext}};
+\node[
+    booknode,
+    text width=23mm,
+    minimum height=9mm,
+    right=of cipher
+] (dec)
+{\textbf{Decryption}\\Algorithm + Key};
+\node[
+    booknode,
+    text width=19mm,
+    minimum height=9mm,
+    right=of dec
+] (plain2)
+{\textbf{Plaintext}};
+\draw[bookarrow] (plain1)--(enc);
+\draw[bookarrow] (enc)--(cipher);
+\draw[bookarrow] (cipher)--(dec);
+\draw[bookarrow] (dec)--(plain2);
+\end{tikzpicture}
+
+\captionof{figure}{Encryption ও Decryption-এর সাধারণ প্রবাহ}
+
+\end{minipage}
+\end{flushleft}
+
+
+\noindent
+\textbf{চিত্রটি থেকে যা বোঝা যায়:}
+প্রথমে Plaintext একটি Algorithm ও Key-এর সাহায্যে Ciphertext-এ
+রূপান্তরিত হয়। পরে উপযুক্ত Key এবং ডিক্রিপশন Algorithm ব্যবহার
+করে Ciphertext থেকে মূল Plaintext ফিরিয়ে আনা হয়।
+
+
+% ============================================================
+% 16.4 CLASSIFICATION
+% ============================================================
+
+\subsection{Encryption-এর প্রধান ধরন}
+
+Key ব্যবহারের পদ্ধতি অনুযায়ী এনক্রিপশন প্রধানত দুই ধরনের---
+
+\begin{flushleft}\centering\captionsetup{justification=centering}
+\begin{minipage}{0.88\linewidth}
+\raggedright
+\small
+
+\begin{tikzpicture}[
+    level distance=15mm,
+    level 1/.style={sibling distance=62mm},
+    every node/.style={font=\small}
+]
+\node[
+    booknode,
+    text width=31mm,
+    minimum height=9mm
+]
+{\textbf{Encryption}}
+child{
+    node[
+        booknode,
+        text width=36mm,
+        minimum height=9mm
+    ]
+    {\textbf{Symmetric}\\Same Secret Key}
+}
+child{
+    node[
+        booknode,
+        text width=36mm,
+        minimum height=9mm
+    ]
+    {\textbf{Asymmetric}\\Public + Private Key}
+};
+\end{tikzpicture}
+
+\captionof{figure}{Encryption-এর প্রধান দুই পদ্ধতি}
+
+\end{minipage}
+\end{flushleft}
+
+
+% ============================================================
+% 16.5 SYMMETRIC
+% ============================================================
+
+\subsection{Symmetric Key Cryptography}
+
+\begin{definitionbox}{}
+
+যে পদ্ধতিতে এনক্রিপশন ও ডিক্রিপশনে একই গোপন কী ব্যবহার করা হয়, তাকে \textbf{সিমেট্রিক কী ক্রিপ্টোগ্রাফি} বলে।
+
+\end{definitionbox}
+
+
+এ পদ্ধতিতে প্রেরক ও প্রাপক উভয়ের কাছে একই গোপন কী (Secret Key)
+নিরাপদে রাখতে হয়।
+
+\chSixInterface{ch06_symmetric_cryptography.png}{একই গোপন কী দিয়ে এনক্রিপশন ও ডিক্রিপশন}{প্রেরক ও প্রাপক একই Secret Key ব্যবহার করেন। তাই ডেটার পাশাপাশি কী-এর গোপনীয়তাও রক্ষা করতে হয়।}
+
+পরের সারণির \textbf{AES}-এর পূর্ণরূপ Advanced Encryption Standard এবং \textbf{DES}-এর পূর্ণরূপ Data Encryption Standard। Triple DES হলো DES-ভিত্তিক পদ্ধতি; \textbf{IDEA}-এর পূর্ণরূপ International Data Encryption Algorithm।
+
+
+\begin{flushleft}
+\small
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.94\linewidth}{|p{35mm}|Y|}
+\hline
+
+\chSixHeader
+\textbf{বিষয়}
+&
+\textbf{Symmetric Encryption}
+\\ \hline
+
+Key
+&
+একই Secret Key
+\\ \hline
+
+গতি
+&
+সাধারণত দ্রুত
+\\ \hline
+
+উপযোগিতা
+&
+বড় পরিমাণ ডেটা দক্ষভাবে এনক্রিপ্ট করা
+\\ \hline
+
+প্রধান সমস্যা
+&
+প্রেরক ও প্রাপকের মধ্যে গোপন কী নিরাপদে আদান-প্রদান করা
+\\ \hline
+
+উদাহরণ
+&
+AES, DES, Triple DES, IDEA
+\\ \hline
+
+\end{tabularx}
+\end{flushleft}
+
+
+
+
+
+% ============================================================
+% 16.6 ASYMMETRIC
+% ============================================================
+
+\subsection{Asymmetric Key Cryptography}
+
+\begin{definitionbox}{}
+
+যে ক্রিপ্টোগ্রাফিক পদ্ধতিতে সম্পর্কযুক্ত দুটি ভিন্ন কী—\textbf{Public Key} ও \textbf{Private Key}—ব্যবহার করা হয়, তাকে \textbf{অ্যাসিমেট্রিক কী ক্রিপ্টোগ্রাফি} বলে।
+
+\end{definitionbox}
+
+
+গোপন বার্তা পাঠাতে প্রেরক সাধারণত প্রাপকের \textbf{Public Key} দিয়ে বার্তা এনক্রিপ্ট করেন। প্রাপক নিজের গোপন \textbf{Private Key} দিয়ে তা ডিক্রিপ্ট করে মূল তথ্য পড়েন।
+
+\chSixInterface{ch06_asymmetric_cryptography.png}{প্রাপকের Public Key ও Private Key-এর ভূমিকা}{চিত্রে প্রেরক প্রাপকের Public Key দিয়ে বার্তা এনক্রিপ্ট করেন। প্রাপক নিজের গোপন Private Key দিয়ে তা ডিক্রিপ্ট করেন; দুটি কী একই জোড়ার অংশ।}
+
+
+
+
+
+RSA একটি পরিচিত Asymmetric পদ্ধতি। RSA নামটি
+\textbf{Rivest, Shamir এবং Adleman}-এর নাম থেকে এসেছে।
+
+
+% ============================================================
+% 16.7 COMPARISON
+% ============================================================
+
+\subsection{Symmetric ও Asymmetric পদ্ধতির পার্থক্য}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+
+
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
+\begin{longtable}[l]{|p{29mm}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-29mm-6\tabcolsep-4\arrayrulewidth\relax/2\relax}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-29mm-6\tabcolsep-4\arrayrulewidth\relax/2\relax}|}
+
+\hline
+
+\chSixHeader
+\raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{Symmetric}
+&
+\raggedright\arraybackslash\textbf{Asymmetric}
+\\ \hline
+\endfirsthead
+
+\hline
+
+\chSixHeader
+\raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{Symmetric}
+&
+\raggedright\arraybackslash\textbf{Asymmetric}
+\\ \hline
+\endhead
+
+
+Key
+&
+একই Secret Key
+&
+Public ও Private Key-এর জোড়া
+\\ \hline
+
+Encryption/Decryption
+&
+একই Key
+&
+গোপন Message-এর উদাহরণে ভিন্ন Key
+\\ \hline
+
+Key Distribution
+&
+Secret Key নিরাপদে ভাগ করতে হয়
+&
+Public Key দেওয়া যায়; Private Key গোপন
+\\ \hline
+
+গতি
+&
+সাধারণত তুলনামূলক দ্রুত
+&
+সাধারণত তুলনামূলক ধীর
+\\ \hline
+
+সাধারণ ভূমিকা
+&
+বৃহৎ ডেটা দক্ষভাবে এনক্রিপ্ট করা
+&
+Secure Key Exchange ও অন্যান্য Cryptographic কাজ
+\\ \hline
+
+উদাহরণ
+&
+AES, DES, Triple DES, IDEA
+&
+RSA
+\\ \hline
+
+
+\caption{Symmetric ও Asymmetric এনক্রিপশনের তুলনা}\\
+\end{longtable}
+\endgroup
+
+
+% ============================================================
+% 16.8 ALGORITHMS
+% ============================================================
+
+\subsection{পরিচিত Encryption Algorithm}
+
+নিচের সারণিতে পরিচিত কয়েকটি এনক্রিপশন অ্যালগরিদমের নাম ও ধরন দেখানো হয়েছে।
+
+\begin{flushleft}
+\small
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.97\linewidth}{|p{23mm}|Y|p{37mm}|}
+\hline
+
+\chSixHeader
+\textbf{নাম}
+&
+\textbf{পূর্ণরূপ/পরিচিতি}
+&
+\textbf{ধরন}
+\\ \hline
+
+AES
+&
+Advanced Encryption Standard
+&
+Symmetric
+\\ \hline
+
+DES
+&
+Data Encryption Standard
+&
+Symmetric; ঐতিহাসিক
+\\ \hline
+
+Triple DES
+&
+DES-ভিত্তিক Process একাধিক ধাপে প্রয়োগ
+&
+Symmetric
+\\ \hline
+
+IDEA
+&
+International Data Encryption Algorithm
+&
+Symmetric
+\\ \hline
+
+RSA
+&
+Rivest, Shamir, Adleman
+&
+Asymmetric
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{পরিচিত Cryptographic Algorithm}
+\end{flushleft}
+
+
+\begin{keypointbox}{DES সম্পর্কে}
+
+DES একটি ঐতিহাসিক Symmetric Algorithm।
+আধুনিক গুরুত্বপূর্ণ Data Security-এর জন্য একে উপযুক্ত
+নিরাপত্তা সমাধান ধরে নেওয়া উচিত নয়।
+
+\end{keypointbox}
+
+
+% ============================================================
+% 16.9 CAESAR
+% ============================================================
+
+\subsection{Caesar Cipher: অক্ষর সরিয়ে Encryption}
+
+Caesar Cipher-এ Alphabet-এর প্রতিটি অক্ষর নির্দিষ্ট সংখ্যক
+ঘর সামনে বা পিছনে সরিয়ে নতুন অক্ষর তৈরি করা হয়। ধরি Shift Key $k=3$। তাহলে $A\rightarrow D$, $B\rightarrow E$
+এবং বর্ণমালার শেষে ঘুরে $Z\rightarrow C$ হবে।
+
+\textbf{উদাহরণ:} তিন ঘর সামনে সরালে DATA থেকে GDWD নয়, GDWD-এর বদলে সঠিক অক্ষরক্রম \texttt{GDWD} হয়।
+
+\begin{mistakebox}{Caesar Cipher সম্পর্কে}
+
+Caesar Cipher এনক্রিপশনের ধারণা বোঝানোর সহজ শিক্ষামূলক
+পদ্ধতি। এটি আধুনিক সংবেদনশীল Data Security-এর জন্য নিরাপদ নয়,
+কারণ সম্ভাব্য Shift খুব অল্প এবং সহজে পরীক্ষা করা যায়।
+
+\end{mistakebox}
+
+
+% ============================================================
+% 16.10 MORE CAESAR EXAMPLES
+% ============================================================
+
+\subsection{Data Encryption-এর ব্যবহার}
+
+এনক্রিপশন বিভিন্ন ক্ষেত্রে ডেটার গোপনীয়তা রক্ষায় ব্যবহৃত হয়।
+
+\begin{enumerate}
+\item \textbf{ব্যক্তিগত তথ্য:} অননুমোদিত ব্যক্তির কাছ থেকে ডেটা গোপন রাখা।
+\item \textbf{Online Banking:} আর্থিক ও ট্রানজেকশন-সংক্রান্ত ডেটা সুরক্ষিত রাখা।
+\item \textbf{E-commerce:} Payment ও ব্যক্তিগত তথ্য গোপন রাখা।
+\item \textbf{Secure Communication:} নেটওয়ার্কে পাঠানো বার্তা বা ডেটা সুরক্ষিত রাখা।
+\item \textbf{Confidential File:} গোপন নথি বা ফাইল সুরক্ষিত রাখা।
+\item \textbf{Backup:} ব্যাকআপ অন্যের হাতে গেলেও ডেটা সহজে পড়তে না দেওয়া।
+\end{enumerate}
+
+
+% ============================================================
+% 16.13 LIMITATIONS
+% ============================================================
+
+
+\textbf{একই ফাইল, তিনটি প্রয়োজন:} এনক্রিপ্ট করা ফলপত্রের কপি অন্যের হাতে গেলে সঠিক কী ছাড়া তার বিষয়বস্তু পড়া কঠিন হয়। তবে অনুমোদিত পাঠক যেন তথ্য পড়তে পারেন, সে জন্য তাঁর কাছে সঠিক কী পৌঁছানোও প্রয়োজন। ফাইল মুছে গেলে এনক্রিপশন তা ফিরিয়ে দেয় না। আবার কী জানা থাকলেও কোন ফল পরিবর্তনের অনুমতি থাকবে, তা আলাদা Authorization দিয়ে নির্ধারিত হয়। তাই গোপনীয়তা রক্ষা, কাজের অনুমতি এবং ডেটা পুনরুদ্ধারের ব্যবস্থা একে অন্যকে সহায়তা করে।
+
+\subsection{Encryption-এর সীমা ও Key Management}
+
+এনক্রিপশন নিরাপত্তার একটি গুরুত্বপূর্ণ ব্যবস্থা। তবে শুধু এনক্রিপশন দিয়ে সব ধরনের
+নিরাপত্তা সমস্যার সমাধান করা যায় না।
+
+\begin{itemize}
+
+    \item এনক্রিপশন ডেটার গোপনীয়তায় সাহায্য করে;
+
+    \item অননুমোদিত ব্যবহারকারীর অনুমতি নিয়ন্ত্রণের জন্য
+          Access Control প্রয়োজন;
+
+    \item ভাইরাস প্রতিরোধের জন্য অ্যান্টিভাইরাস প্রয়োজন;
+
+    \item নেটওয়ার্কে প্রবেশ ও যোগাযোগ নিয়ন্ত্রণে ফায়ারওয়াল প্রয়োজন;
+
+    \item ফাইল মুছে গেলে বা ডিস্ক নষ্ট হলে ডেটা ফিরিয়ে আনতে
+          ব্যাকআপ প্রয়োজন;
+
+    \item কী হারিয়ে গেলে এনক্রিপ্ট করা ডেটা ডিক্রিপ্ট করা কঠিন বা
+          অসম্ভব হতে পারে;
+
+    \item কী অননুমোদিত ব্যক্তির হাতে গেলে গোপনীয়তা ক্ষতিগ্রস্ত
+          হতে পারে।
+
+\end{itemize}
+
+
+\begin{mistakebox}{এনক্রিপশন ও ব্যাকআপ এক নয়}
+
+এনক্রিপ্ট করা ফাইল মুছে গেলে শুধু কী দিয়ে সেই ফাইল ফিরে পাওয়া যায় না।
+
+\[
+\boxed{
+Encryption
+\neq
+Backup
+}
+\]
+
+এনক্রিপশন $\rightarrow$ Confidentiality। ব্যাকআপ $\rightarrow$ Data Recovery-এর জন্য Copy।
+
+\end{mistakebox}
+
+
+% ============================================================
+% 16.14 ACCESS
+% ============================================================
+
+\subsection{Microsoft Access-এ Password-based Encryption}
+
+Microsoft Access-এর সমর্থিত ডেটাবেজ ফরম্যাটে ফাইলের জন্য পাসওয়ার্ডভিত্তিক এনক্রিপশন ব্যবহার করা যেতে পারে। সংস্করণ অনুযায়ী মেনু বা নির্দেশের নাম কিছুটা আলাদা হতে পারে। সাধারণ ধাপ হলো---
+
+\[
+File
+\rightarrow
+Info
+\rightarrow
+Encrypt\ with\ Password
+\]
+সঠিক পাসওয়ার্ড দিয়ে ডেটাবেজ ফাইলটি আবার খোলা যায় কি না পরীক্ষা করা উচিত।
+
+\begin{keypointbox}{গুরুত্বপূর্ণ সীমাবদ্ধতা}
+
+Encrypt with Password দিয়ে ডেটাবেজ ফাইল এনক্রিপ্ট করা এবং নির্দিষ্ট ব্যবহারকারীকে নির্দিষ্ট টেবিল বা রেকর্ডে আলাদা অনুমতি দেওয়া একই কাজ নয়। ফাইল এনক্রিপশন পুরো ফাইলের গোপনীয়তা (Confidentiality) রক্ষায় সাহায্য করে। ব্যবহারকারীর কাজের অনুমতি নির্ধারণ বা Authorization নিরাপত্তার আলাদা ধারণা।
+
+\end{keypointbox}
+
+
+% ============================================================
+% 16.15 NON-TEXT DATA
+% ============================================================
+
+রপ্তানি করা Word নথিতেও পৃথক গোপনীয়তার ব্যবস্থা প্রয়োজন; সমর্থিত desktop Word-এর পদ্ধতি সংরক্ষিত প্রয়োগে আছে। উৎস ডেটাবেজের অধিকার ও backup তখনও প্রয়োজন।
+
+\subsection{Plaintext-এর অন্তর্ভুক্ত Data}
+
+Plaintext শুধু ইংরেজি লেখা বোঝায় না। এনক্রিপশনের আগে মূল ইনপুট বিভিন্ন ধরনের ডেটা হতে পারে—
+
+\begin{itemize}
+    \item Text,
+    \item Image,
+    \item Audio,
+    \item Video,
+    \item Document,
+    \item অন্য Digital ডেটা।
+\end{itemize}
+
+
+Ciphertext মানুষের কাছে অর্থহীন বা অপাঠ্য মনে হলেও তা নির্দিষ্ট অ্যালগরিদম ও কী প্রয়োগে তৈরি ডেটা।
+
+
+% ============================================================
+% 16.16 MESSAGE AND KEY
+% ============================================================
+
+\subsection{Message আদান-প্রদানে Key-এর ভূমিকা}
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.09}
+
+\begin{tabularx}{0.98\linewidth}{|p{26mm}|Y|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{পদ্ধতি}
+&
+\raggedright\textbf{Sender-এর কাজ}
+&
+\raggedright\arraybackslash\textbf{Receiver-এর কাজ}
+\\ \hline
+
+Symmetric
+&
+Secret Key \(K\) দিয়ে Encrypt
+&
+একই \(K\) দিয়ে Decrypt
+\\ \hline
+
+Asymmetric
+&
+Receiver-এর Public Key দিয়ে Encrypt
+&
+নিজের Private Key দিয়ে Decrypt
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{Symmetric ও Asymmetric পদ্ধতিতে Key-এর ভূমিকা}
+\end{flushleft}
+
+
+% ============================================================
+% 16.17 MCQ FOCUS
+% ============================================================
+
+
+
+
+% ============================================================
+% 16.18 CQ FOCUS
+% ============================================================
+
+
+
+
+
+
+
+% ============================================================
+% 16.19 REPRESENTATIVE MCQ
+% ============================================================
+
+
+
+
+% ============================================================
+% FINAL RECAP
+% ============================================================
+
+
+
+\subsection{গুরুত্বপূর্ণ প্রশ্ন}
+\textbf{অনুশীলন:} (১) Plaintext ও Ciphertext-এর পার্থক্য লেখো। (২) Caesar পদ্ধতিতে তিন ঘর সরিয়ে ICT-এর সংকেত নির্ণয় করো। (৩) প্রাপকের private key কেন গোপন রাখা হয়? (৪) এনক্রিপশন থাকলেও ব্যাকআপ কেন দরকার?\par
+

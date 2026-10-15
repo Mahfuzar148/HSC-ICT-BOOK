@@ -1,56 +1,766 @@
-% ৩.১৫ সার্বজনীন গেট
-\section{Universal Gates: NAND, NOR}
+% =========================================================
+% 3.10 Universal Gate
+% A-style: Equation above + Circuit below
+% =========================================================
 
-\subsection{NAND}
-\begin{itemize}
-\item $Y=\overline{A\cdot B}$; NAND দিয়ে AND, OR, NOT তৈরি
-\end{itemize}
+\section{সার্বজনীন গেট দিয়ে মৌলিক গেট বাস্তবায়ন
+(\textenglish{Implementation of Basic Gates Using Universal Gates})}
 
-\subsection{NOR}
-\begin{itemize}
-\item $Y=\overline{A+B}$; NOR দিয়ে সব গেট নির্মাণ
-\end{itemize}
+% =========================================================
+% Definition
+% =========================================================
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item NAND ও NOR gate-এর truth table লিখতে।
-\item universal gate কেন বলা হয় ব্যাখ্যা করতে।
-\item NAND/NOR দিয়ে NOT, AND, OR gate নির্মাণের ধারণা দেখাতে।
-\end{itemize}
-\end{learningbox}
+\par\begingroup
 
-\begin{definitionbox}{Universal gate}
-যে gate একাই ব্যবহার করে মৌলিক gateসহ যেকোনো logic circuit তৈরি করা যায়, তাকে universal gate বলা হয়। NAND ও NOR universal gate।
-\end{definitionbox}
+\textbf{সংজ্ঞা:}
+
+যে একটি মাত্র ধরনের লজিক গেট ব্যবহার করে
+\textenglish{AND}, \textenglish{OR} ও \textenglish{NOT} গেটসহ
+যেকোনো বুলিয়ান ফাংশন বাস্তবায়ন করা যায়,
+তাকে \textbf{সার্বজনীন গেট
+(\textenglish{Universal Gate})} বলে।
+
+\textenglish{NAND} ও \textenglish{NOR} হলো সার্বজনীন গেট।
+\par\endgroup
+
+
+% =========================================================
+% Why NAND and NOR are Universal Gates
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        কেন \textenglish{NAND} ও \textenglish{NOR}-কে
+        সার্বজনীন গেট বলা হয়?
+        }
+    }
+
+
+ডিজিটাল সার্কিটের মৌলিক গেট হলো
+\textenglish{AND}, \textenglish{OR} ও \textenglish{NOT}।
+
+শুধু \textenglish{NAND Gate} ব্যবহার করেই—
+
+\[
+\text{\textenglish{NOT}},
+\qquad
+\text{\textenglish{AND}},
+\qquad
+\text{\textenglish{OR}}
+\]
+
+তৈরি করা যায়।
+
+একইভাবে শুধু \textenglish{NOR Gate} ব্যবহার করেও—
+
+\[
+\text{\textenglish{NOT}},
+\qquad
+\text{\textenglish{OR}},
+\qquad
+\text{\textenglish{AND}}
+\]
+
+তৈরি করা যায়।
+
+অর্থাৎ, শুধু \textenglish{NAND} অথবা শুধু
+\textenglish{NOR Gate} ব্যবহার করেই মৌলিক গেটগুলো তৈরি করা যায়।
+আর মৌলিক গেটগুলোর সাহায্যে যেকোনো বুলিয়ান ফাংশন বাস্তবায়ন সম্ভব।
+
+তাই—
+
+\[
+\boxed{
+\text{\textenglish{NAND} এবং \textenglish{NOR} হলো \textenglish{Universal Gate}}
+}
+\]
+
+\par\endgroup
+
+
+% =========================================================
+% 3.10.1 NAND Gate Implementation
+% =========================================================
+
+\subsection{\textenglish{NAND Gate} দিয়ে
+মৌলিক গেট বাস্তবায়ন}
+
+\textenglish{NAND Gate}-এর সাহায্যে
+\textenglish{NOT}, \textenglish{AND} ও
+\textenglish{OR Gate} বাস্তবায়ন করা যায়।
+
+
+% =========================================================
+% NAND -> NOT
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        \textenglish{NAND Gate} দিয়ে
+        \textenglish{NOT Gate} বাস্তবায়ন
+        }
+    }
+
+
+একটি \textenglish{NAND Gate}-এর দুইটি
+\textenglish{input}-এ একই \(A\) প্রয়োগ করলে—
+
+\[
+\begin{aligned}
+Y
+&=\overline{A\cdot A}\\
+&=\overline A
+\end{aligned}
+\]
+
+কারণ,
+
+\[
+A\cdot A=A
+\]
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$A$ & $B$ & NAND $\overline{A\cdot B}$ & NOR $\overline{A+B}$ \\
-\hline
-0 & 0 & 1 & 1 \\
-\hline
-0 & 1 & 1 & 0 \\
-\hline
-1 & 0 & 1 & 0 \\
-\hline
-1 & 1 & 0 & 0 \\
-\hline
-\end{tabular}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[line width=0.8pt]
+
+\node[
+    nand gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=1.0
+] (g) at (0,0) {};
+
+\coordinate (p) at ($(g.west)+(-1.4,0)$);
+
+\draw
+(p)
+node[left] {\(A\)}
+-- ++(0.55,0)
+coordinate (x);
+
+\draw (x) |- (g.input 1);
+\draw (x) |- (g.input 2);
+
+\draw
+(g.output)
+-- ++(1.0,0)
+node[right] {\(Y=\overline A\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
 \end{center}
+
+\[
+\boxed{Y=\overline A}
+\]
+
+অতএব, একটি \textenglish{NAND Gate} দিয়ে
+একটি \textenglish{NOT Gate} বাস্তবায়ন করা যায়।
+
+\par\endgroup
+
+
+% =========================================================
+% NAND -> AND
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        \textenglish{NAND Gate} দিয়ে
+        \textenglish{AND Gate} বাস্তবায়ন
+        }
+    }
+
+
+প্রথম \textenglish{NAND Gate}-এ
+\(A\) ও \(B\) প্রয়োগ করলে—
+
+\[
+X=\overline{AB}
+\]
+
+এখন \(X\)-কে দ্বিতীয় \textenglish{NAND Gate}-এর
+দুইটি \textenglish{input}-এ প্রয়োগ করলে—
+
+\[
+\begin{aligned}
+Y
+&=\overline{X\cdot X}\\
+&=\overline X\\
+&=\overline{\overline{AB}}\\
+&=AB
+\end{aligned}
+\]
 
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Circuit placeholders}\\[4pt]
-NAND দিয়ে NOT: দুই input একসাথে $A$।\\
-NAND দিয়ে AND: NAND output-কে আবার NAND inverter-এ দাও।\\
-NOR দিয়ে NOT: দুই input একসাথে $A$।\\
-NOR দিয়ে OR: NOR output-কে আবার NOR inverter-এ দাও।
-}}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[line width=0.8pt]
+
+\node[
+    nand gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.9
+] (g1) at (0,0) {};
+
+\node[
+    nand gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.9
+] (g2) at (4.0,0) {};
+
+\draw
+(g1.input 1)
+-- ++(-1.0,0)
+node[left] {\(A\)};
+
+\draw
+(g1.input 2)
+-- ++(-1.0,0)
+node[left] {\(B\)};
+
+\draw
+(g1.output)
+-- ++(0.8,0)
+coordinate (x);
+
+\node[above] at (x)
+{\(X=\overline{AB}\)};
+
+\draw (x) |- (g2.input 1);
+\draw (x) |- (g2.input 2);
+
+\draw
+(g2.output)
+-- ++(1.0,0)
+node[right] {\(Y=AB\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
 \end{center}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Universal gate প্রমাণের প্রশ্নে অন্তত NOT, AND এবং OR gate তৈরি দেখাতে হয়। শুধু ``সব gate তৈরি করা যায়'' লিখলে পূর্ণ নম্বর নাও আসতে পারে।
-\end{boardbox}
+\[
+\boxed{Y=AB}
+\]
+
+অতএব, দুইটি \textenglish{NAND Gate} দিয়ে
+একটি \textenglish{AND Gate} বাস্তবায়ন করা যায়।
+
+\par\endgroup
+
+
+% =========================================================
+% NAND -> OR
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        \textenglish{NAND Gate} দিয়ে
+        \textenglish{OR Gate} বাস্তবায়ন
+        }
+    }
+
+
+প্রথমে দুইটি \textenglish{NAND Gate}-কে
+\textenglish{NOT Gate} হিসেবে ব্যবহার করে—
+
+\[
+\overline A=\overline{A\cdot A}
+\]
+
+এবং,
+
+\[
+\overline B=\overline{B\cdot B}
+\]
+
+পাওয়া যায়।
+
+এরপর \(\overline A\) ও \(\overline B\)-কে
+তৃতীয় \textenglish{NAND Gate}-এ প্রয়োগ করলে—
+
+\[
+\begin{aligned}
+Y
+&=\overline{\overline A\cdot\overline B}\\
+&=A+B
+\end{aligned}
+\]
+
+শেষ ধাপে \textenglish{De Morgan's Theorem} ব্যবহার করা হয়েছে।
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[line width=0.8pt]
+
+% NAND as NOT for A
+\node[
+    nand gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.82
+] (na) at (0,1.0) {};
+
+% NAND as NOT for B
+\node[
+    nand gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.82
+] (nb) at (0,-1.0) {};
+
+% Final NAND
+\node[
+    nand gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.9
+] (out) at (4.1,0) {};
+
+% A connection
+\coordinate (pa) at ($(na.west)+(-1.25,0)$);
+
+\draw
+(pa)
+node[left] {\(A\)}
+-- ++(0.45,0)
+coordinate (xa);
+
+\draw (xa) |- (na.input 1);
+\draw (xa) |- (na.input 2);
+
+% B connection
+\coordinate (pb) at ($(nb.west)+(-1.25,0)$);
+
+\draw
+(pb)
+node[left] {\(B\)}
+-- ++(0.45,0)
+coordinate (xb);
+
+\draw (xb) |- (nb.input 1);
+\draw (xb) |- (nb.input 2);
+
+% Output connections
+\draw
+(na.output)
+-- ++(0.55,0)
+|- (out.input 1);
+
+\draw
+(nb.output)
+-- ++(0.55,0)
+|- (out.input 2);
+
+\node[above] at ($(na.output)+(0.55,0)$)
+{\(\overline A\)};
+
+\node[below] at ($(nb.output)+(0.55,0)$)
+{\(\overline B\)};
+
+\draw
+(out.output)
+-- ++(1.0,0)
+node[right] {\(Y=A+B\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\[
+\boxed{Y=A+B}
+\]
+
+অতএব, তিনটি \textenglish{NAND Gate} দিয়ে
+একটি \textenglish{OR Gate} বাস্তবায়ন করা যায়।
+
+\par\endgroup
+
+
+% =========================================================
+% 3.10.2 NOR Gate Implementation
+% =========================================================
+
+\subsection{\textenglish{NOR Gate} দিয়ে
+মৌলিক গেট বাস্তবায়ন}
+
+\textenglish{NOR Gate}-এর সাহায্যে
+\textenglish{NOT}, \textenglish{OR} ও
+\textenglish{AND Gate} বাস্তবায়ন করা যায়।
+
+
+% =========================================================
+% NOR -> NOT
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        \textenglish{NOR Gate} দিয়ে
+        \textenglish{NOT Gate} বাস্তবায়ন
+        }
+    }
+
+
+একটি \textenglish{NOR Gate}-এর দুইটি
+\textenglish{input}-এ একই \(A\) প্রয়োগ করলে—
+
+\[
+\begin{aligned}
+Y
+&=\overline{A+A}\\
+&=\overline A
+\end{aligned}
+\]
+
+কারণ,
+
+\[
+A+A=A
+\]
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[line width=0.8pt]
+
+\node[
+    nor gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=1.0
+] (g) at (0,0) {};
+
+\coordinate (p) at ($(g.west)+(-1.4,0)$);
+
+\draw
+(p)
+node[left] {\(A\)}
+-- ++(0.55,0)
+coordinate (x);
+
+\draw (x) |- (g.input 1);
+\draw (x) |- (g.input 2);
+
+\draw
+(g.output)
+-- ++(1.0,0)
+node[right] {\(Y=\overline A\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\[
+\boxed{Y=\overline A}
+\]
+
+অতএব, একটি \textenglish{NOR Gate} দিয়ে
+একটি \textenglish{NOT Gate} বাস্তবায়ন করা যায়।
+
+\par\endgroup
+
+
+% =========================================================
+% NOR -> OR
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        \textenglish{NOR Gate} দিয়ে
+        \textenglish{OR Gate} বাস্তবায়ন
+        }
+    }
+
+
+প্রথম \textenglish{NOR Gate}-এ \(A\) ও \(B\) প্রয়োগ করলে—
+
+\[
+X=\overline{A+B}
+\]
+
+এখন \(X\)-কে দ্বিতীয় \textenglish{NOR Gate}-এর
+দুইটি \textenglish{input}-এ প্রয়োগ করলে—
+
+\[
+\begin{aligned}
+Y
+&=\overline{X+X}\\
+&=\overline X\\
+&=\overline{\overline{A+B}}\\
+&=A+B
+\end{aligned}
+\]
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[line width=0.8pt]
+
+\node[
+    nor gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.9
+] (g1) at (0,0) {};
+
+\node[
+    nor gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.9
+] (g2) at (4.0,0) {};
+
+\draw
+(g1.input 1)
+-- ++(-1.0,0)
+node[left] {\(A\)};
+
+\draw
+(g1.input 2)
+-- ++(-1.0,0)
+node[left] {\(B\)};
+
+\draw
+(g1.output)
+-- ++(0.8,0)
+coordinate (x);
+
+\node[above] at (x)
+{\(X=\overline{A+B}\)};
+
+\draw (x) |- (g2.input 1);
+\draw (x) |- (g2.input 2);
+
+\draw
+(g2.output)
+-- ++(1.0,0)
+node[right] {\(Y=A+B\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\[
+\boxed{Y=A+B}
+\]
+
+অতএব, দুইটি \textenglish{NOR Gate} দিয়ে
+একটি \textenglish{OR Gate} বাস্তবায়ন করা যায়।
+
+\par\endgroup
+
+
+% =========================================================
+% NOR -> AND
+% =========================================================
+
+\par\begingroup
+\smallhead{
+        \textbf{
+        \textenglish{NOR Gate} দিয়ে
+        \textenglish{AND Gate} বাস্তবায়ন
+        }
+    }
+
+
+প্রথমে দুইটি \textenglish{NOR Gate}-কে
+\textenglish{NOT Gate} হিসেবে ব্যবহার করে—
+
+\[
+\overline A=\overline{A+A}
+\]
+
+এবং,
+
+\[
+\overline B=\overline{B+B}
+\]
+
+পাওয়া যায়।
+
+এরপর \(\overline A\) ও \(\overline B\)-কে
+তৃতীয় \textenglish{NOR Gate}-এ প্রয়োগ করলে—
+
+\[
+\begin{aligned}
+Y
+&=\overline{\overline A+\overline B}\\
+&=AB
+\end{aligned}
+\]
+
+শেষ ধাপে \textenglish{De Morgan's Theorem} ব্যবহার করা হয়েছে।
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[line width=0.8pt]
+
+% NOR as NOT for A
+\node[
+    nor gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.82
+] (na) at (0,1.0) {};
+
+% NOR as NOT for B
+\node[
+    nor gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.82
+] (nb) at (0,-1.0) {};
+
+% Final NOR
+\node[
+    nor gate US,
+    draw,
+    logic gate inputs=nn,
+    scale=0.9
+] (out) at (4.1,0) {};
+
+% A
+\coordinate (pa) at ($(na.west)+(-1.25,0)$);
+
+\draw
+(pa)
+node[left] {\(A\)}
+-- ++(0.45,0)
+coordinate (xa);
+
+\draw (xa) |- (na.input 1);
+\draw (xa) |- (na.input 2);
+
+% B
+\coordinate (pb) at ($(nb.west)+(-1.25,0)$);
+
+\draw
+(pb)
+node[left] {\(B\)}
+-- ++(0.45,0)
+coordinate (xb);
+
+\draw (xb) |- (nb.input 1);
+\draw (xb) |- (nb.input 2);
+
+% Output connections
+\draw
+(na.output)
+-- ++(0.55,0)
+|- (out.input 1);
+
+\draw
+(nb.output)
+-- ++(0.55,0)
+|- (out.input 2);
+
+\node[above] at ($(na.output)+(0.55,0)$)
+{\(\overline A\)};
+
+\node[below] at ($(nb.output)+(0.55,0)$)
+{\(\overline B\)};
+
+\draw
+(out.output)
+-- ++(1.0,0)
+node[right] {\(Y=AB\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\[
+\boxed{Y=AB}
+\]
+
+অতএব, তিনটি \textenglish{NOR Gate} দিয়ে
+একটি \textenglish{AND Gate} বাস্তবায়ন করা যায়।
+
+\par\endgroup
+
+
+% =========================================================
+% 3.10.3 Summary
+% =========================================================
+
+\subsection{এক নজরে সার্বজনীন গেটের বাস্তবায়ন}
+
+\begin{center}
+
+\begin{tabularx}{\textwidth}
+{|L{0.28\textwidth}|C{0.28\textwidth}|Y|}
+\hline
+
+\rowcolor{ICTLightBlue}
+\textbf{বাস্তবায়িত গেট} &
+\textbf{\textenglish{NAND Gate}-এর সংখ্যা} &
+\textbf{\textenglish{NOR Gate}-এর সংখ্যা}
+\\
+\hline
+
+\textenglish{NOT} &
+১ &
+১
+\\
+\hline
+
+\textenglish{AND} &
+২ &
+৩
+\\
+\hline
+
+\textenglish{OR} &
+৩ &
+২
+\\
+\hline
+
+\end{tabularx}
+\end{center}
+
+
+% =========================================================
+% Exam Reminder
+% =========================================================
+
+\par\begingroup
+
+\textbf{পরীক্ষার জন্য মনে রাখবে:}
+
+\begin{itemize}[label={{\bulletfont\bfseries *}}, leftmargin=*, nosep]
+
+    \item \textenglish{NAND} দিয়ে \textenglish{NOT}
+    তৈরি করতে \(1\)টি \textenglish{NAND Gate} লাগে।
+
+    \item \textenglish{NAND} দিয়ে \textenglish{AND}
+    তৈরি করতে \(2\)টি \textenglish{NAND Gate} লাগে।
+
+    \item \textenglish{NAND} দিয়ে \textenglish{OR}
+    তৈরি করতে \(3\)টি \textenglish{NAND Gate} লাগে।
+
+    \item \textenglish{NOR} দিয়ে \textenglish{NOT}
+    তৈরি করতে \(1\)টি \textenglish{NOR Gate} লাগে।
+
+    \item \textenglish{NOR} দিয়ে \textenglish{OR}
+    তৈরি করতে \(2\)টি \textenglish{NOR Gate} লাগে।
+
+    \item \textenglish{NOR} দিয়ে \textenglish{AND}
+    তৈরি করতে \(3\)টি \textenglish{NOR Gate} লাগে।
+
+    \item \textenglish{NAND} দিয়ে \textenglish{OR}
+    এবং \textenglish{NOR} দিয়ে \textenglish{AND}
+    বাস্তবায়নে \textenglish{De Morgan's Theorem} ব্যবহৃত হয়।
+
+\end{itemize}
+
+\par\endgroup
+
+\input{chapters/Chapter03/topics/15_universal_gates/applied_examples.tex}
+
+\input{chapters/Chapter03/topics/15_universal_gates/type_examples.tex}

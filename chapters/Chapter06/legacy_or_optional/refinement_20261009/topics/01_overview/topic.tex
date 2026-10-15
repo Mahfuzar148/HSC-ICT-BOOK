@@ -1,0 +1,467 @@
+\section{Data, Information ও Database-এর ধারণা}
+
+একটি কলেজে ভর্তি, উপস্থিতি, পরীক্ষার ফলাফল ও যোগাযোগের তথ্য যদি আলাদা আলাদা খাতায় রাখা হয়, তাহলে একই শিক্ষার্থীর নাম, রোল, মোবাইল নম্বর ও ঠিকানা একাধিক জায়গায় বারবার লেখা থাকতে পারে।
+
+কোনো শিক্ষার্থীর ঠিকানা বদলালে সংশ্লিষ্ট সব খাতায় তা সংশোধন করতে হয়। একটি খাতায় সংশোধন করে অন্যটিতে না করলে একই শিক্ষার্থীর নতুন ও পুরোনো ঠিকানা পাশাপাশি থেকে যায়। তখন তাঁর ঠিকানা সম্পর্কে পরস্পরবিরোধী তথ্য পাওয়া যায়।
+
+অল্প তথ্য খাতায় রাখা সম্ভব। কিন্তু শিক্ষার্থী বা গ্রাহকের সংখ্যা কয়েক হাজার হলে তথ্য খোঁজা, সংশোধন ও ব্যবহার করা কঠিন হয়। তাই সম্পর্কিত ডেটা এমন কাঠামোয় সংরক্ষণ করা প্রয়োজন, যাতে তা সংগঠিত থাকে এবং সহজে ব্যবহার করা যায়। এই প্রয়োজন মেটাতে ডেটাবেজ ব্যবহৃত হয়।
+
+
+\subsubsection{Database ব্যবহারের উদ্দেশ্য}
+
+ঠিকানার মতো অভিভাবকের ফোন নম্বরও হালনাগাদ রাখা প্রয়োজন। পুরোনো নম্বর ব্যবহার করলে জরুরি নোটিশ ভুল ব্যক্তির কাছে চলে যেতে পারে।
+
+পরিকল্পিত ডেটাবেজে প্রত্যেক শিক্ষার্থীকে নির্দিষ্ট পরিচিতি দিয়ে শনাক্ত করা যায়। তাঁর পরিচয়ের সঙ্গে হালনাগাদ যোগাযোগের তথ্য রাখা হয়। অনুমোদিত ব্যক্তি ফোন নম্বর সংশোধন করলে প্রয়োজনের সময় সেই হালনাগাদ তথ্য ব্যবহার করা যায়।
+
+লাইব্রেরির সদস্য, হাসপাতালের রোগী, ব্যাংকের গ্রাহক কিংবা কোনো প্রতিষ্ঠানের কর্মীদের তথ্য ব্যবস্থাপনাতেও একই নীতি প্রযোজ্য। এতে একই তথ্য বারবার আলাদা জায়গায় লিখতে হয় না, তথ্য মিলিয়ে দেখার কাজ কমে এবং প্রয়োজনীয় তথ্য দ্রুত পাওয়া যায়। তবে সংরক্ষিত তথ্য সঠিক কি না, তা নির্ভরযোগ্য উৎস থেকে যাচাই করা জরুরি।
+
+ডেটাবেজ কীভাবে এই কাজগুলো সহজ করে, তা বুঝতে প্রথমে \textbf{ডেটা, তথ্য ও ডেটাবেজ}-এর মৌলিক ধারণা জানা প্রয়োজন।
+
+\subsection{Data}
+
+\begin{definitionbox}{}
+কোনো ব্যক্তি, বস্তু, ঘটনা বা বিষয় সম্পর্কে প্রাথমিকভাবে সংগৃহীত
+কাঁচা মান, ঘটনা বা উপাদান (Raw Data), যা প্রক্রিয়াকরণের (Processing) মাধ্যমে অর্থবহ তথ্য
+তৈরিতে ব্যবহৃত হয়, তাকে \textbf{Data} বলে।
+\end{definitionbox}
+
+
+ডেটা শুধু সংখ্যা নয়। নাম, সংখ্যা, অক্ষর, চিহ্ন, তারিখ, ছবি ইত্যাদিও
+প্রয়োজন অনুযায়ী ডেটা হতে পারে। নিচের সারণিতে একজন শিক্ষার্থীর কয়েকটি ডেটা দেখানো হয়েছে।
+এখানে GPA-এর পূর্ণরূপ \textbf{Grade Point Average}; এটি ফলাফলের গড় গ্রেড পয়েন্ট বোঝায়।
+
+\par\smallskip\noindent
+\begin{minipage}[t]{.30\linewidth}\vspace{0pt}\raggedright
+\small
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{|l|l|}
+
+\hline
+\chSixHeader \textbf{বিষয়} & \textbf{সংরক্ষিত ডেটা}\\
+\hline
+
+নাম & Rahim\\
+\hline
+
+রোল & 101\\
+\hline
+
+GPA & 4.75\\
+\hline
+
+জন্মতারিখ & 12-05-2008\\
+\hline
+
+ঠিকানা & Rajshahi\\
+\hline
+
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.67\linewidth}\vspace{0pt}\raggedright
+এখানে \texttt{Rahim}, \texttt{101}, \texttt{4.75},
+\texttt{12-05-2008} ও \texttt{Rajshahi} পৃথক ডেটার মান (Data Value)। নামটি
+শিক্ষার্থীকে বোঝায়, রোলটি তার শ্রেণিগত পরিচিতি এবং GPA ফলের মান
+প্রকাশ করে। তাই একটি মানের সঙ্গে সেটি কী নির্দেশ করছে, তা জানাও প্রয়োজন।
+
+\textbf{শব্দের পরিচয়:} ল্যাটিন Datum একবচন, Data তার বহুবচন।
+\end{minipage}\par\smallskip
+
+একটি নম্বর 80 পৃথক Datum; 70, 80 ও 90 একত্রে ডেটার সমষ্টি।
+
+\textbf{মানের অর্থ প্রেক্ষিতনির্ভর।} 80 একটি সংখ্যা; ``ICT-তে প্রাপ্ত নম্বর 80'' বললে এর অর্থ স্পষ্ট হয়। তাই ডেটাকে সবসময় অর্থহীন বলা ঠিক নয়; সেটি যে প্রশ্নের উত্তর বা সিদ্ধান্তের জন্য ব্যবহার করা হচ্ছে, সেই প্রেক্ষিতও দরকার।
+
+\subsection{শিক্ষণমূলকভাবে ডেটার সাধারণ প্রকৃতি}
+
+ডেটার প্রকৃতি সহজে বোঝাতে Numeric, Text/Non-numeric ও Boolean/Logical আলোচনা করা যায়। এটি সব DBMS-এর formal Data Type-এর তালিকা নয়।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+
+\begin{tabularx}{0.98\linewidth}{|p{29mm}|X|p{36mm}|}
+
+\hline
+
+\chSixHeader \raggedright\textbf{ধরন}
+&
+\raggedright\textbf{ধারণা}
+&
+\raggedright\arraybackslash\textbf{উদাহরণ}
+\\ \hline
+
+Numeric
+&
+সংখ্যা দিয়ে প্রকাশিত ডেটা
+&
+25, 80, 4.75
+\\ \hline
+
+Non-numeric
+&
+অক্ষর, শব্দ বা অন্যান্য অ-সংখ্যামূলক ডেটা
+&
+Rahim, Science
+\\ \hline
+
+Boolean / Logical
+&
+মাত্র দুটি যৌক্তিক অবস্থার একটি
+&
+True/False, Yes/No
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{শিক্ষণমূলকভাবে ডেটার সাধারণ প্রকৃতি}
+
+\end{minipage}\end{flushleft}
+
+Numeric ডেটা পূর্ণসংখ্যা বা দশমিক হতে পারে—বয়স, নম্বর ও GPA তার উদাহরণ। নাম, বিভাগ ও ঠিকানার মতো Non-numeric ডেটা অক্ষর, শব্দ বা String-এ প্রকাশ পায়। Boolean/Logical মান দুটি অবস্থার একটি: Yes/No, True/False বা 1/0; যেমন শিক্ষার্থী উপস্থিত কি না। এই সাধারণ প্রকৃতি এবং Access-এর Short Text, Number, Date/Time, Currency ও AutoNumber-এর মতো Field Data Type পৃথক প্রসঙ্গ; পরের সংশ্লিষ্ট অংশে সেগুলো আছে।
+
+\subsection{Information}
+
+কাঁচা ডেটা সবসময় সরাসরি সিদ্ধান্ত নেওয়ার উপযোগী নয়। ডেটাকে
+সাজানো, গণনা, তুলনা বা অন্যান্য প্রক্রিয়াকরণের মাধ্যমে প্রয়োজনীয়
+অর্থবহ ফল তৈরি করা হয়।
+
+\begin{definitionbox}{Information}
+ডেটাকে প্রয়োজন অনুযায়ী প্রক্রিয়াকরণ, সংগঠন ও বিশ্লেষণের মাধ্যমে
+যে অর্থবহ ও ব্যবহারযোগ্য ফলাফল পাওয়া যায়, তাকে
+\textbf{Information} বলে।
+\end{definitionbox}
+
+
+ধরা যাক, তিনজন শিক্ষার্থীর ICT-তে প্রাপ্ত নম্বর যথাক্রমে 70, 80 ও 90। এই নম্বরগুলো ডেটা। এগুলোর গড় \(\frac{70+80+90}{3}=80\)। অর্থাৎ এই তিন শিক্ষার্থীর গড় নম্বর 80। ডেটা প্রক্রিয়াকরণ করে পাওয়া এই অর্থবহ ফলই
+\textbf{Information}।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\begin{tikzpicture}[
+    node distance=9mm,
+    every node/.style={font=\small}
+]
+\node[
+    booknode,
+    text width=27mm,
+    minimum height=12mm
+] (data) {
+    \textbf{Data}\\
+    70, 80, 90
+};
+\node[
+    booknode,
+    right=of data,
+    text width=31mm,
+    minimum height=12mm
+] (process) {
+    \textbf{Processing}\\
+    যোগ ও ভাগ
+};
+\node[
+    booknode,
+    right=of process,
+    text width=27mm,
+    minimum height=12mm
+] (info) {
+    \textbf{Information}\\
+    গড় = 80
+};
+\draw[bookarrow] (data) -- (process);
+\draw[bookarrow] (process) -- (info);
+\end{tikzpicture}
+
+\captionof{figure}{ডেটা প্রক্রিয়াকরণের মাধ্যমে তথ্য তৈরি}
+
+\end{minipage}\end{flushleft}
+
+সংক্ষেপে, ডেটা \(\rightarrow\) প্রক্রিয়াকরণ \(\rightarrow\) তথ্য। সহজভাবে মনে রাখা যায়: তথ্য = ডেটা + প্রেক্ষিত + অর্থ।
+
+\subsection{Data ও তথ্যের মধ্যে পার্থক্য}
+
+\begingroup\small
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
+\begin{longtable}[l]{|p{23mm}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-23mm-6\tabcolsep-4\arrayrulewidth\relax/2\relax}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-23mm-6\tabcolsep-4\arrayrulewidth\relax/2\relax}|}
+
+
+\hline
+
+\chSixHeader \raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{ডেটা}
+&
+\raggedright\arraybackslash\textbf{তথ্য}
+\\ \hline
+\endfirsthead
+
+
+\hline
+
+\chSixHeader \raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{ডেটা}
+&
+\raggedright\arraybackslash\textbf{তথ্য}
+\\ \hline
+\endhead
+
+
+অবস্থা
+&
+কাঁচা বা প্রাথমিক উপাদান
+&
+প্রক্রিয়াজাত অর্থবহ ফল
+\\ \hline
+
+ভূমিকা
+&
+Processing-এর Input
+&
+Processing-এর Output
+\\ \hline
+
+ব্যবহার
+&
+সরাসরি সিদ্ধান্তে সবসময় যথেষ্ট নয়
+&
+সিদ্ধান্ত গ্রহণে ব্যবহারযোগ্য
+\\ \hline
+
+গঠন
+&
+বিচ্ছিন্ন মান হতে পারে
+&
+প্রয়োজন অনুযায়ী সংগঠিত
+\\ \hline
+
+উদাহরণ
+&
+70, 80, 90
+&
+গড় নম্বর 80
+\\ \hline
+
+
+\caption{ডেটা ও তথ্যের পার্থক্য}\\
+\end{longtable}
+\endgroup
+
+\subsection{Database}
+
+একটি প্রতিষ্ঠানে একই ব্যক্তি বা কাজের সঙ্গে সম্পর্কিত বহু ডেটা সংরক্ষণ করতে হয়। যেমন একজন শিক্ষার্থীর ভর্তি, উপস্থিতি, ফলাফল ও যোগাযোগের তথ্য পরস্পর সম্পর্কিত। ডেটাবেজে এসব তথ্য সংগঠিতভাবে রাখা যায়।
+
+\begin{definitionbox}{Database}
+একটি নির্দিষ্ট কাঠামো ও নিয়মে সুশৃঙ্খলভাবে সংরক্ষিত
+পরস্পর সম্পর্কযুক্ত ডেটার সংগঠিত সংগ্রহকে
+\textbf{Database} বলে।
+\end{definitionbox}
+
+
+\noindent
+
+\subsubsection{সম্পর্কিত Data কেন গুরুত্বপূর্ণ}
+একজন শিক্ষার্থীর Roll বা Student ID ব্যবহার করে তার ভর্তি,
+উপস্থিতি, পরীক্ষার ফলাফল ও যোগাযোগের তথ্য পরস্পরের সঙ্গে
+সম্পর্কিতভাবে সংরক্ষণ করা যায়।
+
+ফলে প্রয়োজনের সময় একটি নির্দিষ্ট শিক্ষার্থীর বিভিন্ন তথ্য
+একটি সংগঠিত ব্যবস্থা থেকে ব্যবহার করা সহজ হয়।
+
+\begin{definitionbox}{Database Management}
+ডেটাবেজের কাঠামো পরিকল্পনা, ডেটা সংরক্ষণ ও হালনাগাদ এবং প্রয়োজনীয় তথ্য আহরণের কাজ পরিচালনাকে \textbf{ডেটাবেজ ম্যানেজমেন্ট} বলে। এর মধ্যে ডেটার সঠিকতা, ব্যবহারাধিকার ও পুনরুদ্ধারের ব্যবস্থা পরিচালনাও অন্তর্ভুক্ত।
+\end{definitionbox}
+কলেজে ভর্তি নেওয়া, ফোন নম্বর সংশোধন, বকেয়া ফি খোঁজা ও ফল প্রকাশের অনুমতি নির্ধারণ এই ব্যবস্থাপনার অংশ।
+\subsection{ডেটাবেজের সংগঠিত কাঠামো}
+
+শুধু অনেক ডেটা বা ফাইল এক জায়গায় থাকলেই সেটি নির্দিষ্ট কাজের ডেটাবেজ হয় না। ডেটাগুলোকে সেই কাজের উদ্দেশ্যে সংগঠিত ও সম্পর্কিত থাকতে হয়। যেমন Student Result-এর সঙ্গে চলচ্চিত্র, গান ও ব্যক্তিগত ছবি এলোমেলোভাবে একটি ফোল্ডারে রাখলে সেটি Student ডেটাবেজ হয় না।
+
+অন্যদিকে শিক্ষার্থীর Roll, Name, Class, Result, Attendance
+ও Contact তথ্য পরিকল্পিতভাবে সংরক্ষিত হলে তা
+Student ডেটাবেজের অংশ হতে পারে।
+
+\subsection{খাতাভিত্তিক ব্যবস্থা ও Database}
+
+\begingroup\small
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
+\begin{longtable}[l]{|p{27mm}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-27mm-6\tabcolsep-4\arrayrulewidth\relax/2\relax}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-27mm-6\tabcolsep-4\arrayrulewidth\relax/2\relax}|}
+
+
+\hline
+
+\chSixHeader \raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{খাতাভিত্তিক ব্যবস্থা}
+&
+\raggedright\arraybackslash\textbf{Database}
+\\ \hline
+\endfirsthead
+
+
+\hline
+
+\chSixHeader \raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{খাতাভিত্তিক ব্যবস্থা}
+&
+\raggedright\arraybackslash\textbf{Database}
+\\ \hline
+\endhead
+
+
+সংরক্ষণ
+&
+একই ডেটা একাধিক খাতায় থাকতে পারে
+&
+সম্পর্কিত ডেটা পরিকল্পিতভাবে সংগঠিত থাকে
+\\ \hline
+
+অনুসন্ধান
+&
+বেশি রেকর্ড হলে সময় লাগে
+&
+প্রয়োজনীয় ডেটা খোঁজা তুলনামূলক সহজ
+\\ \hline
+
+Update
+&
+একাধিক স্থানে সংশোধন লাগতে পারে
+&
+সঠিক Design-এ Update সহজ হয়
+\\ \hline
+
+সমস্যা
+&
+পুনরাবৃত্তি ও অসামঞ্জস্যের ঝুঁকি বেশি
+&
+সঠিক Design এগুলো কমাতে সাহায্য করে
+\\ \hline
+
+
+\caption{Manual System ও ডেটাবেজের মৌলিক পার্থক্য}\\
+\end{longtable}
+\endgroup
+
+ডেটাবেজের নির্দিষ্ট উদ্দেশ্য ও কাঠামো থাকে; ন্যূনতম রেকর্ডসংখ্যার কোনো সর্বজনীন শর্ত নেই। ছোট লাইব্রেরির সংগঠিত সদস্যতালিকাও ডেটাবেজ হতে পারে। Database ডেটার সংগ্রহ, DBMS সেটি পরিচালনার সফটওয়্যার।
+
+সংরক্ষিত ডেটা থেকে ফলাফল, হিসাব ও প্রতিবেদন তৈরি করা যায়। আগের তুলনাসারণিতে সংগঠন, অনুসন্ধান, হালনাগাদ ও পুনরাবৃত্তি কমানোর সুবিধাগুলো দেখানো হয়েছে।
+
+\noindent\textbf{ডেটাবেজ ব্যবহার করলেই কি ভুল ডেটা ঠিক হয়ে যায়?} না। ভুল মান এন্ট্রি করলে ডেটাবেজ নিজে থেকে সবসময় তা শনাক্ত করতে পারে না।
+
+কোনো শিক্ষার্থীর প্রকৃত Marks 85 হলেও ভুল করে 58 এন্ট্রি করলে ফল তৈরিতে 58-ই ব্যবহৃত হতে পারে। অর্থাৎ ভুল ডেটা থেকে ভুল ফল, আর সেই ফল থেকে ভুল তথ্য পাওয়া যায়। তাই সঠিকভাবে ডেটা এন্ট্রি করা এবং গ্রহণযোগ্যতার নিয়ম দিয়ে তা যাচাই করা প্রয়োজন।
+
+\subsection{বাস্তব জীবনে ডেটাবেজের ব্যবহার}
+
+\begingroup\small
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
+\begin{longtable}[l]{|p{31mm}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-31mm-4\tabcolsep-3\arrayrulewidth\relax/1\relax}|}
+
+
+\hline
+
+\chSixHeader \raggedright\textbf{ক্ষেত্র}
+&
+\raggedright\arraybackslash\textbf{সংরক্ষিত তথ্যের উদাহরণ}
+\\ \hline
+\endfirsthead
+
+
+\hline
+
+\chSixHeader \raggedright\textbf{ক্ষেত্র}
+&
+\raggedright\arraybackslash\textbf{সংরক্ষিত তথ্যের উদাহরণ}
+\\ \hline
+\endhead
+
+
+শিক্ষা প্রতিষ্ঠান
+&
+ভর্তি, উপস্থিতি, ফলাফল ও শিক্ষার্থীর পরিচিতি
+\\ \hline
+
+ব্যাংক
+&
+গ্রাহকের হিসাব ও লেনদেন
+\\ \hline
+
+হাসপাতাল
+&
+রোগীর পরিচিতি, পরীক্ষা ও চিকিৎসার তথ্য
+\\ \hline
+
+রেলওয়ে/এয়ারলাইন
+&
+যাত্রী, টিকিট, আসন ও সময়সূচি
+\\ \hline
+
+ব্যবসা প্রতিষ্ঠান
+&
+পণ্য, গ্রাহক, বিক্রয় ও মজুদ
+\\ \hline
+
+সরকারি প্রতিষ্ঠান
+&
+নাগরিক ও বিভিন্ন সরকারি সেবার তথ্য
+\\ \hline
+
+
+\caption{ডেটাবেজ ব্যবহারের পরিচিত ক্ষেত্র}\\
+\end{longtable}
+\endgroup
+
+\subsection{Data, Database ও তথ্যের সম্পর্ক}
+
+ধরা যাক কলেজে নিচের ডেটা সংগ্রহ করা হয়েছে---
+
+\par\smallskip\noindent
+\begin{minipage}[t]{.39\linewidth}\vspace{0pt}\raggedright
+\small
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabular}{|l|l|l|}
+
+\hline
+\chSixHeader \textbf{Roll} & \textbf{Name} & \textbf{ICT Marks}\\
+\hline
+
+101 & Rahim & 80\\
+\hline
+
+102 & Karim & 70\\
+\hline
+
+103 & Nila & 90\\
+\hline
+
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.58\linewidth}\vspace{0pt}\raggedright
+এখানে প্রতিটি Name, Roll ও Marks হলো ডেটা। এগুলোকে একটি
+নির্দিষ্ট কাঠামোয় সংগঠিতভাবে সংরক্ষণ করলে তা Student Result
+ডেটাবেজের অংশ হয়।
+
+Marks-এর মানগুলো থেকে \(\text{Average Marks} = \frac{80+70+90}{3} = 80\) পাওয়া যায়। একই তালিকায় সর্বোচ্চ নম্বর, অর্থাৎ Highest Marks=90। গড় ও সর্বোচ্চ নম্বর শিক্ষার্থীদের ফল সম্পর্কে দুটি অর্থবহ তথ্য দেয়।
+\end{minipage}\par\smallskip
+
+অতএব পুরো প্রক্রিয়াটি--- ডেটা \(\rightarrow\) ডেটাবেজে সংগঠিত সংরক্ষণ \(\rightarrow\) প্রক্রিয়াকরণ \(\rightarrow\) তথ্য।
+
+\subsection{গুরুত্বপূর্ণ প্রশ্ন}
+
+
+\begin{enumerate}
+
+    \item নিচের কোনটি ডেটা এবং কোনটি তথ্য নির্ণয় করো:
+    \texttt{70, 80, 90} এবং ``গড় নম্বর 80''।
+
+    \item ``একজন শিক্ষার্থী উপস্থিত আছে কি না''---এই ডেটা কোন
+    মৌলিক ধরনের?
+
+    \item একটি Folder-এ Student Result, Movie ও Song একসঙ্গে
+    রাখা আছে। এটিকে কি Student ডেটাবেজ বলা যাবে?
+
+    \end{enumerate}
+

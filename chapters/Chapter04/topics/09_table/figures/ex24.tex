@@ -1,0 +1,38 @@
+% Replace exercise 24's PNG figure and its figure-explanation box.
+% Links are separate unnumbered lines, exactly as in the current HTML.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=\linewidth,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \node[font=\scriptsize\bfseries] at (.46,.56) {Govt. Rajendra College};
+  \fill[chFourTint] (.06,.04) rectangle (.86,.44);
+  \draw (.06,.04) rectangle (.86,.44);
+  \node at (.46,.24) {ছবির স্থান\\\texttt{college.jpg}};
+\end{tikzpicture}
+\par\smallskip
+\begin{tikzpicture}[x=\linewidth,y=6.5mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (0,3) rectangle (.62,4);
+  \draw (0,0) rectangle (.92,4);
+  \draw (.62,0)--(.62,4) (.35,0)--(.35,3);
+  \foreach \y in {1,2,3} {\draw (0,\y)--(.62,\y);}
+  \node[font=\scriptsize\bfseries] at (.31,3.5) {At a glance};
+  \node[font=\scriptsize\bfseries] at (.175,2.5) {Established};
+  \node[font=\scriptsize\bfseries] at (.175,1.5) {Student};
+  \node[font=\scriptsize\bfseries] at (.175,.5) {Pass Rate};
+  \node[anchor=west,inner sep=0pt] at (.365,2.5) {1918};
+  \node[anchor=west,inner sep=0pt] at (.365,1.5) {30,000};
+  \node[anchor=west,inner sep=0pt] at (.365,.5) {98\%};
+  \node at (.77,2) {Center\\of\\Excellence};
+\end{tikzpicture}
+\par\smallskip
+\begin{minipage}{.92\linewidth}\scriptsize\raggedright
+Quick Link:\\
+{\color{blue}\underline{Ministry of Education}}\\
+{\color{blue}\underline{Dhaka University}}\\
+{\color{blue}\underline{Dhaka Education Board}}
+\end{minipage}
+\captionof{figure}{অনুশীলন 24: কলেজের ছবি ও লিংক}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+Center of Excellence ঘরটি শিরোনামসহ চার সারি জুড়ে আছে। Quick Link-এর তিনটি লিংক আলাদা লাইনে লেখা; কোডে ক্রমযুক্ত তালিকা নেই। ছবির আয়তক্ষেত্রটি স্থান নির্দেশ করে; ব্রাউজারে \texttt{college.jpg} ফাইলের ছবি আসবে। সংখ্যাগুলো কোডের নমুনা তথ্য।
+

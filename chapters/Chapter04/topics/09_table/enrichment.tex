@@ -1,0 +1,29 @@
+\subsubsection{আধুনিক টেবিলের অংশ: সংক্ষিপ্ত পরিচয়}
+একটি বড় ফলাফলের সারণিতে শিরোনাম, মূল তথ্য ও মোট আলাদা অংশ হিসেবে রাখা যায়। \texttt{thead} শিরোনামের সারিগুলো, \texttt{tbody} মূল তথ্যের সারিগুলো এবং \texttt{tfoot} মোট বা সারসংক্ষেপের সারিগুলো ধরে। এগুলোর ভেতরেও \texttt{tr} এবং তার ভেতর \texttt{th}/\texttt{td} থাকে। এগুলো অতিরিক্ত সারি বা কলাম তৈরি করে না।
+
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+\begin{verbatim}
+<table>
+  <thead>
+    <tr><th scope="col">Name</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Rafi</td></tr>
+  </tbody>
+</table>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:}\par
+\begin{tabular}{l}
+\textbf{Name} \\
+Rafi
+\end{tabular}\par
+\textbf{কোডের অর্থ:} \texttt{th} শিরোনামের ঘর। \texttt{scope="col"} জানায় এটি ওই কলামের তথ্যের শিরোনাম। এতে সহায়ক পাঠযন্ত্রের কাছে তথ্যের সম্পর্ক স্পষ্ট হয়। CSS ছাড়া কোডে রেখা নির্ধারিত নেই।
+\end{minipage}
+\chFourWhy{গ্রুপিং ট্যাগগুলো সারির ভূমিকা বোঝায়; দৃশ্যমান নাম ও তথ্য যথাক্রমে \texttt{th} ও \texttt{td}-তে আছে।}
+
+\begin{keypointbox}{অনুশীলনের ক্রম}
+সহজ: table/tr/td $\rightarrow$ শিরোনাম ও caption $\rightarrow$ মাঝারি: রেখা ও ফাঁক $\rightarrow$ rowspan/colspan $\rightarrow$ সমন্বিত: ঘরে তালিকা, ছবি ও লিংক $\rightarrow$ চিত্র থেকে পরীক্ষার ধরনে কোড $\rightarrow$ ভুল শনাক্ত। আগের উদাহরণগুলো এই ক্রমে অনুশীলন করলে বড় সারণিও ধাপে ধাপে বোঝা যায়।
+\end{keypointbox}

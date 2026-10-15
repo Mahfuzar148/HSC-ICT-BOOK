@@ -1,0 +1,23 @@
+% Replace exercise 29's PNG figure and its figure-explanation box.
+% Photo is literal text below the img; the places use an ordered list.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=7mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (0,4) rectangle (.92,5);
+  \fill[chFourTint] (0,0) rectangle (.92,1);
+  \draw (0,0) rectangle (.92,5);
+  \draw (0,1)--(.92,1) (0,4)--(.92,4);
+  \draw (.43,1)--(.43,4);
+  \node[font=\scriptsize\bfseries] at (.46,4.5) {Bangladesh};
+  \fill[chFourTint] (.08,2.05) rectangle (.35,3.55);
+  \draw (.08,2.05) rectangle (.35,3.55);
+  \node at (.215,2.8) {ছবি\\\texttt{photo.jpg}};
+  \node[anchor=west,inner sep=0pt] at (.02,1.45) {Photo};
+  \node[align=left] at (.675,2.5) {1.\ Dhaka\\2.\ Dinajpur\\3.\ Rangpur};
+  \node[font=\scriptsize\bfseries] at (.46,.5) {Welcome};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 29: বাংলাদেশের স্থান ও ছবি}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+Bangladesh ও Welcome দুটি কলাম জুড়ে আছে। মাঝের বাম ঘরে ছবি এবং তার নিচে কোডের Photo লেখা আছে; ডানে \texttt{ol} তালিকার কারণে 1, 2 ও 3 ক্রমসংখ্যা আসে। ছবির আয়তক্ষেত্রটি \texttt{photo.jpg} রাখার স্থান বোঝায়।
+

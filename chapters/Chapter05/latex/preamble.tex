@@ -1,0 +1,289 @@
+% !TeX program = xelatex
+
+% ================================================================
+% FINAL CHAPTER 5 MASTER FILE
+% Compile with XeLaTeX at least twice so TOC page references settle.
+% ================================================================
+\usepackage[
+  top=1.02cm,bottom=0.72cm,left=1.10cm,right=1.10cm,
+  headheight=14pt,headsep=2.1mm,footskip=4.5mm
+]{geometry}
+
+\usepackage{fontspec}
+\usepackage{iftex}
+\usepackage{etoolbox}
+\usepackage{newunicodechar}
+\usepackage{polyglossia}
+\setdefaultlanguage{bengali}
+\setotherlanguage{english}
+\IfFontExistsTF{Nirmala UI}{%
+  \newfontfamily\bengalifont[Script=Bengali,FakeBold=0.18]{Nirmala UI}
+  \newfontfamily\bengalifonttt[Script=Bengali]{Nirmala UI}
+}{%
+  \newfontfamily\bengalifont[Script=Bengali,BoldFont={FreeSerif},BoldFeatures={FakeBold=1.25}]{FreeSerif}
+  \newfontfamily\bengalifonttt[Script=Bengali]{FreeSerif}
+}
+\IfFontExistsTF{Times New Roman}{\newfontfamily\englishfont{Times New Roman}}{\newfontfamily\englishfont{Liberation Serif}}
+
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{needspace}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc}
+\usepackage{graphicx}
+\usepackage{adjustbox} % horizontal flow diagrams stay on one line
+\usepackage{fancyhdr}
+\usepackage[unicode,hidelinks]{hyperref}
+
+% ---------- Color system ----------
+\definecolor{chapterBlue}{HTML}{173C8C}
+\definecolor{mainTeal}{HTML}{168C88}
+\definecolor{darkTeal}{HTML}{126C69}
+\definecolor{deepTeal}{HTML}{0F5957}
+\definecolor{accentOrange}{HTML}{E69A38}
+\definecolor{deepOrange}{HTML}{C97818}
+\definecolor{softGreen}{HTML}{ECF7F4}
+\definecolor{softBlue}{HTML}{EEF5FA}
+\definecolor{softOrange}{HTML}{FFF4E3}
+\definecolor{softGray}{HTML}{F5F7F7}
+\definecolor{darkBlue}{HTML}{285E7C}
+\definecolor{textGray}{HTML}{3E4648}
+\definecolor{lineGray}{HTML}{C5C9CA}
+\definecolor{codeBg}{HTML}{F6F8FA}
+\definecolor{codeBorder}{HTML}{9AA4AA}
+
+% ---------- Page typography ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.26mm}
+\setlength{\tabcolsep}{3.25pt}
+\setlength{\columnsep}{4.7mm}
+\setlength{\arrayrulewidth}{0.6pt}
+\arrayrulecolor{black}
+\renewcommand{\arraystretch}{1.14}
+\emergencystretch=3em
+\hfuzz=2pt
+\hbadness=10000
+\raggedbottom
+\setlist[itemize]{leftmargin=5mm,itemsep=0.16mm,topsep=0.16mm,parsep=0pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=0.16mm,topsep=0.16mm,parsep=0pt}
+
+% ---------- Compact two-column point lists ----------
+% Short/medium point-based lists are placed side-by-side; content is unchanged.
+\newenvironment{compacttwocolpoints}{%
+  \par\begingroup
+  \setlength{\multicolsep}{0.12mm}%
+  \setlength{\columnsep}{4.4mm}%
+  \begin{multicols}{2}\raggedcolumns
+  \RaggedRight
+  \begin{itemize}[leftmargin=4.0mm,itemsep=0.05mm,topsep=0.05mm,parsep=0pt,partopsep=0pt]
+}{%
+  \end{itemize}
+  \end{multicols}
+  \endgroup\par
+}
+\tcbset{before skip=0.35mm,after skip=0.35mm}
+\newcolumntype{Y}{>{\raggedright\hbadness=10000\arraybackslash\hspace{0pt}}X}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\Centering\arraybackslash}p{#1}}
+\newcommand{\py}[1]{\textenglish{\ttfamily #1}}
+
+% ---------- Running header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\scriptsize\bfseries\color{darkTeal}অধ্যায় ৫ : প্রোগ্রামিং ভাষা}
+\fancyhead[C]{\parbox{0.53\textwidth}{\centering\scriptsize\color{textGray}\rightmark}}
+\fancyhead[R]{\scriptsize\bfseries\color{darkTeal}\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcounter{chaptertopic}
+
+% ---------- Headings ----------
+\newcommand{\chapterheading}[1]{%
+  \pdfbookmark[0]{#1}{chapter05}%
+  \markright{অধ্যায় পরিচিতি}%
+  \vspace*{0.1mm}{\Large\bfseries\color{chapterBlue}#1}\par
+  \vspace{0.1mm}{\color{lineGray}\rule{\linewidth}{0.5pt}}\vspace{0.18mm}%
+}
+\newcommand{\sectionheading}[1]{%
+  \Needspace{8\baselineskip}%
+  \refstepcounter{chaptertopic}\label{topic:\thechaptertopic}%
+  \addcontentsline{toc}{section}{#1}%
+  \markright{#1}%
+  \vspace*{0.1mm}{\Large\bfseries\color{darkTeal}#1}\par
+  \vspace{0.1mm}{\color{accentOrange}\rule{\linewidth}{0.6pt}}\vspace{0.35mm}%
+}
+\newcommand{\booksubheading}[1]{%
+  \Needspace{4\baselineskip}\vspace{0.65mm}%
+  {\normalsize\bfseries\color{darkTeal}#1}\par
+  \vspace{0.05mm}{\color{accentOrange}\rule{\linewidth}{0.35pt}}\vspace{0.18mm}%
+}
+\newcommand{\partheading}[1]{%
+  \Needspace{8\baselineskip}\vspace{0.8mm}%
+  \begin{tcolorbox}[colback=deepTeal,colframe=deepTeal,boxrule=0pt,arc=1.2mm,left=2mm,right=2mm,top=0.7mm,bottom=0.7mm]
+  {\bfseries\color{white}#1}\end{tcolorbox}%
+}
+\newcommand{\topicheading}[1]{%
+  \Needspace{5\baselineskip}%
+  \vspace{0.18mm}%
+  \begin{tcolorbox}[
+    colback=softBlue,
+    colframe=mainTeal,
+    boxrule=0.5pt,
+    arc=1mm,
+    left=1.6mm,
+    right=1.6mm,
+    top=0.32mm,
+    bottom=0.32mm,
+    before skip=0.18mm,
+    after skip=0.22mm,
+    before upper={\RaggedRight}
+  ]
+  {\bfseries\color{darkTeal}#1}
+  \end{tcolorbox}%
+}
+
+% ---------- Common boxes ----------
+\newtcolorbox{overviewbox}{enhanced,breakable,colback=white,colframe=mainTeal,boxrule=0pt,borderline west={2pt}{0pt}{mainTeal},left=2.2mm,right=2mm,top=0.45mm,bottom=0.45mm,before upper={\RaggedRight\small}}
+\newtcolorbox{learningbox}{enhanced,breakable,colback=softGreen,colframe=mainTeal,boxrule=0.5pt,arc=1.5mm,left=2.4mm,right=2.4mm,top=0.45mm,bottom=0.45mm,title={এই অধ্যায় শেষে যা শিখবে},colbacktitle=softGreen,coltitle=darkTeal,fonttitle=\bfseries,before upper={\RaggedRight\small}}
+\newtcolorbox{pathbox}{enhanced,breakable,colback=softBlue,colframe=chapterBlue,boxrule=0.5pt,arc=1.5mm,left=2mm,right=2mm,top=0.4mm,bottom=0.4mm,title={অধ্যায়ের পথনকশা},colbacktitle=softBlue,coltitle=chapterBlue,fonttitle=\bfseries,before upper={\RaggedRight\footnotesize}}
+\newtcolorbox{definitionbox}{enhanced,breakable,colback=softBlue,colframe=mainTeal,boxrule=0pt,borderline west={2pt}{0pt}{mainTeal},left=2.2mm,right=2.2mm,top=0.45mm,bottom=0.45mm,before upper={\RaggedRight\small}}
+\newtcolorbox{examplebox}[1]{enhanced,breakable,colback=softGreen,colframe=mainTeal,boxrule=0.5pt,arc=1.5mm,left=2.3mm,right=2.3mm,top=0.45mm,bottom=0.45mm,title={#1},colbacktitle=softGreen,coltitle=darkTeal,fonttitle=\bfseries,before upper={\RaggedRight\small}}
+\newtcolorbox{rememberbox}{enhanced,breakable,colback=softOrange,colframe=accentOrange,boxrule=0.5pt,arc=1.5mm,left=2.2mm,right=2.2mm,top=0.42mm,bottom=0.42mm,before upper={\RaggedRight\small}}
+\newtcolorbox{infobox}{enhanced,breakable,colback=softBlue,colframe=mainTeal,boxrule=0pt,borderline west={2pt}{0pt}{mainTeal},left=2mm,right=2mm,top=0.5mm,bottom=0.5mm,before upper={\RaggedRight\small}}
+\newtcolorbox{explainbox}[1]{enhanced,breakable,colback=softOrange,colframe=accentOrange,boxrule=0.5pt,arc=1.3mm,left=2mm,right=2mm,top=0.5mm,bottom=0.5mm,title={#1},colbacktitle=softOrange,coltitle=deepOrange,fonttitle=\bfseries,before upper={\RaggedRight\small}}
+\newtcolorbox{revisionbox}[1]{enhanced,breakable,colback=softGreen,colframe=mainTeal,boxrule=0.55pt,arc=1.5mm,left=2.2mm,right=2.2mm,top=0.5mm,bottom=0.5mm,title={#1},colbacktitle=mainTeal,coltitle=white,fonttitle=\bfseries,before upper={\RaggedRight\small}}
+\newtcolorbox{trapbox}{enhanced,breakable,colback=softOrange,colframe=deepOrange,boxrule=0.55pt,arc=1.5mm,left=2.2mm,right=2.2mm,top=0.5mm,bottom=0.5mm,before upper={\RaggedRight\small}}
+\newtcolorbox{sidecodebox}{enhanced,breakable,colback=softGray,colframe=lineGray,boxrule=0.5pt,arc=1.2mm,left=2mm,right=2mm,top=0.6mm,bottom=0.6mm}
+\newtcolorbox{sideexamplebox}{enhanced,breakable,colback=softGreen,colframe=mainTeal,boxrule=0.5pt,arc=1.2mm,left=2mm,right=2mm,top=0.6mm,bottom=0.6mm}
+\newtcolorbox{codebox}{enhanced,breakable,colback=softGray,colframe=lineGray,boxrule=0.5pt,arc=1.2mm,left=2mm,right=2mm,top=0.6mm,bottom=0.6mm,before upper={\RaggedRight\small}}
+\newtcolorbox{codeoutputbox}[1]{enhanced,breakable,colback=softGreen,colframe=mainTeal,boxrule=0.55pt,arc=1.5mm,left=2mm,right=2mm,top=0.45mm,bottom=0.45mm,title={#1},colbacktitle=softGreen,coltitle=darkTeal,fonttitle=\bfseries,before upper={\RaggedRight\small}}
+\newcommand{\codeheading}{{\bfseries\color{darkTeal}Code}\par\vspace{0.2mm}}
+\newcommand{\outputheading}{{\bfseries\color{darkTeal}Input/Output ও ব্যাখ্যা}\par\vspace{0.2mm}}
+
+% ---------- Replaceable image holder ----------
+% Put a later image at the path in argument 1; the holder will automatically be replaced.
+\newcommand{\replaceableimage}[3][42mm]{%
+  \Needspace{10\baselineskip}
+  \begin{center}
+  \IfFileExists{#2}{%
+    \includegraphics[width=0.88\linewidth,height=#1,keepaspectratio]{#2}%
+  }{%
+    \begin{tcolorbox}[width=0.88\linewidth,height=#1,valign=center,colback=softGray,colframe=lineGray,boxrule=0.6pt,arc=1mm]
+    \centering\color{textGray}\bfseries [চিত্র সংযোজনের স্থান]\\[1mm]
+    \normalfont\small #3
+    \end{tcolorbox}%
+  }
+  \end{center}
+}
+
+% ---------- Flowchart styles used across topics ----------
+\tikzset{
+  databox/.style={rectangle,rounded corners=1mm,draw=darkBlue,fill=softBlue,minimum width=28mm,minimum height=8mm,align=center,font=\small},
+  processbox/.style={rectangle,rounded corners=1mm,draw=mainTeal,fill=softGreen,minimum width=31mm,minimum height=8mm,align=center,font=\small},
+  arrow/.style={-{Stealth[length=2mm,width=1.4mm]},line width=0.6pt,draw=textGray},
+  fcTerminal/.style={ellipse,draw=black,line width=0.6pt,minimum width=2.05cm,minimum height=6.5mm,align=center,inner sep=1.5pt},
+  fcIO/.style={trapezium,trapezium left angle=70,trapezium right angle=110,draw=black,line width=0.6pt,minimum width=2.45cm,minimum height=6.5mm,align=center,inner sep=1.5pt},
+  fcProcess/.style={rectangle,draw=black,line width=0.6pt,minimum width=2.35cm,minimum height=6.5mm,align=center,inner sep=1.5pt},
+  fcDecision/.style={diamond,aspect=2.1,draw=black,line width=0.6pt,minimum width=2.35cm,minimum height=8mm,align=center,inner sep=0.8pt},
+  fcConnector/.style={circle,draw=black,line width=0.6pt,minimum size=4mm,inner sep=0pt},
+  fcArrow/.style={-{Stealth[length=2mm,width=1.4mm]},line width=0.6pt},
+  fcstart/.style={ellipse,draw=darkTeal,fill=softGreen,minimum width=17.5mm,minimum height=5.8mm,align=center,font=\scriptsize},
+  fcio/.style={trapezium,trapezium left angle=70,trapezium right angle=110,draw=darkBlue,fill=softBlue,text width=29mm,minimum height=6mm,align=center,font=\scriptsize},
+  fcprocess/.style={rectangle,rounded corners=1mm,draw=mainTeal,fill=softGreen,text width=31.5mm,minimum height=6mm,align=center,font=\scriptsize},
+  fcdecision/.style={diamond,aspect=2.2,draw=deepOrange,fill=softOrange,text width=21mm,inner sep=1pt,align=center,font=\scriptsize},
+  fcarrow/.style={-{Latex[length=1.7mm]},line width=0.45pt,draw=textGray},
+  fcproc/.style={rectangle,draw=darkTeal,thick,minimum width=29mm,minimum height=8mm,align=center},
+  fcdec/.style={diamond,aspect=2.0,draw=darkTeal,thick,minimum width=25mm,minimum height=10mm,align=center,inner sep=1pt},
+  fcline/.style={-Latex,thick,draw=textGray}
+}
+\newcommand{\flowblue}[2]{\fcolorbox{darkBlue}{softBlue}{\parbox[c][8mm][c]{30mm}{\centering\textbf{#1}\\#2}}}
+\newcommand{\flowgreen}[2]{\fcolorbox{mainTeal}{softGreen}{\parbox[c][8mm][c]{30mm}{\centering\textbf{#1}\\#2}}}
+\newcommand{\linearflow}[3]{%
+\begin{tikzpicture}[node distance=1.8mm]
+\node[fcstart] (s) {Start};\node[fcio,below=of s] (i) {#1};\node[fcprocess,below=of i] (p) {#2};\node[fcio,below=of p] (o) {#3};\node[fcstart,below=of o] (e) {End};
+\draw[fcarrow] (s)--(i);\draw[fcarrow](i)--(p);\draw[fcarrow](p)--(o);\draw[fcarrow](o)--(e);
+\end{tikzpicture}}
+\newcommand{\binaryflow}[4]{%
+\begin{tikzpicture}[node distance=2mm and 3mm]
+\node[fcstart](s){Start};\node[fcio,below=of s](i){#1};\node[fcdecision,below=2.5mm of i](d){#2};
+\node[fcprocess,text width=20mm,below left=5mm and 2mm of d](y){#3};\node[fcprocess,text width=20mm,below right=5mm and 2mm of d](n){#4};\node[fcstart,below=13mm of d](e){End};
+\draw[fcarrow](s)--(i);\draw[fcarrow](i)--(d);\draw[fcarrow](d.west)-|node[pos=0.24,above,font=\scriptsize]{হ্যাঁ}(y.north);\draw[fcarrow](d.east)-|node[pos=0.24,above,font=\scriptsize]{না}(n.north);\draw[fcarrow](y.south)|-(e.west);\draw[fcarrow](n.south)|-(e.east);
+\end{tikzpicture}}
+
+% ---------- Exercise macros ----------
+\newcommand{\exerciseTable}[5]{%
+\Needspace{11\baselineskip}\noindent
+\begin{tabularx}{\linewidth}{|>{\RaggedRight\arraybackslash}X|>{\RaggedRight\arraybackslash}X|}\hline
+\rowcolor{darkTeal}\multicolumn{2}{|>{\RaggedRight\arraybackslash}p{\dimexpr\linewidth-2\tabcolsep-2\arrayrulewidth\relax}|}{\color{white}\bfseries #1}\\\hline
+\rowcolor{softBlue}\textbf{\color{darkTeal}Algorithm}&\textbf{\color{darkTeal}Flowchart}\\\hline
+\begin{minipage}[t]{\linewidth}\vspace{0pt}\RaggedRight\small #2\end{minipage}&\begin{minipage}[t]{\linewidth}\vspace{0pt}\centering #3\end{minipage}\\\hline
+\rowcolor{softGreen}\textbf{\color{darkTeal}Python Code}&\textbf{\color{darkTeal}Output ও ব্যাখ্যা}\\\hline
+\begin{minipage}[t]{\linewidth}\vspace{0pt}\RaggedRight\small\begin{english}\ttfamily #4\end{english}\end{minipage}&\begin{minipage}[t]{\linewidth}\vspace{0pt}\RaggedRight\small #5\end{minipage}\\\hline
+\end{tabularx}\vspace{0.9mm}}
+\newcommand{\formulaexercise}[7]{\exerciseTable{#1. #2}{১. Start।\\২. #3 Input নাও।\\৩. #7 সূত্র প্রয়োগ করো।\\৪. Result প্রদর্শন করো।\\৫. End।}{\linearflow{#3 Input}{#7}{#6 প্রদর্শন}}{#4\\[0.5mm]#5\\[0.5mm]print("#6 =", #6)}{Input-এর উপর Result নির্ভর করবে।\medskip\textbf{সূত্র:} #7}}
+
+% ---------- MCQ macros ----------
+\newcommand{\codeblock}[1]{\par\vspace{0.25mm}\begin{tcolorbox}[enhanced,colback=codeBg,colframe=codeBorder,boxrule=0.45pt,arc=0.9mm,boxsep=0.35mm,left=1.4mm,right=1.4mm,top=0.28mm,bottom=0.28mm,before skip=0pt,after skip=0.12mm]\begin{english}\ttfamily\small\RaggedRight #1\end{english}\end{tcolorbox}}
+\newcommand{\mcq}[6]{%
+\begin{tcolorbox}[enhanced,colback=white,colframe=lineGray,boxrule=0.42pt,arc=0.8mm,boxsep=0.35mm,left=1.35mm,right=1.35mm,top=0.22mm,bottom=0.22mm,before skip=0.12mm,after skip=0.12mm,before upper={\raggedright\hbadness=10000\sloppy}]
+\textbf{\color{deepTeal}#1.} #2
+\vspace{0.18mm}
+{\setlength{\tabcolsep}{2.7pt}\begin{tabularx}{\tcbtextwidth}{@{}Y Y@{}}
+ক. #3 & খ. #4 \\[0.08mm]
+গ. #5 & ঘ. #6
+\end{tabularx}}
+\end{tcolorbox}}
+\newcommand{\mcqwide}[6]{%
+\begin{tcolorbox}[enhanced,colback=white,colframe=lineGray,boxrule=0.42pt,arc=0.8mm,boxsep=0.35mm,left=1.35mm,right=1.35mm,top=0.22mm,bottom=0.22mm,before skip=0.12mm,after skip=0.12mm,before upper={\raggedright\hbadness=10000\sloppy}]
+\textbf{\color{deepTeal}#1.} #2
+\vspace{0.18mm}
+{\setlength{\tabcolsep}{2.7pt}\begin{tabularx}{\tcbtextwidth}{@{}Y@{}}
+ক. #3 \\[0.05mm]
+খ. #4 \\[0.05mm]
+গ. #5 \\[0.05mm]
+ঘ. #6
+\end{tabularx}}
+\end{tcolorbox}}
+
+% ---------- CQ macros ----------
+\newcommand{\cqtitle}[2]{%
+  \par\vspace{1mm}%
+  \noindent\begin{minipage}{\linewidth}%
+  \RaggedRight
+  {\large\bfseries\color{darkTeal}CQ--#1 : #2}\par
+  \vspace{0.05mm}{\color{accentOrange}\rule{\linewidth}{0.4pt}}%
+  \end{minipage}\par\vspace{0.18mm}%
+}
+\newtcolorbox{stimulusbox}{enhanced,breakable,colback=softBlue,colframe=mainTeal,boxrule=0pt,borderline west={2pt}{0pt}{mainTeal},left=2.2mm,right=2.2mm,top=0.6mm,bottom=0.6mm,before upper={\RaggedRight}}
+\newtcblisting{pythoncode}{enhanced,breakable,listing only,colback=softGray,colframe=lineGray,boxrule=0.55pt,arc=1.2mm,left=2mm,right=2mm,top=0.8mm,bottom=0.8mm,before skip=0.7mm,after skip=0.7mm,listing options={language=Python,basicstyle=\ttfamily\small,keywordstyle=\bfseries,commentstyle=\itshape,showstringspaces=false,columns=fullflexible,keepspaces=true,breaklines=true,tabsize=4,aboveskip=0pt,belowskip=0pt}}
+\newcommand{\qpart}[2]{\par\noindent\textbf{\color{deepTeal}#1.}\,#2\par\vspace{0.25mm}}
+\newcommand{\boardcqtitle}[1]{%
+  \par\vspace{1.2mm}%
+  \noindent\begin{minipage}{\linewidth}%
+  \RaggedRight
+  {\large\bfseries\color{darkTeal}CQ--#1}\par
+  \vspace{0.05mm}{\color{accentOrange}\rule{\linewidth}{0.4pt}}%
+  \end{minipage}\par\vspace{0.45mm}%
+}
+\newcommand{\ansheading}[2]{\Needspace{5\baselineskip}\vspace{1.2mm}{\normalsize\bfseries\color{darkTeal}CQ--#1 : #2}\par\vspace{0.05mm}{\color{accentOrange}\rule{\linewidth}{0.35pt}}\vspace{0.35mm}}
+\newcommand{\boardansheading}[1]{\Needspace{5\baselineskip}\vspace{1.2mm}{\normalsize\bfseries\color{darkTeal}CQ--#1}\par\vspace{0.05mm}{\color{accentOrange}\rule{\linewidth}{0.35pt}}\vspace{0.35mm}}
+\newcommand{\anslabel}[1]{\par\noindent\textbf{\color{deepTeal}#1.}\par\vspace{0.15mm}}
+\newcommand{\anspart}[2]{\par\noindent\textbf{\color{deepTeal}#1.}\,#2\par\vspace{0.35mm}}
+\newtcolorbox{algorithmbox}{enhanced,breakable,colback=softGreen,colframe=mainTeal,boxrule=0.45pt,arc=1.2mm,left=2mm,right=2mm,top=0.55mm,bottom=0.55mm,before upper={\RaggedRight\small}}
+
+% ---------- Summary table helpers ----------
+\newcommand{\twocoltablehead}[2]{\hline\rowcolor{softBlue}\textbf{\color{darkTeal}#1}&\textbf{\color{darkTeal}#2}\\\hline}
+\newcommand{\threecoltablehead}[3]{\hline\rowcolor{softBlue}\textbf{\color{darkTeal}#1}&\textbf{\color{darkTeal}#2}&\textbf{\color{darkTeal}#3}\\\hline}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{•}{\ensuremath{\bullet}}
+\chFiveInput{latex/text_style.tex}
+

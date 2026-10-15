@@ -1,0 +1,32 @@
+% Replace exercise 28's PNG figure and its figure-explanation box.
+% Teacher names, subjects and image filenames match the adjacent HTML.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=7mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \node[font=\scriptsize\bfseries] at (.47,8.1) {Teacher Info};
+  \fill[chFourTint] (0,6.5) rectangle (.94,7.5);
+  \draw (0,0) rectangle (.94,7.5);
+  \draw (.38,0)--(.38,7.5) (.69,0)--(.69,7.5);
+  \foreach \y in {1.625,3.25,4.875,6.5} {\draw (0,\y)--(.94,\y);}
+  \node[font=\scriptsize\bfseries] at (.19,7) {Teacher};
+  \node[font=\scriptsize\bfseries] at (.535,7) {Subject};
+  \node[font=\scriptsize\bfseries] at (.815,7) {Picture};
+  \node[align=left] at (.19,5.6875) {Mr. Rahul\\Sharma};
+  \node[align=left] at (.19,4.0625) {Mrs. Priya\\Verma};
+  \node[align=left] at (.19,2.4375) {Mr. Amit\\Patel};
+  \node[align=left] at (.19,.8125) {Ms. Neha\\Singh};
+  \node at (.535,5.6875) {Mathematics};
+  \node at (.535,4.0625) {English};
+  \node at (.535,2.4375) {Science};
+  \node at (.535,.8125) {Social Studies};
+  \foreach \y/\file in {5.6875/rahul.jpg,4.0625/priya.jpg,2.4375/amit.jpg,.8125/neha.jpg} {
+    \fill[chFourTint] (.715,\y-.65) rectangle (.915,\y+.65);
+    \draw (.715,\y-.65) rectangle (.915,\y+.65);
+    \node at (.815,\y) {ছবি\\\texttt{\file}};
+  }
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 28: শিক্ষকের তথ্য ও ছবি}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+Teacher Info টেবিলের বাইরের শিরোনাম। প্রতিটি তথ্যের সারিতে একজনের নাম, বিষয় এবং তাঁর ছবির ঘর আছে। দ্বিতীয় নামটি কোড অনুযায়ী Mrs. Priya Verma। আয়তক্ষেত্র ও ফাইলের নাম ছবি রাখার স্থান বোঝায়; ব্রাউজারে সংশ্লিষ্ট ফাইলের ছবি দেখাবে।
+

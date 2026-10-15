@@ -1,0 +1,1275 @@
+\sectionheading{5.34 Python Data Type}
+
+Program-এ ব্যবহৃত কোনো Value কী ধরনের এবং সেই Value-এর
+উপর কী ধরনের Operation করা যাবে—তা
+\textbf{Data Type} দ্বারা বোঝানো হয়।
+
+%================================================
+% Definition + first example
+%================================================
+
+\booksubheading{Data Type কী?}
+
+\begin{definitionbox}
+কোনো Data বা Value-এর
+\textbf{ধরন, বৈশিষ্ট্য এবং তার উপর প্রযোজ্য Operation}
+নির্দেশকারী শ্রেণিকে \textbf{Data Type} বলে।
+\end{definitionbox}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+
+\textbf{উদাহরণ—}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+age = 18\\
+height = 5.7\\
+name = "Rahim"
+\end{english}
+\end{codebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\linewidth}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.28\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.25\linewidth}
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+
+\textbf{Variable}
+&
+\textbf{Value}
+&
+\textbf{Type}
+\\
+\hline
+
+\textenglish{\ttfamily age}
+&
+\textenglish{\ttfamily 18}
+&
+\textenglish{\ttfamily int}
+\\
+\hline
+
+\textenglish{\ttfamily height}
+&
+\textenglish{\ttfamily 5.7}
+&
+\textenglish{\ttfamily float}
+\\
+\hline
+
+\textenglish{\ttfamily name}
+&
+\textenglish{\ttfamily "Rahim"}
+&
+\textenglish{\ttfamily str}
+\\
+\hline
+\end{tabularx}
+
+\end{minipage}
+
+\begin{rememberbox}
+\begin{center}
+\textbf{Value}
+\(\longrightarrow\)
+\textbf{কী ধরনের?}
+\(\longrightarrow\)
+\textbf{Data Type}
+\end{center}
+\end{rememberbox}
+
+%================================================
+% Main classification
+%================================================
+
+\booksubheading{Python-এর প্রধান Built-in Data Type}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{শ্রেণি}}
+&
+\multicolumn{1}{c|}{\textbf{Data Type}}
+\\
+\hline
+
+Numeric
+&
+\textenglish{\ttfamily int, float, complex}
+\\
+\hline
+
+Boolean
+&
+\textenglish{\ttfamily bool}
+\\
+\hline
+
+Text
+&
+\textenglish{\ttfamily str}
+\\
+\hline
+
+Sequence
+&
+\textenglish{\ttfamily list, tuple}
+\\
+\hline
+
+Set
+&
+\textenglish{\ttfamily set}
+\\
+\hline
+
+Mapping
+&
+\textenglish{\ttfamily dict}
+\\
+\hline
+
+None
+&
+\textenglish{\ttfamily NoneType}
+\\
+\hline
+\end{tabularx}
+
+%================================================
+% type() compact
+%================================================
+
+\booksubheading{\textenglish{\ttfamily type()} Function}
+
+কোনো Value বা Variable-এর Data Type জানার জন্য
+\textenglish{\ttfamily type()}
+Function ব্যবহার করা যায়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{Integer Type}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 10\\
+print(type(x))
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily \textless class 'int'\textgreater}
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{String Type}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = "Mina"\\
+print(type(name))
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily \textless class 'str'\textgreater}
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}MCQ তথ্য:}
+\quad
+\textenglish{\ttfamily type()}
+\(\longrightarrow\)
+Data Type নির্ণয় করে।
+\end{rememberbox}
+
+%================================================
+% INT + FLOAT side by side
+%================================================
+
+\chFiveInput{topics/34_python_data_types/python_extensions.tex}
+
+\booksubheading{Numeric Data Type}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{১. Integer — \textenglish{\ttfamily int}}
+
+পূর্ণসংখ্যার জন্য
+\textenglish{\ttfamily int}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = 10\\
+b = -25\\
+c = 0
+\end{english}
+\end{codebox}
+
+এগুলো সব
+\textenglish{\ttfamily int}।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print(type(a))
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily \textless class 'int'\textgreater}
+
+\medskip
+
+\textbf{Size/Range:}
+
+Python
+\textenglish{\ttfamily int}
+সাধারণ fixed 32-bit Range-এ সীমাবদ্ধ নয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 999999999999999999999999999999
+\end{english}
+\end{codebox}
+
+এটিও
+\textenglish{\ttfamily int}
+হতে পারে।
+
+\textbf{ব্যবহারিক সীমা}
+\(\longrightarrow\)
+Available Memory।
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{২. Floating-point — \textenglish{\ttfamily float}}
+
+দশমিক বা Floating-point সংখ্যার জন্য
+\textenglish{\ttfamily float}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 10.5\\
+y = -3.75\\
+z = 2.0
+\end{english}
+\end{codebox}
+
+এগুলো সব
+\textenglish{\ttfamily float}।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+print(type(x))
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily \textless class 'float'\textgreater}
+
+\medskip
+
+\textbf{Size/Range:}
+
+সাধারণ CPython-এ
+\textenglish{\ttfamily float}
+সাধারণত 64-bit double-precision floating-point representation।
+
+প্রায় সর্বোচ্চ magnitude:
+\[
+\pm 1.8\times10^{308}
+\]
+
+খুব ছোট Positive Normal Value:
+\[
+2.2\times10^{-308}
+\]
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}সতর্কতা:}
+Python
+\textenglish{\ttfamily int}
+-এর fixed 4-byte/32-bit range নেই।
+আর
+\textenglish{\ttfamily float}
+-এর 64-bit বলতে floating-point representation বোঝানো হয়,
+পুরো Python Object-এর Memory Size নয়।
+\end{rememberbox}
+
+%================================================
+% Complex + Bool
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৩. Complex — \textenglish{\ttfamily complex}}
+
+Complex Number-এর জন্য
+\textenglish{\ttfamily complex}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+z = 3 + 4j\\
+print(type(z))
+\end{english}
+\end{codebox}
+
+এখানে—
+
+\begin{itemize}
+\item Real Part
+\(\longrightarrow\)
+\textenglish{\ttfamily 3}
+
+\item Imaginary Part
+\(\longrightarrow\)
+\textenglish{\ttfamily 4j}
+\end{itemize}
+
+Output:
+\textenglish{\ttfamily \textless class 'complex'\textgreater}
+
+\medskip
+
+\textbf{MCQ:}
+Python Complex Number-এর Imaginary অংশে
+\textenglish{\ttfamily j}
+ব্যবহৃত হয়।
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৪. Boolean — \textenglish{\ttfamily bool}}
+
+Logical সত্য-মিথ্যা Value-এর জন্য
+\textenglish{\ttfamily bool}
+ব্যবহৃত হয়।
+
+\begin{center}
+\textenglish{\ttfamily True}
+\qquad
+\textenglish{\ttfamily False}
+\end{center}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+is\_student = True\\
+print(type(is\_student))
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily \textless class 'bool'\textgreater}
+
+\medskip
+
+\textbf{মনে রাখবে—}
+
+\begin{center}
+\textenglish{\ttfamily bool}
+\(\longrightarrow\)
+\textenglish{\ttfamily True, False}
+\end{center}
+
+\textenglish{\ttfamily True}
+ও
+\textenglish{\ttfamily False}
+-এর প্রথম Letter Capital।
+
+\end{examplebox}
+
+\end{minipage}
+
+%================================================
+% String + NoneType
+%================================================
+
+\booksubheading{Text ও বিশেষ Data Type}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৫. String — \textenglish{\ttfamily str}}
+
+Text বা Character-এর ধারাবাহিকতার জন্য
+\textenglish{\ttfamily str}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = "Rahim"\\
+country = 'Bangladesh'
+\end{english}
+\end{codebox}
+
+String-এ Single Quote বা Double Quote ব্যবহার করা যায়।
+
+\begin{center}
+\textenglish{\ttfamily 'Mina'}
+\qquad অথবা \qquad
+\textenglish{\ttfamily "Mina"}
+\end{center}
+
+\textbf{Size:}
+Fixed Size নেই; Character-এর সংখ্যা ও Internal Representation
+অনুযায়ী Memory Usage পরিবর্তিত হয়।
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{১০. NoneType}
+
+কোনো অর্থপূর্ণ Value বর্তমানে নির্ধারিত নেই—এমন বিশেষ অবস্থা
+প্রকাশ করতে
+\textenglish{\ttfamily None}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = None\\
+print(type(x))
+\end{english}
+\end{codebox}
+
+Output:
+\textenglish{\ttfamily \textless class 'NoneType'\textgreater}
+
+\medskip
+
+\begin{center}
+\textenglish{\ttfamily None}
+\(\neq\)
+\textenglish{\ttfamily 0}
+\qquad
+\textenglish{\ttfamily None}
+\(\neq\)
+\textenglish{\ttfamily False}
+
+\medskip
+
+\textenglish{\ttfamily None}
+\(\neq\)
+\textenglish{\ttfamily ""}
+\end{center}
+
+\textenglish{\ttfamily None}
+একটি আলাদা বিশেষ Value।
+
+\end{examplebox}
+
+\end{minipage}
+
+%================================================
+% LIST + TUPLE
+%================================================
+
+\booksubheading{Sequence Data Type}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৬. List — \textenglish{\ttfamily list}}
+
+একাধিক Value একটি Collection-এ রাখার জন্য List ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30]\\
+data = [10, "Rahim", 5.5, True]
+\end{english}
+\end{codebox}
+
+\textbf{বৈশিষ্ট্য—}
+
+\begin{itemize}
+\item Ordered
+\item Mutable বা পরিবর্তনযোগ্য
+\item Duplicate Value থাকতে পারে
+\end{itemize}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+numbers[0] = 100
+\end{english}
+\end{codebox}
+
+অর্থাৎ List-এর Element পরিবর্তন করা যায়।
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৭. Tuple — \textenglish{\ttfamily tuple}}
+
+Tuple-এও একাধিক Value রাখা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+numbers = (10, 20, 30)
+\end{english}
+\end{codebox}
+
+\textbf{বৈশিষ্ট্য—}
+
+\begin{itemize}
+\item Ordered
+\item Immutable বা অপরিবর্তনযোগ্য
+\item Duplicate Value থাকতে পারে
+\end{itemize}
+
+\medskip
+
+\begin{center}
+\textbf{List}
+\(\longrightarrow\)
+Mutable
+\qquad
+\textbf{Tuple}
+\(\longrightarrow\)
+Immutable
+\end{center}
+
+\end{examplebox}
+
+\end{minipage}
+
+%================================================
+% List vs Tuple table
+%================================================
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.22\linewidth}
+|Y
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{List}}
+&
+\multicolumn{1}{c|}{\textbf{Tuple}}
+\\
+\hline
+
+Syntax
+&
+\textenglish{\ttfamily [ ]}
+&
+\textenglish{\ttfamily ( )}
+\\
+\hline
+
+পরিবর্তন
+&
+Mutable
+&
+Immutable
+\\
+\hline
+
+Ordered
+&
+হ্যাঁ
+&
+হ্যাঁ
+\\
+\hline
+
+Duplicate
+&
+থাকতে পারে
+&
+থাকতে পারে
+\\
+\hline
+
+উদাহরণ
+&
+\textenglish{\ttfamily [1,2,3]}
+&
+\textenglish{\ttfamily (1,2,3)}
+\\
+\hline
+\end{tabularx}
+
+%================================================
+% SET + DICT — Space Optimized
+%================================================
+
+\booksubheading{Set ও Mapping Data Type}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৮. Set — \textenglish{\ttfamily set}}
+
+একাধিক \textbf{Unique Value}-এর Collection তৈরিতে
+\textenglish{\ttfamily set}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = \{10, 20, 30\}\\
+b = \{10, 20, 20, 30\}
+\end{english}
+\end{codebox}
+
+দ্বিতীয় Set-এ Duplicate
+\textenglish{\ttfamily 20}
+আলাদাভাবে সংরক্ষিত হয় না।
+
+\begin{center}
+\textenglish{\ttfamily \{10, 20, 30\}}
+\end{center}
+
+\textbf{বৈশিষ্ট্য:}\quad
+Unique
+\(\;\bullet\;\)
+Mutable
+\(\;\bullet\;\)
+সাধারণ Indexed Sequence নয়
+
+\end{examplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{examplebox}{৯. Dictionary — \textenglish{\ttfamily dict}}
+
+Data-কে
+\textbf{Key : Value}
+Pair আকারে সংরক্ষণ করতে
+\textenglish{\ttfamily dict}
+ব্যবহৃত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+student = \{"name": "Rahim", "age": 18\}
+\end{english}
+\end{codebox}
+
+\begin{center}
+
+\textenglish{\ttfamily "name"}
+\(\longrightarrow\)
+Key
+\qquad
+\textenglish{\ttfamily "Rahim"}
+\(\longrightarrow\)
+Value
+
+\medskip
+
+\textenglish{\ttfamily "age"}
+\(\longrightarrow\)
+Key
+\qquad
+\textenglish{\ttfamily 18}
+\(\longrightarrow\)
+Value
+
+\end{center}
+
+\textbf{বৈশিষ্ট্য:}\quad
+Key--Value Pair
+\(\;\bullet\;\)
+Mutable
+
+\end{examplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ/CQ-এর জন্য মনে রাখবে}
+
+\begin{center}
+
+\textbf{Set}
+\(\longrightarrow\)
+Unique Value-এর Collection
+
+\qquad
+
+\textbf{Dictionary}
+\(\longrightarrow\)
+Key : Value Pair
+
+\medskip
+
+\textbf{Set ও Dictionary উভয়ই}
+\(\longrightarrow\)
+\textbf{Mutable}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Size / Range Table
+%================================================
+
+\booksubheading{Python Data Type-এর Size ও Range}
+
+Python-এ C/C++-এর মতো সব Data Type-এর জন্য নির্দিষ্ট
+Fixed Byte Size ও Fixed Range দেওয়া সঠিক নয়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.20\linewidth}
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Data Type}}
+&
+\multicolumn{1}{c|}{\textbf{Size / Range-এর ধারণা}}
+\\
+\hline
+
+\textenglish{\ttfamily int}
+&
+Fixed Range নেই; প্রয়োজন অনুযায়ী বড় হতে পারে।
+ব্যবহারিক সীমা available memory-এর উপর নির্ভর করে।
+\\
+\hline
+
+\textenglish{\ttfamily float}
+&
+সাধারণ CPython-এ সাধারণত 64-bit floating-point representation;
+প্রায় \(1.8\times10^{308}\) magnitude পর্যন্ত।
+\\
+\hline
+
+\textenglish{\ttfamily complex}
+&
+Real ও Imaginary—দুটি floating-point অংশ নিয়ে গঠিত।
+\\
+\hline
+
+\textenglish{\ttfamily bool}
+&
+শুধু
+\textenglish{\ttfamily True}
+ও
+\textenglish{\ttfamily False}।
+\\
+\hline
+
+\textenglish{\ttfamily str}
+&
+Fixed Size নেই; Content অনুযায়ী Memory Usage পরিবর্তিত হয়।
+\\
+\hline
+
+\textenglish{\ttfamily list}
+&
+Fixed Size নেই; Element বাড়লে Memory Usage বাড়ে।
+\\
+\hline
+
+\textenglish{\ttfamily tuple}
+&
+Fixed Size নেই; Element-এর সংখ্যা ও Content-এর উপর নির্ভর করে।
+\\
+\hline
+
+\textenglish{\ttfamily set}
+&
+Fixed Size নেই; Element-এর সংখ্যা অনুযায়ী পরিবর্তিত হয়।
+\\
+\hline
+
+\textenglish{\ttfamily dict}
+&
+Fixed Size নেই; Key-Value Pair অনুযায়ী Memory Usage পরিবর্তিত হয়।
+\\
+\hline
+
+\textenglish{\ttfamily NoneType}
+&
+বিশেষ
+\textenglish{\ttfamily None}
+Value নির্দেশ করে।
+\\
+\hline
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}খুব গুরুত্বপূর্ণ}
+
+Python-এর জন্য এভাবে লিখবে না—
+
+\begin{center}
+\textenglish{\ttfamily int = 4 byte}
+\qquad
+\textenglish{\ttfamily Range = -2\textasciicircum31 to 2\textasciicircum31 - 1}
+\end{center}
+
+এটি Python
+\textenglish{\ttfamily int}
+-এর সাধারণ নিয়ম নয়।
+
+\begin{center}
+
+\textbf{C/C++}
+\(\longrightarrow\)
+অনেক Numeric Type-এর নির্দিষ্ট Size/Range
+
+\medskip
+
+\textbf{Python}
+\(\longrightarrow\)
+অনেক ক্ষেত্রে Size Dynamic বা Implementation-dependent
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Mutable Immutable
+%================================================
+
+\booksubheading{Mutable ও Immutable Data Type}
+
+Data তৈরি হওয়ার পর তার Content পরিবর্তন করা যায় কি না—
+তার ভিত্তিতে Data Type-কে Mutable ও Immutable হিসেবে বোঝা যায়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Mutable}
+
+Object তৈরি হওয়ার পর তার Content পরিবর্তন করা যায়।
+
+\begin{center}
+\textenglish{\ttfamily list}
+\qquad
+\textenglish{\ttfamily set}
+\qquad
+\textenglish{\ttfamily dict}
+\end{center}
+
+\end{definitionbox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Immutable}
+
+Object তৈরি হওয়ার পর তার নিজস্ব Value/Content পরিবর্তন করা যায় না।
+
+\begin{center}
+\textenglish{\ttfamily int, float, complex, bool, str, tuple, NoneType}
+\end{center}
+
+\end{definitionbox}
+
+\end{minipage}
+
+\begin{rememberbox}
+\begin{center}
+
+\textbf{List, Set, Dictionary}
+\(\longrightarrow\)
+\textbf{Mutable}
+
+\qquad
+
+\textbf{Number, String, Tuple}
+\(\longrightarrow\)
+\textbf{Immutable}
+
+\end{center}
+\end{rememberbox}
+
+%================================================
+% Summary table
+%================================================
+
+\booksubheading{Python Data Type এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.17\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.25\linewidth}
+|Y|
+}
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Type}}
+&
+\multicolumn{1}{c|}{\textbf{উদাহরণ}}
+&
+\multicolumn{1}{c|}{\textbf{মূল কাজ}}
+\\
+\hline
+
+\textenglish{\ttfamily int}
+&
+\textenglish{\ttfamily 10}
+&
+পূর্ণসংখ্যা
+\\
+\hline
+
+\textenglish{\ttfamily float}
+&
+\textenglish{\ttfamily 10.5}
+&
+দশমিক/Floating-point সংখ্যা
+\\
+\hline
+
+\textenglish{\ttfamily complex}
+&
+\textenglish{\ttfamily 3+4j}
+&
+Complex Number
+\\
+\hline
+
+\textenglish{\ttfamily bool}
+&
+\textenglish{\ttfamily True}
+&
+Logical Value
+\\
+\hline
+
+\textenglish{\ttfamily str}
+&
+\textenglish{\ttfamily "Rahim"}
+&
+Text
+\\
+\hline
+
+\textenglish{\ttfamily list}
+&
+\textenglish{\ttfamily [1,2,3]}
+&
+Mutable Collection
+\\
+\hline
+
+\textenglish{\ttfamily tuple}
+&
+\textenglish{\ttfamily (1,2,3)}
+&
+Immutable Collection
+\\
+\hline
+
+\textenglish{\ttfamily set}
+&
+\textenglish{\ttfamily \{1,2,3\}}
+&
+Unique Element-এর Collection
+\\
+\hline
+
+\textenglish{\ttfamily dict}
+&
+\textenglish{\ttfamily \{"a":1\}}
+&
+Key-Value Collection
+\\
+\hline
+
+\textenglish{\ttfamily NoneType}
+&
+\textenglish{\ttfamily None}
+&
+বিশেষ No-value অবস্থা
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Mixed program
+%================================================
+
+\booksubheading{একই Program-এ বিভিন্ন Data Type}
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = "Mina"\\
+age = 18\\
+height = 5.4\\
+student = True\\
+marks = [80, 85, 90]\\[0.5mm]
+print(type(name))\\
+print(type(age))\\
+print(type(height))\\
+print(type(student))\\
+print(type(marks))
+\end{english}
+\end{codebox}
+
+Data Type যথাক্রমে—
+
+\begin{center}
+\textenglish{\ttfamily str}
+\(\longrightarrow\)
+\textenglish{\ttfamily int}
+\(\longrightarrow\)
+\textenglish{\ttfamily float}
+\(\longrightarrow\)
+\textenglish{\ttfamily bool}
+\(\longrightarrow\)
+\textenglish{\ttfamily list}
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Common mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item
+Python
+\textenglish{\ttfamily int}
+-কে সবসময় 4 Byte মনে করা।
+
+\item
+Python
+\textenglish{\ttfamily int}
+-এর Fixed 32-bit Range আছে মনে করা।
+
+\item
+\textenglish{\ttfamily "10"}
+ও
+\textenglish{\ttfamily 10}
+-কে একই Data Type মনে করা।
+
+\item
+\textenglish{\ttfamily 3 + 4j}
+-এর
+\textenglish{\ttfamily j}
+-কে সাধারণ Variable মনে করা।
+
+\item
+\textenglish{\ttfamily True}
+-এর পরিবর্তে
+\textenglish{\ttfamily true}
+লেখা।
+
+\item List ও Tuple-কে একই ধরনের পরিবর্তনযোগ্য Collection মনে করা।
+
+\item Set-এ Duplicate Element আলাদাভাবে থাকবে মনে করা।
+
+\item Dictionary-কে শুধু Value-এর Collection মনে করা।
+
+\item
+\textenglish{\ttfamily None}
+-কে
+\textenglish{\ttfamily 0}
+মনে করা।
+
+\item Mutable ও Immutable-এর পার্থক্য না বোঝা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+Y
+}
+
+\textenglish{\ttfamily int}
+&
+Integer
+&
+\textenglish{\ttfamily float}
+&
+Floating-point
+\\
+
+\textenglish{\ttfamily complex}
+&
+\textenglish{\ttfamily a+bj}
+&
+\textenglish{\ttfamily bool}
+&
+\textenglish{\ttfamily True/False}
+\\
+
+\textenglish{\ttfamily str}
+&
+Text
+&
+\textenglish{\ttfamily list}
+&
+Mutable Collection
+\\
+
+\textenglish{\ttfamily tuple}
+&
+Immutable Collection
+&
+\textenglish{\ttfamily set}
+&
+Unique Collection
+\\
+
+\textenglish{\ttfamily dict}
+&
+Key : Value
+&
+\textenglish{\ttfamily None}
+&
+NoneType
+\\
+
+\textenglish{\ttfamily type()}
+&
+Data Type নির্ণয়
+&
+Python \textenglish{\ttfamily int}
+&
+Fixed 4-byte Range নয়
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Number}
+\(\longrightarrow\)
+\textenglish{\ttfamily int, float, complex}
+\qquad
+\textbf{Text}
+\(\longrightarrow\)
+\textenglish{\ttfamily str}
+
+\medskip
+
+\textbf{Logical}
+\(\longrightarrow\)
+\textenglish{\ttfamily bool}
+\qquad
+\textbf{Collection}
+\(\longrightarrow\)
+\textenglish{\ttfamily list, tuple, set, dict}
+
+\medskip
+
+\textbf{Mutable}
+\(\longrightarrow\)
+\textenglish{\ttfamily list, set, dict}
+
+\qquad
+
+\textbf{Immutable}
+\(\longrightarrow\)
+\textenglish{\ttfamily int, float, complex, bool, str, tuple, NoneType}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.35 Input and Output
+%================================================
+

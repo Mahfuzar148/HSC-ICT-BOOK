@@ -1,0 +1,18 @@
+% Shared Chapter 6 font configuration for the chapter and standalone contents.
+\makeatletter
+\IfFontExistsTF{Kalpurush}{%
+  \ifdefined\chSixTextFont\else
+    \newfontfamily\chSixTextFont[
+      Renderer=HarfBuzz,Script=Bengali,Language=Bengali,
+      UprightFont=*,BoldFont=*,ItalicFont=*,BoldItalicFont=*,
+      FakeBold=1.25,BoldFeatures={FakeBold=2.4},
+      ItalicFeatures={FakeSlant=.15},
+      BoldItalicFeatures={FakeBold=2.4,FakeSlant=.15},
+      Scale=MatchLowercase
+    ]{Kalpurush}%
+  \fi
+  \chSixTextFont
+  \edef\rmdefault{\f@family}%
+  \edef\familydefault{\f@family}%
+}{}%
+\makeatother

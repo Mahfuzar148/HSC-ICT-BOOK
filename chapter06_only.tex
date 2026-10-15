@@ -1,13 +1,21 @@
-% !TeX program = xelatex
+% !TeX program = lualatex
 % Standalone build file for Chapter 06 only.
-\documentclass[12pt, twoside, openright]{book}
+\documentclass[12pt, twoside, openany]{book}
 \input{preamble.tex}
+\input{chapters/Chapter06/latex/page_layout}
+\chSixNarrowGeometry{\geometry}
+\newcommand{\chSixStandaloneLayout}{}
+\AtBeginDocument{\setlength{\headwidth}{\textwidth}}
+\renewcommand{\contentsname}{সূচিপত্র}
+\setcounter{tocdepth}{1}
+\let\cleardoublepage\clearpage
 \begin{document}
 \frontmatter
-\title{ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}
-\author{HSC ICT}
-\maketitle
+\begingroup
+\input{chapters/Chapter06/latex/text_font}
 \tableofcontents
+\endgroup
 \mainmatter
+\setcounter{chapter}{5}
 \input{chapters/Chapter06/latex/chapter}
 \end{document}

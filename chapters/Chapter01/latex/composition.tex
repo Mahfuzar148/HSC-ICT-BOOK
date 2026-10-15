@@ -1,0 +1,46 @@
+% Chapter-local composition; the shared preamble is preserved.
+\renewenvironment{topicbody}{\begingroup\small\raggedright}{\par\endgroup}
+\tcbset{chOnePlain/.style={enhanced,breakable,frame hidden,colback=white,colbacktitle=white,coltitle=chOneTeal,left=0pt,right=0pt,top=1pt,bottom=1pt,before skip=2pt,after skip=2pt,fonttitle=\small\bfseries,fontupper=\small\raggedright}}
+\renewtcolorbox{learningbox}{chOneBox,breakable=false,title={শিখনফল},fontupper=\small\raggedright}
+\renewtcolorbox{keypointbox}[1]{chOnePlain,title={#1}}
+\renewtcolorbox{boardbox}[1]{chOnePlain,title={#1}}
+\renewtcolorbox{practicebox}{chOnePlain,title={অনুশীলন}}
+% Multi-column exercises must be allowed to break directly with the page.
+\renewenvironment{practicebox}{\par\addvspace{3pt}\noindent{\bfseries\color{chOneTeal}অনুশীলন}\par}{\par\addvspace{3pt}}
+\renewtcolorbox{recapbox}{chOnePlain,title={দ্রুত রিভিশন}}
+\renewtcolorbox{explanationbox}[1]{chOnePlain,title={#1}}
+\renewtcolorbox{examanswerbox}[1]{chOnePlain,title={#1}}
+\renewtcolorbox{examplebox}[1]{chOnePlain,title={#1}}
+\renewcommand{\boardanswer}[2]{\chOneQA{#1}{#2}}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=.5pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=*,topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\chapter}{0pt}{0pt}{5pt}
+\newcommand{\chOnePair}[2]{\par\addvspace{3pt}\noindent\begin{minipage}[t]{.49\linewidth}\vspace{0pt}\tcbset{chOnePlain/.append style={breakable=false}}#1\end{minipage}\hfill\begin{minipage}[t]{.47\linewidth}\vspace{0pt}\tcbset{chOnePlain/.append style={breakable=false}}#2\end{minipage}\par\addvspace{3pt}}
+\newcommand{\chOneGraphic}[1]{\ifcsname chOneAsset#1\endcsname\csname chOneAsset#1\endcsname\else\includegraphics[width=.98\linewidth,height=7cm,keepaspectratio]{#1}\fi}
+\newcommand{\chOneImage}[2]{\par\noindent\begin{minipage}{\linewidth}\centering\chOneGraphic{#1}\par\raggedright\captionof{figure}{#2}\end{minipage}\par}
+\newcommand{\chOneFigureExplain}[4]{\chOnePair{{\color{chOneTeal}\bfseries চিত্র ব্যাখ্যা}\par #4}{\chOneImage{#1}{#2}\label{#3}}}
+\newcommand{\chOneFigureContinue}[5]{\chOneFigureExplain{#1}{#2}{#3}{#4}\noindent #5\par}
+\newcommand{\chOneFigureFlow}[4]{\chOneImage{#1}{#2}\label{#3}\par #4\par}
+\newcommand{\roboticsfigure}[4]{\chOnePair{#2}{\chOneImage{#1}{#3}\label{#4}}}
+\newcommand{\cryosurgeryfigure}[4]{\chOnePair{#2}{\chOneImage{#1}{#3}\label{#4}}}
+\newcommand{\spacefigure}[5]{\chOneFigureExplain{#1}{#3}{#4}{#5}}
+\newcommand{\ictproductionfigure}[5]{\chOneFigureExplain{#1}{#3}{#4}{#5}}
+\renewenvironment{rightimageblock}[2]{\def\chOneRightPath{#1}\def\chOneRightCaption{#2}\par\noindent\begin{minipage}[t]{.49\linewidth}\vspace{0pt}}{\end{minipage}\hfill\begin{minipage}[t]{.47\linewidth}\vspace{0pt}\chOneImage{\chOneRightPath}{\chOneRightCaption}\end{minipage}\par\addvspace{3pt}}
+\RenewDocumentCommand{\midfigure}{O{.76\linewidth} m m}{\par\noindent\begin{minipage}{\linewidth}\centering\begin{minipage}{#1}\chOneImage{#2}{#3}\end{minipage}\end{minipage}\par}
+\RenewDocumentCommand{\bigfigure}{O{.90\linewidth} m m}{\midfigure[#1]{#2}{#3}}
+\RenewDocumentCommand{\smallimage}{O{.70\linewidth} m m}{\midfigure[#1]{#2}{#3}}
+\renewcommand{\conceptimagerow}[3]{\chOnePair{#2}{\chOneImage{#1}{#3}}}
+\renewcommand{\conceptwrapimage}[3]{\conceptimagerow{#1}{#2}{#3}}
+\renewcommand{\mcqoption}[4]{\par\noindent ক. #1\par খ. #2\par গ. #3\par ঘ. #4\par}
+% Only the correct option is displayed; theory belongs in its canonical topic.
+\newcommand{\chOneAnswerBox}[1]{\par\smallskip\noindent{\setlength{\fboxsep}{3pt}\fcolorbox{chOneTeal}{white}{\strut\textbf{\color{chOneTeal}উত্তর: #1।}}}\par}
+\newcommand{\chOneMCQ}[7]{\par\addvspace{4pt}\noindent\begin{minipage}[b]{\linewidth}{\bfseries\color{chOneRose}#1}\par\mcqoption{#2}{#3}{#4}{#5}\chOneAnswerBox{#6}\end{minipage}\par}
+\newcommand{\chOneScenario}[4]{\subsubsection{#1}\textbf{সমস্যা:} #2\par\textbf{সমাধান ও ব্যবহার:} #3\par\textbf{পরীক্ষায় শনাক্ত করার সূত্র:} #4\par}
+\newcommand{\chOneQAPair}[2]{\par\addvspace{3pt}\noindent\begin{minipage}[b]{\linewidth}\chOnePair{#1}{#2}\end{minipage}\par\addvspace{3pt}}
+\newcommand{\chOneQAPairTitle}[3]{\par\addvspace{3pt}\noindent\begin{minipage}[b]{\linewidth}\subtopichead{#1}\chOnePair{#2}{#3}\end{minipage}\par\addvspace{3pt}}
+\newcommand{\chOneTableHead}[2]{#1\endfirsthead #1\endhead #2}
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
+\captionsetup{font=small,skip=2pt}
+\raggedbottom\raggedcolumns\setlength{\multicolsep}{4pt}
+\input{chapters/Chapter01/latex/diagrams}
+\input{chapters/Chapter01/latex/asset_map}

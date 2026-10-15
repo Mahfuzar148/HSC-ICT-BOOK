@@ -1,0 +1,30 @@
+% Original vector rendering of the existing Student dataset.
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\small}]
+\matrix (studentgrid) [matrix of nodes,
+ nodes={draw=black,line width=.6pt,anchor=west,align=left,inner sep=3pt,minimum height=7mm},
+ row sep=-.6pt,column sep=-.6pt,
+ column 1/.style={nodes={text width=10mm}},
+ column 2/.style={nodes={text width=16mm,fill=green!9}},
+ column 3/.style={nodes={text width=31mm}},
+ column 4/.style={nodes={text width=11mm}},
+ column 5/.style={nodes={text width=9mm}},
+ row 1/.style={nodes={fill=chSixTint,font=\small\bfseries}},
+ row 3/.style={nodes={fill=chSixAccent!9}},
+ row 4 column 4/.style={nodes={fill=yellow!25}}]
+{Roll & Name & Group & GPA & Age\\
+ 101 & Rahim & Science & 5.00 & 17\\
+ 102 & Karim & Business Studies & 4.75 & 18\\
+ 103 & Nila & Humanities & 4.50 & 17\\};
+\node[above=6mm of studentgrid-1-2,anchor=south west,text=green!35!black] (fieldlabel) {Field};
+\draw[bookarrow,green!35!black] (fieldlabel.south)--(studentgrid-1-2.north);
+\node[right=6mm of studentgrid-3-5,text=chSixAccent] (recordlabel) {Record};
+\draw[bookarrow,chSixAccent] (recordlabel.west)--(studentgrid-3-5.east);
+\node[below=6mm of studentgrid-4-4,text=chSixTeal] (valuelabel) {Value: 4.50};
+\draw[bookarrow,chSixTeal] (valuelabel.north)--(studentgrid-4-4.south);
+\end{tikzpicture}
+\captionof{table}{Student সারণিতে ফিল্ড, রেকর্ড ও নির্দিষ্ট মান}
+\end{flushleft}
+সবুজ Name কলামটি একটি Field; গোলাপি সারিটি Karim-এর সম্পূর্ণ Record।
+হলুদ ঘরের 4.50 একটি Field Value, আর GPA সেই ফিল্ডের নাম।
+বাস্তব শিক্ষার্থী হলো Entity; সারণিতে তার পরিচয় ও বৈশিষ্ট্যের মান সংরক্ষিত হয়।

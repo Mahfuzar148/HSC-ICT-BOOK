@@ -1,0 +1,26 @@
+# Chapter 1 — ধারণার মূল অবস্থান
+
+৮ অক্টোবর ২০২৬। সংজ্ঞা/মূল প্রক্রিয়া একবার; ভিন্ন ক্ষেত্রে প্রয়োগ ও প্রশ্ন আলাদাভাবে থাকতে পারে। cross-reference নতুন সংজ্ঞা নয়।
+
+| ধারণাগুচ্ছ | Canonical source ও label | MUST KEEP |
+|---|---|---|
+| বিশ্বগ্রাম | [source](topics/01_bishwogram/topic.tex); `sec:ch1-global-village` | ডেটা ও তথ্য; IT/CT/ICT; বিশ্বায়ন; McLuhan 1962/1964; সুবিধা-ঝুঁকি; ডিজিটাল বৈষম্য |
+| বিশ্বগ্রামের উপাদান ও সেবা | [source](topics/02_bishwogramer_upadan_o_obodan/topic.tex); `sec:ch1-components` | পাঁচ উপাদান; সংযোগ বনাম ইন্টারনেট; WWW/ISP/TCP/IP; ই-মেইলের ক্ষেত্র; সম্মেলন; LMS/শিক্ষার চার ধরন; ই-বুক; EHR/EMR/CPR; টেলিমেডিসিন/সার্জারি; MRI/endoscopy; চার ব্যবসার ধরন; EFT/MICR/SWIFT; কাজ; অফিস/IoT; শাসন; কৃষি/গবেষণা/সংস্কৃতি |
+| ভার্চুয়াল রিয়েলিটি | [source](topics/03_virtual_reality/topic.tex); `sec:ch1-vr` | Three-I বনাম Presence; নয় ধরনের সরঞ্জাম; ইনপুট-প্রক্রিয়া-ফল-প্রতিক্রিয়া; ট্র্যাকার/সিমুলেটর/অ্যাপ্লিকেশন/জ্যামিতি; বিলম্ব/FOV; ইতিহাস; simulation/VR/AR/MR; প্রশিক্ষণ ও সীমা |
+| কৃত্রিম বুদ্ধিমত্তা | [source](topics/04_ict_samprotik_prabonota/subtopics/01_kritrim_buddhimotta/topic.tex); `sec:ch1-ai` | AI/ML/DL/GenAI সম্পর্ক; ইতিহাস; শেখার সাত ধাপ ও তিন ধরন; নিউরাল স্তর/ওজন; NLP/কণ্ঠ/CV; LLM/Transformer/টোকেন; Expert System; Fuzzy Logic; শ্রেণি; প্রয়োগ; ঝুঁকি ও নৈতিকতা; আট মডেল পরিবার; RAG/fine-tuning; এজেন্ট ও তত্ত্বাবধান |
+| রোবটিকস | [source](topics/04_ict_samprotik_prabonota/subtopics/02_robotics/topic.tex); `sec:ch1-robotics` | ইতিহাস; সেন্সর/নিয়ন্ত্রক/অ্যাকচুয়েটর/End Effector; Feedback; DOF; চলার ধরন; এগারো শ্রেণি; নাম ও নির্মাতা; প্রয়োগ; 2023 ঘনত্ব বনাম 2024 স্থাপনা; ঝুঁকি |
+| ক্রায়োসার্জারি | [source](topics/04_ict_samprotik_prabonota/subtopics/03_cryosurgery/topic.tex); `sec:ch1-cryosurgery` | নিয়ন্ত্রিত অতিশীতলতা; cryogen/cryoprobe; nitrogen/argon/CO2/helium; freeze-thaw; -196 C স্ফুটনাঙ্ক ও -20 C উদাহরণের শর্ত; imaging/প্রয়োগ/সুবিধা/ঝুঁকি |
+| মহাকাশ অভিযান | [source](topics/04_ict_samprotik_prabonota/subtopics/04_mohakash_ovijan/topic.tex); `sec:ch1-space` | মিশনের ধরন ও ইতিহাস; telemetry/command; uplink/downlink/transponder; VSAT/DTH; কক্ষপথ; remote sensing/GIS/GPS; চার উপগ্রহ; সতর্কতা; বাংলাদেশ উপগ্রহের সব মান; প্রতিষ্ঠান; আধুনিক ব্যবহার ও ঝুঁকি |
+| উৎপাদন | [source](topics/04_ict_samprotik_prabonota/subtopics/05_ict_nirvor_utpadon/topic.tex); `sec:ch1-production` | উৎপাদনচক্র; CAD/CAM/CNC; PLC/SCADA/IIoT; ERP/MES; QR/barcode/RFID; QA/QC; traceability/serialization/GMP; maintenance; supply/cold chain; Industry 4.0; সব শিল্পের প্রয়োগ |
+| প্রতিরক্ষা | [source](topics/04_ict_samprotik_prabonota/subtopics/06_protirokkha/topic.tex); `sec:ch1-defence` | রাডার/UAV; প্রশিক্ষণ ও নজরদারি; encryption/authentication পার্থক্য; লগ/ব্যাকআপ/সংযোগের ব্যর্থতা |
+| বায়োমেট্রিক্স | [source](topics/04_ict_samprotik_prabonota/subtopics/07_biometrics/topic.tex); `sec:ch1-biometrics` | নিবন্ধন/template/threshold; এগারো পদ্ধতি; iris/retina/pupil; 1:1 বনাম 1:N; DNA নমুনা ও অভিন্ন যমজ; false acceptance/rejection; নকল নমুনা; গোপনীয়তা |
+| বায়োইনফরমেটিক্স | [source](topics/04_ict_samprotik_prabonota/subtopics/08_bioinformatics/topic.tex); `sec:ch1-bioinformatics` | 1970 Hesper/Hogeweg; চার বিষয়ের সমন্বয়; sequence/database/BLAST; gene finding/mapping; genomics/proteomics; modelling; পরীক্ষাগারে যাচাই; জুট 2010; dry/wet lab |
+| জেনেটিক ইঞ্জিনিয়ারিং | [source](topics/04_ict_samprotik_prabonota/subtopics/09_genetic_engineering/topic.tex); `sec:ch1-genetic` | DNA/RNA/জিন/ক্রোমোজোম/genome/mutation; bases; 23 জোড়া/46 বনাম 23; 1951/1972/1980; enzyme/ligase/vector/host; insulin/E. coli/yeast; GMO/cloning/hybridization; therapy/stem cell; সুবিধা-ঝুঁকি |
+| ন্যানো প্রযুক্তি | [source](topics/04_ict_samprotik_prabonota/subtopics/10_nanotechnology/topic.tex); `sec:ch1-nano` | 1–100 nm; 10^-9/10^9/50nm রূপান্তর; পৃষ্ঠতল/quantum; 1959/1974; STM 1981; top-down/bottom-up; ছয় উপাদান; চিকিৎসা/ইলেকট্রনিকস/কৃষি/শিল্প/টেনিস/সানস্ক্রিন; মাত্রা ও ঝুঁকি |
+| নৈতিকতা | [source](topics/05_noitikota/topic.tex); `sec:ch1-ethics` | অধিকার/সম্মতি; copyright/patent; plagiarism/clone বনাম infringement; piracy; phishing/social engineering/spoofing; malware; hacker hats; দশ নৈতিক নীতি |
+| সামাজিক প্রভাব | [source](topics/06_somaj_jibone_probhab/topic.tex); `sec:ch1-social` | যোগাযোগ/শিক্ষা/স্বাস্থ্য/কর্মসংস্থান/সংস্কৃতি; অন্তর্ভুক্তি; কর্মীর পুনঃপ্রশিক্ষণ; স্ক্রিন/ঘুম/স্বাস্থ্য; ডিজিটাল বৈষম্যের সংজ্ঞা পুনরায় নয় |
+| অর্থনৈতিক উন্নয়ন | [source](topics/07_orthonoitik_unnoyon/topic.tex); `sec:ch1-economy` | কর্মসংস্থান/বাজার/দক্ষতা; freelancing বনাম remote job; offshoring; revenue/profit এবং সকল খরচ; গ্রামীণ কারিগর; বাংলাদেশে ব্যবহার |
+
+AI-এর সংখ্যাগত নিউরাল উদাহরণ `llm_details.tex`, ভাষা মডেলের গভীর ব্যাখ্যা `language_details.tex`, মডেল পরিচয় `modern_models.tex`, এজেন্ট `agents_and_impact.tex`-এ রয়েছে; সবগুলো একই AI অংশে input হয়। অন্য অংশে এগুলোর পূর্ণ সংজ্ঞা পুনরায় নেই।
+
+ইন্টারনেট/ওয়েবের সংজ্ঞা 02; CAD 04.05; ডেটা/ICT/বিশ্বগ্রাম/ডিজিটাল বৈষম্য 01; DNA/জিন 04.09; copyright/patent/plagiarism 05; simulation 03; IoT 02 এবং শিল্পে তার নির্দিষ্ট প্রয়োগ 04.05।

@@ -1,0 +1,32 @@
+\subsubsection{ট্যাগকে লেখা হিসেবে দেখানো: Character Reference}
+পেজে \texttt{<p>} কথাটি বোঝাতে চাইলে সেটি সরাসরি লিখলে ব্রাউজার ট্যাগ হিসেবে পড়তে পারে। তাই সাধারণ HTML পাঠে \texttt{<}-এর বদলে \texttt{\&lt;} এবং প্রয়োজনমতো \texttt{>}-এর বদলে \texttt{\&gt;} লিখি। অক্ষরকে নির্ধারিত নাম বা Unicode নম্বর দিয়ে প্রকাশের এই রীতিকে \textbf{character reference} বলে; পাঠ্যবইয়ে entity নামেও পরিচিত। নামের রূপ \texttt{\&name;} এবং দশমিক নম্বরের রূপ \texttt{\&\#number;}। শেষে সেমিকোলন লিখবে; নির্ধারিত নামের বড়/ছোট অক্ষরও ঠিক রাখতে হবে।
+
+\begin{center}\small
+\begin{tabular}{|l|l|l|p{.34\linewidth}|}\hline
+\textbf{ফল} & \textbf{নাম দিয়ে} & \textbf{নম্বর দিয়ে} & \textbf{প্রয়োজন} \\\hline
+\texttt{<} & \texttt{\&lt;} & \texttt{\&\#60;} & ট্যাগের শুরু হিসেবে না পড়ে চিহ্ন দেখানো \\\hline
+\texttt{>} & \texttt{\&gt;} & \texttt{\&\#62;} & বন্ধনীর চিহ্ন দেখানো \\\hline
+\& & \texttt{\&amp;} & \texttt{\&\#38;} & ampersand-কে স্পষ্টভাবে লেখা \\\hline
+\texttt{"} & \texttt{\&quot;} & \texttt{\&\#34;} & দ্বৈত উদ্ধৃতির অ্যাট্রিবিউটের মানে উদ্ধৃতি দেখানো \\\hline
+{\fontspec{Latin Modern Roman}\copyright} & \texttt{\&copy;} & \texttt{\&\#169;} & কপিরাইট চিহ্ন দেখানো \\\hline
+অবিভাজ্য ফাঁক & \texttt{\&nbsp;} & \texttt{\&\#160;} & পাশাপাশি শব্দের মাঝে লাইন না ভাঙা \\\hline
+\end{tabular}\end{center}
+
+\par\noindent\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড: ট্যাগ শেখানোর পেজ}\par
+\begin{verbatim}
+<p>Use &lt;p&gt; for text.</p>
+<p>Art &amp; Science</p>
+<p>Room&nbsp;12</p>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও কারণ}\par
+Use \texttt{<p>} for text.\par
+Art \& Science\par
+Room~12\par
+প্রথম লাইনে \texttt{<p>} লেখা হিসেবে দেখা যায়। শেষ লাইনের ফাঁকটি Room ও 12-এর মাঝখানে লাইন ভাঙতে দেয় না।
+\end{minipage}\par
+UTF-8 ফাইলে বাংলা বা {\fontspec{Latin Modern Roman}\copyright}-এর মতো অক্ষর সরাসরিও লেখা যায়; প্রতিটি অক্ষরের নম্বর মুখস্থ করা লাগে না। \texttt{\&nbsp;} দিয়ে পেজের নকশা বা বড় ফাঁক বানাবে না; বিন্যাসে CSS ব্যবহার করবে।
+
+যেমন, \texttt{\&lt;h2\&gt;} লিখলে পেজে \texttt{<h2>} লেখাটি দেখা যায়। এতে শিরোনাম তৈরি হয় না।

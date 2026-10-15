@@ -1,0 +1,194 @@
+% Chapter 5 prose matches the other chapters. Coding containers retain their
+% original definitions, colours, border geometry and 9pt code presentation.
+\definecolor{chFiveTextTeal}{HTML}{14667A}
+\definecolor{chFiveTextAccent}{HTML}{9C3658}
+
+% Keep the original Bengali font available inside the existing coding boxes.
+\ifdefined\bengalifont
+  \let\chFiveLegacyBanglaFont\bengalifont
+\else
+  \newfontfamily\chFiveLegacyBanglaFont[Script=Bengali,FakeBold=.18]{Nirmala UI}
+\fi
+\makeatletter
+\edef\chFiveLegacyRmDefault{\rmdefault}
+\edef\chFiveLegacyFamilyDefault{\familydefault}
+\makeatother
+\IfFontExistsTF{Kalpurush}{%
+  \ifLuaTeX
+    \newfontfamily\chFiveTextFont[
+      Renderer=HarfBuzz,Script=Bengali,Language=Bengali,RawFeature=-tlig,
+      UprightFont=*,BoldFont=*,ItalicFont=*,BoldItalicFont=*,
+      FakeBold=1.25,BoldFeatures={FakeBold=2.4},
+      ItalicFeatures={FakeSlant=.15},
+      BoldItalicFeatures={FakeBold=2.4,FakeSlant=.15},
+      Scale=MatchLowercase
+    ]{Kalpurush}%
+  \else
+    \newfontfamily\chFiveTextFont[
+      Script=Bengali,Language=Bengali,RawFeature=-tlig,UprightFont=*,BoldFont=*,
+      ItalicFont=*,BoldItalicFont=*,FakeBold=1.25,
+      BoldFeatures={FakeBold=2.4},Scale=MatchLowercase
+    ]{Kalpurush}%
+  \fi
+}{%
+  \newfontfamily\chFiveTextFont[Script=Bengali,Language=Bengali,RawFeature=-tlig]{Noto Serif Bengali}%
+}
+\ifdefined\bengalifont\let\bengalifont\chFiveTextFont\fi
+\chFiveTextFont
+\makeatletter
+\edef\rmdefault{\f@family}
+\edef\familydefault{\f@family}
+\makeatother
+\newcommand{\chFiveBodyText}{%
+  \chFiveTextFont\fontsize{12}{14.4}\selectfont\raggedright
+  \setlength{\parindent}{0pt}\setlength{\parskip}{1pt}%
+}
+\setlist[itemize]{leftmargin=5mm,itemsep=1pt,topsep=2pt,parsep=0pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=1pt,topsep=2pt,parsep=0pt}
+\setlength{\multicolsep}{2pt}
+\setlength{\maxbalancingoverflow}{0pt}
+% Keep indivisible questions within their columns, as in Chapter 4.
+\setcounter{collectmore}{-4}
+\raggedcolumns
+\let\chFiveOriginalMulticols\multicols
+\def\multicols{\par\nointerlineskip\chFiveOriginalMulticols}
+\renewcommand{\labelitemi}{\ensuremath{\bullet}}
+\renewcommand{\textbullet}{\ensuremath{\bullet}}
+\raggedbottom
+% Headers may be shipped while a literal English paragraph is active.
+% Select a Bengali-capable family explicitly for every running-header segment.
+\fancyhead[L]{\chFiveTextFont\scriptsize\bfseries\color{chFiveTextTeal}অধ্যায় ৫ : প্রোগ্রামিং ভাষা}
+\fancyhead[C]{\parbox{0.53\textwidth}{\chFiveTextFont\centering\scriptsize\color{textGray}\rightmark}}
+\fancyhead[R]{\chFiveTextFont\scriptsize\bfseries\color{chFiveTextTeal}\thepage}
+
+% The lesson files end with legacy \small switches. Every main heading restores
+% the body size without changing those source files or the sizes of code boxes.
+\renewcommand{\chapterheading}[1]{%
+  \ifdefined\chFiveStandaloneLayout\pdfbookmark[0]{#1}{chapter05}\fi
+  \markright{অধ্যায় পরিচিতি}%
+  \par\addvspace{4pt}\noindent
+  {\chFiveTextFont\fontsize{18}{21}\selectfont\bfseries\color{chFiveTextTeal}#1}\par
+  \nobreak\addvspace{4pt}\chFiveBodyText
+}
+\renewcommand{\sectionheading}[1]{%
+  \par\Needspace{4\baselineskip}\addvspace{6pt}%
+  \refstepcounter{chaptertopic}\label{topic:\thechaptertopic}%
+  \addcontentsline{toc}{section}{#1}\markright{#1}%
+  \noindent{\chFiveTextFont\fontsize{16}{19}\selectfont\bfseries\color{chFiveTextTeal}#1}\par
+  \nobreak\addvspace{3pt}\chFiveBodyText
+}
+\renewcommand{\booksubheading}[1]{%
+  \par\Needspace{4\baselineskip}\addvspace{5pt}\noindent
+  {\chFiveTextFont\fontsize{13}{15}\selectfont\bfseries\color{chFiveTextAccent}#1}\par
+  \nobreak\addvspace{2pt}%
+}
+\renewcommand{\partheading}[1]{%
+  \par\Needspace{4\baselineskip}\addvspace{6pt}\noindent
+  {\chFiveTextFont\fontsize{14}{17}\selectfont\bfseries\color{chFiveTextTeal}#1}\par
+  \nobreak\addvspace{3pt}%
+}
+\renewcommand{\topicheading}[1]{\booksubheading{#1}}
+
+% Plain, breakable teaching paragraphs replace decorative prose containers.
+% The original titles and all body text remain in their original input files.
+\newcommand{\chFivePlainStart}{\par\addvspace{3pt}\begingroup\chFiveBodyText}
+\newcommand{\chFivePlainEnd}{\par\endgroup\addvspace{3pt}}
+\newcommand{\chFivePlainTitle}[1]{%
+  \Needspace{3\baselineskip}\noindent
+  {\bfseries\color{chFiveTextTeal}#1}\par\nobreak\addvspace{2pt}%
+}
+\renewenvironment{overviewbox}{\chFivePlainStart}{\chFivePlainEnd}
+\renewenvironment{definitionbox}{\chFivePlainStart}{\chFivePlainEnd}
+\renewenvironment{rememberbox}{\chFivePlainStart}{\chFivePlainEnd}
+\renewenvironment{infobox}{\chFivePlainStart}{\chFivePlainEnd}
+\renewenvironment{trapbox}{\chFivePlainStart}{\chFivePlainEnd}
+\renewenvironment{stimulusbox}{\chFivePlainStart}{\chFivePlainEnd}
+\renewenvironment{examplebox}[1]{\chFivePlainStart\chFivePlainTitle{#1}}{\chFivePlainEnd}
+\renewenvironment{explainbox}[1]{\chFivePlainStart\chFivePlainTitle{#1}}{\chFivePlainEnd}
+\renewenvironment{revisionbox}[1]{\chFivePlainStart\chFivePlainTitle{#1}}{\chFivePlainEnd}
+\renewenvironment{pathbox}{\chFivePlainStart\chFivePlainTitle{অধ্যায়ের পথনকশা}}{\chFivePlainEnd}
+% Learning outcomes remain the single opening highlight container.
+\renewtcolorbox{learningbox}{enhanced,breakable,frame hidden,
+  colback=chFiveTextTeal!5,colbacktitle=chFiveTextTeal!5,
+  coltitle=chFiveTextTeal,title={এই অধ্যায় শেষে যা শিখবে},
+  fonttitle=\bfseries,fontupper=\chFiveBodyText,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,before skip=3pt,after skip=3pt}
+
+% Match the compact, unboxed question presentation of the other chapters.
+% Each question stays with its options; nested \codeblock retains its old box.
+\newcommand{\chFiveMCQStart}[2]{%
+  \par\addvspace{3pt}\noindent\begin{minipage}{\linewidth}\chFiveBodyText
+  \textbf{\color{chFiveTextTeal}#1.} #2\par\nobreak\vspace{2pt}%
+}
+\newcommand{\chFiveMCQEnd}{\end{minipage}\par\addvspace{3pt}}
+\renewcommand{\mcq}[6]{%
+  \chFiveMCQStart{#1}{#2}%
+  {\setlength{\tabcolsep}{2.7pt}\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+  ক. #3 & খ. #4 \\[1pt] গ. #5 & ঘ. #6
+  \end{tabularx}}\chFiveMCQEnd
+}
+\renewcommand{\mcqwide}[6]{%
+  \chFiveMCQStart{#1}{#2}%
+  {\setlength{\tabcolsep}{2.7pt}\begin{tabularx}{\linewidth}{@{}Y@{}}
+  ক. #3 \\[1pt] খ. #4 \\[1pt] গ. #5 \\[1pt] ঘ. #6
+  \end{tabularx}}\chFiveMCQEnd
+}
+\renewcommand{\cqtitle}[2]{%
+  \par\Needspace{4\baselineskip}\addvspace{5pt}\noindent
+  {\chFiveTextFont\fontsize{14}{17}\selectfont\bfseries\color{chFiveTextTeal}CQ--#1 : #2}\par
+  \nobreak\addvspace{2pt}%
+}
+\renewcommand{\boardcqtitle}[1]{%
+  \par\Needspace{4\baselineskip}\addvspace{5pt}\noindent
+  {\chFiveTextFont\fontsize{14}{17}\selectfont\bfseries\color{chFiveTextTeal}CQ--#1}\par
+  \nobreak\addvspace{2pt}%
+}
+\renewcommand{\qpart}[2]{\par\noindent\textbf{\color{chFiveTextTeal}#1.}\,#2\par\addvspace{2pt}}
+
+% Freeze code/output font context, including the matched side-by-side boxes.
+% No original tcolorbox/listing definition is rewritten by this style layer.
+\makeatletter
+\newcommand{\chFiveCodingContext}{%
+  \begingroup
+  % A minipage cannot split. Apply this after a container's own options so
+  % the original colours, padding and border are retained without split loss.
+  \appto\tcb@afteroptions@hook{\ifinner\tcbset{breakable=false}\fi}%
+  \edef\rmdefault{\chFiveLegacyRmDefault}%
+  \edef\familydefault{\chFiveLegacyFamilyDefault}%
+  \ifdefined\bengalifont\let\bengalifont\chFiveLegacyBanglaFont\fi
+  \chFiveLegacyBanglaFont\fontsize{9}{11}\selectfont
+  \setlength{\parskip}{.26mm}\setlength{\parindent}{0pt}%
+}
+\makeatother
+% Named kernel hooks work with both classic and document-command environments.
+% Remove only this chapter's registrations before returning to the next chapter.
+\AddToHook{env/codebox/before}[chFiveStyle]{\chFiveCodingContext}
+\AddToHook{env/codebox/after}[chFiveStyle]{\endgroup}
+\AddToHook{env/codeoutputbox/before}[chFiveStyle]{\chFiveCodingContext}
+\AddToHook{env/codeoutputbox/after}[chFiveStyle]{\endgroup}
+\AddToHook{env/sidecodebox/before}[chFiveStyle]{\chFiveCodingContext}
+\AddToHook{env/sidecodebox/after}[chFiveStyle]{\endgroup}
+\AddToHook{env/sideexamplebox/before}[chFiveStyle]{\chFiveCodingContext}
+\AddToHook{env/sideexamplebox/after}[chFiveStyle]{\endgroup}
+\AddToHook{env/pythoncode/before}[chFiveStyle]{\chFiveCodingContext}
+\AddToHook{env/pythoncode/after}[chFiveStyle]{\endgroup}
+\let\chFiveOriginalCodeblock\codeblock
+\renewcommand{\codeblock}[1]{\chFiveCodingContext\chFiveOriginalCodeblock{#1}\endgroup}
+\let\chFiveOriginalExerciseTable\exerciseTable
+\renewcommand{\exerciseTable}[5]{%
+  \chFiveCodingContext\chFiveOriginalExerciseTable{#1}{#2}{#3}{#4}{#5}\endgroup
+}
+% Literal code outside a container also retains its original monospace context.
+\AddToHook{env/english/before}[chFiveStyle]{\begingroup\fontsize{9}{11}\selectfont}
+\AddToHook{env/english/after}[chFiveStyle]{\endgroup}
+\newcommand{\chFiveRemoveStyleHooks}{%
+  \RemoveFromHook{env/codebox/before}[chFiveStyle]\RemoveFromHook{env/codebox/after}[chFiveStyle]%
+  \RemoveFromHook{env/codeoutputbox/before}[chFiveStyle]\RemoveFromHook{env/codeoutputbox/after}[chFiveStyle]%
+  \RemoveFromHook{env/sidecodebox/before}[chFiveStyle]\RemoveFromHook{env/sidecodebox/after}[chFiveStyle]%
+  \RemoveFromHook{env/sideexamplebox/before}[chFiveStyle]\RemoveFromHook{env/sideexamplebox/after}[chFiveStyle]%
+  \RemoveFromHook{env/pythoncode/before}[chFiveStyle]\RemoveFromHook{env/pythoncode/after}[chFiveStyle]%
+  \RemoveFromHook{env/english/before}[chFiveStyle]\RemoveFromHook{env/english/after}[chFiveStyle]%
+}
+
+% Font-safe rendering for the arrows already present in the original prose.
+\pdfstringdefDisableCommands{\def\textenglish#1{#1}\def\englishfont{}\def\ttfamily{}}

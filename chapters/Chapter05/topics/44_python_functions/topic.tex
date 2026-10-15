@@ -1,0 +1,1465 @@
+\sectionheading{5.44 Python-এ Function}
+
+একই ধরনের কাজ Program-এর বিভিন্ন স্থানে বারবার প্রয়োজন হলে একই Code
+বারবার না লিখে সেই কাজকে একটি নির্দিষ্ট অংশে রাখা যায়।
+এই পুনঃব্যবহারযোগ্য Code Block-কে \textbf{Function} বলা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Function কী?}
+
+\begin{definitionbox}
+
+নির্দিষ্ট কোনো কাজ সম্পন্ন করার জন্য তৈরি পুনঃব্যবহারযোগ্য
+Code Block-কে \textbf{Function} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{একবার Function তৈরি}
+\(\longrightarrow\)
+\textbf{প্রয়োজনমতো Call}
+\(\longrightarrow\)
+\textbf{একই কাজ পুনরায় সম্পন্ন}
+
+\end{center}
+
+%================================================
+% Benefits
+%================================================
+
+\booksubheading{Function ব্যবহারের সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item একই Code বারবার লিখতে হয় না।
+
+\item Code পুনঃব্যবহার করা যায়।
+
+\item Program ছোট, গোছানো ও সহজবোধ্য হয়।
+
+\item বড় Problem-কে ছোট ছোট অংশে ভাগ করা যায়।
+
+\item Program পরিবর্তন, পরীক্ষা ও রক্ষণাবেক্ষণ সহজ হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Types
+%================================================
+
+\booksubheading{Python-এ Function-এর ধরন}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y
+|>{\RaggedRight\arraybackslash}p{0.32\linewidth}|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{ধরন}
+&
+\textbf{অর্থ}
+&
+\textbf{উদাহরণ}
+\\
+\hline
+
+Built-in Function
+&
+Python-এ আগে থেকেই তৈরি।
+&
+\textenglish{\ttfamily print(), input(), len(), type()}
+\\
+\hline
+
+User-defined Function
+&
+Programmer প্রয়োজন অনুযায়ী তৈরি করে।
+&
+\textenglish{\ttfamily add(), area(), greet()}
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textenglish{\ttfamily print()},
+\textenglish{\ttfamily input()},
+\textenglish{\ttfamily len()},
+\textenglish{\ttfamily type()}
+ইত্যাদি হলো \textbf{Built-in Function}।
+
+\textenglish{\ttfamily def}
+ব্যবহার করে Programmer যে Function তৈরি করে তা
+\textbf{User-defined Function}।
+
+\end{rememberbox}
+
+%================================================
+% Syntax
+%================================================
+
+\booksubheading{User-defined Function তৈরির Syntax}
+
+\begin{codeoutputbox}{Function-এর সাধারণ Structure}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def function\_name():\\
+\hspace*{4mm}statement
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\textenglish{\ttfamily def}
+\(\longrightarrow\)
+Function তৈরির Keyword
+
+\medskip
+
+\textenglish{\ttfamily function\_name}
+\(\longrightarrow\)
+Function-এর নাম
+
+\medskip
+
+\textenglish{\ttfamily ()}
+\(\longrightarrow\)
+Parameter-এর স্থান
+
+\medskip
+
+\textenglish{\ttfamily :}
+\(\longrightarrow\)
+Header-এর শেষ
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+Function Body অবশ্যই সঠিকভাবে \textbf{Indented} হতে হবে।
+
+%================================================
+% Define and Call
+%================================================
+
+\booksubheading{Function তৈরি ও Call}
+
+\begin{codeoutputbox}{প্রথম Function}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def greet():\\
+\hspace*{4mm}print("Hello")\\[0.5mm]
+greet()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily Hello}
+\end{center}
+
+\textenglish{\ttfamily def greet():}
+Function Define করেছে।
+
+\textenglish{\ttfamily greet()}
+Function-টিকে Call করেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+শুধু Function Define করলে তার Body Execute হয় না।
+
+\begin{center}
+
+\textbf{Function Call}
+\(\longrightarrow\)
+\textbf{Function Body Execute}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Multiple Call
+%================================================
+
+\booksubheading{একই Function একাধিকবার Call}
+
+\begin{codeoutputbox}{Function Reuse}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def greet():\\
+\hspace*{4mm}print("Welcome")\\[0.5mm]
+greet()\\
+greet()\\
+greet()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+Welcome\\
+Welcome\\
+Welcome
+\end{english}
+
+\medskip
+
+Function একবার Define করা হয়েছে,
+কিন্তু তিনবার Call করা হয়েছে।
+
+এটাই Code Reuse-এর একটি সুবিধা।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Parameter Argument
+%================================================
+
+\booksubheading{Parameter ও Argument}
+
+Function-এ বাইরে থেকে Data পাঠানোর জন্য Parameter ব্যবহার করা হয়।
+
+\begin{codeoutputbox}{Parameter ও Argument}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def greet(name):\\
+\hspace*{4mm}print("Hello", name)\\[0.5mm]
+greet("Rafi")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Hello Rafi}
+\end{center}
+
+\textenglish{\ttfamily name}
+\(\longrightarrow\)
+Parameter
+
+\medskip
+
+\textenglish{\ttfamily "Rafi"}
+\(\longrightarrow\)
+Argument
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{অর্থ}
+\\
+\hline
+
+Parameter
+&
+Function Definition-এর মধ্যে ব্যবহৃত Variable।
+\\
+\hline
+
+Argument
+&
+Function Call-এর সময় Parameter-এর জন্য পাঠানো Actual Value।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Definition-এর মধ্যে}
+\(\longrightarrow\)
+\textbf{Parameter}
+
+\qquad
+
+\textbf{Call-এর মধ্যে}
+\(\longrightarrow\)
+\textbf{Argument}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Multiple Parameters
+%================================================
+
+\booksubheading{একাধিক Parameter}
+
+\begin{codeoutputbox}{দুইটি Parameter}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}print(a + b)\\[0.5mm]
+add(10, 20)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 30}
+\end{center}
+
+\textenglish{\ttfamily a, b}
+হলো Parameter।
+
+\textenglish{\ttfamily 10, 20}
+হলো Argument।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Positional
+%================================================
+
+\booksubheading{Positional Argument}
+
+Argument-এর Position অনুযায়ী Parameter-এ Value গেলে তাকে
+\textbf{Positional Argument} বলা হয়।
+
+\begin{codeoutputbox}{Positional Argument}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def student(name, age):\\
+\hspace*{4mm}print(name, age)\\[0.5mm]
+student("Rafi", 18)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Rafi 18}
+\end{center}
+
+প্রথম Argument
+\textenglish{\ttfamily "Rafi"}
+যায়
+\textenglish{\ttfamily name}-এ।
+
+দ্বিতীয় Argument
+\textenglish{\ttfamily 18}
+যায়
+\textenglish{\ttfamily age}-এ।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+Positional Argument-এ Argument-এর
+\textbf{Order গুরুত্বপূর্ণ}।
+
+\end{rememberbox}
+
+%================================================
+% Keyword argument
+%================================================
+
+\booksubheading{Keyword Argument}
+
+Parameter-এর নাম উল্লেখ করে Argument পাঠানো হলে তাকে
+\textbf{Keyword Argument} বলা হয়।
+
+\begin{codeoutputbox}{Keyword Argument}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def student(name, age):\\
+\hspace*{4mm}print(name, age)\\[0.5mm]
+student(age=18, name="Rafi")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Rafi 18}
+\end{center}
+
+Parameter-এর নাম উল্লেখ করা হয়েছে।
+
+তাই এখানে Argument-এর Position বদলালেও
+সঠিক Parameter-এ Value গেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Default parameter
+%================================================
+
+\booksubheading{Default Parameter}
+
+Function Definition-এর সময় কোনো Parameter-এর Default Value
+নির্ধারণ করা যায়।
+
+\begin{codeoutputbox}{Default Value}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def greet(name="Student"):\\
+\hspace*{4mm}print("Hello", name)\\[0.5mm]
+greet()\\
+greet("Rafi")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+Hello Student\\
+Hello Rafi
+\end{english}
+
+\medskip
+
+প্রথম Call-এ Argument নেই,
+তাই Default Value ব্যবহৃত হয়েছে।
+
+দ্বিতীয় Call-এ
+\textenglish{\ttfamily "Rafi"}
+Default Value-এর জায়গায় এসেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Return
+%================================================
+
+\booksubheading{\textenglish{\ttfamily return} Statement}
+
+Function-এর Result Function-এর বাইরে ফেরত পাঠানোর জন্য
+\textenglish{\ttfamily return}
+ব্যবহার করা হয়।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily return} ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}return a + b\\[0.5mm]
+result = add(10, 20)\\
+print(result)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 30}
+\end{center}
+
+\textenglish{\ttfamily return a + b}
+Result Function-এর বাইরে পাঠিয়েছে।
+
+ফেরত পাওয়া Value
+\textenglish{\ttfamily result}
+Variable-এ রাখা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% print vs return
+%================================================
+
+\booksubheading{\textenglish{\ttfamily print()} বনাম \textenglish{\ttfamily return}}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textenglish{\ttfamily print()}
+&
+\textenglish{\ttfamily return}
+\\
+\hline
+
+প্রধান কাজ
+&
+Output Screen-এ প্রদর্শন করে।
+&
+Value Function-এর বাইরে ফেরত দেয়।
+\\
+\hline
+
+Result সংরক্ষণ
+&
+শুধু Print করলে Return Value হিসেবে পাওয়া যায় না।
+&
+Variable-এ রাখা যায়।
+\\
+\hline
+
+পরে Calculation
+&
+Printed Output সরাসরি Result হিসেবে ব্যবহার করা যায় না।
+&
+Return করা Value ব্যবহার করা যায়।
+\\
+\hline
+
+Function শেষ
+&
+অবশ্যই Function শেষ করে না।
+&
+Execute হলে Function শেষ হয়।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{codeoutputbox}{Return করা Value পুনরায় ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def square(n):\\
+\hspace*{4mm}return n * n\\[0.5mm]
+x = square(5)\\
+y = x + 10\\
+print(y)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 35}
+\end{center}
+
+\textenglish{\ttfamily square(5)}
+ফেরত দেয় 25।
+
+তারপর—
+
+\[
+25 + 10 = 35
+\]
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+
+\begin{center}
+
+\textenglish{\ttfamily print()}
+\(\neq\)
+\textenglish{\ttfamily return}
+
+\end{center}
+
+\textenglish{\ttfamily print()}
+Output দেখায়, আর
+\textenglish{\ttfamily return}
+Result ফেরত দেয়।
+
+\end{rememberbox}
+
+%================================================
+% Return stops function
+%================================================
+
+\booksubheading{\textenglish{\ttfamily return} হলে Function কোথায় থামে?}
+
+\textenglish{\ttfamily return}
+Execute হলে Function-এর Execution সেখানেই শেষ হয়।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily return}-এর পরের Code}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def test():\\
+\hspace*{4mm}print("A")\\
+\hspace*{4mm}return\\
+\hspace*{4mm}print("B")\\[0.5mm]
+test()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily A}
+\end{center}
+
+\textenglish{\ttfamily return}
+Execute হওয়ার পর Function শেষ হয়েছে।
+
+তাই
+\textenglish{\ttfamily print("B")}
+Execute হয়নি।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily return}
+\(\longrightarrow\)
+\textbf{Value ফেরত দিতে পারে}
++
+\textbf{Function Execution শেষ করে}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% None
+%================================================
+
+\booksubheading{Explicit \textenglish{\ttfamily return} না থাকলে কী হয়?}
+
+Python Function-এ Explicit
+\textenglish{\ttfamily return}
+না থাকলে Function সাধারণত
+\textenglish{\ttfamily None}
+Return করে।
+
+\begin{codeoutputbox}{Implicit \textenglish{\ttfamily None}}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def greet():\\
+\hspace*{4mm}print("Hello")\\[0.5mm]
+x = greet()\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+Hello\\
+None
+\end{english}
+
+\medskip
+
+Function-এর ভিতরের
+\textenglish{\ttfamily print()}
+প্রথমে
+\textenglish{\ttfamily Hello}
+দেখিয়েছে।
+
+Explicit
+\textenglish{\ttfamily return}
+না থাকায় Return Value হলো
+\textenglish{\ttfamily None}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Four Forms
+%================================================
+
+\booksubheading{Function-এর সাধারণ চারটি রূপ}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.22\linewidth}
+|>{\centering\arraybackslash}p{0.21\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Parameter}
+&
+\textbf{Return}
+&
+\textbf{উদাহরণ}
+\\
+\hline
+
+নেই
+&
+নেই
+&
+Message Print করা।
+\\
+\hline
+
+আছে
+&
+নেই
+&
+Input নিয়ে Result Print করা।
+\\
+\hline
+
+নেই
+&
+আছে
+&
+নির্দিষ্ট Value Return করা।
+\\
+\hline
+
+আছে
+&
+আছে
+&
+Input নিয়ে Result Return করা।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Four examples compact
+%================================================
+
+\begin{codeoutputbox}{১. Parameter নেই, Return নেই}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def show():\\
+\hspace*{4mm}print("Hello")\\[0.5mm]
+show()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Hello}
+\end{center}
+
+Function কোনো Input নেয়নি এবং কোনো Value Returnও করেনি।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{২. Parameter আছে, Return নেই}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}print(a + b)\\[0.5mm]
+add(5, 3)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 8}
+\end{center}
+
+দুটি Argument নেওয়া হয়েছে,
+কিন্তু Result শুধু Print করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{৩. Parameter নেই, Return আছে}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def get\_number():\\
+\hspace*{4mm}return 10\\[0.5mm]
+x = get\_number()\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 10}
+\end{center}
+
+Function কোনো Parameter নেয়নি,
+কিন্তু
+\textenglish{\ttfamily 10}
+Return করেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{৪. Parameter আছে, Return আছে}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}return a + b\\[0.5mm]
+x = add(5, 3)\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 8}
+\end{center}
+
+Function Input নিয়েছে এবং Result Return করেছে।
+
+Practical Program-এ এটি খুব কার্যকর।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Multiple values
+%================================================
+
+\booksubheading{একাধিক Value Return}
+
+Python Function একাধিক Value একসঙ্গে Return করতে পারে।
+
+\begin{codeoutputbox}{একাধিক Result Return}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def calculate(a, b):\\
+\hspace*{4mm}return a + b, a - b\\[0.5mm]
+x, y = calculate(10, 5)\\
+print(x)\\
+print(y)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+15\\
+5
+\end{english}
+
+\medskip
+
+একই Function থেকে Sum ও Difference ফেরত এসেছে।
+
+Python একাধিক Return Value-কে সাধারণত Tuple আকারে প্রদান করে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Function from function
+%================================================
+
+\booksubheading{একটি Function থেকে অন্য Function Call}
+
+\begin{codeoutputbox}{Function-এর ভিতরে Function Call}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def square(n):\\
+\hspace*{4mm}return n * n\\[0.5mm]
+def show():\\
+\hspace*{4mm}print(square(5))\\[0.5mm]
+show()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 25}
+\end{center}
+
+\textenglish{\ttfamily show()}
+Function-এর ভিতর থেকে
+\textenglish{\ttfamily square(5)}
+Call করা হয়েছে।
+
+এভাবে বড় Program ছোট ছোট Function-এ ভাগ করা যায়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Built-ins
+%================================================
+
+\booksubheading{কিছু গুরুত্বপূর্ণ Built-in Function}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.31\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Function}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily print()}
+&
+Output প্রদর্শন করে।
+\\
+\hline
+
+\textenglish{\ttfamily input()}
+&
+User-এর কাছ থেকে Input গ্রহণ করে।
+\\
+\hline
+
+\textenglish{\ttfamily len()}
+&
+Length বা Item Count নির্ণয় করে।
+\\
+\hline
+
+\textenglish{\ttfamily type()}
+&
+Data Type নির্ণয় করে।
+\\
+\hline
+
+\textenglish{\ttfamily int()}
+&
+Integer-এ Conversion করে।
+\\
+\hline
+
+\textenglish{\ttfamily float()}
+&
+Float-এ Conversion করে।
+\\
+\hline
+
+\textenglish{\ttfamily str()}
+&
+String-এ Conversion করে।
+\\
+\hline
+
+\textenglish{\ttfamily range()}
+&
+Number Sequence তৈরি করে।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Naming rules
+%================================================
+
+\booksubheading{Function Name লেখার নিয়ম}
+
+Function Name-ও Variable Name-এর সাধারণ নিয়ম অনুসরণ করে।
+
+\begin{codeoutputbox}{সঠিক ও ভুল Function Name}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\codeheading
+
+\textbf{সঠিক—}
+
+\begin{english}
+\ttfamily
+calculate\_sum()\\
+student\_info()\\
+area()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\outputheading
+
+\textbf{ভুল—}
+
+\begin{english}
+\ttfamily
+2sum()\\
+student-info()
+\end{english}
+
+\medskip
+
+Name Digit দিয়ে শুরু করা যাবে না এবং
+Hyphen ব্যবহার করা যাবে না।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+Python Keyword Function Name হিসেবে ব্যবহার করা যাবে না।
+
+%================================================
+% Argument count
+%================================================
+
+\booksubheading{Function Call-এ Argument সংখ্যা}
+
+\begin{codeoutputbox}{Argument সংখ্যা মিলতে হবে}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}return a + b\\[0.5mm]
+print(add(10, 20))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 30}
+\end{center}
+
+এখানে দুটি Parameter আছে এবং দুটি Argument দেওয়া হয়েছে।
+
+Argument কম বা বেশি হলে Error হতে পারে,
+যদি Default বা বিশেষ Parameter ব্যবস্থা না থাকে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Modular relation
+%================================================
+
+\booksubheading{Function ও Modular Programming}
+
+Function ব্যবহার করে বড় Program-কে ছোট ছোট Logical অংশে ভাগ করা যায়।
+
+\begin{center}
+
+\textbf{Main Program}
+\(\longrightarrow\)
+\textbf{Input Function}
+\(\longrightarrow\)
+\textbf{Calculation Function}
+\(\longrightarrow\)
+\textbf{Output Function}
+
+\end{center}
+
+এতে প্রতিটি Function একটি নির্দিষ্ট কাজ করে এবং পুরো Program
+আরও সংগঠিত হয়। Function তাই \textbf{Modular Programming}-এর
+একটি গুরুত্বপূর্ণ ভিত্তি।
+
+%================================================
+% Execution flow
+%================================================
+
+\booksubheading{Function-এর Execution Flow}
+
+\begin{codeoutputbox}{Execution Flow}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def greet():\\
+\hspace*{4mm}print("Hello")\\[0.5mm]
+print("Start")\\
+greet()\\
+print("End")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+Start\\
+Hello\\
+End
+\end{english}
+
+\medskip
+
+Execution Flow—
+
+\begin{center}
+
+Main Program
+
+\(\downarrow\)
+
+Function Call
+
+\(\downarrow\)
+
+Function Body
+
+\(\downarrow\)
+
+Main Program
+
+\end{center}
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\chFiveInput{topics/44_python_functions/python_extensions.tex}
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily def}
+Keyword লিখতে ভুল করা।
+
+\item Function Header-এর শেষে
+\textenglish{\ttfamily :}
+না দেওয়া।
+
+\item Function Body সঠিকভাবে Indent না করা।
+
+\item Function Define করলেই Body Execute হবে মনে করা।
+
+\item Function Call করার সময়
+\textenglish{\ttfamily ()}
+না দেওয়া।
+
+\item Parameter ও Argument গুলিয়ে ফেলা।
+
+\item প্রয়োজনীয় Argument-এর সংখ্যা না মেলানো।
+
+\item
+\textenglish{\ttfamily print()}
+ও
+\textenglish{\ttfamily return}
+-কে একই মনে করা।
+
+\item
+\textenglish{\ttfamily return}
+-এর পরের Statement Execute হবে মনে করা।
+
+\item Invalid Function Name ব্যবহার করা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+}
+
+Function
+&
+Reusable Code Block
+&
+\textenglish{\ttfamily def}
+&
+Function তৈরি
+\\[0.5mm]
+
+Function Call
+&
+\textenglish{\ttfamily function\_name()}
+&
+Parameter
+&
+Definition-এর Variable
+\\[0.5mm]
+
+Argument
+&
+Call-এর Actual Value
+&
+\textenglish{\ttfamily return}
+&
+Result ফেরত দেয়
+\\[0.5mm]
+
+\textenglish{\ttfamily print()}
+&
+Output দেখায়
+&
+No explicit return
+&
+\textenglish{\ttfamily None}
+\\[0.5mm]
+
+Built-in
+&
+আগে থেকেই তৈরি
+&
+User-defined
+&
+Programmer তৈরি করে
+\\[0.5mm]
+
+Function
+&
+Code Reuse
+&
+Modularity
+&
+Programকে ছোট অংশে ভাগ
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Define}
+\(\longrightarrow\)
+\textenglish{\ttfamily def}
+
+\qquad
+
+\textbf{Run}
+\(\longrightarrow\)
+\textbf{Function Call}
+
+\medskip
+
+\textbf{Input to Function}
+\(\longrightarrow\)
+\textbf{Argument}
+
+\qquad
+
+\textbf{Receive inside Function}
+\(\longrightarrow\)
+\textbf{Parameter}
+
+\medskip
+
+\textbf{Result Back}
+\(\longrightarrow\)
+\textenglish{\ttfamily return}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.45
+%================================================
+

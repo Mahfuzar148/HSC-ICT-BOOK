@@ -1,45 +1,371 @@
-% ৩.৭ কোড (Code) - ধারণা
-\section{কোড: ধারণা ও প্রয়োজন}
+\section{সংখ্যা ও অক্ষরের কোড}
+মানুষ একই ``৫'' প্রতীককে পরিমাণ, ফোন নম্বরের অঙ্ক বা লেখার ক্যারেক্টার হিসেবে ব্যবহার করে। কম্পিউটারে এই অর্থগুলো নির্দিষ্ট bit pattern দিয়ে প্রকাশ করতে হয়। তথ্য ও সংকেতের মধ্যে সম্মত সম্পর্ক তৈরির নিয়মকে \textbf{কোড (Code)} বলে। কোডটির নিয়ম জানা থাকলেই সংরক্ষিত সংকেত থেকে অর্থ উদ্ধার করা যায়।
 
-\begin{itemize}
-\item Code কী, data ও character representation
-\item Numeric ও alphanumeric code
-\item কেন computer code ব্যবহার করে
-\end{itemize}
+\subsection{সংখ্যা পদ্ধতি ও কোডের সম্পর্ক}
+সংখ্যা পদ্ধতিতে অঙ্ক, ভিত্তি ও অবস্থান দিয়ে একটি সংখ্যার মান নির্ণয় হয়। কোডে প্রতীক বা তথ্যের জন্য নির্ধারিত pattern ব্যবহার হয়। তাই bit pattern দেখেই সেটিকে সাধারণ বাইনারি সংখ্যা ধরে নেওয়া ঠিক নয়।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.23\linewidth}|Y|Y|}\hline
+\rowcolor{ICTLightBlue}ধরন&কী প্রকাশ করে&উদাহরণ\\\hline
+সংখ্যাভিত্তিক কোড&দশমিক অঙ্ক বা সংখ্যাসংক্রান্ত অবস্থা&8421 BCD, অন্যান্য weighted code, Excess-3, Gray\\\hline
+আলফানিউমেরিক কোড&অক্ষর, অঙ্কের লেখা, বিরামচিহ্ন ও নিয়ন্ত্রণ চিহ্ন&ASCII, EBCDIC, Unicode\\\hline
+সংকেতভিত্তিক কোড&দৈর্ঘ্য বা বিন্যাসের সংকেত দিয়ে প্রতীক&মর্স কোড\\\hline
+\end{tabularx}\end{center}
+সংখ্যাভিত্তিক কোডে প্রতিটি বিটের নির্দিষ্ট ওজন থাকলে তাকে \textbf{weighted code} বলে। 8421-এ ওজন ৮, ৪, ২, ১। Excess-3 ও Gray-তে সাধারণ স্থানমান যোগ করে তথ্য উদ্ধার করা যায় না; সেগুলো \textbf{non-weighted code}।
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item computer code-এর প্রয়োজনীয়তা ব্যাখ্যা করতে।
-\item numeric code ও alphanumeric code আলাদা করতে।
-\item character representation-এর ধারণা লিখতে।
-\end{itemize}
-\end{learningbox}
+\subsection{BCD এবং 8421 পদ্ধতি}
+BCD-এর পূর্ণরূপ \textenglish{Binary Coded Decimal}। এখানে দশমিক সংখ্যার প্রতিটি অঙ্ক আলাদা কোডে লেখা হয়। বহুল ব্যবহৃত \textbf{8421 BCD}-তে প্রতিটি দশমিক অঙ্কের জন্য ৪ বিট থাকে; বিটগুলোর ওজন ৮, ৪, ২, ১। কোনো অঙ্কের কোডে শুরুর শূন্য বাদ দিলে চার বিটের সীমানা নষ্ট হবে।
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\hline
+অঙ্ক&0&1&2&3&4&5&6&7&8&9\\\hline
+8421&0000&0001&0010&0011&0100&0101&0110&0111&1000&1001\\\hline
+\end{tabular}\end{center}
+চার বিটে ১৬টি pattern থাকলেও এখানে ১০টি দশমিক অঙ্কের কোড লাগে। $1010$ থেকে $1111$ পর্যন্ত ছয়টি pattern কোনো বৈধ 8421 BCD অঙ্ক নয়। দশমিক display ও decimal digit ধরে কাজ করতে BCD সুবিধাজনক; তবে সাধারণ বাইনারির তুলনায় অনেক সংখ্যায় বেশি বিট লাগে।
 
-\begin{definitionbox}{Computer code}
-কম্পিউটার কোনো character, digit বা symbol-কে নির্দিষ্ট binary pattern দিয়ে প্রকাশ করে। character বা data প্রকাশের এই নির্দিষ্ট binary নিয়মকে computer code বলা হয়।
-\end{definitionbox}
+\smallhead{উদাহরণ: অঙ্ক থেকে কোড}
+$(583)_{10}$-এর প্রতিটি অঙ্ককে আলাদা করে চার বিটে লেখো।
+\begin{center}\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\foreach \x/\d/\bits in {0/5/0101,35/8/1000,70/3/0011}{
+\node[vc digit] (s\d) at (\x,0) {$\d$};
+\node[vc result] (t\d) at (\x,-15) {$\bits$};
+\draw[vc arrow] (s\d.south)--(t\d.north);}
+\end{tikzpicture}\end{chThreeDiagram}\end{center}
+অতএব কোড $0101\;1000\;0011$। বিপরীতভাবে প্রতিটি চার বিটের group-এর মান পড়লে ৫, ৮ ও ৩ পাওয়া যায়। পুরো ১২ বিটকে একসঙ্গে সাধারণ বাইনারি সংখ্যা ধরে পড়া BCD decoding নয়।
 
-\begin{keypointbox}{কেন code দরকার}
-\begin{itemize}
-\item computer সরাসরি বাংলা/ইংরেজি অক্ষর বোঝে না; binary pattern বোঝে।
-\item text, number, symbol ও control instruction সংরক্ষণে code দরকার।
-\item একই character সব system-এ একইভাবে বোঝাতে standard code দরকার।
-\end{itemize}
-\end{keypointbox}
+\smallhead{BCD, সাধারণ বাইনারি ও অঙ্কের লেখা}
+\begin{center}\begin{tabularx}{\linewidth}{|L{.24\linewidth}|Y|Y|}\hline
+\rowcolor{ICTLightBlue}বিষয়&8421 BCD&সাধারণ বাইনারি\\\hline
+প্রকাশের একক&প্রতিটি দশমিক অঙ্ক&সম্পূর্ণ সংখ্যামান\\\hline
+দশমিক 39&$0011\;1001$&$100111$\\\hline
+বিটের দৈর্ঘ্য&দুই দশমিক অঙ্কে ৮ বিট&এই মানে ন্যূনতম ৬ বিট\\\hline
+শুরুর শূন্য&প্রতি group-এ ৪ বিট রাখে&মানের আগে অপ্রয়োজনীয় ০ বাদ যায়\\\hline
+\end{tabularx}\end{center}
+তিনটি দশমিক অঙ্ককে BCD-তে দেখাতে $3\times4=12$ বিট লাগে। কিন্তু ওই দশমিক সংখ্যার সাধারণ বাইনারি দৈর্ঘ্য সংখ্যামানের ওপর নির্ভর করে।
+
+\subsection{আলফানিউমেরিক কোড ও EBCDIC}
+অক্ষর, অঙ্কের লেখা এবং বিশেষ চিহ্ন প্রকাশের কোডকে আলফানিউমেরিক বা character code বলে। এর মধ্যে নিয়ন্ত্রণের কাজের কোডও থাকতে পারে; সব কোড পর্দায় দৃশ্যমান অক্ষর নয়।
+
+EBCDIC-এর পূর্ণরূপ \textenglish{Extended Binary Coded Decimal Interchange Code}। এটি IBM ব্যবস্থায় ব্যবহৃত ৮-বিট character code পরিবার। আট বিটে ২৫৬টি সম্ভাব্য মান থাকলেও কোন মানে কোন ক্যারেক্টার হবে তা code page অনুযায়ী নির্ধারিত হয়। নামের মধ্যে BCD থাকলেও EBCDIC-কে প্রতি দশমিক অঙ্কের সাধারণ ৪-বিট BCD হিসেবে পড়া যাবে না।
+
+\textbf{উদাহরণ:} IBM-037 code page-এ A-এর byte $(C1)_{16}=11000001_2$। ASCII-তে একই A-এর মান $(41)_{16}$। তাই শুধু byte জানলেই যথেষ্ট নয়; কোন character encoding ব্যবহৃত হয়েছে তাও জানা প্রয়োজন।
+
+\subsection{ASCII}
+ASCII-এর পূর্ণরূপ \textenglish{American Standard Code for Information Interchange}। মূল ASCII ৭-বিট হওয়ায় $2^7=128$টি মান প্রকাশ করে। আট বিটের byte-এ সংরক্ষণ করলে এর শুরুতে ০ বসানো যায়। অঙ্কের ক্যারেক্টার, বড়/ছোট হাতের বর্ণ ও নিয়ন্ত্রণ কোডের আলাদা মান থাকে।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.24\linewidth}|c|Y|}\hline
+\rowcolor{ICTLightBlue}ক্যারেক্টার/পরিসর&দশমিক মান&উদাহরণ\\\hline
+নিয়ন্ত্রণ কোড&0–31, 127&লাইন পরিবর্তনের LF=10; DEL=127\\\hline
+Space&32&শব্দের মধ্যের ফাঁকের কোড\\\hline
+0–9 লেখা&48–57&5-এর মান 53\\\hline
+A–Z&65–90&A=65, B=66\\\hline
+a–z&97–122&a=97, b=98\\\hline
+\end{tabularx}\end{center}
+বাকি printable মানে বিরামচিহ্ন ও অন্যান্য প্রতীক আছে। ``Extended ASCII'' নামে পরিচিত বিভিন্ন ৮-বিট code page-এ ২৫৬টি সম্ভাব্য byte মান থাকে; সব code page-এর উপরের ১২৮টি অবস্থানের অর্থ একই নয়।
+
+\smallhead{উদাহরণ: B5 লেখাটি সংরক্ষণ ও উদ্ধার}
+B-এর ASCII মান $66=(01000010)_2$ এবং 5 ক্যারেক্টারের মান $53=(00110101)_2$। তাই B5 লেখাটির byte হলো $01000010\;00110101$। বিপরীতভাবে byte দুইটি আলাদা মান হিসেবে পড়লে B এবং 5 পাওয়া যায়। সংখ্যামান ৫-এর সাধারণ বাইনারি 101; লেখার ক্যারেক্টার 5-এর ASCII 00110101।
+
+\begin{center}\begin{tabularx}{\linewidth}{|L{.23\linewidth}|Y|Y|}\hline
+\rowcolor{ICTLightBlue}দশমিক 39 নিয়ে প্রশ্ন&BCD&ASCII-তে ``39'' লেখা\\\hline
+কীকে কোড করছে?&দশমিক অঙ্ক ৩ ও ৯&ক্যারেক্টার 3 ও 9\\\hline
+বিটের প্রকাশ&$0011\;1001$&$00110011\;00111001$\\\hline
+অঙ্কপ্রতি দৈর্ঘ্য&4 বিট&মূল কোড 7 বিট; এখানে 8-বিট byte-এ দেখানো\\\hline
+\end{tabularx}\end{center}
+
+\subsection{Unicode ও সংরক্ষণের রূপ}
+বিভিন্ন ভাষার ক্যারেক্টারকে একটি সমন্বিত code space-এ পরিচয় দেওয়ার মানদণ্ড হলো \textbf{Unicode}। প্রতিটি encoded character-এর পরিচয় \textbf{code point} দিয়ে লেখা হয়। যেমন A-এর U+0041, বাংলা অ-এর U+0985। কোড পয়েন্টের পরিচয় এবং সেটি সংরক্ষণের byte এক জিনিস নয়।
+
+UTF-8, UTF-16 ও UTF-32 দিয়ে Unicode code point সংরক্ষণ করা যায়। UTF-8-এ ১–৪ byte, UTF-16-এ ১ বা ২টি ১৬-বিট code unit এবং UTF-32-এ একটি ৩২-বিট code unit লাগে। বাংলা একটি দৃশ্যমান যুক্তাক্ষর একাধিক code point দিয়েও গঠিত হতে পারে। তাই একটি দৃশ্যমান অক্ষর মানেই একটি byte বা একটি code point—এমন নিয়ম নেই।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.24\linewidth}|Y|Y|}\hline
+\rowcolor{ICTLightBlue}বিষয়&মূল ASCII&Unicode\\\hline
+পরিসর&৭-বিটের ১২৮টি মান&বহু ভাষার জন্য সমন্বিত code space\\\hline
+বাংলা লেখা&নিজস্ব বাংলা ক্যারেক্টার নেই&বাংলার code point আছে\\\hline
+সংরক্ষণ&প্রায়ই ৮-বিট byte-এ রাখা হয়&UTF encoding অনুযায়ী byte সংখ্যা বদলায়\\\hline
+উদাহরণ&A-এর মান 65&A-এর U+0041; অ-এর U+0985\\\hline
+\end{tabularx}\end{center}
+\textbf{উদাহরণ:} অ-এর UTF-8 byte হলো \textenglish{E0 A6 85}, অর্থাৎ ৩ byte। UTF-16-এ এর জন্য ২ byte এবং UTF-32-এ ৪ byte লাগে। Unicode-এর প্রাথমিক ১৬-বিট ধারণায় $2^{16}=65536$টি অবস্থান বলা হতো; বর্তমান Unicode-কে সবসময় ১৬ বিটের কোড বলা সঠিক নয়। বহুভাষিক তথ্য বিনিময়ে অভিন্ন code point ব্যবহারের সুবিধাই এখানে মুখ্য।
+
+\subsection{মর্স কোড}
+মর্স কোডে ছোট সংকেত (dot), দীর্ঘ সংকেত (dash) এবং বিরতির বিন্যাস দিয়ে ক্যারেক্টার বোঝানো হয়। প্রতিটি ক্যারেক্টারে সমানসংখ্যক সংকেত থাকে না। যেমন E-এর সংকেত একটি dot, T-এর একটি dash এবং A-এর dot–dash।
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|}\hline
+ক্যারেক্টার&E&T&A&S&O\\\hline
+সংকেত&$\cdot$&$-$&$\cdot\,-$&$\cdot\,\cdot\,\cdot$&$-\,-\,-$\\\hline
+\end{tabular}\end{center}
+কোডটি সংকেতের দৈর্ঘ্য ও বিরতির নিয়ম মেনে পাঠাতে হয়। এটিকে ASCII-এর মতো নির্দিষ্ট ৭-বিট code word ভাবা যাবে না।
+
+\subsection{সম্পূরক সংখ্যাভিত্তিক কোড}
+দশমিক অঙ্ককে প্রকাশের জন্য একাধিক weighted code তৈরি করা যায়। নিচের সারণিগুলো নির্দিষ্ট নির্বাচিত mapping। শুধু ওজনের যোগফল মিলে গেলেই অন্য যেকোনো bit pattern-কে ওই কোডের নির্ধারিত অঙ্ক বলা যাবে না; প্রদত্ত mapping-ও মানতে হবে।
+\subsubsection*{\textenglish{7421 Code}}
+
+\textenglish{7421 Code} একটি
+\textenglish{Weighted Code}।
+
+বিটগুলোর ওজন—
+
+\[
+\boxed{7,\;4,\;2,\;1}
+\]
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Diagram placeholder}\\[4pt]
-Character ``A'' $\rightarrow$ code table lookup $\rightarrow$ binary code $\rightarrow$ memory/storage
-}}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{\textenglish{Decimal}} &
+\textbf{\textenglish{7421}} \\
+\hline
+0 & 0000 \\ \hline
+1 & 0001 \\ \hline
+2 & 0010 \\ \hline
+3 & 0011 \\ \hline
+4 & 0100 \\ \hline
+5 & 0101 \\ \hline
+6 & 0110 \\ \hline
+7 & 1000 \\ \hline
+8 & 1001 \\ \hline
+9 & 1010 \\ \hline
+\end{tabular}
 \end{center}
 
-\begin{practicebox}
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+(395)_{10}
+\]
+
+\[
+3=0011,\qquad
+9=1010,\qquad
+5=0101
+\]
+
+অতএব,
+
+\[
+\boxed{
+(395)_{10}
+=
+(0011\;1010\;0101)_{7421}
+}
+\]
+
+% =========================================================
+% 3.6.7 5421 Code
+% =========================================================
+
+\subsubsection*{\textenglish{5421 Code}}
+
+\textenglish{5421 Code} একটি
+\textenglish{Weighted Code}।
+
+চারটি বিটের ওজন—
+
+\[
+\boxed{5,\;4,\;2,\;1}
+\]
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{\textenglish{Decimal}} &
+\textbf{\textenglish{5421}} \\
+\hline
+0 & 0000 \\ \hline
+1 & 0001 \\ \hline
+2 & 0010 \\ \hline
+3 & 0011 \\ \hline
+4 & 0100 \\ \hline
+5 & 1000 \\ \hline
+6 & 1001 \\ \hline
+7 & 1010 \\ \hline
+8 & 1011 \\ \hline
+9 & 1100 \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+(386)_{10}
+\]
+
+\[
+3=0011,\qquad
+8=1011,\qquad
+6=1001
+\]
+
+অতএব,
+
+\[
+\boxed{
+(386)_{10}
+=
+(0011\;1011\;1001)_{5421}
+}
+\]
+
+% =========================================================
+% 3.6.8 2421 Code
+% =========================================================
+
+\subsubsection*{\textenglish{2421 Code}}
+
+\textenglish{2421 Code} একটি
+\textenglish{Weighted Code}।
+
+বিটগুলোর ওজন—
+
+\[
+\boxed{2,\;4,\;2,\;1}
+\]
+
+এটি একটি গুরুত্বপূর্ণ
+\textenglish{Self-complementing Code}।
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{\textenglish{Decimal}} &
+\textbf{\textenglish{2421}} \\
+\hline
+0 & 0000 \\ \hline
+1 & 0001 \\ \hline
+2 & 0010 \\ \hline
+3 & 0011 \\ \hline
+4 & 0100 \\ \hline
+5 & 1011 \\ \hline
+6 & 1100 \\ \hline
+7 & 1101 \\ \hline
+8 & 1110 \\ \hline
+9 & 1111 \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+(469)_{10}
+\]
+
+\[
+4=0100,\qquad
+6=1100,\qquad
+9=1111
+\]
+
+অতএব,
+
+\[
+\boxed{
+(469)_{10}
+=
+(0100\;1100\;1111)_{2421}
+}
+\]
+
+% =========================================================
+% 3.6.9 Excess-3
+% =========================================================
+
+\subsubsection*{\textenglish{Excess-3 Code}}
+
+\textenglish{Excess-3 (XS-3)} একটি
+\textenglish{Non-weighted Code}।
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+প্রতিটি দশমিক অঙ্কের সঙ্গে ৩ যোগ করে প্রাপ্ত সংখ্যাকে
+৪-বিট বাইনারিতে প্রকাশ করলে যে কোড পাওয়া যায়,
+তাকে \textenglish{Excess-3 Code} বলে।
+\par\endgroup
+
+
+\[
+\boxed{
+\text{\textenglish{Excess-3}}
+=
+\text{\textenglish{Decimal Digit}}+3
+}
+\]
+
+\subsubsection*{রূপান্তরের ধাপ}
+
+\par\begingroup
+
 \begin{enumerate}
-\item Computer code কী?
-\item Numeric code ও alphanumeric code-এর পার্থক্য লেখ।
-\item Unicode কেন গুরুত্বপূর্ণ?
+    \item প্রতিটি দশমিক অঙ্ক আলাদা করো।
+    \item প্রতিটি অঙ্কের সঙ্গে ৩ যোগ করো।
+    \item প্রাপ্ত সংখ্যাকে ৪-বিট বাইনারিতে প্রকাশ করো।
+    \item সব \textenglish{group} পাশাপাশি বসাও।
 \end{enumerate}
-\end{practicebox}
+\par\endgroup
+
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+(729)_{10}
+\]
+
+\[
+7+3=10=(1010)_2
+\]
+
+\[
+2+3=5=(0101)_2
+\]
+
+\[
+9+3=12=(1100)_2
+\]
+
+সুতরাং,
+
+\[
+\boxed{
+729
+=
+(1010\;0101\;1100)_{\text{\textenglish{XS-3}}}
+}
+\]
+
+\subsubsection*{বৈশিষ্ট্য}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item এটি \textenglish{Non-weighted Code}।
+    \item প্রতিটি দশমিক অঙ্ক আলাদাভাবে
+    \textenglish{encode} করা হয়।
+    \item এটি \textenglish{Self-complementing Code}।
+\end{itemize}
+
+% =========================================================
+% 3.6.10 Gray Code
+% =========================================================
+
+\subsubsection*{Gray Code}
+পরপর দুইটি অবস্থার code word-এ মাত্র একটি বিট পরিবর্তিত হয়—এই বৈশিষ্ট্যযুক্ত একটি non-weighted code হলো Gray code। এখানে binary-reflected Gray code দেখানো হচ্ছে। একসঙ্গে একাধিক বিট পরিবর্তনের অস্পষ্টতা কমাতে অবস্থান শনাক্তকারী encoder-এ এ ধরনের কোড ব্যবহৃত হয়। কোডটি নিজে সব transmission error সংশোধন করে—এমন দাবি করা যাবে না।
+
+\textbf{বাইনারি থেকে Gray:} প্রথম বিট অপরিবর্তিত রাখো। এরপর মূল বাইনারির পাশাপাশি দুই বিট XOR করে পরের Gray বিট লেখো। একই বিটে XOR ফল ০; ভিন্ন বিটে ১।
+\begin{center}\begin{tabular}{|c|c|c|c|c|}\hline
+মূল বাইনারি&1&0&1&1\\\hline
+হিসাব&প্রথম বিট&$1\oplus0$&$0\oplus1$&$1\oplus1$\\\hline
+Gray&1&1&1&0\\\hline
+\end{tabular}\end{center}
+অতএব বাইনারি 1011-এর Gray code 1110। এখানে প্রতিবার পাশাপাশি \emph{মূল বাইনারি} বিট ব্যবহার হয়েছে।
+
+\textbf{Gray থেকে বাইনারি:} প্রথম বিট অপরিবর্তিত। পরের প্রতিটি বাইনারি বিট হবে আগে পাওয়া বাইনারি বিট এবং বর্তমান Gray বিটের XOR। যেমন Gray 1101 থেকে যথাক্রমে $1$, $1\oplus1=0$, $0\oplus0=0$, $0\oplus1=1$; ফলে বাইনারি 1001।
+
+\textbf{পরিবর্তনের উদাহরণ:} ৭ থেকে ৮-এ বাইনারি $0111\to1000$-তে চার বিট বদলায়। একই অবস্থার reflected Gray $0100\to1100$-তে কেবল এক বিট বদলায়। এই ক্রমের বৈশিষ্ট্য কোডের উদ্দেশ্য বোঝায়; সাধারণ বাইনারির ওজন দিয়ে Gray-এর মান সরাসরি যোগ করা যাবে না।
+
+\subsection{কোড নির্বাচনে প্রয়োজনীয় পার্থক্য}
+\begin{center}\begin{tabularx}{\linewidth}{|L{.19\linewidth}|L{.22\linewidth}|Y|}\hline
+\rowcolor{ICTLightBlue}কোড&কাজের একক&সতর্কতা\\\hline
+8421 BCD&দশমিক অঙ্ক&প্রতি অঙ্কে ৪ বিট; 1010–1111 অবৈধ\\\hline
+7421/5421/2421&দশমিক অঙ্ক&বিটের ওজনের সঙ্গে নির্বাচিত mapping-ও মানতে হয়\\\hline
+Excess-3&দশমিক অঙ্ক&প্রতি অঙ্কে ৩ যোগ করে encode; decode-এ ৩ বাদ\\\hline
+Gray&সংখ্যাগত অবস্থার ক্রম&পরপর code word-এ এক বিট বদলায়; সরাসরি binary weight নয়\\\hline
+ASCII/EBCDIC&ক্যারেক্টার&সঠিক code page ও encoding জানতে হয়\\\hline
+Unicode&ক্যারেক্টারের code point&সংরক্ষণের byte নির্ধারণ করে UTF encoding\\\hline
+Morse&ক্যারেক্টারের সংকেত&dot/dash-এর সঙ্গে বিরতির নিয়মও জরুরি\\\hline
+\end{tabularx}\end{center}
+\input{chapters/Chapter03/topics/07_codes_overview/concept_examples.tex}

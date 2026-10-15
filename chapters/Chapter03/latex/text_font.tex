@@ -1,0 +1,9 @@
+% Font families are selected before the standalone contents, and locally in a full book.
+\IfFontExistsTF{Kalpurush}{%
+\setmainfont[Renderer=HarfBuzz,Script=Bengali,Language=Bengali,
+UprightFont={Kalpurush},BoldFont={Kalpurush},ItalicFont={Kalpurush},BoldItalicFont={Kalpurush},
+BoldFeatures={FakeBold=1.3},BoldItalicFeatures={FakeBold=1.3}]{Kalpurush}
+}{}
+\newfontfamily\chThreeSymbols[UprightFont={Segoe UI Symbol},BoldFont={Segoe UI Symbol},ItalicFont={Segoe UI Symbol},BoldItalicFont={Segoe UI Symbol}]{Segoe UI Symbol}
+\let\symbolfont\chThreeSymbols
+\def\chThreeFontReady{1}

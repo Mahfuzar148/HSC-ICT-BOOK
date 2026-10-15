@@ -1,0 +1,54 @@
+% Parent -> junction <- parent, using the topic's unchanged source records.
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=0pt,align=left}]
+\node (teacher) {\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Teacher}}\\\hline
+\chSixHeader TeacherID & Name\\\hline
+T1001 & Hasan\\\hline T1002 & Nila\\\hline
+T1003 & Rafi\\\hline T1004 & Mitu\\\hline
+\end{tabular}};
+\node[anchor=north west] (teaching) at ([xshift=11mm]teacher.north east)
+{\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{\textbf{Teaching}}\\\hline
+\chSixHeader TeacherID & SubjectCode & Day\\\hline
+T1001 & 101 & Sat\\\hline T1001 & 102 & Sun\\\hline
+T1002 & 101 & Mon\\\hline T1003 & 103 & Tue\\\hline
+T1003 & 104 & Wed\\\hline
+\end{tabular}};
+\node[anchor=north west] (subject) at ([xshift=11mm]teaching.north east)
+{\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Subject}}\\\hline
+\chSixHeader SubjectCode & Subject\\\hline
+101 & Bangla\\\hline 102 & English\\\hline
+103 & ICT\\\hline 104 & Physics\\\hline
+\end{tabular}};
+\draw[bookarrow] (teacher.east)--node[pos=.2,above=2pt]{1}node[pos=.8,above=2pt]{M}(teaching.west);
+\draw[bookarrow] (subject.west)--node[pos=.2,above=2pt]{1}node[pos=.8,above=2pt]{M}(teaching.east);
+\node[anchor=north west,text width=29mm] at ([yshift=-2mm]teacher.south west) {TeacherID = PK};
+\node[anchor=north west,text width=45mm] at ([yshift=-2mm]teaching.south west) {TeacherID ও SubjectCode = FK};
+\node[anchor=north west,text width=32mm] at ([yshift=-2mm]subject.south west) {SubjectCode = PK};
+\end{tikzpicture}
+\captionof{table}{দুই Parent থেকে Teaching Junction Table-এ 1:M সংযোগ}
+\end{flushleft}
+
+\begin{multicols}{2}
+\textbf{Teacher থেকে পড়ি।} Hasan-এর ID T1001। Teaching-এ এই ID-র
+সঙ্গে 101 ও 102 রয়েছে; Subject থেকে নাম মিলিয়ে পাই Bangla ও English।
+অর্থাৎ একজন শিক্ষক একাধিক বিষয় পড়ান।
+
+\columnbreak
+\textbf{Subject থেকে পড়ি।} Bangla-এর Code 101। Teaching-এ 101-এর
+সঙ্গে T1001 ও T1002 রয়েছে। Teacher থেকে পাই Hasan ও Nila। অর্থাৎ
+একটি বিষয় একাধিক শিক্ষক পড়ান।
+\end{multicols}
+
+Teaching-এর প্রতিটি সারি একজন শিক্ষক ও একটি বিষয়ের সংযোগ এবং তার দিন
+রাখে। TeacherID ও SubjectCode আলাদা Foreign Key; একটি মানের পুনরাবৃত্তি
+থাকলেও তা একই রেকর্ডের অনিচ্ছাকৃত অনুলিপি নয়। এই নমুনায় একই
+শিক্ষক--বিষয় জোড়ার জন্য একটি দিন রাখা হয়েছে। একই জোড়া একবার রাখার
+নিয়ম থাকলে জোড়াটিকে Composite Primary Key করা যায়।
+
+Teacher থেকে Teaching এবং Subject থেকে Teaching---দুটি সম্পর্কই 1:M।
+এই দুটি সংযোগের মাধ্যমে Teacher ও Subject-এর M:N সম্পর্ক বাস্তবায়িত হয়।
+Mitu-এর এখন কোনো Teaching রেকর্ড নেই; সম্পর্কের ধরন কেবল বর্তমান
+রেকর্ড গুনে নয়, কোন সংযোগ অনুমোদিত তার নিয়ম থেকে নির্ধারিত হয়।

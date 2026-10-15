@@ -1,84 +1,97 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % 4.x Mini Project / Web Page Designing Practice
-\section{ব্যবহারিক অনুশীলন: Mini Project}
+\section{ব্যবহারিক অনুশীলন: ছোট ওয়েবসাইট প্রকল্প (Mini Project)}
+
+% Composition pass 2026-10-04
+একটি পেজের বদলে কলেজের পরিচিতি, নোটিশ, ফল ও যোগাযোগের আলাদা পেজ দরকার।
+
+\chFourMotivation{সম্পূর্ণ ছোট সাইট তৈরি $\rightarrow$ মিনি প্রকল্প $\rightarrow$ ফোল্ডার, পেজ, লিংক ও সম্পদের পথ মিলিয়ে পরীক্ষা $\rightarrow$ পাঁচ পেজের কলেজ ওয়েবসাইট।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML ব্যবহার করে একটি simple static website-এর পরিকল্পনা করতে।
-\item Home, About, Notice, Result ও Contact page-এর structure বুঝতে।
-\item heading, paragraph, image, hyperlink, list, table ও form একসাথে ব্যবহার করতে।
-\item file/folder structure ঠিক রেখে website project তৈরি করতে।
-\item HSC practical-style web page design task সমাধান করতে।
+\item HTML ব্যবহার করে একটি সহজ স্ট্যাটিক ওয়েবসাইটের পরিকল্পনা করতে।
+\item Home, About, Notice, Result ও Contact পেজের কাঠামো বুঝতে।
+\item শিরোনাম, অনুচ্ছেদ, ছবি, হাইপারলিংক, তালিকা, সারণি ও ফর্ম একসঙ্গে ব্যবহার করতে।
+\item ফাইল ও ফোল্ডার সঠিকভাবে সাজিয়ে ওয়েবসাইটের প্রকল্প তৈরি করতে।
+\item উচ্চমাধ্যমিকের ব্যবহারিক প্রশ্নের চাহিদা অনুযায়ী ওয়েবপেজ তৈরি করতে।
 \end{itemize}
 \end{learningbox}
 
-HSC ICT বইয়ে অনেক সময় ``Mini Project'' নামে আলাদা section না থাকলেও Chapter 4-এ web page designing, HTML tag, hyperlink, image, table, form এবং website publishing শেখানো হয়। তাই Chapter 4-এর শেষে একটি ব্যবহারিক mini project রাখা খুব উপযোগী। এটি নতুন theory topic নয়; বরং পুরো chapter-এর tag ও concept practice করার একটি practical exercise।
+এই ছোট প্রকল্পে ওয়েবপেজ ডিজাইন, HTML ট্যাগ, হাইপারলিংক, ছবি, সারণি, ফর্ম ও প্রকাশনার কাজ একসঙ্গে প্রয়োগ করা হবে। পরিচিত ট্যাগ দিয়ে পাঁচটি পেজ তৈরি করে তাদের পারস্পরিক সংযোগ পরীক্ষা করব।
 
-\begin{keypointbox}{Book placement}
-এই অংশটি chapter শেষে \textbf{ব্যবহারিক অনুশীলন: Mini Project} বা \textbf{Chapter Project} নামে রাখা ভালো। এতে শিক্ষার্থী HTML tag মুখস্থ করার পাশাপাশি একটি বাস্তব web page তৈরি করার অভ্যাস পাবে।
+\begin{keypointbox}{অধ্যায়ের ধারণা একসঙ্গে প্রয়োগ}
+প্রকল্পে প্রতিটি ট্যাগের কাজ এবং পুরো পেজের সঙ্গে তার সম্পর্ক দেখা যায়। ফাইল তৈরি, লিংক যুক্ত করা ও ব্রাউজারে পরীক্ষা করার কাজ একই সঙ্গে অনুশীলন হয়।
 \end{keypointbox}
 
-\subsection{Project Title}
+\subsection{প্রকল্পের নাম}
 
-\begin{definitionbox}{Project}
-\textbf{``আমার কলেজ'' ওয়েবসাইট তৈরি} - এটি একটি simple static website project, যেখানে HTML-এর basic tag ব্যবহার করে কয়েকটি page তৈরি করা হবে।
-\end{definitionbox}
+\textbf{``আমার কলেজ'' ওয়েবসাইট তৈরি}। এটি একটি সহজ স্ট্যাটিক ওয়েবসাইটের প্রকল্প। HTML-এর মৌলিক ট্যাগ ব্যবহার করে কয়েকটি পেজ তৈরি করা হবে। উদাহরণের ABC College, শিক্ষার্থী ও যোগাযোগের তথ্য কাল্পনিক।
 
-\subsection{Project Objective}
+\subsection{প্রকল্পের উদ্দেশ্য}
 
-এই project শেষে শিক্ষার্থীরা HTML ব্যবহার করে একটি simple static website তৈরি করতে পারবে। Website-এ heading, paragraph, image, hyperlink, list, table এবং form ব্যবহার থাকবে।
+এই প্রকল্প শেষে শিক্ষার্থীরা HTML দিয়ে একটি সহজ স্ট্যাটিক ওয়েবসাইট তৈরি করতে পারবে। এতে শিরোনাম, অনুচ্ছেদ, ছবি, হাইপারলিংক, তালিকা, সারণি ও ফর্ম থাকবে।
 
-\subsection{Project Type}
+\subsection{প্রকল্পের ধরন}
 
 \begin{itemize}
-\item Static Website
-\item Local Web Page Project
-\item HSC ICT Chapter 4 Practical Practice
+\item স্ট্যাটিক ওয়েবসাইট
+\item নিজের কম্পিউটারে তৈরি ও পরীক্ষা করা ওয়েবপেজের প্রকল্প
+\item উচ্চমাধ্যমিক ICT-এর চতুর্থ অধ্যায়ের ব্যবহারিক অনুশীলন
 \end{itemize}
 
-\subsection{Required Knowledge}
+\subsection{প্রয়োজনীয় পূর্বধারণা}
 
-এই project করার আগে শিক্ষার্থীর জানা দরকার:
+এই প্রকল্প করার আগে শিক্ষার্থীর জানা দরকার:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Basic HTML document structure
-\item Heading ও paragraph
-\item Text formatting
-\item List
-\item Hyperlink
-\item Image
-\item Table
-\item Form
-\item Internal page link
-\item HTML file save করা: \texttt{.html}
+\item HTML ডকুমেন্টের মৌলিক কাঠামো
+\item শিরোনাম ও অনুচ্ছেদ
+\item লেখা ফরম্যাটিং
+\item তালিকা
+\item হাইপারলিংক
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item ছবি
+\item সারণি
+\item ফর্ম
+\item নিজের ওয়েবসাইটের পেজগুলোর মধ্যে লিংক
+\item HTML ফাইল সংরক্ষণ করা: \texttt{.html}
+\end{itemize}
+\end{minipage}\par
 
-\subsection{Project Description}
 
-শিক্ষার্থীকে \textbf{``আমার কলেজ''} নামে একটি simple website তৈরি করতে হবে। Website-এ কয়েকটি page থাকবে এবং প্রতিটি page একে অপরের সাথে hyperlink দ্বারা যুক্ত থাকবে।
+\subsection{প্রকল্পের বিবরণ}
 
-\subsection{Website Pages}
+শিক্ষার্থীকে \textbf{``আমার কলেজ''} নামে একটি সহজ ওয়েবসাইট তৈরি করতে হবে। এতে কয়েকটি পেজ থাকবে এবং পেজগুলো হাইপারলিংক দিয়ে পরস্পর যুক্ত থাকবে।
+
+\subsection{ওয়েবসাইটের পেজগুলো}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.24\textwidth}|p{0.34\textwidth}|}
 \hline
-\textbf{File Name} & \textbf{Page Name} & \textbf{কাজ} \\
+\textbf{ফাইলের নাম} & \textbf{পেজের নাম} & \textbf{কাজ} \\
 \hline
 \texttt{index.html} & Home Page & কলেজের পরিচিতি \\
 \hline
 \texttt{about.html} & About Page & কলেজ সম্পর্কে তথ্য \\
 \hline
-\texttt{notice.html} & Notice Page & notice list \\
+\texttt{notice.html} & Notice Page & বিজ্ঞপ্তির তালিকা \\
 \hline
-\texttt{result.html} & Result Page & student result table \\
+\texttt{result.html} & Result Page & শিক্ষার্থীর ফলের সারণি \\
 \hline
-\texttt{contact.html} & Contact Page & contact form \\
+\texttt{contact.html} & Contact Page & যোগাযোগের ফর্ম \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Folder Structure}
+\subsection{ফোল্ডারের কাঠামো}
 
-Project folder এভাবে সাজাবে:
+প্রকল্পের ফোল্ডার এভাবে সাজাবে:
 
 \begin{verbatim}
 college-website/
@@ -92,48 +105,61 @@ college-website/
     college.jpg
 \end{verbatim}
 
-\begin{keypointbox}{Note}
-\texttt{college.jpg} এবং \texttt{logo.png} image file \texttt{images} folder-এর ভিতরে রাখতে হবে। HTML file থেকে image দেখাতে \texttt{src="images/college.jpg"} ধরনের path ব্যবহার করতে হবে।
+\begin{keypointbox}{ছবির ফাইল ও লিংকের গন্তব্য}
+\texttt{college.jpg} ও \texttt{logo.png} ছবির ফাইল \texttt{images} ফোল্ডারের ভেতরে রাখতে হবে। HTML ফাইল থেকে ছবি দেখাতে \texttt{src="images/college.jpg"} ধরনের পথ ব্যবহার করতে হবে। Notice পেজের \texttt{hsc-form-fillup.pdf}, \texttt{class-routine.pdf}, \texttt{ict-practical.pdf} ও \texttt{admission-result.pdf} লিংক চালাতে ঐ নামের PDF ফাইল প্রকল্পের মূল ফোল্ডারে রাখতে হবে।
 \end{keypointbox}
 
-\subsection{Page Requirements}
+\subsection{প্রতিটি পেজে প্রয়োজনীয় বিষয়}
 
-\subsubsection{Page 1: Home Page - \texttt{index.html}}
+\subsubsection{পেজ ১: Home — \texttt{index.html}}
 
-\texttt{index.html} page-এ থাকবে:
+\texttt{index.html} পেজে থাকবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item College name heading
-\item College logo ও college image
-\item Short welcome paragraph
-\item Navigation link: Home, About, Notice, Result, Contact
-\item Unordered list দিয়ে facilities
-\item Ordered list দিয়ে important links
-\item Footer
+\item কলেজের নামের শিরোনাম
+\item কলেজের লোগো ও ছবি
+\item স্বাগত জানিয়ে ছোট অনুচ্ছেদ
+\item নেভিগেশন লিংক: Home, About, Notice, Result ও Contact
 \end{itemize}
-
-\subsubsection{Page 2: About Page - \texttt{about.html}}
-
-\texttt{about.html} page-এ থাকবে:
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item College history
-\item Mission and vision
-\item Department/group list
-\item Back to Home link
+\item অক্রমিক তালিকায় কলেজের সুবিধাগুলো
+\item ক্রমিক তালিকায় গুরুত্বপূর্ণ লিংকগুলো
+\item ফুটার
 \end{itemize}
+\end{minipage}\par
 
-\subsubsection{Page 3: Notice Page - \texttt{notice.html}}
 
-\texttt{notice.html} page-এ থাকবে:
+\Needspace{10\baselineskip}
+% Related compact discussions; source reading order is retained.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{পেজ ২: About — \texttt{about.html}}
+
+\texttt{about.html} পেজে থাকবে:
 \begin{itemize}
-\item Notice heading
-\item Ordered list বা unordered list
-\item PDF download link example
-\item Back to Home link
+\item কলেজের ইতিহাস
+\item কলেজের লক্ষ্য ও ভবিষ্যৎ পরিকল্পনা
+\item বিভাগের তালিকা
+\item Home পেজে ফেরার লিংক
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{পেজ ৩: Notice — \texttt{notice.html}}
 
-\subsubsection{Page 4: Result Page - \texttt{result.html}}
+\texttt{notice.html} পেজে থাকবে:
+\begin{itemize}
+\item বিজ্ঞপ্তির শিরোনাম
+\item ক্রমিক বা অক্রমিক তালিকা
+\item PDF ফাইল খোলা বা ডাউনলোডের লিংক
+\item Home পেজে ফেরার লিংক
+\end{itemize}
+\end{minipage}\par\smallskip
+\subsubsection{পেজ ৪: Result — \texttt{result.html}}
 
-\texttt{result.html} page-এ student result table থাকবে।
+\texttt{result.html} পেজে শিক্ষার্থীর ফলের সারণি থাকবে।
 
 \begin{center}
 \begin{tabular}{|c|c|p{0.30\textwidth}|c|}
@@ -149,55 +175,79 @@ college-website/
 \end{tabular}
 \end{center}
 
-এই অংশে \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>}, \texttt{border} ও \texttt{<caption>} ব্যবহার practice হবে।
+এই অংশে \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>}, \texttt{border} ও \texttt{<caption>} ব্যবহারের অনুশীলন হবে। এই তিন সারির প্রাথমিক নমুনাটি পরে পূর্ণ কোডে বিস্তারিত তথ্যসহ চার সারিতে দেখানো হয়েছে। GPA এখানে পৃথক নমুনা তথ্য; পরের কোডের ICT Marks থেকে GPA হিসাব করা হয়নি।
 
-\subsubsection{Page 5: Contact Page - \texttt{contact.html}}
+\subsubsection{পেজ ৫: Contact — \texttt{contact.html}}
 
-\texttt{contact.html} page-এ simple form থাকবে:
+\texttt{contact.html} পেজে একটি সহজ ফর্ম থাকবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
 \item Name
 \item Email
 \item Gender
 \item Group
-\item Message
-\item Submit button
-\item Reset button
 \end{itemize}
-
-এই অংশে \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}, \texttt{<option>} ও \texttt{<button>} ব্যবহার practice হবে।
-
-\subsection{Project Requirements}
-
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item কমপক্ষে 5টি page থাকবে।
-\item প্রতিটি page-এ navigation menu থাকবে।
-\item অন্তত 1টি image ব্যবহার করতে হবে।
-\item অন্তত 1টি list ব্যবহার করতে হবে।
-\item অন্তত 1টি table ব্যবহার করতে হবে।
-\item অন্তত 1টি form ব্যবহার করতে হবে।
-\item সব page internal hyperlink দিয়ে connected থাকতে হবে।
-\item File ও folder name ঠিকভাবে রাখতে হবে।
+\item Message
+\item Submit বোতাম
+\item Reset বোতাম
 \end{itemize}
+\end{minipage}\par
 
-\subsection{Step-by-step Instruction}
+
+এই অংশে \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}, \texttt{<option>} ও \texttt{<button>}-এর কাজ মিলিয়ে অনুশীলন হবে। নিচের পূর্ণ কোডে Submit ও Reset বোতাম \texttt{<input>} দিয়ে তৈরি করা হয়েছে; \texttt{<button>} দিয়েও বোতাম তৈরি করা যায়।
+
+ফর্মটি তথ্য গ্রহণের নিয়ন্ত্রণ উপাদান দেখানোর নমুনা। এখানে \texttt{submit.php}-এর সার্ভার প্রোগ্রাম নেই। তাই শুধু HTML ফাইল খুলে Submit চাপলে তথ্য সংরক্ষিত হবে না বা কলেজের অফিসে পৌঁছাবে না। ওই কাজের জন্য সার্ভারের প্রোগ্রাম বা কার্যকর ফর্ম সেবা প্রয়োজন। Password ঘরটি ইনপুটের ধরন দেখায়; সাধারণ যোগাযোগের ফর্মে পাসওয়ার্ড চাওয়ার প্রয়োজন নেই।
+
+উদাহরণে \texttt{<font>}, \texttt{<center>}, \texttt{bgcolor}, \texttt{align}, \texttt{cellpadding} ও \texttt{cellspacing}-এর মতো পুরোনো উপস্থাপনা রূপ আছে। ব্রাউজারে এগুলো দেখা যেতে পারে, কিন্তু আধুনিক HTML-এ নতুন কাজের জন্য CSS ব্যবহার করা হয়। সারণির তথ্য দেখানো ও সারণি দিয়ে পুরো পেজের বিন্যাস করা আলাদা বিষয়।
+
+\subsection{প্রকল্পের শর্ত}
+
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item কমপক্ষে ৫টি পেজ থাকবে।
+\item প্রতিটি পেজে নেভিগেশন মেনু থাকবে।
+\item অন্তত ১টি ছবি ব্যবহার করতে হবে।
+\item অন্তত ১টি তালিকা ব্যবহার করতে হবে।
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item অন্তত ১টি সারণি ব্যবহার করতে হবে।
+\item অন্তত ১টি ফর্ম ব্যবহার করতে হবে।
+\item সব পেজ অভ্যন্তরীণ হাইপারলিংক দিয়ে যুক্ত থাকতে হবে।
+\item ফাইল ও ফোল্ডারের নাম সঠিকভাবে রাখতে হবে।
+\end{itemize}
+\end{minipage}\par
+
+
+\input{chapters/Chapter04/topics/11_web_page_designing/clarity}
+
+\subsection{কাজ করার ধাপ}
 
 \begin{enumerate}
-\item একটি folder তৈরি করো: \texttt{college-website}
-\item \texttt{index.html} file তৈরি করো।
-\item অন্য page তৈরি করো: \texttt{about.html} ও \texttt{notice.html}
+\item একটি ফোল্ডার তৈরি করো: \texttt{college-website}
+\item \texttt{index.html} ফাইল তৈরি করো।
+\item অন্য পেজ তৈরি করো: \texttt{about.html} ও \texttt{notice.html}
 \item এরপর তৈরি করো: \texttt{result.html} ও \texttt{contact.html}
-\item \texttt{images} folder তৈরি করে \texttt{logo.png} ও \texttt{college.jpg} রাখো।
-\item সব page-এ navigation link দাও।
-\item Browser-এ \texttt{index.html} open করে output দেখো।
-\item Link, image, table ও form কাজ করছে কিনা পরীক্ষা করো।
-\item ভুল থাকলে code edit করে আবার browser-এ refresh করো।
+\item \texttt{images} ফোল্ডার তৈরি করে \texttt{logo.png} ও \texttt{college.jpg} রাখো।
+\item সব পেজে নেভিগেশন লিংক দাও।
+\item ব্রাউজারে \texttt{index.html} খুলে ফল দেখো।
+\item লিংক, ছবি, সারণি ও ফর্মের নিয়ন্ত্রণগুলো কাজ করছে কি না পরীক্ষা করো।
+\item ভুল থাকলে কোড সংশোধন করে ব্রাউজারে পেজ আবার লোড করো।
 \end{enumerate}
 
-\subsection{Page 1: Home Page Code}
+\subsection{পেজ ১: Home পেজের কোড}
 
-নিচের code \texttt{index.html} file-এ লিখবে।
+নিচের কোড \texttt{index.html} ফাইলে লিখবে।
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -317,41 +367,52 @@ college-website/
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Home Page Output ধারণা}
 
-Browser-এ দেখা যাবে:
+\subsection{Home পেজের ফল}
+
+ব্রাউজারে দেখা যাবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item উপরে college logo ও college name সহ header।
-\item Home, About, Notice, Result, Contact navigation link।
-\item College building image।
-\item Welcome paragraph।
-\item Facilities list।
-\item Important links ordered list।
-\item Footer section।
+\item উপরে কলেজের লোগো ও নামসহ হেডার।
+\item Home, About, Notice, Result ও Contact নেভিগেশন লিংক।
+\item কলেজ ভবনের ছবি।
+\item স্বাগত জানিয়ে অনুচ্ছেদ।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item কলেজের সুবিধার তালিকা।
+\item ক্রমিক তালিকায় গুরুত্বপূর্ণ লিংক।
+\item ফুটার অংশ।
+\end{itemize}
+\end{minipage}\par
 
-\subsection{Home Page Code Explanation}
+
+\subsection{Home পেজের কোডের ব্যাখ্যা}
 
 \begin{itemize}
-\item \texttt{<!DOCTYPE html>} browser-কে জানায় যে document-টি HTML5 standard অনুসরণ করে।
-\item \texttt{<html>} থেকে \texttt{</html>} পর্যন্ত সম্পূর্ণ HTML document লেখা হয়েছে।
+\item \texttt{<!DOCTYPE html>} ডকুমেন্টকে HTML হিসেবে পরিচিত করে এবং ব্রাউজারের মানসম্মত রেন্ডারিং মোড চালু রাখতে সাহায্য করে। এটি দিলেই কোডের সব ট্যাগ আধুনিক HTML-এ বৈধ হয়ে যায় না।
+\item \texttt{<html>} থেকে \texttt{</html>} পর্যন্ত HTML ডকুমেন্টের উপাদানগুলো লেখা হয়েছে।
 \item \texttt{<head>} অংশে \texttt{meta charset} ও \texttt{title} রাখা হয়েছে।
-\item \texttt{<body bgcolor="\#F5F7FA">} page-এর background color নির্ধারণ করেছে।
-\item প্রথম \texttt{<table>} header section তৈরি করেছে, যেখানে logo ও college name আছে।
-\item \texttt{<img src="images/logo.png">} logo image দেখানোর জন্য ব্যবহৃত হয়েছে।
-\item \texttt{<a href="about.html">} ধরনের link ব্যবহার করে navigation menu তৈরি হয়েছে।
-\item \texttt{<center>} ও \texttt{align="center"} image ও text center-এ দেখাতে সাহায্য করেছে।
-\item \texttt{<ul>} facilities list এবং \texttt{<ol>} important links list তৈরি করেছে।
-\item শেষ \texttt{<table>} footer section তৈরি করেছে।
+\item \texttt{<body bgcolor="\#F5F7FA">} পেজের পটভূমির রং নির্ধারণ করেছে।
+\item প্রথম \texttt{<table>} দিয়ে হেডারের বিন্যাস তৈরি করা হয়েছে; এতে লোগো ও কলেজের নাম আছে।
+\item \texttt{<img src="images/logo.png">} লোগোর ছবি দেখানোর জন্য ব্যবহৃত হয়েছে।
+\item \texttt{<a href="about.html">} ধরনের লিংক দিয়ে নেভিগেশন মেনু তৈরি হয়েছে।
+\item \texttt{<center>} ও \texttt{align="center"} ছবি ও লেখা মাঝখানে দেখাতে সাহায্য করেছে।
+\item \texttt{<ul>} কলেজের সুবিধার তালিকা এবং \texttt{<ol>} গুরুত্বপূর্ণ লিংকের তালিকা তৈরি করেছে।
+\item শেষ \texttt{<table>} দিয়ে ফুটার অংশ সাজানো হয়েছে।
 \end{itemize}
 
-\subsection{Page 2: About Page Code}
+\subsection{পেজ ২: About পেজের কোড}
 
-নিচের code \texttt{about.html} file-এ লিখবে।
+নিচের কোড \texttt{about.html} ফাইলে লিখবে।
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -456,28 +517,23 @@ Browser-এ দেখা যাবে:
         <table border="1" width="100%"
                cellpadding="8" cellspacing="0">
           <tr>
-            <th>Information</th>
-            <th>Details</th>
+            <th>Information</th><th>Details</th>
           </tr>
           <tr>
-            <td>Institution Name</td>
-            <td>ABC College</td>
+            <td>Institution Name</td><td>ABC College</td>
           </tr>
           <tr>
-            <td>Established</td>
-            <td>2005</td>
+            <td>Established</td><td>2005</td>
           </tr>
           <tr>
-            <td>Location</td>
-            <td>Dhaka, Bangladesh</td>
+            <td>Location</td><td>Dhaka, Bangladesh</td>
           </tr>
           <tr>
             <td>Groups</td>
             <td>Science, Business Studies, Humanities</td>
           </tr>
           <tr>
-            <td>Website Type</td>
-            <td>Static Website</td>
+            <td>Website Type</td><td>Static Website</td>
           </tr>
         </table>
 
@@ -509,39 +565,57 @@ Browser-এ দেখা যাবে:
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{About Page Output ধারণা}
 
-Browser-এ দেখা যাবে:
+\subsection{About পেজের ফল}
+
+ব্রাউজারে দেখা যাবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item একই header, navigation menu ও footer।
-\item কলেজের পরিচিতি, history, mission ও vision।
-\item academic group-এর unordered list।
-\item facilities-এর ordered list।
-\item institution information table।
-\item Back to Home, View Notice ও Contact Us link।
+\item একই হেডার, নেভিগেশন মেনু ও ফুটার।
+\item কলেজের পরিচিতি, ইতিহাস, লক্ষ্য ও ভবিষ্যৎ পরিকল্পনা।
+\item বিভাগের অক্রমিক তালিকা।
 \end{itemize}
-
-\subsection{About Page Code Explanation}
-
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item এই page-এ Home page-এর মতো একই header, navigation menu ও footer রাখা হয়েছে, যাতে website-এর design consistent থাকে।
-\item \texttt{<h1>} main page heading দেখিয়েছে এবং \texttt{<h2>} দিয়ে ছোট ছোট section heading তৈরি হয়েছে।
-\item \texttt{<p align="justify">} paragraph text দুই পাশে সমানভাবে সাজাতে ব্যবহার করা হয়েছে।
-\item \texttt{<hr>} heading-এর নিচে horizontal line তৈরি করেছে।
-\item \texttt{<ul type="square">} academic groups bullet আকারে দেখিয়েছে।
-\item \texttt{<ol type="1">} college facilities serial number সহ দেখিয়েছে।
-\item institution information দেখাতে \texttt{<table>}, \texttt{<tr>}, \texttt{<th>} ও \texttt{<td>} ব্যবহার করা হয়েছে।
-\item \texttt{<th>} table heading cell তৈরি করেছে এবং \texttt{<td>} সাধারণ data cell তৈরি করেছে।
-\item নিচের \texttt{<a>} tag গুলো Back to Home, Notice ও Contact page-এ যাওয়ার internal link তৈরি করেছে।
+\item কলেজের সুবিধার ক্রমিক তালিকা।
+\item প্রতিষ্ঠানের তথ্যের সারণি।
+\item Back to Home, View Notice ও Contact Us লিংক।
 \end{itemize}
+\end{minipage}\par
 
-\subsection{Page 3: Notice Page Code}
 
-নিচের code \texttt{notice.html} file-এ লিখবে।
+\subsection{About পেজের কোডের ব্যাখ্যা}
 
-\begin{examplebox}{Code}
+\par\noindent
+\begin{multicols}{2}
+\begin{itemize}
+\item এই পেজে Home পেজের মতো একই হেডার, নেভিগেশন মেনু ও ফুটার রাখা হয়েছে। এতে ওয়েবসাইটের নকশায় সামঞ্জস্য থাকে।
+\item \texttt{<h1>} পেজের প্রধান শিরোনাম দেখিয়েছে। \texttt{<h2>} দিয়ে বিভিন্ন অংশের দ্বিতীয় স্তরের শিরোনাম তৈরি হয়েছে।
+\item \texttt{<p align="justify">} অনুচ্ছেদের লেখা দুই প্রান্তে সমানভাবে সাজাতে ব্যবহার করা হয়েছে।
+\item \texttt{<hr>} বিষয়ভিত্তিক বিরতি বোঝাতে শিরোনামের নিচে অনুভূমিক রেখা দেখিয়েছে।
+\item \texttt{<ul type="square">} বিভাগগুলো বুলেটসহ দেখিয়েছে।
+
+
+\item \texttt{<ol type="1">} কলেজের সুবিধাগুলো ক্রমিক নম্বরসহ দেখিয়েছে।
+\item প্রতিষ্ঠানের তথ্য দেখাতে \texttt{<table>}, \texttt{<tr>}, \texttt{<th>} ও \texttt{<td>} ব্যবহার করা হয়েছে।
+\item \texttt{<th>} সারণির শিরোনাম ঘর এবং \texttt{<td>} সাধারণ তথ্যের ঘর তৈরি করেছে।
+\item নিচের \texttt{<a>} ট্যাগগুলো Home, Notice ও Contact পেজে যাওয়ার অভ্যন্তরীণ লিংক তৈরি করেছে।
+\end{itemize}
+\end{multicols}
+\par
+
+
+\subsection{পেজ ৩: Notice পেজের কোড}
+
+নিচের কোড \texttt{notice.html} ফাইলে লিখবে।
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -607,30 +681,25 @@ Browser-এ দেখা যাবে:
                cellpadding="8" cellspacing="0">
           <caption><b>ABC College Notice List</b></caption>
           <tr bgcolor="#DBEAFE">
-            <th>Serial No</th>
-            <th>Notice Title</th>
-            <th>Date</th>
+            <th>Serial No</th><th>Notice Title</th><th>Date</th>
             <th>Download</th>
           </tr>
           <tr>
-            <td align="center">01</td>
-            <td>HSC Form Fill-up Notice</td>
+            <td align="center">01</td><td>HSC Form Fill-up Notice</td>
             <td align="center">05-06-2026</td>
             <td align="center">
               <a href="hsc-form-fillup.pdf">Download</a>
             </td>
           </tr>
           <tr>
-            <td align="center">02</td>
-            <td>Class Routine Published</td>
+            <td align="center">02</td><td>Class Routine Published</td>
             <td align="center">10-06-2026</td>
             <td align="center">
               <a href="class-routine.pdf">Download</a>
             </td>
           </tr>
           <tr>
-            <td align="center">03</td>
-            <td>ICT Practical Exam Notice</td>
+            <td align="center">03</td><td>ICT Practical Exam Notice</td>
             <td align="center">15-06-2026</td>
             <td align="center">
               <a href="ict-practical.pdf">Download</a>
@@ -691,40 +760,50 @@ Browser-এ দেখা যাবে:
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Notice Page Output ধারণা}
 
-Browser-এ দেখা যাবে:
+\subsection{Notice পেজের ফল}
+
+ব্রাউজারে দেখা যাবে:
 \begin{itemize}
-\item Notice Board heading।
-\item notice list table, যেখানে serial, notice title, date ও download link থাকবে।
-\item important instructions ordered list।
-\item notice category unordered list।
-\item Result ও Contact page-এ যাওয়ার internal link।
+\item Notice Board শিরোনাম।
+\item বিজ্ঞপ্তির সারণি; এতে ক্রমিক নম্বর, শিরোনাম, তারিখ ও ডাউনলোড লিংক থাকবে।
+\item গুরুত্বপূর্ণ নির্দেশনার ক্রমিক তালিকা।
+\item বিজ্ঞপ্তির ধরনের অক্রমিক তালিকা।
+\item Result ও Contact পেজে যাওয়ার অভ্যন্তরীণ লিংক।
 \end{itemize}
 
-\subsection{Notice Page Code Explanation}
+\subsection{Notice পেজের কোডের ব্যাখ্যা}
 
+\par\noindent
+\begin{multicols}{2}
 \begin{itemize}
-\item \texttt{Notice Board} heading page-এর উদ্দেশ্য বোঝায়।
-\item notice information row-column আকারে দেখানোর জন্য table ব্যবহার করা হয়েছে।
-\item \texttt{<table border="1">} table-এর border দেখিয়েছে।
-\item \texttt{<caption>} table-এর title হিসেবে \texttt{ABC College Notice List} দেখিয়েছে।
-\item \texttt{bgcolor="\#DBEAFE"} heading row-এর background color দিয়েছে।
-\item প্রতিটি notice আলাদা \texttt{<tr>} row-এর ভিতরে লেখা হয়েছে।
-\item serial, title, date ও download link আলাদা \texttt{<td>} cell-এ রাখা হয়েছে।
-\item \texttt{<a href="class-routine.pdf">} PDF file-এর address নির্দেশ করেছে।
-\item \texttt{Download} text-এ click করলে file open/download হতে পারে।
-\item \texttt{<ol>} important instructions serial number সহ দেখিয়েছে।
-\item \texttt{<ul type="square">} notice category bullet list হিসেবে দেখিয়েছে।
+\item \texttt{Notice Board} শিরোনাম পেজের উদ্দেশ্য বোঝায়।
+\item বিজ্ঞপ্তির তথ্য সারি-কলামে দেখাতে সারণি ব্যবহার করা হয়েছে।
+\item \texttt{<table border="1">} সারণির সীমানা দেখিয়েছে।
+\item \texttt{<caption>} সারণির শিরোনাম হিসেবে \texttt{ABC College Notice List} দেখিয়েছে।
+\item \texttt{bgcolor="\#DBEAFE"} শিরোনামের সারির পটভূমির রং দিয়েছে।
+\item প্রতিটি বিজ্ঞপ্তি আলাদা \texttt{<tr>} সারির ভেতরে লেখা হয়েছে।
+
+
+\item ক্রমিক নম্বর, শিরোনাম, তারিখ ও ডাউনলোড লিংক আলাদা \texttt{<td>} ঘরে রাখা হয়েছে।
+\item \texttt{<a href="class-routine.pdf">} PDF ফাইলের পথ নির্দেশ করেছে।
+\item \texttt{Download} লেখায় ক্লিক করলে ফাইল খুলতে বা ডাউনলোড হতে পারে; শুধু লিংকের লেখায় Download থাকলেই ডাউনলোড বাধ্যতামূলক হয় না।
+\item \texttt{<ol>} গুরুত্বপূর্ণ নির্দেশনা ক্রমিক নম্বরসহ দেখিয়েছে।
+\item \texttt{<ul type="square">} বিজ্ঞপ্তির ধরন বুলেটসহ তালিকায় দেখিয়েছে।
 \end{itemize}
+\end{multicols}
+\par
 
-\subsection{Page 4: Result Page Code}
 
-নিচের code \texttt{result.html} file-এ লিখবে।
+\subsection{পেজ ৪: Result পেজের কোড}
 
-\begin{examplebox}{Code}
+নিচের কোড \texttt{result.html} ফাইলে লিখবে।
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -789,44 +868,28 @@ Browser-এ দেখা যাবে:
                cellpadding="8" cellspacing="0">
           <caption><b>Result of HSC ICT Examination</b></caption>
           <tr bgcolor="#DBEAFE">
-            <th>Roll No</th>
-            <th>Name</th>
-            <th>Group</th>
-            <th>ICT Marks</th>
-            <th>GPA</th>
-            <th>Result</th>
+            <th>Roll No</th><th>Name</th><th>Group</th>
+            <th>ICT Marks</th><th>GPA</th><th>Result</th>
           </tr>
           <tr>
-            <td align="center">101</td>
-            <td>Sakib Hasan</td>
-            <td>Science</td>
-            <td align="center">92</td>
-            <td align="center">5.00</td>
-            <td align="center">Passed</td>
+            <td align="center">101</td><td>Sakib Hasan</td>
+            <td>Science</td><td align="center">92</td>
+            <td align="center">5.00</td><td align="center">Passed</td>
           </tr>
           <tr>
-            <td align="center">102</td>
-            <td>Asraful Islam</td>
-            <td>Business Studies</td>
-            <td align="center">85</td>
-            <td align="center">4.75</td>
-            <td align="center">Passed</td>
+            <td align="center">102</td><td>Asraful Islam</td>
+            <td>Business Studies</td><td align="center">85</td>
+            <td align="center">4.75</td><td align="center">Passed</td>
           </tr>
           <tr>
-            <td align="center">103</td>
-            <td>Sumaiya Akter</td>
-            <td>Humanities</td>
-            <td align="center">78</td>
-            <td align="center">4.50</td>
-            <td align="center">Passed</td>
+            <td align="center">103</td><td>Sumaiya Akter</td>
+            <td>Humanities</td><td align="center">78</td>
+            <td align="center">4.50</td><td align="center">Passed</td>
           </tr>
           <tr>
-            <td align="center">104</td>
-            <td>Tanvir Ahmed</td>
-            <td>Science</td>
-            <td align="center">67</td>
-            <td align="center">4.00</td>
-            <td align="center">Passed</td>
+            <td align="center">104</td><td>Tanvir Ahmed</td>
+            <td>Science</td><td align="center">67</td>
+            <td align="center">4.00</td><td align="center">Passed</td>
           </tr>
         </table>
 
@@ -840,20 +903,16 @@ Browser-এ দেখা যাবে:
             <th colspan="2">Examination Summary</th>
           </tr>
           <tr>
-            <td>Total Students</td>
-            <td align="center">04</td>
+            <td>Total Students</td><td align="center">04</td>
           </tr>
           <tr>
-            <td>Passed Students</td>
-            <td align="center">04</td>
+            <td>Passed Students</td><td align="center">04</td>
           </tr>
           <tr>
-            <td>Failed Students</td>
-            <td align="center">00</td>
+            <td>Failed Students</td><td align="center">00</td>
           </tr>
           <tr>
-            <td>Highest GPA</td>
-            <td align="center">5.00</td>
+            <td>Highest GPA</td><td align="center">5.00</td>
           </tr>
         </table>
 
@@ -893,38 +952,56 @@ Browser-এ দেখা যাবে:
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Result Page Output ধারণা}
 
-Browser-এ দেখা যাবে:
+\subsection{Result পেজের ফল}
+
+ব্রাউজারে দেখা যাবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Student Result heading।
-\item HSC ICT Result Sheet নামে main result table।
-\item table caption, table heading ও data cell।
-\item Result Summary table, যেখানে \texttt{colspan} ব্যবহার করা হয়েছে।
-\item Important Notes list।
-\item Notice ও Contact page-এ যাওয়ার link।
+\item Student Result শিরোনাম।
+\item HSC ICT Result Sheet নামে প্রধান ফলের সারণি।
+\item সারণির শিরোনাম, শিরোনামের ঘর ও তথ্যের ঘর।
 \end{itemize}
-
-\subsection{Result Page Code Explanation}
-
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item এই page-এ student result table আকারে দেখানো হয়েছে।
-\item \texttt{<caption>} result table-এর title দেখিয়েছে।
-\item first row-এ \texttt{<th>} ব্যবহার করে Roll No, Name, Group, ICT Marks, GPA ও Result heading তৈরি করা হয়েছে।
-\item প্রতিটি student-এর result একটি করে \texttt{<tr>} row-এর ভিতরে রাখা হয়েছে।
-\item \texttt{align="center"} roll, marks, GPA ও result data center-এ দেখিয়েছে।
-\item Result Summary table-এ \texttt{colspan="2"} ব্যবহার করে একটি heading cell দুইটি column জুড়ে দেখানো হয়েছে।
-\item \texttt{<ul type="square">} result page-এর important notes bullet আকারে দেখিয়েছে।
-\item নিচের link গুলো Home, Notice ও Contact page-এর সাথে page-টি যুক্ত করেছে।
+\item Result Summary সারণি; এতে \texttt{colspan} ব্যবহার করা হয়েছে।
+\item Important Notes তালিকা।
+\item Notice ও Contact পেজে যাওয়ার লিংক।
 \end{itemize}
+\end{minipage}\par
 
-\subsection{Page 5: Contact Page Code}
 
-নিচের code \texttt{contact.html} file-এ লিখবে।
+\subsection{Result পেজের কোডের ব্যাখ্যা}
 
-\begin{examplebox}{Code}
+\par\noindent
+\begin{multicols}{2}
+\begin{itemize}
+\item এই পেজে শিক্ষার্থীর ফল সারণিতে দেখানো হয়েছে।
+\item \texttt{<caption>} ফলের সারণির শিরোনাম দেখিয়েছে।
+\item প্রথম সারিতে \texttt{<th>} দিয়ে Roll No, Name, Group, ICT Marks, GPA ও Result শিরোনামের ঘর তৈরি হয়েছে।
+\item প্রতিটি শিক্ষার্থীর ফল একটি করে \texttt{<tr>} সারিতে রাখা হয়েছে।
+
+
+\item \texttt{align="center"} রোল, নম্বর, GPA ও ফলের মান ঘরের মাঝখানে দেখিয়েছে।
+\item Result Summary সারণিতে \texttt{colspan="2"} দিয়ে একটি শিরোনাম ঘর দুইটি কলামজুড়ে দেখানো হয়েছে।
+\item \texttt{<ul type="square">} ফলের পেজের গুরুত্বপূর্ণ নোটগুলো বুলেটসহ দেখিয়েছে।
+\item নিচের লিংকগুলো এই পেজকে Home, Notice ও Contact পেজের সঙ্গে যুক্ত করেছে।
+\end{itemize}
+\end{multicols}
+\par
+
+
+\subsection{পেজ ৫: Contact পেজের কোড}
+
+নিচের কোড \texttt{contact.html} ফাইলে লিখবে।
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -989,20 +1066,16 @@ Browser-এ দেখা যাবে:
         <table border="1" width="100%"
                cellpadding="8" cellspacing="0">
           <tr bgcolor="#DBEAFE">
-            <th>Information</th>
-            <th>Details</th>
+            <th>Information</th><th>Details</th>
           </tr>
           <tr>
-            <td>College Name</td>
-            <td>ABC College</td>
+            <td>College Name</td><td>ABC College</td>
           </tr>
           <tr>
-            <td>Address</td>
-            <td>Dhaka, Bangladesh</td>
+            <td>Address</td><td>Dhaka, Bangladesh</td>
           </tr>
           <tr>
-            <td>Phone</td>
-            <td>+880 1234-567890</td>
+            <td>Phone</td><td>+880 1234-567890</td>
           </tr>
           <tr>
             <td>Email</td>
@@ -1098,8 +1171,7 @@ Browser-এ দেখা যাবে:
               <td>
                 <textarea id="message" name="message"
                           rows="5" cols="42"
-                          placeholder="Write your message here">
-                </textarea>
+                          placeholder="Write your message here"></textarea>
               </td>
             </tr>
 
@@ -1121,7 +1193,7 @@ Browser-এ দেখা যাবে:
           <li>This contact form is created for HTML practice.</li>
           <li>The form uses text field and password field.</li>
           <li>It also uses radio button, checkbox and dropdown.</li>
-          <li>The reset button clears the input fields.</li>
+          <li>The reset button restores the initial form values.</li>
         </ul>
 
         <p align="center">
@@ -1151,126 +1223,152 @@ Browser-এ দেখা যাবে:
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Contact Page Output ধারণা}
 
-Browser-এ দেখা যাবে:
+\subsection{Contact পেজের ফল}
+
+ব্রাউজারে দেখা যাবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Contact Us heading।
-\item college contact information table।
-\item email link, যেখানে click করলে mail application open হতে পারে।
-\item contact form: name, email, password, gender, group, checkbox ও message।
-\item Submit ও Reset button।
-\item অন্য page-এ যাওয়ার internal link।
+\item Contact Us শিরোনাম।
+\item কলেজের যোগাযোগের তথ্যের সারণি।
+\item ইমেইলের লিংক; এতে ক্লিক করলে যন্ত্রে নির্ধারিত মেইল অ্যাপ্লিকেশন খুলতে পারে।
 \end{itemize}
-
-\subsection{Contact Page Code Explanation}
-
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Contact page-এ contact information table এবং user input নেওয়ার form আছে।
-\item \texttt{mailto:info@abccollege.edu.bd} email address-এর সাথে clickable email link তৈরি করেছে।
-\item \texttt{<form action="submit.php" method="post">} form data পাঠানোর জন্য form area তৈরি করেছে।
-\item \texttt{action="submit.php"} form submit হলে data কোন file-এ যাবে তা নির্দেশ করে।
-\item \texttt{method="post"} form data পাঠানোর পদ্ধতি নির্ধারণ করে।
-\item \texttt{<input type="text">} name ও email নেওয়ার text field তৈরি করেছে।
-\item \texttt{<input type="password">} password field তৈরি করেছে, যেখানে লেখা character সাধারণত গোপন থাকে।
-\item \texttt{<input type="radio">} gender থেকে একটি option select করার সুযোগ দেয়।
-\item \texttt{<select>} ও \texttt{<option>} group selection-এর dropdown list তৈরি করেছে।
-\item \texttt{<input type="checkbox">} একাধিক subject select করার সুযোগ দেয়।
-\item \texttt{<textarea>} বড় message বা comment লেখার multi-line input field তৈরি করেছে।
-\item \texttt{type="submit"} form submit button এবং \texttt{type="reset"} form clear করার button তৈরি করেছে।
+\item যোগাযোগের ফর্ম: Name, Email, Password, Gender, Group, বিষয়ের চেকবক্স ও Message।
+\item Submit ও Reset বোতাম।
+\item অন্য পেজে যাওয়ার অভ্যন্তরীণ লিংক।
 \end{itemize}
+\end{minipage}\par
 
-\subsection{Complete Project Output}
 
-সবগুলো file ঠিকভাবে তৈরি করলে website-টি browser-এ একটি simple static college website হিসেবে দেখা যাবে। Output যাচাই করার সময় নিচের বিষয়গুলো মিলিয়ে দেখবে:
+\subsection{Contact পেজের কোডের ব্যাখ্যা}
 
 \begin{itemize}
-\item \texttt{index.html} open করলে Home page দেখা যাবে।
-\item সব page-এ একই header, navigation menu ও footer থাকবে।
-\item navigation menu থেকে Home, About, Notice, Result ও Contact page-এ যাওয়া যাবে।
-\item Home page-এ logo, college image, welcome text ও list থাকবে।
-\item About page-এ paragraph, list ও institution information table থাকবে।
-\item Notice page-এ notice table ও download link থাকবে।
-\item Result page-এ result table এবং summary table থাকবে।
-\item Contact page-এ contact information table, email link ও form থাকবে।
-\item image না দেখালে \texttt{images} folder এবং \texttt{src} path পরীক্ষা করতে হবে।
+\item Contact পেজে যোগাযোগের তথ্যের সারণি ও ব্যবহারকারীর তথ্য নেওয়ার ফর্ম আছে।
+\item \texttt{mailto:info@abccollege.edu.bd} ইমেইল ঠিকানার জন্য ক্লিকযোগ্য লিংক তৈরি করেছে।
+\item \texttt{<form action="submit.php" method="post">} ফর্মের তথ্য পাঠানোর জন্য ফর্মের অংশ তৈরি করেছে।
+\item \texttt{action="submit.php"} ফর্ম জমা দিলে তথ্য কোন গন্তব্যে যাবে তা নির্দেশ করে।
+\item \texttt{method="post"} ফর্মের তথ্য পাঠানোর পদ্ধতি নির্ধারণ করে।
+\item \texttt{<input type="text">} নাম ও ইমেইল নেওয়ার লেখার ঘর তৈরি করেছে। এই উদাহরণের ইমেইল ঘর \texttt{type="text"}; তাই এটি নিজে ইমেইলের গঠন পরীক্ষা করে না।
+\item \texttt{<input type="password">} পাসওয়ার্ডের ঘর তৈরি করেছে; এতে টাইপ করা অক্ষরের বদলে সাধারণত বিন্দু বা তারকা দেখা যায়। এটি নিজে তথ্য এনক্রিপ্ট করে না।
+\item \texttt{<input type="radio">} একই নামের Gender বিকল্পগুলোর মধ্যে একটি বেছে নিতে দেয়।
+\item \texttt{<select>} ও \texttt{<option>} Group বাছাইয়ের ড্রপডাউন তালিকা তৈরি করেছে।
+\item \texttt{<input type="checkbox">} একাধিক বিষয় বেছে নেওয়ার সুযোগ দেয়।
+\item \texttt{<textarea>} বড় বার্তা বা মন্তব্য লেখার একাধিক লাইনের ঘর তৈরি করেছে।
+\item \texttt{type="submit"} ফর্ম জমা দেওয়ার বোতাম এবং \texttt{type="reset"} প্রাথমিক মান ফিরিয়ে আনার বোতাম তৈরি করেছে। Reset সব ঘর বাধ্যতামূলকভাবে ফাঁকা করে না; যেমন Group আবার প্রথম বিকল্পে ফিরে যায়।
 \end{itemize}
 
-\begin{keypointbox}{Project complete}
-এই mini project-এ মোট 5টি HTML page আছে: \texttt{index.html}, \texttt{about.html}, \texttt{notice.html}, \texttt{result.html} এবং \texttt{contact.html}। এগুলো একসাথে Chapter 4-এর heading, paragraph, image, hyperlink, list, table ও form topic-এর practical revision হিসেবে কাজ করবে।
+\subsection{পুরো প্রকল্পের ফল}
+
+সব ফাইল সঠিকভাবে তৈরি করলে ব্রাউজারে একটি সহজ স্ট্যাটিক কলেজ ওয়েবসাইট দেখা যাবে। ফল যাচাইয়ে নিচের বিষয়গুলো মিলিয়ে দেখবে:
+
+\par\noindent
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{index.html} খুললে Home পেজ দেখা যাবে।
+\item সব পেজে একই হেডার, নেভিগেশন মেনু ও ফুটার থাকবে।
+\item নেভিগেশন মেনু থেকে Home, About, Notice, Result ও Contact পেজে যাওয়া যাবে।
+\item Home পেজে লোগো, কলেজের ছবি, স্বাগত জানিয়ে লেখা ও তালিকা থাকবে।
+\item About পেজে অনুচ্ছেদ, তালিকা ও প্রতিষ্ঠানের তথ্যের সারণি থাকবে।
+
+
+\item Notice পেজে বিজ্ঞপ্তির সারণি ও ডাউনলোড লিংক থাকবে।
+\item Result পেজে ফলের সারণি ও সারসংক্ষেপের সারণি থাকবে।
+\item Contact পেজে যোগাযোগের তথ্যের সারণি, ইমেইল লিংক ও ফর্ম থাকবে।
+\item ছবি না দেখালে \texttt{images} ফোল্ডার ও \texttt{src}-এ দেওয়া পথ পরীক্ষা করতে হবে।
+\end{itemize}
+\end{multicols}
+\par
+
+
+\begin{keypointbox}{প্রকল্পের পেজগুলো}
+এই ছোট প্রকল্পে মোট ৫টি HTML পেজ আছে: \texttt{index.html}, \texttt{about.html}, \texttt{notice.html}, \texttt{result.html} এবং \texttt{contact.html}। এই পাঁচ পেজে শিরোনাম, অনুচ্ছেদ, ছবি, হাইপারলিংক, তালিকা, সারণি ও ফর্মের ব্যবহার একসঙ্গে অনুশীলন করা যায়।
 \end{keypointbox}
 
-\subsection{এই Page-এ যা Practice হচ্ছে}
+\subsection{এই প্রকল্পে যা অনুশীলন হচ্ছে}
 
 \begin{center}
 \begin{tabular}{|p{0.34\textwidth}|p{0.46\textwidth}|}
 \hline
-\textbf{HTML Topic} & \textbf{ব্যবহার} \\
+\textbf{HTML বিষয়} & \textbf{ব্যবহার} \\
 \hline
-Basic structure & \texttt{html}, \texttt{head}, \texttt{title}, \texttt{body} \\
+মৌলিক কাঠামো & \texttt{html}, \texttt{head}, \texttt{title}, \texttt{body} \\
 \hline
-Image & \texttt{<img>} \\
+ছবি & \texttt{<img>} \\
 \hline
-Hyperlink & \texttt{<a href="about.html">} \\
+হাইপারলিংক & \texttt{<a href="about.html">} \\
 \hline
-List & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} \\
+তালিকা & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} \\
 \hline
-Table layout & \texttt{<table>}, \texttt{<tr>}, \texttt{<td>} \\
+সারণির বিন্যাস & \texttt{<table>}, \texttt{<tr>}, \texttt{<td>} \\
 \hline
-Text formatting & \texttt{<font>}, \texttt{<b>}, heading, paragraph \\
+লেখা ফরম্যাটিং & \texttt{<font>}, \texttt{<b>}, শিরোনাম, অনুচ্ছেদ \\
 \hline
-Page design & background color, alignment, footer \\
+পেজ ডিজাইন & পটভূমির রং, সারিবিন্যাস ও ফুটার \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Evaluation / Mark Distribution}
+\subsection{মূল্যায়নের নমুনা নম্বরবণ্টন}
+
+নিচের ৯৫ নম্বরের ছকটি এই প্রকল্পে নিজের কাজ যাচাইয়ের নমুনা। এটি বোর্ড পরীক্ষার নির্ধারিত নম্বরবণ্টন নয়।
 
 \begin{center}
 \begin{tabular}{|p{0.58\textwidth}|r|}
 \hline
-\textbf{কাজ} & \textbf{Marks} \\
+\textbf{কাজ} & \textbf{নম্বর} \\
 \hline
-HTML structure ঠিক আছে & 10 \\
+HTML কাঠামো ঠিক আছে & 10 \\
 \hline
-Navigation link কাজ করছে & 15 \\
+নেভিগেশন লিংক কাজ করছে & 15 \\
 \hline
-Image ঠিকভাবে show করছে & 10 \\
+ছবি সঠিকভাবে দেখাচ্ছে & 10 \\
 \hline
-List ব্যবহার & 10 \\
+তালিকার ব্যবহার & 10 \\
 \hline
-Table ব্যবহার & 15 \\
+সারণির ব্যবহার & 15 \\
 \hline
-Form ব্যবহার & 15 \\
+ফর্মের ব্যবহার & 15 \\
 \hline
-Page design ও clean layout & 10 \\
+পেজ ডিজাইন ও সুশৃঙ্খল বিন্যাস & 10 \\
 \hline
-File/folder organization & 10 \\
+ফাইল ও ফোল্ডার সাজানো & 10 \\
 \hline
-\textbf{Total} & \textbf{95} \\
+\textbf{মোট} & \textbf{95} \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Common Mistake}
+\subsection{সাধারণ ভুল}
 
-\begin{mistakebox}{Mini Project করার সময় সাধারণ ভুল}
+\begin{mistakebox}{প্রকল্প তৈরির সময় সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \texttt{index.html} file-এর নাম ভুল লেখা।
-\item \texttt{images} folder না বানিয়ে image path দেওয়া।
-\item \texttt{src="images/college.jpg"} path ভুল লেখা।
-\item Navigation link-এ file name ভুল লেখা।
-\item সব page একই folder-এ না রাখা।
-\item HTML tag ঠিকভাবে close না করা।
-\item Browser refresh না করে output check করা।
-\item Image file extension \texttt{.jpg}, \texttt{.png} ভুল লেখা।
+\item \texttt{index.html} ফাইলের নাম ভুল লেখা।
+\item \texttt{images} ফোল্ডার না বানিয়ে ছবির পথ দেওয়া।
+\item \texttt{src="images/college.jpg"} পথ ভুল লেখা।
+\item নেভিগেশন লিংকে ফাইলের নাম ভুল লেখা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item উদাহরণের সব HTML পেজ একই ফোল্ডারে না রাখা।
+\item যেসব HTML ট্যাগের সমাপ্তি ট্যাগ দরকার, সেগুলো সঠিকভাবে শেষ না করা।
+\item ব্রাউজারে পেজ পুনরায় লোড না করে ফল যাচাই করা।
+\item ছবির ফাইলের এক্সটেনশন \texttt{.jpg}, \texttt{.png} ভুল লেখা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\subsection{Board-style Short Answer}
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\begin{boardbox}{Mini Project কেন উপযোগী?}
-HTML শেখার সবচেয়ে ভালো উপায় হলো নিজে web page তৈরি করা। Mini project-এর মাধ্যমে শিক্ষার্থী heading, paragraph, image, hyperlink, list, table ও form একসাথে ব্যবহার করতে পারে। ফলে Chapter 4-এর গুরুত্বপূর্ণ tag ও structure ব্যবহারিকভাবে practice হয়।
+\begin{boardbox}{ছোট প্রকল্প কেন উপযোগী?}
+নিজে ওয়েবপেজ তৈরি করলে HTML-এর ব্যবহার বোঝা যায়। ছোট প্রকল্পে শিক্ষার্থী শিরোনাম, অনুচ্ছেদ, ছবি, হাইপারলিংক, তালিকা, সারণি ও ফর্ম একসঙ্গে ব্যবহার করতে পারে। ফলে এই অধ্যায়ের গুরুত্বপূর্ণ ট্যাগ ও কাঠামো ব্যবহারিকভাবে অনুশীলন হয়।
 \end{boardbox}

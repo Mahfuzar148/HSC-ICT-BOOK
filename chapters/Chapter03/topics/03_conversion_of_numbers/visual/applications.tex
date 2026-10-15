@@ -1,0 +1,368 @@
+\subsection{সীমা, দ্রুত রূপান্তর ও পরীক্ষার প্রয়োগ}
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{অসসীম ভগ্নাংশ ও আনুমানিক ফল}
+$(0.1)_{10}$-কে বাইনারিতে লেখো। একই অবশিষ্ট ভগ্নাংশ আবার এলে পরের অঙ্কগুলো পুনরাবৃত্ত হবে।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC079}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-75);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.1 $};
+\draw[vc line] (26,3)--(26,-63);
+\node[vcnum] (m0) at (45,-5) {$\times 2$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ 0 $};
+\node[vcnum] (f0) at (45,-12) {$ 0.2 $};
+\node[vcnum] (m1) at (45,-17) {$\times 2$};
+\draw[vc line] (7,-20)--(65,-20);
+\node[vcnum] at (14,-24) {$ 0 $};
+\node[vcnum] (f1) at (45,-24) {$ 0.4 $};
+\node[vcnum] (m2) at (45,-29) {$\times 2$};
+\draw[vc line] (7,-32)--(65,-32);
+\node[vcnum] at (14,-36) {$ 0 $};
+\node[vcnum] (f2) at (45,-36) {$ 0.8 $};
+\node[vcnum] (m3) at (45,-41) {$\times 2$};
+\draw[vc line] (7,-44)--(65,-44);
+\node[vcnum] at (14,-48) {$ 1 $};
+\node[vcnum] (f3) at (45,-48) {$ 0.6 $};
+\node[vcnum] (m4) at (45,-53) {$\times 2$};
+\draw[vc line] (7,-56)--(65,-56);
+\node[vcnum] at (14,-60) {$ 1 $};
+\node[vcnum] (f4) at (45,-60) {$ 0.2 $};
+\draw[vc arrow] (f0.east)--(72,-12)--(72,-17)--(m1.east);
+\draw[vc arrow] (f1.east)--(72,-24)--(72,-29)--(m2.east);
+\draw[vc arrow] (f2.east)--(72,-36)--(72,-41)--(m3.east);
+\draw[vc arrow] (f3.east)--(72,-48)--(72,-53)--(m4.east);
+\node[vcnote] at (0,-8) {MSB};
+\node[vcnote] at (0,-65) {$\vdots$};
+\draw[vc arrow] (0,-12)--(0,-60);
+\node[vcnote] at (34,-72) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+শেষে আবার ০.২ এসেছে। তাই $(0.1)_{10}=(0.000110011\ldots)_2$। প্রথম আট বিটে কাটলে $\approx(0.00011001)_2=25/256=0.09765625$; তা ঠিক ০.১ নয়।
+সরলতম ভগ্নাংশের হরের মৌলিক গুণনীয়কগুলো লক্ষ্য ভিত্তিতেও থাকলে প্রকাশ সসীম হয়; বাইনারির ভিত্তিতে ৫ নেই।
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{অজানা ভিত্তি নির্ণয়}
+$(132)_b=(56)_{10}$ হলে ভিত্তি কত?\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC080}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-12) {$ 1\times b^{2} $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\node[vc digit] (d1) at (30,0) {$ 3 $};
+\node[vcnum] (w1) at (30,-12) {$ 3\times b^{1} $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\node[vc digit] (d2) at (60,0) {$ 2 $};
+\node[vcnum] (w2) at (60,-12) {$ 2\times b^{0} $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[b^2+3b+2=56\quad\Longrightarrow\quad(b+9)(b-6)=0.\]
+ভিত্তি $b=6$; ঋণাত্মক মান গ্রহণযোগ্য নয়। যাচাই $36+18+2=56$।
+\end{minipage}\par
+\convExample{৩}{নম্বর তুলনা ও গড়}
+তিন বিষয়ে নম্বর $(4C)_{16}$, $(115)_8$ এবং $(1001000)_2$। সর্বোচ্চ নম্বর ও গড় নির্ণয় করো।\par
+\textbf{$ (4C)_{16} $}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC081}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 4 $};
+\node[vcnum] (w0) at (0,-10) {$ 16^{1} $};
+\node[vcnum] (v0) at (0,-25) {$ 64 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ \mathrm{C} $};
+\node[vcnum] (w1) at (19,-10) {$ 16^{0} $};
+\node[vcnum] (v1) at (19,-25) {$ 12 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=4\times 16^{1}+\mathrm{C}\times 16^{0}\\&=64+12=76.\end{aligned}\]
+\textbf{$ (115)_{8} $}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC082}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-10) {$ 8^{2} $};
+\node[vcnum] (v0) at (0,-25) {$ 64 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 1 $};
+\node[vcnum] (w1) at (19,-10) {$ 8^{1} $};
+\node[vcnum] (v1) at (19,-25) {$ 8 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 5 $};
+\node[vcnum] (w2) at (38,-10) {$ 8^{0} $};
+\node[vcnum] (v2) at (38,-25) {$ 5 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 8^{2}+1\times 8^{1}+5\times 8^{0}\\&=64+8+5=77.\end{aligned}\]
+\textbf{$ (1001000)_{2} $}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC083}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-10) {$ 2^{6} $};
+\node[vcnum] (v0) at (0,-25) {$ 64 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 0 $};
+\node[vcnum] (w1) at (19,-10) {$ 2^{5} $};
+\node[vcnum] (v1) at (19,-25) {$ 0 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 0 $};
+\node[vcnum] (w2) at (38,-10) {$ 2^{4} $};
+\node[vcnum] (v2) at (38,-25) {$ 0 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (57,0) {$ 1 $};
+\node[vcnum] (w3) at (57,-10) {$ 2^{3} $};
+\node[vcnum] (v3) at (57,-25) {$ 8 $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] (d4) at (76,0) {$ 0 $};
+\node[vcnum] (w4) at (76,-10) {$ 2^{2} $};
+\node[vcnum] (v4) at (76,-25) {$ 0 $};
+\draw[vc arrow] (d4.south)--(w4.north);
+\draw[vc arrow] (w4.south)--(v4.north);
+\node[vc digit] (d5) at (95,0) {$ 0 $};
+\node[vcnum] (w5) at (95,-10) {$ 2^{1} $};
+\node[vcnum] (v5) at (95,-25) {$ 0 $};
+\draw[vc arrow] (d5.south)--(w5.north);
+\draw[vc arrow] (w5.south)--(v5.north);
+\node[vc digit] (d6) at (114,0) {$ 0 $};
+\node[vcnum] (w6) at (114,-10) {$ 2^{0} $};
+\node[vcnum] (v6) at (114,-25) {$ 0 $};
+\draw[vc arrow] (d6.south)--(w6.north);
+\draw[vc arrow] (w6.south)--(v6.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 2^{6}+0\times 2^{5}+0\times 2^{4}+1\times 2^{3}+0\times 2^{2}+0\times 2^{1}+0\times 2^{0}\\&=64+8=72.\end{aligned}\]
+সর্বোচ্চ ৭৭; গড় $(76+77+72)/3=75$। গড়কে বাইনারিতে প্রকাশের ধাপ:
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC084}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-63);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 2 $};
+\node[vcnum] at (10.0,0) {$ 75 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ 1 $};
+\node[vcnum] at (1.5,-7) {$ 2 $};
+\node[vcnum] at (11.5,-7) {$ 37 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 1 $};
+\node[vcnum] at (3.0,-14) {$ 2 $};
+\node[vcnum] at (13.0,-14) {$ 18 $};
+\draw[vc line] (8.0,-11)--(8.0,-17.5)--(50,-17.5);
+\node[vcnum] (r2) at (44,-21) {$ 0 $};
+\node[vcnum] at (4.5,-21) {$ 2 $};
+\node[vcnum] at (14.5,-21) {$ 9 $};
+\draw[vc line] (9.5,-18)--(9.5,-24.5)--(50,-24.5);
+\node[vcnum] (r3) at (44,-28) {$ 1 $};
+\node[vcnum] at (6.0,-28) {$ 2 $};
+\node[vcnum] at (16.0,-28) {$ 4 $};
+\draw[vc line] (11.0,-25)--(11.0,-31.5)--(50,-31.5);
+\node[vcnum] (r4) at (44,-35) {$ 0 $};
+\node[vcnum] at (7.5,-35) {$ 2 $};
+\node[vcnum] at (17.5,-35) {$ 2 $};
+\draw[vc line] (12.5,-32)--(12.5,-38.5)--(50,-38.5);
+\node[vcnum] (r5) at (44,-42) {$ 0 $};
+\node[vcnum] at (9.0,-42) {$ 2 $};
+\node[vcnum] at (19.0,-42) {$ 1 $};
+\draw[vc line] (14.0,-39)--(14.0,-45.5)--(50,-45.5);
+\node[vcnum] (r6) at (44,-49) {$ 1 $};
+\node[vcnum] at (20.5,-49) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-54) {MSB};
+\draw[vc arrow] (61,-49)--(61,-7);
+\node[vcnote] at (31,-61) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[(75)_{10}=(1001011)_2.\]
+
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৪}{স্থানমান বেছে দ্রুত রূপান্তর}
+ভাগ না করে $(173)_{10}$-কে বাইনারিতে লেখো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC085}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vcnum] (w0) at (0,0) {$ 128 $};
+\node[vc digit] (b0) at (0,-13) {$ 1 $};
+\draw[vc arrow] (w0.south)--(b0.north);
+\node[vcnum] (w1) at (16,0) {$ 64 $};
+\node[vc digit] (b1) at (16,-13) {$ 0 $};
+\draw[vc arrow] (w1.south)--(b1.north);
+\node[vcnum] (w2) at (32,0) {$ 32 $};
+\node[vc digit] (b2) at (32,-13) {$ 1 $};
+\draw[vc arrow] (w2.south)--(b2.north);
+\node[vcnum] (w3) at (48,0) {$ 16 $};
+\node[vc digit] (b3) at (48,-13) {$ 0 $};
+\draw[vc arrow] (w3.south)--(b3.north);
+\node[vcnum] (w4) at (64,0) {$ 8 $};
+\node[vc digit] (b4) at (64,-13) {$ 1 $};
+\draw[vc arrow] (w4.south)--(b4.north);
+\node[vcnum] (w5) at (80,0) {$ 4 $};
+\node[vc digit] (b5) at (80,-13) {$ 1 $};
+\draw[vc arrow] (w5.south)--(b5.north);
+\node[vcnum] (w6) at (96,0) {$ 2 $};
+\node[vc digit] (b6) at (96,-13) {$ 0 $};
+\draw[vc arrow] (w6.south)--(b6.north);
+\node[vcnum] (w7) at (112,0) {$ 1 $};
+\node[vc digit] (b7) at (112,-13) {$ 1 $};
+\draw[vc arrow] (w7.south)--(b7.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+$173=128+32+8+4+1$; নির্বাচিত ওজনে ১ এবং অন্যগুলোতে ০। তাই $(173)_{10}=(10101101)_2$। অক্টাল/হেক্সাডেসিমাল প্রকাশ পেতে একই বিটকে regroup করো।
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৫}{ধারণাভিত্তিক MCQ: padding কোথায়?}
+$(101.11)_2$-এর hexadecimal কোনটি? (ক) 5.3, (খ) 5.C, (গ) A.3, (ঘ) A.C।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC086}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] at (27.0,0) {$.$};
+\node[vc bit] (raw0) at (6,0) {$ 1 $};
+\node[vc bit] (raw1) at (12,0) {$ 0 $};
+\node[vc bit] (raw2) at (18,0) {$ 1 $};
+\node[vc bit] (raw3) at (36.0,0) {$ 1 $};
+\node[vc bit] (raw4) at (42.0,0) {$ 1 $};
+\node[vc bit] (new0) at (0,-20) {$ 0 $};
+\node[vc bit] (new1) at (6,-20) {$ 1 $};
+\node[vc bit] (new2) at (12,-20) {$ 0 $};
+\node[vc bit] (new3) at (18,-20) {$ 1 $};
+\node[vc bit] (new4) at (36.0,-20) {$ 1 $};
+\node[vc bit] (new5) at (42.0,-20) {$ 1 $};
+\node[vc bit] (new6) at (48.0,-20) {$ 0 $};
+\node[vc bit] (new7) at (54.0,-20) {$ 0 $};
+\draw[vc arrow,draw=vcBlue!65] (raw0.south)--(6,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw1.south)--(12,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw2.south)--(18,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw3.south)--(36.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw4.south)--(42.0,-17);
+\node[vc digit] at (27.0,-20) {$.$};
+\draw[dashed,draw=vcPad,line width=.85pt] (-2.5,-22.8) rectangle (2.5,-17.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-left) at (-13.5,-9) {বামে ১টি ০};
+\draw[vc arrow,draw=vcPad] (pad-left.south)--(0.0,-17);
+\draw[dashed,draw=vcPad,line width=.85pt] (45.5,-22.8) rectangle (56.5,-17.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-right) at (67.5,-9) {ডানে ২টি ০};
+\draw[vc arrow,draw=vcPad] (pad-right.south)--(51.0,-17);
+\draw[vc brace] (-3.0,-24)--(21.0,-24);
+\node[vc result] (g0) at (9.0,-37) {$ 5 $};
+\draw[vc arrow] (9.0,-27)--(g0.north);
+\draw[vc brace] (33.0,-24)--(57.0,-24);
+\node[vc result] (g1) at (45.0,-37) {$ \mathrm{C} $};
+\draw[vc arrow] (45.0,-27)--(g1.north);
+\node[vc digit] at (27.0,-37) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+উত্তর (খ): $(5.C)_{16}$। পূর্ণাংশের বামে এবং ভগ্নাংশের ডানে শূন্য বসে; ভগ্নাংশের শুরুতে বসালে মান বদলায়।
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৬}{সিগন্যাল থেকে সংখ্যামান}
+আটটি সময়খণ্ডে প্রথম বিট MSB; উচ্চ=১ ও নিম্ন=০। নিচের signal-এর মান হেক্সাডেসিমালে লেখো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC087}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\draw[black!40] (0,0)--(80,0);
+\draw[vc line] (0,7)--(10,7);
+\node[vc bit] (bit0) at (5,-14) {$ 1 $};
+\draw[vc arrow] (5,-3)--(bit0.north);
+\draw[vc line] (10,0)--(20,0);
+\draw[vc line] (10,0)--(10,7);
+\node[vc bit] (bit1) at (15,-14) {$ 0 $};
+\draw[vc arrow] (15,-3)--(bit1.north);
+\draw[vc line] (20,7)--(30,7);
+\draw[vc line] (20,0)--(20,7);
+\node[vc bit] (bit2) at (25,-14) {$ 1 $};
+\draw[vc arrow] (25,-3)--(bit2.north);
+\draw[vc line] (30,7)--(40,7);
+\node[vc bit] (bit3) at (35,-14) {$ 1 $};
+\draw[vc arrow] (35,-3)--(bit3.north);
+\draw[vc line] (40,0)--(50,0);
+\draw[vc line] (40,0)--(40,7);
+\node[vc bit] (bit4) at (45,-14) {$ 0 $};
+\draw[vc arrow] (45,-3)--(bit4.north);
+\draw[vc line] (50,0)--(60,0);
+\node[vc bit] (bit5) at (55,-14) {$ 0 $};
+\draw[vc arrow] (55,-3)--(bit5.north);
+\draw[vc line] (60,7)--(70,7);
+\draw[vc line] (60,0)--(60,7);
+\node[vc bit] (bit6) at (65,-14) {$ 1 $};
+\draw[vc arrow] (65,-3)--(bit6.north);
+\draw[vc line] (70,0)--(80,0);
+\draw[vc line] (70,0)--(70,7);
+\node[vc bit] (bit7) at (75,-14) {$ 0 $};
+\draw[vc arrow] (75,-3)--(bit7.north);
+\node[vcnote,anchor=east] at (-3,7) {উচ্চ};
+\node[vcnote,anchor=east] at (-3,0) {নিম্ন};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC088}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc bit] (raw0) at (0,0) {$ 1 $};
+\node[vc bit] (raw1) at (6,0) {$ 0 $};
+\node[vc bit] (raw2) at (12,0) {$ 1 $};
+\node[vc bit] (raw3) at (18,0) {$ 1 $};
+\node[vc bit] (raw4) at (24,0) {$ 0 $};
+\node[vc bit] (raw5) at (30,0) {$ 0 $};
+\node[vc bit] (raw6) at (36,0) {$ 1 $};
+\node[vc bit] (raw7) at (42,0) {$ 0 $};
+\draw[vc brace] (-3.0,-4)--(21.0,-4);
+\node[vc result] (g0) at (9.0,-17) {$ \mathrm{B} $};
+\draw[vc arrow] (9.0,-7)--(g0.north);
+\draw[vc brace] (21.0,-4)--(45.0,-4);
+\node[vc result] (g1) at (33.0,-17) {$ 2 $};
+\draw[vc arrow] (33.0,-7)--(g1.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[(10110010)_2=(B2)_{16}=178_{10}.\]
+সময়ক্রমে প্রথম বিট LSB হলে উল্টো ক্রমে পড়তে হবে; তখন মান বদলাবে।
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৭}{স্থানমান বেছে অক্টাল ও হেক্সাডেসিমাল}
+ভাগ ছাড়াই $(345)_{10}$-কে দুই ভিত্তিতে লেখো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC089}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vcnum] (w0) at (0,0) {$ 64 $};
+\node[vc digit] (d0) at (0,-12) {$ 5 $};
+\draw[vc arrow] (w0.south)--(d0.north);
+\node[vcnum] (w1) at (25,0) {$ 8 $};
+\node[vc digit] (d1) at (25,-12) {$ 3 $};
+\draw[vc arrow] (w1.south)--(d1.north);
+\node[vcnum] (w2) at (50,0) {$ 1 $};
+\node[vc digit] (d2) at (50,-12) {$ 1 $};
+\draw[vc arrow] (w2.south)--(d2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC090}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vcnum] (w0) at (0,0) {$ 256 $};
+\node[vc digit] (d0) at (0,-12) {$ 1 $};
+\draw[vc arrow] (w0.south)--(d0.north);
+\node[vcnum] (w1) at (25,0) {$ 16 $};
+\node[vc digit] (d1) at (25,-12) {$ 5 $};
+\draw[vc arrow] (w1.south)--(d1.north);
+\node[vcnum] (w2) at (50,0) {$ 1 $};
+\node[vc digit] (d2) at (50,-12) {$ 9 $};
+\draw[vc arrow] (w2.south)--(d2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[345=5\times64+3\times8+1=(531)_8,\qquad345=1\times256+5\times16+9=(159)_{16}.\]
+ওজনের গুণকই সংশ্লিষ্ট অঙ্ক; প্রতিটি অঙ্ক লক্ষ্য ভিত্তির চেয়ে ছোট থাকবে।
+\end{minipage}\par

@@ -1,0 +1,183 @@
+\providecommand{\chLogicExample}[3]{\chThreeExample{#2}{#3}\label{ex:#1}}
+\subsection{ধরন অনুযায়ী লজিক গেটের প্রয়োগ}
+গেটের নাম মুখস্থ করার সঙ্গে কোন input-এ output বদলায় তা বোঝা প্রয়োজন। নিচের উদাহরণে ০ ও ১ একটি নির্দিষ্ট logical state; বাস্তব বৈদ্যুতিক switch-এর সংযোগে আগে state-এর অর্থ ঠিক করো।
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ১: output pattern থেকে gate শনাক্ত}
+দুই input-এর ক্রম 00, 01, 10, 11 হলে চার output একই ক্রমে পড়ো। শুধু একটি সারি দিয়ে gate চেনা যায় না।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT01.1}{১.১}{শেষে শুধু একবার ০}
+এক অজানা দুই-input gate-এর output 1110। নাম ও সমীকরণ লেখো.
+\chThreeAnswer কেবল 11-তে output ০, তাই NAND: $Y=\overline{AB}$। AND হলে 0001 হতো।
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT01.2}{১.২}{মাঝের দুই সারিতে ০}
+এক gate-এর output 1001। আরেকটির 0110। তাদের সম্পর্ক কী?
+\chThreeAnswer প্রথমটি XNOR: $AB+\overline A\,\overline B$; দ্বিতীয়টি XOR: $A\overline B+\overline AB$। প্রতিটি সারিতে তারা পরস্পরের পূরক। সমতা পরীক্ষায় XNOR এবং অসমতায় XOR কাজে লাগে।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ২: এক input স্থির ও একই signal দুই input-এ}
+স্থির input-এ ০/১ বসাও। দুই pin-এ একই input দেওয়া এবং একটি pin-এ constant দেওয়া পৃথক সংযোগ।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT02.1}{২.১}{একটি enable input}
+$Y=A\oplus E$; E=০ ও E=১ হলে output-এর কাজ কী?
+\chThreeAnswer E=০ হলে $Y=A$; E=১ হলে $Y=\overline A$। তাই E দিয়ে signal অপরিবর্তিত রাখা বা উল্টানো যায়।
+\begin{center}\begin{tabular}{|c|c|c|}\hline
+$A$ & $E$ & $Y$\\\hline
+0 & 0 & 0\\\hline
+0 & 1 & 1\\\hline
+1 & 0 & 1\\\hline
+1 & 1 & 0\\\hline
+\end{tabular}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT02.2}{২.২}{tied-input-এ কোনটি inverter}
+একই A দুই input-এ দিলে NAND, NOR, XOR ও XNOR-এর output লেখো.
+\chThreeAnswer $\overline{AA}=\overline A$, $\overline{A+A}=\overline A$, $A\oplus A=0$, $\overline{A\oplus A}=1$। তাই tied NAND/NOR inverter; tied XOR/XNOR constant output দেয়।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,1) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (0,-1) {};
+\draw (P.input 1)--++(-.6,0) coordinate (join_P) node[left,text=black] {$A$};
+\draw (P.input 2)--(join_P |- P.input 2)--(join_P);
+\fill[ICTBlue] (join_P) circle (1.2pt);
+\draw (Q.input 1)--++(-.6,0) coordinate (join_Q) node[left,text=black] {$A$};
+\draw (Q.input 2)--(join_Q |- Q.input 2)--(join_Q);
+\fill[ICTBlue] (join_Q) circle (1.2pt);
+\draw[->] (P.output)--++(.85,0) node[right,text=black] {$P$};
+\draw[->] (Q.output)--++(.85,0) node[right,text=black] {$Q$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{একই input দুই pin-এ দিয়ে NAND ও NOR inverter।}\label{LG001}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৩: output জানা থাকলে input-এর শর্ত}
+সত্যক সারণিতে চাওয়া output-এর সারিগুলো রাখো। একটি শর্তে একাধিক input combination থাকতে পারে।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT03.1}{৩.১}{XOR-এর হারানো input}
+$A=1$ এবং $A\oplus B=1$। B কত? XNOR output ১ চাইলে B কত হবে?
+\chThreeAnswer XOR-এ ভিন্ন input চাই, তাই B=০। XNOR-এ একই input চাই, তাই B=১। একই output হলেও gate বদলালে শর্ত বদলায়।
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT03.2}{৩.২}{NAND output-এর একাধিক সম্ভাবনা}
+$\overline{AB}=1$ থেকে কি A ও B দুটোই ০ বলা যায়?
+\chThreeAnswer না। 00, 01 ও 10—তিনটি সম্ভাবনা। কেবল 11 বাদ যায়। আবার A=১ জানা থাকলে B=০ নির্দিষ্ট হয়। output ০ হলে অবশ্য A=B=১।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৪: বহু input-এর XOR ও parity}
+ধারাবাহিক XOR-এ মোট ১-এর সংখ্যা বিজোড় হলে output ১। দুই input-এর নিয়ম “ভিন্ন হলে ১” তিন বা চার input-এ যথেষ্ট নয়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT04.1}{৪.১}{তিন bit-এ parity}
+101 ও 111-এর তিন bit XOR করো.
+\chThreeAnswer $1\oplus0\oplus1=0$; দুটি ১। $1\oplus1\oplus1=1$; তিনটি ১। তাই তিনটি input সমান হলেও XOR output ১ হতে পারে।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[xor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,0.6) {};
+\node[xor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.input 2)--++(-.7,0) node[left,text=black] {$B$};
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (P.output)--(0.85,0.6) |- (Y.input 1);
+\draw (Y.input 2)--++(-.7,0) node[left,text=black] {$C$};
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{দুইটি XOR দিয়ে তিন-input parity।}\label{LG002}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT04.2}{৪.২}{even parity bit}
+ডেটা 1101 এবং 1010-এর শেষে even-parity bit বসাও.
+\chThreeAnswer 1101-এ তিনটি ১, তাই parity bit ১: 11011। 1010-এ দুটি ১, তাই bit ০: 10100। parity bit-সহ সব bit XOR করলে ০। এটি error শনাক্তের উপাদান; নিজে থেকে ভুল bit-এর অবস্থান বলে না।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৫: কথার শর্ত থেকে gate}
+“দুটিই”, “অন্তত একটি”, “কেবল একটি” এবং “কোনোটিই নয়”—এই চারটি শর্ত আলাদা। input=১ কোন ঘটনাকে বোঝায় তা আগে লেখো।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT05.1}{৫.১}{অনুমতি ও বাধা}
+অনুমতি P=১ এবং জরুরি stop S=০ হলে যন্ত্র চলবে। সমীকরণ ও circuit দাও.
+\chThreeAnswer $Y=P\overline S$। S-এর NOT এবং তার সঙ্গে P-এর AND। stop সক্রিয় হলে অনুমতি থাকলেও Y=০।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[not gate US,draw,fill=ICTLightBlue,logic gate inputs=n,minimum size=10mm] (N) at (0,-0.8) {};
+\node[and gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (N.input)--++(-.7,0) node[left,text=black] {$S$};
+\node[above=3pt,text=ICTGreen] at (N.north) {$N$};
+\draw (Y.input 1)--++(-.7,0) node[left,text=black] {$P$};
+\draw (N.output)--(0.97,-0.8) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{অনুমতির সঙ্গে stop signal-এর পূরক AND।}\label{LG003}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT05.2}{৫.২}{কেবল একটি সেন্সর সক্রিয়}
+দুটি detector A,B-এর ঠিক একটি সক্রিয় হলে সতর্কবার্তা; দুটোই সক্রিয় হলে নয়। কোন gate?
+\chThreeAnswer $Y=\overline AB+A\overline B=A\oplus B$। 00,01,10,11-এ output 0,1,1,0। “অন্তত একটি” হলে OR হতো এবং 11-তেও বার্তা আসত।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৬: একাধিক bit-এ পৃথক gate প্রয়োগ}
+প্রতি অবস্থানের bit-জোড়ায় একই truth rule বসাও। এটি দুই সংখ্যার গাণিতিক যোগ বা গুণ নয়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT06.1}{৬.১}{চার bit-এ NAND ও XOR}
+$A=1100$, $B=1010$ হলে bitwise AND, NAND ও XOR লেখো.
+\chThreeAnswer AND=1000; NAND=0111; XOR=0110। প্রথমে AND করে তার চার bit উল্টালে NAND পাওয়া যায়। বিটসীমা চারটি বলে output-ও চারটি bit।
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT06.2}{৬.২}{সব bit মিলিয়ে সমতা}
+$A=0110$, $B=0110$ এবং $C=0100$। XNOR দিয়ে A=B ও A=C পরীক্ষা করো.
+\chThreeAnswer A,B-এর XNOR=1111; সব bit AND করলে ১, তাই সমান। A,C-এর XNOR=1101; সব bit AND করলে ০, তাই অসমান। শুধু শেষ bit বা একটি bit মিললে যথেষ্ট নয়।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৭: এক gate-এর output পরের gate-এ}
+প্রথম gate-এর output P লেখো। তারপর দ্বিতীয় সমীকরণে P বসাও। inverted gate-এর সরাসরি cascade সাধারণ AND/OR cascade-এর মতো নয়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT07.1}{৭.১}{দুই NAND তিন-input NAND কি না}
+$P=\overline{AB}$, $Y=\overline{PC}$। $Y=\overline{ABC}$ কি?
+\chThreeAnswer $Y=AB+\overline C$। A=B=C=১ হলে Y=১; কিন্তু $\overline{ABC}=0$। তাই সমান নয়।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,0.6) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.input 2)--++(-.7,0) node[left,text=black] {$B$};
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (P.output)--(0.85,0.6) |- (Y.input 1);
+\draw (Y.input 2)--++(-.7,0) node[left,text=black] {$C$};
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{প্রথম NAND-এর পূরকসহ signal দ্বিতীয় NAND-এ যায়।}\label{LG004}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{GT07.2}{৭.২}{দুই NOR-এর প্রকৃত রাশি}
+$P=\overline{A+B}$, $Y=\overline{P+C}$ সরল করো.
+\chThreeAnswer $Y=(A+B)\overline C$। A=১,B=০,C=০-এ Y=১; তিন-input NOR হলে ০। তাই প্রথম stage-এর পূরক বাদ দিয়ে $\overline{A+B+C}$ লেখা ভুল।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,0.6) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.input 2)--++(-.7,0) node[left,text=black] {$B$};
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (P.output)--(0.85,0.6) |- (Y.input 1);
+\draw (Y.input 2)--++(-.7,0) node[left,text=black] {$C$};
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{দুই NOR cascade-এ intermediate পূরক বিবেচনা।}\label{LG005}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\smallhead{ক--খ প্রশ্নের ধারণা}
+AND-এ সব প্রয়োজনীয় input সত্য; OR-এ অন্তত একটি সত্য; NOT input-এর পূরক দেয়। NAND ও NOR দিয়ে NOT, AND ও OR সব কাজ তৈরি করা যায় বলে তারা সার্বজনীন। XOR-এর দুই-input শর্ত অসমতা এবং XNOR-এর শর্ত সমতা। একটি সারিতে সমান output পাওয়া circuit-এর সমতুল্যতার প্রমাণ নয়।

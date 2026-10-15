@@ -1,0 +1,255 @@
+\subsection{হেক্সাডেসিমাল থেকে অক্টাল}
+প্রতি অক্টাল অঙ্কে ৩ বিট, প্রতি হেক্সাডেসিমাল অঙ্কে ৪ বিট। বিন্দুর দুই পাশ আলাদা করে ৩ বিটের গ্রুপ করো। প্রয়োজনের শূন্য পূর্ণাংশের বামে ও ভগ্নাংশের ডানে বসে।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (2B9)_{16} $-কে ৮ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC055}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (s0) at (9.0,0) {$ 2 $};
+\draw[vc arrow] (s0.south)--(9.0,-9);
+\node[vc digit] (s1) at (33.0,0) {$ \mathrm{B} $};
+\draw[vc arrow] (s1.south)--(33.0,-9);
+\node[vc digit] (s2) at (57.0,0) {$ 9 $};
+\draw[vc arrow] (s2.south)--(57.0,-9);
+\node[vc bit] (raw0) at (0,-12) {$ 0 $};
+\node[vc bit] (raw1) at (6,-12) {$ 0 $};
+\node[vc bit] (raw2) at (12,-12) {$ 1 $};
+\node[vc bit] (raw3) at (18,-12) {$ 0 $};
+\node[vc bit] (raw4) at (24,-12) {$ 1 $};
+\node[vc bit] (raw5) at (30,-12) {$ 0 $};
+\node[vc bit] (raw6) at (36,-12) {$ 1 $};
+\node[vc bit] (raw7) at (42,-12) {$ 1 $};
+\node[vc bit] (raw8) at (48,-12) {$ 1 $};
+\node[vc bit] (raw9) at (54,-12) {$ 0 $};
+\node[vc bit] (raw10) at (60,-12) {$ 0 $};
+\node[vc bit] (raw11) at (66,-12) {$ 1 $};
+\draw[vc brace] (-3.0,-16)--(21.0,-16);
+\draw[vc brace] (21.0,-16)--(45.0,-16);
+\draw[vc brace] (45.0,-16)--(69.0,-16);
+\node[vc bit] (new0) at (0,-32) {$ 0 $};
+\node[vc bit] (new1) at (6,-32) {$ 0 $};
+\node[vc bit] (new2) at (12,-32) {$ 1 $};
+\node[vc bit] (new3) at (18,-32) {$ 0 $};
+\node[vc bit] (new4) at (24,-32) {$ 1 $};
+\node[vc bit] (new5) at (30,-32) {$ 0 $};
+\node[vc bit] (new6) at (36,-32) {$ 1 $};
+\node[vc bit] (new7) at (42,-32) {$ 1 $};
+\node[vc bit] (new8) at (48,-32) {$ 1 $};
+\node[vc bit] (new9) at (54,-32) {$ 0 $};
+\node[vc bit] (new10) at (60,-32) {$ 0 $};
+\node[vc bit] (new11) at (66,-32) {$ 1 $};
+\draw[vc arrow,draw=vcBlue!65] (0,-21)--(0,-29);
+\draw[vc arrow,draw=vcBlue!65] (6,-21)--(6,-29);
+\draw[vc arrow,draw=vcBlue!65] (12,-21)--(12,-29);
+\draw[vc arrow,draw=vcBlue!65] (18,-21)--(18,-29);
+\draw[vc arrow,draw=vcBlue!65] (24,-21)--(24,-29);
+\draw[vc arrow,draw=vcBlue!65] (30,-21)--(30,-29);
+\draw[vc arrow,draw=vcBlue!65] (36,-21)--(36,-29);
+\draw[vc arrow,draw=vcBlue!65] (42,-21)--(42,-29);
+\draw[vc arrow,draw=vcBlue!65] (48,-21)--(48,-29);
+\draw[vc arrow,draw=vcBlue!65] (54,-21)--(54,-29);
+\draw[vc arrow,draw=vcBlue!65] (60,-21)--(60,-29);
+\draw[vc arrow,draw=vcBlue!65] (66,-21)--(66,-29);
+\draw[vc brace] (-3.0,-36)--(15.0,-36);
+\node[vc result] (g0) at (6.0,-49) {$ 1 $};
+\draw[vc arrow] (6.0,-39)--(g0.north);
+\draw[vc brace] (15.0,-36)--(33.0,-36);
+\node[vc result] (g1) at (24.0,-49) {$ 2 $};
+\draw[vc arrow] (24.0,-39)--(g1.north);
+\draw[vc brace] (33.0,-36)--(51.0,-36);
+\node[vc result] (g2) at (42.0,-49) {$ 7 $};
+\draw[vc arrow] (42.0,-39)--(g2.north);
+\draw[vc brace] (51.0,-36)--(69.0,-36);
+\node[vc result] (g3) at (60.0,-49) {$ 1 $};
+\draw[vc arrow] (60.0,-39)--(g3.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (2B9)_{16}=(1271)_{8}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.9A)_{16} $-কে ৮ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC056}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (s0) at (21.0,0) {$ 0 $};
+\draw[vc arrow] (s0.south)--(21.0,-9);
+\node[vc digit] (s1) at (57.0,0) {$ 9 $};
+\draw[vc arrow] (s1.south)--(57.0,-9);
+\node[vc digit] (s2) at (81.0,0) {$ \mathrm{A} $};
+\draw[vc arrow] (s2.south)--(81.0,-9);
+\node[vc digit] at (39.0,0) {$.$};
+\node[vc bit] (raw0) at (12,-12) {$ 0 $};
+\node[vc bit] (raw1) at (18,-12) {$ 0 $};
+\node[vc bit] (raw2) at (24,-12) {$ 0 $};
+\node[vc bit] (raw3) at (30,-12) {$ 0 $};
+\node[vc bit] (raw4) at (48.0,-12) {$ 1 $};
+\node[vc bit] (raw5) at (54.0,-12) {$ 0 $};
+\node[vc bit] (raw6) at (60.0,-12) {$ 0 $};
+\node[vc bit] (raw7) at (66.0,-12) {$ 1 $};
+\node[vc bit] (raw8) at (72.0,-12) {$ 1 $};
+\node[vc bit] (raw9) at (78.0,-12) {$ 0 $};
+\node[vc bit] (raw10) at (84.0,-12) {$ 1 $};
+\node[vc bit] (raw11) at (90.0,-12) {$ 0 $};
+\node[vc digit] at (39.0,-12) {$.$};
+\draw[vc brace] (9.0,-16)--(33.0,-16);
+\draw[vc brace] (45.0,-16)--(69.0,-16);
+\draw[vc brace] (69.0,-16)--(93.0,-16);
+\node[vc bit] (new0) at (0,-32) {$ 0 $};
+\node[vc bit] (new1) at (6,-32) {$ 0 $};
+\node[vc bit] (new2) at (12,-32) {$ 0 $};
+\node[vc bit] (new3) at (18,-32) {$ 0 $};
+\node[vc bit] (new4) at (24,-32) {$ 0 $};
+\node[vc bit] (new5) at (30,-32) {$ 0 $};
+\node[vc bit] (new6) at (48.0,-32) {$ 1 $};
+\node[vc bit] (new7) at (54.0,-32) {$ 0 $};
+\node[vc bit] (new8) at (60.0,-32) {$ 0 $};
+\node[vc bit] (new9) at (66.0,-32) {$ 1 $};
+\node[vc bit] (new10) at (72.0,-32) {$ 1 $};
+\node[vc bit] (new11) at (78.0,-32) {$ 0 $};
+\node[vc bit] (new12) at (84.0,-32) {$ 1 $};
+\node[vc bit] (new13) at (90.0,-32) {$ 0 $};
+\node[vc bit] (new14) at (96.0,-32) {$ 0 $};
+\draw[vc arrow,draw=vcBlue!65] (12,-21)--(12,-29);
+\draw[vc arrow,draw=vcBlue!65] (18,-21)--(18,-29);
+\draw[vc arrow,draw=vcBlue!65] (24,-21)--(24,-29);
+\draw[vc arrow,draw=vcBlue!65] (30,-21)--(30,-29);
+\draw[vc arrow,draw=vcBlue!65] (48.0,-21)--(48.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (54.0,-21)--(54.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (60.0,-21)--(60.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (66.0,-21)--(66.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (72.0,-21)--(72.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (78.0,-21)--(78.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (84.0,-21)--(84.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (90.0,-21)--(90.0,-29);
+\node[vc digit] at (39.0,-32) {$.$};
+\draw[dashed,draw=vcPad,line width=.85pt] (-2.5,-34.8) rectangle (8.5,-29.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-left) at (-13.5,-21) {বামে ২টি ০};
+\draw[vc arrow,draw=vcPad] (pad-left.south)--(3.0,-29);
+\draw[dashed,draw=vcPad,line width=.85pt] (93.5,-34.8) rectangle (98.5,-29.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-right) at (109.5,-21) {ডানে ১টি ০};
+\draw[vc arrow,draw=vcPad] (pad-right.south)--(96.0,-29);
+\draw[vc brace] (-3.0,-36)--(15.0,-36);
+\node[vc result] (g0) at (6.0,-49) {$ 0 $};
+\draw[vc arrow] (6.0,-39)--(g0.north);
+\draw[vc brace] (15.0,-36)--(33.0,-36);
+\node[vc result] (g1) at (24.0,-49) {$ 0 $};
+\draw[vc arrow] (24.0,-39)--(g1.north);
+\draw[vc brace] (45.0,-36)--(63.0,-36);
+\node[vc result] (g2) at (54.0,-49) {$ 4 $};
+\draw[vc arrow] (54.0,-39)--(g2.north);
+\draw[vc brace] (63.0,-36)--(81.0,-36);
+\node[vc result] (g3) at (72.0,-49) {$ 6 $};
+\draw[vc arrow] (72.0,-39)--(g3.north);
+\draw[vc brace] (81.0,-36)--(99.0,-36);
+\node[vc result] (g4) at (90.0,-49) {$ 4 $};
+\draw[vc arrow] (90.0,-39)--(g4.north);
+\node[vc digit] at (39.0,-49) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (0.9A)_{16}=(0.464)_{8}.\]
+দাগঘেরা বিটগুলো গ্রুপ পূরণের জন্য যোগ করা শূন্য; এগুলো মান বদলায়নি।\par
+পূর্ণাংশের শুরুর বা ভগ্নাংশের শেষের অপ্রয়োজনীয় ০ বাদ দিয়ে ফল লেখা হয়েছে; ভগ্নাংশের শুরুর ০ বাদ যায় না।\par
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (6B.92)_{16} $-কে ৮ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC057}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (s0) at (15.0,0) {$ 6 $};
+\draw[vc arrow] (s0.south)--(15.0,-9);
+\node[vc digit] (s1) at (39.0,0) {$ \mathrm{B} $};
+\draw[vc arrow] (s1.south)--(39.0,-9);
+\node[vc digit] (s2) at (75.0,0) {$ 9 $};
+\draw[vc arrow] (s2.south)--(75.0,-9);
+\node[vc digit] (s3) at (99.0,0) {$ 2 $};
+\draw[vc arrow] (s3.south)--(99.0,-9);
+\node[vc digit] at (57.0,0) {$.$};
+\node[vc bit] (raw0) at (6,-12) {$ 0 $};
+\node[vc bit] (raw1) at (12,-12) {$ 1 $};
+\node[vc bit] (raw2) at (18,-12) {$ 1 $};
+\node[vc bit] (raw3) at (24,-12) {$ 0 $};
+\node[vc bit] (raw4) at (30,-12) {$ 1 $};
+\node[vc bit] (raw5) at (36,-12) {$ 0 $};
+\node[vc bit] (raw6) at (42,-12) {$ 1 $};
+\node[vc bit] (raw7) at (48,-12) {$ 1 $};
+\node[vc bit] (raw8) at (66.0,-12) {$ 1 $};
+\node[vc bit] (raw9) at (72.0,-12) {$ 0 $};
+\node[vc bit] (raw10) at (78.0,-12) {$ 0 $};
+\node[vc bit] (raw11) at (84.0,-12) {$ 1 $};
+\node[vc bit] (raw12) at (90.0,-12) {$ 0 $};
+\node[vc bit] (raw13) at (96.0,-12) {$ 0 $};
+\node[vc bit] (raw14) at (102.0,-12) {$ 1 $};
+\node[vc bit] (raw15) at (108.0,-12) {$ 0 $};
+\node[vc digit] at (57.0,-12) {$.$};
+\draw[vc brace] (3.0,-16)--(27.0,-16);
+\draw[vc brace] (27.0,-16)--(51.0,-16);
+\draw[vc brace] (63.0,-16)--(87.0,-16);
+\draw[vc brace] (87.0,-16)--(111.0,-16);
+\node[vc bit] (new0) at (0,-32) {$ 0 $};
+\node[vc bit] (new1) at (6,-32) {$ 0 $};
+\node[vc bit] (new2) at (12,-32) {$ 1 $};
+\node[vc bit] (new3) at (18,-32) {$ 1 $};
+\node[vc bit] (new4) at (24,-32) {$ 0 $};
+\node[vc bit] (new5) at (30,-32) {$ 1 $};
+\node[vc bit] (new6) at (36,-32) {$ 0 $};
+\node[vc bit] (new7) at (42,-32) {$ 1 $};
+\node[vc bit] (new8) at (48,-32) {$ 1 $};
+\node[vc bit] (new9) at (66.0,-32) {$ 1 $};
+\node[vc bit] (new10) at (72.0,-32) {$ 0 $};
+\node[vc bit] (new11) at (78.0,-32) {$ 0 $};
+\node[vc bit] (new12) at (84.0,-32) {$ 1 $};
+\node[vc bit] (new13) at (90.0,-32) {$ 0 $};
+\node[vc bit] (new14) at (96.0,-32) {$ 0 $};
+\node[vc bit] (new15) at (102.0,-32) {$ 1 $};
+\node[vc bit] (new16) at (108.0,-32) {$ 0 $};
+\node[vc bit] (new17) at (114.0,-32) {$ 0 $};
+\draw[vc arrow,draw=vcBlue!65] (6,-21)--(6,-29);
+\draw[vc arrow,draw=vcBlue!65] (12,-21)--(12,-29);
+\draw[vc arrow,draw=vcBlue!65] (18,-21)--(18,-29);
+\draw[vc arrow,draw=vcBlue!65] (24,-21)--(24,-29);
+\draw[vc arrow,draw=vcBlue!65] (30,-21)--(30,-29);
+\draw[vc arrow,draw=vcBlue!65] (36,-21)--(36,-29);
+\draw[vc arrow,draw=vcBlue!65] (42,-21)--(42,-29);
+\draw[vc arrow,draw=vcBlue!65] (48,-21)--(48,-29);
+\draw[vc arrow,draw=vcBlue!65] (66.0,-21)--(66.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (72.0,-21)--(72.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (78.0,-21)--(78.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (84.0,-21)--(84.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (90.0,-21)--(90.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (96.0,-21)--(96.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (102.0,-21)--(102.0,-29);
+\draw[vc arrow,draw=vcBlue!65] (108.0,-21)--(108.0,-29);
+\node[vc digit] at (57.0,-32) {$.$};
+\draw[dashed,draw=vcPad,line width=.85pt] (-2.5,-34.8) rectangle (2.5,-29.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-left) at (-13.5,-21) {বামে ১টি ০};
+\draw[vc arrow,draw=vcPad] (pad-left.south)--(0.0,-29);
+\draw[dashed,draw=vcPad,line width=.85pt] (111.5,-34.8) rectangle (116.5,-29.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-right) at (127.5,-21) {ডানে ১টি ০};
+\draw[vc arrow,draw=vcPad] (pad-right.south)--(114.0,-29);
+\draw[vc brace] (-3.0,-36)--(15.0,-36);
+\node[vc result] (g0) at (6.0,-49) {$ 1 $};
+\draw[vc arrow] (6.0,-39)--(g0.north);
+\draw[vc brace] (15.0,-36)--(33.0,-36);
+\node[vc result] (g1) at (24.0,-49) {$ 5 $};
+\draw[vc arrow] (24.0,-39)--(g1.north);
+\draw[vc brace] (33.0,-36)--(51.0,-36);
+\node[vc result] (g2) at (42.0,-49) {$ 3 $};
+\draw[vc arrow] (42.0,-39)--(g2.north);
+\draw[vc brace] (63.0,-36)--(81.0,-36);
+\node[vc result] (g3) at (72.0,-49) {$ 4 $};
+\draw[vc arrow] (72.0,-39)--(g3.north);
+\draw[vc brace] (81.0,-36)--(99.0,-36);
+\node[vc result] (g4) at (90.0,-49) {$ 4 $};
+\draw[vc arrow] (90.0,-39)--(g4.north);
+\draw[vc brace] (99.0,-36)--(117.0,-36);
+\node[vc result] (g5) at (108.0,-49) {$ 4 $};
+\draw[vc arrow] (108.0,-39)--(g5.north);
+\node[vc digit] at (57.0,-49) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (6B.92)_{16}=(153.444)_{8}.\]
+দাগঘেরা বিটগুলো গ্রুপ পূরণের জন্য যোগ করা শূন্য; এগুলো মান বদলায়নি।\par
+\end{minipage}\par

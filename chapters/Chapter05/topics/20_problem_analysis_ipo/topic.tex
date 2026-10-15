@@ -1,0 +1,509 @@
+\sectionheading{5.20 সমস্যাটি বিশ্লেষণ ও IPO মডেল (Problem Analysis and IPO Model)}
+
+কোনো Program লেখার আগে সবচেয়ে গুরুত্বপূর্ণ কাজ হলো
+\textbf{সমস্যাটি সঠিকভাবে বোঝা}।
+
+Problem কী চাচ্ছে, কী Data দেওয়া হবে, কোন Processing করতে হবে
+এবং কী Result পাওয়া যাবে—এসব নির্ধারণ করাই
+Problem Analysis-এর মূল কাজ।
+
+%================================================
+% Problem Analysis Definition
+%================================================
+\booksubheading{Problem Analysis কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Problem-এর উদ্দেশ্য, প্রয়োজনীয় Input, করণীয় Processing,
+প্রত্যাশিত Output এবং প্রয়োজনীয় শর্তসমূহ চিহ্নিত ও বিশ্লেষণ
+করার প্রক্রিয়াকে \textbf{Problem Analysis} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Problem কী?
+\(\longrightarrow\)
+কী দেওয়া আছে?
+\(\longrightarrow\)
+কী করতে হবে?
+\(\longrightarrow\)
+কী ফল চাই?
+}
+
+\end{center}
+
+%================================================
+% Main Tasks
+%================================================
+\booksubheading{Problem Analysis-এর প্রধান কাজ}
+
+একটি Programming Problem বিশ্লেষণের সময় সাধারণত—
+
+\begin{compacttwocolpoints}
+
+\item Problem-এর \textbf{মূল উদ্দেশ্য} নির্ধারণ করা হয়।
+
+\item কী কী \textbf{Input} প্রয়োজন তা চিহ্নিত করা হয়।
+
+\item Input-এর ওপর কী \textbf{Process বা Calculation} হবে তা ঠিক করা হয়।
+
+\item কী \textbf{Output} দিতে হবে তা নির্ধারণ করা হয়।
+
+\item কোনো \textbf{Condition বা Constraint} আছে কি না তা দেখা হয়।
+
+\item Solution-এর কাজগুলো কোন ক্রমে সম্পন্ন হবে তা বিবেচনা করা হয়।
+
+\end{compacttwocolpoints}
+
+এগুলো পরিষ্কার হলে Algorithm, Flowchart এবং Program Code
+তৈরি করা সহজ হয়।
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Problem Analysis কেন প্রয়োজন?}
+
+সঠিকভাবে Problem Analysis না করলে Program-এর Syntax ঠিক হলেও
+Solution ভুল হতে পারে।
+
+Problem Analysis-এর মাধ্যমে—
+
+\begin{compacttwocolpoints}
+
+\item Problem সম্পর্কে পরিষ্কার ধারণা পাওয়া যায়।
+
+\item প্রয়োজনীয় ও অপ্রয়োজনীয় Data আলাদা করা যায়।
+
+\item Input ও Output সহজে নির্ধারণ করা যায়।
+
+\item প্রয়োজনীয় Formula বা Condition চিহ্নিত করা যায়।
+
+\item Algorithm ও Flowchart তৈরি সহজ হয়।
+
+\item ভুল Solution তৈরির সম্ভাবনা কমে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% IPO Model
+%================================================
+\booksubheading{IPO Model}
+
+Program-এর Problem বিশ্লেষণের একটি সহজ পদ্ধতি হলো
+\textbf{IPO Model}।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.18\linewidth}{
+        \centering\textbf{Input}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Process}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.18\linewidth}{
+        \centering\textbf{Output}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+\begin{center}
+
+\textbf{
+IPO = Input -- Process -- Output
+}
+
+\end{center}
+
+আগের Program Organization Topic-এ Input, Process ও Output-এর
+মৌলিক ধারণা আলোচনা করা হয়েছে।
+
+এখানে এগুলোকে \textbf{Problem Analysis-এর একটি Model}
+হিসেবে ব্যবহার করা হবে।
+
+%================================================
+% IPO Definition
+%================================================
+\booksubheading{IPO Model কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Problem-এর Solution নির্ধারণের জন্য প্রয়োজনীয়
+\textbf{Input}, সেই Input-এর ওপর সম্পাদিত \textbf{Process}
+এবং প্রত্যাশিত \textbf{Output} চিহ্নিত করে Problem-কে
+বিশ্লেষণের পদ্ধতিকে \textbf{IPO Model} বলা হয়।
+
+\end{definitionbox}
+
+%================================================
+% IPO Components
+%================================================
+\booksubheading{IPO Model-এর তিনটি অংশ}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{Problem Analysis-এ প্রশ্ন}}
+\\
+\hline
+
+Input
+&
+কী কী Data দেওয়া হবে বা গ্রহণ করতে হবে?
+\\
+\hline
+
+Process
+&
+Data-এর ওপর কী কাজ, Formula বা Calculation হবে?
+\\
+\hline
+
+Output
+&
+শেষে কী Result পাওয়া বা প্রদর্শন করা হবে?
+\\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textbf{
+কী নেব?
+\(\longrightarrow\)
+কী করব?
+\(\longrightarrow\)
+কী দেখাব?
+}
+
+\end{center}
+
+%================================================
+% Example 1
+%================================================
+\begin{examplebox}{উদাহরণ ১: দুটি সংখ্যার যোগফল}
+
+Problem: দুটি সংখ্যার যোগফল নির্ণয় করতে হবে।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{IPO অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{বিশ্লেষণ}}
+\\
+\hline
+
+Input
+&
+দুটি সংখ্যা \textenglish{\ttfamily a, b}
+\\
+\hline
+
+Process
+&
+\textenglish{\ttfamily sum = a + b}
+\\
+\hline
+
+Output
+&
+\textenglish{\ttfamily sum}
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{1mm}
+
+\begin{center}
+
+\textbf{
+a, b
+\(\longrightarrow\)
+a + b
+\(\longrightarrow\)
+Sum
+}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Example 2
+%================================================
+\begin{examplebox}{উদাহরণ ২: আয়তক্ষেত্রের ক্ষেত্রফল}
+
+Problem: দৈর্ঘ্য ও প্রস্থ দেওয়া থাকলে আয়তক্ষেত্রের ক্ষেত্রফল
+নির্ণয় করতে হবে।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{IPO অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{বিশ্লেষণ}}
+\\
+\hline
+
+Input
+&
+দৈর্ঘ্য \textenglish{\ttfamily l}, প্রস্থ \textenglish{\ttfamily w}
+\\
+\hline
+
+Process
+&
+\textenglish{\ttfamily area = l * w}
+\\
+\hline
+
+Output
+&
+ক্ষেত্রফল \textenglish{\ttfamily area}
+\\
+\hline
+
+\end{tabularx}
+
+এখানে Problem Analysis করার সময় প্রয়োজনীয় Formula-টিও
+চিহ্নিত করা হয়েছে।
+
+\end{examplebox}
+
+%================================================
+% Example 3
+%================================================
+\begin{examplebox}{উদাহরণ ৩: সংখ্যা জোড় না বিজোড়}
+
+Problem: একটি সংখ্যা Even না Odd নির্ণয় করতে হবে।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{IPO অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{বিশ্লেষণ}}
+\\
+\hline
+
+Input
+&
+একটি পূর্ণসংখ্যা \textenglish{\ttfamily n}
+\\
+\hline
+
+Process
+&
+\textenglish{\ttfamily n \% 2 == 0} পরীক্ষা
+\\
+\hline
+
+Output
+&
+Even অথবা Odd
+\\
+\hline
+
+\end{tabularx}
+
+এখানে শুধু Calculation নয়, একটি
+\textbf{Condition}-ও Problem Analysis-এর অংশ।
+
+\end{examplebox}
+
+%================================================
+% Relationship
+%================================================
+\booksubheading{IPO Model ও Problem Analysis-এর সম্পর্ক}
+
+Problem Analysis একটি বিস্তৃত প্রক্রিয়া।
+IPO Model সেই বিশ্লেষণকে সহজভাবে তিনটি প্রধান ভাগে সাজাতে সাহায্য করে।
+
+\begin{center}
+
+\textbf{
+Problem Analysis
+\(\longrightarrow\)
+Input শনাক্ত
+\(\longrightarrow\)
+Process নির্ধারণ
+\(\longrightarrow\)
+Output নির্ধারণ
+}
+
+\end{center}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.28\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{মূল ধারণা}}
+\\
+\hline
+
+Problem Analysis
+&
+পুরো Problem বুঝে উদ্দেশ্য, Data, Condition ও Solution নির্ধারণ করা।
+\\
+\hline
+
+IPO Model
+&
+Problem-এর Input, Process ও Output সুশৃঙ্খলভাবে সাজানো।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Computational Thinking Relationship
+%================================================
+\booksubheading{Computational Thinking-এর সঙ্গে সম্পর্ক}
+
+আগের Topic-এর Computational Thinking-এর সঙ্গে
+Problem Analysis-এর ঘনিষ্ঠ সম্পর্ক রয়েছে।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.29\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধারণা}}
+&
+\multicolumn{1}{c|}{\textbf{Problem Analysis-এ ভূমিকা}}
+\\
+\hline
+
+Decomposition
+&
+Problem-কে ছোট অংশে ভাগ করতে সাহায্য করে।
+\\
+\hline
+
+Abstraction
+&
+প্রয়োজনীয় Data নির্বাচন ও অপ্রাসঙ্গিক তথ্য বাদ দিতে সাহায্য করে।
+\\
+\hline
+
+Algorithmic Thinking
+&
+Solution-এর ধাপ নির্ধারণে সাহায্য করে।
+\\
+\hline
+
+IPO Model
+&
+Input, Process এবং Output পরিষ্কারভাবে নির্ধারণ করে।
+\\
+\hline
+
+\end{tabularx}
+
+এগুলো একই বিষয় নয়; বরং Problem Solving-এর বিভিন্ন সহায়ক ধারণা।
+
+%================================================
+% Checklist
+%================================================
+\booksubheading{Problem Analysis-এর সহজ Checklist}
+
+কোনো নতুন Programming Problem দেখলে নিচের পাঁচটি প্রশ্ন করো—
+
+\begin{enumerate}
+
+\item Problem আমাকে \textbf{কী বের করতে বলেছে?}
+
+\item কী কী \textbf{Input} দেওয়া আছে বা নিতে হবে?
+
+\item কোনো \textbf{Formula বা Condition} আছে কি?
+
+\item Input-এর ওপর কী \textbf{Process} করতে হবে?
+
+\item শেষ পর্যন্ত কী \textbf{Output} দেখাতে হবে?
+
+\end{enumerate}
+
+এই প্রশ্নগুলোর উত্তর পরিষ্কার থাকলে পরবর্তী Algorithm,
+Flowchart এবং Program তৈরি অনেক সহজ হয়।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Program লেখার আগে \textbf{Problem Analysis} করা উচিত।
+
+\item Problem Analysis-এ উদ্দেশ্য, Input, Process, Output এবং
+প্রয়োজনীয় Condition চিহ্নিত করা হয়।
+
+\item \textbf{IPO = Input -- Process -- Output}।
+
+\item IPO Model হলো Problem Analysis-এর একটি সহজ পদ্ধতি।
+
+\item \textbf{Input} = কী Data নেওয়া হবে।
+
+\item \textbf{Process} = Data-এর ওপর কী কাজ হবে।
+
+\item \textbf{Output} = কী Result পাওয়া যাবে।
+
+\item Formula ও Condition-ও Problem Analysis-এর সময়
+নির্ধারণ করা হতে পারে।
+
+\item দ্রুত মনে রাখার ধারা—
+
+\begin{center}
+
+\textbf{
+Problem বুঝি
+\(\longrightarrow\)
+Input খুঁজি
+\(\longrightarrow\)
+Process ঠিক করি
+\(\longrightarrow\)
+Output নির্ধারণ করি
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.21 Program Development
+%================================================

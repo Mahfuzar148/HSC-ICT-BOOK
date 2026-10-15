@@ -1,34 +1,412 @@
-% ৯. প্রোগ্রামের সংগঠন
-\section{প্রোগ্রামের সংগঠন}
+\sectionheading{5.15 প্রোগ্রামের সংগঠন (Program Organization)}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী একটি C program-এর প্রধান অংশ এবং IPO model ব্যাখ্যা করতে পারবে।
-\end{learningbox}
+একটি Program সাধারণত কিছু Data গ্রহণ করে, সেই Data নির্দিষ্ট নিয়মে
+Process করে এবং শেষে প্রয়োজনীয় Result প্রদান করে।
 
-\begin{definitionbox}{Program organization}
-একটি program-এর বিভিন্ন অংশ যেমন comment, header, declaration, main function, input, processing, output ও return statement সুশৃঙ্খলভাবে সাজানোর পদ্ধতিকে program organization বলা যায়।
+Program-এর এই মৌলিক কার্যক্রমগুলো কীভাবে সাজানো ও পরস্পরের সঙ্গে
+সম্পর্কিত থাকে, সেটিই \textbf{Program Organization}-এর মূল ধারণা।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{প্রোগ্রামের সংগঠন কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Program-এর বিভিন্ন কার্যকর অংশের সুশৃঙ্খল গঠন ও তাদের পারস্পরিক
+সম্পর্ককে \textbf{প্রোগ্রামের সংগঠন (Program Organization)} বলা হয়।
+
 \end{definitionbox}
 
+একটি সাধারণ Program-এর প্রধান তিনটি অংশ হলো—
+
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{IPO model placeholder}\\[4pt]
-Input $\rightarrow$ Processing $\rightarrow$ Output
-}}
+
+\textbf{
+Input
+\(\longrightarrow\)
+Process
+\(\longrightarrow\)
+Output
+}
+
 \end{center}
 
-\begin{keypointbox}{C program-এর সাধারণ অংশ}
-\begin{enumerate}
-\item Documentation/comment
-\item Preprocessor directive
-\item Global declaration
-\item \texttt{main()} function
-\item Variable declaration
-\item Input, processing, output
-\item \texttt{return 0;}
-\end{enumerate}
-\end{keypointbox}
+একে সংক্ষেপে \textbf{IPO} ধারণা হিসেবেও মনে রাখা যায়।
 
-\begin{boardbox}{বোর্ড ফোকাস}
-C program structure আঁকতে \texttt{\#include <stdio.h>} এবং \texttt{int main()} অংশ সাধারণত লিখতে হয়।
-\end{boardbox}
+%================================================
+% Main Parts
+%================================================
+\booksubheading{Program-এর প্রধান অংশ}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+Input
+&
+প্রয়োজনীয় Data, Information বা Instruction গ্রহণ করা।
+\\
+\hline
+
+Process
+&
+প্রদত্ত Data-কে নির্দেশ অনুযায়ী প্রক্রিয়াকরণ করা।
+\\
+\hline
+
+Output
+&
+Processing শেষে প্রাপ্ত Result প্রদর্শন বা প্রদান করা।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Input
+%================================================
+\booksubheading{১. Input}
+
+কাঙ্ক্ষিত Result পাওয়ার জন্য Program-কে যে Data, Information
+বা Instruction দেওয়া হয়, তাকে \textbf{Input} বলে।
+
+ধরা যাক, দুটি সংখ্যার গুণফল নির্ণয় করতে Program-এ দেওয়া হলো—
+
+\begin{center}
+
+\textbf{30 এবং 7}
+
+\end{center}
+
+এখানে \textbf{30 ও 7 হলো Input}।
+
+%================================================
+% Process
+%================================================
+\booksubheading{২. Process বা Processing}
+
+Input হিসেবে পাওয়া Data-কে Program-এর Instruction অনুযায়ী
+প্রয়োজনীয় হিসাব বা কার্যক্রমের মাধ্যমে প্রক্রিয়াকরণ করাকে
+\textbf{Processing} বলে।
+
+উপরের উদাহরণে—
+
+\begin{center}
+
+\textbf{
+30
+\(\times\)
+7
+}
+
+\end{center}
+
+এই গুণ করার কাজটিই \textbf{Processing}।
+
+%================================================
+% Output
+%================================================
+\booksubheading{৩. Output}
+
+Processing-এর ফলে যে চূড়ান্ত Result পাওয়া যায়, তাকে
+\textbf{Output} বলে।
+
+উপরের উদাহরণে—
+
+\begin{center}
+
+\textbf{
+30
+\(\times\)
+7
+=
+210
+}
+
+\end{center}
+
+এখানে \textbf{210 হলো Output}।
+
+%================================================
+% Complete Example
+%================================================
+\begin{examplebox}{একটি সম্পূর্ণ উদাহরণ}
+
+ধরা যাক, দুটি সংখ্যার গুণফল নির্ণয় করতে হবে।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.23\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধাপ}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+Input
+&
+30 ও 7 গ্রহণ করা
+\\
+\hline
+
+Process
+&
+30 \(\times\) 7 হিসাব করা
+\\
+\hline
+
+Output
+&
+210 প্রদর্শন করা
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{1mm}
+
+\begin{center}
+
+\textbf{
+30, 7
+\(\longrightarrow\)
+গুণ করা
+\(\longrightarrow\)
+210
+}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% IPO Relationship
+%================================================
+\booksubheading{Input, Process ও Output-এর পারস্পরিক সম্পর্ক}
+
+Program-এর এই তিনটি অংশ ধারাবাহিকভাবে একে অপরের সঙ্গে যুক্ত।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.19\linewidth}{
+        \centering\textbf{Input}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Process}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.19\linewidth}{
+        \centering\textbf{Output}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+Input ছাড়া Processing-এর জন্য প্রয়োজনীয় Data পাওয়া যায় না এবং
+Processing ছাড়া প্রত্যাশিত Output পাওয়া যায় না।
+
+তাই কোনো Problem বুঝতে তিনটি প্রশ্ন করা যায়—
+
+\begin{center}
+
+\textbf{
+কী দেওয়া হবে?
+\(\longrightarrow\)
+কী কাজ করা হবে?
+\(\longrightarrow\)
+কী ফল পাওয়া যাবে?
+}
+
+\end{center}
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Input, Process ও Output-এর তুলনা}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.20\linewidth}|Y|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Input}}
+&
+\multicolumn{1}{c|}{\textbf{Process}}
+&
+\multicolumn{1}{c|}{\textbf{Output}}
+\\
+\hline
+
+অর্থ
+&
+Program-এ দেওয়া Data
+&
+Data-এর ওপর সম্পাদিত কাজ
+&
+প্রাপ্ত Result
+\\
+\hline
+
+অবস্থান
+&
+শুরুতে
+&
+মাঝের ধাপে
+&
+শেষে
+\\
+\hline
+
+উদাহরণ
+&
+30, 7
+&
+30 \(\times\) 7
+&
+210
+\\
+\hline
+
+মূল প্রশ্ন
+&
+কী দেওয়া হবে?
+&
+কী করা হবে?
+&
+কী পাওয়া যাবে?
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Real Example
+%================================================
+\begin{examplebox}{আরও একটি সহজ উদাহরণ}
+
+একজন শিক্ষার্থীর তিন বিষয়ের নম্বর থেকে গড় নির্ণয় করতে হবে।
+
+\textbf{Input:}
+তিনটি বিষয়ের নম্বর।
+
+\textbf{Process:}
+তিনটি নম্বর যোগ করে 3 দিয়ে ভাগ করা।
+
+\textbf{Output:}
+শিক্ষার্থীর গড় নম্বর।
+
+\medskip
+
+অর্থাৎ—
+
+\begin{center}
+
+\textbf{
+তিনটি নম্বর
+\(\longrightarrow\)
+যোগ ও ভাগ
+\(\longrightarrow\)
+গড় নম্বর
+}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Program Organization-এর গুরুত্ব}
+
+\begin{itemize}
+
+\item Problem-এর Input, Processing ও Output সহজে চিহ্নিত করা যায়।
+
+\item Program তৈরির আগে কী Data লাগবে এবং কী Result পাওয়া যাবে
+তা পরিষ্কার হয়।
+
+\item Program-এর কাজকে সুশৃঙ্খলভাবে ভাবতে সাহায্য করে।
+
+\item পরবর্তী Algorithm, Flowchart ও Program Development বোঝা সহজ হয়।
+
+\end{itemize}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Program-এর কার্যকর অংশগুলোর সুশৃঙ্খল গঠন ও সম্পর্ককে
+\textbf{Program Organization} বলা হয়।
+
+\item সাধারণ Program-এর প্রধান তিনটি অংশ—
+\textbf{Input, Process এবং Output}।
+
+\item \textbf{Input} = Data/Information/Instruction গ্রহণ।
+
+\item \textbf{Process} = Input Data-এর ওপর প্রয়োজনীয় কার্যক্রম।
+
+\item \textbf{Output} = Processing শেষে পাওয়া Result।
+
+\item সবচেয়ে গুরুত্বপূর্ণ Flow—
+
+\begin{center}
+
+\textbf{
+Input
+\(\longrightarrow\)
+Process
+\(\longrightarrow\)
+Output
+}
+
+\end{center}
+
+\item Problem বোঝার সহজ কৌশল—
+
+\begin{center}
+
+\textbf{
+কী নেব?
+\(\longrightarrow\)
+কী করব?
+\(\longrightarrow\)
+কী দেখাব?
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.16 Program Design Model
+%================================================

@@ -1,0 +1,26 @@
+% Replace exercise 35's PNG figure and its figure-explanation box.
+% CURRENT HTML: Club, Science and ICT share one th with rowspan="2".
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=7mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (0,3) rectangle (.69,4);
+  \fill[chFourTint] (.69,1) rectangle (.94,4);
+  \draw (0,0) rectangle (.94,4);
+  \draw (.23,0)--(.23,4) (.69,0)--(.69,4);
+  \draw (.3833,0)--(.3833,1) (.5367,0)--(.5367,1);
+  \draw (0,1)--(.94,1) (0,3)--(.69,3);
+  \node[font=\scriptsize\bfseries] at (.115,3.5) {Group};
+  \node[font=\scriptsize\bfseries] at (.46,3.5) {Section};
+  \node at (.115,2) {Science};
+  \node[anchor=west,align=left,inner sep=0pt] at (.25,2) {1.\ Science1\\2.\ Science2};
+  \node at (.815,2.5) {{\bfseries\underline{Club}}\\Science\\ICT};
+  \node at (.115,.5) {Arts};
+  \node at (.30665,.5) {H\textsubscript{1}};
+  \node at (.46,.5) {B};
+  \node at (.61335,.5) {C};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 35: বিভাগ, শাখা ও ক্লাব}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+Section শিরোনাম ও Science সারির বিষয়গুলো আলাদাভাবে তিন কলাম জুড়ে আছে। কোডে Club, Science ও ICT একই শিরোনামের ঘরে লেখা এবং ঘরটি \texttt{rowspan="2"} দিয়ে প্রথম দুই সারি জুড়ে আছে। Arts সারির H\textsubscript{1}, B ও C তিনটি আলাদা ঘর; তার শেষ ঘর ফাঁকা।
+

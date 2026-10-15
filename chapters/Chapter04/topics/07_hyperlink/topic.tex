@@ -1,46 +1,55 @@
-% 4.x Hyperlink in HTML
-\section{Hyperlink in HTML}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% 4.x হাইপারলিংক in HTML
+\section{HTML-এ হাইপারলিংক (Hyperlink)}
+
+% Composition pass 2026-10-04
+Home, Notice ও Result পেজ তৈরি আছে, কিন্তু এক পেজ থেকে অন্যটিতে যাওয়ার পথ দরকার।
+
+\chFourMotivation{পেজে চলাচল $\rightarrow$ হাইপারলিংক $\rightarrow$ href-এ গন্তব্য ও ক্লিকযোগ্য লেখা/ছবি $\rightarrow$ কলেজের মেনু থেকে প্রয়োজনীয় পেজ খোলা।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item hyperlink কী এবং web page navigation-এ এর প্রয়োজনীয়তা ব্যাখ্যা করতে।
-\item \texttt{<a>} tag ও \texttt{href} attribute-এর কাজ লিখতে।
-\item internal, external, bookmark, email, image, file ও new tab link তৈরি করতে।
-\item link text, URL, \texttt{mailto:}, \texttt{target} ও \texttt{download} attribute ব্যবহার করতে।
-\item absolute URL, relative URL এবং নিরাপদ new-tab practice ব্যাখ্যা করতে।
-\item HSC practical ও board exam-এর hyperlink-related প্রশ্নের উত্তর দিতে।
+\item হাইপারলিংক কী এবং ওয়েবপেজ চলাচলে এর প্রয়োজনীয়তা ব্যাখ্যা করতে।
+\item \texttt{<a>} ট্যাগ ও \texttt{href} অ্যাট্রিবিউটের কাজ লিখতে।
+\item অভ্যন্তরীণ, বাহ্যিক, বুকমার্ক, ইমেইল, ছবি, ফাইল ও নতুন ট্যাবের লিংক তৈরি করতে।
+\item লিংকের লেখা, URL, \texttt{mailto:}, \texttt{target} ও \texttt{download} অ্যাট্রিবিউট ব্যবহার করতে।
+\item পূর্ণ URL, আপেক্ষিক URL এবং নতুন ট্যাবে লিংক খোলার নিয়ম ব্যাখ্যা করতে।
+\item HSC ব্যবহারিক অনুশীলন ও বোর্ড পরীক্ষার হাইপারলিংক-সম্পর্কিত প্রশ্নের উত্তর দিতে।
 \end{itemize}
 \end{learningbox}
 
-HTML list শেখার পর hyperlink শেখা গুরুত্বপূর্ণ, কারণ একটি web page-এর text, list, image বা button-এর মাধ্যমে অন্য page, website, file বা একই page-এর নির্দিষ্ট অংশে যাওয়ার ব্যবস্থা hyperlink দিয়ে করা হয়। Website-এর navigation menu, ``Read more'', ``Download'', ``Contact us'', image button - এসব hyperlink-এর বাস্তব উদাহরণ।
 
-\subsection{Hyperlink কী?}
 
-\begin{definitionbox}{Hyperlink}
-Hyperlink হলো web page-এর এমন clickable text, image বা object, যার ওপর click করলে user অন্য web page, website, file, email address বা একই page-এর নির্দিষ্ট অংশে যেতে পারে।
+HTML তালিকা শেখার পর হাইপারলিংক শেখা গুরুত্বপূর্ণ, কারণ একটি ওয়েবপেজের লেখা, তালিকা, ছবি বা বোতামের মাধ্যমে অন্য পেজ, ওয়েবসাইট, ফাইল বা একই পেজের নির্দিষ্ট অংশে যাওয়ার ব্যবস্থা হাইপারলিংক দিয়ে করা হয়। ওয়েবসাইটের চলাচল মেনু, ``Read more'', ``Download'', ``Contact us'', ছবি বোতাম - এসব হাইপারলিংকের বাস্তব উদাহরণ।
+
+\subsection{হাইপারলিংক কী?}
+
+\begin{definitionbox}{হাইপারলিংক (Hyperlink)}
+ওয়েবপেজের যে লেখা, ছবি বা উপাদান নির্বাচন করলে অন্য পেজ, ওয়েবসাইট, ফাইল, ইমেইল ঠিকানা কিংবা একই পেজের নির্দিষ্ট অংশে যাওয়া যায়, তাকে হাইপারলিংক বলে।
 \end{definitionbox}
 
-সহজভাবে বলা যায়, hyperlink একটি সংযোগপথ। এক page থেকে অন্য page-এ যাওয়ার জন্য অথবা web page-এর মধ্যে related information দ্রুত দেখানোর জন্য hyperlink ব্যবহার করা হয়। একটি website user-friendly করতে hyperlink অত্যন্ত গুরুত্বপূর্ণ।
+হাইপারলিংক পেজ ও তথ্যের মধ্যে সংযোগ তৈরি করে। ব্যবহারকারী এই সংযোগ ধরে প্রয়োজনীয় তথ্যে পৌঁছান। তাই ওয়েবসাইটে সহজে চলাচলের জন্য অর্থবহ লিংক থাকা প্রয়োজন।
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-Hyperlink হলো web page-এর clickable text বা image, যার মাধ্যমে এক page থেকে অন্য page, website, file, email address বা একই page-এর নির্দিষ্ট location-এ যাওয়া যায়।
-\end{boardbox}
 
-\subsection{Anchor Tag: \texttt{<a>}}
 
-\begin{definitionbox}{Anchor tag}
-HTML-এ hyperlink তৈরি করার জন্য \texttt{<a>} tag ব্যবহার করা হয়। \texttt{<a>} tag-কে anchor tag বলা হয়।
+\subsection{অ্যাঙ্কর ট্যাগ: \texttt{<a>}}
+
+\begin{definitionbox}{অ্যাঙ্কর ট্যাগ (Anchor Tag)}
+HTML-এ হাইপারলিংক তৈরি করার জন্য \texttt{<a>} ট্যাগ ব্যবহার করা হয়। \texttt{<a>} ট্যাগকে অ্যাঙ্কর ট্যাগ বলা হয়।
 \end{definitionbox}
 
-Anchor tag-এর সবচেয়ে গুরুত্বপূর্ণ attribute হলো \texttt{href}। \texttt{href} ছাড়া \texttt{<a>} tag লিখলে সাধারণত link কার্যকর হয় না, কারণ browser জানে না click করলে কোথায় যেতে হবে।
+অ্যাঙ্কর ট্যাগের সবচেয়ে গুরুত্বপূর্ণ অ্যাট্রিবিউট হলো \texttt{href}। \texttt{href} ছাড়া \texttt{<a>} ট্যাগ লিখলে সাধারণত লিংক কার্যকর হয় না, কারণ ব্রাউজার জানে না ক্লিক করলে কোথায় যেতে হবে।
 
-\subsubsection{Basic Syntax}
+\subsubsection{লেখার সাধারণ রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="url">Link Text</a>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
 \begin{center}
@@ -48,116 +57,135 @@ Anchor tag-এর সবচেয়ে গুরুত্বপূর্ণ attrib
 \hline
 \textbf{অংশ} & \textbf{ব্যাখ্যা} \\
 \hline
-\texttt{<a>} & Anchor tag শুরু করে \\
+\texttt{<a>} & অ্যাঙ্কর ট্যাগ শুরু করে \\
 \hline
-\texttt{href} & Link-এর destination বা address নির্ধারণ করে \\
+\texttt{href} & লিংকের গন্তব্য বা ঠিকানা নির্ধারণ করে \\
 \hline
-\texttt{"url"} & যে page, website, file বা address-এ link যাবে \\
+\texttt{"url"} & যে পেজ, ওয়েবসাইট, ফাইল বা ঠিকানায় লিংক যাবে \\
 \hline
-\texttt{Link Text} & user যে text-এ click করবে \\
+\texttt{Link Text} & ব্যবহারকারী যে লেখায় ক্লিক করবে \\
 \hline
-\texttt{</a>} & Anchor tag শেষ করে \\
+\texttt{</a>} & অ্যাঙ্কর ট্যাগ শেষ করে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <a href="https://www.google.com">Google</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{Google} নামে একটি clickable link দেখা যাবে। এতে click করলে Google website open হবে।
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} ব্রাউজারে \textbf{Google} নামে একটি ক্লিকযোগ্য লিংক দেখা যাবে। এতে ক্লিক করলে Google ওয়েবসাইট খুলবে।
+\end{minipage}
+\chFourWhy{এখানে \texttt{href} অ্যাট্রিবিউট লিংকের গন্তব্য হিসেবে Google ওয়েবসাইটের ঠিকানা দিয়েছে এবং \texttt{Google} হলো ক্লিকযোগ্য লিংকের লেখা।}
+\end{chFourWholeExample}
 
-\textbf{ব্যাখ্যা:} এখানে \texttt{href} attribute link-এর গন্তব্য হিসেবে Google website-এর address দিয়েছে এবং \texttt{Google} হলো clickable link text।
-\end{examplebox}
-
-\subsection{\texttt{href} Attribute}
+\subsection{\texttt{href} অ্যাট্রিবিউট}
 
 \begin{definitionbox}{\texttt{href}}
-\texttt{href} attribute link-এ click করলে user কোথায় যাবে তা নির্ধারণ করে। এর পূর্ণরূপ Hyperlink Reference বা Hypertext Reference হিসেবে লেখা হয়।
+\texttt{href} অ্যাট্রিবিউট লিংকের গন্তব্য ঠিকানা নির্ধারণ করে। Hyperlink Reference কথাটি দিয়ে এর কাজ বোঝানো হয়; কোডে অ্যাট্রিবিউটের নাম \texttt{href}।
 \end{definitionbox}
 
 \begin{keypointbox}{মনে রাখো}
-Hyperlink-এর প্রশ্নে \texttt{href} attribute অবশ্যই উল্লেখ করতে হবে। শুধু \texttt{<a>} tag লিখলে answer অসম্পূর্ণ হতে পারে।
+\texttt{href} ছাড়া \texttt{<a>} এলিমেন্ট হাইপারলিংক তৈরি করে না; এটি লিংকের জন্য স্থানধারক হিসেবে থাকতে পারে।
 \end{keypointbox}
 
 
-\begin{keypointbox}{Link text guideline}
-\texttt{Click here} এর চেয়ে \texttt{Download Routine}, \texttt{Visit Google} বা \texttt{Go to Contact} - এ ধরনের meaningful link text ব্যবহার করা ভালো।
+\begin{keypointbox}{লিংকের লেখা বাছাইয়ের নিয়ম}
+\texttt{Click here} এর চেয়ে \texttt{Download Routine}, \texttt{Visit Google} বা \texttt{Go to Contact} - এ ধরনের অর্থবহ লিংকের লেখা ব্যবহার করা ভালো।
 \end{keypointbox}
 
-\subsection{Hyperlink-এর প্রকারভেদ}
+\subsection{হাইপারলিংকের প্রকারভেদ}
 
-HSC ICT বইয়ের জন্য hyperlink topic নিচের ধরনগুলো দিয়ে সাজানো সবচেয়ে উপযোগী:
+গন্তব্য, ক্লিকযোগ্য অংশ ও খোলার পদ্ধতি অনুযায়ী লিংকের নিচের রূপগুলো পরিচিত। এগুলো পরস্পর বিচ্ছিন্ন শ্রেণি নয়; একই বাহ্যিক লিংক ছবিতে দেওয়া যেতে পারে এবং নতুন ট্যাবেও খুলতে পারে:
 
 \begin{enumerate}
-\item External Link
-\item Internal Link
-\item Same Page বা Bookmark Link
-\item Email Link
-\item Image Link
-\item Download বা File Link
-\item New Tab Link
+\item বাহ্যিক লিংক
+\item অভ্যন্তরীণ লিংক
+\item একই পেজ বা বুকমার্ক লিংক
+\item ইমেইল লিংক
+\item ছবিতে লিংক
+\item ডাউনলোড বা ফাইলের লিংক
+\item নতুন ট্যাবের লিংক
 \end{enumerate}
 
-\subsection{Mermaid Study Diagram}
-
-
-\subsection{External Link}
-
-\begin{definitionbox}{External Link}
-External link হলো এমন hyperlink, যা current website বা current page থেকে অন্য কোনো website-এ নিয়ে যায়।
+\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{definitionbox}{বাহ্যিক লিংক (External Link)}
+বাহ্যিক লিংক হলো এমন হাইপারলিংক, যা বর্তমান ওয়েবসাইট বা বর্তমান পেজ থেকে অন্য কোনো ওয়েবসাইটে নিয়ে যায়।
 \end{definitionbox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{definitionbox}{অভ্যন্তরীণ লিংক (Internal Link)}
+অভ্যন্তরীণ লিংক হলো এমন হাইপারলিংক, যা একই ওয়েবসাইটের একটি পেজ থেকে অন্য পেজে নিয়ে যায়।
+\end{definitionbox}
+\end{minipage}\par
 
-External link লিখতে সাধারণত website address-এর আগে \texttt{http://} বা \texttt{https://} লেখা হয়।
+\subsection{বাহ্যিক লিংক}
 
-\subsubsection{Example}
 
-\begin{examplebox}{Code}
+
+বাহ্যিক লিংক লিখতে সাধারণত ওয়েবসাইট ঠিকানার আগে \texttt{http://} বা \texttt{https://} লেখা হয়।
+
+\subsubsection{উদাহরণ}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="https://www.google.com">Visit Google</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{Visit Google} text দেখা যাবে। এতে click করলে Google website open হবে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} ব্রাউজারে \textbf{Visit Google} লেখা দেখা যাবে। এতে ক্লিক করলে Google ওয়েবসাইট খুলবে।
 
-\textbf{ব্যাখ্যা:} এখানে link বর্তমান web page-এর বাইরে অন্য website-এ যাচ্ছে, তাই এটি external link।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} এখানে লিংক বর্তমান ওয়েবপেজের বাইরে অন্য ওয়েবসাইটে যাচ্ছে, তাই এটি বাহ্যিক লিংক।
+\par\smallskip
+\end{minipage}\par
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-যে hyperlink current website থেকে অন্য website-এ নিয়ে যায়, তাকে external link বলে।
-\end{boardbox}
 
-\subsection{Internal Link}
 
-\begin{definitionbox}{Internal Link}
-Internal link হলো এমন hyperlink, যা একই website-এর একটি page থেকে অন্য page-এ নিয়ে যায়।
-\end{definitionbox}
 
-একটি college website-এ Home page থেকে About, Notice, Result বা Contact page-এ যাওয়ার জন্য internal link ব্যবহার করা হয়।
+\subsection{অভ্যন্তরীণ লিংক}
 
-\subsubsection{Example}
 
-\begin{examplebox}{Code}
+
+একটি কলেজের ওয়েবসাইটে \texttt{Home} পেজ থেকে \texttt{About}, \texttt{Notice}, \texttt{Result} বা \texttt{Contact} পেজে যাওয়ার জন্য অভ্যন্তরীণ লিংক ব্যবহার করা হয়।
+
+\subsubsection{উদাহরণ}
+
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <a href="about.html">About Us</a>
 <a href="notice.html">Notice</a>
 <a href="contact.html">Contact</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{About Us}, \textbf{Notice}, \textbf{Contact} নামে তিনটি link দেখা যাবে।
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} ব্রাউজারে \textbf{About Us}, \textbf{Notice}, \textbf{Contact} নামে তিনটি লিংক দেখা যাবে।
+\end{minipage}
+\chFourWhy{এগুলো একই ওয়েবসাইটের স্থানীয় পেজে লিংক করে। তাই এগুলো অভ্যন্তরীণ লিংক।}
+\end{chFourWholeExample}
 
-\textbf{ব্যাখ্যা:} এগুলো একই website-এর local page-এ link করে। তাই এগুলো internal link।
-\end{examplebox}
+\subsubsection{পূর্ণাঙ্গ উদাহরণ: \texttt{index.html}}
 
-\subsubsection{Complete Example: \texttt{index.html}}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -170,488 +198,612 @@ Internal link হলো এমন hyperlink, যা একই website-এর এ
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-একই website-এর একটি page থেকে অন্য page-এ যাওয়ার জন্য যে hyperlink ব্যবহার করা হয়, তাকে internal link বলে।
-\end{boardbox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 
-\subsection{Absolute URL ও Relative URL}
+\end{minipage}\par
 
-\begin{definitionbox}{Absolute URL}
-Absolute URL হলো সম্পূর্ণ web address, যেখানে protocol, domain এবং প্রয়োজনীয় path একসাথে লেখা থাকে।
+
+\input{chapters/Chapter04/topics/07_hyperlink/clarity}
+
+\subsection{পূর্ণ URL ও আপেক্ষিক URL}
+
+\begin{definitionbox}{পূর্ণ ঠিকানা (Absolute URL)}
+পূর্ণ URL হলো সম্পূর্ণ ওয়েব ঠিকানা, যেখানে প্রোটোকল, ডোমেইন এবং প্রয়োজনীয় পথ একসঙ্গে লেখা থাকে।
 \end{definitionbox}
 
-\begin{definitionbox}{Relative URL}
-Relative URL হলো একই website-এর মধ্যে page বা file-এর আংশিক path, যেখানে পুরো domain লিখতে হয় না।
+\begin{definitionbox}{আপেক্ষিক ঠিকানা (Relative URL)}
+যে ঠিকানা একটি ভিত্তি ঠিকানার সঙ্গে মিলিয়ে সম্পূর্ণ করা হয়, তাকে \textbf{আপেক্ষিক URL} বলে। একই ওয়েবসাইটের পেজ বা ফাইলের ক্ষেত্রে প্রায়ই শুধু আপেক্ষিক পথ লেখা হয়; যেমন \texttt{about.html}।
 \end{definitionbox}
 
 \begin{center}
 \begin{tabular}{|p{0.28\textwidth}|p{0.30\textwidth}|p{0.28\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Absolute URL} & \textbf{Relative URL} \\
+\textbf{বিষয়} & \textbf{পূর্ণ URL} & \textbf{আপেক্ষিক URL} \\
 \hline
-Address & সম্পূর্ণ address & আংশিক/local path \\
+ঠিকানা & সম্পূর্ণ ঠিকানা & ভিত্তি ঠিকানার সঙ্গে মিলিয়ে সম্পূর্ণ করতে হয় \\
 \hline
-Protocol & থাকে & সাধারণত থাকে না \\
+প্রোটোকল & থাকে & সাধারণত থাকে না \\
 \hline
-ব্যবহার & external link & internal link \\
+ব্যবহার & একই বা অন্য সাইটের পূর্ণ ঠিকানা & ভিত্তি ঠিকানা অনুযায়ী গন্তব্য \\
 \hline
-Example & \texttt{https://google.com} & \texttt{about.html} \\
+উদাহরণ & \texttt{https://google.com} & \texttt{about.html} \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-External link-এ সাধারণত absolute URL এবং internal link-এ relative URL ব্যবহার করা হয়।
-\end{boardbox}
+\subsubsection{লিংক থেকে গন্তব্য বোঝার ধাপ}
+একটি আপেক্ষিক ঠিকানা বুঝতে বর্তমান পেজের ভিত্তি ঠিকানাও লাগে। নিচের উদাহরণে ভিত্তি ঠিকানা \texttt{https://college.example/} ধরা হয়েছে।
+\begin{center}
+\resizebox{.96\linewidth}{!}{%
+\begin{tikzpicture}[node distance=7mm,
+  linkstep/.style={draw=chFourTeal,rounded corners,fill=chFourTint,
+    text width=38mm,minimum height=18mm,align=center,font=\small},
+  flow/.style={-{Stealth[length=2mm]},thick,draw=chFourTeal}]
+\node[linkstep] (a) {ক্লিকযোগ্য লেখা\\\texttt{About Us}};
+\node[linkstep,right=of a] (b) {লিংকের ঠিকানা\\\texttt{href="about.html"}};
+\node[linkstep,right=of b] (c) {ভিত্তির সঙ্গে মিলিয়ে\\গন্তব্য পেজ খোলা};
+\draw[flow] (a)--(b); \draw[flow] (b)--(c);
+\end{tikzpicture}}
+\end{center}
+ফলে গন্তব্য হয় \texttt{https://college.example/about.html}। ক্লিকযোগ্য লেখা বদলালেও \texttt{href} একই থাকলে গন্তব্য বদলায় না; \texttt{href} বদলালে গন্তব্য বদলায়।
 
-\subsection{Same Page Link বা Bookmark Link}
 
-\begin{definitionbox}{Same Page Link}
-Same page link হলো এমন hyperlink, যার মাধ্যমে একই web page-এর নির্দিষ্ট section-এ যাওয়া যায়।
+
+\subsection{একই পেজের লিংক বা বুকমার্ক লিংক}
+
+\begin{definitionbox}{একই পেজের লিংক (Same Page / Bookmark Link)}
+একই পেজ লিংক হলো এমন হাইপারলিংক, যার মাধ্যমে একই ওয়েবপেজের নির্দিষ্ট অংশে যাওয়া যায়।
 \end{definitionbox}
 
-বড় web page, article, table of contents বা FAQ section-এ same page link ব্যবহার করলে user দ্রুত প্রয়োজনীয় অংশে যেতে পারে।
+বড় ওয়েবপেজ, নিবন্ধ, সূচিপত্র বা বহুল জিজ্ঞাসিত প্রশ্নের অংশে একই পেজের লিংক ব্যবহার করলে ব্যবহারকারী দ্রুত প্রয়োজনীয় অংশে যেতে পারে।
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="#html">Go to HTML Section</a>
 
 <h2 id="html">HTML Section</h2>
 <p>HTML is used to create web page structure.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{Go to HTML Section} নামে link দেখা যাবে। এতে click করলে একই page-এর \textbf{HTML Section} অংশে চলে যাবে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} ব্রাউজারে \textbf{Go to HTML Section} নামে লিংক দেখা যাবে। এতে ক্লিক করলে একই পেজের \textbf{HTML Section} অংশে চলে যাবে।
 
-\textbf{ব্যাখ্যা:} \texttt{href="\#html"} মানে page-এর \texttt{id="html"} অংশে যাওয়া। এখানে \texttt{\#} দিয়ে target id নির্দেশ করা হয়েছে।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} \texttt{href="\#html"} মানে পেজের \texttt{id="html"} অংশে যাওয়া। এখানে \texttt{\#} দিয়ে গন্তব্য id নির্দেশ করা হয়েছে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-একই web page-এর নির্দিষ্ট অংশে যাওয়ার জন্য target section-এ \texttt{id} attribute এবং link-এ \texttt{href="\#id"} ব্যবহার করে same page link তৈরি করা হয়।
-\end{boardbox}
 
-\subsection{Email Link}
 
-\begin{definitionbox}{Email Link}
-Email link হলো এমন hyperlink, যেখানে click করলে default email application খুলে নির্দিষ্ট email address-এ message পাঠানোর ব্যবস্থা হয়।
+
+\subsection{ইমেইল লিংক}
+
+\begin{definitionbox}{ইমেইল লিংক (Email Link)}
+ইমেইল লিংক হলো এমন হাইপারলিংক, যার মাধ্যমে নির্দিষ্ট ঠিকানায় বার্তা লেখার জন্য ইমেইল অ্যাপ্লিকেশন খোলার অনুরোধ করা হয়। এটি কাজ করতে উপযুক্ত অ্যাপ বা ওয়েবমেইল ব্যবস্থা থাকতে হয়; ক্লিক করলেই বার্তা পাঠানো হয় না।
 \end{definitionbox}
 
-Email link তৈরি করতে \texttt{href} attribute-এর value হিসেবে \texttt{mailto:} ব্যবহার করা হয়।
+ইমেইল লিংক তৈরি করতে \texttt{href} অ্যাট্রিবিউটের মান হিসেবে \texttt{mailto:} ব্যবহার করা হয়।
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="mailto:info@example.com">Send Email</a>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="mailto:principal@abccollege.edu.bd">Email Principal</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{Email Principal} link দেখা যাবে। এতে click করলে email application খুলতে পারে এবং receiver হিসেবে \texttt{principal@abccollege.edu.bd} address বসবে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} ব্রাউজারে \textbf{Email Principal} লিংক দেখা যাবে। এতে ক্লিক করলে ইমেইল অ্যাপ্লিকেশন খুলতে পারে এবং প্রাপক হিসেবে \texttt{principal@abccollege.edu.bd} ঠিকানা বসবে।
 
-\textbf{ব্যাখ্যা:} \texttt{mailto:} browser-কে জানায় যে link-টি email address-এর জন্য।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} \texttt{mailto:} ব্রাউজারকে জানায় যে লিংকটি ইমেইল ঠিকানার জন্য।
+\par\smallskip
+\end{minipage}\par
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-Email address-এর সাথে hyperlink তৈরি করতে \texttt{mailto:} ব্যবহার করা হয়।
-\end{boardbox}
 
-\subsection{Image Link}
 
-\begin{definitionbox}{Image Link}
-Image link হলো এমন hyperlink যেখানে link text-এর পরিবর্তে image ব্যবহার করা হয়। Image-এ click করলে নির্দিষ্ট page বা website open হয়।
+
+\subsection{ছবিতে লিংক}
+
+\begin{definitionbox}{ছবিতে লিংক (Image Link)}
+ছবিতে লিংক হলো এমন হাইপারলিংক যেখানে লিংকের লেখার পরিবর্তে ছবি ব্যবহার করা হয়। ছবিতে ক্লিক করলে নির্দিষ্ট পেজ বা ওয়েবসাইট খোলে।
 \end{definitionbox}
 
-Image link তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসানো হয়।
+ছবিতে লিংক তৈরি করতে \texttt{<a>} ট্যাগের ভিতরে \texttt{<img>} ট্যাগ বসানো হয়।
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="url">
   <img src="image.jpg" alt="Image">
 </a>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="https://www.ictacademy.com">
   <img src="ict.jpg" alt="ICT Academy" width="200">
 </a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \texttt{ict.jpg} image দেখা যাবে। ছবিতে click করলে নির্দিষ্ট website open হবে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} ব্রাউজারে \texttt{ict.jpg} ছবি দেখা যাবে। ছবিতে ক্লিক করলে নির্দিষ্ট ওয়েবসাইট খুলবে।
 
-\textbf{ব্যাখ্যা:} এখানে clickable অংশটি text নয়, image। তাই \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করা হয়েছে।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} এখানে ক্লিকযোগ্য অংশটি লেখা নয়, ছবি। তাই \texttt{<a>} ট্যাগের ভিতরে \texttt{<img>} ট্যাগ ব্যবহার করা হয়েছে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-Image link তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করা হয়।
-\end{boardbox}
 
-\subsection{Download বা File Link}
 
-\begin{definitionbox}{File Link}
-যে hyperlink কোনো PDF, image, document বা অন্য file open/download করার জন্য ব্যবহৃত হয়, তাকে file link বলা যায়।
+
+\subsection{ডাউনলোড বা ফাইলের লিংক}
+
+\begin{definitionbox}{ফাইলের লিংক (File Link)}
+যে হাইপারলিংক কোনো PDF, ছবি, ডকুমেন্ট বা অন্য ফাইল খুলে/ডাউনলোড করার জন্য ব্যবহৃত হয়, তাকে ফাইলের লিংক বলা যায়।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <a href="routine.pdf">Download Routine</a>
 <a href="syllabus.pdf">Download Syllabus</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{Download Routine} এবং \textbf{Download Syllabus} নামে link দেখা যাবে।
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} ব্রাউজারে \textbf{Download Routine} এবং \textbf{Download Syllabus} নামে লিংক দেখা যাবে।
+\end{minipage}
+\chFourWhy{লিংকে ক্লিক করলে ব্রাউজার ফাইল খুলতে পারে অথবা ডাউনলোড করতে পারে। এটি ব্রাউজারের সেটিং ও ফাইলের ধরনের উপর নির্ভর করে।}
+\end{chFourWholeExample}
 
-\textbf{ব্যাখ্যা:} link-এ click করলে browser file open করতে পারে অথবা download করতে পারে। এটি browser setting ও file type-এর উপর নির্ভর করে।
-\end{examplebox}
+\subsubsection{\texttt{download} অ্যাট্রিবিউট}
 
-\subsubsection{\texttt{download} Attribute}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="routine.pdf" download>Download Routine</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \textbf{Download Routine} link-এ click করলে file download হওয়ার নির্দেশ পায়।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} \textbf{Download Routine} লিংকে ক্লিক করলে ফাইল ডাউনলোড হওয়ার নির্দেশ পায়।
 
-\textbf{ব্যাখ্যা:} \texttt{download} attribute browser-কে file download করতে উৎসাহিত করে। তবে কিছু browser বা server policy-এর কারণে আচরণ ভিন্ন হতে পারে।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} \texttt{download} অ্যাট্রিবিউট ব্রাউজারকে ফাইল ডাউনলোড করতে উৎসাহিত করে। তবে কিছু ব্রাউজার বা সার্ভারের নীতির কারণে আচরণ ভিন্ন হতে পারে।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{New Tab Link}
 
-\begin{definitionbox}{New Tab Link}
-\texttt{target="\_blank"} attribute ব্যবহার করলে link নতুন tab বা নতুন window-তে open হয়।
+\subsection{নতুন ট্যাবের লিংক}
+
+\begin{definitionbox}{নতুন ট্যাবের লিংক (New Tab Link)}
+\texttt{target="\_blank"} অ্যাট্রিবিউট ব্যবহার করলে লিংক নতুন ট্যাব বা নতুন উইন্ডোতে খোলে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="https://www.google.com" target="_blank">Open Google</a>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Browser-এ \textbf{Open Google} link দেখা যাবে। এতে click করলে Google নতুন tab-এ open হবে।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} ব্রাউজারে \textbf{Open Google} লিংক দেখা যাবে। এতে ক্লিক করলে Google নতুন ট্যাবে খুলবে।
 
-\textbf{ব্যাখ্যা:} \texttt{target="\_blank"} destination page নতুন tab/window-তে open করার নির্দেশ দেয়।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} \texttt{target="\_blank"} গন্তব্য পেজ নতুন ট্যাব/উইন্ডোতে খোলার নির্দেশ দেয়।
+\par\smallskip
+\end{minipage}\par
 
-\subsubsection{Common \texttt{target} Values}
+
+\subsubsection{পরিচিত \texttt{target} মান}
 
 \begin{center}
 \begin{tabular}{|p{0.20\textwidth}|p{0.60\textwidth}|}
 \hline
-\textbf{Value} & \textbf{কাজ} \\
+\textbf{মান} & \textbf{কাজ} \\
 \hline
-\texttt{\_self} & একই tab/window-এ open করে; default behaviour \\
+\texttt{\_self} & একই ট্যাব/উইন্ডোতে খোলে; স্বাভাবিক আচরণ \\
 \hline
-\texttt{\_blank} & নতুন tab/window-এ open করে \\
+\texttt{\_blank} & নতুন ট্যাব/উইন্ডোতে খোলে \\
 \hline
-\texttt{\_parent} & parent frame-এ open করে \\
+\texttt{\_parent} & বাইরের ফ্রেমে খোলে \\
 \hline
-\texttt{\_top} & পুরো browser window-তে open করে \\
+\texttt{\_top} & পুরো ব্রাউজার উইন্ডোতে খোলে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{keypointbox}{Modern practice}
-Modern web development-এ \texttt{target="\_blank"} ব্যবহার করলে security-এর জন্য \texttt{rel="noopener noreferrer"} যোগ করা ভালো।
+\begin{keypointbox}{আধুনিক ব্যবহারের নিয়ম}
+\texttt{rel="noopener"} নতুন পেজকে মূল পেজের \texttt{window.opener} সংযোগ পাওয়া থেকে আটকায়। \texttt{noreferrer} গন্তব্যে উৎস পেজের Referer তথ্য পাঠানো বন্ধ করে। বর্তমান HTML-এ \texttt{target="\_blank"} সাধারণত নিজেই opener সংযোগ বিচ্ছিন্ন করে; নিচের উদাহরণে দুটি উদ্দেশ্য স্পষ্ট করে লেখা হয়েছে।
 \end{keypointbox}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
   Open Google
 </a>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Link-এর Default Color}
+\subsection{লিংকের স্বাভাবিক রং}
 
-সাধারণভাবে browser hyperlink-এর state অনুযায়ী ভিন্ন color দেখায়। HSC পরীক্ষার জন্য default unvisited hyperlink color সাধারণত \textbf{blue} মনে রাখা দরকার।
+সাধারণভাবে ব্রাউজার হাইপারলিংকের অবস্থা অনুযায়ী ভিন্ন রং দেখায়। নিজস্ব CSS না থাকলে আগে দেখা হয়নি এমন লিংক সাধারণত \textbf{নীল} হয়।
 
 \begin{center}
 \begin{tabular}{|p{0.35\textwidth}|p{0.35\textwidth}|}
 \hline
-\textbf{Link State} & \textbf{সাধারণ color} \\
+\textbf{লিংকের অবস্থা} & \textbf{সাধারণ রং} \\
 \hline
-Unvisited link & Blue \\
+আগে দেখা হয়নি এমন লিংক & নীল \\
 \hline
-Visited link & Purple \\
+আগে দেখা হয়েছে এমন লিংক & বেগুনি \\
 \hline
-Active link & Red \\
+ক্লিক করার সময়কার লিংক & লাল \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{boardbox}{HSC Exam Note}
-Default hyperlink color সাধারণত \textbf{blue}।
+\begin{boardbox}{পরীক্ষায় মনে রাখবে}
+স্বাভাবিক হাইপারলিংকের রং সাধারণত \textbf{নীল}।
 \end{boardbox}
 
-\subsection{Hyperlink-এর সুবিধা}
+\subsection{হাইপারলিংকের সুবিধা}
 
-Hyperlink web page-কে connected ও interactive করে। এর প্রধান সুবিধাগুলো হলো:
+হাইপারলিংক ওয়েবপেজকে সম্পর্কযুক্ত করে এবং ব্যবহারকারীর চলাচলের সুযোগ বাড়ায়। এর প্রধান সুবিধাগুলো হলো:
 
-\begin{itemize}
-\item এক page থেকে অন্য page-এ দ্রুত যাওয়া যায়।
-\item related information সহজে access করা যায়।
-\item website navigation সহজ হয়।
-\item external resource যুক্ত করা যায়।
-\item PDF, image বা document open/download করা যায়।
-\item email communication সহজ হয়।
-\item একই page-এর নির্দিষ্ট section-এ দ্রুত যাওয়া যায়।
-\end{itemize}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}
+\item এক পেজ থেকে অন্য পেজে দ্রুত যাওয়া যায়।
+\item সম্পর্কিত তথ্য সহজে দেখা যায়।
+\item ওয়েবসাইটের পেজগুলোর মধ্যে চলাচল সহজ হয়।
+\item বাহ্যিক সম্পদ যুক্ত করা যায়।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}
+\item PDF, ছবি বা ডকুমেন্ট খুলে/ডাউনলোড করা যায়।
+\item ইমেইল যোগাযোগ সহজ হয়।
+\item একই পেজের নির্দিষ্ট অংশে দ্রুত যাওয়া যায়।
+\end{enumerate}
+\end{minipage}\par
 
-\subsection{Hyperlink Syntax Table}
 
-\begin{center}
-\begin{tabular}{|p{0.23\textwidth}|p{0.57\textwidth}|}
+\subsection{হাইপারলিংকের লেখার রূপ}
+
+\begingroup
+\setlength{\LTpre}{2pt}\setlength{\LTpost}{2pt}
+\begin{longtable}{|p{0.23\textwidth}|p{0.57\textwidth}|}
 \hline
-\textbf{Link Type} & \textbf{Syntax} \\
+\textbf{লিংকের ধরন} & \textbf{সিনট্যাক্স} \\
 \hline
-External link & {\footnotesize\ttfamily <a href="https://example.com">}\\
+\endfirsthead
+\hline
+\textbf{লিংকের ধরন} & \textbf{সিনট্যাক্স} \\
+\hline
+\endhead
+বাহ্যিক লিংক & {\footnotesize\ttfamily <a href="https://example.com">}\\
 & {\footnotesize\ttfamily Visit</a>} \\
 \hline
-Internal link & {\footnotesize\ttfamily <a href="about.html">About</a>} \\
+অভ্যন্তরীণ লিংক & {\footnotesize\ttfamily <a href="about.html">About</a>} \\
 \hline
-Same page link & {\footnotesize\ttfamily <a href="\#section1">Go</a>} \\
+একই পেজ লিংক & {\footnotesize\ttfamily <a href="\#section1">Go</a>} \\
 \hline
-Email link & {\footnotesize\ttfamily <a href="mailto:info@example.com">}\\
+ইমেইল লিংক & {\footnotesize\ttfamily <a href="mailto:info@example.com">}\\
 & {\footnotesize\ttfamily Email</a>} \\
 \hline
-Image link & {\footnotesize\ttfamily <a href="url">}\\
+ছবিতে লিংক & {\footnotesize\ttfamily <a href="url">}\\
 & {\footnotesize\ttfamily <img src="photo.jpg"></a>} \\
 \hline
-File link & {\footnotesize\ttfamily <a href="routine.pdf">}\\
+ফাইল লিংক & {\footnotesize\ttfamily <a href="routine.pdf">}\\
 & {\footnotesize\ttfamily Download</a>} \\
 \hline
-New tab link & {\footnotesize\ttfamily <a href="https://example.com"}\\
+নতুন ট্যাব লিংক & {\footnotesize\ttfamily <a href="https://example.com"}\\
 & {\footnotesize\ttfamily target="\_blank">Open</a>} \\
 \hline
-\end{tabular}
-\end{center}
+\end{longtable}
+\endgroup
 
-\subsection{Complete Example Code}
 
-\begin{examplebox}{Code}
+\subsection{পূর্ণাঙ্গ উদাহরণ}
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>HTML Hyperlink Example</title>
-</head>
-<body>
+<h1>ABC College Website</h1>
 
-  <h1>ABC College Website</h1>
+<h2>Internal Links</h2>
+<a href="about.html">About</a> |
+<a href="notice.html">Notice</a> |
+<a href="contact.html">Contact</a>
 
-  <h2>Internal Links</h2>
-  <a href="about.html">About</a> |
-  <a href="notice.html">Notice</a> |
-  <a href="contact.html">Contact</a>
+<h2>External Link</h2>
+<a href="https://www.google.com"
+   target="_blank">
+  Visit Google
+</a>
 
-  <h2>External Link</h2>
-  <a href="https://www.google.com"
-     target="_blank">
-    Visit Google
-  </a>
+<h2>Email Link</h2>
+<a href="mailto:info@abccollege.edu.bd">
+  Email Us
+</a>
 
-  <h2>Email Link</h2>
-  <a href="mailto:info@abccollege.edu.bd">
-    Email Us
-  </a>
+<h2>Image Link</h2>
+<a href="https://www.ictacademy.com">
+  <img src="ict.jpg" alt="ICT Academy" width="200">
+</a>
 
-  <h2>Image Link</h2>
-  <a href="https://www.ictacademy.com">
-    <img src="ict.jpg" alt="ICT Academy" width="200">
-  </a>
+<h2>Same Page Link</h2>
+<a href="#result">Go to Result Section</a>
 
-  <h2>Same Page Link</h2>
-  <a href="#result">Go to Result Section</a>
-
-  <h2 id="result">Result Section</h2>
-  <p>HSC result information will be published here.</p>
-
-</body>
-</html>
+<h2 id="result">Result Section</h2>
+<p>HSC result information will be published here.</p>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ দেখা যাবে:
+
+\begin{examplebox}{ফল কী হবে?}
+ব্রাউজারে দেখা যাবে:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \textbf{ABC College Website} heading।
-\item About, Notice, Contact internal link।
-\item Google external link।
-\item Email Us email link।
-\item একটি image; image-এ click করলে নির্দিষ্ট website open হবে।
-\item Go to Result Section link; এতে click করলে একই page-এর Result Section-এ যাবে।
+\item \textbf{ABC College Website} শিরোনাম।
+\item \texttt{About}, \texttt{Notice}, \texttt{Contact} অভ্যন্তরীণ লিংক।
+\item \texttt{Google} বাহ্যিক লিংক।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item \texttt{Email Us} ইমেইল লিংক।
+\item একটি ছবি; ছবিতে ক্লিক করলে নির্দিষ্ট ওয়েবসাইট খুলবে।
+\item \texttt{Go to Result Section} লিংক; এতে ক্লিক করলে একই পেজের \texttt{Result Section} অংশে যাবে।
+\end{itemize}
+\end{minipage}\par
+
 \end{examplebox}
 
 \subsection{সাধারণ ভুল}
 
-\begin{mistakebox}{Common Mistake}
+\begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \texttt{href} attribute না দেওয়া।
+\item \texttt{href} অ্যাট্রিবিউট না দেওয়া।
 \item \texttt{href}-এর জায়গায় \texttt{src} লেখা।
-\item external link-এ \texttt{https://} না দেওয়া।
-\item closing \texttt{</a>} tag না দেওয়া।
-\item \texttt{<a>} tag-এর ভিতরে click করার text বা image না রাখা।
-\item image link করতে \texttt{<img>} tag \texttt{<a>} tag-এর বাইরে রাখা।
-\item email link-এ \texttt{mailto:} না লেখা।
-\item same page link-এ \texttt{\#} না দেওয়া।
-\item \texttt{id} এবং \texttt{href="\#id"} value মিল না রাখা।
+\item বাহ্যিক লিংকে \texttt{https://} না দেওয়া।
+\item শেষের \texttt{</a>} ট্যাগ না দেওয়া।
+\item \texttt{<a>} ট্যাগের ভিতরে ক্লিক করার লেখা বা ছবি না রাখা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item ছবিতে লিংক করতে \texttt{<img>} ট্যাগ \texttt{<a>} ট্যাগের বাইরে রাখা।
+\item ইমেইল লিংকে \texttt{mailto:} না লেখা।
+\item একই পেজের লিংকে \texttt{\#} না দেওয়া।
+\item \texttt{id} এবং \texttt{href="\#id"} মান মিল না রাখা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
 \subsubsection{ভুল}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a>Google</a>
 \end{verbatim}
-\end{examplebox}
 
-এখানে \texttt{href} নেই, তাই এটি কার্যকর hyperlink হবে না।
-
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে \texttt{href} নেই, তাই এটি কার্যকর হাইপারলিংক হবে না।
+\end{minipage}\par
 \subsubsection{সঠিক}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="https://www.google.com">Google</a>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{বইয়ে ব্যবহারযোগ্য সারাংশ}
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\begin{recapbox}
-Hyperlink web page-এর একটি গুরুত্বপূর্ণ উপাদান। Hyperlink-এর মাধ্যমে user এক page থেকে অন্য page, অন্য website, email address, file বা একই page-এর নির্দিষ্ট অংশে যেতে পারে। HTML-এ hyperlink তৈরি করতে \texttt{<a>} বা anchor tag ব্যবহৃত হয়। Anchor tag-এর প্রয়োজনীয় attribute হলো \texttt{href}, যা link-এর destination নির্ধারণ করে। Link text-এর জায়গায় text বা image ব্যবহার করা যায়। Website navigation, related information প্রদর্শন, file download এবং email communication-এর জন্য hyperlink অত্যন্ত গুরুত্বপূর্ণ।
-\end{recapbox}
-
-\subsection{ছোট প্রশ্নোত্তর}
-
-\begin{enumerate}
-\item \textbf{Hyperlink কী?}\\
-উত্তর: Clickable text বা image, যার মাধ্যমে অন্য page, website, file, email address বা একই page-এর নির্দিষ্ট অংশে যাওয়া যায়।
-
-\item \textbf{Hyperlink তৈরি করতে কোন tag ব্যবহৃত হয়?}\\
-উত্তর: \texttt{<a>} tag।
-
-\item \textbf{\texttt{<a>} tag-এর প্রয়োজনীয় attribute কোনটি?}\\
-উত্তর: \texttt{href}।
-
-\item \textbf{\texttt{href} এর পূর্ণ অর্থ কী?}\\
-উত্তর: Hyperlink Reference বা Hypertext Reference।
-
-\item \textbf{Hyperlink-এর syntax কী?}\\
-উত্তর: \texttt{<a href="url">Link Text</a>}।
-
-\item \textbf{Email link তৈরি করতে কী ব্যবহার করা হয়?}\\
-উত্তর: \texttt{mailto:}।
-
-\item \textbf{Image link কীভাবে তৈরি করা হয়?}\\
-উত্তর: \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসিয়ে।
-
-\item \textbf{নতুন tab-এ link open করতে কোন attribute ব্যবহার হয়?}\\
-উত্তর: \texttt{target="\_blank"}।
-\end{enumerate}
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{হাইপারলিংক কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{হাইপারলিংক তৈরি করতে কোন ট্যাগ ব্যবহৃত হয়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{<a>} ট্যাগের প্রয়োজনীয় অ্যাট্রিবিউট কোনটি?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{href} এর পূর্ণ অর্থ কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{হাইপারলিংকের সিনট্যাক্স কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ইমেইল লিংক তৈরি করতে কী ব্যবহার করা হয়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ছবিতে লিংক কীভাবে তৈরি করা হয়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{নতুন ট্যাবে লিংক খুলতে কোন অ্যাট্রিবিউট ব্যবহার হয়?}}
+\end{minipage}\par\smallskip
+\end{multicols}
 
 \subsection{বোর্ডভিত্তিক সৃজনশীল প্রশ্ন}
 
 \begin{boardbox}{সৃজনশীল প্রশ্ন ১}
-একটি college website-এ Home, Notice, Result, Email Us এবং Open Google link আছে। Notice ও Result link একই website-এর page-এ নিয়ে যায়, Email Us link email application open করে, আর Open Google link নতুন tab-এ যায়।
+একটি কলেজ ওয়েবসাইটে \texttt{Home}, \texttt{Notice}, \texttt{Result}, \texttt{Email Us} এবং \texttt{Open Google} লিংক আছে। \texttt{Notice} ও \texttt{Result} একই ওয়েবসাইটের পেজে নিয়ে যায়, \texttt{Email Us} ইমেইল অ্যাপ্লিকেশন খোলার অনুরোধ করে, আর \texttt{Open Google} নতুন ট্যাবে যায়।
 \end{boardbox}
 
-\begin{boardbox}{সৃজনশীল প্রশ্ন ১: নমুনা উত্তর}
-\begin{itemize}
-\item ক) Hyperlink হলো clickable text, image বা object, যার মাধ্যমে অন্য page, website, file, email বা একই page-এর নির্দিষ্ট অংশে যাওয়া যায়।
-\item খ) Internal link একই website-এর এক page থেকে অন্য page-এ নিয়ে যাওয়ার জন্য ব্যবহৃত হয়।
-\item গ) উদ্দীপকে internal link, email link এবং external link-এর সাথে new tab link ব্যবহার করা হয়েছে।
-\item ঘ) \texttt{rel="noopener noreferrer"} ব্যবহার করলে নতুন tab থেকে original page-এর ওপর unwanted access কমে এবং নিরাপত্তা বাড়ে।
-\end{itemize}
-\end{boardbox}
+
 
 \begin{boardbox}{সৃজনশীল প্রশ্ন ২}
-একটি web page-এ \texttt{Go to Admission Section} link আছে, যা একই page-এর admission অংশে নিয়ে যায়। আরেকটি course brochure image-এ click করলে সংশ্লিষ্ট course page open হয়।
+একটি ওয়েবপেজে \texttt{Go to Admission Section} লিংক আছে, যা একই পেজের ভর্তি অংশে নিয়ে যায়। আরেকটি কোর্স পরিচিতিপত্র ছবিতে ক্লিক করলে সংশ্লিষ্ট কোর্স পেজ খোলে।
 \end{boardbox}
 
-\begin{boardbox}{সৃজনশীল প্রশ্ন ২: নমুনা উত্তর}
-\begin{itemize}
-\item ক) Same page link হলো এমন link, যা একই web page-এর নির্দিষ্ট section-এ নিয়ে যায়।
-\item খ) Image link তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag ব্যবহার করা হয়।
-\item গ) \texttt{href="\#admission"} target section-এর \texttt{id="admission"}-এ jump করে।
-\item ঘ) Same page link বড় page-এ দ্রুত প্রয়োজনীয় information খুঁজে পেতে সাহায্য করে এবং navigation সহজ করে।
-\end{itemize}
-\end{boardbox}
 
-\subsection{Exam Focus MCQ}
 
-\begin{enumerate}
-\item HTML-এ hyperlink তৈরি করতে কোন tag ব্যবহৃত হয়?\\
-ক) \texttt{<p>} \quad খ) \texttt{<a>} \quad গ) \texttt{<li>} \quad ঘ) \texttt{<img>}
+\Needspace{10\baselineskip}
+\subsection{পরীক্ষাভিত্তিক বহুনির্বাচনি প্রশ্ন}
 
-\item \texttt{<a>} tag-এর প্রয়োজনীয় attribute কোনটি?\\
-ক) \texttt{src} \quad খ) \texttt{href} \quad গ) \texttt{alt} \quad ঘ) \texttt{border}
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+HTML-এ হাইপারলিংক তৈরি করতে কোন ট্যাগ ব্যবহৃত হয়?
+\par ক) \texttt{<p>}
+\par খ) \texttt{<a>}
+\par গ) \texttt{<li>}
+\par ঘ) \texttt{<img>}
+\end{minipage}
 
-\item \texttt{href} এর অর্থ কী?\\
-ক) Hot Reference \quad খ) Home Reference \quad গ) Hyperlink Reference \quad ঘ) Hyperlink Replace
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{<a>} ট্যাগের প্রয়োজনীয় অ্যাট্রিবিউট কোনটি?
+\par ক) \texttt{src}
+\par খ) \texttt{href}
+\par গ) \texttt{alt}
+\par ঘ) \texttt{border}
+\end{minipage}
 
-\item Hyperlink-এর সঠিক syntax কোনটি?\\
-ক) \texttt{<a url="link">Text</a>} \quad খ) \texttt{<a href="url">Link Text</a>}\\
-গ) \texttt{<href="url">Text</href>} \quad ঘ) \texttt{<link href="url">Text</link>}
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{href} এর অর্থ কী?
+\par ক) Hot Reference
+\par খ) Home Reference
+\par গ) Hyperlink Reference
+\par ঘ) Hyperlink Replace
+\end{minipage}
 
-\item Email address-এর সাথে link তৈরি করতে কোনটি ব্যবহার করা হয়?\\
-ক) \texttt{email:} \quad খ) \texttt{mailto:} \quad গ) \texttt{src:} \quad ঘ) \texttt{target:}
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+হাইপারলিংকের সঠিক সিনট্যাক্স কোনটি?
+\par ক) \texttt{<a url="link">Text</a>}
+\par খ) \texttt{<a href="url">Link Text</a>}
+\par গ) \texttt{<href="url">Text</href>}
+\par ঘ) \texttt{<link href="url">Text</link>}
+\end{minipage}
 
-\item Image link তৈরি করতে কী করতে হয়?\\
-ক) \texttt{<img>} tag-এর ভিতরে \texttt{<p>} tag বসাতে হয়\\
-খ) \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়\\
-গ) \texttt{<table>} tag-এর ভিতরে \texttt{<a>} tag বসাতে হয়\\
-ঘ) \texttt{<body>} tag বাদ দিতে হয়
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ইমেইল ঠিকানার সঙ্গে লিংক তৈরি করতে কোনটি ব্যবহার করা হয়?
+\par ক) \texttt{email:}
+\par খ) \texttt{mailto:}
+\par গ) \texttt{src:}
+\par ঘ) \texttt{target:}
+\end{minipage}
 
-\item Default unvisited hyperlink color সাধারণত কী?\\
-ক) Red \quad খ) Green \quad গ) Blue \quad ঘ) Pink
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ছবিতে লিংক তৈরি করতে কী করতে হয়?
+\par ক) \texttt{<img>} ট্যাগের ভিতরে \texttt{<p>} ট্যাগ বসাতে হয়
+\par খ) \texttt{<a>} ট্যাগের ভিতরে \texttt{<img>} ট্যাগ বসাতে হয়
+\par গ) \texttt{<table>} ট্যাগের ভিতরে \texttt{<a>} ট্যাগ বসাতে হয়
+\par ঘ) \texttt{<body>} ট্যাগ বাদ দিতে হয়
+\end{minipage}
 
-\item \texttt{target="\_blank"} attribute-এর কাজ কী?\\
-ক) link delete করা \quad খ) নতুন tab/window-এ open করা \quad গ) file download করা \quad ঘ) same page jump করা
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+স্বাভাবিক আগে দেখা হয়নি এমন হাইপারলিংকের রং সাধারণত কী?
+\par ক) লাল
+\par খ) সবুজ
+\par গ) নীল
+\par ঘ) গোলাপি
+\end{minipage}
 
-\item \texttt{download} attribute-এর কাজ কী?\\
-ক) link text color change করা \quad খ) file download করার নির্দেশ দেওয়া \quad গ) image link তৈরি করা \quad ঘ) email open করা
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{target="\_blank"} অ্যাট্রিবিউটের কাজ কী?
+\par ক) লিংক মুছে ফেলা
+\par খ) নতুন ট্যাব/উইন্ডোতে খোলা
+\par গ) ফাইল ডাউনলোড করা
+\par ঘ) একই পেজ নির্দিষ্ট অংশে যাওয়া
+\end{minipage}
 
-\item \texttt{href="\#section"} দ্বারা কোন ধরনের link তৈরি হয়?\\
-ক) External link \quad খ) Internal link \quad গ) Same page/Bookmark link \quad ঘ) File link
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{download} অ্যাট্রিবিউটের কাজ কী?
+\par ক) লিংক লেখার রং পরিবর্তন করা
+\par খ) ফাইল ডাউনলোডের অনুরোধ করা
+\par গ) ছবিতে লিংক তৈরি করা
+\par ঘ) ইমেইল খোলা
+\end{minipage}
 
-\item \texttt{<a>} tag-এ \texttt{href} না থাকলে সাধারণত কী হয়?\\
-ক) link নতুন tab খুলে \quad খ) এটি hyperlink না হয়ে placeholder-এর মতো থাকে \quad গ) file download হয় \quad ঘ) image দেখায়
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{href="\#section"} দ্বারা কোন ধরনের লিংক তৈরি হয়?
+\par ক) বাহ্যিক লিংক
+\par খ) অভ্যন্তরীণ লিংক
+\par গ) একই পেজ/বুকমার্ক লিংক
+\par ঘ) ফাইল লিংক
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{<a>} ট্যাগে \texttt{href} না থাকলে সাধারণত কী হয়?
+\par ক) লিংক নতুন ট্যাব খুলে
+\par খ) এটি হাইপারলিংক না হয়ে স্থানধারক উপাদান হিসেবে থাকে
+\par গ) ফাইল ডাউনলোড হয়
+\par ঘ) ছবি দেখায়
+\end{minipage}
 \end{enumerate}
+\end{multicols}
 
-\begin{boardbox}{MCQ Answer Key}
-১-খ, ২-খ, ৩-গ, ৪-খ, ৫-খ, ৬-খ, ৭-গ, ৮-খ, ৯-খ, ১০-গ, ১১-খ
-\end{boardbox}
+\chFourMCQAnswer{১-খ, ২-খ, ৩-গ, ৪-খ, ৫-খ, ৬-খ, ৭-গ, ৮-খ, ৯-খ, ১০-গ, ১১-খ}
+
+\input{chapters/Chapter04/topics/07_hyperlink/book_concepts}
+

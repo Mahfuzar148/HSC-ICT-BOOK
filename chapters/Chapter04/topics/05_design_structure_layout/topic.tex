@@ -1,49 +1,56 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % Topic: Web Page Design, Structure and Layout
-\section{Design: Structure ও Layout}
+\section{ওয়েবপেজের কাঠামো ও বিন্যাস (Structure and Layout)}
+
+% Composition pass 2026-10-04
+একই কলেজের ওয়েবপেজ কম্পিউটারে প্রশস্ত, কিন্তু মোবাইলে সরু পর্দায় দেখা হবে।
+
+\chFourMotivation{উভয় পর্দায় পাঠযোগ্যতা $\rightarrow$ বিন্যাস ও রেসপনসিভ ডিজাইন $\rightarrow$ নমনীয় মাপ ও উপযুক্ত CSS-এ অংশ সাজানো $\rightarrow$ মেনু, ছবি ও তথ্য সহজে ব্যবহার করা।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item webpage layout, wireframe ও responsive design ব্যাখ্যা করতে।
-\item fixed, fluid ও responsive layout আলাদা করতে।
-\item header, menu, content, sidebar ও footer-এর কাজ বলতে।
-\item একটি simple webpage layout plan বা wireframe আঁকতে।
-\item HSC practical webpage design করার আগে layout পরিকল্পনা করতে।
+\item ওয়েবপেজের বিন্যাস, ওয়্যারফ্রেম ও রেসপনসিভ ডিজাইন ব্যাখ্যা করতে।
+\item ফিক্সড, ফ্লুইড ও রেসপনসিভ বিন্যাস আলাদা করতে।
+\item হেডার, মেনু, মূল বিষয়বস্তু, সাইডবার ও ফুটারের কাজ বলতে।
+\item একটি সহজ ওয়েবপেজের বিন্যাস পরিকল্পনা বা ওয়্যারফ্রেম আঁকতে।
+\item ব্যবহারিক কাজের ওয়েবপেজ তৈরির আগে বিন্যাস পরিকল্পনা করতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Layout কী?}
+\subsection{ওয়েবপেজের বিন্যাস (Webpage Layout)}
 
-\begin{definitionbox}{Webpage Layout}
-ওয়েবপেজে header, navigation menu, main content, image, table, sidebar ও footer কোথায় থাকবে, সেই পরিকল্পিত বিন্যাসকে webpage layout বলে।
+\begin{definitionbox}{}
+ওয়েবপেজের হেডার, মেনু, মূল বিষয়বস্তু, ছবি, সারণি, সাইডবার ও ফুটারের অবস্থান নির্ধারণের বিন্যাসকে \textbf{ওয়েবপেজ লেআউট} বলে।
 \end{definitionbox}
 
-ভালো layout page-কে পরিষ্কার, পড়ার উপযোগী এবং ব্যবহারকারী-বান্ধব করে। HSC practical-এ full webpage design করার আগে layout বুঝে নিলে code লেখা সহজ হয়।
+সঠিক বিন্যাস পেজকে পরিষ্কার, পড়ার উপযোগী ও ব্যবহারবান্ধব করে। ব্যবহারিক কাজে পূর্ণাঙ্গ ওয়েবপেজ তৈরির আগে বিন্যাস বুঝে নিলে কোড লেখা সহজ হয়।
 
-\subsection{Webpage-এর প্রধান Layout অংশ}
+\subsection{ওয়েবপেজের বিন্যাসের প্রধান অংশ}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.58\textwidth}|}
 \hline
 \textbf{অংশ} & \textbf{কাজ} \\
 \hline
-Header & website-এর নাম, logo, title বা slogan দেখায় \\
+Header & ওয়েবসাইটের নাম, লোগো, শিরোনাম বা স্লোগান দেখায় \\
 \hline
-Navigation/Menu & অন্য page বা section-এ যাওয়ার link রাখে \\
+Navigation/Menu & অন্য পেজ বা অংশে যাওয়ার লিংক রাখে \\
 \hline
-Main Content & মূল লেখা, image, list, table, form ইত্যাদি রাখে \\
+Main Content & মূল লেখা, ছবি, তালিকা, সারণি ও ফর্ম ইত্যাদি রাখে \\
 \hline
-Sidebar & notice, important link, advertisement বা extra information রাখে \\
+Sidebar & বিজ্ঞপ্তি, গুরুত্বপূর্ণ লিংক, বিজ্ঞাপন বা অতিরিক্ত তথ্য রাখে \\
 \hline
-Footer & copyright, contact, address, email, social link ইত্যাদি রাখে \\
+Footer & কপিরাইট, যোগাযোগের তথ্য, ঠিকানা, ইমেইল ও সামাজিক যোগাযোগের লিংক রাখে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Wireframe কী?}
+\subsection{ওয়্যারফ্রেম (Wireframe)}
 
-\begin{definitionbox}{Wireframe}
-Webpage তৈরি করার আগে page-এর কোন অংশ কোথায় থাকবে তা box বা rough sketch আকারে দেখানোর প্রাথমিক নকশাকে wireframe বলে।
+\begin{definitionbox}{}
+ওয়েবপেজের অংশগুলোর অবস্থান ঘর বা খসড়া চিত্রে দেখানোর প্রাথমিক নকশাকে \textbf{ওয়্যারফ্রেম} বলে। কোড লেখার আগে এই নকশা করা হয়।
 \end{definitionbox}
 
 \begin{center}
@@ -59,86 +66,98 @@ Webpage তৈরি করার আগে page-এর কোন অংশ ক�
 }}
 \end{center}
 
-\begin{keypointbox}{Wireframe কেন দরকার?}
+\begin{keypointbox}{ওয়্যারফ্রেম কেন দরকার?}
 \begin{itemize}
-\item code লেখার আগে page plan পরিষ্কার হয়।
-\item কোন content কোথায় থাকবে তা বোঝা যায়।
-\item header, menu, content ও footer আলাদা করা সহজ হয়।
-\item figure দেখে HTML code লেখার সময় ভুল কম হয়।
-\item বড় project-এ designer ও developer একই plan follow করতে পারে।
+\item কোড লেখার আগে পেজের পরিকল্পনা পরিষ্কার হয়।
+\item কোন বিষয়বস্তু কোথায় থাকবে তা বোঝা যায়।
+\item হেডার, মেনু, মূল বিষয়বস্তু ও ফুটার আলাদা করা সহজ হয়।
+\item চিত্র দেখে HTML কোড লেখার সময় ভুল কম হয়।
+\item বড় প্রকল্পে ডিজাইনার ও ডেভেলপার একই পরিকল্পনা অনুসরণ করতে পারেন।
 \end{itemize}
 \end{keypointbox}
 
-\subsection{Layout-এর ধরন}
+\subsection{বিন্যাসের ধরন}
 
 \begin{center}
 \begin{tabular}{|p{0.20\textwidth}|p{0.34\textwidth}|p{0.32\textwidth}|}
 \hline
-\textbf{Layout} & \textbf{ধারণা} & \textbf{সুবিধা/সীমাবদ্ধতা} \\
+\textbf{বিন্যাস} & \textbf{ধারণা} & \textbf{সুবিধা/সীমাবদ্ধতা} \\
 \hline
-Fixed Layout & width fixed থাকে, যেমন 960px & desktop-এ predictable, mobile-এ সমস্যা হতে পারে \\
+Fixed Layout & প্রস্থ নির্দিষ্ট থাকে, যেমন 960px & ডেস্কটপে বিন্যাস অনুমানযোগ্য; ছোট মোবাইল পর্দায় সমস্যা হতে পারে \\
 \hline
-Fluid Layout & width percentage অনুযায়ী বদলায় & screen অনুযায়ী ছড়ায়, কিন্তু control কম \\
+Fluid Layout & প্রস্থ শতকরা হিসাবে নির্ধারিত হয় & পর্দার প্রস্থ অনুযায়ী বদলায়; সব অংশের অবস্থান নিয়ন্ত্রণ কঠিন হতে পারে \\
 \hline
-Responsive Layout & screen size অনুযায়ী layout পরিবর্তিত হয় & modern website-এর জন্য সবচেয়ে উপযোগী \\
+Responsive Layout & পর্দার আকার অনুযায়ী বিন্যাস বদলায় & বিভিন্ন আকারের যন্ত্রে ব্যবহারযোগ্য ওয়েবসাইট তৈরিতে উপযোগী \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Responsive Design কী?}
+\subsection{রেসপনসিভ ডিজাইন (Responsive Design)}
 
-\begin{definitionbox}{Responsive Design}
-যে design-এ webpage-এর layout screen size অনুযায়ী পরিবর্তিত হয়ে desktop, tablet ও mobile-এ সুন্দরভাবে দেখা যায়, তাকে responsive design বলে।
+\begin{definitionbox}{}
+পর্দার আকার অনুযায়ী বিন্যাস বদলে ওয়েবপেজকে পাঠযোগ্য ও ব্যবহারযোগ্য রাখার নকশাপদ্ধতিকে \textbf{রেসপনসিভ ডিজাইন} বলে। এতে একই পেজ ডেস্কটপ, ট্যাবলেট ও মোবাইলে ব্যবহার করা যায়।
 \end{definitionbox}
 
-Responsive design-এ সাধারণত flexible width, readable font, properly sized image, mobile-friendly menu এবং viewport meta tag ব্যবহার করা হয়।
+রেসপনসিভ ডিজাইনে নমনীয় প্রস্থ, পাঠযোগ্য অক্ষর, উপযুক্ত মাপের ছবি ও মোবাইলে ব্যবহারযোগ্য মেনু রাখা হয়। viewport মেটা ট্যাগ ব্রাউজারকে পর্দা অনুযায়ী প্রদর্শনের নির্দেশনা দেয়। শুধু এই ট্যাগ যথেষ্ট নয়; CSS দিয়ে অংশগুলোর মাপ ও অবস্থানও নির্ধারণ করতে হয়।
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 \end{verbatim}
 \end{examplebox}
 
-\subsection{ভালো Web Layout-এর Design Principle}
+\subsection{ওয়েবপেজের বিন্যাসের নীতি}
 
-\begin{keypointbox}{Design principle}
+\begin{keypointbox}{নকশার নীতি}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \textbf{Contrast:} গুরুত্বপূর্ণ অংশ আলাদা করে দেখানো।
-\item \textbf{Alignment:} text ও element সুশৃঙ্খল রাখা।
-\item \textbf{Repetition:} একই style বারবার ব্যবহার করে consistency রাখা।
-\item \textbf{Proximity:} সম্পর্কিত content কাছাকাছি রাখা।
-\item \textbf{Whitespace:} content-এর মাঝে পর্যাপ্ত ফাঁকা জায়গা রাখা।
-\item \textbf{Readability:} text যেন সহজে পড়া যায়।
+\item \textbf{পার্থক্য ফুটিয়ে তোলা (Contrast):} গুরুত্বপূর্ণ অংশ আলাদা করে দেখানো।
+\item \textbf{সারিবিন্যাস (Alignment):} লেখা ও উপাদান সুশৃঙ্খল রাখা।
+\item \textbf{একই রীতির পুনর্ব্যবহার (Repetition):} একই শৈলী ব্যবহার করে সামঞ্জস্য রাখা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item \textbf{নৈকট্য (Proximity):} সম্পর্কিত বিষয়বস্তু কাছাকাছি রাখা।
+\item \textbf{ফাঁকা জায়গা (Whitespace):} বিষয়বস্তুর মাঝে পর্যাপ্ত ফাঁকা জায়গা রাখা।
+\item \textbf{পাঠযোগ্যতা (Readability):} লেখা যেন সহজে পড়া যায়।
+\end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
-\subsection{Layout Plan থেকে HTML Tag নির্বাচন}
+\input{chapters/Chapter04/topics/05_design_structure_layout/clarity}
+
+\subsection{বিন্যাস পরিকল্পনা থেকে HTML ট্যাগ নির্বাচন}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
 \hline
-\textbf{Layout অংশ} & \textbf{HTML tag} & \textbf{Example} \\
+\textbf{বিন্যাসের অংশ} & \textbf{HTML ট্যাগ} & \textbf{উদাহরণ} \\
 \hline
-Header & \texttt{<div>}, \texttt{<h1>}, \texttt{<p>} & Website title \\
+Header & \texttt{<div>}, \texttt{<h1>}, \texttt{<p>} & ওয়েবসাইটের শিরোনাম \\
 \hline
 Menu & \texttt{<div>}, \texttt{<a>} & Home, About, Contact \\
 \hline
-Main content & \texttt{<div>}, \texttt{<h2>}, \texttt{<p>} & welcome text \\
+Main content & \texttt{<div>}, \texttt{<h2>}, \texttt{<p>} & স্বাগত জানিয়ে লেখা \\
 \hline
-Image area & \texttt{<img>} & campus image \\
+Image area & \texttt{<img>} & ক্যাম্পাসের ছবি \\
 \hline
-List area & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} & subject list \\
+List area & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>} & বিষয়ের তালিকা \\
 \hline
-Table area & \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} & result table \\
+Table area & \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} & ফলের সারণি \\
 \hline
-Footer & \texttt{<div>}, \texttt{<p>} & copyright \\
+Footer & \texttt{<div>}, \texttt{<p>} & কপিরাইট \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Mini Layout Example}
+\subsection{বিন্যাসের ছোট উদাহরণ}
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <div style="background-color:navy; color:white; padding:10px;">
   <h1>ABC College</h1>
@@ -159,45 +178,54 @@ Footer & \texttt{<div>}, \texttt{<p>} & copyright \\
   <p>Copyright ABC College</p>
 </div>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Problem Solution}
+
+\subsection{সমস্যা ও সমাধান}
 
 \begin{practicebox}
-\textbf{Problem:} একটি college webpage-এর layout plan তৈরি করো যেখানে header, menu, notice, subject list, result table ও footer থাকবে।
+\textbf{সমস্যা:} একটি কলেজের ওয়েবপেজের বিন্যাস পরিকল্পনা করো। এতে হেডার, মেনু, বিজ্ঞপ্তি, বিষয়ের তালিকা, ফলের সারণি ও ফুটার থাকবে।
 
-\textbf{Solution plan:}
+\textbf{সমাধানের পরিকল্পনা:}
 \begin{enumerate}
-\item Header অংশে \texttt{<div>} এর ভিতরে \texttt{<h1>} দিয়ে college name লিখবে।
-\item Menu অংশে \texttt{<a>} দিয়ে Home, Notice, Result, Contact link লিখবে।
-\item Main content অংশে notice paragraph লিখবে।
-\item Subject list-এর জন্য \texttt{<ul>} ও \texttt{<li>} ব্যবহার করবে।
-\item Result table-এর জন্য \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} ব্যবহার করবে।
-\item Footer অংশে copyright বা email লিখবে।
+\item হেডার অংশে \texttt{<div>}-এর ভেতরে \texttt{<h1>} দিয়ে কলেজের নাম লিখবে।
+\item মেনু অংশে \texttt{<a>} দিয়ে Home, Notice, Result ও Contact লিংক লিখবে।
+\item মূল বিষয়বস্তুর অংশে বিজ্ঞপ্তির অনুচ্ছেদ লিখবে।
+\item বিষয়ের তালিকার জন্য \texttt{<ul>} ও \texttt{<li>} ব্যবহার করবে।
+\item ফলের সারণির জন্য \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} ব্যবহার করবে।
+\item ফুটার অংশে কপিরাইট বা ইমেইল লিখবে।
 \end{enumerate}
 \end{practicebox}
 
-\begin{boardbox}{Board focus}
-Webpage design practical-এ code শুরু করার আগে layout section identify করা খুব জরুরি। Header, menu, content, table/list/image ও footer আলাদা করলে code clean হয় এবং output figure-এর সাথে মেলানো সহজ হয়।
+\begin{boardbox}{পরীক্ষার জন্য মনে রাখবে}
+ওয়েবপেজ তৈরির ব্যবহারিক কাজে কোড লেখার আগে বিন্যাসের অংশগুলো শনাক্ত করো। হেডার, মেনু, মূল বিষয়বস্তু, সারণি/তালিকা/ছবি ও ফুটার আলাদা করলে কোড সুশৃঙ্খল হয়। এতে চাহিদার চিত্রের সঙ্গে ফল মেলানো সহজ হয়।
 \end{boardbox}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item layout plan না করে সরাসরি code লেখা।
-\item header, menu, content ও footer আলাদা না করা।
-\item সব content এক \texttt{<div>} tag-এর ভিতরে অগোছালোভাবে লেখা।
-\item mobile view চিন্তা না করা।
-\item image width বেশি দিয়ে page overflow করা।
-\item menu link-এ \texttt{href} না দেওয়া।
+\item বিন্যাস পরিকল্পনা না করে সরাসরি কোড লেখা।
+\item হেডার, মেনু, মূল বিষয়বস্তু ও ফুটার আলাদা না করা।
+\item সব বিষয়বস্তু এক \texttt{<div>} ট্যাগের ভেতরে অগোছালোভাবে লেখা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item মোবাইল পর্দায় পেজ কেমন হবে তা বিবেচনা না করা।
+\item ছবির প্রস্থ বেশি দিয়ে পেজের সীমানা ছাড়িয়ে ফেলা।
+\item মেনুর লিংকে \texttt{href} না দেওয়া।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
 \begin{practicebox}
 \begin{enumerate}
-\item Responsive design কী?
-\item Wireframe কেন দরকার?
-\item Fixed ও responsive layout-এর পার্থক্য লেখ।
-\item একটি college website-এর wireframe আঁকো।
-\item Header, menu ও footer-এর জন্য কোন tag ব্যবহার করা যায়?
+\item রেসপনসিভ ডিজাইন কী?
+\item ওয়্যারফ্রেম কেন দরকার?
+\item ফিক্সড ও রেসপনসিভ বিন্যাসের পার্থক্য লেখ।
+\item একটি কলেজের ওয়েবসাইটের ওয়্যারফ্রেম আঁকো।
+\item হেডার, মেনু ও ফুটার তৈরিতে কোন ট্যাগ ব্যবহার করা যায়?
 \end{enumerate}
 \end{practicebox}

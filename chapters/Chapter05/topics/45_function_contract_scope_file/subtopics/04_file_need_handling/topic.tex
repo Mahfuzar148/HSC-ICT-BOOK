@@ -1,0 +1,1261 @@
+\booksubheading{File কেন প্রয়োজন?}
+
+\begin{definitionbox}
+
+\textbf{File:}
+কম্পিউটারের Secondary Storage-এ একটি নির্দিষ্ট নামের অধীনে
+Data স্থায়ীভাবে বা ভবিষ্যতে ব্যবহারের জন্য সংরক্ষণের একককে
+\textbf{File} বলে।
+
+\end{definitionbox}
+
+Variable Program চলাকালীন Data সংরক্ষণ করতে পারে।
+
+\begin{codeoutputbox}{Variable-এ Data}
+
+\noindent
+\begin{minipage}[t]{0.50\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+marks = 85\\
+print(marks)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 85}
+\end{center}
+
+\textenglish{\ttfamily marks}
+Variable Program চলার সময় Value ধরে রেখেছে।
+
+কিন্তু Program বন্ধ হওয়ার পর Runtime Memory-এর এই Data
+স্থায়ীভাবে থাকে না।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+Program বন্ধ হওয়ার পরও Data প্রয়োজন হলে তা স্থায়ী Storage-এ
+সংরক্ষণ করতে হয়। এ কাজে \textbf{File} ব্যবহার করা যায়।
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Program চলাকালীন Data}
+\(\longrightarrow\)
+\textbf{Variable}
+
+\medskip
+
+\textbf{Program বন্ধ হওয়ার পরও Data দরকার}
+\(\longrightarrow\)
+\textbf{File}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Temporary Persistent
+%================================================
+
+\booksubheading{Temporary ও Persistent Data}
+
+\begin{definitionbox}
+
+\textbf{Temporary Data:}
+Program চলাকালীন সাময়িকভাবে Memory-তে থাকা এবং সাধারণত Program
+শেষ হলে হারিয়ে যাওয়া Data-কে \textbf{Temporary Data} বলা হয়।
+
+\medskip
+
+\textbf{Persistent Data:}
+Program শেষ হওয়ার পরও Storage-এ সংরক্ষিত থাকে এবং ভবিষ্যতে
+পুনরায় ব্যবহার করা যায় এমন Data-কে \textbf{Persistent Data} বলা হয়।
+
+\end{definitionbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.29\linewidth}
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{Variable / Runtime Memory}
+&
+\textbf{File}
+\\
+\hline
+
+Data-এর প্রকৃতি
+&
+Temporary
+&
+Persistent
+\\
+\hline
+
+কতক্ষণ থাকে
+&
+Program চলাকালে
+&
+Program বন্ধ হওয়ার পরও থাকতে পারে
+\\
+\hline
+
+প্রধান ব্যবহার
+&
+Processing
+&
+Data সংরক্ষণ
+\\
+\hline
+
+পরে ব্যবহার
+&
+Runtime শেষ হলে থাকে না
+&
+পুনরায় ব্যবহার করা যায়
+\\
+\hline
+
+উদাহরণ
+&
+Calculation Result
+&
+Student Record, Result
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Variable}
+\(\longrightarrow\)
+\textbf{Temporary Runtime Data}
+
+\qquad
+
+\textbf{File}
+\(\longrightarrow\)
+\textbf{Persistent Data}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% File uses
+%================================================
+
+\booksubheading{File ব্যবহারের প্রয়োজনীয়তা}
+
+File ব্যবহার করা হয়—
+
+\begin{compacttwocolpoints}
+
+\item Program বন্ধ হওয়ার পরও Data সংরক্ষণ করতে।
+
+\item পরবর্তীতে Data আবার পড়তে ও ব্যবহার করতে।
+
+\item Student, Customer বা অন্যান্য Record রাখতে।
+
+\item Result, Report বা Log সংরক্ষণ করতে।
+
+\item অনেক Data দীর্ঘ সময় ধরে রাখতে।
+
+\item Saved Data ভবিষ্যতে আবার Process করতে।
+
+\end{compacttwocolpoints}
+
+\booksubheading{Python-এ File Handling}
+
+Python Program শুধু Runtime-এর Variable নিয়ে কাজ করে না; প্রয়োজন হলে
+Storage-এ থাকা File-এ Data লিখতে, File থেকে Data পড়তে এবং নতুন Data
+যোগ করতেও পারে। Program-এর মাধ্যমে File খোলা, Data পড়া/লেখা এবং
+File বন্ধ করার পুরো প্রক্রিয়াকে \textbf{File Handling} বলা হয়।
+
+\begin{definitionbox}
+\textbf{\color{darkTeal}File Handling:}
+
+Python Program-এর সাহায্যে কোনো File \textbf{Open করা, Data Read করা,
+Data Write/Append করা এবং কাজ শেষে File Close করার প্রক্রিয়াকে}
+\textbf{File Handling} বলা হয়।
+\end{definitionbox}
+
+\begin{center}
+\textbf{Python Program}
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily open()}}
+\(\longrightarrow\)
+\textbf{File Object}
+\(\longrightarrow\)
+\textbf{Read / Write / Append}
+\(\longrightarrow\)
+\textbf{Close}
+\end{center}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}Python-এর সঙ্গে File-এর সম্পর্ক}
+
+Python হলো Program লেখার Language; আর File হলো Data স্থায়ীভাবে রাখার
+Storage মাধ্যম। Python Program \textenglish{\ttfamily open()} Function-এর
+মাধ্যমে File-এর সঙ্গে সংযোগ তৈরি করে এবং সেই File Object ব্যবহার করে
+Data পড়া বা লেখা হয়।
+\end{rememberbox}
+
+%================================================
+% Program file vs data file
+%================================================
+
+\booksubheading{Python Program File ও Data File এক নয়}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries\RaggedRight\arraybackslash}p{0.28\linewidth}|Y|Y|}
+\hline
+\rowcolor{softBlue}
+\textbf{বিষয়} & \textbf{Python Program File} & \textbf{Data File}\\
+\hline
+মূল কাজ & Python Code সংরক্ষণ & Program-এর প্রয়োজনীয় Data সংরক্ষণ\\
+\hline
+সাধারণ Extension & \textenglish{\ttfamily .py} & \textenglish{\ttfamily .txt}, \textenglish{\ttfamily .csv} ইত্যাদি\\
+\hline
+উদাহরণ & \textenglish{\ttfamily result.py} & \textenglish{\ttfamily result.txt}\\
+\hline
+সম্পর্ক & Code Execute করে & Code-এর মাধ্যমে Read/Write করা যায়\\
+\hline
+\end{tabularx}
+
+\begin{center}
+\textenglish{\ttfamily result.py}
+\(\longrightarrow\)
+\textbf{Python Program}
+\(\longrightarrow\)
+\textenglish{\ttfamily result.txt}
+\end{center}
+
+অর্থাৎ \textenglish{\ttfamily .py} File-এ Program লেখা থাকে, আর
+\textenglish{\ttfamily .txt}-এর মতো Data File-এ Program-এর Data
+সংরক্ষণ করা যেতে পারে।
+
+%================================================
+% open
+%================================================
+
+\booksubheading{\textenglish{\ttfamily open()} দিয়ে File খোলা}
+
+Python-এ File ব্যবহার করার আগে সাধারণত \textenglish{\ttfamily open()}
+Function দিয়ে File খোলা হয়।
+
+\begin{center}
+\textenglish{\ttfamily file = open("filename", "mode")}
+\end{center}
+
+এখানে—
+
+\begin{itemize}
+\item \textenglish{\ttfamily "filename"} হলো যে File নিয়ে কাজ করা হবে তার নাম বা Path।
+\item \textenglish{\ttfamily "mode"} দিয়ে File-টি Read, Write নাকি Append করার জন্য খোলা হবে তা নির্ধারণ করা হয়।
+\item \textenglish{\ttfamily open()} একটি \textbf{File Object} Return করে; এই Object-এর মাধ্যমে File-এর Data নিয়ে কাজ করা হয়।
+\end{itemize}
+
+\begin{codeoutputbox}{File Open ও Close করার মৌলিক গঠন}
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+file = open("result.txt", "w")\\
+file.write("ICT = 85")\\
+file.close()
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\outputheading
+
+\textenglish{\ttfamily result.txt} নামে File তৈরি/খোলা হবে এবং সেখানে
+
+\begin{center}
+\textenglish{\ttfamily ICT = 85}
+\end{center}
+
+লেখা হবে। শেষে \textenglish{\ttfamily close()} File বন্ধ করবে।
+\end{minipage}
+\end{codeoutputbox}
+
+%================================================
+% File mode
+%================================================
+
+\booksubheading{File Mode}
+
+File খোলার সময় Mode নির্বাচন খুব গুরুত্বপূর্ণ।
+
+\begin{tabularx}{\linewidth}{|C{0.12\linewidth}|>{\bfseries\RaggedRight\arraybackslash}p{0.20\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\textbf{Mode} & \textbf{কাজ} & \textbf{গুরুত্বপূর্ণ বিষয়}\\
+\hline
+\textenglish{\ttfamily r} & Read & File থেকে Data পড়া হয়; File না থাকলে Error হতে পারে।\\
+\hline
+\textenglish{\ttfamily w} & Write & নতুন করে Data লেখা হয়; File না থাকলে তৈরি হয়, থাকলে আগের Content মুছে নতুন Content লেখা হয়।\\
+\hline
+\textenglish{\ttfamily a} & Append & আগের Content ঠিক রেখে File-এর শেষে নতুন Data যোগ করা হয়; File না থাকলে তৈরি হতে পারে।\\
+\hline
+\textenglish{\ttfamily x} & Create & নতুন File তৈরি করে; একই নামের File আগে থেকেই থাকলে Error হয়।\\
+\hline
+\end{tabularx}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}MCQ Trap}
+
+\begin{center}
+\textenglish{\ttfamily r} = Read
+\qquad
+\textenglish{\ttfamily w} = Write/Overwrite
+\qquad
+\textenglish{\ttfamily a} = Append
+\end{center}
+
+বিশেষ করে \textenglish{\ttfamily w} Mode ব্যবহার করলে পুরোনো File-এর
+আগের Content হারিয়ে যেতে পারে।
+\end{rememberbox}
+
+\textenglish{\ttfamily t} Text Mode এবং \textenglish{\ttfamily b} Binary
+Mode বোঝাতে ব্যবহৃত হতে পারে। সাধারণ Text File-এর ক্ষেত্রে
+\textenglish{\ttfamily t} হলো Default; তাই সাধারণভাবে শুধু
+\textenglish{\ttfamily r}, \textenglish{\ttfamily w} বা
+\textenglish{\ttfamily a} লিখলেই Text Mode বোঝায়।
+
+%================================================
+% write
+%================================================
+
+\booksubheading{File-এ Data লেখা — \textenglish{\ttfamily write()}}
+
+\textenglish{\ttfamily write()} Method ব্যবহার করে Text File-এ String
+Data লেখা যায়।
+
+\begin{codeoutputbox}{Write Mode-এর উদাহরণ}
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+file = open("student.txt", "w")\\
+file.write("Rahim 85")\\
+file.close()
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\outputheading
+
+\textenglish{\ttfamily student.txt} File-এর Content হবে—
+
+\begin{center}
+\textenglish{\ttfamily Rahim 85}
+\end{center}
+
+\textenglish{\ttfamily w} Mode হওয়ায় File আগে থাকলে তার পুরোনো Content
+নতুন Content দিয়ে প্রতিস্থাপিত হবে।
+\end{minipage}
+\end{codeoutputbox}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\textenglish{\ttfamily write()}-এ সাধারণত String Data দিতে হয়।
+Number সরাসরি লিখতে হলে প্রয়োজনে \textenglish{\ttfamily str()} দিয়ে
+String-এ রূপান্তর করা যায়।
+\end{rememberbox}
+
+%================================================
+% read
+%================================================
+
+\booksubheading{File থেকে Data পড়া — \textenglish{\ttfamily read()}}
+
+\textenglish{\ttfamily r} Mode-এ File খুলে
+\textenglish{\ttfamily read()} Method ব্যবহার করলে File-এর Content
+পড়া যায়।
+
+\begin{codeoutputbox}{Read Mode-এর উদাহরণ}
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+file = open("student.txt", "r")\\
+data = file.read()\\
+print(data)\\
+file.close()
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\outputheading
+
+যদি File-এ থাকে—
+
+\begin{center}
+\textenglish{\ttfamily Rahim 85}
+\end{center}
+
+তবে Output হবে—
+
+\begin{center}
+\textenglish{\ttfamily Rahim 85}
+\end{center}
+\end{minipage}
+\end{codeoutputbox}
+
+এখানে File-এর Stored Data প্রথমে
+\textenglish{\ttfamily data} Variable-এ এসেছে; এরপর
+\textenglish{\ttfamily print()} দিয়ে Screen-এ দেখানো হয়েছে।
+
+%================================================
+% read methods
+%================================================
+
+\booksubheading{File পড়ার গুরুত্বপূর্ণ Method}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\textbf{Method} & \textbf{কাজ}\\
+\hline
+\textenglish{\ttfamily read()} & File-এর Content পড়ে; কোনো Size না দিলে সাধারণত অবশিষ্ট পুরো Content পড়তে পারে।\\
+\hline
+\textenglish{\ttfamily readline()} & একবারে একটি Line পড়তে ব্যবহৃত হয়।\\
+\hline
+\textenglish{\ttfamily readlines()} & File-এর Lineগুলোকে List আকারে পেতে ব্যবহার করা যায়।\\
+\hline
+\end{tabularx}
+
+HSC পর্যায়ে মূল ধারণা হিসেবে
+\textenglish{\ttfamily read()} এবং
+\textenglish{\ttfamily readline()}-এর কাজ বুঝে রাখাই গুরুত্বপূর্ণ।
+
+%================================================
+% append
+%================================================
+
+\booksubheading{আগের Data না মুছে নতুন Data যোগ — Append Mode}
+
+Existing File-এর Data রেখে শেষে নতুন Data যোগ করতে
+\textenglish{\ttfamily a} Mode ব্যবহার করা হয়।
+
+\begin{codeoutputbox}{Append Mode-এর উদাহরণ}
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+file = open("student.txt", "a")\\
+file.write(" Karim 90")\\
+file.close()
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\outputheading
+
+File-এ আগে যদি থাকে—
+
+\begin{center}
+\textenglish{\ttfamily Rahim 85}
+\end{center}
+
+তবে Append করার পর Content-এর শেষে নতুন Data যোগ হবে—
+
+\begin{center}
+\textenglish{\ttfamily Rahim 85 Karim 90}
+\end{center}
+\end{minipage}
+\end{codeoutputbox}
+
+\begin{center}
+\textenglish{\ttfamily w}
+\(\longrightarrow\)
+\textbf{নতুন করে লেখা}
+\qquad
+\textenglish{\ttfamily a}
+\(\longrightarrow\)
+\textbf{শেষে যোগ করা}
+\end{center}
+
+%================================================
+% close
+%================================================
+
+\booksubheading{\textenglish{\ttfamily close()} কেন প্রয়োজন?}
+
+File-এর কাজ শেষ হলে \textenglish{\ttfamily close()} Method দিয়ে File
+বন্ধ করা ভালো অভ্যাস। এতে File-এর সঙ্গে Program-এর ব্যবহৃত Resource
+মুক্ত হয় এবং লিখিত Data সঠিকভাবে সংরক্ষিত হওয়ার প্রক্রিয়া সম্পন্ন হয়।
+
+\begin{center}
+\textbf{Open}
+\(\longrightarrow\)
+\textbf{Read / Write}
+\(\longrightarrow\)
+\textbf{Close}
+\end{center}
+
+%================================================
+% with open
+%================================================
+
+\booksubheading{\textenglish{\ttfamily with open(...)} — নিরাপদ ও সহজ পদ্ধতি}
+
+Python-এ File Handling-এর জন্য
+\textenglish{\ttfamily with open(...)} ব্যবহার করলে Block-এর কাজ শেষ
+হওয়ার পর File স্বয়ংক্রিয়ভাবে Close হয়ে যায়। তাই আলাদা করে
+\textenglish{\ttfamily close()} লেখা সাধারণত প্রয়োজন হয় না।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily with} ব্যবহার করে File লেখা}
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+with open("result.txt", "w") as file:\\
+\hspace*{4mm}file.write("Average = 85")
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\vspace{0pt}
+\outputheading
+
+\textenglish{\ttfamily result.txt}-এ লেখা হবে—
+
+\begin{center}
+\textenglish{\ttfamily Average = 85}
+\end{center}
+
+Block শেষ হলে File স্বয়ংক্রিয়ভাবে Close হবে।
+\end{minipage}
+\end{codeoutputbox}
+
+\begin{rememberbox}
+\textbf{\color{deepOrange}Shortcut}
+
+\begin{center}
+\textenglish{\ttfamily open() + close()}
+\(\longrightarrow\)
+\textbf{Manual File Management}
+
+\medskip
+
+\textenglish{\ttfamily with open(...)}
+\(\longrightarrow\)
+\textbf{Automatic Close}
+\end{center}
+\end{rememberbox}
+
+%================================================
+% Complete save and read
+%================================================
+
+\booksubheading{একই Program-এ Data Save ও পুনরায় Read}
+
+নিচের উদাহরণে প্রথমে Result File-এ Save করা হয়েছে। পরে একই File আবার
+Open করে Stored Data পড়া হয়েছে। এতে Python Program ও Persistent File
+Data-এর সম্পর্ক স্পষ্ট হয়।
+
+\begin{codeoutputbox}{Result Save করে পরে Read}
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+marks = 85\\[0.4mm]
+with open("result.txt", "w") as file:\\
+\hspace*{4mm}file.write(str(marks))\\[0.6mm]
+with open("result.txt", "r") as file:\\
+\hspace*{4mm}saved = file.read()\\[0.6mm]
+print(saved)
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\vspace{0pt}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 85}
+\end{center}
+
+ধাপগুলো—
+
+\begin{enumerate}
+\item \textenglish{\ttfamily marks}-এ 85 রাখা হয়েছে।
+\item \textenglish{\ttfamily result.txt}-এ 85 Save হয়েছে।
+\item File আবার Read Mode-এ খোলা হয়েছে।
+\item Saved Data পড়ে Output দেখানো হয়েছে।
+\end{enumerate}
+\end{minipage}
+\end{codeoutputbox}
+
+\begin{center}
+\textbf{Variable}
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily write()}}
+\(\longrightarrow\)
+\textbf{File-এ Persistent Data}
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily read()}}
+\(\longrightarrow\)
+\textbf{আবার Program-এ Data}
+\end{center}
+
+%================================================
+% File handling with function
+%================================================
+
+\booksubheading{Function ও File একসঙ্গে ব্যবহার}
+
+Function Data Processing করতে পারে এবং Process করা Result File-এ
+সংরক্ষণ করা যায়। অর্থাৎ Function ও File প্রতিদ্বন্দ্বী নয়; Program-এ
+দুটির কাজ আলাদা হলেও একসঙ্গে ব্যবহার করা যায়।
+
+\begin{codeoutputbox}{Function-এর Result File-এ Save}
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+\vspace{0pt}
+\codeheading
+\begin{english}
+\ttfamily
+def average(a, b):\\
+\hspace*{4mm}return (a + b) / 2\\[0.5mm]
+result = average(80, 90)\\[0.5mm]
+with open("average.txt", "w") as file:\\
+\hspace*{4mm}file.write(str(result))
+\end{english}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\vspace{0pt}
+\outputheading
+
+Function Result—
+
+\begin{center}
+\textenglish{\ttfamily 85.0}
+\end{center}
+
+\textenglish{\ttfamily average.txt} File-এও
+\textenglish{\ttfamily 85.0} সংরক্ষিত হবে।
+
+\medskip
+Function \(\rightarrow\) Processing
+
+File \(\rightarrow\) Persistent Storage
+\end{minipage}
+\end{codeoutputbox}
+
+%================================================
+% File handling mistakes
+%================================================
+
+\booksubheading{Python File Handling-এর সাধারণ ভুল}
+
+\begin{rememberbox}
+\begin{itemize}
+\item \textenglish{\ttfamily w} এবং \textenglish{\ttfamily a} Mode-কে একই মনে করা।
+\item File না থাকা সত্ত্বেও \textenglish{\ttfamily r} Mode-এ Open করলে কী হতে পারে তা না বোঝা।
+\item \textenglish{\ttfamily open()} করার পর File Object-এর বদলে শুধু File Name নিয়েই কাজ করার চেষ্টা করা।
+\item কাজ শেষে \textenglish{\ttfamily close()} না করা, যখন \textenglish{\ttfamily with} ব্যবহার করা হয়নি।
+\item Number সরাসরি \textenglish{\ttfamily write()}-এ দিলে সমস্যা হতে পারে—প্রয়োজনে \textenglish{\ttfamily str()} ব্যবহার করতে হয়।
+\item \textenglish{\ttfamily .py} Program File এবং \textenglish{\ttfamily .txt} Data File-কে একই মনে করা।
+\end{itemize}
+\end{rememberbox}
+
+%================================================
+% File handling quick revision
+%================================================
+
+\booksubheading{File Handling এক নজরে}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries\RaggedRight\arraybackslash}p{0.31\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}
+\textbf{বিষয়} & \textbf{মনে রাখবে}\\
+\hline
+File Open & \textenglish{\ttfamily open("name", "mode")}\\
+\hline
+Read Mode & \textenglish{\ttfamily r}\\
+\hline
+Write Mode & \textenglish{\ttfamily w}\\
+\hline
+Append Mode & \textenglish{\ttfamily a}\\
+\hline
+Data Read & \textenglish{\ttfamily read()}, \textenglish{\ttfamily readline()}\\
+\hline
+Data Write & \textenglish{\ttfamily write()}\\
+\hline
+File Close & \textenglish{\ttfamily close()}\\
+\hline
+Automatic Close & \textenglish{\ttfamily with open(...)}\\
+\hline
+Persistent Data & Program বন্ধ হওয়ার পরও File-এ সংরক্ষিত Data\\
+\hline
+\end{tabularx}
+%================================================
+% Practical flow
+%================================================
+
+%================================================
+% Practical flow
+%================================================
+
+\booksubheading{বাস্তব উদাহরণ}
+
+Student Result Program-এ—
+
+\begin{center}
+
+\textbf{Marks Input}
+\(\longrightarrow\)
+\textbf{Result Calculate}
+\(\longrightarrow\)
+\textbf{Variable-এ Result}
+
+\end{center}
+
+শুধু Variable ব্যবহার করলে Program বন্ধ হওয়ার পর Runtime Data থাকবে না।
+
+কিন্তু—
+
+\begin{center}
+
+\textbf{Marks Input}
+\(\longrightarrow\)
+\textbf{Result Calculate}
+\(\longrightarrow\)
+\textbf{File-এ Save}
+\(\longrightarrow\)
+\textbf{পরে আবার ব্যবহার}
+
+\end{center}
+
+করলে Data ভবিষ্যতেও ব্যবহার করা সম্ভব।
+
+%================================================
+% Function vs File
+%================================================
+
+\booksubheading{Function ও File-এর কাজের পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{Function}
+&
+\textbf{File}
+\\
+\hline
+
+প্রধান কাজ
+&
+Program-এর Logic সংগঠিত করে
+&
+Data সংরক্ষণ করে
+\\
+\hline
+
+Input
+&
+Data গ্রহণ করতে পারে
+&
+Stored Data ধারণ করে
+\\
+\hline
+
+Processing
+&
+Calculation/Logic করতে পারে
+&
+মূল উদ্দেশ্য Storage
+\\
+\hline
+
+ফলাফল
+&
+Value Return করতে পারে
+&
+Data পরে পুনরায় ব্যবহার করা যায়
+\\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textbf{Function}
+\(\longrightarrow\)
+\textbf{কাজ/Logic সংগঠিত করে}
+
+\qquad
+
+\textbf{File}
+\(\longrightarrow\)
+\textbf{Data সংরক্ষণ করে}
+
+\end{center}
+
+%================================================
+% Combined Example
+%================================================
+
+\booksubheading{একই উদাহরণে পুরো ধারণা}
+
+\begin{codeoutputbox}{Average নির্ণয়ের Function}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def average(a, b):\\
+\hspace*{4mm}result = (a + b) / 2\\
+\hspace*{4mm}return result\\[0.5mm]
+x = average(80, 90)\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 85.0}
+\end{center}
+
+\textenglish{\ttfamily a, b}
+\(\longrightarrow\)
+Input / Parameter
+
+\medskip
+
+\textenglish{\ttfamily (a+b)/2}
+\(\longrightarrow\)
+Processing
+
+\medskip
+
+\textenglish{\ttfamily result}
+\(\longrightarrow\)
+Local Variable
+
+\medskip
+
+\textenglish{\ttfamily 85.0}
+\(\longrightarrow\)
+Return Value
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{উদাহরণ}
+\\
+\hline
+
+Function
+&
+\textenglish{\ttfamily average()}
+\\
+\hline
+
+Contract-এর Input
+&
+\textenglish{\ttfamily a, b}
+\\
+\hline
+
+Processing
+&
+\textenglish{\ttfamily (a + b) / 2}
+\\
+\hline
+
+Local Variable
+&
+\textenglish{\ttfamily result}
+\\
+\hline
+
+Argument
+&
+\textenglish{\ttfamily 80, 90}
+\\
+\hline
+
+Return Value
+&
+\textenglish{\ttfamily 85.0}
+\\
+\hline
+
+\end{tabularx}
+
+যদি
+\textenglish{\ttfamily 85.0}
+শুধু Program চলাকালে প্রয়োজন হয়, Variable যথেষ্ট।
+
+কিন্তু Program বন্ধ হওয়ার পরও Result রাখতে হলে
+\textbf{File}-এ সংরক্ষণ করতে হবে।
+
+%================================================
+% MCQ Points
+%================================================
+
+\booksubheading{গুরুত্বপূর্ণ MCQ তথ্য}
+
+\begin{rememberbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.38\linewidth}
+Y
+}
+
+Computational Thinking
+&
+সমস্যাকে যৌক্তিকভাবে বিশ্লেষণ ও সমাধান পরিকল্পনা
+\\[0.45mm]
+
+Function Contract
+&
+Input + Processing + Expected Output
+\\[0.45mm]
+
+Scope
+&
+Variable কোথায় ব্যবহার করা যাবে
+\\[0.45mm]
+
+Local Variable
+&
+Function-এর ভিতরে তৈরি
+\\[0.45mm]
+
+Local Scope
+&
+Local Variable-এর ব্যবহারযোগ্য সীমা
+\\[0.45mm]
+
+Global Variable
+&
+Function-এর বাইরে তৈরি
+\\[0.45mm]
+
+Global Scope
+&
+Global Variable-এর বিস্তৃত ব্যবহারযোগ্য সীমা
+\\[0.45mm]
+
+Parameter
+&
+Function-এর Local Scope-এর অংশ
+\\[0.45mm]
+
+Global Value Read
+&
+সাধারণত
+\textenglish{\ttfamily global}
+Keyword প্রয়োজন নেই
+\\[0.45mm]
+
+Global Assignment
+&
+\textenglish{\ttfamily global}
+Keyword প্রয়োজন হতে পারে
+\\[0.45mm]
+
+Temporary Data
+&
+Runtime চলাকালীন সাময়িক Data
+\\[0.45mm]
+
+Persistent Data
+&
+Program শেষ হওয়ার পরও সংরক্ষিত Data
+\\[0.45mm]
+
+File
+&
+Persistent Data সংরক্ষণে ব্যবহৃত হয়
+\\[0.45mm]
+
+File Handling
+&
+File Open, Read/Write/Append ও Close করার প্রক্রিয়া
+\\[0.45mm]
+
+\textenglish{\ttfamily open()}
+&
+File খুলে File Object তৈরি করে
+\\[0.45mm]
+
+\textenglish{\ttfamily r / w / a}
+&
+Read / Write (Overwrite) / Append Mode
+\\[0.45mm]
+
+\textenglish{\ttfamily read() / write()}
+&
+File থেকে Data পড়া / File-এ Data লেখা
+\\[0.45mm]
+
+\textenglish{\ttfamily with open(...)}
+&
+Block শেষে File স্বয়ংক্রিয়ভাবে Close হয়
+\\
+
+\end{tabularx}
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item Function Contract-কে শুধু Function-এর নাম মনে করা।
+
+\item Scope-কে Variable-এর Value মনে করা।
+
+\item Local Variable Function-এর বাইরে ব্যবহার করা যাবে মনে করা।
+
+\item Local ও Global Variable একই মনে করা।
+
+\item Function-এর ভিতরে একই Name-এ Assignment করলেই Global Variable
+পরিবর্তিত হবে মনে করা।
+
+\item Global Variable শুধু পড়ার জন্যও সবসময়
+\textenglish{\ttfamily global}
+লাগে মনে করা।
+
+\item
+\textenglish{\ttfamily global}
+Keyword-এর কাজ ভুল বোঝা।
+
+\item সব Data Global Variable-এ রাখা ভালো Design মনে করা।
+
+\item Variable-এর Data Program বন্ধ হওয়ার পরও স্থায়ী থাকবে মনে করা।
+
+\item Temporary Data ও Persistent Data-কে একই মনে করা।
+
+\item Runtime Memory ও File-কে একই ধরনের Storage মনে করা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+}
+
+Function Contract
+&
+Input + Processing + Output
+&
+Scope
+&
+Variable-এর Access সীমা
+\\[0.5mm]
+
+Local Variable
+&
+Function-এর ভিতরে
+&
+Global Variable
+&
+Function-এর বাইরে
+\\[0.5mm]
+
+Local Scope
+&
+Local-এর ব্যবহারযোগ্য সীমা
+&
+Global Scope
+&
+Global-এর ব্যবহারযোগ্য সীমা
+\\[0.5mm]
+
+Parameter
+&
+Local Scope
+&
+\textenglish{\ttfamily global}
+&
+Global Variable-এ Assignment
+\\[0.5mm]
+
+Parameter + Return
+&
+পরিষ্কার Function Design
+&
+Temporary Data
+&
+Runtime Data
+\\[0.5mm]
+
+File
+&
+Persistent Storage
+&
+Persistent Data
+&
+পরে আবার ব্যবহারযোগ্য
+\\[0.5mm]
+
+\textenglish{\ttfamily open()}
+&
+File Open / File Object
+&
+\textenglish{\ttfamily r, w, a}
+&
+Read, Write, Append
+\\[0.5mm]
+
+\textenglish{\ttfamily read()} / \textenglish{\ttfamily write()}
+&
+Data পড়া / লেখা
+&
+\textenglish{\ttfamily with open(...)}
+&
+Automatic Close
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Function কী নেবে/দেবে?}
+\(\longrightarrow\)
+\textbf{Contract}
+
+\qquad
+
+\textbf{Variable কোথায় ব্যবহার হবে?}
+\(\longrightarrow\)
+\textbf{Scope}
+
+\medskip
+
+\textbf{Function-এর নিজের Variable}
+\(\longrightarrow\)
+\textbf{Local}
+
+\qquad
+
+\textbf{Function-এর বাইরের Variable}
+\(\longrightarrow\)
+\textbf{Global}
+
+\medskip
+
+\textbf{Program চলাকালীন Data}
+\(\longrightarrow\)
+\textbf{Temporary}
+
+\qquad
+
+\textbf{Program বন্ধের পরও Data}
+\(\longrightarrow\)
+\textbf{Persistent / File}
+
+\medskip
+
+\textbf{Python দিয়ে File ব্যবহার}
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily open()} \(\rightarrow\) Read/Write/Append \(\rightarrow\) Close}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.46
+%================================================
+

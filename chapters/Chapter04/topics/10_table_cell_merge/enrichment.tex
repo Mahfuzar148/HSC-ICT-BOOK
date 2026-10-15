@@ -1,0 +1,24 @@
+\subsubsection{ভুল ধরো: বাড়তি ঘর কেন হলো?}
+\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\textbf{ভুল}\par
+\begin{verbatim}
+<table border="1">
+  <tr><td rowspan="2">ICT</td>
+      <td>CQ</td></tr>
+  <tr><td>ICT</td><td>MCQ</td></tr>
+</table>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\textbf{সঠিক}\par
+\begin{verbatim}
+<table border="1">
+  <tr><td rowspan="2">ICT</td>
+      <td>CQ</td></tr>
+  <tr><td>MCQ</td></tr>
+</table>
+\end{verbatim}
+\end{minipage}
+\chFourWhy{ICT ঘরটি দ্বিতীয় সারির প্রথম স্থানও দখল করেছে। সেখানে নতুন ICT ঘর দিলে মোট তিন কলামের স্থান হয়; দুই-কলামের কাঙ্ক্ষিত ছক পাওয়া যায় না।}
+\textbf{পুরোনো ও বর্তমান রীতি:} এখানে \texttt{border} পুরোনো উপস্থাপনমূলক অ্যাট্রিবিউট। আধুনিক CSS-এ ঘরের \texttt{border} ও টেবিলের \texttt{border-collapse} ব্যবহার করবে।

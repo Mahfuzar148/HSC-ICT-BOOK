@@ -1,0 +1,443 @@
+\sectionheading{5.1 প্রোগ্রামের ধারণা}
+
+কম্পিউটার অত্যন্ত দ্রুত ও নির্ভুলভাবে কাজ করতে পারলেও
+\textbf{কী কাজ করতে হবে তা নিজে থেকে নির্ধারণ করতে পারে না}।
+কোনো কাজ সম্পন্ন করতে তাকে সঠিক ক্রমে প্রয়োজনীয় নির্দেশ দিতে হয়।
+এই নির্দেশনাগুলো পরিকল্পিত ও সুশৃঙ্খলভাবে সাজিয়ে তৈরি করা হয়
+\textbf{Program}।
+
+সহজ কথায়, কম্পিউটারকে যদি কোনো Problem দেওয়া হয়, তবে সেই Problem
+সমাধানের জন্য কী কী কাজ কোন ক্রমে করতে হবে—Program-এ সেটিই
+নির্দেশ আকারে লেখা থাকে।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{প্রোগ্রাম কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো নির্দিষ্ট সমস্যা সমাধান বা কাজ সম্পাদনের জন্য কম্পিউটারকে
+দেওয়া \textbf{যুক্তিসংগত, সুশৃঙ্খল ও ধারাবাহিক নির্দেশনার সমষ্টিকে}
+\textbf{প্রোগ্রাম (Program)} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+\textbf{
+সমস্যা সমাধানের জন্য সাজানো নির্দেশনা
+\(\;=\;\)
+Program
+}
+\end{center}
+
+%================================================
+% Program works
+%================================================
+\booksubheading{একটি Program কীভাবে কাজ করে?}
+
+একটি Program-এর কাজ সাধারণত তিনটি মৌলিক পর্যায়ে বোঝানো যায়—
+\textbf{Input, Processing ও Output}।
+
+\begin{center}
+
+\begin{tikzpicture}[node distance=12mm]
+
+\node[databox] (input)
+{\textbf{Input}\\Data গ্রহণ};
+
+\node[processbox,right=of input] (process)
+{\textbf{Processing}\\নির্দেশ অনুযায়ী কাজ};
+
+\node[databox,right=of process] (output)
+{\textbf{Output}\\ফলাফল প্রদান};
+
+\draw[arrow] (input) -- (process);
+\draw[arrow] (process) -- (output);
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{Input:} Program-এর কাজ করার জন্য প্রয়োজনীয় Data গ্রহণ করা।
+
+\item \textbf{Processing:} নির্ধারিত Formula, Rule বা Logic অনুসারে
+Input Data-এর ওপর কাজ করা।
+
+\item \textbf{Output:} Processing শেষে পাওয়া Result ব্যবহারকারীর
+কাছে প্রদর্শন করা।
+
+\end{itemize}
+
+%================================================
+% Example
+%================================================
+\begin{examplebox}{উদাহরণ: দুটি সংখ্যার যোগফল}
+
+ধরা যাক, দুটি সংখ্যা \textbf{10} ও \textbf{20}-এর যোগফল বের করতে হবে।
+
+এক্ষেত্রে Program-এর কাজ হবে—
+
+\begin{itemize}
+
+\item 10 ও 20 সংখ্যা দুটি গ্রহণ করা।
+
+\item সংখ্যা দুটি যোগ করা।
+
+\item পাওয়া যোগফল প্রদর্শন করা।
+
+\end{itemize}
+
+\[
+\boxed{
+10,\;20
+\;\longrightarrow\;
+10+20
+\;\longrightarrow\;
+30
+}
+\]
+
+অর্থাৎ—
+
+\begin{center}
+\begin{tabularx}{0.78\linewidth}{|>{\bfseries}C{0.22\linewidth}|Y|}
+\hline
+Input & 10, 20\\
+\hline
+Processing & \(10+20\)\\
+\hline
+Output & 30\\
+\hline
+\end{tabularx}
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Program and problem
+%================================================
+\booksubheading{Problem থেকে Program}
+
+Program লেখার শুরুতেই Code লেখা হয় না। প্রথমে Problem বুঝতে হয়,
+তারপর সমাধানের ধাপ নির্ধারণ করে সেই ধাপগুলো Programming Language-এর
+সাহায্যে Program আকারে লেখা হয়।
+
+\begin{center}
+
+\textbf{
+Problem
+\(\rightarrow\)
+সমাধানের চিন্তা
+\(\rightarrow\)
+নির্দেশনা
+\(\rightarrow\)
+Program
+\(\rightarrow\)
+Result
+}
+
+\end{center}
+
+যেমন, একজন শিক্ষার্থীর তিনটি বিষয়ের গড় নম্বর বের করতে হলে প্রথমে
+তিনটি নম্বর Input নিতে হবে, নম্বরগুলো যোগ করতে হবে, যোগফলকে 3 দিয়ে
+ভাগ করতে হবে এবং শেষে Average প্রদর্শন করতে হবে।
+
+%================================================
+% Second example
+%================================================
+\begin{examplebox}{আরও একটি উদাহরণ: গড় নম্বর নির্ণয়}
+
+তিনটি বিষয়ের নম্বর—
+
+\[
+70,\qquad80,\qquad90
+\]
+
+প্রথমে মোট নম্বর—
+
+\[
+Total=70+80+90=240
+\]
+
+তারপর গড়—
+
+\[
+Average=\frac{240}{3}=80
+\]
+
+অতএব,
+
+\[
+\boxed{Average=80}
+\]
+
+এখানে \textbf{70, 80, 90 হলো Input}, যোগ ও ভাগ হলো
+\textbf{Processing} এবং \textbf{80 হলো Output}।
+
+\end{examplebox}
+
+%================================================
+% Fundamental parts
+%================================================
+\booksubheading{Program-এর মৌলিক অংশ}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.18\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+&
+\multicolumn{1}{c|}{\textbf{উদাহরণ}}
+\\
+\hline
+
+Input
+&
+প্রয়োজনীয় Data গ্রহণ করা
+&
+দুটি সংখ্যা গ্রহণ
+\\
+\hline
+
+Processing
+&
+Data-এর ওপর প্রয়োজনীয় Logic বা Operation প্রয়োগ করা
+&
+সংখ্যা দুটি যোগ করা
+\\
+\hline
+
+Output
+&
+Process শেষে পাওয়া Result প্রদর্শন করা
+&
+যোগফল প্রদর্শন
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Instructions
+%================================================
+\booksubheading{Program-এর নির্দেশনা কেমন হওয়া উচিত?}
+
+Program-এর Instruction এলোমেলো হলে কম্পিউটার কাঙ্ক্ষিত Result
+দিতে পারবে না। তাই নির্দেশগুলো কিছু সাধারণ বৈশিষ্ট্য অনুসরণ করা
+প্রয়োজন।
+
+\begin{itemize}
+
+\item \textbf{সুনির্দিষ্ট হতে হবে—} কোন কাজ করতে হবে তা পরিষ্কার থাকতে হবে।
+
+\item \textbf{সঠিক ক্রমে থাকতে হবে—} যে কাজ আগে করা দরকার সেটি আগে
+এবং পরের কাজ পরে থাকতে হবে।
+
+\item \textbf{যুক্তিসংগত হতে হবে—} প্রতিটি Instruction Problem সমাধানের
+সঙ্গে সম্পর্কিত হতে হবে।
+
+\item \textbf{সম্পূর্ণ হতে হবে—} প্রয়োজনীয় কোনো ধাপ বাদ দেওয়া যাবে না।
+
+\item \textbf{কার্যকর হতে হবে—} নির্দেশগুলো এমন হতে হবে যাতে বাস্তবে
+কম্পিউটার তা সম্পন্ন করতে পারে।
+
+\end{itemize}
+
+\begin{examplebox}{নির্দেশের ক্রম কেন গুরুত্বপূর্ণ?}
+
+চা তৈরির ক্ষেত্রে যেমন—
+
+\begin{center}
+পানি গরম
+\(\rightarrow\)
+চা-পাতা
+\(\rightarrow\)
+চিনি/দুধ
+\(\rightarrow\)
+চা প্রস্তুত
+\end{center}
+
+ধাপগুলোর ক্রম এলোমেলো হলে কাঙ্ক্ষিত ফল নাও পাওয়া যেতে পারে।
+Program-এর ক্ষেত্রেও Instruction-এর সঠিক ক্রম অত্যন্ত গুরুত্বপূর্ণ।
+
+\end{examplebox}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Program কেন প্রয়োজন?}
+
+কম্পিউটারের Hardware শক্তিশালী হলেও Program ছাড়া তা নির্দিষ্ট
+ব্যবহারকারীর কাজ সম্পন্ন করতে পারে না। Program-এর সাহায্যে—
+
+\begin{compacttwocolpoints}
+
+\item গাণিতিক ও যৌক্তিক হিসাব দ্রুত করা যায়।
+
+\item একই কাজ বারবার স্বয়ংক্রিয়ভাবে সম্পন্ন করা যায়।
+
+\item বিপুল পরিমাণ Data দ্রুত Process করা যায়।
+
+\item শিক্ষাপ্রতিষ্ঠানের Result, Bank হিসাব, Billing System,
+Reservation System ইত্যাদি পরিচালনা করা যায়।
+
+\item Website, Mobile App, Game ও বিভিন্ন Software তৈরি করা যায়।
+
+\item সময়, শ্রম ও অনেক ক্ষেত্রে ভুলের পরিমাণ কমানো যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Good Program
+%================================================
+\booksubheading{একটি ভালো Program-এর সাধারণ বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.23\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ধারণা}}
+\\
+\hline
+
+Correctness
+&
+সঠিক Input-এর জন্য সঠিক Result দিতে হবে।
+\\
+\hline
+
+Clarity
+&
+Program-এর Logic ও Instruction সহজে বোঝা যায় এমন হওয়া উচিত।
+\\
+\hline
+
+Efficiency
+&
+অপ্রয়োজনীয় ধাপ ও Resource-এর ব্যবহার যথাসম্ভব কম হওয়া উচিত।
+\\
+\hline
+
+Reliability
+&
+বিভিন্ন বৈধ Input-এর ক্ষেত্রেও নির্ভরযোগ্যভাবে কাজ করা উচিত।
+\\
+\hline
+
+Maintainability
+&
+প্রয়োজনে Program সহজে সংশোধন ও উন্নত করা সম্ভব হওয়া উচিত।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Program and Programming Language
+%================================================
+\booksubheading{Program ও Programming Language-এর সম্পর্ক}
+
+Program নিজে কোনো ভাষা নয়। Program হলো নির্দিষ্ট কাজের জন্য
+লেখা Instruction-এর সমষ্টি, আর সেই Instruction লেখার জন্য
+Programming Language ব্যবহার করা হয়।
+
+\begin{center}
+
+\textbf{
+Programming Language
+\(\longrightarrow\)
+Program লেখা
+\(\longrightarrow\)
+কম্পিউটারকে কাজের নির্দেশ
+}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\textbf{Programming Language হলো Program লেখার মাধ্যম, আর Program
+হলো সেই ভাষায় লেখা কার্যনির্দেশ।}
+
+\end{rememberbox}
+
+%================================================
+% Program vs Software
+%================================================
+\booksubheading{Program ও Software কি একই?}
+
+Program ও Software পরস্পর সম্পর্কিত হলেও সবসময় একই বিষয় নয়।
+
+\begin{tabularx}{\linewidth}{|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Program}}
+&
+\multicolumn{1}{c|}{\textbf{Software}}
+\\
+\hline
+
+সাধারণত নির্দিষ্ট কাজ সম্পাদনের Instruction-এর সমষ্টি
+&
+এক বা একাধিক Program-এর সঙ্গে প্রয়োজনীয় Data, Library,
+Interface ইত্যাদির সমন্বয়ে পূর্ণাঙ্গ ব্যবস্থা হতে পারে
+\\
+\hline
+
+একটি ছোট বা নির্দিষ্ট কাজ করতে পারে
+&
+একাধিক সম্পর্কিত কাজ সম্পন্ন করতে পারে
+\\
+\hline
+
+উদাহরণ: দুটি সংখ্যার যোগফল নির্ণয়ের Program
+&
+উদাহরণ: Word Processing Software
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Final reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Program হলো \textbf{নির্দেশনার সমষ্টি}।
+
+\item Program-এর সাধারণ কাজের ধারা—
+\textbf{Input \(\rightarrow\) Processing \(\rightarrow\) Output}।
+
+\item Instruction-এর \textbf{সঠিক ক্রম} Program-এর Result-এর জন্য গুরুত্বপূর্ণ।
+
+\item কোনো Problem দেওয়া হলে তার \textbf{Input, Processing ও Output}
+আলাদা করে শনাক্ত করতে পারা উচিত।
+
+\item Program লেখার জন্য Programming Language প্রয়োজন।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.2 Programming Language
+%================================================

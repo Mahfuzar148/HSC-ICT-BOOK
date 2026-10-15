@@ -1,0 +1,30 @@
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\footnotesize},
+  chSixRelationMatrix/.style={matrix of nodes,nodes in empty cells,
+    nodes={draw=black,line width=.6pt,align=left,inner xsep=3pt,inner ysep=2pt,minimum height=7mm,anchor=center,text height=2.7mm,text depth=.8mm},
+    column sep=-.6pt,row sep=-.6pt,row 1/.style={nodes={fill=chSixTint}}}]
+\matrix (t) [chSixRelationMatrix,column 1/.style={nodes={text width=16mm}},column 2/.style={nodes={text width=17mm}}] {
+TID (PK) & Name\\
+11 & Salma\\
+12 & Rahat\\
+13 & Nila\\
+};
+\matrix (r) [chSixRelationMatrix,anchor=north west,
+  column 1/.style={nodes={text width=24mm}},column 2/.style={nodes={text width=17mm}},
+  column 3/.style={nodes={text width=17mm}},column 4/.style={nodes={text width=11mm}}]
+at ([xshift=19mm]t.north east) {
+RoutineID (PK) & TID (FK) & Day & Period\\
+501 & 11 & Sunday & 1\\
+502 & 11 & Sunday & 3\\
+504 & 11 & Monday & 1\\
+503 & 12 & Sunday & 2\\
+505 & 13 & Monday & 3\\
+};
+\node[anchor=south west,font=\small] at ([yshift=2mm]t.north west) {\textbf{Teacher: 1}};
+\node[anchor=south west,font=\small] at ([yshift=2mm]r.north west) {\textbf{Routine: M}};
+\foreach \n in {2,3,4}{\draw[bookarrow] (t-2-2.east)--(r-\n-1.west);}
+\draw[bookarrow] (t-3-2.east)--(r-5-1.west);
+\draw[bookarrow] (t-4-2.east)--(r-6-1.west);
+\end{tikzpicture}
+\captionof{table}{TID মিলিয়ে Teacher-এর একটি Record থেকে একাধিক Routine Record}
+\end{flushleft}

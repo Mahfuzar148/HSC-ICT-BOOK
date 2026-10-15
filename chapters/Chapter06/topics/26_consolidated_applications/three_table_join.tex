@@ -1,0 +1,10 @@
+\subsubsection{বিভাগ, শিক্ষার্থী ও নির্দিষ্ট পরীক্ষার ফল একত্রে}
+Department(DeptID, DeptName), Student(StudentID, Name, DeptID) ও Result(ResultID, StudentID, ExamName, ICTMark) ধরা যাক। Department–Student এবং Student–Result উভয় সম্পর্ক 1:M। ResultID রেকর্ডের পরিচিতি; প্রতি শিক্ষার্থীর প্রতি পরীক্ষায় একটি ফলের নিয়মে (StudentID, ExamName) অনন্য রাখা প্রয়োজন। Science বিভাগের Annual পরীক্ষায় অন্তত 80 পাওয়া শিক্ষার্থীর নাম ও নম্বর নির্বাচন করা যায়—
+\begin{verbatim}
+SELECT s.Name,r.ICTMark
+FROM Department d JOIN Student s ON d.DeptID=s.DeptID
+JOIN Result r ON s.StudentID=r.StudentID
+WHERE d.DeptName='Science' AND r.ExamName='Annual'
+  AND r.ICTMark>=80;
+\end{verbatim}
+

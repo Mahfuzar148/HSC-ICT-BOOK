@@ -1,89 +1,182 @@
 \subsection{মহাকাশ অভিযান}
-
-\begin{learningbox}
-এই অংশ শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item মহাকাশ অভিযানে ICT-এর ভূমিকা ব্যাখ্যা করতে।
-\item স্যাটেলাইট, GPS, remote sensing ও weather forecasting-এর ব্যবহার লিখতে।
-\item মহাকাশ গবেষণায় data communication ও computer control-এর প্রয়োজনীয়তা বুঝতে।
-\end{itemize}
-\end{learningbox}
-
-\subsubsection{মহাকাশ অভিযানে আইসিটির ভূমিকা}
-
-মহাকাশ অভিযান হলো satellite, spacecraft, rover, telescope বা astronaut mission-এর মাধ্যমে মহাকাশ সম্পর্কে তথ্য সংগ্রহ ও গবেষণা। এখানে ICT ছাড়া mission control, communication, navigation, data processing, image analysis, simulation এবং safety monitoring সম্ভব নয়।
-
-\begin{definitionbox}{মহাকাশ অভিযানে ICT}
-মহাকাশ অভিযানে তথ্য ও যোগাযোগ প্রযুক্তি হলো computer, sensor, communication network, satellite link, software ও data analysis system-এর ব্যবহার, যার মাধ্যমে spacecraft নিয়ন্ত্রণ, তথ্য আদান-প্রদান ও গবেষণা করা হয়।
-\end{definitionbox}
-
+\label{sec:ch1-space}
+\subsubsection{ধারণা ও অভিযানের ধরন}
+\definition{মহাকাশ অভিযান}{মহাকাশযান, উপগ্রহ, প্রোব, রোভার, দূরবীক্ষণযন্ত্র বা মানুষবাহী মিশন দিয়ে পৃথিবীর বাইরের পরিবেশ সম্পর্কে পর্যবেক্ষণ, তথ্য সংগ্রহ ও বৈজ্ঞানিক গবেষণার প্রক্রিয়াকে মহাকাশ অভিযান বলে।}
+অভিযানে গ্রহ, উপগ্রহ, নক্ষত্র, ছায়াপথ ও মহাজাগতিক পরিবেশ নিয়ে গবেষণা করা হয়। শুধু মহাকাশচারীর যাত্রা নয়, আবহাওয়ার উপগ্রহ, অবস্থান নির্ণয়ের উপগ্রহ, মঙ্গলযান, মহাকাশ দূরবীক্ষণ ও গবেষণাকেন্দ্রও এর অংশ। যোগাযোগ, পৃথিবী পর্যবেক্ষণ, তথ্য বিশ্লেষণ ও আন্তর্জাতিক যৌথ কাজ এর সঙ্গে সম্পর্কিত।
+\begin{compactpoints}
+\item উপগ্রহ মিশনে যোগাযোগ, সম্প্রচার, আবহাওয়া, দিকনির্দেশ ও দূর অনুধাবনের কাজ হয়।
+\item মানুষবাহী মিশনে মহাকাশচারী বা cosmonaut অংশ নেন। চন্দ্র মিশনে কক্ষপথ, অবতরণ ও নমুনা সংগ্রহ করা হয়।
+\item গ্রহ অনুসন্ধানে Mars, Venus, Jupiter বা Saturn-এ প্রোব, orbiter বা রোভার পাঠানো হয়। রোভার পৃষ্ঠে চলে; প্রোব দূরের পরিবেশে তথ্য সংগ্রহ করে।
+\item Hubble বা James Webb-এর মতো দূরবীক্ষণে দূরের মহাবিশ্ব দেখা হয়। মহাকাশকেন্দ্রে দীর্ঘমেয়াদি পরীক্ষা চালানো হয়।
+\item বাণিজ্যিক মিশনে উপগ্রহ উৎক্ষেপণ, পণ্য বা মানুষ বহন এবং পর্যটনের কাজ থাকতে পারে।
+\end{compactpoints}
+মিশনের মোট সংখ্যা গণনার ভিত্তি ও সময় অনুযায়ী বদলায়। 1957 সাল থেকে বহু উপগ্রহ, প্রোব, মানুষবাহী যান ও মহাকাশকেন্দ্রের অংশ পাঠানো হয়েছে; নতুন উৎক্ষেপণে সংখ্যা পরিবর্তিত হয়।
+\chOneFigureExplain{chapters/Chapter01/images/space_exploration_overview.png}{মহাকাশ অনুসন্ধানের উপাদান}{fig:space-exploration-overview}{মহাকাশযান যন্ত্র বা মানুষ বহন করে। পৃথিবীর মিশন নিয়ন্ত্রণকেন্দ্রে কম্পিউটার ও যোগাযোগব্যবস্থা দিয়ে কাজ পরিচালনা এবং প্রাপ্ত তথ্য বিশ্লেষণ করা হয়।}
+\subsubsection{ইতিহাস}
+\begin{compacttable}
+\begin{longtable}{|p{\dimexpr.23\linewidth-7pt\relax}|p{\dimexpr.77\linewidth-7pt\relax}|}
+\hline\textbf{সময়} & \textbf{ঘটনা}\\\hline\endfirsthead
+\hline\textbf{সময়} & \textbf{ঘটনা}\\\hline\endhead
+4 October 1957 & Soviet Union প্রথম কৃত্রিম উপগ্রহ Sputnik-1 উৎক্ষেপণ করে; আধুনিক Space Age-এর সূচনা হয়।\\\hline
+1961 & Vostok-1-এ Yuri Gagarin প্রথম মানুষ হিসেবে মহাকাশে যান।\\\hline
+1969 & Apollo 11-এ Neil Armstrong ও Buzz Aldrin চাঁদে হাঁটেন।\\\hline
+1970s--1980s & বিভিন্ন গ্রহে প্রোব ও রোবট মিশনে তথ্য সংগ্রহ বাড়ে।\\\hline
+1990 & Hubble পৃথিবীর বায়ুমণ্ডলের বাইরে থেকে মহাজাগতিক ছবি সংগ্রহ শুরু করে।\\\hline
+1998 থেকে & International Space Station বা ISS দীর্ঘমেয়াদি গবেষণার জন্য গড়ে ওঠে।\\\hline
+2000s থেকে & মঙ্গলযান, চন্দ্র মিশন, পুনর্ব্যবহারযোগ্য রকেট, বাণিজ্যিক যাত্রা, CubeSat ও ছবির AI বিশ্লেষণ বাড়ে।\\\hline
+2021 & Perseverance মঙ্গলযান প্রাচীন জীবনের সম্ভাব্য প্রমাণ অনুসন্ধান ও শিলার নমুনা সংগ্রহে কাজ করে।\\\hline
+2022 থেকে & James Webb প্রাচীন ছায়াপথ, নক্ষত্রের জন্ম ও বহিঃগ্রহের বায়ুমণ্ডল সম্পর্কে তথ্য দেয়।\\\hline
+\end{longtable}
+\end{compacttable}
+\chOneFigureExplain{chapters/Chapter01/images/space_exploration_history_timeline.png}{মহাকাশ অভিযানের বিকাশ}{fig:space-history-timeline}{উপগ্রহ, মানুষবাহী অভিযান, দূরবীক্ষণ ও রোবটভিত্তিক গবেষণার ধারা দেখানো হয়েছে।}
+\subsubsection{নিয়ন্ত্রণ, তথ্য ও টেলিমেট্রি}
+সেন্সর তাপমাত্রা, বিকিরণ, চাপ, ছবি, গতি, অবস্থান ও বায়ুমণ্ডলের তথ্য মাপে। কম্পিউটার রকেটের পথ, মহাকাশযানের অভিমুখ ও কক্ষপথ সংশোধন করে। সফটওয়্যার দিকনির্দেশ, তথ্য সংকোচন, ত্রুটি শনাক্ত, স্বয়ংক্রিয় নিয়ন্ত্রণ, পরিকল্পনা ও সিমুলেশনে ব্যবহৃত হয়। যোগাযোগের সংযোগ দিয়ে তথ্য পৃথিবীতে আসে এবং নির্দেশ মহাকাশযানে যায়।
+\definition{টেলিমেট্রি}{দূরের যন্ত্রের সেন্সর-পাঠ, অবস্থা ও কার্যক্রমের তথ্য যোগাযোগব্যবস্থায় নিয়ন্ত্রণকেন্দ্রে পাঠানোর প্রযুক্তিকে টেলিমেট্রি (Telemetry) বলে।}
+মহাকাশযানের তাপমাত্রা, ব্যাটারি, জ্বালানি, কক্ষপথ, বেগ, উচ্চতা, দিক, ত্রুটি, ছবি, বৈজ্ঞানিক পরিমাপ এবং রোভারের চলা, খনন ও নমুনার তথ্য টেলিমেট্রিতে আসে। সেন্সর থেকে ট্রান্সমিটার রেডিও বা মাইক্রোওয়েভ সংকেতে তথ্য পাঠায়; ভূকেন্দ্রের অ্যান্টেনা তা গ্রহণ করে। নিয়ন্ত্রণকেন্দ্র তথ্য দেখে যান ও মিশনের অবস্থা বোঝে। পৃথিবী থেকে ক্যামেরা চালুর নির্দেশ পাঠানো Command; যান থেকে তাপমাত্রা পাঠানো Telemetry।
+\chOneFigureExplain{chapters/Chapter01/images/ict_role_in_space_mission.png}{মিশন পরিচালনায় ICT}{fig:ict-role-space}{তথ্য গ্রহণ, নিয়ন্ত্রণ, যোগাযোগ ও বিশ্লেষণে কম্পিউটার ও সফটওয়্যার লাগে।}
+\chOneFigureExplain{chapters/Chapter01/images/space_telemetry_data_flow.png}{টেলিমেট্রির তথ্যপ্রবাহ}{fig:space-telemetry}{যান থেকে তথ্য আসে; নির্দেশ বিপরীত দিকে যায়।}
 \subsubsection{স্যাটেলাইট যোগাযোগ}
-
-Satellite পৃথিবীর কক্ষপথে থেকে communication signal গ্রহণ ও প্রেরণ করে। TV broadcast, mobile backhaul, internet connectivity, disaster communication এবং remote area communication-এ satellite গুরুত্বপূর্ণ।
-
-\begin{examplebox}{বাংলাদেশ প্রেক্ষিত}
-Bangabandhu Satellite-1 বাংলাদেশের broadcasting, telecommunication ও emergency communication সক্ষমতা বাড়ানোর জন্য গুরুত্বপূর্ণ national space infrastructure।
-\end{examplebox}
-
-\subsubsection{রিমোট সেন্সিং}
-
-Remote sensing হলো দূর থেকে sensor ব্যবহার করে পৃথিবীর land, water, forest, crop, weather বা disaster সম্পর্কে তথ্য সংগ্রহ করা। Satellite image বিশ্লেষণ করে বন্যা, নদীভাঙন, বন উজাড়, ফসলের অবস্থা ও নগরায়ণ পর্যবেক্ষণ করা যায়।
-
-\begin{keypointbox}{রিমোট সেন্সিংয়ের ব্যবহার}
-\begin{itemize}
-\item দুর্যোগ ব্যবস্থাপনা: বন্যা, ঘূর্ণিঝড়, আগুন।
-\item কৃষি: crop health, irrigation planning।
-\item পরিবেশ: forest monitoring, pollution observation।
-\item নগর পরিকল্পনা: land use map, road network।
-\item জলবায়ু গবেষণা: temperature, cloud, sea level trend।
-\end{itemize}
-\end{keypointbox}
-
-\subsubsection{জিপিএস}
-
-GPS বা Global Positioning System satellite signal ব্যবহার করে অবস্থান, গতি ও সময় নির্ণয় করে। Navigation, transport tracking, ride sharing, disaster rescue, mapping, agriculture এবং military operation-এ GPS ব্যবহার হয়।
-
-\subsubsection{আবহাওয়া পূর্বাভাস}
-
-Weather satellite cloud pattern, temperature, humidity, wind movement ও storm formation পর্যবেক্ষণ করে। Computer model এই data বিশ্লেষণ করে forecast তৈরি করে। ঘূর্ণিঝড়প্রবণ বাংলাদেশে satellite-based weather forecasting জীবন ও সম্পদ রক্ষায় সহায়ক।
-
-\subsubsection{মহাকাশ গবেষণায় তথ্য বিশ্লেষণ}
-
-Space mission থেকে বিপুল পরিমাণ image, sensor data, telemetry ও scientific measurement আসে। Computer algorithm, AI, high-performance computing এবং data visualization ব্যবহার করে বিজ্ঞানীরা এই data বিশ্লেষণ করেন।
-
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.56\textwidth}|}
-\hline
-\textbf{ICT component} & \textbf{মহাকাশে ভূমিকা} \\
-\hline
-Sensor & temperature, radiation, image, motion data সংগ্রহ \\
-\hline
-Communication link & spacecraft ও mission control-এর মধ্যে data আদান-প্রদান \\
-\hline
-Software & navigation, control, simulation, fault detection \\
-\hline
-Data analysis & satellite image, telemetry ও research data বিশ্লেষণ \\
-\hline
+\definition{স্যাটেলাইট যোগাযোগ}{পৃথিবীর ভূকেন্দ্র থেকে পাঠানো সংকেত উপগ্রহের সাহায্যে অন্য ভূকেন্দ্র বা প্রাপকে পৌঁছানোর ব্যবস্থাকে স্যাটেলাইট যোগাযোগ বলে।}
+\term{Earth Station} হলো অ্যান্টেনা ও যন্ত্রসহ ভূকেন্দ্র। ভূকেন্দ্র থেকে উপগ্রহে সংকেত পাঠানো \term{Uplink}, আর উপগ্রহ থেকে পৃথিবীর প্রাপকে পাঠানো \term{Downlink}। উপগ্রহের \term{Transponder} সংকেত গ্রহণ, প্রক্রিয়াকরণ, প্রয়োজনে কম্পাঙ্ক পরিবর্তন ও শক্তি বৃদ্ধি করে পুনরায় পাঠায়।
+TV, রেডিও, ইন্টারনেটের সংযোগ, দুর্যোগের যোগাযোগ, জাহাজ ও বিমানে এবং দূরবর্তী এলাকায় এই ব্যবস্থা কাজে লাগে। ভূভাগের তার বা মোবাইল টাওয়ার ক্ষতিগ্রস্ত হলে বিকল্প সংযোগ পাওয়া যেতে পারে। প্রতিষ্ঠানের ব্যক্তিগত নেটওয়ার্ক, ব্যাংকের ATM-এর বিকল্প সংযোগ ও জরুরি সরকারি যোগাযোগও ব্যবহারক্ষেত্র।
+\term{VSAT (Very Small Aperture Terminal)} ছোট অ্যান্টেনাভিত্তিক স্যাটেলাইট টার্মিনাল। \term{DTH (Direct-to-Home)}-এ বাড়ির ডিশ অ্যান্টেনা সরাসরি সম্প্রচারের সংকেত গ্রহণ করে।
+\chOneFigureExplain{chapters/Chapter01/images/satellite_communication_in_space_exploration.png}{স্যাটেলাইটে সংকেত আদান-প্রদান}{fig:satellite-communication-space}{ভূকেন্দ্র, উপগ্রহ ও প্রাপকের মধ্যে সংকেতের দিক দেখানো হয়েছে।}
+\subsubsection{কক্ষপথ}
+\begin{compacttable}
+\begin{tabular}{|p{\dimexpr.25\linewidth-7pt\relax}|p{\dimexpr.75\linewidth-7pt\relax}|}
+\hline\textbf{কক্ষপথ} & \textbf{বৈশিষ্ট্য ও ব্যবহার}\\\hline
+LEO (Low Earth Orbit) & তুলনামূলক কাছের কক্ষপথ; পৃথিবী পর্যবেক্ষণ, দূর অনুধাবন, কিছু ইন্টারনেট উপগ্রহ ও ISS-এ ব্যবহার।\\\hline
+MEO (Medium Earth Orbit) & LEO ও GEO-এর মাঝামাঝি; GPS-এর মতো অবস্থান ও দিকনির্দেশের ব্যবস্থায় ব্যবহার।\\\hline
+GEO (Geostationary Earth Orbit) & পৃথিবীর ঘূর্ণনের সঙ্গে মিল রেখে নির্দিষ্ট কক্ষপথে ঘোরে; ভূমি থেকে একই স্থানে স্থির মনে হয়। সম্প্রচার, যোগাযোগ ও আবহাওয়ায় ব্যবহার।\\\hline
 \end{tabular}
-\end{center}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-মহাকাশ অভিযানে ICT-এর ভূমিকা লিখতে satellite communication, remote sensing, GPS, weather forecasting এবং data analysis—এই পাঁচটি point খুব গুরুত্বপূর্ণ।
-\end{boardbox}
+\end{compacttable}
+\chOneFigureExplain{chapters/Chapter01/images/satellite_orbits_geo_meo_leo.png}{কক্ষপথের ধরন}{fig:satellite-orbits}{কাজের চাহিদা অনুযায়ী কক্ষপথ নির্বাচন করা হয়।}
+\subsubsection{রিমোট সেন্সিং ও GIS}
+\definition{রিমোট সেন্সিং}{বস্তুর সঙ্গে সরাসরি সংস্পর্শে না এসে দূরের সেন্সরে তার বৈশিষ্ট্যের তথ্য সংগ্রহের প্রযুক্তিকে রিমোট সেন্সিং (Remote Sensing) বলে। উপগ্রহ বা বিমানের সেন্সরে ভূমি, পানি, বন, ফসল ও মেঘ সম্পর্কে তথ্য পাওয়া যায়।}
+সেন্সরের ছবি ও সংকেত ভূকেন্দ্রে আসার পর কম্পিউটারে নয়েজ কমানো, রঙের ব্যান্ড বিশ্লেষণ ও বস্তু শ্রেণিবদ্ধ করা হয়। বিশেষজ্ঞ সেই তথ্য ও মানচিত্র থেকে সিদ্ধান্ত নেন।
+\term{GIS (Geographic Information System)} ভূ-অবস্থানযুক্ত তথ্য সংরক্ষণ, বিভিন্ন স্তর মিলিয়ে বিশ্লেষণ ও মানচিত্র তৈরি করে। GPS অবস্থান দেয়, রিমোট সেন্সিং দূর থেকে তথ্য সংগ্রহ করে এবং GIS সেই তথ্যের স্তর বিশ্লেষণ করতে পারে।
+\begin{compactpoints}
+\item বন্যা, ঘূর্ণিঝড়ের ক্ষতি, ভূমিধস, আগুন ও জলোচ্ছ্বাসের মানচিত্রে উদ্ধার পরিকল্পনা করা যায়।
+\item ফসলের অবস্থা, মাটির আর্দ্রতা, খরা ও সেচ; বন, পানি, নদীভাঙন ও দূষণ পর্যবেক্ষণ করা যায়।
+\item ভূমির ব্যবহার, সড়ক ও নগর সম্প্রসারণ; তাপমাত্রার ধারা, মেঘ, সমুদ্রপৃষ্ঠ ও বরফের বিস্তার বিশ্লেষণ করা যায়।
+\item সীমান্ত, সামুদ্রিক এলাকা ও অবকাঠামোর তথ্য নিরাপত্তা ও পরিকল্পনায় কাজে লাগে।
+\end{compactpoints}
+বন্যায় উপগ্রহের পানির বিস্তার GIS-এ রাস্তা ও বসতির স্তরের সঙ্গে মিলিয়ে ঝুঁকির মানচিত্র করা যায়। মাঠকর্মীর GPS অবস্থান উদ্ধারদলকে সাহায্য করে। মেঘ, ছবির রেজল্যুশন ও পুরোনো তথ্যের সীমা বিবেচনা করতে হয়।
+\chOneFigureExplain{chapters/Chapter01/images/remote_sensing_process.png}{দূরের তথ্য থেকে মানচিত্র}{fig:remote-sensing-process}{সেন্সরের তথ্য প্রক্রিয়াকরণ ও বিশেষজ্ঞের বিশ্লেষণ মিলিয়ে সিদ্ধান্ত নেওয়া হয়।}
+\subsubsection{GPS}
+\definition{GPS}{Global Positioning System বা GPS হলো উপগ্রহের সংকেতভিত্তিক ব্যবস্থা, যা প্রাপকের অবস্থান, গতি ও সময় নির্ণয়ে সাহায্য করে।}
+উপগ্রহ নিজের সময় ও অবস্থানের রেডিও সংকেত পাঠায়। প্রাপক সংকেত আসার সময় থেকে দূরত্ব হিসাব করে। সাধারণ ত্রিমাত্রিক অবস্থান এবং প্রাপকের ঘড়ির ভুল নির্ণয়ে অন্তত 4টি উপগ্রহের মাপ ব্যবহার হয়। দূরত্ব থেকে অবস্থান নির্ণয়ের ধারণা Trilateration। সাধারণ GPS প্রাপক উপগ্রহে নিজের অবস্থান পাঠিয়ে উত্তর চায় না। ভবনের ভেতর, উঁচু ভবনের পাশে বা সংকেত বাধাগ্রস্ত হলে অবস্থান নির্ণয়ে ভুল বাড়তে পারে।
+অক্ষাংশ, দ্রাঘিমাংশ ও উচ্চতা; মানচিত্র, যানবাহন অনুসরণ, রাইড শেয়ারিং, কৃষি, বিমান, জাহাজ, সামরিক কাজ ও উদ্ধার; সময়ের সমন্বয়ে GPS কাজে লাগে।
+\chOneFigureExplain{chapters/Chapter01/images/gps_working_process.png}{GPS-এ অবস্থান নির্ণয়}{fig:gps-working}{একাধিক উপগ্রহের দূরত্ব ও সময়ের মাপ মিলিয়ে অবস্থান বের করা হয়।}
+\subsubsection{আবহাওয়া ও আগাম সতর্কতা}
+আবহাওয়ার উপগ্রহ মেঘ, তাপমাত্রা, আর্দ্রতা, বাতাস, বৃষ্টির ব্যবস্থা ও ঘূর্ণিঝড়ের গতিপথ পর্যবেক্ষণ করে। রাডার ও উপগ্রহের তথ্য কম্পিউটারের সংখ্যাভিত্তিক পূর্বাভাস মডেলে ব্যবহার হয়। ফল থেকে ঘূর্ণিঝড়, ভারী বৃষ্টি বা সমুদ্রের সতর্কতা তৈরি করে SMS, ওয়েবসাইট, TV, রেডিও ও অ্যাপে জানানো যায়। দুর্যোগ কর্তৃপক্ষ মানুষ সরানো, উদ্ধার ও সম্পদ রক্ষার প্রস্তুতি নিতে পারে।
+\chOneFigureExplain{chapters/Chapter01/images/weather_forecasting_satellite_process.png}{তথ্য থেকে পূর্বাভাস ও প্রস্তুতি}{fig:weather-satellite-forecast}{পর্যবেক্ষণ, কম্পিউটারের মডেল ও আগাম সতর্কতা জীবন ও সম্পদ রক্ষায় সাহায্য করে।}
+\subsubsection{বাংলাদেশের প্রথম যোগাযোগ উপগ্রহ}
+Bangabandhu Satellite-1, বর্তমানে Bangladesh Satellite-1 নামেও পরিচিত, বাংলাদেশের প্রথম ভূস্থির যোগাযোগ ও সম্প্রচার উপগ্রহ। এর উৎক্ষেপণের তথ্য নিচে দেওয়া হলো।
+\begin{compactpoints}
+\item বাংলাদেশ সময় 12 May 2018; UTC-তে 11 May 2018, 20:14।
+\item যুক্তরাষ্ট্রের Florida-র Kennedy Space Center-এর Launch Complex 39A থেকে SpaceX Falcon 9 Block 5-এ উৎক্ষেপণ।
+\item নির্মাতা Thales Alenia Space; পরিচালনাকারী Bangladesh Satellite Company Limited বা BSCL।
+\item কক্ষপথের অবস্থান 119.1° East; উচ্চতা প্রায় 35,786 km।
+\item মোট 40টি C-band ও Ku-band ট্রান্সপন্ডার; পরিকল্পিত আয়ু প্রায় 15 বছর।
+\item Gazipur-এ প্রধান ভূকেন্দ্র এবং Betbunia, Rangamati-তে বিকল্প ভূকেন্দ্র।
+\end{compactpoints}
+TV সম্প্রচার, DTH, VSAT, যোগাযোগের বিকল্প সংযোগ, ইন্টারনেটের লিংক, উপগ্রহের সক্ষমতা ভাড়া ও জরুরি যোগাযোগে এর ব্যবহার আছে। চর, দ্বীপ, পাহাড় ও দুর্যোগকবলিত এলাকায় উপযুক্ত প্রাপক ও ব্যবস্থা থাকলে সংযোগ দেওয়া যায়।
+\chOneFigureExplain{chapters/Chapter01/images/bangabandhu_satellite_1.png}{বাংলাদেশের যোগাযোগ উপগ্রহ}{fig:bangabandhu-satellite-1}{ভূকেন্দ্র ও প্রাপকের সাহায্যে জাতীয় যোগাযোগ অবকাঠামোয় উপগ্রহের ব্যবহার দেখানো হয়েছে।}
+\subsubsection{বাংলাদেশের প্রতিষ্ঠান ও প্রয়োগ}
+\begin{compactpoints}
+\item \term{SPARRSO}: Bangladesh Space Research and Remote Sensing Organization। কৃষি, বন, পানি, পরিবেশ, দুর্যোগ ও উন্নয়নে মহাকাশবিজ্ঞান, রিমোট সেন্সিং ও GIS-এর গবেষণা ও তথ্য সহায়তা দেয়। প্রধান কার্যালয় Agargaon, Dhaka।
+\item \term{BSCL}: বাংলাদেশের যোগাযোগ উপগ্রহ ও সম্প্রচারসেবা পরিচালনার সঙ্গে যুক্ত।
+\item \term{BMD}: Bangladesh Meteorological Department। উপগ্রহ, রাডার ও কম্পিউটারের মডেলে আবহাওয়ার পূর্বাভাস ও ঘূর্ণিঝড়ের সতর্কতা দেয়।
+\item \term{AAUB}: Aviation and Aerospace University, Bangladesh। বিমান, মহাকাশকৌশল, যোগাযোগ ও দিকনির্দেশের শিক্ষা ও গবেষণায় কাজ করে।
+\item BUET, DU, SUST, BRAC University ও MIST-সহ বিশ্ববিদ্যালয়ে রোবট, ড্রোন, উপগ্রহ যোগাযোগ, GIS ও সংশ্লিষ্ট প্রকল্পের ক্ষেত্র আছে। দুর্যোগ সংস্থা মানচিত্র ও আবহাওয়ার তথ্য নিয়ে পরিকল্পনা করে।
+\end{compactpoints}
+\chOneFigureExplain{chapters/Chapter01/images/space_technology_in_bangladesh.png}{বাংলাদেশে মহাকাশ প্রযুক্তি}{fig:space-technology-bangladesh}{সম্প্রচার, আবহাওয়া, কৃষি, পরিবেশ, দুর্যোগ ও শিক্ষায় ব্যবহার করা হয়।}
+\chOneFigureExplain{chapters/Chapter01/images/bangladesh_space_research_centers.png}{বাংলাদেশের সংশ্লিষ্ট প্রতিষ্ঠান}{fig:bd-space-research-centers}{গবেষণা, উপগ্রহ পরিচালনা, আবহাওয়া ও উচ্চশিক্ষায় প্রতিষ্ঠানের ভূমিকা ভিন্ন।}
+\subsubsection{আধুনিক প্রযুক্তি ও অবদান}
+AI-এ উপগ্রহের ছবি থেকে ফসল, রাস্তা, ভবন, নদীভাঙন, মেঘ, বন্যা ও ক্ষতি শনাক্ত করা যায়। রোভারের ক্যামেরা ও সেন্সর দিয়ে পাথর, গর্ত ও বাধা দেখে পথ এবং অবতরণস্থান বাছাই করা যায়। তাপমাত্রা, ব্যাটারি, জ্বালানি, কম্পন ও সংকেত হারানোর তথ্য থেকে ত্রুটি বা অস্বাভাবিকতা শনাক্ত করা যায়। ছবির বিশ্লেষণ, আবহাওয়া ও উদ্ধার পরিকল্পনায়ও AI সহায়ক। সংশ্লিষ্ট AI পদ্ধতির মূল ধারণা \ref{sec:ch1-ai} অংশে আছে।
+উৎক্ষেপণ, কক্ষপথ সংশোধন, সংযুক্তি ও অবতরণের আগে সিমুলেশনে ঝুঁকি দেখা হয়। CubeSat ছোট উপগ্রহ; শিক্ষা ও কম ব্যয়ের গবেষণায় ব্যবহার হয়। বহু উপগ্রহের Constellation যোগাযোগের নেটওয়ার্ক তৈরি করে। পুনর্ব্যবহারযোগ্য রকেট ব্যয় কমাতে পারে। ডিজিটাল মডেল, উন্নত গণনাব্যবস্থা ও রোবট বাহু অনুসন্ধানে সাহায্য করে।
+মহাকাশপ্রযুক্তি গ্রহ, নক্ষত্র, ছায়াপথ, কৃষ্ণগহ্বর, বহিঃগ্রহ, মহাজাগতিক বিকিরণ, পৃথিবী ও জলবায়ু সম্পর্কে জ্ঞান বাড়ায়। যোগাযোগসেবা, উৎক্ষেপণশিল্প ও মহাকাশের ডেটাভিত্তিক বাজার তৈরি করে। STEM, জ্যোতির্বিজ্ঞান, মহাকাশকৌশল, AI ও ডেটা বিজ্ঞানের দক্ষতা গড়ে ওঠে।
+\chOneFigureExplain{chapters/Chapter01/images/modern_space_technology.png}{আধুনিক মিশনের প্রযুক্তি}{fig:modern-space-technology}{স্বয়ংক্রিয় পথ, ছবির বিশ্লেষণ, ছোট উপগ্রহ ও সিমুলেশন মিশনে সহায়তা করে।}
+\chOneFigureExplain{chapters/Chapter01/images/global_contribution_of_space_exploration.png}{মহাকাশ গবেষণার অবদান}{fig:global-space-contribution}{বৈজ্ঞানিক জ্ঞান ও পৃথিবীর সেবা উভয় ক্ষেত্রেই সুফল পাওয়া যায়।}
+\subsubsection{সীমাবদ্ধতা}
+রকেট ও উপগ্রহ তৈরি ও উৎক্ষেপণ ব্যয়বহুল; ব্যর্থ হলে বড় ক্ষতি হয়। দক্ষ জনবল ও গবেষণা অবকাঠামো দরকার। বিকিরণ, বায়ুশূন্যতা, অতিরিক্ত তাপমাত্রা ও অতি স্বল্প মাধ্যাকর্ষণ মানুষ ও যন্ত্রের জন্য ঝুঁকি। মহাকাশবর্জ্যে সংঘর্ষ, কক্ষপথের ভিড় ও পরিবেশের প্রভাব বিবেচনা করতে হয়। সংকেত বাধাগ্রস্ত করা, হ্যাকিং ও সাইবার আক্রমণ থেকে নির্দেশ, তথ্যের সংযোগ ও ভূকেন্দ্র রক্ষা করাও জরুরি।
+\chOneFigureExplain{chapters/Chapter01/images/space_exploration_advantages_challenges.png}{মহাকাশ অভিযানের চ্যালেঞ্জ}{fig:space-advantages-challenges}{ব্যয়, পরিবেশ, বর্জ্য ও যোগাযোগের নিরাপত্তা মিশনের পরিকল্পনায় বিবেচিত হয়।}
+\subsubsection{অনুশীলন}
 
 \begin{practicebox}
 \textbf{MCQ}
-\begin{enumerate}
-\item দূর থেকে satellite sensor দিয়ে পৃথিবীর তথ্য সংগ্রহকে কী বলে?\\
-ক. Remote sensing \quad খ. Printing \quad গ. Formatting \quad ঘ. Encryption only
-\item GPS প্রধানত কী নির্ণয় করে?\\
-ক. file size \quad খ. অবস্থান ও সময় \quad গ. font style \quad ঘ. browser history
-\end{enumerate}
+\begin{multicols}{2}\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}আধুনিক Space Age কোন satellite উৎক্ষেপণের মাধ্যমে শুরু হয়?\par \mcqoption{Sputnik-1}{Hubble}{Apollo 11}{ISS}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}GPS-এর পূর্ণরূপ কী?\par \mcqoption{General Printing System}{Global Positioning System}{Graphic Processing System}{Global Program Server}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Remote sensing বলতে কী বোঝায়?\par \mcqoption{keyboard দিয়ে লেখা}{printer দিয়ে output}{দূর থেকে sensor দিয়ে তথ্য সংগ্রহ}{virus scan}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Earth station থেকে satellite-এ signal পাঠানোকে কী বলে?\par \mcqoption{Downlink}{Hyperlink}{Offline}{Uplink}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Spacecraft-এর health data পৃথিবীতে পাঠানোর প্রযুক্তি কোনটি?\par \mcqoption{Telemetry}{Formatting}{Printing}{Debugging}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Bangladesh Satellite-1 কোন ধরনের satellite?\par \mcqoption{Gaming satellite}{Communication and broadcasting}{Printer satellite}{Keyboard satellite}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}SPARRSO মূলত কোন কাজের সাথে বেশি সম্পর্কিত?\par \mcqoption{HTML coding only}{banking transaction only}{Remote sensing ও space research}{typing practice}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Weather forecasting-এ কোনটি বেশি ব্যবহৃত হয়?\par \mcqoption{শুধু keyboard}{শুধু monitor}{শুধু speaker}{Satellite image ও radar image}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}AI-এর পূর্ণরূপ কী?\par \mcqoption{Artificial Intelligence}{Automatic Internet}{Analog Information}{Active Interface}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}কোন প্রযুক্তি data থেকে pattern শিখে prediction করতে পারে?\par \mcqoption{Formatting}{Machine Learning}{Printing}{Typing}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Image বা video থেকে object শনাক্ত করার AI ক্ষেত্র কোনটি?\par \mcqoption{Word Processing}{Spreadsheet}{Computer Vision}{File Compression}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}মানুষের ভাষা বুঝতে ও process করতে কোন AI ক্ষেত্র ব্যবহৃত হয়?\par \mcqoption{GPS}{VSAT}{DTH}{NLP}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Expert System কী ব্যবহার করে সিদ্ধান্ত দেয়?\par \mcqoption{Expert knowledge ও rule}{শুধু keyboard}{শুধু monitor}{কেবল printer}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}AI ও Robot সম্পর্কে সঠিক বক্তব্য কোনটি?\par \mcqoption{AI মানেই সবসময় robot}{AI software হতে পারে, robot physical machine}{robot কখনও sensor ব্যবহার করে না}{AI শুধু printing করে}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Mars rover obstacle এড়িয়ে চলতে কোন প্রযুক্তি বেশি সহায়ক?\par \mcqoption{শুধু speaker}{শুধু keyboard}{AI ও Computer Vision}{শুধু scanner}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Fuzzy Logic কোন ধরনের reasoning ব্যবহার করে?\par \mcqoption{শুধু true/false rigid logic}{Manual typing}{Printing logic}{Approximate reasoning}\chOneAnswerBox{ঘ}\par\end{minipage}
+\end{enumerate}\end{multicols}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item মহাকাশ অভিযানে satellite communication-এর ভূমিকা লেখ।
-\item আবহাওয়া পূর্বাভাসে ICT কীভাবে সহায়তা করে?
+\item মহাকাশ অভিযান বলতে কী বোঝ?
+\item মহাকাশ অভিযানে ICT-এর তিনটি ভূমিকা লেখ।
+\item Satellite communication কী?
+\item Uplink ও Downlink-এর পার্থক্য লেখ।
+\item Remote sensing-এর দুটি ব্যবহার লেখ।
+\item GPS কীভাবে অবস্থান নির্ণয় করে?
+\item Weather forecasting-এ satellite কীভাবে সহায়তা করে?
+\item Bangladesh-এ space technology-এর দুটি ব্যবহার লেখ।
+\item SPARRSO-এর কাজ কী?
+\item Telemetry কী?
+\item Artificial Intelligence কী?
+\item Machine Learning ও Computer Vision-এর পার্থক্য লেখ।
+\item Expert System কীভাবে সিদ্ধান্ত দেয়?
+\item AI ও Robot-এর পার্থক্য লেখ।
+\item মহাকাশ অভিযানে AI-এর তিনটি ব্যবহার লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল প্রশ্ন}
+একটি উপকূলীয় জেলায় ঘূর্ণিঝড়ের আশঙ্কা দেখা দিয়েছে। Weather satellite মেঘের ঘূর্ণন ও wind movement শনাক্ত করে data পাঠাচ্ছে। BMD computer model দিয়ে cyclone track পূর্বাভাস দিচ্ছে। Disaster management team GPS ও satellite communication ব্যবহার করে evacuation plan তৈরি করছে।
+
+\begin{enumerate}
+\item ক. Remote sensing কী?
+\item খ. Weather forecasting-এ ICT কেন গুরুত্বপূর্ণ?
+\item গ. উদ্দীপকে satellite data কীভাবে ব্যবহৃত হয়েছে? ব্যাখ্যা কর।
+\item ঘ. GPS, satellite communication ও weather satellite একসাথে ব্যবহার করলে দুর্যোগ ব্যবস্থাপনায় কী সুবিধা হয়—বিশ্লেষণ কর।
+\end{enumerate}
+
+\textbf{AI ভিত্তিক সৃজনশীল প্রশ্ন}
+একটি Mars rover গ্রহের পৃষ্ঠে চলাচল করছে। Rover-এর camera পাথর, crater ও obstacle-এর ছবি তুলছে। AI software image analysis করে নিরাপদ পথ নির্বাচন করছে এবং sensor data দেখে battery ও temperature problem আগে থেকেই mission control-এ warning পাঠাচ্ছে।
+
+\begin{enumerate}
+\item ক. Artificial Intelligence কী?
+\item খ. Computer Vision বলতে কী বোঝ?
+\item গ. উদ্দীপকে AI কীভাবে rover navigation-এ ব্যবহার হয়েছে? ব্যাখ্যা কর।
+\item ঘ. AI, sensor, telemetry ও mission control একসাথে ব্যবহার করলে মহাকাশ অভিযান কীভাবে নিরাপদ ও কার্যকর হয়—বিশ্লেষণ কর।
 \end{enumerate}
 \end{practicebox}
 

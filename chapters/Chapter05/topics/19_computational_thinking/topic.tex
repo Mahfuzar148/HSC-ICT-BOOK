@@ -1,0 +1,518 @@
+\sectionheading{5.19 কম্পিউটেশনাল থিংকিং (Computational Thinking)}
+
+কোনো জটিল Problem দেখেই সরাসরি Code লেখা শুরু করা সবসময়
+কার্যকর নয়।
+
+প্রথমে Problem-টিকে বুঝতে হয়, ছোট অংশে ভাগ করতে হয়,
+প্রয়োজনীয় তথ্য আলাদা করতে হয় এবং ধাপে ধাপে Solution
+তৈরি করতে হয়।
+
+সমস্যা সমাধানের এই যৌক্তিক ও সুশৃঙ্খল চিন্তার পদ্ধতিই
+\textbf{Computational Thinking}।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Computational Thinking কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Problem-কে এমনভাবে
+\textbf{বিশ্লেষণ, বিভাজন ও ধাপে ধাপে সমাধানের পরিকল্পনা}
+করার চিন্তাপদ্ধতি, যাতে Solution মানুষ বা Computer
+কার্যকরভাবে বাস্তবায়ন করতে পারে, তাকে
+\textbf{Computational Thinking} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Problem বুঝি
+\(\longrightarrow\)
+ছোট অংশে ভাগ করি
+\(\longrightarrow\)
+প্রয়োজনীয় বিষয় খুঁজি
+\(\longrightarrow\)
+সমাধানের ধাপ তৈরি করি
+}
+
+\end{center}
+
+%================================================
+% Main Elements
+%================================================
+\booksubheading{Computational Thinking-এর মূল উপাদান}
+
+Computational Thinking বোঝার জন্য চারটি গুরুত্বপূর্ণ ধারণা হলো—
+
+\begin{center}
+
+\textbf{
+Decomposition
+\(\longrightarrow\)
+Pattern Recognition
+\(\longrightarrow\)
+Abstraction
+\(\longrightarrow\)
+Algorithmic Thinking
+}
+
+\end{center}
+
+%================================================
+% Decomposition
+%================================================
+\booksubheading{১. Decomposition — সমস্যা বিভাজন}
+
+\begin{definitionbox}
+
+একটি বড় ও জটিল Problem-কে কয়েকটি
+\textbf{ছোট ও সহজ Problem-এ ভাগ করার প্রক্রিয়াকে}
+\textbf{Decomposition} বলে।
+
+\end{definitionbox}
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+ধরা যাক একটি Student Result System তৈরি করতে হবে।
+
+পুরো Problem-টিকে এভাবে ভাগ করা যায়—
+
+\begin{itemize}
+
+\item শিক্ষার্থীর তথ্য গ্রহণ
+\item নম্বর গ্রহণ
+\item মোট নম্বর নির্ণয়
+\item Average নির্ণয়
+\item Grade নির্ণয়
+\item Result প্রদর্শন
+
+\end{itemize}
+
+অর্থাৎ একটি বড় Problem কয়েকটি ছোট কাজে বিভক্ত হলো।
+
+\end{examplebox}
+
+\begin{center}
+
+\textbf{
+Decomposition
+=
+বড় Problem
+\(\longrightarrow\)
+ছোট Problem
+}
+
+\end{center}
+
+%================================================
+% Pattern Recognition
+%================================================
+\booksubheading{২. Pattern Recognition — সাদৃশ্য বা Pattern শনাক্তকরণ}
+
+\begin{definitionbox}
+
+Problem-এর বিভিন্ন অংশ বা পূর্বে সমাধান করা Problem-এর মধ্যে
+\textbf{মিল, পুনরাবৃত্তি বা একই ধরনের বৈশিষ্ট্য খুঁজে বের করাকে}
+\textbf{Pattern Recognition} বলে।
+
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+
+একাধিক শিক্ষার্থীর Result তৈরির ক্ষেত্রে প্রত্যেকের জন্যই—
+
+\begin{center}
+
+\textbf{
+Marks
+\(\longrightarrow\)
+Total
+\(\longrightarrow\)
+Average
+\(\longrightarrow\)
+Grade
+}
+
+\end{center}
+
+একই ধরনের কাজ পুনরাবৃত্তি হচ্ছে।
+
+এই মিল বা পুনরাবৃত্তি শনাক্ত করাই
+\textbf{Pattern Recognition}।
+
+\end{examplebox}
+
+Pattern শনাক্ত করতে পারলে আগে জানা Solution নতুন বা একই ধরনের
+Problem সমাধানে কাজে লাগানো যায়।
+
+%================================================
+% Abstraction
+%================================================
+\booksubheading{৩. Abstraction — প্রয়োজনীয় তথ্য নির্বাচন}
+
+\begin{definitionbox}
+
+Problem সমাধানের জন্য প্রয়োজনীয় তথ্য রেখে
+\textbf{অপ্রয়োজনীয় বা কম গুরুত্বপূর্ণ বিস্তারিত বিষয় উপেক্ষা করার
+প্রক্রিয়াকে} \textbf{Abstraction} বলে।
+
+\end{definitionbox}
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+একজন শিক্ষার্থীর Average নির্ণয়ের জন্য প্রয়োজন—
+
+\begin{center}
+
+\textbf{শিক্ষার্থীর প্রাপ্ত নম্বর}
+\end{center}
+
+কিন্তু তার প্রিয় রং বা বাসার রং Average নির্ণয়ের জন্য
+প্রয়োজনীয় নয়।
+
+অতএব Problem সমাধানের জন্য প্রয়োজনীয় তথ্য নেওয়া হবে এবং
+অপ্রাসঙ্গিক তথ্য উপেক্ষা করা হবে।
+
+\end{examplebox}
+
+\begin{center}
+
+\textbf{
+প্রয়োজনীয় তথ্য রাখি
++
+অপ্রাসঙ্গিক তথ্য বাদ দিই
+=
+Abstraction
+}
+
+\end{center}
+
+%================================================
+% Algorithmic Thinking
+%================================================
+\booksubheading{৪. Algorithmic Thinking — ধাপভিত্তিক সমাধান}
+
+\begin{definitionbox}
+
+Problem সমাধানের জন্য
+\textbf{সুস্পষ্ট, যৌক্তিক ও ধারাবাহিক ধাপ নির্ধারণ করার
+চিন্তাপদ্ধতিকে}
+\textbf{Algorithmic Thinking} বলে।
+
+\end{definitionbox}
+
+\begin{examplebox}{উদাহরণ}
+
+দুটি সংখ্যার বড়টি নির্ণয়ের জন্য—
+
+\begin{enumerate}
+
+\item দুটি সংখ্যা গ্রহণ করি।
+\item সংখ্যা দুটি তুলনা করি।
+\item বড় সংখ্যাটি নির্ধারণ করি।
+\item Result প্রদর্শন করি।
+
+\end{enumerate}
+
+অর্থাৎ Problem-এর Solution-কে ধাপে ধাপে সাজানো হয়েছে।
+
+\end{examplebox}
+
+Algorithm পরবর্তী Topic-এ বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Combined Example
+%================================================
+\booksubheading{চারটি ধারণা একসঙ্গে}
+
+ধরা যাক একটি School Result Processing System তৈরি করতে হবে।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.30\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Computational Thinking-এর অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{কী করা হবে}}
+\\
+\hline
+
+Decomposition
+&
+System-কে Input, Calculation, Grade, Output ইত্যাদি
+ছোট অংশে ভাগ করা।
+\\
+\hline
+
+Pattern Recognition
+&
+সব শিক্ষার্থীর Result তৈরিতে একই ধরনের কাজ শনাক্ত করা।
+\\
+\hline
+
+Abstraction
+&
+Result তৈরির জন্য শুধু প্রয়োজনীয় Data নির্বাচন করা।
+\\
+\hline
+
+Algorithmic Thinking
+&
+কাজগুলো কোন ক্রমে হবে তা ধাপে ধাপে নির্ধারণ করা।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}গুরুত্বপূর্ণ}
+
+Computational Thinking কোনো নির্দিষ্ট Programming Language নয়;
+এটি \textbf{Problem Solving-এর একটি চিন্তাপদ্ধতি}।
+
+\end{rememberbox}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Computational Thinking কেন গুরুত্বপূর্ণ?}
+
+\begin{compacttwocolpoints}
+
+\item জটিল Problem সহজে বোঝা যায়।
+
+\item বড় Problem ছোট অংশে ভাগ করা যায়।
+
+\item একই ধরনের Problem-এর Pattern শনাক্ত করা যায়।
+
+\item অপ্রয়োজনীয় তথ্য বাদ দিয়ে মূল Problem-এ মনোযোগ দেওয়া যায়।
+
+\item Algorithm ও Program তৈরি সহজ হয়।
+
+\item Error কমানো এবং Solution যাচাই করা সহজ হয়।
+
+\item সুশৃঙ্খল ও কার্যকর Solution তৈরি করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Computational Thinking vs Programming
+%================================================
+\booksubheading{Computational Thinking ও Programming-এর সম্পর্ক}
+
+Computational Thinking এবং Programming পরস্পরের সঙ্গে সম্পর্কিত,
+তবে দুটি একই বিষয় নয়।
+
+\textbf{Computational Thinking} হলো Problem কীভাবে সমাধান করা হবে
+তা নিয়ে চিন্তা ও পরিকল্পনা।
+
+\textbf{Programming} হলো সেই Solution-কে Programming Language-এর
+মাধ্যমে Computer-এ বাস্তবায়ন করা।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Computational Thinking}}
+&
+\multicolumn{1}{c|}{\textbf{Programming}}
+\\
+\hline
+
+মূল কাজ
+&
+Problem বিশ্লেষণ ও Solution পরিকল্পনা
+&
+Solution-কে Code-এ রূপ দেওয়া
+\\
+\hline
+
+পর্যায়
+&
+Code লেখার আগেই শুরু হতে পারে
+&
+সাধারণত Solution নির্ধারণের পর
+\\
+\hline
+
+Language নির্ভরতা
+&
+নির্দিষ্ট Programming Language-এর ওপর নির্ভরশীল নয়
+&
+Programming Language প্রয়োজন
+\\
+\hline
+
+উদাহরণ
+&
+Problem ভাগ করা, Pattern খোঁজা
+&
+Python-এ Program লেখা
+\\
+\hline
+
+\end{tabularx}
+
+\textbf{সহজভাবে—}
+
+\begin{center}
+
+\textbf{
+Computational Thinking
+=
+কীভাবে সমাধান করব?
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Programming
+=
+সেই সমাধান Computer-কে কীভাবে করাব?
+}
+
+\end{center}
+
+%================================================
+% Relation to Modular Programming
+%================================================
+\booksubheading{Modular Programming-এর সঙ্গে সম্পর্ক}
+
+আগের Topic-এ Modular Programming-এ বড় Program-কে ছোট
+Module-এ ভাগ করার কথা বলা হয়েছে।
+
+Computational Thinking-এর \textbf{Decomposition}-এও
+বড় Problem-কে ছোট অংশে ভাগ করা হয়।
+
+তবে দুটি একই বিষয় নয়।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.28\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{মূল ধারণা}}
+\\
+\hline
+
+Decomposition
+&
+Problem-কে ছোট অংশে ভাঙার চিন্তাপদ্ধতি।
+\\
+\hline
+
+Modular Programming
+&
+Program-কে ছোট Module-এ সংগঠিত করার Programming পদ্ধতি।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Quick Comparison
+%================================================
+\booksubheading{চারটি উপাদান দ্রুত মনে রাখো}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.30\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধারণা}}
+&
+\multicolumn{1}{c|}{\textbf{Shortcut}}
+\\
+\hline
+
+Decomposition
+&
+Divide — বড় Problem-কে ছোট অংশে ভাগ করা
+\\
+\hline
+
+Pattern Recognition
+&
+Find Pattern — মিল বা পুনরাবৃত্তি খোঁজা
+\\
+\hline
+
+Abstraction
+&
+Focus — প্রয়োজনীয় বিষয়ের ওপর গুরুত্ব দেওয়া
+\\
+\hline
+
+Algorithmic Thinking
+&
+Make Steps — সমাধানের ধাপ তৈরি করা
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item \textbf{Computational Thinking} একটি Problem Solving
+চিন্তাপদ্ধতি; এটি কোনো Programming Language নয়।
+
+\item এর গুরুত্বপূর্ণ চারটি ধারণা—
+\textbf{Decomposition, Pattern Recognition, Abstraction এবং
+Algorithmic Thinking}।
+
+\item \textbf{Decomposition} =
+বড় Problem-কে ছোট অংশে ভাগ করা।
+
+\item \textbf{Pattern Recognition} =
+Problem-এর মধ্যে মিল বা পুনরাবৃত্তি খুঁজে বের করা।
+
+\item \textbf{Abstraction} =
+প্রয়োজনীয় তথ্য রাখা এবং অপ্রয়োজনীয় তথ্য বাদ দেওয়া।
+
+\item \textbf{Algorithmic Thinking} =
+Solution-এর ধাপগুলো যৌক্তিকভাবে সাজানো।
+
+\item Computational Thinking Program লেখার আগেই
+Problem বুঝতে ও Solution পরিকল্পনা করতে সাহায্য করে।
+
+\item দ্রুত মনে রাখার ক্রম—
+
+\begin{center}
+
+\textbf{
+Divide
+\(\longrightarrow\)
+Find Pattern
+\(\longrightarrow\)
+Focus
+\(\longrightarrow\)
+Make Steps
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.20 Problem Analysis and IPO Model
+%================================================

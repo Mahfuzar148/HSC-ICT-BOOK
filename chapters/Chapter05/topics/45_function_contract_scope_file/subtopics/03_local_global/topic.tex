@@ -1,0 +1,586 @@
+\booksubheading{Local Variable ও Local Scope}
+
+\begin{definitionbox}
+
+\textbf{Local Variable:}
+কোনো Function-এর ভিতরে তৈরি এবং সাধারণত সেই Function-এর
+মধ্যেই ব্যবহারযোগ্য Variable-কে \textbf{Local Variable} বলে।
+
+\medskip
+
+\textbf{Local Scope:}
+Program-এর যে সীমিত অংশে একটি Local Variable ব্যবহার করা যায়,
+তাকে সেই Variable-এর \textbf{Local Scope} বলে।
+
+\end{definitionbox}
+
+\begin{codeoutputbox}{Local Variable}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def show():\\
+\hspace*{4mm}x = 10\\
+\hspace*{4mm}print(x)\\[0.5mm]
+show()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 10}
+\end{center}
+
+\textenglish{\ttfamily x}
+Function-এর ভিতরে তৈরি হয়েছে।
+
+তাই
+\textenglish{\ttfamily x}
+একটি \textbf{Local Variable}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Local outside
+%================================================
+
+\begin{codeoutputbox}{Local Variable বাইরে ব্যবহার করলে}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def show():\\
+\hspace*{4mm}x = 10\\[0.5mm]
+show()\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+এখানে Error হবে।
+
+কারণ
+\textenglish{\ttfamily x}
+শুধু
+\textenglish{\ttfamily show()}
+Function-এর Local Scope-এ তৈরি হয়েছে।
+
+Function-এর বাইরে
+\textenglish{\ttfamily x}
+পরিচিত নয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Function-এর ভিতরে তৈরি Variable}
+\(\longrightarrow\)
+\textbf{Local Variable}
+
+\end{center}
+
+সাধারণত সেটি সংশ্লিষ্ট Function-এর ভিতরেই ব্যবহারযোগ্য।
+
+\end{rememberbox}
+
+%================================================
+% Parameter scope
+%================================================
+
+\booksubheading{Parameter-এর Scope}
+
+\begin{definitionbox}
+
+\textbf{Parameter Scope:}
+Function Definition-এ ব্যবহৃত Parameter সাধারণত সেই Function-এর
+ভিতরেই Local Name হিসেবে ব্যবহার করা যায়। Parameter-এর এই
+ব্যবহারযোগ্য সীমাকে তার \textbf{Parameter Scope} বলা যায়।
+
+\end{definitionbox}
+
+\begin{codeoutputbox}{Parameter ও Local Variable}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def square(n):\\
+\hspace*{4mm}result = n * n\\
+\hspace*{4mm}return result\\[0.5mm]
+print(square(4))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 16}
+\end{center}
+
+\textenglish{\ttfamily n}
+\(\longrightarrow\)
+Parameter
+
+\medskip
+
+\textenglish{\ttfamily result}
+\(\longrightarrow\)
+Local Variable
+
+\medskip
+
+দুটিই
+\textenglish{\ttfamily square()}
+Function-এর Local Scope-এর অংশ।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Global
+%================================================
+
+\booksubheading{Global Variable ও Global Scope}
+
+\begin{definitionbox}
+
+\textbf{Global Variable:}
+Function-এর বাইরে তৈরি এবং Program-এর বিভিন্ন অংশ থেকে
+ব্যবহারযোগ্য Variable-কে সাধারণভাবে \textbf{Global Variable} বলে।
+
+\medskip
+
+\textbf{Global Scope:}
+Program-এর যে বিস্তৃত অংশে একটি Global Name বা Variable
+Access করা যায়, তাকে তার \textbf{Global Scope} বলে।
+
+\end{definitionbox}
+
+\begin{codeoutputbox}{Global Variable}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+x = 10\\[0.5mm]
+def show():\\
+\hspace*{4mm}print(x)\\[0.5mm]
+show()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 10}
+\end{center}
+
+\textenglish{\ttfamily x}
+Function-এর বাইরে Define করা হয়েছে।
+
+তাই এটি \textbf{Global Variable}।
+
+Function-এর ভিতর থেকে এর Value পড়া গেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Local global comparison
+%================================================
+
+\booksubheading{Local বনাম Global Variable}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.28\linewidth}
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{Local Variable}
+&
+\textbf{Global Variable}
+\\
+\hline
+
+কোথায় তৈরি
+&
+Function-এর ভিতরে
+&
+Function-এর বাইরে
+\\
+\hline
+
+Scope
+&
+সাধারণত সংশ্লিষ্ট Function
+&
+Program-এর বিস্তৃত অংশ
+\\
+\hline
+
+প্রধান কাজ
+&
+Function-এর নিজস্ব Data
+&
+একাধিক অংশে প্রয়োজনীয় Data
+\\
+\hline
+
+পরিবর্তনের প্রভাব
+&
+সাধারণত সীমিত
+&
+বিভিন্ন অংশে প্রভাব ফেলতে পারে
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Inside Function}
+\(\longrightarrow\)
+\textbf{Local}
+
+\qquad
+
+\textbf{Outside Function}
+\(\longrightarrow\)
+\textbf{Global}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Same name
+%================================================
+
+\booksubheading{একই নামের Local ও Global Variable}
+
+একই Name-এর Local ও Global Variable থাকতে পারে।
+
+\begin{codeoutputbox}{একই Name, ভিন্ন Scope}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+x = 10\\[0.5mm]
+def show():\\
+\hspace*{4mm}x = 20\\
+\hspace*{4mm}print(x)\\[0.5mm]
+show()\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+20\\
+10
+\end{english}
+
+\medskip
+
+Function-এর ভিতরের
+\textenglish{\ttfamily x = 20}
+হলো Local।
+
+বাইরের
+\textenglish{\ttfamily x = 10}
+হলো Global।
+
+দুটির Scope আলাদা।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+
+Function-এর ভিতরে একই Name-এর Local Variable থাকলে
+Function-এর ভিতরে সাধারণত Local Variable-ই ব্যবহৃত হয়।
+
+\end{rememberbox}
+
+%================================================
+% Read global
+%================================================
+
+\booksubheading{Global Variable পড়া}
+
+Global Variable-এর Value Function-এর ভিতর থেকে পড়ার জন্য
+সবসময়
+\textenglish{\ttfamily global}
+Keyword প্রয়োজন হয় না।
+
+\begin{codeoutputbox}{Global Value Read}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+x = 10\\[0.5mm]
+def show():\\
+\hspace*{4mm}print(x)\\[0.5mm]
+show()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 10}
+\end{center}
+
+এখানে শুধু Global
+\textenglish{\ttfamily x}
+-এর Value পড়া হয়েছে।
+
+তাই
+\textenglish{\ttfamily global x}
+লেখার প্রয়োজন হয়নি।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% global keyword
+%================================================
+
+\booksubheading{\textenglish{\ttfamily global} Keyword}
+
+\begin{definitionbox}
+
+\textbf{\textenglish{\ttfamily global} Keyword:}
+Function-এর ভিতরে কোনো Name-কে Local Variable হিসেবে না ধরে
+বাইরের Global Variable হিসেবে ব্যবহার ও Assignment করার ঘোষণা দিতে
+\textenglish{\ttfamily global}
+Keyword ব্যবহৃত হয়।
+
+\end{definitionbox}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily global} ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+x = 10\\[0.5mm]
+def change():\\
+\hspace*{4mm}global x\\
+\hspace*{4mm}x = 20\\[0.5mm]
+change()\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 20}
+\end{center}
+
+\textenglish{\ttfamily global x}
+দিয়ে বোঝানো হয়েছে যে Function-এর
+\textenglish{\ttfamily x}
+নতুন Local Variable নয়।
+
+Global
+\textenglish{\ttfamily x}
+-ই পরিবর্তিত হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Without global
+%================================================
+
+\booksubheading{\textenglish{\ttfamily global} ব্যবহার না করলে}
+
+\begin{codeoutputbox}{Local Assignment}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+x = 10\\[0.5mm]
+def change():\\
+\hspace*{4mm}x = 20\\
+\hspace*{4mm}print(x)\\[0.5mm]
+change()\\
+print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+20\\
+10
+\end{english}
+
+\medskip
+
+Function-এর ভিতরের
+\textenglish{\ttfamily x = 20}
+একটি Local Variable তৈরি করেছে।
+
+Global
+\textenglish{\ttfamily x = 10}
+অপরিবর্তিত আছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Good design
+%================================================
+
+\booksubheading{ভালো Function Design}
+
+প্রয়োজন ছাড়া অনেক Global Variable-এর উপর নির্ভর না করে
+Parameter দিয়ে Data নেওয়া এবং
+\textenglish{\ttfamily return}
+দিয়ে Result ফেরত দেওয়া সাধারণত বেশি পরিষ্কার Design।
+
+\begin{codeoutputbox}{Parameter + Return}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}return a + b\\[0.5mm]
+result = add(10, 20)\\
+print(result)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 30}
+\end{center}
+
+Data এসেছে Parameter দিয়ে।
+
+Result বাইরে গেছে
+\textenglish{\ttfamily return}
+দিয়ে।
+
+এতে Function Global Variable-এর উপর কম নির্ভরশীল হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Parameter দিয়ে Input}
+\(\longrightarrow\)
+\textbf{Processing}
+\(\longrightarrow\)
+\textenglish{\ttfamily return}
+\textbf{ দিয়ে Result}
+
+\end{center}
+
+এটি Function-কে আরও পরিষ্কার ও Reusable করতে সাহায্য করে।
+
+\end{rememberbox}
+
+%================================================
+% Scope importance
+%================================================
+
+\booksubheading{Scope কেন গুরুত্বপূর্ণ?}
+
+\begin{compacttwocolpoints}
+
+\item Variable কোথায় ব্যবহার করা যাবে তা পরিষ্কার করে।
+
+\item একই Name-এর Variable গুলিয়ে ফেলার সম্ভাবনা কমায়।
+
+\item অপ্রয়োজনীয় Data Change কমায়।
+
+\item Function-কে স্বাধীনভাবে কাজ করতে সাহায্য করে।
+
+\item Program বুঝতে ও Debug করতে সহজ করে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% File
+%================================================
+

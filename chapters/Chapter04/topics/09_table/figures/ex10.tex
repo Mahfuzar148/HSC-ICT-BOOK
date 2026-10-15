@@ -1,0 +1,19 @@
+% Replace exercise 10's PNG figure AND its existing figure-explanation box.
+% widths/heights are illustrative; there is no rowspan in the HTML code.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=6mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (.22,2.5) rectangle (.58,3.5);
+  \fill[chFourRose!10] (.58,0) rectangle (.89,2.5);
+  \draw (0,0) rectangle (.89,4.5);
+  \draw (.22,0)--(.22,4.5) (.58,0)--(.58,4.5);
+  \draw (0,2.5)--(.89,2.5) (0,3.5)--(.89,3.5);
+  \node at (.11,4) {A1}; \node at (.40,4) {A2}; \node at (.735,4) {A3};
+  \node at (.11,3) {B1}; \node at (.40,3) {Wide Cell}; \node at (.735,3) {B3};
+  \node at (.11,1.25) {C1}; \node at (.40,1.25) {C2}; \node at (.735,1.25) {Tall Cell};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 10: ঘরের প্রস্থ ও উচ্চতা}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+Wide Cell-এর \texttt{width="120"} দ্বিতীয় কলামের প্রস্থে প্রভাব ফেলে। Tall Cell-এর \texttt{height="80"} দিলে পুরো তৃতীয় সারি উঁচু হয়; C1 ও C2-এর সীমানাও একই উচ্চতায় থাকে। এখানে কোনো ঘর একাধিক সারি জুড়ে নেই। মাপগুলো ধারণামূলকভাবে দেখানো হয়েছে।
+

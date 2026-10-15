@@ -1,0 +1,252 @@
+\providecommand{\chLogicExample}[3]{\chThreeExample{#2}{#3}\label{ex:#1}}
+\subsection{ধরন অনুযায়ী NAND ও NOR সার্কিট নির্মাণ}
+সার্বজনীন gate-এর circuit-এ প্রতিটি gate একই ধরনের হতে হবে। প্রথমে রাশি সরল করো, তারপর intermediate signal-গুলোর সমীকরণ লেখো। নিচের গণনা দেখানো নির্মাণে দুই-input gate ধরে; এক signal-এর inverter একবার তৈরি করে প্রয়োজনমতো ব্যবহার করা যায়।
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ১: SOP-কে NAND--NAND-এ নেওয়া}
+প্রত্যেক AND পদের পূরক প্রথম NAND-এ তৈরি হয়; তাদের শেষ NAND-এ দিলে মূল পদগুলোর OR পাওয়া যায়। প্রয়োজনীয় input-এর পূরক tied-input NAND-এ নাও।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN01.1}{১.১}{দুটি complemented product}
+$Y=\overline AC+B\overline D$ শুধু NAND-এ গঠন করো.
+\chThreeAnswer $N_A=\overline A$, $N_D=\overline D$ tied NAND থেকে। $P=\overline{N_AC}$, $Q=\overline{BN_D}$; $Y=\overline{PQ}=\overline AC+B\overline D$। পাঁচটি NAND।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (NA) at (0,1.2) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (ND) at (0,-1.2) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (3,1.2) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (3,-1.2) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (6,0) {};
+\draw (NA.input 1)--++(-.6,0) coordinate (join_NA) node[left,text=black] {$A$};
+\draw (NA.input 2)--(join_NA |- NA.input 2)--(join_NA);
+\fill[ICTBlue] (join_NA) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (NA.north) {$N_A$};
+\draw (ND.input 1)--++(-.6,0) coordinate (join_ND) node[left,text=black] {$D$};
+\draw (ND.input 2)--(join_ND |- ND.input 2)--(join_ND);
+\fill[ICTBlue] (join_ND) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (ND.north) {$N_D$};
+\draw (NA.output)--(0.85,1.2) |- (P.input 1);
+\draw (P.input 2)--++(-.7,0) node[left,text=black] {$C$};
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (Q.input 1)--++(-.7,0) node[left,text=black] {$B$};
+\draw (ND.output)--(0.97,-1.2) |- (Q.input 2);
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (P.output)--(3.85,1.2) |- (Y.input 1);
+\draw (Q.output)--(3.97,-1.2) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{Input-এর পূরকসহ SOP-এর পাঁচ-NAND নির্মাণ।}\label{LG006}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN01.2}{১.২}{এক shared inverter}
+$Y=A\overline C+B\overline C$ সরল করে NAND-এ বানাও.
+\chThreeAnswer $Y=(A+B)\overline C$; SOP রাখলেও $N_C=\overline C$ একবার তৈরি করলেই চলে। $P=\overline{AN_C}$, $Q=\overline{BN_C}$, $Y=\overline{PQ}$। চারটি NAND; C-এর জন্য দুই inverter লাগে না।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (NC) at (0,0) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (3,1.1) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (3,-1.1) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (6,0) {};
+\draw (NC.input 1)--++(-.6,0) coordinate (join_NC) node[left,text=black] {$C$};
+\draw (NC.input 2)--(join_NC |- NC.input 2)--(join_NC);
+\fill[ICTBlue] (join_NC) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (NC.north) {$N_C$};
+\fill[ICTBlue] (0.85,0) circle (1.2pt);
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (NC.output)--(0.97,0) |- (P.input 2);
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (Q.input 1)--++(-.7,0) node[left,text=black] {$B$};
+\draw (NC.output)--(0.97,0) |- (Q.input 2);
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (P.output)--(3.85,1.1) |- (Y.input 1);
+\draw (Q.output)--(3.97,-1.1) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{একটি পূরক signal দুই product term-এ ব্যবহার।}\label{LG007}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ২: POS-কে NOR--NOR-এ নেওয়া}
+প্রত্যেক OR পদের পূরক প্রথম NOR-এ; শেষ NOR দিয়ে পূরক যোগের পূরক নিলে মূল OR পদগুলোর AND পাওয়া যায়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN02.1}{২.১}{দুই পূরক input-সহ POS}
+$Y=(A+\overline B)(\overline C+D)$ শুধু NOR-এ গঠন করো.
+\chThreeAnswer $N_B=\overline B$, $N_C=\overline C$; $P=\overline{A+N_B}$, $Q=\overline{N_C+D}$; $Y=\overline{P+Q}$। পাঁচটি NOR।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (NB) at (0,1.2) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (NC) at (0,-1.2) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (3,1.2) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (3,-1.2) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (6,0) {};
+\draw (NB.input 1)--++(-.6,0) coordinate (join_NB) node[left,text=black] {$B$};
+\draw (NB.input 2)--(join_NB |- NB.input 2)--(join_NB);
+\fill[ICTBlue] (join_NB) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (NB.north) {$N_B$};
+\draw (NC.input 1)--++(-.6,0) coordinate (join_NC) node[left,text=black] {$C$};
+\draw (NC.input 2)--(join_NC |- NC.input 2)--(join_NC);
+\fill[ICTBlue] (join_NC) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (NC.north) {$N_C$};
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (NB.output)--(0.97,1.2) |- (P.input 2);
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (NC.output)--(0.85,-1.2) |- (Q.input 1);
+\draw (Q.input 2)--++(-.7,0) node[left,text=black] {$D$};
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (P.output)--(3.85,1.2) |- (Y.input 1);
+\draw (Q.output)--(3.97,-1.2) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{Complemented input-সহ পাঁচ-NOR POS নির্মাণ।}\label{LG008}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN02.2}{২.২}{সরলীকরণে কম gate}
+$Y=(A+B)(A+\overline B)$ শুধু NOR-এ বানাতে হলে আগে কী করবে?
+\chThreeAnswer $Y=A+B\overline B=A$। তাই শুধু output=A নেওয়া যথেষ্ট। প্রশ্নে gate ব্যবহার করে buffer চাইলে tied NOR দুইবার দাও: $P=\overline A$, $Y=\overline P=A$। নিচের নির্মাণে দুইটি NOR; কাঁচা POS-এর gate গুনে একে সর্বনিম্ন বলা যাবে না।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,0) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (P.input 1)--++(-.6,0) coordinate (join_P) node[left,text=black] {$A$};
+\draw (P.input 2)--(join_P |- P.input 2)--(join_P);
+\fill[ICTBlue] (join_P) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\fill[ICTBlue] (0.85,0) circle (1.2pt);
+\draw (P.output)--(0.85,0) |- (Y.input 1);
+\draw (P.output)--(0.97,0) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{সরলীকৃত signal-কে দুই NOR দিয়ে buffer করা।}\label{LG009}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৩: চাওয়া gate-এর সুবিধাজনক রূপ নির্বাচন}
+NAND-এ SOP, NOR-এ POS সুবিধাজনক। আগে রাশির রূপ বদলালে সরাসরি construction-এর চেয়ে gate কমতে পারে।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN03.1}{৩.১}{POS থেকে ছোট NAND circuit}
+$Y=(A+B)(A+C)$-কে শুধু NAND-এ গঠন করো.
+\chThreeAnswer $Y=A+BC$। $P=\overline A$ tied NAND-এ; $Q=\overline{BC}$। শেষ $Y=\overline{PQ}=A+BC$। তিনটি NAND।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,1) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (0,-1) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (P.input 1)--++(-.6,0) coordinate (join_P) node[left,text=black] {$A$};
+\draw (P.input 2)--(join_P |- P.input 2)--(join_P);
+\fill[ICTBlue] (join_P) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (Q.input 1)--++(-.7,0) node[left,text=black] {$B$};
+\draw (Q.input 2)--++(-.7,0) node[left,text=black] {$C$};
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (P.output)--(0.85,1) |- (Y.input 1);
+\draw (Q.output)--(0.97,-1) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{POS সরল করে তিন-NAND নির্মাণ।}\label{LG010}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN03.2}{৩.২}{SOP থেকে ছোট NOR circuit}
+$Y=AB+AC$-কে শুধু NOR-এ গঠন করো.
+\chThreeAnswer $Y=A(B+C)$। $P=\overline A$ tied NOR-এ; $Q=\overline{B+C}$। শেষ $Y=\overline{P+Q}=A(B+C)$। তিনটি NOR।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,1) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (0,-1) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (3,0) {};
+\draw (P.input 1)--++(-.6,0) coordinate (join_P) node[left,text=black] {$A$};
+\draw (P.input 2)--(join_P |- P.input 2)--(join_P);
+\fill[ICTBlue] (join_P) circle (1.2pt);
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\draw (Q.input 1)--++(-.7,0) node[left,text=black] {$B$};
+\draw (Q.input 2)--++(-.7,0) node[left,text=black] {$C$};
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (P.output)--(0.85,1) |- (Y.input 1);
+\draw (Q.output)--(0.97,-1) |- (Y.input 2);
+\draw[->] (Y.output)--++(.85,0) node[right,text=black] {$Y$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{SOP factor করে তিন-NOR নির্মাণ।}\label{LG011}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৪: XOR/XNOR-এর shared intermediate}
+একই প্রথম signal দুই শাখায় যায়। প্রতিটি শাখার নাম লিখে truth table মিলিয়ে নাও; শেষে inverter যোগ করলে output-এর পূরক পাওয়া যায়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN04.1}{৪.১}{চার NAND-এর XOR ও পঞ্চম gate}
+শুধু NAND-এ XOR দেখাও; XNOR পেতে কী যোগ করবে?
+\chThreeAnswer $P=\overline{AB}$, $Q=\overline{AP}$, $R=\overline{BP}$, $Y=\overline{QR}=A\oplus B$। শেষ tied NAND-এ $Z=\overline{YY}=\overline{A\oplus B}$। Y-তে চার ও Z-তে পাঁচটি gate; প্রতিটি input-এ Y,Z বিপরীত।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,0) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (3,1.2) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (R) at (3,-1.2) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (6,0) {};
+\node[nand gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Z) at (9,0) {};
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.input 2)--++(-.7,0) node[left,text=black] {$B$};
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\fill[ICTBlue] (0.85,0) circle (1.2pt);
+\draw (Q.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.output)--(0.97,0) |- (Q.input 2);
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (R.input 1)--++(-.7,0) node[left,text=black] {$B$};
+\draw (P.output)--(0.97,0) |- (R.input 2);
+\node[above=3pt,text=ICTGreen] at (R.north) {$R$};
+\draw (Q.output)--(3.85,1.2) |- (Y.input 1);
+\draw (R.output)--(3.97,-1.2) |- (Y.input 2);
+\node[above=3pt,text=ICTGreen] at (Y.north) {$Y$};
+\fill[ICTBlue] (6.85,0) circle (1.2pt);
+\draw (Y.output)--(6.85,0) |- (Z.input 1);
+\draw (Y.output)--(6.97,0) |- (Z.input 2);
+\draw[->] (Z.output)--++(.85,0) node[right,text=black] {$Z$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{চার-NAND XOR-এর পরে inverter দিয়ে XNOR।}\label{LG012}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{UN04.2}{৪.২}{চার NOR-এর XNOR ও পঞ্চম gate}
+শুধু NOR-এ XNOR দেখাও; XOR পেতে কী যোগ করবে?
+\chThreeAnswer $P=\overline{A+B}$, $Q=\overline{A+P}$, $R=\overline{B+P}$, $Y=\overline{Q+R}=\overline{A\oplus B}$। শেষ $Z=\overline{Y+Y}=A\oplus B$। Y-তে চার ও Z-তে পাঁচটি NOR।
+\begin{center}\begin{minipage}{\linewidth}\centering
+\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.85pt,draw=ICTBlue,font=\small]
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (P) at (0,0) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Q) at (3,1.2) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (R) at (3,-1.2) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Y) at (6,0) {};
+\node[nor gate US,draw,fill=ICTLightBlue,logic gate inputs=nn,minimum size=10mm] (Z) at (9,0) {};
+\draw (P.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.input 2)--++(-.7,0) node[left,text=black] {$B$};
+\node[above=3pt,text=ICTGreen] at (P.north) {$P$};
+\fill[ICTBlue] (0.85,0) circle (1.2pt);
+\draw (Q.input 1)--++(-.7,0) node[left,text=black] {$A$};
+\draw (P.output)--(0.97,0) |- (Q.input 2);
+\node[above=3pt,text=ICTGreen] at (Q.north) {$Q$};
+\draw (R.input 1)--++(-.7,0) node[left,text=black] {$B$};
+\draw (P.output)--(0.97,0) |- (R.input 2);
+\node[above=3pt,text=ICTGreen] at (R.north) {$R$};
+\draw (Q.output)--(3.85,1.2) |- (Y.input 1);
+\draw (R.output)--(3.97,-1.2) |- (Y.input 2);
+\node[above=3pt,text=ICTGreen] at (Y.north) {$Y$};
+\fill[ICTBlue] (6.85,0) circle (1.2pt);
+\draw (Y.output)--(6.85,0) |- (Z.input 1);
+\draw (Y.output)--(6.97,0) |- (Z.input 2);
+\draw[->] (Z.output)--++(.85,0) node[right,text=black] {$Z$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{চার-NOR XNOR-এর পরে inverter দিয়ে XOR।}\label{LG013}
+\end{minipage}\end{center}
+
+\end{minipage}\par\smallskip
+\begin{center}\begin{tabular}{|c|c|c|c|}\hline
+$A$ & $B$ & NAND circuit-এর $Y$ & NOR circuit-এর $Y$\\\hline
+0 & 0 & 0 & 1\\\hline
+0 & 1 & 1 & 0\\\hline
+1 & 0 & 1 & 0\\\hline
+1 & 1 & 0 & 1\\\hline
+\end{tabular}\end{center}

@@ -1,0 +1,67 @@
+% Source types: Mahbubur Rahman, Chapter 5 PDF pp.90--93.
+\booksubheading{Recursive Function: ছোট সমস্যায় নিজেকে Call করা}
+
+যে function তার কাজের মধ্যে নিজেকেই call করে, তাকে recursive function
+বলে। দুটি বিষয় দরকার: কাজ থামানোর \textbf{base case} এবং আগের চেয়ে ছোট
+সমস্যা নিয়ে পরের call। নতুন call-এ আলাদা local variable থাকে।
+
+\textbf{উদাহরণ: Factorial-এর recursive রূপ।} Loop-ভিত্তিক সমাধান আগে
+দেওয়া হয়েছে; এখানে function call ও return-এর ক্রম দেখানো হলো।
+\(n\) একটি অঋণাত্মক পূর্ণসংখ্যা।
+\begin{pythoncode}
+def factorial(n):
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(4))
+print(factorial(0))
+\end{pythoncode}
+\textbf{Output:} \py{24}, \py{1}। \py{raise ValueError(...)} এখানে
+অগ্রহণযোগ্য input হলে ভুলের কারণ জানিয়ে ওই call থামায়।
+
+\begin{tabularx}{\linewidth}{|Y|Y|}
+\hline
+\rowcolor{softBlue}\textbf{Call-এর সময়} & \textbf{ফিরে আসার সময়}\\\hline
+\py{factorial(4)} অপেক্ষা করে \py{factorial(3)}-এর জন্য & \(4\times6=24\)\\\hline
+\py{factorial(3)} অপেক্ষা করে \py{factorial(2)}-এর জন্য & \(3\times2=6\)\\\hline
+\py{factorial(2)} অপেক্ষা করে \py{factorial(1)}-এর জন্য & \(2\times1=2\)\\\hline
+\py{factorial(1)} অপেক্ষা করে \py{factorial(0)}-এর জন্য & \(1\times1=1\)\\\hline
+\py{factorial(0)} base case-এ থামে & সরাসরি 1 return করে\\\hline
+\end{tabularx}
+
+Base case বাদ দিলে বা প্রতিবার একই \py{n} পাঠালে call থামার পথে এগোয় না।
+প্রতিটি call-এর তথ্য memory-তে রাখতে হয়; তাই খুব বড় \py{n}-এর জন্য
+Python-এর recursion limit-এ ভুল হতে পারে। এত বড় গণনায় আগের iterative
+সমাধান উপযোগী। Recursion-এ আলাদা loop লেখা বাধ্যতামূলক নয়।
+
+\booksubheading{এক File-এর Function অন্য Program-এ ব্যবহার}
+
+পুনর্ব্যবহারের জন্য function একটি \py{.py} file-এ রাখা যায়। এই file-টিকে
+module হিসেবে import করলে function আবার লিখতে হয় না। নিচের দুই file
+একই folder-এ রাখো।
+
+\textbf{প্রথম file: \py{geometry\_tools.py}}
+\begin{pythoncode}
+def rectangle_area(length, width):
+    return length * width
+
+def rectangle_perimeter(length, width):
+    return 2 * (length + width)
+\end{pythoncode}
+\Needspace{10\baselineskip}
+\textbf{দ্বিতীয় file: \py{use\_geometry.py}}
+\begin{pythoncode}
+import geometry_tools
+
+print(geometry_tools.rectangle_area(7, 4))
+print(geometry_tools.rectangle_perimeter(7, 4))
+\end{pythoncode}
+দ্বিতীয় file চালালে \textbf{Output:} \py{28}, \py{22}। Import করার সময়
+module-এর নামের সঙ্গে \py{.py} লেখা হয় না। ক্ষেত্রফল ও পরিসীমার কাজ
+একটি module-এ থাকায় অন্য প্রোগ্রাম থেকেও একই function ব্যবহার করা যায়।
+\py{math.sqrt()}-এর মতোই module-এর নাম, dot ও function-এর নাম
+দিয়ে call করা হয়েছে।
+

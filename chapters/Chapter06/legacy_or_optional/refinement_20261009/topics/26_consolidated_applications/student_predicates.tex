@@ -1,0 +1,219 @@
+\subsection{Student টেবিলে শর্তের অতিরিক্ত প্রয়োগ}
+এখানে অংশ~\ref{sec:ch06-student-master}-এর একই Student টেবিল ব্যবহার করা হয়েছে। মূল পাঠে প্রতিটি operator-এর নিয়ম একবার আলোচনা করা হয়েছে; নিচে নাম, পরিচিতি, ভিন্ন সীমা ও pattern-এর ফল দেখানো হলো।
+\begin{minipage}{\linewidth}
+\chSixExample{৭.৪}{Rahim নামের শিক্ষার্থীর সব তথ্য দেখাও।}
+
+\begin{chSixSideBySide}[.32]
+\begin{verbatim}
+SELECT *
+FROM Student
+WHERE Name='Rahim';
+\end{verbatim}
+\chSixNextColumn
+\textbf{ফল}\par\smallskip
+{\raggedright\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|l|l|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA & Fee & Email\\\hline
+102 & Rahim & Science & 5.00 & 600 & rahim@test.com\\
+\hline\end{tabular}\par}
+\end{chSixSideBySide}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.৫}{যে শিক্ষার্থীর Roll 213, তার তথ্য দেখাও।}
+
+\begin{chSixSideBySide}[.32]
+\begin{verbatim}
+SELECT *
+FROM Student
+WHERE Roll=213;
+\end{verbatim}
+\chSixNextColumn
+\textbf{ফল}\par\smallskip
+{\raggedright\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|l|l|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA & Fee & Email\\\hline
+213 & Sami & Business Studies & 5.00 & 600 & sami@test.com\\
+\hline\end{tabular}\par}
+\end{chSixSideBySide}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.৬}{যেসব শিক্ষার্থীর GPA 5.00-এর কম, তাদের Roll, Name ও GPA দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE GPA<5;
+\end{verbatim}
+\smallskip\small ফলে Nabila, Farhan, Mahi, Mim ও Tania আসবে।
+
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+109 & Nabila & 4.80\\\hline
+205 & Farhan & 4.80\\\hline
+306 & Mahi & 4.50\\\hline
+150 & Mim & 4.20\\\hline
+180 & Tania & 3.90\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.৮}{যেসব শিক্ষার্থীর GPA 4.80 থেকে 5.00-এর মধ্যে, তাদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE GPA BETWEEN 4.80 AND 5.00;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+213 & Sami & 5.00\\\hline
+205 & Farhan & 4.80\\\hline
+305 & Rima & 5.00\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.৯}{যাদের Roll 200 থেকে 300-এর মধ্যে নয়, তাদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+WHERE Roll NOT BETWEEN 200 AND 300;
+\end{verbatim}
+\smallskip\small ফলে Roll 102, 109, 305, 306, 150 ও 180 আসবে।
+
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Roll, Name}{\mbox{102, Rahim}; \mbox{109, Nabila}; \mbox{305, Rima}; \mbox{306, Mahi}; \mbox{150, Mim}; \mbox{180, Tania}}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.১১}{Rahim, Sami ও Farhan ছাড়া অন্য শিক্ষার্থীদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+WHERE Name NOT IN
+('Rahim','Sami','Farhan');
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Roll, Name}{\mbox{109, Nabila}; \mbox{305, Rima}; \mbox{306, Mahi}; \mbox{150, Mim}; \mbox{180, Tania}}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.১৩}{Science বিভাগে যারা GPA 5 পেয়েছে, তাদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE Department='Science'
+  AND GPA=5;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.১৫}{যারা Business Studies বিভাগে পড়ে অথবা GPA 5 পেয়েছে, তাদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Department, GPA
+FROM Student
+WHERE Department='Business Studies'
+   OR GPA=5;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA\\\hline
+102 & Rahim & Science & 5.00\\\hline
+213 & Sami & Business Studies & 5.00\\\hline
+205 & Farhan & Business Studies & 4.80\\\hline
+305 & Rima & Humanities & 5.00\\\hline
+180 & Tania & Business Studies & 3.90\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.১৭}{যেসব শিক্ষার্থীর নাম M দিয়ে শুরু, তাদের Roll ও Name দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+WHERE Name LIKE 'M%';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Roll & Name\\\hline
+306 & Mahi\\\hline
+150 & Mim\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.১৯}{ফলাফলে Name কলামের শিরোনাম StudentName হিসেবে দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name AS StudentName, GPA
+FROM Student;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{StudentName, GPA}{\mbox{Rahim, 5.00}; \mbox{Nabila, 4.80}; \mbox{Sami, 5.00}; \mbox{Farhan, 4.80}; \mbox{Rima, 5.00}; \mbox{Mahi, 4.50}; \mbox{Mim, 4.20}; \mbox{Tania, 3.90}}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.২০}{Department-এর নামগুলো পুনরাবৃত্তি ছাড়া দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT DISTINCT Department
+FROM Student;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+Department\\\hline
+Science\\\hline
+Business Studies\\\hline
+Humanities\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+\chSixExample{৭.২১}{Fee-কে মাসিক ফি ধরে প্রত্যেক শিক্ষার্থীর ১২ মাসের মোট ফি হিসাব করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name,
+       Fee*12 AS AnnualFee
+FROM Student;
+\end{verbatim}
+\smallskip\small AnnualFee মূল Student টেবিলে নতুন ফিল্ড তৈরি করেনি।
+এটি শুধু কুয়েরির ফলাফলে হিসাব করে পাওয়া মান।
+
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Name, AnnualFee}{\mbox{Rahim, 7200}; \mbox{Nabila, 6600}; \mbox{Sami, 7200}; \mbox{Farhan, 6000}; \mbox{Rima, 6600}; \mbox{Mahi, 6000}; \mbox{Mim, 5400}; \mbox{Tania, 5400}}
+\end{minipage}
+\end{minipage}

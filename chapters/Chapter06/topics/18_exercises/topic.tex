@@ -1,26 +1,243 @@
-% ১৮. অনুশীলনী
-\section{অনুশীলনী}
-\begin{practicebox}
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-    \item ডেটা ও তথ্যের মধ্যে পার্থক্য লেখো।
-    \item ফিল্ড, রেকর্ড ও টেবিল কী?
-    \item DBMS-এর চারটি কাজ লেখো।
-    \item RDBMS বলতে কী বোঝায়?
-    \item Primary key ও Foreign key-এর পার্থক্য লেখো।
-    \item Query কেন ব্যবহার করা হয়?
-    \item Sorting ও Indexing-এর পার্থক্য লেখো।
-    \item Form ও Report-এর ব্যবহার লেখো।
-    \item কর্পোরেট ডেটাবেজের দুটি উদাহরণ দাও।
-    \item ডেটা এনক্রিপশন কেন প্রয়োজন?
+\Needspace{30\baselineskip}
+\section{সংক্ষিপ্ত প্রশ্ন ও সৃজনশীল অনুশীলনী}
+\label{sec:ch06-exercises}
+ নিচের প্রশ্নগুলো অধ্যায়ের ধারণা প্রয়োগের জন্য প্রস্তুত করা হয়েছে। প্রতিটি উদ্দীপকে দেওয়া টেবিল তার নিজস্ব নমুনা; একই নামের অন্য টেবিলের মান ব্যবহার করবে না। কোনো প্রশ্নে অধ্যায়ের আগের টেবিল ব্যবহার করতে বলা হলে শুধু সেই নির্দিষ্ট টেবিলটি নেবে।
+
+\subsection{ব্যাখ্যা ও তুলনামূলক প্রশ্ন}
+\begin{multicols}{2}
+\small
+\begin{enumerate}[itemsep=0pt,topsep=1pt]
+\item একটি শ্রেণির গড় নম্বর কীভাবে আরেকটি বিশ্লেষণের ডেটা হতে পারে?
+\item একই ফোল্ডারে থাকা সব ফাইলকে একটি নির্দিষ্ট ডেটাবেজ বলা যায় না কেন?
+\item ফিল্ডের নাম, ফিল্ডের মান ও রেকর্ডের পার্থক্য উদাহরণ দিয়ে বোঝাও।
+\item GPA-এর Data Type নির্ধারণের পাশাপাশি Validation Rule কেন প্রয়োজন, ব্যাখ্যা করো।
+\item পাঁচ কলামের টেবিলে তিন রেকর্ড যোগ ও এক কলাম বাদ দিলে কোন পরিমাপ কীভাবে বদলায়?
+\item DBMS ও DBA-এর দায়িত্ব আলাদা করে ব্যাখ্যা করো।
+\item একই নামের দুজনের ক্ষেত্রে Name-কে প্রাইমারি কী করলে সমস্যা কী?
+\item একাধিক ফিল্ড পৃথকভাবে অনন্য হলে প্রাইমারি কী নির্বাচনে কী বিবেচনা করবে?
+\item একটি প্রাইমারি কী একাধিক ফিল্ড নিয়ে গঠিত হতে পারে কেন?
+\item ফরেন কী-এর পুনরাবৃত্তি কীভাবে 1:M সম্পর্ককে প্রকাশ করে?
+\item ফিল্ডের নাম আলাদা হলেও সম্পর্ক সম্ভব, কিন্তু অসামঞ্জস্যপূর্ণ টাইপ সমস্যা করে কেন?
+\item পরীক্ষায় অনুপস্থিত শিক্ষার্থীর নম্বর এবং শূন্য পাওয়া শিক্ষার্থীর নম্বর কীভাবে আলাদা করবে?
+\item Format, Input Mask ও Validation Rule-এর কাজ আলাদা করে বোঝাও।
+\item AutoNumber-এর সর্বোচ্চ মানকে মোট রেকর্ডসংখ্যা ধরা যায় না কেন?
+\item SELECT-এর expression এবং ALTER TABLE দিয়ে নতুন ফিল্ড যোগের পার্থক্য কী?
+\item WHERE ও HAVING কোন পর্যায়ের শর্ত নির্ধারণ করে?
+\item ইনডেক্স অতিরিক্ত জায়গা ও লেখার ব্যয় বাড়ায় কেন?
+\item NoSQL একটি ভাষা নয় কেন? Big Data-এর সঙ্গে এর পার্থক্য কী?
+\item ERP-তে একই অর্ডারের তথ্য বিভিন্ন বিভাগ কীভাবে ব্যবহার করতে পারে?
+\item এনক্রিপশন, permission ও backup কেন পরস্পরের পূর্ণ বিকল্প নয়?
 \end{enumerate}
-\end{practicebox}
+\end{multicols}
 
-\begin{boardbox}{সৃজনশীল প্রশ্নের প্রস্তুতি}
-একটি কলেজের Student, Result ও Payment টেবিল দেওয়া থাকলে কোন ফিল্ড Primary key হবে, কোন ফিল্ড Foreign key হবে, কীভাবে One-to-Many relation তৈরি হবে এবং নির্দিষ্ট শর্তের Query কীভাবে লেখা হবে--এসব ব্যাখ্যা করার অনুশীলন করো।
-\end{boardbox}
+\subsection{সারণি ও SQL-এর ফল বিশ্লেষণ}
+নিচের Product টেবিল ব্যবহার করো। UnitPrice-এর সব মান একই মুদ্রায় এবং Stock পূর্ণসংখ্যায় দেওয়া হয়েছে।
+\begin{flushleft}\small
+\begin{tabular}{|l|l|l|l|}\hline
+ProductID & ProductName & UnitPrice & Stock\\\hline
+11 & Notebook & 80 & 30\\\hline
+12 & Pen & 15 & 100\\\hline
+13 & Folder & 80 & 20\\\hline
+14 & Marker & 45 & 0\\\hline
+\end{tabular}
+\end{flushleft}
+\begin{enumerate}
+\item টেবিলের ফিল্ড, রেকর্ড ও ডেটা-ঘরের সংখ্যা নির্ণয় করো। UnitPrice একা প্রাইমারি কী হবে না কেন?
+\item \begin{minipage}[t]{\linewidth}নিচের নির্দেশগুলোর ফল নির্ণয় করো। ফলের কলামের নাম ও নির্বাচিত রেকর্ড আলাদা করে লেখো।
+\begin{verbatim}
+SELECT ProductID,ProductName FROM Product
+WHERE UnitPrice>=45 AND Stock>0;
+SELECT ProductName,UnitPrice*Stock AS StockValue
+FROM Product WHERE ProductID IN (11,13);
+SELECT ProductID FROM Product ORDER BY UnitPrice DESC,ProductID ASC;
+SELECT COUNT(*),SUM(Stock),MAX(UnitPrice) FROM Product;
+\end{verbatim}
+\end{minipage}
+\item Stock শূন্য এমন পণ্যের নাম দেখাও এবং নতুন Stock মান 10 করতে একটি UPDATE লেখো। WHERE ছাড়া চালালে কী হবে?
+\item SupplierCode নামে Text ফিল্ড যোগের SQLite নির্দেশ লেখো। এতে কোনো নতুন পণ্যের রেকর্ড যোগ হবে কি?
+\item ProductID 12-এর রেকর্ড মুছে ফেলা ও Product টেবিল বাদ দেওয়ার নির্দেশ আলাদা করে লেখো।
+\end{enumerate}
 
-\begin{recapbox}
-Chapter 6-এর মূল কথা: ডেটাকে সংগঠিতভাবে রাখার জন্য ডেটাবেজ, ডেটাবেজ পরিচালনার জন্য DBMS, সম্পর্কভিত্তিক টেবিল ব্যবস্থার জন্য RDBMS, ডেটা বের করার জন্য Query, দ্রুত অনুসন্ধানের জন্য Indexing, উপস্থাপনের জন্য Form/Report এবং নিরাপত্তার জন্য Access control, Backup ও Encryption ব্যবহৃত হয়।
-\end{recapbox}
 
+\subsection{ত্রুটি শনাক্ত ও সংশোধন}
+নিচের প্রতিটি ক্ষেত্রে সমস্যা চিহ্নিত করে সঠিক রূপ ও কারণ লেখো।
+\begin{multicols}{2}
+\small
+\begin{enumerate}
+\item অজানা GPA খুঁজতে \texttt{WHERE GPA=NULL} লেখা হয়েছে।
+\item শুধু রোল 101 মুছতে \texttt{DELETE Student WHERE Roll=101;} লেখা হয়েছে।
+\item নাম বদলাতে \texttt{ALTER TABLE Student SET Name='Rupa';} লেখা হয়েছে।
+\item Text মোবাইল নম্বর 01710000000-কে হিসাবের সুবিধার যুক্তিতে Number করা হয়েছে।
+\item Enrolment-এ অনেক শিক্ষার্থী বহু কোর্স নেয়, কিন্তু শুধু StudentID-কে unique করা হয়েছে।
+\item নতুন কর্মীর পরিচিতি AutoNumber; অন্য টেবিলের EmployeeID-ও AutoNumber করে সম্পর্কিত মান মেলার আশা করা হয়েছে।
+\item SQLite-এ নতুন ডেটাবেজ ফাইলের পরিবর্তে \texttt{CREATE DATABASE School;} চালানো হয়েছে।
+\item একটি ছোট নমুনায় সব নাম আলাদা দেখে Name-কে চিরকাল অনন্য ঘোষণা করা হয়েছে।
+\end{enumerate}
+\end{multicols}
+
+
+\subsection{সৃজনশীল প্রশ্ন}
+\textbf{১. গ্রন্থাগারের ডেটা নকশা।} একটি কলেজে Book(BookID, Title, AuthorName) এবং Issue(IssueID, BookID, StudentID, IssueDate, ReturnDate) রাখা হয়। একটি বই ভিন্ন সময়ে বিভিন্ন শিক্ষার্থী নিতে পারে। ফেরত না দেওয়া বইয়ের ReturnDate এখনও জানা নেই।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}Field কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}Title-কে বইয়ের অনন্য পরিচিতি ধরা সবসময় যুক্তিযুক্ত নয় কেন?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}টেবিল দুটির কী, সম্পর্ক এবং IssueDate ও ReturnDate-এর উপযুক্ত Access টাইপ নির্ধারণ করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}ফেরত না দেওয়া বইয়ের তথ্য নির্ভরযোগ্যভাবে খোঁজার ব্যবস্থা বিশ্লেষণ করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{২. শ্রেণি ও রোল।} একটি প্রতিষ্ঠানে XI ও XII উভয় শ্রেণিতে Roll 1 থেকে শুরু হয়। একই শিক্ষাবর্ষে প্রতি শ্রেণির একটি শাখা আছে। Student(ClassName, Roll, Name, Mobile, GPA)-তে বর্তমান শিক্ষাবর্ষের তথ্য রাখা হয়। ভবিষ্যতে একাধিক শিক্ষাবর্ষের তথ্য রাখার পরিকল্পনা আছে।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}কম্পোজিট কী কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}Mobile দেখতে সংখ্যা হলেও Text উপযুক্ত কেন?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}বর্তমান কাঠামোয় উপযুক্ত অনন্য কী ও GPA-এর যাচাইয়ের নিয়ম নির্ধারণ করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}ভবিষ্যৎ শিক্ষাবর্ষ যোগ হলে বর্তমান কী যথেষ্ট থাকবে কি না বিশ্লেষণ করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{৩. কোর্সে ভর্তি।} TrainingCentre-এ Learner(LearnerID, Name), Course(CourseID, CourseName) এবং Enrolment(LearnerID, CourseID, EnrolDate) আছে। একই শিক্ষার্থী একই কোর্সে একবার ভর্তি হতে পারে, কিন্তু ভিন্ন কোর্সে ভর্তি হওয়ার সুযোগ আছে।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}জাংশন টেবিল কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}শুধু LearnerID-কে Enrolment-এর প্রাইমারি কী করলে সমস্যা কী?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}তিন টেবিলের কী ও সংযোগচিত্র তৈরি করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}অজানা CourseID গ্রহণ করলে কী সমস্যা হবে এবং কোন বিধি তা প্রতিরোধ করে, ব্যাখ্যা করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{৪. ব্যাংকের অসম্পূর্ণ লেনদেন।} A01 হিসাবে 10000 এবং A02 হিসাবে 3000 টাকা আছে। A01 থেকে A02-তে 2000 টাকা পাঠাতে প্রথম হিসাব থেকে টাকা কমানো হলো। দ্বিতীয় হিসাবে যোগ করার আগে ব্যর্থতা ধরা পড়ল; তখনো COMMIT হয়নি। কোনো ফি নেই।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] ট্রানজেকশন কী?
+\item[খ.] Atomicity ও Durability আলাদা কেন?
+\item[গ.] ROLLBACK-এর পর দুই Balance নির্ণয় করো; সফল হলে কত হতো?
+\item[ঘ.] শুধু Debit স্থায়ী করলে কোন সমস্যা হবে? Consistency বলতে সব লেনদেনে মোট টাকা অপরিবর্তিত বোঝায় কি?
+\end{enumerate}
+\end{multicols}
+
+\textbf{৫. দোকানের সমন্বিত ব্যবস্থা।} অর্ডার গ্রহণের পর বিক্রয় বিভাগ গ্রাহকের তথ্য, গুদাম বিভাগ পণ্যের পরিমাণ এবং হিসাব বিভাগ পরিশোধের তথ্য ব্যবহার করে। একই গ্রাহকের ঠিকানা তিন বিভাগে আলাদা থাকায় পণ্য ভুল ঠিকানায় গেছে।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}রিডানড্যান্সি কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}একই ডেটার ভিন্ন সংস্করণ কেন সমস্যা তৈরি করে?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}CustomerID ও OrderID ব্যবহার করে তথ্য সংগঠনের ধারণা দাও।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}ERP-ধরনের সমন্বয় সুবিধা দিলেও অনুমতি ও যাচাই দরকার কেন, বিশ্লেষণ করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{৬. ফলাফলের অনুমতি।} শিক্ষার্থী নিজের ফল পড়ে, শিক্ষক নির্দিষ্ট বিষয়ের নম্বর সংশোধন করেন এবং দায়িত্বপ্রাপ্ত কর্মী নতুন শিক্ষার্থীর রেকর্ড যোগ করেন। ভুল কনফিগারেশনে সবার Delete অধিকার চালু হয়ে গেল।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}Authorization কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}পরিচয় যাচাই হয়ে গেলেই সব কাজের অধিকার দেওয়া যায় না কেন?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}তিন ধরনের ব্যবহারকারীর প্রয়োজনীয় অনুমতির সারণি তৈরি করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}অতিরিক্ত Delete অধিকার, ব্যাকআপ ও পরিবর্তনের লগের সম্পর্ক বিশ্লেষণ করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{৭. বার্তার রূপান্তর।} একটি শিক্ষামূলক পদ্ধতিতে প্রতিটি ইংরেজি অক্ষর এক ঘর সামনে সরানো হয়; Z-এর পরে A আসে। এ নিয়মে DATA লেখা EBUB হয়েছে। একই প্রতিষ্ঠান বাস্তব ব্যক্তিগত তথ্য সংরক্ষণের নিরাপদ ব্যবস্থা করতে চায়।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}Ciphertext কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}এনক্রিপশন ও ডিক্রিপশনের দিক আলাদা কেন?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}প্রদত্ত বার্তায় plaintext, ciphertext ও সরণ-কী শনাক্ত করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}এই সরল নিয়মকে বাস্তব ব্যক্তিগত তথ্যের যথেষ্ট নিরাপত্তা বলা যায় কি না, যুক্তি দাও।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{৮. অনুসন্ধান ও মেধাতালিকা।} লক্ষাধিক শিক্ষার্থীর তথ্য থেকে কর্মচারী প্রতিদিন RegistrationNo দিয়ে রেকর্ড খোঁজেন। অধ্যক্ষ GPA বড় থেকে ছোট এবং সমান GPA-তে Roll ছোট থেকে বড় তালিকা চান। সব ফিল্ডে ইনডেক্স দেওয়ার প্রস্তাব এসেছে।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}sort key কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}ইনডেক্স থাকলেই ফলের ক্রম নিশ্চিত নয় কেন?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}অধ্যক্ষের প্রয়োজনের ORDER BY clause লেখো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}RegistrationNo-তে ইনডেক্স এবং সব ফিল্ডে ইনডেক্সের প্রস্তাব তুলনা করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{৯. বিভাগের তথ্য ও নম্বর।} Department(DeptID, DeptName), Student(StudentID, Name, DeptID) এবং Result(ResultID, StudentID, ExamName, ICTMark) আছে। একজন শিক্ষার্থীর একাধিক পরীক্ষার ফল রাখা হবে। একই শিক্ষার্থীর একই পরীক্ষার ফল দ্বিতীয়বার যোগ করা যাবে না।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}ফরেন কী কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}Result.StudentID অনন্য করলে সমস্যা কী?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}দুটি 1:M সম্পর্ক এবং প্রয়োজনীয় unique বিধি নির্ধারণ করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}Science বিভাগের Annual পরীক্ষায় কমপক্ষে 80 পাওয়া শিক্ষার্থীর নাম ও নম্বর দেখানোর কুয়েরি তৈরি করো।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\textbf{১০. ব্যাকআপ ও সেবা।} একটি সরকারি সেবা কেন্দ্রে সোমবারের পূর্ণ ব্যাকআপ আছে। মঙ্গলবার নতুন রেকর্ড যোগ হয়েছে। বুধবার সার্ভারের ডিস্ক নষ্ট হলো। সব ডেটা এনক্রিপ্ট করা ছিল, কিন্তু সর্বশেষ পরিবর্তনের আলাদা কপি নেই।
+\begin{multicols}{2}
+\begin{enumerate}
+\item[ক.] \begin{minipage}[t]{\linewidth}Recovery কী?
+\end{minipage}
+\item[খ.] \begin{minipage}[t]{\linewidth}এনক্রিপশন থাকলেও হারানো ফাইল নিজে থেকে ফিরে আসে না কেন?
+\end{minipage}
+\item[গ.] \begin{minipage}[t]{\linewidth}বর্তমানে কোন সময় পর্যন্ত তথ্য ফিরে পাওয়ার সম্ভাবনা আছে, ব্যাখ্যা করো।
+\end{minipage}
+\item[ঘ.] \begin{minipage}[t]{\linewidth}সাম্প্রতিক পরিবর্তন রক্ষা, আলাদা কপি ও পুনরুদ্ধারের পরীক্ষা নিয়ে পরিকল্পনা দাও।
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\subsection{উদ্দীপক থেকে শর্ত ও সংশোধন নির্ণয়}
+একটি স্বাস্থ্যকেন্দ্র Patient টেবিলে নিচের তথ্য রেখেছে। কেন্দ্রটি শুধু নির্দিষ্ট রোগীর বয়স সংশোধন এবং নির্দিষ্ট রক্তের গ্রুপের প্রাপ্তবয়স্ক রোগীদের তালিকা তৈরি করতে চায়।
+\begin{flushleft}\small
+\begin{tabular}{|l|l|l|l|}\hline
+PatientID & Name & Age & BloodGroup\\\hline
+31 & Rumi & 22 & A+\\\hline
+32 & Sajal & 17 & O+\\\hline
+33 & Dina & 45 & O+\\\hline
+34 & Nafis & 29 & B+\\\hline
+\end{tabular}
+\end{flushleft}
+\begin{enumerate}
+\item[ক.] অ্যাট্রিবিউট কী?
+\item[খ.] রোগীর নামকে প্রাইমারি কী না করার কারণ ব্যাখ্যা করো।
+\item[গ.] Sajal-এর সঠিক বয়স 19 হলে নির্দিষ্ট রেকর্ডটি সংশোধনের SQL লেখো।
+\item[ঘ.] সংশোধনের পরে O+ গ্রুপের কমপক্ষে 18 বছর বয়সী রোগীদের বয়সের অধঃক্রমে দেখানোর SQL ও ফল নির্ণয় করো।
+\end{enumerate}
+\input{chapters/Chapter06/topics/18_exercises/query_practice}
+
+\input{chapters/Chapter06/topics/18_exercises/new_syllabus_practice}
+
+\input{chapters/Chapter06/topics/18_exercises/concept_checks}
+
+Student(StudentID, Name) ও Result(ResultID, StudentID, Marks) থেকে বেশি নম্বর পাওয়া শিক্ষার্থীর নাম দেখাতে কী কী ধারণা লাগবে?
+
+\input{chapters/Chapter06/topics/18_exercises/topic_checks}
+
+\input{chapters/Chapter06/topics/18_exercises/additional_short_questions}

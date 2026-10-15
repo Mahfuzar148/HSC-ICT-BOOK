@@ -1,0 +1,23 @@
+% !TeX program = xelatex
+% Build from the repository root. Standalone proof for user approval.
+\documentclass[12pt]{article}
+\usepackage[a4paper,left=16mm,right=16mm,top=16mm,bottom=16mm]{geometry}
+\usepackage{iftex,fontspec}
+\ifLuaTeX
+ \setmainfont[Renderer=HarfBuzz,Script=Bengali,Language=Bengali,
+ UprightFont={Kalpurush},BoldFont={Kalpurush},BoldFeatures={FakeBold=1.3}]{Kalpurush}
+\else
+ \setmainfont[Script=Bengali,Language=Bengali,
+ UprightFont={Kalpurush},BoldFont={Kalpurush},BoldFeatures={FakeBold=1.3}]{Kalpurush}
+\fi
+\usepackage{amsmath,amssymb,xcolor,tikz}
+\input{chapters/Chapter03/previews/conversion_visual/macros.tex}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1mm}
+\begin{document}
+{\Large\bfseries সংখ্যা পদ্ধতির রূপান্তর}\par
+{\color{CVAccent}পূর্ণাংশ ও ভগ্নাংশ পাশাপাশি; অঙ্ক ও বিটের ধাপে রূপান্তর}\par
+\vspace{2mm}\hrule height .6pt\vspace{4mm}
+\input{chapters/Chapter03/previews/conversion_visual/compact_example.tex}
+\end{document}

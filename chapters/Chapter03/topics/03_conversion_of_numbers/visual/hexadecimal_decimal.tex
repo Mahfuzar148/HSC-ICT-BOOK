@@ -1,0 +1,90 @@
+\subsection{হেক্সাডেসিমাল থেকে দশমিক}
+বিন্দুর বামে ওজন $b^0,b^1,\ldots$; ডানে $b^{-1},b^{-2},\ldots$। প্রতিটি অঙ্কের সঙ্গে তার ওজন গুণ করে অবদানগুলো যোগ করো।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (6DF)_{16} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC049}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 6 $};
+\node[vcnum] (w0) at (0,-10) {$ 16^{2} $};
+\node[vcnum] (v0) at (0,-25) {$ 1536 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ \mathrm{D} $};
+\node[vcnum] (w1) at (19,-10) {$ 16^{1} $};
+\node[vcnum] (v1) at (19,-25) {$ 208 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ \mathrm{F} $};
+\node[vcnum] (w2) at (38,-10) {$ 16^{0} $};
+\node[vcnum] (v2) at (38,-25) {$ 15 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=6\times 16^{2}+\mathrm{D}\times 16^{1}+\mathrm{F}\times 16^{0}\\&=1536+208+15=1759.\end{aligned}\]
+\[\therefore\ (6DF)_{16}=(1759)_{10}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.A6)_{16} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC050}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 0 $};
+\node[vcnum] (w0) at (0,-10) {$ 16^{0} $};
+\node[vcnum] (v0) at (0,-25) {$ 0 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (27,0) {$ \mathrm{A} $};
+\node[vcnum] (w1) at (27,-10) {$ 16^{-1} $};
+\node[vcnum] (v1) at (27,-25) {$ \frac{5}{8} $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (46,0) {$ 6 $};
+\node[vcnum] (w2) at (46,-10) {$ 16^{-2} $};
+\node[vcnum] (v2) at (46,-25) {$ \frac{3}{128} $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] at (13.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=0\times 16^{0}+\mathrm{A}\times 16^{-1}+6\times 16^{-2}\\&=\frac{5}{8}+\frac{3}{128}=0.6484375.\end{aligned}\]
+\[\therefore\ (0.A6)_{16}=(0.6484375)_{10}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (3B.9C)_{16} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC051}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 3 $};
+\node[vcnum] (w0) at (0,-10) {$ 16^{1} $};
+\node[vcnum] (v0) at (0,-25) {$ 48 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ \mathrm{B} $};
+\node[vcnum] (w1) at (19,-10) {$ 16^{0} $};
+\node[vcnum] (v1) at (19,-25) {$ 11 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (46,0) {$ 9 $};
+\node[vcnum] (w2) at (46,-10) {$ 16^{-1} $};
+\node[vcnum] (v2) at (46,-25) {$ \frac{9}{16} $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (65,0) {$ \mathrm{C} $};
+\node[vcnum] (w3) at (65,-10) {$ 16^{-2} $};
+\node[vcnum] (v3) at (65,-25) {$ \frac{3}{64} $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] at (32.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=3\times 16^{1}+\mathrm{B}\times 16^{0}+9\times 16^{-1}+\mathrm{C}\times 16^{-2}\\&=48+11+\frac{9}{16}+\frac{3}{64}=59.609375.\end{aligned}\]
+\[\therefore\ (3B.9C)_{16}=(59.609375)_{10}.\]
+\end{minipage}\par

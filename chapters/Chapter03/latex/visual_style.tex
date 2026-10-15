@@ -1,0 +1,31 @@
+% Chapter-local style; shared preamble and other chapters remain untouched.
+\ifdefined\chThreeFontReady\else\input{chapters/Chapter03/latex/text_font.tex}\fi
+\definecolor{ICTBlue}{HTML}{1769AA}
+\definecolor{ICTGreen}{HTML}{16835D}
+\definecolor{ICTOrange}{HTML}{995322}
+\definecolor{ICTLightBlue}{HTML}{EAF4FB}
+\definecolor{ICTLightGreen}{HTML}{EDF7F2}
+\definecolor{ICTLightOrange}{HTML}{FFF3E8}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcommand{\bulletfont}{\mdseries\symbolfont}
+\let\chThreeEnglish\textenglish
+\renewcommand{\textenglish}[1]{\ifmmode\text{\chThreeEnglish{#1}}\else\chThreeEnglish{#1}\fi}
+\pdfstringdefDisableCommands{\def\textenglish#1{#1}\def\chThreeEnglish#1{#1}\def\englishfont{}}
+\usetikzlibrary{shapes.gates.logic.US,fit}
+\setlength{\arrayrulewidth}{0.6pt}
+\arrayrulecolor{black}
+\captionsetup{hypcap=false}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
+\graphicspath{{\chThreeRoot}{\chThreeRoot chapters/Chapter03/resources/images/}{\chThreeRoot chapters/Chapter03/resources/}}
+\newsavebox{\chThreePicture}
+\newenvironment{chThreeDiagram}{\begin{lrbox}{\chThreePicture}}{%
+\end{lrbox}\ifdim\wd\chThreePicture>0.98\linewidth
+\resizebox{0.98\linewidth}{!}{\usebox{\chThreePicture}}%
+\else\usebox{\chThreePicture}\fi}
+\newcommand{\chThreeExample}[2]{\par\Needspace{3\baselineskip}\smallhead{উদাহরণ #1: #2}}
+\newcommand{\chThreeAnswer}{\par\textbf{সমাধান:} }
+\tikzset{chff/.style={draw,minimum width=15mm,minimum height=16mm,align=center,font=\small},chmux/.style={draw,trapezium,trapezium left angle=70,trapezium right angle=110,minimum width=11mm,minimum height=12mm,align=center,font=\scriptsize},chgate/.style={draw,logic gate inputs=nn,minimum size=10mm}}

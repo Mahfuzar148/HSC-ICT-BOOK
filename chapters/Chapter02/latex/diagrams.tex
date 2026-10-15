@@ -1,0 +1,121 @@
+% Original vector diagrams. Labels describe functional roles; no copied artwork.
+\newcommand{\chTwoNative}[1]{\resizebox{.98\linewidth}{!}{\csname chTwoDraw#1\endcsname}}
+\tikzset{chTwoNode/.style={draw=chTwoTeal,fill=chTwoTint,rounded corners=2pt,align=center,inner sep=4pt,font=\small},chTwoLink/.style={draw=chTwoTeal,thick},chTwoArrow/.style={chTwoLink,-{Stealth[length=2mm]}}}
+\newcommand{\chTwoDrawCommunication}{%
+\begin{tikzpicture}[node distance=5mm]
+\node[chTwoNode] (s) {Sender};\node[chTwoNode,right=of s] (m) {Medium};\node[chTwoNode,right=of m] (r) {Receiver};
+\draw[chTwoArrow] (s)--node[above,font=\small]{Message}(m);\draw[chTwoArrow] (m)--(r);
+\node[below=7mm of m,font=\small,align=center]{Protocol: shared rules};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawTransmission}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[chTwoNode,text width=2.3cm] (a) at (0,0) {Bit paths};\node[anchor=west,font=\small] at (1.5,0) {Serial / Parallel};
+\node[chTwoNode,text width=2.3cm] (b) at (0,-.8) {Timing};\node[anchor=west,font=\small] at (1.5,-.8) {Async / Sync / Isochronous};
+\node[chTwoNode,text width=2.3cm] (c) at (0,-1.6) {Direction};\node[anchor=west,font=\small] at (1.5,-1.6) {Simplex / Half / Full duplex};
+\node[chTwoNode,text width=2.3cm] (d) at (0,-2.4) {Recipients};\node[anchor=west,font=\small] at (1.5,-2.4) {Unicast / Broadcast / Multicast};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawAsyncframe}{%
+\begin{tikzpicture}[x=.55cm,y=1cm]
+\foreach \x/\t in {0/Start,1/D0,2/D1,3/D2,4/D3,5/D4,6/D5,7/D6,8/D7,9/Stop}{\draw[chTwoLink,fill=chTwoTint] (\x,0) rectangle ++(1,.7);\node[font=\small,rotate=90] at (\x+.5,.35){\t};}
+\node[font=\small,anchor=north] at (.5,-.1){0};\node[font=\small,anchor=north] at (9.5,-.1){1};
+\draw[chTwoLink] (1,-.4)--(1,-.55)--(9,-.55)--(9,-.4);\node[font=\small,below] at (5,-.55){8 data bits};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawSyncblock}{%
+\begin{tikzpicture}
+\node[chTwoNode] (h) at (0,0){Header};\node[chTwoNode,text width=2.8cm] (d) at (2.6,0){Many characters\\Data block};\node[chTwoNode] (t) at (5.2,0){Trailer};
+\draw[chTwoArrow] (h)--(d);\draw[chTwoArrow] (d)--(t);\node[font=\small,align=center] at (2.6,-1){Shared timing; block overhead};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawDuplex}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\foreach \y/\label in {0/Simplex,-1.4/Half duplex,-2.8/Full duplex}{\node[chTwoNode] at (0,\y){A};\node[chTwoNode] at (5,\y){B};\node[font=\small] at (2.5,\y+.5){\label};}
+\draw[chTwoArrow] (.4,0)--(4.6,0);
+\draw[chTwoArrow] (.4,-1.3)--node[above,font=\small]{turn 1}(4.6,-1.3);\draw[chTwoArrow] (4.6,-1.7)--node[below,font=\small]{turn 2}(.4,-1.7);
+\draw[chTwoArrow] (.4,-2.7)--(4.6,-2.7);\draw[chTwoArrow] (4.6,-3.1)--node[below,font=\small]{same time}(.4,-3.1);
+\end{tikzpicture}}
+\newcommand{\chTwoDrawSatellite}{%
+\begin{tikzpicture}
+\node[chTwoNode] (s) at (3,2){Satellite\\Transponder};\node[chTwoNode] (a) at (0,0){Earth A};\node[chTwoNode] (b) at (6,0){Earth B};
+\draw[chTwoArrow] (a)--node[sloped,above,font=\small]{Uplink}(s);\draw[chTwoArrow] (s)--node[sloped,above,font=\small]{Downlink}(b);
+\node[font=\small,align=center] at (3,-.7){GEO height: approx. 35,786 km};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawFiber}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\fill[chTwoTint] (0,0) rectangle (6,1.5);\fill[chTwoTeal!15] (0,.4) rectangle (6,1.1);
+\draw[chTwoLink] (0,.4)--(6,.4);\draw[chTwoLink] (0,1.1)--(6,1.1);
+\draw[chTwoArrow,chTwoRose] (0,.75)--(.8,1.1)--(2.4,.4)--(4,1.1)--(5.6,.4)--(6,.6);
+\node[font=\small] at (3,1.8){Cladding: lower refractive index};\node[font=\small,fill=white] at (3,.75){Core};
+\node[font=\small] at (3,-.4){Ray model of total internal reflection};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawMobilearch}{%
+\begin{tikzpicture}[node distance=5mm]
+\node[chTwoNode] (p) {Phone};\node[chTwoNode,right=of p] (b){BTS};\node[chTwoNode,right=of b] (c){BSC};\node[chTwoNode,right=of c] (m){MSC};
+\draw[chTwoLink,<->] (p)--(b);\draw[chTwoLink,<->] (b)--(c);\draw[chTwoLink,<->] (c)--(m);
+\node[font=\small,below=8mm of c,align=center]{Traditional GSM / 2G model};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawSwitch}{%
+\begin{tikzpicture}
+\node[chTwoNode] (s) at (2.7,0){Switch};\node[chTwoNode] (a) at (0,0){A};\node[chTwoNode] (b) at (5.4,.9){B};\node[chTwoNode] (c) at (5.4,-.9){C};
+\draw[chTwoArrow] (a)--node[above,font=\small]{to B}(s);\draw[chTwoArrow] (s)--(b);\draw[chTwoLink,dashed] (s)--(c);
+\node[font=\small,align=center] at (2.7,-1.8){Known B: forward to B's port\\Unknown/broadcast: flood other ports};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawBus}{%
+\begin{tikzpicture}
+\draw[chTwoLink] (0,0)--(6,0);\draw[chTwoLink] (0,-.2)--(0,.2);\draw[chTwoLink] (6,-.2)--(6,.2);
+\foreach \x/\l in {1/A,3/B,5/C}{\node[chTwoNode] (n\l) at (\x,1){\l};\draw[chTwoLink] (n\l)--(\x,0);}
+\node[font=\small,below] at (3,0){Shared backbone; terminators at ends};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawStar}{%
+\begin{tikzpicture}
+\node[chTwoNode] (s) at (2.5,0){Switch};\foreach \x/\y/\l in {0/1/A,0/-1/B,5/1/C,5/-1/D}{\node[chTwoNode] (\l) at (\x,\y){\l};\draw[chTwoLink] (s)--(\l);}
+\end{tikzpicture}}
+\newcommand{\chTwoDrawRing}{%
+\begin{tikzpicture}
+\foreach \a/\l in {90/A,18/B,-54/C,-126/D,162/E}{\node[chTwoNode,circle] (\l) at (\a:1.6){\l};}
+\foreach \a/\b in {A/B,B/C,C/D,D/E,E/A}{\draw[chTwoArrow] (\a)--(\b);}
+\node[font=\small,align=center] at (0,0){Single-ring\\model};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawMesh}{%
+\begin{tikzpicture}
+\foreach \a/\l in {90/1,18/2,-54/3,-126/4,162/5}{\coordinate (p\l) at (\a:1.7);}
+\foreach \a in {1,...,4}{\pgfmathtruncatemacro{\next}{\a+1}\foreach \b in {\next,...,5}{\draw[chTwoLink] (p\a)--(p\b);}}
+\foreach \l in {1,...,5}{\node[chTwoNode,circle] at (p\l){\l};}\node[font=\small] at (0,-2.3){5 nodes; 10 duplex links};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawTree}{%
+\begin{tikzpicture}
+\node[chTwoNode] (r) at (3,2){Core};\node[chTwoNode] (a) at (1,1){Dept A};\node[chTwoNode] (b) at (5,1){Dept B};\draw[chTwoLink] (r)--(a);\draw[chTwoLink] (r)--(b);
+\foreach \x/\l/\parentnode in {0/A1/a,2/A2/a,4/B1/b,6/B2/b}{\node[chTwoNode] (\l) at (\x,0){\l};\draw[chTwoLink] (\parentnode)--(\l);}
+\end{tikzpicture}}
+\newcommand{\chTwoDrawHybrid}{%
+\begin{tikzpicture}
+\draw[chTwoLink] (0,1.7)--(6,1.7);\node[font=\small] at (3,2.2){Bus backbone};
+\node[chTwoNode] (a) at (1,1){Switch A};\node[chTwoNode] (b) at (5,1){Switch B};\draw[chTwoLink] (a)--(1,1.7);\draw[chTwoLink] (b)--(5,1.7);
+\foreach \x/\l/\parentnode in {0/A1/a,2/A2/a,4/B1/b,6/B2/b}{\node[chTwoNode] (\l) at (\x,0){\l};\draw[chTwoLink] (\parentnode)--(\l);}
+\node[font=\small] at (1,-.6){Star A};\node[font=\small] at (5,-.6){Star B};
+\end{tikzpicture}}
+\newcommand{\chTwoDrawCloudbackup}{%
+\begin{tikzpicture}
+\node[chTwoNode] (a) at (0,0){Laptop};\node[chTwoNode] (b) at (4.5,0){Cloud files};\node[chTwoNode] (c) at (4.5,-1.5){Backup copy};
+\draw[chTwoLink,<->] (a)--node[above,font=\small]{Sync}(b);\draw[chTwoArrow] (b)--node[right,font=\small]{scheduled}(c);
+\node[font=\small,align=center] at (0,-1.5){Sync may propagate\\deletion};
+\end{tikzpicture}}
+
+\newcommand{\chTwoDrawMedia}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[chTwoNode,text width=2.3cm] (g) at (0,0) {Guided / Cable};
+\node[chTwoNode,text width=4cm] (gc) at (4,0) {Twisted pair; Coaxial\\Optical fiber};
+\draw[chTwoArrow] (g)--(gc);
+\node[chTwoNode,text width=2.3cm] (u) at (0,-1.3) {Unguided / Free space};
+\node[chTwoNode,text width=4cm] (uc) at (4,-1.3) {Radio (includes microwave)\\Infrared};
+\draw[chTwoArrow] (u)--(uc);
+\node[font=\footnotesize,align=center] at (2,-2.7) {Satellite: a wireless relay system};
+\end{tikzpicture}}
+
+\newcommand{\chTwoDrawWireless}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[chTwoNode,text width=2cm] (w) at (0,0) {Wave / Medium};
+\node[chTwoNode,text width=4.2cm] (wc) at (4,0) {Radio (includes microwave)\\Infrared};
+\draw[chTwoArrow] (w)--(wc);
+\node[chTwoNode,text width=2cm] (s) at (0,-1.4) {System / Technology};
+\node[chTwoNode,text width=4.2cm] (sc) at (4,-1.4) {Satellite; Bluetooth\\Wi-Fi; WiMAX};
+\draw[chTwoArrow] (s)--(sc);
+\end{tikzpicture}}

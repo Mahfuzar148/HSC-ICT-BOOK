@@ -1,0 +1,1497 @@
+\sectionheading{5.40 Python \textenglish{\ttfamily while} Loop}
+
+কোনো Condition যতক্ষণ
+\textenglish{\ttfamily True}
+থাকে, ততক্ষণ একই Code Block বারবার Execute করার জন্য Python-এ
+\textenglish{\ttfamily while}
+Loop ব্যবহার করা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop কী?}
+
+\begin{definitionbox}
+
+কোনো নির্দিষ্ট Condition
+\textenglish{\ttfamily True}
+থাকা পর্যন্ত একটি Statement বা Code Block পুনরাবৃত্তি করার Loop-কে
+\textbf{\textenglish{\ttfamily while} Loop} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{Condition পরীক্ষা}
+\(\longrightarrow\)
+\textenglish{\ttfamily True}
+\(\longrightarrow\)
+\textbf{Loop Body}
+\(\longrightarrow\)
+\textbf{Update}
+
+\medskip
+
+\textbf{Update}
+\(\longrightarrow\)
+\textbf{আবার Condition পরীক্ষা}
+
+\end{center}
+
+Condition
+\textenglish{\ttfamily False}
+হলে Loop শেষ হয়।
+
+%================================================
+% Syntax
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop-এর Syntax}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+initialization\\[0.5mm]
+while condition:\\
+\hspace*{4mm}statement\\
+\hspace*{4mm}update
+\end{english}
+\end{codebox}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\[0.5mm]
+while i <= 5:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3 \quad 4 \quad 5}
+\end{center}
+
+%================================================
+% Main parts
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop-এর প্রধান অংশ}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{অংশ}
+&
+\textbf{Code}
+&
+\textbf{কাজ}
+\\
+\hline
+
+Initialization
+&
+\textenglish{\ttfamily i = 1}
+&
+প্রাথমিক Value নির্ধারণ করে।
+\\
+\hline
+
+Condition
+&
+\textenglish{\ttfamily i <= 5}
+&
+Loop চলবে কি না পরীক্ষা করে।
+\\
+\hline
+
+Loop Body
+&
+\textenglish{\ttfamily print(i)}
+&
+পুনরাবৃত্ত কাজ সম্পন্ন করে।
+\\
+\hline
+
+Update
+&
+\textenglish{\ttfamily i += 1}
+&
+Counter-এর Value পরিবর্তন করে।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textbf{Initialization}
+\(\longrightarrow\)
+\textbf{Condition}
+\(\longrightarrow\)
+\textbf{Loop Body}
+\(\longrightarrow\)
+\textbf{Update}
+
+\end{center}
+
+এ চারটি অংশ
+\textenglish{\ttfamily while}
+Loop বোঝার জন্য সবচেয়ে গুরুত্বপূর্ণ।
+
+\end{rememberbox}
+
+%================================================
+% Working process
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop কীভাবে কাজ করে?}
+
+ধরা যাক—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\[0.5mm]
+while i <= 3:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{codebox}
+
+এর কার্যধারা—
+
+\begin{center}
+
+\textenglish{\ttfamily i = 1}
+\(\longrightarrow\)
+\textenglish{\ttfamily 1 <= 3}
+True
+\(\longrightarrow\)
+Print 1
+\(\longrightarrow\)
+\textenglish{\ttfamily i = 2}
+
+\medskip
+
+\textenglish{\ttfamily i = 2}
+\(\longrightarrow\)
+\textenglish{\ttfamily 2 <= 3}
+True
+\(\longrightarrow\)
+Print 2
+\(\longrightarrow\)
+\textenglish{\ttfamily i = 3}
+
+\medskip
+
+\textenglish{\ttfamily i = 3}
+\(\longrightarrow\)
+\textenglish{\ttfamily 3 <= 3}
+True
+\(\longrightarrow\)
+Print 3
+\(\longrightarrow\)
+\textenglish{\ttfamily i = 4}
+
+\medskip
+
+\textenglish{\ttfamily i = 4}
+\(\longrightarrow\)
+\textenglish{\ttfamily 4 <= 3}
+False
+\(\longrightarrow\)
+\textbf{Loop শেষ}
+
+\end{center}
+
+%================================================
+% Trace table
+%================================================
+
+\booksubheading{Dry Run / Trace Table}
+
+উপরের Program-এর Trace Table—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.16\linewidth}
+|>{\centering\arraybackslash}p{0.13\linewidth}
+|>{\centering\arraybackslash}p{0.21\linewidth}
+|>{\centering\arraybackslash}p{0.17\linewidth}
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Iteration}
+&
+\textbf{\textenglish{\ttfamily i}}
+&
+\textbf{\textenglish{\ttfamily i <= 3}}
+&
+\textbf{Output}
+&
+\textbf{Update-এর পর \textenglish{\ttfamily i}}
+\\
+\hline
+
+1
+&
+1
+&
+True
+&
+1
+&
+2
+\\
+\hline
+
+2
+&
+2
+&
+True
+&
+2
+&
+3
+\\
+\hline
+
+3
+&
+3
+&
+True
+&
+3
+&
+4
+\\
+\hline
+
+শেষ পরীক্ষা
+&
+4
+&
+False
+&
+—
+&
+—
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য:}
+Condition
+\textenglish{\ttfamily False}
+হওয়ার পর Loop Body আর Execute হয় না।
+
+\end{rememberbox}
+
+%================================================
+% Forward Reverse
+%================================================
+
+\booksubheading{Forward ও Reverse \textenglish{\ttfamily while} Loop}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Forward Loop}
+
+ছোট Value থেকে বড় Value-এর দিকে যেতে Counter বাড়ানো হয়।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3 \quad 4 \quad 5}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Reverse Loop}
+
+বড় Value থেকে ছোট Value-এর দিকে যেতে Counter কমানো হয়।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 5\\
+while i >= 1:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i -= 1
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 5 \quad 4 \quad 3 \quad 2 \quad 1}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Forward}
+\(\longrightarrow\)
+সাধারণত
+\textenglish{\ttfamily i += 1}
+
+\qquad
+
+\textbf{Reverse}
+\(\longrightarrow\)
+সাধারণত
+\textenglish{\ttfamily i -= 1}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Even Odd
+%================================================
+
+\booksubheading{Even ও Odd Number}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Even Number}
+
+২ থেকে ১০ পর্যন্ত জোড় সংখ্যা—
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 2\\
+while i <= 10:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 2
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily 2, 4, 6, 8, 10}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Odd Number}
+
+১ থেকে ১০ পর্যন্ত বিজোড় সংখ্যা—
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 10:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 2
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily 1, 3, 5, 7, 9}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{examplebox}{Condition ব্যবহার করেও Even Number বের করা যায়}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 10:\\
+\hspace*{4mm}if i \% 2 == 0:\\
+\hspace*{8mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{codebox}
+
+\end{examplebox}
+
+%================================================
+% Sum
+%================================================
+
+\booksubheading{Loop ব্যবহার করে Sum নির্ণয়}
+
+১ থেকে ৫ পর্যন্ত সংখ্যার যোগফল—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\
+total = 0\\[0.5mm]
+while i <= 5:\\
+\hspace*{4mm}total += i\\
+\hspace*{4mm}i += 1\\[0.5mm]
+print(total)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily 15}
+
+\begin{center}
+
+\textenglish{\ttfamily 0}
+\(\longrightarrow\)
+\textenglish{\ttfamily +1}
+\(\longrightarrow\)
+\textenglish{\ttfamily +2}
+\(\longrightarrow\)
+\textenglish{\ttfamily +3}
+\(\longrightarrow\)
+\textenglish{\ttfamily +4}
+\(\longrightarrow\)
+\textenglish{\ttfamily +5}
+\(\longrightarrow\)
+\textenglish{\ttfamily 15}
+
+\end{center}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.32\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Code}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily i = 1}
+&
+Counter-এর Initial Value।
+\\
+\hline
+
+\textenglish{\ttfamily total = 0}
+&
+Sum-এর Initial Value।
+\\
+\hline
+
+\textenglish{\ttfamily total += i}
+&
+প্রতিটি Iteration-এ Sum Update।
+\\
+\hline
+
+\textenglish{\ttfamily i += 1}
+&
+Counter Update।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Fixed number repetition
+%================================================
+
+\booksubheading{নির্দিষ্ট সংখ্যকবার Statement Execute}
+
+\begin{examplebox}{\textenglish{\ttfamily "Python"} পাঁচবার Print}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+count = 1\\[0.5mm]
+while count <= 5:\\
+\hspace*{4mm}print("Python")\\
+\hspace*{4mm}count += 1
+\end{english}
+\end{codebox}
+
+এখানে Loop মোট \textbf{5 Iteration} চলবে।
+
+\end{examplebox}
+
+%================================================
+% Condition based input
+%================================================
+
+\booksubheading{Condition-ভিত্তিক Loop}
+
+\textenglish{\ttfamily while}
+Loop-এর বড় সুবিধা হলো—কতবার Loop চলবে তা আগে থেকে জানা না থাকলেও
+Condition-এর ভিত্তিতে Loop চালানো যায়।
+
+\begin{examplebox}{User Input-এর উপর Loop}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+number = int(input("Enter 0 to stop: "))\\[0.5mm]
+while number != 0:\\
+\hspace*{4mm}print("You entered:", number)\\
+\hspace*{4mm}number = int(input("Enter 0 to stop: "))
+\end{english}
+\end{codebox}
+
+User যতক্ষণ
+\textenglish{\ttfamily 0}
+না দেয়, Loop চলবে।
+
+\end{examplebox}
+
+%================================================
+% Sentinel
+%================================================
+
+\booksubheading{Sentinel Value}
+
+Loop বন্ধ করার জন্য বিশেষভাবে ব্যবহৃত Value-কে অনেক ক্ষেত্রে
+\textbf{Sentinel Value} বলা হয়।
+
+উপরের Program-এ—
+
+\begin{center}
+
+\textbf{Sentinel Value}
+\(\longrightarrow\)
+\textenglish{\ttfamily 0}
+
+\end{center}
+
+\begin{rememberbox}
+
+Sentinel-controlled Loop-এ বিশেষ একটি Value পাওয়া গেলে
+Loop বন্ধ করা হয়।
+
+\end{rememberbox}
+
+%================================================
+% Update importance
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop-এ Update কেন গুরুত্বপূর্ণ?}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{সঠিক}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{sidecodebox}
+
+Counter পরিবর্তিত হচ্ছে, তাই Condition একসময় False হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{ভুল}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+\textenglish{\ttfamily i}
+পরিবর্তিত হচ্ছে না, তাই Loop চলতেই থাকবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}ভুল করো না}
+
+\begin{center}
+
+\textbf{Counter Update না করলে}
+\(\longrightarrow\)
+\textbf{Infinite Loop হতে পারে}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Infinite Loop
+%================================================
+
+\booksubheading{Infinite Loop}
+
+যে Loop-এর Condition কার্যকরভাবে কখনো
+\textenglish{\ttfamily False}
+হয় না এবং Loop অনির্দিষ্টকাল চলতে থাকে তাকে
+\textbf{Infinite Loop} বলে।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+while True:\\
+\hspace*{4mm}print("Python")
+\end{english}
+\end{codebox}
+
+এটি নিজে থেকে শেষ হবে না।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.36\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{সাধারণ কারণ}
+&
+\textbf{উদাহরণ}
+\\
+\hline
+
+Counter Update না করা
+&
+\textenglish{\ttfamily i}
+-এর Value অপরিবর্তিত থাকা
+\\
+\hline
+
+ভুল Direction-এ Update
+&
+কমার কথা থাকলে বাড়ানো
+\\
+\hline
+
+Condition কখনো False না হওয়া
+&
+\textenglish{\ttfamily while True}
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Intentional infinite loop
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সব Infinite Loop ভুল নয়}
+
+কখনো ইচ্ছাকৃতভাবে—
+
+\begin{center}
+\textenglish{\ttfamily while True:}
+\end{center}
+
+ব্যবহার করা হয়। প্রয়োজনমতো
+\textenglish{\ttfamily break}
+দিয়ে Loop বন্ধ করা যায়।
+
+\textenglish{\ttfamily break}
+বিস্তারিতভাবে
+\textbf{5.41 Loop Control Statement}
+-এ আলোচনা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Zero iteration + entry controlled
+%================================================
+
+\booksubheading{Condition শুরুতেই False হলে কী হবে?}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 10\\[0.5mm]
+while i < 5:\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{codebox}
+
+এখানে শুরুতেই—
+
+\begin{center}
+
+\textenglish{\ttfamily 10 < 5}
+\(\longrightarrow\)
+\textenglish{\ttfamily False}
+
+\end{center}
+
+তাই Loop Body
+\textbf{একবারও Execute হবে না}।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap}
+
+\textenglish{\ttfamily while}
+হলো \textbf{Entry-Controlled Loop}।
+
+কারণ Loop Body-তে প্রবেশের আগেই Condition পরীক্ষা করা হয়।
+
+\begin{center}
+
+\textbf{শুরুতেই Condition False}
+\(\longrightarrow\)
+\textbf{0 Iteration}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Multiple statements and indentation
+%================================================
+
+\booksubheading{Loop Body ও Indentation}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{একাধিক Statement Loop Body-তে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 3:\\
+\hspace*{4mm}print("Number:", i)\\
+\hspace*{4mm}print("ICT")\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{sidecodebox}
+
+Indented তিনটি Statement-ই Loop Body-এর অংশ।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Statement Loop-এর বাইরে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 3:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1\\[0.5mm]
+print("Finished")
+\end{english}
+\end{sidecodebox}
+
+শেষের Statement মাত্র একবার Execute হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+Python-এ
+\textenglish{\ttfamily \{ \}}
+দিয়ে Loop Body নির্ধারণ করা হয় না;
+\textbf{Indentation} দিয়ে Code Block নির্ধারিত হয়।
+
+\end{rememberbox}
+
+%================================================
+% Update variations
+%================================================
+
+\booksubheading{Update সবসময় \textenglish{\ttfamily +1} হতে হবে?}
+
+না। সমস্যার Logic অনুযায়ী Update ভিন্ন হতে পারে।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.30\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Update}
+&
+\textbf{অর্থ}
+\\
+\hline
+
+\textenglish{\ttfamily i += 1}
+&
+১ করে বৃদ্ধি।
+\\
+\hline
+
+\textenglish{\ttfamily i += 2}
+&
+২ করে বৃদ্ধি।
+\\
+\hline
+
+\textenglish{\ttfamily i -= 1}
+&
+১ করে হ্রাস।
+\\
+\hline
+
+\textenglish{\ttfamily i *= 2}
+&
+প্রতিবার ২ দিয়ে গুণ।
+\\
+\hline
+
+\end{tabularx}
+
+Condition এবং Problem-এর Logic অনুযায়ী সঠিক Update নির্বাচন করতে হয়।
+
+%================================================
+% Counter
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop-এ Counter}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+count = 1\\[0.5mm]
+while count <= 3:\\
+\hspace*{4mm}print(count)\\
+\hspace*{4mm}count += 1
+\end{english}
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily count}
+হলো Counter।
+
+Counter সাধারণত—
+
+\begin{center}
+
+\textbf{Loop-এর আগে Initialize}
+\(\longrightarrow\)
+\textbf{Condition-এ ব্যবহার}
+\(\longrightarrow\)
+\textbf{Loop Body-তে Update}
+
+\end{center}
+
+%================================================
+% Nested while
+%================================================
+
+\booksubheading{Nested \textenglish{\ttfamily while} Loop}
+
+একটি
+\textenglish{\ttfamily while}
+Loop-এর ভিতরে আরেকটি
+\textenglish{\ttfamily while}
+Loop থাকলে তাকে
+\textbf{Nested while Loop} বলে।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\[0.5mm]
+while i <= 2:\\
+\hspace*{4mm}j = 1\\[0.5mm]
+\hspace*{4mm}while j <= 3:\\
+\hspace*{8mm}print(i, j)\\
+\hspace*{8mm}j += 1\\[0.5mm]
+\hspace*{4mm}i += 1
+\end{english}
+\end{codebox}
+
+এখানে—
+
+\begin{center}
+
+\textbf{Outer Loop}
+\(\longrightarrow\)
+2 বার
+
+\qquad
+
+\textbf{Inner Loop}
+\(\longrightarrow\)
+প্রতিবার 3 বার
+
+\end{center}
+
+তাই
+\textenglish{\ttfamily print()}
+মোট—
+
+\begin{center}
+
+\(2 \times 3 = 6\) বার Execute হবে।
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Inner counter note
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Nested Loop-এ গুরুত্বপূর্ণ}
+
+Inner Loop-এর Counter সাধারণত Outer Loop-এর প্রতিটি Iteration-এ
+আবার Initialize করতে হয়।
+
+\begin{center}
+
+\textenglish{\ttfamily while i <= 2:}
+\(\longrightarrow\)
+\textenglish{\ttfamily j = 1}
+
+\end{center}
+
+\textenglish{\ttfamily j}
+পুনরায় Initialize না করলে পরবর্তী Outer Iteration-এ Inner Loop
+প্রয়োজনমতো নাও চলতে পারে।
+
+\end{rememberbox}
+
+%================================================
+% while else
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while ... else}}
+
+Python-এ
+\textenglish{\ttfamily while}
+Loop-এর সঙ্গে Optional
+\textenglish{\ttfamily else}
+ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\[0.5mm]
+while i <= 3:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1\\
+else:\\
+\hspace*{4mm}print("Loop Finished")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+1\\
+2\\
+3\\
+Loop Finished
+\end{english}
+\end{codebox}
+
+Loop স্বাভাবিকভাবে Condition
+\textenglish{\ttfamily False}
+হয়ে শেষ হলে
+\textenglish{\ttfamily else}
+Block Execute হয়।
+
+\begin{rememberbox}
+
+\textenglish{\ttfamily break}
+দিয়ে Loop বন্ধ হলে
+\textenglish{\ttfamily while ... else}
+-এর
+\textenglish{\ttfamily else}
+Block Execute হয় না।
+
+এটি পরবর্তী
+\textbf{5.41 Loop Control Statement}
+Topic-এ আরও পরিষ্কার হবে।
+
+\end{rememberbox}
+
+%================================================
+% for vs while
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for} ও \textenglish{\ttfamily while}-এর ব্যবহার}
+
+একই কাজ অনেক সময় দুই ধরনের Loop দিয়েই করা যায়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily for}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+নির্দিষ্ট Range-এর জন্য সুবিধাজনক।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily while}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{sidecodebox}
+
+Condition-ভিত্তিক Repetition-এর জন্য সুবিধাজনক।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.39\linewidth}
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{পরিস্থিতি}
+&
+\textbf{সাধারণত সুবিধাজনক}
+\\
+\hline
+
+নির্দিষ্ট Range
+&
+\textenglish{\ttfamily for}
+\\
+\hline
+
+Sequence/Collection-এর Item Process
+&
+\textenglish{\ttfamily for}
+\\
+\hline
+
+Condition True থাকা পর্যন্ত
+&
+\textenglish{\ttfamily while}
+\\
+\hline
+
+Iteration সংখ্যা আগে থেকে স্পষ্ট নয়
+&
+\textenglish{\ttfamily while}
+\\
+\hline
+
+User Input-এর উপর Repetition
+&
+\textenglish{\ttfamily while}
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Use cases
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop কোথায় বেশি উপযোগী?}
+
+\begin{compacttwocolpoints}
+
+\item Condition পূরণ হওয়া পর্যন্ত কাজ চালাতে।
+
+\item User-এর Input-এর উপর Loop চালাতে।
+
+\item Valid Input না পাওয়া পর্যন্ত পুনরায় Input নিতে।
+
+\item Menu-driven Program তৈরি করতে।
+
+\item কোনো Target পাওয়া পর্যন্ত Searching করতে।
+
+\item নির্দিষ্ট Event ঘটার অপেক্ষায় Repetition চালাতে।
+
+\item Iteration সংখ্যা আগে থেকে জানা না থাকলে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Input validation
+%================================================
+
+\booksubheading{Input Validation-এর সহজ উদাহরণ}
+
+User Positive Number না দেওয়া পর্যন্ত Input নেওয়া—
+
+\begin{examplebox}{Valid Input না পাওয়া পর্যন্ত Loop}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+n = int(input("Enter positive number: "))\\[0.5mm]
+while n <= 0:\\
+\hspace*{4mm}n = int(input("Try again: "))\\[0.5mm]
+print("Accepted")
+\end{english}
+\end{codebox}
+
+এখানে Loop কতবার চলবে তা আগে থেকে জানা নেই।
+তাই
+\textenglish{\ttfamily while}
+Loop উপযোগী।
+
+\end{examplebox}
+
+%================================================
+% Key features
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop-এর গুরুত্বপূর্ণ বৈশিষ্ট্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.36\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{তথ্য}
+\\
+\hline
+
+Keyword
+&
+\textenglish{\ttfamily while}
+\\
+\hline
+
+মূল ভিত্তি
+&
+Condition
+\\
+\hline
+
+Condition True
+&
+Loop Body Execute
+\\
+\hline
+
+Condition False
+&
+Loop শেষ
+\\
+\hline
+
+Code Block
+&
+Indentation দ্বারা নির্ধারিত
+\\
+\hline
+
+Initialization
+&
+সাধারণত Loop-এর আগে
+\\
+\hline
+
+Update
+&
+Programmer-কে লিখতে হয়
+\\
+\hline
+
+0 Iteration সম্ভব?
+&
+হ্যাঁ
+\\
+\hline
+
+Infinite Loop সম্ভব?
+&
+হ্যাঁ
+\\
+\hline
+
+Loop Control
+&
+Entry-Controlled
+\\
+\hline
+
+\textenglish{\ttfamily else}
+&
+Optional
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item Loop-এর আগে Counter Initialize না করা।
+
+\item Condition ভুল লেখা।
+
+\item Counter/Variable Update না করা।
+
+\item সঠিক Direction-এর বিপরীতে Update করা।
+
+\item Condition-এর শেষে
+\textenglish{\ttfamily :}
+না দেওয়া।
+
+\item Loop Body-তে সঠিক Indentation না দেওয়া।
+
+\item ভুল করে Infinite Loop তৈরি করা।
+
+\item Reverse Loop-এ Counter কমানোর পরিবর্তে বাড়ানো।
+
+\item Loop-এর বাইরে থাকা Statement-কে Loop Body মনে করা।
+
+\item Nested
+\textenglish{\ttfamily while}
+-এ Inner Counter পুনরায় Initialize না করা।
+
+\item শুরুতেই Condition False হলে Loop Body চলবে মনে করা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+}
+
+\textenglish{\ttfamily while}
+&
+Condition True থাকা পর্যন্ত
+&
+Initialization
+&
+Loop-এর আগে
+\\[0.7mm]
+
+Condition
+&
+Loop চলবে কি না
+&
+Loop Body
+&
+Repeated Code
+\\[0.7mm]
+
+Update
+&
+Counter পরিবর্তন
+&
+Condition False
+&
+Loop শেষ
+\\[0.7mm]
+
+Forward
+&
+Counter বৃদ্ধি
+&
+Reverse
+&
+Counter হ্রাস
+\\[0.7mm]
+
+0 Iteration
+&
+সম্ভব
+&
+Infinite Loop
+&
+সম্ভব
+\\[0.7mm]
+
+Entry-Controlled
+&
+আগে Condition পরীক্ষা
+&
+Nested Loop
+&
+Loop-এর ভিতরে Loop
+\\[0.7mm]
+
+Sentinel
+&
+Loop বন্ধের বিশেষ Value
+&
+\textenglish{\ttfamily else}
+&
+Optional
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Initialization}
+\(\longrightarrow\)
+\textbf{Condition}
+
+\medskip
+
+\textbf{Condition True}
+\(\longrightarrow\)
+\textbf{Loop Body}
+\(\longrightarrow\)
+\textbf{Update}
+\(\longrightarrow\)
+\textbf{আবার Condition}
+
+\medskip
+
+\textbf{Condition False}
+\(\longrightarrow\)
+\textbf{Loop শেষ}
+
+\medskip
+
+\textbf{Update না হলে}
+\(\longrightarrow\)
+\textbf{Infinite Loop হতে পারে}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.41 Loop Control Statement
+%================================================
+

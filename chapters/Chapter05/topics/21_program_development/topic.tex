@@ -1,0 +1,571 @@
+\sectionheading{5.21 প্রোগ্রাম ডেভেলপমেন্ট (Program Development)}
+
+একটি কার্যকর Program সাধারণত সরাসরি Code লেখা দিয়ে শুরু করা হয় না।
+প্রথমে Problem নির্ধারণ ও বিশ্লেষণ করা হয়, তারপর Program Design,
+Coding, Implementation, Documentation এবং Maintenance-এর মাধ্যমে
+Program Development সম্পন্ন করা হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Program Development কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Problem সমাধানের উদ্দেশ্যে Problem নির্ধারণ থেকে শুরু করে
+Program Design, Coding, Implementation, Documentation এবং
+Maintenance পর্যন্ত সম্পূর্ণ প্রক্রিয়াকে
+\textbf{Program Development} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Problem বুঝি
+\(\longrightarrow\)
+Design করি
+\(\longrightarrow\)
+Code লিখি
+\(\longrightarrow\)
+Test করি
+\(\longrightarrow\)
+সংরক্ষণ ও উন্নয়ন করি
+}
+
+\end{center}
+
+%================================================
+% Main Steps
+%================================================
+\booksubheading{Program Development-এর প্রধান ধাপ}
+
+Program তৈরির প্রধান ধাপগুলো হলো—
+
+\begin{center}
+
+\textbf{
+Problem Identification
+\(\rightarrow\)
+Problem Analysis
+\(\rightarrow\)
+Program Design
+}
+
+\vspace{0.6mm}
+
+\textbf{
+\(\rightarrow\)
+Development/Coding
+\(\rightarrow\)
+Implementation
+\(\rightarrow\)
+Documentation
+\(\rightarrow\)
+Maintenance
+}
+
+\end{center}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.32\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধাপ}}
+&
+\multicolumn{1}{c|}{\textbf{মূল কাজ}}
+\\
+\hline
+
+সমস্যা নির্দিষ্টকরণ
+&
+কোন Problem সমাধান করতে হবে তা নির্ধারণ করা।
+\\
+\hline
+
+সমস্যা বিশ্লেষণ
+&
+Problem ও সম্ভাব্য Solution বিশ্লেষণ করা।
+\\
+\hline
+
+Program Design
+&
+Algorithm ও Flowchart-এর সাহায্যে Program-এর পরিকল্পনা তৈরি করা।
+\\
+\hline
+
+Development/Coding
+&
+Programming Language ব্যবহার করে Program Code লেখা।
+\\
+\hline
+
+Program Implementation
+&
+Program পরীক্ষা, Error শনাক্ত ও প্রয়োজনীয় Correction করা।
+\\
+\hline
+
+Program Documentation
+&
+Program সম্পর্কিত প্রয়োজনীয় লিখিত তথ্য সংরক্ষণ করা।
+\\
+\hline
+
+Program Maintenance
+&
+প্রয়োজন অনুযায়ী Program পরিবর্তন, সংশোধন ও উন্নয়ন করা।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 1 Problem Identification
+%================================================
+\booksubheading{১. সমস্যা নির্দিষ্টকরণ (Problem Identification)}
+
+Program Development-এর শুরুতে
+\textbf{কোন Problem সমাধান করতে হবে তা সঠিকভাবে নির্ধারণ}
+করা হয়।
+
+এ পর্যায়ে Problem-এর উদ্দেশ্য ও কী ধরনের Result প্রয়োজন
+সে সম্পর্কে পরিষ্কার ধারণা নেওয়া হয়।
+
+\begin{center}
+
+\textbf{
+প্রথম প্রশ্ন:
+``কোন Problem-এর সমাধান করতে হবে?''
+}
+
+\end{center}
+
+%================================================
+% 2 Problem Analysis
+%================================================
+\booksubheading{২. সমস্যা বিশ্লেষণ (Problem Analysis)}
+
+Problem নির্ধারণের পর সেটি বিশ্লেষণ করা হয় এবং কীভাবে
+Solution তৈরি করা সম্ভব তা বিবেচনা করা হয়।
+
+একাধিক Solution সম্ভব হলে উপযুক্ত Solution নির্বাচন করা হয়।
+
+Problem Analysis ও IPO Model আগের Topic-এ বিস্তারিত আলোচনা
+করা হয়েছে; তাই এখানে পুনরাবৃত্তি করা হলো না।
+
+%================================================
+% 3 Program Design
+%================================================
+\booksubheading{৩. Program Design}
+
+Problem Analysis-এর পর Program-এর সম্পূর্ণ পরিকল্পনা তৈরি করা হয়।
+
+এই পর্যায়ে সাধারণত—
+
+\begin{itemize}
+
+\item Algorithm তৈরি করা হয়।
+
+\item Flowchart তৈরি করা হয়।
+
+\item Program-এর Logical Structure নির্ধারণ করা হয়।
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ-এর জন্য গুরুত্বপূর্ণ}
+
+Program তৈরির ক্ষেত্রে
+\textbf{Program Design একটি অত্যন্ত গুরুত্বপূর্ণ ধাপ}।
+
+Program-এর Solution কীভাবে বাস্তবায়িত হবে, তার পরিকল্পনা
+এই ধাপেই তৈরি করা হয়।
+
+\end{rememberbox}
+
+%================================================
+% 4 Coding
+%================================================
+\booksubheading{৪. Program Development বা Coding}
+
+Program Design সম্পন্ন হওয়ার পর নির্বাচিত Programming Language
+ব্যবহার করে Program-এর Instruction লেখা হয়।
+
+Programming Language-এ Program লেখার এই কাজকে
+\textbf{Coding} বলা হয়।
+
+\begin{center}
+
+\textbf{
+Algorithm / Flowchart
+\(\longrightarrow\)
+Programming Language
+\(\longrightarrow\)
+Source Code
+}
+
+\end{center}
+
+Coding-এর সময় Program-এর Logic ও Programming Language-এর
+Syntax সঠিকভাবে ব্যবহার করতে হয়।
+
+%================================================
+% 5 Implementation
+%================================================
+\booksubheading{৫. Program Implementation}
+
+Program লেখা শেষ হওয়ার পর Program-টি পরীক্ষা করা হয়।
+
+Error পাওয়া গেলে প্রয়োজনীয় Correction করা হয় এবং Program
+সঠিকভাবে কাজ করছে কি না যাচাই করা হয়।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.15\linewidth}{
+        \centering\textbf{Code}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.15\linewidth}{
+        \centering\textbf{Test}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.17\linewidth}{
+        \centering\textbf{Error\\Check}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.18\linewidth}{
+        \centering\textbf{Correction}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.15\linewidth}{
+        \centering\textbf{Retest}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+Testing ও Debugging এই পর্যায়ে গুরুত্বপূর্ণ ভূমিকা পালন করে।
+
+%================================================
+% Run Program
+%================================================
+\booksubheading{Run Program কী?}
+
+Program-এর Error সংশোধন করার পর Program সঠিকভাবে কাজ করলে
+Program-টি চালিয়ে Result পাওয়া যায়।
+
+Program চালানোর প্রক্রিয়াকে সাধারণভাবে
+\textbf{Run Program} বলা হয়।
+
+\begin{center}
+
+\textbf{
+Error Correction
+\(\longrightarrow\)
+Run Program
+\(\longrightarrow\)
+Result
+}
+
+\end{center}
+
+%================================================
+% 6 Documentation
+%================================================
+\booksubheading{৬. Program Documentation}
+
+\begin{definitionbox}
+
+Program ভবিষ্যতে ব্যবহার, পরিবর্তন বা Update করার সুবিধার জন্য
+Program সম্পর্কিত প্রয়োজনীয় তথ্য
+\textbf{লিখিতভাবে সংরক্ষণ করার প্রক্রিয়াকে}
+\textbf{Program Documentation} বলা হয়।
+
+\end{definitionbox}
+
+Documentation-এ প্রয়োজন অনুযায়ী থাকতে পারে—
+
+\begin{itemize}
+
+\item Program-এর উদ্দেশ্য
+\item Program-এর Logic বা কাজের বিবরণ
+\item প্রয়োজনীয় Input ও Output সম্পর্কিত তথ্য
+\item ব্যবহারের নির্দেশনা
+\item গুরুত্বপূর্ণ পরিবর্তনের তথ্য
+
+\end{itemize}
+
+ভালো Documentation থাকলে ভবিষ্যতে Program বোঝা,
+ব্যবহার ও পরিবর্তন করা সহজ হয়।
+
+%================================================
+% 7 Maintenance
+%================================================
+\booksubheading{৭. Program Maintenance}
+
+Program তৈরি ও ব্যবহার শুরু হওয়ার পরও প্রয়োজন অনুযায়ী
+Program-এর বিভিন্ন পরিবর্তন করতে হতে পারে।
+
+যেমন—
+
+\begin{itemize}
+
+\item Error Correction
+\item Modification
+\item পরিবর্ধন
+\item প্রয়োজন অনুযায়ী Update বা উন্নয়ন
+
+\end{itemize}
+
+এই কাজগুলোকে \textbf{Program Maintenance} বলা হয়।
+
+%================================================
+% Documentation vs Maintenance
+%================================================
+\booksubheading{Documentation ও Maintenance-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.24\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Documentation}}
+&
+\multicolumn{1}{c|}{\textbf{Maintenance}}
+\\
+\hline
+
+মূল কাজ
+&
+Program-এর তথ্য লিখিতভাবে সংরক্ষণ
+&
+Program পরিবর্তন ও উন্নয়ন
+\\
+\hline
+
+উদ্দেশ্য
+&
+ভবিষ্যতে Program বোঝা ও ব্যবহার সহজ করা
+&
+Program কার্যকর ও প্রয়োজনোপযোগী রাখা
+\\
+\hline
+
+উদাহরণ
+&
+Logic, ব্যবহারবিধি, পরিবর্তনের তথ্য
+&
+Error Correction, Modification, Update
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Full Flow
+%================================================
+\booksubheading{Program Development-এর পূর্ণ Flow}
+
+\begin{center}
+
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Problem Identification}
+    }
+}
+
+\(\downarrow\)
+
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Problem Analysis}
+    }
+}
+
+\(\downarrow\)
+
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Program Design}
+    }
+}
+
+\(\downarrow\)
+
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Development / Coding}
+    }
+}
+
+\(\downarrow\)
+
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Implementation}
+    }
+}
+
+\(\downarrow\)
+
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Documentation}
+    }
+}
+
+\(\downarrow\)
+
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{Maintenance}
+    }
+}
+
+\end{center}
+
+%================================================
+% Quick Comparison
+%================================================
+\booksubheading{ধাপগুলো দ্রুত মনে রাখো}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.33\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধাপ}}
+&
+\multicolumn{1}{c|}{\textbf{সহজ প্রশ্ন}}
+\\
+\hline
+
+Problem Identification
+&
+কোন Problem সমাধান করব?
+\\
+\hline
+
+Problem Analysis
+&
+Problem কীভাবে সমাধান করা যাবে?
+\\
+\hline
+
+Program Design
+&
+Solution-এর ধাপ কী হবে?
+\\
+\hline
+
+Coding
+&
+Solution-কে কীভাবে Code-এ লিখব?
+\\
+\hline
+
+Implementation
+&
+Program ঠিকভাবে কাজ করছে কি?
+\\
+\hline
+
+Documentation
+&
+Program-এর প্রয়োজনীয় তথ্য কীভাবে সংরক্ষণ করব?
+\\
+\hline
+
+Maintenance
+&
+ভবিষ্যতে কীভাবে Program সংশোধন বা উন্নয়ন করব?
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Program Development হলো Program তৈরির
+\textbf{সম্পূর্ণ প্রক্রিয়া}।
+
+\item প্রথম ধাপ হলো
+\textbf{Problem Identification}।
+
+\item Problem Identification-এর পরে
+\textbf{Problem Analysis} করা হয়।
+
+\item Program Design-এ Algorithm ও Flowchart ব্যবহার করে
+Solution-এর পরিকল্পনা করা হয়।
+
+\item Programming Language-এ Program লেখার কাজকে
+\textbf{Coding} বলা হয়।
+
+\item Implementation পর্যায়ে Program
+\textbf{Test ও Correct} করা হয়।
+
+\item \textbf{Documentation} =
+Program সম্পর্কিত প্রয়োজনীয় লিখিত তথ্য সংরক্ষণ।
+
+\item \textbf{Maintenance} =
+Program-এর প্রয়োজনীয় পরিবর্তন, সংশোধন ও উন্নয়ন।
+
+\item দ্রুত ক্রম—
+
+\begin{center}
+
+\textbf{
+Identify
+\(\rightarrow\)
+Analyze
+\(\rightarrow\)
+Design
+\(\rightarrow\)
+Code
+}
+
+\vspace{0.5mm}
+
+\textbf{
+\(\rightarrow\)
+Implement
+\(\rightarrow\)
+Document
+\(\rightarrow\)
+Maintain
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.22 Dry Run and Trace Table
+%================================================

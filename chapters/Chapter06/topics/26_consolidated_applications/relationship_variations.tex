@@ -1,0 +1,92 @@
+\subsubsection{Teacher--Subject সম্পর্ক ও সংযোগ Table}
+\input{chapters/Chapter06/latex/many_to_many_tables}
+
+\subsubsection{Student--Course-এর আরেকটি M:N উদাহরণ}
+
+একজন শিক্ষার্থী একাধিক কোর্স নিতে পারে। আবার একই কোর্সে একাধিক শিক্ষার্থী ভর্তি হতে পারে। নিচের Student, Course ও Enrolment টেবিলে এই সংযোগ দেখা যায়।
+
+\input{chapters/Chapter06/latex/student_course_tables}
+
+
+Enrolment-এর (101, C01) সারিটি বোঝায় Rupa ICT নিয়েছে। (101, C02) থেকে
+বোঝা যায় Rupa English-ও নিয়েছে। আবার C01-এর সঙ্গে 101 ও 102 আছে বলে
+ICT-তে Rupa ও Nabil দুজনই রয়েছে। তাই উভয় দিক থেকে একাধিক সংযোগ হয়।
+
+
+একই Student একই Course-এ একবারই ভর্তি হতে পারলে Enrolment-এর (StudentID, CourseID) জোড়া Composite Primary Key হতে পারে। StudentID একা অনন্য নয়, CourseID-ও একা অনন্য নয়; কিন্তু একই জোড়া আবার বসালে একই ভর্তি দুবার লেখা হবে। একটি ভর্তি বাতিল করলে সেই সংযোগের সারি বাদ যায়; শিক্ষার্থী বা কোর্সের নিজস্ব পরিচয় মুছে ফেলার প্রয়োজন হয় না।
+
+এই নকশায় Student থেকে Enrolment হলো 1:M এবং Course থেকে Enrolment-ও 1:M। অর্থাৎ মূল দুই সত্তার M:N সম্পর্ক মধ্যবর্তী সারণির মাধ্যমে দুটি 1:M সম্পর্কে বাস্তবায়িত হয়। Junction-এর প্রতিটি সারি একজন Student ও একটি Course-এর নির্দিষ্ট সংযোগ বোঝায়; সব Student-এর সঙ্গে সব Course স্বয়ংক্রিয়ভাবে যুক্ত হয় না।
+
+\begin{mistakebox}{এক ফিল্ডে একাধিক ID লিখবে না}
+
+Student টেবিলের একটি CourseID ফিল্ডে \[
+C01,C02,C03
+\] এভাবে একাধিক মান রাখা ভালো Relational Design নয়। প্রতিটি Student--Course সম্পর্ককে Junction Table-এর আলাদা রেকর্ড
+হিসেবে রাখা উচিত।
+
+\end{mistakebox}
+
+
+% ============================================================
+% SQL M:N
+% ============================================================
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{১০.২}{Student, Enrolment ও Course টেবিল থেকে ICT নেওয়া শিক্ষার্থীদের Name দেখাও।}
+
+\noindent
+\begin{minipage}[c]{0.60\linewidth}
+
+\begin{verbatim}
+SELECT Student.Name
+FROM Student, Enrolment, Course
+WHERE Student.StudentID =
+      Enrolment.StudentID
+  AND Enrolment.CourseID =
+      Course.CourseID
+  AND Course.CourseName = 'ICT'
+ORDER BY Student.StudentID;
+\end{verbatim}
+
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.04\linewidth}
+\raggedright
+$\Rightarrow$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.30\linewidth}
+\raggedright
+
+\footnotesize
+\textbf{ফল}
+
+\smallskip
+
+\begin{tabular}{|l|}
+\hline
+\chSixHeader
+Name\\
+\hline
+Rupa\\\hline
+Nabil\\
+\hline
+\end{tabular}
+
+\end{minipage}
+\end{minipage}\par\smallskip
+
+
+\textbf{দুই ধাপে সংযোগ, তারপর বাছাই।} প্রথম শর্তে StudentID দিয়ে
+Student থেকে Enrolment-এর সংশ্লিষ্ট সারি মেলে। দ্বিতীয় শর্তে CourseID
+দিয়ে ওই Enrolment-এর Course জানা যায়। তাই (101, C01) থেকে Rupa–ICT,
+(101, C02) থেকে Rupa–English এবং (102, C01) থেকে Nabil–ICT পাওয়া যায়।
+শেষ শর্ত ICT বেছে নেওয়ায় Rupa ও Nabil থাকে; SELECT তাঁদের Name দেখায়।
+StudentID আর CourseID ভিন্ন সত্তার পরিচয়—এ দুটিকে সরাসরি সমান না ধরে
+Junction Table-এর দুই Foreign Key দিয়ে সংযোগ করতে হয়।
+
+
+% ============================================================
+% ORDER PRODUCT CQ EXAMPLE
+% ============================================================
+

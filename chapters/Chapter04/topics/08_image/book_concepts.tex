@@ -1,0 +1,44 @@
+\subsubsection{ছবির ফরম্যাট বেছে নেওয়ার কারণ}
+ক্যাম্পাসের ফটোগ্রাফে JPEG-এ ফাইল ছোট করা যায়, তবে অতিরিক্ত সংকোচনে সূক্ষ্ম তথ্য হারাতে পারে। স্বচ্ছ পটভূমির লোগো বা ধারালো লেখা-যুক্ত স্ক্রিনশটে PNG উপযোগী; এতে তথ্য অক্ষুণ্ণ রাখা সংকোচন (lossless compression) হয়। সাধারণ অ্যানিমেশনে GIF ব্যবহার করা যায়, কিন্তু প্রতি ফ্রেমে সীমিত রঙের কারণে সব ফটোগ্রাফের জন্য এটি ভালো পছন্দ নয়। রেখাভিত্তিক লোগোতে SVG বড় করলেও রেখা স্পষ্ট রাখতে পারে। অর্থাৎ শুধু ফাইলের এক্সটেনশন নয়—ছবির তথ্য, স্বচ্ছতা, মান ও ফাইলের মাপ দেখে সিদ্ধান্ত নিতে হবে।
+
+\subsubsection{থাম্বনেইল থেকে বড় ছবিতে যাওয়া}
+\textbf{থাম্বনেইল (Thumbnail)} হলো বড় ছবির ছোট পূর্বরূপ। সংগ্রহের পেজে ছোট ছবি দেখে প্রয়োজনীয় বড় ছবিটি খোলা সুবিধাজনক। নিচে দুই ফাইলই নিজে তৈরি করে একই ফোল্ডারে রাখতে হবে; ছোটটির অনুপাত 4:3 ধরা হয়েছে।
+\par\noindent\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ছবি ও লিংকের সমন্বয়}\par
+\begin{verbatim}
+<a href="library-large.jpg">
+  <img src="library-small.jpg"
+       alt="College library"
+       width="128" height="96">
+</a>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+ছোট ছবিটি 128\,$\times$\,96 পিক্সেলে দেখা যাবে। সেটি নির্বাচন করলে বড় ফাইলটি খুলবে। \texttt{src} দেখানোর ছোট ছবি, \texttt{href} যাওয়ার বড় ছবি। আলাদা ছোট ফাইল রাখলে প্রথম পেজে বড় ফাইলটি নামানোর প্রয়োজন কমে।
+\end{minipage}\par
+
+\subsubsection{তথ্যের ছবি ও পটভূমির ছবি}
+ব্যানারে ভর্তি-তারিখ বা কলেজের নাম থাকলে তা পাঠের তথ্য; তখন \texttt{img} ও উপযুক্ত \texttt{alt} দেবে। শুধু সাজসজ্জার পটভূমি পটভূমিতে দিতে CSS-এর \texttt{background-image} ব্যবহার করা যায়। পুরোনো \texttt{body background} রীতির আধুনিক বিকল্প এটি।
+\par\noindent\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}body-এর CSS রীতি}\par
+\begin{verbatim}
+body {
+  background-color: white;
+  background-image:
+    url("paper-texture.png");
+}
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোথায় লিখবে, কী দেখা যাবে}\par
+কোডটি \texttt{head}-এর \texttt{style} এলিমেন্টে লিখবে। ফাইল থাকলে সাদা পটভূমির ওপর ছবিটি স্বাভাবিক রীতিতে পুনরাবৃত্ত হবে; না এলে সাদা রং থাকবে। CSS-এর background-এ \texttt{alt} নেই; প্রয়োজনীয় তথ্য সেখানে একা রাখবে না।
+\end{minipage}\par
+ভর্তি-শেষের তারিখ শুধু পটভূমির ছবিতে থাকলে ছবি না আসা বা সহায়ক পাঠযন্ত্র ব্যবহারের সময় তথ্যটি হারাতে পারে। তাই প্রয়োজনীয় তারিখ পাঠ হিসেবেও রাখা উচিত।
+
+
+\subsubsection{ছবির ফরম্যাটের পূর্ণরূপ}
+JPEG-এর পূর্ণরূপ Joint Photographic Experts Group; প্রচলিত ফাইল এক্সটেনশন \texttt{.jpg} ও \texttt{.jpeg}। PNG হলো Portable Network Graphics এবং GIF হলো Graphics Interchange Format; এক্সটেনশন যথাক্রমে \texttt{.png} ও \texttt{.gif}। ফাইলের নামের এক্সটেনশন বদলালেই ছবির প্রকৃত ফরম্যাট বদলে যায় না; ফরম্যাট বদলাতে উপযুক্তভাবে রূপান্তর ও সংরক্ষণ করতে হয়।
+
+\subsubsection{পুরোনো ছবির অ্যাট্রিবিউটে ফাঁক}
+পুরোনো HTML-এ \texttt{hspace} ছবির বাম ও ডান পাশে এবং \texttt{vspace} ওপর ও নিচে ফাঁকের পরিমাণ নির্দেশ করত। যেমন, \texttt{hspace="10"} দুই পাশে 10 পিক্সেল করে ফাঁক বোঝায়। এগুলো ছবির \texttt{width} বা \texttt{height} বদলানোর অ্যাট্রিবিউট নয়। নতুন কোডে ছবির বাইরের ফাঁক CSS-এর \texttt{margin} দিয়ে নির্ধারণ করা উচিত।

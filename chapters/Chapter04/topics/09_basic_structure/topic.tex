@@ -1,31 +1,35 @@
-% ৪.x HTML Document-এর মৌলিক কাঠামো
-\section{HTML Document-এর মৌলিক কাঠামো}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% ৪.x HTML ডকুমেন্টের মৌলিক কাঠামো
+\section{HTML ডকুমেন্টের মৌলিক কাঠামো}
+
+% Composition pass 2026-10-04
+পেজের নাম ব্রাউজারের ট্যাবে এবং কলেজের পরিচিতি পেজের ভেতরে দেখাতে হবে।
+
+\chFourMotivation{পেজের তথ্য ও দৃশ্যমান অংশ আলাদা রাখা $\rightarrow$ head ও body $\rightarrow$ নির্দিষ্ট অংশে উপযুক্ত এলিমেন্ট লেখা $\rightarrow$ সঠিক শিরোনাম, এনকোডিং ও বিষয়বস্তু।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML document structure কী তা ব্যাখ্যা করতে।
-\item \texttt{<!DOCTYPE html>}, \texttt{<html>}, \texttt{<head>}, \texttt{<title>} ও \texttt{<body>} tag-এর কাজ লিখতে।
+\item HTML ডকুমেন্টের কাঠামো কী তা ব্যাখ্যা করতে।
+\item \texttt{<!DOCTYPE html>} ঘোষণা এবং \texttt{<html>}, \texttt{<head>}, \texttt{<title>} ও \texttt{<body>} ট্যাগের কাজ লিখতে।
 \item \texttt{<head>} ও \texttt{<body>} অংশের পার্থক্য বুঝতে।
-\item একটি basic HTML file লিখে \texttt{.html} extension দিয়ে save করতে।
-\item HSC practical ও board exam-এর জন্য standard HTML structure মনে রাখতে।
+\item একটি মৌলিক HTML ফাইল লিখে \texttt{.html} এক্সটেনশন দিয়ে সংরক্ষণ করতে।
+\item HSC-এর ব্যবহারিক অনুশীলন ও বোর্ড পরীক্ষার জন্য মানসম্মত HTML কাঠামো মনে রাখতে।
 \end{itemize}
 \end{learningbox}
 
 \subsection{ভূমিকা}
+সম্পূর্ণ HTML নথিতে পেজ-সম্পর্কিত তথ্য ও দৃশ্যমান বিষয়বস্তু আলাদা অংশে লেখা হয়। \texttt{head}-এ থাকে শিরোনাম ও মেটাডেটা; \texttt{body}-এ থাকে ব্যবহারকারীর জন্য পেজের বিষয়বস্তু। শুরুতে \texttt{<!DOCTYPE html>} ঘোষণা এবং \texttt{head}-এ এনকোডিং লিখলে ব্রাউজার নথি পড়তে ও দেখাতে সঠিক নির্দেশনা পায়।
 
-HTML tag, element ও attribute জানা থাকলে একটি সম্পূর্ণ web page-এর গঠন বোঝা সহজ হয়। HTML file-এর code এলোমেলোভাবে লেখা যায় না; browser যেন document-এর শুরু, page title, metadata এবং visible content ঠিকভাবে বুঝতে পারে, সে জন্য একটি নির্দিষ্ট structure অনুসরণ করা হয়।
-
-HSC ICT-তে basic HTML program লেখার সময় সাধারণত \texttt{<html>}, \texttt{<head>}, \texttt{<title>} এবং \texttt{<body>} অংশ ব্যবহার করে web page তৈরি দেখানো হয়। আধুনিক HTML-এ এর শুরুতে \texttt{<!DOCTYPE html>} এবং বাংলা text ঠিকভাবে দেখানোর জন্য \texttt{<meta charset="UTF-8">} ব্যবহার করা ভালো।
-
-
-\begin{definitionbox}{HTML Document Structure}
-HTML Document Structure হলো একটি HTML web page-এর মৌলিক গঠন, যেখানে কোন tag কোথায় থাকবে এবং browser কোন অংশ কীভাবে বুঝবে তা নির্ধারিত থাকে।
+\begin{definitionbox}{HTML ডকুমেন্টের কাঠামো (Document Structure)}
+HTML নথির মূল এলিমেন্ট এবং তার অধীনে পেজের তথ্য ও বিষয়বস্তু সাজানোর বিন্যাসকে HTML ডকুমেন্টের কাঠামো বলে।
 \end{definitionbox}
 
-\subsection{Basic HTML Structure}
+\subsection{HTML-এর মৌলিক কাঠামো}
 
-\begin{examplebox}{Code}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড ও ব্রাউজারে ফল: কোডের বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -39,228 +43,274 @@ HTML Document Structure হলো একটি HTML web page-এর মৌলি
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
+ব্রাউজার ট্যাবে \texttt{My First Web Page} দেখা যাবে। ওয়েবপেজের দৃশ্যমান অংশে \texttt{Welcome to HSC ICT} শিরোনাম এবং নিচে অনুচ্ছেদ লেখা দেখা যাবে।
 
-\begin{examplebox}{Output ধারণা}
-Browser tab-এ \texttt{My First Web Page} দেখা যাবে। Web page-এর body area-তে \texttt{Welcome to HSC ICT} heading এবং নিচে paragraph text দেখা যাবে।
-\end{examplebox}
 
-\begin{keypointbox}{আধুনিক practice note}
+
+\begin{keypointbox}{আধুনিক ব্যবহারের বাড়তি তথ্য}
 \begin{itemize}
-\item \texttt{<html>} tag-এ \texttt{lang} attribute দিলে page-এর ভাষা বোঝা সহজ হয়।
-\item \texttt{<meta charset="UTF-8">} বাংলা ও অন্যান্য Unicode text ঠিকভাবে দেখাতে সাহায্য করে।
-\item \texttt{<meta name="viewport" content="width=device-width, initial-scale=1.0">} mobile-friendly display-এর জন্য কাজে লাগে।
-\item \texttt{<head>} অংশে title, metadata, CSS link ও script link রাখা হয়।
+\item \texttt{<html>} ট্যাগে \texttt{lang} অ্যাট্রিবিউট দিলে পেজের ভাষা বোঝা সহজ হয়।
+\item \texttt{<meta charset="UTF-8">} বাংলা ও অন্যান্য Unicode লেখা ঠিকভাবে দেখাতে সাহায্য করে।
+\item \texttt{<meta name="viewport" content="width=device-width, initial-scale=1.0">} মোবাইলের পর্দার মাপ অনুযায়ী পেজ দেখাতে কাজে লাগে।
+\item \texttt{<head>} অংশে শিরোনাম, মেটাডেটা, CSS লিংক ও স্ক্রিপ্ট লিংক রাখা হয়।
 \end{itemize}
 \end{keypointbox}
 
-\subsection{Structure-এর প্রধান অংশ}
+\subsection{কাঠামোর প্রধান অংশ}
 
 \subsubsection{\texttt{<!DOCTYPE html>}}
 
-\begin{definitionbox}{Document type declaration}
-\texttt{<!DOCTYPE html>} হলো document type declaration, যা browser-কে জানায় যে document-টি modern HTML বা HTML5 standard অনুসরণ করে লেখা হয়েছে।
+\begin{definitionbox}{ডকুমেন্টের ধরন ঘোষণা (Document Type Declaration)}
+\texttt{<!DOCTYPE html>} হলো HTML ডকুমেন্টের শুরুতে লেখা ঘোষণা। এটি ব্রাউজারকে পুরোনো প্রদর্শন-পদ্ধতি এড়িয়ে বর্তমান মান অনুযায়ী পেজ দেখাতে সাহায্য করে; ঘোষণাটি কোডের সব ভুল পরীক্ষা করে না।
 \end{definitionbox}
 
 \begin{itemize}
-\item এটি HTML tag নয়, declaration।
-\item সাধারণত HTML document-এর একদম শুরুতে লেখা হয়।
-\item Browser-কে standard mode-এ page render করতে সাহায্য করে।
-\item HSC basic code-এ অনেক সময় না দেখালেও modern HTML code-এ এটি লেখা ভালো।
+\item এটি HTML ট্যাগ নয়, ঘোষণা।
+\item সাধারণত HTML ডকুমেন্টের একদম শুরুতে লেখা হয়।
+\item ব্রাউজারকে মান অনুযায়ী প্রদর্শনের পদ্ধতিতে পেজ প্রদর্শন করতে সাহায্য করে।
+\item HSC মৌলিক কোডে অনেক সময় না দেখালেও আধুনিক HTML কোডে এটি লেখা ভালো।
 \end{itemize}
 
-\subsubsection{\texttt{<html>} tag}
+\subsubsection{\texttt{<html>} ট্যাগ}
 
-\begin{definitionbox}{Root element}
-\texttt{<html>} tag হলো HTML document-এর root element; এর ভিতরে সম্পূর্ণ web page-এর code লেখা হয়।
+\begin{definitionbox}{মূল এলিমেন্ট (Root Element)}
+\texttt{<html>} ট্যাগ হলো HTML ডকুমেন্টের মূল এলিমেন্ট; এর ভিতরে সম্পূর্ণ ওয়েবপেজের কোড লেখা হয়।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <html>
   ...
 </html>
 \end{verbatim}
-\end{examplebox}
 
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item \texttt{<html>} tag document-এর শুরু নির্দেশ করে।
-\item \texttt{</html>} tag document-এর শেষ নির্দেশ করে।
+\item \texttt{<html>} ট্যাগ ডকুমেন্টের শুরু নির্দেশ করে।
+\item \texttt{</html>} ট্যাগ ডকুমেন্টের শেষ নির্দেশ করে।
 \item এর ভিতরে সাধারণত দুইটি প্রধান অংশ থাকে: \texttt{<head>} এবং \texttt{<body>}।
 \end{itemize}
+\end{minipage}\par
 
-\subsubsection{\texttt{<head>} tag}
 
-\begin{definitionbox}{Head section}
-\texttt{<head>} tag হলো HTML document-এর এমন অংশ যেখানে page সম্পর্কিত তথ্য, title, style, script, link এবং meta information রাখা হয়।
+\subsubsection{\texttt{<head>} ট্যাগ}
+
+\begin{definitionbox}{পেজের তথ্যের অংশ (Head Section)}
+\texttt{<head>} ট্যাগ হলো HTML ডকুমেন্টের এমন অংশ যেখানে পেজ সম্পর্কিত তথ্য, শিরোনাম, রীতি, স্ক্রিপ্ট, লিংক এবং মেটাডেটা রাখা হয়।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <head>
   <title>Page Title</title>
 </head>
 \end{verbatim}
-\end{examplebox}
 
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item এই অংশের content সাধারণত browser window-এর main page area-তে সরাসরি দেখা যায় না।
-\item Page title, character encoding, CSS link, script link ইত্যাদি এখানে লেখা যায়।
-\item HSC exam-এ \texttt{<head>} অংশের কাজ হিসেবে page-related information উল্লেখ করতে হবে।
+\item এই অংশের বিষয়বস্তু সাধারণত ব্রাউজার উইন্ডোর প্রধান পেজ এলাকায় সরাসরি দেখা যায় না।
+\item পেজ শিরোনাম, অক্ষর এনকোডিং, CSS লিংক, স্ক্রিপ্ট লিংক ইত্যাদি এখানে লেখা যায়।
+\item মেটাডেটা পেজের পরিচয় ও বৈশিষ্ট্য জানায়; এটি মূল বিষয়বস্তু নয়।
 \end{itemize}
+\end{minipage}\par
 
-\begin{keypointbox}{Head-এর ভিতরে থাকতে পারে}
+
+\begin{keypointbox}{head অংশে থাকতে পারে}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
 \item \texttt{<title>}
 \item \texttt{<meta>}
 \item \texttt{<link>}
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
 \item \texttt{<style>}
 \item \texttt{<script>}
 \item \texttt{<base>}
 \end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
 \subsubsection{\texttt{<meta charset="UTF-8">}}
 
-\begin{definitionbox}{Character encoding}
-\texttt{<meta charset="UTF-8">} হলো metadata tag, যা document-এর character encoding নির্ধারণ করে।
+\begin{definitionbox}{অক্ষর এনকোডিং (Character Encoding)}
+অক্ষরকে বাইটে প্রকাশ এবং সেই বাইট পড়ে অক্ষর শনাক্ত করার নিয়মকে \textbf{অক্ষর এনকোডিং} বলে। \texttt{<meta charset="UTF-8">} জানায় যে নথিটি UTF-8 এনকোডিংয়ে লেখা।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <meta charset="UTF-8">
 \end{verbatim}
-\end{examplebox}
 
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item বাংলা, ইংরেজি এবং অধিকাংশ ভাষার character ঠিকভাবে দেখাতে সাহায্য করে।
-\item এটি \texttt{<head>} tag-এর ভিতরে লেখা হয়।
-\item বাংলা content যুক্ত web page-এ এটি ব্যবহার করা ভালো অভ্যাস।
+\item বাংলা, ইংরেজি এবং অধিকাংশ ভাষার অক্ষর ঠিকভাবে দেখাতে সাহায্য করে।
+\item এটি \texttt{<head>} ট্যাগের ভিতরে লেখা হয়।
+\item বাংলা লেখা যুক্ত ওয়েবপেজে এই ঘোষণা দেওয়ার পাশাপাশি ফাইলটিও UTF-8 এনকোডিংয়ে সংরক্ষণ করতে হবে। শুধু ঘোষণা বদলালে অন্য এনকোডিংয়ের ফাইল স্বয়ংক্রিয়ভাবে রূপান্তরিত হয় না।
 \end{itemize}
+\end{minipage}\par
 
-\subsubsection{\texttt{<title>} tag}
 
-\begin{definitionbox}{Page title}
-\texttt{<title>} tag browser tab বা title bar-এ web page-এর title প্রদর্শন করে।
+\input{chapters/Chapter04/topics/09_basic_structure/book_concepts}
+
+\subsubsection{\texttt{<title>} ট্যাগ}
+
+\begin{definitionbox}{পেজের শিরোনাম (Page Title)}
+\texttt{<title>} ট্যাগ ব্রাউজার ট্যাব বা শিরোনাম বারে ওয়েবপেজের শিরোনাম প্রদর্শন করে।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <title>My First Web Page</title>
 \end{verbatim}
-\end{examplebox}
 
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item এটি \texttt{<head>} tag-এর ভিতরে লেখা হয়।
-\item এটি page body-এর ভিতরে দেখা যায় না।
-\item Bookmark বা search result-এ page title বোঝাতে সাহায্য করে।
+\item এটি \texttt{<head>} ট্যাগের ভিতরে লেখা হয়।
+\item এটি পেজের দৃশ্যমান অংশে দেখা যায় না।
+\item বুকমার্ক বা অনুসন্ধান ফলে পেজ শিরোনাম বোঝাতে সাহায্য করে।
 \end{itemize}
+\end{minipage}\par
+
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.58\textwidth}|}
 \hline
-\textbf{Tag} & \textbf{কোথায় দেখা যায়} \\
+\textbf{ট্যাগ} & \textbf{কোথায় দেখা যায়} \\
 \hline
-\texttt{<title>} & Browser tab/title bar-এ \\
+\texttt{<title>} & ব্রাউজার ট্যাব/শিরোনাম বারে \\
 \hline
-\texttt{<h1>} & Web page-এর visible body area-তে \\
+\texttt{<h1>} & ওয়েবপেজের দৃশ্যমান অংশে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsubsection{\texttt{<body>} tag}
+\subsubsection{\texttt{<body>} ট্যাগ}
 
-\begin{definitionbox}{Visible content section}
-\texttt{<body>} tag হলো HTML document-এর প্রধান অংশ, যেখানে web page-এর দৃশ্যমান content লেখা হয়।
+\begin{definitionbox}{দৃশ্যমান বিষয়বস্তুর অংশ (Body Section)}
+\texttt{<body>} ট্যাগ হলো HTML ডকুমেন্টের প্রধান অংশ, যেখানে ওয়েবপেজের দৃশ্যমান বিষয়বস্তু লেখা হয়।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <body>
   <h1>Welcome</h1>
   <p>This is a paragraph.</p>
 </body>
 \end{verbatim}
-\end{examplebox}
 
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item Web page-এ যে text, image, link, table, list বা form দেখা যায়, তা \texttt{<body>} অংশে লেখা হয়।
-\item \texttt{<body>} tag-এর বাইরে visible heading বা paragraph লেখা উচিত নয়।
-\item HSC practical code-এ body অংশ সবচেয়ে বেশি ব্যবহৃত হয়।
+\item ওয়েবপেজে যে লেখা, ছবি, লিংক, সারণি, তালিকা বা ফর্ম দেখা যায়, তা \texttt{<body>} অংশে লেখা হয়।
+\item \texttt{<body>} ট্যাগের বাইরে দৃশ্যমান শিরোনাম বা অনুচ্ছেদ লেখা উচিত নয়।
+\item ব্যবহারিক উদাহরণের শিরোনাম, তালিকা ও সারণি এই অংশেই যোগ করা হয়।
 \end{itemize}
+\end{minipage}\par
 
-\begin{keypointbox}{Body-এর ভিতরে থাকতে পারে}
+
+\begin{keypointbox}{body অংশে থাকতে পারে}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Heading: \texttt{<h1>} থেকে \texttt{<h6>}
-\item Paragraph: \texttt{<p>}
-\item Image: \texttt{<img>}
-\item Hyperlink: \texttt{<a>}
-\item List: \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>}
-\item Table: \texttt{<table>}
-\item Form: \texttt{<form>}
+\item শিরোনাম: \texttt{<h1>} থেকে \texttt{<h6>}
+\item অনুচ্ছেদ: \texttt{<p>}
+\item ছবি: \texttt{<img>}
+\item হাইপারলিংক: \texttt{<a>}
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item তালিকা: \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>}
+\item সারণি: \texttt{<table>}
+\item ফর্ম: \texttt{<form>}
+\end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
-\subsection{Head ও Body-এর পার্থক্য}
+\subsection{head ও body অংশের পার্থক্য}
 
 \begin{center}
 \begin{tabular}{|p{0.22\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
 \hline
 \textbf{বিষয়} & \textbf{\texttt{<head>}} & \textbf{\texttt{<body>}} \\
 \hline
-কাজ & Page সম্পর্কিত তথ্য রাখে & Page-এর visible content রাখে \\
+কাজ & পেজ সম্পর্কিত তথ্য রাখে & পেজের দৃশ্যমান বিষয়বস্তু রাখে \\
 \hline
-Browser-এ সরাসরি দেখা যায়? & সাধারণত না & হ্যাঁ \\
+ব্রাউজারে সরাসরি দেখা যায়? & সাধারণত না & হ্যাঁ \\
 \hline
-Example tag & \texttt{<title>}, \texttt{<meta>}, \texttt{<style>} & \texttt{<h1>}, \texttt{<p>}, \texttt{<img>}, \texttt{<a>} \\
+উদাহরণ ট্যাগ & \texttt{<title>}, \texttt{<meta>}, \texttt{<style>} & \texttt{<h1>}, \texttt{<p>}, \texttt{<img>}, \texttt{<a>} \\
 \hline
-ব্যবহার & metadata, title, CSS, script link & heading, paragraph, image, table, form \\
+ব্যবহার & মেটাডেটা, শিরোনাম, CSS, স্ক্রিপ্ট লিংক & শিরোনাম, অনুচ্ছেদ, ছবি, সারণি, ফর্ম \\
 \hline
-HSC focus & setting, style, script, title & browser-এ যা দেখা যায় \\
+পরীক্ষার গুরুত্ব & বিন্যাস, রীতি, স্ক্রিপ্ট, শিরোনাম & ব্রাউজারে যা দেখা যায় \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{HTML Structure Diagram}
+\subsection{HTML কাঠামোর চিত্র}
 
-\begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{HTML Document}\\[4pt]
-\texttt{<!DOCTYPE html>}\\
-$\downarrow$\\
-\texttt{<html>}\\
-$\swarrow \hspace{2cm} \searrow$\\
-\texttt{<head>} \hspace{2cm} \texttt{<body>}\\
-\texttt{title, meta, style} \hspace{1.1cm} \texttt{heading, paragraph, image, link}
-}}
-\end{center}
-
-\begin{center}
-\textbf{HTML Document Tree}\\[6pt]
+\noindent
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{HTML ডকুমেন্টের গাছের মতো কাঠামো}\par
 \begin{tikzpicture}[
-  level distance=1.25cm,
-  level 1/.style={sibling distance=4.8cm},
-  level 2/.style={sibling distance=2.3cm},
-  every node/.style={draw, rounded corners, align=center, fill=blue!5, inner sep=5pt, font=\small}
+  every node/.style={draw, rounded corners, align=center, fill=blue!5,
+    inner sep=3pt, font=\footnotesize}
 ]
-\node {\texttt{html}}
-  child { node {\texttt{head}}
-    child { node {\texttt{title}} }
-    child { node {\texttt{meta}} }
-  }
-  child { node {\texttt{body}}
-    child { node {\texttt{h1}, \texttt{p}} }
-    child { node {\texttt{img}, \texttt{a}, \texttt{table}} }
-  };
+\node (html) at (0,0) {\texttt{html}};
+\node (head) at (-1.35,-1.05) {\texttt{head}};
+\node (body) at (1.35,-1.05) {\texttt{body}};
+\node (title) at (-2,-2.15) {\texttt{title}};
+\node (meta) at (-.65,-2.15) {\texttt{meta}};
+\node (text) at (1.35,-2.15) {\texttt{h1}, \texttt{p}};
+\node (media) at (1.35,-3.2) {\texttt{img}, \texttt{a}, \texttt{table}};
+\draw (html) -- (head);
+\draw (html) -- (body);
+\draw (head) -- (title);
+\draw (head) -- (meta);
+\draw (body) -- (text);
+\draw (body.east) -- (3,-1.05) |- (media.east);
 \end{tikzpicture}
-\end{center}
+\end{minipage}\hfill
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+\textbf{চিত্র থেকে কোড বোঝার নিয়ম}\par
+গাছের মতো কাঠামোর চিত্রে বাইরের ট্যাগের ভিতরে ভেতরের ট্যাগ থাকে। যেমন \texttt{<html>} ট্যাগের ভিতরে \texttt{<head>} ও \texttt{<body>} থাকে। আবার \texttt{<body>} ট্যাগের ভিতরে দৃশ্যমান বিষয়বস্তু যেমন শিরোনাম, অনুচ্ছেদ, ছবি, লিংক, তালিকা ও সারণি লেখা হয়।
+\par \texttt{style}-ও \texttt{head}-এ থাকতে পারে। নথির শুরুতে \texttt{<!DOCTYPE html>} ঘোষণা লেখা হয়; এটি এলিমেন্টের ট্যাগ নয়।
+\end{minipage}
 
-\begin{keypointbox}{Tree থেকে code বোঝার নিয়ম}
-Tree diagram-এ parent tag-এর ভিতরে child tag থাকে। যেমন \texttt{<html>} tag-এর ভিতরে \texttt{<head>} ও \texttt{<body>} থাকে। আবার \texttt{<body>} tag-এর ভিতরে visible content যেমন heading, paragraph, image, link, list ও table লেখা হয়।
-\end{keypointbox}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -273,11 +323,23 @@ Tree diagram-এ parent tag-এর ভিতরে child tag থাকে। য
   </body>
 </html>
 \end{verbatim}
-\end{examplebox}
 
-\subsection{Complete Example: College Web Page}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কাঠামো পড়ার নিয়ম}\par
+\texttt{<!DOCTYPE html>} নথির ধরন ঘোষণা করে।\par
+\texttt{html}-এর ভিতরে \texttt{head} ও \texttt{body} আছে।\par
+\texttt{Page Title} ব্রাউজারের ট্যাবে এবং \texttt{Visible content} পেজের দৃশ্যমান অংশে দেখা যাবে।
+\end{minipage}\par
 
-\begin{examplebox}{Code}
+
+\subsection{পূর্ণাঙ্গ উদাহরণ: কলেজের ওয়েবপেজ}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -292,110 +354,140 @@ Tree diagram-এ parent tag-এর ভিতরে child tag থাকে। য
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
 
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.54\textwidth}|}
-\hline
-\textbf{Code} & \textbf{কাজ} \\
-\hline
-\texttt{<!DOCTYPE html>} & HTML5 document ঘোষণা করে \\
-\hline
-\texttt{<html>} & সম্পূর্ণ document ধরে \\
-\hline
-\texttt{<head>} & page সম্পর্কিত তথ্য রাখে \\
-\hline
-\texttt{<meta charset="UTF-8">} & character encoding নির্ধারণ করে \\
-\hline
-\texttt{<title>} & browser tab title দেখায় \\
-\hline
-\texttt{<body>} & visible content রাখে \\
-\hline
-\texttt{<h1>} & বড় heading দেখায় \\
-\hline
-\texttt{<p>} & paragraph দেখায় \\
-\hline
-\end{tabular}
-\end{center}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\small
 
-\subsection{HTML File Save করার নিয়ম}
+\textbf{\color{chFourTeal}কোডের কাজ}\par
+\texttt{<!DOCTYPE html>}: HTML ডকুমেন্টের ধরন ঘোষণা করে\par\smallskip
+\texttt{<html>}: সম্পূর্ণ ডকুমেন্ট ধরে\par\smallskip
+\texttt{<head>}: পেজ সম্পর্কিত তথ্য রাখে\par\smallskip
+\texttt{<meta charset="UTF-8">}: ব্যবহৃত অক্ষর এনকোডিং ঘোষণা করে\par\smallskip
+\texttt{<title>}: ব্রাউজার ট্যাব শিরোনাম দেখায়\par\smallskip
+\texttt{<body>}: দৃশ্যমান বিষয়বস্তু রাখে\par\smallskip
+\texttt{<h1>}: প্রথম স্তরের শিরোনাম দেখায়\par\smallskip
+\texttt{<p>}: অনুচ্ছেদ দেখায়\par\smallskip
+\end{minipage}\par
 
-HTML code লেখার পর file save করতে হবে \texttt{.html} বা \texttt{.htm} extension দিয়ে।
 
-\begin{examplebox}{File name example}
+\subsection{HTML ফাইল সংরক্ষণের নিয়ম}
+
+HTML কোড লেখার পর ফাইল সংরক্ষণ করতে হবে \texttt{.html} বা \texttt{.htm} এক্সটেনশন দিয়ে।
+
+\begin{examplebox}{ফাইলের নামের উদাহরণ}
 \texttt{index.html}, \texttt{home.html}, \texttt{about.html}
 \end{examplebox}
 
 \begin{enumerate}
-\item Notepad বা VS Code open করো।
-\item HTML code লিখো।
-\item File save করো \texttt{index.html} নামে।
-\item File browser দিয়ে open করো।
-\item Output browser-এ দেখো।
+\item Notepad বা VS Code খোলো।
+\item HTML কোড লিখো।
+\item ফাইলটি UTF-8 এনকোডিংয়ে \texttt{index.html} নামে সংরক্ষণ করো। Notepad-এ প্রয়োজন হলে \texttt{Save as type: All Files} বেছে নেবে, যাতে নামের শেষে \texttt{.txt} যুক্ত না হয়।
+\item ফাইল ব্রাউজার দিয়ে খোলো।
+\item ফল ব্রাউজারে দেখো।
 \end{enumerate}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
 \item \texttt{<!DOCTYPE html>} না লেখা।
-\item \texttt{<head>} tag-এর ভিতরে visible content লেখা।
-\item \texttt{<body>} tag-এর বাইরে heading বা paragraph লেখা।
-\item \texttt{<title>} tag-কে page heading মনে করা।
-\item closing tag না দেওয়া।
-\item file \texttt{.txt} হিসেবে save করা।
-\item বাংলা text ঠিকভাবে দেখানোর জন্য \texttt{UTF-8} না দেওয়া।
-\item \texttt{<head>} ও \texttt{<body>} tag-এর order ভুল করা।
+\item \texttt{<head>} ট্যাগের ভিতরে দৃশ্যমান বিষয়বস্তু লেখা।
+\item \texttt{<body>} ট্যাগের বাইরে শিরোনাম বা অনুচ্ছেদ লেখা।
+\item \texttt{<title>} ট্যাগকে পেজে দৃশ্যমান শিরোনামের ট্যাগ মনে করা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item শেষের ট্যাগ না দেওয়া।
+\item ফাইল \texttt{.txt} হিসেবে সংরক্ষণ করা।
+\item বাংলা লেখা ঠিকভাবে দেখানোর জন্য \texttt{UTF-8} না দেওয়া।
+\item \texttt{<head>} ও \texttt{<body>} ট্যাগের ক্রম ভুল করা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\begin{boardbox}{সঠিক order মনে রাখো}
-\texttt{DOCTYPE} $\rightarrow$ \texttt{html} $\rightarrow$ \texttt{head} $\rightarrow$ \texttt{title/meta} $\rightarrow$ \texttt{body} $\rightarrow$ visible content
+\begin{boardbox}{সঠিক ক্রম মনে রাখো}
+\texttt{DOCTYPE} $\rightarrow$ \texttt{html} $\rightarrow$ \texttt{head} $\rightarrow$ \texttt{title/meta} $\rightarrow$ \texttt{body} $\rightarrow$ দৃশ্যমান বিষয়বস্তু
 \end{boardbox}
 
-\subsection{পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-HTML document একটি নির্দিষ্ট কাঠামো অনুসরণ করে লেখা হয়। আধুনিক HTML document-এর শুরুতে \texttt{<!DOCTYPE html>} লেখা হয়। এরপর \texttt{<html>} tag-এর মধ্যে সম্পূর্ণ document থাকে। \texttt{<head>} অংশে web page সম্পর্কিত তথ্য, title, metadata, style ও script রাখা হয়। \texttt{<title>} tag browser tab-এ page title প্রদর্শন করে। \texttt{<body>} অংশে web page-এর দৃশ্যমান content যেমন heading, paragraph, image, hyperlink, list, table ও form লেখা হয়।
+HTML ডকুমেন্ট একটি নির্দিষ্ট কাঠামো অনুসরণ করে লেখা হয়। আধুনিক HTML ডকুমেন্টের শুরুতে \texttt{<!DOCTYPE html>} লেখা হয়। এরপর \texttt{<html>} ট্যাগের মধ্যে সম্পূর্ণ ডকুমেন্ট থাকে। \texttt{<head>} অংশে ওয়েবপেজ সম্পর্কিত তথ্য, শিরোনাম, মেটাডেটা, রীতি ও স্ক্রিপ্ট রাখা হয়। \texttt{<title>} ট্যাগ ব্রাউজার ট্যাবে পেজ শিরোনাম প্রদর্শন করে। \texttt{<body>} অংশে ওয়েবপেজের দৃশ্যমান বিষয়বস্তু যেমন শিরোনাম, অনুচ্ছেদ, ছবি, হাইপারলিংক, তালিকা, সারণি ও ফর্ম লেখা হয়।
 
-\subsection{ছোট প্রশ্নোত্তর}
+\input{chapters/Chapter04/topics/09_basic_structure/clarity}
 
-\begin{enumerate}
-\item HTML document-এর root element কোনটি?\\
-\textbf{উত্তর:} \texttt{<html>}।
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\item HTML document-এর visible content কোন tag-এর ভিতরে লেখা হয়?\\
-\textbf{উত্তর:} \texttt{<body>} tag-এর ভিতরে।
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{HTML ডকুমেন্টের মূল এলিমেন্ট কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{HTML ডকুমেন্টের দৃশ্যমান বিষয়বস্তু কোন ট্যাগের ভিতরে লেখা হয়?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{ওয়েবপেজের শিরোনাম ব্রাউজার ট্যাবে দেখাতে কোন ট্যাগ ব্যবহৃত হয়?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\texttt{<head>} ট্যাগের কাজ কী?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\texttt{<!DOCTYPE html>} কেন ব্যবহার করা হয়?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{বাংলা লেখা ঠিকভাবে দেখাতে কোন meta ট্যাগ ব্যবহার করা ভালো?}
+\end{minipage}\par\smallskip
+\end{multicols}
 
-\item Web page-এর title browser tab-এ দেখাতে কোন tag ব্যবহৃত হয়?\\
-\textbf{উত্তর:} \texttt{<title>} tag।
+\Needspace{10\baselineskip}
+\subsection{পরীক্ষাভিত্তিক বহুনির্বাচনি প্রশ্ন}
 
-\item \texttt{<head>} tag-এর কাজ কী?\\
-\textbf{উত্তর:} Page সম্পর্কিত তথ্য, title, metadata, style ও script রাখার জন্য \texttt{<head>} tag ব্যবহৃত হয়।
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+HTML ডকুমেন্টের মূল এলিমেন্ট কোনটি?
+\par ক) \texttt{<head>}
+\par খ) \texttt{<title>}
+\par গ) \texttt{<html>}
+\par ঘ) \texttt{<body>}
+\end{minipage}
 
-\item \texttt{<!DOCTYPE html>} কেন ব্যবহার করা হয়?\\
-\textbf{উত্তর:} Browser-কে জানাতে যে document-টি modern HTML বা HTML5 standard অনুসরণ করে লেখা হয়েছে।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ব্রাউজার ট্যাবে পেজ শিরোনাম দেখাতে কোন ট্যাগ ব্যবহৃত হয়?
+\par ক) \texttt{<h1>}
+\par খ) \texttt{<title>}
+\par গ) \texttt{<body>}
+\par ঘ) \texttt{<p>}
+\end{minipage}
 
-\item বাংলা text ঠিকভাবে দেখাতে কোন meta tag ব্যবহার করা ভালো?\\
-\textbf{উত্তর:} \texttt{<meta charset="UTF-8">}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ওয়েবপেজের দৃশ্যমান বিষয়বস্তু কোন এলিমেন্টের ভিতরে থাকে?
+\par ক) \texttt{<head>}
+\par খ) \texttt{<body>}
+\par গ) \texttt{<title>}
+\par ঘ) \texttt{<meta>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+পেজ সম্পর্কিত মেটাডেটা কোন অংশে থাকে?
+\par ক) \texttt{<body>}
+\par খ) \texttt{<head>}
+\par গ) \texttt{<table>}
+\par ঘ) \texttt{<img>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+আধুনিক HTML ডকুমেন্টের শুরুতে কোন ঘোষণা লেখা হয়?
+\par ক) \texttt{<html>}
+\par খ) \texttt{<!DOCTYPE html>}
+\par গ) \texttt{<body>}
+\par ঘ) \texttt{<title>}
+\end{minipage}
 \end{enumerate}
+\end{multicols}
 
-\subsection{Exam Focus MCQ}
-
-\begin{enumerate}
-\item HTML document-এর root element কোনটি?\\
-ক) \texttt{<head>} \quad খ) \texttt{<title>} \quad গ) \texttt{<html>} \quad ঘ) \texttt{<body>}
-
-\item Browser tab-এ page title দেখাতে কোন tag ব্যবহৃত হয়?\\
-ক) \texttt{<h1>} \quad খ) \texttt{<title>} \quad গ) \texttt{<body>} \quad ঘ) \texttt{<p>}
-
-\item Web page-এর visible content কোন element-এর ভিতরে থাকে?\\
-ক) \texttt{<head>} \quad খ) \texttt{<body>} \quad গ) \texttt{<title>} \quad ঘ) \texttt{<meta>}
-
-\item Page সম্পর্কিত metadata কোন অংশে থাকে?\\
-ক) \texttt{<body>} \quad খ) \texttt{<head>} \quad গ) \texttt{<table>} \quad ঘ) \texttt{<img>}
-
-\item Modern HTML document-এর শুরুতে কোন declaration লেখা হয়?\\
-ক) \texttt{<html>} \quad খ) \texttt{<!DOCTYPE html>} \quad গ) \texttt{<body>} \quad ঘ) \texttt{<title>}
-\end{enumerate}
-
-\begin{boardbox}{Answer key}
-১-গ, ২-খ, ৩-খ, ৪-খ, ৫-খ
-\end{boardbox}
+\chFourMCQAnswer{১-গ, ২-খ, ৩-খ, ৪-খ, ৫-খ}

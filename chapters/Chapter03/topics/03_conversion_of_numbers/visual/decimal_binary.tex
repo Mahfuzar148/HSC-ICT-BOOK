@@ -1,0 +1,169 @@
+\subsection{দশমিক থেকে বাইনারি}
+পূর্ণাংশে লক্ষ্য ভিত্তি দিয়ে ভাগ করো; ভাগশেষ নিচ থেকে ওপরে পড়ো। ভগ্নাংশে একই ভিত্তি দিয়ে গুণ করে পাওয়া অঙ্ক ওপর থেকে নিচে পড়ো।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (45)_{10} $-কে ২ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC001}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-56);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 2 $};
+\node[vcnum] at (10.0,0) {$ 45 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ 1 $};
+\node[vcnum] at (1.5,-7) {$ 2 $};
+\node[vcnum] at (11.5,-7) {$ 22 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 0 $};
+\node[vcnum] at (3.0,-14) {$ 2 $};
+\node[vcnum] at (13.0,-14) {$ 11 $};
+\draw[vc line] (8.0,-11)--(8.0,-17.5)--(50,-17.5);
+\node[vcnum] (r2) at (44,-21) {$ 1 $};
+\node[vcnum] at (4.5,-21) {$ 2 $};
+\node[vcnum] at (14.5,-21) {$ 5 $};
+\draw[vc line] (9.5,-18)--(9.5,-24.5)--(50,-24.5);
+\node[vcnum] (r3) at (44,-28) {$ 1 $};
+\node[vcnum] at (6.0,-28) {$ 2 $};
+\node[vcnum] at (16.0,-28) {$ 2 $};
+\draw[vc line] (11.0,-25)--(11.0,-31.5)--(50,-31.5);
+\node[vcnum] (r4) at (44,-35) {$ 0 $};
+\node[vcnum] at (7.5,-35) {$ 2 $};
+\node[vcnum] at (17.5,-35) {$ 1 $};
+\draw[vc line] (12.5,-32)--(12.5,-38.5)--(50,-38.5);
+\node[vcnum] (r5) at (44,-42) {$ 1 $};
+\node[vcnum] at (19.0,-42) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-47) {MSB};
+\draw[vc arrow] (61,-42)--(61,-7);
+\node[vcnote] at (31,-54) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (45)_{10}=(101101)_{2}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.6875)_{10} $-কে ২ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC002}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-63);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.6875 $};
+\draw[vc line] (26,3)--(26,-51);
+\node[vcnum] (m0) at (45,-5) {$\times 2$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ 1 $};
+\node[vcnum] (f0) at (45,-12) {$ 0.375 $};
+\node[vcnum] (m1) at (45,-17) {$\times 2$};
+\draw[vc line] (7,-20)--(65,-20);
+\node[vcnum] at (14,-24) {$ 0 $};
+\node[vcnum] (f1) at (45,-24) {$ 0.75 $};
+\node[vcnum] (m2) at (45,-29) {$\times 2$};
+\draw[vc line] (7,-32)--(65,-32);
+\node[vcnum] at (14,-36) {$ 1 $};
+\node[vcnum] (f2) at (45,-36) {$ 0.5 $};
+\node[vcnum] (m3) at (45,-41) {$\times 2$};
+\draw[vc line] (7,-44)--(65,-44);
+\node[vcnum] at (14,-48) {$ 1 $};
+\node[vcnum] (f3) at (45,-48) {$ 0 $};
+\draw[vc arrow] (f0.east)--(72,-12)--(72,-17)--(m1.east);
+\draw[vc arrow] (f1.east)--(72,-24)--(72,-29)--(m2.east);
+\draw[vc arrow] (f2.east)--(72,-36)--(72,-41)--(m3.east);
+\node[vcnote] at (0,-8) {MSB};
+\node[vcnote] at (0,-53) {LSB};
+\draw[vc arrow] (0,-12)--(0,-48);
+\node[vcnote] at (34,-60) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (0.6875)_{10}=(0.1011)_{2}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (77.4375)_{10} $-কে ২ ভিত্তিতে রূপান্তর করো।\par
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering\textbf{পূর্ণাংশ}\par\vspace{1mm}
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC003}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-63);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 2 $};
+\node[vcnum] at (10.0,0) {$ 77 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ 1 $};
+\node[vcnum] at (1.5,-7) {$ 2 $};
+\node[vcnum] at (11.5,-7) {$ 38 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 0 $};
+\node[vcnum] at (3.0,-14) {$ 2 $};
+\node[vcnum] at (13.0,-14) {$ 19 $};
+\draw[vc line] (8.0,-11)--(8.0,-17.5)--(50,-17.5);
+\node[vcnum] (r2) at (44,-21) {$ 1 $};
+\node[vcnum] at (4.5,-21) {$ 2 $};
+\node[vcnum] at (14.5,-21) {$ 9 $};
+\draw[vc line] (9.5,-18)--(9.5,-24.5)--(50,-24.5);
+\node[vcnum] (r3) at (44,-28) {$ 1 $};
+\node[vcnum] at (6.0,-28) {$ 2 $};
+\node[vcnum] at (16.0,-28) {$ 4 $};
+\draw[vc line] (11.0,-25)--(11.0,-31.5)--(50,-31.5);
+\node[vcnum] (r4) at (44,-35) {$ 0 $};
+\node[vcnum] at (7.5,-35) {$ 2 $};
+\node[vcnum] at (17.5,-35) {$ 2 $};
+\draw[vc line] (12.5,-32)--(12.5,-38.5)--(50,-38.5);
+\node[vcnum] (r5) at (44,-42) {$ 0 $};
+\node[vcnum] at (9.0,-42) {$ 2 $};
+\node[vcnum] at (19.0,-42) {$ 1 $};
+\draw[vc line] (14.0,-39)--(14.0,-45.5)--(50,-45.5);
+\node[vcnum] (r6) at (44,-49) {$ 1 $};
+\node[vcnum] at (20.5,-49) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-54) {MSB};
+\draw[vc arrow] (61,-49)--(61,-7);
+\node[vcnote] at (31,-61) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+$ (1001101)_{2} $
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering\textbf{ভগ্নাংশ}\par\vspace{1mm}
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC004}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-63);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.4375 $};
+\draw[vc line] (26,3)--(26,-51);
+\node[vcnum] (m0) at (45,-5) {$\times 2$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ 0 $};
+\node[vcnum] (f0) at (45,-12) {$ 0.875 $};
+\node[vcnum] (m1) at (45,-17) {$\times 2$};
+\draw[vc line] (7,-20)--(65,-20);
+\node[vcnum] at (14,-24) {$ 1 $};
+\node[vcnum] (f1) at (45,-24) {$ 0.75 $};
+\node[vcnum] (m2) at (45,-29) {$\times 2$};
+\draw[vc line] (7,-32)--(65,-32);
+\node[vcnum] at (14,-36) {$ 1 $};
+\node[vcnum] (f2) at (45,-36) {$ 0.5 $};
+\node[vcnum] (m3) at (45,-41) {$\times 2$};
+\draw[vc line] (7,-44)--(65,-44);
+\node[vcnum] at (14,-48) {$ 1 $};
+\node[vcnum] (f3) at (45,-48) {$ 0 $};
+\draw[vc arrow] (f0.east)--(72,-12)--(72,-17)--(m1.east);
+\draw[vc arrow] (f1.east)--(72,-24)--(72,-29)--(m2.east);
+\draw[vc arrow] (f2.east)--(72,-36)--(72,-41)--(m3.east);
+\node[vcnote] at (0,-8) {MSB};
+\node[vcnote] at (0,-53) {LSB};
+\draw[vc arrow] (0,-12)--(0,-48);
+\node[vcnote] at (34,-60) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+$ (0.0111)_{2} $
+\end{minipage}\par
+\[\therefore\ (77.4375)_{10}=(1001101.0111)_{2}.\]
+\end{minipage}\par

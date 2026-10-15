@@ -1,26 +1,35 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % Topic 15: Rowspan and Colspan
-\section{Rowspan ও Colspan}
+\section{সারণির ঘর একত্র করা: rowspan ও colspan}
+
+% Composition pass 2026-10-04
+ফলের সারণিতে একটি শিরোনাম তিন কলামের ওপর এবং একটি বিষয় দুই সারির পাশে দেখাতে হবে।
+
+\chFourMotivation{একাধিক মূল ঘরের স্থানজুড়ে একই তথ্য $\rightarrow$ colspan/rowspan $\rightarrow$ বিস্তৃত ঘরের দখল করা স্থান গোনা $\rightarrow$ ফল ও রুটিনের মিলিত শিরোনাম।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML table cell merge কী তা ব্যাখ্যা করতে।
-\item \texttt{colspan} attribute ব্যবহার করে cell-কে একাধিক column জুড়ে দেখাতে।
-\item \texttt{rowspan} attribute ব্যবহার করে cell-কে একাধিক row জুড়ে দেখাতে।
-\item figure দেখে \texttt{rowspan} ও \texttt{colspan} নির্ধারণ করতে।
-\item merged cell-এর জন্য অতিরিক্ত \texttt{<td>} বা \texttt{<th>} না লেখার নিয়ম বুঝতে।
+\item HTML সারণির ঘর একত্র করার ধারণা ব্যাখ্যা করতে।
+\item \texttt{colspan} অ্যাট্রিবিউট ব্যবহার করে ঘরকে একাধিক কলামজুড়ে দেখাতে।
+\item \texttt{rowspan} অ্যাট্রিবিউট ব্যবহার করে ঘরকে একাধিক সারিজুড়ে দেখাতে।
+\item চিত্র দেখে \texttt{rowspan} ও \texttt{colspan} নির্ধারণ করতে।
+\item একত্র করা ঘরের জন্য অতিরিক্ত \texttt{<td>} বা \texttt{<th>} না লেখার নিয়ম বুঝতে।
 \end{itemize}
 \end{learningbox}
 
-HTML table তৈরি করার সময় অনেক সময় একটি cell-কে একাধিক column বা একাধিক row জুড়ে দেখাতে হয়। যেমন--একটি table-এর উপরে ``Result Sheet'' title পুরো ৩টি column জুড়ে থাকতে পারে, অথবা ``Phone'' cell-এর অধীনে দুইটি phone number থাকতে পারে। এই ধরনের cell merge করার জন্য HTML-এ \texttt{colspan} ও \texttt{rowspan} attribute ব্যবহার করা হয়।
 
-\subsection{Cell Merge কী?}
 
-\begin{definitionbox}{Cell Merge}
-HTML table-এ একাধিক row বা column জুড়ে একটি cell প্রদর্শনের জন্য cell merge করা হয়। এই কাজের জন্য \texttt{rowspan} ও \texttt{colspan} attribute ব্যবহার করা হয়।
+একটি পরীক্ষার ফলের সারণিতে Roll, Name ও GPA তিনটি কলাম আছে। উপরে Result Sheet শিরোনামটি তিন কলামের মাঝ বরাবর দেখাতে আলাদা তিনটি ঘরে একই কথা লেখার প্রয়োজন নেই; একটি ঘরকে তিন কলামজুড়ে বিস্তৃত করলেই হয়। আবার একজনের দুটি ফোন নম্বর থাকলে Phone পরিচিতিটি দুই সারিজুড়ে একবার দেখানো যায়। এই অংশে \texttt{colspan} ও \texttt{rowspan} দিয়ে ঘরের বিস্তার এবং মূল ছকের স্থান গণনা শেখা হবে।
+
+\subsection{ঘর একত্র করা (Cell Merge)}
+
+\begin{definitionbox}{}
+HTML সারণিতে একাধিক সারি বা কলামের স্থানজুড়ে একটি ঘর বিস্তৃত করে দেখানোকে \textbf{ঘর একত্র করা} বলে। এর জন্য \texttt{rowspan} ও \texttt{colspan} অ্যাট্রিবিউট ব্যবহার করা হয়।
 \end{definitionbox}
 
-সহজভাবে, table-এর দুই বা ততোধিক cell-এর জায়গা একত্র করে একটি বড় cell তৈরি করাই cell merge।
+ঘর একত্র করলে ছকের বিন্যাস বদলায়। আলাদা ঘরের লেখা স্বয়ংক্রিয়ভাবে একসঙ্গে যুক্ত হয় না। বিস্তৃত ঘরে কী লেখা থাকবে এবং ঘরটি কত সারি বা কলাম দখল করবে, তা কোডে নির্ধারণ করতে হয়।
 
 \begin{examplebox}{সহজ উদাহরণ}
 \begin{center}
@@ -32,39 +41,57 @@ HTML table-এ একাধিক row বা column জুড়ে একটি ce
 \hline
 \end{tabular}
 \end{center}
-এখানে \textbf{Result Sheet} cell-টি ৩টি column জুড়ে আছে। তাই HTML code-এ \texttt{colspan="3"} ব্যবহার করতে হবে।
+এখানে \textbf{Result Sheet} ঘরটি ৩টি কলামজুড়ে আছে। তাই HTML কোডে \texttt{colspan="3"} ব্যবহার করতে হবে।
 \end{examplebox}
 
-\subsection{\texttt{colspan} কী?}
+\subsection{\texttt{colspan} দিয়ে কলামজুড়ে ঘর}
 
-\begin{definitionbox}{\texttt{colspan}}
-HTML table-এ কোনো cell-কে একাধিক column জুড়ে প্রদর্শনের জন্য \texttt{colspan} attribute ব্যবহার করা হয়।
-\end{definitionbox}
+\texttt{colspan} একটি ঘর কতটি কলামজুড়ে থাকবে, তা নির্ধারণ করে। নিচের উদাহরণে Math ও ICT একই Subject শিরোনামের অধীনে আছে।
 
-\texttt{colspan} শব্দের অর্থ হলো column span বা column জুড়ে বিস্তৃত হওয়া। এটি সাধারণত \texttt{<th>} বা \texttt{<td>} tag-এর ভিতরে লেখা হয়।
+\texttt{colspan} নামটি Column Span অর্থাৎ কলামজুড়ে বিস্তার বোঝায়। এটি সাধারণত \texttt{<th>} বা \texttt{<td>} ট্যাগের ভেতরে লেখা হয়।
 
-\subsubsection{Syntax}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\subsubsection{লেখার রূপ}
 
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <th colspan="number">Heading</th>
 <td colspan="number">Data</td>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\subsubsection{উদাহরণ}
 
-\subsubsection{Example}
-
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <th colspan="2">Subject</th>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
 
-এর অর্থ: \textbf{Subject} cell-টি ২টি column জুড়ে থাকবে।
 
-\subsection{Colspan Example: Subject Table}
+এর অর্থ: \textbf{Subject} ঘরটি ২টি কলামজুড়ে থাকবে।
+\end{minipage}\par
+\subsection{কলামের উদাহরণ: বিষয়ের সারণি}
 
-\begin{examplebox}{Output ধারণা}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.60\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
+\begin{verbatim}
+<!DOCTYPE html><html>
+<head><title>Colspan Example</title></head>
+<body><table border="1">
+  <tr><th>Name</th><th colspan="2">Subject</th></tr>
+  <tr><td>Kabir</td><td>Math</td><td>ICT</td></tr>
+</table></body></html>
+\end{verbatim}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.36\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -74,108 +101,89 @@ Kabir & Math & ICT \\
 \hline
 \end{tabular}
 \end{center}
-এখানে \textbf{Subject} heading দুইটি column--Math ও ICT--এর উপর বসেছে। তাই \texttt{Subject} cell-এ \texttt{colspan="2"} ব্যবহার হবে।
-\end{examplebox}
+এখানে \textbf{Subject} শিরোনাম দুইটি কলাম--Math ও ICT--এর উপর বসেছে। তাই \texttt{Subject} ঘরে \texttt{colspan="2"} ব্যবহার হবে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Colspan Example</title>
-</head>
-<body>
-  <table border="1">
-    <tr>
-      <th>Name</th>
-      <th colspan="2">Subject</th>
-    </tr>
-    <tr>
-      <td>Kabir</td>
-      <td>Math</td>
-      <td>ICT</td>
-    </tr>
-  </table>
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
 
 \begin{boardbox}{পরীক্ষায় মনে রাখবে}
-একটি heading যদি দুইটি column-এর উপর বসে, তাহলে \texttt{colspan="2"} লিখতে হয়। তিনটি column হলে \texttt{colspan="3"} লিখতে হয়।
+একটি শিরোনাম যদি দুইটি কলামের উপর বসে, তাহলে \texttt{colspan="2"} লিখতে হয়। তিনটি কলাম হলে \texttt{colspan="3"} লিখতে হয়।
 \end{boardbox}
 
-\subsection{\texttt{rowspan} কী?}
+\subsection{\texttt{rowspan} দিয়ে সারিজুড়ে ঘর}
 
-\begin{definitionbox}{\texttt{rowspan}}
-HTML table-এ কোনো cell-কে একাধিক row জুড়ে প্রদর্শনের জন্য \texttt{rowspan} attribute ব্যবহার করা হয়।
-\end{definitionbox}
+\texttt{rowspan} একটি ঘর কতটি সারিজুড়ে থাকবে, তা নির্ধারণ করে। নিচের উদাহরণে Phone ঘরের পাশে দুই সারিতে দুটি নম্বর আছে।
 
-\texttt{rowspan} শব্দের অর্থ হলো row span বা row জুড়ে বিস্তৃত হওয়া। এটি \texttt{<th>} অথবা \texttt{<td>} tag-এর সাথে ব্যবহার করা যায়।
+\texttt{rowspan} নামটি Row Span অর্থাৎ সারিজুড়ে বিস্তার বোঝায়। এটি \texttt{<th>} অথবা \texttt{<td>} ট্যাগে ব্যবহার করা যায়।
 
-\subsubsection{Syntax}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\subsubsection{লেখার রূপ}
 
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <th rowspan="number">Heading</th>
 <td rowspan="number">Data</td>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\subsubsection{উদাহরণ}
 
-\subsubsection{Example}
-
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <th rowspan="2">Phone</th>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
 
-এর অর্থ: \textbf{Phone} cell-টি ২টি row জুড়ে থাকবে।
 
-\subsection{Rowspan Example: Phone Table}
+এর অর্থ: \textbf{Phone} ঘরটি ২টি সারিজুড়ে থাকবে।
+\end{minipage}\par
+\subsection{সারির উদাহরণ: ফোন নম্বরের সারণি}
 
-\begin{examplebox}{Output ধারণা}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <td>Kabir</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Phone</th>
+    <td>8942318</td>
+  </tr>
+  <tr>
+    <td>1750181</td>
+  </tr>
+</table>
+\end{verbatim}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Name} & Kabir \\
 \hline
-\textbf{Phone} & 8942318 \\
+\raisebox{-.5\normalbaselineskip}[0pt][0pt]{\textbf{Phone}} & 8942318 \\
 \cline{2-2}
  & 1750181 \\
 \hline
 \end{tabular}
 \end{center}
-এখানে \textbf{Phone} cell-টি দুইটি phone number-এর পাশে দুইটি row জুড়ে আছে। তাই \texttt{rowspan="2"} ব্যবহার হবে।
-\end{examplebox}
+এখানে \textbf{Phone} ঘরটি দুইটি ফোন নম্বরের পাশে দুইটি সারিজুড়ে আছে। তাই \texttt{rowspan="2"} ব্যবহার হবে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Rowspan Example</title>
-</head>
-<body>
-  <table border="1">
-    <tr>
-      <th>Name</th>
-      <td>Kabir</td>
-    </tr>
-    <tr>
-      <th rowspan="2">Phone</th>
-      <td>8942318</td>
-    </tr>
-    <tr>
-      <td>1750181</td>
-    </tr>
-  </table>
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
 
-\subsection{Rowspan ও Colspan-এর পার্থক্য}
+\input{chapters/Chapter04/topics/10_table_cell_merge/clarity}
+
+\subsection{rowspan ও colspan-এর পার্থক্য}
 
 \begin{center}
 \footnotesize
@@ -183,24 +191,24 @@ HTML table-এ কোনো cell-কে একাধিক row জুড়ে প�
 \hline
 \textbf{বিষয়} & \textbf{\texttt{colspan}} & \textbf{\texttt{rowspan}} \\
 \hline
-কাজ & cell-কে একাধিক column জুড়ে দেয় & cell-কে একাধিক row জুড়ে দেয় \\
+কাজ & ঘরকে একাধিক কলামজুড়ে বিস্তৃত করে & ঘরকে একাধিক সারিজুড়ে বিস্তৃত করে \\
 \hline
-দিক & আড়াআড়ি বা horizontal & লম্বালম্বি বা vertical \\
+দিক & আড়াআড়ি & লম্বালম্বি \\
 \hline
-ব্যবহার & heading কয়েকটি column-এর উপর বসাতে & একটি label কয়েকটি row-এর পাশে বসাতে \\
+ব্যবহার & শিরোনাম কয়েকটি কলামের ওপর বসাতে & একটি পরিচিতি কয়েকটি সারির পাশে বসাতে \\
 \hline
-Example & \texttt{<th colspan="3">Result</th>} & \texttt{<td rowspan="2">ICT</td>} \\
+উদাহরণ & \texttt{<th colspan="3">Result</th>} & \texttt{<td rowspan="2">ICT</td>} \\
 \hline
-মনে রাখার উপায় & Column span & Row span \\
+মনে রাখার উপায় & কলামজুড়ে বিস্তার & সারিজুড়ে বিস্তার \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Rowspan ও Colspan কোথায় লেখা হয়?}
+\subsection{অ্যাট্রিবিউট দুটি কোথায় লেখা হয়?}
 
-\texttt{rowspan} ও \texttt{colspan} সাধারণত \texttt{<td>} অথবা \texttt{<th>} tag-এর ভিতরে লেখা হয়।
+\texttt{rowspan} ও \texttt{colspan} সাধারণত \texttt{<td>} অথবা \texttt{<th>} ট্যাগের ভেতরে লেখা হয়।
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <th colspan="3">Result Sheet</th>
 <td rowspan="2">ICT</td>
@@ -208,12 +216,32 @@ Example & \texttt{<th colspan="3">Result</th>} & \texttt{<td rowspan="2">ICT</td
 \end{examplebox}
 
 \begin{keypointbox}{মূল নিয়ম}
-\texttt{colspan} বা \texttt{rowspan}-এর value হিসেবে একটি পূর্ণ সংখ্যা লিখতে হয়। যেমন \texttt{colspan="3"} মানে ৩টি column এবং \texttt{rowspan="2"} মানে ২টি row।
+\texttt{colspan}-এর জন্য ধনাত্মক পূর্ণসংখ্যা দিতে হয়; যেমন \texttt{colspan="3"} মানে তিনটি কলাম। এখানকার \texttt{rowspan="2"} মানে দুইটি সারি। বিশেষ ক্ষেত্রে \texttt{rowspan="0"} বর্তমান সারি-দলের অবশিষ্ট সব সারি বোঝায়; সাধারণ চিত্রভিত্তিক অনুশীলনে যতটি সারি বিস্তৃত হয়েছে, সেই সংখ্যা লিখবে।
 \end{keypointbox}
 
-\subsection{Colspan ব্যবহার করে Result Title}
+\subsection{ফলের সারণির শিরোনামে colspan}
 
-\begin{examplebox}{Output ধারণা}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th colspan="3">Result Sheet</th>
+  </tr>
+  <tr>
+    <th>Roll</th><th>Name</th><th>GPA</th>
+  </tr>
+  <tr>
+    <td>101</td><td>Rafi</td><td>5.00</td>
+  </tr>
+</table>
+\end{verbatim}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -225,49 +253,46 @@ Example & \texttt{<th colspan="3">Result</th>} & \texttt{<td rowspan="2">ICT</td
 \hline
 \end{tabular}
 \end{center}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Result Sheet</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th colspan="3">Result Sheet</th>
-    </tr>
-    <tr>
-      <th>Roll</th>
-      <th>Name</th>
-      <th>GPA</th>
-    </tr>
-    <tr>
-      <td>101</td>
-      <td>Rafi</td>
-      <td>5.00</td>
-    </tr>
-  </table>
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
 
-\begin{keypointbox}{Explanation}
-Table-এ মোট ৩টি column আছে: Roll, Name, GPA। Result Sheet heading পুরো ৩টি column জুড়ে থাকবে। তাই \texttt{<th colspan="3">Result Sheet</th>} লেখা হয়েছে।
+\begin{keypointbox}{ব্যাখ্যা}
+সারণিতে মোট ৩টি কলাম আছে: Roll, Name, GPA। Result Sheet শিরোনাম পুরো ৩টি কলামজুড়ে থাকবে। তাই \texttt{<th colspan="3">Result Sheet</th>} লেখা হয়েছে।
 \end{keypointbox}
 
-\subsection{Rowspan ব্যবহার করে Subject Marks Table}
+\subsection{বিষয়ভিত্তিক নম্বরের সারণিতে rowspan}
 
-\begin{examplebox}{Output ধারণা}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Subject</th><th>Type</th><th>Marks</th>
+  </tr>
+  <tr>
+    <td rowspan="2">ICT</td><td>CQ</td><td>45</td>
+  </tr>
+  <tr>
+    <td>MCQ</td><td>25</td>
+  </tr>
+  <tr>
+    <td>English</td><td>Total</td><td>95</td>
+  </tr>
+</table>
+\end{verbatim}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{Subject} & \textbf{Type} & \textbf{Marks} \\
 \hline
-ICT & CQ & 45 \\
+\raisebox{-.5\normalbaselineskip}[0pt][0pt]{ICT} & CQ & 45 \\
 \cline{2-3}
  & MCQ & 25 \\
 \hline
@@ -275,54 +300,50 @@ English & Total & 95 \\
 \hline
 \end{tabular}
 \end{center}
-এখানে \textbf{ICT} cell-টি CQ ও MCQ--দুইটি row জুড়ে আছে। তাই \texttt{rowspan="2"} ব্যবহার হবে।
-\end{examplebox}
+এখানে \textbf{ICT} ঘরটি CQ ও MCQ--দুইটি সারিজুড়ে আছে। তাই \texttt{rowspan="2"} ব্যবহার হবে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
+
+\Needspace{7\baselineskip}
+\subsection{একই সারণিতে rowspan ও colspan}
+
+একটি জটিল সারণিতে \texttt{rowspan} ও \texttt{colspan}--দুটিই ব্যবহার হতে পারে।
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Marks Table</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th>Subject</th>
-      <th>Type</th>
-      <th>Marks</th>
-    </tr>
-    <tr>
-      <td rowspan="2">ICT</td>
-      <td>CQ</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <td>MCQ</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>English</td>
-      <td>Total</td>
-      <td>95</td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th colspan="5">Marks Sheet</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Roll No.</th><th colspan="2">Bangla</th>
+    <th colspan="2">English</th>
+  </tr>
+  <tr>
+    <th>1st</th><th>2nd</th><th>1st</th><th>2nd</th>
+  </tr>
+  <tr>
+    <td>001</td><td>85</td><td>67</td><td>58</td><td>70</td>
+  </tr>
+  <tr>
+    <td>002</td><td>65</td><td>75</td><td>60</td><td>55</td>
+  </tr>
+</table>
 \end{verbatim}
-\end{examplebox}
-
-\subsection{Rowspan ও Colspan একসাথে ব্যবহার}
-
-Complex table-এ একই table-এর মধ্যে \texttt{rowspan} ও \texttt{colspan}--দুটিই ব্যবহার হতে পারে।
-
-\begin{examplebox}{Output ধারণা}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \multicolumn{5}{|c|}{\textbf{Marks Sheet}} \\
 \hline
-\textbf{Roll No.} & \multicolumn{2}{c|}{\textbf{Bangla}} & \multicolumn{2}{c|}{\textbf{English}} \\
+\raisebox{-.5\normalbaselineskip}[0pt][0pt]{\textbf{Roll No.}} & \multicolumn{2}{c|}{\textbf{Bangla}} & \multicolumn{2}{c|}{\textbf{English}} \\
 \cline{2-5}
  & \textbf{1st} & \textbf{2nd} & \textbf{1st} & \textbf{2nd} \\
 \hline
@@ -332,75 +353,154 @@ Complex table-এ একই table-এর মধ্যে \texttt{rowspan} ও \t
 \hline
 \end{tabular}
 \end{center}
-\textbf{ব্যাখ্যা:} Marks Sheet ৫টি column জুড়ে আছে, Roll No. দুইটি row জুড়ে আছে, Bangla দুইটি column জুড়ে আছে এবং English দুইটি column জুড়ে আছে।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} Marks Sheet ৫টি কলামজুড়ে আছে, Roll No. দুইটি সারিজুড়ে আছে, Bangla দুইটি কলামজুড়ে আছে এবং English দুইটি কলামজুড়ে আছে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
+
+\subsection{প্রয়োগ: শিক্ষার্থীর তথ্য ও নামের বিস্তৃত ঘর}
+
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+\begin{chFourWholeExample}{\texttt{colspan} কোড}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Marks Sheet</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th colspan="5">Marks Sheet</th>
-    </tr>
-    <tr>
-      <th rowspan="2">Roll No.</th>
-      <th colspan="2">Bangla</th>
-      <th colspan="2">English</th>
-    </tr>
-    <tr>
-      <th>1st</th>
-      <th>2nd</th>
-      <th>1st</th>
-      <th>2nd</th>
-    </tr>
-    <tr>
-      <td>001</td>
-      <td>85</td>
-      <td>67</td>
-      <td>58</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <td>002</td>
-      <td>65</td>
-      <td>75</td>
-      <td>60</td>
-      <td>55</td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1">
+  <tr>
+    <th colspan="2">Student Info</th>
+  </tr>
+  <tr>
+    <td>Roll</td>
+    <td>101</td>
+  </tr>
+</table>
 \end{verbatim}
-\end{examplebox}
+\end{chFourWholeExample}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+\begin{chFourWholeExample}{\texttt{rowspan} কোড}
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <th rowspan="2">Name</th>
+    <td>Rafi</td>
+  </tr>
+  <tr>
+    <td>Sakib</td>
+  </tr>
+</table>
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\par\smallskip
 
-\subsection{Rowspan/Colspan বের করার সহজ নিয়ম}
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.58\linewidth}\vspace{0pt}\small
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{chapters/Chapter04/topics/images/3d_rowspan_colspan.png}
+\captionof{figure}{rowspan ও colspan দিয়ে ঘরের বিস্তার}\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.38\linewidth}\vspace{0pt}\small
+\begin{keypointbox}{চিত্র ব্যাখ্যা}
+চিত্রে \texttt{colspan} দিয়ে আড়াআড়ি বিস্তার এবং \texttt{rowspan} দিয়ে লম্বালম্বি বিস্তার দেখানো হয়েছে। চিত্র দেখে কোড লেখার সময় বিস্তৃত ঘর আগে শনাক্ত করতে হয়।
+\end{keypointbox}
 
-Table figure দেখে code লেখার সময় এই নিয়ম follow করবে:
+
+\begin{keypointbox}{মনে রাখার উপায়}
+\texttt{colspan} = কলাম জুড়ে পাশের দিকে বিস্তার।\\
+\texttt{rowspan} = সারি জুড়ে নিচের দিকে বিস্তার।
+\end{keypointbox}
+\end{minipage}\par\smallskip
+
+\par\noindent\begin{minipage}{\linewidth}
+\subsubsection{বিস্তৃত ঘরের দখল করা স্থান গুনে দেখো}
+\begin{center}
+\begin{tikzpicture}[x=8mm,y=7mm,every node/.style={font=\small,align=center}]
+\begin{scope}
+\fill[chFourTint] (0,2.6) rectangle (4,3.9);
+\draw (0,0) rectangle (6,3.9);
+\draw (0,1.3)--(6,1.3) (0,2.6)--(6,2.6);
+\draw (2,0)--(2,2.6) (4,0)--(4,3.9);
+\node at (2,3.25) {দুই কলাম};
+\node at (5,3.25) {এক ঘর};
+\node at (3,4.65) {\texttt{colspan="2"}};
+\node at (3,-.65) {প্রথম সারিতে দুইটি ট্যাগ};
+\end{scope}
+\begin{scope}[xshift=65mm]
+\fill[chFourRose!10] (0,1.3) rectangle (2,3.9);
+\draw (0,0) rectangle (6,3.9);
+\draw (0,1.3)--(6,1.3) (2,2.6)--(6,2.6);
+\draw (2,0)--(2,3.9) (4,0)--(4,3.9);
+\node[text width=14mm] at (1,2.6) {দুই সারি};
+\node at (3,4.65) {\texttt{rowspan="2"}};
+\node at (3,-.65) {দ্বিতীয় সারিতে দুইটি ট্যাগ};
+\end{scope}
+\end{tikzpicture}
+\captionof{figure}{তিন কলামের ছকে colspan ও rowspan-এর দখল করা স্থান}
+\end{center}
+বাম ছকে ওপরের একটি ঘর দুই কলামের স্থান নিয়েছে। তাই ওই সারিতে তিন কলামের জন্য দুইটি ঘরের ট্যাগ লিখতে হবে। ডান ছকে বাম ঘরটি প্রথম দুই সারি জুড়ে আছে। দ্বিতীয় সারিতে তার জন্য আরেকটি ট্যাগ লিখলে নতুন ঘর যোগ হয়ে ছক বদলে যাবে। উভয় ছকেই মূল কলামসংখ্যা তিন।
+
+\end{minipage}\par\smallskip
+
+\subsubsection{মূল ছকের স্থান গণনা}
+
+বিস্তৃত ঘর হলো এমন ঘর, যা একাধিক সারি বা কলামের জায়গা নেয়। টেবিল চিত্র দেখে কোড লেখার সময় বিস্তৃত ঘর ভুল হলে পুরো টেবিলের বিন্যাস নষ্ট হয়ে যায়। তাই \texttt{rowspan} ও \texttt{colspan} ব্যবহার করার আগে মূল কলামসংখ্যা ঠিক করা দরকার।
+
+\begin{boardbox}{\texttt{colspan} কখন ব্যবহার করবে}
+যদি কোনো ঘর বাম থেকে ডানে একাধিক কলামের জায়গা নেয়, তখন \texttt{colspan} ব্যবহার করবে। যেমন, একটি শিরোনাম যদি টেবিলের তিনটি কলাম জুড়ে থাকে, তাহলে কোড হবে \texttt{<th colspan="3">Title</th>}।
+\end{boardbox}
+
+\begin{boardbox}{\texttt{rowspan} কখন ব্যবহার করবে}
+যদি কোনো ঘর উপর থেকে নিচে একাধিক সারির জায়গা নেয়, তখন \texttt{rowspan} ব্যবহার করবে। যেমন, একটি বিভাগের নাম যদি দুইটি শাখার সারির জন্য একই হয়, তাহলে কোড হবে \texttt{<td rowspan="2">Science</td>}।
+\end{boardbox}
+
+\begin{keypointbox}{বিস্তৃত ঘরের কারণে ঘর গণনা কমে যায়}
+\texttt{colspan} দেওয়া ঘর একই সারিতে একাধিক কলামের স্থান নেয়। \texttt{rowspan} দেওয়া ঘর পরের সারির স্থানও দখল করে; সেই পরের সারিতে ওই স্থানের জন্য নতুন ঘর লিখতে হয় না। তাই প্রতিটি সারির দৃশ্যমান ঘর গুনলেই মূল কলামসংখ্যা পাওয়া যায় না; বিস্তৃত ঘরের দখল করা স্থানও ধরতে হবে।
+\end{keypointbox}
+
+
+\subsection{চিত্র থেকে rowspan ও colspan নির্ধারণ}
+
+সারণির চিত্র দেখে কোড লেখার আগে মূল কলাম ও মূল সারিগুলো শনাক্ত করো। বিস্তৃত ঘরটি মূল ছকের কতটি স্থান দখল করেছে, তা গুনতে হয়। শুধু দৃশ্যমান ঘরের সংখ্যা থেকে মূল সারি বা কলামসংখ্যা পাওয়া যায় না। ধাপগুলো হলো:
 
 \begin{enumerate}
-\item মোট কয়টি column আছে গুনে নাও।
-\item কোনো cell ডানদিকে কয়টি column জুড়ে আছে দেখো।
-\item cell ডানদিকে ২টি column জুড়লে \texttt{colspan="2"}।
-\item cell ডানদিকে ৩টি column জুড়লে \texttt{colspan="3"}।
-\item কোনো cell নিচের দিকে কয়টি row জুড়ে আছে দেখো।
-\item cell নিচের দিকে ২টি row জুড়লে \texttt{rowspan="2"}।
-\item cell নিচের দিকে ৩টি row জুড়লে \texttt{rowspan="3"}।
-\item যে row বা column merge হয়ে গেছে, সেই জায়গার জন্য আলাদা \texttt{<td>} বা \texttt{<th>} আর লিখবে না।
+\item মোট কয়টি কলাম আছে গুনে নাও।
+\item কোনো ঘর ডানদিকে কয়টি কলামজুড়ে আছে দেখো।
+\item ঘর ডানদিকে ২টি কলাম জুড়লে \texttt{colspan="2"}।
+\item ঘর ডানদিকে ৩টি কলাম জুড়লে \texttt{colspan="3"}।
+\item কোনো ঘর নিচের দিকে কয়টি সারিজুড়ে আছে দেখো।
+\item ঘর নিচের দিকে ২টি সারি জুড়লে \texttt{rowspan="2"}।
+\item ঘর নিচের দিকে ৩টি সারি জুড়লে \texttt{rowspan="3"}।
+\item যে সারি বা কলাম একত্র হয়ে গেছে, সেই জায়গার জন্য আলাদা \texttt{<td>} বা \texttt{<th>} আর লিখবে না।
 \end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[x=17mm,y=8mm,font=\small]
+\draw (0,0) rectangle (3,2);
+\draw (0,1)--(3,1);
+\draw (1,0)--(1,2);
+\draw (2,0)--(2,1);
+\node at (.5,1.5) {Name};
+\node at (2,1.5) {Subject};
+\node at (.5,.5) {1};
+\node at (1.5,.5) {2};
+\node at (2.5,.5) {3};
+\node[anchor=west] at (3.25,1.5) {শিরোনামের ২টি ঘর};
+\node[anchor=west] at (3.25,.5) {মূল ছকের ৩টি কলাম};
+\end{tikzpicture}
+\end{center}
+Subject ঘরটি ২ ও ৩ নম্বর কলাম দখল করেছে। তাই প্রথম সারিতে দুটি ঘর লেখা হলেও তার বিস্তার $1+2=3$ কলাম।
 
 \subsection{সবচেয়ে গুরুত্বপূর্ণ নিয়ম}
 
-\subsubsection{Colspan হলে কী কমবে?}
+\subsubsection{colspan হলে একই সারিতে কয়টি ঘর লিখবে?}
 
-যদি কোনো row-তে একটি cell \texttt{colspan="2"} হয়, তাহলে সেই row-তে ১টি extra cell কম লিখতে হবে।
+নির্দিষ্ট তিন-কলামের সারণিতে একটি ঘর দুই কলামজুড়ে থাকলে বাকি এক কলামের জন্য আরেকটি ঘর প্রয়োজন। তাই শুধু ট্যাগের সংখ্যা নয়, প্রতিটি ঘর কত কলামের স্থান দখল করছে তা যোগ করে দেখবে। নিচের প্রথম সারিটি চাওয়া Name--Math--ICT ছকের সঙ্গে মেলে না: Subject একাই দুই কলামের স্থান নেয়, তার পরে Math ও ICT আরও দুইটি স্থান নেয়।
 
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
 \textbf{ভুল:}
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <tr>
   <th colspan="2">Subject</th>
@@ -408,10 +508,11 @@ Table figure দেখে code লেখার সময় এই নিয়ম fol
   <th>ICT</th>
 </tr>
 \end{verbatim}
-\end{examplebox}
-
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \textbf{সঠিক:}
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <tr>
   <th>Name</th>
@@ -423,14 +524,20 @@ Table figure দেখে code লেখার সময় এই নিয়ম fol
   <td>ICT</td>
 </tr>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\par
 
-\subsubsection{Rowspan হলে কী কমবে?}
 
-যদি একটি cell \texttt{rowspan="2"} হয়, তাহলে পরের row-তে সেই cell-এর জায়গায় আর \texttt{<td>} বা \texttt{<th>} লিখবে না।
+\subsubsection{rowspan হলে পরের সারিতে কী লিখবে?}
 
-\textbf{Correct:}
-\begin{examplebox}{Code}
+যদি একটি ঘর \texttt{rowspan="2"} হয়, তাহলে পরের সারিতে সেই ঘরের জায়গায় আর \texttt{<td>} বা \texttt{<th>} লিখবে না।
+
+\Needspace{7\baselineskip}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{সঠিক:}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <tr>
   <th rowspan="2">Phone</th>
@@ -440,10 +547,11 @@ Table figure দেখে code লেখার সময় এই নিয়ম fol
   <td>1750181</td>
 </tr>
 \end{verbatim}
-\end{examplebox}
-
-\textbf{Wrong:}
-\begin{examplebox}{Code}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{ভুল:}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <tr>
   <th rowspan="2">Phone</th>
@@ -454,31 +562,57 @@ Table figure দেখে code লেখার সময় এই নিয়ম fol
   <td>1750181</td>
 </tr>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\par
 
-দ্বিতীয় row-তে আবার Phone লিখলে \texttt{rowspan}-এর অর্থ নষ্ট হবে, কারণ merged cell আগে থেকেই সেই জায়গা দখল করে আছে।
 
-\subsection{Empty Cell থাকলে কী করবে?}
+Phone প্রথম সারি থেকে দ্বিতীয় সারির প্রথম কলাম পর্যন্ত বিস্তৃত আছে। দ্বিতীয় সারিতে আবার Phone-এর ঘর লিখলে সেটি পরের খালি কলামে বসে এবং নম্বর আরও ডানে সরে যায়। ফলে চাওয়া দুই-কলামের ছক পাওয়া যায় না।
 
-কোনো table cell ফাঁকা থাকলে অনেক সময় browser cell ঠিকভাবে দেখায় না। HSC-style code-এ ফাঁকা cell দেখাতে \texttt{<br>} দেওয়া যায়।
+\subsection{ফাঁকা ঘর দেখানোর নিয়ম}
 
-\begin{examplebox}{Code}
+খালি \texttt{<td></td>} একটি বৈধ ঘর। সেটি দেখানোর জন্য \texttt{<br>} দেওয়া বাধ্যতামূলক নয়। ঘরের উচ্চতা, ফাঁকা জায়গা ও সীমানা CSS-এর নিয়মের ওপর নির্ভর করে। নিচের পুরোনো উদাহরণে \texttt{<br>} একটি ফাঁকা লাইনের জায়গা রাখে।
+
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <td><br></td>
 \end{verbatim}
 \end{examplebox}
 
-Modern/common practice হিসেবে non-breaking space \texttt{\&nbsp;} ব্যবহার করা যায়।
+নিচের \texttt{\&nbsp;} একটি অচ্ছেদ্য ফাঁকা অক্ষর রাখে; তাই এই ঘরটি আর সম্পূর্ণ খালি থাকে না। এটি ফাঁকা ঘরকে বৈধ করার নিয়ম নয়। নতুন পেজে প্রয়োজনীয় উচ্চতা ও ফাঁকা জায়গা CSS দিয়ে নির্ধারণ করা যায়।
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <td>&nbsp;</td>
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Full Practice Example: Student Subject Table}
+\Needspace{7\baselineskip}
+\subsection{পূর্ণ অনুশীলন: শিক্ষার্থী ও বিষয়ের সারণি}
 
-\begin{examplebox}{Output ধারণা}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th colspan="3">Student</th>
+  </tr>
+  <tr>
+    <th>Name</th><th colspan="2">Subject</th>
+  </tr>
+  <tr>
+    <td>Sakib</td><td>Bangla</td><td>English</td>
+  </tr>
+  <tr>
+    <td>Asraful</td><td>Math</td><td>ICT</td>
+  </tr>
+</table>
+\end{verbatim}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -492,51 +626,46 @@ Asraful & Math & ICT \\
 \hline
 \end{tabular}
 \end{center}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
+
+\Needspace{7\baselineskip}
+\subsection{পূর্ণ অনুশীলন: কর্মী ও বেতনের সারণি}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Student Subject Table</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th colspan="3">Student</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th colspan="2">Subject</th>
-    </tr>
-    <tr>
-      <td>Sakib</td>
-      <td>Bangla</td>
-      <td>English</td>
-    </tr>
-    <tr>
-      <td>Asraful</td>
-      <td>Math</td>
-      <td>ICT</td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>Emp. Information</caption>
+  <tr>
+    <th>ID No</th><th>Emp. Name</th><th>Salary</th>
+  </tr>
+  <tr>
+    <td>1001</td><td>Sakib</td><td rowspan="3">50,000</td>
+  </tr>
+  <tr>
+    <td>1002</td><td>Asraful</td>
+  </tr>
+  <tr>
+    <td><br></td>
+    <td><br></td>
+  </tr>
+</table>
 \end{verbatim}
-\end{examplebox}
-
-\subsection{Full Practice Example: Employee Salary Table}
-
-\begin{examplebox}{Output ধারণা}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফলের ধারণা}\par
 \begin{center}
+\textbf{Emp. Information}\par\smallskip
 \begin{tabular}{|c|c|c|}
-\hline
-\multicolumn{3}{|c|}{\textbf{Emp. Information}} \\
 \hline
 \textbf{ID No} & \textbf{Emp. Name} & \textbf{Salary} \\
 \hline
-1001 & Sakib & 50,000 \\
+1001 & Sakib & \raisebox{-\normalbaselineskip}[0pt][0pt]{50,000} \\
 \cline{1-2}
 1002 & Asraful & \\
 \cline{1-2}
@@ -544,181 +673,194 @@ Asraful & Math & ICT \\
 \hline
 \end{tabular}
 \end{center}
-এখানে Salary cell কয়েকটি row জুড়ে থাকতে পারে, তাই \texttt{rowspan} ব্যবহার করা যাবে।
-\end{examplebox}
+এখানে Salary-এর 50,000 লেখা ঘরটি তিন সারিজুড়ে আছে; তৃতীয় সারিতে ID No ও Emp. Name ফাঁকা। তাই \texttt{rowspan="3"} দেওয়া হয়েছে। Emp. Information হলো \texttt{<caption>}-এর লেখা; এটি সীমানার ভেতরে একত্র করা শিরোনাম ঘর নয়।
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Code}
+
+
+\input{chapters/Chapter04/topics/10_table_cell_merge/enrichment}
+
+
+\subsection{প্রয়োগ: নদী ও ফুলের নাম সারণিতে সাজানো}
+ফলে River ঘরটি তিনটি সারিজুড়ে থাকবে; পাশে Padma, Jamuna ও Meghna থাকবে। Flower ঘরটিও তিনটি সারিজুড়ে থাকবে; পাশে Adenium, Rose ও Lily থাকবে।
+
+\Needspace{4\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড}\par\smallskip
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Employee Table</title>
-</head>
 <body>
   <table border="1" cellspacing="0" cellpadding="5">
-    <caption>Emp. Information</caption>
     <tr>
-      <th>ID No</th>
-      <th>Emp. Name</th>
-      <th>Salary</th>
+      <td rowspan="3" align="center">River</td><td>Padma</td>
     </tr>
     <tr>
-      <td>1001</td>
-      <td>Sakib</td>
-      <td rowspan="3">50,000</td>
+      <td>Jamuna</td>
     </tr>
     <tr>
-      <td>1002</td>
-      <td>Asraful</td>
+      <td>Meghna</td>
     </tr>
     <tr>
-      <td><br></td>
-      <td><br></td>
+      <td rowspan="3" align="center">Flower</td><td>Adenium</td>
+    </tr>
+    <tr>
+      <td>Rose</td>
+    </tr>
+    <tr>
+      <td>Lily</td>
     </tr>
   </table>
 </body>
 </html>
 \end{verbatim}
+\end{multicols}
+
+
+\textbf{কেন \texttt{rowspan="3"}?}\\
+River-এর পাশে তিনটি নদীর নাম আছে, তাই River ঘর তিনটি সারিজুড়ে থাকবে। Flower-এর ক্ষেত্রেও একই কারণে \texttt{rowspan="3"} ব্যবহার করা হয়েছে।
+
+
+
+
+\subsection{সংক্ষিপ্ত অনুশীলন}
+
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{colspan} কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{rowspan} কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{rowspan} ও \texttt{colspan}-এর পার্থক্য লেখ।}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{<th colspan="3">Result</th>} এর অর্থ কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{\texttt{<td rowspan="2">Phone</td>} এর অর্থ কী?}}
+\end{minipage}\par\smallskip
+\end{multicols}
+
+\Needspace{10\baselineskip}
+\subsection{বহুনির্বাচনি অনুশীলন}
+
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=1,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item সারণির ঘরকে একাধিক কলামজুড়ে দিতে কোন অ্যাট্রিবিউট ব্যবহার হয়?
+\par ক) \texttt{rowspan}
+\par খ) \texttt{colspan}
+\par গ) \texttt{cellpadding}
+\par ঘ) \texttt{cellspacing}
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=2,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item সারণির ঘরকে একাধিক সারিজুড়ে দিতে কোন অ্যাট্রিবিউট ব্যবহার হয়?
+\par ক) \texttt{rowspan}
+\par খ) \texttt{colspan}
+\par গ) \texttt{border}
+\par ঘ) \texttt{src}
+\end{enumerate}
+\end{minipage}
+\par
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=3,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item \texttt{<th colspan="4">Title</th>} এর অর্থ কী?
+\par ক) Title ৪টি row জুড়ে থাকবে
+\par খ) Title ৪টি column জুড়ে থাকবে
+\par গ) Title ৪ pixel হবে
+\par ঘ) Title ৪ বার দেখা যাবে
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=4,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item \texttt{<td rowspan="3">Phone</td>} এর অর্থ কী?
+\par ক) Phone ৩টি column জুড়ে থাকবে
+\par খ) Phone ৩টি row জুড়ে থাকবে
+\par গ) Phone ৩ pixel হবে
+\par ঘ) Phone ৩ বার print হবে
+\end{enumerate}
+\end{minipage}
+\par
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=5,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item নিচের কোন ট্যাগে \texttt{rowspan}/\texttt{colspan} ব্যবহার করা যায়?
+\par ক) \texttt{<td>} ও \texttt{<th>}
+\par খ) \texttt{<br>} ও \texttt{<hr>}
+\par গ) \texttt{<img>} ও \texttt{<a>}
+\par ঘ) \texttt{<html>} ও \texttt{<body>}
+\end{enumerate}
+\end{minipage}
+\par
+
+\chFourMCQAnswer{১-খ, ২-ক, ৩-খ, ৪-খ, ৫-ক}
+
+\subsection{প্রয়োগ: নম্বরের ছকে দুটি বিস্তৃত শিরোনাম}
+
+
+\begin{examplebox}{কোড}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th colspan="3">Result</th>
+  </tr>
+  <tr>
+    <th>Subject</th><th>CQ</th><th>MCQ</th>
+  </tr>
+  <tr>
+    <td>ICT</td><td>45</td><td>25</td>
+  </tr>
+  <tr>
+    <td>English</td><td colspan="2">95</td>
+  </tr>
+</table>
+\end{verbatim}
 \end{examplebox}
 
-\subsection{HSC Board/Exam Focus}
 
-\begin{boardbox}{বেশি গুরুত্বপূর্ণ}
-\begin{itemize}
-\item \texttt{colspan} দিয়ে column merge করা হয়।
-\item \texttt{rowspan} দিয়ে row merge করা হয়।
-\item \texttt{<th>} ও \texttt{<td>}--দুটিতেই \texttt{rowspan}/\texttt{colspan} ব্যবহার করা যায়।
-\item \texttt{colspan="3"} মানে cell ৩টি column জুড়ে থাকবে।
-\item \texttt{rowspan="2"} মানে cell ২টি row জুড়ে থাকবে।
-\item merge cell-এর জন্য অতিরিক্ত \texttt{<td>} লিখলে table structure নষ্ট হয়।
-\item result table, marks sheet, phone table ও subject table বেশি practice করতে হবে।
-\end{itemize}
-\end{boardbox}
-
-\subsection{Exam-style Short Answer}
-
-\begin{enumerate}
-\item \textbf{\texttt{colspan} কী?}\\
-উত্তর: HTML table-এ কোনো cell-কে একাধিক column জুড়ে প্রদর্শনের জন্য \texttt{colspan} attribute ব্যবহার করা হয়। যেমন \texttt{<th colspan="3">Result</th>} লিখলে Result cell-টি ৩টি column জুড়ে থাকবে।
-
-\item \textbf{\texttt{rowspan} কী?}\\
-উত্তর: HTML table-এ কোনো cell-কে একাধিক row জুড়ে প্রদর্শনের জন্য \texttt{rowspan} attribute ব্যবহার করা হয়। যেমন \texttt{<td rowspan="2">ICT</td>} লিখলে ICT cell-টি ২টি row জুড়ে থাকবে।
-
-\item \textbf{\texttt{rowspan} ও \texttt{colspan}-এর পার্থক্য লেখ।}\\
-উত্তর: \texttt{rowspan} কোনো cell-কে লম্বালম্বি একাধিক row জুড়ে বিস্তৃত করে। অন্যদিকে \texttt{colspan} কোনো cell-কে আড়াআড়ি একাধিক column জুড়ে বিস্তৃত করে।
-
-\item \textbf{\texttt{<th colspan="3">Result</th>} এর অর্থ কী?}\\
-উত্তর: এর অর্থ হলো Result heading cell-টি table-এর ৩টি column জুড়ে প্রদর্শিত হবে।
-
-\item \textbf{\texttt{<td rowspan="2">Phone</td>} এর অর্থ কী?}\\
-উত্তর: এর অর্থ হলো Phone data cell-টি table-এর ২টি row জুড়ে প্রদর্শিত হবে।
-\end{enumerate}
-
-\subsection{Practice MCQ}
-
-\begin{enumerate}
-\item Table cell-কে একাধিক column জুড়ে দিতে কোন attribute ব্যবহার হয়?\\
-ক) \texttt{rowspan} \quad খ) \texttt{colspan} \quad গ) \texttt{cellpadding} \quad ঘ) \texttt{cellspacing}
-
-\item Table cell-কে একাধিক row জুড়ে দিতে কোন attribute ব্যবহার হয়?\\
-ক) \texttt{rowspan} \quad খ) \texttt{colspan} \quad গ) \texttt{border} \quad ঘ) \texttt{src}
-
-\item \texttt{<th colspan="4">Title</th>} এর অর্থ কী?\\
-ক) Title ৪টি row জুড়ে থাকবে\\
-খ) Title ৪টি column জুড়ে থাকবে\\
-গ) Title ৪ pixel হবে\\
-ঘ) Title ৪ বার দেখা যাবে
-
-\item \texttt{<td rowspan="3">Phone</td>} এর অর্থ কী?\\
-ক) Phone ৩টি column জুড়ে থাকবে\\
-খ) Phone ৩টি row জুড়ে থাকবে\\
-গ) Phone ৩ pixel হবে\\
-ঘ) Phone ৩ বার print হবে
-
-\item নিচের কোন tag-এর সাথে \texttt{rowspan}/\texttt{colspan} ব্যবহার করা যায়?\\
-ক) \texttt{<td>} ও \texttt{<th>}\\
-খ) \texttt{<br>} ও \texttt{<hr>}\\
-গ) \texttt{<img>} ও \texttt{<a>}\\
-ঘ) \texttt{<html>} ও \texttt{<body>}
-\end{enumerate}
-
-\begin{boardbox}{MCQ Answer Key}
-১-খ, ২-ক, ৩-খ, ৪-খ, ৫-ক
-\end{boardbox}
-
-\subsection{CQ Practice}
+\subsection{সৃজনশীল অনুশীলন}
 
 \begin{practicebox}
-\textbf{উদ্দীপক:} একটি webpage-এ Result table দেখাতে হবে। Result heading পুরো ৩টি column জুড়ে থাকবে এবং English-এর 95 marks CQ ও MCQ--দুইটি column জুড়ে থাকবে।
+\textbf{উদ্দীপক:} একটি ওয়েবপেজে Result সারণি দেখাতে হবে। Result শিরোনাম পুরো ৩টি কলামজুড়ে থাকবে এবং English-এর 95 নম্বর CQ ও MCQ--দুইটি কলামজুড়ে থাকবে।
 
 \textbf{প্রশ্ন}\\
 ক. \texttt{colspan} কী?\\
 খ. \texttt{rowspan} কেন ব্যবহার করা হয়?\\
-গ. উদ্দীপকের জন্য HTML code লেখ।\\
-ঘ. table figure দেখে \texttt{rowspan} ও \texttt{colspan} নির্ধারণের নিয়ম বিশ্লেষণ কর।
+গ. উদ্দীপকের জন্য HTML কোড লেখ।\\
+ঘ. সারণি চিত্র দেখে \texttt{rowspan} ও \texttt{colspan} নির্ধারণের নিয়ম বিশ্লেষণ কর।
 \end{practicebox}
 
-\subsubsection{গ. Code}
-
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Result Table</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th colspan="3">Result</th>
-    </tr>
-    <tr>
-      <th>Subject</th>
-      <th>CQ</th>
-      <th>MCQ</th>
-    </tr>
-    <tr>
-      <td>ICT</td>
-      <td>45</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>English</td>
-      <td colspan="2">95</td>
-    </tr>
-  </table>
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
-
-\subsubsection{ঘ. বিশ্লেষণ}
-
-Table figure দেখে প্রথমে মোট column সংখ্যা গুনতে হয়। কোনো cell যদি ডানদিকে একাধিক column জুড়ে থাকে, সেখানে \texttt{colspan} ব্যবহার করতে হয়। আবার কোনো cell যদি নিচের দিকে একাধিক row জুড়ে থাকে, সেখানে \texttt{rowspan} ব্যবহার করতে হয়। Merge করা cell-এর জায়গায় পরবর্তী row বা column-এ অতিরিক্ত \texttt{<td>} বা \texttt{<th>} লেখা যাবে না; কারণ merged cell আগে থেকেই সেই জায়গা দখল করে নেয়।
-
-\subsection{Common Mistake}
+\subsection{সাধারণ ভুল}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
 \item \texttt{rowspan} ও \texttt{colspan} গুলিয়ে ফেলা।
-\item column merge করতে \texttt{rowspan} ব্যবহার করা।
-\item row merge করতে \texttt{colspan} ব্যবহার করা।
-\item \texttt{colspan="2"} দেওয়ার পরও একই row-তে অতিরিক্ত cell লিখে ফেলা।
-\item \texttt{rowspan="2"} দেওয়ার পরও পরের row-তে একই cell আবার লিখে ফেলা।
-\item value quote ছাড়া লেখা, যেমন \texttt{colspan=2}।
-\item \texttt{<tr>} tag-এর সাথে \texttt{colspan} লেখা।
-\item \texttt{<table>} tag-এর সাথে \texttt{rowspan} লেখা।
-\item figure-এর মোট row/column না গুনে সরাসরি code লেখা।
+\item কলাম একত্র করতে \texttt{rowspan} ব্যবহার করা।
+\item সারি একত্র করতে \texttt{colspan} ব্যবহার করা।
+\item \texttt{colspan="2"} দেওয়ার পরও একই সারিতে অতিরিক্ত ঘর লিখে ফেলা।
+\item \texttt{rowspan="2"} দেওয়ার পরও পরের সারিতে একই ঘর আবার লিখে ফেলা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item উদ্ধৃতি না থাকলেই মান ভুল ভাবা: \texttt{colspan=2} বৈধ HTML। তবে একই লেখার রীতি রাখতে \texttt{colspan="2"} ব্যবহার করা সুবিধাজনক।
+\item \texttt{<tr>} ট্যাগে \texttt{colspan} লেখা।
+\item \texttt{<table>} ট্যাগে \texttt{rowspan} লেখা।
+\item চিত্রের মোট সারি/কলাম না গুনে সরাসরি কোড লেখা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\texttt{colspan} মানে column span বা আড়াআড়ি merge। \texttt{rowspan} মানে row span বা লম্বালম্বি merge। \texttt{colspan} ও \texttt{rowspan} সাধারণত \texttt{<td>} বা \texttt{<th>} tag-এর সাথে ব্যবহৃত হয়। \texttt{colspan="3"} মানে cell ৩টি column জুড়ে থাকবে এবং \texttt{rowspan="2"} মানে cell ২টি row জুড়ে থাকবে। Merge cell-এর জায়গায় অতিরিক্ত cell লিখবে না।
-\end{recapbox}
-
-
 \begin{boardbox}{পরবর্তী টপিক}
-পরের টপিক: Table-এর ভিতরে List, Image, Hyperlink ও Nested Table।
+পরের অংশে সারণির ঘরের ভেতরে তালিকা, ছবি, হাইপারলিংক ও নেস্টেড সারণি ব্যবহার করব।
 \end{boardbox}

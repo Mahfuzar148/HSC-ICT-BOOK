@@ -1,50 +1,1067 @@
-% ৩.৫ চিহ্নযুক্ত সংখ্যা (Signed Numbers)
-\section{চিহ্নযুক্ত সংখ্যা}
+% =========================================================
+% Topic 3.5
+% Signed Number
+% =========================================================
 
-\subsection{সংজ্ঞা}
-\begin{itemize}
-\item Signed number, sign bit, magnitude bits
-\item MSB ও LSB-এর ধারণা
-\end{itemize}
+\section{চিহ্নযুক্ত সংখ্যা
+(\textenglish{Signed Number Representation})}
 
-\subsection{প্রতিনিধিত্ব পদ্ধতি}
-\begin{itemize}
-\item Sign-magnitude
-\item 1's complement
-\item 2's complement
-\end{itemize}
+একই bit pattern চিহ্নবিহীন সংখ্যা, চিহ্নযুক্ত সংখ্যা বা কোনো code হিসেবে ভিন্ন অর্থ দিতে পারে। তাই signed হিসাব শুরু করার আগে \textbf{কত বিট} এবং \textbf{কোন প্রকাশপদ্ধতি} ব্যবহার হবে তা নির্দিষ্ট করতে হয়। আট বিট বলা হলে সেই আট বিটের মধ্যেই চিহ্নের তথ্য থাকে; তার বাইরে আরেকটি বিট স্বয়ংক্রিয়ভাবে যোগ হয় না।
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item signed ও unsigned number আলাদা করতে।
-\item sign bit, magnitude bit, MSB ও LSB ব্যাখ্যা করতে।
-\item sign-magnitude, 1's complement ও 2's complement তুলনা করতে।
-\end{itemize}
-\end{learningbox}
+চিহ্নযুক্ত প্রকাশের তিনটি প্রচলিত ধারণা হলো সাইন-ম্যাগনিটিউড, ১-এর পরিপূরক এবং ২-এর পরিপূরক। নিচের আলোচনায় যেখানে আলাদা করে বলা নেই সেখানে ৮ বিট ব্যবহার করা হয়েছে। আগে মানের পরিসর মিলিয়ে নাও, তারপর বিটে লেখো ও হিসাব করো।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.25\linewidth}|Y|c|}\hline
+\rowcolor{ICTLightBlue}প্রকাশপদ্ধতি&$n$ বিটে পূর্ণসংখ্যার পরিসর&৮ বিটে\\\hline
+চিহ্নবিহীন&$0$ থেকে $2^n-1$&0 থেকে 255\\\hline
+সাইন-ম্যাগনিটিউড&$-(2^{n-1}-1)$ থেকে $+(2^{n-1}-1)$&$-127$ থেকে $+127$\\\hline
+১-এর পরিপূরক&$-(2^{n-1}-1)$ থেকে $+(2^{n-1}-1)$&$-127$ থেকে $+127$\\\hline
+২-এর পরিপূরক&$-2^{n-1}$ থেকে $2^{n-1}-1$&$-128$ থেকে $+127$\\\hline
+\end{tabularx}\end{center}
+প্রথম দুই signed পদ্ধতিতে শূন্যের দুইটি bit pattern থাকে। ২-এর পরিপূরকে শূন্য একবার প্রকাশিত হয়; এজন্য ঋণাত্মক দিকে আরও একটি মান পাওয়া যায়।
 
-\begin{definitionbox}{Signed number}
-যে binary representation-এ সংখ্যার ধনাত্মক বা ঋণাত্মক চিহ্ন প্রকাশ করা হয়, তাকে signed number বলা হয়। সাধারণত সর্ববাম bit বা MSB sign bit হিসেবে ব্যবহৃত হয়।
-\end{definitionbox}
+% =========================================================
+% 3.5.1 Sign-Magnitude Representation
+% =========================================================
+
+\subsection{\textenglish{Sign-Magnitude Representation}}
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+যে পদ্ধতিতে একটি বাইনারি সংখ্যার সর্ববামের বিটটি
+\textenglish{Sign bit} হিসেবে এবং বাকি বিটগুলো সংখ্যার মান বা
+\textenglish{Magnitude} প্রকাশের জন্য ব্যবহৃত হয়,
+তাকে \textenglish{Sign-Magnitude Representation} বলে।
+\par\endgroup
+
+
+\subsubsection*{\textenglish{Sign Bit}}
 
 \begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+\begin{tabular}{|c|c|}
 \hline
-\textbf{পদ্ধতি} & \textbf{ধারণা} & \textbf{সীমাবদ্ধতা/সুবিধা} \\
+\rowcolor{ICTLightBlue}
+\textbf{\textenglish{Sign Bit}} & \textbf{অর্থ} \\
 \hline
-Sign-magnitude & MSB sign, বাকি অংশ magnitude & +0 ও -0 দুইভাবে থাকতে পারে \\
+0 & ধনাত্মক $(+)$ \\
 \hline
-1's complement & positive number-এর bit উল্টে negative & end-around carry দরকার হতে পারে \\
-\hline
-2's complement & 1's complement-এর সাথে 1 যোগ & arithmetic সহজ, computer-এ বেশি ব্যবহৃত \\
+1 & ঋণাত্মক $(-)$ \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{8-bit sign-magnitude}
-$+13=(00001101)_2$ হলে $-13=(10001101)_2$। এখানে প্রথম bit 1 হওয়ায় সংখ্যাটি ঋণাত্মক, বাকি 7 bit magnitude প্রকাশ করছে।
-\end{examplebox}
+ধরা যাক, ৮-বিট ব্যবহার করা হবে।
 
-\begin{boardbox}{বোর্ড ফোকাস}
-signed number-এর প্রশ্নে bit count উল্লেখ করা জরুরি। 4-bit, 8-bit বা 16-bit ভেদে range ও representation বদলে যায়।
-\end{boardbox}
+\[
++13=(1101)_2
+\]
+
+৮-বিটে লিখলে—
+
+\[
+00001101
+\]
+
+তাই \textenglish{Sign-Magnitude}-এ,
+
+\[
+\boxed{+13=00001101}
+\]
+
+ঋণাত্মক হলে \textenglish{Sign bit}=1 হবে—
+
+\[
+\boxed{-13=10001101}
+\]
+
+এখানে সর্ববামের ১ শুধুমাত্র ঋণাত্মক চিহ্ন নির্দেশ করছে।
+
+\subsubsection*{সুবিধা}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item ধনাত্মক ও ঋণাত্মক সংখ্যার চিহ্ন সহজে বোঝা যায়।
+    \item পদ্ধতিটি বোঝা সহজ।
+    \item সংখ্যার \textenglish{Magnitude} আলাদাভাবে দেখা যায়।
+\end{itemize}
+
+\subsubsection*{সীমাবদ্ধতা}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item $+0$ এবং $-0$—দুটি শূন্যের \textenglish{representation} পাওয়া যায়।
+    \item যোগ ও বিয়োগের সময় \textenglish{Sign} এবং
+    \textenglish{Magnitude} আলাদাভাবে বিবেচনা করতে হয়।
+    \item \textenglish{Arithmetic operation} তুলনামূলক জটিল।
+    \item কম্পিউটারের \textenglish{Arithmetic Logic Unit (ALU)}-এ
+    সরাসরি ব্যবহার তুলনামূলক কম সুবিধাজনক।
+\end{itemize}
+
+% =========================================================
+% 3.5.2 Sign-Magnitude Addition/Subtraction
+% =========================================================
+
+\subsection{\textenglish{Sign-Magnitude}-এ যোগ ও বিয়োগ}
+
+\par\begingroup
+
+\textbf{ধাপসমূহ}
+
+\begin{enumerate}
+    \item দুটি সংখ্যার \textenglish{Sign bit} পরীক্ষা করো।
+    \item \textenglish{Sign} একই হলে
+    \textenglish{Magnitude} যোগ করো এবং একই \textenglish{Sign} রাখো।
+    \item \textenglish{Sign} ভিন্ন হলে বড়
+    \textenglish{Magnitude} থেকে ছোট \textenglish{Magnitude} বিয়োগ করো।
+    \item যে সংখ্যার \textenglish{Magnitude} বড়,
+    ফলাফলের \textenglish{Sign} সেটির মতো হবে।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১: একই \textenglish{Sign}-এর যোগ}
+
+৮-বিট \textenglish{Sign-Magnitude}-এ—
+
+\[
++5=00000101
+\]
+
+\[
++3=00000011
+\]
+
+দুটিই ধনাত্মক, তাই \textenglish{Magnitude} যোগ করি—
+
+\[
+5+3=8
+\]
+
+অতএব,
+
+\[
+\boxed{+5+(+3)=+8}
+\]
+
+এবং ৮-বিট \textenglish{Sign-Magnitude} ফলাফল—
+
+\[
+\boxed{00001000}
+\]
+
+\subsubsection*{উদাহরণ--২: ভিন্ন \textenglish{Sign}}
+
+\[
++7+(-3)
+\]
+
+\textenglish{Magnitude} দুটির পার্থক্য—
+
+\[
+7-3=4
+\]
+
+বড় \textenglish{Magnitude} 7-এর \textenglish{Sign} ধনাত্মক।
+
+তাই,
+
+\[
+\boxed{+7+(-3)=+4}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
+-9+(+4)
+\]
+
+\[
+9-4=5
+\]
+
+বড় \textenglish{Magnitude} 9-এর \textenglish{Sign} ঋণাত্মক।
+
+তাই,
+
+\[
+\boxed{-9+(+4)=-5}
+\]
+
+% =========================================================
+% 3.5.3 1's Complement
+% =========================================================
+
+\subsection{\textenglish{1's Complement}}
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+কোনো বাইনারি সংখ্যার প্রতিটি ০-কে ১ এবং ১-কে ০ দ্বারা পরিবর্তন করলে
+যে সংখ্যা পাওয়া যায় তাকে ঐ সংখ্যার
+\textenglish{1's Complement} বলে।
+\par\endgroup
+
+
+অর্থাৎ,
+
+\[
+0\rightarrow1
+\]
+
+এবং
+
+\[
+1\rightarrow0
+\]
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+10110010
+\]
+
+এর \textenglish{1's Complement}—
+
+\[
+\boxed{01001101}
+\]
+
+\subsubsection*{\textenglish{1's Complement} বের করার নিয়ম}
+
+\par\begingroup
+
+\begin{enumerate}
+    \item সংখ্যাটিকে নির্দিষ্ট \textenglish{bit-width}-এ লিখো।
+    \item প্রতিটি ০-এর জায়গায় ১ বসাও।
+    \item প্রতিটি ১-এর জায়গায় ০ বসাও।
+    \item পাওয়া সংখ্যাটিই \textenglish{1's Complement}।
+\end{enumerate}
+\par\endgroup
+
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+00101100
+\]
+
+সব \textenglish{bit} উল্টালে—
+
+\[
+11010011
+\]
+
+অতএব,
+
+\[
+\boxed{
+\text{\textenglish{1's Complement}}=11010011
+}
+\]
+
+\par\begingroup
+
+\textbf{সহজ নিয়ম:}
+
+\textenglish{1's Complement} বের করতে
+\textbf{সব \textenglish{bit} উল্টে দাও}।
+
+অর্থাৎ, $0\rightarrow1$ এবং $1\rightarrow0$।
+\par\endgroup
+
+
+% =========================================================
+% 3.5.4 Negative Number in 1's Complement
+% =========================================================
+
+\subsection{\textenglish{1's Complement} দিয়ে ঋণাত্মক সংখ্যা প্রকাশ}
+
+\textenglish{1's Complement} পদ্ধতিতে কোনো ধনাত্মক সংখ্যার
+ঋণাত্মক \textenglish{representation} পেতে
+ধনাত্মক সংখ্যাটির সব \textenglish{bit} উল্টাতে হয়।
+
+ধরা যাক, ৮-বিটে $-13$ প্রকাশ করতে হবে।
+
+\[
++13=00001101
+\]
+
+সব \textenglish{bit} উল্টালে—
+
+\[
+11110010
+\]
+
+অতএব,
+
+\[
+\boxed{-13=11110010}
+\]
+
+% =========================================================
+% 3.5.5 Advantages/Limitations of 1's Complement
+% =========================================================
+
+\subsection{\textenglish{1's Complement}-এর সুবিধা ও সীমাবদ্ধতা}
+
+\subsubsection*{সুবিধা}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item \textenglish{Sign-Magnitude}-এর তুলনায়
+    \textenglish{arithmetic operation} সহজ।
+    \item বাইনারি \textenglish{complement} ব্যবহার করে বিয়োগ করা যায়।
+    \item ঋণাত্মক সংখ্যা সহজে প্রকাশ করা যায়।
+\end{itemize}
+
+\subsubsection*{সীমাবদ্ধতা}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item এখানে দুটি শূন্য রয়েছে।
+\end{itemize}
+
+\[
++0=00000000
+\]
+
+\[
+-0=11111111
+\]
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item যোগের সময় \textenglish{End-around Carry} সামলাতে হয়।
+    \item \textenglish{2's Complement}-এর তুলনায়
+    \textenglish{arithmetic circuit} বাস্তবায়ন কম সুবিধাজনক।
+\end{itemize}
+
+% =========================================================
+% 3.5.6 Addition Using 1's Complement
+% =========================================================
+
+\subsection{\textenglish{1's Complement} দিয়ে যোগ}
+
+\par\begingroup
+
+\textbf{ধাপসমূহ}
+
+\begin{enumerate}
+    \item সংখ্যাগুলোকে একই \textenglish{bit-width}-এ লিখো।
+    \item ঋণাত্মক সংখ্যা থাকলে তার
+    \textenglish{1's Complement representation} তৈরি করো।
+    \item সরাসরি বাইনারি যোগ করো।
+    \item সর্ববাম দিক থেকে \textenglish{carry} বের হলে
+    সেটিকে \textenglish{End-around Carry} বলা হয়।
+    \item সেই \textenglish{carry} আবার ফলাফলের
+    সর্বডান \textenglish{bit}-এর সঙ্গে যোগ করো।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১}
+
+\[
++5=00000101
+\]
+
+\[
++3=00000011
+\]
+
+যোগ—
+
+\[
+\begin{array}{r}
+00000101\\
++00000011\\
+\hline
+00001000
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{5+3=8}
+\]
+
+\subsubsection*{উদাহরণ--২}
+
+\[
+-5+7
+\]
+
+প্রথমে,
+
+\[
++5=00000101
+\]
+
+এর \textenglish{1's Complement}—
+
+\[
+-5=11111010
+\]
+
+এবং,
+
+\[
++7=00000111
+\]
+
+যোগ করলে—
+
+\[
+\begin{array}{r}
+11111010\\
++00000111\\
+\hline
+1\,00000001
+\end{array}
+\]
+
+এখানে একটি \textenglish{End-around Carry} হয়েছে।
+
+তাই,
+
+\[
+00000001+1=00000010
+\]
+
+অতএব,
+
+\[
+\boxed{-5+7=+2}
+\]
+
+\subsubsection*{উদাহরণ--৩}
+
+\[
++9+(-4)
+\]
+
+\[
++9=00001001
+\]
+
+\[
++4=00000100
+\]
+
+$+4$-এর \textenglish{1's Complement}—
+
+\[
+-4=11111011
+\]
+
+এখন,
+
+\[
+\begin{array}{r}
+00001001\\
++11111011\\
+\hline
+1\,00000100
+\end{array}
+\]
+
+\textenglish{End-around Carry} যোগ করলে—
+
+\[
+00000100+1=00000101
+\]
+
+অতএব,
+
+\[
+\boxed{+9+(-4)=+5}
+\]
+
+% =========================================================
+% 3.5.7 2's Complement
+% =========================================================
+
+\subsection{\textenglish{2's Complement}}
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+কোনো বাইনারি সংখ্যার
+\textenglish{1's Complement}-এর সঙ্গে ১ যোগ করলে
+যে সংখ্যা পাওয়া যায় তাকে ঐ সংখ্যার
+\textenglish{2's Complement} বলে।
+\par\endgroup
+
+
+অর্থাৎ,
+
+\[
+\boxed{
+\text{\textenglish{2's Complement}}
+=
+\text{\textenglish{1's Complement}}+1
+}
+\]
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+10110010
+\]
+
+প্রথমে \textenglish{1's Complement}—
+
+\[
+01001101
+\]
+
+এর সঙ্গে ১ যোগ—
+
+\[
+01001101+1=01001110
+\]
+
+অতএব,
+
+\[
+\boxed{
+\text{\textenglish{2's Complement}}
+=
+01001110
+}
+\]
+
+% =========================================================
+% 3.5.8 Methods / Shortcut of 2's Complement
+% =========================================================
+
+\smallhead{নির্দিষ্ট বিটদৈর্ঘ্যের শর্ত}
+$n$ বিটে কোনো pattern-এর ২-এর পরিপূরক $(2^n-N)\bmod2^n$। তাই সব শূন্যের পরিপূরকও শূন্য; যোগে $n$ বিটের বাইরে ক্যারি থাকলে নির্ধারিত ফলের বাইরে থাকে। একটি ধনাত্মক সংখ্যার ঋণাত্মক মান লিখতে আগে নিশ্চিত হতে হবে যে মানটি নির্বাচিত signed পরিসরে আছে। সর্বনিম্ন ঋণাত্মক মানটির বিপরীত ধনাত্মক মান একই বিটদৈর্ঘ্যে নাও থাকতে পারে।
+
+\subsection{\textenglish{2's Complement} বের করার নিয়ম ও শর্টকাট}
+
+\subsubsection*{পদ্ধতি--১:
+\textenglish{1's Complement + 1}}
+
+\par\begingroup
+
+\begin{enumerate}
+    \item সংখ্যাটির সব ০ ও ১ উল্টাও।
+    \item পাওয়া \textenglish{1's Complement}-এর সঙ্গে ১ যোগ করো।
+    \item প্রাপ্ত ফলাফলই \textenglish{2's Complement}।
+\end{enumerate}
+\par\endgroup
+
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+00110100
+\]
+
+\textenglish{1's Complement}—
+
+\[
+11001011
+\]
+
+১ যোগ করলে—
+
+\[
+11001011+1=11001100
+\]
+
+সুতরাং,
+
+\[
+\boxed{
+\text{\textenglish{2's Complement}}
+=
+11001100
+}
+\]
+
+\subsubsection*{\textenglish{2's Complement}-এর শর্টকাট}
+
+\par\begingroup
+
+\textbf{শর্টকাট:}
+
+ডান দিক থেকে প্রথম ১ পর্যন্ত সব \textenglish{bit}
+\textbf{অপরিবর্তিত রাখো}।
+
+এরপর সেই প্রথম ১-এর বাম পাশের সব
+\textenglish{bit} \textbf{উল্টে দাও}।
+\par\endgroup
+
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ--১:}}
+
+\[
+00101100
+\]
+
+ডান দিক থেকে প্রথম ১ এবং তার ডান পাশ অপরিবর্তিত রেখে
+বাম পাশের \textenglish{bit} উল্টালে—
+
+\[
+\boxed{11010100}
+\]
+
+অতএব,
+
+\[
+\boxed{
+\text{\textenglish{2's Complement}}(00101100)=11010100
+}
+\]
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ--২:}}
+
+\[
+10110000
+\]
+
+শর্টকাট প্রয়োগ করলে—
+
+\[
+\boxed{01010000}
+\]
+
+অতএব,
+
+\[
+\boxed{
+\text{\textenglish{2's Complement}}(10110000)=01010000
+}
+\]
+
+% =========================================================
+% 3.5.9 Negative Number in 2's Complement
+% =========================================================
+
+\subsection{\textenglish{2's Complement}-এ ঋণাত্মক সংখ্যা}
+
+কোনো ধনাত্মক সংখ্যার ঋণাত্মক
+\textenglish{representation} পেতে
+তার \textenglish{2's Complement} নিতে হয়।
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+৮-বিটে $-13$—
+
+\[
++13=00001101
+\]
+
+\textenglish{1's Complement}—
+
+\[
+11110010
+\]
+
+এর সঙ্গে ১ যোগ—
+
+\[
+11110010+1=11110011
+\]
+
+অতএব,
+
+\[
+\boxed{-13=11110011}
+\]
+
+% =========================================================
+% 3.5.10 Advantages of 2's Complement
+% =========================================================
+
+\subsection{\textenglish{2's Complement}-এর সুবিধা ও সীমাবদ্ধতা}
+
+\textenglish{2's Complement} বর্তমানে
+\textenglish{signed binary arithmetic}-এ সবচেয়ে বেশি ব্যবহৃত
+পদ্ধতিগুলোর একটি।
+
+\subsubsection*{সুবিধা}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item মাত্র একটি শূন্যের \textenglish{representation} আছে।
+    \item যোগ ও বিয়োগ একই ধরনের বাইনারি
+    \textenglish{adder circuit} দিয়ে করা যায়।
+    \item \textenglish{End-around Carry}-এর প্রয়োজন নেই।
+    \item \textenglish{Arithmetic circuit} তুলনামূলক সহজ।
+    \item ঋণাত্মক সংখ্যার গাণিতিক কাজ সহজ।
+    \item কম্পিউটার সিস্টেমে ব্যাপকভাবে ব্যবহৃত হয়।
+\end{itemize}
+
+\subsubsection*{সীমাবদ্ধতা}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item \textenglish{MSB} দেখে চিহ্ন বোঝার নিয়মটি
+    নতুন শিক্ষার্থীর কাছে শুরুতে কিছুটা কঠিন হতে পারে।
+    \item নির্দিষ্ট \textenglish{bit-width}-এর সীমার বাইরে
+    ফলাফল গেলে \textenglish{overflow} হতে পারে।
+    \item একই সংখ্যার \textenglish{representation}
+    \textenglish{bit-width}-এর ওপর নির্ভর করে।
+\end{itemize}
+
+% =========================================================
+% 3.5.11 Addition Using 2's Complement
+% =========================================================
+
+\subsection{\textenglish{2's Complement} দিয়ে যোগ}
+
+\par\begingroup
+
+\textbf{ধাপসমূহ}
+
+\begin{enumerate}
+    \item সব সংখ্যাকে একই \textenglish{bit-width}-এ লিখো।
+    \item ঋণাত্মক সংখ্যা থাকলে তার
+    \textenglish{2's Complement representation} তৈরি করো।
+    \item সব বাইনারি সংখ্যা যোগ করো।
+    \item সর্ববাম দিক থেকে অতিরিক্ত
+    \textenglish{carry} বের হলে সেটি বাদ দাও।
+    \item অবশিষ্ট \textenglish{bit}-গুলোই ফলাফল।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১: $5+3$}
+
+\[
+5=00000101
+\]
+
+\[
+3=00000011
+\]
+
+যোগ—
+
+\[
+\begin{array}{r}
+00000101\\
++00000011\\
+\hline
+00001000
+\end{array}
+\]
+
+অতএব,
+
+\[
+\boxed{5+3=8}
+\]
+
+\subsubsection*{উদাহরণ--২: $7+(-3)$}
+
+\[
+7=00000111
+\]
+
+\[
+3=00000011
+\]
+
+$3$-এর \textenglish{1's Complement}—
+
+\[
+11111100
+\]
+
+১ যোগ করলে—
+
+\[
+-3=11111101
+\]
+
+এখন,
+
+\[
+\begin{array}{r}
+00000111\\
++11111101\\
+\hline
+1\,00000100
+\end{array}
+\]
+
+অতিরিক্ত \textenglish{carry} বাদ দিলে—
+
+\[
+00000100
+\]
+
+অতএব,
+
+\[
+\boxed{7+(-3)=4}
+\]
+
+\subsubsection*{উদাহরণ--৩: $(-5)+3$}
+
+\[
+5=00000101
+\]
+
+এর \textenglish{2's Complement}—
+
+\[
+11111011
+\]
+
+অর্থাৎ,
+
+\[
+-5=11111011
+\]
+
+এখন,
+
+\[
+\begin{array}{r}
+11111011\\
++00000011\\
+\hline
+11111110
+\end{array}
+\]
+
+$11111110$ হলো $-2$-এর
+\textenglish{2's Complement representation}।
+
+সুতরাং,
+
+\[
+\boxed{-5+3=-2}
+\]
+
+% =========================================================
+% 3.5.12 Subtraction Using 2's Complement
+% =========================================================
+
+\subsection{\textenglish{2's Complement} দিয়ে বিয়োগ}
+
+\textenglish{2's Complement}-এর সবচেয়ে বড় সুবিধাগুলোর একটি হলো
+বিয়োগকে যোগে রূপান্তর করা যায়।
+
+\[
+\boxed{
+A-B
+=
+A+
+\text{\textenglish{2's Complement of }}B
+}
+\]
+
+\par\begingroup
+
+\textbf{ধাপসমূহ}
+
+\begin{enumerate}
+    \item প্রথম সংখ্যাটি নির্দিষ্ট \textenglish{bit-width}-এ লিখো।
+    \item দ্বিতীয় সংখ্যার \textenglish{2's Complement} বের করো।
+    \item প্রথম সংখ্যার সঙ্গে সেটি যোগ করো।
+    \item অতিরিক্ত \textenglish{carry} বের হলে বাদ দাও।
+    \item \textenglish{MSB} দেখে ফলাফল ধনাত্মক না ঋণাত্মক নির্ণয় করো।
+    \item ফলাফল ঋণাত্মক হলে তার মান বের করতে আবার
+    \textenglish{2's Complement} নাও।
+\end{enumerate}
+\par\endgroup
+
+
+\subsubsection*{উদাহরণ--১: $9-5$}
+
+৮-বিটে,
+
+\[
+9=00001001
+\]
+
+\[
+5=00000101
+\]
+
+$5$-এর \textenglish{1's Complement}—
+
+\[
+11111010
+\]
+
+১ যোগ করলে—
+
+\[
+\text{\textenglish{2's Complement}}=11111011
+\]
+
+এখন,
+
+\[
+\begin{array}{r}
+00001001\\
++11111011\\
+\hline
+1\,00000100
+\end{array}
+\]
+
+অতিরিক্ত \textenglish{carry} বাদ দিলে—
+
+\[
+00000100
+\]
+
+অতএব,
+
+\[
+\boxed{9-5=4}
+\]
+
+\subsubsection*{উদাহরণ--২: $5-9$}
+
+\[
+5=00000101
+\]
+
+\[
+9=00001001
+\]
+
+$9$-এর \textenglish{1's Complement}—
+
+\[
+11110110
+\]
+
+১ যোগ করলে—
+
+\[
+\text{\textenglish{2's Complement}}=11110111
+\]
+
+এখন,
+
+\[
+\begin{array}{r}
+00000101\\
++11110111\\
+\hline
+11111100
+\end{array}
+\]
+
+এখানে \textenglish{MSB}=1, তাই ফলাফল ঋণাত্মক।
+
+ফলাফলের মান বের করতে $11111100$-এর
+\textenglish{2's Complement} নিই—
+
+\[
+\text{\textenglish{1's Complement}}=00000011
+\]
+
+\[
+00000011+1=00000100
+\]
+
+অতএব,
+
+\[
+\boxed{5-9=-4}
+\]
+
+% =========================================================
+% 3.5.13 Comparison
+% =========================================================
+
+\subsection{তিনটি পদ্ধতির তুলনা}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|L{0.18\textwidth}|Y|Y|Y|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{বিষয়} &
+\textbf{\textenglish{Sign-Magnitude}} &
+\textbf{\textenglish{1's Complement}} &
+\textbf{\textenglish{2's Complement}} \\
+\hline
+
+\textenglish{Sign bit} &
+আলাদা থাকে &
+\textenglish{MSB} চিহ্ন নির্দেশ করে &
+\textenglish{MSB} চিহ্ন নির্দেশ করে \\
+\hline
+
+ঋণাত্মক সংখ্যা &
+\textenglish{Sign bit}=1 &
+সব \textenglish{bit} উল্টানো হয় &
+\textenglish{1's Complement}+1 \\
+\hline
+
+শূন্য &
+দুটি &
+দুটি &
+একটি \\
+\hline
+
+যোগ &
+তুলনামূলক জটিল &
+\textenglish{End-around Carry} লাগে &
+তুলনামূলক সহজ \\
+\hline
+
+বিয়োগ &
+আলাদা নিয়ম প্রয়োজন &
+\textenglish{Complement} ব্যবহার করা যায় &
+যোগের মাধ্যমে করা যায় \\
+\hline
+
+\textenglish{Circuit Implementation} &
+কম সুবিধাজনক &
+তুলনামূলক জটিল &
+সবচেয়ে সুবিধাজনক \\
+\hline
+
+\textenglish{Overflow} &
+বিবেচনা প্রয়োজন &
+বিবেচনা প্রয়োজন &
+বিবেচনা প্রয়োজন \\
+\hline
+
+ব্যবহার &
+ধারণাগত বা বিশেষ ক্ষেত্রে &
+ঐতিহাসিক বা বিশেষ ক্ষেত্রে &
+আধুনিক কম্পিউটারে ব্যাপক \\
+\hline
+\end{tabularx}
+\end{center}
+
+% =========================================================
+% Final Exam Notes
+% =========================================================
+
+\par\begingroup
+
+\textbf{পরীক্ষায় মনে রাখবে}
+
+\[
+\boxed{
+\text{\textenglish{1's Complement}}
+=
+\text{সব \textenglish{bit} উল্টাও}
+}
+\]
+
+\[
+\boxed{
+\text{\textenglish{2's Complement}}
+=
+\text{\textenglish{1's Complement}}+1
+}
+\]
+
+\textbf{\textenglish{2's Complement}-এর শর্টকাট:}
+
+ডান দিক থেকে প্রথম ১ পর্যন্ত অপরিবর্তিত রাখো;
+তার বাম পাশের সব \textenglish{bit} উল্টে দাও।
+\par\endgroup
+
+\input{chapters/Chapter03/topics/05_signed_numbers/concept_examples.tex}

@@ -1,0 +1,22 @@
+\subsection{স্বাস্থ্যকেন্দ্রের বয়স সংশোধন ও রক্তের গ্রুপে বাছাই}
+একটি স্বাস্থ্যকেন্দ্র Patient টেবিলে নিচের তথ্য রেখেছে। কেন্দ্রটি শুধু নির্দিষ্ট রোগীর বয়স সংশোধন এবং নির্দিষ্ট রক্তের গ্রুপের প্রাপ্তবয়স্ক রোগীদের তালিকা তৈরি করতে চায়।
+\begin{flushleft}\small
+\begin{tabular}{|l|l|l|l|}\hline
+PatientID & Name & Age & BloodGroup\\\hline
+31 & Rumi & 22 & A+\\\hline
+32 & Sajal & 17 & O+\\\hline
+33 & Dina & 45 & O+\\\hline
+34 & Nafis & 29 & B+\\\hline
+\end{tabular}
+\end{flushleft}
+\begin{verbatim}
+UPDATE Patient SET Age=19 WHERE PatientID=32;
+\end{verbatim}
+রক্তের গ্রুপ ও বয়সের শর্ত একই সঙ্গে সত্য হতে হবে, তাই AND প্রয়োজন। কমপক্ষে 18 বলতে 18-ও অন্তর্ভুক্ত।
+\begin{verbatim}
+SELECT PatientID, Name, Age FROM Patient
+WHERE BloodGroup='O+' AND Age>=18
+ORDER BY Age DESC;
+\end{verbatim}
+ফল হবে প্রথমে (33, Dina, 45), তারপর (32, Sajal, 19)। WHERE বাদ দিলে নির্দিষ্ট রোগীর পরিবর্তে সব রোগীর বয়স বদলে যেত; আর OR দিলে দুটি শর্তের যেকোনো একটি সত্য হলেই রেকর্ড নির্বাচিত হতো।
+

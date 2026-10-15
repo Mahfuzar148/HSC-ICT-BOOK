@@ -1,66 +1,86 @@
-% 4.x HTML Form
-\section{HTML Form}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% 4.x HTML ফর্ম
+\section{HTML ফর্ম (Form)}
+
+% Composition pass 2026-10-04
+ওয়েবপেজে ভর্তির তথ্য পড়া যায়, কিন্তু শিক্ষার্থীকে আবেদনও জমা দিতে হবে।
+
+\chFourMotivation{ব্যবহারকারীর তথ্য গ্রহণ $\rightarrow$ HTML ফর্ম $\rightarrow$ নিয়ন্ত্রণ উপাদানে তথ্য নিয়ে সার্ভারে অনুরোধ পাঠানো $\rightarrow$ আবেদন ও যোগাযোগ। সংরক্ষণের কাজ সার্ভারের প্রোগ্রাম করে।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML form কী এবং কেন ব্যবহার করা হয় তা ব্যাখ্যা করতে।
-\item \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}, \texttt{<option>}, \texttt{<button>} ও \texttt{<label>} tag ব্যবহার করতে।
-\item text field, password field, radio button, checkbox, textarea, dropdown, submit ও reset button তৈরি করতে।
-\item \texttt{action}, \texttt{method}, \texttt{name}, \texttt{value}, \texttt{placeholder}, \texttt{checked} ও \texttt{required} attribute-এর কাজ বুঝতে।
-\item HSC practical ও board exam-এর form-related প্রশ্নের উত্তর দিতে।
+\item HTML ফর্ম কী এবং কেন ব্যবহার করা হয় তা ব্যাখ্যা করতে।
+\item \texttt{<form>}, \texttt{<input>}, \texttt{<textarea>}, \texttt{<select>}, \texttt{<option>}, \texttt{<button>} ও \texttt{<label>} ট্যাগ ব্যবহার করতে।
+\item এক লাইনের টেক্সট ঘর, পাসওয়ার্ড ঘর, রেডিও বোতাম, চেকবক্স, টেক্সটএরিয়া, ড্রপডাউন, সাবমিট ও রিসেট বোতাম তৈরি করতে।
+\item \texttt{action}, \texttt{method}, \texttt{name}, \texttt{value}, \texttt{placeholder}, \texttt{checked} ও \texttt{required} অ্যাট্রিবিউটের কাজ বুঝতে।
+\item HSC ব্যবহারিক অনুশীলন ও বোর্ড পরীক্ষার ফর্ম-সম্পর্কিত প্রশ্নের উত্তর দিতে।
 \end{itemize}
 \end{learningbox}
 
-Table দিয়ে web page-এ data সাজিয়ে দেখানো যায়। কিন্তু user-এর কাছ থেকে data নিতে হলে HTML form ব্যবহার করতে হয়। Online registration, login, contact message, search box, feedback, admission application, order form বা survey form - এসব ক্ষেত্রে form খুব গুরুত্বপূর্ণ।
+সারণি দিয়ে ওয়েবপেজে ডেটা সাজিয়ে দেখানো যায়। কিন্তু ব্যবহারকারীর কাছ থেকে ডেটা নিতে হলে HTML ফর্ম ব্যবহার করতে হয়। অনলাইন নিবন্ধন, লগইন, যোগাযোগ বার্তা, অনুসন্ধান ঘর, মতামত, ভর্তির আবেদন, অর্ডারের ফর্ম বা জরিপের ফর্ম - এসব ক্ষেত্রে ফর্ম খুব গুরুত্বপূর্ণ।
 
-\subsection{HTML Form কী?}
+\subsection{HTML ফর্ম কী?}
 
-\begin{definitionbox}{HTML Form}
-HTML Form হলো web page-এর এমন একটি অংশ, যার মাধ্যমে user-এর কাছ থেকে তথ্য নেওয়া যায়।
+\begin{definitionbox}{HTML ফর্ম (Form)}
+ব্যবহারকারীর তথ্য লেখা বা নির্বাচন করার জন্য ওয়েবপেজে সাজানো নিয়ন্ত্রণ উপাদানগুলোর ব্যবস্থাকে HTML ফর্ম বলে। ফর্ম জমা দিয়ে সেই তথ্য নির্দিষ্ট গন্তব্যে পাঠানো যায়।
 \end{definitionbox}
 
-Form-এর মাধ্যমে user নাম, ঠিকানা, email, password, gender, subject choice, comment, admission information, login information ইত্যাদি লিখতে বা নির্বাচন করতে পারে। Form submit করলে সেই data server file বা script-এর কাছে পাঠানো যায়।
+ফর্মে নাম, ঠিকানা, ইমেইল, পাসওয়ার্ড ও মন্তব্য লেখা যায়। লিঙ্গ, পঠিত বিষয় ও অন্যান্য পছন্দ বিকল্প থেকে নির্বাচন করা যায়। ভর্তি ও লগইনের ফর্মে এভাবে প্রয়োজনীয় তথ্য নেওয়া হয়। ফর্ম জমা দিলে ডেটা গ্রহণের জন্য নির্ধারিত সার্ভারের প্রোগ্রামে অনুরোধ যায়।
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-HTML Form হলো web page-এর user input নেওয়ার একটি ব্যবস্থা, যার মাধ্যমে user-এর দেওয়া data server-এ পাঠানো যায়।
-\end{boardbox}
 
-\subsection{Form কেন ব্যবহার করা হয়?}
 
-Form ব্যবহার করা হয়:
+\subsection{ফর্ম কেন ব্যবহার করা হয়?}
+
+ফর্ম ব্যবহার করা হয়:
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Login করার জন্য।
-\item Registration করার জন্য।
-\item Contact message পাঠানোর জন্য।
-\item Search করার জন্য।
-\item Online admission form পূরণ করার জন্য।
-\item Feedback নেওয়ার জন্য।
-\item Order বা payment information নেওয়ার জন্য।
-\item Survey বা quiz answer নেওয়ার জন্য।
+\item লগইন করার জন্য।
+\item নিবন্ধন করার জন্য।
+\item যোগাযোগ বার্তা পাঠানোর জন্য।
+\item অনুসন্ধান করার জন্য।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item অনলাইন ভর্তি ফর্ম পূরণ করার জন্য।
+\item মতামত নেওয়ার জন্য।
+\item অর্ডার বা অর্থ পরিশোধের তথ্য নেওয়ার জন্য।
+\item জরিপের উত্তর সংগ্রহের জন্য।
+\end{itemize}
+\end{minipage}\par
 
-\subsection{\texttt{<form>} Tag}
 
-\begin{definitionbox}{\texttt{<form>} tag}
-\texttt{<form>} tag HTML document-এ একটি form area তৈরি করার জন্য ব্যবহৃত হয়।
+\subsection{\texttt{<form>} ট্যাগ}
+
+\begin{definitionbox}{}
+\texttt{<form>} ট্যাগ HTML ডকুমেন্টে একটি ফর্ম এলাকা তৈরি করার জন্য ব্যবহৃত হয়।
 \end{definitionbox}
 
-Form-এর ভিতরে বিভিন্ন input control রাখা হয়। যেমন: text field, password field, radio button, checkbox, dropdown, textarea, submit button।
+ফর্মে এক লাইনের লেখার ঘর, পাসওয়ার্ড ঘর, রেডিও বোতাম, চেকবক্স, ড্রপডাউন তালিকা ও টেক্সটএরিয়া রাখা যায়। সাবমিট বোতাম তথ্য জমা দেওয়ার কাজ শুরু করে।
 
-\subsubsection{Basic Syntax}
+\subsubsection{লেখার সাধারণ রূপ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <form action="submit.php" method="post">
   Form controls go here
 </form>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{ব্যাখ্যা}
-\texttt{<form>} হলো form container। এর ভিতরের input field গুলো user data গ্রহণ করে। \texttt{action} data কোথায় যাবে তা নির্ধারণ করে এবং \texttt{method} data পাঠানোর পদ্ধতি নির্ধারণ করে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+\texttt{<form>} হলো ফর্মের ধারক। এর ভিতরের তথ্য লেখার ঘরগুলো ব্যবহারকারীর ডেটা গ্রহণ করে। \texttt{action} ডেটা কোথায় যাবে তা নির্ধারণ করে এবং \texttt{method} ডেটা পাঠানোর পদ্ধতি নির্ধারণ করে।
+\par\smallskip
+\end{minipage}\par
+
 
 \begin{center}
 \begin{tikzpicture}[
@@ -75,327 +95,377 @@ Form-এর ভিতরে বিভিন্ন input control রাখা হ
 \node[field] (email) at ([xshift=1.7cm,yshift=0.7cm]form.center) {Email: \texttt{input}};
 \node[field] (group) at ([xshift=-1.7cm,yshift=0cm]form.center) {Group: \texttt{select}};
 \node[field] (msg) at ([xshift=1.7cm,yshift=0cm]form.center) {Message: \texttt{textarea}};
-\node[field, fill=yellow!12] (submit) at ([yshift=-0.75cm]form.center) {\texttt{submit} / \texttt{reset}};
+\node[field, fill=yellow!12] (submit) at ([yshift=-0.75cm]form.center) {\texttt{submit}};
 \node[label, left=0.65cm of form] (action) {\texttt{action}\\data কোথায় যাবে};
 \node[label, right=0.65cm of form] (method) {\texttt{method}\\কীভাবে যাবে};
 \draw[arrow] (action) -- (form.west);
 \draw[arrow] (method) -- (form.east);
 \draw[arrow] (submit) -- ++(0,-0.55) node[below, font=\scriptsize]{server-এ পাঠায়};
 \end{tikzpicture}\\[3pt]
-\textit{চিত্র: Form-এর ভিতরে input control থাকে, submit করলে data পাঠানো হয়}
+\textit{চিত্র: ফর্মের ভিতরে তথ্য দেওয়ার নিয়ন্ত্রণ উপাদান থাকে, সাবমিট করলে ডেটা পাঠানো হয়}
 \end{center}
 
-\subsection{Form-এর গুরুত্বপূর্ণ Attribute}
+\subsection{ফর্মের গুরুত্বপূর্ণ অ্যাট্রিবিউট}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.56\textwidth}|}
 \hline
-\textbf{Attribute} & \textbf{কাজ} \\
+\textbf{অ্যাট্রিবিউট} & \textbf{কাজ} \\
 \hline
-\texttt{action} & form submit হলে data কোথায় যাবে তা নির্ধারণ করে \\
+\texttt{action} & ফর্ম সাবমিট হলে ডেটা কোথায় যাবে তা নির্ধারণ করে \\
 \hline
-\texttt{method} & data পাঠানোর পদ্ধতি নির্ধারণ করে \\
+\texttt{method} & ডেটা পাঠানোর পদ্ধতি নির্ধারণ করে \\
 \hline
-\texttt{name} & form বা input field-এর নাম নির্ধারণ করে \\
+\texttt{name} & ফর্ম বা তথ্য লেখার ঘরের নাম নির্ধারণ করে \\
 \hline
-\texttt{target} & response কোথায় open হবে তা নির্ধারণ করতে পারে \\
+\texttt{target} & সার্ভারের পাঠানো ফল কোথায় খুলবে তা নির্ধারণ করতে পারে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsubsection{\texttt{action} Attribute}
+\subsubsection{\texttt{action} অ্যাট্রিবিউট}
 
-\texttt{action} attribute form-এর data কোন server file বা URL-এ পাঠানো হবে তা নির্ধারণ করে।
+\texttt{action} অ্যাট্রিবিউট ফর্মের ডেটা কোন সার্ভার ফাইল বা URL-এ পাঠানো হবে তা নির্ধারণ করে।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <form action="form_action.php">
 \end{verbatim}
-\end{examplebox}
 
-User submit button click করলে form-এর content \texttt{action} attribute-এ দেওয়া file বা script-এর কাছে যায়।
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+ব্যবহারকারী সাবমিট বোতাম ক্লিক করলে ফর্মের বিষয়বস্তু \texttt{action} অ্যাট্রিবিউটে দেওয়া ফাইল বা স্ক্রিপ্টের কাছে যায়।
+\end{minipage}\par
+\subsubsection{\texttt{method} অ্যাট্রিবিউট}
 
-\subsubsection{\texttt{method} Attribute}
-
-\texttt{method} attribute form data কীভাবে server-এ পাঠানো হবে তা নির্ধারণ করে।
+\texttt{method} অ্যাট্রিবিউট ফর্মের ডেটা কীভাবে সার্ভারে পাঠানো হবে তা নির্ধারণ করে।
 
 \begin{center}
 \begin{tabular}{|p{0.18\textwidth}|p{0.62\textwidth}|}
 \hline
-\textbf{Method} & \textbf{ব্যবহার} \\
+\textbf{পদ্ধতি} & \textbf{ব্যবহার} \\
 \hline
-\texttt{get} & ছোট data বা search query পাঠাতে ব্যবহার করা যায়; data URL-এ দেখা যেতে পারে। \\
+\texttt{get} & ফর্মের ডেটা URL-এর query অংশে যুক্ত করে; অনুসন্ধানের মতো তথ্য উদ্ধারের কাজে প্রচলিত। \\
 \hline
-\texttt{post} & sensitive বা বড় data পাঠাতে ব্যবহার করা ভালো; data URL-এ সরাসরি দেখা যায় না। \\
+\texttt{post} & ডেটা HTTP অনুরোধের মূল অংশে পাঠায়; URL-এর query অংশে সরাসরি যুক্ত করে না। নিবন্ধন বা তথ্য জমা দেওয়ার কাজে প্রচলিত। \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <form action="submit.php" method="post">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\begin{keypointbox}{HSC note}
-Search form-এর জন্য \texttt{get} এবং login, registration, password বা private information-এর জন্য \texttt{post} বেশি উপযোগী।
+\begin{keypointbox}{পরীক্ষায় মনে রাখবে}
+অনুসন্ধানের ফর্মে \texttt{get} এবং লগইন বা নিবন্ধনের তথ্য জমা দেওয়ার ফর্মে \texttt{post} প্রচলিত। \texttt{post} নিজে ডেটা এনক্রিপ্ট করে না; পাসওয়ার্ড বা ব্যক্তিগত তথ্য পরিবহনের সুরক্ষায় HTTPS দরকার।
 \end{keypointbox}
 
-\subsection{\texttt{<input>} Tag}
+\subsection{\texttt{<input>} ট্যাগ}
 
-\begin{definitionbox}{\texttt{<input>} tag}
-\texttt{<input>} tag form-এর ভিতরে বিভিন্ন ধরনের input field তৈরি করতে ব্যবহৃত হয়।
+\begin{definitionbox}{}
+\texttt{<input>} ট্যাগ বিভিন্ন ধরনের তথ্য দেওয়ার ঘর, নির্বাচন উপাদান বা বোতাম তৈরি করে। \texttt{type} অ্যাট্রিবিউট তার ধরন নির্ধারণ করে।
 \end{definitionbox}
 
-\texttt{<input>} একটি empty tag। এর closing tag নেই। \texttt{type} attribute-এর value অনুযায়ী input field-এর ধরন পরিবর্তিত হয়।
+\texttt{<input>} একটি এম্পটি ট্যাগ। এর শেষের ট্যাগ নেই। \texttt{type} অ্যাট্রিবিউটের মান অনুযায়ী তথ্য লেখার ঘরের ধরন পরিবর্তিত হয়।
 
-\subsubsection{Basic Syntax}
+\subsubsection{লেখার সাধারণ রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <input type="text" name="username">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Common Input Attributes}
+\subsubsection{ইনপুটের পরিচিত অ্যাট্রিবিউট}
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
 \hline
-\textbf{Attribute} & \textbf{কাজ} \\
+\textbf{অ্যাট্রিবিউট} & \textbf{কাজ} \\
 \hline
-\texttt{type} & input field-এর ধরন নির্ধারণ করে \\
+\texttt{type} & তথ্য লেখার ঘরের ধরন নির্ধারণ করে \\
 \hline
-\texttt{name} & server-এ data পাঠানোর field name নির্ধারণ করে \\
+\texttt{name} & সার্ভারে ডেটা পাঠানোর ঘরের নাম নির্ধারণ করে \\
 \hline
-\texttt{value} & default value বা button text নির্ধারণ করে \\
+\texttt{value} & প্রাথমিক মান বা বোতামের লেখা নির্ধারণ করে \\
 \hline
-\texttt{placeholder} & input field-এর hint text দেখায় \\
+\texttt{placeholder} & তথ্য লেখার ঘরে ইঙ্গিতমূলক লেখা দেখায় \\
 \hline
-\texttt{checked} & radio বা checkbox আগে থেকেই selected রাখে \\
+\texttt{checked} & রেডিও বা চেকবক্স আগে থেকেই নির্বাচিত রাখে \\
 \hline
-\texttt{maxlength} & maximum character limit নির্ধারণ করে \\
+\texttt{maxlength} & অক্ষরসংখ্যার সর্বোচ্চ সীমা নির্ধারণ করে \\
 \hline
-\texttt{size} & field-এর visual width নির্ধারণ করে \\
+\texttt{size} & ঘরের দৃশ্যমান প্রস্থ নির্ধারণ করে \\
 \hline
-\texttt{required} & field পূরণ বাধ্যতামূলক করে \\
+\texttt{required} & ঘর পূরণ বাধ্যতামূলক করে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Text Field}
+\subsection{টেক্সট ঘর}
 
 \begin{definitionbox}{\texttt{type="text"}}
-Text field হলো এমন input field যেখানে user text, number বা সাধারণ তথ্য লিখতে পারে।
+টেক্সট ঘর হলো এমন তথ্য লেখার ঘর যেখানে ব্যবহারকারী লেখা, সংখ্যা বা সাধারণ তথ্য লিখতে পারে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <form>
   Name: <input type="text" name="student_name">
 </form>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Modern Example}
+\subsubsection{আধুনিক উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <label for="name">Name:</label>
 <input type="text" id="name" name="name"
        placeholder="Enter your name">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ একটি single-line text box দেখা যাবে। User সেখানে নিজের নাম লিখতে পারবে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+ব্রাউজারে একটি এক লাইনের টেক্সট ঘর দেখা যাবে। ব্যবহারকারী সেখানে নিজের নাম লিখতে পারবে।
+\end{minipage}
 
-\subsection{Password Field}
+\end{chFourWholeExample}
+
+\subsection{পাসওয়ার্ড ঘর}
 
 \begin{definitionbox}{\texttt{type="password"}}
-Password field হলো এমন input field যেখানে user-এর লেখা character গুলো সাধারণত dot বা asterisk আকারে দেখা যায়।
+পাসওয়ার্ড ঘরে লেখা অক্ষরের বদলে সাধারণত বিন্দু বা তারকা চিহ্ন দেখা যায়। এতে পর্দায় মূল লেখাটি আড়াল থাকে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 Password: <input type="password" name="pwd">
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
-User password লিখলে browser character গুলো সরাসরি না দেখিয়ে dot বা bullet আকারে দেখাতে পারে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+ব্যবহারকারী পাসওয়ার্ড লিখলে ব্রাউজার অক্ষরগুলো সরাসরি না দেখিয়ে ডট বা বুলেট দেখাতে পারে। এই আড়াল করা প্রদর্শন পাসওয়ার্ড এনক্রিপ্ট করে না।
+\end{minipage}
+\chFourWhy{\texttt{type} অনুযায়ী নিয়ন্ত্রণ উপাদান তৈরি হয়; \textbf{name} জমা দেওয়া মানের পরিচয় দেয়।}
+\end{chFourWholeExample}
 
-\subsection{Radio Button}
+\subsection{রেডিও বোতাম}
 
 \begin{definitionbox}{\texttt{type="radio"}}
-Radio button হলো এমন input control, যেখানে user কয়েকটি option-এর মধ্যে শুধু একটি option নির্বাচন করতে পারে।
+একই দলের কয়েকটি বিকল্পের মধ্যে একটি বেছে নেওয়ার নিয়ন্ত্রণ উপাদানকে রেডিও বোতাম বলে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 Gender:
 <input type="radio" name="gender" value="Male"> Male
 <input type="radio" name="gender" value="Female"> Female
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\begin{keypointbox}{Important rule}
-এক group-এর radio button-এর \texttt{name} একই হতে হবে। \texttt{name} একই না হলে user একাধিক radio option select করতে পারে।
+\begin{keypointbox}{গুরুত্বপূর্ণ নিয়ম}
+একই দলের রেডিও বোতামের \texttt{name} একই হতে হবে। \texttt{name} একই না হলে ব্যবহারকারী একাধিক রেডিও বিকল্প নির্বাচন করতে পারে।
 \end{keypointbox}
 
-\subsubsection{Group Example}
+\subsubsection{একটি দলের উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 Group:
 <input type="radio" name="group" value="Science"> Science
 <input type="radio" name="group" value="Business"> Business
 <input type="radio" name="group" value="Humanities"> Humanities
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Checkbox}
+\subsection{চেকবক্স}
 
 \begin{definitionbox}{\texttt{type="checkbox"}}
-Checkbox হলো এমন input control, যেখানে user একাধিক option নির্বাচন করতে পারে।
+প্রতিটি বিকল্প স্বাধীনভাবে নির্বাচন বা বাতিল করার নিয়ন্ত্রণ উপাদানকে চেকবক্স বলে। একাধিক চেকবক্স একসঙ্গে নির্বাচিত থাকতে পারে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 Subjects:
 <input type="checkbox" name="subject" value="ICT"> ICT
 <input type="checkbox" name="subject" value="English"> English
 <input type="checkbox" name="subject" value="Bangla"> Bangla
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Radio Button ও Checkbox-এর পার্থক্য}
+\subsubsection{রেডিও বোতাম ও চেকবক্সের পার্থক্য}
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.28\textwidth}|p{0.28\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Radio Button} & \textbf{Checkbox} \\
+\textbf{বিষয়} & \textbf{রেডিও বোতাম} & \textbf{চেকবক্স} \\
 \hline
-Selection & একটি option & একাধিক option \\
+নির্বাচন & একটি বিকল্প & একাধিক বিকল্প \\
 \hline
-Example & Gender, group & Favourite subjects \\
+উদাহরণ & লিঙ্গ, বিভাগ & পছন্দের বিষয়গুলো \\
 \hline
-Type & \texttt{radio} & \texttt{checkbox} \\
+ধরন & \texttt{radio} & \texttt{checkbox} \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Submit Button}
+\subsection{সাবমিট বোতাম}
 
 \begin{definitionbox}{\texttt{type="submit"}}
-Submit button হলো এমন button, যেটিতে click করলে form-এর data \texttt{action} attribute-এ দেওয়া server file বা URL-এ পাঠানো হয়।
+সাবমিট বোতাম হলো এমন বোতাম, যেটিতে ক্লিক করলে ফর্মের ডেটা \texttt{action} অ্যাট্রিবিউটে দেওয়া সার্ভার ফাইল বা URL-এ পাঠানো হয়।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <input type="submit" value="Submit">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Button Tag Version}
+\subsubsection{বোতাম এলিমেন্টের রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <button type="submit">Submit</button>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Reset Button}
+\subsection{রিসেট বোতাম}
 
 \begin{definitionbox}{\texttt{type="reset"}}
-Reset button form-এর input field গুলোকে আগের default অবস্থায় ফিরিয়ে দেয়।
+রিসেট বোতাম ফর্মের তথ্য লেখার ঘরগুলোকে আগের প্রাথমিক অবস্থায় ফিরিয়ে দেয়।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <input type="reset" value="Reset">
 \end{verbatim}
-\end{examplebox}
 
-User ভুল input দিলে form clear করার জন্য reset button ব্যবহার করা যায়।
-
-\subsection{Normal Button}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+ভুল তথ্য বদলানোর সময় রিসেট বোতাম দিয়ে ফর্মের ঘরগুলো প্রাথমিক অবস্থায় ফেরানো যায়। প্রাথমিক মান থাকলে তা ফিরে আসে; সব ঘর সবসময় ফাঁকা হয় না।
+\end{minipage}\par
+\subsection{সাধারণ বোতাম}
 
 \begin{definitionbox}{\texttt{type="button"}}
-Normal button নিজে form submit করে না; সাধারণত JavaScript action-এর জন্য ব্যবহার করা হয়।
+সাধারণ বোতাম নিজে ফর্ম সাবমিট করে না; সাধারণত JavaScript দিয়ে নির্ধারিত কাজের জন্য ব্যবহার করা হয়।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <input type="button" value="Click Me">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Button Tag Version}
+\subsubsection{বোতাম এলিমেন্টের রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <button type="button">Click Me</button>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{\texttt{<textarea>} Tag}
+\subsection{\texttt{<textarea>} ট্যাগ}
 
-\begin{definitionbox}{\texttt{<textarea>} tag}
-\texttt{<textarea>} tag multi-line text input নেওয়ার জন্য ব্যবহৃত হয়।
+\begin{definitionbox}{}
+\texttt{<textarea>} ট্যাগ একাধিক লাইনের লেখা ইনপুট নেওয়ার জন্য ব্যবহৃত হয়।
 \end{definitionbox}
 
-যখন user বড় message, comment, address বা feedback লিখবে, তখন textarea ব্যবহার করা হয়।
+যখন ব্যবহারকারী বড় বার্তা, মন্তব্য, ঠিকানা বা মতামত লিখবে, তখন টেক্সটএরিয়া ব্যবহার করা হয়।
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <textarea rows="4" cols="30">
 Write your message here
 </textarea>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Modern Example}
+\subsubsection{আধুনিক উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <label for="message">Message:</label><br>
 <textarea id="message" name="message"
           rows="4" cols="40"></textarea>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ বড় multi-line box দেখা যাবে। User সেখানে address, comment বা message লিখতে পারবে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+ব্রাউজারে একাধিক লাইনের বড় টেক্সট ঘর দেখা যাবে। ব্যবহারকারী সেখানে ঠিকানা, মন্তব্য বা বার্তা লিখতে পারবে।
+\end{minipage}
 
-\subsection{Dropdown List}
+\end{chFourWholeExample}
+
+\subsection{ড্রপডাউন তালিকা}
 
 \begin{definitionbox}{\texttt{<select>} ও \texttt{<option>}}
-\texttt{<select>} tag dropdown list তৈরি করে এবং \texttt{<option>} tag dropdown-এর প্রতিটি option নির্ধারণ করে।
+\texttt{<select>} ট্যাগ ড্রপডাউন তালিকা তৈরি করে এবং \texttt{<option>} ট্যাগ ড্রপডাউনের প্রতিটি বিকল্প নির্ধারণ করে।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <select name="group">
   <option value="science">Science</option>
@@ -403,75 +473,83 @@ Browser-এ বড় multi-line box দেখা যাবে। User সেখা
   <option value="humanities">Humanities</option>
 </select>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
 \subsubsection{ব্যবহার}
 
 \begin{itemize}
-\item Group selection
-\item District selection
-\item Subject selection
-\item Blood group selection
-\item Category selection
+\item বিভাগ নির্বাচন
+\item জেলা নির্বাচন
+\item বিষয় নির্বাচন
+\item রক্তের গ্রুপ নির্বাচন
+\item শ্রেণি নির্বাচন
 \end{itemize}
 
-\subsection{\texttt{<button>} Tag}
+\subsection{\texttt{<button>} ট্যাগ}
 
-\begin{definitionbox}{\texttt{<button>} tag}
-\texttt{<button>} tag clickable button তৈরি করতে ব্যবহৃত হয়।
+\begin{definitionbox}{}
+\texttt{<button>} ট্যাগ ক্লিকযোগ্য বোতাম তৈরি করতে ব্যবহৃত হয়।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 <button type="button">Click</button>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
 \begin{center}
 \begin{tabular}{|p{0.26\textwidth}|p{0.54\textwidth}|}
 \hline
-\textbf{Button Type} & \textbf{কাজ} \\
+\textbf{বোতামের ধরন} & \textbf{কাজ} \\
 \hline
-\texttt{submit} & form submit করে \\
+\texttt{submit} & ফর্ম সাবমিট করে \\
 \hline
-\texttt{reset} & form reset করে \\
+\texttt{reset} & ফর্মকে প্রাথমিক অবস্থায় ফেরায় \\
 \hline
-\texttt{button} & সাধারণ clickable button তৈরি করে \\
+\texttt{button} & সাধারণ ক্লিকযোগ্য বোতাম তৈরি করে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{\texttt{<label>} Tag}
+\subsection{\texttt{<label>} ট্যাগ}
 
-\begin{definitionbox}{\texttt{<label>} tag}
-\texttt{<label>} tag input field-এর label বা নাম দেওয়ার জন্য ব্যবহৃত হয়।
+\begin{definitionbox}{}
+\texttt{<label>} ট্যাগ তথ্য লেখার ঘরের পরিচয় বা লেবেল দেওয়ার জন্য ব্যবহৃত হয়।
 \end{definitionbox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <label for="email">Email:</label>
 <input type="email" id="email" name="email">
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
 \subsubsection{কেন দরকার?}
 
 \begin{itemize}
-\item Form readable হয়।
-\item Accessibility ভালো হয়।
-\item Label-এ click করলে related input focus হতে পারে।
-\item Professional coding practice গড়ে ওঠে।
+\item ফর্ম সহজপাঠ্য হয়।
+\item স্ক্রিন রিডার ইনপুটের পরিচয় বুঝতে পারে।
+\item লেবেলে ক্লিক করলে সম্পর্কিত ইনপুট সক্রিয় হয়।
+\item পেশাগত কোড লেখার অনুশীলন গড়ে ওঠে।
 \end{itemize}
 
-\subsection{Complete Example: Student Registration Form}
+\Needspace{7\baselineskip}
+\subsection{পূর্ণাঙ্গ উদাহরণ: শিক্ষার্থী নিবন্ধনের ফর্ম}
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -531,175 +609,218 @@ Browser-এ বড় multi-line box দেখা যাবে। User সেখা
 </body>
 </html>
 \end{verbatim}
+\end{multicols}
+
+
+\begin{examplebox}{ফল কী হবে?}
+ব্রাউজারে \texttt{Student Registration Form} শিরোনাম; \texttt{Name} ও \texttt{Roll} টেক্সট ঘর; \texttt{Password} ঘর; \texttt{Gender} রেডিও বোতাম; \texttt{Subjects} চেকবক্স; \texttt{Group} ড্রপডাউন; \texttt{Address} টেক্সটএরিয়া এবং \texttt{Submit} ও \texttt{Reset} বোতাম দেখা যাবে।
 \end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ Student Registration Form heading, Name ও Roll text field, Password field, Gender radio button, Subjects checkbox, Group dropdown, Address textarea, Submit ও Reset button দেখা যাবে।
-\end{examplebox}
-
-\subsection{Form Tag Table}
+\subsection{ফর্মের ট্যাগ ও কাজ}
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.55\textwidth}|}
 \hline
-\textbf{Tag} & \textbf{কাজ} \\
+\textbf{ট্যাগ} & \textbf{কাজ} \\
 \hline
-\texttt{<form>} & form area তৈরি করে \\
+\texttt{<form>} & ফর্ম এলাকা তৈরি করে \\
 \hline
-\texttt{<input>} & input field বা control তৈরি করে \\
+\texttt{<input>} & তথ্য লেখার ঘর বা নিয়ন্ত্রণ তৈরি করে \\
 \hline
-\texttt{<textarea>} & multi-line text box তৈরি করে \\
+\texttt{<textarea>} & একাধিক লাইনের লেখা ঘর তৈরি করে \\
 \hline
-\texttt{<select>} & dropdown list তৈরি করে \\
+\texttt{<select>} & ড্রপডাউন তালিকা তৈরি করে \\
 \hline
-\texttt{<option>} & dropdown-এর option তৈরি করে \\
+\texttt{<option>} & ড্রপডাউনের বিকল্প তৈরি করে \\
 \hline
-\texttt{<button>} & button তৈরি করে \\
+\texttt{<button>} & বোতাম তৈরি করে \\
 \hline
-\texttt{<label>} & input-এর label তৈরি করে \\
+\texttt{<label>} & ইনপুটের লেবেল তৈরি করে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Input Type Table}
+\subsection{ইনপুটের ধরন ও কাজ}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.56\textwidth}|}
 \hline
-\textbf{Input Type} & \textbf{কাজ} \\
+\textbf{ইনপুটের ধরন} & \textbf{কাজ} \\
 \hline
-\texttt{text} & text field তৈরি করে \\
+\texttt{text} & এক লাইনের টেক্সট ঘর তৈরি করে \\
 \hline
-\texttt{password} & password field তৈরি করে \\
+\texttt{password} & পাসওয়ার্ড ঘর তৈরি করে \\
 \hline
-\texttt{radio} & single option selection \\
+\texttt{radio} & একটি বিকল্প নির্বাচন \\
 \hline
-\texttt{checkbox} & multiple option selection \\
+\texttt{checkbox} & একাধিক বিকল্প নির্বাচন \\
 \hline
-\texttt{submit} & form data submit করে \\
+\texttt{submit} & ফর্মের ডেটা সাবমিট করে \\
 \hline
-\texttt{reset} & form reset করে \\
+\texttt{reset} & ফর্মকে প্রাথমিক অবস্থায় ফেরায় \\
 \hline
-\texttt{button} & normal button তৈরি করে \\
+\texttt{button} & স্বাভাবিক বোতাম তৈরি করে \\
 \hline
-\texttt{email} & email input নেয় \\
+\texttt{email} & ইমেইল ইনপুট নেয় \\
 \hline
-\texttt{number} & number input নেয় \\
+\texttt{number} & সংখ্যা ইনপুট নেয় \\
 \hline
-\texttt{date} & date input নেয় \\
+\texttt{date} & তারিখ ইনপুট নেয় \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{keypointbox}{HSC focus}
-\texttt{text}, \texttt{password}, \texttt{radio}, \texttt{checkbox}, \texttt{submit}, \texttt{reset} এবং \texttt{button} input type বেশি গুরুত্বপূর্ণ।
+\begin{keypointbox}{পরীক্ষার গুরুত্ব}
+\texttt{text}, \texttt{password}, \texttt{radio}, \texttt{checkbox}, \texttt{submit}, \texttt{reset} এবং \texttt{button} ইনপুটের ধরন বেশি গুরুত্বপূর্ণ।
 \end{keypointbox}
 
 \subsection{সাধারণ ভুল}
 
-\begin{mistakebox}{Common Mistake}
+\begin{mistakebox}{সাধারণ ভুল}
 \begin{itemize}
-\item \texttt{<form>} tag না দিয়ে input field লেখা।
-\item \texttt{name} attribute না দেওয়া।
-\item Radio button-এর \texttt{name} আলাদা আলাদা দেওয়া।
-\item Submit button না দেওয়া।
-\item \texttt{action} attribute ভুল দেওয়া।
-\item Password field-এ \texttt{type="text"} লেখা।
-\item Checkbox ও radio button গুলিয়ে ফেলা।
+\item সার্ভারে ফর্ম হিসেবে পাঠাতে চাওয়া ঘরকে কোনো ফর্মের সঙ্গে যুক্ত না করা। ফর্মের বাইরে ইনপুট লেখা নিজে সিনট্যাক্সের ভুল নয়; শেখার উদাহরণে সংশ্লিষ্ট ঘরগুলো \texttt{<form>}-এর মধ্যে রাখা সহজ।
+\item \texttt{name} অ্যাট্রিবিউট না দেওয়া।
+\item রেডিও বোতামের \texttt{name} আলাদা আলাদা দেওয়া।
+\item সাবমিট বোতাম না দেওয়া।
+\item \texttt{action} অ্যাট্রিবিউট ভুল দেওয়া।
+\item পাসওয়ার্ড ঘরে \texttt{type="text"} লেখা।
+\item চেকবক্স ও রেডিও বোতাম গুলিয়ে ফেলা।
 \item \texttt{<select>}-এর ভিতরে \texttt{<option>} না দেওয়া।
-\item \texttt{<textarea>} closing tag না দেওয়া।
-\item \texttt{label for} এবং input \texttt{id} মিল না রাখা।
+\item \texttt{<textarea>} শেষের ট্যাগ না দেওয়া।
+\item \texttt{label for} এবং ইনপুট \texttt{id} মিল না রাখা।
 \end{itemize}
 \end{mistakebox}
 
-\subsubsection{ভুল Radio Example}
+\subsubsection{ভুল রেডিও উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <input type="radio" name="male" value="Male"> Male
 <input type="radio" name="female" value="Female"> Female
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-এতে দুইটাই select করা যেতে পারে।
+দুটি রেডিও বোতামের নাম আলাদা হওয়ায় দুটিই একসঙ্গে নির্বাচিত থাকতে পারে।
 
-\subsubsection{সঠিক Radio Example}
+\subsubsection{সঠিক রেডিও উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <input type="radio" name="gender" value="Male"> Male
 <input type="radio" name="gender" value="Female"> Female
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{বইয়ে ব্যবহারযোগ্য সারাংশ}
+\subsection{পাঠের সারাংশ}
 
-\begin{recapbox}
-HTML form user-এর কাছ থেকে তথ্য সংগ্রহ করার জন্য ব্যবহৃত হয়। Form তৈরি করতে \texttt{<form>} tag ব্যবহার করা হয় এবং এর ভিতরে text field, password field, radio button, checkbox, dropdown list, textarea, submit button ও reset button রাখা যায়। \texttt{<input>} tag বিভিন্ন ধরনের input control তৈরি করে এবং এর \texttt{type} attribute input-এর ধরন নির্ধারণ করে। বড় text নেওয়ার জন্য \texttt{<textarea>}, dropdown list তৈরির জন্য \texttt{<select>} এবং option তৈরির জন্য \texttt{<option>} tag ব্যবহার করা হয়। Form submit হলে \texttt{action} attribute-এ দেওয়া server file বা URL-এ data পাঠানো হয়। তাই online registration, login, feedback, search এবং contact system তৈরিতে HTML form খুব গুরুত্বপূর্ণ।
-\end{recapbox}
 
-\subsection{ছোট প্রশ্নোত্তর}
 
-\begin{enumerate}
-\item \textbf{HTML Form কী?}\\
-উত্তর: User input নেওয়ার জন্য web page-এ ব্যবহৃত কাঠামোকে HTML Form বলে।
 
-\item \textbf{Form তৈরির tag কোনটি?}\\
-উত্তর: \texttt{<form>}।
+\input{chapters/Chapter04/topics/10_form/enrichment}
 
-\item \textbf{Input field তৈরির tag কোনটি?}\\
-উত্তর: \texttt{<input>}।
+\input{chapters/Chapter04/topics/10_form/clarity}
 
-\item \textbf{Password field তৈরির code কী?}\\
-উত্তর: \texttt{<input type="password">}।
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\item \textbf{একাধিক option নির্বাচন করতে কোন input type ব্যবহার হয়?}\\
-উত্তর: \texttt{checkbox}।
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{HTML ফর্ম কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ফর্ম তৈরির ট্যাগ কোনটি?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ইনপুট ঘর তৈরির ট্যাগ কোনটি?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{পাসওয়ার্ড ঘর তৈরির কোড কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{একাধিক বিকল্প নির্বাচন করতে কোন ইনপুটের ধরন ব্যবহার হয়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{একাধিক বিকল্প থেকে একটি বিকল্প নির্বাচন করতে কোন ইনপুটের ধরন ব্যবহার হয়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{একাধিক লাইন লেখা ইনপুট নিতে কোন ট্যাগ ব্যবহার হয়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ড্রপডাউন তালিকা তৈরির ট্যাগ কোনটি?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ড্রপডাউনের বিকল্প তৈরির ট্যাগ কোনটি?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ফর্ম ডেটা সার্ভারে পাঠাতে কোন বোতাম ব্যবহার হয়?}}
+\end{minipage}\par\smallskip
+\end{multicols}
 
-\item \textbf{একাধিক option থেকে একটি option নির্বাচন করতে কোন input type ব্যবহার হয়?}\\
-উত্তর: \texttt{radio}।
+\Needspace{10\baselineskip}
+\subsection{পরীক্ষাভিত্তিক বহুনির্বাচনি প্রশ্ন}
 
-\item \textbf{Multi-line text input নিতে কোন tag ব্যবহার হয়?}\\
-উত্তর: \texttt{<textarea>}।
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+HTML ফর্ম তৈরি করতে কোন ট্যাগ ব্যবহৃত হয়?
+\par ক) \texttt{<table>}
+\par খ) \texttt{<form>}
+\par গ) \texttt{<img>}
+\par ঘ) \texttt{<a>}
+\end{minipage}
 
-\item \textbf{Dropdown list তৈরির tag কোনটি?}\\
-উত্তর: \texttt{<select>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ইনপুট ঘর তৈরির ট্যাগ কোনটি?
+\par ক) \texttt{<input>}
+\par খ) \texttt{<select>}
+\par গ) \texttt{<option>}
+\par ঘ) \texttt{<caption>}
+\end{minipage}
 
-\item \textbf{Dropdown-এর option তৈরির tag কোনটি?}\\
-উত্তর: \texttt{<option>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+পাসওয়ার্ড ঘর তৈরির জন্য কোন কোড সঠিক?
+\par ক) \texttt{<input type="text">}
+\par খ) \texttt{<input type="password">}
+\par গ) \texttt{<input type="radio">}
+\par ঘ) \texttt{<input type="checkbox">}
+\end{minipage}
 
-\item \textbf{Form data server-এ পাঠাতে কোন button ব্যবহার হয়?}\\
-উত্তর: Submit button।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+একাধিক বিকল্প নির্বাচন করতে কোনটি ব্যবহৃত হয়?
+\par ক) রেডিও বোতাম
+\par খ) চেকবক্স
+\par গ) সাবমিট বোতাম
+\par ঘ) পাসওয়ার্ড ঘর
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ড্রপডাউন তালিকা তৈরির ট্যাগ কোনটি?
+\par ক) \texttt{<textarea>}
+\par খ) \texttt{<select>}
+\par গ) \texttt{<input>}
+\par ঘ) \texttt{<label>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ফর্ম সাবমিট হলে ডেটা কোথায় যাবে তা কোন অ্যাট্রিবিউট নির্ধারণ করে?
+\par ক) \texttt{src}
+\par খ) \texttt{href}
+\par গ) \texttt{action}
+\par ঘ) \texttt{alt}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+একাধিক লাইন লেখা ইনপুট নিতে কোন ট্যাগ ব্যবহৃত হয়?
+\par ক) \texttt{<textarea>}
+\par খ) \texttt{<input type="text">}
+\par গ) \texttt{<option>}
+\par ঘ) \texttt{<tr>}
+\end{minipage}
 \end{enumerate}
+\end{multicols}
 
-\subsection{Exam Focus MCQ}
-
-\begin{enumerate}
-\item HTML form তৈরি করতে কোন tag ব্যবহৃত হয়?\\
-ক) \texttt{<table>} \quad খ) \texttt{<form>} \quad গ) \texttt{<img>} \quad ঘ) \texttt{<a>}
-
-\item Input field তৈরির tag কোনটি?\\
-ক) \texttt{<input>} \quad খ) \texttt{<select>} \quad গ) \texttt{<option>} \quad ঘ) \texttt{<caption>}
-
-\item Password field তৈরির জন্য কোন code সঠিক?\\
-ক) \texttt{<input type="text">}\\
-খ) \texttt{<input type="password">}\\
-গ) \texttt{<input type="radio">}\\
-ঘ) \texttt{<input type="checkbox">}
-
-\item একাধিক option select করতে কোনটি ব্যবহৃত হয়?\\
-ক) Radio button \quad খ) Checkbox \quad গ) Submit button \quad ঘ) Password field
-
-\item Dropdown list তৈরির tag কোনটি?\\
-ক) \texttt{<textarea>} \quad খ) \texttt{<select>} \quad গ) \texttt{<input>} \quad ঘ) \texttt{<label>}
-
-\item Form submit হলে data কোথায় যাবে তা কোন attribute নির্ধারণ করে?\\
-ক) \texttt{src} \quad খ) \texttt{href} \quad গ) \texttt{action} \quad ঘ) \texttt{alt}
-
-\item Multi-line text input নিতে কোন tag ব্যবহৃত হয়?\\
-ক) \texttt{<textarea>} \quad খ) \texttt{<input type="text">} \quad গ) \texttt{<option>} \quad ঘ) \texttt{<tr>}
-\end{enumerate}
-
-\begin{boardbox}{MCQ Answer Key}
-১-খ, ২-ক, ৩-খ, ৪-খ, ৫-খ, ৬-গ, ৭-ক
-\end{boardbox}
+\chFourMCQAnswer{১-খ, ২-ক, ৩-খ, ৪-খ, ৫-খ, ৬-গ, ৭-ক}

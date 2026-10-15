@@ -1,0 +1,45 @@
+\subsection{সম্পর্কিত সারণিতে শিক্ষার্থীর মোট ফি}
+\textbf{নমুনা।} একটি কলেজে নিচের দুই টেবিল আছে। এক শিক্ষার্থী বিভিন্ন মাসে ফি দেয়; প্রতিটি রসিদ আলাদা।
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{Student}\\ \hline
+StudentID & Name & ClassName\\ \hline
+1 & Ayesha & XI\\\hline
+2 & Nabil & XI\\\hline
+3 & Rupa & XII\\ \hline
+\end{tabular}
+\qquad
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{Payment}\\ \hline
+PaymentID & StudentID & Amount\\ \hline
+501 & 1 & 600\\\hline
+502 & 1 & 400\\\hline
+503 & 2 & 700\\ \hline
+\end{tabular}
+\end{flushleft}
+
+\begin{flushleft}
+\small
+\fbox{\parbox{0.88\linewidth}{\raggedright
+Student.StudentID (PK) $\xrightarrow{\;1:N\;}$ Payment.StudentID (FK)}}
+\end{flushleft}
+\textbf{মোট জমা কমপক্ষে ৭০০ এমন শিক্ষার্থী নির্বাচন:}
+\begin{verbatim}
+SELECT s.StudentID, s.Name, SUM(p.Amount) AS TotalPaid
+FROM Student AS s
+INNER JOIN Payment AS p ON s.StudentID = p.StudentID
+GROUP BY s.StudentID, s.Name
+HAVING SUM(p.Amount) >= 700
+ORDER BY TotalPaid DESC, s.StudentID ASC;
+\end{verbatim}
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|}\hline
+StudentID & Name & TotalPaid\\ \hline
+1 & Ayesha & 1000\\\hline
+2 & Nabil & 700\\ \hline
+\end{tabular}
+\end{flushleft}
+Ayesha-র মোট ৬০০+৪০০=১০০০, Nabil-এর ৭০০। Rupa-র Payment নেই, তাই INNER JOIN-এর ফলেও নেই। একই নামে দুই শিক্ষার্থী থাকতে পারে বলে শুধু Name দিয়ে গ্রুপ না করে StudentID-ও দেওয়া হয়েছে। “কমপক্ষে” মানে \texttt{>=}; শুধু \texttt{>} দিলে ৭০০ বাদ যেত।
+

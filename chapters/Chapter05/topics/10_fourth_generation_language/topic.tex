@@ -1,0 +1,477 @@
+\sectionheading{5.10 চতুর্থ প্রজন্মের ভাষা (Fourth Generation Language — 4GL)}
+
+কম্পিউটারের ব্যবহার আরও সহজ করার উদ্দেশ্যে এমন ভাষার বিকাশ ঘটে,
+যেখানে Programmer-কে প্রতিটি কাজের বিস্তারিত ধাপ লিখতে হয় না;
+বরং তুলনামূলক সহজ ও স্বাভাবিক ভাষার কাছাকাছি নির্দেশ দিয়ে
+প্রয়োজনীয় কাজ সম্পন্ন করা যায়।
+
+এ ধরনের ভাষাকে
+\textbf{Fourth Generation Language (4GL)}
+বা \textbf{চতুর্থ প্রজন্মের ভাষা} বলা হয়।
+
+4GL-কে অনেক ক্ষেত্রে \textbf{অতি উচ্চস্তরের ভাষা}
+হিসেবেও উল্লেখ করা হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{চতুর্থ প্রজন্মের ভাষা কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Programming Language-এ তুলনামূলক কম ও সহজ নির্দেশ ব্যবহার করে
+Database Query, Report তৈরি, Data পরিচালনা এবং বিভিন্ন Application-এর
+কাজ সম্পন্ন করা যায়, তাকে
+\textbf{চতুর্থ প্রজন্মের ভাষা
+(Fourth Generation Language — 4GL)} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+কম নির্দেশ
+\(\;+\;\)
+সহজ ব্যবহার
+\(\;+\;\)
+দ্রুত কাজ
+\(\;=\;\)
+4GL
+}
+
+\end{center}
+
+%================================================
+% Main Concept
+%================================================
+\booksubheading{4GL-এর মূল ধারণা}
+
+আগের প্রজন্মের অনেক Programming Language-এ Programmer-কে
+একটি কাজ \textbf{কীভাবে (How)} সম্পন্ন হবে তার ধাপ
+তুলনামূলক বিস্তারিতভাবে লিখতে হয়।
+
+4GL-এ অনেক ক্ষেত্রে Programmer মূলত
+\textbf{কী ফলাফল (What)} প্রয়োজন তা জানায় এবং প্রয়োজনীয়
+অভ্যন্তরীণ কাজ System নিজে সম্পন্ন করে।
+
+\begin{center}
+
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][10mm][c]{0.34\linewidth}{
+        \centering
+        \textbf{3GL}\\
+        How — কীভাবে কাজ হবে
+    }
+}
+\hspace{7mm}
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][10mm][c]{0.34\linewidth}{
+        \centering
+        \textbf{4GL}\\
+        What — কী ফল প্রয়োজন
+    }
+}
+
+\end{center}
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+Database থেকে নির্দিষ্ট Data বের করার জন্য SQL-এ একটি Query
+লেখা যায়।
+
+Programmer-কে Database-এর প্রতিটি Record কোন ধাপে বা কীভাবে
+Search করা হবে তা আলাদাভাবে লিখতে হয় না।
+
+অর্থাৎ Programmer মূলত \textbf{কোন Data প্রয়োজন} তা জানায়।
+
+\end{examplebox}
+
+%================================================
+% Application Generator
+%================================================
+\booksubheading{4GL-কে Application Generator বলা হয় কেন?}
+
+4GL ব্যবহার করে অনেক ক্ষেত্রে তুলনামূলক কম Coding-এর মাধ্যমে
+Form, Query, Report এবং Data Processing-এর কাজ দ্রুত তৈরি করা যায়।
+
+এ কারণে কিছু 4GL Tool-কে
+\textbf{Application Generator} হিসেবেও উল্লেখ করা হয়।
+
+\begin{center}
+
+\textbf{
+কম Coding
+\(\longrightarrow\)
+কম সময় ও শ্রম
+\(\longrightarrow\)
+দ্রুত Application Development
+}
+
+\end{center}
+
+%================================================
+% Features
+%================================================
+\booksubheading{4GL-এর প্রধান বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.28\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{সহজ ব্যাখ্যা}}
+\\
+\hline
+
+অতি উচ্চস্তরের ভাষা
+&
+মানুষের ব্যবহার ও Problem Solving-এর তুলনামূলক কাছাকাছি।
+\\
+\hline
+
+Natural Language-এর কাছাকাছি
+&
+নির্দেশ তুলনামূলক সহজ ও বোধগম্য।
+\\
+\hline
+
+কম Coding
+&
+একই কাজের জন্য তুলনামূলক কম নির্দেশ প্রয়োজন হয়।
+\\
+\hline
+
+Query সুবিধা
+&
+Database থেকে প্রয়োজনীয় Data অনুসন্ধান ও নির্বাচন করা যায়।
+\\
+\hline
+
+Report Generation
+&
+Data থেকে সহজে Report তৈরি করা যায়।
+\\
+\hline
+
+দ্রুত Development
+&
+Application বা Software তৈরিতে সময় কম লাগে।
+\\
+\hline
+
+কম শ্রম
+&
+Programming-এর প্রয়োজনীয় শ্রম তুলনামূলক কম হয়।
+\\
+\hline
+
+User-oriented
+&
+ব্যবহারকারীর প্রয়োজনীয় Result দ্রুত পাওয়ার ওপর বেশি গুরুত্ব দেওয়া হয়।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Uses
+%================================================
+\booksubheading{4GL-এর ব্যবহার}
+
+4GL বিশেষভাবে Data ও Business-oriented কাজের ক্ষেত্রে
+ব্যবহার করা হয়। যেমন—
+
+\begin{compacttwocolpoints}
+
+\item Database Query তৈরিতে।
+
+\item Data সংরক্ষণ ও অনুসন্ধানে।
+
+\item Report তৈরিতে।
+
+\item Data পরিচালনা ও আদান-প্রদানে।
+
+\item Business Application তৈরিতে।
+
+\item দ্রুত Application Development-এ।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Query Language
+%================================================
+\booksubheading{Query Language কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Query Language}
+
+Database থেকে প্রয়োজনীয় Data অনুসন্ধান, নির্বাচন বা পরিবর্তনের
+জন্য ব্যবহৃত ভাষাকে সাধারণভাবে
+\textbf{Query Language} বলা হয়।
+
+\end{definitionbox}
+
+4GL-এর আলোচনায়
+\textbf{SQL (Structured Query Language)}
+একটি গুরুত্বপূর্ণ উদাহরণ।
+
+%================================================
+% SQL Example
+%================================================
+\begin{examplebox}{SQL Query-এর সহজ উদাহরণ}
+
+ধরা যাক, \textenglish{\ttfamily student} নামের Table-এর
+সব Data দেখতে হবে।
+
+\begin{codebox}
+
+\begin{center}
+{\textenglish{\ttfamily SELECT * FROM student;}}
+\end{center}
+
+\end{codebox}
+
+এখানে Programmer মূলত কোন Data প্রয়োজন তা Query-এর মাধ্যমে
+Database System-কে জানাচ্ছে।
+
+\end{examplebox}
+
+%================================================
+% Examples
+%================================================
+\booksubheading{4GL-এর উদাহরণ}
+
+4GL-এর সবচেয়ে পরিচিত উদাহরণ হিসেবে—
+
+\begin{center}
+
+\textbf{SQL (Structured Query Language)}
+
+\end{center}
+
+উল্লেখ করা যায়।
+
+কিছু পাঠ্যবইয়ে 4GL-এর উদাহরণের আলোচনায় Oracle-এর নামও পাওয়া যায়।
+তবে \textbf{Oracle নিজে Java বা Python-এর মতো General Purpose
+Programming Language নয়}; Oracle হলো একটি
+\textbf{RDBMS/Database Platform}।
+
+Oracle Database Environment-এ SQL ও PL/SQL ব্যবহার করা হয়।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+পরীক্ষায়—
+
+\textbf{SQL = 4GL-এর গুরুত্বপূর্ণ উদাহরণ}
+
+লেখা যায়।
+
+কিন্তু—
+
+\textbf{Oracle = General Purpose Programming Language}
+
+লেখা ঠিক নয়।
+
+Oracle মূলত একটি \textbf{RDBMS / Database Platform}।
+
+\end{rememberbox}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{4GL-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item Programming তুলনামূলক সহজ।
+
+\item কম Code লিখে বেশি কাজ করা যায়।
+
+\item Application দ্রুত তৈরি করা যায়।
+
+\item Database Query তৈরি সহজ।
+
+\item Report Generation সহজ।
+
+\item Software Development-এ সময় কম লাগে।
+
+\item Programming-এর শ্রম তুলনামূলক কমে।
+
+\item Programmer-এর Productivity বাড়ে।
+
+\item Business ও Database Application তৈরিতে সুবিধাজনক।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Limitations
+%================================================
+\booksubheading{4GL-এর কিছু সীমাবদ্ধতা}
+
+\begin{itemize}
+
+\item সব ধরনের System-level Programming-এর জন্য উপযোগী নয়।
+
+\item Hardware-এর ওপর Low Level Language-এর মতো সরাসরি
+নিয়ন্ত্রণ পাওয়া যায় না।
+
+\item নির্দিষ্ট 4GL Tool বা Database Environment-এর ওপর
+নির্ভরতা থাকতে পারে।
+
+\item অত্যন্ত বিশেষ বা Hardware-oriented কাজের জন্য
+General Purpose বা Low Level Language প্রয়োজন হতে পারে।
+
+\end{itemize}
+
+%================================================
+% 3GL vs 4GL
+%================================================
+\booksubheading{3GL ও 4GL-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.21\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{3GL}}
+&
+\multicolumn{1}{c|}{\textbf{4GL}}
+\\
+\hline
+
+মূল গুরুত্ব
+&
+কাজ কীভাবে সম্পন্ন হবে
+&
+কী Result প্রয়োজন
+\\
+\hline
+
+Instruction
+&
+তুলনামূলক বেশি
+&
+তুলনামূলক কম
+\\
+\hline
+
+Code-এর পরিমাণ
+&
+বেশি হতে পারে
+&
+তুলনামূলক কম
+\\
+\hline
+
+Development
+&
+তুলনামূলক বেশি সময় লাগতে পারে
+&
+দ্রুত Development সম্ভব
+\\
+\hline
+
+ব্যবহার
+&
+General Programming
+&
+Query, Report ও Data/Business Application
+\\
+\hline
+
+Programming জ্ঞান
+&
+তুলনামূলক বেশি প্রয়োজন
+&
+অনেক কাজ সহজভাবে করা যায়
+\\
+\hline
+
+উদাহরণ
+&
+C, FORTRAN, BASIC
+&
+SQL
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Generation
+%================================================
+\booksubheading{4GL ও ভাষার প্রজন্ম}
+
+Fourth Generation Language হলো Programming Language-এর
+\textbf{চতুর্থ প্রজন্ম}।
+
+\begin{center}
+
+\textbf{
+4GL
+\(\;=\;\)
+Fourth Generation Language
+}
+
+\end{center}
+
+4GL-এর বিকাশ 1970-এর দশক থেকে উল্লেখযোগ্যভাবে শুরু হয় বলে
+প্রচলিত পাঠ্যবইয়ে আলোচনা করা হয়।
+
+এর উদ্দেশ্য ছিল Programming আরও সহজ করা এবং কম Coding-এর মাধ্যমে
+দ্রুত প্রয়োজনীয় Result বা Application তৈরি করা।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item 4GL-এর পূর্ণরূপ
+\textbf{Fourth Generation Language}।
+
+\item 4GL-কে \textbf{অতি উচ্চস্তরের ভাষা} হিসেবেও উল্লেখ করা হয়।
+
+\item 4GL-এর বিকাশ 1970-এর দশক থেকে আলোচিত।
+
+\item 4GL-এ তুলনামূলক
+\textbf{কম Code-এ বেশি কাজ} করা যায়।
+
+\item 4GL-এ অনেক ক্ষেত্রে
+\textbf{How-এর চেয়ে What}-এর ওপর বেশি গুরুত্ব দেওয়া হয়।
+
+\item 4GL বিশেষভাবে
+\textbf{Database Query, Report ও Business Application}-এ উপযোগী।
+
+\item কিছু 4GL Tool-কে
+\textbf{Application Generator} বলা হয়।
+
+\item \textbf{SQL} 4GL-এর একটি গুরুত্বপূর্ণ উদাহরণ।
+
+\item SQL-এর পূর্ণরূপ
+\textbf{Structured Query Language}।
+
+\item 4GL ব্যবহারে Software Development-এর
+\textbf{সময় ও শ্রম কমতে পারে}।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.11 Translator Program
+%================================================

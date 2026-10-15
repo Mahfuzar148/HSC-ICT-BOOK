@@ -1,0 +1,22 @@
+% !TeX program = lualatex
+\documentclass[12pt,twoside,openany]{book}
+\input{preamble.tex}
+\input{chapters/Chapter03/latex/text_font.tex}
+\geometry{a4paper,left=16mm,right=16mm,top=16mm,bottom=16mm,headheight=30pt,includehead,includefoot,bindingoffset=0mm}
+\AtBeginDocument{\setlength{\headwidth}{\textwidth}\setlength{\headheight}{30pt}}
+\providecommand{\chThreeRoot}{}
+\begin{document}
+\input{chapters/Chapter03/latex/visual_style.tex}
+\frontmatter
+\renewcommand{\contentsname}{সূচিপত্র}
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{2}
+\chapter{বুলিয়ান অ্যালজেবরা ও লজিক গেট}
+\input{chapters/Chapter03/topics/10_boolean_algebra/topic.tex}
+\clearpage
+\input{chapters/Chapter03/topics/11_simplification/topic.tex}
+\input{chapters/Chapter03/topics/14_basic_gates/topic.tex}
+\input{chapters/Chapter03/topics/15_universal_gates/topic.tex}
+\input{chapters/Chapter03/topics/16_examples/topic.tex}
+\end{document}

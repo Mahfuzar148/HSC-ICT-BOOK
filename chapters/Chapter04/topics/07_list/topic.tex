@@ -1,62 +1,70 @@
-% ৪.x HTML List
-\section{HTML List}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% ৪.x HTML তালিকা
+\section{HTML-এ তালিকা (List)}
+
+% Composition pass 2026-10-04
+বইয়ের বিষয়গুলো একটানা অনুচ্ছেদে লিখলে আলাদা উপাদান ও তাদের ক্রম বোঝা কঠিন।
+
+\chFourMotivation{তথ্যকে পৃথক উপাদানে সাজানো $\rightarrow$ তালিকা $\rightarrow$ ক্রম, বুলেট বা পরিভাষা–বর্ণনার জোড়া $\rightarrow$ লাইব্রেরির বিভাগ ও বইয়ের বিষয় দ্রুত পড়া যায়।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML list কী তা ব্যাখ্যা করতে।
-\item Ordered List, Unordered List ও Description List-এর পার্থক্য লিখতে।
-\item \texttt{<ol>}, \texttt{<ul>}, \texttt{<li>}, \texttt{<dl>}, \texttt{<dt>} ও \texttt{<dd>} tag ব্যবহার করতে।
-\item \texttt{type} ও \texttt{start} attribute-এর কাজ বুঝতে।
-\item nested list তৈরি করতে।
-\item HSC practical ও board exam-এর list-related প্রশ্নের উত্তর দিতে।
+\item HTML তালিকা কী তা ব্যাখ্যা করতে।
+\item ক্রমযুক্ত তালিকা, বুলেট তালিকা ও বর্ণনামূলক তালিকার পার্থক্য লিখতে।
+\item \texttt{<ol>}, \texttt{<ul>}, \texttt{<li>}, \texttt{<dl>}, \texttt{<dt>} ও \texttt{<dd>} ট্যাগ ব্যবহার করতে।
+\item \texttt{type} ও \texttt{start} অ্যাট্রিবিউটের কাজ বুঝতে।
+\item নেস্টেড তালিকা তৈরি করতে।
+\item HSC ব্যবহারিক অনুশীলন ও বোর্ড পরীক্ষার তালিকা-সম্পর্কিত প্রশ্নের উত্তর দিতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{HTML List কী?}
 
-\begin{definitionbox}{HTML List}
-HTML List হলো web page-এ একাধিক তথ্য বা item-কে ধারাবাহিক, bullet বা description আকারে সাজিয়ে প্রদর্শনের পদ্ধতি।
+
+\subsection{HTML তালিকা কী?}
+
+\begin{definitionbox}{HTML তালিকা (List)}
+ওয়েবপেজে একাধিক উপাদানকে ক্রম, বুলেট কিংবা পরিভাষা ও বর্ণনার জোড়ায় সাজানোর পদ্ধতিকে HTML তালিকা বলে।
 \end{definitionbox}
 
-Subject list, food menu, book list, routine, product feature, instruction step, website menu বা glossary - এসব তথ্য list আকারে দেখালে user সহজে পড়তে ও বুঝতে পারে। HTML-এ list ব্যবহার করলে content organized হয় এবং web page দেখতে পরিষ্কার লাগে।
-
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-HTML list হলো web page-এ একাধিক item সংগঠিতভাবে প্রদর্শনের পদ্ধতি। Ordered List, Unordered List ও Description List - HTML-এর প্রধান list type।
-\end{boardbox}
+পঠিত বিষয়, খাবারের মেনু, বই, রুটিন, পণ্যের বৈশিষ্ট্য, নির্দেশনার ধাপ ও ওয়েবসাইটের মেনু তালিকায় সাজানো যায়। পরিভাষা ও তার অর্থও তালিকায় দেখানো যায়। এতে প্রতিটি উপাদান আলাদা করে পড়া ও তুলনা করা সহজ হয়।
 
 
-\subsection{HTML List-এর প্রকারভেদ}
+
+
+\subsection{HTML তালিকার প্রকারভেদ}
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.18\textwidth}|p{0.43\textwidth}|}
 \hline
-\textbf{List Type} & \textbf{Tag} & \textbf{ব্যবহার} \\
+\textbf{তালিকার ধরন} & \textbf{ট্যাগ} & \textbf{ব্যবহার} \\
 \hline
-Ordered List & \texttt{<ol>} & সংখ্যা, অক্ষর বা roman marker সহ ক্রমানুসার list \\
+ক্রমযুক্ত তালিকা & \texttt{<ol>} & সংখ্যা, অক্ষর বা রোমান সংখ্যা চিহ্নসহ ক্রমানুসার তালিকা \\
 \hline
-Unordered List & \texttt{<ul>} & bullet/symbol সহ list; item-এর order গুরুত্বপূর্ণ নয় \\
+বুলেট তালিকা & \texttt{<ul>} & বুলেট/চিহ্নসহ তালিকা; উপাদানের ক্রম গুরুত্বপূর্ণ নয় \\
 \hline
-Description List & \texttt{<dl>} & term ও description আকারে list \\
+বর্ণনামূলক তালিকা & \texttt{<dl>} & পরিভাষা ও বর্ণনা আকারে তালিকা \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{keypointbox}{মনে রাখো}
-\texttt{<ol>} ও \texttt{<ul>} list-এর প্রতিটি item লেখার জন্য \texttt{<li>} tag ব্যবহার করা হয়। কিন্তু \texttt{<dl>} list-এ \texttt{<li>} নয়; term-এর জন্য \texttt{<dt>} এবং description-এর জন্য \texttt{<dd>} ব্যবহার করা হয়।
+\texttt{<ol>} ও \texttt{<ul>} তালিকার প্রতিটি উপাদান লেখার জন্য \texttt{<li>} ট্যাগ ব্যবহার করা হয়। কিন্তু \texttt{<dl>} তালিকায় \texttt{<li>} নয়; পরিভাষার জন্য \texttt{<dt>} এবং বর্ণনার জন্য \texttt{<dd>} ব্যবহার করা হয়।
 \end{keypointbox}
 
-\subsection{Ordered List: \texttt{<ol>}}
+\subsection{ক্রমযুক্ত তালিকা: \texttt{<ol>}}
 
-\begin{definitionbox}{Ordered List}
-Ordered List হলো এমন list যেখানে item গুলো নির্দিষ্ট ক্রমে সংখ্যা, অক্ষর বা roman number দিয়ে প্রদর্শিত হয়।
+\begin{definitionbox}{ক্রমযুক্ত তালিকা (Ordered List)}
+যে তালিকায় উপাদানগুলো নির্দিষ্ট ক্রমে সংখ্যা, অক্ষর বা রোমান সংখ্যার চিহ্নসহ দেখানো হয়, তাকে ক্রমযুক্ত তালিকা বলে।
 \end{definitionbox}
 
-যখন list-এর item গুলোর order বা ক্রম গুরুত্বপূর্ণ, তখন ordered list ব্যবহার করা হয়। যেমন: instruction step, exam routine, ranking, chapter list, admission process বা algorithm steps।
+উপাদানের ক্রম গুরুত্বপূর্ণ হলে ক্রমযুক্ত তালিকা ব্যবহার করা হয়। নির্দেশনার ধাপ, পরীক্ষার রুটিন, স্থানক্রম, অধ্যায়ের তালিকা, ভর্তি প্রক্রিয়া ও অ্যালগরিদমের ধাপ এর উদাহরণ।
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <ol>
   <li>First item</li>
@@ -64,11 +72,15 @@ Ordered List হলো এমন list যেখানে item গুলো ন�
   <li>Third item</li>
 </ol>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -84,29 +96,33 @@ Ordered List হলো এমন list যেখানে item গুলো ন�
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:}
 \begin{enumerate}
 \item ICT: World and Bangladesh Perspective
 \item Communication System and Networking
 \item Number System and Digital Device
 \item Web Design Introduction and HTML
 \end{enumerate}
-\textbf{ব্যাখ্যা:} \texttt{<ol>} ordered list শুরু করে এবং প্রতিটি \texttt{<li>} একটি করে list item তৈরি করে। Browser defaultভাবে marker হিসেবে 1, 2, 3 ব্যবহার করে।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} \texttt{<ol>} ক্রমযুক্ত তালিকা শুরু করে এবং প্রতিটি \texttt{<li>} একটি করে তালিকার উপাদান তৈরি করে। ব্রাউজার স্বাভাবিক অবস্থায় চিহ্ন হিসেবে 1, 2, 3 ব্যবহার করে।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{Ordered List-এর Attribute}
 
-\subsubsection{\texttt{type} attribute}
+\subsection{ক্রমযুক্ত তালিকার অ্যাট্রিবিউট}
 
-\texttt{type} attribute দিয়ে ordered list-এর marker কীভাবে দেখাবে তা নির্ধারণ করা যায়।
+\subsubsection{\texttt{type} অ্যাট্রিবিউট}
+
+\texttt{type} অ্যাট্রিবিউট দিয়ে ক্রমযুক্ত তালিকার চিহ্ন কীভাবে দেখাবে তা নির্ধারণ করা যায়।
 
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.35\textwidth}|}
 \hline
-\textbf{Type} & \textbf{Output marker} \\
+\textbf{ধরন} & \textbf{ফলের চিহ্ন} \\
 \hline
 \texttt{type="1"} & 1, 2, 3 \\
 \hline
@@ -121,7 +137,10 @@ Ordered List হলো এমন list যেখানে item গুলো ন�
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <ol type="A">
   <li>HTML</li>
@@ -129,21 +148,25 @@ Ordered List হলো এমন list যেখানে item গুলো ন�
   <li>JavaScript</li>
 </ol>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}\\
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:}\\
 A. HTML\\
 B. CSS\\
 C. JavaScript\\
-\textbf{ব্যাখ্যা:} \texttt{type="A"} দেওয়ায় marker number না হয়ে capital letter হিসেবে দেখায়।
-\end{examplebox}
+\end{minipage}
+\chFourWhy{\texttt{type="A"} দেওয়ায় চিহ্ন সংখ্যা না হয়ে বড় হাতের অক্ষর হিসেবে দেখায়।}
+\end{chFourWholeExample}
 
-\subsubsection{\texttt{start} attribute}
+\subsubsection{\texttt{start} অ্যাট্রিবিউট}
 
-\texttt{start} attribute দিয়ে ordered list কোন number থেকে শুরু হবে তা নির্ধারণ করা যায়।
+\texttt{start} অ্যাট্রিবিউট দিয়ে ক্রমযুক্ত তালিকা কোন সংখ্যা থেকে শুরু হবে তা নির্ধারণ করা যায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <ol start="5">
   <li>HTML</li>
@@ -151,38 +174,38 @@ C. JavaScript\\
   <li>JavaScript</li>
 </ol>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:}
 \begin{enumerate}[start=5]
 \item HTML
 \item CSS
 \item JavaScript
 \end{enumerate}
-\textbf{ব্যাখ্যা:} \texttt{start="5"} দেওয়ায় list marker ১ থেকে না শুরু হয়ে ৫ থেকে শুরু হয়েছে।
-\end{examplebox}
+\end{minipage}
+\chFourWhy{\texttt{start="5"} দেওয়ায় তালিকার চিহ্ন ১ থেকে না শুরু হয়ে ৫ থেকে শুরু হয়েছে।}
+\end{chFourWholeExample}
 
-\begin{keypointbox}{Spec note}
-\texttt{reversed} attribute দিলে ordered list উল্টো ক্রমে গণনা হয়।
-আর কোনো নির্দিষ্ট item-এর numbering আলাদা করতে সেই \texttt{<li>} element-এ \texttt{value} attribute ব্যবহার করা যায়।
+\begin{keypointbox}{মান অনুযায়ী বাড়তি তথ্য}
+\texttt{reversed} অ্যাট্রিবিউট দিলে ক্রমযুক্ত তালিকা উল্টো ক্রমে গণনা হয়।
+নির্দিষ্ট উপাদান থেকে গণনার মান বদলাতে সেই \texttt{<li>} এলিমেন্টে \texttt{value} অ্যাট্রিবিউট ব্যবহার করা যায়।
 \end{keypointbox}
 
-\begin{boardbox}{Ordered List: exam answer}
-Ordered List হলো এমন HTML list যেখানে item গুলো number, letter বা roman numeral দিয়ে ক্রমানুসারে প্রদর্শিত হয়। Ordered list তৈরির জন্য \texttt{<ol>} tag এবং প্রতিটি item-এর জন্য \texttt{<li>} tag ব্যবহার করা হয়।
-\end{boardbox}
 
-\subsection{Unordered List: \texttt{<ul>}}
 
-\begin{definitionbox}{Unordered List}
-Unordered List হলো এমন list যেখানে item গুলো bullet বা symbol দিয়ে প্রদর্শিত হয় এবং item-এর নির্দিষ্ট ক্রম গুরুত্বপূর্ণ নয়।
+\subsection{বুলেট তালিকা: \texttt{<ul>}}
+
+\begin{definitionbox}{বুলেট তালিকা (Unordered List)}
+যে তালিকায় উপাদানের নির্দিষ্ট ক্রম গুরুত্বপূর্ণ নয় এবং প্রতিটি উপাদান বুলেট বা চিহ্নসহ দেখানো হয়, তাকে বুলেট তালিকা বলে।
 \end{definitionbox}
 
-যখন item-এর order গুরুত্বপূর্ণ নয়, তখন unordered list ব্যবহার করা হয়। যেমন: menu list, feature list, subject list, shopping list, notice points, important topic list বা website navigation menu।
+যখন উপাদানের ক্রম গুরুত্বপূর্ণ নয়, তখন বুলেট তালিকা ব্যবহার করা হয়। যেমন: মেনু, বৈশিষ্ট্য, পঠিত বিষয়, কেনাকাটা, বিজ্ঞপ্তি, গুরুত্বপূর্ণ পাঠ বা ওয়েবসাইটে চলাচলের তালিকা।
 
-\subsubsection{Syntax}
+\subsubsection{সিনট্যাক্স}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <ul>
   <li>Item one</li>
@@ -190,58 +213,61 @@ Unordered List হলো এমন list যেখানে item গুলো bul
   <li>Item three</li>
 </ul>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsubsection{Example}
+\subsubsection{উদাহরণ}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<body>
-  <h2>Web Design Tools</h2>
+<h2>Web Design Tools</h2>
 
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>Browser</li>
-  </ul>
-</body>
-</html>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>Browser</li>
+</ul>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:}
 \begin{itemize}
 \item HTML
 \item CSS
 \item JavaScript
 \item Browser
 \end{itemize}
-\textbf{ব্যাখ্যা:} \texttt{<ul>} unordered list তৈরি করে। Browser defaultভাবে bullet marker দেখায়।
-\end{examplebox}
+\end{minipage}
+\chFourWhy{\texttt{<ul>} বুলেট তালিকা তৈরি করে। ব্রাউজার স্বাভাবিক অবস্থায় বুলেট চিহ্ন দেখায়।}
+\end{chFourWholeExample}
 
-\subsection{Unordered List-এর \texttt{type} Attribute}
+\subsection{বুলেট তালিকার \texttt{type} অ্যাট্রিবিউট}
 
-HSC book-style HTML code-এ unordered list-এর marker পরিবর্তনের জন্য \texttt{type} attribute দেখা যায়।
+পরীক্ষায় পরিচিত পুরোনো HTML কোডে বুলেট তালিকার চিহ্ন পরিবর্তনের জন্য \texttt{type} অ্যাট্রিবিউট দেখা যায়।
 
 \begin{center}
 \begin{tabular}{|p{0.30\textwidth}|p{0.34\textwidth}|}
 \hline
-\textbf{Type} & \textbf{Output idea} \\
+\textbf{ধরন} & \textbf{ফল কী হবে?} \\
 \hline
-\texttt{type="disc"} & filled bullet \\
+\texttt{type="disc"} & ভরাট বুলেট \\
 \hline
-\texttt{type="circle"} & circle bullet \\
+\texttt{type="circle"} & ফাঁপা গোলাকার বুলেট \\
 \hline
-\texttt{type="square"} & square bullet \\
+\texttt{type="square"} & বর্গাকার বুলেট \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <ul type="square">
   <li>Monitor</li>
@@ -249,33 +275,35 @@ HSC book-style HTML code-এ unordered list-এর marker পরিবর্ত�
   <li>Mouse</li>
 </ul>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}\\
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:}\\
 \(\blacksquare\) Monitor\\
 \(\blacksquare\) Keyboard\\
 \(\blacksquare\) Mouse\\
-\textbf{ব্যাখ্যা:} \texttt{type="square"} দেওয়ায় list marker square bullet আকারে দেখা যাবে।
-\end{examplebox}
+\end{minipage}
+\chFourWhy{\texttt{type="square"} দেওয়ায় তালিকার চিহ্ন বর্গাকার বুলেট আকারে দেখা যাবে।}
+\end{chFourWholeExample}
 
-\begin{mistakebox}{Modern note}
-Modern HTML/CSS-এ list marker design করার জন্য CSS ব্যবহার করা বেশি standard। তবে HSC exam-এর জন্য \texttt{type="disc"}, \texttt{type="circle"} ও \texttt{type="square"} জানা দরকার।
+\begin{mistakebox}{আধুনিক HTML-এর নিয়ম}
+বর্তমান HTML-এ \texttt{<ul>}-এর \texttt{type} পুরোনো অ্যাট্রিবিউট; বুলেটের ধরন বদলাতে CSS-এর \texttt{list-style-type} ব্যবহার করা হয়। \texttt{<ol>}-এর \texttt{type} কিন্তু বর্তমান মানে বৈধ। পরীক্ষার পুরোনো উদাহরণ বোঝার জন্য \texttt{type="disc"}, \texttt{type="circle"} ও \texttt{type="square"} জানা দরকার।
 \end{mistakebox}
 
-\begin{boardbox}{Unordered List: exam answer}
-Unordered List হলো এমন HTML list যেখানে item গুলো bullet symbol দিয়ে প্রদর্শিত হয়। এটি তৈরির জন্য \texttt{<ul>} tag এবং প্রতিটি item-এর জন্য \texttt{<li>} tag ব্যবহার করা হয়।
-\end{boardbox}
 
-\subsection{List Item: \texttt{<li>}}
 
-\begin{definitionbox}{List item}
-\texttt{<li>} tag list-এর প্রতিটি item লিখতে ব্যবহৃত হয়।
+\subsection{তালিকার উপাদান: \texttt{<li>}}
+
+\begin{definitionbox}{তালিকার উপাদান (List Item)}
+\texttt{<li>} ট্যাগ তালিকার প্রতিটি উপাদান লিখতে ব্যবহৃত হয়।
 \end{definitionbox}
 
-\texttt{<ol>} এবং \texttt{<ul>} - দুই ধরনের list-এর item লিখতেই \texttt{<li>} tag ব্যবহার করা হয়।
+\texttt{<ol>} এবং \texttt{<ul>} - দুই ধরনের তালিকার উপাদান লিখতেই \texttt{<li>} ট্যাগ ব্যবহার করা হয়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <ul>
   <li>Bangla</li>
@@ -283,107 +311,109 @@ Unordered List হলো এমন HTML list যেখানে item গুল�
   <li>ICT</li>
 </ul>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:}
 \begin{itemize}
 \item Bangla
 \item English
 \item ICT
 \end{itemize}
-\textbf{ব্যাখ্যা:} প্রতিটি \texttt{<li>} tag একটি আলাদা list item তৈরি করেছে।
-\end{examplebox}
+\end{minipage}
+\chFourWhy{প্রতিটি \texttt{<li>} ট্যাগ একটি আলাদা তালিকার উপাদান তৈরি করেছে।}
+\end{chFourWholeExample}
 
-\begin{keypointbox}{HSC note}
-কিছু পুরনো example-এ \texttt{<li>} closing tag না দিলেও চলে দেখানো হতে পারে। কিন্তু বই লেখার সময় ও practical coding-এ \texttt{<li>Item</li>} আকারে closing tag দিয়ে লিখলে code পরিষ্কার ও standard হয়।
+\begin{keypointbox}{পরীক্ষায় মনে রাখবে}
+HTML-এর নির্দিষ্ট নিয়মে \texttt{</li>} বাদ দেওয়া যায়; যেমন পরেই আরেকটি \texttt{<li>} শুরু হলে। এটি শুধু পুরোনো HTML-এর নিয়ম নয়। শেখার সময় \texttt{<li>Item</li>} আকারে শেষের ট্যাগ লিখলে তালিকার গঠন সহজে বোঝা যায়।
 \end{keypointbox}
 
-\subsection{Description List: \texttt{<dl>}, \texttt{<dt>}, \texttt{<dd>}}
+\subsection{বর্ণনামূলক তালিকা: \texttt{<dl>}, \texttt{<dt>}, \texttt{<dd>}}
 
-\begin{definitionbox}{Description List}
-Description List হলো এমন list যেখানে কোনো term বা বিষয়ের নাম এবং তার description বা ব্যাখ্যা একসাথে দেখানো হয়।
+\begin{definitionbox}{বর্ণনামূলক তালিকা (Description List)}
+পরিভাষা বা বিষয়ের নামের সঙ্গে তার বর্ণনা সাজিয়ে দেখানোর তালিকাকে বর্ণনামূলক তালিকা বলে।
 \end{definitionbox}
 
-Glossary, definition list, FAQ, product specification, contact details, dictionary-like content বা term and meaning দেখাতে description list ব্যবহার করা যায়।
+পরিভাষা, সংজ্ঞা, বহুল জিজ্ঞাসিত প্রশ্ন (Frequently Asked Questions বা FAQ), পণ্যের বৈশিষ্ট্য, যোগাযোগের বিস্তারিত তথ্য বা শব্দের অর্থ দেখাতে বর্ণনামূলক তালিকা ব্যবহার করা যায়।
 
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.58\textwidth}|}
-\hline
-\textbf{Tag} & \textbf{কাজ} \\
-\hline
-\texttt{<dl>} & Description list শুরু ও শেষ করে \\
-\hline
-\texttt{<dt>} & Term বা name নির্দেশ করে \\
-\hline
-\texttt{<dd>} & Term-এর description নির্দেশ করে \\
-\hline
-\end{tabular}
-\end{center}
+\subsubsection{সিনট্যাক্স}
 
-\subsubsection{Syntax}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <dl>
   <dt>Term</dt>
   <dd>Description of the term</dd>
 </dl>
 \end{verbatim}
-\end{examplebox}
 
-\subsubsection{Example}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\begin{tabular}{|p{0.25\linewidth}|p{0.64\linewidth}|}
+\hline
+\textbf{ট্যাগ} & \textbf{কাজ} \\
+\hline
+\texttt{<dl>} & বর্ণনামূলক তালিকা শুরু ও শেষ করে \\
+\hline
+\texttt{<dt>} & পরিভাষা বা নাম নির্দেশ করে \\
+\hline
+\texttt{<dd>} & পরিভাষার বর্ণনা নির্দেশ করে \\
+\hline
+\end{tabular}
+\end{minipage}\par
 
-\begin{examplebox}{Code}
+
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\subsubsection{উদাহরণ: কোড}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<body>
-  <h2>Web Terms</h2>
-
-  <dl>
-    <dt>HTML</dt>
-    <dd>HTML is used to create the structure of a web page.</dd>
-
-    <dt>CSS</dt>
-    <dd>CSS is used to design and style a web page.</dd>
-
-    <dt>JavaScript</dt>
-    <dd>JavaScript is used to add interactivity to a web page.</dd>
-  </dl>
-</body>
-</html>
+<h2>Web Terms</h2><dl>
+  <dt>HTML</dt>
+  <dd>HTML is used to create the structure of a web page.</dd>
+  <dt>CSS</dt>
+  <dd>CSS is used to design and style a web page.</dd>
+  <dt>JavaScript</dt>
+  <dd>JavaScript is used to add interactivity to a web page.</dd></dl>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}\\
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
 \textbf{HTML}\\
-\hspace*{1cm}HTML is used to create the structure of a web page.\\
+\hspace*{.5em}HTML is used to create the structure of a web page.\\
 \textbf{CSS}\\
-\hspace*{1cm}CSS is used to design and style a web page.\\
+\hspace*{.5em}CSS is used to design and style a web page.\\
 \textbf{JavaScript}\\
-\hspace*{1cm}JavaScript is used to add interactivity to a web page.\\
-\textbf{ব্যাখ্যা:} \texttt{<dt>} tag term দেখায় এবং \texttt{<dd>} tag সেই term-এর description দেখায়।
-\end{examplebox}
+\hspace*{.5em}JavaScript is used to add interactivity to a web page.\\
+\textbf{ব্যাখ্যা:} \texttt{<dt>} ট্যাগ পরিভাষা দেখায় এবং \texttt{<dd>} ট্যাগ সেই পরিভাষার বর্ণনা দেখায়।
+\par\smallskip
+\end{minipage}\par
 
-\begin{boardbox}{Description List: exam answer}
-Description List হলো এমন HTML list যেখানে term ও তার description দেখানো হয়। এটি তৈরির জন্য \texttt{<dl>} tag, term লেখার জন্য \texttt{<dt>} tag এবং description লেখার জন্য \texttt{<dd>} tag ব্যবহার করা হয়।
-\end{boardbox}
 
-\begin{keypointbox}{Spec note}
-একটি \texttt{dl} element-এ একাধিক \texttt{dt} দিয়ে একটি name-এর একাধিক term দেওয়া যেতে পারে এবং একাধিক \texttt{dd} দিয়ে
-একটি term-এর একাধিক description দেওয়া যেতে পারে। প্রয়োজন হলে পুরো group-কে \texttt{div} দিয়ে wrap করা যায়,
-বিশেষ করে styling বা metadata-এর জন্য।
+
+
+\begin{keypointbox}{মান অনুযায়ী বাড়তি তথ্য}
+একটি \texttt{dl} এলিমেন্টে একই দলভুক্ত একাধিক নাম বা পরিভাষার জন্য একাধিক \texttt{dt} এবং সংশ্লিষ্ট বিকল্প বর্ণনার জন্য একাধিক \texttt{dd} দেওয়া যায়। একই বর্ণনার একাধিক অনুচ্ছেদ হলে সেগুলো একই \texttt{dd}-এর মধ্যে থাকে। প্রয়োজন হলে প্রতিটি নাম-বর্ণনার দলকে \texttt{div} দিয়ে ঘিরে রীতি বা মেটাডেটা দেওয়া যায়।
 \end{keypointbox}
 
-\subsection{Nested List}
+\input{chapters/Chapter04/topics/07_list/clarity}
 
-\begin{definitionbox}{Nested List}
-একটি list-এর item-এর ভিতরে আরেকটি list ব্যবহার করলে তাকে Nested List বলা যায়।
+\subsection{নেস্টেড তালিকা}
+
+\begin{definitionbox}{নেস্টেড তালিকা (Nested List)}
+একটি তালিকার উপাদানের ভিতরে আরেকটি তালিকা ব্যবহার করলে তাকে নেস্টেড তালিকা বলা যায়।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
+\par\noindent
 \begin{verbatim}
 <ul>
   <li>Science
@@ -403,10 +433,12 @@ Description List হলো এমন HTML list যেখানে term ও ত�
   </li>
 </ul>
 \end{verbatim}
-\end{examplebox}
-
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:}
+\par
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:}
 \begin{itemize}
 \item Science
   \begin{enumerate}
@@ -421,99 +453,103 @@ Description List হলো এমন HTML list যেখানে term ও ত�
   \item Management
   \end{enumerate}
 \end{itemize}
-\textbf{ব্যাখ্যা:} বাইরের listটি \texttt{<ul>} এবং প্রতিটি group-এর ভিতরে \texttt{<ol>} list আছে। এইভাবে category ও subcategory দেখানো যায়।
-\end{examplebox}
+\textbf{ব্যাখ্যা:} বাইরের তালিকাটি \texttt{<ul>} এবং প্রতিটি দলের ভিতরে \texttt{<ol>} তালিকা আছে। এইভাবে শ্রেণি ও উপশ্রেণি দেখানো যায়।
+\par\smallskip
+\end{minipage}\par
 
-\begin{keypointbox}{Nested list কোথায় ব্যবহার হয়}
-Subject group, website menu, chapter and sub-topic, category and subcategory, course module বা product feature group দেখাতে nested list ব্যবহার করা যায়।
+
+\begin{keypointbox}{নেস্টেড তালিকা কোথায় ব্যবহার হয়}
+পঠিত বিষয়ের দল, ওয়েবসাইটের মেনু, অধ্যায় ও উপপাঠ, শ্রেণি ও উপশ্রেণি, কোর্সের অংশ বা পণ্যের বৈশিষ্ট্যের দল দেখাতে নেস্টেড তালিকা ব্যবহার করা যায়।
 \end{keypointbox}
 
-\subsection{Ordered, Unordered ও Description List-এর পার্থক্য}
+\subsection{ক্রমযুক্ত, বুলেট ও বর্ণনামূলক তালিকার পার্থক্য}
 
 \begin{center}
 \small
 \begin{tabular}{|p{0.18\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Ordered List} & \textbf{Unordered List} & \textbf{Description List} \\
+\textbf{বিষয়} & \textbf{ক্রমযুক্ত তালিকা} & \textbf{বুলেট তালিকা} & \textbf{বর্ণনামূলক তালিকা} \\
 \hline
-Tag & \texttt{<ol>} & \texttt{<ul>} & \texttt{<dl>} \\
+ট্যাগ & \texttt{<ol>} & \texttt{<ul>} & \texttt{<dl>} \\
 \hline
-Item tag & \texttt{<li>} & \texttt{<li>} & \texttt{<dt>}, \texttt{<dd>} \\
+উপাদান ট্যাগ & \texttt{<li>} & \texttt{<li>} & \texttt{<dt>}, \texttt{<dd>} \\
 \hline
-Marker & সংখ্যা/অক্ষর/roman & bullet/symbol & term-description \\
+চিহ্ন & সংখ্যা/অক্ষর/রোমান সংখ্যা & বুলেট/চিহ্ন & পরিভাষা-বর্ণনা \\
 \hline
-Order গুরুত্বপূর্ণ? & হ্যাঁ & না & term অনুযায়ী \\
+ক্রম গুরুত্বপূর্ণ? & হ্যাঁ & না & পরিভাষা অনুযায়ী \\
 \hline
-ব্যবহার & step, ranking, routine & topic, feature, menu & definition, glossary \\
+ব্যবহার & ধাপ, স্থানক্রম, রুটিন & পাঠ, বৈশিষ্ট্য, মেনু & সংজ্ঞা, পরিভাষার তালিকা \\
 \hline
-Example & 1, 2, 3 & bullet & HTML - markup language \\
+উদাহরণ & 1, 2, 3 & বুলেট & HTML - মার্কআপ ভাষা \\
 \hline
 \end{tabular}
 \normalsize
 \end{center}
 
-\subsection{Complete Example Code}
+\subsection{পূর্ণাঙ্গ উদাহরণ}
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>HTML List Example</title>
-</head>
-<body>
+<h1>HTML List Example</h1>
 
-  <h1>HTML List Example</h1>
+<h2>Ordered List</h2>
+<ol type="1">
+  <li>Open Notepad</li>
+  <li>Write HTML code</li>
+  <li>Save as index.html</li>
+  <li>Open with browser</li>
+</ol>
 
-  <h2>Ordered List</h2>
-  <ol type="1">
-    <li>Open Notepad</li>
-    <li>Write HTML code</li>
-    <li>Save as index.html</li>
-    <li>Open with browser</li>
-  </ol>
+<h2>Unordered List</h2>
+<ul type="square">
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
 
-  <h2>Unordered List</h2>
-  <ul type="square">
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-  </ul>
+<h2>Description List</h2>
+<dl>
+  <dt>HTML</dt>
+  <dd>HTML creates the structure of a web page.</dd>
 
-  <h2>Description List</h2>
-  <dl>
-    <dt>HTML</dt>
-    <dd>HTML creates the structure of a web page.</dd>
-
-    <dt>CSS</dt>
-    <dd>CSS designs the appearance of a web page.</dd>
-  </dl>
-
-</body>
-</html>
+  <dt>CSS</dt>
+  <dd>CSS designs the appearance of a web page.</dd>
+</dl>
 \end{verbatim}
+\end{multicols}
+
+
+\begin{examplebox}{ফল কী হবে?}
+ব্রাউজারে প্রথমে ক্রমযুক্ত তালিকা 1, 2, 3, 4 আকারে দেখা যাবে। এরপর বুলেট তালিকা বর্গাকার বুলেট আকারে দেখা যাবে। শেষে বর্ণনামূলক তালিকা পরিভাষা ও বর্ণনা আকারে দেখা যাবে।
 \end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ প্রথমে ordered list 1, 2, 3, 4 আকারে দেখা যাবে। এরপর unordered list square bullet আকারে দেখা যাবে। শেষে description list term ও description আকারে দেখা যাবে।
-\end{examplebox}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
 \item \texttt{<ol>} ও \texttt{<ul>} গুলিয়ে ফেলা।
-\item \texttt{<li>} tag না দেওয়া।
-\item \texttt{<dl>} tag-এর ভিতরে \texttt{<li>} ব্যবহার করা।
+\item \texttt{<li>} ট্যাগ না দেওয়া।
+\item \texttt{<dl>} ট্যাগের ভিতরে \texttt{<li>} ব্যবহার করা।
 \item \texttt{<dt>} ও \texttt{<dd>} ভুলভাবে ব্যবহার করা।
-\item ordered list-এ \texttt{type} value ভুল লেখা।
-\item \texttt{<ul>} tag-এ number marker আশা করা।
-\item list-এর closing tag না দেওয়া।
-\item nested list ভুলভাবে close করা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item ক্রমযুক্ত তালিকায় \texttt{type} মান ভুল লেখা।
+\item \texttt{<ul>} ট্যাগে সংখ্যা চিহ্ন আশা করা।
+\item তালিকার শেষের ট্যাগ না দেওয়া।
+\item নেস্টেড তালিকা ভুলভাবে বন্ধ করা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\begin{boardbox}{Correct nested structure}
-\begin{examplebox}{Code}
+\begin{boardbox}{নেস্টেড তালিকার সঠিক গঠন}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <ul>
   <li>ICT
@@ -524,72 +560,109 @@ Browser-এ প্রথমে ordered list 1, 2, 3, 4 আকারে দেখ
   </li>
 </ul>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 \end{boardbox}
 
-\subsection{পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}
+\input{chapters/Chapter04/topics/07_list/board_concepts}
 
-HTML list ব্যবহার করে web page-এর তথ্য সুন্দর ও সংগঠিতভাবে প্রদর্শন করা যায়। HTML-এ প্রধানত তিন ধরনের list ব্যবহৃত হয় - Ordered List, Unordered List এবং Description List। Ordered List-এ item গুলো সংখ্যা, অক্ষর বা roman number দিয়ে প্রদর্শিত হয় এবং এটি \texttt{<ol>} tag দিয়ে তৈরি করা হয়। Unordered List-এ item গুলো bullet symbol দিয়ে প্রদর্শিত হয় এবং এটি \texttt{<ul>} tag দিয়ে তৈরি করা হয়। Ordered ও unordered list-এর প্রতিটি item লেখার জন্য \texttt{<li>} tag ব্যবহার করা হয়। Description List-এ term ও description দেখানোর জন্য \texttt{<dl>}, \texttt{<dt>} এবং \texttt{<dd>} tag ব্যবহার করা হয়।
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\subsection{ছোট প্রশ্নোত্তর}
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{HTML তালিকা কী?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{HTML-এ তালিকা কয় প্রকার?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{ক্রমযুক্ত তালিকা তৈরির ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{বুলেট তালিকা তৈরির ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{তালিকার উপাদান লেখার ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{বর্ণনামূলক তালিকা তৈরির ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{বর্ণনামূলক তালিকায় পরিভাষা লেখার ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{বর্ণনামূলক তালিকায় বর্ণনা লেখার ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\texttt{<ol type="A">} দিলে ফল কেমন হবে?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\texttt{<ul type="square">} দিলে ফল কেমন হবে?}
+\end{minipage}\par\smallskip
+\end{multicols}
 
-\begin{enumerate}
-\item HTML list কী?\\
-\textbf{উত্তর:} Web page-এ একাধিক item সংগঠিতভাবে প্রদর্শনের পদ্ধতিকে HTML list বলে।
+\Needspace{10\baselineskip}
+\subsection{পরীক্ষাভিত্তিক বহুনির্বাচনি প্রশ্ন}
 
-\item HTML-এ list কয় প্রকার?\\
-\textbf{উত্তর:} সাধারণত ৩ প্রকার - Ordered List, Unordered List, Description List।
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+HTML-এ তালিকা সাধারণত কয় প্রকার?
+\par ক) ২
+\par খ) ৩
+\par গ) ৪
+\par ঘ) ৫
+\end{minipage}
 
-\item Ordered List তৈরির tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<ol>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ক্রমযুক্ত তালিকা তৈরির ট্যাগ কোনটি?
+\par ক) \texttt{<ul>}
+\par খ) \texttt{<ol>}
+\par গ) \texttt{<li>}
+\par ঘ) \texttt{<dl>}
+\end{minipage}
 
-\item Unordered List তৈরির tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<ul>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+বুলেট তালিকা তৈরির ট্যাগ কোনটি?
+\par ক) \texttt{<ul>}
+\par খ) \texttt{<ol>}
+\par গ) \texttt{<dt>}
+\par ঘ) \texttt{<dd>}
+\end{minipage}
 
-\item List item লেখার tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<li>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+তালিকার উপাদান যুক্ত করার ট্যাগ কোনটি?
+\par ক) \texttt{<ol>}
+\par খ) \texttt{<li>}
+\par গ) \texttt{<ul>}
+\par ঘ) \texttt{<dl>}
+\end{minipage}
 
-\item Description List তৈরির tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<dl>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+বর্ণনামূলক তালিকায় পরিভাষা লেখার ট্যাগ কোনটি?
+\par ক) \texttt{<dd>}
+\par খ) \texttt{<dt>}
+\par গ) \texttt{<li>}
+\par ঘ) \texttt{<ul>}
+\end{minipage}
 
-\item Description List-এ term লেখার tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<dt>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{<ol type="i">} দিলে তালিকার চিহ্ন কেমন হবে?
+\par ক) A, B, C
+\par খ) a, b, c
+\par গ) I, II, III
+\par ঘ) i, ii, iii
+\end{minipage}
 
-\item Description List-এ description লেখার tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<dd>}।
-
-\item \texttt{<ol type="A">} দিলে output কেমন হবে?\\
-\textbf{উত্তর:} A, B, C আকারে list marker দেখাবে।
-
-\item \texttt{<ul type="square">} দিলে output কেমন হবে?\\
-\textbf{উত্তর:} square bullet আকারে item দেখাবে।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+বুলেট তালিকার চিহ্ন বর্গাকার করতে কোনটি ব্যবহার করা যায়?
+\par ক) \texttt{<ul type="square">}
+\par খ) \texttt{<ol type="square">}
+\par গ) \texttt{<li type="A">}
+\par ঘ) \texttt{<dl type="square">}
+\end{minipage}
 \end{enumerate}
+\end{multicols}
 
-\subsection{Exam Focus MCQ}
-
-\begin{enumerate}
-\item HTML-এ list সাধারণত কয় প্রকার?\\
-ক) ২ \quad খ) ৩ \quad গ) ৪ \quad ঘ) ৫
-
-\item Ordered List তৈরির tag কোনটি?\\
-ক) \texttt{<ul>} \quad খ) \texttt{<ol>} \quad গ) \texttt{<li>} \quad ঘ) \texttt{<dl>}
-
-\item Unordered List তৈরির tag কোনটি?\\
-ক) \texttt{<ul>} \quad খ) \texttt{<ol>} \quad গ) \texttt{<dt>} \quad ঘ) \texttt{<dd>}
-
-\item List item যুক্ত করার tag কোনটি?\\
-ক) \texttt{<ol>} \quad খ) \texttt{<li>} \quad গ) \texttt{<ul>} \quad ঘ) \texttt{<dl>}
-
-\item Description List-এ term লেখার tag কোনটি?\\
-ক) \texttt{<dd>} \quad খ) \texttt{<dt>} \quad গ) \texttt{<li>} \quad ঘ) \texttt{<ul>}
-
-\item \texttt{<ol type="i">} দিলে list marker কেমন হবে?\\
-ক) A, B, C \quad খ) a, b, c \quad গ) I, II, III \quad ঘ) i, ii, iii
-
-\item Unordered list-এর marker square করতে কোনটি ব্যবহার করা যায়?\\
-ক) \texttt{<ul type="square">} \quad খ) \texttt{<ol type="square">} \quad গ) \texttt{<li type="A">} \quad ঘ) \texttt{<dl type="square">}
-\end{enumerate}
-
-\begin{boardbox}{Answer key}
-১-খ, ২-খ, ৩-ক, ৪-খ, ৫-খ, ৬-ঘ, ৭-ক
-\end{boardbox}
+\chFourMCQAnswer{১-খ, ২-খ, ৩-ক, ৪-খ, ৫-খ, ৬-ঘ, ৭-ক}

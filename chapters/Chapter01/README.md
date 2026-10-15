@@ -1,3 +1,5 @@
+> সর্বশেষ সম্পাদনা (৮ অক্টোবর ২০২৬): বাংলা ভাষা ও ধারণার পুনরাবৃত্তি পর্যালোচনা সম্পন্ন। MCQ-এর শুধু সঠিক উত্তর বক্সে; CQ-তে উদ্দীপক ও প্রশ্ন। বর্তমান ফলের জন্য [ভাষা পর্যালোচনা](CHAPTER01_LANGUAGE_REVIEW.md), [ধারণার মূল অবস্থান](CHAPTER01_TOPIC_OWNERSHIP.md), [Royal coverage](CHAPTER01_BOARD_COVERAGE.md) ও [PDF যাচাই](CHAPTER01_LANGUAGE_VALIDATION.md) দেখুন। পুরোনো রিপোর্টগুলো আগের পর্যায়ের রেকর্ড।
+
 # Chapter01 - Notes
 
 - Folder structure: `latex/`, `topics/`, `images/`, `assets/`.

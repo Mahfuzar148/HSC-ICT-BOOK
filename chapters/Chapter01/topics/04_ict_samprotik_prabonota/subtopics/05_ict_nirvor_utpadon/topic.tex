@@ -1,92 +1,145 @@
-\subsection{আইসিটি নির্ভর উৎপাদন ব্যবস্থা}
-
-\begin{learningbox}
-এই অংশ শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item ICT নির্ভর উৎপাদন ব্যবস্থার ধারণা ব্যাখ্যা করতে।
-\item automation, computer-controlled machine, robot ও quality control-এর ভূমিকা লিখতে।
-\item smart manufacturing ও Industry 4.0 ধারণার সঙ্গে ICT-এর সম্পর্ক বুঝতে।
-\end{itemize}
-\end{learningbox}
-
-\subsubsection{স্বয়ংক্রিয় উৎপাদন}
-
-উৎপাদন ব্যবস্থায় ICT ব্যবহার করলে machine, sensor, software, robot, database ও network একসঙ্গে কাজ করে। এতে raw material থেকে final product তৈরির ধাপ computer দ্বারা পরিকল্পিত, নিয়ন্ত্রিত ও পর্যবেক্ষিত হতে পারে।
-
-\begin{definitionbox}{ICT নির্ভর উৎপাদন}
-ICT নির্ভর উৎপাদন ব্যবস্থা হলো এমন manufacturing system, যেখানে computer, sensor, automation software, robot, database ও network ব্যবহার করে উৎপাদন, মান নিয়ন্ত্রণ, inventory ও delivery পরিচালনা করা হয়।
-\end{definitionbox}
-
-Smart manufacturing ধারণায় machine data, IoT, robotics, analytics ও automation ব্যবহার করে উৎপাদনকে দ্রুত, flexible ও efficient করা হয়।
-
-\subsubsection{কম্পিউটার-নিয়ন্ত্রিত যন্ত্র}
-
-CNC machine, 3D printer, automated packaging machine, PLC-controlled assembly line এবং industrial robot computer program অনুযায়ী কাজ করে। এতে shape, size, speed, temperature, pressure বা timing বেশি নির্ভুলভাবে control করা যায়।
-
-\begin{examplebox}{CNC machine}
-CNC machine computer program অনুসারে metal বা wood কাটে। একই design বারবার একই মাপে তৈরি করা যায়, তাই error কম হয়।
-\end{examplebox}
-
-\subsubsection{রোবট ব্যবহৃত উৎপাদন}
-
-Robot welding, painting, material handling, assembling, packaging এবং inspection করতে পারে। মানুষের জন্য ঝুঁকিপূর্ণ, ভারী বা repetitive কাজ robot দিয়ে করালে নিরাপত্তা ও উৎপাদনশীলতা বাড়ে।
-
-\subsubsection{গুণগত মান নিয়ন্ত্রণ}
-
-Quality control-এ camera, sensor, barcode/RFID, database ও AI-based inspection ব্যবহার করা যায়। defective product শনাক্ত, production data record এবং batch tracking ICT দিয়ে করা যায়।
-
-\begin{center}
-\begin{tabular}{|p{0.28\textwidth}|p{0.58\textwidth}|}
-\hline
-\textbf{ICT tool} & \textbf{উৎপাদনে ভূমিকা} \\
-\hline
-Sensor & temperature, pressure, speed বা defect শনাক্ত \\
-\hline
-Database & inventory, batch, worker, order data সংরক্ষণ \\
-\hline
-Robot & repetitive ও hazardous কাজ করা \\
-\hline
-ERP software & finance, inventory, production ও sales সমন্বয় \\
-\hline
-Barcode/RFID & product tracking ও supply chain control \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsubsection{উৎপাদন ব্যবস্থায় আইসিটির সুবিধা}
-
-\begin{keypointbox}{সুবিধা}
-\begin{itemize}
-\item production speed বৃদ্ধি।
-\item defect ও waste কমানো।
-\item product quality consistent রাখা।
-\item inventory ও supply chain tracking সহজ করা।
-\item worker safety বৃদ্ধি।
-\item উৎপাদন data বিশ্লেষণ করে planning উন্নত করা।
-\end{itemize}
-\end{keypointbox}
-
-\begin{mistakebox}{সাধারণ ভুল}
-Automation মানেই মানুষ অপ্রয়োজনীয় হয়ে যায়—এ ধারণা ঠিক নয়। Automation repetitive কাজ কমায়, কিন্তু design, maintenance, programming, supervision, quality analysis ও decision-making-এ দক্ষ মানুষের প্রয়োজন থাকে।
-\end{mistakebox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-ICT নির্ভর উৎপাদনের উত্তরে automation, CNC, robot, sensor, database ও quality control শব্দগুলো ব্যবহার করলে উত্তর বেশি exam-ready হয়।
-\end{boardbox}
+\subsection{আইসিটিনির্ভর উৎপাদন ব্যবস্থা}
+\label{sec:ch1-production}
+\subsubsection{ধারণা ও উৎপাদনের ধারা}
+\definition{আইসিটিনির্ভর উৎপাদন}{কম্পিউটার, সেন্সর, সফটওয়্যার, যন্ত্রনিয়ন্ত্রণ, নেটওয়ার্ক ও তথ্য বিশ্লেষণ ব্যবহার করে উৎপাদনের পরিকল্পনা, কাজ, মান, মজুত, রক্ষণাবেক্ষণ ও সরবরাহ পরিচালনার ব্যবস্থাকে আইসিটিনির্ভর উৎপাদন বলে।}
+উৎপাদন বা Manufacturing-এ কাঁচামাল থেকে পণ্য তৈরি হয়। যেমন, কাপড় থেকে পোশাক, রাসায়নিক উপাদান থেকে ওষুধ এবং যন্ত্রাংশ থেকে চার্জার তৈরি করা যায়। তৈরির মূল উপাদান Raw Material; তৈরি হয়ে বিক্রি বা সরবরাহের উপযোগী পণ্য Finished Goods। পুরো তৈরি না-হওয়া পণ্য Work in Progress বা WIP। ধারাবাহিক যন্ত্র ও কর্মস্থানের ব্যবস্থা Production Line; অংশ জোড়া লাগানো Assembly এবং নিরাপদে মোড়ক, লেবেল ও সরবরাহের প্রস্তুতি Packaging।
+হাতে বা মানুষের সরাসরি নিয়ন্ত্রণে কাজ হলে তা ম্যানুয়াল উৎপাদন। প্রোগ্রামে যন্ত্র নিয়ন্ত্রণ করলে কম্পিউটারনিয়ন্ত্রিত উৎপাদন হয়। \term{Automation} হলো উপযুক্ত যন্ত্র ও সফটওয়্যারে কাজ স্বয়ংক্রিয় করা। এতে মানুষ অপ্রয়োজনীয় হয়ে যায় না; নকশা, প্রোগ্রাম, রক্ষণাবেক্ষণ, তত্ত্বাবধান, মান ও নিরাপত্তায় দক্ষ মানুষ দরকার।
+\begin{compactenum}
+\item পণ্যের আকৃতি, মাপ, উপাদান ও কাজ ঠিক করে নকশা করা হয়।
+\item কত পণ্য, কখন, কোন কাঁচামাল, কর্মী ও যন্ত্রে তৈরি হবে এবং কখন পৌঁছাবে তা পরিকল্পনা করা হয়।
+\item যন্ত্র চালানোর নির্দেশ তৈরি করে উৎপাদন শুরু করা হয়।
+\item সেন্সর, যন্ত্রের লগ ও শনাক্তকারী কোডে কাজের তথ্য সংগ্রহ করা হয়।
+\item ক্যামেরা, সেন্সর, সফটওয়্যার বা কর্মী পণ্যের মান পরীক্ষা করে।
+\item উৎপাদনের পরিমাণ, ত্রুটি, ব্যাচ ও মজুতের রেকর্ড রাখা হয়।
+\item গুদাম ও সরবরাহের তথ্য মিলিয়ে পণ্য পৌঁছানো এবং ক্রেতার প্রতিক্রিয়া নিয়ে পরিকল্পনা উন্নত করা হয়।
+\end{compactenum}
+\chOneFigureExplain{chapters/Chapter01/images/ict_dependent_production_overview.png}{নকশা থেকে সরবরাহ}{fig:ict-production-overview}{প্রতিটি ধাপের তথ্য পরের ধাপ এবং সিদ্ধান্তে কাজে লাগে।}
+\chOneFigureExplain{chapters/Chapter01/images/ict_production_workflow.png}{উৎপাদনের তথ্যভিত্তিক চক্র}{fig:ict-production-workflow}{তথ্য বিশ্লেষণ করে যন্ত্র বা কর্মী কাজের পরিবর্তন করে।}
+\subsubsection{CAD, CAM ও CNC}
+\definition{CAD}{Computer-Aided Design বা CAD হলো কম্পিউটার সফটওয়্যারে পণ্য, যন্ত্রাংশ, ভবন, পোশাকের প্যাটার্ন বা অন্য বস্তুর ডিজিটাল নকশা তৈরির পদ্ধতি।}
+CAD-এ 2D অঙ্কন, 3D মডেল, আসবাব ও সার্কিটের বিন্যাস তৈরি করা যায়। নকশার মাপ, সংঘাত বা ভুল পরীক্ষা ও পরিবর্তন করা সহজ হয়। সিমুলেশন ও নমুনার ধারণা যাচাইয়ের পর চূড়ান্ত নকশা উৎপাদনে দেওয়া যায়।
+\definition{CAM}{Computer-Aided Manufacturing বা CAM হলো কম্পিউটারের সাহায্যে উৎপাদনযন্ত্র পরিচালনার নির্দেশ তৈরি ও প্রয়োগের পদ্ধতি।}
+CAM নকশা থেকে কাটার পথ, গতি, খননের স্থান, যন্ত্রের চলা ও কাজের নির্দেশ তৈরি করতে পারে। \term{Tool Path} হলো কাটার যন্ত্রাংশ চলার নির্ধারিত পথ।
+\definition{CNC}{Computer Numerical Control বা CNC হলো প্রোগ্রামে নির্ধারিত স্থানাঙ্ক, গতি, গভীরতা ও যন্ত্রের পথ অনুযায়ী উৎপাদনযন্ত্র নিয়ন্ত্রণের পদ্ধতি।}
+CNC যন্ত্রে ধাতু, কাঠ, প্লাস্টিক, কাপড় বা চামড়া কাটা, ছিদ্র, মিলিং, খোদাই ও গঠন করা যায়। যেমন, CAD-এ ধাতব অংশের নকশা, CAM-এ কাটার পথ এবং CNC-তে সেই পথে কাটা হয়। একই প্রোগ্রামে একই মাপের পণ্য পুনরায় তৈরির ক্ষমতা Repeat Accuracy। সঠিক নির্দেশ ও ক্যালিব্রেশনে হাতের ভুল কমানো, গতি বাড়ানো ও জটিল আকৃতি তৈরি করা যায়। নকশা ঠিক হলেও নির্দেশের রূপান্তর বা যন্ত্রের মাপ ভুল হলে ফল ভুল হবে।
+\chOneFigureExplain{chapters/Chapter01/images/cad_design_process.png}{ডিজিটাল নকশার ধাপ}{fig:cad-design-process}{ধারণা থেকে অঙ্কন, মডেল, পরীক্ষা ও চূড়ান্ত নকশা তৈরি হয়।}
+\chOneFigureExplain{chapters/Chapter01/images/cnc_machine_working.png}{প্রোগ্রাম অনুযায়ী যন্ত্রের কাজ}{fig:cnc-machine-working}{স্থানাঙ্ক, পথ ও গতির নির্দেশ অনুযায়ী যন্ত্র চলে।}
+\subsubsection{PLC, SCADA ও সেন্সর}
+\definition{PLC}{Programmable Logic Controller বা PLC হলো শিল্পে ব্যবহৃত নিয়ন্ত্রক কম্পিউটার, যা সেন্সরের ইনপুট ও প্রোগ্রামের যুক্তি অনুযায়ী মোটর, পাম্প, ভাল্‌ভ, হিটার, কাটার বা পরিবাহক চালায়।}
+\definition{SCADA}{Supervisory Control and Data Acquisition বা SCADA হলো প্রক্রিয়ার তথ্য সংগ্রহ, প্রদর্শন ও তত্ত্বাবধানভিত্তিক নিয়ন্ত্রণের ব্যবস্থা।}
+PLC যন্ত্রের নিয়ন্ত্রণে কাজ করে। SCADA-তে পরিচালনাকারী মান, রেখাচিত্র, যন্ত্রের অবস্থা ও সতর্কতা দেখেন এবং প্রয়োজন অনুযায়ী ব্যবস্থা নেন। বিদ্যুৎ, রাসায়নিক ও ইস্পাত কারখানায় তাপমাত্রা, চাপ, প্রবাহ ও ট্যাংকের স্তর নিয়ন্ত্রণে এগুলো লাগে। বিপজ্জনক মানে সতর্কতা, সেটিং পরিবর্তন, মেরামত বা জরুরি বন্ধ করা যায়। CNC-এর নির্দিষ্ট যন্ত্রপথের কাজ ও PLC-এর যুক্তিভিত্তিক নিয়ন্ত্রণ এক বিশেষ কাজ নয়।
+উৎপাদনে সেন্সর তাপমাত্রা, চাপ, আর্দ্রতা, গতি, কম্পন, ওজন, অবস্থান, রং ও উপস্থিতি মাপে। পাঠকের সাহায্যে বারকোড ও RFID-এর পরিচয়ও নেওয়া যায়। বেশি তাপে শীতলীকরণ, বেশি কম্পনে ত্রুটির সতর্কতা, কম মজুতে পুনঃক্রয়ের বার্তা বা ত্রুটিযুক্ত পণ্য আলাদা করার সিদ্ধান্ত হতে পারে। সেন্সর তথ্য নেয়, নিয়ন্ত্রক নির্দেশ দেয় এবং অ্যাকচুয়েটর বাস্তব কাজ করে; অংশগুলোর মূল আলোচনা রোবটিকসে আছে।
+\term{IIoT (Industrial Internet of Things)} শিল্পযন্ত্র ও সেন্সরের সংযুক্ত ব্যবস্থায় তথ্য আদান-প্রদান করে। গেটওয়ে ও নেটওয়ার্ক দিয়ে তথ্য সার্ভার বা ক্লাউডে যায়। ঘটনা ঘটার সঙ্গে প্রয়োজনীয় তথ্য পাওয়া Real-time Data; উৎপাদন চলার সময় অবস্থা দেখা Real-time Monitoring। \term{Dashboard}-এ উৎপাদন, ত্রুটি, মজুত, সতর্কতা ও যন্ত্রের অবস্থা একসঙ্গে দেখা যায়।
+\chOneFigureExplain{chapters/Chapter01/images/plc_scada_industrial_control.png}{নিয়ন্ত্রণ ও তত্ত্বাবধান}{fig:plc-scada-control}{সেন্সর, PLC, যন্ত্র ও পরিচালনাকারীর তথ্যপ্রবাহ দেখানো হয়েছে।}
+\chOneFigureExplain{chapters/Chapter01/images/sensor_iot_in_factory.png}{সংযুক্ত যন্ত্রের তথ্য}{fig:sensor-iot-factory}{সংগ্রহ, সংরক্ষণ, প্রদর্শন ও সতর্কতার তথ্য থেকে কাজ নির্বাচন করা হয়।}
+\subsubsection{ERP, MES ও তথ্যভান্ডার}
+\definition{ERP}{Enterprise Resource Planning বা ERP হলো ক্রয়, অর্থ, মজুত, মানবসম্পদ, বিক্রি, উৎপাদনের পরিকল্পনা ও সরবরাহ একসঙ্গে সমন্বয়ের সফটওয়্যার ব্যবস্থা।}
+\definition{MES}{Manufacturing Execution System বা MES হলো কারখানার উৎপাদন আদেশ, যন্ত্রের অবস্থা, কর্মীর কাজ, ব্যাচ, মান ও অগ্রগতি পর্যবেক্ষণ ও নথিবদ্ধ করার ব্যবস্থা।}
+ERP-এর আদেশ উৎপাদনের কাজে যায়; MES কাজের অগ্রগতি জানায়। তথ্যভান্ডারে কাঁচামাল, তৈরি পণ্য, ক্রেতার আদেশ, কর্মী, ব্যাচ, যন্ত্রের লগ, ত্রুটি ও সরবরাহের রেকর্ড থাকে। প্রতিবেদন থেকে মজুত পুনঃক্রয়, রক্ষণাবেক্ষণ, লক্ষ্য ও পৌঁছানোর সময় বদলানো যায়।
+\chOneFigureExplain{chapters/Chapter01/images/erp_mes_database_in_manufacturing.png}{পরিকল্পনা, কাজ ও রেকর্ড}{fig:erp-mes-database}{প্রতিষ্ঠানের পরিকল্পনা ও কারখানার বাস্তব অগ্রগতি মিলিয়ে সিদ্ধান্ত নেওয়া হয়।}
+\subsubsection{বারকোড, QR ও RFID}
+\definition{বারকোড}{যন্ত্রে পড়ার উপযোগী রেখা বা নকশায় পরিচয়সংকেত প্রকাশের কোডকে বারকোড (Barcode) বলে। প্রচলিত একমাত্রিক কোডে সমান্তরাল রেখা ও ফাঁক থাকে।}
+স্ক্যান করে পণ্যের পরিচয়, দাম, ব্যাচ বা মজুতের সংশ্লিষ্ট রেকর্ড পাওয়া যায়। অপটিক্যাল পাঠে কোডটি দেখা যেতে হয়। \term{QR Code (Quick Response Code)} দ্বিমাত্রিক কোড; প্রচলিত একমাত্রিক বারকোডের তুলনায় বেশি তথ্য রাখা যায়। পণ্যের তথ্য, ওয়েব লিংক, অর্থ পরিশোধ ও পরিচয় যাচাইয়ে ব্যবহার আছে।
+\definition{RFID}{Radio Frequency Identification বা RFID হলো রেডিও সংকেতে ট্যাগের পরিচয় ও তথ্য পড়ার প্রযুক্তি।}
+পণ্য বা বান্ডিলে যুক্ত ট্যাগ পাঠকযন্ত্র পড়ে। অনেক ক্ষেত্রে বাক্সের ভেতর থেকেও পড়া যায়; সরাসরি দৃশ্যমান রেখা বা Line-of-sight লাগে না। ধাতু, তরল, দূরত্ব ও ট্যাগের ধরনে ফল বদলায়। বারকোড ও QR অপটিক্যাল, RFID রেডিওভিত্তিক।
+এই পরিচয় দিয়ে কাঁচামাল, তৈরি পণ্য, ব্যাচ, উৎপাদনের তারিখ, মেয়াদ, মজুত, বান্ডিল, গুদাম ও চালান অনুসরণ করা যায়। \term{Traceability} হলো পণ্য কোন উপাদান, ব্যাচ, যন্ত্র, কর্মী ও তারিখে তৈরি হয়েছে এবং কোথায় গেছে তা খুঁজে পাওয়ার ক্ষমতা। \term{Batch} একই উৎপাদনপর্ব, সূত্র বা শর্তে তৈরি পণ্যের দল।
+\subsubsection{মান যাচাই ও নিশ্চিতকরণ}
+\definition{মান নিয়ন্ত্রণ}{পণ্য নির্ধারিত মাপ, গঠন, রং, ওজন, নিরাপত্তা ও কার্যক্ষমতা মেনে তৈরি হয়েছে কি না পরীক্ষা করার প্রক্রিয়াকে Quality Control বা QC বলে।}
+ক্যামেরায় উপরিভাগ, আকৃতি, রং ও লেবেল; সেন্সরে ওজন, মাপ বা অন্য মান দেখা হয়। সফটওয়্যার বা AI নির্ধারিত মানের সঙ্গে মিলিয়ে ফাটল, দাগ, ভুল সেলাই, ভুল মাপ, কম ওজন, ভুল লেবেল বা অনুপস্থিত অংশ শনাক্ত করতে পারে। পরিচয়ের সঙ্গে ফল রেকর্ড রেখে ত্রুটিযুক্ত পণ্য আলাদা করা হয়; সমস্যার ব্যাচ খোঁজা বা পণ্য ফিরিয়ে আনা সহজ হয়।
+\term{Quality Assurance বা QA}-এ ত্রুটি প্রতিরোধের জন্য প্রক্রিয়া, মান, প্রশিক্ষণ ও নথি ঠিক রাখা হয়। QC পণ্যের মান পরীক্ষা করে; QA প্রক্রিয়ায় মান বজায় রাখার ব্যবস্থা করে। \term{Defect} পণ্যের ত্রুটি; \term{Rework} ত্রুটি ঠিক করতে পুনরায় কাজ। কাঁচামাল, সময়, শক্তি বা পণ্য নষ্ট হওয়া Waste।
+\chOneFigureExplain{chapters/Chapter01/images/ict_quality_control_process.png}{পরীক্ষা, বাছাই ও রেকর্ড}{fig:ict-quality-control}{পণ্যের পরীক্ষার ফল পরিচয়ের সঙ্গে সংরক্ষণ করে পরে সমস্যা অনুসরণ করা যায়।}
+\subsubsection{রক্ষণাবেক্ষণ ও তথ্য বিশ্লেষণ}
+\term{Downtime} হলো যন্ত্র বা উৎপাদন লাইন বন্ধ থাকার সময়। রক্ষণাবেক্ষণে মেরামত, তেল দেওয়া, ক্যালিব্রেশন ও অংশ বদলানো হয়। সেন্সরের তথ্য থেকে সম্ভাব্য ত্রুটি আগেই অনুমান করে ব্যবস্থা নেওয়া Predictive Maintenance; AI অংশে এর মূল ধারণা আছে।
+যেমন, মোটরের কম্পন বেড়ে গেলে সফটওয়্যার স্বাভাবিক মানের সঙ্গে তুলনা করে বেয়ারিংয়ের সম্ভাব্য সমস্যা জানাতে পারে। তাপমাত্রা, শব্দ, বিদ্যুৎপ্রবাহ, গতি ও চাপ থেকেও মোটর, বেল্ট বা পাম্পের সমস্যা অনুমান করা যায়। পরিচালনাকারী পরীক্ষা করে মেরামত করলে হঠাৎ বন্ধ হওয়া ও উৎপাদনের ক্ষতি কমতে পারে।
+উৎপাদনের ডেটা বিশ্লেষণ বা Data Analytics-এ ত্রুটি, চাহিদা, অপচয়, বন্ধ থাকার সময় ও উন্নয়নের সুযোগ খোঁজা হয়। কম ব্যয়, কম সময় ও অপচয়ে ভালো মান পেতে প্রক্রিয়া উন্নত করা Optimization।
+\chOneFigureExplain{chapters/Chapter01/images/predictive_maintenance_process.png}{ত্রুটির আগে সতর্কতা}{fig:predictive-maintenance}{অস্বাভাবিক পাঠ থেকে সম্ভাব্য সমস্যা বুঝে মেরামতের ব্যবস্থা নেওয়া যায়।}
+\subsubsection{সরবরাহ ও উৎপাদনে রোবট}
+সরবরাহকারীর কাঁচামাল থেকে কারখানা, গুদাম, পরিবহন ও ক্রেতা পর্যন্ত ধারাকে Supply Chain বলে। সংরক্ষণ, পরিবহন, চালান ও পৌঁছানোর ব্যবস্থাপনা Logistics। তাপমাত্রাসংবেদনশীল ওষুধ, মাছ, দুধ বা হিমায়িত খাবার নির্দিষ্ট ঠান্ডায় রাখা ও পরিবহন Cold Chain।
+উৎপাদনে রোবট ভারী, ঝুঁকিপূর্ণ, পুনরাবৃত্ত ও সূক্ষ্ম কাজে ব্যবহৃত হয়। রং করার পুরুত্ব ও সমাপ্তি, ঝালাই, জোড়া লাগানো, এক স্থান থেকে অন্য স্থানে তোলা, মোড়ক, কার্টন ও প্যালেট সাজানো এবং পরীক্ষা করা যায়। সেন্সরে অবস্থান, নিয়ন্ত্রকে নির্দেশ এবং ক্যামেরায় পরবর্তী মান যাচাই করা হয়। ভালো পণ্য পরের ধাপে যায়; ত্রুটিযুক্তটি আলাদা হয়। রোবটের গঠন ও সীমা \ref{sec:ch1-robotics} অংশে আছে।
+\chOneFigureExplain{chapters/Chapter01/images/robotics_in_manufacturing.png}{উৎপাদন লাইনে রোবট}{fig:robotics-manufacturing}{কাজের পর পণ্যের মান পরীক্ষা ও পরের ধাপে স্থানান্তর করা হয়।}
+\chOneFigureExplain{chapters/Chapter01/images/ict_production_components.png}{উৎপাদনের সমন্বিত উপাদান}{fig:ict-production-components}{নকশা, নির্দেশ, নিয়ন্ত্রণ, পরিকল্পনা ও পরিচয় ব্যবস্থার ভূমিকা ভিন্ন।}
+\subsubsection{শিল্প বিপ্লব ও স্মার্ট কারখানা}
+প্রথম শিল্প বিপ্লবে পানি ও বাষ্পের শক্তিতে যান্ত্রিক উৎপাদন, দ্বিতীয়তে বিদ্যুৎ ও Assembly Line-এ ব্যাপক উৎপাদন এবং তৃতীয়তে ইলেকট্রনিকস, কম্পিউটার ও ICT-এ স্বয়ংক্রিয়তা বাড়ে। চতুর্থতে সংযুক্ত সেন্সর, IoT, AI, রোবট ও তথ্য বিশ্লেষণে বাস্তব উৎপাদন ও ডিজিটাল ব্যবস্থার সমন্বয় বাড়ে।
+\definition{স্মার্ট উৎপাদন}{সংযুক্ত যন্ত্র, সেন্সর, সফটওয়্যার ও তথ্য বিশ্লেষণে চলতি তথ্য ব্যবহার করে উৎপাদনের সিদ্ধান্ত ও কাজ সমন্বয় করার ব্যবস্থাকে Smart Manufacturing বলে।}
+Industry 4.0-এ IoT/IIoT, রোবট, AI, Big Data, ক্লাউড, Cyber-physical System, Digital Twin ও 3D Printing ব্যবহৃত হয়। \term{Digital Twin} বাস্তব যন্ত্র, কারখানা বা প্রক্রিয়ার ডিজিটাল মডেল; পরিবর্তনের ফল আগে পরীক্ষা করতে সাহায্য করে। 3D Printing দ্রুত নমুনা বা চাহিদামতো পণ্য তৈরিতে উপযোগী। ক্লাউডে তথ্য রাখা ও দূর থেকে বিশ্লেষণ করা যায়। সংযুক্ত কারখানায় উৎপাদন, ত্রুটি, চাহিদা, শক্তির ব্যবহার ও রক্ষণাবেক্ষণ দেখে PLC, ERP/MES, রোবট বা কর্মী কাজ বদলাতে পারে। নেটওয়ার্ক ও নিয়ন্ত্রণকে অননুমোদিত প্রবেশ থেকে রক্ষা করতে হয়।
+\chOneFigureExplain{chapters/Chapter01/images/industry_4_0_smart_factory.png}{তথ্যভিত্তিক স্মার্ট কারখানা}{fig:industry-4-smart-factory}{বাস্তব উৎপাদন ও ডিজিটাল বিশ্লেষণ যুক্ত করে কাজ পরিচালনা করা হয়।}
+\subsubsection{খাতভিত্তিক ও বাংলাদেশের ব্যবহার}
+\subtopichead{পোশাক ও বস্ত্র}
+ক্রেতার আদেশ ERP-তে রাখা হয়। CAD-এ প্যাটার্ন, মাপের বিন্যাস ও marker তৈরি; সমানভাবে কাপড়ের স্তর বিছানো; CAM/CNC-তে কাটার পর সেলাই হয়। লাইনের উৎপাদন, কাজের ভারসাম্য ও অগ্রগতি দেখা যায়। ক্যামেরা বা কর্মী দাগ, সেলাই ও মাপ পরীক্ষা করে। RFID-তে বান্ডিল, WIP ও তৈরি পণ্যের অবস্থান এবং ERP-তে প্যাকিং তালিকা ও চালানের সময় রাখা যায়। বস্ত্রশিল্পে রং করার তাপমাত্রা, আর্দ্রতা ও সুতা-কাপড়ের মানও পরীক্ষা হয়।
+\chOneFigureExplain{chapters/Chapter01/images/rmg_automation_workflow.png}{পোশাক উৎপাদনের ধারা}{fig:rmg-automation-workflow}{নকশা, কাটার নির্দেশ ও যন্ত্রের ক্যালিব্রেশন আলাদা পরীক্ষা করা দরকার।}
+\subtopichead{ওষুধ}
+উপাদান ও ব্যাচের পরিচয়, সূত্র, যন্ত্র, কর্মী, সময় ও পদ্ধতি নথিবদ্ধ হয়। \term{GMP (Good Manufacturing Practice)} মান, নিরাপত্তা ও নথির সুশৃঙ্খল উৎপাদনচর্চা। তাপমাত্রা, আর্দ্রতা ও পরিচ্ছন্নতা পর্যবেক্ষণ, স্বয়ংক্রিয় ভরা, ট্যাবলেট গণনা ও মোড়ক তৈরি করা হয়। প্রতিটি মোড়কে স্বতন্ত্র ক্রমিক পরিচয় দিয়ে অনুসরণ করা Serialization। ব্যাচ, মেয়াদ ও পরীক্ষাগারের ফল রাখা হয়; গ্রহণযোগ্য হলে পণ্য ছাড়া এবং ব্যর্থ হলে আটকে রাখা বা বাতিল করা হয়। নথিতে কাজের ধারাবাহিক প্রমাণ বা audit trail থাকে।
+\chOneFigureExplain{chapters/Chapter01/images/pharma_ict_production_system.png}{ওষুধের ব্যাচ ও মান}{fig:pharma-ict-production}{পরিবেশ, পরিমাণ, পরিচয় ও পরীক্ষার ফল সংরক্ষণ করা হয়।}
+\subtopichead{খাদ্য ও কৃষিপণ্য}
+ওজন, মেশানো, পাস্তুরায়নের তাপমাত্রা, মোড়ক, মেয়াদ ও ব্যাচের কোড নিয়ন্ত্রণ করা হয়। পরিচ্ছন্নতা ও পরীক্ষার রেকর্ড এবং ঠান্ডা সংরক্ষণ ও পরিবহন পর্যবেক্ষণ জরুরি। চালকল, খাদ্যকল, দুগ্ধ, মাছ প্রক্রিয়াকরণ, আর্দ্রতা মাপা ও গুদামের পর্যবেক্ষণে ব্যবহার আছে।
+\subtopichead{ইলেকট্রনিকস ও অন্যান্য শিল্প}
+PCB নকশা, যন্ত্রাংশ বসানো, সোল্ডারিং, পরীক্ষা, ক্যালিব্রেশন, firmware স্থাপন, ক্রমিক পরিচয়, মেরামতের ইতিহাস, ওয়ারেন্টি ও বিক্রয়োত্তর সেবা রাখা যায়। মোবাইল, TV, ফ্রিজ ও কম্পিউটারের যন্ত্রাংশের উৎপাদন উদাহরণ। চামড়া ও জুতায় নকশা, কাটা, সেলাই ও মান; গাড়ি ও প্রকৌশলে CNC, ঝালাই, রং ও জোড়া লাগানো; রাসায়নিক কারখানায় চাপ, প্রবাহ ও ট্যাংকের স্তর; ইস্পাতে চুল্লি ও rolling mill; বিদ্যুতে turbine, boiler, generator ও load নিয়ন্ত্রণে ICT লাগে। গুদামে স্বয়ংক্রিয় বাছাই ও মজুত অনুসরণ করা যায়।
+বাংলাদেশে পোশাক, বস্ত্র, ওষুধ, খাদ্য, ইলেকট্রনিকস, চামড়া, বিদ্যুৎ, সিমেন্ট, ইস্পাত, প্লাস্টিক, মোড়ক ও সরবরাহ খাতে এসব প্রযুক্তির ব্যবহার ও উন্নয়নের ক্ষেত্র আছে। সব কারখানা সম্পূর্ণ স্মার্ট নয়; প্রতিষ্ঠানভেদে সমন্বয়ের মাত্রা বদলায়।
+\chOneFigureExplain{chapters/Chapter01/images/ict_production_sector_contribution.png}{শিল্পভেদে প্রযুক্তির ব্যবহার}{fig:ict-sector-contribution}{কাজের চাহিদা অনুযায়ী তথ্য ও নিয়ন্ত্রণের উপাদান বদলায়।}
+\chOneFigureExplain{chapters/Chapter01/images/ict_production_in_bangladesh.png}{বাংলাদেশে উৎপাদনের প্রয়োগ}{fig:ict-production-bangladesh}{আদেশ, উৎপাদন, মান, পরিচয় ও সরবরাহে তথ্য একত্র করা যায়।}
+\subsubsection{সুবিধা ও সীমাবদ্ধতা}
+সঠিক ব্যবস্থায় গতি, ধারাবাহিক মান, কর্মীর নিরাপত্তা, কাঁচামালের ব্যবহার ও সরবরাহের সময় উন্নত করা যায়। ত্রুটি, পুনরায় কাজ, অপচয় ও হঠাৎ বন্ধ হওয়া কমতে পারে। রপ্তানির ক্রেতার শর্ত ও উৎপাদনের উৎস অনুসরণ সহজ হয়। প্রচলিত হাতে কাজ, কাগজের রেকর্ড ও সরাসরি পরিদর্শনের বদলে ডিজিটাল নকশা, রেকর্ড, পরিচয় ও যন্ত্রের সহায়তা বাড়ে; ফল ব্যবস্থার মানের ওপর নির্ভর করে।
+শুরুর ব্যয়, বিশেষত ছোট প্রতিষ্ঠানের বিনিয়োগ, বড় সীমা। দক্ষ পরিচালনাকারী, প্রকৌশলী, প্রোগ্রামার, কর্মীর পুনঃপ্রশিক্ষণ, রক্ষণাবেক্ষণ ও যন্ত্রাংশ দরকার। ভুল ডেটা, সফটওয়্যার বা যন্ত্রের ত্রুটিতে ভুল সিদ্ধান্ত বা উৎপাদন বন্ধ হতে পারে। সাইবার আক্রমণ থেকে তথ্য, ERP ও যন্ত্রনিয়ন্ত্রণ রক্ষা করতে হয়। স্বয়ংক্রিয়তা শতভাগ নির্ভুলতার নিশ্চয়তা নয়।
+\chOneFigureExplain{chapters/Chapter01/images/ict_production_advantages_limitations.png}{উৎপাদনের সুফল ও শর্ত}{fig:ict-production-advantages-limitations}{প্রশিক্ষণ, সঠিক তথ্য, রক্ষণাবেক্ষণ ও নিরাপত্তা সুফল বজায় রাখে।}
+\subsubsection{অনুশীলন}
 
 \begin{practicebox}
 \textbf{MCQ}
-\begin{enumerate}
-\item CNC machine কোনটির দ্বারা নিয়ন্ত্রিত হয়?\\
-ক. computer program \quad খ. শুধুই হাতুড়ি \quad গ. কাগজের খাতা \quad ঘ. radio only
-\item Barcode/RFID উৎপাদনে কোন কাজে সহায়তা করে?\\
-ক. product tracking \quad খ. poem writing \quad গ. screen brightness \quad ঘ. keyboard cleaning
-\end{enumerate}
+\begin{multicols}{2}\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}CNC machine কোনটির দ্বারা নিয়ন্ত্রিত হয়?\par \mcqoption{computer program}{শুধুই হাতুড়ি}{কাগজের খাতা}{radio only}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}CAD-এর পূর্ণরূপ কী?\par \mcqoption{Common Analog Data}{Computer-Aided Design}{Computer Audio Device}{Central Access Disk}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Barcode/RFID উৎপাদনে কোন কাজে সহায়তা করে?\par \mcqoption{poem writing}{screen brightness}{product tracking}{keyboard cleaning}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}PLC-এর কাজ কী?\par \mcqoption{শুধু ছবি আঁকা}{movie play}{browser history delete}{machine control}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Quality control-এ camera ও sensor কী শনাক্ত করতে পারে?\par \mcqoption{defect}{গান}{font style}{keyboard color}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}ERP software কোন কাজ করে?\par \mcqoption{শুধু game খেলা}{production, inventory ও sales সমন্বয়}{monitor পরিষ্কার}{sound বাড়ানো}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Industry 4.0-এর সাথে কোন technology সম্পর্কিত?\par \mcqoption{শুধু chalkboard}{শুধু কাগজ}{IoT ও AI}{শুধু typewriter}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Predictive maintenance কী করে?\par \mcqoption{শুধু product paint করে}{শুধু table তৈরি করে}{file delete করে}{machine fail করার আগে সমস্যা অনুমান করে}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}RFID-এর পূর্ণরূপ কী?\par \mcqoption{Radio Frequency Identification}{Random File Information Device}{Rapid Factory Internet Data}{Real Format Input Disk}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}MES মূলত কোন data track করে?\par \mcqoption{শুধু গান}{factory floor production data}{শুধু wallpaper}{শুধু keyboard type}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Dashboard কী দেখায়?\par \mcqoption{শুধু নাটক}{শুধু font list}{real-time production status}{শুধু mouse color}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Downtime বলতে কী বোঝায়?\par \mcqoption{product বিক্রির দাম}{design-এর রং}{keyboard-এর model}{machine/line বন্ধ থাকার সময়}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Digital Twin কী?\par \mcqoption{real machine/factory-এর virtual copy}{দুইটি monitor}{duplicate keyboard}{printed invoice}\chOneAnswerBox{ক}\par\end{minipage}
+\end{enumerate}\end{multicols}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
 \item ICT নির্ভর উৎপাদন ব্যবস্থা কী?
 \item উৎপাদনে sensor ব্যবহারের দুটি সুবিধা লেখ।
+\item CAD ও CAM বলতে কী বোঝ?
+\item CNC machine কী?
+\item PLC ও SCADA-এর কাজ লিখ।
+\item Quality control-এ ICT কীভাবে সহায়তা করে?
+\item RFID উৎপাদনে কী কাজে লাগে?
+\item Industry 4.0 কী?
+\item ERP ও MES-এর পার্থক্য লেখ।
+\item Barcode, QR Code ও RFID-এর পার্থক্য লেখ।
+\item Traceability বলতে কী বোঝ?
+\item Predictive maintenance কেন গুরুত্বপূর্ণ?
+\item Dashboard ও real-time data উৎপাদনে কীভাবে সাহায্য করে?
+\item বাংলাদেশে ICT নির্ভর উৎপাদনের দুটি sector লেখ।
+\item ICT নির্ভর উৎপাদনের দুটি সীমাবদ্ধতা লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল প্রশ্ন}
+একটি garment factory-তে buyer order ERP software-এ record করা হয়। CAD দিয়ে pattern তৈরি করা হয়, automatic cutting machine দিয়ে fabric কাটা হয়, RFID দিয়ে bundle tracking করা হয় এবং camera-based system দিয়ে defect শনাক্ত করা হয়।
+
+\begin{enumerate}
+\item ক. CAD কী?
+\item খ. RFID product tracking-এ কীভাবে সাহায্য করে?
+\item গ. উদ্দীপকে ICT নির্ভর উৎপাদনের কোন কোন technology ব্যবহৃত হয়েছে? ব্যাখ্যা কর।
+\item ঘ. এই system ব্যবহার করলে factory-র productivity ও quality কীভাবে উন্নত হতে পারে—বিশ্লেষণ কর।
 \end{enumerate}
 \end{practicebox}
 

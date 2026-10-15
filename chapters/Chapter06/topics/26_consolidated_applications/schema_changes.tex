@@ -1,0 +1,16 @@
+\subsection{নতুন Field, Data পরিবর্তন ও কাঠামো পরিবর্তন}
+\begin{verbatim}
+ALTER TABLE Student ADD COLUMN Address TEXT;
+UPDATE Student SET Address = 'Khulna' WHERE StudentID = 2;
+SELECT StudentID, Address FROM Student ORDER BY StudentID;
+\end{verbatim}
+এগুলো এই অংশের শিক্ষার্থী ও ফি নমুনার Student টেবিলে SQLite দিয়ে চালালে নতুন Address ফিল্ড যোগ হবে। StudentID=2-এর মান Khulna; 1 ও 3-এর নতুন ফিল্ড NULL থাকবে। নতুন ফিল্ড যোগ করা DDL; মান বদলানো DML।
+
+টেবিলের মাঝখানে নতুন কলাম দেখানোর ক্ষেত্রে সফটওয়্যারের সুবিধা বিবেচ্য। Access Design View বা DB Browser-এর সমর্থিত নকশা-সুবিধায় ক্রম সাজানো যায়। SQLite-এর ADD COLUMN শেষে কলাম যোগ করে; প্রদর্শনের ক্রম চাইলে SELECT-এর ফিল্ড তালিকা সাজাও। কলামের প্রদর্শনক্রম ডেটার পারস্পরিক অর্থ বদলায় না।
+
+\subsubsection{একই বিভাগের নাম একবার দেখানো}
+Science, Business, Science থাকা তিনটি রেকর্ডে \texttt{SELECT DISTINCT GroupName FROM Student ORDER BY GroupName;} চালালে Business ও Science একবার করে আসে। মূল তিনটি রেকর্ড মুছে যায় না।
+
+\subsubsection{একই নমুনায় বাছাই ও সাজানোর ফল}
+তিন শিক্ষার্থীর Roll যথাক্রমে 1, 2, 3 এবং GPA 5.00, 4.50, 5.00 হলে GPA=5 শর্তে দুটি রেকর্ড মেলে। GPA DESC, Roll DESC ক্রমে রোল হয় 3, 1, 2। DISTINCT GPA-তে দুটি পৃথক মান পাওয়া যায়। মূল তিনটি রেকর্ড থেকে GPA=5 রেকর্ড মুছে ফেললে একটি রেকর্ড থাকে; আগের SELECT নির্দেশগুলো মূল ডেটা বদলায়নি।
+

@@ -1,0 +1,1446 @@
+\sectionheading{5.39 Python \textenglish{\ttfamily for} Loop}
+
+কোনো Sequence বা Iterable-এর প্রতিটি Item নিয়ে একবার করে কাজ করতে
+অথবা নির্দিষ্ট সংখ্যকবার কোনো Code Block Execute করতে Python-এ
+\textenglish{\ttfamily for} Loop ব্যবহার করা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for} Loop কী?}
+
+\begin{definitionbox}
+
+কোনো Iterable-এর Itemগুলো পর্যায়ক্রমে গ্রহণ করে প্রতিটি Item-এর জন্য
+নির্দিষ্ট Code Block Execute করার Loop-কে
+\textbf{\textenglish{\ttfamily for} Loop} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{Iterable / Sequence}
+\(\longrightarrow\)
+\textbf{একটি Item গ্রহণ}
+\(\longrightarrow\)
+\textbf{Loop Body Execute}
+\(\longrightarrow\)
+\textbf{পরবর্তী Item}
+
+\end{center}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 0 \quad 1 \quad 2 \quad 3 \quad 4}
+\end{center}
+
+এখানে
+\textenglish{\ttfamily i}
+হলো \textbf{Loop Variable}।
+
+%================================================
+% Syntax
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for} Loop-এর Syntax}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for variable in iterable:\\
+\hspace*{4mm}statement
+\end{english}
+\end{codebox}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for x in [10, 20, 30]:\\
+\hspace*{4mm}print(x)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 10 \quad 20 \quad 30}
+\end{center}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+\textenglish{\ttfamily for}
+&
+Loop শুরু করার Keyword।
+\\
+\hline
+
+\textenglish{\ttfamily x}
+&
+Loop Variable।
+\\
+\hline
+
+\textenglish{\ttfamily in}
+&
+Iterable থেকে একে একে Item গ্রহণে ব্যবহৃত Keyword।
+\\
+\hline
+
+\textenglish{\ttfamily [10,20,30]}
+&
+Iterable।
+\\
+\hline
+
+\textenglish{\ttfamily :}
+&
+Loop Header-এর শেষ নির্দেশ করে।
+\\
+\hline
+
+\textenglish{\ttfamily print(x)}
+&
+Loop Body।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Iterable
+%================================================
+
+\booksubheading{Iterable কী?}
+
+যে Object-এর Itemগুলো একে একে গ্রহণ করে Loop চালানো যায় তাকে
+\textbf{Iterable} বলা হয়।
+
+Python-এ সাধারণ Iterable—
+
+\begin{center}
+
+\textbf{String}
+\qquad
+\textbf{List}
+\qquad
+\textbf{Tuple}
+\qquad
+\textbf{Set}
+\qquad
+\textbf{Dictionary}
+\qquad
+\textenglish{\ttfamily range()}
+
+\end{center}
+
+\begin{examplebox}{String-এর উপর Loop}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for ch in "ICT":\\
+\hspace*{4mm}print(ch)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily I \qquad C \qquad T}
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Loop Variable
+%================================================
+
+\booksubheading{Loop Variable কীভাবে কাজ করে?}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in [10, 20, 30]:\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{codebox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.30\linewidth}
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Iteration}
+&
+\textbf{\textenglish{\ttfamily i}-এর Value}
+\\
+\hline
+
+1
+&
+10
+\\
+\hline
+
+2
+&
+20
+\\
+\hline
+
+3
+&
+30
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textenglish{\ttfamily for}
+Loop Iterable থেকে নিজেই পরবর্তী Item নিয়ে Loop Variable-এ দেয়।
+
+সাধারণত
+\textenglish{\ttfamily while}
+-এর মতো আলাদাভাবে
+\textenglish{\ttfamily i += 1}
+লিখে Loop Variable Update করতে হয় না।
+
+\end{rememberbox}
+
+%================================================
+% range
+%================================================
+
+\booksubheading{\textenglish{\ttfamily range()} Function}
+
+নির্দিষ্ট সংখ্যার ধারায়
+\textenglish{\ttfamily for}
+Loop চালাতে
+\textenglish{\ttfamily range()}
+খুব বেশি ব্যবহৃত হয়।
+
+\begin{center}
+
+\textenglish{\ttfamily range(stop)}
+
+\qquad
+
+\textenglish{\ttfamily range(start, stop)}
+
+\qquad
+
+\textenglish{\ttfamily range(start, stop, step)}
+
+\end{center}
+
+%================================================
+% range stop + start stop
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{১. \textenglish{\ttfamily range(stop)}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 0 \quad 1 \quad 2 \quad 3 \quad 4}
+\end{center}
+
+\textenglish{\ttfamily range(5)}
+শুরু হয় 0 থেকে এবং 5 অন্তর্ভুক্ত হয় না।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{২. \textenglish{\ttfamily range(start, stop)}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(2, 6):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 2 \quad 3 \quad 4 \quad 5}
+\end{center}
+
+Start অন্তর্ভুক্ত হয়, কিন্তু Stop অন্তর্ভুক্ত হয় না।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap}
+
+\begin{center}
+
+\textenglish{\ttfamily range(2, 6)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 2, 3, 4, 5}
+
+\end{center}
+
+\textbf{Start Included, Stop Excluded}
+
+\end{rememberbox}
+
+%================================================
+% range step
+%================================================
+
+\booksubheading{৩. \textenglish{\ttfamily range(start, stop, step)}}
+
+Step দ্বারা প্রতিবার Value কত করে পরিবর্তিত হবে তা নির্ধারিত হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(2, 11, 2):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 2 \quad 4 \quad 6 \quad 8 \quad 10}
+\end{center}
+
+এখানে—
+
+\begin{center}
+
+\textbf{Start}
+\(\longrightarrow\)
+\textenglish{\ttfamily 2}
+
+\qquad
+
+\textbf{Stop}
+\(\longrightarrow\)
+\textenglish{\ttfamily 11}
+
+\qquad
+
+\textbf{Step}
+\(\longrightarrow\)
+\textenglish{\ttfamily 2}
+
+\end{center}
+
+%================================================
+% Default values
+%================================================
+
+\booksubheading{\textenglish{\ttfamily range()}-এর Default Value}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.35\linewidth}
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{অংশ}
+&
+\textbf{Default Value}
+\\
+\hline
+
+Start
+&
+\textenglish{\ttfamily 0}
+\\
+\hline
+
+Step
+&
+\textenglish{\ttfamily 1}
+\\
+\hline
+
+Stop
+&
+অবশ্যই দিতে হয়
+\\
+\hline
+
+\end{tabularx}
+
+অর্থাৎ—
+
+\begin{center}
+
+\textenglish{\ttfamily range(5)}
+\(\longrightarrow\)
+0 থেকে শুরু
+\(\longrightarrow\)
+1 করে বৃদ্ধি
+
+\end{center}
+
+%================================================
+% Forward + Reverse
+%================================================
+
+\booksubheading{Forward ও Reverse Loop}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Forward Loop}
+
+Positive Step ব্যবহার করলে Value সাধারণত সামনে দিকে বাড়ে।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3 \quad 4 \quad 5}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Reverse Loop}
+
+পেছনের দিকে যেতে Negative Step ব্যবহার করা হয়।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(5, 0, -1):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 5 \quad 4 \quad 3 \quad 2 \quad 1}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Reverse Loop}
+
+\begin{center}
+
+\textbf{Start বড়}
+\(\longrightarrow\)
+\textbf{Stop ছোট}
+\(\longrightarrow\)
+\textbf{Step Negative}
+
+\end{center}
+
+উদাহরণ:
+\textenglish{\ttfamily range(5, 0, -1)}
+
+\end{rememberbox}
+
+%================================================
+% Step zero
+%================================================
+
+\booksubheading{Step কি \textenglish{\ttfamily 0} হতে পারে?}
+
+না। Step
+\textenglish{\ttfamily 0}
+দেওয়া যায় না।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+range(1, 10, 0)
+\end{english}
+\end{codebox}
+
+এটি Error সৃষ্টি করবে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য:}
+\quad
+\textenglish{\ttfamily range()}
+-এর Step কখনো
+\textenglish{\ttfamily 0}
+হতে পারে না।
+
+\end{rememberbox}
+
+%================================================
+% Range summary table
+%================================================
+
+\booksubheading{\textenglish{\ttfamily range()} এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.38\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Expression}
+&
+\textbf{Values}
+\\
+\hline
+
+\textenglish{\ttfamily range(5)}
+&
+\textenglish{\ttfamily 0, 1, 2, 3, 4}
+\\
+\hline
+
+\textenglish{\ttfamily range(1, 5)}
+&
+\textenglish{\ttfamily 1, 2, 3, 4}
+\\
+\hline
+
+\textenglish{\ttfamily range(1, 6)}
+&
+\textenglish{\ttfamily 1, 2, 3, 4, 5}
+\\
+\hline
+
+\textenglish{\ttfamily range(2, 11, 2)}
+&
+\textenglish{\ttfamily 2, 4, 6, 8, 10}
+\\
+\hline
+
+\textenglish{\ttfamily range(5, 0, -1)}
+&
+\textenglish{\ttfamily 5, 4, 3, 2, 1}
+\\
+\hline
+
+\textenglish{\ttfamily range(10, 0, -2)}
+&
+\textenglish{\ttfamily 10, 8, 6, 4, 2}
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% String List Tuple
+%================================================
+
+\booksubheading{String, List ও Tuple-এর উপর \textenglish{\ttfamily for} Loop}
+
+\noindent
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{String}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for ch in "ICT":\\
+\hspace*{4mm}print(ch)
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily I \quad C \quad T}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{List}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for x in [10, 20, 30]:\\
+\hspace*{4mm}print(x)
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily 10 \quad 20 \quad 30}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{Tuple}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for x in (2, 4, 6):\\
+\hspace*{4mm}print(x)
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily 2 \quad 4 \quad 6}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Dictionary
+%================================================
+
+\booksubheading{Dictionary-এর উপর \textenglish{\ttfamily for} Loop}
+
+Dictionary-এর উপর সরাসরি
+\textenglish{\ttfamily for}
+Loop চালালে সাধারণত তার \textbf{Key} পাওয়া যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+student = \{"name": "Rafi", "age": 18\}\\
+for x in student:\\
+\hspace*{4mm}print(x)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily name \qquad age}
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\begin{center}
+
+\textbf{Dictionary-এর উপর সরাসরি}
+\textenglish{\ttfamily for}
+\textbf{Loop}
+\(\longrightarrow\)
+\textbf{Key-এর উপর Iteration}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% 1 to 10 + even odd
+%================================================
+
+\booksubheading{সংখ্যার Range-এর উপর \textenglish{\ttfamily for} Loop}
+
+\noindent
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{১ থেকে ১০}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(1, 11):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+Stop
+\textenglish{\ttfamily 11}
+অন্তর্ভুক্ত নয়।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{Even}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(2, 11, 2):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily 2,4,6,8,10}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{Odd}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(1, 11, 2):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+Output:
+
+\begin{center}
+\textenglish{\ttfamily 1,3,5,7,9}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Even using condition
+%================================================
+
+\begin{examplebox}{Condition ব্যবহার করেও Even Number বের করা যায়}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(1, 11):\\
+\hspace*{4mm}if i \% 2 == 0:\\
+\hspace*{8mm}print(i)
+\end{english}
+\end{codebox}
+
+\end{examplebox}
+
+%================================================
+% Sum
+%================================================
+
+\booksubheading{Loop ব্যবহার করে Sum নির্ণয়}
+
+১ থেকে ৫ পর্যন্ত সংখ্যার যোগফল—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+total = 0\\[0.5mm]
+for i in range(1, 6):\\
+\hspace*{4mm}total += i\\[0.5mm]
+print(total)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily 15}
+
+\begin{center}
+
+\textenglish{\ttfamily 0}
+\(\longrightarrow\)
+\textenglish{\ttfamily +1}
+\(\longrightarrow\)
+\textenglish{\ttfamily +2}
+\(\longrightarrow\)
+\textenglish{\ttfamily +3}
+\(\longrightarrow\)
+\textenglish{\ttfamily +4}
+\(\longrightarrow\)
+\textenglish{\ttfamily +5}
+\(\longrightarrow\)
+\textenglish{\ttfamily 15}
+
+\end{center}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.31\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{অংশ}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily total = 0}
+&
+যোগফলের প্রাথমিক Value।
+\\
+\hline
+
+\textenglish{\ttfamily i}
+&
+Loop Variable।
+\\
+\hline
+
+\textenglish{\ttfamily total += i}
+&
+প্রতিটি Iteration-এ Sum Update করে।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Iteration count
+%================================================
+
+\booksubheading{Loop কতবার চলবে?}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{৫ Iteration}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+Values—
+
+\begin{center}
+\textenglish{\ttfamily 0,1,2,3,4}
+\end{center}
+
+মোট ৫টি Iteration।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{৪ Iteration}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(1, 5):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+Values—
+
+\begin{center}
+\textenglish{\ttfamily 1,2,3,4}
+\end{center}
+
+মোট ৪টি Iteration।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}ভুল করো না}
+
+\textenglish{\ttfamily range()}
+-এর Stop Value গণনায় অন্তর্ভুক্ত হয় না।
+
+\begin{center}
+
+\textenglish{\ttfamily range(1,5)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 1,2,3,4}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Indentation
+%================================================
+
+\booksubheading{Loop Body ও Indentation}
+
+Indentation দিয়েই বোঝা যায় কোন Statement Loop Body-এর অংশ।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{দুটি Statement Loop Body-তে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}print("ICT")
+\end{english}
+\end{sidecodebox}
+
+দুটি
+\textenglish{\ttfamily print()}
+-ই প্রতিটি Iteration-এ Execute হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{একটি Statement Loop-এর বাইরে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}print(i)\\[0.5mm]
+print("ICT")
+\end{english}
+\end{sidecodebox}
+
+\textenglish{\ttfamily print("ICT")}
+মাত্র একবার Execute হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+\quad
+Python-এ
+\textbf{Indentation}
+দিয়ে Loop Body নির্ধারিত হয়।
+
+\end{rememberbox}
+
+%================================================
+% Nested for
+%================================================
+
+\booksubheading{Nested \textenglish{\ttfamily for} Loop-এর প্রাথমিক ধারণা}
+
+একটি
+\textenglish{\ttfamily for}
+Loop-এর ভিতরে আরেকটি
+\textenglish{\ttfamily for}
+Loop থাকলে তাকে
+\textbf{Nested for Loop} বলে।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(2):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}print(i, j)
+\end{english}
+\end{codebox}
+
+এখানে—
+
+\begin{center}
+
+\textbf{Outer Loop}
+\(\longrightarrow\)
+2 বার
+
+\qquad
+
+\textbf{Inner Loop}
+\(\longrightarrow\)
+প্রতিবার 3 বার
+
+\end{center}
+
+তাই
+\textenglish{\ttfamily print()}
+মোট—
+
+\begin{center}
+
+\(2 \times 3 = 6\) বার Execute হবে।
+
+\end{center}
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+Nested Loop পরবর্তী
+\textbf{Loop Pattern}
+Topic-এ বিশেষভাবে ব্যবহৃত হবে।
+
+\end{rememberbox}
+
+%================================================
+% for else
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for ... else}}
+
+Python-এ
+\textenglish{\ttfamily for}
+Loop-এর পরে Optional
+\textenglish{\ttfamily else}
+ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}print(i)\\
+else:\\
+\hspace*{4mm}print("Loop Finished")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+0\\
+1\\
+2\\
+Loop Finished
+\end{english}
+\end{codebox}
+
+Loop স্বাভাবিকভাবে শেষ হলে
+\textenglish{\ttfamily else}
+Block Execute হয়।
+
+\begin{rememberbox}
+
+\textenglish{\ttfamily break}
+দিয়ে Loop বন্ধ হলে
+\textenglish{\ttfamily for ... else}
+-এর আচরণ ভিন্ন হয়।
+
+এটি
+\textbf{5.41 Loop Control Statement}
+-এ বিস্তারিত আলোচনা হবে।
+
+\end{rememberbox}
+
+%================================================
+% break continue preview
+%================================================
+
+\booksubheading{\textenglish{\ttfamily break} ও \textenglish{\ttfamily continue}-এর প্রাথমিক ধারণা}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Statement}
+&
+\textbf{প্রাথমিক কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily break}
+&
+Loop সঙ্গে সঙ্গে বন্ধ করে।
+\\
+\hline
+
+\textenglish{\ttfamily continue}
+&
+বর্তমান Iteration-এর বাকি অংশ Skip করে পরবর্তী Iteration-এ যায়।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily break}
+\(\longrightarrow\)
+\textbf{Loop বন্ধ}
+
+\qquad
+
+\textenglish{\ttfamily continue}
+\(\longrightarrow\)
+\textbf{Current Iteration Skip}
+
+\end{center}
+
+বিস্তারিত:
+\textbf{5.41 Loop Control Statement}
+
+\end{rememberbox}
+
+%================================================
+% When to use
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for} Loop কখন ব্যবহার করা সুবিধাজনক?}
+
+\begin{compacttwocolpoints}
+
+\item নির্দিষ্ট Range-এর উপর Loop চালাতে।
+
+\item String-এর Character Process করতে।
+
+\item List, Tuple, Set ইত্যাদির Item Process করতে।
+
+\item Collection-এর প্রতিটি Item নিয়ে কাজ করতে।
+
+\item নির্দিষ্ট সংখ্যক Iteration প্রয়োজন হলে।
+
+\item Sum, Count, Multiplication Table ইত্যাদি তৈরি করতে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Key features
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for} Loop-এর গুরুত্বপূর্ণ বৈশিষ্ট্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{তথ্য}
+\\
+\hline
+
+Keyword
+&
+\textenglish{\ttfamily for}
+\\
+\hline
+
+Item গ্রহণ
+&
+\textenglish{\ttfamily in}
+\\
+\hline
+
+Code Block
+&
+Indentation দ্বারা নির্ধারিত
+\\
+\hline
+
+Numeric Range
+&
+\textenglish{\ttfamily range()}
+\\
+\hline
+
+Default Start
+&
+\textenglish{\ttfamily 0}
+\\
+\hline
+
+Default Step
+&
+\textenglish{\ttfamily 1}
+\\
+\hline
+
+Stop
+&
+Excluded
+\\
+\hline
+
+Step
+&
+Positive বা Negative হতে পারে
+\\
+\hline
+
+Step
+\textenglish{\ttfamily 0}
+&
+গ্রহণযোগ্য নয়
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily for}
+Header-এর শেষে
+\textenglish{\ttfamily :}
+না দেওয়া।
+
+\item Loop Body-তে সঠিক Indentation না দেওয়া।
+
+\item
+\textenglish{\ttfamily range()}
+-এর Stop Value Included মনে করা।
+
+\item
+\textenglish{\ttfamily range(1,5)}
+-কে ১ থেকে ৫ পর্যন্ত মনে করা।
+
+\item Reverse Loop-এ Negative Step না দেওয়া।
+
+\item
+\textenglish{\ttfamily range()}
+-এ Step হিসেবে
+\textenglish{\ttfamily 0}
+দেওয়া।
+
+\item Loop কতবার Execute হবে তা ভুল হিসাব করা।
+
+\item Loop Variable-কে অপ্রয়োজনীয়ভাবে নিজে Update করা।
+
+\item Loop-এর বাইরে থাকা Statement-কে Loop Body মনে করা।
+
+\item
+\textenglish{\ttfamily for}
+ও
+\textenglish{\ttfamily while}
+-এর ব্যবহার গুলিয়ে ফেলা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+}
+
+\textenglish{\ttfamily for}
+&
+Iterable-এর Item নেয়
+&
+\textenglish{\ttfamily in}
+&
+Item গ্রহণের Keyword
+\\[0.7mm]
+
+\textenglish{\ttfamily range(stop)}
+&
+0 থেকে stop-1
+&
+Default Start
+&
+\textenglish{\ttfamily 0}
+\\[0.7mm]
+
+Default Step
+&
+\textenglish{\ttfamily 1}
+&
+Stop
+&
+Excluded
+\\[0.7mm]
+
+Positive Step
+&
+Forward
+&
+Negative Step
+&
+Reverse
+\\[0.7mm]
+
+Step
+&
+\textenglish{\ttfamily 0}
+হতে পারে না
+&
+Dictionary
+&
+সরাসরি Loop-এ Key
+\\[0.7mm]
+
+Loop Body
+&
+Indentation দ্বারা
+&
+Nested Loop
+&
+Loop-এর ভিতরে Loop
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textenglish{\ttfamily range(5)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 0,1,2,3,4}
+
+\medskip
+
+\textenglish{\ttfamily range(1,6)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 1,2,3,4,5}
+
+\medskip
+
+\textenglish{\ttfamily range(2,11,2)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 2,4,6,8,10}
+
+\medskip
+
+\textenglish{\ttfamily range(5,0,-1)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 5,4,3,2,1}
+
+\medskip
+
+\textbf{Start Included}
+\qquad
+\textbf{Stop Excluded}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.40 Python while Loop
+%================================================
+

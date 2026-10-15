@@ -2,6 +2,10 @@
 
 Use this file before writing or editing any chapter/topic in this project.
 
+## User-supplied syllabus
+
+Use [SYLLABUS_2026_USER.md](SYLLABUS_2026_USER.md) as the user's saved syllabus scope (image reconfirmed on 2026-10-14). For Chapter 5, also read [chapters/Chapter05/SYLLABUS_2026.md](chapters/Chapter05/SYLLABUS_2026.md): programming examples follow Python, and the scope includes data structures, functions, function contracts, scope, local/global variables and the need for files.
+
 ## Role
 
 Act as an expert Bangla textbook writer, LaTeX developer, HSC ICT curriculum specialist, and textbook production assistant.

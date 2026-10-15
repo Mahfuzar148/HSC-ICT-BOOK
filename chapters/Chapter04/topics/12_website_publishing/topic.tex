@@ -1,62 +1,67 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % Topic: Website Publishing and Hosting
-\section{Website Publishing ও Hosting}
+\section{ওয়েবসাইট প্রকাশ ও হোস্টিং (Website Publishing and Hosting)}
+
+% Composition pass 2026-10-04
+নিজের কম্পিউটারে তৈরি সাইটটি অন্য শিক্ষার্থীদের যন্ত্র থেকে দেখতে হবে।
+
+\chFourMotivation{সবার কাছে URL দিয়ে পৌঁছানো $\rightarrow$ হোস্টিং ও প্রকাশনা $\rightarrow$ ফাইল সার্ভারে রাখা, প্রয়োজনমতো DNS ও HTTPS নির্ধারণ $\rightarrow$ দূর থেকে কলেজের সাইট দেখা।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item domain, hosting, URL, DNS ও web server ব্যাখ্যা করতে।
-\item website publishing কী তা সংজ্ঞাসহ লিখতে।
-\item website publish করার ধাপ লিখতে।
-\item FTP/SFTP, control panel ও static hosting-এর ধারণা বুঝতে।
-\item website publish করার পর common problem শনাক্ত করতে।
+\item ডোমেইন, হোস্টিং, URL, DNS ও ওয়েব সার্ভারের সম্পর্ক ব্যাখ্যা করতে।
+\item ওয়েবসাইট প্রকাশ কী তা সংজ্ঞাসহ লিখতে।
+\item ওয়েবসাইট প্রকাশের ধাপ লিখতে।
+\item FTP (File Transfer Protocol), SFTP (SSH File Transfer Protocol), নিয়ন্ত্রণ প্যানেল ও স্ট্যাটিক হোস্টিংয়ের ধারণা বুঝতে।
+\item ওয়েবসাইট প্রকাশের পরে সাধারণ সমস্যা শনাক্ত করতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Website Publishing কী?}
+\subsection{ওয়েবসাইট প্রকাশ (Website Publishing)}
 
-\begin{definitionbox}{Website Publishing}
-তৈরি করা webpage বা website-এর file web server-এ upload করে domain/URL-এর মাধ্যমে internet ব্যবহারকারীদের জন্য দেখার উপযোগী করার প্রক্রিয়াকে website publishing বলে।
+\begin{definitionbox}{}
+ওয়েবসাইটের ফাইল ওয়েব সার্ভারে রেখে ইন্টারনেটে URL দিয়ে দেখার উপযোগী করার প্রক্রিয়াকে \textbf{ওয়েবসাইট প্রকাশ} বলে।
 \end{definitionbox}
 
-Local computer-এ \texttt{index.html} file open করলে শুধু নিজের device থেকে website দেখা যায়। কিন্তু website publish করলে internet-এর মাধ্যমে অন্য user-ও URL লিখে website দেখতে পারে।
+নিজের কম্পিউটারের \texttt{index.html} ফাইল খুললে সেই কম্পিউটার থেকে পেজ দেখা যায়। ইন্টারনেটে প্রকাশ করলে অন্য ব্যবহারকারীও URL দিয়ে পেজ দেখতে পারেন। হোস্টিং সেবার দেওয়া ঠিকানা ব্যবহার করা যায়; নিজের ডোমেইন যুক্ত করতে চাইলে ডোমেইন ও DNS-এর ব্যবস্থা করতে হয়।
 
-\subsection{Domain ও Hosting}
+\subsection{ডোমেইন ও হোস্টিং}
 
-Website তৈরি করার পর সেটি internet-এ দেখানোর জন্য server-এ রাখতে হয়। ব্যবহারকারী domain name বা URL লিখে সেই server থেকে page দেখতে পায়।
+ওয়েবসাইট তৈরির পরে ইন্টারনেটে দেখানোর জন্য তার ফাইল সার্ভারে রাখতে হয়। ব্যবহারকারী ডোমেইন নামসহ URL দিয়ে সেই সার্ভার থেকে পেজ পান।
 
-\begin{definitionbox}{Domain name}
-Internet-এ কোনো website-কে সহজে চেনার জন্য ব্যবহৃত human-readable address-কে domain name বলে। যেমন \texttt{example.com}।
+\textbf{আগের ধারণা মনে করি:} ডোমেইন নাম, যেমন \texttt{example.com}, প্রকাশিত সাইটের ঠিকানায় ব্যবহার করা যায়। হোস্টিং সেবার দেওয়া ঠিকানাতেও সাইট প্রকাশ করা যায়; নিজের ডোমেইন যুক্ত করা ঐচ্ছিক।
+
+\begin{definitionbox}{ওয়েব হোস্টিং (Web Hosting)}
+ইন্টারনেটে ওয়েবসাইটের ফাইল ও প্রয়োজনীয় সম্পদ রাখার এবং ব্যবহারকারীর অনুরোধে সরবরাহ করার সার্ভার-সেবাকে \textbf{ওয়েব হোস্টিং} বলে। এতে HTML, ছবি, CSS, JavaScript এবং প্রয়োজন অনুযায়ী ডেটাবেজ রাখার ব্যবস্থা থাকে।
 \end{definitionbox}
 
-\begin{definitionbox}{Web hosting}
-Website-এর file, image, CSS, JavaScript, database ইত্যাদি internet-connected server-এ সংরক্ষণ করে user-এর কাছে পৌঁছে দেওয়ার সেবাকে web hosting বলে।
-\end{definitionbox}
-
-\subsection{Publishing-এর জন্য যা যা দরকার}
+\subsection{প্রকাশের প্রয়োজনীয় উপাদান}
 
 \begin{center}
 \begin{tabular}{|p{0.26\textwidth}|p{0.56\textwidth}|}
 \hline
 \textbf{উপাদান} & \textbf{কাজ} \\
 \hline
-HTML/CSS/JS file & website-এর মূল content, style ও behavior \\
+HTML/CSS/JavaScript ফাইল & ওয়েবসাইটের মূল বিষয়বস্তু, সাজানোর রীতি ও আচরণ \\
 \hline
-Image/media file & logo, photo, PDF বা অন্য resource \\
+ছবি/মিডিয়া ফাইল & লোগো, ছবি, PDF বা অন্য উপকরণ \\
 \hline
-Domain name & user-friendly website address \\
+ডোমেইন নাম & মানুষের জন্য সহজ ওয়েবসাইটের ঠিকানা \\
 \hline
-Hosting/server & website file রাখার internet-connected server \\
+হোস্টিং/সার্ভার & ওয়েবসাইটের ফাইল রাখার ইন্টারনেটে সংযুক্ত সার্ভার \\
 \hline
-DNS & domain name-কে hosting server-এর সাথে যুক্ত করে \\
+DNS & ডোমেইন নামকে হোস্টিংয়ের গন্তব্যের সঙ্গে যুক্ত করে \\
 \hline
-FTP/SFTP বা control panel & file upload ও manage করার উপায় \\
+FTP/SFTP বা নিয়ন্ত্রণ প্যানেল & ফাইল পাঠানো ও পরিচালনার উপায় \\
 \hline
-SSL/HTTPS & secure connection নিশ্চিত করে \\
+TLS/HTTPS & ব্রাউজার ও সার্ভারের মধ্যে তথ্য আদান-প্রদানে সুরক্ষা দেয় \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Publishing Workflow}
+\subsection{ওয়েবসাইট প্রকাশের কাজের ধারা}
 
 \begin{center}
 \scaletikz{\begin{tikzpicture}[
@@ -78,87 +83,117 @@ SSL/HTTPS & secure connection নিশ্চিত করে \\
 \end{tikzpicture}}
 \end{center}
 
-\subsection{Hosting-এর ধরন}
+\subsection{হোস্টিংয়ের ধরন}
 
 \begin{center}
 \begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.28\textwidth}|}
 \hline
 \textbf{ধরন} & \textbf{ধারণা} & \textbf{ব্যবহার} \\
 \hline
-Shared hosting & এক server বহু website ভাগ করে & ছোট website \\
+শেয়ার্ড হোস্টিং (Shared Hosting) & একই সার্ভারের সম্পদ বহু ওয়েবসাইট ভাগ করে & ছোট ওয়েবসাইট \\
 \hline
-VPS & virtual private server & medium project \\
+VPS & Virtual Private Server; ভার্চুয়ালভাবে পৃথক সার্ভার পরিবেশ & মাঝারি প্রকল্প \\
 \hline
-Cloud hosting & scalable resource & high traffic/modern app \\
+ক্লাউড হোস্টিং (Cloud Hosting) & প্রয়োজন অনুযায়ী সম্পদ বাড়ানো যায় & বেশি ব্যবহারকারী বা বড় অ্যাপ্লিকেশন \\
 \hline
-Static hosting & HTML/CSS/JS file serve করে & portfolio, documentation \\
+স্ট্যাটিক হোস্টিং (Static Hosting) & HTML/CSS/JavaScript ফাইল সরবরাহ করে & পোর্টফোলিও, নির্দেশিকা \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Domain, Hosting, URL ও DNS-এর সম্পর্ক}
+\subsection{ডোমেইন, হোস্টিং, URL ও DNS-এর সম্পর্ক}
 
 \begin{keypointbox}{সহজ ব্যাখ্যা}
 \begin{itemize}
-\item \textbf{Domain name} হলো website-এর নাম/ঠিকানা।
-\item \textbf{Hosting} হলো যেখানে website-এর file রাখা হয়।
-\item \textbf{URL} হলো নির্দিষ্ট webpage বা resource-এর পূর্ণ address।
-\item \textbf{DNS} domain name-কে server IP address-এর সাথে map করে।
+\item \textbf{ডোমেইন নাম} হলো ওয়েবসাইট চেনার নাম বা ঠিকানার অংশ।
+\item \textbf{হোস্টিং} হলো ওয়েবসাইটের ফাইল সার্ভারে রেখে সরবরাহ করার সেবা।
+\item \textbf{URL} হলো নির্দিষ্ট ওয়েবপেজ বা উপকরণের ঠিকানা।
+\item \textbf{DNS} ডোমেইন নাম থেকে সংশ্লিষ্ট সার্ভারের ঠিকানা খুঁজতে সাহায্য করে।
 \end{itemize}
 \end{keypointbox}
 
-\begin{examplebox}{Example}
+\begin{examplebox}{উদাহরণ}
 \begin{itemize}
 \item Domain: \texttt{abccollege.edu.bd}
-\item Hosting: যে server-এ \texttt{index.html}, image, CSS file রাখা আছে
+\item Hosting: যে সার্ভারে \texttt{index.html}, ছবি ও CSS ফাইল রাখা আছে
 \item URL: \texttt{https://abccollege.edu.bd/notice.html}
 \end{itemize}
 \end{examplebox}
 
-\subsection{Publish Checklist}
+\subsection{প্রকাশের আগে যাচাই}
 
-\begin{keypointbox}{Publish checklist}
+\begin{keypointbox}{যাচাইয়ের তালিকা}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Home page file সাধারণত \texttt{index.html} নাম রাখা।
-\item সব link, image path ও form action test করা।
-\item mobile view ও browser compatibility দেখা।
-\item domain DNS ঠিকভাবে hosting server-এর দিকে point করা।
-\item security-এর জন্য HTTPS ব্যবহার করা।
-\item upload করার আগে file/folder structure ঠিক রাখা।
+\item হোম পেজের ফাইল সাধারণত \texttt{index.html} নামে রাখা; প্রয়োজনে সেবার নির্ধারিত নাম মেলানো।
+\item সব লিংক, ছবির পথ ও ফর্মের গন্তব্য পরীক্ষা করা।
+\item মোবাইলে পেজ দেখা এবং বিভিন্ন ব্রাউজারে কাজ করে কি না পরীক্ষা করা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item নিজের ডোমেইন থাকলে DNS সঠিক হোস্টিং গন্তব্যে নির্দেশ করছে কি না দেখা।
+\item তথ্য আদান-প্রদানের সুরক্ষায় HTTPS ব্যবহার করা।
+\item সার্ভারে পাঠানোর আগে ফাইল ও ফোল্ডার সঠিকভাবে সাজানো।
+\end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
-\subsection{Website দেখা না গেলে সম্ভাব্য কারণ}
+\input{chapters/Chapter04/topics/12_website_publishing/board_concepts}
 
-Website publish করার পর কখনো কখনো URL লিখলেও website দেখা যায় না। সম্ভাব্য কারণগুলো হলো:
+\input{chapters/Chapter04/topics/12_website_publishing/clarity}
 
+\subsection{ওয়েবসাইট দেখা না গেলে সম্ভাব্য কারণ}
+
+ওয়েবসাইট প্রকাশের পরে কখনো URL লিখলেও পেজ দেখা যায় না। সম্ভাব্য কারণগুলো হলো:
+
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Domain name-এর মেয়াদ শেষ হয়ে যাওয়া।
-\item Hosting account-এর মেয়াদ শেষ বা suspend হওয়া।
-\item Web server down থাকা।
-\item DNS configuration ভুল হওয়া বা DNS update complete না হওয়া।
-\item Bandwidth limit শেষ হয়ে যাওয়া।
-\item \texttt{index.html} file upload না করা বা ভুল folder-এ upload করা।
-\item HTML file, image path বা permission ভুল থাকা।
-\item HTTPS/SSL certificate সমস্যা হওয়া।
+\item নিবন্ধিত ডোমেইন নামের মেয়াদ শেষ হওয়া।
+\item হোস্টিং অ্যাকাউন্টের মেয়াদ শেষ হওয়া বা সাময়িকভাবে বন্ধ থাকা।
+\item ওয়েব সার্ভার অচল থাকা।
+\item DNS-এর সেটিং ভুল হওয়া বা পরিবর্তিত তথ্য এখনো কার্যকর না হওয়া।
 \end{itemize}
-
-\subsection{Website Security Basic}
-
-Website publish করার পর basic security বজায় রাখা জরুরি।
-
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item HTTPS/SSL certificate ব্যবহার করা।
-\item Hosting control panel-এর strong password রাখা।
-\item নিয়মিত backup রাখা।
-\item অপ্রয়োজনীয় file public folder-এ না রাখা।
-\item Form থাকলে user input validate করা।
-\item Hosting panel, CMS বা script update রাখা।
+\item ডেটা আদান-প্রদানের নির্ধারিত সীমা শেষ হয়ে যাওয়া।
+\item \texttt{index.html} ফাইল সার্ভারে না পাঠানো বা ভুল ফোল্ডারে রাখা।
+\item HTML ফাইল, ছবির পথ বা প্রবেশের অনুমতিতে ভুল থাকা।
+\item HTTPS সার্টিফিকেটে সমস্যা হওয়া।
 \end{itemize}
+\end{minipage}\par
 
-\subsection{Quick Publish Steps}
 
-\begin{examplebox}{Publish via FTP/SFTP}
+\subsection{ওয়েবসাইটের মৌলিক নিরাপত্তা}
+
+ওয়েবসাইট প্রকাশের পরে মৌলিক নিরাপত্তা বজায় রাখা জরুরি। HTTPS-এ এখন TLS (Transport Layer Security) ব্যবহৃত হয়; হোস্টিং প্যানেলে SSL (Secure Sockets Layer) কথাটি প্রচলিত পুরোনো নামে দেখা যেতে পারে। HTTPS সংযোগের তথ্য সুরক্ষিত করে; ওয়েবসাইটের সব তথ্য বিশ্বাসযোগ্য হওয়ার নিশ্চয়তা দেয় না।
+
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item HTTPS-এর জন্য বৈধ সার্টিফিকেট ব্যবহার করা।
+\item হোস্টিং নিয়ন্ত্রণ প্যানেলে শক্তিশালী পাসওয়ার্ড রাখা।
+\item নিয়মিত ব্যাকআপ রাখা।
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item অপ্রয়োজনীয় বা ব্যক্তিগত ফাইল সবার জন্য উন্মুক্ত ফোল্ডারে না রাখা।
+\item ফর্ম থাকলে ব্যবহারকারীর তথ্যের বৈধতা পরীক্ষা করা; সার্ভারেও এই পরীক্ষা করা।
+\item হোস্টিং প্যানেল, CMS (Content Management System) ও ব্যবহৃত স্ক্রিপ্ট হালনাগাদ রাখা।
+\end{itemize}
+\end{minipage}\par
+
+
+\subsection{সংক্ষিপ্ত প্রকাশের ধাপ}
+
+নিচে ফাইল-ভিত্তিক হোস্টিংয়ে প্রকাশের একটি উদাহরণ দেওয়া হয়েছে। সেবাভেদে ফোল্ডারের নাম, ফাইল পাঠানোর পদ্ধতি ও DNS রেকর্ড আলাদা হতে পারে। DNS-এ কোনো সেবা সার্ভারের IP ঠিকানা, আবার কোনো সেবা নির্দিষ্ট হোস্টনেম চায়। SFTP-তে SSH (Secure Shell) সংযোগ তথ্য সুরক্ষিত রাখে। সাধারণ FTP নিজে এনক্রিপশন দেয় না।
+
+\begin{examplebox}{FTP/SFTP দিয়ে প্রকাশের নমুনা ধাপ}
 \begin{verbatim}
 1. Test locally (open index.html in browser)
 2. Connect to host via SFTP/FTP client
@@ -168,43 +203,53 @@ Website publish করার পর basic security বজায় রাখা জ
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Problem Solution}
+
+\subsection{অনুসন্ধানে সাইট খুঁজে পাওয়া ও SEO}
+সার্চ ইঞ্জিন যেন সাইটের বিষয়বস্তু বুঝতে পারে এবং ব্যবহারকারী প্রাসঙ্গিক অনুসন্ধানে সাইটটি খুঁজে পান, সে জন্য বিষয়বস্তু ও গঠন উন্নত করার কাজকে SEO (Search Engine Optimization) বলে। অর্থপূর্ণ শিরোনাম, পরিষ্কার লেখা, উপযুক্ত লিংক ও সহজ নেভিগেশন এতে সাহায্য করে। সাইট প্রকাশের জন্য সার্চ ইঞ্জিনে আলাদা নিবন্ধন বাধ্যতামূলক নয়। প্রকাশিত পেজ সার্চ ইঞ্জিনের সূচিতে আসতে সময় লাগতে পারে; SEO করলেই প্রথম অবস্থানে আসার নিশ্চয়তা নেই।
+
+\subsection{সমস্যা ও সমাধান}
 
 \begin{practicebox}
-\textbf{Problem:} Rafi একটি college website তৈরি করেছে। তার computer-এ website ঠিক দেখা যায়, কিন্তু hosting server-এ upload করার পর image দেখা যাচ্ছে না এবং home page automatically open হচ্ছে না। সম্ভাব্য কারণ ও সমাধান লেখ।
+\textbf{সমস্যা:} রাফি একটি কলেজের ওয়েবসাইট তৈরি করেছে। নিজের কম্পিউটারে পেজ সঠিকভাবে দেখা যায়। হোস্টিং সার্ভারে পাঠানোর পরে ছবি দেখা যাচ্ছে না এবং হোম পেজ নিজে থেকে খুলছে না। সম্ভাব্য কারণ ও সমাধান লেখ।
 
-\textbf{Solution:}
+\textbf{সমাধান:}
 \begin{itemize}
-\item Home page automatically open না হলে file name \texttt{index.html} আছে কি না check করতে হবে।
-\item Image দেখা না গেলে image file upload হয়েছে কি না check করতে হবে।
-\item Image path case-sensitive কি না check করতে হবে; যেমন \texttt{Campus.jpg} ও \texttt{campus.jpg} ভিন্ন হতে পারে।
-\item HTML file ও image একই folder-এ না থাকলে correct folder path দিতে হবে।
-\item Browser cache clear করে আবার test করা যেতে পারে।
+\item হোম পেজ নিজে থেকে না খুললে ফাইলের নাম \texttt{index.html} আছে কি না এবং তা সঠিক প্রকাশযোগ্য ফোল্ডারে রাখা হয়েছে কি না দেখতে হবে।
+\item ছবি না দেখালে ছবির ফাইল সার্ভারে পাঠানো হয়েছে কি না দেখতে হবে।
+\item ফাইলের পথে বড় ও ছোট অক্ষরের মিল দেখতে হবে; যেমন \texttt{Campus.jpg} ও \texttt{campus.jpg} ভিন্ন হতে পারে।
+\item HTML ফাইল ও ছবি একই ফোল্ডারে না থাকলে ছবির ফোল্ডারসহ সঠিক পথ দিতে হবে।
+\item ব্রাউজারের ক্যাশ মুছে আবার পরীক্ষা করা যেতে পারে।
 \end{itemize}
 \end{practicebox}
 
-\begin{boardbox}{Exam focus}
-Website publish করার ধাপ লিখতে বললে: file তৈরি, local test, domain/hosting নেওয়া, server-এ upload, DNS setup, browser test--এই flow লিখবে। Website না দেখা গেলে domain expiry, hosting expiry, server down, DNS error, bandwidth limit, wrong file path ও missing \texttt{index.html} উল্লেখ করা যায়।
-\end{boardbox}
+
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item home page-এর file name \texttt{index.html} না রাখা।
-\item image upload না করে শুধু HTML file upload করা।
-\item local computer-এর absolute path HTML code-এ ব্যবহার করা।
-\item domain কিনে hosting/DNS setup না করা।
-\item DNS update হতে কিছু সময় লাগতে পারে--এটা না বোঝা।
-\item HTTPS/SSL setup না করা।
-\item publish করার আগে link, image, form ও mobile view test না করা।
+\item হোস্টিং সেবা যে প্রাথমিক ফাইলের নাম চায়, তা না রাখা; সাধারণ উদাহরণ \texttt{index.html}।
+\item ছবি না পাঠিয়ে শুধু HTML ফাইল সার্ভারে পাঠানো।
+\item নিজের কম্পিউটারের সম্পূর্ণ স্থানীয় পথ HTML কোডে ব্যবহার করা।
+\item ডোমেইন কিনে হোস্টিং/DNS-এর ব্যবস্থা না করা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item DNS-এর পরিবর্তিত তথ্য কার্যকর হতে সময় লাগতে পারে—এটি বিবেচনা না করা।
+\item HTTPS-এর ব্যবস্থা না করা।
+\item প্রকাশের আগে লিংক, ছবি, ফর্ম ও মোবাইলে পেজ পরীক্ষা না করা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
 \begin{practicebox}
 \begin{enumerate}
-\item Domain ও hosting-এর পার্থক্য লেখ।
-\item \texttt{index.html} file কেন গুরুত্বপূর্ণ?
-\item Website publish করার পাঁচটি ধাপ লেখ।
+\item ডোমেইন ও হোস্টিংয়ের পার্থক্য লেখ।
+\item \texttt{index.html} ফাইল কেন গুরুত্বপূর্ণ?
+\item ওয়েবসাইট প্রকাশের পাঁচটি ধাপ লেখ।
 \item DNS-এর কাজ কী?
-\item Website publish করার আগে কোন কোন জিনিস test করা উচিত?
+\item ওয়েবসাইট প্রকাশের আগে কোন কোন বিষয় পরীক্ষা করা উচিত?
 \end{enumerate}
 \end{practicebox}

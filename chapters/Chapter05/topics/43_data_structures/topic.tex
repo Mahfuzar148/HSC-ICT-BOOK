@@ -1,0 +1,1818 @@
+\sectionheading{5.43 Data Structure — তথ্যের সুশৃঙ্খল বিন্যাস}
+
+একটি Program-এ অনেকগুলো সম্পর্কিত Data আলাদা আলাদা Variable-এ রাখলে
+সেগুলো পরিচালনা করা কঠিন হয়। একাধিক Data-কে নির্দিষ্ট নিয়মে
+সুশৃঙ্খলভাবে সংরক্ষণ ও ব্যবহার করতে \textbf{Data Structure} ব্যবহৃত হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Data Structure কী?}
+
+\begin{definitionbox}
+
+Data-কে এমনভাবে সংগঠিত ও সংরক্ষণ করার পদ্ধতি, যাতে প্রয়োজন অনুযায়ী
+সহজে Access, Update ও Process করা যায়, তাকে
+\textbf{Data Structure} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{Data}
+\(\longrightarrow\)
+\textbf{সুশৃঙ্খলভাবে সংরক্ষণ}
+\(\longrightarrow\)
+\textbf{সহজে Access ও Process}
+
+\end{center}
+
+%================================================
+% Main Structures
+%================================================
+
+\booksubheading{Python-এর গুরুত্বপূর্ণ Data Structure}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.22\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.31\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Data Structure}
+&
+\textbf{উদাহরণ}
+&
+\textbf{প্রধান বৈশিষ্ট্য}
+\\
+\hline
+
+List
+&
+\textenglish{\ttfamily [10, 20, 30]}
+&
+পরিবর্তনযোগ্য Collection।
+\\
+\hline
+
+Tuple
+&
+\textenglish{\ttfamily (10, 20, 30)}
+&
+অপরিবর্তনযোগ্য Collection।
+\\
+\hline
+
+Set
+&
+\textenglish{\ttfamily \{10, 20, 30\}}
+&
+Unique Item সংরক্ষণ করে।
+\\
+\hline
+
+Dictionary
+&
+\textenglish{\ttfamily \{"name":"Rafi"\}}
+&
+Key--Value Pair আকারে Data রাখে।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{List}
+\(\longrightarrow\)
+\textenglish{\ttfamily [ ]}
+
+\qquad
+
+\textbf{Tuple}
+\(\longrightarrow\)
+\textenglish{\ttfamily ( )}
+
+\qquad
+
+\textbf{Set}
+\(\longrightarrow\)
+\textenglish{\ttfamily \{ \}}
+
+\medskip
+
+\textbf{Dictionary}
+\(\longrightarrow\)
+\textenglish{\ttfamily \{key: value\}}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% LIST
+%================================================
+
+\booksubheading{১. List}
+
+একাধিক Item একটি Variable-এর মধ্যে ধারাবাহিকভাবে সংরক্ষণ করতে
+\textbf{List} ব্যবহার করা হয়।
+
+\begin{codeoutputbox}{List তৈরি}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40]\\
+print(numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily [10, 20, 30, 40]}
+\end{center}
+
+একটি List-এর মধ্যে একাধিক Item রাখা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+List-এর গুরুত্বপূর্ণ বৈশিষ্ট্য—
+
+\begin{itemize}
+
+\item Ordered।
+
+\item Mutable বা পরিবর্তনযোগ্য।
+
+\item Duplicate Item থাকতে পারে।
+
+\item Index ব্যবহার করে Item Access করা যায়।
+
+\item বিভিন্ন Data Type-এর Item রাখা যায়।
+
+\end{itemize}
+
+%================================================
+% Index
+%================================================
+
+\booksubheading{List-এর Index}
+
+Python-এ Index সাধারণত
+\textenglish{\ttfamily 0}
+থেকে শুরু হয়।
+
+\begin{codeoutputbox}{Index ব্যবহার করে Item Access}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40]\\
+print(numbers[0])\\
+print(numbers[2])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+10\\
+30
+\end{english}
+
+\medskip
+
+প্রথম Item-এর Index
+\textenglish{\ttfamily 0}
+এবং তৃতীয় Item-এর Index
+\textenglish{\ttfamily 2}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.20\linewidth}
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Item}
+&
+10
+&
+20
+&
+30
+&
+40
+\\
+\hline
+
+\textbf{Index}
+&
+0
+&
+1
+&
+2
+&
+3
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+Python-এর প্রথম Item-এর Index সাধারণত
+\textenglish{\ttfamily 0}।
+
+\end{rememberbox}
+
+%================================================
+% Negative Index
+%================================================
+
+\booksubheading{Negative Index}
+
+Negative Index ব্যবহার করে শেষের দিক থেকে Item Access করা যায়।
+
+\begin{codeoutputbox}{Negative Index}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40]\\
+print(numbers[-1])\\
+print(numbers[-2])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+40\\
+30
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily -1}
+\(\longrightarrow\)
+শেষ Item
+
+\textenglish{\ttfamily -2}
+\(\longrightarrow\)
+শেষের আগের Item
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% List Update
+%================================================
+
+\booksubheading{List-এর Item পরিবর্তন}
+
+List \textbf{Mutable}, তাই তৈরির পরে Item পরিবর্তন করা যায়।
+
+\begin{codeoutputbox}{Item Update}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30]\\
+numbers[1] = 50\\
+print(numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily [10, 50, 30]}
+\end{center}
+
+Index
+\textenglish{\ttfamily 1}
+-এর Value
+\textenglish{\ttfamily 20}
+থেকে
+\textenglish{\ttfamily 50}
+হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% append insert
+%================================================
+
+\booksubheading{List-এ Item যোগ}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily append()} ও \textenglish{\ttfamily insert()}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20]\\
+numbers.append(30)\\
+numbers.insert(1, 15)\\
+print(numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily [10, 15, 20, 30]}
+\end{center}
+
+\textenglish{\ttfamily append(30)}
+শেষে 30 যোগ করেছে।
+
+\textenglish{\ttfamily insert(1, 15)}
+Index 1-এ 15 যোগ করেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% remove pop
+%================================================
+
+\booksubheading{List থেকে Item বাদ}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily remove()} ও \textenglish{\ttfamily pop()}}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40]\\
+numbers.remove(20)\\
+x = numbers.pop(1)\\
+print(x)\\
+print(numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+30\\{}
+[10, 40]
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily remove(20)}
+Value 20 বাদ দেয়।
+
+\textenglish{\ttfamily pop(1)}
+Index 1-এর Item সরিয়ে সেটি Return করে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Slicing
+%================================================
+
+\booksubheading{List Slicing}
+
+List-এর নির্দিষ্ট অংশ নেওয়াকে \textbf{Slicing} বলা হয়।
+
+\begin{codeoutputbox}{Slicing}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40, 50]\\
+print(numbers[1:4])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily [20, 30, 40]}
+\end{center}
+
+\textenglish{\ttfamily [1:4]}
+এ Index 1 থেকে শুরু হলেও Index 4 অন্তর্ভুক্ত হয় না।
+
+\medskip
+
+\textbf{Start Included, Stop Excluded}
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% List Loop
+%================================================
+
+\booksubheading{List-এর উপর Loop}
+
+\begin{codeoutputbox}{List Traversal}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30]\\
+for x in numbers:\\
+\hspace*{4mm}print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+10\\
+20\\
+30
+\end{english}
+
+\medskip
+
+প্রতিটি Iteration-এ List-এর একটি করে Item
+\textenglish{\ttfamily x}
+-এর মধ্যে আসে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% TUPLE
+%================================================
+
+\booksubheading{২. Tuple}
+
+List-এর মতো Tuple-এও একাধিক Item রাখা যায়। তবে Tuple-এর Item
+তৈরির পরে সাধারণভাবে পরিবর্তন করা যায় না।
+
+\begin{codeoutputbox}{Tuple তৈরি ও Access}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = (10, 20, 30)\\
+print(numbers[1])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 20}
+\end{center}
+
+Tuple Ordered এবং Index ব্যবহার করে Item Access করা যায়।
+
+কিন্তু এটি \textbf{Immutable}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+Tuple-এর গুরুত্বপূর্ণ বৈশিষ্ট্য—
+
+\begin{itemize}
+
+\item Ordered।
+
+\item Immutable বা অপরিবর্তনযোগ্য।
+
+\item Duplicate Item থাকতে পারে।
+
+\item Index ব্যবহার করা যায়।
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{List = Mutable}
+\qquad
+\textbf{Tuple = Immutable}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Single Item Tuple
+%================================================
+
+\booksubheading{Single Item Tuple}
+
+একটি Item-এর Tuple তৈরি করতে Comma গুরুত্বপূর্ণ।
+
+\begin{codeoutputbox}{Comma-এর গুরুত্ব}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+x = (10,)\\
+y = (10)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\outputheading
+
+\textenglish{\ttfamily x = (10,)}
+\(\longrightarrow\)
+Tuple
+
+\medskip
+
+\textenglish{\ttfamily y = (10)}
+\(\longrightarrow\)
+সাধারণ Integer Value
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+Single Item Tuple তৈরি করতে Item-এর পরে Comma প্রয়োজন।
+
+\begin{center}
+\textenglish{\ttfamily (10,)}
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% SET
+%================================================
+
+\booksubheading{৩. Set}
+
+Unique Item-এর Collection সংরক্ষণ করতে \textbf{Set} ব্যবহার করা হয়।
+
+Set-এর গুরুত্বপূর্ণ বৈশিষ্ট্য—
+
+\begin{compacttwocolpoints}
+
+\item Duplicate Item রাখে না।
+
+\item Indexing সমর্থন করে না।
+
+\item Item-এর নির্দিষ্ট Positional Order-এর উপর নির্ভর করা উচিত নয়।
+
+\item Mutable।
+
+\item Membership Testing-এ উপযোগী।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Set Duplicate
+%================================================
+
+\begin{codeoutputbox}{Set-এ Duplicate Item}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = \{10, 20, 20, 30\}\\
+print(numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+Set-এ
+\textenglish{\ttfamily 20}
+একবারই থাকবে।
+
+উদাহরণস্বরূপ—
+
+\begin{center}
+\textenglish{\ttfamily \{10, 20, 30\}}
+\end{center}
+
+Item প্রদর্শনের Order ভিন্ন হতে পারে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Set}
+\(\longrightarrow\)
+\textbf{Duplicate Item বাদ দেয়}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Set Add Remove
+%================================================
+
+\booksubheading{Set-এ Item যোগ ও বাদ}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily add()} ও \textenglish{\ttfamily remove()}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = \{10, 20\}\\
+numbers.add(30)\\
+numbers.remove(20)\\
+print(numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+Result-এ 30 যোগ হবে এবং 20 বাদ যাবে।
+
+উদাহরণস্বরূপ—
+
+\begin{center}
+\textenglish{\ttfamily \{10, 30\}}
+\end{center}
+
+\textenglish{\ttfamily add()}
+Item যোগ করে,
+\textenglish{\ttfamily remove()}
+Item বাদ দেয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Empty Set
+%================================================
+
+\booksubheading{Empty Set}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily \{\}} বনাম \textenglish{\ttfamily set()}}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+a = \{\}\\
+b = set()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\outputheading
+
+\textenglish{\ttfamily a = \{\}}
+\(\longrightarrow\)
+Empty Dictionary
+
+\medskip
+
+\textenglish{\ttfamily b = set()}
+\(\longrightarrow\)
+Empty Set
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap}
+
+\begin{center}
+
+\textenglish{\ttfamily \{\}}
+\(\longrightarrow\)
+\textbf{Empty Dictionary}
+
+\qquad
+
+\textenglish{\ttfamily set()}
+\(\longrightarrow\)
+\textbf{Empty Set}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% DICTIONARY
+%================================================
+
+\booksubheading{৪. Dictionary}
+
+Data-কে \textbf{Key--Value Pair} আকারে সংরক্ষণ করতে
+Dictionary ব্যবহার করা হয়।
+
+\begin{codeoutputbox}{Dictionary তৈরি}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{\\
+\hspace*{4mm}"name": "Rafi",\\
+\hspace*{4mm}"age": 18,\\
+\hspace*{4mm}"marks": 85\\
+\}
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+এখানে—
+
+\textenglish{\ttfamily "name"}
+\(\longrightarrow\)
+Key
+
+\textenglish{\ttfamily "Rafi"}
+\(\longrightarrow\)
+Value
+
+\medskip
+
+Dictionary-তে Data
+\textbf{Key--Value Pair}
+আকারে থাকে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Dict access
+%================================================
+
+\booksubheading{Dictionary থেকে Value Access}
+
+\begin{codeoutputbox}{Key ব্যবহার করে Access}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{\\
+\hspace*{4mm}"name": "Rafi",\\
+\hspace*{4mm}"age": 18\\
+\}\\
+print(student["name"])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Rafi}
+\end{center}
+
+Dictionary-তে সাধারণত Position নয়,
+\textbf{Key} ব্যবহার করে Value Access করা হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Dict update add
+%================================================
+
+\booksubheading{Dictionary-এর Value পরিবর্তন ও নতুন Item যোগ}
+
+\begin{codeoutputbox}{Update ও Add}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{\\
+\hspace*{4mm}"name": "Rafi",\\
+\hspace*{4mm}"age": 18\\
+\}\\
+student["age"] = 19\\
+student["city"] = "Rajshahi"
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\textenglish{\ttfamily "age"}
+-এর Value 18 থেকে 19 হয়েছে।
+
+\medskip
+
+\textenglish{\ttfamily "city"}
+নামে নতুন Key--Value Pair যোগ হয়েছে।
+
+\medskip
+
+Dictionary \textbf{Mutable}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Dict pop
+%================================================
+
+\booksubheading{Dictionary থেকে Item বাদ}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily pop()}}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{"name": "Rafi", "age": 18\}\\
+student.pop("age")\\
+print(student)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily \{"name": "Rafi"\}}
+\end{center}
+
+\textenglish{\ttfamily pop("age")}
+দিয়ে
+\textenglish{\ttfamily "age"}
+Key ও তার Value বাদ গেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Dictionary Loop
+%================================================
+
+\booksubheading{Dictionary-এর উপর Loop}
+
+\begin{codeoutputbox}{সরাসরি Dictionary Iteration}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{"name": "Rafi", "age": 18\}\\
+for x in student:\\
+\hspace*{4mm}print(x)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+name\\
+age
+\end{english}
+
+\medskip
+
+Dictionary-এর উপর সরাসরি Loop চালালে
+\textbf{Key} পাওয়া যায়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+
+\begin{center}
+
+\textbf{Dictionary-এর উপর সরাসরি Loop}
+\(\longrightarrow\)
+\textbf{Key-এর উপর Iteration}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% items
+%================================================
+
+\booksubheading{Key ও Value একসঙ্গে পাওয়া}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily items()} Method}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{"name": "Rafi", "age": 18\}\\
+for key, value in student.items():\\
+\hspace*{4mm}print(key, value)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+name Rafi\\
+age 18
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily items()}
+Key ও Value একসঙ্গে দেয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Dictionary methods
+%================================================
+
+\booksubheading{Dictionary-এর গুরুত্বপূর্ণ Method}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.30\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Method}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily keys()}
+&
+সব Key পাওয়া যায়।
+\\
+\hline
+
+\textenglish{\ttfamily values()}
+&
+সব Value পাওয়া যায়।
+\\
+\hline
+
+\textenglish{\ttfamily items()}
+&
+Key--Value Pair পাওয়া যায়।
+\\
+\hline
+
+\textenglish{\ttfamily get()}
+&
+Key অনুযায়ী Value পাওয়া যায়।
+\\
+\hline
+
+\textenglish{\ttfamily pop()}
+&
+নির্দিষ্ট Key-এর Item বাদ দেয়।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily get()} Example}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{"name": "Rafi", "age": 18\}\\
+print(student.get("name"))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Rafi}
+\end{center}
+
+\textenglish{\ttfamily get("name")}
+Key অনুযায়ী Value Return করেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% len
+%================================================
+
+\booksubheading{\textenglish{\ttfamily len()} Function}
+
+List, Tuple, Set ও Dictionary-তে Item সংখ্যা নির্ণয়ের জন্য
+\textenglish{\ttfamily len()}
+ব্যবহার করা যায়।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily len()} Example}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30]\\
+print(len(numbers))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 3}
+\end{center}
+
+List-এ মোট 3টি Item আছে।
+
+Dictionary-এর ক্ষেত্রে
+\textenglish{\ttfamily len()}
+Key--Value Pair-এর সংখ্যা নির্দেশ করে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Membership
+%================================================
+
+\booksubheading{Membership Operator}
+
+কোনো Item Collection-এর মধ্যে আছে কি না পরীক্ষা করতে
+\textenglish{\ttfamily in}
+ব্যবহার করা যায়।
+
+\begin{codeoutputbox}{List-এ Membership Test}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30]\\
+print(20 in numbers)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily True}
+\end{center}
+
+20 List-এর মধ্যে আছে, তাই ফলাফল
+\textenglish{\ttfamily True}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{Dictionary-তে Membership Test}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{"name": "Rafi", "age": 18\}\\
+print("name" in student)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily True}
+\end{center}
+
+Dictionary-এর ক্ষেত্রে
+\textenglish{\ttfamily in}
+সাধারণত \textbf{Key} পরীক্ষা করে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Main Comparison
+%================================================
+
+\booksubheading{List, Tuple, Set ও Dictionary-এর পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.19\linewidth}
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বৈশিষ্ট্য}
+&
+\textbf{List}
+&
+\textbf{Tuple}
+&
+\textbf{Set}
+&
+\textbf{Dictionary}
+\\
+\hline
+
+চিহ্ন
+&
+\textenglish{\ttfamily [ ]}
+&
+\textenglish{\ttfamily ( )}
+&
+\textenglish{\ttfamily \{ \}}
+&
+\textenglish{\ttfamily \{key:value\}}
+\\
+\hline
+
+Ordered
+&
+হ্যাঁ
+&
+হ্যাঁ
+&
+Positional নয়
+&
+হ্যাঁ
+\\
+\hline
+
+Mutable
+&
+হ্যাঁ
+&
+না
+&
+হ্যাঁ
+&
+হ্যাঁ
+\\
+\hline
+
+Duplicate
+&
+হ্যাঁ
+&
+হ্যাঁ
+&
+না
+&
+Key নয়
+\\
+\hline
+
+Access
+&
+Index
+&
+Index
+&
+Index নয়
+&
+Key
+\\
+\hline
+
+প্রধান ব্যবহার
+&
+পরিবর্তনযোগ্য Data
+&
+স্থির Data
+&
+Unique Item
+&
+Key--Value Data
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Mutable Immutable
+%================================================
+
+\booksubheading{Mutable বনাম Immutable}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.32\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{ধরন}
+&
+\textbf{অর্থ}
+&
+\textbf{উদাহরণ}
+\\
+\hline
+
+Mutable
+&
+তৈরির পরে Content পরিবর্তন করা যায়।
+&
+List, Set, Dictionary
+\\
+\hline
+
+Immutable
+&
+তৈরির পরে Content পরিবর্তন করা যায় না।
+&
+Tuple
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{List + Set + Dictionary}
+\(\longrightarrow\)
+\textbf{Mutable}
+
+\qquad
+
+\textbf{Tuple}
+\(\longrightarrow\)
+\textbf{Immutable}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Nested Data Structure
+%================================================
+
+\booksubheading{Nested Data Structure}
+
+একটি Data Structure-এর ভিতরে অন্য Data Structure রাখা যায়।
+
+\begin{codeoutputbox}{List-এর ভিতরে List}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+students = [\\
+\hspace*{4mm}["Rafi", 85],\\
+\hspace*{4mm}["Nila", 90]\\
+]\\
+print(students[0][0])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily Rafi}
+\end{center}
+
+\textenglish{\ttfamily students[0]}
+প্রথম Inner List।
+
+তার
+\textenglish{\ttfamily [0]}
+Index-এর Item হলো
+\textenglish{\ttfamily "Rafi"}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Dictionary with list
+%================================================
+
+\begin{codeoutputbox}{Dictionary-এর ভিতরে List}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{\\
+\hspace*{4mm}"name": "Rafi",\\
+\hspace*{4mm}"marks": [80, 85, 90]\\
+\}\\
+print(student["marks"][1])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 85}
+\end{center}
+
+প্রথমে
+\textenglish{\ttfamily "marks"}
+Key-এর List পাওয়া হয়েছে।
+
+তারপর Index
+\textenglish{\ttfamily 1}
+থেকে 85 পাওয়া গেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% When to use
+%================================================
+
+\chFiveInput{topics/43_data_structures/python_extensions.tex}
+
+\booksubheading{কোন Data Structure কখন ব্যবহার করব?}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.58\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{প্রয়োজন}
+&
+\textbf{উপযোগী}
+\\
+\hline
+
+Item পরিবর্তন করতে হবে
+&
+List
+\\
+\hline
+
+Data অপরিবর্তিত রাখতে চাই
+&
+Tuple
+\\
+\hline
+
+Duplicate Item বাদ দিতে চাই
+&
+Set
+\\
+\hline
+
+Unique Collection প্রয়োজন
+&
+Set
+\\
+\hline
+
+Key দিয়ে Data Access করতে চাই
+&
+Dictionary
+\\
+\hline
+
+নাম--Value / ID--Value ধরনের Data
+&
+Dictionary
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Benefits
+%================================================
+
+\booksubheading{Data Structure ব্যবহারের সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item অনেক Data একসঙ্গে সংরক্ষণ করা যায়।
+
+\item সম্পর্কিত Data সুশৃঙ্খলভাবে রাখা যায়।
+
+\item Data সহজে Access ও Process করা যায়।
+
+\item Loop ব্যবহার করে Collection-এর Item নিয়ে কাজ করা যায়।
+
+\item Search, Update ও Delete সহজ হয়।
+
+\item Program আরও সংগঠিত ও পরিচালনাযোগ্য হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% MCQ
+%================================================
+
+\booksubheading{গুরুত্বপূর্ণ MCQ তথ্য}
+
+\begin{rememberbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.37\linewidth}
+Y
+}
+
+List
+&
+\textenglish{\ttfamily [ ]}; Mutable; Duplicate থাকতে পারে।
+\\[0.45mm]
+
+Tuple
+&
+\textenglish{\ttfamily ( )}; Immutable; Duplicate থাকতে পারে।
+\\[0.45mm]
+
+Set
+&
+Unique Item; Indexing নেই।
+\\[0.45mm]
+
+Dictionary
+&
+Key--Value Pair; Key দিয়ে Access।
+\\[0.45mm]
+
+প্রথম Index
+&
+\textenglish{\ttfamily 0}
+\\[0.45mm]
+
+শেষ Item
+&
+Negative Index
+\textenglish{\ttfamily -1}
+\\[0.45mm]
+
+Empty Dictionary
+&
+\textenglish{\ttfamily \{\}}
+\\[0.45mm]
+
+Empty Set
+&
+\textenglish{\ttfamily set()}
+\\[0.45mm]
+
+Single Item Tuple
+&
+Comma প্রয়োজন:
+\textenglish{\ttfamily (10,)}
+\\[0.45mm]
+
+Dictionary Loop
+&
+সরাসরি Loop করলে Key পাওয়া যায়।
+\\[0.45mm]
+
+Dictionary-তে \textenglish{\ttfamily in}
+&
+সাধারণত Key পরীক্ষা করে।
+\\[0.45mm]
+
+\textenglish{\ttfamily len()}
+&
+Item / Entry-এর সংখ্যা নির্ণয় করে।
+\\
+
+\end{tabularx}
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily \{\}}
+-কে Empty Set মনে করা।
+
+\item Set-এ Index ব্যবহার করার চেষ্টা করা।
+
+\item Tuple-এর Item পরিবর্তনের চেষ্টা করা।
+
+\item List ও Tuple-এর Mutable/Immutable বৈশিষ্ট্য গুলিয়ে ফেলা।
+
+\item Dictionary-তে Index দিয়ে Value Access করার চেষ্টা করা।
+
+\item Dictionary-এর উপর সরাসরি Loop চালালে Value পাওয়া যাবে মনে করা।
+
+\item Single Item Tuple-এ Comma না দেওয়া।
+
+\item List Slicing-এ Stop Index Included মনে করা।
+
+\item Set-এর Item সবসময় একই Position/Order-এ থাকবে ধরে নেওয়া।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+Y
+}
+
+List
+&
+Ordered + Mutable
+&
+Tuple
+&
+Ordered + Immutable
+\\[0.5mm]
+
+Set
+&
+Unique Item
+&
+Dictionary
+&
+Key--Value Pair
+\\[0.5mm]
+
+\textenglish{\ttfamily [ ]}
+&
+List
+&
+\textenglish{\ttfamily ( )}
+&
+Tuple
+\\[0.5mm]
+
+\textenglish{\ttfamily \{10,20\}}
+&
+Set
+&
+\textenglish{\ttfamily \{"name":"Rafi"\}}
+&
+Dictionary
+\\[0.5mm]
+
+\textenglish{\ttfamily \{\}}
+&
+Empty Dictionary
+&
+\textenglish{\ttfamily set()}
+&
+Empty Set
+\\[0.5mm]
+
+List / Tuple
+&
+Index দিয়ে Access
+&
+Dictionary
+&
+Key দিয়ে Access
+\\[0.5mm]
+
+\textenglish{\ttfamily len()}
+&
+Item Count
+&
+\textenglish{\ttfamily in}
+&
+Membership Test
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{পরিবর্তন করতে হবে}
+\(\longrightarrow\)
+\textbf{List}
+
+\qquad
+
+\textbf{পরিবর্তন করা যাবে না}
+\(\longrightarrow\)
+\textbf{Tuple}
+
+\medskip
+
+\textbf{Duplicate চাই না}
+\(\longrightarrow\)
+\textbf{Set}
+
+\qquad
+
+\textbf{Key দিয়ে Data চাই}
+\(\longrightarrow\)
+\textbf{Dictionary}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.44 Function
+%================================================
+

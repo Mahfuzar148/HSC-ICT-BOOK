@@ -1,0 +1,98 @@
+\subsection{ORDER BY দিয়ে ফলাফল সাজানো}
+
+অংশ~\ref{sec:ch06-student-master}-এর একই Student টেবিলে নিচের ফল পাওয়া যায়। ORDER BY-এর নিয়ম Sorting অংশে আছে; এখানে ভিন্ন মানদণ্ডের প্রয়োগ দেখানো হয়েছে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২২}{Name-এর বর্ণানুক্রমে শিক্ষার্থীদের তথ্য সাজাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Department, GPA
+FROM Student
+ORDER BY Name ASC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA\\\hline
+205 & Farhan & Business Studies & 4.80\\\hline
+306 & Mahi & Humanities & 4.50\\\hline
+150 & Mim & Science & 4.20\\\hline
+109 & Nabila & Science & 4.80\\\hline
+102 & Rahim & Science & 5.00\\\hline
+305 & Rima & Humanities & 5.00\\\hline
+213 & Sami & Business Studies & 5.00\\\hline
+180 & Tania & Business Studies & 3.90\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২৩}{GPA বড় থেকে ছোট ক্রমে সাজাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+213 & Sami & 5.00\\\hline
+305 & Rima & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+205 & Farhan & 4.80\\\hline
+306 & Mahi & 4.50\\\hline
+150 & Mim & 4.20\\\hline
+180 & Tania & 3.90\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২৪}{GPA বড় থেকে ছোট সাজাও; GPA সমান হলে Roll ছোট থেকে বড় সাজাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC, Roll ASC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+213 & Sami & 5.00\\\hline
+305 & Rima & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+205 & Farhan & 4.80\\\hline
+306 & Mahi & 4.50\\\hline
+150 & Mim & 4.20\\\hline
+180 & Tania & 3.90\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\begin{boardbox}{ORDER BY-এর গুরুত্বপূর্ণ তথ্য}
+
+\begin{itemize}
+
+\item ASC = Ascending।
+
+\item DESC = Descending।
+
+\item ASC/DESC না লিখলে সাধারণত ঊর্ধ্বক্রম ব্যবহৃত হয়।
+
+\item সাজানোর জন্য একাধিক ফিল্ড থাকলে বামদিকের ফিল্ড আগে বিবেচিত হয়।
+
+\item শুধু \texttt{ORDER BY GPA DESC} দিলে সমান GPA রেকর্ডের
+নিজেদের মধ্যকার নির্দিষ্ট ক্রম নিশ্চিত নয়।
+
+\end{itemize}
+
+\end{boardbox}
+

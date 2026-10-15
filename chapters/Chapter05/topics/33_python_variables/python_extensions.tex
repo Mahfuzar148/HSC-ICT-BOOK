@@ -1,0 +1,21 @@
+% Source type: Mahbubur Rahman, Chapter 5 PDF p.45 (constants).
+\booksubheading{ধ্রুবক হিসেবে ব্যবহৃত নাম}
+
+কোনো প্রোগ্রামে যে মান অপরিবর্তিত রাখার পরিকল্পনা করা হয়, তাকে ধ্রুবক
+হিসেবে ব্যবহার করা যায়। Python-এ এমন নাম সাধারণত বড় হাতের অক্ষরে লেখা হয়,
+যেমন \py{VAT\_RATE}। এটি নামকরণের রীতি; বড় হাতের নাম লিখলেই নতুন মান
+assign করা বন্ধ হয়ে যায় না। তাই প্রোগ্রামারকে মানটি অপরিবর্তিত রাখতে হয়।
+
+\textbf{উদাহরণ: নির্ধারিত হারে করসহ মূল্য।}
+\begin{pythoncode}
+VAT_RATE = 0.05
+price = 800
+vat = price * VAT_RATE
+payable = price + vat
+print(f"VAT = {vat:.2f}")
+print(f"Payable = {payable:.2f}")
+\end{pythoncode}
+\textbf{Output:} \py{VAT = 40.00}, \py{Payable = 840.00}।
+এখানে মূল দাম পরিবর্তিত হতে পারে; একই প্রোগ্রামের হিসাবগুলোতে করের হার
+একই রাখতে \py{VAT\_RATE} ব্যবহার করা হয়েছে।
+

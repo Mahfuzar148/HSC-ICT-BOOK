@@ -1,0 +1,91 @@
+% Source types: Mahbubur Rahman, Chapter 5 PDF pp.53--55.
+\booksubheading{গাণিতিক রাশি থেকে Python Expression}
+
+গাণিতিক রাশিতে গুণচিহ্ন বাদ দেওয়া যায়, কিন্তু Python-এ প্রতিটি গুণের জন্য
+\py{*} লিখতে হয়। ঘাতের জন্য \py{**}, ভাগের জন্য \py{/} এবং ভাগশেষের
+জন্য \py{\%} ব্যবহৃত হয়। বড় numerator বা denominator-কে parentheses-এ
+রাখলে সূত্রের grouping ঠিক থাকে। বর্গমূলের জন্য \py{math.sqrt()} ব্যবহার
+করতে আগে \py{import math} লিখতে হয়।
+
+\begin{tabularx}{\linewidth}{|p{0.34\linewidth}|Y|}
+\hline
+\rowcolor{softBlue}\textbf{গাণিতিক রাশি} & \textbf{Python Expression}\\\hline
+\(a^2+2ab+b^2\) & \py{a ** 2 + 2 * a * b + b ** 2}\\\hline
+\(ax^2+bx+c\) & \py{a * x ** 2 + b * x + c}\\\hline
+\(a^3+b^3\) & \py{a ** 3 + b ** 3}\\\hline
+\((a+b)(a-b)\) & \py{(a + b) * (a - b)}\\\hline
+\(\dfrac{a+b}{a-b}\) & \py{(a + b) / (a - b)}; এখানে \(a\ne b\)\\\hline
+\(\dfrac{a^2}{b+c}\) & \py{a ** 2 / (b + c)}; এখানে \(b+c\ne0\)\\\hline
+\(\sqrt{3a^2+2b^2}\) & \py{math.sqrt(3 * a ** 2 + 2 * b ** 2)}\\\hline
+\(\dfrac{\sqrt{b^2-4ac}}{2a}\) & \py{math.sqrt(b ** 2 - 4 * a * c) / (2 * a)}\\\hline
+\end{tabularx}
+
+শেষ রাশিটিতে বাস্তব বর্গমূলের জন্য \(b^2-4ac\ge0\) এবং ভাগের জন্য
+\(a\ne0\) হতে হবে। একই রাশির \(2a\) যদি বর্গমূলের \emph{ভেতরে} থাকে,
+তবে expression হবে \py{math.sqrt((b ** 2 - 4 * a * c) / (2 * a))}।
+বন্ধনীর অবস্থান বদলালে গাণিতিক অর্থও বদলে যায়।
+
+\textbf{ধরন ১: বহুপদী ও গুণফল।} ধরা যাক, \(a=5,b=2,x=3,c=1\)।
+\begin{pythoncode}
+a, b, x, c = 5, 2, 3, 1
+print(a ** 2 + 2 * a * b + b ** 2)
+print(a * x ** 2 + b * x + c)
+print((a + b) * (a - b))
+print(a ** 3 + b ** 3)
+\end{pythoncode}
+\textbf{Output:} যথাক্রমে \py{49}, \py{52}, \py{21}, \py{133}।
+প্রথম রাশিতে \(25+20+4=49\); দ্বিতীয়টিতে \(45+6+1=52\)।
+
+\textbf{ধরন ২: ভগ্নাংশ ও বর্গমূল।}
+\begin{pythoncode}
+import math
+a, b, c = 5, 2, 1
+ratio = (a + b) / (a - b)
+fraction = a ** 2 / (b + c)
+root = math.sqrt(3 * a ** 2 + 2 * b ** 2)
+print(f"{ratio:.4f} {fraction:.4f} {root:.4f}")
+\end{pythoncode}
+\textbf{Output:} \py{2.3333 8.3333 9.1104}।
+এখানে রাশিগুলো যথাক্রমে \(7/3\), \(25/3\) ও \(\sqrt{83}\)।
+\py{:.4f} ফলের প্রদর্শনকে দশমিকের পরে চার ঘরে রাখে।
+
+\textbf{ধরন ৩: ভাগ, ভাগশেষ ও ঘাত মিলিয়ে রাশির মান।}
+\[
+E=\left(\frac{12}{3}+\frac{6}{3}\right)^{(14\bmod 5)}-3\times2+5
+  =6^4-6+5=1295.
+\]
+\begin{pythoncode}
+value = (12 / 3 + 6 / 3) ** (14 % 5) - 3 * 2 + 5
+print(value)
+\end{pythoncode}
+\textbf{Output:} \py{1295.0}। \py{/}-এর ফল \py{float} হওয়ায়
+এখানে ফলটিও \py{float}; গাণিতিক মান 1295।
+
+\booksubheading{Floor Division-এর ঋণাত্মক সংখ্যার উদাহরণ}
+
+\py{//} ভাগফলকে নিচের পূর্ণসংখ্যার দিকে নামায়। তাই
+\(-7/3=-2.333\ldots\) থেকে floor হয় \(-3\), \(-2\) নয়।
+\begin{pythoncode}
+print(-7 // 3)
+print(-7 % 3)
+print((-7 // 3) * 3 + (-7 % 3))
+\end{pythoncode}
+\textbf{Output:} যথাক্রমে \py{-3}, \py{2}, \py{-7}।
+ভাজক শূন্য না হলে পূর্ণসংখ্যার ক্ষেত্রে
+\(a=(a\mathbin{//}b)b+(a\bmod b)\)। উদাহরণে \((-3)\times3+2=-7\)।
+
+\booksubheading{Logical Expression-এ Short-circuit}
+
+\py{and}-এর বাম অংশ মিথ্যা হলে ডান অংশ আর পরীক্ষা হয় না;
+\py{or}-এর বাম অংশ সত্য হলে ডান অংশ প্রয়োজন হয় না। এই নিয়মকে
+short-circuit evaluation বলে। শর্তের ক্রম ব্যবহার করে অনিরাপদ হিসাব
+থেকে বাঁচা যায়।
+\begin{pythoncode}
+a, b = 12, 0
+print(b != 0 and a / b > 2)
+print(b == 0 or a / b > 2)
+\end{pythoncode}
+\textbf{Output:} \py{False}, \py{True}। কোনো লাইনেই \py{a / b}
+হিসাব হয় না। প্রথম শর্তটি উল্টে \py{a / b > 2 and b != 0} লিখলে
+আগেই শূন্য দিয়ে ভাগের ভুল হবে।
+
