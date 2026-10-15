@@ -1,0 +1,1340 @@
+\sectionheading{5.42 Loop Pattern}
+
+Loop ব্যবহার করে কোনো নির্দিষ্ট বিন্যাসে Character, Symbol বা Number
+বারবার Print করাকে সাধারণভাবে \textbf{Loop Pattern} বলা হয়।
+Pattern তৈরিতে সাধারণত \textbf{Nested Loop} বেশি ব্যবহৃত হয়।
+
+%================================================
+% Basic Idea
+%================================================
+
+\booksubheading{Pattern তৈরির মূল ধারণা}
+
+Pattern-কে সাধারণত \textbf{Row} ও \textbf{Column} হিসেবে চিন্তা করা হয়।
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Outer Loop}
+\(\longrightarrow\)
+\textbf{Row নিয়ন্ত্রণ করে}
+
+\qquad
+
+\textbf{Inner Loop}
+\(\longrightarrow\)
+\textbf{প্রতি Row-এর Item / Column নিয়ন্ত্রণ করে}
+
+\medskip
+
+\textbf{Outer Loop = কতটি Row}
+\qquad
+\textbf{Inner Loop = প্রতি Row-তে কতটি Item}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% print and end
+%================================================
+
+\booksubheading{\textenglish{\ttfamily print()} ও \textenglish{\ttfamily end} কেন গুরুত্বপূর্ণ?}
+
+\begin{codeoutputbox}{সাধারণ \textenglish{\ttfamily print()}}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+print("*")\\
+print("*")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+*\\
+*
+\end{english}
+
+প্রতিটি
+\textenglish{\ttfamily print()}
+শেষে নতুন Line তৈরি হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{\textenglish{\ttfamily end=" "} ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+print("*", end=" ")\\
+print("*", end=" ")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textenglish{\ttfamily * *}
+
+\medskip
+
+\textenglish{\ttfamily end=" "}
+ব্যবহার করলে পরবর্তী Output একই Line-এ থাকে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+Pattern-এর সাধারণ Structure—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for ...:\\
+\hspace*{4mm}for ...:\\
+\hspace*{8mm}print(..., end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+\end{codebox}
+
+ভিতরের
+\textenglish{\ttfamily print(..., end=" ")}
+একই Row-তে Item Print করে এবং শেষের
+\textenglish{\ttfamily print()}
+নতুন Row শুরু করে।
+
+\end{rememberbox}
+
+%================================================
+% Rectangular Pattern
+%================================================
+
+\booksubheading{১. Rectangular Star Pattern}
+
+\begin{codeoutputbox}{Rectangular Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}for j in range(4):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+* * * *\\
+* * * *\\
+* * * *
+\end{english}
+
+\medskip
+
+Outer Loop = 3 Row
+
+Inner Loop = প্রতি Row-তে 4 Star
+
+\medskip
+
+মোট Star =
+\(3 \times 4 = 12\)
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.25\linewidth}
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Row}
+&
+\textbf{Inner Loop Iteration}
+&
+\textbf{Star}
+\\
+\hline
+
+1 & 4 & 4 \\
+\hline
+2 & 4 & 4 \\
+\hline
+3 & 4 & 4 \\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Shortcut:}
+যদি Outer Loop
+\textenglish{\ttfamily m}
+বার এবং Inner Loop প্রতিবার
+\textenglish{\ttfamily n}
+বার চলে, তবে মোট Inner Execution =
+\(m \times n\)।
+
+\end{rememberbox}
+
+%================================================
+% Increasing Pattern
+%================================================
+
+\booksubheading{২. Increasing Star Pattern}
+
+\begin{codeoutputbox}{Increasing Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 5):\\
+\hspace*{4mm}for j in range(i):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+*\\
+* *\\
+* * *\\
+* * * *
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily i = 1,2,3,4}
+
+তাই
+\textenglish{\ttfamily range(i)}
+যথাক্রমে 1, 2, 3 ও 4 বার চলে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+Increasing Pattern-এর সাধারণ Logic—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(1, n + 1):\\
+\hspace*{4mm}for j in range(i):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+\end{codebox}
+
+\textbf{Increasing Pattern}
+\(\longrightarrow\)
+Row Number বাড়ার সঙ্গে Item সংখ্যাও বাড়ে।
+
+\end{rememberbox}
+
+%================================================
+% Decreasing Pattern
+%================================================
+
+\booksubheading{৩. Decreasing Star Pattern}
+
+\begin{codeoutputbox}{Decreasing Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(4, 0, -1):\\
+\hspace*{4mm}for j in range(i):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+* * * *\\
+* * *\\
+* *\\
+*
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily i}
+এর Value:
+\textenglish{\ttfamily 4,3,2,1}
+
+তাই প্রতি Row-তে Star সংখ্যা কমে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Alternative decreasing
+%================================================
+
+\booksubheading{Decreasing Pattern-এর আরেকটি Logic}
+
+\begin{codeoutputbox}{Formula ব্যবহার করে}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = 4\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}for j in range(n - i + 1):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+প্রতি Row-এর Item সংখ্যা—
+
+\[
+n-i+1
+\]
+
+যদি
+\textenglish{\ttfamily n = 4},
+তবে Item সংখ্যা—
+
+\begin{center}
+4, 3, 2, 1
+\end{center}
+
+তাই Output আগের Pattern-এর মতোই।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Row Number Pattern
+%================================================
+
+\booksubheading{৪. Row Number Pattern}
+
+\begin{codeoutputbox}{Row Number Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 5):\\
+\hspace*{4mm}for j in range(i):\\
+\hspace*{8mm}print(i, end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+1\\
+2 2\\
+3 3 3\\
+4 4 4 4
+\end{english}
+
+\medskip
+
+Print করা হচ্ছে
+\textenglish{\ttfamily i}।
+
+তাই প্রতিটি Row-তে Row Number দেখা যায়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Column Number Pattern
+%================================================
+
+\booksubheading{৫. Column Number Pattern}
+
+\begin{codeoutputbox}{Column Number Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 5):\\
+\hspace*{4mm}for j in range(1, i + 1):\\
+\hspace*{8mm}print(j, end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+1\\
+1 2\\
+1 2 3\\
+1 2 3 4
+\end{english}
+
+\medskip
+
+Print করা হচ্ছে
+\textenglish{\ttfamily j}।
+
+তাই Inner Loop-এর Value Output-এ দেখা যায়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily print(i, end=" ")}
+\(\longrightarrow\)
+\textbf{Row Value}
+
+\qquad
+
+\textenglish{\ttfamily print(j, end=" ")}
+\(\longrightarrow\)
+\textbf{Column Value}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% i vs j
+%================================================
+
+\booksubheading{\textenglish{\ttfamily i} বনাম \textenglish{\ttfamily j}}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.25\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Variable}
+&
+\textbf{সাধারণ কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily i}
+&
+Outer Loop / Row নির্দেশ করতে ব্যবহৃত হয়।
+\\
+\hline
+
+\textenglish{\ttfamily j}
+&
+Inner Loop / Column বা Row-এর Item নির্দেশ করতে ব্যবহৃত হয়।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textenglish{\ttfamily i}
+ও
+\textenglish{\ttfamily j}
+বাধ্যতামূলক Variable Name নয়।
+অন্য বৈধ Variable Name-ও ব্যবহার করা যায়।
+
+\end{rememberbox}
+
+%================================================
+% Square Number Pattern
+%================================================
+
+\booksubheading{৬. Square Number Pattern}
+
+\begin{codeoutputbox}{Square Number Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 4):\\
+\hspace*{4mm}for j in range(1, 4):\\
+\hspace*{8mm}print(j, end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+1 2 3\\
+1 2 3\\
+1 2 3
+\end{english}
+
+\medskip
+
+Outer Loop = 3 Row
+
+Inner Loop প্রতিবার
+\textenglish{\ttfamily 1,2,3}
+Print করে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Same Number Square
+%================================================
+
+\booksubheading{৭. একই Number-এর Square Pattern}
+
+\begin{codeoutputbox}{একই Row Number বারবার}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 4):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}print(i, end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+1 1 1\\
+2 2 2\\
+3 3 3
+\end{english}
+
+\medskip
+
+Inner Loop কতবার Print হবে তা নিয়ন্ত্রণ করে।
+
+Print হচ্ছে Outer Loop-এর
+\textenglish{\ttfamily i}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Continuous Number Pattern
+%================================================
+
+\booksubheading{৮. Continuous Number Pattern}
+
+\begin{codeoutputbox}{Continuous Number Pattern}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+num = 1\\
+for i in range(1, 4):\\
+\hspace*{4mm}for j in range(i):\\
+\hspace*{8mm}print(num, end=" ")\\
+\hspace*{8mm}num += 1\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+1\\
+2 3\\
+4 5 6
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily num}
+একটি আলাদা Counter।
+
+প্রতিবার
+\textenglish{\ttfamily num += 1}
+হওয়ায় Number ধারাবাহিকভাবে বাড়ে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Pattern solving technique
+%================================================
+
+\booksubheading{Pattern তৈরির সহজ কৌশল}
+
+Pattern দেখলে প্রথমে তিনটি প্রশ্ন করো—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{প্রশ্ন}
+&
+\textbf{কী নির্ধারণ করবে?}
+\\
+\hline
+
+মোট কতটি Row?
+&
+Outer Loop।
+\\
+\hline
+
+প্রতি Row-তে কতটি Item?
+&
+Inner Loop।
+\\
+\hline
+
+কী Print করতে হবে?
+&
+\textenglish{\ttfamily "*"},
+\textenglish{\ttfamily i},
+\textenglish{\ttfamily j}
+বা আলাদা Counter।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{কত Row?}
+\(\longrightarrow\)
+\textbf{Outer Loop}
+
+\qquad
+
+\textbf{কত Item?}
+\(\longrightarrow\)
+\textbf{Inner Loop}
+
+\medskip
+
+\textbf{কী Print হবে?}
+\(\longrightarrow\)
+\textenglish{\ttfamily * / i / j / counter}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Increasing Analysis
+%================================================
+
+\booksubheading{Increasing Pattern বিশ্লেষণের Shortcut}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.25\linewidth}
+|>{\centering\arraybackslash}p{0.25\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Row \textenglish{\ttfamily i}}
+&
+\textbf{Star সংখ্যা}
+&
+\textbf{Logic}
+\\
+\hline
+
+1 & 1 & \textenglish{\ttfamily range(1)} \\
+\hline
+2 & 2 & \textenglish{\ttfamily range(2)} \\
+\hline
+3 & 3 & \textenglish{\ttfamily range(3)} \\
+\hline
+4 & 4 & \textenglish{\ttfamily range(4)} \\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textbf{Star সংখ্যা = Row Number}
+\(\Rightarrow\)
+Inner Loop =
+\textenglish{\ttfamily range(i)}
+
+\end{center}
+
+%================================================
+% Decreasing Analysis
+%================================================
+
+\booksubheading{Decreasing Pattern বিশ্লেষণের Shortcut}
+
+যদি মোট Row
+\textenglish{\ttfamily n}
+হয়—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.35\linewidth}
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Row \textenglish{\ttfamily i}}
+&
+\textbf{Item সংখ্যা}
+\\
+\hline
+
+1 & \textenglish{\ttfamily n} \\
+\hline
+
+2 & \textenglish{\ttfamily n-1} \\
+\hline
+
+3 & \textenglish{\ttfamily n-2} \\
+\hline
+
+\(\cdots\) & \(\cdots\) \\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textbf{সাধারণ Formula:}
+\qquad
+\(n-i+1\)
+
+\end{center}
+
+%================================================
+% Nested Loop Working
+%================================================
+
+\booksubheading{Nested Loop কীভাবে চলে?}
+
+\begin{codeoutputbox}{Nested Loop Execution}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(2):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}print(i, j)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+0 0\\
+0 1\\
+0 2\\
+1 0\\
+1 1\\
+1 2
+\end{english}
+
+\medskip
+
+\textenglish{\ttfamily i = 0}
+হলে
+\textenglish{\ttfamily j = 0,1,2}।
+
+তারপর
+\textenglish{\ttfamily i = 1}
+হলেও Inner Loop আবার সম্পূর্ণ চলে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Outer Loop-এর প্রতিটি Iteration-এর জন্য
+Inner Loop সম্পূর্ণভাবে চলে।}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% print position
+%================================================
+
+\booksubheading{Pattern-এ \textenglish{\ttfamily print()}-এর অবস্থান}
+
+\begin{codeoutputbox}{সঠিক Position}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+শেষের
+\textenglish{\ttfamily print()}
+Inner Loop-এর বাইরে কিন্তু Outer Loop-এর ভিতরে।
+
+তাই একটি Row-এর সব Star Print হওয়ার পর নতুন Line হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{codeoutputbox}{ভুল Position}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{8mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+দ্বিতীয়
+\textenglish{\ttfamily print()}
+Inner Loop-এর ভিতরে।
+
+তাই প্রতিটি Star-এর পর নতুন Line তৈরি হবে এবং প্রত্যাশিত Row Pattern হবে না।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+Row পরিবর্তনের খালি
+\textenglish{\ttfamily print()}
+সাধারণত—
+
+\begin{center}
+
+\textbf{Inner Loop-এর বাইরে}
+\qquad
+কিন্তু
+\qquad
+\textbf{Outer Loop-এর ভিতরে}
+
+\end{center}
+
+থাকে।
+
+\end{rememberbox}
+
+%================================================
+% end="" vs end=" "
+%================================================
+
+\booksubheading{\textenglish{\ttfamily end=""} বনাম \textenglish{\ttfamily end=" "}}
+
+\begin{codeoutputbox}{Output Formatting}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+
+\textbf{\color{darkTeal}Space ছাড়া}
+
+\begin{english}
+\ttfamily
+for i in range(4):\\
+\hspace*{4mm}print("*", end="")
+\end{english}
+
+\medskip
+
+\textbf{Output:}
+\textenglish{\ttfamily ****}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+
+\textbf{\color{darkTeal}Space সহ}
+
+\begin{english}
+\ttfamily
+for i in range(4):\\
+\hspace*{4mm}print("*", end=" ")
+\end{english}
+
+\medskip
+
+\textbf{Output:}
+\textenglish{\ttfamily * * * *}
+
+\end{minipage}
+
+\medskip
+
+দুইটিই সঠিক। প্রয়োজনীয় Output Design অনুযায়ী ব্যবহার করা হয়।
+
+\end{codeoutputbox}
+
+%================================================
+% while Pattern
+%================================================
+
+\booksubheading{\textenglish{\ttfamily while} Loop দিয়েও Pattern তৈরি করা যায়}
+
+Pattern সাধারণত
+\textenglish{\ttfamily for}
+Loop দিয়ে লেখা সহজ। তবে
+\textenglish{\ttfamily while}
+Loop দিয়েও একই Logic তৈরি করা যায়।
+
+\begin{codeoutputbox}{\textenglish{\ttfamily while} দিয়ে Increasing Pattern}
+
+\noindent
+\begin{minipage}[t]{0.57\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 3:\\
+\hspace*{4mm}j = 1\\
+\hspace*{4mm}while j <= i:\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{8mm}j += 1\\
+\hspace*{4mm}print()\\
+\hspace*{4mm}i += 1
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+*\\
+* *\\
+* * *
+\end{english}
+
+\medskip
+
+Inner Counter
+\textenglish{\ttfamily j}
+প্রতিটি Outer Iteration-এ আবার
+\textenglish{\ttfamily j = 1}
+থেকে শুরু হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+Pattern-এর জন্য সাধারণত
+\textenglish{\ttfamily for}
+Loop বেশি সহজ ও সংক্ষিপ্ত।
+তবে
+\textenglish{\ttfamily while}
+Loop দিয়েও Pattern তৈরি করা যায়।
+
+\end{rememberbox}
+
+%================================================
+% Same Loop, Different Print
+%================================================
+
+\booksubheading{একই Loop Logic, ভিন্ন Print Expression}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.39\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Code}
+&
+\textbf{ফলাফল}
+\\
+\hline
+
+\textenglish{\ttfamily print("*", end=" ")}
+&
+Star Pattern
+\\
+\hline
+
+\textenglish{\ttfamily print(i, end=" ")}
+&
+Row Number Pattern
+\\
+\hline
+
+\textenglish{\ttfamily print(j, end=" ")}
+&
+Column Number Pattern
+\\
+\hline
+
+\textenglish{\ttfamily print(num, end=" ")}
+&
+Continuous Number Pattern
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Summary
+%================================================
+
+\booksubheading{গুরুত্বপূর্ণ Pattern Summary}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Pattern}
+&
+\textbf{Inner Loop / মূল Logic}
+\\
+\hline
+
+Rectangle / Square
+&
+প্রতি Row-তে নির্দিষ্ট সংখ্যক Iteration।
+\\
+\hline
+
+Increasing
+&
+\textenglish{\ttfamily range(i)}
+বা Row-এর সঙ্গে Item সংখ্যা বৃদ্ধি।
+\\
+\hline
+
+Decreasing
+&
+\textenglish{\ttfamily range(n-i+1)}
+বা Reverse Count।
+\\
+\hline
+
+Row Number
+&
+\textenglish{\ttfamily print(i)}
+\\
+\hline
+
+Column Number
+&
+\textenglish{\ttfamily print(j)}
+\\
+\hline
+
+Continuous Number
+&
+আলাদা Counter।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item Outer Loop ও Inner Loop-এর কাজ গুলিয়ে ফেলা।
+
+\item একই Row-তে Output রাখার জন্য
+\textenglish{\ttfamily end}
+ব্যবহার না করা।
+
+\item Row পরিবর্তনের
+\textenglish{\ttfamily print()}
+ভুল Indentation-এ রাখা।
+
+\item Increasing Pattern-এ Inner Loop-এর Range ভুল লেখা।
+
+\item Decreasing Pattern-এর Item সংখ্যা ভুল হিসাব করা।
+
+\item
+\textenglish{\ttfamily i}
+ও
+\textenglish{\ttfamily j}
+-এর কাজ গুলিয়ে ফেলা।
+
+\item
+\textenglish{\ttfamily range()}
+-এর Stop Value Excluded—এটি ভুলে যাওয়া।
+
+\item Nested
+\textenglish{\ttfamily while}
+Loop-এ Inner Counter পুনরায় Initialize না করা।
+
+\item Star-এর জায়গায়
+\textenglish{\ttfamily i}
+বা
+\textenglish{\ttfamily j}
+ভুলভাবে Print করা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+}
+
+Outer Loop
+&
+Row
+&
+Inner Loop
+&
+প্রতি Row-এর Item
+\\[0.5mm]
+
+\textenglish{\ttfamily end=" "}
+&
+একই Line-এ Print
+&
+\textenglish{\ttfamily print()}
+&
+নতুন Row
+\\[0.5mm]
+
+Increasing
+&
+Item সংখ্যা বাড়ে
+&
+Decreasing
+&
+Item সংখ্যা কমে
+\\[0.5mm]
+
+\textenglish{\ttfamily print(i)}
+&
+Row Value
+&
+\textenglish{\ttfamily print(j)}
+&
+Column Value
+\\[0.5mm]
+
+Rectangle
+&
+Fixed Item Count
+&
+Continuous Number
+&
+আলাদা Counter
+\\[0.5mm]
+
+Nested Loop
+&
+Outer-এর প্রতি Iteration-এ Inner সম্পূর্ণ চলে
+&
+Pattern
+&
+Row + Column Logic
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Pattern Solve করার ৩ ধাপ}
+
+\medskip
+
+\textbf{কত Row?}
+\(\longrightarrow\)
+\textbf{Outer Loop}
+
+\qquad
+
+\textbf{প্রতি Row-তে কত Item?}
+\(\longrightarrow\)
+\textbf{Inner Loop}
+
+\medskip
+
+\textbf{কী Print হবে?}
+\(\longrightarrow\)
+\textenglish{\ttfamily * / i / j / counter}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.43 Data Structure
+%================================================
+

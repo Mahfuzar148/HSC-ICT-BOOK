@@ -1,0 +1,531 @@
+\sectionheading{5.7 Java}
+
+Java একটি \textbf{High Level, General Purpose এবং Object-Oriented
+Programming Language}। এটি এমনভাবে তৈরি করা হয়েছে যাতে Programmer
+তুলনামূলক সহজ ও বোধগম্য Code লিখতে পারে এবং প্রয়োজনীয় Java
+Environment থাকলে একই Program বিভিন্ন Platform-এ ব্যবহার করা যায়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Java কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Java হলো একটি \textbf{High Level, Object-Oriented ও General Purpose
+Programming Language}, যা বিভিন্ন ধরনের Software ও Application
+তৈরিতে ব্যবহৃত হয়।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Java
+=
+High Level
++
+Object-Oriented
++
+General Purpose
+}
+
+\end{center}
+
+%================================================
+% History
+%================================================
+\booksubheading{Java-এর সংক্ষিপ্ত ইতিহাস}
+
+Java-এর ইতিহাসের কয়েকটি তথ্য MCQ-এর জন্য গুরুত্বপূর্ণ—
+
+\begin{compacttwocolpoints}
+
+\item Java-এর প্রধান উদ্ভাবক \textbf{James Gosling}।
+
+\item ভাষাটি \textbf{Sun Microsystems}-এ তৈরি হয়।
+
+\item Java-এর প্রাথমিক নাম ছিল \textbf{Oak}।
+
+\item Java আনুষ্ঠানিকভাবে \textbf{1995 সালে} প্রকাশিত হয়।
+
+\item পরবর্তীতে Sun Microsystems-কে Oracle Corporation অধিগ্রহণ করে।
+
+\end{compacttwocolpoints}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textbf{
+James Gosling
+\(\rightarrow\)
+Oak
+\(\rightarrow\)
+Java
+\(\rightarrow\)
+1995
+}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Features
+%================================================
+\booksubheading{Java-এর প্রধান বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{সহজ ব্যাখ্যা}}
+\\
+\hline
+
+High Level
+&
+মানুষের জন্য তুলনামূলক সহজে লেখা ও বোঝা যায়।
+\\
+\hline
+
+Object-Oriented
+&
+Class ও Object ভিত্তিক Programming সমর্থন করে।
+\\
+\hline
+
+General Purpose
+&
+বিভিন্ন ধরনের Software ও Application তৈরিতে ব্যবহার করা যায়।
+\\
+\hline
+
+Platform Independent
+&
+প্রয়োজনীয় Java Environment থাকলে বিভিন্ন Platform-এ ব্যবহার করা যায়।
+\\
+\hline
+
+Secure
+&
+Program ও Runtime-এর নিরাপত্তার জন্য বিভিন্ন ব্যবস্থা রয়েছে।
+\\
+\hline
+
+Robust
+&
+Error Handling ও Memory Management-এর সুবিধা রয়েছে।
+\\
+\hline
+
+Multithreading
+&
+একই Program-এ একাধিক কাজের ধারা পরিচালনা করা যায়।
+\\
+\hline
+
+Portable
+&
+ভিন্ন System-এ Program স্থানান্তর তুলনামূলক সহজ।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Platform Independence
+%================================================
+\booksubheading{Java কেন Platform Independent?}
+
+Java-এর সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্যগুলোর একটি হলো
+\textbf{Platform Independence}।
+
+Java Source Code সরাসরি নির্দিষ্ট Processor-এর Machine Code-এ
+রূপান্তরিত না হয়ে প্রথমে একটি মধ্যবর্তী Code-এ রূপান্তরিত হয়,
+যাকে \textbf{Bytecode} বলা হয়।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.19\linewidth}{
+        \centering\textbf{Java\\Source Code}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.17\linewidth}{
+        \centering\textbf{Java\\Compiler}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.16\linewidth}{
+        \centering\textbf{Bytecode}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.13\linewidth}{
+        \centering\textbf{JVM}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.15\linewidth}{
+        \centering\textbf{Execution}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+এখানে—
+
+\begin{itemize}
+
+\item \textbf{Source Code:} Programmer-এর লেখা Java Program।
+
+\item \textbf{Java Compiler:} Source Code-কে Bytecode-এ রূপান্তর করে।
+
+\item \textbf{Bytecode:} Platform-neutral Intermediate Code।
+
+\item \textbf{JVM:} Bytecode নির্দিষ্ট System-এ Execute করতে সাহায্য করে।
+
+\end{itemize}
+
+%================================================
+% JVM
+%================================================
+\booksubheading{JVM কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}JVM (Java Virtual Machine)}
+
+Java Bytecode-কে নির্দিষ্ট Computer System-এ Execute করার জন্য
+ব্যবহৃত Virtual Machine-কে \textbf{JVM} বলা হয়।
+
+\end{definitionbox}
+
+Windows, Linux বা অন্য Platform-এর জন্য উপযোগী JVM থাকতে পারে,
+কিন্তু Java Bytecode একই থাকতে পারে।
+
+এই ধারণার সঙ্গে Java-এর বহুল পরিচিত উক্তি হলো—
+
+\begin{center}
+
+\textbf{Write Once, Run Anywhere (WORA)}
+
+\end{center}
+
+অর্থাৎ প্রয়োজনীয় JVM থাকলে একই Java Bytecode বিভিন্ন Platform-এ
+চালানো সম্ভব।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Java-এর Platform Independence-এর সঙ্গে
+\textbf{Bytecode ও JVM} ঘনিষ্ঠভাবে সম্পর্কিত।
+
+\end{rememberbox}
+
+%================================================
+% Compiler and File
+%================================================
+\booksubheading{Java Compiler, Source File ও Bytecode}
+
+Java Program সাধারণত \textenglish{\ttfamily .java} Extension-যুক্ত
+Source File-এ লেখা হয়।
+
+যেমন—
+
+\begin{center}
+
+{\textenglish{\ttfamily Hello.java}}
+
+\end{center}
+
+Java Compiler Source Program Compile করলে Bytecode-যুক্ত
+\textenglish{\ttfamily .class} File তৈরি হতে পারে।
+
+\begin{center}
+
+\textbf{
+\textenglish{\ttfamily .java}
+\(\longrightarrow\)
+Compile
+\(\longrightarrow\)
+\textenglish{\ttfamily .class}
+}
+
+\end{center}
+
+\textenglish{\ttfamily .class} File-এর Bytecode JVM-এর সাহায্যে
+Execute করা হয়।
+
+%================================================
+% JDK JRE JVM
+%================================================
+\booksubheading{JDK, JRE ও JVM-এর প্রাথমিক ধারণা}
+
+Java-এর ক্ষেত্রে তিনটি গুরুত্বপূর্ণ শব্দ হলো
+\textbf{JDK, JRE ও JVM}।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{নাম}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+JDK
+&
+\textbf{Java Development Kit}। Java Program তৈরি, Compile এবং
+Development-এর প্রয়োজনীয় Tool-সমূহের সমষ্টি।
+\\
+\hline
+
+JRE
+&
+\textbf{Java Runtime Environment}। Java Program চালানোর জন্য
+প্রয়োজনীয় Runtime Environment।
+\\
+\hline
+
+JVM
+&
+\textbf{Java Virtual Machine}। Java Bytecode Execute করে।
+\\
+\hline
+
+\end{tabularx}
+
+\textbf{সহজভাবে—}
+
+\begin{center}
+
+\textbf{
+JDK = Development
+\qquad
+JRE = Runtime
+\qquad
+JVM = Bytecode Execution
+}
+
+\end{center}
+
+%================================================
+% Java Example
+%================================================
+\booksubheading{Java-এর একটি ছোট উদাহরণ}
+
+Screen-এ \textenglish{\ttfamily Hello} প্রদর্শনের একটি সাধারণ
+Java Program—
+
+\begin{codebox}
+\begin{Verbatim}[fontsize=\small]
+class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+\end{Verbatim}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+\begin{Verbatim}[fontsize=\small]
+Hello
+\end{Verbatim}
+\end{codebox}
+
+এই পর্যায়ে Program-এর বিস্তারিত Structure মুখস্থ করার প্রয়োজন নেই।
+এখানে মূল উদ্দেশ্য হলো Java-তে অর্থবোধক Keyword ও Statement
+ব্যবহার করে Program লেখা হয়—এই ধারণাটি বোঝা।
+
+%================================================
+% Uses
+%================================================
+\booksubheading{Java-এর ব্যবহার}
+
+Java বিভিন্ন ধরনের Software Development-এ ব্যবহার করা হয়। যেমন—
+
+\begin{compacttwocolpoints}
+
+\item Desktop Application তৈরিতে।
+
+\item Web ও Server-side Application তৈরিতে।
+
+\item Enterprise Software তৈরিতে।
+
+\item Banking ও Business System-এ।
+
+\item Network-based Application-এ।
+
+\item বিভিন্ন বড় Software System তৈরিতে।
+
+\item Android Application Development-এ ঐতিহাসিকভাবে ব্যাপক ব্যবহার হয়েছে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Java-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item Machine Language-এর তুলনায় Syntax অনেক সহজ।
+
+\item Object-Oriented Programming সমর্থন করে।
+
+\item Platform Independence-এর সুবিধা রয়েছে।
+
+\item বড় ও জটিল Software তৈরিতে উপযোগী।
+
+\item Code পুনর্ব্যবহারের সুযোগ রয়েছে।
+
+\item Security ও Error Handling-এর বিভিন্ন সুবিধা রয়েছে।
+
+\item Standard Library সমৃদ্ধ।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Limitations
+%================================================
+\booksubheading{Java-এর কিছু সীমাবদ্ধতা}
+
+\begin{itemize}
+
+\item Java Program চালানোর জন্য উপযুক্ত Java Environment প্রয়োজন।
+
+\item Low Level Language-এর মতো Hardware-এর ওপর সরাসরি নিয়ন্ত্রণ কম।
+
+\item JVM-এর মাধ্যমে Program চলায় কিছু ক্ষেত্রে Native Machine
+Code-এর তুলনায় অতিরিক্ত Resource প্রয়োজন হতে পারে।
+
+\end{itemize}
+
+%================================================
+% Java vs Python
+%================================================
+\booksubheading{Java ও Python-এর প্রাথমিক পার্থক্য}
+
+এখন শুধু ধারণার জন্য—
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Java}}
+&
+\multicolumn{1}{c|}{\textbf{Python}}
+\\
+\hline
+
+ভাষার স্তর
+&
+High Level
+&
+High Level
+\\
+\hline
+
+ধরন
+&
+General Purpose, Object-Oriented
+&
+General Purpose
+\\
+\hline
+
+Syntax
+&
+তুলনামূলক বেশি নিয়মবদ্ধ
+&
+তুলনামূলক সহজ
+\\
+\hline
+
+Execution ধারণা
+&
+Bytecode ও JVM
+&
+Interpreter-ভিত্তিক ব্যবহার বেশি
+\\
+\hline
+
+গুরুত্বপূর্ণ ব্যক্তি
+&
+James Gosling
+&
+Guido van Rossum
+\\
+\hline
+
+\end{tabularx}
+
+Python পরবর্তী আলাদা Topic-এ বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Java একটি \textbf{High Level Programming Language}।
+
+\item Java-এর প্রধান উদ্ভাবক \textbf{James Gosling}।
+
+\item Java তৈরি হয়েছিল \textbf{Sun Microsystems}-এ।
+
+\item Java-এর প্রাথমিক নাম ছিল \textbf{Oak}।
+
+\item Java আনুষ্ঠানিকভাবে প্রকাশিত হয় \textbf{1995 সালে}।
+
+\item Java একটি \textbf{Object-Oriented ও General Purpose Language}।
+
+\item JVM-এর পূর্ণরূপ \textbf{Java Virtual Machine}।
+
+\item Java Source Code Compile হয়ে \textbf{Bytecode} তৈরি হয়।
+
+\item Java Source File-এর Extension সাধারণত
+\textenglish{\ttfamily .java}।
+
+\item Bytecode-যুক্ত File-এর Extension সাধারণত
+\textenglish{\ttfamily .class}।
+
+\item \textbf{Write Once, Run Anywhere (WORA)} Java-এর
+Platform Independence-এর ধারণা প্রকাশ করে।
+
+\item \textbf{JDK = Development, JRE = Runtime, JVM = Bytecode Execution}।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.8 Oracle
+%================================================

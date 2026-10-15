@@ -1,0 +1,663 @@
+\sectionheading{5.27 Programming Environment}
+
+কোনো Programming Language-এ Program লিখে সেটি চালানোর জন্য
+শুধু ভাষাটি জানলেই হয় না।
+
+Code লেখা, Edit করা, Run করা এবং Error শনাক্ত ও সংশোধন করার জন্য
+প্রয়োজনীয় Software ও Tool-এর সমন্বিত পরিবেশ প্রয়োজন হয়।
+এই পরিবেশকে \textbf{Programming Environment} বলা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Programming Environment কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Program \textbf{লেখা, সম্পাদনা (Edit), Execute এবং Error
+শনাক্ত ও সংশোধন} করার জন্য প্রয়োজনীয় Software, Tool ও
+সুবিধার সমন্বিত ব্যবস্থাকে \textbf{Programming Environment} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{Code লেখা}
+\(\longrightarrow\)
+\textbf{Run করা}
+\(\longrightarrow\)
+\textbf{Error দেখা}
+\(\longrightarrow\)
+\textbf{সংশোধন করা}
+
+\end{center}
+
+এই কাজগুলো করার প্রয়োজনীয় পরিবেশই হলো
+\textbf{Programming Environment}।
+
+%================================================
+% Main Components
+%================================================
+
+\booksubheading{Python Programming Environment-এর প্রধান উপাদান}
+
+Python Program তৈরি ও চালানোর জন্য সাধারণত নিচের
+উপাদানগুলো ব্যবহৃত হয়—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.32\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{উপাদান}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+
+\\
+
+\hline
+
+Python Interpreter
+&
+Python Code বুঝে Execute করতে সাহায্য করে।
+\\
+
+\hline
+
+Code Editor
+&
+Program Code লেখা, Edit ও Save করা হয়।
+\\
+
+\hline
+
+Shell / Console
+&
+সরাসরি Instruction দিয়ে তাৎক্ষণিক Result দেখা যায়।
+\\
+
+\hline
+
+IDE
+&
+Code লেখা, Run, Debug এবং অন্যান্য Development সুবিধা
+এক জায়গায় পাওয়া যায়।
+\\
+
+\hline
+
+\end{tabularx}
+
+% ---------- Figure: Programming Environment ----------
+\replaceableimage[60mm]
+{images/python-environment.png}
+{Programming Environment-এর Code Editor, Run ও Output/Terminal অংশ}
+
+\begin{center}
+\footnotesize\textbf{চিত্র: একটি Programming Environment-এর প্রধান অংশ}
+\end{center}
+
+%================================================
+% Interpreter
+%================================================
+
+\booksubheading{১. Python Interpreter}
+
+Python Interpreter হলো এমন Software যা Python Program-এর
+Instruction বুঝে Execute করতে সাহায্য করে।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+এই Python Code Execute করার জন্য Python Interpreter প্রয়োজন।
+
+\begin{center}
+
+\textbf{Python Code}
+\(\longrightarrow\)
+\textbf{Interpreter}
+\(\longrightarrow\)
+\textbf{Execution}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\textbf{Interpreter}
+\(\longrightarrow\)
+Python Code Execute করতে সাহায্য করে।
+
+\end{rememberbox}
+
+%================================================
+% Code Editor
+%================================================
+
+\booksubheading{২. Code Editor}
+
+যে Software-এ Program Code লেখা ও পরিবর্তন করা যায় তাকে
+\textbf{Code Editor} বলে।
+
+Code Editor ব্যবহার করে—
+
+\begin{itemize}
+
+\item নতুন Program Code লেখা যায়।
+
+\item Code Edit বা পরিবর্তন করা যায়।
+
+\item Program File Save করা যায়।
+
+\item Code সুন্দর ও সুশৃঙ্খলভাবে লেখা যায়।
+
+\end{itemize}
+
+উদাহরণ হিসেবে
+\textbf{Visual Studio Code (VS Code)}
+-এর মতো Code Editor ব্যবহার করা যায়।
+
+\begin{rememberbox}
+
+Code Editor-এর বিভিন্ন মাধ্যম ও ব্যবহার
+\textbf{5.29 Python-এ Code লেখার মাধ্যম}
+অংশে বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Shell
+%================================================
+
+\booksubheading{৩. Python Shell / Interactive Mode}
+
+Python Shell-এ সাধারণত একটি Instruction লিখে Enter চাপলে
+সঙ্গে সঙ্গে তার Result দেখা যায়।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+>>> 10 + 20\\
+30
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 10 + 20}
+Instruction দেওয়ার পর সঙ্গে সঙ্গে
+\textenglish{\ttfamily 30}
+Result পাওয়া গেছে।
+
+\end{examplebox}
+
+\begin{center}
+
+\textbf{একটি Instruction}
+\(\longrightarrow\)
+\textbf{সঙ্গে সঙ্গে Result}
+
+\end{center}
+
+ছোট Calculation বা কোনো ছোট Code দ্রুত পরীক্ষা করার জন্য
+Shell সুবিধাজনক।
+
+%================================================
+% IDE
+%================================================
+
+\booksubheading{৪. IDE — Integrated Development Environment}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}IDE-এর পূর্ণরূপ}
+
+\textbf{Integrated Development Environment}
+
+\end{definitionbox}
+
+IDE এমন একটি Software Environment যেখানে Program Development-এর
+বিভিন্ন সুবিধা একই জায়গায় পাওয়া যায়।
+
+IDE-তে সাধারণত—
+
+\begin{itemize}
+
+\item Code Editor থাকে।
+
+\item Program Run/Execute করার সুবিধা থাকে।
+
+\item Error Message দেখা যায়।
+
+\item Debugging-এর সুবিধা থাকে।
+
+\item Program File ব্যবস্থাপনার সুবিধা থাকে।
+
+\end{itemize}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{Editor}
++
+\textbf{Run}
++
+\textbf{Debug}
++
+\textbf{অন্যান্য Tool}
+=
+\textbf{IDE}
+
+\end{center}
+
+%================================================
+% Common Environments
+%================================================
+
+\booksubheading{Python-এর পরিচিত Programming Environment ও Tool}
+
+Python Code লেখা ও চালানোর জন্য বিভিন্ন Environment বা Tool
+ব্যবহার করা যায়। যেমন—
+
+\begin{itemize}
+
+\item \textbf{IDLE}
+
+\item \textbf{Visual Studio Code (VS Code)}
+
+\item \textbf{PyCharm}
+
+\item \textbf{Jupyter Notebook}
+
+\end{itemize}
+
+এগুলোর কাজের ধরন ও সুবিধা এক নয়, তবে Python Program
+লেখা ও চালানোর কাজে ব্যবহার করা যায়।
+
+%================================================
+% IDLE
+%================================================
+
+\booksubheading{IDLE}
+
+Python শেখার ক্ষেত্রে পরিচিত একটি Environment হলো
+\textbf{IDLE}।
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}IDLE-এর পূর্ণরূপ}
+
+\textbf{Integrated Development and Learning Environment}
+
+\end{definitionbox}
+
+IDLE-এর মাধ্যমে—
+
+\begin{itemize}
+
+\item Python Code লেখা যায়।
+
+\item Python Shell ব্যবহার করা যায়।
+
+\item Program Run করা যায়।
+
+\item Program File Save করা যায়।
+
+\item Error Message দেখা যায়।
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\textbf{IDE}
+\(\rightarrow\)
+Integrated Development Environment
+
+\medskip
+
+\textbf{IDLE}
+\(\rightarrow\)
+Integrated Development and Learning Environment
+
+\end{rememberbox}
+
+%================================================
+% Shell vs Editor
+%================================================
+
+\booksubheading{Shell ও Editor-এর পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.20\linewidth}
+|Y
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Shell}}
+&
+\multicolumn{1}{c|}{\textbf{Editor}}
+
+\\
+
+\hline
+
+কাজ
+&
+সরাসরি Instruction Execute করা হয়।
+&
+পূর্ণ Program লেখা ও Edit করা হয়।
+\\
+
+\hline
+
+Result
+&
+সাধারণত সঙ্গে সঙ্গে Result দেখা যায়।
+&
+Program Run করার পর Result দেখা যায়।
+\\
+
+\hline
+
+ব্যবহার
+&
+ছোট Test বা Calculation-এর জন্য সুবিধাজনক।
+&
+বড় বা সংরক্ষণযোগ্য Program লেখার জন্য সুবিধাজনক।
+\\
+
+\hline
+
+File
+&
+প্রতিবার আলাদা File তৈরি করা প্রয়োজন হয় না।
+&
+Program Code File হিসেবে Save করা যায়।
+\\
+
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\textbf{Shell}
+\(\longrightarrow\)
+Quick Test / Quick Result
+
+\medskip
+
+\textbf{Editor}
+\(\longrightarrow\)
+Write, Edit and Save Program
+
+\end{rememberbox}
+
+%================================================
+% Importance
+%================================================
+
+\booksubheading{Programming Environment কেন প্রয়োজন?}
+
+Programming Environment-এর সাহায্যে—
+
+\begin{compacttwocolpoints}
+
+\item সহজে Program Code লেখা যায়।
+
+\item Program Run বা Execute করা যায়।
+
+\item Error শনাক্ত করা যায়।
+
+\item Code পরিবর্তন ও সংশোধন করা যায়।
+
+\item Program File Save করা যায়।
+
+\item Program Development-এর কাজ সুশৃঙ্খলভাবে করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Language vs Environment
+%================================================
+
+\booksubheading{Programming Language ও Programming Environment এক নয়}
+
+\textbf{Programming Language} হলো Program লেখার ভাষা।
+
+উদাহরণ—
+
+\begin{center}
+
+\textbf{Python}
+\(\longrightarrow\)
+Programming Language
+
+\end{center}
+
+অন্যদিকে,
+
+\textbf{Programming Environment} হলো সেই ভাষায় Code লেখা,
+Run করা ও Development-এর প্রয়োজনীয় পরিবেশ।
+
+\begin{center}
+
+\textbf{IDLE / VS Code / PyCharm}
+\(\longrightarrow\)
+Development Environment / Tool
+
+\end{center}
+
+%================================================
+% One Look Table
+%================================================
+
+\booksubheading{এক নজরে মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.30\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+
+\\
+
+\hline
+
+Python
+&
+Programming Language
+\\
+
+\hline
+
+Interpreter
+&
+Python Code Execute করে
+\\
+
+\hline
+
+Code Editor
+&
+Code লেখা ও Edit করা হয়
+\\
+
+\hline
+
+Shell
+&
+সরাসরি Instruction দিয়ে দ্রুত Result দেখা যায়
+\\
+
+\hline
+
+IDE
+&
+Development-এর বিভিন্ন সুবিধা একসঙ্গে দেয়
+\\
+
+\hline
+
+IDLE
+&
+Python শেখা, Code লেখা ও Run করার একটি পরিচিত Environment
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Python ও IDLE-কে একই বিষয় মনে করা।
+
+\item IDE এবং IDLE-এর পূর্ণরূপ গুলিয়ে ফেলা।
+
+\item Shell ও Editor-কে একই কাজের Tool মনে করা।
+
+\item Interpreter-কে Code Editor মনে করা।
+
+\item Programming Environment-কে Programming Language মনে করা।
+
+\item Shell-এ কাজ করার জন্য প্রতিবার Program File তৈরি করতেই হবে
+এমন ধারণা করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+Program লেখা, Edit, Run এবং Error সংশোধনের প্রয়োজনীয় পরিবেশকে
+\textbf{Programming Environment} বলে।
+
+\item
+Python Program Execute করতে
+\textbf{Python Interpreter}
+ব্যবহৃত হয়।
+
+\item
+Code Editor-এ Program Code লেখা ও Edit করা যায়।
+
+\item
+Shell-এ Instruction দিয়ে দ্রুত Result দেখা যায়।
+
+\item
+\textbf{IDE}
+=
+Integrated Development Environment।
+
+\item
+\textbf{IDLE}
+=
+Integrated Development and Learning Environment।
+
+\item
+IDLE Python-এর পরিচিত Programming Environment।
+
+\item
+Shell ছোট Test-এর জন্য এবং Editor পূর্ণ Program লিখে
+Save করার জন্য সুবিধাজনক।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Python}
+\(\longrightarrow\)
+Language
+\qquad
+\textbf{Interpreter}
+\(\longrightarrow\)
+Execute
+
+\medskip
+
+\textbf{Editor}
+\(\longrightarrow\)
+Write/Edit
+\qquad
+\textbf{Shell}
+\(\longrightarrow\)
+Quick Result
+
+\medskip
+
+\textbf{IDE}
+\(\longrightarrow\)
+সব Development সুবিধা একসাথে
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.28 Python Installation and Setup
+%================================================
+

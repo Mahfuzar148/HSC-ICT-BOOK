@@ -1,0 +1,520 @@
+\subsection{সম্পর্কিত সারণিতে শিক্ষার্থীর মোট ফি}
+\textbf{নমুনা।} একটি কলেজে নিচের দুই টেবিল আছে। এক শিক্ষার্থী বিভিন্ন মাসে ফি দেয়; প্রতিটি রসিদ আলাদা।
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{Student}\\ \hline
+StudentID & Name & ClassName\\ \hline
+1 & Ayesha & XI\\\hline
+2 & Nabil & XI\\\hline
+3 & Rupa & XII\\ \hline
+\end{tabular}
+\qquad
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{Payment}\\ \hline
+PaymentID & StudentID & Amount\\ \hline
+501 & 1 & 600\\\hline
+502 & 1 & 400\\\hline
+503 & 2 & 700\\ \hline
+\end{tabular}
+\end{flushleft}
+
+\begin{flushleft}
+\small
+\fbox{\parbox{0.88\linewidth}{\raggedright
+Student.StudentID (PK) $\xrightarrow{\;1:N\;}$ Payment.StudentID (FK)}}
+\end{flushleft}
+\textbf{মোট জমা কমপক্ষে ৭০০ এমন শিক্ষার্থী নির্বাচন:}
+\begin{verbatim}
+SELECT s.StudentID, s.Name, SUM(p.Amount) AS TotalPaid
+FROM Student AS s
+INNER JOIN Payment AS p ON s.StudentID = p.StudentID
+GROUP BY s.StudentID, s.Name
+HAVING SUM(p.Amount) >= 700
+ORDER BY TotalPaid DESC, s.StudentID ASC;
+\end{verbatim}
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|}\hline
+StudentID & Name & TotalPaid\\ \hline
+1 & Ayesha & 1000\\\hline
+2 & Nabil & 700\\ \hline
+\end{tabular}
+\end{flushleft}
+Ayesha-র মোট ৬০০+৪০০=১০০০, Nabil-এর ৭০০। Rupa-র Payment নেই, তাই INNER JOIN-এর ফলেও নেই। একই নামে দুই শিক্ষার্থী থাকতে পারে বলে শুধু Name দিয়ে গ্রুপ না করে StudentID-ও দেওয়া হয়েছে। “কমপক্ষে” মানে \texttt{>=}; শুধু \texttt{>} দিলে ৭০০ বাদ যেত।
+
+\subsection{নতুন Field, Data পরিবর্তন ও কাঠামো পরিবর্তন}
+\begin{verbatim}
+ALTER TABLE Student ADD COLUMN Address TEXT;
+UPDATE Student SET Address = 'Khulna' WHERE StudentID = 2;
+SELECT StudentID, Address FROM Student ORDER BY StudentID;
+\end{verbatim}
+এগুলো এই অংশের শিক্ষার্থী ও ফি নমুনার Student টেবিলে SQLite দিয়ে চালালে নতুন Address ফিল্ড যোগ হবে। StudentID=2-এর মান Khulna; 1 ও 3-এর নতুন ফিল্ড NULL থাকবে। নতুন ফিল্ড যোগ করা DDL; মান বদলানো DML।
+
+টেবিলের মাঝখানে নতুন কলাম দেখানোর ক্ষেত্রে সফটওয়্যারের সুবিধা বিবেচ্য। Access Design View বা DB Browser-এর সমর্থিত নকশা-সুবিধায় ক্রম সাজানো যায়। SQLite-এর ADD COLUMN শেষে কলাম যোগ করে; প্রদর্শনের ক্রম চাইলে SELECT-এর ফিল্ড তালিকা সাজাও। কলামের প্রদর্শনক্রম ডেটার পারস্পরিক অর্থ বদলায় না।
+
+\subsubsection{একই বিভাগের নাম একবার দেখানো}
+Science, Business, Science থাকা তিনটি রেকর্ডে \texttt{SELECT DISTINCT GroupName FROM Student ORDER BY GroupName;} চালালে Business ও Science একবার করে আসে। মূল তিনটি রেকর্ড মুছে যায় না।
+
+\subsubsection{একই নমুনায় বাছাই ও সাজানোর ফল}
+তিন শিক্ষার্থীর Roll যথাক্রমে 1, 2, 3 এবং GPA 5.00, 4.50, 5.00 হলে GPA=5 শর্তে দুটি রেকর্ড মেলে। GPA DESC, Roll DESC ক্রমে রোল হয় 3, 1, 2। DISTINCT GPA-তে দুটি পৃথক মান পাওয়া যায়। মূল তিনটি রেকর্ড থেকে GPA=5 রেকর্ড মুছে ফেললে একটি রেকর্ড থাকে; আগের SELECT নির্দেশগুলো মূল ডেটা বদলায়নি।
+
+\subsubsection{বিভাগ, শিক্ষার্থী ও নির্দিষ্ট পরীক্ষার ফল একত্রে}
+Department(DeptID, DeptName), Student(StudentID, Name, DeptID) ও Result(ResultID, StudentID, ExamName, ICTMark) ধরা যাক। Department–Student এবং Student–Result উভয় সম্পর্ক 1:M। ResultID রেকর্ডের পরিচিতি; প্রতি শিক্ষার্থীর প্রতি পরীক্ষায় একটি ফলের নিয়মে (StudentID, ExamName) অনন্য রাখা প্রয়োজন। Science বিভাগের Annual পরীক্ষায় অন্তত 80 পাওয়া শিক্ষার্থীর নাম ও নম্বর নির্বাচন করা যায়—
+\begin{verbatim}
+SELECT s.Name,r.ICTMark
+FROM Department d JOIN Student s ON d.DeptID=s.DeptID
+JOIN Result r ON s.StudentID=r.StudentID
+WHERE d.DeptName='Science' AND r.ExamName='Annual'
+  AND r.ICTMark>=80;
+\end{verbatim}
+
+\subsection{স্বাস্থ্যকেন্দ্রের বয়স সংশোধন ও রক্তের গ্রুপে বাছাই}
+একটি স্বাস্থ্যকেন্দ্র Patient টেবিলে নিচের তথ্য রেখেছে। কেন্দ্রটি শুধু নির্দিষ্ট রোগীর বয়স সংশোধন এবং নির্দিষ্ট রক্তের গ্রুপের প্রাপ্তবয়স্ক রোগীদের তালিকা তৈরি করতে চায়।
+\begin{flushleft}\small
+\begin{tabular}{|l|l|l|l|}\hline
+PatientID & Name & Age & BloodGroup\\\hline
+31 & Rumi & 22 & A+\\\hline
+32 & Sajal & 17 & O+\\\hline
+33 & Dina & 45 & O+\\\hline
+34 & Nafis & 29 & B+\\\hline
+\end{tabular}
+\end{flushleft}
+\begin{verbatim}
+UPDATE Patient SET Age=19 WHERE PatientID=32;
+\end{verbatim}
+রক্তের গ্রুপ ও বয়সের শর্ত একই সঙ্গে সত্য হতে হবে, তাই AND প্রয়োজন। কমপক্ষে 18 বলতে 18-ও অন্তর্ভুক্ত।
+\begin{verbatim}
+SELECT PatientID, Name, Age FROM Patient
+WHERE BloodGroup='O+' AND Age>=18
+ORDER BY Age DESC;
+\end{verbatim}
+ফল হবে প্রথমে (33, Dina, 45), তারপর (32, Sajal, 19)। WHERE বাদ দিলে নির্দিষ্ট রোগীর পরিবর্তে সব রোগীর বয়স বদলে যেত; আর OR দিলে দুটি শর্তের যেকোনো একটি সত্য হলেই রেকর্ড নির্বাচিত হতো।
+
+\subsubsection{চার পণ্যের হিসাবের ফল বোঝা}
+\begin{flushleft}\small
+\begin{tabular}{|l|l|l|l|}\hline
+ProductID & ProductName & UnitPrice & Stock\\\hline
+11 & Notebook & 80 & 30\\\hline
+12 & Pen & 15 & 100\\\hline
+13 & Folder & 80 & 20\\\hline
+14 & Marker & 45 & 0\\\hline
+\end{tabular}
+\end{flushleft}
+ওপরের Product সারণিতে চারটি ফিল্ড ও চারটি রেকর্ড আছে, তাই ডিগ্রি 4, কার্ডিনালিটি 4 এবং মোট ঘর 16। UnitPrice 80 পুনরাবৃত্ত। নির্ধারিত প্রথম কুয়েরিতে ProductID 11-এর Notebook ও 13-এর Folder মেলে; UnitPrice ও Stock-এর গুণফলে StockValue হয় 2400 ও 1600। মূল্যের অধঃক্রম ও পরিচিতির ঊর্ধ্বক্রমে ProductID-এর ক্রম 11, 13, 14, 12। COUNT, SUM ও MAX-এর ফল যথাক্রমে 4, 150, 80। কাঠামোয় ফিল্ড যোগ করতে ALTER TABLE এবং নতুন রেকর্ড যোগ করতে INSERT লাগে।
+
+\subsubsection{GPA-তে সীমা ও বিভাগের ফি}
+মূল Student সারণিতে GPA কমপক্ষে 4.5 কিন্তু 5-এর কম হলে Nabila, Farhan ও Mahi মেলে; তাঁদের GPA যথাক্রমে 4.80, 4.80 ও 4.50। Science বিভাগের মোট Fee হলো $600+550+450=1600$। নির্দিষ্ট নামের ক্রম প্রয়োজন হলে ORDER BY দিতে হয়।
+
+\subsection{আরও তিনটি সারণিতে SQL-এর প্রয়োগ}
+নিচের প্রতিটি উদ্দীপকে দেওয়া টেবিল সেই উদাহরণের নিজস্ব নমুনা। একই টেবিলের নাম থাকলেও অন্য উদাহরণের মান ব্যবহার করবে না। আগের কোনো উদাহরণের টেবিল প্রয়োজন হলে তা প্রশ্নে স্পষ্ট করে বলা আছে।
+
+
+
+\begin{boardbox}{উদাহরণ--১: Salary ও Designation}
+
+নিচের Employee টেবিলের Officer পদে কর্মরত ব্যক্তিদের মধ্যে যাদের Salary 30000 টাকার বেশি এবং 55000 টাকার সমান বা কম, তাদের সব তথ্য দেখাও। ফলাফল Name-এর বর্ণানুক্রমে সাজাও।
+
+\end{boardbox}
+
+
+\par\smallskip\noindent\begin{minipage}[t]{.53\linewidth}\vspace{0pt}\raggedright
+\small
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+ID & Name & Designation & Salary\\
+\hline
+101 & Anika & Manager & 40000\\\hline
+102 & Shafin & Officer & 25000\\\hline
+103 & Fahim & Accountant & 32000\\\hline
+104 & Kamal & Officer & 48000\\\hline
+105 & Javed & Officer & 52000\\\hline
+106 & Marjana & Officer & 29000\\
+\hline
+
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.44\linewidth}\vspace{0pt}\raggedright
+\small
+
+
+
+SQL—
+
+
+\begin{verbatim}
+SELECT *
+FROM Employee
+WHERE Salary>30000
+  AND Salary<=55000
+  AND Designation='Officer'
+ORDER BY Name ASC;
+\end{verbatim}
+\end{minipage}\par\smallskip
+\textbf{শর্তের ব্যাখ্যা:} Salary 30000-এর বেশি, 55000-এর সমান বা কম এবং Designation Officer—তিনটি শর্তই একসঙ্গে পূরণ করতে হবে।
+
+
+
+
+ফলে Javed ও Kamal নির্বাচিত হবে এবং Name অনুযায়ী Ascending Order-এ
+Javed আগে, Kamal পরে প্রদর্শিত হবে।
+
+
+% ============================================================
+% BOARD STYLE 2
+% ============================================================
+
+
+\begin{boardbox}{উদাহরণ--২: Class ও Section}
+
+নিচের Student টেবিল থেকে যাদের Class-এর মান 9 এবং Section-এর মান morning, তাদের সব তথ্য দেখাও।
+
+\end{boardbox}
+
+
+\par\smallskip\noindent\begin{minipage}[t]{.53\linewidth}\vspace{0pt}\raggedright
+\small
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+Name & Class & Roll & Section\\
+\hline
+Mizan & 9 & 1 & morning\\\hline
+David & 9 & 2 & morning\\\hline
+Parimal & 8 & 2 & day\\\hline
+Rubel & 8 & 1 & day\\\hline
+Sumi & 9 & 4 & morning\\\hline
+Tania & 10 & 5 & morning\\
+\hline
+
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.44\linewidth}\vspace{0pt}\raggedright
+\small
+
+
+
+SQL—
+
+
+\begin{verbatim}
+SELECT *
+FROM Student
+WHERE Class=9
+  AND Section='morning';
+\end{verbatim}
+\end{minipage}\par\smallskip
+
+
+
+ফল—
+
+Mizan, David ও Sumi।
+
+
+\textbf{কারণ:}
+
+একই রেকর্ডে Class এবং Section-এর দুটি শর্তই সত্য হতে হবে।
+
+তাই AND ব্যবহৃত হয়েছে।
+
+
+% ============================================================
+% BOARD STYLE 3
+% ============================================================
+
+
+\begin{boardbox}{উদাহরণ--৩: OR শর্ত}
+
+উদাহরণ--২-এর Student টেবিল ব্যবহার করে Class-এর মান 9 অথবা 10 এমন শিক্ষার্থীদের সব তথ্য দেখাও।
+
+\end{boardbox}
+
+
+\par\smallskip\noindent\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+\textbf{OR দিয়ে}
+\begin{verbatim}
+SELECT *
+FROM Student
+WHERE Class=9
+   OR Class=10;
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.49\linewidth}\vspace{0pt}\raggedright
+\textbf{একই শর্ত IN দিয়ে}
+\begin{verbatim}
+SELECT *
+FROM Student
+WHERE Class IN (9,10);
+\end{verbatim}
+\end{minipage}\par\smallskip
+
+
+
+% ============================================================
+% BOARD STYLE 4
+% ============================================================
+
+
+\begin{boardbox}{উদাহরণ--৪: Patient টেবিল}
+
+নিচের Patient টেবিলে যেসব রোগীর Gender-এর মান Male এবং Age 50 বা তার বেশি, তাদের Name, Age, Blood ও Contact দেখাও।
+
+\end{boardbox}
+
+
+\begin{flushleft}
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+Name & Gender & Age & Blood & Contact\\
+\hline
+Zahid & Male & 45 & O+ & 02918205\\\hline
+Sabina & Female & 50 & B+ & 02918305\\\hline
+Malek & Male & 60 & AB+ & 02918504\\\hline
+Rahim & Male & 35 & O+ & 02918702\\\hline
+Anika & Female & 25 & O+ & 02918901\\
+\hline
+
+\end{tabular}
+
+\end{flushleft}
+
+
+SQL—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT Name, Age, Blood, Contact
+FROM Patient
+WHERE Gender='Male'
+  AND Age>=50;
+\end{verbatim}
+\end{minipage}\par
+
+
+ফলে Malek-এর রেকর্ড আসবে।
+
+
+% ============================================================
+% BOARD STYLE 5
+% ============================================================
+
+
+\begin{boardbox}{উদাহরণ--৫: UPDATE}
+
+এই অনুশীলনে উদাহরণ--৪-এর Patient টেবিল ব্যবহার করো। তবে শুধু এই অনুশীলনের শুরুতে ধরে নাও, Anika-এর Gender ভুলভাবে Male সংরক্ষিত আছে। সেই মান Female দিয়ে সংশোধনের SQL লেখো।
+
+\end{boardbox}
+
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+UPDATE Patient
+SET Gender='Female'
+WHERE Name='Anika';
+\end{verbatim}
+\end{minipage}\par
+
+
+\begin{keypointbox}{আরও নিরাপদ নকশা}
+
+Name একাধিক ব্যক্তির একই হতে পারে।
+
+তাই বাস্তব ডেটাবেজে—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE PatientID='P105'
+\end{verbatim}
+\end{minipage}\par
+
+এর মতো Primary Key দিয়ে রেকর্ড শনাক্ত করা ভালো।
+
+\end{keypointbox}
+
+
+% ============================================================
+% BOARD STYLE 6
+% ============================================================
+
+
+\Needspace{10\baselineskip}
+
+\subsubsection{Worker সারণির শর্ত ও SQL}
+নিচের Worker সারণির স্বাধীন নমুনায় নির্দেশগুলো প্রয়োগ করা হয়েছে।
+\begin{flushleft}
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+WorkerID & Name & Department & Salary & City & JoinYear\\
+\hline
+W01 & Rakib & Production & 28000 & Dhaka & 2022\\\hline
+W02 & Sumaiya & Accounts & 35000 & Rajshahi & 2021\\\hline
+W03 & Imran & Production & 32000 & Khulna & 2023\\\hline
+W04 & Tania & Sales & 42000 & Dhaka & 2020\\\hline
+W05 & Sakib & Sales & 30000 & Rajshahi & 2022\\\hline
+W06 & Mahi & Accounts & 38000 & Dhaka & 2021\\
+\hline
+
+\end{tabular}
+
+\end{flushleft}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{প্রয়োগ 1.}\par
+\begin{verbatim}
+SELECT * FROM Worker;
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{2.}\par
+\begin{verbatim}
+SELECT Name, Salary FROM Worker;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{3.}\par
+\begin{verbatim}
+SELECT * FROM Worker WHERE City='Dhaka';
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{4.}\par
+\begin{verbatim}
+SELECT * FROM Worker WHERE Salary>30000;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{5.}\par
+\begin{verbatim}
+SELECT * FROM Worker WHERE Department IN ('Production','Sales');
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{6.}\par
+\begin{verbatim}
+SELECT * FROM Worker WHERE Salary BETWEEN 28000 AND 35000;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{7.}\par
+\begin{verbatim}
+SELECT * FROM Worker WHERE JoinYear=2022;
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{8.}\par
+\begin{verbatim}
+SELECT * FROM Worker ORDER BY Salary DESC;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{9.}\par
+\begin{verbatim}
+SELECT AVG(Salary) FROM Worker WHERE Department='Accounts';
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{10.}\par
+\begin{verbatim}
+SELECT MAX(Salary) FROM Worker;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+
+\subsubsection{Product সারণির শর্ত ও SQL}
+নিচের Product সারণির স্বাধীন নমুনায় নির্দেশগুলো প্রয়োগ করা হয়েছে।
+\begin{flushleft}
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+ProductID & ProductName & Category & Price & Stock\\
+\hline
+P01 & Keyboard & Electronics & 1200 & 15\\\hline
+P02 & Mouse & Electronics & 650 & 8\\\hline
+P03 & Notebook & Stationery & 120 & 40\\\hline
+P04 & Pen Set & Stationery & 250 & 5\\\hline
+P05 & Headphone & Electronics & 1800 & 12\\
+\hline
+
+\end{tabular}
+
+\end{flushleft}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{প্রয়োগ 1.}\par
+\begin{verbatim}
+SELECT * FROM Product WHERE Stock<10;
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{2.}\par
+\begin{verbatim}
+SELECT * FROM Product WHERE Price BETWEEN 500 AND 1500;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{3.}\par
+\begin{verbatim}
+SELECT * FROM Product WHERE Category='Electronics';
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{4.}\par
+\begin{verbatim}
+SELECT SUM(Stock) FROM Product;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{5.}\par
+\begin{verbatim}
+SELECT MIN(Price) FROM Product;
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{6.}\par
+\begin{verbatim}
+SELECT MAX(Price) FROM Product;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}\textbf{7.}\par
+\begin{verbatim}
+SELECT ProductName, Price FROM Product ORDER BY Price DESC;
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+\par\noindent\begin{minipage}{\linewidth}\textbf{8.}\par
+\begin{verbatim}
+SELECT * FROM Product WHERE ProductName LIKE 'H%';
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+
+
+\subsubsection{সীমার মধ্যে নম্বর বাছাই}
+নম্বর ৭০-এর বেশি হলে \texttt{Marks > 70}, আর কমপক্ষে ৭০ হলে \texttt{Marks >= 70} শর্ত প্রযোজ্য। ৪০ থেকে ৭০ পর্যন্ত উভয় সীমাসহ নম্বর বাছাই করতে \texttt{Marks BETWEEN 40 AND 70} লেখা যায়।
+

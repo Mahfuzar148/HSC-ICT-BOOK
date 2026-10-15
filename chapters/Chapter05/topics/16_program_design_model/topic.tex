@@ -1,0 +1,507 @@
+\sectionheading{5.16 প্রোগ্রাম ডিজাইন মডেল (Program Design Model)}
+
+কোনো সমস্যা সমাধানের জন্য শুধু Program লিখলেই হয় না;
+Program তৈরির কাজটি \textbf{কোন পদ্ধতিতে পরিকল্পনা, উন্নয়ন,
+পরীক্ষা ও বাস্তবায়ন করা হবে}, সেটিও গুরুত্বপূর্ণ।
+
+Program তৈরির এই সুশৃঙ্খল পদ্ধতি বা কাঠামোকেই সাধারণভাবে
+\textbf{Program Design Model} বলা হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Program Design Model কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Program তৈরির বিভিন্ন ধাপকে একটি নির্দিষ্ট পদ্ধতি ও কাঠামো
+অনুসারে সাজিয়ে Program উন্নয়নের যে Model তৈরি করা হয়,
+তাকে \textbf{Program Design Model} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Program কীভাবে ধাপে ধাপে তৈরি হবে
+\(\;=\;\)
+Program Design Model
+}
+
+\end{center}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Program Design Model কেন প্রয়োজন?}
+
+একটি ভালো Design Model ব্যবহার করলে—
+
+\begin{compacttwocolpoints}
+
+\item Program তৈরির কাজ পরিকল্পিতভাবে করা যায়।
+
+\item বড় Problem-কে সহজে পরিচালনা করা যায়।
+
+\item ভুল ও জটিলতা কমানো যায়।
+
+\item Testing ও Modification সহজ হয়।
+
+\item Program Development-এর অগ্রগতি সহজে বোঝা যায়।
+
+\item Team-এর একাধিক সদস্যের কাজ সমন্বয় করা সুবিধাজনক হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Process Model Intro
+%================================================
+\booksubheading{Program Development-এর Process Model}
+
+Program বা Software তৈরির ধাপগুলো কীভাবে সম্পন্ন হবে তার ভিত্তিতে
+বিভিন্ন ধরনের Process Model ব্যবহৃত হয়।
+
+HSC পর্যায়ে প্রধান ধারণাগুলো হলো—
+
+%================================================
+% Linear
+%================================================
+\booksubheading{১. রৈখিক প্রক্রিয়া মডেল (Linear Process Model)}
+
+\begin{definitionbox}
+
+যে Model-এ Program Development-এর একটি ধাপ শেষ হওয়ার পর
+ধারাবাহিকভাবে পরবর্তী ধাপে যাওয়া হয়, তাকে
+\textbf{Linear Process Model} বলা হয়।
+
+\end{definitionbox}
+
+\textbf{সহজ ধারণা—}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.14\linewidth}{
+        \centering\textbf{ধাপ--১}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.14\linewidth}{
+        \centering\textbf{ধাপ--২}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.14\linewidth}{
+        \centering\textbf{ধাপ--৩}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.14\linewidth}{
+        \centering\textbf{ধাপ--৪}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+অর্থাৎ কাজ সাধারণত একটি নির্দিষ্ট ক্রমে এগোয়।
+
+\textbf{উদাহরণ:}
+Waterfall Model এবং V-Model।
+
+%================================================
+% Waterfall
+%================================================
+\booksubheading{Waterfall Model}
+
+Waterfall Model-এ Development-এর ধাপগুলো সাধারণত ওপর থেকে নিচে
+ধারাবাহিকভাবে সম্পন্ন হয়।
+
+\begin{center}
+
+\textbf{
+Requirement Analysis
+\(\rightarrow\)
+Design
+\(\rightarrow\)
+Implementation
+\(\rightarrow\)
+Testing
+\(\rightarrow\)
+Deployment
+\(\rightarrow\)
+Maintenance
+}
+
+\end{center}
+
+এর মূল ধারণা হলো—
+\textbf{একটি ধাপ শেষ করে পরবর্তী ধাপে যাওয়া}।
+
+%================================================
+% Iterative
+%================================================
+\booksubheading{২. পুনরাবৃত্তিমূলক প্রক্রিয়া মডেল (Iterative Process Model)}
+
+\begin{definitionbox}
+
+যে Model-এ Program বা System একবারে সম্পূর্ণ তৈরি না করে
+\textbf{বারবার Development Cycle-এর মধ্য দিয়ে উন্নত করা হয়},
+তাকে \textbf{Iterative Process Model} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{
+Design
+\(\rightarrow\)
+Develop
+\(\rightarrow\)
+Test
+\(\rightarrow\)
+Improve
+\(\rightarrow\)
+আবার Development
+}
+
+\end{center}
+
+প্রথম Version সম্পূর্ণ নিখুঁত না হলেও পরবর্তী Iteration-এ
+নতুন Feature যোগ বা প্রয়োজনীয় পরিবর্তন করা যায়।
+
+\textbf{উদাহরণ:} Spiral Model।
+
+%================================================
+% Parallel
+%================================================
+\booksubheading{৩. সমান্তরাল প্রক্রিয়া মডেল (Parallel Process Model)}
+
+\begin{definitionbox}
+
+যে Model-এ Development-এর বিভিন্ন কাজ বা অংশ প্রয়োজন অনুযায়ী
+\textbf{একই সময় বা পরস্পরের সঙ্গে সমন্বয় করে} সম্পন্ন করা যায়,
+তাকে \textbf{Parallel Process Model} বলা হয়।
+
+\end{definitionbox}
+
+এক্ষেত্রে একটি কাজ পুরোপুরি শেষ হওয়ার জন্য সবসময় অন্য কাজকে
+অপেক্ষা করতে হয় না।
+
+\begin{center}
+
+\textbf{
+একাধিক Development Task
+\(\longrightarrow\)
+সমান্তরালে কাজ
+\(\longrightarrow\)
+সমন্বয়
+\(\longrightarrow\)
+সম্পূর্ণ Program
+}
+
+\end{center}
+
+\textbf{উদাহরণ:} Unified Process Model।
+
+%================================================
+% Process Model Comparison
+%================================================
+\booksubheading{Process Model-এর তুলনা}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.19\linewidth}|Y|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Linear}}
+&
+\multicolumn{1}{c|}{\textbf{Iterative}}
+&
+\multicolumn{1}{c|}{\textbf{Parallel}}
+\\
+\hline
+
+কাজের ধরন
+&
+ধারাবাহিক
+&
+পুনরাবৃত্তিমূলক
+&
+সমান্তরাল
+\\
+\hline
+
+ধাপ
+&
+একটির পর একটি
+&
+Development Cycle বারবার হতে পারে
+&
+কিছু কাজ একই সময়ে চলতে পারে
+\\
+\hline
+
+পরিবর্তন
+&
+পরে পরিবর্তন তুলনামূলক কঠিন
+&
+পরিবর্তন ও উন্নয়ন তুলনামূলক সহজ
+&
+বিভিন্ন অংশ একসঙ্গে উন্নয়ন সম্ভব
+\\
+\hline
+
+উদাহরণ
+&
+Waterfall, V-Model
+&
+Spiral Model
+&
+Unified Process Model
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Programming Model
+%================================================
+\booksubheading{Programming Model-এর ধারণা}
+
+Program-এর Code কীভাবে সংগঠিত ও তৈরি করা হবে তার ভিত্তিতেও
+বিভিন্ন Programming Model রয়েছে।
+
+এ অধ্যায়ের জন্য গুরুত্বপূর্ণ Modelগুলো হলো—
+
+%================================================
+% Structured
+%================================================
+\booksubheading{১. Structured Programming}
+
+Program-কে সুশৃঙ্খলভাবে বিভিন্ন অংশে ভাগ করে
+\textbf{Sequence, Selection এবং Repetition}-এর মতো
+Control Structure ব্যবহার করে Program তৈরি করার পদ্ধতিকে
+\textbf{Structured Programming} বলা হয়।
+
+\textbf{মূল ধারণা:}
+Program-কে ছোট, সুশৃঙ্খল ও সহজ অংশে সাজানো।
+
+%================================================
+% OOP
+%================================================
+\booksubheading{২. Object Oriented Programming (OOP)}
+
+যে Programming পদ্ধতিতে Data এবং তার সঙ্গে সম্পর্কিত Operation-কে
+\textbf{Object}-এর ভিত্তিতে সংগঠিত করে Program তৈরি করা হয়,
+তাকে \textbf{Object Oriented Programming} বলে।
+
+OOP-এর কয়েকটি গুরুত্বপূর্ণ ধারণা—
+
+\begin{compacttwocolpoints}
+
+\item Object
+\item Class
+\item Encapsulation
+\item Inheritance
+\item Polymorphism
+
+\end{compacttwocolpoints}
+
+এখানে এগুলোর নাম ও মূল ধারণা মনে রাখলেই যথেষ্ট।
+
+%================================================
+% Visual
+%================================================
+\booksubheading{৩. Visual Programming}
+
+যে Programming পদ্ধতিতে Graphical Interface, Form, Button,
+Menu ইত্যাদি Visual Element ব্যবহার করে Program তৈরি করা যায়,
+তাকে \textbf{Visual Programming} বলে।
+
+এতে Text Code-এর পাশাপাশি Graphical Element ব্যবহার করেও
+Program তৈরির বিভিন্ন কাজ করা যায়।
+
+%================================================
+% Event Driven
+%================================================
+\booksubheading{৪. Event Driven Programming}
+
+যে Programming পদ্ধতিতে কোনো \textbf{Event} সংঘটিত হলে
+সেই Event অনুযায়ী Program-এর নির্দিষ্ট Code Execute হয়,
+তাকে \textbf{Event Driven Programming} বলে।
+
+Event-এর উদাহরণ—
+
+\begin{itemize}
+
+\item Mouse Click
+\item Key Press
+\item Button Click
+
+\end{itemize}
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+একটি Application-এ কোনো Button-এ Click করলে Result প্রদর্শিত হলো।
+
+এখানে \textbf{Button Click} হলো Event এবং সেই Event-এর কারণে
+নির্দিষ্ট Code Execute হলো।
+
+\end{examplebox}
+
+%================================================
+% Programming Model Comparison
+%================================================
+\booksubheading{Programming Model-এর তুলনা}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.33\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Model}}
+&
+\multicolumn{1}{c|}{\textbf{মূল ধারণা}}
+\\
+\hline
+
+Structured Programming
+&
+Program-কে সুশৃঙ্খল Control Structure-এ সাজানো।
+\\
+\hline
+
+Object Oriented Programming
+&
+Object ও Class-এর ভিত্তিতে Program তৈরি।
+\\
+\hline
+
+Visual Programming
+&
+Graphical Element ব্যবহার করে Program তৈরি।
+\\
+\hline
+
+Event Driven Programming
+&
+Event ঘটলে সংশ্লিষ্ট Code Execute করা।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Process vs Programming Model
+%================================================
+\booksubheading{Process Model ও Programming Model-এর পার্থক্য}
+
+দুটি বিষয় দেখতে কাছাকাছি হলেও এক নয়।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.25\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Process Model}}
+&
+\multicolumn{1}{c|}{\textbf{Programming Model}}
+\\
+\hline
+
+মূল প্রশ্ন
+&
+Program তৈরির কাজ কীভাবে এগোবে?
+&
+Program-এর Code কীভাবে সংগঠিত হবে?
+\\
+\hline
+
+উদাহরণ
+&
+Linear, Iterative, Parallel
+&
+Structured, OOP, Visual, Event Driven
+\\
+\hline
+
+গুরুত্ব
+&
+Development Process
+&
+Programming Style/Structure
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item \textbf{Program Design Model} Program Development-কে
+পরিকল্পিত ও সুশৃঙ্খল করে।
+
+\item \textbf{Linear Model} →
+ধাপগুলো ধারাবাহিকভাবে সম্পন্ন হয়।
+
+\item \textbf{Waterfall ও V-Model} →
+Linear Model-এর উদাহরণ।
+
+\item \textbf{Iterative Model} →
+Development Cycle বারবার সম্পন্ন করে Program উন্নত করা হয়।
+
+\item \textbf{Spiral Model} →
+Iterative Model-এর উদাহরণ।
+
+\item \textbf{Parallel Model} →
+একাধিক Development কাজ একই সময়ে চলতে পারে।
+
+\item \textbf{Unified Process Model} →
+Parallel Process Model-এর উদাহরণ।
+
+\item Programming Model-এর গুরুত্বপূর্ণ ধরন—
+\textbf{Structured, Object Oriented, Visual ও Event Driven Programming}।
+
+\item দ্রুত পার্থক্য—
+
+\begin{center}
+
+\textbf{
+Process Model
+=
+Program তৈরির ধাপ কীভাবে চলবে
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Programming Model
+=
+Program-এর Code/Structure কীভাবে সাজানো হবে
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.17 Modular Programming
+%================================================

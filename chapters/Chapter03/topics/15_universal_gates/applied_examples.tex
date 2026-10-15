@@ -1,0 +1,38 @@
+\subsection{একই ধরনের গেট দিয়ে সম্পূর্ণ রাশি}
+\chThreeExample{১}{NAND দিয়ে $Y=AB+CD$}
+\chThreeAnswer প্রথম দুটি NAND-এর আউটপুট $P=\overline{AB}$ ও $Q=\overline{CD}$। তৃতীয় NAND-এ:
+\[Y=\overline{PQ}=\overline{\overline{AB}\cdot\overline{CD}}=AB+CD.\]
+দুটি স্তরে তিনটি দুই-ইনপুট NAND লাগে। শেষ গেটে OR বসালে আর ``শুধু NAND'' বাস্তবায়ন থাকবে না।
+
+\chThreeExample{২}{NOR দিয়ে $Y=(A+B)(C+D)$}
+\chThreeAnswer $P=\overline{A+B}$, $Q=\overline{C+D}$। শেষ NOR-এ $Y=\overline{P+Q}=(A+B)(C+D)$। তিনটি দুই-ইনপুট NOR যথেষ্ট।
+
+\chThreeExample{৩}{চার NAND দিয়ে XOR}
+\chThreeAnswer
+\[P=\overline{AB},\quad Q=\overline{AP},\quad R=\overline{BP},\quad Y=\overline{QR}.\]
+00, 01, 10, 11 ইনপুটে শেষ ফল যথাক্রমে ০, ১, ১, ০। তাই $Y=A\oplus B$। একই সংযোগে NAND-এর জায়গায় NOR বসালে XNOR পাওয়া যায়; গেটের নাম বদলালেই একই function থাকে না।
+
+% Mahbub teaching-type follow-up, 2026-10-14
+\chThreeExample{৪}{শুধু NAND দিয়ে XNOR এবং শুধু NOR দিয়ে XOR}
+আগের চার-NAND XOR-এর output-এ একটি tied-input NAND দাও। একইভাবে চার-NOR XNOR-এর output-এ tied-input NOR দিলে কী হয়?
+\chThreeAnswer NAND-এ $N(X,X)=\overline X$ এবং NOR-এ $R(X,X)=\overline X$। তাই চার NAND-এর পরে পঞ্চম NAND দিলে $\overline{A\oplus B}$ বা XNOR। চার NOR-এর পরে পঞ্চম NOR দিলে XOR।
+\begin{center}\begin{tabular}{|c|c|c|}\hline
+চাওয়া কাজ & শুধু NAND & শুধু NOR\\\hline
+XOR & ৪টি & এই নির্মাণে ৫টি\\\hline
+XNOR & এই নির্মাণে ৫টি & ৪টি\\\hline
+\end{tabular}\end{center}
+NOR-এর চার গেটের ধাপ $P=\overline{A+B}$, $Q=\overline{A+P}$, $R=\overline{B+P}$, $X=\overline{Q+R}$। 00, 01, 10, 11-এ $X$ হলো ১, ০, ০, ১; শেষ inverter-এ XOR পাওয়া যায়। গণনা এখানে উল্লিখিত দুই-ইনপুট নির্মাণের জন্য।
+
+\chThreeExample{৫}{পূরক চলকসহ SOP-কে NAND ও NOR-এ বাস্তবায়ন}
+$Y=A\overline B+BC$-কে শুধু NAND এবং শুধু NOR দিয়ে প্রকাশ করো।
+\chThreeAnswer NAND নির্মাণে $N_B=\overline{BB}=\overline B$, $P=\overline{AN_B}$, $Q=\overline{BC}$, $Y=\overline{PQ}$; চারটি NAND।
+
+NOR নির্মাণের জন্য আগে POS করি:
+\[(A+B)(\overline B+C)=A\overline B+AC+BC=A\overline B+BC.\]
+শেষ ধাপে consensus theorem-এ AC অপ্রয়োজনীয়। এখন $N_B=\overline{B+B}$, $P=\overline{A+B}$, $Q=\overline{N_B+C}$, $Y=\overline{P+Q}$; চারটি NOR। উভয় নির্মাণে $A=1,B=0,C=0$-এ output ১; সব আট input-এ একই ফল হতে হবে।
+
+\chThreeExample{৬}{POS-কে শুধু NAND-এ এবং SOP-কে শুধু NOR-এ}
+$Y=(A+B)(C+D)$ NAND-এ এবং $Z=AB+CD$ NOR-এ গঠন করো; প্রথমে সরলীকরণ না করেও ধাপ দেখাও।
+\chThreeAnswer NAND-এ tied-input দিয়ে $\overline A,\overline B,\overline C,\overline D$ তৈরি করো। তাদের জোড়ায় NAND করলে $P=A+B$, $Q=C+D$। এরপর $R=\overline{PQ}$, $Y=\overline{RR}=PQ$; আটটি NAND।
+
+NOR-এ একইভাবে চার input-এর পূরক তৈরি করো। জোড়ায় NOR করলে $P=AB$, $Q=CD$। এরপর $R=\overline{P+Q}$, $Z=\overline{R+R}=P+Q$; আটটি NOR। এই সরাসরি নির্মাণ বোঝায় উভয় universal gate দিয়ে SOP/POS দুটোই সম্ভব। আগে রাশি বদলে বা shared intermediate ব্যবহার করলে কখনো গেটের সংখ্যা কমানো যায়; এই সংখ্যা সর্বক্ষেত্রে সর্বনিম্নের দাবি নয়।

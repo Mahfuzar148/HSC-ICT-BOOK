@@ -1,0 +1,47 @@
+% Technical basis: MDN ol. Inspired question skills, original data and wording.
+\subsubsection{type ও start একসঙ্গে: ফল গণনা করার নিয়ম}
+\texttt{type} চিহ্নের ধরন বেছে নেয়; \texttt{start} বলে কত নম্বর অবস্থান থেকে গণনা শুরু হবে। \texttt{start}-এর মান পূর্ণসংখ্যা, চিহ্নের অক্ষর নয়। যেমন \texttt{type="A" start="3"} দিলে প্রথম চিহ্ন C, পরেরটি D; \texttt{type="i" start="4"} দিলে iv, v। অক্ষর e থেকে শুরু করতে \texttt{type="a" start="5"} লিখবে, \texttt{start="e"} নয়।
+
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
+\begin{verbatim}
+<ol type="a" start="4">
+  <li>Books</li>
+  <li>Courses
+    <ol type="i" start="2">
+      <li>HTML</li>
+      <li>CSS</li>
+    </ol>
+  </li>
+  <li>Clubs
+    <ul style="list-style-type:circle">
+      <li>Science</li>
+      <li>Debate</li>
+    </ul>
+  </li>
+</ol>
+\end{verbatim}
+\end{multicols}
+\par\noindent\begin{minipage}[t]{.36\linewidth}\vspace{0pt}
+\textbf{\color{chFourTeal}দৃশ্যমান ফল}\par
+\begin{enumerate}[label=\alph*.,start=4,leftmargin=*]
+\item Books
+\item Courses
+\begin{enumerate}[label=\roman*.,start=2,leftmargin=*]
+\item HTML
+\item CSS
+\end{enumerate}
+\item Clubs
+\begin{itemize}[label=$\circ$,leftmargin=*]
+\item Science
+\item Debate
+\end{itemize}
+\end{enumerate}
+
+\end{minipage}\hfill
+\begin{minipage}[t]{.60\linewidth}\vspace{0pt}
+বাইরের তালিকা d, e, f পর্যন্ত চলে। ভেতরের রোমান তালিকা নিজস্ব \texttt{start="2"} অনুযায়ী ii থেকে চলে; বাইরের e থেকে গণনা করে না। বুলেট তালিকা সংখ্যার গণনায় অংশ নেয় না। প্রতিটি ভেতরের তালিকা তার সংশ্লিষ্ট বাইরের \texttt{<li>}-এর মধ্যেই শেষ হয়েছে।
+\end{minipage}\par
+
+নেস্টেড তালিকার প্রতিটি স্তরে আলাদা \texttt{<ol>} বা \texttt{<ul>} থাকে। চিহ্নের ধরন ও শুরু নম্বর ওই স্তরেই নির্ধারিত হয়। ফলে বাইরের বড় হাতের অক্ষরের তালিকার ভেতরে সংখ্যা এবং অন্য শাখায় বুলেট রাখা যায়। স্তরের প্রথম দুটি চিহ্ন মিলিয়ে গণনা যাচাই করা যায়।
+

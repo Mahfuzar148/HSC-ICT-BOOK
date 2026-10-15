@@ -1,0 +1,34 @@
+\subsection{Encryption ও Decryption-এর দ্রুত উদাহরণ}
+
+\par\smallskip\noindent
+\begin{minipage}[t]{.47\linewidth}\vspace{0pt}\small
+\begin{tabularx}{\linewidth}{|Y|Y|Y|}\hline
+\chSixHeader Plaintext & Rule & Ciphertext\\\hline
+HELLO & ৩ ঘর সামনে & KHOOR\\\hline
+HELLO & ১ ঘর সামনে & IFMMP\\\hline
+XYZ & ৩ ঘর সামনে & ABC\\\hline
+HSC & ২ ঘর সামনে & JUE\\\hline
+\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{.49\linewidth}\vspace{0pt}\small
+\textbf{উল্টো পথে ডিক্রিপশন।} তিন ঘর Shift-এ HELLO থেকে KHOOR হয়।
+এবার প্রতিটি অক্ষর তিন ঘর পিছিয়ে পাই—
+\[
+K\rightarrow H,\quad H\rightarrow E,\quad O\rightarrow L,
+\]
+\[
+O\rightarrow L,\quad R\rightarrow O.
+\]
+ফলে আবার মূল HELLO পাওয়া যায়।
+\end{minipage}\par\smallskip
+
+\begin{keypointbox}{সরণের নিয়ম}
+প্রশ্নে দেওয়া Shift বা Rule-ই ব্যবহার করবে; আগের Ciphertext মুখস্থ করে
+লিখবে না। সারণিতে একই HELLO-র জন্য $k=3$ ও $k=1$-এ ভিন্ন ফল হয়েছে।
+\end{keypointbox}
+
+
+% ============================================================
+% 16.11 CUSTOM RULE
+% ============================================================
+

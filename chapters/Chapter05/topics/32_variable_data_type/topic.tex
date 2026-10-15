@@ -1,0 +1,806 @@
+\sectionheading{5.32 Variable ও Data Type}
+
+Program-এ বিভিন্ন ধরনের Data নিয়ে কাজ করতে হয়।
+
+কোনো Data বা Value-কে একটি নাম দিয়ে Program-এ ব্যবহার করার
+জন্য \textbf{Variable} এবং Dataটি কী ধরনের তা বোঝানোর জন্য
+\textbf{Data Type} ব্যবহৃত হয়।
+
+%================================================
+% Variable Definition
+%================================================
+
+\booksubheading{Variable কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Program-এ কোনো Data বা Value-কে একটি নামের মাধ্যমে
+সংরক্ষণ ও ব্যবহার করার ব্যবস্থাকে সাধারণভাবে
+\textbf{Variable} বলা হয়।
+
+\end{definitionbox}
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+age = 18
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.30\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{অর্থ}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily age}
+&
+Variable-এর নাম
+\\
+
+\hline
+
+\textenglish{\ttfamily =}
+&
+Assignment Operator
+\\
+
+\hline
+
+\textenglish{\ttfamily 18}
+&
+Variable-এর সঙ্গে যুক্ত Value
+\\
+
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\begin{center}
+
+\textbf{Variable}
+\(\longrightarrow\)
+\textbf{Data/Value-এর নামযুক্ত ধারক}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Why Variable
+%================================================
+
+\booksubheading{Variable কেন প্রয়োজন?}
+
+ধরা যাক—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+price = 500
+\end{english}
+
+\end{codebox}
+
+এখন Program-এর বিভিন্ন জায়গায় সরাসরি
+\textenglish{\ttfamily 500}
+না লিখে
+\textenglish{\ttfamily price}
+নামটি ব্যবহার করা যায়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print(price)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+500
+\end{english}
+
+\end{codebox}
+
+এতে Program লেখা, বোঝা ও পরিবর্তন করা সহজ হয়।
+
+%================================================
+% Data Type Definition
+%================================================
+
+\booksubheading{Data Type কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Data বা Value কী ধরনের এবং তার উপর কী ধরনের
+Operation করা যাবে—তা নির্দেশকারী শ্রেণিকে
+\textbf{Data Type} বলা হয়।
+
+\end{definitionbox}
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+age = 18\\
+name = "Rahim"
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily 18}
+একটি পূর্ণসংখ্যা।
+
+\item
+\textenglish{\ttfamily "Rahim"}
+একটি Text/String ধরনের Data।
+
+\end{itemize}
+
+%================================================
+% Why Data Type
+%================================================
+
+\booksubheading{Data Type কেন প্রয়োজন?}
+
+Computer-এর কাছে নিচের Valueগুলো একই ধরনের Data নয়—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+20\\
+20.5\\
+"20"\\
+True
+\end{english}
+
+\end{codebox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.30\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Value}}
+&
+\multicolumn{1}{c|}{\textbf{সাধারণ ধারণা}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily 20}
+&
+পূর্ণসংখ্যা
+\\
+
+\hline
+
+\textenglish{\ttfamily 20.5}
+&
+দশমিক সংখ্যা
+\\
+
+\hline
+
+\textenglish{\ttfamily "20"}
+&
+Text/String
+\\
+
+\hline
+
+\textenglish{\ttfamily True}
+&
+Logical/Boolean Value
+\\
+
+\hline
+
+\end{tabularx}
+
+তাই Program-এ Data-এর ধরন জানা গুরুত্বপূর্ণ।
+
+%================================================
+% Relation
+%================================================
+
+\booksubheading{Variable ও Data Type-এর সম্পর্ক}
+
+Variable কোনো Value-কে নাম দিয়ে ব্যবহার করতে সাহায্য করে এবং
+Data Type সেই Value-এর ধরন নির্দেশ করে।
+
+\begin{examplebox}{উদাহরণ ১}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+age = 18
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{center}
+
+\textbf{Variable}
+\(\longrightarrow\)
+\textenglish{\ttfamily age}
+\qquad
+\textbf{Value}
+\(\longrightarrow\)
+\textenglish{\ttfamily 18}
+\qquad
+\textbf{Data Type}
+\(\longrightarrow\)
+Integer
+
+\end{center}
+
+\end{examplebox}
+
+\begin{examplebox}{উদাহরণ ২}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+name = "Karim"
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{center}
+
+\textbf{Variable}
+\(\longrightarrow\)
+\textenglish{\ttfamily name}
+\qquad
+\textbf{Value}
+\(\longrightarrow\)
+\textenglish{\ttfamily "Karim"}
+\qquad
+\textbf{Data Type}
+\(\longrightarrow\)
+String
+
+\end{center}
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}দ্রুত সম্পর্ক}
+
+\begin{center}
+
+\textbf{Variable Name}
+\(\longrightarrow\)
+\textbf{Value}
+\(\longrightarrow\)
+\textbf{Data Type}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Different Types of Data
+%================================================
+
+\booksubheading{একই Program-এ বিভিন্ন ধরনের Data}
+
+নিচের Programটি লক্ষ্য করো—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+name = "Rahim"\\
+age = 18\\
+height = 5.7\\
+is\_student = True
+\end{english}
+
+\end{codebox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.27\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Variable}}
+&
+\multicolumn{1}{c|}{\textbf{Value}}
+&
+\multicolumn{1}{c|}{\textbf{Data-এর ধরন}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily name}
+&
+\textenglish{\ttfamily "Rahim"}
+&
+Text/String
+\\
+
+\hline
+
+\textenglish{\ttfamily age}
+&
+\textenglish{\ttfamily 18}
+&
+Integer
+\\
+
+\hline
+
+\textenglish{\ttfamily height}
+&
+\textenglish{\ttfamily 5.7}
+&
+Floating-point
+\\
+
+\hline
+
+\textenglish{\ttfamily is\_student}
+&
+\textenglish{\ttfamily True}
+&
+Boolean
+\\
+
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+এই Data Typeগুলোর নির্দিষ্ট Python নাম, ব্যবহার ও বৈশিষ্ট্য
+\textbf{5.34 Python Data Type}
+অংশে বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Variable Value Change
+%================================================
+
+\booksubheading{Variable-এর Value পরিবর্তন হতে পারে}
+
+Variable-এর একটি গুরুত্বপূর্ণ ধারণা হলো—
+Program চলাকালে এর Value পরিবর্তন করা যেতে পারে।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10\\
+x = 20
+\end{english}
+
+\end{codebox}
+
+শেষে
+\textenglish{\ttfamily x}
+-এর বর্তমান Value হবে—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+20
+\end{english}
+
+\end{codebox}
+
+কারণ দ্বিতীয় Assignment-এ নতুন Value
+আগের Value-এর পরিবর্তে ব্যবহৃত হয়েছে।
+
+\begin{center}
+
+\textbf{পুরোনো Value}
+\(\longrightarrow\)
+\textbf{নতুন Assignment}
+\(\longrightarrow\)
+\textbf{নতুন Value}
+
+\end{center}
+
+%================================================
+% Assignment
+%================================================
+
+\booksubheading{Assignment-এর প্রাথমিক ধারণা}
+
+Python-এ সাধারণভাবে
+\textenglish{\ttfamily =}
+চিহ্ন ব্যবহার করে Variable-এর সঙ্গে Value যুক্ত করা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+number = 50
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily =}
+হলো \textbf{Assignment Operator}।
+
+\begin{center}
+
+\textbf{ডান পাশের Value}
+\(\longrightarrow\)
+\textbf{বাম পাশের Variable}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}গুরুত্বপূর্ণ}
+
+Programming-এ—
+
+\begin{center}
+
+\textenglish{\ttfamily x = 10}
+
+\end{center}
+
+এর অর্থ Mathematical Equation নয়।
+
+এখানে
+\textenglish{\ttfamily 10}
+Value-টি
+\textenglish{\ttfamily x}
+Variable-এর সঙ্গে Assign করা হচ্ছে।
+
+\end{rememberbox}
+
+%================================================
+% Variable and Constant
+%================================================
+
+\booksubheading{Variable ও Constant-এর প্রাথমিক পার্থক্য}
+
+Variable-এর Value পরিবর্তিত হতে পারে।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10\\
+x = 15
+\end{english}
+
+\end{codebox}
+
+অন্যদিকে Constant ধারণায় কোনো Value সাধারণত
+অপরিবর্তিত রাখার উদ্দেশ্যে ব্যবহার করা হয়।
+
+\begin{rememberbox}
+
+এখানে শুধু মূল ধারণাটি মনে রাখবে।
+
+Python Variable-এর নিয়ম ও ব্যবহার
+\textbf{5.33 Python Variable}
+অংশে বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Importance
+%================================================
+
+\booksubheading{Variable ও Data Type জানা কেন গুরুত্বপূর্ণ?}
+
+Variable ও Data Type-এর ধারণা থাকলে—
+
+\begin{compacttwocolpoints}
+
+\item Program-এ Data সংরক্ষণ ও ব্যবহার করা সহজ হয়।
+
+\item বিভিন্ন ধরনের Data আলাদা করে বোঝা যায়।
+
+\item Calculation সঠিকভাবে করা যায়।
+
+\item Input নেওয়া ও Output দেখানো সহজ হয়।
+
+\item Condition, Loop ও Function-এ Data নিয়ে কাজ করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Small Example
+%================================================
+
+\booksubheading{একটি ছোট উদাহরণ}
+
+\begin{examplebox}{Program}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+name = "Mina"\\
+age = 17\\[1mm]
+print(name)\\
+print(age)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Mina\\
+17
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily name}
+ও
+\textenglish{\ttfamily age}
+হলো Variable এবং তাদের সঙ্গে ভিন্ন ধরনের Value যুক্ত রয়েছে।
+
+\end{examplebox}
+
+%================================================
+% Summary Table
+%================================================
+
+\booksubheading{এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.30\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{মূল ধারণা}}
+
+\\
+
+\hline
+
+Variable
+&
+Data বা Value-কে নাম দিয়ে ব্যবহার করা হয়।
+\\
+
+\hline
+
+Value
+&
+Variable-এর সঙ্গে যুক্ত প্রকৃত Data।
+\\
+
+\hline
+
+Data Type
+&
+Value কী ধরনের তা নির্দেশ করে।
+\\
+
+\hline
+
+Assignment
+&
+Variable-এর সঙ্গে Value যুক্ত করা।
+\\
+
+\hline
+
+Assignment Operator
+&
+\textenglish{\ttfamily =}
+\\
+
+\hline
+
+Variable Value
+&
+প্রয়োজনে পরিবর্তন করা যায়।
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Variable এবং Value-কে একই বিষয় মনে করা।
+
+\item Variable-এর নামকে Data Type মনে করা।
+
+\item
+\textenglish{\ttfamily "10"}
+ও
+\textenglish{\ttfamily 10}
+একই ধরনের Data মনে করা।
+
+\item
+\textenglish{\ttfamily =}
+-কে সবসময় Mathematical Equality মনে করা।
+
+\item Variable-এর Value পরিবর্তন করা যায় না মনে করা।
+
+\item Text লিখতে Quotation Mark ব্যবহার না করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+\textbf{Variable}
+ব্যবহার করে Data বা Value-কে নাম দেওয়া হয়।
+
+\item
+\textbf{Value}
+হলো Variable-এর সঙ্গে যুক্ত প্রকৃত Data।
+
+\item
+\textbf{Data Type}
+Value কী ধরনের তা নির্দেশ করে।
+
+\item
+\textenglish{\ttfamily =}
+হলো Assignment Operator।
+
+\item
+Variable-এর Value পরিবর্তিত হতে পারে।
+
+\item
+একই Program-এ বিভিন্ন ধরনের Data ব্যবহার করা যায়।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Variable Name}
+\(\longrightarrow\)
+\textbf{Value}
+\(\longrightarrow\)
+\textbf{Data Type}
+
+\end{center}
+
+\item
+উদাহরণ—
+
+\begin{center}
+
+\textenglish{\ttfamily age = 18}
+
+\end{center}
+
+এখানে—
+
+\begin{center}
+
+\textenglish{\ttfamily age}
+\(\longrightarrow\)
+\textbf{Variable}
+
+\qquad
+
+\textenglish{\ttfamily 18}
+\(\longrightarrow\)
+\textbf{Value}
+
+\qquad
+
+\textbf{Integer}
+\(\longrightarrow\)
+\textbf{Data Type}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.33 Python Variable
+%================================================
+

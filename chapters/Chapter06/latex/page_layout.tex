@@ -1,0 +1,8 @@
+% One narrow-page profile for the standalone chapter and the complete book.
+% Paper remains 170 x 240 mm. The inner trim margin is 8 + 3 = 11 mm.
+% Keep the original body font; gain space from margins and header/footer gaps.
+\providecommand{\chSixNarrowGeometry}[1]{%
+  #1{inner=8mm,outer=7mm,bindingoffset=3mm,
+     top=8mm,bottom=8mm,includehead,includefoot,
+     headheight=15pt,headsep=3.5mm,footskip=5.2mm}%
+}

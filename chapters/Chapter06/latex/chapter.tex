@@ -1,49 +1,88 @@
 % chapter.tex (Chapter 06)
+\ifdefined\chSixStandaloneLayout\else
+  \input{chapters/Chapter06/latex/page_layout}
+  \savegeometry{chSixPreviousLayout}
+  \chSixNarrowGeometry{\newgeometry}
+\fi
+\begingroup
+\input{chapters/Chapter06/latex/visual_style}
+\setlength{\headwidth}{\textwidth}
+% Chapter-local readability settings; other chapters keep their existing style.
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+  breaklines=true, breakanywhere=true,
+  fontsize=\footnotesize, fontfamily=tt, formatcom=\ttfamily,
+  frame=single, framerule=0.6pt, framesep=3pt,
+  listparameters={\setlength{\topsep}{2pt}\setlength{\partopsep}{0pt}}
+}
+\setlength{\topsep}{2pt}
+\setlength{\partopsep}{0pt}
+\captionsetup{hypcap=false}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.10}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+\setlength{\columnsep}{5mm}
+\setlength{\parskip}{1pt}
+\setlength{\multicolsep}{0pt}
+\raggedcolumns
+% A preceding tabular has a deep baseline. Start columns as a fresh block so
+% multicol's baseline adjustment cannot pull their first line over the table.
+\let\chSixOriginalMulticols\multicols
+\def\multicols{\par\nointerlineskip\chSixOriginalMulticols}
+% Balanced columns must stay inside the text area instead of overrunning it.
+\setlength{\maxbalancingoverflow}{0pt}
+\renewcommand{\tablename}{সারণি}
 \chapter{ডেটাবেজ ম্যানেজমেন্ট সিস্টেম}
 
-\begin{learningbox}
-এই অধ্যায়ে ডেটা, ডেটাবেজ, DBMS, RDBMS, টেবিল, ফিল্ড, রেকর্ড, কী, রিলেশন, কুয়েরি, সর্টিং, ইনডেক্সিং, ফর্ম, রিপোর্ট, কর্পোরেট ও সরকারি ডেটাবেজ, ডেটা নিরাপত্তা এবং এনক্রিপশন ধারাবাহিকভাবে শেখানো হয়েছে। HSC পরীক্ষায় এই অধ্যায় থেকে সংজ্ঞা, পার্থক্য, প্রয়োগ, SQL কুয়েরি এবং ব্যবহারিক কাজ খুব বেশি গুরুত্বপূর্ণ।
-\end{learningbox}
+ডেটাবেজের মাধ্যমে সম্পর্কিত উপাত্ত সংরক্ষণ, অনুসন্ধান ও হালনাগাদ করা যায়। এই অধ্যায়ে উপাত্তের কাঠামো থেকে শুরু করে টেবিল তৈরি, কুয়েরি, সম্পর্ক, তথ্য সুরক্ষা, ট্রানজেকশন, NoSQL ও Big Data-এর প্রয়োগ আলোচনা করা হয়েছে। শিক্ষার্থী পরিচিত উদাহরণ বিশ্লেষণ করে নতুন সমস্যার জন্য ডেটা টাইপ, কী ও উপযুক্ত নির্দেশ নির্বাচন করতে শিখবে।
 
-\begin{keypointbox}{অধ্যায়ের ধারণা-মানচিত্র}
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.68\textwidth}|}
-\hline
-ভিত্তি & ডেটা, ইনফরমেশন, ফিল্ড, রেকর্ড, টেবিল, ডেটাবেজ \\
-\hline
-ব্যবস্থাপনা & DBMS, RDBMS, DBA, ডেটা টাইপ, ডেটাবেজ তৈরি \\
-\hline
-উদ্ধার ও বিশ্লেষণ & Query, SQL, Sorting, Indexing, Relation \\
-\hline
-উপস্থাপন & Form, Report, Corporate/Government database \\
-\hline
-সুরক্ষা & Access control, Backup, Encryption, Data security \\
-\hline
-\end{tabular}
-\end{center}
+\begin{keypointbox}{শিখনফল}
+এই অধ্যায় শেষে শিক্ষার্থী পারবে—
+\begin{enumerate}
+\item Database, Field, Record ও Table-এর গঠন এবং DBMS ও RDBMS-এর কাজ ব্যাখ্যা করতে;
+\item প্রয়োজন অনুযায়ী Data Type, Primary Key ও Foreign Key নির্বাচন করে টেবিল তৈরি করতে;
+\item টেবিলের Relationship নির্ধারণ এবং Query ও SQL দিয়ে তথ্য নির্বাচন ও পরিবর্তন করতে;
+\item Sorting ও Indexing-এর কাজ তুলনা এবং সমষ্টিগত হিসাব করতে;
+\item কর্পোরেট ও সরকারি প্রতিষ্ঠানে ডেটাবেজের ব্যবহার বর্ণনা করতে;
+\item তথ্য সুরক্ষার ব্যবস্থা ও Encryption পদ্ধতি শনাক্ত করতে;
+\item Transaction ও ACID-এর চারটি বৈশিষ্ট্য উদাহরণ দিয়ে ব্যাখ্যা করতে;
+\item NoSQL ও Big Data-এর মূল ধারণা ও ব্যবহার তুলনা করতে।
+\end{enumerate}
 \end{keypointbox}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-প্রায়ই আসা বিষয়: DBMS-এর সুবিধা, DBMS ও RDBMS-এর পার্থক্য, Primary key ও Foreign key, One-to-many relation, Query-এর কাজ, Sorting ও Indexing-এর পার্থক্য, Form ও Report-এর ব্যবহার, ডেটা নিরাপত্তা এবং এনক্রিপশন।
-\end{boardbox}
 \input{chapters/Chapter06/topics/01_overview/topic}
 \input{chapters/Chapter06/topics/02_basic_elements/topic}
 \input{chapters/Chapter06/topics/03_dbms/topic}
 \input{chapters/Chapter06/topics/04_rdbms/topic}
 \input{chapters/Chapter06/topics/05_creating_database/topic}
 \input{chapters/Chapter06/topics/06_data_type/topic}
+\input{chapters/Chapter06/topics/10_relation/topic}
 \input{chapters/Chapter06/topics/07_query/topic}
 \input{chapters/Chapter06/topics/08_sorting/topic}
 \input{chapters/Chapter06/topics/09_indexing/topic}
-\input{chapters/Chapter06/topics/10_relation/topic}
-\input{chapters/Chapter06/topics/11_form/topic}
-\input{chapters/Chapter06/topics/12_report/topic}
+% Optional former topic: 11_form
+% Optional former topic: 12_report
 \input{chapters/Chapter06/topics/13_corporate_database/topic}
 \input{chapters/Chapter06/topics/14_government_database/topic}
 \input{chapters/Chapter06/topics/15_data_security/topic}
 \input{chapters/Chapter06/topics/16_data_encryption/topic}
+\input{chapters/Chapter06/topics/23_transaction_acid/topic}
+\input{chapters/Chapter06/topics/24_nosql/topic}
+\input{chapters/Chapter06/topics/25_big_data/topic}
 \input{chapters/Chapter06/topics/17_practical_tasks/topic}
+% 19_recap: author archive; canonical content is in theory.
+% 22_question_strategy: author archive; canonical content is in theory.
+% Board-practice section withdrawn at the author's request; theory retained.
+\input{chapters/Chapter06/topics/26_consolidated_applications/topic}
 \input{chapters/Chapter06/topics/18_exercises/topic}
 \input{chapters/Chapter06/topics/mcq_questions/topic}
 
-% Resource linked: resources/HSC ICT Chapter 06 Handnote.pdf
+% 20_sources: author archive; canonical content is in theory.
+\endgroup
+\ifdefined\chSixStandaloneLayout\else
+  \loadgeometry{chSixPreviousLayout}
+\fi

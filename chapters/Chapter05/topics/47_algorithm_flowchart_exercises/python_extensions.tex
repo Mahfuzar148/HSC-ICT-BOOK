@@ -1,0 +1,235 @@
+% New, non-duplicate problem types from Mahbubur Rahman PDF pp.28,100--101.
+% Shared diagram geometry; each exercise receives its own condition/update.
+\newcommand{\chFiveSeriesFlow}[3]{%
+\begin{center}
+\begin{tikzpicture}[node distance=5mm and 12mm,>=Stealth]
+\node[fcstart] (s) {Start};
+\node[fcio,below=of s] (input) {Input \(n\)};
+\node[fcdecision,below=of input] (valid) {\(n<0\)?};
+\node[fcio,right=16mm of valid,text width=24mm] (error) {Invalid input};
+\node[fcstart,right=of error] (errorend) {End};
+\node[fcprocess,below=of valid,text width=32mm] (init) {#1};
+\node[fcdecision,below=of init] (test) {\(i\le n\)?};
+\node[fcprocess,right=16mm of test,text width=38mm] (update) {#2\\\(i=i+1\)};
+\node[fcio,below=8mm of test] (out) {#3};
+\node[fcstart,below=of out] (end) {End};
+\draw[fcarrow] (s)--(input);\draw[fcarrow] (input)--(valid);
+\draw[fcarrow] (valid)--node[above,font=\small]{হ্যাঁ}(error);
+\draw[fcarrow] (error)--(errorend);
+\draw[fcarrow] (valid)--node[left,font=\small]{না}(init);
+\draw[fcarrow] (init)--(test);
+\draw[fcarrow] (test)--node[above,font=\small]{হ্যাঁ}(update);
+\draw[fcarrow] (update.north)|-([yshift=2mm]test.north)--(test.north);
+\draw[fcarrow] (test)--node[left,font=\small]{না}(out);
+\draw[fcarrow] (out)--(end);
+\end{tikzpicture}
+\end{center}}
+\clearpage
+\partheading{অংশ–J: শর্ত, ধারার গুণফল ও ভগ্নাংশের ধারা}
+
+\booksubheading{১০৪. সমীকরণের সহগ থেকে মূল নির্ণয়}
+
+\(ax^2+bx+c=0\) সমীকরণের জন্য পূর্ণসংখ্যা \(a,b,c\) input নিয়ে
+মূল নির্ণয় করো। \(a=0\) হলে সমীকরণটি দ্বিঘাত থাকে না; তাই আগে এই
+অবস্থা পরীক্ষা করতে হবে। \(a\ne0\) হলে discriminant
+\(D=b^2-4ac\)। \(D>0\) হলে দুটি পৃথক বাস্তব মূল, \(D=0\) হলে
+একই বাস্তব মূল এবং \(D<0\) হলে দুটি complex conjugate মূল পাওয়া যায়।
+
+\textbf{Algorithm:}
+\begin{enumerate}
+\item Start; পূর্ণসংখ্যা \(a,b,c\) গ্রহণ করো।
+\item \(a=0\) হলে: \(b\ne0\)-এ একমাত্র মূল \(-c/b\);
+  \(b=c=0\)-এ অসংখ্য সমাধান; \(b=0,c\ne0\)-এ সমাধান নেই। ফল দেখিয়ে End।
+\item \(D=b^2-4ac\) হিসাব করো।
+\item \(D<0\) হলে \(u=-b/(2a)\), \(v=\sqrt{-D}/|2a|\);
+  মূল \(u+vi\) ও \(u-vi\) প্রদর্শন করো।
+\item অন্যথায় \(D=0\) হলে \(-b/(2a)\) প্রদর্শন করো।
+\item অন্যথায় \((-b+\sqrt D)/(2a)\) ও \((-b-\sqrt D)/(2a)\)
+  প্রদর্শন করো; End।
+\end{enumerate}
+
+\textbf{Flowchart:}
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=9mm,y=8mm,>=Stealth,
+  every node/.style={font=\small,align=center},
+  term/.style={draw=darkTeal,fill=softGreen,rounded corners,minimum width=20mm,minimum height=7mm},
+  proc/.style={draw=darkTeal,fill=softBlue,text width=29mm,minimum height=9mm},
+  decision/.style={draw=darkTeal,diamond,aspect=2,inner sep=1mm},
+  io/.style={draw=darkTeal,trapezium,trapezium left angle=70,trapezium right angle=110,minimum height=7mm},
+  arr/.style={->,semithick,color=darkTeal}]
+\node[term] (s) at (0,0) {Start};
+\node[io] (in) at (0,-1.4) {Input \(a,b,c\)};
+\node[decision] (az) at (0,-3) {\(a=0\)?};
+\node[proc] (linear) at (5.5,-3) {\(b,c\) পরীক্ষা;\newline রৈখিক ফল প্রদর্শন};
+\node[proc] (d) at (0,-4.8) {\(D=b^2-4ac\)};
+\node[decision] (neg) at (0,-6.4) {\(D<0\)?};
+\node[io,text width=26mm] (complex) at (-5.5,-6.4) {\(u+vi,u-vi\)\newline প্রদর্শন};
+\node[decision] (zero) at (0,-8.2) {\(D=0\)?};
+\node[io,text width=26mm] (repeat) at (-3.6,-10.3) {\(-b/(2a)\)\newline প্রদর্শন};
+\node[io,text width=29mm] (real) at (3.6,-10.3) {\(\frac{-b\pm\sqrt D}{2a}\)\newline প্রদর্শন};
+\node[term] (end) at (0,-13) {End};
+\draw[arr] (s)--(in); \draw[arr] (in)--(az);
+\draw[arr] (az)--node[above]{হ্যাঁ}(linear);
+\draw[arr] (az)--node[right]{না}(d);
+\draw[arr] (d)--(neg);
+\draw[arr] (neg)--node[above]{হ্যাঁ}(complex);
+\draw[arr] (neg)--node[right]{না}(zero);
+\draw[arr] (zero.west)-|node[pos=.25,above]{হ্যাঁ}(repeat.north);
+\draw[arr] (zero.east)-|node[pos=.25,above]{না}(real.north);
+\draw[arr] (repeat.south)|-(end.west);
+\draw[arr] (real.south)|-(end.east);
+\draw[arr] (linear.east)--(8.5,-3)--(8.5,-13)--(end.east);
+\draw[arr] (complex.west)--(-8.5,-6.4)--(-8.5,-13)--(end.west);
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+
+\Needspace{22\baselineskip}
+\textbf{Python Code:}
+\begin{pythoncode}
+import math
+a = int(input())
+b = int(input())
+c = int(input())
+if a == 0:
+    if b != 0:
+        print(f"Linear root = {-c / b:.3f}")
+    elif c == 0:
+        print("Infinite solutions")
+    else:
+        print("No solution")
+else:
+    d = b ** 2 - 4 * a * c
+    if d < 0:
+        real = -b / (2 * a)
+        imag = math.sqrt(-d) / abs(2 * a)
+        print(f"Roots = {real:.3f} + {imag:.3f}i")
+        print(f"        {real:.3f} - {imag:.3f}i")
+    elif d == 0:
+        print(f"Repeated root = {-b / (2 * a):.3f}")
+    else:
+        x1 = (-b + math.sqrt(d)) / (2 * a)
+        x2 = (-b - math.sqrt(d)) / (2 * a)
+        print(f"Roots = {x1:.3f}, {x2:.3f}")
+\end{pythoncode}
+
+\textbf{Input ও Output যাচাই:} প্রতিটি input মান আলাদা লাইনে দেবে।
+\begin{tabularx}{\linewidth}{|p{0.2\linewidth}|Y|Y|}
+\hline
+\rowcolor{softBlue}\textbf{Input \((a,b,c)\)} & \textbf{অবস্থা} & \textbf{Output}\\\hline
+\((1,-5,6)\) & \(D=1>0\) & \py{Roots = 3.000, 2.000}\\\hline
+\((1,4,4)\) & \(D=0\) & \py{Repeated root = -2.000}\\\hline
+\((1,-2,5)\) & \(D=-16<0\) & \py{Roots = 1.000 + 2.000i}; পরের লাইনে \py{1.000 - 2.000i}\\\hline
+\((0,2,-8)\) & রৈখিক সমীকরণ & \py{Linear root = 4.000}\\\hline
+\((0,0,0)\) & অভেদ \(0=0\) & \py{Infinite solutions}\\\hline
+\((0,0,3)\) & অসম্ভব \(3=0\) & \py{No solution}\\\hline
+\end{tabularx}
+
+\textbf{Dry run:} \((1,-5,6)\)-এ \(D=25-24=1\),
+\(\sqrt D=1\), \(2a=2\); তাই \(x_1=(5+1)/2=3\) ও
+\(x_2=(5-1)/2=2\)। এখানে \py{i} শুধু output-এ complex মূলের
+প্রচলিত গাণিতিক চিহ্ন; Python-এর complex literal-এ \py{j} ব্যবহৃত হয়।
+
+\booksubheading{১০৫. জোড় সংখ্যার বর্গের গুণফল}
+
+\(8^2\times6^2\times4^2\times2^2\) নির্ণয় করো। যোগফলের accumulator
+শূন্য থেকে শুরু হয়; গুণফলের accumulator শুরু হয় 1 থেকে।
+
+\textbf{Algorithm:} Start; \(p=1,i=8\) ধরো। \(i\ge2\) হলে
+\(p=p\times i^2\), \(i=i-2\) করে শর্তে ফিরে যাও। অন্যথায় \(p\)
+প্রদর্শন করে End।
+
+\begin{center}
+\begin{tikzpicture}[node distance=5mm and 12mm,>=Stealth]
+\node[fcstart] (s) {Start};
+\node[fcprocess,below=of s] (init) {\(p=1,i=8\)};
+\node[fcdecision,below=of init] (test) {\(i\ge2\)?};
+\node[fcprocess,right=18mm of test,text width=30mm] (update) {\(p=p\times i^2\)\\\(i=i-2\)};
+\node[fcio,below=8mm of test] (out) {Print \(p\)};
+\node[fcstart,below=of out] (end) {End};
+\draw[fcarrow] (s)--(init);\draw[fcarrow] (init)--(test);
+\draw[fcarrow] (test)--node[above,font=\small]{হ্যাঁ}(update);
+\draw[fcarrow] (update.north)|-([yshift=2mm]test.north)--(test.north);
+\draw[fcarrow] (test)--node[left,font=\small]{না}(out);
+\draw[fcarrow] (out)--(end);
+\end{tikzpicture}
+\end{center}
+
+\begin{pythoncode}
+product = 1
+for i in range(8, 1, -2):
+    product *= i ** 2
+print(product)
+\end{pythoncode}
+\textbf{Output:} \py{147456}। \py{range(8, 1, -2)} থেকে 8, 6, 4, 2
+পাওয়া যায়। \py{1} বাদ যায়, ফলে শেষ পদ 2-ও নেওয়া হয়।
+
+\begin{tabularx}{\linewidth}{|c|c|Y|}
+\hline
+\rowcolor{softBlue}\(i\) & \(i^2\) & \textbf{গুণের পর product}\\\hline
+8 & 64 & 64\\\hline
+6 & 36 & 2304\\\hline
+4 & 16 & 36864\\\hline
+2 & 4 & 147456\\\hline
+\end{tabularx}
+
+\booksubheading{১০৬. ক্রমিক সংখ্যার বর্গের গুণফল}
+
+\(1^2\times2^2\times\cdots\times n^2\) নির্ণয় করো। এখানে input হলো
+অঋণাত্মক পূর্ণসংখ্যা \(n\)। Loop-এ প্রতিটি সংখ্যার বর্গ
+যোগ না করে গুণ করতে হবে। \(n=0\) হলে কোনো পদ নেওয়া হয় না; এই
+empty product-এর মান 1 ধরা হয়।
+
+\textbf{Algorithm:} Start; \(n\) নাও। \(n<0\) হলে invalid input
+দেখিয়ে End। অন্যথায় \(p=1,i=1\) ধরো। \(i\le n\) থাকা পর্যন্ত
+\(p=p\times i^2\), \(i=i+1\) করো; \(p\) প্রদর্শন করে End।
+\chFiveSeriesFlow{\(p=1,i=1\)}{\(p=p\times i^2\)}{Print \(p\)}
+
+\begin{pythoncode}
+n = int(input())
+if n < 0:
+    print("Invalid input")
+else:
+    product = 1
+    for i in range(1, n + 1):
+        product *= i ** 2
+    print(product)
+\end{pythoncode}
+\textbf{Input:} \py{4}; \textbf{Output:} \py{576}।
+হিসাব: \(1\times4\times9\times16=576=(4!)^2\)।
+\textbf{ভিন্ন input:} \py{0}-এ \py{1}; \py{1}-এ \py{1};
+\py{-2}-এ \py{Invalid input}। Factorial-এর program আবার না লিখে
+এই সম্পর্ক দিয়ে ফল যাচাই করা যায়।
+
+\booksubheading{১০৭. ভগ্নাংশ পদবিশিষ্ট ধারার যোগফল}
+
+\(S=1.5+2.5+3.5+\cdots\) ধারার প্রথম \(n\)টি পদের যোগফল বের করো।
+এখানে \(n\) পদের সংখ্যা, শেষ পদের মান নয়; শেষ পদ \(n+0.5\)।
+\py{range()}-এর argument পূর্ণসংখ্যা হতে হয়। তাই integer counter \(i\)
+থেকে পদ \(i+0.5\) তৈরি করো।
+
+\textbf{Algorithm:} Start; অঋণাত্মক পূর্ণসংখ্যা \(n\) নাও।
+\(S=0,i=1\) ধরো। \(i\le n\) থাকা পর্যন্ত \(S=S+i+0.5\),
+\(i=i+1\) করো। \(S\) প্রদর্শন করে End; ঋণাত্মক \(n\) গ্রহণ করো না।
+
+\chFiveSeriesFlow{\(S=0,i=1\)}{\(S=S+(i+0.5)\)}{Print \(S\)}
+
+\Needspace{10\baselineskip}
+\begin{pythoncode}
+n = int(input())
+if n < 0:
+    print("Invalid input")
+else:
+    total = 0.0
+    for i in range(1, n + 1):
+        term = i + 0.5
+        total += term
+    print(f"Sum = {total:.1f}")
+\end{pythoncode}
+\textbf{Input:} \py{4}; \textbf{Output:} \py{Sum = 12.0}।
+Trace-এ পদের মান 1.5, 2.5, 3.5, 4.5 এবং যোগের পর total যথাক্রমে
+1.5, 4.0, 7.5, 12.0। \(n=0\)-এ \py{Sum = 0.0}।
+সূত্র দিয়ে যাচাই: \(S=n(n+1)/2+0.5n=n(n+2)/2\);
+\(n=4\)-এ \(4\times6/2=12\)।
+

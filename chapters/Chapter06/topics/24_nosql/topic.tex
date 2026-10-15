@@ -1,0 +1,91 @@
+\section{NoSQL}
+\label{sec:ch06-nosql}
+\begin{definitionbox}{}
+Document, Key--Value, Wide-column বা Graph মডেলে ডেটা পরিচালনা করে এমন ডেটাবেজ ব্যবস্থার শ্রেণিকে \textbf{NoSQL} বলে। এসব মডেল প্রচলিত রিলেশনাল সারণির বিকল্প হিসেবে ব্যবহৃত হয়। NoSQL শব্দটি প্রায়ই Not Only SQL অর্থে ব্যবহৃত হয়।
+\end{definitionbox}
+
+
+কলেজের ফলের সারণিতে সবার জন্য একই ধরনের Roll, Name ও GPA লাগে। কিন্তু অনলাইন দোকানে বইয়ের জন্য Author, পোশাকের জন্য Size এবং ফোনের জন্য Storage প্রয়োজন হয়। তথ্যের ধরন ও ব্যবহারের চাহিদা অনুযায়ী ভিন্ন ডেটা মডেল সুবিধাজনক হতে পারে।
+
+SQL একটি ভাষা, আর NoSQL বিভিন্ন ডেটাবেজ ব্যবস্থার একটি শ্রেণি। NoSQL কোনো একক ভাষা বা সফটওয়্যারের নাম নয়। ডেটাবেজ ব্যবস্থার তুলনা করতে তাই RDBMS ও NoSQL বলা বেশি নির্দিষ্ট। NoSQL-এর বিভিন্ন মডেলে ডেটা রাখার পদ্ধতিও আলাদা। তথ্যের সম্পর্ক, অনুসন্ধানের ধরন ও পরিবর্তনের প্রয়োজন দেখে উপযুক্ত মডেল বেছে নিতে হয়।
+
+
+\subsubsection{NoSQL ব্যবহারের প্রেক্ষাপট}
+\begin{enumerate}
+\item \textbf{পণ্যের ভিন্ন বৈশিষ্ট্য:} একটি Product সারণিতে বই, পোশাক ও ফোনের সব বৈশিষ্ট্যের জন্য কলাম রাখলে অনেক ঘর অব্যবহৃত থাকবে। বইয়ের Author ফোনের ক্ষেত্রে প্রযোজ্য নয়; ফোনের Storage-ও পোশাকের বৈশিষ্ট্য নয়। নতুন ধরনের পণ্য এলে সারণির নকশা আরও বাড়াতে হতে পারে। Document মডেলে প্রতিটি পণ্যের প্রাসঙ্গিক বৈশিষ্ট্য একসঙ্গে রাখা সুবিধাজনক হতে পারে।
+\item \textbf{ব্যক্তির সংযোগ:} সামাজিক অ্যাপে কোনো ব্যক্তি কাদের সঙ্গে যুক্ত, তা খুঁজতে ব্যক্তি ও তাঁদের সংযোগভিত্তিক Graph মডেল বিবেচনা করা যায়।
+\item \textbf{সাময়িক তথ্য:} session ID দিয়ে সাময়িক তথ্য খুঁজে পাওয়ার কাজে Key--Value মডেল ব্যবহার করা যায়।
+\end{enumerate}
+\textbf{মডেল নির্বাচনের শর্ত:} সব সমস্যার জন্য একই NoSQL মডেল উপযোগী নয়; রিলেশনাল নকশাতেও বিকল্প সমাধান সম্ভব। তাই কী ধরনের কুয়েরি প্রয়োজন, তা দেখে ডেটা মডেল বেছে নিতে হয়।
+
+\subsubsection{NoSQL-এর বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{ভিন্ন ডেটা মডেল:} Document, Key--Value, Wide-column ও Graph-এর মতো মডেলে ডেটা রাখা যায়।
+\item \textbf{কাঠামোর নমনীয়তা:} কিছু ব্যবস্থায় ভিন্ন রেকর্ডের জন্য ভিন্ন ফিল্ড রাখা যায়।
+\item \textbf{পণ্যভেদে নিয়ম:} Query, Validation ও Transaction-এর সুবিধা ব্যবস্থাভেদে আলাদা।
+\end{enumerate}
+\subsection{চারটি পরিচিত Data Model}
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{25mm}|Y|Y|}\hline\chSixHeader
+মডেল & ডেটার বিন্যাস & পরিচিত প্রয়োগ\\\hline
+Key--Value & একটি অনন্য Key দিয়ে সংশ্লিষ্ট মান পাওয়া যায় & Login session-এর পরিচিতি দিয়ে সাময়িক তথ্য খোঁজা\\\hline
+Document & একটি Document-এ ক্ষেত্র ও মান; তালিকা বা ভেতরের অবজেক্টও থাকতে পারে & ভিন্ন বৈশিষ্ট্যের পণ্যের বিবরণ\\\hline
+Wide-column & Row key ও column family অনুযায়ী ডেটা সংগঠন & যন্ত্র ও সময় অনুযায়ী বিপুল পর্যবেক্ষণ রাখা\\\hline
+Graph & Node-এ সত্তা, Edge-এ তাদের সংযোগ & ব্যক্তি থেকে ব্যক্তি বা স্থান থেকে স্থানের সংযোগ অনুসন্ধান\\\hline
+\end{tabularx}
+\end{flushleft}
+Document ব্যবস্থার উদাহরণ MongoDB, Key--Value-এর উদাহরণ Redis, Wide-column-এর Cassandra এবং Graph-এর Neo4j। এখানে নামগুলো মডেলের পরিচিতির জন্য; একই পণ্য একাধিক সুবিধা দিতে পারে। Graph মানে বার বা পাই-চার্ট নয়; এখানে সত্তার সংযোগ বোঝানো হয়।
+
+\subsection{একই শিক্ষার্থীর তথ্য দুইভাবে}
+JSON-এর পূর্ণরূপ JavaScript Object Notation। নিচে একটি রিলেশনাল সারণি এবং JSON বিন্যাসে একটি Document-এ শিক্ষার্থীর তথ্য দেখানো হয়েছে।
+\begin{chSixSideBySide}[.48]
+\small\textbf{রিলেশনাল Student সারণি}\par
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+StudentID & Name & GPA\\\hline
+101 & Rupa & 5.00\\\hline
+102 & Nabil & 4.75\\\hline
+\end{tabular}\par\smallskip
+প্রতিটি কলামের অর্থ নির্দিষ্ট। আলাদা Course সারণি থাকলে কী দিয়ে যুক্ত করা যায়। অন্য শিক্ষার্থীদের জন্যও একই সংজ্ঞার কলাম ব্যবহৃত হয়।
+\chSixNextColumn
+\small\textbf{একটি JSON-আকারের Document}\par
+% nosql-example: student-document
+\begin{verbatim}
+{
+  "StudentID": 101,
+  "Name": "Rupa",
+  "GPA": 5.00,
+  "Clubs": ["Science", "Debate"]
+}
+\end{verbatim}
+\end{chSixSideBySide}
+Document-এর Clubs একটি তালিকা। রিলেশনাল উদাহরণে এক ঘরে কমা দিয়ে একাধিক CourseID না রাখার নিয়ম শেখানো হয়েছিল; সেটি নির্দিষ্ট রিলেশনাল নকশার প্রসঙ্গ। Document মডেলে তালিকা ও একাধিক স্তরে সাজানো ডেটা (Nested Data) রাখা সমর্থিত হতে পারে। দুই মডেলের নিয়ম এক করে বিচার করা যাবে না। এই JSON-টি ডেটার নমুনা; এটি SQL কুয়েরি নয়।
+
+\subsection{RDBMS ও NoSQL-এর তুলনা}
+API-এর পূর্ণরূপ Application Programming Interface।
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{22mm}|Y|Y|}\hline\chSixHeader
+বিবেচনা & RDBMS & NoSQL\\\hline
+মডেল & সম্পর্কিত সারি-কলামের সারণি & Document, Key--Value, Wide-column, Graph ইত্যাদি\\\hline
+কাঠামো & ঘোষিত table schema ও constraints & অনেক ব্যবস্থায় নমনীয় ক্ষেত্র; validation থাকতে পারে\\\hline
+নির্দেশ & SQL প্রধান ভাষা & পণ্যভেদে query language বা API; এক অভিন্ন ভাষা নয়\\\hline
+নির্বাচনের কারণ & সম্পর্ক, JOIN ও নির্ধারিত নিয়মভিত্তিক লেনদেন & উপযোগী মডেল, পরিবর্তনশীল গঠন ও নির্দিষ্ট workload\\\hline
+সম্প্রসারণ & এক/একাধিক সার্ভার—সক্ষমতা নকশানির্ভর & অনেক ব্যবস্থা একাধিক সার্ভারে কাজ ভাগ করতে পারে\\\hline
+লেনদেন & ACID transaction গুরুত্বপূর্ণ সুবিধা & কিছু ব্যবস্থায় ACID transaction-ও আছে; পণ্যভেদে সীমা আলাদা\\\hline
+\end{tabularx}
+\end{flushleft}
+\subsubsection{Flexible Schema ও Validation}
+MongoDB-এর একই Collection-এর সব Document-এ একই ফিল্ড থাকা বাধ্যতামূলক নয়। একে \textbf{Flexible Schema} বলে। বইয়ের Document-এ Author ও ISBN এবং ফোনের Document-এ Storage ও ScreenSize রাখা যায়। অপ্রযোজ্য বৈশিষ্ট্য সব পণ্যে বসাতে হয় না; নতুন বৈশিষ্ট্য যোগও সহজ হয়।
+
+তবে সব পণ্যের Price একই অর্থে এবং উপযুক্ত সংখ্যার ধরনে রাখতে হয়। কোথাও সংখ্যা, কোথাও অসংগত লেখা থাকলে সর্বনিম্ন দাম খোঁজার ফল ভুল হতে পারে। Price সংখ্যামূলক হবে কিংবা প্রয়োজনীয় পরিচিতি থাকবে—এসব বিধি Schema Validation দিয়ে নির্ধারণ করা যায়। ফিল্ডের নাম, মান যাচাই ও অনুসন্ধানের পরিকল্পনাও বজায় রাখতে হয়।
+
+অনুমতি ও ব্যাকআপের পরিকল্পনা নমনীয় স্কিমাতেও প্রয়োজন। একই প্রতিষ্ঠানে প্রয়োজনমতো RDBMS ও NoSQL দুটোই ব্যবহৃত হতে পারে। MongoDB-এর এই সুবিধা সব NoSQL ব্যবস্থায় একইভাবে পাওয়া যায় না; নিয়ম ও সুবিধা পণ্যভেদে আলাদা।
+
+\subsection{প্রয়োগ ও ভুল ধারণা}
+\begin{enumerate}
+\item \textbf{মডেল নির্বাচন:} অনলাইন দোকানের ভিন্ন বৈশিষ্ট্যের পণ্যে Document, একটি session key থেকে দ্রুত তথ্য পেতে Key--Value এবং পরিচিত ব্যক্তিদের সংযোগ খুঁজতে Graph মডেল বিবেচনা করা যায়।
+\item \textbf{ব্যবহারের শর্ত:} তবে সাধারণ কয়েকটি ফলের সারণির জন্য কেবল নতুন নাম দেখে NoSQL বেছে নেওয়া যুক্তিসংগত নয়। প্রয়োজনীয় কুয়েরি, শুদ্ধতার নিয়ম এবং ব্যবস্থাপনার সামর্থ্য আগে দেখতে হবে।
+\end{enumerate}
+
+\begin{mistakebox}{NoSQL সম্পর্কে ভুল ধারণা}
+NoSQL সবসময় দ্রুত কাজ করে, এতে কখনো সম্পর্ক প্রকাশ করা যায় না, কোনো স্কিমা বা ACID বৈশিষ্ট্য নেই—এ ধরনের চূড়ান্ত দাবিগুলো ভুল। সম্পর্ক প্রকাশের পদ্ধতি এবং লেনদেনের সুবিধা ব্যবস্থাভেদে বদলায়। NoSQL মানেই Big Data নয়; ছোট ডেটাও NoSQL-এ রাখা যায়।
+\end{mistakebox}

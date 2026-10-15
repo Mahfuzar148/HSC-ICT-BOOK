@@ -1,0 +1,517 @@
+\sectionheading{5.2 প্রোগ্রামিং ভাষার ধারণা}
+
+মানুষ পরস্পরের সঙ্গে যোগাযোগের জন্য বাংলা, ইংরেজি ইত্যাদি ভাষা
+ব্যবহার করে। একইভাবে কম্পিউটারকে কোনো নির্দিষ্ট কাজ করানোর জন্যও
+নির্দেশ দিতে হয়। কিন্তু মানুষের সাধারণ ভাষায় লেখা নির্দেশ
+কম্পিউটার সরাসরি বুঝতে পারে না।
+
+তাই এমন একটি \textbf{নিয়মবদ্ধ ভাষা} প্রয়োজন, যার সাহায্যে
+Programmer তার Problem Solving-এর নির্দেশগুলো Program আকারে
+লিখতে পারে। এই ভাষাই হলো \textbf{Programming Language}।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{প্রোগ্রামিং ভাষা কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কম্পিউটারকে কোনো নির্দিষ্ট কাজ সম্পাদনের নির্দেশ দেওয়ার জন্য
+নির্ধারিত \textbf{শব্দ, প্রতীক ও নিয়ম} ব্যবহার করে Program লেখার
+ভাষাকে \textbf{প্রোগ্রামিং ভাষা (Programming Language)} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Programming Language
+\(\;=\;\)
+Program লেখার ভাষা
+}
+
+\end{center}
+
+অর্থাৎ Programmer তার Problem-এর সমাধানের নির্দেশ
+Programming Language-এর সাহায্যে লিখে কম্পিউটারকে কাজ করায়।
+
+%================================================
+% Basic relation
+%================================================
+\booksubheading{Programming Language-এর কাজ}
+
+Programming Language মানুষের Problem Solving Logic এবং
+কম্পিউটারের কাজের মধ্যে একটি মাধ্যম হিসেবে কাজ করে।
+
+\begin{center}
+
+\begin{tikzpicture}[node distance=9mm]
+
+\node[databox] (problem)
+{\textbf{Problem}\\সমস্যা};
+
+\node[processbox,right=of problem] (logic)
+{\textbf{Logic}\\সমাধানের ধাপ};
+
+\node[databox,right=of logic] (program)
+{\textbf{Program}\\Language-এ লেখা};
+
+\node[processbox,right=of program] (computer)
+{\textbf{Computer}\\কাজ সম্পাদন};
+
+\draw[arrow] (problem) -- (logic);
+\draw[arrow] (logic) -- (program);
+\draw[arrow] (program) -- (computer);
+
+\end{tikzpicture}
+
+\end{center}
+
+Programmer প্রথমে Problem বুঝে সমাধানের Logic তৈরি করে।
+এরপর নির্দিষ্ট Programming Language-এর নিয়ম অনুসরণ করে সেই
+Logic Program আকারে লেখা হয়।
+
+%================================================
+% Example
+%================================================
+\begin{examplebox}{উদাহরণ: Screen-এ একটি লেখা প্রদর্শন}
+
+ধরা যাক, কম্পিউটারের Screen-এ \textbf{Hello} প্রদর্শন করতে হবে।
+
+Python Programming Language-এ লেখা যায়—
+
+\begin{center}
+
+{\textenglish{\ttfamily print("Hello")}}
+
+\end{center}
+
+এখানে \textenglish{\ttfamily print()} ব্যবহার করে কম্পিউটারকে
+\textbf{Hello প্রদর্শনের নির্দেশ} দেওয়া হয়েছে।
+
+অর্থাৎ—
+
+\begin{center}
+
+\textbf{
+নির্দেশ
+\(\rightarrow\)
+Programming Language-এ Program
+\(\rightarrow\)
+ফলাফল
+}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Elements
+%================================================
+\booksubheading{Programming Language-এ কী থাকে?}
+
+প্রতিটি Programming Language-এর নিজস্ব \textbf{শব্দ, প্রতীক এবং
+লেখার নিয়ম} থাকে। এসব নির্দিষ্ট নিয়ম অনুসরণ করেই Program লেখা হয়।
+
+Programming Language-এর কয়েকটি পরিচিত উপাদান হলো—
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.20\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{উপাদান}}
+&
+\multicolumn{1}{c|}{\textbf{সহজ ধারণা}}
+&
+\multicolumn{1}{c|}{\textbf{উদাহরণ}}
+\\
+\hline
+
+Keyword
+&
+Language-এ আগে থেকে নির্ধারিত বিশেষ শব্দ
+&
+\textenglish{\ttfamily if, for, while}
+\\
+\hline
+
+Symbol
+&
+নির্দিষ্ট কাজ বা অর্থ প্রকাশকারী চিহ্ন
+&
+\textenglish{\ttfamily +,\ -,\, =}
+\\
+\hline
+
+Variable
+&
+Data রাখার জন্য ব্যবহৃত নাম
+&
+\textenglish{\ttfamily total, age}
+\\
+\hline
+
+Operator
+&
+Data-এর ওপর Operation করার চিহ্ন
+&
+\textenglish{\ttfamily +,\ *,\, /}
+\\
+\hline
+
+Statement
+&
+Program-এর কোনো কাজ সম্পাদনের নির্দেশ
+&
+\textenglish{\ttfamily print("ICT")}
+\\
+\hline
+
+Syntax
+&
+Program লেখার সঠিক নিয়ম বা গঠন
+&
+Language অনুযায়ী নির্ধারিত নিয়ম
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+প্রতিটি Programming Language-এর নিজস্ব \textbf{Syntax} বা
+লেখার নিয়ম রয়েছে। সেই নিয়ম সঠিকভাবে অনুসরণ না করলে Program-এ
+Error হতে পারে।
+
+\end{rememberbox}
+
+%================================================
+% Example problem
+%================================================
+\begin{examplebox}{উদাহরণ: দুটি সংখ্যার যোগফল}
+
+Problem: দুটি সংখ্যা \(a\) ও \(b\)-এর যোগফল বের করতে হবে।
+
+মানুষের চিন্তায়—
+
+\[
+Sum=a+b
+\]
+
+Python-এ—
+
+\begin{center}
+
+\begin{tabular}{@{}l@{}}
+\textenglish{\ttfamily a = 10}\\
+\textenglish{\ttfamily b = 20}\\
+\textenglish{\ttfamily total = a + b}\\
+\textenglish{\ttfamily print(total)}
+\end{tabular}
+
+\end{center}
+
+Output—
+
+\[
+\boxed{30}
+\]
+
+এখানে একই Problem-এর সমাধানের Logic একটি Programming Language-এর
+নির্দিষ্ট নিয়ম অনুসরণ করে Program আকারে লেখা হয়েছে।
+
+\end{examplebox}
+
+%================================================
+% Need
+%================================================
+\booksubheading{Programming Language কেন প্রয়োজন?}
+
+কম্পিউটারকে কার্যকরভাবে ব্যবহার করার জন্য Programming Language
+অত্যন্ত গুরুত্বপূর্ণ। এর সাহায্যে—
+
+\begin{compacttwocolpoints}
+
+\item Problem Solving-এর Logic Program আকারে প্রকাশ করা যায়।
+
+\item কম্পিউটারকে নির্দিষ্ট কাজ করার Instruction দেওয়া যায়।
+
+\item গাণিতিক, যৌক্তিক ও Data Processing-এর কাজ করা যায়।
+
+\item একই ধরনের কাজ স্বয়ংক্রিয়ভাবে বারবার সম্পন্ন করা যায়।
+
+\item Software, Website, Mobile App, Game এবং বিভিন্ন
+Automation System তৈরি করা যায়।
+
+\item বড় Problem-কে ছোট অংশে ভাগ করে Program তৈরি করা যায়।
+
+\item Program প্রয়োজন অনুযায়ী পরিবর্তন, উন্নয়ন ও পুনরায় ব্যবহার করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Human vs programming language
+%================================================
+\booksubheading{মানুষের ভাষা ও Programming Language-এর পার্থক্য}
+
+মানুষের দৈনন্দিন ভাষা এবং Programming Language—উভয়টিই নির্দেশ বা
+তথ্য প্রকাশে ব্যবহৃত হলেও এদের নিয়ম ও ব্যবহার এক নয়।
+
+\begin{tabularx}{\linewidth}{|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{মানুষের ভাষা}}
+&
+\multicolumn{1}{c|}{\textbf{Programming Language}}
+\\
+\hline
+
+মানুষের মধ্যে ভাব ও তথ্য প্রকাশের জন্য ব্যবহৃত হয়
+&
+কম্পিউটারকে নির্দেশ দিয়ে Program লেখার জন্য ব্যবহৃত হয়
+\\
+\hline
+
+একই কথা বিভিন্নভাবে প্রকাশ করা যায়
+&
+নির্দিষ্ট Syntax বা নিয়ম অনুসরণ করে লিখতে হয়
+\\
+\hline
+
+কিছু ভুল থাকলেও মানুষ Context থেকে অর্থ বুঝতে পারে
+&
+নিয়মে ভুল হলে Program-এ Error হতে পারে
+\\
+\hline
+
+শব্দ ও বাক্যের অর্থ অনেক সময় পরিস্থিতিনির্ভর
+&
+Instruction-এর অর্থ নির্দিষ্ট ও সুনির্দিষ্ট
+\\
+\hline
+
+উদাহরণ: বাংলা, ইংরেজি
+&
+উদাহরণ: Python, Java
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Program vs language
+%================================================
+\booksubheading{Program ও Programming Language-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Program}}
+&
+\multicolumn{1}{c|}{\textbf{Programming Language}}
+\\
+\hline
+
+নির্দিষ্ট কাজ সম্পাদনের জন্য সাজানো Instruction-এর সমষ্টি
+&
+Program লেখার জন্য ব্যবহৃত নিয়মবদ্ধ ভাষা
+\\
+\hline
+
+সাধারণত একটি নির্দিষ্ট Problem বা কাজের সমাধান করে
+&
+বিভিন্ন ধরনের Program তৈরি করতে ব্যবহার করা যায়
+\\
+\hline
+
+Programming Language ব্যবহার করে Program লেখা হয়
+&
+Program তৈরির মাধ্যম হিসেবে কাজ করে
+\\
+\hline
+
+উদাহরণ: দুটি সংখ্যার যোগফল নির্ণয়ের Program
+&
+উদাহরণ: Python, Java
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\textbf{Programming Language হলো Program লেখার মাধ্যম, আর Program
+হলো সেই ভাষায় লেখা কার্যনির্দেশ।}
+
+\end{rememberbox}
+
+%================================================
+% Can computer understand?
+%================================================
+\booksubheading{কম্পিউটার কি সব Programming Language সরাসরি বুঝতে পারে?}
+
+কম্পিউটার মূলত \textbf{Machine Language-এর Instruction} সরাসরি
+বুঝতে পারে। Python, Java বা Assembly-এর মতো অন্যান্য ভাষায় লেখা
+Program সরাসরি Processor-এর বোধগম্য নয়।
+
+তাই প্রয়োজন অনুযায়ী Program-কে কম্পিউটারের বোধগম্য Instruction-এ
+রূপান্তর করতে \textbf{Translator Program} ব্যবহার করা হয়।
+
+\begin{center}
+
+\begin{tikzpicture}[node distance=12mm]
+
+\node[databox] (source)
+{\textbf{Source Program}\\Language-এ লেখা};
+
+\node[processbox,right=of source] (translator)
+{\textbf{Translator}\\অনুবাদ};
+
+\node[databox,right=of translator] (machine)
+{\textbf{Machine Code}\\কম্পিউটারের বোধগম্য};
+
+\draw[arrow] (source) -- (translator);
+\draw[arrow] (translator) -- (machine);
+
+\end{tikzpicture}
+
+\end{center}
+
+Compiler, Interpreter এবং Assembler হলো বিভিন্ন ধরনের
+Translator Program। এগুলো পরবর্তী অংশে বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Classification preview
+%================================================
+\booksubheading{Programming Language-এর স্তরভিত্তিক ধারণা}
+
+কম্পিউটারের Hardware-এর সঙ্গে ঘনিষ্ঠতা এবং মানুষের জন্য
+সহজবোধ্যতার ভিত্তিতে Programming Language-কে বিভিন্ন স্তরে
+আলোচনা করা হয়।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.26\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ভাষার ধরন}}
+&
+\multicolumn{1}{c|}{\textbf{প্রাথমিক ধারণা}}
+\\
+\hline
+
+Machine Language
+&
+0 ও 1-এর মাধ্যমে লেখা; কম্পিউটার সরাসরি বুঝতে পারে
+\\
+\hline
+
+Assembly Language
+&
+Mnemonic বা প্রতীকী Instruction ব্যবহার করা হয়
+\\
+\hline
+
+Middle Level Language
+&
+High Level ও Low Level বৈশিষ্ট্যের সমন্বয় দেখা যায়
+\\
+\hline
+
+High Level Language
+&
+মানুষের জন্য তুলনামূলক সহজ ও পাঠযোগ্য
+\\
+\hline
+
+Fourth Generation Language
+&
+কম Instruction-এ প্রয়োজনীয় Result প্রকাশে গুরুত্ব দেওয়া হয়
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}খেয়াল করো}
+
+এখানে ভাষাগুলোর শুধু প্রাথমিক ধারণা দেওয়া হয়েছে। Machine Language,
+Assembly Language, Middle Level Language, High Level Language এবং
+4GL পরবর্তী Topic-গুলোতে বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Evolution
+%================================================
+\booksubheading{Programming Language-এর বিকাশ}
+
+প্রথম দিকের কম্পিউটারে Program লেখা ছিল অনেক কঠিন এবং
+Hardware-নির্ভর। সময়ের সঙ্গে Programming Language এমনভাবে
+উন্নত হয়েছে যাতে Program লেখা আরও সহজ, বোধগম্য ও কার্যকর হয়।
+
+Programming Language-এর এই বিকাশকে বিভিন্ন
+\textbf{Generation} দিয়ে বোঝানো হয়।
+
+\begin{center}
+
+\textbf{
+1GL
+\(\rightarrow\)
+2GL
+\(\rightarrow\)
+3GL
+\(\rightarrow\)
+4GL
+\(\rightarrow\)
+5GL
+}
+
+\end{center}
+
+সাধারণভাবে Generation বাড়ার সঙ্গে Language মানুষের Problem
+Solving ধারণার কাছাকাছি এসেছে এবং Program লেখা তুলনামূলক সহজ হয়েছে।
+
+%================================================
+% Final Remember
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Programming Language হলো \textbf{Program লেখার মাধ্যম}।
+
+\item প্রতিটি Programming Language-এর নিজস্ব
+\textbf{শব্দ, প্রতীক ও Syntax} থাকে।
+
+\item Program হলো \textbf{নির্দেশনার সমষ্টি}; Programming Language
+হলো সেই নির্দেশ লেখার ভাষা।
+
+\item কম্পিউটার মূলত Machine Language সরাসরি বুঝতে পারে।
+
+\item অন্যান্য ভাষায় লেখা Program-কে Machine-এর উপযোগী করতে
+Translator Program প্রয়োজন হতে পারে।
+
+\item Programming Language-এর বিভিন্ন স্তর ও Generation রয়েছে।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.3 Machine Language
+%================================================

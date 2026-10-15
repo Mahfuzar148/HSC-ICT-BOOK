@@ -1,0 +1,770 @@
+\subsection{শিক্ষকের তথ্য থেকে নির্বাচন ও হিসাব}
+
+নিচের সারণিতে MSc হলো \textbf{Master of Science} এবং MA হলো \textbf{Master of Arts} ডিগ্রির সংক্ষিপ্ত রূপ।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+TeacherID & Name & Subject & Qualification & Salary\\
+\hline
+T01 & Salma & ICT & MSc & 55000\\\hline
+T02 & Rahat & Bangla & MA & 48000\\\hline
+T03 & Farid & Physics & MSc & 62000\\\hline
+T04 & Nabila & ICT & MSc & 58000\\\hline
+T05 & Karim & English & MA & 45000\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Teacher Table}
+
+\end{minipage}\end{flushleft}
+
+
+\textbf{অনুশীলন:}\begin{enumerate}
+\item ICT বিষয়ের শিক্ষকদের তথ্য দেখাও।
+\item যেসব শিক্ষকের Salary 50000-এর বেশি, তাঁদের তথ্য দেখাও।
+\item Salary-এর সর্বোচ্চ মান বের করো।
+\item শিক্ষকদের গড় Salary বের করো।
+\end{enumerate}
+\subsection{খেলোয়াড়ের তথ্য বিশ্লেষণ}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+PlayerID & Name & Team & Game & Age & Score\\
+\hline
+P01 & Sakib & Tigers & Cricket & 24 & 135\\\hline
+P02 & Rafi & Eagles & Football & 22 & 18\\\hline
+P03 & Tamim & Tigers & Cricket & 25 & 98\\\hline
+P04 & Nabil & Warriors & Cricket & 21 & 152\\\hline
+P05 & Rima & Queens & Badminton & 20 & 75\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Player Table}
+
+\end{minipage}\end{flushleft}
+
+
+\textbf{অনুশীলন:}\begin{enumerate}
+\item Cricket খেলোয়াড়দের তথ্য দেখাও।
+\item যেসব খেলোয়াড়ের Score 100-এর বেশি, তাঁদের তথ্য দেখাও।
+\item Score-এর সর্বোচ্চ মান বের করো।
+\item Score-এর গড় বের করো।
+\end{enumerate}
+\subsection{শহর অনুযায়ী গ্রাহকের তথ্য বিশ্লেষণ}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+CustomerID & Name & Phone & City\\
+\hline
+C01 & Asif & 01710000001 & Dhaka\\\hline
+C02 & Nila & 01710000002 & Rajshahi\\\hline
+C03 & Anika & 01710000003 & Dhaka\\\hline
+C04 & Karim & 01710000004 & Khulna\\\hline
+C05 & Arif & 01710000005 & Dhaka\\\hline
+C06 & Mitu & 01710000006 & Rajshahi\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Customer Table}
+
+\end{minipage}\end{flushleft}
+
+
+\textbf{অনুশীলন:}\begin{enumerate}
+\item Dhaka শহরের গ্রাহকদের তথ্য দেখাও।
+\item মোট গ্রাহকসংখ্যা বের করো।
+\item যেসব গ্রাহকের Name A দিয়ে শুরু, তাঁদের তথ্য দেখাও।
+\item যেসব City-তে একাধিক গ্রাহক আছেন, সেগুলো দেখাও।
+\end{enumerate}
+\subsection{ব্যাংকের সম্পর্কিত টেবিলে SQL-এর প্রয়োগ}
+
+ব্যাংকের ডেটাবেজ একটি গুরুত্বপূর্ণ বাস্তব উদাহরণ। এখানে একই সঙ্গে
+শর্ত, সমষ্টিগত ফাংশন, UPDATE এবং সম্পর্কিত টেবিলের কুয়েরি
+বোঝা যায়।
+
+\begin{chSixSideBySide}[.48]
+\subsubsection{BankCustomer Table}
+
+
+
+\small
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+CustomerID & Name & Address & Phone\\
+\hline
+C01 & Rafi & Rajshahi & 01712000001\\\hline
+C02 & Nila & Dhaka & 01712000002\\\hline
+C03 & Sami & Rajshahi & 01712000003\\\hline
+C04 & Mitu & Khulna & 01712000004\\
+\hline
+
+\end{tabular}
+\chSixNextColumn
+\subsubsection{Account Table}
+
+
+
+\small
+\setlength{\tabcolsep}{2.5pt}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+AccountNo & CustomerID & AccountType & Balance\\
+\hline
+A1001 & C01 & Savings & 150000\\\hline
+A1002 & C02 & Current & 85000\\\hline
+A1003 & C01 & Current & 70000\\\hline
+A1004 & C03 & Savings & 220000\\\hline
+A1005 & C04 & Savings & 45000\\
+\hline
+
+\end{tabular}
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\subsubsection{Loan Table}
+
+
+
+\small
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+LoanID & CustomerID & LoanType & Amount\\
+\hline
+L01 & C01 & Home & 500000\\\hline
+L02 & C02 & Personal & 150000\\\hline
+L03 & C03 & Business & 700000\\\hline
+L04 & C04 & Personal & 120000\\
+\hline
+
+\end{tabular}
+\chSixNextColumn
+একজন গ্রাহকের একাধিক ব্যাংক হিসাব থাকতে পারে।
+
+তাই ধারণাগতভাবে—
+
+\[
+Customer
+\quad
+1:M
+\quad
+Account
+\]
+\end{chSixSideBySide}
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৪৯}{সব ব্যাংক হিসাবের তথ্য দেখাও।}
+
+\begin{chSixSideBySide}[.32]
+\begin{verbatim}
+SELECT *
+FROM Account;
+\end{verbatim}
+\chSixNextColumn
+\textbf{ফল}\par\smallskip
+{\raggedright\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|l|l|l|l|}\hline\chSixHeader
+AccountNo & CustomerID & AccountType & Balance\\\hline
+A1001 & C01 & Savings & 150000\\\hline
+A1002 & C02 & Current & 85000\\\hline
+A1003 & C01 & Current & 70000\\\hline
+A1004 & C03 & Savings & 220000\\\hline
+A1005 & C04 & Savings & 45000\\
+\hline\end{tabular}\par}
+\end{chSixSideBySide}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫০}{যেসব হিসাবের Balance 50000-এর বেশি, সেগুলো দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT AccountNo, CustomerID, Balance
+FROM Account
+WHERE Balance>50000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+AccountNo & CustomerID & Balance\\\hline
+A1001 & C01 & 150000\\\hline
+A1002 & C02 & 85000\\\hline
+A1003 & C01 & 70000\\\hline
+A1004 & C03 & 220000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫১}{ঋণের পরিমাণের সর্বোচ্চ মান বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT MAX(Amount) AS HighestLoan
+FROM Loan;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+HighestLoan\\\hline
+700000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫২}{Savings হিসাবগুলোর মধ্যে যেগুলোর Balance 100000-এর বেশি, সেগুলো দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT AccountNo, CustomerID, Balance
+FROM Account
+WHERE AccountType='Savings'
+  AND Balance>100000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+AccountNo & CustomerID & Balance\\\hline
+A1001 & C01 & 150000\\\hline
+A1004 & C03 & 220000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+ফলে A1001 ও A1004 আসবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৩}{যেসব হিসাবের Balance 80000 থেকে 180000-এর মধ্যে, সেগুলো দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT AccountNo, Balance
+FROM Account
+WHERE Balance BETWEEN 80000 AND 180000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+AccountNo & Balance\\\hline
+A1001 & 150000\\\hline
+A1002 & 85000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৪}{সব হিসাবের Balance যোগ করে মোট অর্থের পরিমাণ বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SUM(Balance) AS TotalBalance
+FROM Account;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+TotalBalance\\\hline
+570000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\par TotalBalance = 150000+85000+70000+220000+45000 = 570000.\par
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৫}{Balance-এর গড় বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT AVG(Balance) AS AverageBalance
+FROM Account;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+AverageBalance\\\hline
+114000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\par AverageBalance = 570000/5 = 114000.\par
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৬}{Balance বড় থেকে ছোট ক্রমে ব্যাংক হিসাবগুলো সাজাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT AccountNo, Balance
+FROM Account
+ORDER BY Balance DESC;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{AccountNo, Balance}{\mbox{A1004, 220000}; \mbox{A1001, 150000}; \mbox{A1002, 85000}; \mbox{A1003, 70000}; \mbox{A1005, 45000}}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৭}{A1002 হিসাবে 15000 টাকা জমা হলে তার Balance হালনাগাদ করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+UPDATE Account
+SET Balance=Balance+15000
+WHERE AccountNo='A1002';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+AccountNo & Balance\\\hline
+A1002 & 100000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+এই হিসাবে আগে 85000 টাকা ছিল। নতুন করে 15000 টাকা জমা হওয়ায় Balance হলো 85000+15000=100000 টাকা। তাই UPDATE-এ পুরোনো Balance-এর সঙ্গে জমার পরিমাণ যোগ করা হয়েছে।
+
+\begin{keypointbox}{Calculated UPDATE}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SET Balance=Balance+15000
+\end{verbatim}
+\end{minipage}\par
+
+এখানে পুরোনো Balance-এর সঙ্গে নতুন জমার পরিমাণ যোগ করা হচ্ছে।
+
+\end{keypointbox}
+
+\subsection{Salary/Payroll টেবিলে বেতন হিসাব: রাশি ও সারসংক্ষেপের Query}
+
+নিচের সারণিতে HR (Human Resources) মানবসম্পদ বিভাগ এবং IT (Information Technology) তথ্যপ্রযুক্তি বিভাগ বোঝায়।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\scriptsize
+
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+EmpID & Name & Department & BasicSalary & Allowance & Medical & Deduction\\
+\hline
+E101 & Rafi & Accounts & 30000 & 5000 & 1500 & 2000\\\hline
+E102 & Nila & HR & 35000 & 6000 & 1800 & 2500\\\hline
+E103 & Sami & IT & 45000 & 8000 & 2200 & 3000\\\hline
+E104 & Mitu & Accounts & 28000 & 4500 & 1400 & 1500\\\hline
+E105 & Hasan & IT & 50000 & 9000 & 2500 & 3500\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Salary Table}
+
+\end{minipage}\end{flushleft}
+
+\chSixExample{৭.৫৮}{প্রত্যেক কর্মীর প্রাপ্য বেতন বা Net Salary দেখাও।}
+
+ধরি—
+
+\par NetSalary = BasicSalary + Allowance + Medical - Deduction.\par
+
+SQL—
+
+\noindent\begin{minipage}{\linewidth}
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name, BasicSalary + Allowance
+       + Medical - Deduction AS NetSalary
+FROM Salary;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Name, NetSalary}{\mbox{Rafi, 34500}; \mbox{Nila, 40300}; \mbox{Sami, 52200}; \mbox{Mitu, 32400}; \mbox{Hasan, 58000}}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+এখানে NetSalary কুয়েরির মাধ্যমে হিসাব করা ফল। মূল টেবিলে এই নামে আলাদা ফিল্ড থাকা বাধ্যতামূলক নয়।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৯}{যেসব কর্মীর Basic Salary 35000-এর বেশি, তাঁদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT EmpID, Name, BasicSalary
+FROM Salary
+WHERE BasicSalary>35000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+EmpID & Name & BasicSalary\\\hline
+E103 & Sami & 45000\\\hline
+E105 & Hasan & 50000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+ফলাফলে Sami ও Hasan-এর তথ্য পাওয়া যাবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬০}{IT বিভাগের কর্মীদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name, BasicSalary
+FROM Salary
+WHERE Department='IT';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Name & BasicSalary\\\hline
+Sami & 45000\\\hline
+Hasan & 50000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬১}{Basic Salary-এর সর্বোচ্চ মান বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT MAX(BasicSalary) AS HighestSalary
+FROM Salary;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+HighestSalary\\\hline
+50000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬২}{Basic Salary-এর গড় বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT AVG(BasicSalary) AS AverageSalary
+FROM Salary;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+AverageSalary\\\hline
+37600\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৩}{প্রতিটি বিভাগের গড় Basic Salary দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Department,
+       AVG(BasicSalary) AS AverageSalary
+FROM Salary
+GROUP BY Department;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Department & AverageSalary\\\hline
+Accounts & 29000\\\hline
+HR & 35000\\\hline
+IT & 47500\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৪}{যেসব বিভাগের গড় Basic Salary 30000-এর বেশি, সেগুলো দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Department,
+       AVG(BasicSalary) AS AverageSalary
+FROM Salary
+GROUP BY Department
+HAVING AVG(BasicSalary)>30000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Department & AverageSalary\\\hline
+HR & 35000\\\hline
+IT & 47500\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+HR ও IT বিভাগের গড় বেতন শর্ত পূরণ করে, তাই এই বিভাগ দুটির তথ্য পাওয়া যাবে।
+
+\Needspace{18\baselineskip}
+\subsection{লাইব্রেরির ডেটাবেজে Query}
+
+\subsubsection{Book Table}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+BookID & BookName & Author & Price & Category\\
+\hline
+B01 & Database Basics & Rahman & 450 & Computer\\\hline
+B02 & Easy SQL & Karim & 520 & Computer\\\hline
+B03 & Physics Plus & Nabil & 600 & Science\\\hline
+B04 & Web Design & Rafi & 480 & Computer\\\hline
+B05 & English Grammar & Hasan & 350 & Language\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Book Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৫}{Computer শ্রেণির বইগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT BookID, BookName, Author
+FROM Book
+WHERE Category='Computer';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+BookID & BookName & Author\\\hline
+B01 & Database Basics & Rahman\\\hline
+B02 & Easy SQL & Karim\\\hline
+B04 & Web Design & Rafi\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৬}{যেসব বইয়ের Price 500-এর বেশি, সেগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT BookName, Price
+FROM Book
+WHERE Price>500;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+BookName & Price\\\hline
+Easy SQL & 520\\\hline
+Physics Plus & 600\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৭}{Rahman-এর লেখা বইগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT BookName, Price
+FROM Book
+WHERE Author='Rahman';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+BookName & Price\\\hline
+Database Basics & 450\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\subsubsection{LibraryIssue Table}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+IssueID & StudentID & BookID & IssueDate & ReturnDate\\
+\hline
+I01 & S01 & B01 & 2026-08-01 & 2026-08-07\\\hline
+I02 & S02 & B03 & 2026-08-03 & NULL\\\hline
+I03 & S01 & B04 & 2026-08-04 & NULL\\\hline
+I04 & S05 & B02 & 2026-08-05 & 2026-08-12\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{LibraryIssue Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৮}{যেসব বই এখনো ফেরত দেওয়া হয়নি, সেগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT StudentID, BookID
+FROM LibraryIssue
+WHERE ReturnDate IS NULL;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+StudentID & BookID\\\hline
+S02 & B03\\\hline
+S01 & B04\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+B03 ও B04 বইয়ের ফেরতের তারিখ নেই, তাই এগুলো ফলাফলে দেখা যাবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৯}{ধার দেওয়া বইগুলোর নামসহ সংশ্লিষ্ট তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT i.IssueID,
+       b.BookName,
+       i.StudentID
+FROM LibraryIssue AS i
+INNER JOIN Book AS b
+ON i.BookID=b.BookID;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+IssueID & BookName & StudentID\\\hline
+I01 & Database Basics & S01\\\hline
+I02 & Physics Plus & S02\\\hline
+I03 & Web Design & S01\\\hline
+I04 & Easy SQL & S05\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+এখানে— \texttt{LibraryIssue.BookID} এবং \texttt{Book.BookID} মিলিয়ে সম্পর্কিত রেকর্ড একসঙ্গে দেখানো হয়েছে।
+
+\subsection{Sales টেবিলে গাণিতিক রাশি ও সমষ্টিগত হিসাব}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+SaleID & Product & UnitPrice & Quantity & SalesPerson\\
+\hline
+S01 & Keyboard & 1200 & 2 & Rafi\\\hline
+S02 & Mouse & 650 & 5 & Nila\\\hline
+S03 & Headphone & 1800 & 3 & Rafi\\\hline
+S04 & PenDrive & 900 & 4 & Sami\\\hline
+S05 & Speaker & 2200 & 2 & Nila\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Sales Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭০}{প্রতিটি বিক্রয়ের TotalPrice দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Product,
+       UnitPrice*Quantity AS TotalPrice
+FROM Sales;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Product, TotalPrice}{\mbox{Keyboard, 2400}; \mbox{Mouse, 3250}; \mbox{Headphone, 5400}; \mbox{PenDrive, 3600}; \mbox{Speaker, 4400}}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭১}{সব বিক্রয়ের মূল্য যোগ করে মোট বিক্রয়মূল্য বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SUM(UnitPrice*Quantity)
+       AS TotalSales
+FROM Sales;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+TotalSales\\\hline
+19050\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭২}{প্রত্যেক SalesPerson-এর মোট বিক্রয়মূল্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SalesPerson,
+       SUM(UnitPrice*Quantity) AS TotalSales
+FROM Sales
+GROUP BY SalesPerson;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+SalesPerson & TotalSales\\\hline
+Nila & 7650\\\hline
+Rafi & 7800\\\hline
+Sami & 3600\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+

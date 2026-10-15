@@ -1,36 +1,522 @@
-% ৮. অনুবাদক প্রোগ্রাম
-\section{অনুবাদক (Translator) প্রোগ্রাম}
+\sectionheading{5.11 অনুবাদক প্রোগ্রাম (Translator Program)}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী translator program-এর কাজ এবং compiler, interpreter, assembler-এর পার্থক্য বুঝতে পারবে।
-\end{learningbox}
+কম্পিউটার সরাসরি \textbf{Machine Language} বুঝতে পারে।
+কিন্তু Programmer সাধারণত Assembly Language বা High Level
+Language ব্যবহার করে Program লেখে।
 
-\begin{definitionbox}{Translator program}
-যে system software source program-কে machine language বা object program-এ রূপান্তর করে, তাকে translator program বলা হয়।
+এসব ভাষায় লেখা Program কম্পিউটার সরাসরি Execute করতে পারে না।
+তাই Programmer-এর লেখা Program-কে কম্পিউটারের বোধগম্য
+Machine Language-এ রূপান্তর করার জন্য একটি বিশেষ Program
+প্রয়োজন হয়। এই Program-ই হলো \textbf{Translator Program}।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{অনুবাদক প্রোগ্রাম কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Program কোনো Programming Language-এ লেখা Program-কে
+কম্পিউটারের বোধগম্য \textbf{Machine Language বা Machine Code}-এ
+অনুবাদ করে, তাকে
+\textbf{অনুবাদক প্রোগ্রাম (Translator Program)} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Source Program
+\(\longrightarrow\)
+Translator Program
+\(\longrightarrow\)
+Machine/Object Code
+}
+
+\end{center}
+
+%================================================
+% Why Needed
+%================================================
+\booksubheading{Translator Program কেন প্রয়োজন?}
+
+কম্পিউটারের Processor High Level Language বা Assembly Language-এর
+Instruction সরাসরি বুঝতে পারে না।
+
+তাই এসব ভাষায় লেখা Program-কে Machine-এর বোধগম্য রূপে পরিবর্তন
+করতে Translator Program প্রয়োজন।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.24\linewidth}{
+        \centering\textbf{High Level /\\Assembly Code}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{Translator\\Program}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.23\linewidth}{
+        \centering\textbf{Machine\\Code}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+অর্থাৎ Translator Program মানুষের জন্য সহজ Programming Language
+এবং কম্পিউটারের Machine Language-এর মধ্যে
+\textbf{যোগাযোগের মাধ্যম} হিসেবে কাজ করে।
+
+%================================================
+% Source Program
+%================================================
+\booksubheading{Source Program কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Source Program}
+
+Programmer যে Programming Language ব্যবহার করে মূল Program
+লেখে, তাকে \textbf{Source Program বা Source Code} বলা হয়।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে—}
+
+\begin{center}
+
+\textbf{
+Programmer-এর লেখা মূল Program
+\(\;=\;\)
+Source Program
+}
+
+\end{center}
+
+যেমন Python, Java বা Assembly Language-এ Programmer যে Code
+লেখে, সেটিই Source Program।
+
+%================================================
+% Object Program
+%================================================
+\booksubheading{Object Program কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Object Program}
+
+Translator Program Source Program-কে অনুবাদ করার পর যে
+Machine-oriented বা Target Program তৈরি করে, তাকে সাধারণভাবে
+\textbf{Object Program বা Object Code} বলা হয়।
+
 \end{definitionbox}
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Translator diagram placeholder}\\[4pt]
-Source Program $\rightarrow$ Translator $\rightarrow$ Object/Machine Program
-}}
+
+\textbf{
+Source Program
+\(\longrightarrow\)
+Translation
+\(\longrightarrow\)
+Object Program
+}
+
 \end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+সব Translator একইভাবে আলাদা Object Program তৈরি করে না।
+
+Compiler ও Assembler সাধারণত Object/Target Code তৈরি করে,
+কিন্তু Interpreter-এর কাজের ধরন ভিন্ন।
+
+\end{rememberbox}
+
+%================================================
+% General Flow
+%================================================
+\booksubheading{Translator Program-এর কাজের ধারা}
+
+সাধারণভাবে Translator Program-এর কাজ—
 
 \begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.42\textwidth}|p{0.22\textwidth}|}
-\hline
-\textbf{Translator} & \textbf{কাজ} & \textbf{Input language} \\
-\hline
-Compiler & পুরো program একসাথে translate করে & high-level \\
-\hline
-Interpreter & line by line translate/run করে & high-level \\
-\hline
-Assembler & assembly code machine code-এ নেয় & assembly \\
-\hline
-\end{tabular}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.19\linewidth}{
+        \centering\textbf{Source\\Program}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.20\linewidth}{
+        \centering\textbf{Translator\\Program}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.20\linewidth}{
+        \centering\textbf{Machine /\\Object Code}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.16\linewidth}{
+        \centering\textbf{Execution}
+    }
+}
+\end{adjustbox}
 \end{center}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Translator-এর প্রশ্নে source program, object program এবং machine language শব্দগুলো ব্যবহার করো।
-\end{boardbox}
+এখানে—
+
+\begin{itemize}
+
+\item \textbf{Source Program:}
+Programmer-এর লেখা মূল Code।
+
+\item \textbf{Translator Program:}
+Source Code অনুবাদ করে।
+
+\item \textbf{Machine/Object Code:}
+কম্পিউটারের উপযোগী অনূদিত Code।
+
+\item \textbf{Execution:}
+কম্পিউটার Instruction অনুযায়ী কাজ সম্পন্ন করে।
+
+\end{itemize}
+
+%================================================
+% Types
+%================================================
+\booksubheading{Translator Program-এর প্রধান প্রকারভেদ}
+
+Translator Program প্রধানত তিন ধরনের—
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Translator}}
+&
+\multicolumn{1}{c|}{\textbf{কী অনুবাদ করে}}
+&
+\multicolumn{1}{c|}{\textbf{মূল ধারণা}}
+\\
+\hline
+
+Compiler
+&
+High Level Language
+&
+সম্পূর্ণ Program একসঙ্গে অনুবাদ করে।
+\\
+\hline
+
+Interpreter
+&
+High Level Language
+&
+সাধারণত Statement ধরে ধরে অনুবাদ ও Execute করে।
+\\
+\hline
+
+Assembler
+&
+Assembly Language
+&
+Assembly Program-কে Machine Language-এ রূপান্তর করে।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Compiler Intro
+%================================================
+\booksubheading{Compiler-এর প্রাথমিক ধারণা}
+
+Compiler High Level Language-এ লেখা
+\textbf{সম্পূর্ণ Source Program একসঙ্গে} অনুবাদ করে।
+
+\begin{center}
+
+\textbf{
+High Level Program
+\(\longrightarrow\)
+Compiler
+\(\longrightarrow\)
+Object/Target Program
+}
+
+\end{center}
+
+Compiler পরবর্তী Topic-এ বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Interpreter Intro
+%================================================
+\booksubheading{Interpreter-এর প্রাথমিক ধারণা}
+
+Interpreter High Level Program-এর Instruction সাধারণত
+\textbf{একটির পর একটি অনুবাদ করে এবং Execute করে}।
+
+\begin{center}
+
+\textbf{
+Source Statement
+\(\longrightarrow\)
+Interpreter
+\(\longrightarrow\)
+Translation + Execution
+}
+
+\end{center}
+
+Compiler ও Interpreter-এর পার্থক্য পরবর্তী অংশে বিস্তারিত
+আলোচনা করা হবে।
+
+%================================================
+% Assembler Intro
+%================================================
+\booksubheading{Assembler-এর প্রাথমিক ধারণা}
+
+Assembler হলো Assembly Language-এর Translator।
+
+\begin{center}
+
+\textbf{
+Assembly Program
+\(\longrightarrow\)
+Assembler
+\(\longrightarrow\)
+Machine Language
+}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ-এর জন্য গুরুত্বপূর্ণ}
+
+\textbf{Assembler শুধু Assembly Language-এর Translator।}
+
+\end{rememberbox}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Translator Program-এর প্রয়োজনীয়তা}
+
+Translator Program-এর সাহায্যে—
+
+\begin{compacttwocolpoints}
+
+\item High Level Language-এ লেখা Program Machine-এর উপযোগী করা যায়।
+
+\item Assembly Program Machine Code-এ রূপান্তর করা যায়।
+
+\item Programmer-এর জন্য সহজ ভাষায় Program লেখা সম্ভব হয়।
+
+\item Program-এর Error শনাক্ত করতে সহায়তা পাওয়া যায়।
+
+\item Source Program ও Machine-এর মধ্যে প্রয়োজনীয় অনুবাদ সম্পন্ন হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Source and Target Language
+%================================================
+\booksubheading{Source Language ও Target Language}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Source Language}
+
+যে ভাষায় মূল Program লেখা হয় এবং যেখান থেকে Program অনুবাদ করা হয়,
+তাকে \textbf{Source Language} বলে।
+
+\medskip
+
+\textbf{\color{darkTeal}Target Language}
+
+যে ভাষায় Program অনুবাদ করা হয়, তাকে
+\textbf{Target Language} বলে।
+
+\end{definitionbox}
+
+উদাহরণ—
+
+\begin{center}
+
+\textbf{
+Assembly Language
+\(\longrightarrow\)
+Assembler
+\(\longrightarrow\)
+Machine Language
+}
+
+\end{center}
+
+এখানে—
+
+\begin{itemize}
+
+\item Assembly Language = \textbf{Source Language}
+
+\item Machine Language = \textbf{Target Language}
+
+\end{itemize}
+
+%================================================
+% Relationship
+%================================================
+\booksubheading{Translator Program ও Programmer-এর সম্পর্ক}
+
+Programmer-কে সরাসরি 0 ও 1 ব্যবহার করে Machine Program লিখতে
+হলে Programming অত্যন্ত কঠিন হতো।
+
+Translator Program ব্যবহারের ফলে Programmer সহজ Programming
+Language-এ Code লিখতে পারে এবং Translator সেই Code-কে
+Machine-এর উপযোগী করে।
+
+\begin{center}
+
+\textbf{
+সহজ ভাষায় Programming
+\(\;+\;\)
+Translator
+\(\;=\;\)
+Program বাস্তবায়ন সহজ
+}
+
+\end{center}
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Compiler, Interpreter ও Assembler এক নজরে}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.18\linewidth}|Y|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Compiler}}
+&
+\multicolumn{1}{c|}{\textbf{Interpreter}}
+&
+\multicolumn{1}{c|}{\textbf{Assembler}}
+\\
+\hline
+
+Source Language
+&
+High Level
+&
+High Level
+&
+Assembly
+\\
+\hline
+
+অনুবাদের ধরন
+&
+সম্পূর্ণ Program একসঙ্গে
+&
+সাধারণত Statement ধরে ধরে
+&
+Assembly থেকে Machine Code
+\\
+\hline
+
+Object Code
+&
+সাধারণত তৈরি করে
+&
+সাধারণত পৃথক Object Program তৈরি করে না
+&
+তৈরি করে
+\\
+\hline
+
+প্রধান কাজ
+&
+High Level থেকে Target Code
+&
+অনুবাদ ও Execute
+&
+Assembly থেকে Machine Code
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Translator Program হলো \textbf{অনুবাদক প্রোগ্রাম}।
+
+\item এর কাজ Source Program-কে Machine-এর উপযোগী Code-এ রূপান্তর করা।
+
+\item Programmer-এর লেখা মূল Code হলো
+\textbf{Source Program বা Source Code}।
+
+\item অনুবাদের পর তৈরি Code-কে প্রসঙ্গভেদে
+\textbf{Object Code বা Target Code} বলা হয়।
+
+\item Translator Program প্রধানত তিন ধরনের—
+\textbf{Compiler, Interpreter ও Assembler}।
+
+\item Compiler ও Interpreter High Level Language-এর সঙ্গে সম্পর্কিত।
+
+\item Assembler হলো \textbf{Assembly Language-এর Translator}।
+
+\item
+\textbf{
+Assembly Language
+\(\rightarrow\)
+Assembler
+\(\rightarrow\)
+Machine Language
+}
+
+\item Compiler সম্পূর্ণ Program একসঙ্গে অনুবাদ করে।
+
+\item Interpreter সাধারণত Statement ধরে ধরে অনুবাদ ও Execute করে।
+
+\item Source Language হলো যে ভাষা থেকে অনুবাদ করা হয়।
+
+\item Target Language হলো যে ভাষায় অনুবাদ করা হয়।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.12 Compiler
+%================================================

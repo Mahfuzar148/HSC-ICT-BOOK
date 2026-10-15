@@ -1,0 +1,17 @@
+\subsection{নাম অনুযায়ী সাজানোর প্রয়োগ}
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chSixExample{৮.১}{নাম A থেকে Z সাজাও।}
+\noindent\begin{minipage}[c]{0.57\linewidth}
+\begin{verbatim}
+SELECT Roll,Name FROM Student
+ORDER BY Name ASC;
+\end{verbatim}
+\smallskip Name-এর বর্ণক্রম প্রথম অগ্রাধিকার। ASC না লিখলেও ORDER BY-এর সাধারণ ঊর্ধ্বক্রম কার্যকর হয়। DESC দিলে এই ভিন্ন নামগুলোর ক্রম উল্টে যাবে।
+
+\end{minipage}\hfill\begin{minipage}[c]{0.04\linewidth}$\Rightarrow$\end{minipage}\hfill
+\begin{minipage}[c]{0.36\linewidth}\raggedright\footnotesize\textbf{ফল}\par\smallskip
+\chSixResultList{Roll, Name}{\mbox{205, Farhan}; \mbox{306, Mahi}; \mbox{150, Mim}; \mbox{109, Nabila}; \mbox{102, Rahim}; \mbox{305, Rima}; \mbox{213, Sami}; \mbox{180, Tania}}
+\end{minipage}\par\smallskip
+\end{minipage}\par
+
+

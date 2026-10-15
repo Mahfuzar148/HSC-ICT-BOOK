@@ -1,0 +1,24 @@
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\footnotesize},
+  chSixRelationMatrix/.style={matrix of nodes,nodes in empty cells,
+    nodes={draw=black,line width=.6pt,align=left,inner xsep=3pt,inner ysep=2pt,minimum height=7mm,anchor=center,text height=2.7mm,text depth=.8mm},
+    column sep=-.6pt,row sep=-.6pt,row 1/.style={nodes={fill=chSixTint}}}]
+\matrix (s) [chSixRelationMatrix,column 1/.style={nodes={text width=25mm}},column 2/.style={nodes={text width=19mm}}] {
+StudentID (PK) & Name\\
+101 & Rupa\\
+102 & Nabil\\
+103 & Tania\\
+};
+\matrix (p) [chSixRelationMatrix,anchor=north west,column 1/.style={nodes={text width=33mm}},column 2/.style={nodes={text width=17mm}}]
+at ([xshift=20mm]s.north east) {
+StudentID (PK, FK) & SSCGPA\\
+101 & 5.00\\
+102 & 4.75\\
+103 & 4.50\\
+};
+\node[anchor=south west,font=\small] at ([yshift=2mm]s.north west) {\textbf{Student: 1}};
+\node[anchor=south west,font=\small] at ([yshift=2mm]p.north west) {\textbf{Profile: 1}};
+\foreach \r in {2,3,4}{\draw[bookarrow] (s-\r-2.east)--(p-\r-1.west);}
+\end{tikzpicture}
+\captionof{table}{একই StudentID-তে একটি Student ও সর্বোচ্চ একটি Profile-এর মিল}
+\end{flushleft}

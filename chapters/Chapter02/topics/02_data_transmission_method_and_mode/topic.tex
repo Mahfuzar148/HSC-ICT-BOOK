@@ -1,584 +1,114 @@
-% Chapter 02.2: ডেটা ট্রান্সমিশন মেথড ও মোড
+% Audited topic 2.2: canonical concepts C02.01--C02.14.
+% Provenance and relocation decisions: CHAPTER02_TOPIC02_CHANGELOG.md.
+\begingroup
+\chTwoReadableTopicStyle
+\widowpenalty=10000
+\clubpenalty=10000
 \section{ডেটা ট্রান্সমিশন মেথড ও মোড}
+\label{ch2:transmission}
+কলেজের সেন্সর মাঝে মাঝে তাপমাত্রার ছোট বার্তা পাঠায়। অফিসে বড় ফাইল পাঠাতে হয়, আবার ভিডিও ক্লাসে শব্দ ও ছবি সময়মতো পৌঁছানো প্রয়োজন। এই তিন কাজে ডেটার পরিমাণ ও সময়ের চাহিদা আলাদা। প্রয়োজন অনুযায়ী প্রেরণপদ্ধতি বেছে নিলে অপ্রয়োজনীয় খরচ ও যোগাযোগের সমস্যা কমে।
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item ডেটা ট্রান্সমিশন কী তা ব্যাখ্যা করতে।
-\item Parallel transmission ও Serial transmission-এর পার্থক্য বুঝতে।
-\item Asynchronous, Synchronous ও Isochronous transmission ব্যাখ্যা করতে।
-\item Simplex, Half-duplex ও Full-duplex transmission mode তুলনা করতে।
-\item Unicast, Broadcast ও Multicast data delivery mode শনাক্ত করতে।
-\item বোর্ড ও ভর্তি পরীক্ষার প্রশ্নে transmission method/mode প্রয়োগ করতে।
-\end{itemize}
-\end{learningbox}
-
-\subsection{বাস্তব জীবনের শুরু}
-
-আমরা যখন mobile দিয়ে message পাঠাই, computer থেকে file transfer করি, video call করি বা online class করি—তখন data এক device থেকে অন্য device-এ যায়। কিন্তু data সবসময় একইভাবে যায় না। কখনো data একসাথে অনেক bit আকারে যায়, কখনো একটির পর একটি bit যায়, আবার কখনো live audio-video stream-এর মতো নির্দিষ্ট সময় বজায় রেখে যায়।
-
-এই data যাওয়ার পদ্ধতিকে বলা হয় \textbf{Data Transmission Method}। আর data কোন direction-এ যাচ্ছে—একদিকে, পালাক্রমে, নাকি একই সাথে দুইদিকে—এটি বোঝায় \textbf{Transmission Mode}।
-
-\begin{keypointbox}{মূল ধারণা}
-Data transmission বুঝতে তিনটি প্রশ্ন মনে রাখো:
-\begin{itemize}
-\item Data কীভাবে যাচ্ছে? — Parallel না Serial?
-\item Data কখন/কোন নিয়মে যাচ্ছে? — Asynchronous, Synchronous না Isochronous?
-\item Data কোন direction-এ যাচ্ছে? — Simplex, Half-duplex না Full-duplex?
-\end{itemize}
-\end{keypointbox}
-
-\subsection{ডেটা ট্রান্সমিশন}
-
-\begin{definitionbox}{ডেটা ট্রান্সমিশন}
-এক device থেকে অন্য device-এ communication medium-এর মাধ্যমে data পাঠানোর প্রক্রিয়াকে data transmission বলা হয়।
+\subsection{ডেটা ট্রান্সমিশন ও চারটি পৃথক প্রশ্ন}
+\label{ch2:c02-01}
+\begin{definitionbox}{ডেটা ট্রান্সমিশন (Data Transmission)}
+যোগাযোগমাধ্যম দিয়ে এক যন্ত্র থেকে অন্য যন্ত্রে সংকেতের সাহায্যে ডেটা পাঠানোর প্রক্রিয়াকে ডেটা ট্রান্সমিশন বলে। ডেটা বৈদ্যুতিক, আলোকীয় বা রেডিও সংকেতে বহন করা যায়।
 \end{definitionbox}
+\chTwoPair{একটি যোগাযোগের চারটি দিক আলাদাভাবে বিবেচনা করতে হয়:
+\begin{enumerate}
+\item \textbf{বিটের পথ:} পাশাপাশি না ধারাবাহিক?
+\item \textbf{সময় ও ফ্রেম:} ক্যারেক্টারভিত্তিক, ব্লকভিত্তিক নাকি নির্দিষ্ট সময়ের ব্যবধানে ডেটা পাঠানো হয়?
+\item \textbf{দিক:} একদিকে, পালাক্রমে না একই সময়ে দুইদিকে?
+\item \textbf{প্রাপক:} একজন, সবাই না নির্বাচিত দল?
+\end{enumerate}
+মেথড (Method) দিয়ে সাধারণত ডেটা পাঠানোর পদ্ধতি ও সময়ের নিয়ম বোঝানো হয়। দিকভিত্তিক মোড (Direction Mode) দিয়ে ডেটা আদান-প্রদানের দিক বোঝানো হয়।}{\chTwoNative{Transmission}\par
+\textbf{চিত্রের পাঠ:} একই যোগাযোগে বিটগুলো ধারাবাহিকভাবে পাঠানো এবং সময় সমন্বিত রাখা যায়; তখন যোগাযোগটি Serial ও Synchronous। দুই প্রান্ত একই সময়ে পাঠাতে ও গ্রহণ করতে পারলে মোড Full-duplex। একজন নির্দিষ্ট প্রাপকের কাছে পাঠানো হলে তা Unicast। এগুলো যোগাযোগের চারটি ভিন্ন দিক বোঝায়।}
 
-Data transmission সাধারণত signal-এর মাধ্যমে সম্পন্ন হয়। Computer data binary আকারে অর্থাৎ 0 ও 1 হিসেবে সংরক্ষণ ও process করে। এই 0 ও 1 communication medium দিয়ে পাঠানোর সময় electrical signal, optical signal বা electromagnetic signal হিসেবে transmitted হয়।
+\subsection{বিটের পথ: Parallel ও Serial Transmission}
+\label{ch2:c02-02}
+\chTwoPair{\begin{definitionbox}{Parallel Transmission}
+একই সময়ে আলাদা ডেটা লাইন দিয়ে একাধিক বিট পাঠানোর পদ্ধতিকে প্যারালাল ট্রান্সমিশন (Parallel Transmission) বলে। যেমন, 8টি ডেটা লাইনে একবারে 8টি বিট পাঠানো যায়।
+\end{definitionbox}}{\begin{definitionbox}{Serial Transmission}
+একটি ডেটা পথে একটির পর একটি বিট পাঠানোর পদ্ধতিকে সিরিয়াল ট্রান্সমিশন (Serial Transmission) বলে। একই 8টি বিট এই পদ্ধতিতে পরপর পাঠানো হয়।
+\end{definitionbox}}
+\chTwoPair{\centering
+\begin{tikzpicture}[x=1cm,y=.55cm]
+\node[font=\normalsize] at (2,.8){Parallel: একই সময়ে};
+\foreach \y/\bit in {0/1,-1/0,-2/1,-3/1}{
+\node[chTwoNode] at (0,\y){\bit};
+\draw[chTwoArrow] (.4,\y)--(3.7,\y);
+\node[chTwoNode] at (4.1,\y){\bit};}
+\node[font=\normalsize] at (2,-4){চার বিটের চারটি পথ};
+\end{tikzpicture}}{\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[font=\normalsize] at (2,.5){Serial: পরপর};
+\node[chTwoNode] (a) at (0,-.3){Sender};
+\node[chTwoNode] (b) at (4,-.3){Receiver};
+\draw[chTwoArrow] (a)--node[above,font=\normalsize]{1, 0, 1, 1}(b);
+\node[font=\normalsize,align=center] at (2,-1.4){একই পথে চার বিট\\চারটি বিট-সময়ে};
+\end{tikzpicture}}
+\begin{tabularx}{\linewidth}{|p{.18\linewidth}|X|X|}\hline
+\textbf{বিষয়} & \textbf{Parallel} & \textbf{Serial}\\\hline
+পাঠানোর ধরন & আলাদা পথে একই সময়ে একাধিক বিট & একটি পথে পরপর বিট\\\hline
+লাইন ও খরচ & বেশি ডেটা লাইন, বেশি সংযোগ ও খরচ & কম ডেটা লাইন; সংযোগ তুলনামূলক সহজ\\\hline
+দূরত্ব & স্বল্প দূরত্বে সুবিধাজনক & দীর্ঘ দূরত্বেও সুবিধাজনক\\\hline
+সীমাবদ্ধতা & দূরত্ব বাড়লে বিটগুলোর পৌঁছানোর সময়ে অমিল হতে পারে & নির্দিষ্ট বিট হারে একবারে একটি বিট যায়\\\hline
+উদাহরণ & কম্পিউটারের কিছু অভ্যন্তরীণ বাস; পুরোনো Parallel Printer Port & USB (Universal Serial Bus), আধুনিক Ethernet ও Serial Link\\\hline
+\end{tabularx}
+\chTwoWhy{প্রতিটি লাইনের বিট হার সমান হলে প্যারালাল পদ্ধতিতে একসঙ্গে বেশি বিট পাঠানো যায়। তবে আধুনিক সিরিয়াল সংযোগের বিট হার অনেক বেশি হতে পারে। তাই প্যারালাল সবসময় দ্রুত নয়। সিরিয়ালে কম ডেটা লাইন লাগে; আলাদা লাইনের বিট পৌঁছানোর সময়ের অমিলও এড়ানো যায়।}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/data_transmission_overview_tree.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/data_transmission_overview_tree.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Data Transmission\\[8pt]
-$\downarrow$\\[8pt]
-Method: Parallel, Serial\\[8pt]
-$\downarrow$\\[8pt]
-Timing: Asynchronous, Synchronous, Isochronous\\[8pt]
-$\downarrow$\\[8pt]
-Mode: Simplex, Half-duplex, Full-duplex
-\vspace{0.7cm}
-}}
-}
-\caption{ডেটা ট্রান্সমিশনের ধারণা মানচিত্র}
-\end{figure}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Data transmission question-এ method ও mode গুলিয়ে ফেলা যাবে না। Method বোঝায় data কীভাবে পাঠানো হচ্ছে, আর mode বোঝায় data কোন direction-এ আদান-প্রদান হচ্ছে।
-\end{boardbox}
-
-\subsection{ডেটা ট্রান্সমিশন মেথড}
-
-Data transmission method মূলত দুই ধরনের:
-
-\begin{itemize}
-\item Parallel Transmission
-\item Serial Transmission
-\end{itemize}
-
-\subsection{Parallel Transmission}
-
-\begin{definitionbox}{Parallel Transmission}
-যে transmission পদ্ধতিতে একাধিক bit একই সময়ে আলাদা আলাদা channel বা line দিয়ে পাঠানো হয়, তাকে parallel transmission বলা হয়।
+\subsection{Bit Synchronization: বিটের সীমানা চেনা}
+\label{ch2:c02-03}
+\begin{definitionbox}{বিট সিঙ্ক্রোনাইজেশন (Bit Synchronization)}
+প্রেরকের প্রতিটি বিটের শুরু, শেষ ও নমুনা নেওয়ার সঠিক সময় প্রাপককে শনাক্ত করতে হয়। বিট পড়ার এই সময়ের সমন্বয়কে বিট সিঙ্ক্রোনাইজেশন (Bit Synchronization) বলে।
 \end{definitionbox}
+একটি বিট 1 মিলিসেকেন্ড (ms) স্থায়ী হলে প্রাপককে সেই বিটের সঠিক সময়ে সংকেত পড়তে হয়। ভুল সময়ে পড়লে আগের বা পরের বিটের মান পাওয়া যেতে পারে। \textbf{বিট সিঙ্ক্রোনাইজেশনের উদ্দেশ্য বিট ঠিকভাবে পড়া; ব্যান্ডউইথ বাড়ানো নয়।} সিরিয়াল পদ্ধতিতে সময়ের নিয়ম অনুযায়ী Asynchronous, Synchronous ও Isochronous প্রেরণ আলোচনা করা হয়।
 
-Parallel transmission-এ 8 bit data পাঠাতে চাইলে 8টি আলাদা line ব্যবহার করা যেতে পারে। ফলে একই সময়ে অনেক bit পাঠানো যায়। তাই short distance-এ এটি দ্রুত। তবে line বেশি লাগার কারণে cost বেশি হয় এবং দূরত্ব বাড়লে synchronization problem হতে পারে।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/parallel_vs_serial_transmission.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/parallel_vs_serial_transmission.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.7cm}
-Parallel Transmission\\[4pt]
-Bit 1 $\longrightarrow$\\
-Bit 2 $\longrightarrow$\\
-Bit 3 $\longrightarrow$\\
-Bit 4 $\longrightarrow$\\[12pt]
-Serial Transmission\\[4pt]
-Bit 1 $\longrightarrow$ Bit 2 $\longrightarrow$ Bit 3 $\longrightarrow$ Bit 4
-\vspace{0.7cm}
-}}
-}
-\caption{প্যারালাল ও সিরিয়াল ট্রান্সমিশন}
-\end{figure}
-
-\begin{keypointbox}{Parallel transmission-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item একাধিক bit একই সময়ে পাঠানো হয়।
-\item একাধিক channel বা wire প্রয়োজন হয়।
-\item short distance communication-এ কার্যকর।
-\item speed বেশি হলেও cost বেশি।
-\item দূরত্ব বেশি হলে timing mismatch বা synchronization problem হতে পারে।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{উদাহরণ}
-Computer-এর internal bus বা পুরনো printer port-এ parallel transmission ব্যবহৃত হতো। কারণ এগুলো সাধারণত short distance-এর মধ্যে data transfer করত।
-\end{examplebox}
-
-\subsection{Serial Transmission}
-
-\begin{definitionbox}{Serial Transmission}
-যে transmission পদ্ধতিতে data bit-by-bit অর্থাৎ একটির পর একটি bit একই channel দিয়ে পাঠানো হয়, তাকে serial transmission বলা হয়।
-\end{definitionbox}
-
-Serial transmission-এ line কম লাগে, তাই cost কম। Long distance communication-এর জন্য এটি বেশি উপযোগী। Modern communication system, USB, Ethernet, mobile network এবং internet communication-এ serial transmission-এর ধারণা গুরুত্বপূর্ণ।
-
-\begin{keypointbox}{Serial transmission-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item data একটির পর একটি bit হিসেবে পাঠানো হয়।
-\item সাধারণত একটি channel বা কম line প্রয়োজন হয়।
-\item long distance communication-এর জন্য উপযোগী।
-\item cost তুলনামূলক কম।
-\item speed নির্ভর করে channel capacity, clocking, protocol ও technology-এর উপর।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{উদাহরণ}
-USB, Ethernet communication, modem communication এবং long-distance network communication-এ serial transmission বহুল ব্যবহৃত।
-\end{examplebox}
-
-\subsection{Parallel Transmission ও Serial Transmission-এর পার্থক্য}
-
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Parallel Transmission} & \textbf{Serial Transmission} \\
-\hline
-Data পাঠানোর ধরন & একাধিক bit একই সময়ে যায় & bit-by-bit একটির পর একটি যায় \\
-\hline
-Line/Channel & একাধিক line প্রয়োজন & সাধারণত একটি line বা কম line প্রয়োজন \\
-\hline
-Distance & short distance-এ ভালো & long distance-এ ভালো \\
-\hline
-Cost & বেশি & তুলনামূলক কম \\
-\hline
-Speed ধারণা & short distance-এ দ্রুত & modern technology-তে খুব দ্রুত হতে পারে \\
-\hline
-Problem & synchronization problem হতে পারে & bit ordering ও timing control দরকার \\
-\hline
-উদাহরণ & internal bus, old printer port & USB, Ethernet, modem, internet \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{mistakebox}{Parallel বনাম serial}
-অনেকে মনে করে parallel transmission সবসময় serial transmission-এর চেয়ে ভালো। আসলে short distance-এ parallel দ্রুত হতে পারে, কিন্তু long distance ও modern networking-এ serial transmission বেশি practical ও reliable।
-\end{mistakebox}
-
-\subsection{Serial Transmission-এর ধরন}
-
-Serial transmission সাধারণত তিন ধরনের:
-
-\begin{itemize}
-\item Asynchronous Transmission
-\item Synchronous Transmission
-\item Isochronous Transmission
-\end{itemize}
-
-\subsection{Asynchronous Transmission}
-
+\subsection{Asynchronous Transmission: ক্যারেক্টারভিত্তিক ফ্রেম}
+\label{ch2:c02-04}
 \begin{definitionbox}{Asynchronous Transmission}
-যে serial transmission পদ্ধতিতে data character বা small unit আকারে পাঠানো হয় এবং প্রতিটি unit-এর শুরুতে start bit ও শেষে stop bit থাকে, তাকে asynchronous transmission বলা হয়।
+প্রতিটি ক্যারেক্টার বা ছোট ডেটা এককের সঙ্গে স্টার্ট ও স্টপ বিট দিয়ে আলাদা ফ্রেম তৈরি করে পাঠানোর পদ্ধতিকে অ্যাসিনক্রোনাস ট্রান্সমিশন (Asynchronous Transmission) বলে। প্রেরক ও প্রাপক সারাক্ষণ একই ক্লক সংকেত ব্যবহার করে না। প্রতিটি ফ্রেমের শুরুতে তারা বিট পড়ার সময় মিলিয়ে নেয়।
 \end{definitionbox}
-
-Asynchronous transmission-এ sender ও receiver-এর clock পুরো সময় synchronized থাকতে হয় না। প্রতিটি character বা byte আলাদাভাবে পাঠানো হয়। Receiver start bit দেখে বুঝতে পারে data শুরু হয়েছে এবং stop bit দেখে বুঝতে পারে data শেষ হয়েছে।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/asynchronous_transmission_frame.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/asynchronous_transmission_frame.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Start Bit \quad $\rightarrow$ \quad Data Bits \quad $\rightarrow$ \quad Stop Bit
-\vspace{0.7cm}
-}}
-}
-\caption{অ্যাসিনক্রোনাস ট্রান্সমিশন ফ্রেম}
-\end{figure}
-
-\begin{keypointbox}{Asynchronous transmission-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item data ছোট unit বা character আকারে পাঠানো হয়।
-\item প্রতিটি unit-এর সাথে start bit ও stop bit থাকে।
-\item sender ও receiver-এর continuous clock synchronization দরকার হয় না।
-\item data কম হলে বা অনিয়মিতভাবে data পাঠাতে হলে উপযোগী।
-\item extra start/stop bit থাকার কারণে overhead বেশি হতে পারে।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{উদাহরণ}
-Keyboard input, পুরনো serial communication এবং কম পরিমাণ অনিয়মিত data পাঠানোর ক্ষেত্রে asynchronous transmission ব্যবহৃত হতে পারে।
-\end{examplebox}
-
-\subsection{Synchronous Transmission}
-
-\begin{definitionbox}{Synchronous Transmission}
-যে serial transmission পদ্ধতিতে sender ও receiver clock synchronization বজায় রেখে data block বা frame আকারে পাঠায়, তাকে synchronous transmission বলা হয়।
-\end{definitionbox}
-
-Synchronous transmission-এ data character-by-character না গিয়ে বড় block বা frame হিসেবে যায়। এখানে start/stop bit প্রতিটি character-এর সাথে থাকে না। ফলে large amount data দ্রুত ও দক্ষতার সাথে পাঠানো যায়। তবে sender ও receiver-এর timing বা clock synchronization গুরুত্বপূর্ণ।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/synchronous_transmission_block.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/synchronous_transmission_block.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Header \quad $\rightarrow$ \quad Data Block \quad $\rightarrow$ \quad Trailer
-\vspace{0.7cm}
-}}
-}
-\caption{সিনক্রোনাস ট্রান্সমিশন ব্লক}
-\end{figure}
-
-\begin{keypointbox}{Synchronous transmission-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item data block বা frame আকারে পাঠানো হয়।
-\item sender ও receiver-এর clock synchronization প্রয়োজন।
-\item বড় পরিমাণ data দ্রুত transfer-এর জন্য উপযোগী।
-\item overhead তুলনামূলক কম।
-\item network communication-এ বেশি কার্যকর।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{উদাহরণ}
-Network communication, high-speed data transfer, LAN communication ইত্যাদিতে synchronous transmission-এর ধারণা ব্যবহৃত হয়।
-\end{examplebox}
-
-\subsection{Isochronous Transmission}
-
-\begin{definitionbox}{Isochronous Transmission}
-যে transmission পদ্ধতিতে data নির্দিষ্ট সময় interval বজায় রেখে continuous stream হিসেবে পাঠানো হয়, তাকে isochronous transmission বলা হয়।
-\end{definitionbox}
-
-Isochronous transmission বিশেষভাবে audio ও video communication-এর জন্য গুরুত্বপূর্ণ। এখানে শুধু data পৌঁছানোই যথেষ্ট নয়; data নির্দিষ্ট সময়ের মধ্যে পৌঁছাতে হবে। কারণ video call, live class বা streaming-এ delay বেশি হলে sound ও video mismatch হতে পারে।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/synchronous_vs_isochronous_transmission.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Synchronous: Block \quad Block \quad Block\\[12pt]
-Isochronous: Stream \quad Stream \quad Stream
-\vspace{0.7cm}
-}}
-}
-\caption{সিনক্রোনাস ও আইসোক্রোনাস ট্রান্সমিশনের ধারণা}
-\end{figure}
-
-\begin{keypointbox}{Isochronous transmission-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item continuous data stream পাঠানো হয়।
-\item নির্দিষ্ট সময় interval বজায় রাখা গুরুত্বপূর্ণ।
-\item audio, video ও real-time communication-এর জন্য উপযোগী।
-\item delay বেশি হলে communication quality কমে যায়।
-\item live streaming, video conference, online class-এ এর ধারণা গুরুত্বপূর্ণ।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{উদাহরণ}
-Video call, live online class, IP TV, live audio-video streaming—এসব ক্ষেত্রে timing খুব গুরুত্বপূর্ণ, তাই isochronous transmission-এর ধারণা প্রযোজ্য।
-\end{examplebox}
-
-\subsection{Asynchronous, Synchronous ও Isochronous Transmission-এর পার্থক্য}
-
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Asynchronous} & \textbf{Synchronous} & \textbf{Isochronous} \\
-\hline
-Data পাঠানোর ধরন & character বা small unit & block বা frame & continuous stream \\
-\hline
-Timing & start/stop bit দিয়ে control & clock synchronization দরকার & fixed time interval দরকার \\
-\hline
-Overhead & বেশি & তুলনামূলক কম & timing control গুরুত্বপূর্ণ \\
-\hline
-ব্যবহার & কম বা অনিয়মিত data & বড় পরিমাণ data & audio-video/live data \\
-\hline
-উদাহরণ & keyboard/serial input & network data transfer & video call/live class \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Asynchronous transmission-এর প্রশ্নে start bit ও stop bit অবশ্যই লিখতে হবে। Synchronous transmission-এর ক্ষেত্রে block/frame ও clock synchronization লিখতে হবে। Isochronous transmission-এর ক্ষেত্রে real-time audio-video এবং fixed time interval লিখলে উত্তর পূর্ণাঙ্গ হয়।
-\end{boardbox}
-
-\subsection{ডেটা ট্রান্সমিশন মোড}
-
-\begin{definitionbox}{Transmission Mode}
-Data sender ও receiver-এর মধ্যে কোন direction-এ আদান-প্রদান হবে, সেই পদ্ধতিকে transmission mode বলা হয়।
-\end{definitionbox}
-
-Transmission mode তিন ধরনের:
-
-\begin{itemize}
-\item Simplex
-\item Half-duplex
-\item Full-duplex
-\end{itemize}
-
-\subsection{Simplex Mode}
-
-\begin{definitionbox}{Simplex Mode}
-যে transmission mode-এ data শুধু এক direction-এ যায়, অর্থাৎ sender শুধু পাঠায় এবং receiver শুধু গ্রহণ করে, তাকে simplex mode বলা হয়।
-\end{definitionbox}
-
-Simplex mode-এ receiver data পাঠাতে পারে না। এটি one-way communication system। Broadcasting system-এ এটি বেশি দেখা যায়।
-
-\begin{examplebox}{উদাহরণ}
-Radio broadcast, TV broadcast, keyboard থেকে computer-এ input, monitor-এ output display—এসব simplex communication-এর উদাহরণ।
-\end{examplebox}
-
-\subsection{Half-duplex Mode}
-
-\begin{definitionbox}{Half-duplex Mode}
-যে transmission mode-এ data দুই direction-এ যেতে পারে, কিন্তু একই সময়ে দুই direction-এ যেতে পারে না, তাকে half-duplex mode বলা হয়।
-\end{definitionbox}
-
-Half-duplex mode-এ উভয় পক্ষ data পাঠাতে ও গ্রহণ করতে পারে, কিন্তু একসাথে নয়। একজন কথা বললে অন্যজন অপেক্ষা করে।
-
-\begin{examplebox}{উদাহরণ}
-Walkie-talkie half-duplex communication-এর সহজ উদাহরণ। একজন কথা বলার সময় অন্যজন শুনে, পরে অন্যজন কথা বলে।
-\end{examplebox}
-
-\subsection{Full-duplex Mode}
-
-\begin{definitionbox}{Full-duplex Mode}
-যে transmission mode-এ data একই সময়ে দুই direction-এ আদান-প্রদান করা যায়, তাকে full-duplex mode বলা হয়।
-\end{definitionbox}
-
-Full-duplex mode আধুনিক communication-এ খুব গুরুত্বপূর্ণ, কারণ এতে sender ও receiver একই সময়ে data পাঠাতে ও গ্রহণ করতে পারে। ফলে communication দ্রুত ও স্বাভাবিক হয়।
-
-\begin{examplebox}{উদাহরণ}
-Mobile phone call, video call এবং modern network communication full-duplex communication-এর উদাহরণ।
-\end{examplebox}
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/simplex_half_full_duplex_modes.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.7cm}
-Simplex: A $\longrightarrow$ B\\[10pt]
-Half-duplex: A $\longleftrightarrow$ B \quad One at a time\\[10pt]
-Full-duplex: A $\Longleftrightarrow$ B \quad Same time
-\vspace{0.7cm}
-}}
-}
-\caption{সিমপ্লেক্স, হাফ-ডুপ্লেক্স ও ফুল-ডুপ্লেক্স মোড}
-\end{figure}
-
-\subsection{Simplex, Half-duplex ও Full-duplex-এর পার্থক্য}
-
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|p{0.24\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Simplex} & \textbf{Half-duplex} & \textbf{Full-duplex} \\
-\hline
-Direction & একদিকে & দুইদিকে & দুইদিকে \\
-\hline
-Same time communication & সম্ভব নয় & সম্ভব নয় & সম্ভব \\
-\hline
-Sender/Receiver ভূমিকা & নির্দিষ্ট & পালাক্রমে বদলাতে পারে & একই সাথে উভয় কাজ করতে পারে \\
-\hline
-উদাহরণ & TV/Radio broadcast & Walkie-talkie & Mobile call, video call \\
-\hline
-ব্যবহার & one-way communication & পালাক্রমিক communication & real-time interactive communication \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{mistakebox}{Half-duplex বনাম full-duplex}
-Half-duplex ও full-duplex দুটোতেই data দুইদিকে যেতে পারে। পার্থক্য হলো half-duplex-এ একই সময়ে দুইদিকে যায় না, কিন্তু full-duplex-এ একই সময়ে দুইদিকে data আদান-প্রদান হয়।
+\chTwoPair{\textbf{পাঠানোর ধাপ:} নিষ্ক্রিয় বা Idle অবস্থার পর স্টার্ট বিট নতুন ক্যারেক্টারের শুরু জানায়। এরপর ডেটা বিট, প্রয়োজনে প্যারিটি বিট এবং সবশেষে স্টপ বিট পাঠানো হয়। দুই পক্ষের বিট হার ও ফ্রেমের বিন্যাস একই হতে হয়। UART (Universal Asynchronous Receiver/Transmitter)-এর প্রচলিত ফ্রেমে Idle/Stop-এর মান 1 এবং Start-এর মান 0।
+\par\textbf{উদাহরণ:} সিরিয়াল পোর্টে কিবোর্ডের ক্যারেক্টার বা সেন্সরের ছোট বার্তা পাঠানো এর উদাহরণ। ব্যবহারকারী টাইপ করলেই ক্যারেক্টার তৈরি হয়। আগে সব ক্যারেক্টার জমিয়ে বড় ব্লক বানাতে হয় না।}{\chTwoNative{Asyncframe}\par
+\textbf{8N1 ফ্রেম:} 8 Data Bit, No Parity, 1 Stop Bit; এর বাইরে 1 Start Bit। মোট $1+8+1=10$ বিট। এটি একটি নির্দিষ্ট ফ্রেমের বিন্যাস; সব অ্যাসিনক্রোনাস ফ্রেমের দৈর্ঘ্য এক নয়।}
+\begin{mistakebox}{Start, Stop, Gap ও Memory নিয়ে ভুল এড়াও}
+স্টার্ট ও স্টপ বিট ফ্রেমের সীমানা জানায়। ঐচ্ছিক প্যারিটি বিট কিছু ত্রুটি শনাক্ত করতে পারে; এটি মূল ডেটা নয় এবং সাধারণ ত্রুটি সংশোধনের ব্যবস্থাও নয়। ক্যারেক্টারগুলোর মধ্যে বিরতি \textbf{থাকতে পারে}, তবে তা বাধ্যতামূলক নয়। আগে বড় ব্লক জমিয়ে রাখতে হয় না। এই অর্থে অ্যাসিনক্রোনাস পদ্ধতিতে মেমোরি লাগে না বলা হয়। বাস্তব UART-এ রেজিস্টার ও বাফার থাকে। পুরোনো কিবোর্ডের উদাহরণ থেকে আধুনিক USB সংযোগের সব প্রেরণকে অ্যাসিনক্রোনাস বলা যায় না।
 \end{mistakebox}
+\textbf{ডেটা বিটের সংখ্যা:} মূল ASCII-তে ৭ bit দিয়ে $2^7=128$টি কোড প্রকাশ করা যায়। ৮-bit কোডের বিন্যাসে $2^8=256$টি ভিন্ন বিট-প্যাটার্ন থাকে। UART-এ ৭ বা ৮ ডেটা বিটের ফ্রেম দেখা যায়; Unicode-এর সব অক্ষর এক বাইটে ধরে না। মোট ফ্রেমের বিট গুনতে ডেটা বিটের সঙ্গে স্টার্ট, স্টপ ও ঐচ্ছিক প্যারিটি বিট যোগ করতে হয়। একই বিট হারে বাড়তি বিট পাঠাতে বেশি সময় লাগে; বিরতি থাকলে আরও সময় লাগে। কার্যকর ডেটার অনুপাত ও সময়ের হিসাব অংশ \ref{ch2:c02-07}-এ আছে।
 
-\subsection{Data Delivery Mode: Unicast, Broadcast ও Multicast}
+\textbf{জোড় ও বিজোড় প্যারিটি (Even/Odd Parity):} ডেটা ও প্যারিটি বিটে মোট 1-এর সংখ্যা জোড় রাখলে Even Parity এবং বিজোড় রাখলে Odd Parity হয়। \texttt{10110010}-এ চারটি 1 আছে। তাই Even Parity Bit হবে 0 এবং Odd Parity Bit হবে 1। পথে একটি বিট উল্টে গেলে জোড় বা বিজোড়ের নির্ধারিত নিয়ম ভেঙে যায়। কিন্তু দুটি বিট উল্টে গেলে নিয়মটি ঠিক থাকতে পারে। তাই একটি প্যারিটি বিট সব ত্রুটি শনাক্ত করতে পারে না; ভুল বিটের অবস্থান বের করে সংশোধনও করতে পারে না।
 
-Data transmission-এ কখনো data এক receiver-এর কাছে যায়, কখনো network-এর সব receiver-এর কাছে যায়, আবার কখনো নির্দিষ্ট group-এর কাছে যায়। এই ভিত্তিতে delivery mode তিন ধরনের:
-
-\begin{itemize}
-\item Unicast
-\item Broadcast
-\item Multicast
-\end{itemize}
-
-\subsection{Unicast}
-
-\begin{definitionbox}{Unicast}
-এক sender থেকে এক নির্দিষ্ট receiver-এর কাছে data পাঠানোর পদ্ধতিকে unicast বলা হয়।
+\subsection{Synchronous Transmission: ব্লক ও সমন্বিত সময়}
+\label{ch2:c02-05}
+\begin{definitionbox}{Synchronous Transmission}
+প্রেরক ও প্রাপকের বিটের সময় সমন্বয় করে একাধিক ক্যারেক্টারের ডেটা ব্লক বা ফ্রেমে পাঠানোর পদ্ধতিকে সিনক্রোনাস ট্রান্সমিশন (Synchronous Transmission) বলে। প্রতিটি ক্যারেক্টারের সঙ্গে আলাদা স্টার্ট ও স্টপ বিট দিতে হয় না।
 \end{definitionbox}
+\chTwoPair{\textbf{পাঠানোর ধাপ:} ব্লকভিত্তিক এই উদাহরণে ডেটা সাময়িকভাবে বাফারে রেখে ব্লক তৈরি করা হয়। প্রয়োজনীয় নিয়ন্ত্রণ ও ফ্রেমিংয়ের তথ্য যোগ করে সময়ের সমন্বয় বজায় রেখে ব্লক পাঠানো হয়। প্রাপক সমন্বিত সময় অনুযায়ী বিট ও ব্লক শনাক্ত করে। ক্লকের সময় আলাদা লাইন দিয়ে জানানো যায়, আবার সংকেত থেকেও উদ্ধার করা যায়।
+\par\textbf{বাফারের প্রয়োজন:} এই উদাহরণে ব্লক সাজানোর জন্য ক্যারেক্টারগুলো সাময়িকভাবে জমা রাখতে প্রধান মেমোরি বা বাফার প্রয়োজন। বাফারে ডেটা জমা রাখা এবং ক্লকের সাহায্যে বিট পড়ার সময় মেলানো দুটি পৃথক কাজ।}{\chTwoNative{Syncblock}\par
+\textbf{চিত্রের পাঠ:} হেডার ও ট্রেলার ব্লকের পরিচয়, নিয়ন্ত্রণ বা যাচাইয়ের তথ্য বহন করতে পারে। সব প্রোটোকলের ফ্রেম একরকম নয়। বড় ফাইল স্থানান্তর ও ব্লকভিত্তিক নেটওয়ার্ক যোগাযোগে এই পদ্ধতির ব্যবহার দেখা যায়।}
+\textbf{সুবিধা:} বড় ব্লকে ক্যারেক্টারপ্রতি ফ্রেমিংয়ের বাড়তি তথ্য কম লাগে। ফলে কার্যকর ডেটার অনুপাত বাড়তে পারে। \textbf{সীমাবদ্ধতা:} বাফার, সময়ের সমন্বয় ও নিয়ন্ত্রণব্যবস্থা প্রয়োজন। ছোট বার্তা জমিয়ে ব্লক বানাতে অপেক্ষা লাগতে পারে। বাফার ও সময় সমন্বয়ের ব্যবস্থা থাকায় প্রাথমিক নকশা তুলনামূলক জটিল ও ব্যয়বহুল হতে পারে। খরচ প্রযুক্তি ও প্রয়োজনের ওপর নির্ভর করে। স্টার্ট ও স্টপ বিট না থাকা মানে মোট ওভারহেড শূন্য নয়।
 
-\begin{examplebox}{উদাহরণ}
-একজন বন্ধুকে email পাঠানো, এক ব্যক্তিকে WhatsApp message পাঠানো, একটি device থেকে নির্দিষ্ট server-এ request পাঠানো—unicast communication-এর উদাহরণ।
-\end{examplebox}
-
-\subsection{Broadcast}
-
-\begin{definitionbox}{Broadcast}
-এক sender থেকে network-এর সকল receiver-এর কাছে data পাঠানোর পদ্ধতিকে broadcast বলা হয়।
+\subsection{Isochronous Transmission: সময়ের নিয়মিত প্রবাহ}
+\label{ch2:c02-06}
+\begin{definitionbox}{Isochronous Transmission}
+নির্দিষ্ট সময়ের ব্যবধান বা সময়সূচি মেনে ডেটার ইউনিট পাঠানোর পদ্ধতিকে আইসোক্রোনাস ট্রান্সমিশন (Isochronous Transmission) বলে। ধারাবাহিক অডিও ও ভিডিওতে সময়মতো নিয়মিত ডেটা পৌঁছানো বিশেষ প্রয়োজন। এই পদ্ধতিতে সেই সময়ের চাহিদাকে গুরুত্ব দেওয়া হয়।
 \end{definitionbox}
-
-\begin{examplebox}{উদাহরণ}
-TV broadcast, radio broadcast এবং local network-এ broadcast message—broadcast communication-এর উদাহরণ।
-\end{examplebox}
-
-\subsection{Multicast}
-
-\begin{definitionbox}{Multicast}
-এক sender থেকে নির্দিষ্ট একটি receiver group-এর কাছে data পাঠানোর পদ্ধতিকে multicast বলা হয়।
-\end{definitionbox}
-
-\begin{examplebox}{উদাহরণ}
-একটি online class link নির্দিষ্ট group-এর শিক্ষার্থীদের কাছে পাঠানো, group video streaming, IPTV multicast—multicast communication-এর উদাহরণ।
-\end{examplebox}
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/unicast_broadcast_multicast.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/unicast_broadcast_multicast.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.7cm}
-Unicast: One Sender $\longrightarrow$ One Receiver\\[10pt]
-Broadcast: One Sender $\longrightarrow$ All Receivers\\[10pt]
-Multicast: One Sender $\longrightarrow$ Selected Group
-\vspace{0.7cm}
-}}
-}
-\caption{Unicast, Broadcast ও Multicast}
-\end{figure}
-
-\subsection{Unicast, Broadcast ও Multicast-এর পার্থক্য}
-
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Unicast} & \textbf{Broadcast} & \textbf{Multicast} \\
-\hline
-Receiver সংখ্যা & একজন নির্দিষ্ট receiver & network-এর সবাই & নির্দিষ্ট group \\
-\hline
-Data flow & One-to-one & One-to-all & One-to-many selected \\
-\hline
-Efficiency & নির্দিষ্ট communication-এ efficient & সবার জন্য দরকার হলে efficient & group communication-এ efficient \\
-\hline
-উদাহরণ & personal email/message & TV/radio broadcast & online class group stream \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Transmission mode এবং delivery mode এক নয়। Simplex/Half-duplex/Full-duplex direction বোঝায়, আর Unicast/Broadcast/Multicast receiver group বোঝায়।
-\end{boardbox}
-
-\subsection{Exam-style প্রশ্ন ও উত্তর}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Parallel transmission কী?}
-যে transmission পদ্ধতিতে একাধিক bit একই সময়ে আলাদা আলাদা line বা channel দিয়ে পাঠানো হয়, তাকে parallel transmission বলা হয়। এতে speed বেশি হলেও একাধিক line লাগে, তাই cost বেশি এবং long distance-এ synchronization problem হতে পারে।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Serial transmission কেন long distance-এ উপযোগী?}
-Serial transmission-এ data bit-by-bit একই channel দিয়ে পাঠানো হয়। এতে line কম লাগে, cost কম হয় এবং long distance communication সহজ হয়। তাই modern network, USB, Ethernet ও internet communication-এ serial transmission বেশি ব্যবহৃত হয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Asynchronous transmission কী?}
-যে serial transmission পদ্ধতিতে data character বা small unit আকারে পাঠানো হয় এবং প্রতিটি unit-এর শুরুতে start bit ও শেষে stop bit থাকে, তাকে asynchronous transmission বলা হয়। এতে sender ও receiver-এর continuous clock synchronization প্রয়োজন হয় না।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: Simplex ও Full-duplex}
-Simplex mode-এ data শুধু একদিকে যায়; receiver data পাঠাতে পারে না। কিন্তু full-duplex mode-এ একই সময়ে দুই direction-এ data আদান-প্রদান করা যায়। TV broadcast simplex-এর উদাহরণ, আর mobile phone call full-duplex-এর উদাহরণ।
-\end{boardbox}
-
-\subsection{Brainstorming Critical Question}
-
-\begin{practicebox}
-একটি কলেজে online class নেওয়া হয়। শিক্ষক live video class নেন, শিক্ষার্থীরা chat করে প্রশ্ন করে, আবার class recording server-এ upload করা হয়।
-
-\begin{enumerate}
-\item ক. Serial transmission কী?
-\item খ. Asynchronous transmission-এ start bit ও stop bit কেন দরকার?
-\item গ. উদ্দীপকে live class-এর ক্ষেত্রে কোন transmission timing ধারণা বেশি গুরুত্বপূর্ণ? ব্যাখ্যা কর।
-\item ঘ. শিক্ষক ও শিক্ষার্থীদের live interaction full-duplex communication-এর সাথে কতটা সম্পর্কযুক্ত? বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\begin{itemize}
-\item Data transmission হলো এক device থেকে অন্য device-এ data পাঠানোর প্রক্রিয়া।
-\item Parallel transmission-এ একাধিক bit একই সময়ে যায়।
-\item Serial transmission-এ bit একটির পর একটি যায়।
-\item Asynchronous transmission-এ start bit ও stop bit থাকে।
-\item Synchronous transmission-এ data block/frame আকারে যায়।
-\item Isochronous transmission-এ fixed time interval বজায় রাখা গুরুত্বপূর্ণ।
-\item Simplex হলো one-way communication।
-\item Half-duplex হলো two-way but one at a time।
-\item Full-duplex হলো two-way at the same time।
-\item Unicast one-to-one, Broadcast one-to-all, Multicast one-to-selected group।
-\end{itemize}
-\end{recapbox}
-
-\subsection{অনুশীলন}
-
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item Parallel transmission-এ data কীভাবে পাঠানো হয়?\\
-ক. একটির পর একটি bit \quad খ. একাধিক bit একই সময়ে \quad গ. শুধু wireless মাধ্যমে \quad ঘ. শুধু audio signal হিসেবে
-
-\item Serial transmission-এ data কীভাবে যায়?\\
-ক. একাধিক line দিয়ে একই সময়ে \quad খ. bit-by-bit \quad গ. শুধু broadcast আকারে \quad ঘ. কোনো medium ছাড়া
-
-\item Asynchronous transmission-এ কোন bit ব্যবহৃত হয়?\\
-ক. Start bit ও Stop bit \quad খ. Only parity bit \quad গ. IP bit \quad ঘ. Cloud bit
-
-\item Live video class-এ timing বজায় রাখার জন্য কোন transmission ধারণা বেশি সম্পর্কযুক্ত?\\
-ক. Asynchronous \quad খ. Isochronous \quad গ. Simplex \quad ঘ. Broadcast only
-
-\item Walkie-talkie কোন mode-এর উদাহরণ?\\
-ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Multicast
-
-\item Mobile phone call কোন mode-এর উদাহরণ?\\
-ক. Simplex \quad খ. Half-duplex \quad গ. Full-duplex \quad ঘ. Broadcast
-
-\item একজন sender একজন receiver-কে message পাঠালে সেটি কী?\\
-ক. Broadcast \quad খ. Multicast \quad গ. Unicast \quad ঘ. Duplex
-\end{enumerate}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Data transmission কী?
-\item Parallel ও Serial transmission-এর মধ্যে পার্থক্য লেখ।
-\item Asynchronous transmission কী? Start bit ও Stop bit-এর ভূমিকা লেখ।
-\item Synchronous transmission কেন large data transfer-এ উপযোগী?
-\item Isochronous transmission কোথায় ব্যবহৃত হয়?
-\item Simplex, Half-duplex ও Full-duplex-এর পার্থক্য লেখ।
-\item Unicast, Broadcast ও Multicast-এর পার্থক্য লেখ।
-\end{enumerate}
-
-\textbf{সৃজনশীল প্রশ্ন}
-একটি প্রতিষ্ঠানে online meeting, file sharing এবং live training session পরিচালিত হয়। Meeting-এ সবাই একই সময়ে কথা শুনতে ও বলতে পারে, file server থেকে নির্দিষ্ট user file download করে, আর live training নির্দিষ্ট group-এর কাছে stream করা হয়।
-
-\begin{enumerate}
-\item ক. Transmission mode কী?
-\item খ. Serial transmission long distance communication-এ উপযোগী কেন?
-\item গ. উদ্দীপকে full-duplex ও unicast communication শনাক্ত করে ব্যাখ্যা কর।
-\item ঘ. live training session multicast ও isochronous transmission-এর সাথে কীভাবে সম্পর্কযুক্ত? বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
+\chTwoPair{\textbf{সমস্যা:} ভিডিওর ছবিগুলো অনিয়মিত সময়ে পৌঁছালে চলমান দৃশ্য থেমে যেতে পারে। শব্দের নমুনা দেরিতে পৌঁছালে কথার ধারাবাহিকতা নষ্ট হয়। \textbf{সমাধান:} নির্ধারিত সময়ে নিয়মিত ডেটা পাঠাতে হয়। উপযুক্ত বাফার ব্যবহার করে প্রবাহ বজায় রাখা যায়। সময়ের প্রয়োজন বুঝতে Latency/Jitter-এর আলোচনা দেখো (অংশ \ref{ch2:c01-06} ও \ref{ch2:c01-11})।}{\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+\foreach \x/\t in {0/t,2/{t+T},4/{t+2T}}{
+\node[chTwoNode] at (\x,0){Data};
+\node[font=\normalsize] at (\x,-.6){$\t$};}
+\draw[chTwoArrow] (-.5,-1)--(4.6,-1);
+\node[font=\normalsize] at (2,-1.4){নির্ধারিত ব্যবধান $T$};
+\end{tikzpicture}}
+\textbf{প্রয়োগ:} USB অডিও যন্ত্রের Isochronous Transfer একটি নির্দিষ্ট উদাহরণ। এই প্রেরণে নিয়মিত সময় বরাদ্দ থাকে, কিন্তু ব্যর্থ প্যাকেট আবার পাঠানো হয় না। এই ব্যবস্থায় ব্যর্থ প্যাকেট পুনঃপ্রেরণের বদলে সময়মতো ডেটা পাঠানোকে প্রাধান্য দেওয়া হয়। সব আইসোক্রোনাস ব্যবস্থার নিয়ম এমন নয়। লাইভ কল, অনলাইন ক্লাস ও IPTV (Internet Protocol Television)-তে সময়মতো ডেটা প্রয়োজন। তবে শুধু কাজের নাম দেখে ব্যবহৃত প্রোটোকলকে আইসোক্রোনাস বলা যায় না।
+\begin{tabularx}{\linewidth}{|p{.17\linewidth}|X|X|X|}\hline
+\textbf{বিষয়} & \textbf{Asynchronous} & \textbf{Synchronous} & \textbf{Isochronous}\\\hline
+মূল বৈশিষ্ট্য & প্রতি ক্যারেক্টারের পৃথক স্টার্ট ও স্টপ বিট & সময় সমন্বিত ব্লক/ফ্রেম & নির্ধারিত সময়ে নিয়মিত প্রবাহ\\\hline
+ছোট অনিয়মিত বার্তা & সহজে পাঠানো যায় & ব্লক তৈরির অপেক্ষা হতে পারে & সাধারণত প্রধান প্রয়োজন নয়\\\hline
+বাড়তি তথ্য ও চাহিদা & ক্যারেক্টারপ্রতি বাড়তি বিট & ব্লকের নিয়ন্ত্রণতথ্য ও বাফার & সময়/প্রয়োজনীয় ক্ষমতা বজায় রাখা\\\hline
+উদাহরণের প্রসঙ্গ & UART-এ ক্যারেক্টার বা সেন্সরের বার্তা & বড় ডেটার ব্লক স্থানান্তর & USB অডিও প্রেরণ\\\hline
+\end{tabularx}
+\input{chapters/Chapter02/topics/02_data_transmission_method_and_mode/concept_enrichment.tex}
+\input{chapters/Chapter02/topics/02_data_transmission_method_and_mode/applied_examples.tex}
+\endgroup

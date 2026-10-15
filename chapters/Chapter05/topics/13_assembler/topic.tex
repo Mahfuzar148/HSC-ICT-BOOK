@@ -1,0 +1,538 @@
+\sectionheading{5.13 অ্যাসেম্বলার (Assembler)}
+
+Assembly Language-এ Program লেখার সময় 0 ও 1-এর পরিবর্তে
+\textenglish{\ttfamily ADD, SUB, MOV, JMP} ইত্যাদি
+\textbf{Mnemonic Code} এবং প্রয়োজন অনুযায়ী Symbol বা Label
+ব্যবহার করা হয়।
+
+এসব Instruction Programmer-এর জন্য সহজ হলেও Processor সরাসরি
+বুঝতে পারে না। তাই Assembly Language-এ লেখা Program-কে
+Machine Language-এ রূপান্তর করার জন্য \textbf{Assembler} প্রয়োজন।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Assembler কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Translator Program \textbf{Assembly Language-এ লেখা Program-কে
+Machine Language বা Machine Code-এ রূপান্তর করে}, তাকে
+\textbf{Assembler} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Assembly Language
+\(\longrightarrow\)
+Assembler
+\(\longrightarrow\)
+Machine Language
+}
+
+\end{center}
+
+%================================================
+% Need
+%================================================
+\booksubheading{Assembler কেন প্রয়োজন?}
+
+Assembly Language-এ Mnemonic Instruction ব্যবহার করা হলেও CPU
+মূলত Binary Machine Instruction বুঝতে পারে।
+
+Assembler এসব Mnemonic ও Symbolic Instruction-কে সংশ্লিষ্ট
+Processor-এর বোধগম্য Machine Code-এ রূপান্তর করে।
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+ধরা যাক Assembly Program-এ লেখা আছে—
+
+\begin{center}
+{\textenglish{\ttfamily ADD A, B}}
+\end{center}
+
+এখানে \textenglish{\ttfamily ADD} যোগ করার Operation প্রকাশ করে।
+
+Assembler এই Instruction-কে সংশ্লিষ্ট Processor-এর উপযোগী
+Binary Machine Instruction-এ রূপান্তর করবে।
+
+\end{examplebox}
+
+%================================================
+% Assembling
+%================================================
+\booksubheading{Assembling কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Assembling}
+
+Assembly Language-এর Program-কে Assembler-এর সাহায্যে
+Machine Code-এ রূপান্তরের প্রক্রিয়াকে \textbf{Assembling} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{
+Assembler = অনুবাদক Program
+\qquad
+Assembling = অনুবাদের প্রক্রিয়া
+}
+
+\end{center}
+
+%================================================
+% Flow
+%================================================
+\booksubheading{Assembler-এর কাজের ধারা}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{Assembly\\Source Program}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.17\linewidth}{
+        \centering\textbf{Assembler}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.22\linewidth}{
+        \centering\textbf{Machine /\\Object Code}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.15\linewidth}{
+        \centering\textbf{Execution}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+%================================================
+% Main Functions
+%================================================
+\booksubheading{Assembler-এর প্রধান কাজ}
+
+Assembler সাধারণত—
+
+\begin{itemize}
+
+\item Mnemonic Instruction-কে সংশ্লিষ্ট
+\textbf{Machine Instruction}-এ রূপান্তর করে।
+
+\item Opcode ও Operand-এর তথ্য Machine-এর উপযোগীভাবে অনুবাদ করে।
+
+\item Program-এ ব্যবহৃত \textbf{Label বা Symbolic Address}
+শনাক্ত ও প্রয়োজনীয় Address-এর সঙ্গে সম্পর্ক স্থাপন করে।
+
+\item Assembly Language-এর Syntax ও Instruction-সংক্রান্ত
+Error শনাক্ত করতে সাহায্য করে।
+
+\item প্রয়োজনীয় \textbf{Object/Machine Code} তৈরি করে।
+
+\end{itemize}
+
+%================================================
+% Label and Symbol
+%================================================
+\booksubheading{Label বা Symbolic Address কী?}
+
+Assembly Program-এ কোনো Instruction বা Memory Location সহজে
+শনাক্ত করার জন্য অর্থবোধক নাম ব্যবহার করা যেতে পারে।
+এ ধরনের নামকে \textbf{Label বা Symbolic Name} বলা হয়।
+
+যেমন—
+
+\begin{center}
+
+{\textenglish{\ttfamily START \qquad LOOP \qquad NEXT}}
+
+\end{center}
+
+Programmer-এর জন্য এসব নাম Numeric Address মনে রাখার তুলনায় সহজ।
+Assembler এসব Symbol-এর সঙ্গে প্রয়োজনীয় Address-এর সম্পর্ক নির্ধারণ করে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Label Programmer-এর জন্য সহজ প্রতীকী নাম।
+
+Assembler সেই Label বা Symbol-কে প্রয়োজনীয় Machine Address-এর
+সঙ্গে সম্পর্কিত করে।
+
+\end{rememberbox}
+
+%================================================
+% Features
+%================================================
+\booksubheading{Assembler-এর প্রধান বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}
+\\
+\hline
+
+Translator Program
+&
+এটি একটি অনুবাদক Program।
+\\
+\hline
+
+Source Language
+&
+Assembly Language।
+\\
+\hline
+
+Target Language
+&
+Machine Language বা Machine Code।
+\\
+\hline
+
+Mnemonic Translation
+&
+Mnemonic-কে Machine Instruction-এ রূপান্তর করে।
+\\
+\hline
+
+Symbol Handling
+&
+Label ও Symbolic Address নিয়ে কাজ করতে পারে।
+\\
+\hline
+
+Error Detection
+&
+Assembly Syntax ও Instruction-এর ভুল শনাক্ত করতে সাহায্য করে।
+\\
+\hline
+
+Machine Dependent
+&
+নির্দিষ্ট Processor-এর Instruction Set-এর সঙ্গে সম্পর্কিত।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Machine Dependent
+%================================================
+\booksubheading{Assembler কেন Machine Dependent?}
+
+Assembly Language নির্দিষ্ট Processor Architecture-এর
+\textbf{Instruction Set}-এর ওপর নির্ভরশীল।
+
+এক Processor-এর Instruction, Register বা Mnemonic অন্য
+Processor-এ একইভাবে নাও থাকতে পারে।
+
+তাই Assembler-ও সাধারণত নির্দিষ্ট Processor Architecture-এর
+Assembly Code অনুবাদের জন্য তৈরি হয়।
+
+\begin{center}
+
+\textbf{
+Processor/Architecture পরিবর্তন
+\(\longrightarrow\)
+Instruction Set পরিবর্তন হতে পারে
+\(\longrightarrow\)
+Assembler-ও ভিন্ন হতে পারে
+}
+
+\end{center}
+
+%================================================
+% One Pass / Two Pass
+%================================================
+\booksubheading{One-pass ও Two-pass Assembler — সংক্ষিপ্ত ধারণা}
+
+এটি মূল ধারণার তুলনায় কম গুরুত্বপূর্ণ; MCQ বা জ্ঞানমূলক
+প্রশ্নের সুবিধার জন্য সংক্ষেপে জানলেই যথেষ্ট।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধরন}}
+&
+\multicolumn{1}{c|}{\textbf{ধারণা}}
+\\
+\hline
+
+One-pass Assembler
+&
+Source Program সাধারণত একবার Scan করে Translation সম্পন্ন
+করার চেষ্টা করে।
+\\
+\hline
+
+Two-pass Assembler
+&
+Source Program দুইবার Scan করে; প্রথম Pass-এ Symbol/Label
+সম্পর্কিত তথ্য সংগ্রহ এবং পরবর্তী Pass-এ Machine Code তৈরির
+কাজ করা হয়।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Shortcut}
+
+\textbf{One-pass = একবার Scan}
+
+\textbf{Two-pass = দুইবার Scan}
+
+\end{rememberbox}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Assembler-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item Programmer-কে সরাসরি 0 ও 1 দিয়ে Program লিখতে হয় না।
+
+\item Mnemonic ব্যবহার করায় Program লেখা ও বোঝা সহজ হয়।
+
+\item Label ও Symbolic Address ব্যবহার করা যায়।
+
+\item Assembly Program-এর Error শনাক্ত করতে সহায়তা করে।
+
+\item Hardware-এর কাছাকাছি Efficient Program তৈরিতে উপযোগী।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Limitations
+%================================================
+\booksubheading{Assembler-এর সীমাবদ্ধতা}
+
+\begin{itemize}
+
+\item নির্দিষ্ট Processor Architecture-এর ওপর নির্ভরশীল।
+
+\item Assembly Programming-এর জন্য Processor ও Instruction Set
+সম্পর্কে ধারণা প্রয়োজন।
+
+\item High Level Language-এর তুলনায় বড় Program লেখা ও Maintain
+করা কঠিন।
+
+\item ভিন্ন Architecture-এ Program ব্যবহার করতে Code পরিবর্তনের
+প্রয়োজন হতে পারে।
+
+\end{itemize}
+
+%================================================
+% Example
+%================================================
+\booksubheading{Assembler-এর উদাহরণ}
+
+Assembler Software-এর একটি পরিচিত উদাহরণ—
+
+\begin{center}
+
+\textbf{GAS — GNU Assembler}
+
+\end{center}
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Compiler, Interpreter ও Assembler-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{
+|>{\bfseries}p{0.17\linewidth}|Y|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Compiler}}
+&
+\multicolumn{1}{c|}{\textbf{Interpreter}}
+&
+\multicolumn{1}{c|}{\textbf{Assembler}}
+\\
+\hline
+
+Source Language
+&
+High Level
+&
+High Level
+&
+Assembly Language
+\\
+\hline
+
+অনুবাদের ধরন
+&
+পুরো Program একসঙ্গে
+&
+সাধারণত Statement ধরে ধরে
+&
+Assembly Instruction অনুবাদ
+\\
+\hline
+
+Object/Target Code
+&
+সাধারণত তৈরি করে
+&
+সাধারণত পৃথক Object Program তৈরি করে না
+&
+Machine/Object Code তৈরি করে
+\\
+\hline
+
+Execution
+&
+Compilation-এর পরে
+&
+Translation-এর সঙ্গে ধাপে ধাপে
+&
+Machine Code তৈরির পরে
+\\
+\hline
+
+প্রধান কাজ
+&
+High Level থেকে Target Code
+&
+High Level Code অনুবাদ ও Execute
+&
+Assembly থেকে Machine Code
+\\
+\hline
+
+Error Handling
+&
+পুরো Program বিশ্লেষণ করে Error দেখাতে পারে
+&
+Error পাওয়া স্থানে সাধারণত থামে
+&
+Assembly Syntax/Symbol Error শনাক্ত করে
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Shortcut
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}দ্রুত মনে রাখার কৌশল}
+
+\begin{center}
+
+\textbf{
+Compiler
+\(\rightarrow\)
+High Level
+\(\rightarrow\)
+পুরো Program
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Interpreter
+\(\rightarrow\)
+High Level
+\(\rightarrow\)
+Statement ধরে ধরে
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Assembler
+\(\rightarrow\)
+Assembly
+\(\rightarrow\)
+Machine Code
+}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Assembler একটি \textbf{Translator Program}।
+
+\item এর Source Language হলো \textbf{Assembly Language}।
+
+\item Target হলো \textbf{Machine Language/Machine Code}।
+
+\item
+\textbf{
+Assembly Language
+\(\rightarrow\)
+Assembler
+\(\rightarrow\)
+Machine Code
+}
+
+\item Assembler-এর অনুবাদ প্রক্রিয়াকে
+\textbf{Assembling} বলে।
+
+\item Mnemonic, Label ও Symbolic Address নিয়ে Assembler কাজ করে।
+
+\item Assembler \textbf{Machine Dependent}।
+
+\item \textbf{GAS = GNU Assembler}।
+
+\item One-pass ও Two-pass Assembler অতিরিক্ত ধারণা হিসেবে
+সংক্ষেপে মনে রাখলেই যথেষ্ট।
+
+\item Compiler ও Interpreter-এর সঙ্গে Assembler-এর সবচেয়ে
+গুরুত্বপূর্ণ পার্থক্য হলো—
+\textbf{Assembler-এর Source Language হচ্ছে Assembly Language}।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.14 Interpreter
+%================================================

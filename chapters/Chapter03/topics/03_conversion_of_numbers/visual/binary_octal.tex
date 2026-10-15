@@ -1,0 +1,159 @@
+\subsection{বাইনারি থেকে অক্টাল}
+বিন্দুর দুই পাশ আলাদা করে ৩ বিটের গ্রুপ করো। প্রয়োজনের শূন্য পূর্ণাংশের বামে ও ভগ্নাংশের ডানে বসে।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (1101101)_{2} $-কে ৮ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC020}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc bit] (raw0) at (12,0) {$ 1 $};
+\node[vc bit] (raw1) at (18,0) {$ 1 $};
+\node[vc bit] (raw2) at (24,0) {$ 0 $};
+\node[vc bit] (raw3) at (30,0) {$ 1 $};
+\node[vc bit] (raw4) at (36,0) {$ 1 $};
+\node[vc bit] (raw5) at (42,0) {$ 0 $};
+\node[vc bit] (raw6) at (48,0) {$ 1 $};
+\node[vc bit] (new0) at (0,-20) {$ 0 $};
+\node[vc bit] (new1) at (6,-20) {$ 0 $};
+\node[vc bit] (new2) at (12,-20) {$ 1 $};
+\node[vc bit] (new3) at (18,-20) {$ 1 $};
+\node[vc bit] (new4) at (24,-20) {$ 0 $};
+\node[vc bit] (new5) at (30,-20) {$ 1 $};
+\node[vc bit] (new6) at (36,-20) {$ 1 $};
+\node[vc bit] (new7) at (42,-20) {$ 0 $};
+\node[vc bit] (new8) at (48,-20) {$ 1 $};
+\draw[vc arrow,draw=vcBlue!65] (raw0.south)--(12,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw1.south)--(18,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw2.south)--(24,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw3.south)--(30,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw4.south)--(36,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw5.south)--(42,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw6.south)--(48,-17);
+\draw[dashed,draw=vcPad,line width=.85pt] (-2.5,-22.8) rectangle (8.5,-17.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-left) at (-13.5,-9) {বামে ২টি ০};
+\draw[vc arrow,draw=vcPad] (pad-left.south)--(3.0,-17);
+\draw[vc brace] (-3.0,-24)--(15.0,-24);
+\node[vc result] (g0) at (6.0,-37) {$ 1 $};
+\draw[vc arrow] (6.0,-27)--(g0.north);
+\draw[vc brace] (15.0,-24)--(33.0,-24);
+\node[vc result] (g1) at (24.0,-37) {$ 5 $};
+\draw[vc arrow] (24.0,-27)--(g1.north);
+\draw[vc brace] (33.0,-24)--(51.0,-24);
+\node[vc result] (g2) at (42.0,-37) {$ 5 $};
+\draw[vc arrow] (42.0,-27)--(g2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (1101101)_{2}=(155)_{8}.\]
+দাগঘেরা বিটগুলো গ্রুপ পূরণের জন্য যোগ করা শূন্য; এগুলো মান বদলায়নি।\par
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.10111)_{2} $-কে ৮ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC021}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] at (21.0,0) {$.$};
+\node[vc bit] (raw0) at (12,0) {$ 0 $};
+\node[vc bit] (raw1) at (30.0,0) {$ 1 $};
+\node[vc bit] (raw2) at (36.0,0) {$ 0 $};
+\node[vc bit] (raw3) at (42.0,0) {$ 1 $};
+\node[vc bit] (raw4) at (48.0,0) {$ 1 $};
+\node[vc bit] (raw5) at (54.0,0) {$ 1 $};
+\node[vc bit] (new0) at (0,-20) {$ 0 $};
+\node[vc bit] (new1) at (6,-20) {$ 0 $};
+\node[vc bit] (new2) at (12,-20) {$ 0 $};
+\node[vc bit] (new3) at (30.0,-20) {$ 1 $};
+\node[vc bit] (new4) at (36.0,-20) {$ 0 $};
+\node[vc bit] (new5) at (42.0,-20) {$ 1 $};
+\node[vc bit] (new6) at (48.0,-20) {$ 1 $};
+\node[vc bit] (new7) at (54.0,-20) {$ 1 $};
+\node[vc bit] (new8) at (60.0,-20) {$ 0 $};
+\draw[vc arrow,draw=vcBlue!65] (raw0.south)--(12,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw1.south)--(30.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw2.south)--(36.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw3.south)--(42.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw4.south)--(48.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw5.south)--(54.0,-17);
+\node[vc digit] at (21.0,-20) {$.$};
+\draw[dashed,draw=vcPad,line width=.85pt] (-2.5,-22.8) rectangle (8.5,-17.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-left) at (-13.5,-9) {বামে ২টি ০};
+\draw[vc arrow,draw=vcPad] (pad-left.south)--(3.0,-17);
+\draw[dashed,draw=vcPad,line width=.85pt] (57.5,-22.8) rectangle (62.5,-17.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-right) at (73.5,-9) {ডানে ১টি ০};
+\draw[vc arrow,draw=vcPad] (pad-right.south)--(60.0,-17);
+\draw[vc brace] (-3.0,-24)--(15.0,-24);
+\node[vc result] (g0) at (6.0,-37) {$ 0 $};
+\draw[vc arrow] (6.0,-27)--(g0.north);
+\draw[vc brace] (27.0,-24)--(45.0,-24);
+\node[vc result] (g1) at (36.0,-37) {$ 5 $};
+\draw[vc arrow] (36.0,-27)--(g1.north);
+\draw[vc brace] (45.0,-24)--(63.0,-24);
+\node[vc result] (g2) at (54.0,-37) {$ 6 $};
+\draw[vc arrow] (54.0,-27)--(g2.north);
+\node[vc digit] at (21.0,-37) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (0.10111)_{2}=(0.56)_{8}.\]
+দাগঘেরা বিটগুলো গ্রুপ পূরণের জন্য যোগ করা শূন্য; এগুলো মান বদলায়নি।\par
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (101101.1101)_{2} $-কে ৮ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC022}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] at (39.0,0) {$.$};
+\node[vc bit] (raw0) at (0,0) {$ 1 $};
+\node[vc bit] (raw1) at (6,0) {$ 0 $};
+\node[vc bit] (raw2) at (12,0) {$ 1 $};
+\node[vc bit] (raw3) at (18,0) {$ 1 $};
+\node[vc bit] (raw4) at (24,0) {$ 0 $};
+\node[vc bit] (raw5) at (30,0) {$ 1 $};
+\node[vc bit] (raw6) at (48.0,0) {$ 1 $};
+\node[vc bit] (raw7) at (54.0,0) {$ 1 $};
+\node[vc bit] (raw8) at (60.0,0) {$ 0 $};
+\node[vc bit] (raw9) at (66.0,0) {$ 1 $};
+\node[vc bit] (new0) at (0,-20) {$ 1 $};
+\node[vc bit] (new1) at (6,-20) {$ 0 $};
+\node[vc bit] (new2) at (12,-20) {$ 1 $};
+\node[vc bit] (new3) at (18,-20) {$ 1 $};
+\node[vc bit] (new4) at (24,-20) {$ 0 $};
+\node[vc bit] (new5) at (30,-20) {$ 1 $};
+\node[vc bit] (new6) at (48.0,-20) {$ 1 $};
+\node[vc bit] (new7) at (54.0,-20) {$ 1 $};
+\node[vc bit] (new8) at (60.0,-20) {$ 0 $};
+\node[vc bit] (new9) at (66.0,-20) {$ 1 $};
+\node[vc bit] (new10) at (72.0,-20) {$ 0 $};
+\node[vc bit] (new11) at (78.0,-20) {$ 0 $};
+\draw[vc arrow,draw=vcBlue!65] (raw0.south)--(0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw1.south)--(6,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw2.south)--(12,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw3.south)--(18,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw4.south)--(24,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw5.south)--(30,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw6.south)--(48.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw7.south)--(54.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw8.south)--(60.0,-17);
+\draw[vc arrow,draw=vcBlue!65] (raw9.south)--(66.0,-17);
+\node[vc digit] at (39.0,-20) {$.$};
+\draw[dashed,draw=vcPad,line width=.85pt] (69.5,-22.8) rectangle (80.5,-17.2);
+\node[vcnote,text=vcPad,fill=vcPad!8,inner sep=1.5pt] (pad-right) at (91.5,-9) {ডানে ২টি ০};
+\draw[vc arrow,draw=vcPad] (pad-right.south)--(75.0,-17);
+\draw[vc brace] (-3.0,-24)--(15.0,-24);
+\node[vc result] (g0) at (6.0,-37) {$ 5 $};
+\draw[vc arrow] (6.0,-27)--(g0.north);
+\draw[vc brace] (15.0,-24)--(33.0,-24);
+\node[vc result] (g1) at (24.0,-37) {$ 5 $};
+\draw[vc arrow] (24.0,-27)--(g1.north);
+\draw[vc brace] (45.0,-24)--(63.0,-24);
+\node[vc result] (g2) at (54.0,-37) {$ 6 $};
+\draw[vc arrow] (54.0,-27)--(g2.north);
+\draw[vc brace] (63.0,-24)--(81.0,-24);
+\node[vc result] (g3) at (72.0,-37) {$ 4 $};
+\draw[vc arrow] (72.0,-27)--(g3.north);
+\node[vc digit] at (39.0,-37) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (101101.1101)_{2}=(55.64)_{8}.\]
+দাগঘেরা বিটগুলো গ্রুপ পূরণের জন্য যোগ করা শূন্য; এগুলো মান বদলায়নি।\par
+\end{minipage}\par

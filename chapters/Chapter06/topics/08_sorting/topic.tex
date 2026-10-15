@@ -1,34 +1,106 @@
-% ৮. Sorting
 \section{Sorting}
-ডেটাকে নির্দিষ্ট ক্রমে সাজানোকে Sorting বলে। নামের বর্ণানুক্রম, রোলের ছোট থেকে বড় ক্রম, তারিখের নতুন থেকে পুরোনো ক্রম বা নম্বরের বেশি থেকে কম ক্রমে ডেটা সাজানো যায়।
 
-\subsection{Sorting কী}
-\begin{definitionbox}{Sorting}
-ডেটাবেজের রেকর্ডগুলোকে একটি বা একাধিক ফিল্ডের মান অনুযায়ী ঊর্ধ্বক্রম বা নিম্নক্রমে সাজানোর প্রক্রিয়াকে Sorting বলে।
+\begin{definitionbox}{}
+ডেটাবেজে একটি বা একাধিক ফিল্ডের মান অনুসারে রেকর্ডগুলোকে নির্দিষ্ট ক্রমে সাজানোর প্রক্রিয়াকে \textbf{Sorting} বলে।
 \end{definitionbox}
 
-\subsection{ব্যবহার}
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
-ধরন & অর্থ & উদাহরণ \\
-\hline
-Ascending & ছোট থেকে বড় / A থেকে Z & Roll 1, 2, 3 \\
-\hline
-Descending & বড় থেকে ছোট / Z থেকে A & GPA 5.00, 4.75 \\
-\hline
-\end{tabular}
-\end{center}
 
-\begin{examplebox}{SQL-এ Sorting}
+\subsubsection{তালিকা উপস্থাপনায় Sorting-এর প্রয়োজন}
+সব শিক্ষার্থীর নম্বর একটি তালিকায় থাকলেও এলোমেলো ক্রমে দেখালে তা পড়তে অসুবিধা হয়। প্রয়োজন অনুযায়ী রেকর্ড সাজালে তালিকাটি ব্যবহার করা সহজ হয়।
+
+
+
+
+কলেজের রোল তালিকা ছোট থেকে বড় রোলে, মেধাতালিকা বেশি থেকে কম নম্বরে এবং সাম্প্রতিক ভর্তির তালিকা নতুন থেকে পুরোনো তারিখে সাজানো যায়। ব্যাংকের সাম্প্রতিক লেনদেন, দোকানের কম থেকে বেশি দামের পণ্য এবং হাসপাতালের সময় অনুযায়ী সাক্ষাতের তালিকাও এভাবে সাজানো হয়। এতে তালিকা পড়া, তুলনা ও প্রয়োজনীয় অবস্থান চেনা সহজ হয়।
+
+সমান নম্বর পেলে Roll-এর ঊর্ধ্বক্রমে রেকর্ড সাজানো যায়। সমান মানের জন্য দ্বিতীয় নিয়ম না থাকলে রেকর্ডগুলোর পারস্পরিক ক্রম নির্দিষ্ট নাও হতে পারে। সর্টিং ভুল নম্বর সংশোধন করে না; পুরো রেকর্ড অক্ষুণ্ণ রেখে প্রদর্শনের ক্রম বদলায়.
+
+\subsection{Ascending ও Descending Order}
+\textbf{Ascending বা ঊর্ধ্বক্রম} হলো ছোট থেকে বড় মানের ক্রম; SQL-এ এর নির্দেশ ASC। \textbf{Descending বা নিম্নক্রম} হলো বড় থেকে ছোট মানের ক্রম; এর নির্দেশ DESC। সংখ্যা, লেখা ও তারিখে ``ছোট'' ও ``বড়'' বোঝার ধরন আলাদা। যেমন সংখ্যায় 70-এর আগে 60 আসে, ইংরেজি নামের বর্ণানুক্রমে Karim-এর আগে Arif এবং সময়ের হিসাবে নতুন তারিখের আগে পুরোনো তারিখ আসে।
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright\small
+\begin{tabularx}{\linewidth}{|p{25mm}|X|X|}\hline
+উপাত্ত & Ascending (ASC) & Descending (DESC)\\\hline
+Number/Currency & ছোট থেকে বড়: 10, 20, 30 & বড় থেকে ছোট: 30, 20, 10\\\hline
+Text & A থেকে Z: Arif, Karim, Sumi & Z থেকে A: Sumi, Karim, Arif\\\hline
+Date/Time & পুরোনো থেকে নতুন & নতুন থেকে পুরোনো\\\hline
+\end{tabularx}
+\captionof{table}{ডেটার ধরন অনুযায়ী সর্টিংয়ের ক্রম}
+\end{minipage}\end{flushleft}
+``ক্রমবর্ধমান'', ``ছোট থেকে বড়'' বা ``বর্ণানুক্রমে'' বলা হলে সাধারণভাবে ASC বোঝায়। ``ক্রমহ্রাসমান'', ``সর্বোচ্চ থেকে সর্বনিম্ন'' বা ``নতুন আগে'' বলা হলে সংশ্লিষ্ট মানে DESC প্রয়োজন। আগে ফিল্ডের অর্থ বুঝে তারপর নির্দেশ নির্বাচন করতে হয়।
+
+\subsection{Query অংশের একই Student টেবিলে Sorting}
+\noindent\begin{minipage}[t]{.25\linewidth}\vspace{0pt}\small
+\begin{tabular}{|l|l|l|}\hline\chSixHeader Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+213 & Sami & 5.00\\\hline
+205 & Farhan & 4.80\\\hline
+305 & Rima & 5.00\\\hline
+306 & Mahi & 4.50\\\hline
+150 & Mim & 4.20\\\hline
+180 & Tania & 3.90\\
+\hline\end{tabular}\end{minipage}\hfill
+\begin{minipage}[t]{.71\linewidth}\vspace{0pt}আগের অংশের Roll, Name ও GPA অপরিবর্তিত রেখে একই শিক্ষার্থীদের সাজাই। নিচে কেবল প্রয়োজনীয় তিনটি ফিল্ড দেখানো হয়েছে; Department, Fee ও Email-ও মূল টেবিলে আছে।\end{minipage}\par\smallskip
+
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chSixExample{৮.২}{GPA বেশি আগে, সমান GPA-তে ছোট রোল আগে দেখাও।}
+\noindent\begin{minipage}[c]{0.57\linewidth}
 \begin{verbatim}
-SELECT Roll, Name, GPA
-FROM Student
-ORDER BY GPA DESC;
+SELECT Roll,Name,GPA FROM Student
+ORDER BY GPA DESC,Roll ASC;
 \end{verbatim}
-এখানে GPA বেশি থেকে কম ক্রমে দেখানো হবে।
-\end{examplebox}
+\smallskip Rahim, Sami ও Rima-এর GPA 5.00; তাই তাদের মধ্যে Roll 102, 213, 305 ক্রমে আসে। Nabila ও Farhan-এর সমান GPA-তে 109 আগে, 205 পরে। শুধু GPA DESC দিলে সমান মানের রেকর্ডগুলোর পারস্পরিক ক্রম নিশ্চিত হতো না।
 
-\begin{practicebox}
-Student টেবিল থেকে Name বর্ণানুক্রমে এবং GPA বেশি থেকে কম ক্রমে দেখানোর জন্য দুটি আলাদা কুয়েরি লিখো।
-\end{practicebox}
+\end{minipage}\hfill\begin{minipage}[c]{0.04\linewidth}$\Rightarrow$\end{minipage}\hfill
+\begin{minipage}[c]{0.36\linewidth}\raggedright\footnotesize\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+213 & Sami & 5.00\\\hline
+305 & Rima & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+205 & Farhan & 4.80\\\hline
+306 & Mahi & 4.50\\\hline
+150 & Mim & 4.20\\\hline
+180 & Tania & 3.90\\
+\hline\end{tabular}
+\end{minipage}\par\smallskip
+\end{minipage}\par
+
+
+\begin{boardbox}{সর্টিংয়ের অগ্রাধিকার}
+ORDER BY-তে বাম দিকের ফিল্ড আগে কাজ করে। পরের ফিল্ড শুধু আগের সমান মানের রেকর্ডগুলোর মধ্যে ক্রম নির্ধারণ করে। পুরো রেকর্ড একসঙ্গে সাজে; নামের সঙ্গে অন্য শিক্ষার্থীর GPA যুক্ত হয় না।
+\end{boardbox}
+\subsection{ডেটার ধরন ও ফলের নির্দিষ্ট ক্রম}
+সংখ্যা ও Currency-র মান সংখ্যাগতভাবে তুলনা করা হয়। Text-এর ক্রম collation, ভাষা ও সফটওয়্যারের নিয়মের ওপর নির্ভর করে; সংখ্যার মতো লেখা Text-কে Number ধরে সাজানো যাবে না। Date-এর জন্য প্রকৃত তারিখমান বা সাজানো যায় এমন অভিন্ন বিন্যাস প্রয়োজন। \texttt{YYYY-MM-DD} বিন্যাসে রাখা তারিখ Text হিসেবেও যথাযথ ক্রম দিতে পারে; \texttt{DD-MM-YYYY} লেখা সাধারণ বর্ণক্রমে সাজিয়ে একই ফল নিশ্চিত হয় না।
+
+একাধিক ফিল্ডে প্রথম ফিল্ড প্রধান অগ্রাধিকার পায়; পরেরটি আগের সমান মানের মধ্যে ক্রম ঠিক করে। শেষে অনন্য ID দিলে সব সমান মানের ক্ষেত্রেও ফলের ক্রম নির্দিষ্ট করা যায়। Filtering রেকর্ড বাছাই করে, Sorting ক্রম বদলায়, আর সম্পাদনা মান পরিবর্তন করে। NULL, শূন্য ও সংখ্যার মতো লেখার বিস্তারিত প্রয়োগ সংরক্ষিত উদাহরণে আছে; ইনডেক্স নিজে ফলের ক্রম নিশ্চিত করে না।
+
+\subsection{Microsoft Access-এ Sorting}
+টেবিল বা কুয়েরির Datasheet View-তে প্রয়োজনীয় ফিল্ড নির্বাচন করে Ascending বা Descending ব্যবহার করা যায়। Form ও Report-এও প্রয়োজন অনুযায়ী সাজানো তথ্য দেখানো যায়। একাধিক ফিল্ডের ক্রম নির্ধারণে Query Design-এর Sort সারি ব্যবহার করা সুবিধাজনক। সর্টিংয়ের জন্য বাম দিকে রাখা ফিল্ড আগে অগ্রাধিকার পায়।
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright\small
+\begin{tabular}{|l|l|l|}\hline
+Field & GPA & Roll\\\hline
+Table & Student & Student\\\hline
+Sort & Descending & Ascending\\\hline
+\end{tabular}
+\captionof{table}{Access Query Design-এ সর্টিংয়ের বিন্যাস}
+\end{minipage}\end{flushleft}
+এখানে প্রথমে GPA বেশি থেকে কম, একই GPA-তে Roll ছোট থেকে বড় সাজবে। SQL-এ এর সমতুল্য অংশ \texttt{ORDER BY GPA DESC, Roll ASC}। সাধারণ Access সর্টিংয়ে Text, Number, Currency ও Date/Time-এর মান ব্যবহার করা যায়; OLE Object বা Attachment-এর মতো বিষয়কে সাধারণ লেখা বা সংখ্যার মতো সর্ট করা যায় না। লেখার বড় ও ছোট হাতের অক্ষর কীভাবে তুলনা হবে তা ব্যবহৃত ভাষা ও সফটওয়্যারের সাজানোর নিয়মের ওপর নির্ভর করে।
+
+\chSixInterface{ch06_access_sorting_query_design.png}{Query Design-এ একাধিক ফিল্ডে সর্টিং}{Sort সারিতে GPA-এর জন্য Descending এবং তার ডান পাশে Roll-এর জন্য Ascending দেওয়া হয়েছে। ফলে বেশি GPA আগে আসে; GPA সমান হলে ছোট Roll আগে আসে।}
+
+\subsection{গুরুত্বপূর্ণ প্রশ্ন}
+
+\begin{multicols}{2}
+\small
+\begin{enumerate}
+
+    \item ডেটাবেজ রেকর্ড সাজানোকে কী বলে?
+
+    \item Ascending-এর SQL Keyword কোনটি?
+
+    \item Descending-এর SQL Keyword কোনটি?
+
+    \end{enumerate}
+\end{multicols}
+

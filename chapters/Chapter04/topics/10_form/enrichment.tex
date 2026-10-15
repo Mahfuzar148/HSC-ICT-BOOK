@@ -1,0 +1,24 @@
+\subsubsection{সাবমিট করলে কোন তথ্য যায়?}
+লাইব্রেরিতে বই খোঁজার ফর্মে ব্যবহারকারী ICT লিখেছে। নিচের কোডে \textbf{name} হলো সার্ভারের কাছে পাঠানো তথ্যের পরিচয় এবং নিয়ন্ত্রণের বর্তমান মান হলো পাঠানো তথ্য।
+
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+\begin{verbatim}
+<form action="search.php" method="get">
+  <label for="q">Book:</label>
+  <input id="q" name="q" value="ICT"
+         placeholder="Book name" required>
+  <button type="submit">Search</button>
+</form>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{অনুরোধের গন্তব্য:}\par
+\texttt{search.php?q=ICT}\par
+\texttt{action} খোঁজার প্রোগ্রামের ঠিকানা দেয়। \texttt{method="get"} হওয়ায় \texttt{q=ICT} URL-এর query অংশে যায়। শিক্ষার্থী লেখা বদলালে পাঠানো মানও বদলাবে। \texttt{placeholder} ইঙ্গিত; এটি লেবেল বা আসল মানের বিকল্প নয়।
+\end{minipage}
+\chFourWhy{ফর্ম নাম ও বর্তমান মানের জোড়া পাঠায়। নামহীন বা disabled নিয়ন্ত্রণ সাধারণত পাঠানো হয় না; চেকবক্স/রেডিও নির্বাচিত হলে তার মান যায়। required ব্রাউজারের যাচাই দেয়, কিন্তু সার্ভারেও ইনপুট যাচাই দরকার।}
+
+\begin{mistakebox}{POST আর HTTPS-এর কাজ আলাদা}
+একই ফর্মে \texttt{method="post"} হলে তথ্য অনুরোধের মূল অংশে যায়; এই পরিবর্তন নিজে এনক্রিপশন যোগ করে না। HTTPS পরিবহনের সময় যোগাযোগ এনক্রিপ্ট করে। HTML-এর ফর্ম তৈরি বা submit করা মানেই ডেটাবেজে তথ্য সংরক্ষণ নয়—\texttt{action}-এর প্রোগ্রামকে প্রয়োজনীয় কাজ করতে হবে।
+\end{mistakebox}

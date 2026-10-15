@@ -1,0 +1,799 @@
+\sectionheading{5.30 Python Program-এর প্রাথমিক পরিচিতি}
+
+কোনো নির্দিষ্ট কাজ সম্পন্ন বা Problem সমাধানের জন্য Python
+ভাষায় এক বা একাধিক Instruction বা Statement লিখে
+Python Program তৈরি করা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Python Program কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Problem সমাধান বা নির্দিষ্ট কাজ সম্পন্ন করার জন্য
+Python Programming Language-এর নিয়ম অনুসারে লেখা
+এক বা একাধিক \textbf{Statement-এর সমষ্টিকে Python Program}
+বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{Instruction / Statement}
+\(\longrightarrow\)
+\textbf{Program}
+\(\longrightarrow\)
+\textbf{Execution}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+%================================================
+% Python Statement
+%================================================
+
+\booksubheading{Python Statement}
+
+Python Program-এর প্রতিটি কার্যকর নির্দেশনাকে সাধারণভাবে
+\textbf{Statement} বলা হয়।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+এখানে পুরো লাইনটি একটি Python Statement।
+
+\medskip
+
+আরও একটি উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print(10 + 20)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+30
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+%================================================
+% Simple Python Program
+%================================================
+
+\replaceableimage[68mm]
+{images/python-editor-run.png}
+{Python Editor-এ Program লিখে Run করার পর Output}
+
+\begin{center}
+\footnotesize\textbf{চিত্র: Python Editor-এ Program লিখে Run করার ধাপ}
+\end{center}
+
+\booksubheading{একটি সাধারণ Python Program}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello, Python!")\\
+print("Welcome to Programming")
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Hello, Python!\\
+Welcome to Programming
+\end{english}
+
+\end{codebox}
+
+এখানে দুটি Statement রয়েছে।
+
+Python সাধারণভাবে Statementগুলো
+\textbf{উপর থেকে নিচের দিকে (Top to Bottom)}
+Execute করে।
+
+\begin{center}
+
+\textbf{১ম Statement}
+\(\longrightarrow\)
+\textbf{২য় Statement}
+\(\longrightarrow\)
+\textbf{৩য় Statement}
+\(\longrightarrow\)
+\textbf{\dots}
+
+\end{center}
+
+%================================================
+% How Program Works
+%================================================
+
+\booksubheading{Python Program কীভাবে কাজ করে?}
+
+একটি Python Program-এর সাধারণ কার্যধারা—
+
+\begin{center}
+
+\textbf{Source Code}
+\(\longrightarrow\)
+\textbf{Python Interpreter}
+\(\longrightarrow\)
+\textbf{Execution}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+Programmer প্রথমে Python Code লেখে।
+
+Python Interpreter সেই Code Execute করে এবং প্রয়োজন অনুযায়ী
+Result বা Output প্রদান করে।
+
+%================================================
+% Source Code
+%================================================
+
+\booksubheading{Source Code কী?}
+
+\begin{definitionbox}
+
+Programmer কোনো Programming Language ব্যবহার করে যে Code
+লেখে তাকে \textbf{Source Code} বলা হয়।
+
+\end{definitionbox}
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("ICT")
+\end{english}
+
+\end{codebox}
+
+এটি Python-এর Source Code।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\textbf{Programmer লিখে}
+\(\longrightarrow\)
+Source Code
+
+\medskip
+
+\textbf{Interpreter Execute করে}
+\(\longrightarrow\)
+Program চলে
+
+\end{rememberbox}
+
+%================================================
+% Python Program File
+%================================================
+
+\booksubheading{Python Program File}
+
+Script Mode-এ Python Program সাধারণত
+\textbf{\textenglish{\ttfamily .py}}
+Extension-যুক্ত File-এ Save করা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+hello.py\\
+first\_program.py
+\end{english}
+
+\end{codebox}
+
+এরপর File Run করলে Python Program Execute হয়।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+Python Source Program File Extension
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily .py}}
+
+\end{rememberbox}
+
+%================================================
+% print()
+%================================================
+
+\booksubheading{\textenglish{\ttfamily print()} সম্পর্কে প্রাথমিক ধারণা}
+
+Python-এ Screen-এ Text, Number বা কোনো Result প্রদর্শনের জন্য
+সাধারণত
+\textenglish{\ttfamily print()}
+Function ব্যবহার করা হয়।
+
+\begin{examplebox}{Text প্রদর্শন}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Bangladesh")
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Bangladesh
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+\begin{examplebox}{Calculation-এর Result প্রদর্শন}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print(5 + 3)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+8
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}আপাতত মনে রাখবে}
+
+\begin{center}
+
+\textenglish{\ttfamily print()}
+\(\longrightarrow\)
+\textbf{Output প্রদর্শন}
+
+\end{center}
+
+এর বিস্তারিত ব্যবহার
+\textbf{Input ও Output}
+অংশে আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Text and Number
+%================================================
+
+\booksubheading{Text ও Number-এর প্রাথমিক ধারণা}
+
+Python-এ Text সাধারণত Quotation Mark-এর মধ্যে লেখা হয়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+অন্যদিকে Number সরাসরি লেখা যায়—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print(100)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+100
+\end{english}
+
+\end{codebox}
+
+%================================================
+% Quotation Difference
+%================================================
+
+\booksubheading{Quotation Mark থাকলে কী পার্থক্য হয়?}
+
+নিচের দুটি Statement লক্ষ্য করো—
+
+\begin{examplebox}{Quotation-এর মধ্যে}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("10 + 20")
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+10 + 20
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 10 + 20}
+Text হিসেবে প্রদর্শিত হয়েছে।
+
+\end{examplebox}
+
+\begin{examplebox}{Quotation ছাড়া}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print(10 + 20)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+30
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 10 + 20}
+একটি Calculation হিসেবে কাজ করেছে।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}গুরুত্বপূর্ণ}
+
+\textbf{Quotation-এর ভিতরে}
+\(\longrightarrow\)
+Text
+
+\medskip
+
+\textbf{Quotation ছাড়া}
+\(\longrightarrow\)
+Expression / Calculation
+
+\end{rememberbox}
+
+%================================================
+% Top to Bottom
+%================================================
+
+\booksubheading{Python Program সাধারণভাবে Top to Bottom Execute হয়}
+
+নিচের Programটি লক্ষ্য করো—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("First")\\
+print("Second")\\
+print("Third")
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+First\\
+Second\\
+Third
+\end{english}
+
+\end{codebox}
+
+Python সাধারণভাবে প্রথম Statement থেকে শুরু করে নিচের
+Statementগুলো পর্যায়ক্রমে Execute করে।
+
+\begin{center}
+
+\textbf{Top}
+\(\longrightarrow\)
+\textbf{Bottom}
+
+\end{center}
+
+\begin{rememberbox}
+
+Conditional Statement, Loop ও Function ব্যবহারের ক্ষেত্রে
+Program-এর Execution Flow পরিবর্তিত হতে পারে।
+
+সেগুলো পরবর্তী অংশে আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Comment
+%================================================
+
+\booksubheading{Comment-এর প্রাথমিক ধারণা}
+
+Program-এর মধ্যে Programmer-এর ব্যাখ্যা বা Note লেখার জন্য
+\textbf{Comment} ব্যবহার করা হয়।
+
+Python-এ এক লাইনের Comment সাধারণত
+\textbf{\textenglish{\ttfamily \#}}
+দিয়ে শুরু হয়।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+\# This is a comment\\
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+Comment Program-এর কার্যকর Instruction হিসেবে Execute হয় না।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\textenglish{\ttfamily \#}
+\(\longrightarrow\)
+Single-line Comment
+
+\end{rememberbox}
+
+%================================================
+% Program Analysis
+%================================================
+
+\booksubheading{একটি ছোট Program বিশ্লেষণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+\# My first Python program\\
+print("Hello")\\
+print(10 + 5)
+\end{english}
+
+\end{codebox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.45\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{অংশ}}
+&
+\multicolumn{1}{c|}{\textbf{অর্থ}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily \# My first Python program}
+&
+Comment
+\\
+
+\hline
+
+\textenglish{\ttfamily print("Hello")}
+&
+Text Output প্রদর্শন
+\\
+
+\hline
+
+\textenglish{\ttfamily print(10 + 5)}
+&
+Calculation-এর Result প্রদর্শন
+\\
+
+\hline
+
+\textenglish{\ttfamily 15}
+&
+দ্বিতীয়
+\textenglish{\ttfamily print()}
+Statement-এর Output
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Basic Characteristics
+%================================================
+
+\booksubheading{Python Program-এর প্রাথমিক বৈশিষ্ট্য}
+
+একটি সাধারণ Python Program-এ—
+
+\begin{compacttwocolpoints}
+
+\item এক বা একাধিক Statement থাকতে পারে।
+
+\item Statement সাধারণভাবে Top to Bottom Execute হয়।
+
+\item
+\textenglish{\ttfamily print()}
+ব্যবহার করে Output প্রদর্শন করা যায়।
+
+\item Text সাধারণত Quotation Mark-এর মধ্যে লেখা হয়।
+
+\item Calculation Expression আকারে লেখা যায়।
+
+\item
+\textenglish{\ttfamily \#}
+ব্যবহার করে Single-line Comment লেখা যায়।
+
+\item Script Program
+\textenglish{\ttfamily .py}
+File-এ Save করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% First Program Flow
+%================================================
+
+\booksubheading{প্রথম Program লেখার সাধারণ ধারা}
+
+\begin{center}
+
+\textbf{Editor}
+\(\longrightarrow\)
+\textbf{Python Code লেখা}
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily .py} File Save}
+\(\longrightarrow\)
+\textbf{Run}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("My First Python Program")
+\end{english}
+
+\end{codebox}
+
+\textbf{File:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+first.py
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+My First Python Program
+\end{english}
+
+\end{codebox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Python Code-এর সঙ্গে Output-ও Program File-এ লিখে দেওয়া।
+
+\item
+\textenglish{\ttfamily >>>}
+-কে Script Program-এর অংশ মনে করা।
+
+\item Text লেখার সময় Quotation Mark ভুলে যাওয়া।
+
+\item
+\textenglish{\ttfamily "10 + 20"}
+ও
+\textenglish{\ttfamily 10 + 20}
+একই Result দেবে মনে করা।
+
+\item
+\textenglish{\ttfamily \#}
+-কে Program Output-এর অংশ মনে করা।
+
+\item Python Program File ভুল Extension-এ Save করা।
+
+\item Python Program সবসময় নিচ থেকে উপরে Execute হয় মনে করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+Python Program হলো এক বা একাধিক
+\textbf{Statement-এর সমষ্টি}।
+
+\item
+Programmer-এর লেখা Program Code-কে
+\textbf{Source Code}
+বলা হয়।
+
+\item
+Python Interpreter Source Code Execute করে।
+
+\item
+Python সাধারণভাবে Statement
+\textbf{Top to Bottom}
+Execute করে।
+
+\item
+\textenglish{\ttfamily print()}
+ব্যবহার করে Output প্রদর্শন করা হয়।
+
+\item
+Text সাধারণত Quotation Mark-এর মধ্যে লেখা হয়।
+
+\item
+\textenglish{\ttfamily \#}
+দিয়ে Single-line Comment শুরু হয়।
+
+\item
+Python Script File-এর Extension হলো
+\textbf{\textenglish{\ttfamily .py}}।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Source Code}
+\(\longrightarrow\)
+\textbf{Interpreter}
+\(\longrightarrow\)
+\textbf{Execution}
+\(\longrightarrow\)
+\textbf{Output}
+
+\medskip
+
+\textbf{Statement}
+\(\longrightarrow\)
+\textbf{Statement}
+\(\longrightarrow\)
+\textbf{Statement}
+\(\longrightarrow\)
+\textbf{Program}
+
+\medskip
+
+\textenglish{\ttfamily print()}
+\(\longrightarrow\)
+\textbf{Output}
+\qquad
+\textenglish{\ttfamily \#}
+\(\longrightarrow\)
+\textbf{Comment}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.31 Python Syntax
+%================================================
+

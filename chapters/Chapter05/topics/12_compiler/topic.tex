@@ -1,30 +1,468 @@
-% ৮.১ Compiler
-\section{Compiler}
+\sectionheading{5.12 কম্পাইলার (Compiler)}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী compiler-এর কাজ, সুবিধা, অসুবিধা এবং interpreter-এর সাথে পার্থক্য লিখতে পারবে।
-\end{learningbox}
+High Level Language-এ লেখা Program কম্পিউটার সরাসরি বুঝতে পারে না।
+এই Source Program-কে Machine-এর উপযোগী Code-এ রূপান্তর করার জন্য
+বিভিন্ন Translator Program ব্যবহৃত হয়।
 
-\begin{definitionbox}{Compiler}
-যে translator পুরো source program একসাথে machine code/object code-এ রূপান্তর করে এবং error list দেখায়, তাকে compiler বলা হয়।
+এর মধ্যে \textbf{Compiler} সম্পূর্ণ Source Program-কে
+একসঙ্গে অনুবাদ করে।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Compiler কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Translator Program কোনো High Level Language-এ লেখা
+\textbf{সম্পূর্ণ Source Program-কে একসঙ্গে অনুবাদ করে}
+Machine/Target Code বা Object Program তৈরি করে,
+তাকে \textbf{Compiler} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+পুরো Program একসঙ্গে অনুবাদ করে
+\(\;=\;\)
+Compiler
+}
+
+\end{center}
+
+%================================================
+% Working Process
+%================================================
+\booksubheading{Compiler কীভাবে কাজ করে?}
+
+Compiler প্রথমে Programmer-এর লেখা সম্পূর্ণ Source Program গ্রহণ করে।
+এরপর পুরো Program বিশ্লেষণ ও অনুবাদ করে Object বা Target Code
+তৈরি করে।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Source\\Program}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.18\linewidth}{
+        \centering\textbf{Compiler}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.23\linewidth}{
+        \centering\textbf{Object /\\Target Program}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.16\linewidth}{
+        \centering\textbf{Execution}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+এখানে—
+
+\begin{itemize}
+
+\item \textbf{Source Program:}
+Programmer-এর লেখা High Level Code।
+
+\item \textbf{Compiler:}
+সম্পূর্ণ Source Program বিশ্লেষণ ও অনুবাদ করে।
+
+\item \textbf{Object/Target Program:}
+অনুবাদের পর তৈরি Machine-oriented Code।
+
+\item \textbf{Execution:}
+অনূদিত Program চালিয়ে Result পাওয়া যায়।
+
+\end{itemize}
+
+%================================================
+% Simple Example
+%================================================
+\begin{examplebox}{Compiler-এর কাজ সহজভাবে বোঝো}
+
+ধরা যাক, একটি Source Program-এ 100টি Statement রয়েছে।
+
+Compiler সাধারণত Statement 1 থেকে Statement 100 পর্যন্ত
+\textbf{সম্পূর্ণ Program একসঙ্গে বিশ্লেষণ ও অনুবাদ} করবে।
+
+অর্থাৎ Compiler একটি Statement অনুবাদ করে সঙ্গে সঙ্গে সেটি
+Execute করে পরবর্তী Statement-এ যায় না।
+
+\end{examplebox}
+
+%================================================
+% Compilation
+%================================================
+\booksubheading{Compilation কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Compilation}
+
+High Level Language-এ লেখা Source Program-কে Compiler-এর
+সাহায্যে Machine/Target Code-এ রূপান্তরের প্রক্রিয়াকে
+\textbf{Compilation} বলে।
+
 \end{definitionbox}
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Compiler flow placeholder}\\[4pt]
-Source code $\rightarrow$ Compiler $\rightarrow$ Object code $\rightarrow$ Linker $\rightarrow$ Executable
-}}
+
+\textbf{
+Compiler-এর অনুবাদ প্রক্রিয়া
+\(\;=\;\)
+Compilation
+}
+
 \end{center}
 
-\begin{keypointbox}{সুবিধা ও সীমাবদ্ধতা}
-\begin{itemize}
-\item একবার compile হলে executable দ্রুত run হয়।
-\item object/executable file তৈরি হতে পারে।
-\item সব error একসাথে দেখাতে পারে, তাই নতুনদের কাছে debugging কঠিন লাগতে পারে।
-\end{itemize}
-\end{keypointbox}
+%================================================
+% Features
+%================================================
+\booksubheading{Compiler-এর প্রধান বৈশিষ্ট্য}
 
-\begin{examplebox}{C language}
-C program সাধারণত compiler দিয়ে machine code-এ রূপান্তরিত হয়, তারপর run করা হয়।
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.28\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}
+\\
+\hline
+
+সম্পূর্ণ Program অনুবাদ
+&
+পুরো Source Program একসঙ্গে অনুবাদ করে।
+\\
+\hline
+
+High Level Language
+&
+High Level Language-এ লেখা Program অনুবাদে ব্যবহৃত হয়।
+\\
+\hline
+
+Object Code তৈরি
+&
+সফল অনুবাদের পর Object বা Target Code তৈরি করতে পারে।
+\\
+\hline
+
+Error Report
+&
+সম্পূর্ণ Program বিশ্লেষণের পর Error সম্পর্কে তথ্য দিতে পারে।
+\\
+\hline
+
+Translation আলাদা
+&
+Compilation ও Program Execution আলাদা ধাপ হতে পারে।
+\\
+\hline
+
+দ্রুত Execution
+&
+Compile করা Program পরবর্তীতে তুলনামূলক দ্রুত Execute হতে পারে।
+\\
+\hline
+
+Recompile প্রয়োজন
+&
+Source Code পরিবর্তন করলে সাধারণত আবার Compile করতে হয়।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Error Detection
+%================================================
+\booksubheading{Compiler কীভাবে Error শনাক্ত করে?}
+
+Compiler পুরো Source Program বিশ্লেষণ করে Programming Language-এর
+Syntax ও অন্যান্য নিয়মে ভুল আছে কি না পরীক্ষা করে।
+
+Error পাওয়া গেলে Compiler Error Message প্রদর্শন করতে পারে।
+Programmer Error সংশোধন করার পর Program আবার Compile করে।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.17\linewidth}{
+        \centering\textbf{Source\\Code}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.15\linewidth}{
+        \centering\textbf{Compile}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.17\linewidth}{
+        \centering\textbf{Error\\Report}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.18\linewidth}{
+        \centering\textbf{Error\\Correction}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.16\linewidth}{
+        \centering\textbf{Recompile}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+\begin{examplebox}{Error-এর সহজ উদাহরণ}
+
+ধরা যাক, কোনো C/C++ ধরনের Program-এ প্রয়োজনীয় Semicolon
+লেখা হয়নি বা Syntax-এর অন্য কোনো ভুল রয়েছে।
+
+Compiler Program Compile করার সময় সেই Error শনাক্ত করে
+Error Message প্রদর্শন করতে পারে।
+
 \end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+Compiler Syntax বা Language Rule-এর অনেক Error শনাক্ত করতে পারে,
+কিন্তু Programmer কী Result চেয়েছিল তা সবসময় বুঝতে পারে না।
+
+তাই Syntax সঠিক হলেও Program-এর Logic ভুল হলে
+ভুল Result পাওয়া সম্ভব।
+
+\end{rememberbox}
+
+%================================================
+% Object Program
+%================================================
+\booksubheading{Object Program কেন গুরুত্বপূর্ণ?}
+
+Compiler সফলভাবে Source Program অনুবাদ করলে
+Object বা Target Program তৈরি হতে পারে।
+
+Object Program সংরক্ষণ করা থাকলে প্রতিবার Program চালানোর সময়
+সম্পূর্ণ Source Program পুনরায় অনুবাদ করার প্রয়োজন নাও হতে পারে।
+
+এই কারণে Compile করা Program পরবর্তীতে তুলনামূলক দ্রুত
+Execute হতে পারে।
+
+\begin{center}
+
+\textbf{
+Source Program
+\(\longrightarrow\)
+Compiler
+\(\longrightarrow\)
+Object Program
+}
+
+\end{center}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Compiler-এর সুবিধা}
+
+\begin{itemize}
+
+\item সম্পূর্ণ Program একসঙ্গে অনুবাদ করে।
+
+\item Object বা Target Program তৈরি করা যায়।
+
+\item Compile হওয়ার পর Program তুলনামূলক দ্রুত Execute হতে পারে।
+
+\item একই Object Program বারবার চালানোর ক্ষেত্রে Source Program
+প্রতিবার পুনরায় অনুবাদ করার প্রয়োজন নাও হতে পারে।
+
+\item একবারে একাধিক Error সম্পর্কে তথ্য পাওয়া যেতে পারে।
+
+\item বড় Program ও Software Development-এর জন্য উপযোগী।
+
+\end{itemize}
+
+%================================================
+% Disadvantages
+%================================================
+\booksubheading{Compiler-এর অসুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item সম্পূর্ণ Program Compile করতে কিছু সময় প্রয়োজন হয়।
+
+\item Source Program-এ পরিবর্তন করলে সাধারণত পুনরায় Compile করতে হয়।
+
+\item Error থাকলে সফল Object Program তৈরি নাও হতে পারে।
+
+\item Error Report পাওয়ার পর Programmer-কে Error সংশোধন করতে হয়।
+
+\item Source Program ও Object Program-এর জন্য আলাদা Storage
+প্রয়োজন হতে পারে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Object Code Note
+%================================================
+\booksubheading{Object Code কি সরাসরি Executable Program?}
+
+Object Code সবসময় সরাসরি সম্পূর্ণ Executable Program হবে—
+এমন নয়।
+
+Programming Environment অনুযায়ী Object Code-এর পরে
+Linking বা অন্যান্য Processing প্রয়োজন হতে পারে।
+
+তবে HSC পর্যায়ের জন্য মূল ধারণা হলো—
+
+\begin{center}
+
+\textbf{
+Compiler সম্পূর্ণ Source Program অনুবাদ করে
+Object/Target Code তৈরি করে
+}
+
+\end{center}
+
+%================================================
+% Compiler vs Interpreter
+%================================================
+\booksubheading{Compiler ও Interpreter-এর প্রাথমিক পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Compiler}}
+&
+\multicolumn{1}{c|}{\textbf{Interpreter}}
+\\
+\hline
+
+অনুবাদের ধরন
+&
+সম্পূর্ণ Program একসঙ্গে
+&
+সাধারণত Statement ধরে ধরে
+\\
+\hline
+
+Object Program
+&
+সাধারণত তৈরি করে
+&
+সাধারণত পৃথক Object Program তৈরি করে না
+\\
+\hline
+
+Error
+&
+পুরো Program বিশ্লেষণের পর একাধিক Error দেখাতে পারে
+&
+Error পাওয়া গেলে সাধারণত সেই স্থানে থামে
+\\
+\hline
+
+Execution
+&
+Compilation শেষে Program চালানো হয়
+&
+অনুবাদ ও Execution ধাপে ধাপে হয়
+\\
+\hline
+
+পরবর্তী Execution
+&
+Compile করা Program তুলনামূলক দ্রুত চলতে পারে
+&
+প্রতিবার Program চালানোর সময় পুনরায় অনুবাদ প্রয়োজন হতে পারে
+\\
+\hline
+
+\end{tabularx}
+
+Interpreter পরবর্তী Topic-এ বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Compiler একটি \textbf{Translator Program}।
+
+\item Compiler \textbf{High Level Language}-এ লেখা Program অনুবাদ করে।
+
+\item Compiler \textbf{সম্পূর্ণ Source Program একসঙ্গে} অনুবাদ করে।
+
+\item Compiler-এর অনুবাদ প্রক্রিয়াকে
+\textbf{Compilation} বলে।
+
+\item অনুবাদের পর \textbf{Object/Target Program} তৈরি হতে পারে।
+
+\item Source Code পরিবর্তন করলে সাধারণত
+\textbf{Recompile} করতে হয়।
+
+\item Compiler পুরো Program বিশ্লেষণ করে একাধিক Error সম্পর্কে
+তথ্য দিতে পারে।
+
+\item Syntax সঠিক হলেও \textbf{Logical Error} থাকতে পারে।
+
+\item Compile করা Program-এর Execution তুলনামূলক দ্রুত হতে পারে।
+
+\item সবচেয়ে গুরুত্বপূর্ণ পার্থক্য—
+
+\begin{center}
+
+\textbf{
+Compiler = পুরো Program একসঙ্গে
+}
+
+\textbf{
+Interpreter = সাধারণত Statement ধরে ধরে
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.13 Assembler
+%================================================

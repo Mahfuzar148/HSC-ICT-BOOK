@@ -1,0 +1,808 @@
+\sectionheading{5.29 Python-এ Code লেখার মাধ্যম}
+
+Python Program বিভিন্ন ধরনের Environment বা Tool ব্যবহার করে
+লেখা ও Execute করা যায়।
+
+কাজের ধরন অনুযায়ী কখনো সরাসরি Instruction লিখে সঙ্গে সঙ্গে
+Result দেখা যায়, আবার কখনো Program File তৈরি করে Code
+Save ও Run করা হয়।
+
+%================================================
+% Main Ways
+%================================================
+
+\booksubheading{Python Code লেখার প্রধান মাধ্যম}
+
+Python Code লেখার পদ্ধতি সহজভাবে প্রধানত দুইভাবে বোঝা যায়—
+
+\begin{enumerate}
+
+\item \textbf{Interactive Mode / Python Shell}
+
+\item \textbf{Script Mode / Editor}
+
+\end{enumerate}
+
+এ ছাড়া Code লেখাকে সহজ করার জন্য বিভিন্ন
+\textbf{IDE, Code Editor, Notebook ও Online Environment}
+ব্যবহার করা যায়।
+
+\begin{center}
+
+\textbf{Interactive Mode}
+\qquad
+\textbf{ও}
+\qquad
+\textbf{Script Mode}
+
+\end{center}
+
+%================================================
+% Interactive Mode
+%================================================
+
+\replaceableimage[60mm]
+{images/python-shell.png}
+{Python IDLE Shell-এ Prompt, Command ও Output}
+
+\begin{center}
+\footnotesize\textbf{চিত্র: Python Interactive Shell-এ সরাসরি Code Execute করা}
+\end{center}
+
+\booksubheading{১. Interactive Mode / Python Shell}
+
+Interactive Mode-এ Python Shell-এর Prompt-এ সরাসরি
+Instruction লিখে Enter চাপলে সাধারণত সঙ্গে সঙ্গে Result দেখা যায়।
+
+Python Shell-এর Prompt হলো—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+>>>
+\end{english}
+
+\end{codebox}
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+>>> 10 + 5\\
+15
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 10 + 5}
+লিখে Enter চাপার সঙ্গে সঙ্গে
+\textenglish{\ttfamily 15}
+Result পাওয়া গেছে।
+
+\end{examplebox}
+
+\textbf{Interactive Mode-এর বৈশিষ্ট্য—}
+
+\begin{itemize}
+
+\item একবারে ছোট Instruction পরীক্ষা করা যায়।
+
+\item Result সঙ্গে সঙ্গে দেখা যায়।
+
+\item ছোট Calculation ও Code Test-এর জন্য সুবিধাজনক।
+
+\item প্রতিবার Program File তৈরি করা প্রয়োজন হয় না।
+
+\item বড় Program লেখার জন্য তুলনামূলক কম সুবিধাজনক।
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\begin{center}
+
+\textbf{Command লিখি}
+\(\longrightarrow\)
+\textbf{Enter চাপি}
+\(\longrightarrow\)
+\textbf{সঙ্গে সঙ্গে Result}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Script Mode
+%================================================
+
+\booksubheading{২. Script Mode / Editor}
+
+Script Mode-এ একাধিক Python Statement একটি Program File-এ
+লেখা হয়।
+
+File-টি
+\textbf{\textenglish{\ttfamily .py}}
+Extension-এ Save করে পরে পুরো Program একসঙ্গে Execute করা যায়।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+a = 10\\
+b = 20\\
+sum = a + b\\
+print(sum)
+\end{english}
+
+\end{codebox}
+
+Program File-এর নাম হতে পারে—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+sum.py
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+\textbf{Script Mode-এর বৈশিষ্ট্য—}
+
+\begin{itemize}
+
+\item একাধিক Statement নিয়ে Program লেখা যায়।
+
+\item Code Program File হিসেবে Save করা যায়।
+
+\item প্রয়োজন হলে পরে Code Edit করা যায়।
+
+\item একই Program বারবার Run করা যায়।
+
+\item বড় ও সংরক্ষণযোগ্য Program তৈরির জন্য উপযোগী।
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\begin{center}
+
+\textbf{Code লিখি}
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily .py} File Save করি}
+\(\longrightarrow\)
+\textbf{Run করি}
+\(\longrightarrow\)
+\textbf{Output পাই}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Interactive vs Script
+%================================================
+
+\booksubheading{Interactive Mode ও Script Mode-এর পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.20\linewidth}
+|Y
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Interactive Mode}}
+&
+\multicolumn{1}{c|}{\textbf{Script Mode}}
+
+\\
+
+\hline
+
+Code লেখা
+&
+Shell Prompt-এ সরাসরি লেখা হয়।
+&
+Editor বা Program File-এ লেখা হয়।
+\\
+
+\hline
+
+Execution
+&
+Instruction দেওয়ার সঙ্গে সঙ্গে Execute হয়।
+&
+Program File Run করলে Execute হয়।
+\\
+
+\hline
+
+Result
+&
+সাধারণত সঙ্গে সঙ্গে দেখা যায়।
+&
+Program Run করার পর দেখা যায়।
+\\
+
+\hline
+
+File Save
+&
+সাধারণত বাধ্যতামূলক নয়।
+&
+\textenglish{\ttfamily .py}
+File হিসেবে Save করা হয়।
+\\
+
+\hline
+
+ব্যবহার
+&
+ছোট Test ও Calculation-এর জন্য সুবিধাজনক।
+&
+পূর্ণ Program লেখার জন্য সুবিধাজনক।
+\\
+
+\hline
+
+পুনঃব্যবহার
+&
+আগের Instruction সংরক্ষণ ও পুনঃব্যবহার তুলনামূলক কম সুবিধাজনক।
+&
+Save করা Program সহজে আবার Run ও Edit করা যায়।
+\\
+
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}পরীক্ষায় গুরুত্বপূর্ণ}
+
+\textbf{Interactive Mode}
+\(\longrightarrow\)
+Immediate Result
+
+\medskip
+
+\textbf{Script Mode}
+\(\longrightarrow\)
+Saved Program
+
+\end{rememberbox}
+
+%================================================
+% IDLE
+%================================================
+
+\booksubheading{IDLE-এ Python Code লেখা}
+
+Python-এর পরিচিত Environment
+\textbf{IDLE}-এ সাধারণভাবে দুইভাবে কাজ করা যায়—
+
+\textbf{ক. Python Shell}
+
+Shell-এ সরাসরি Instruction লিখে Result দেখা যায়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+>>> print("Hello")\\
+Hello
+\end{english}
+
+\end{codebox}
+
+\textbf{খ. Editor Window}
+
+Editor Window-তে একাধিক Statement লিখে Program File হিসেবে
+Save ও Run করা যায়।
+
+\textbf{সাধারণ ধাপ—}
+
+\begin{center}
+
+\textbf{New File}
+\(\longrightarrow\)
+\textbf{Code লেখা}
+\(\longrightarrow\)
+\textbf{Save}
+\(\longrightarrow\)
+\textbf{Run Module}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+Python Program File সাধারণত
+\textbf{\textenglish{\ttfamily .py}}
+Extension-এ Save করা হয়।
+
+%================================================
+% Code Editor
+%================================================
+
+\booksubheading{Code Editor ব্যবহার করে Python লেখা}
+
+Python Program লেখার জন্য বিভিন্ন Code Editor ব্যবহার করা যায়।
+
+উদাহরণ—
+
+\begin{center}
+
+\textbf{Visual Studio Code (VS Code)}
+
+\end{center}
+
+Code Editor-এ সাধারণত—
+
+\begin{compacttwocolpoints}
+
+\item Program Code লেখা যায়।
+
+\item Code Edit করা যায়।
+
+\item Syntax Highlighting পাওয়া যায়।
+
+\item Program File Save করা যায়।
+
+\item প্রয়োজনীয় Setup থাকলে Program Run করা যায়।
+
+\end{compacttwocolpoints}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Code Editor-এর মূল কাজ—
+
+\begin{center}
+
+\textbf{Write}
+\(\longrightarrow\)
+\textbf{Edit}
+\(\longrightarrow\)
+\textbf{Save Code}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% IDE
+%================================================
+
+\booksubheading{IDE ব্যবহার করে Python লেখা}
+
+IDE-তে Code লেখা, Run, Debug এবং Project Management-এর মতো
+একাধিক Development সুবিধা একই Environment-এ পাওয়া যায়।
+
+Python-এর পরিচিত IDE-এর উদাহরণ—
+
+\begin{itemize}
+
+\item \textbf{IDLE}
+
+\item \textbf{PyCharm}
+
+\end{itemize}
+
+IDE-তে সাধারণত—
+
+\begin{center}
+
+\textbf{Code Editor}
++
+\textbf{Run}
++
+\textbf{Debug}
++
+\textbf{Project Tool}
+
+\end{center}
+
+সুবিধা পাওয়া যায়।
+
+%================================================
+% Jupyter Notebook
+%================================================
+
+\booksubheading{Jupyter Notebook}
+
+Python Code লেখার আরেকটি পরিচিত মাধ্যম হলো
+\textbf{Jupyter Notebook}।
+
+এখানে Code সাধারণত ছোট ছোট
+\textbf{Cell}-এ লেখা ও Execute করা যায়।
+
+একটি Code Cell Run করলে তার Output সাধারণত সেই Cell-এর
+কাছাকাছি দেখা যায়।
+
+\begin{center}
+
+\textbf{Cell-এ Code}
+\(\longrightarrow\)
+\textbf{Run}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+Jupyter Notebook বিশেষভাবে—
+
+\begin{itemize}
+
+\item Data Analysis
+
+\item Scientific Computing
+
+\item Learning ও Experiment
+
+\item Machine Learning
+
+\end{itemize}
+
+জাতীয় কাজে ব্যবহৃত হয়।
+
+%================================================
+% Online Environment
+%================================================
+
+\booksubheading{Online Python Environment}
+
+কিছু Online Programming Environment ব্যবহার করে Browser থেকেই
+Python Code লেখা ও Run করা যায়।
+
+এক্ষেত্রে Local Computer-এ আলাদাভাবে Python Install না করেও
+Practice করা সম্ভব হতে পারে।
+
+\begin{center}
+
+\textbf{Browser}
+\(\longrightarrow\)
+\textbf{Code লিখি}
+\(\longrightarrow\)
+\textbf{Run}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+\textbf{সুবিধা—}
+
+\begin{itemize}
+
+\item Installation ছাড়াই Practice করা যায়।
+
+\item বিভিন্ন Device থেকে ব্যবহার করা যায়।
+
+\item Beginner-এর Practice-এর জন্য সুবিধাজনক।
+
+\end{itemize}
+
+\textbf{সীমাবদ্ধতা—}
+
+\begin{itemize}
+
+\item সাধারণত Internet প্রয়োজন হয়।
+
+\item Local Computer-এর সব সুবিধা পাওয়া নাও যেতে পারে।
+
+\item Platform অনুযায়ী Feature ভিন্ন হতে পারে।
+
+\end{itemize}
+
+%================================================
+% Which Mode to Use
+%================================================
+
+\booksubheading{কোন কাজের জন্য কোন মাধ্যম?}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.42\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{প্রয়োজন}}
+&
+\multicolumn{1}{c|}{\textbf{উপযোগী মাধ্যম}}
+
+\\
+
+\hline
+
+ছোট Calculation
+&
+Interactive Shell
+\\
+
+\hline
+
+ছোট Code পরীক্ষা
+&
+Interactive Mode
+\\
+
+\hline
+
+পূর্ণ Program লেখা
+&
+Script Mode
+\\
+
+\hline
+
+Program Save ও Edit করা
+&
+Editor / Script Mode
+\\
+
+\hline
+
+Project Development
+&
+IDE
+\\
+
+\hline
+
+Data Analysis বা Experiment
+&
+Jupyter Notebook
+\\
+
+\hline
+
+Installation ছাড়া Practice
+&
+Online Environment
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% First Script Program
+%================================================
+
+\booksubheading{একটি Script Program-এর উদাহরণ}
+
+Editor-এ লিখি—
+
+\begin{examplebox}{Program}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Welcome to Python")
+\end{english}
+
+\end{codebox}
+
+File Save করি—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+welcome.py
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Welcome to Python
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+\textbf{কাজের ধারা—}
+
+\begin{center}
+
+\textbf{Editor}
+\(\longrightarrow\)
+\textbf{Code লেখা}
+\(\longrightarrow\)
+\textbf{Save as \textenglish{\ttfamily .py}}
+\(\longrightarrow\)
+\textbf{Run}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+%================================================
+% Which one is important
+%================================================
+
+\booksubheading{Interactive Mode ও Script Mode—কখন কোনটি?}
+
+দুটি Mode-ই গুরুত্বপূর্ণ; তবে ব্যবহার ভিন্ন।
+
+\begin{itemize}
+
+\item
+দ্রুত কোনো Statement বা Calculation পরীক্ষা করতে
+\(\longrightarrow\)
+\textbf{Interactive Mode}
+
+\item
+পূর্ণ Program লিখে Save ও পুনরায় ব্যবহার করতে
+\(\longrightarrow\)
+\textbf{Script Mode}
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজ Shortcut}
+
+\textbf{Practice / Quick Test}
+\(\longrightarrow\)
+Interactive Mode
+
+\medskip
+
+\textbf{Complete Program}
+\(\longrightarrow\)
+Script Mode
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item
+\textenglish{\ttfamily >>>}
+-কে Python Program File-এর অংশ হিসেবে লিখে দেওয়া।
+
+\item
+Script File
+\textenglish{\ttfamily .py}
+Extension-এ Save না করা।
+
+\item
+Interactive Mode ও Script Mode-কে একই বিষয় মনে করা।
+
+\item
+Editor-কে Interpreter মনে করা।
+
+\item
+Code Editor এবং IDE-এর কাজ সম্পূর্ণ একই মনে করা।
+
+\item
+Shell-এ লেখা Code সবসময় স্বয়ংক্রিয়ভাবে Program File হিসেবে
+Save হয় মনে করা।
+
+\item
+Interactive Mode-কে বড় Program লেখার প্রধান মাধ্যম মনে করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+Python Code প্রধানত
+\textbf{Interactive Mode}
+ও
+\textbf{Script Mode}
+ব্যবহার করে লেখা যায়।
+
+\item
+Interactive Mode-এ
+\textenglish{\ttfamily >>>}
+Prompt দেখা যায়।
+
+\item
+Interactive Mode-এ Instruction-এর Result দ্রুত পাওয়া যায়।
+
+\item
+Script Mode-এ Code Program File-এ লেখা ও Save করা হয়।
+
+\item
+Python Source File-এর Extension হলো
+\textbf{\textenglish{\ttfamily .py}}।
+
+\item
+পূর্ণ Program লেখার জন্য Script Mode বেশি উপযোগী।
+
+\item
+IDLE-এ Python Shell ও Editor—দুইভাবেই কাজ করা যায়।
+
+\item
+VS Code Code Editor হিসেবে Python Development-এ ব্যবহার করা যায়।
+
+\item
+PyCharm একটি পরিচিত Python IDE।
+
+\item
+Jupyter Notebook-এ Code Cell-ভিত্তিকভাবে Execute করা যায়।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Shell}
+\(\longrightarrow\)
+\textbf{Write}
+\(\longrightarrow\)
+\textbf{Enter}
+\(\longrightarrow\)
+\textbf{Result}
+
+\medskip
+
+\textbf{Script}
+\(\longrightarrow\)
+\textbf{Write}
+\(\longrightarrow\)
+\textbf{Save}
+\(\longrightarrow\)
+\textbf{Run}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.30 Python Program Introduction
+%================================================
+

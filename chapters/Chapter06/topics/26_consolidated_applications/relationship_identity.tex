@@ -1,0 +1,33 @@
+\subsubsection{নমুনার মিল ও প্রতিষ্ঠানের নিয়ম}
+নমুনায় প্রত্যেক শিক্ষকের পাশে একটি কোর্স থাকলেই Teacher–Course-এর স্থায়ী সম্পর্ক 1:1 প্রমাণিত হয় না। একজন শিক্ষক সর্বোচ্চ কয়টি কোর্স পড়াতে পারেন এবং একটি কোর্সে সর্বোচ্চ কয়জন শিক্ষক থাকতে পারেন, তা জানতে হয়। ব্যাংকেও একজনের একাধিক হিসাব বা যৌথ হিসাবের সুযোগ থাকলে সেই নিয়ম নকশায় ধরতে হয়। নিয়ম অনির্দিষ্ট থাকলে নমুনায় দেখা মিল থেকে তার বেশি সিদ্ধান্ত নেওয়া যায় না।
+
+একই CustID-এর পাশে দুটি ভিন্ন ব্যক্তির নাম থাকলে আগে দেখতে হবে ID পুনরাবৃত্তি বৈধ কি না, নাকি নমুনায় ভুল আছে। এমন অসামঞ্জস্য থেকে নিশ্চয়তা দিয়ে সম্পর্কের ধরন স্থির করা যায় না। আবার দুই সারণির প্রথম সারি একই ব্যক্তির হবে এমন কোনো নিয়ম নেই; একটির সারির ক্রম বদলালেও সংশ্লিষ্ট কী-এর মান মিলিয়েই সংযোগ নির্ধারিত হবে।
+
+
+
+
+
+
+
+% ============================================================
+% FINAL RECAP
+% ============================================================
+
+
+
+\subsubsection{শিক্ষার্থীর একক পরিচয় দিয়ে Academic ও Contact যুক্ত করা}
+Academic(StudentID, Name, GPA, Remark) এবং Contact(StudentID, District)-এ প্রতি শিক্ষার্থীর সর্বোচ্চ একটি রেকর্ড থাকলে StudentID দিয়ে 1:1 সংযোগ করা যায়। Contact.StudentID অনন্য ফরেন কী হবে। Name ও Remark Text এবং GPA ভগ্নাংশসমর্থিত Number; GPA-এর সীমা 0--5।
+\begin{flushleft}\centering\captionsetup{justification=centering}\begin{minipage}{\linewidth}\raggedright\small
+\begin{tikzpicture}[node distance=10mm,every node/.style={font=\small}]
+\node[draw,minimum width=27mm,minimum height=8mm] (a) {Academic};
+\node[draw,diamond,aspect=2,right=of a,inner sep=2pt] (r) {সংযোগ};
+\node[draw,minimum width=27mm,minimum height=8mm,right=of r] (c) {Contact};
+\node[draw,ellipse,above=7mm of a] (id) {\underline{StudentID}};
+\node[draw,ellipse,above=7mm of c] (cid) {\underline{StudentID}};
+\draw(a)--node[above]{1}(r);\draw(r)--node[above]{1}(c);
+\draw(a)--(id);\draw(c)--(cid);
+\end{tikzpicture}
+\captionof{figure}{পরিচিতি কী-ভিত্তিক সম্পর্কের সরল ER উপস্থাপন}
+\end{minipage}\end{flushleft}
+চিত্রের আয়তক্ষেত্র দুটি এন্টিটি, ডিম্বাকৃতি তাদের পরিচিতি অ্যাট্রিবিউট এবং রম্বস সংযোগ দেখায়। সব অ্যাট্রিবিউট না এঁকেও মূল সম্পর্ক দেখানো হয়েছে। নকশা বদলে একজনের একাধিক যোগাযোগের রেকর্ড রাখলে 1:M এবং আলাদা ContactID প্রয়োজন হতে পারে।
+

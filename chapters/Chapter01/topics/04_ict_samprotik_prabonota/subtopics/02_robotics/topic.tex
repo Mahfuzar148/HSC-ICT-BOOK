@@ -1,118 +1,119 @@
 \subsection{রোবটিকস}
-
-\begin{learningbox}
-এই অংশ শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item রোবট ও রোবটিকসের ধারণা ব্যাখ্যা করতে।
-\item রোবটের sensor, actuator, controller ও power system-এর কাজ লিখতে।
-\item শিল্প, চিকিৎসা, শিক্ষা, কৃষি ও প্রতিরক্ষায় রোবটের ব্যবহার চিহ্নিত করতে।
-\item রোবট ব্যবহারের সুবিধা ও সীমাবদ্ধতা বিশ্লেষণ করতে।
-\end{itemize}
-\end{learningbox}
-
-\subsubsection{রোবটিকসের ধারণা}
-
-রোবটিকস হলো রোবটের নকশা, তৈরি, নিয়ন্ত্রণ, programming এবং ব্যবহার নিয়ে কাজ করা প্রযুক্তিক্ষেত্র। রোবট সাধারণত sensor দিয়ে পরিবেশ থেকে তথ্য নেয়, controller দিয়ে সিদ্ধান্ত নেয় এবং actuator বা motor দিয়ে কাজ সম্পন্ন করে।
-
-\begin{definitionbox}{সংজ্ঞা}
-রোবটিকস হলো engineering ও computer science-এর সমন্বিত শাখা, যেখানে programmable machine বা robot তৈরি ও নিয়ন্ত্রণ করা হয়, যাতে তা স্বয়ংক্রিয় বা আধা-স্বয়ংক্রিয়ভাবে নির্দিষ্ট কাজ করতে পারে।
-\end{definitionbox}
-
-\begin{mistakebox}{সাধারণ ভুল}
-সব machine রোবট নয়। কোনো machine যদি শুধু switch চাপলে একই কাজ করে, তবে সেটি automation হতে পারে। কিন্তু রোবট সাধারণত programmable, sensor-based এবং নির্দিষ্ট মাত্রায় পরিবেশের সঙ্গে interact করতে পারে।
-\end{mistakebox}
-
-\subsubsection{রোবটের প্রধান অংশ}
-
-\begin{center}
-\begin{tabular}{|p{0.28\textwidth}|p{0.58\textwidth}|}
-\hline
-\textbf{অংশ} & \textbf{কাজ} \\
-\hline
-Sensor & আলো, তাপ, দূরত্ব, শব্দ, চাপ, ছবি বা অবস্থান শনাক্ত করে \\
-\hline
-Controller & sensor data বিশ্লেষণ করে command দেয় \\
-\hline
-Actuator & motor, arm, wheel বা gripper নড়াচড়া করায় \\
-\hline
-Power system & battery বা electric supply দিয়ে শক্তি দেয় \\
-\hline
-End effector & robot arm-এর শেষ অংশ; ধরা, কাটা, welding বা painting করে \\
-\hline
-Program & robot কীভাবে কাজ করবে তা নির্ধারণ করে \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsubsection{রোবটের বৈশিষ্ট্য}
-
-\begin{keypointbox}{প্রধান বৈশিষ্ট্য}
-\begin{itemize}
-\item নির্দিষ্ট কাজ বারবার একইভাবে করতে পারে।
-\item বিপজ্জনক পরিবেশে মানুষের বদলে কাজ করতে পারে।
-\item sensor data নিয়ে পরিবেশ অনুযায়ী response দিতে পারে।
-\item programming বদলালে কাজের ধরন বদলানো যায়।
-\item AI যুক্ত হলে কিছু ক্ষেত্রে সিদ্ধান্ত নেওয়ার ক্ষমতা বাড়ে।
-\end{itemize}
-\end{keypointbox}
-
-\subsubsection{রোবটের ব্যবহারক্ষেত্র}
-
-\begin{examplebox}{শিল্পকারখানা}
-গাড়ি assembly line-এ robot welding, painting, lifting ও quality inspection করতে পারে। এতে উৎপাদন দ্রুত হয় এবং মানুষের জন্য ঝুঁকিপূর্ণ কাজ কমে।
-\end{examplebox}
-
-\begin{examplebox}{চিকিৎসা}
-Surgical robot ডাক্তারকে সূক্ষ্ম operation-এ সহায়তা করতে পারে। Rehabilitation robot রোগীর হাত-পা নড়াচড়া practice করাতে পারে।
-\end{examplebox}
-
-\begin{keypointbox}{আরও ব্যবহার}
-\begin{itemize}
-\item কৃষি: crop monitoring, spraying, harvesting।
-\item শিক্ষা: STEM lab, coding practice, robotics competition।
-\item প্রতিরক্ষা: bomb disposal, surveillance, drone operation।
-\item মহাকাশ: rover, robotic arm, satellite maintenance।
-\item গৃহস্থালি: robotic vacuum cleaner, assistive robot।
-\end{itemize}
-\end{keypointbox}
-
-\subsubsection{রোবটিকসের সুবিধা}
-
-\begin{itemize}
-\item ঝুঁকিপূর্ণ কাজ মানুষের বদলে করতে পারে।
-\item একই কাজ দ্রুত ও নির্ভুলভাবে বারবার করতে পারে।
-\item উৎপাদনশীলতা ও quality control বাড়ায়।
-\item ২৪ ঘণ্টা কাজ করতে পারে, fatigue কম।
-\item চিকিৎসা ও গবেষণায় সূক্ষ্ম কাজের সহায়তা করে।
-\end{itemize}
-
-\subsubsection{রোবটিকসের সীমাবদ্ধতা}
-
-\begin{itemize}
-\item installation ও maintenance cost বেশি হতে পারে।
-\item skilled programmer ও technician দরকার।
-\item ভুল program বা sensor error হলে দুর্ঘটনা ঘটতে পারে।
-\item কিছু repetitive job কমে যেতে পারে।
-\item মানবিক বিচার, empathy ও সামাজিক context রোবট সহজে বুঝতে পারে না।
-\end{itemize}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-রোবটিকসের উত্তরে sensor, controller, actuator—এই তিনটি অংশ উল্লেখ করলে উত্তর বেশি নির্ভুল হয়। ব্যবহারক্ষেত্র লিখতে শিল্প, চিকিৎসা, প্রতিরক্ষা ও মহাকাশ থেকে উদাহরণ দাও।
-\end{boardbox}
-
+\label{sec:ch1-robotics}
+\subsubsection{রোবট ও রোবটিকস}
+\definition{রোবটিকস}{রোবটের নকশা, গঠন, তৈরি, প্রোগ্রামিং, নিয়ন্ত্রণ, পরিচালনা ও ব্যবহার নিয়ে কাজ করা প্রযুক্তিক্ষেত্রকে রোবটিকস (Robotics) বলে। এতে যন্ত্রকৌশল, ইলেকট্রনিকস, কম্পিউটার বিজ্ঞান, সফটওয়্যার, নিয়ন্ত্রণব্যবস্থা ও AI-এর সমন্বয় হয়।}
+\definition{রোবট}{কম্পিউটার প্রোগ্রামে নিয়ন্ত্রিত এমন তড়িৎযান্ত্রিক যন্ত্র, যা মানুষের নির্দেশ বা নিজস্ব সেন্সর ও প্রোগ্রামের সাহায্যে নির্দিষ্ট বাস্তব কাজ করতে পারে, তাকে রোবট (Robot) বলে।}
+রোবট তথ্য গ্রহণ করে, নির্দেশ নির্ণয় করে এবং যন্ত্রাংশ দিয়ে কাজ করে। নড়াচড়া হলো Motion, পরিবেশ মাপা হলো Sensing এবং তথ্য ব্যবহার করে উপযুক্ত কাজ নির্বাচন হলো Intelligence। সব রোবট মানুষের আকৃতির হয় না; স্থির রোবট বাহুও রোবট হতে পারে। শুধু সুইচ চাপলে কাজ করা সাধারণ যন্ত্র বা স্বয়ংক্রিয় ব্যবস্থাকে রোবট বলা যথেষ্ট নয়। সব রোবটে মেশিন লার্নিংও থাকে না।
+\roboticsfigure{chapters/Chapter01/images/robotics_overview.png}{রোবটে হার্ডওয়্যার, সফটওয়্যার, তথ্য গ্রহণ ও নিয়ন্ত্রণ একসঙ্গে কাজ করে।}{রোবটিকসের মৌলিক ধারণা}{fig:robotics-overview}
+\subsubsection{ইতিহাস ও শব্দের উৎপত্তি}
+Robot শব্দের উৎস Czech/Slavic \textit{Robota}; এর অর্থ শ্রম বা বাধ্যতামূলক শ্রম। Karel \chOneAccentedName{Čapek}-এর 1920 সালের \textit{R.U.R.} নাটকে শব্দটি পরিচিতি পায়। Isaac Asimov-এর লেখায় Robotics এবং Three Laws of Robotics পরিচিত হয়। এগুলো সাহিত্যের নীতি; বাস্তব যন্ত্রের নিরাপত্তা পরীক্ষার বিকল্প নয়।
+Norbert Wiener-এর Cybernetics ও প্রতিক্রিয়াভিত্তিক নিয়ন্ত্রণের কাজ রোবটিকসকে প্রভাবিত করে। George Devol প্রোগ্রামযোগ্য শিল্পরোবট \textit{Unimate}-এর উদ্ভাবনের সঙ্গে যুক্ত। Joseph Engelberger Unimation-এর মাধ্যমে শিল্পে এর ব্যবহার এগিয়ে নেন; তিনি আধুনিক রোবটিকসের জনক হিসেবে পরিচিত। Unimate প্রথম শিল্পরোবট হিসেবে পরিচিত। পরে মহাকাশের রোবট বাহু ও মঙ্গলযান, উন্নত সেন্সর, AI, IoT ও ক্লাউড সেবার ব্যবহার বাড়ে।
+\roboticsfigure{chapters/Chapter01/images/robotics_history_timeline.png}{সাহিত্যে শব্দের ব্যবহার থেকে প্রোগ্রামযোগ্য শিল্পযন্ত্র ও আধুনিক রোবটের বিকাশ হয়েছে।}{রোবটিকসের বিকাশ}{fig:robotics-history}
+\subsubsection{অংশ ও কাজের পদ্ধতি}
+\begin{compacttable}
+\begin{longtable}{|p{\dimexpr.29\linewidth-7pt\relax}|p{\dimexpr.71\linewidth-7pt\relax}|}
+\hline\textbf{অংশ} & \textbf{কাজ}\\\hline\endfirsthead
+\hline\textbf{অংশ} & \textbf{কাজ}\\\hline\endhead
+সেন্সর & আলো, দূরত্ব, তাপমাত্রা, শব্দ, চাপ, ছবি, গতি ও অবস্থান মাপে। ক্যামেরা, ultrasonic, infrared ও LiDAR ব্যবহৃত হতে পারে।\\\hline
+নিয়ন্ত্রক বা প্রসেসর & তথ্য বিশ্লেষণ করে প্রোগ্রাম অনুযায়ী নির্দেশ দেয়। দিক, গতি, বাহুর ঘূর্ণন ও ধরার সময় নির্ধারণ করে।\\\hline
+অ্যাকচুয়েটর (Actuator) & শক্তিকে গতি বা বলে রূপ দেয়। মোটর, সার্ভো, জলচাপভিত্তিক hydraulic বা বায়ুচাপভিত্তিক pneumatic ব্যবস্থা উদাহরণ।\\\hline
+শক্তিব্যবস্থা & ব্যাটারি, বিদ্যুৎ সংযোগ বা সৌরশক্তি সরবরাহ করে। শক্তির উৎস ও শক্তিকে গতিতে রূপ দেওয়ার যন্ত্র ভিন্ন।\\\hline
+বাহু বা Manipulator & বস্তু ধরা, তোলা, সরানো, জোড়া লাগানো ও কাজের স্থানে পৌঁছাতে সাহায্য করে।\\\hline
+End Effector & বাহুর শেষের কাজ করার অংশ; gripper, কাটার, ঝালাইযন্ত্র, রং করার মুখ বা অস্ত্রোপচারের যন্ত্র হতে পারে। কাজ বদলালে এই অংশ বদলানো যায়।\\\hline
+চলাচলের ব্যবস্থা & চাকা, ট্র্যাক, পা, ড্রোনের প্রপেলার বা পানির নিচের thruster দিয়ে চলাচল করে।\\\hline
+প্রোগ্রাম ও যোগাযোগ & সফটওয়্যার কাজের শর্ত নির্ধারণ করে। Wi-Fi, Bluetooth, রেডিও বা ইন্টারনেটে তথ্য ও নির্দেশ আদান-প্রদান করা যায়।\\\hline
+\end{longtable}
+\end{compacttable}
+\roboticsfigure{chapters/Chapter01/images/robot_parts_labelled..png}{বাহুর মোটর অ্যাকচুয়েটর; শেষের ধরার যন্ত্র End Effector। দুটি অংশের কাজ আলাদা।}{রোবটের প্রধান অংশ}{fig:robot-parts}
+কাজের লক্ষ্য ঠিক করার পর সেন্সর তথ্য নেয়। নিয়ন্ত্রক সেই তথ্য থেকে নির্দেশ নির্ণয় করে এবং অ্যাকচুয়েটর কাজ করে। ফল আবার সেন্সরে মাপা হলে গতি, দিক বা ধরার চাপ সংশোধন করা যায়। এই তথ্য গ্রহণ, সিদ্ধান্ত ও কাজের ধারাকে Sense--Think--Act বলে; ফল ফিরে আসা হলো Feedback।
+\exampleline{রেখা অনুসরণকারী রোবটের সেন্সর কালো ও সাদা রেখা শনাক্ত করে। নিয়ন্ত্রক সংকেত অনুযায়ী মোটর চালায়; চাকা রোবটকে রেখা বরাবর নিয়ে যায়। গরম ধাতু ধরার রোবটেও অবস্থান ও ধরা ঠিক আছে কি না মাপতে হয়; ভুল গ্রিপে বস্তু পড়ে যেতে পারে।}
+\roboticsfigure{chapters/Chapter01/images/robot_working_cycle.png}{সেন্সরের তথ্য থেকে নির্দেশ এবং কাজের ফল থেকে সংশোধনের চক্র দেখানো হয়েছে।}{রোবটের কাজের চক্র}{fig:robot-working-cycle}
+\term{Degrees of Freedom} হলো স্বাধীনভাবে পরিবর্তনযোগ্য অবস্থান বা গতির দিকের সংখ্যা। ত্রিমাত্রিক স্থানে অবস্থানের তিন দিক ও অভিমুখের তিন ঘূর্ণন মিলিয়ে ছয়টি দিক বিবেচনা করা যায়। অনেক শিল্পরোবট বাহুতে ছয়টি জয়েন্ট থাকে; সব রোবটের জয়েন্ট বা স্বাধীন গতির সংখ্যা ছয় নয়। কোনো জয়েন্ট 360 ডিগ্রি ঘুরতে পারে, অন্যটির সীমা থাকে। নকশা, তার, নিরাপত্তা ও কাজের পরিধি সেই সীমা নির্ধারণ করে।
+\subsubsection{ধরন ও উদাহরণ}
+\begin{compacttable}
+\begin{longtable}{|p{\dimexpr.28\linewidth-7pt\relax}|p{\dimexpr.72\linewidth-7pt\relax}|}
+\hline\textbf{ধরন} & \textbf{কাজ ও উদাহরণ}\\\hline\endfirsthead
+\hline\textbf{ধরন} & \textbf{কাজ ও উদাহরণ}\\\hline\endhead
+শিল্পরোবট & ঝালাই, রং, তোলা, জোড়া লাগানো ও মোড়ক তৈরি; Unimate বা রোবট বাহু।\\\hline
+সেবার রোবট & হোটেল, হাসপাতাল, অফিস ও বাড়িতে সহায়তা; Pepper বা সরবরাহকারী রোবট।\\\hline
+মানবসদৃশ রোবট & মানুষের গঠন বা আচরণের অনুকরণ; Sophia, ASIMO ও Atlas।\\\hline
+চলমান রোবট & চাকা, ট্র্যাক বা পায়ে চলে; AGV বা গুদামের রোবট।\\\hline
+চিকিৎসার রোবট & অস্ত্রোপচার, পুনর্বাসন, রোগ নির্ণয়ের সহায়তা বা হাসপাতালের সেবা; da Vinci।\\\hline
+শিক্ষার রোবট & প্রোগ্রামিং ও STEM শেখা; LEGO বা Arduino প্রকল্প।\\\hline
+কৃষির রোবট & ফসল পর্যবেক্ষণ, স্প্রে, সংগ্রহ ও মাটি বিশ্লেষণ; ড্রোন স্প্রেয়ার।\\\hline
+প্রতিরক্ষা ও মহাকাশ & বোমা নিষ্ক্রিয়, নজরদারি, উদ্ধার ও অন্য গ্রহে অনুসন্ধান; মঙ্গলযান।\\\hline
+গৃহস্থালি ও সহযোগী রোবট & ঘর পরিষ্কার, ঘাস কাটা ও সহায়তা। Cobot শিল্পে মানুষের পাশে উপযুক্ত নিরাপত্তাব্যবস্থায় কাজ করার জন্য তৈরি।\\\hline
+\end{longtable}
+\end{compacttable}
+নিয়ন্ত্রণ অনুযায়ী রোবট দূরনিয়ন্ত্রিত, আংশিক স্বয়ংক্রিয় বা স্বয়ংক্রিয় হতে পারে। প্রোগ্রাম বদলে কাজ বদলানো যায়; উপযুক্ত AI যুক্ত হলে ছবি বা ধরন শনাক্ত ও সিদ্ধান্ত নেওয়ার ক্ষমতা বাড়তে পারে।
+Sophia Hanson Robotics-এর সামাজিক মানবসদৃশ রোবট; ভাষা, মুখের অভিব্যক্তি ও মানুষের সঙ্গে যোগাযোগের জন্য পরিচিত। Honda-এর ASIMO হাঁটা, দৌড় ও সহায়তার প্রদর্শনের উদাহরণ। Sony-এর AIBO রোবট কুকুর, বিনোদন ও সঙ্গ দেওয়ার যন্ত্র। Boston Dynamics-এর Atlas গতিশীল চলাচলের গবেষণা এবং চারপায়ের Spot পরিদর্শন, মানচিত্র তৈরি ও ঝুঁকিপূর্ণ স্থান পর্যবেক্ষণের উদাহরণ। NASA-এর Perseverance মঙ্গলযান শিলার নমুনা ও বৈজ্ঞানিক তথ্য সংগ্রহ করে। da Vinci-তে চিকিৎসক সূক্ষ্ম যন্ত্র নিয়ন্ত্রণ করেন; রোবট চিকিৎসকের বিকল্প নয়।
+\roboticsfigure{chapters/Chapter01/images/types_of_robots.png}{আকৃতি, চলাচল ও ব্যবহারের ভিত্তি আলাদা; একই রোবট একাধিক পরিচয়ে পড়তে পারে।}{রোবটের ধরন}{fig:types-of-robots}
+\roboticsfigure{chapters/Chapter01/images/popular_robots_examples.png}{কাজ ও নির্মাতা অনুযায়ী পরিচিত কয়েকটি রোবট দেখানো হয়েছে।}{রোবটের উদাহরণ}{fig:popular-robots}
+\subsubsection{ব্যবহার ও অবদান}
+\begin{compactpoints}
+\item কারখানার নির্দিষ্ট পথে বাহু চালিয়ে গাড়ির যন্ত্রাংশ জোড়া লাগানো, ঝালাই, রং, বস্তু বহন ও মান পরীক্ষা করা যায়। ক্যামেরা ও AI ত্রুটিযুক্ত পণ্য শনাক্তে সাহায্য করে।
+\item চিকিৎসায় সূক্ষ্ম অস্ত্রোপচার, হাত-পায়ের পুনর্বাসন, ওষুধ পৌঁছানো, জীবাণুমুক্ত করা ও রোগীকে সহায়তা করা যায়।
+\item মহাকাশ, গভীর সমুদ্র, খনি, রাসায়নিক কারখানা, অগ্নিকাণ্ড ও তেজস্ক্রিয় স্থানে ছবি, নমুনা ও পরিবেশের তথ্য সংগ্রহ করে মানুষের ঝুঁকি কমানো যায়।
+\item কৃষিতে ফসলের অবস্থা, নির্দিষ্ট স্থানে কীটনাশক, মাটির তথ্য ও সংগ্রহের কাজ করা যায়।
+\item ভূমিকম্প, রাসায়নিক নিঃসরণ, ভবনধস ও বন্যায় আটকে পড়া মানুষ খোঁজা বা ঝুঁকিপূর্ণ স্থান দেখা যায়। প্রতিরক্ষায় বোমা নিষ্ক্রিয় ও নজরদারি করা যায়।
+\item বাড়িতে পরিষ্কার, ঘাস কাটা, বয়স্ক ও প্রতিবন্ধী ব্যক্তির স্মরণবার্তা, চলাচল ও জরুরি সতর্কতায় সহায়তা করা যায়।
+\item হোটেল ও গুদামে সরবরাহ, অর্ডার বাছাই, মজুত স্থানান্তর ও সেবায় সহায়তা পাওয়া যায়।
+\item Arduino, Raspberry Pi, রোবট কিট ও প্রতিযোগিতায় কোড, ইলেকট্রনিকস, সেন্সর, মোটর ও সমস্যা সমাধান শেখা যায়। গবেষণায় দৃষ্টি, স্বয়ংক্রিয় পথ ও মানুষ-রোবট যোগাযোগ পরীক্ষা করা হয়।
+\end{compactpoints}
+Industry 4.0 বা স্মার্ট কারখানায় রোবট, সেন্সর, IoT ও তথ্য বিশ্লেষণ একসঙ্গে ব্যবহৃত হয়। ধারাবাহিক কাজ উৎপাদন ও মান নিয়ন্ত্রণে সহায়তা করে; মানুষ পরিকল্পনা, তত্ত্বাবধান ও সৃজনশীল কাজে মনোযোগ দিতে পারে।
+\roboticsfigure{chapters/Chapter01/images/robotics_applications.png}{কাজ অনুযায়ী যন্ত্র, নিয়ন্ত্রণ ও নিরাপত্তার ব্যবস্থা বেছে নিতে হয়।}{রোবটের ব্যবহার}{fig:robotics-applications}
+\roboticsfigure{chapters/Chapter01/images/global_robotics_contribution.png}{মানুষের ঝুঁকিপূর্ণ ও পুনরাবৃত্ত কাজ কমিয়ে সূক্ষ্ম কাজ ও গবেষণায় সহায়তা করা যায়।}{রোবটিকসের অবদান}{fig:global-robotics-contribution}
+বাংলাদেশে শিক্ষাপ্রতিষ্ঠানের ক্লাব, Robot Olympiad, প্রোগ্রামিং প্রতিযোগিতা, গবেষণাগার, মেকাট্রনিকস ও এমবেডেড ব্যবস্থার চর্চা ব্যবহারিক দক্ষতা তৈরি করে। পোশাক, মোড়ক ও ইলেকট্রনিকস শিল্প; ফসল পর্যবেক্ষণ ও সেচ; হাসপাতাল, দুর্যোগ ব্যবস্থাপনা ও নগরসেবায় ব্যবহার বাড়ানোর সুযোগ আছে। স্থানীয় সমস্যার উপযোগী প্রকল্প ও দক্ষ পরিচালনাকারী দরকার।
+\roboticsfigure{chapters/Chapter01/images/robotics_in_bangladesh.png}{শিক্ষা, গবেষণা ও স্থানীয় সমস্যার সমাধানে ব্যবহারের ক্ষেত্র দেখানো হয়েছে।}{বাংলাদেশে রোবটিকস}{fig:robotics-bangladesh}
+\subtopichead{ব্যবহারের পরিমাপ}
+\term{Robot Density} হলো উৎপাদনশিল্পে প্রতি 10,000 কর্মীর বিপরীতে রোবটের সংখ্যা। মোট স্থাপন ও ঘনত্ব ভিন্ন সূচক। 2023 সালের ঘনত্বের হিসাবে South Korea শীর্ষে ছিল; 2024 সালের নতুন শিল্পরোবট স্থাপনে China বৃহত্তম বাজার। Japan ও Germany শিল্পস্বয়ংক্রিয়তা ও সূক্ষ্ম উৎপাদনে পরিচিত। USA, China, Japan, Germany ও South Korea গবেষণা, মানবসদৃশ রোবট, উৎপাদন ও উদ্যোগে গুরুত্বপূর্ণ। কোন বছর ও কোন সূচক বিবেচিত হচ্ছে তা ছাড়া এক দেশকে সব ক্ষেত্রে প্রথম বলা যায় না।
+\subsubsection{সীমাবদ্ধতা ও নিরাপত্তা}
+রোবট স্থাপন ও রক্ষণাবেক্ষণ ব্যয়বহুল হতে পারে। প্রোগ্রামিং, ক্যালিব্রেশন, মেরামত ও নিরাপত্তার জন্য দক্ষ কর্মী দরকার। কিছু পুনরাবৃত্ত চাকরি কমলেও পরিচালনা, রক্ষণাবেক্ষণ ও প্রকৌশলের নতুন দক্ষতা প্রয়োজন হয়। মানবিক বিচার, সহমর্মিতা ও সামাজিক পরিস্থিতি বোঝার সীমার কারণে সেবায় মানুষের তত্ত্বাবধান দরকার।
+রোবট মানুষের মতো ক্লান্ত হয় না এবং উপযুক্ত ব্যবস্থায় ২৪ ঘণ্টা কাজ করতে পারে; শক্তি, রক্ষণাবেক্ষণ ও কাজের সীমা তবু থাকে। ভুল প্রোগ্রাম, সেন্সরের ত্রুটি, বিদ্যুৎ বিভ্রাট বা ভুল ডেটায় দুর্ঘটনা ঘটতে পারে। নিরাপদ দূরত্ব, বাধা শনাক্তকরণ, গতিসীমা, সুরক্ষাবেষ্টনী ও জরুরি থামার ব্যবস্থা দরকার। সংযুক্ত রোবটে অনুমতি নিয়ন্ত্রণ ও তথ্যের নিরাপত্তা এবং গুরুত্বপূর্ণ কাজে পরীক্ষা, পর্যবেক্ষণ ও মানুষের পর্যালোচনা রাখতে হয়।
+\roboticsfigure{chapters/Chapter01/images/robotics_advantages_limitations.png}{সুফলের জন্য সঠিক নকশা, দক্ষতা, পরীক্ষা ও নিরাপত্তা দরকার।}{রোবটিকসের সুযোগ ও সীমা}{fig:robotics-advantages-limitations}
 \begin{practicebox}
 \textbf{MCQ}
-\begin{enumerate}
-\item রোবটের পরিবেশ শনাক্তকারী অংশ কোনটি?\\
-ক. Sensor \quad খ. Monitor \quad গ. Printer \quad ঘ. Scanner only
-\item Robot arm নড়াচড়া করায় কোন অংশ?\\
-ক. Actuator \quad খ. ROM \quad গ. Browser \quad ঘ. Router
-\end{enumerate}
+\begin{multicols}{2}\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}Robot শব্দটি কোন শব্দ থেকে এসেছে?\par \mcqoption{Robota}{Router}{Radar}{Register}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}রোবটের পরিবেশ শনাক্তকারী অংশ কোনটি?\par \mcqoption{Monitor}{Sensor}{Printer}{Scanner only}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}রোবটের বাহু নাড়ায় কোন অংশ?\par \mcqoption{ROM}{Browser}{Actuator}{Router}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}রোবটের decision নেওয়ার প্রধান অংশ কোনটি?\par \mcqoption{Keyboard}{Speaker}{Printer}{Controller}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}নিচের কোনটি humanoid robot?\par \mcqoption{Sophia}{Router}{Monitor}{Modem}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}প্রথম industrial robot হিসেবে কোনটি পরিচিত?\par \mcqoption{ASIMO}{Unimate}{AIBO}{Sophia}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}AIBO কোন ধরনের robot?\par \mcqoption{Surgical robot}{Mars rover}{Robotic dog}{Printer robot}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}রোবটিকসের সাথে কোন ক্ষেত্রটি সবচেয়ে বেশি সম্পর্কিত?\par \mcqoption{শুধু word processing}{শুধু printing}{শুধু accounting}{AI ও control system}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Sense--Think--Act model-এ ``Sense'' অংশের কাজ কী?\par \mcqoption{data সংগ্রহ করা}{paper print করা}{file delete করা}{battery charge করা}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}রোবটের End Effector কোথায় থাকে?\par \mcqoption{monitor-এর ভিতরে}{robot arm-এর শেষ অংশে}{keyboard-এর নিচে}{router-এর antenna-তে}\chOneAnswerBox{খ}\par\end{minipage}
+\end{enumerate}\end{multicols}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
 \item রোবটিকস বলতে কী বোঝ?
+\item Robot ও সাধারণ machine-এর মধ্যে পার্থক্য লেখ।
+\item Sensor, controller ও actuator-এর কাজ লেখ।
 \item রোবট ব্যবহারের দুটি সুবিধা লেখ।
+\item রোবট ব্যবহারের দুটি সীমাবদ্ধতা লেখ।
+\item Humanoid robot কী? দুটি উদাহরণ দাও।
+\item বাংলাদেশে robotics-এর দুটি সম্ভাব্য ব্যবহার লেখ।
+\end{enumerate}
+
+\textbf{সৃজনশীল প্রশ্ন}
+একটি আধুনিক হাসপাতালে medicine delivery, ward disinfection এবং rehabilitation therapy-র জন্য robot ব্যবহার করা হচ্ছে। robot-গুলো sensor দিয়ে বাধা শনাক্ত করে, controller দিয়ে route ঠিক করে এবং motor দিয়ে চলাচল করে।
+
+\begin{enumerate}
+\item ক. রোবটিকস কী?
+\item খ. Sensor কেন robot-এর জন্য গুরুত্বপূর্ণ?
+\item গ. উদ্দীপকে robot-এর কোন কোন অংশের কাজ উল্লেখ আছে? ব্যাখ্যা কর।
+\item ঘ. হাসপাতালে robot ব্যবহারের সুবিধা ও সীমাবদ্ধতা বিশ্লেষণ কর।
 \end{enumerate}
 \end{practicebox}
 

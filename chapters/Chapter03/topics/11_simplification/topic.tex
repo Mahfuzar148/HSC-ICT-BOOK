@@ -1,0 +1,1969 @@
+% =========================================================
+% 3.8.11 Boolean Function Simplification
+% Two-column clean layout
+% 64 Worked Examples
+% =========================================================
+
+\subsection{বুলিয়ান রাশি সরলীকরণ অনুশীলন
+(\textenglish{Boolean Function Simplification})}
+
+বুলিয়ান সূত্র ও উপপাদ্য ব্যবহার করে নিচের রাশিগুলো
+ধাপে ধাপে সরল করা হয়েছে। প্রতিটি গুরুত্বপূর্ণ ধাপ দেখানো হয়েছে,
+যাতে শিক্ষার্থী সমাধানের পদ্ধতি সহজে বুঝতে পারে।
+
+\setlength{\columnsep}{14pt}
+\setlength{\columnseprule}{0pt}
+
+\begin{multicols}{2}
+\small
+
+% =========================================================
+% 1
+% =========================================================
+
+\textbf{১.}
+
+\[
+\begin{aligned}
+F
+&=AB+A\overline B+\overline AB\\
+&=A(B+\overline B)+\overline AB\\
+&=A\cdot1+\overline AB\\
+&=A+\overline AB\\
+&=A+B
+\end{aligned}
+\]
+
+{\footnotesize
+এখানে \(B+\overline B=1\) এবং
+\(A+\overline AB=A+B\) সূত্র ব্যবহার করা হয়েছে।
+}
+
+\[
+\boxed{F=A+B}
+\]
+
+\medskip
+
+% =========================================================
+% 2
+% =========================================================
+
+\textbf{২.}
+
+\[
+\begin{aligned}
+F
+&=(A+B)(A+C)(\overline A+B)\\
+&=(A+B)(\overline A+B)(A+C)\\
+&=B(A+C)\\
+&=AB+BC
+\end{aligned}
+\]
+
+{\footnotesize
+কারণ,
+\[
+(X+Y)(\overline X+Y)=Y
+\]
+}
+
+\[
+\boxed{F=AB+BC}
+\]
+
+\medskip
+
+% =========================================================
+% 3
+% =========================================================
+
+\textbf{৩.}
+
+\[
+F=(A+B+C)(A+B+\overline C)
+\]
+
+ধরি,
+
+\[
+X=A+B
+\]
+
+তাহলে,
+
+\[
+\begin{aligned}
+F
+&=(X+C)(X+\overline C)\\
+&=X+C\overline C\\
+&=X+0\\
+&=X\\
+&=A+B
+\end{aligned}
+\]
+
+\[
+\boxed{F=A+B}
+\]
+
+\medskip
+
+% =========================================================
+% 4
+% =========================================================
+
+\textbf{৪.}
+
+\[
+\begin{aligned}
+F
+&=(A+B)(A+\overline B+C)\\
+&=A+B(\overline B+C)\\
+&=A+B\overline B+BC\\
+&=A+0+BC\\
+&=A+BC
+\end{aligned}
+\]
+
+{\footnotesize
+এখানে
+\[
+(X+Y)(X+Z)=X+YZ
+\]
+সূত্র ব্যবহার করা হয়েছে।
+}
+
+\[
+\boxed{F=A+BC}
+\]
+
+\medskip
+
+% =========================================================
+% 5
+% =========================================================
+
+\textbf{৫.}
+
+\[
+\begin{aligned}
+F
+&=AB+A\overline BC+\overline ABC\\
+&=A(B+\overline BC)+\overline ABC
+\end{aligned}
+\]
+
+যেহেতু,
+
+\[
+B+\overline BC=B+C
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=AB+AC+\overline ABC\\
+&=AB+AC+BC
+\end{aligned}
+\]
+
+{\footnotesize
+এখানে \(AB+\overline ABC=AB+BC\) ব্যবহার করা হয়েছে।
+}
+
+\[
+\boxed{F=AB+AC+BC}
+\]
+
+\medskip
+
+% =========================================================
+% 6
+% =========================================================
+
+\textbf{৬.}
+
+\[
+\begin{aligned}
+F
+&=AB+AC+\overline AB\\
+&=B(A+\overline A)+AC\\
+&=B\cdot1+AC\\
+&=B+AC
+\end{aligned}
+\]
+
+\[
+\boxed{F=B+AC}
+\]
+
+\medskip
+
+% =========================================================
+% 7
+% =========================================================
+
+\textbf{৭.}
+
+\[
+\begin{aligned}
+F
+&=AB+A\overline B+AC+\overline AC\\
+&=A(B+\overline B)
++C(A+\overline A)\\
+&=A\cdot1+C\cdot1\\
+&=A+C
+\end{aligned}
+\]
+
+\[
+\boxed{F=A+C}
+\]
+
+\medskip
+
+% =========================================================
+% 8
+% =========================================================
+
+\textbf{৮.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(\overline A+C)\\
+&\times(B+C)
+\end{aligned}
+\]
+
+\textenglish{Consensus}-এর দ্বৈত সূত্র অনুযায়ী,
+
+\[
+\begin{aligned}
+F
+&=(A+B)(\overline A+C)\\
+&=A\overline A+AC+\overline AB+BC\\
+&=AC+\overline AB+BC\\
+&=AC+\overline AB
+\end{aligned}
+\]
+
+\[
+\boxed{F=AC+\overline AB}
+\]
+
+\medskip
+
+% =========================================================
+% 9
+% =========================================================
+
+\textbf{৯.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(\overline A+B)\\
+&\times(A+C)\\
+&=B(A+C)\\
+&=AB+BC
+\end{aligned}
+\]
+
+\[
+\boxed{F=AB+BC}
+\]
+
+\medskip
+
+% =========================================================
+% 10
+% =========================================================
+
+\textbf{১০.}
+
+\[
+\begin{aligned}
+F
+&=ABC+AB\overline C+A\overline BC\\
+&=AB(C+\overline C)+A\overline BC\\
+&=AB+A\overline BC\\
+&=A(B+\overline BC)\\
+&=A(B+C)\\
+&=AB+AC
+\end{aligned}
+\]
+
+\[
+\boxed{F=AB+AC}
+\]
+
+\medskip
+
+% =========================================================
+% 11
+% =========================================================
+
+\textbf{১১.}
+
+\[
+\begin{aligned}
+F
+={}&ABC+AB\overline C\\
+&+\overline ABC+\overline AB\overline C\\
+&=AB(C+\overline C)\\
+&\quad+\overline AB(C+\overline C)\\
+&=AB+\overline AB\\
+&=B(A+\overline A)\\
+&=B
+\end{aligned}
+\]
+
+\[
+\boxed{F=B}
+\]
+
+\medskip
+
+% =========================================================
+% 12
+% =========================================================
+
+\textbf{১২.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B+C)(A+B+\overline C)\\
+&\times(A+\overline B+C)
+\end{aligned}
+\]
+
+প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+(A+B+C)(A+B+\overline C)=A+B
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=(A+B)(A+\overline B+C)\\
+&=A+B(\overline B+C)\\
+&=A+BC
+\end{aligned}
+\]
+
+\[
+\boxed{F=A+BC}
+\]
+
+\medskip
+
+% =========================================================
+% 13
+% =========================================================
+
+\textbf{১৩.}
+
+\[
+\begin{aligned}
+F
+&=(A+B)(A+C)(A+D)\\
+&=(A+BC)(A+D)\\
+&=A+BCD
+\end{aligned}
+\]
+
+{\footnotesize
+এখানে দুইবার
+\[
+(X+Y)(X+Z)=X+YZ
+\]
+সূত্র প্রয়োগ করা হয়েছে।
+}
+
+\[
+\boxed{F=A+BCD}
+\]
+
+\medskip
+
+% =========================================================
+% 14
+% =========================================================
+
+\textbf{১৪.}
+
+\[
+\begin{aligned}
+F
+&=AB+\overline AB+BC+BD\\
+&=B(A+\overline A)+BC+BD\\
+&=B+BC+BD\\
+&=B
+\end{aligned}
+\]
+
+{\footnotesize
+কারণ \(B+BC=B\) এবং \(B+BD=B\)।
+}
+
+\[
+\boxed{F=B}
+\]
+
+\medskip
+
+% =========================================================
+% 15
+% =========================================================
+
+\textbf{১৫.}
+
+\[
+F=AB+\overline AC+BC+AD
+\]
+
+এখানে \(BC\) হলো \(AB\) ও \(\overline AC\)-এর
+\textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=AB+\overline AC+AD
+\end{aligned}
+\]
+
+\[
+\boxed{F=AB+\overline AC+AD}
+\]
+
+\medskip
+
+% =========================================================
+% 16
+% =========================================================
+
+\textbf{১৬.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(\overline A+C)\\
+&\times(B+C)(A+D)
+\end{aligned}
+\]
+
+প্রথম তিনটি গুণনীয়কে
+\textenglish{Consensus}-এর দ্বৈত সূত্র প্রয়োগ করে,
+
+\[
+\begin{aligned}
+F
+&=(A+B)(\overline A+C)(A+D)\\
+&=(AC+\overline AB)(A+D)\\
+&=AC+\overline ABD
+\end{aligned}
+\]
+
+\[
+\boxed{F=AC+\overline ABD}
+\]
+
+\medskip
+
+% =========================================================
+% 17
+% =========================================================
+
+\textbf{১৭.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(A+\overline B)\\
+&\times(\overline A+C)\\
+&=A(\overline A+C)\\
+&=A\overline A+AC\\
+&=AC
+\end{aligned}
+\]
+
+\[
+\boxed{F=AC}
+\]
+
+\medskip
+
+% =========================================================
+% 18
+% =========================================================
+
+\textbf{১৮.}
+
+\[
+\begin{aligned}
+F
+&=AB+\overline ABC+A\overline C\\
+&=B(A+\overline AC)+A\overline C\\
+&=B(A+C)+A\overline C\\
+&=AB+BC+A\overline C
+\end{aligned}
+\]
+
+এখানে \(AB\) হলো \(BC\) ও \(A\overline C\)-এর
+\textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+F=BC+A\overline C
+\]
+
+\[
+\boxed{F=BC+A\overline C}
+\]
+
+\medskip
+
+% =========================================================
+% 19
+% =========================================================
+
+\textbf{১৯.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B+C)(A+\overline B+C)\\
+&\times(\overline A+B+C)
+\end{aligned}
+\]
+
+প্রথম দুইটি গুণনীয়কের জন্য ধরি,
+
+\[
+X=A+C
+\]
+
+তাহলে,
+
+\[
+(X+B)(X+\overline B)=X
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=(A+C)(\overline A+B+C)\\
+&=C+AB
+\end{aligned}
+\]
+
+\[
+\boxed{F=C+AB}
+\]
+
+\medskip
+
+% =========================================================
+% 20
+% =========================================================
+
+\textbf{২০.}
+
+\[
+\begin{aligned}
+F
+&=A+\overline AB+\overline A\overline BC\\
+&=A+B+\overline A\overline BC\\
+&=A+B+\overline BC\\
+&=A+B+C
+\end{aligned}
+\]
+
+{\footnotesize
+প্রথমে \(A+\overline AB=A+B\),
+পরে \(B+\overline BC=B+C\) ব্যবহার করা হয়েছে।
+}
+
+\[
+\boxed{F=A+B+C}
+\]
+
+\medskip
+
+% =========================================================
+% 21
+% =========================================================
+
+\textbf{২১.}
+
+\[
+\begin{aligned}
+F
+&=(A+B)(\overline A+B)(B+C)\\
+&=B(B+C)\\
+&=B
+\end{aligned}
+\]
+
+\[
+\boxed{F=B}
+\]
+
+\medskip
+
+% =========================================================
+% 22
+% =========================================================
+
+\textbf{২২.}
+
+\[
+\begin{aligned}
+F
+&=AB+\overline AC+BC+\overline ACD\\
+&=AB+\overline AC+BC
+\end{aligned}
+\]
+
+কারণ,
+
+\[
+\overline AC+\overline ACD=\overline AC
+\]
+
+এখন \(BC\) হলো \textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+F=AB+\overline AC
+\]
+
+\[
+\boxed{F=AB+\overline AC}
+\]
+
+\medskip
+
+% =========================================================
+% 23
+% =========================================================
+
+\textbf{২৩.}
+
+\[
+\begin{aligned}
+F
+={}&ABC+AB\overline C\\
+&+A\overline BC+A\overline B\overline C\\
+&=AB(C+\overline C)\\
+&\quad+A\overline B(C+\overline C)\\
+&=AB+A\overline B\\
+&=A(B+\overline B)\\
+&=A
+\end{aligned}
+\]
+
+\[
+\boxed{F=A}
+\]
+
+\medskip
+
+% =========================================================
+% 24
+% =========================================================
+
+\textbf{২৪.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B+C)(A+\overline B+C)\\
+&\times(\overline A+B+C)\\
+&\times(\overline A+\overline B+C)
+\end{aligned}
+\]
+
+প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+A+C
+\]
+
+এবং শেষ দুইটি থেকে,
+
+\[
+\overline A+C
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=(A+C)(\overline A+C)\\
+&=C
+\end{aligned}
+\]
+
+\[
+\boxed{F=C}
+\]
+
+\medskip
+
+% =========================================================
+% 25
+% =========================================================
+
+\textbf{২৫.}
+
+\[
+\begin{aligned}
+F
+&=AB+\overline AB+AC+\overline AD\\
+&=B(A+\overline A)+AC+\overline AD\\
+&=B+AC+\overline AD
+\end{aligned}
+\]
+
+\[
+\boxed{F=B+AC+\overline AD}
+\]
+
+\medskip
+
+% =========================================================
+% 26
+% =========================================================
+
+\textbf{২৬.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(A+\overline B+C)\\
+&\times(\overline A+C)\\
+&=(A+BC)(\overline A+C)\\
+&=AC+\overline ABC+BC\\
+&=AC+BC\\
+&=C(A+B)
+\end{aligned}
+\]
+
+\[
+\boxed{F=C(A+B)}
+\]
+
+\medskip
+
+% =========================================================
+% 27
+% =========================================================
+
+\textbf{২৭.}
+
+\[
+\begin{aligned}
+F
+={}&AB+\overline ABC\\
+&+A\overline BC+\overline A\overline BC
+\end{aligned}
+\]
+
+\(C\)-যুক্ত পদগুলো একত্র করলে,
+
+\[
+\begin{aligned}
+F
+&=AB+C(\overline AB+A\overline B
++\overline A\overline B)\\
+&=AB+C(\overline A+\overline B)
+\end{aligned}
+\]
+
+এখন,
+
+\[
+AB+\overline A+\overline B=1
+\]
+
+তাই,
+
+\[
+F=AB+C
+\]
+
+\[
+\boxed{F=AB+C}
+\]
+
+\medskip
+
+% =========================================================
+% 28
+% =========================================================
+
+\textbf{২৮.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B+C)(A+B+\overline C)\\
+&\times(A+\overline B+C)\\
+&\times(A+\overline B+\overline C)
+\end{aligned}
+\]
+
+প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+A+B
+\]
+
+শেষ দুইটি থেকে,
+
+\[
+A+\overline B
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=(A+B)(A+\overline B)\\
+&=A
+\end{aligned}
+\]
+
+\[
+\boxed{F=A}
+\]
+
+\medskip
+
+% =========================================================
+% 29
+% =========================================================
+
+\textbf{২৯.}
+
+\[
+F=AB+\overline AC+BC+\overline AD
+\]
+
+এখানে \(BC\) হলো \(AB\) ও \(\overline AC\)-এর
+\textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+F=AB+\overline AC+\overline AD
+\]
+
+\[
+\boxed{F=AB+\overline AC+\overline AD}
+\]
+
+\medskip
+
+% =========================================================
+% 30
+% =========================================================
+
+\textbf{৩০.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(\overline A+C)(B+C)\\
+&\times(A+D)(C+D)
+\end{aligned}
+\]
+
+প্রথম তিনটি গুণনীয়কে
+\textenglish{Consensus}-এর দ্বৈত সূত্র প্রয়োগ করে,
+
+\[
+\begin{aligned}
+F
+&=(A+B)(\overline A+C)(A+D)(C+D)\\
+&=(AC+\overline AB)(A+D)(C+D)\\
+&=AC+\overline ABD
+\end{aligned}
+\]
+
+\[
+\boxed{F=AC+\overline ABD}
+\]
+
+\medskip
+
+% =========================================================
+% 31
+% =========================================================
+
+\textbf{৩১.}
+
+\[
+\begin{aligned}
+F
+={}&AB+\overline ABC+A\overline BC\\
+&+\overline A\overline BC+AD
+\end{aligned}
+\]
+
+প্রথম চারটি পদ সরল করলে,
+
+\[
+AB+\overline ABC
++A\overline BC+\overline A\overline BC
+=
+AB+C
+\]
+
+তাই,
+
+\[
+F=AB+C+AD
+\]
+
+\[
+\boxed{F=C+AB+AD}
+\]
+
+\medskip
+
+% =========================================================
+% 32
+% =========================================================
+
+\textbf{৩২.}
+
+\[
+\begin{aligned}
+F
+={}&ABCD+ABC\overline D\\
+&+A\overline BCD+A\overline BC\overline D\\
+&=ABC(D+\overline D)\\
+&\quad+A\overline BC(D+\overline D)\\
+&=ABC+A\overline BC\\
+&=AC(B+\overline B)\\
+&=AC
+\end{aligned}
+\]
+
+\[
+\boxed{F=AC}
+\]
+
+\medskip
+
+% =========================================================
+% 33
+% =========================================================
+
+\textbf{৩৩.}
+
+\[
+\begin{aligned}
+F
+={}&ABCD+AB\overline CD\\
+&+A\overline BCD+\overline ABCD\\
+&=D(ABC+AB\overline C\\
+&\qquad+A\overline BC+\overline ABC)
+\end{aligned}
+\]
+
+ভেতরের রাশি সরল করলে,
+
+\[
+ABC+AB\overline C
++A\overline BC+\overline ABC
+=
+AB+AC+BC
+\]
+
+তাই,
+
+\[
+\boxed{F=ABD+ACD+BCD}
+\]
+
+\medskip
+
+% =========================================================
+% 34
+% =========================================================
+
+\textbf{৩৪.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B+C+D)\\
+&\times(A+B+C+\overline D)\\
+&\times(A+B+\overline C+D)\\
+&\times(A+\overline B+C+D)
+\end{aligned}
+\]
+
+প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+A+B+C
+\]
+
+এরপর ধাপে ধাপে সরল করলে,
+
+\[
+F=A+BC+BD+CD
+\]
+
+\[
+\boxed{F=A+BC+BD+CD}
+\]
+
+\medskip
+
+% =========================================================
+% 35
+% =========================================================
+
+\textbf{৩৫.}
+
+\[
+F=AB+\overline AC+BC+\overline AD+CD
+\]
+
+এখানে \(BC\) হলো \(AB\) ও \(\overline AC\)-এর
+\textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+F=AB+\overline AC+\overline AD+CD
+\]
+
+\[
+\boxed{F=AB+\overline AC+\overline AD+CD}
+\]
+
+\medskip
+
+% =========================================================
+% 36
+% =========================================================
+
+\textbf{৩৬.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B)(\overline A+C)(B+C)\\
+&\times(\overline B+D)(C+D)
+\end{aligned}
+\]
+
+প্রথম তিনটি গুণনীয়ক থেকে,
+
+\[
+(A+B)(\overline A+C)
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+={}&(AC+\overline AB)\\
+&\times(\overline B+D)(C+D)
+\end{aligned}
+\]
+
+বণ্টন ও শোষণ সূত্র প্রয়োগ করলে,
+
+\[
+\boxed{F=BCD+A\overline BC+\overline ABD}
+\]
+
+\medskip
+
+% =========================================================
+% 37
+% =========================================================
+
+\textbf{৩৭.}
+
+\[
+\begin{aligned}
+F
+={}&ABC+AB\overline C\\
+&+\overline ABC+\overline A\overline BD\\
+&=AB(C+\overline C)\\
+&\quad+\overline ABC+\overline A\overline BD\\
+&=AB+\overline ABC+\overline A\overline BD\\
+&=AB+BC+\overline A\overline BD
+\end{aligned}
+\]
+
+\[
+\boxed{F=AB+BC+\overline A\overline BD}
+\]
+
+\medskip
+
+% =========================================================
+% 38
+% =========================================================
+
+\textbf{৩৮.}
+
+\[
+\begin{aligned}
+F
+={}&(A+B+C)(A+\overline B+C)\\
+&\times(\overline A+B+D)\\
+&\times(\overline A+\overline B+D)
+\end{aligned}
+\]
+
+প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+A+C
+\]
+
+শেষ দুইটি থেকে,
+
+\[
+\overline A+D
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=(A+C)(\overline A+D)\\
+&=AD+\overline AC+CD\\
+&=AD+\overline AC
+\end{aligned}
+\]
+
+এখানে \(CD\) হলো \textenglish{Consensus} পদ।
+
+\[
+\boxed{F=AD+\overline AC}
+\]
+
+\medskip
+
+% =========================================================
+% 39
+% =========================================================
+
+\textbf{৩৯.}
+
+\[
+\begin{aligned}
+F
+={}&AB+A\overline BC\\
+&+\overline ABC+\overline A\overline BD
+\end{aligned}
+\]
+
+প্রথম তিনটি পদ সরল করলে,
+
+\[
+AB+A\overline BC+\overline ABC
+=
+AB+AC+BC
+\]
+
+তাই,
+
+\[
+\boxed{F=AB+AC+BC+\overline A\overline BD}
+\]
+
+\medskip
+
+% =========================================================
+% 40
+% =========================================================
+
+\textbf{৪০.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A+B}+AB\\
+&=\overline A\,\overline B+AB
+\end{aligned}
+\]
+
+দুইটি পদ পরস্পরকে শোষণ করে না।
+
+তাই এটিই সরল রূপ।
+
+\[
+\boxed{F=\overline A\,\overline B+AB}
+\]
+
+\medskip
+
+% =========================================================
+% 41
+% =========================================================
+
+\textbf{৪১.}
+
+\[
+\begin{aligned}
+F
+&=\overline{AB}+\overline AB\\
+&=(\overline A+\overline B)+\overline AB\\
+&=\overline A+\overline B
+\end{aligned}
+\]
+
+{\footnotesize
+কারণ,
+\[
+\overline A+\overline AB=\overline A
+\]
+}
+
+\[
+\boxed{F=\overline A+\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 42
+% =========================================================
+
+\textbf{৪২.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A+B}+\overline AB+A\overline B\\
+&=\overline A\,\overline B+\overline AB
++A\overline B\\
+&=\overline A(\overline B+B)+A\overline B\\
+&=\overline A+A\overline B\\
+&=\overline A+\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A+\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 43
+% =========================================================
+
+\textbf{৪৩.}
+
+\[
+F=\overline{AB}+AB
+\]
+
+ধরি,
+
+\[
+X=AB
+\]
+
+তাহলে,
+
+\[
+\begin{aligned}
+F
+&=\overline X+X\\
+&=1
+\end{aligned}
+\]
+
+\[
+\boxed{F=1}
+\]
+
+\medskip
+
+% =========================================================
+% 44
+% =========================================================
+
+\textbf{৪৪.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A+B+C}
++\overline A\,\overline BC\\
+&=\overline A\,\overline B\,\overline C
++\overline A\,\overline BC\\
+&=\overline A\,\overline B(\overline C+C)\\
+&=\overline A\,\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A\,\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 45
+% =========================================================
+
+\textbf{৪৫.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A+\overline{(B+C)}}\\
+&=\overline A\,
+\overline{\overline{(B+C)}}\\
+&=\overline A(B+C)
+\end{aligned}
+\]
+
+{\footnotesize
+এখানে \textenglish{De Morgan's Theorem}
+এবং দ্বৈত পূরক সূত্র ব্যবহার করা হয়েছে।
+}
+
+\[
+\boxed{F=\overline A(B+C)}
+\]
+
+\medskip
+
+% =========================================================
+% 46
+% =========================================================
+
+\textbf{৪৬.}
+
+\[
+\begin{aligned}
+F
+&=\overline{\overline{(A+B)}+C}\\
+&=\overline{\overline{(A+B)}}\,\overline C\\
+&=(A+B)\overline C
+\end{aligned}
+\]
+
+{\footnotesize
+এখানে \textenglish{De Morgan's Theorem}
+এবং \(\overline{\overline X}=X\) ব্যবহার করা হয়েছে।
+}
+
+\[
+\boxed{F=(A+B)\overline C}
+\]
+
+\medskip
+
+% =========================================================
+% 47
+% =========================================================
+
+\textbf{৪৭.}
+
+\[
+\begin{aligned}
+F
+&=\overline{(A+B)(A+C)}\\
+&=\overline{A+B}+\overline{A+C}\\
+&=\overline A\,\overline B
++\overline A\,\overline C\\
+&=\overline A(\overline B+\overline C)
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A(\overline B+\overline C)}
+\]
+
+\medskip
+
+% =========================================================
+% 48
+% =========================================================
+
+\textbf{৪৮.}
+
+\[
+\begin{aligned}
+F
+&=\overline{AB+\overline AC}\\
+&=\overline{AB}\,
+\overline{\overline AC}\\
+&=(\overline A+\overline B)(A+\overline C)
+\end{aligned}
+\]
+
+বণ্টন করলে,
+
+\[
+\begin{aligned}
+F
+&=\overline A\,\overline C
++A\overline B
++\overline B\,\overline C
+\end{aligned}
+\]
+
+এখানে \(\overline B\,\overline C\) হলো
+\textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+\boxed{F=\overline A\,\overline C+A\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 49
+% =========================================================
+
+\textbf{৪৯.}
+
+\[
+\begin{aligned}
+F
+&=\overline{(A+B)(\overline A+C)}\\
+&=\overline{A+B}
++\overline{\overline A+C}\\
+&=\overline A\,\overline B+A\overline C
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A\,\overline B+A\overline C}
+\]
+
+\medskip
+
+% =========================================================
+% 50
+% =========================================================
+
+\textbf{৫০.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A+B\overline C}\\
+&=\overline A\,\overline{B\overline C}\\
+&=\overline A(\overline B+C)
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A(\overline B+C)}
+\]
+
+\medskip
+
+% =========================================================
+% 51
+% =========================================================
+
+\textbf{৫১.}
+
+\[
+F=\overline{AB+\overline AC+BC}
+\]
+
+ভেতরের \(BC\) হলো \textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=\overline{AB+\overline AC}\\
+&=(\overline A+\overline B)(A+\overline C)\\
+&=\overline A\,\overline C+A\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A\,\overline C+A\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 52
+% =========================================================
+
+\textbf{৫২.}
+
+\[
+F=
+\overline{(A+B+C)(A+B+\overline C)}
+\]
+
+কারণ,
+
+\[
+(A+B+C)(A+B+\overline C)=A+B
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=\overline{A+B}\\
+&=\overline A\,\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A\,\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 53
+% =========================================================
+
+\textbf{৫৩.}
+
+\[
+F=
+\overline{(A+B)(A+\overline B+C)}
+\]
+
+ভেতরের রাশি,
+
+\[
+(A+B)(A+\overline B+C)=A+BC
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=\overline{A+BC}\\
+&=\overline A\,\overline{BC}\\
+&=\overline A(\overline B+\overline C)
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A(\overline B+\overline C)}
+\]
+
+\medskip
+
+% =========================================================
+% 54
+% =========================================================
+
+\textbf{৫৪.}
+
+\[
+\begin{aligned}
+F
+&=\overline{AB+\overline AB}\\
+&=\overline{B(A+\overline A)}\\
+&=\overline{B\cdot1}\\
+&=\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 55
+% =========================================================
+
+\textbf{৫৫.}
+
+\[
+\begin{aligned}
+F
+={}&\overline{
+ABC+A\overline BC
++\overline ABC
++\overline A\overline BC
+}
+\end{aligned}
+\]
+
+ভেতরে \(C\) সাধারণ গুণনীয়ক নিলে,
+
+\[
+\begin{aligned}
+F
+&=\overline{
+C(AB+A\overline B
++\overline AB+\overline A\overline B)
+}\\
+&=\overline{C\cdot1}\\
+&=\overline C
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline C}
+\]
+
+\medskip
+
+% =========================================================
+% 56
+% =========================================================
+
+\textbf{৫৬.}
+
+\[
+F=\overline{(A+B)(\overline A+B)}
+\]
+
+কারণ,
+
+\[
+(A+B)(\overline A+B)=B
+\]
+
+তাই,
+
+\[
+F=\overline B
+\]
+
+\[
+\boxed{F=\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 57
+% =========================================================
+
+\textbf{৫৭.}
+
+ধরি,
+\[\begin{aligned}
+P={}&(A+B+C)(A+B+\overline C)\\
+&\times(A+\overline B+C)(A+\overline B+\overline C)
+\end{aligned}\]
+তাহলে প্রদত্ত রাশি \(F=\overline P\)।
+
+ভেতরের প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+A+B
+\]
+
+এবং শেষ দুইটি থেকে,
+
+\[
+A+\overline B
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=\overline{(A+B)(A+\overline B)}\\
+&=\overline A
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A}
+\]
+
+\medskip
+
+% =========================================================
+% 58
+% =========================================================
+
+\textbf{৫৮.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A\overline B+\overline AB}\\
+&=\overline{A\overline B}\,
+\overline{\overline AB}\\
+&=(\overline A+B)(A+\overline B)
+\end{aligned}
+\]
+
+বণ্টন করলে,
+
+\[
+\begin{aligned}
+F
+&=AB+\overline A\,\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=AB+\overline A\,\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 59
+% =========================================================
+
+\textbf{৫৯.}
+
+\[
+F=
+\overline{(A+B)(\overline A+C)(B+C)}
+\]
+
+\textenglish{Consensus}-এর দ্বৈত সূত্র অনুযায়ী,
+
+\[
+(A+B)(\overline A+C)(B+C)
+=
+(A+B)(\overline A+C)
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=\overline{(A+B)(\overline A+C)}\\
+&=\overline{AC+\overline AB}\\
+&=(\overline A+\overline C)(A+\overline B)\\
+&=\overline A\,\overline B+A\overline C
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A\,\overline B+A\overline C}
+\]
+
+\medskip
+
+% =========================================================
+% 60
+% =========================================================
+
+\textbf{৬০.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A+\overline AB}\\
+&=\overline{A+B}\\
+&=\overline A\,\overline B
+\end{aligned}
+\]
+
+{\footnotesize
+প্রথমে \(A+\overline AB=A+B\),
+এরপর \textenglish{De Morgan's Theorem} প্রয়োগ করা হয়েছে।
+}
+
+\[
+\boxed{F=\overline A\,\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 61
+% =========================================================
+
+\textbf{৬১.}
+
+\[
+\begin{aligned}
+F
+&=\overline{A(\overline A+B)}\\
+&=\overline{A\overline A+AB}\\
+&=\overline{0+AB}\\
+&=\overline{AB}\\
+&=\overline A+\overline B
+\end{aligned}
+\]
+
+\[
+\boxed{F=\overline A+\overline B}
+\]
+
+\medskip
+
+% =========================================================
+% 62
+% =========================================================
+
+\textbf{৬২.}
+
+\[
+F=\overline{(A+B)(A+C)(A+D)}
+\]
+
+ভেতরের রাশি,
+
+\[
+(A+B)(A+C)(A+D)=A+BCD
+\]
+
+তাই,
+
+\[
+\begin{aligned}
+F
+&=\overline{A+BCD}\\
+&=\overline A\,\overline{BCD}\\
+&=\overline A
+(\overline B+\overline C+\overline D)
+\end{aligned}
+\]
+
+\[
+\boxed{
+F=\overline A
+(\overline B+\overline C+\overline D)
+}
+\]
+
+\medskip
+
+% =========================================================
+% 63
+% =========================================================
+
+\textbf{৬৩.}
+
+\[
+F=
+\overline{AB+\overline AC+BC+AD}
+\]
+
+ভেতরের \(BC\) হলো \(AB\) ও \(\overline AC\)-এর
+\textenglish{Consensus} পদ।
+
+তাই,
+
+\[
+F=\overline{AB+\overline AC+AD}
+\]
+
+এখন \textenglish{De Morgan's Theorem} প্রয়োগ করে,
+
+\[
+\begin{aligned}
+F
+={}&(\overline A+\overline B)\\
+&\times(A+\overline C)
+(\overline A+\overline D)
+\end{aligned}
+\]
+
+অতএব,
+
+\[
+\boxed{
+\begin{aligned}
+F
+={}&(\overline A+\overline B)
+(A+\overline C)\\
+&\times(\overline A+\overline D)
+\end{aligned}
+}
+\]
+
+\medskip
+
+% =========================================================
+% 64
+% =========================================================
+
+\textbf{৬৪.}
+
+ধরি,
+\[\begin{aligned}
+P={}&(A+B+C)\\
+&\times(A+B+\overline C)(A+\overline B+C)
+\end{aligned}\]
+তাহলে প্রদত্ত রাশি \(F=\overline P\)।
+
+প্রথম দুইটি গুণনীয়ক থেকে,
+
+\[
+(A+B+C)(A+B+\overline C)=A+B
+\]
+
+তাই ভেতরের রাশি,
+
+\[
+\begin{aligned}
+&(A+B)(A+\overline B+C)\\
+&=A+B(\overline B+C)\\
+&=A+BC
+\end{aligned}
+\]
+
+অতএব,
+
+\[
+\begin{aligned}
+F
+&=\overline{A+BC}\\
+&=\overline A\,\overline{BC}\\
+&=\overline A(\overline B+\overline C)
+\end{aligned}
+\]
+
+\[
+\boxed{
+F=\overline A(\overline B+\overline C)
+}
+\]
+
+\end{multicols}
+
+% Restore column rule after this section if needed
+\setlength{\columnseprule}{0pt}

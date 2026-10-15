@@ -1,0 +1,1123 @@
+\sectionheading{5.33 Python Variable}
+
+Program-এ Data বা Value-কে একটি নাম দিয়ে সংরক্ষণ ও ব্যবহার
+করার জন্য \textbf{Variable} ব্যবহৃত হয়।
+
+Python-এ C/C++-এর মতো Variable তৈরির আগে আলাদাভাবে
+Data Type ঘোষণা করতে হয় না।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Python Variable কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Python Program-এ কোনো Value-কে একটি নির্দিষ্ট নামের মাধ্যমে
+সংরক্ষণ ও ব্যবহার করার জন্য যে নাম ব্যবহার করা হয় তাকে
+\textbf{Variable} বলে।
+
+\end{definitionbox}
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+age = 18
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{center}
+
+\textenglish{\ttfamily age}
+\(\longrightarrow\)
+\textbf{Variable Name}
+\qquad
+\textenglish{\ttfamily 18}
+\(\longrightarrow\)
+\textbf{Value}
+\qquad
+\textenglish{\ttfamily =}
+\(\longrightarrow\)
+\textbf{Assignment Operator}
+
+\end{center}
+
+%================================================
+% Creating Variable
+%================================================
+
+\booksubheading{Python-এ Variable তৈরি}
+
+Python-এ কোনো নামের সঙ্গে Value Assign করলেই Variable তৈরি হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10\\
+name = "Rahim"
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily x}
+এবং
+\textenglish{\ttfamily name}
+দুটি Variable।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Python-এ সাধারণভাবে—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+int x
+\end{english}
+
+\end{codebox}
+
+এভাবে Variable Declare করতে হয় না।
+
+বরং—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10
+\end{english}
+
+\end{codebox}
+
+লিখলেই Variable তৈরি হয়।
+
+\end{rememberbox}
+
+%================================================
+% Assignment
+%================================================
+
+\booksubheading{Assignment}
+
+Python-এ
+\textenglish{\ttfamily =}
+চিহ্ন ব্যবহার করে Variable-এর সঙ্গে Value Assign করা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+number = 50
+\end{english}
+
+\end{codebox}
+
+Assignment-এর সাধারণ রূপ—
+
+\begin{center}
+
+\textbf{Variable}
+\(\;=\;\)
+\textbf{Value}
+
+\end{center}
+
+অর্থাৎ—
+
+\begin{center}
+
+\textbf{ডান পাশের Value}
+\(\longrightarrow\)
+\textbf{বাম পাশের Variable}
+
+\end{center}
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+price = 500
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 500}
+Value-টি
+\textenglish{\ttfamily price}
+Variable-এর সঙ্গে Assign করা হয়েছে।
+
+%================================================
+% Using Variable
+%================================================
+
+\booksubheading{Variable-এর Value ব্যবহার}
+
+Variable তৈরি করার পর Variable-এর নাম ব্যবহার করে তার
+Value নিয়ে কাজ করা যায়।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+age = 18\\
+print(age)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+18
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+%================================================
+% Changing Value
+%================================================
+
+\booksubheading{Variable-এর Value পরিবর্তন}
+
+একই Variable-এ পরে নতুন Value Assign করা যায়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10\\
+x = 20\\
+print(x)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+20
+\end{english}
+
+\end{codebox}
+
+শেষের Assignment-এ
+\textenglish{\ttfamily x}
+-এর নতুন Value হয়েছে
+\textenglish{\ttfamily 20}।
+
+\begin{center}
+
+\textenglish{\ttfamily x = 10}
+\(\longrightarrow\)
+\textenglish{\ttfamily x = 20}
+\(\longrightarrow\)
+\textbf{বর্তমান Value = 20}
+
+\end{center}
+
+%================================================
+% Naming Rules
+%================================================
+
+\booksubheading{Python Variable নামকরণের নিয়ম}
+
+Variable-এর নাম লেখার ক্ষেত্রে কিছু নির্দিষ্ট নিয়ম মানতে হয়।
+
+%------------------------------------------------
+% Rule 1
+%------------------------------------------------
+
+\textbf{\color{darkTeal}১. Letter বা Underscore দিয়ে শুরু করা যায়}
+
+\textbf{সঠিক—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+name = "Rafi"\\
+\_age = 18
+\end{english}
+
+\end{codebox}
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+2name = "Rafi"
+\end{english}
+
+\end{codebox}
+
+কারণ Variable Name Digit দিয়ে শুরু হতে পারে না।
+
+%------------------------------------------------
+% Rule 2
+%------------------------------------------------
+
+\textbf{\color{darkTeal}২. Letter, Digit ও Underscore ব্যবহার করা যায়}
+
+সঠিক উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+student1 = "Rahim"\\
+roll\_10 = 25\\
+total\_marks = 450
+\end{english}
+
+\end{codebox}
+
+Variable Name-এ Letter, Digit ও Underscore ব্যবহার করা যায়;
+তবে Digit প্রথম Character হতে পারে না।
+
+%------------------------------------------------
+% Rule 3
+%------------------------------------------------
+
+\textbf{\color{darkTeal}৩. Space ব্যবহার করা যায় না}
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+student name = "Rahim"
+\end{english}
+
+\end{codebox}
+
+\textbf{সঠিক—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+student\_name = "Rahim"
+\end{english}
+
+\end{codebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textbf{Space নয়}
+\(\longrightarrow\)
+\textbf{Underscore \textenglish{\ttfamily \_} ব্যবহার করা যায়}
+
+\end{center}
+
+\end{rememberbox}
+
+%------------------------------------------------
+% Rule 4
+%------------------------------------------------
+
+\textbf{\color{darkTeal}৪. Special Character ব্যবহার করা যায় না}
+
+Variable Name-এ সাধারণভাবে নিচের ধরনের Special Character
+ব্যবহার করা যায় না—
+
+\begin{center}
+
+\textenglish{\ttfamily @ \quad \# \quad \$ \quad \% \quad -}
+
+\end{center}
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+total-marks = 500\\
+price\$ = 100
+\end{english}
+
+\end{codebox}
+
+\textbf{সঠিক—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+total\_marks = 500\\
+price = 100
+\end{english}
+
+\end{codebox}
+
+%------------------------------------------------
+% Rule 5
+%------------------------------------------------
+
+\textbf{\color{darkTeal}৫. Python Keyword Variable Name হতে পারে না}
+
+Python-এর Reserved Keyword Variable-এর নাম হিসেবে ব্যবহার
+করা যায় না।
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if = 10\\
+for = 20
+\end{english}
+
+\end{codebox}
+
+কারণ
+\textenglish{\ttfamily if}
+ও
+\textenglish{\ttfamily for}
+Python Keyword।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\begin{center}
+
+\textbf{Python Keyword}
+\(\longrightarrow\)
+\textbf{Variable Name হিসেবে ব্যবহার করা যায় না}
+
+\end{center}
+
+\end{rememberbox}
+
+%------------------------------------------------
+% Rule 6
+%------------------------------------------------
+
+\textbf{\color{darkTeal}৬. Python Variable Case Sensitive}
+
+Python Variable Name Case Sensitive।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+age = 18\\
+Age = 20\\
+AGE = 25
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily age},
+\textenglish{\ttfamily Age}
+এবং
+\textenglish{\ttfamily AGE}
+তিনটি আলাদা Variable।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textenglish{\ttfamily name}
+\(\neq\)
+\textenglish{\ttfamily Name}
+\(\neq\)
+\textenglish{\ttfamily NAME}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Valid Invalid Table
+%================================================
+
+\booksubheading{Valid ও Invalid Variable Name}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.26\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.20\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Variable Name}}
+&
+\multicolumn{1}{c|}{\textbf{অবস্থা}}
+&
+\multicolumn{1}{c|}{\textbf{কারণ}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily age}
+&
+Valid
+&
+Letter দিয়ে শুরু।
+\\
+
+\hline
+
+\textenglish{\ttfamily \_age}
+&
+Valid
+&
+Underscore দিয়ে শুরু।
+\\
+
+\hline
+
+\textenglish{\ttfamily age2}
+&
+Valid
+&
+Digit শেষে ব্যবহার করা হয়েছে।
+\\
+
+\hline
+
+\textenglish{\ttfamily student\_name}
+&
+Valid
+&
+Underscore ব্যবহার করা হয়েছে।
+\\
+
+\hline
+
+\textenglish{\ttfamily 2age}
+&
+Invalid
+&
+Digit দিয়ে শুরু।
+\\
+
+\hline
+
+\textenglish{\ttfamily student name}
+&
+Invalid
+&
+Space রয়েছে।
+\\
+
+\hline
+
+\textenglish{\ttfamily total-marks}
+&
+Invalid
+&
+Hyphen ব্যবহার করা হয়েছে।
+\\
+
+\hline
+
+\textenglish{\ttfamily if}
+&
+Invalid
+&
+Python Keyword।
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Meaningful Variable
+%================================================
+
+\booksubheading{অর্থবহ Variable Name ব্যবহার}
+
+Variable-এর নাম এমন হওয়া ভালো যাতে নাম দেখেই তার কাজ বা
+Value সম্পর্কে সহজে ধারণা পাওয়া যায়।
+
+\textbf{কম পরিষ্কার—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 500
+\end{english}
+
+\end{codebox}
+
+\textbf{অর্থবহ—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+total\_marks = 500
+\end{english}
+
+\end{codebox}
+
+আরও উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+student\_name = "Mina"\\
+age = 17\\
+total\_price = 800
+\end{english}
+
+\end{codebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\begin{center}
+
+\textbf{Meaningful Variable Name}
+\(\longrightarrow\)
+\textbf{Program বুঝতে সহজ}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Multiple Assignment
+%================================================
+
+\booksubheading{Multiple Assignment}
+
+Python-এ একই Statement-এ একাধিক Variable-এর সঙ্গে
+একাধিক Value Assign করা যায়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+a, b, c = 10, 20, 30
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{center}
+
+\textenglish{\ttfamily a = 10}
+\qquad
+\textenglish{\ttfamily b = 20}
+\qquad
+\textenglish{\ttfamily c = 30}
+
+\end{center}
+
+%================================================
+% Same Value
+%================================================
+
+\booksubheading{একই Value একাধিক Variable-এ Assign}
+
+একাধিক Variable-এর সঙ্গে একই Value Assign করাও সম্ভব।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = y = z = 100
+\end{english}
+
+\end{codebox}
+
+এর ফলে—
+
+\begin{center}
+
+\textenglish{\ttfamily x = 100}
+\qquad
+\textenglish{\ttfamily y = 100}
+\qquad
+\textenglish{\ttfamily z = 100}
+
+\end{center}
+
+%================================================
+% Swap
+%================================================
+
+\booksubheading{Variable-এর Value অদলবদল}
+
+Python-এ দুটি Variable-এর Value সহজে Swap করা যায়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+a = 10\\
+b = 20\\[1mm]
+a, b = b, a
+\end{english}
+
+\end{codebox}
+
+এরপর—
+
+\begin{center}
+
+\textenglish{\ttfamily a = 20}
+\qquad
+\textenglish{\ttfamily b = 10}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Python Shortcut}
+
+দুটি Variable-এর Value Swap—
+
+\begin{center}
+
+\textenglish{\ttfamily a, b = b, a}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Dynamically Typed
+%================================================
+
+\booksubheading{Python Dynamically Typed}
+
+Python-এ Variable-এর Data Type আগে আলাদাভাবে Declare
+করতে হয় না।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10
+\end{english}
+
+\end{codebox}
+
+পরে একই Variable-এর সঙ্গে অন্য ধরনের Value-ও Assign করা যায়—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = "Hello"
+\end{english}
+
+\end{codebox}
+
+অর্থাৎ Variable-এর সঙ্গে যুক্ত Value অনুযায়ী তার Data Type
+পরিবর্তিত হতে পারে।
+
+\begin{rememberbox}
+
+এই বিষয়টি
+\textbf{5.34 Python Data Type}
+অংশে বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Delete Variable
+%================================================
+
+\booksubheading{Variable Delete করা}
+
+প্রয়োজনে
+\textenglish{\ttfamily del}
+Keyword ব্যবহার করে কোনো Variable-এর নামের binding
+মুছে দেওয়া যায়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10\\
+del x
+\end{english}
+
+\end{codebox}
+
+এরপর
+\textenglish{\ttfamily x}
+নামটি ব্যবহার করতে গেলে Error হতে পারে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\begin{center}
+
+\textenglish{\ttfamily del}
+\(\longrightarrow\)
+\textbf{Variable-এর binding মুছে দিতে ব্যবহৃত হয়}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% snake_case
+%================================================
+
+\booksubheading{Variable Name লেখার ভালো পদ্ধতি}
+
+একাধিক শব্দের Variable Name লেখার ক্ষেত্রে Python-এ সাধারণভাবে
+\textbf{snake\_case} পদ্ধতি ব্যবহার করা সুবিধাজনক।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+student\_name = "Rahim"\\
+total\_marks = 450\\
+average\_score = 75.5
+\end{english}
+
+\end{codebox}
+
+\begin{center}
+
+\textbf{শব্দ}
++
+\textenglish{\ttfamily \_}
++
+\textbf{শব্দ}
+\(\longrightarrow\)
+\textbf{snake\_case}
+
+\end{center}
+
+%================================================
+% Naming Rule Summary
+%================================================
+
+\booksubheading{Variable Naming Rules এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.49\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{নিয়ম}}
+&
+\multicolumn{1}{c|}{\textbf{উদাহরণ}}
+
+\\
+
+\hline
+
+Letter দিয়ে শুরু করা যায়
+&
+\textenglish{\ttfamily name}
+\\
+
+\hline
+
+Underscore দিয়ে শুরু করা যায়
+&
+\textenglish{\ttfamily \_name}
+\\
+
+\hline
+
+Digit পরে ব্যবহার করা যায়
+&
+\textenglish{\ttfamily name2}
+\\
+
+\hline
+
+Digit দিয়ে শুরু করা যায় না
+&
+\textenglish{\ttfamily 2name} \; $\times$
+\\
+
+\hline
+
+Space ব্যবহার করা যায় না
+&
+\textenglish{\ttfamily student name} \; $\times$
+\\
+
+\hline
+
+Underscore ব্যবহার করা যায়
+&
+\textenglish{\ttfamily student\_name}
+\\
+
+\hline
+
+Keyword ব্যবহার করা যায় না
+&
+\textenglish{\ttfamily if} \; $\times$
+\\
+
+\hline
+
+Case Sensitive
+&
+\textenglish{\ttfamily age}
+ও
+\textenglish{\ttfamily Age}
+আলাদা
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Small Program
+%================================================
+
+\booksubheading{একটি ছোট Program}
+
+\begin{examplebox}{Variable ব্যবহার}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+student\_name = "Mina"\\
+age = 17\\
+marks = 85\\[1mm]
+print(student\_name)\\
+print(age)\\
+print(marks)
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Mina\\
+17\\
+85
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily student\_name},
+\textenglish{\ttfamily age}
+ও
+\textenglish{\ttfamily marks}
+তিনটি Variable।
+
+\end{examplebox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\chFiveInput{topics/33_python_variables/python_extensions.tex}
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Variable Name Digit দিয়ে শুরু করা।
+
+\item Variable Name-এর মধ্যে Space ব্যবহার করা।
+
+\item
+\textenglish{\ttfamily -},
+\textenglish{\ttfamily @},
+\textenglish{\ttfamily \#}
+ইত্যাদি Special Character ব্যবহার করা।
+
+\item Python Keyword-কে Variable Name হিসেবে ব্যবহার করা।
+
+\item
+\textenglish{\ttfamily age}
+ও
+\textenglish{\ttfamily Age}
+-কে একই Variable মনে করা।
+
+\item
+\textenglish{\ttfamily =}
+-কে Mathematical Equality মনে করা।
+
+\item Value Assign করার আগে Variable ব্যবহার করার চেষ্টা করা।
+
+\item অর্থহীন বা অস্পষ্ট Variable Name ব্যবহার করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+Python-এ Value Assign করলেই Variable তৈরি হয়।
+
+\item
+\textenglish{\ttfamily =}
+হলো Assignment Operator।
+
+\item
+Variable Name Letter বা
+\textenglish{\ttfamily \_}
+দিয়ে শুরু হতে পারে।
+
+\item
+Variable Name Digit দিয়ে শুরু হতে পারে না।
+
+\item
+Variable Name-এর মধ্যে Space ব্যবহার করা যায় না।
+
+\item
+অধিকাংশ Special Character ব্যবহার করা যায় না।
+
+\item
+Python Keyword Variable Name হতে পারে না।
+
+\item
+Python Variable Name
+\textbf{Case Sensitive}।
+
+\item
+অর্থবহ Variable Name ব্যবহার করা ভালো।
+
+\item
+একই Statement-এ একাধিক Variable-এ Value Assign করা যায়।
+
+\item
+\textenglish{\ttfamily a, b = b, a}
+দিয়ে দুটি Variable-এর Value সহজে Swap করা যায়।
+
+\item
+Python
+\textbf{Dynamically Typed}।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Variable}
+\(\;=\;\)
+\textbf{Value}
+
+\medskip
+
+\textbf{Letter / \textenglish{\ttfamily \_}}
+\(\longrightarrow\)
+\textbf{শুরু করা যায়}
+
+\qquad
+
+\textbf{Digit}
+\(\longrightarrow\)
+\textbf{শুরুতে নয়}
+
+\medskip
+
+\textbf{Space / Special Character}
+\(\longrightarrow\)
+\textbf{নয়}
+
+\qquad
+
+\textbf{Keyword}
+\(\longrightarrow\)
+\textbf{নয়}
+
+\medskip
+
+\textenglish{\ttfamily name}
+\(\neq\)
+\textenglish{\ttfamily Name}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.34 Python Data Type
+%================================================
+

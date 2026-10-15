@@ -1,0 +1,797 @@
+% ============================================================
+% 10. DATABASE RELATIONSHIP
+% Chapter 06 — Database Management System
+%
+% Focus:
+% NCTB syllabus
+% Board MCQ/CQ
+% Mahbubur Rahman / OkkhorPattro-style table + arrow teaching
+% Compact page layout
+% ============================================================
+
+\section{Database Relationship}
+\label{sec:ch06-relationships}
+
+
+% ============================================================
+% LEARNING OUTCOME
+% ============================================================
+
+\textbf{এই অংশে:} সারণি ও তীর দিয়ে PK/FK, Parent--Child, 1:1, 1:M, M:1 ও M:N বোঝা হবে। Junction Table, Referential Integrity, সম্পর্কিত কুয়েরি এবং Access-এ সম্পর্ক তৈরির প্রয়োগও থাকবে।
+
+
+% ============================================================
+% INTRODUCTION
+% ============================================================
+
+কলেজের শিক্ষার্থী, বিভাগ, ফলাফল, কোর্স ও শিক্ষকের সব তথ্য একটি বড় টেবিলে রাখা হলে একই তথ্য বারবার লিখতে হয়। এতে অপ্রয়োজনীয় পুনরাবৃত্তি বা Data Redundancy বাড়ে। একটি তথ্য বদলাতে তখন একাধিক রেকর্ড সংশোধন করতে হতে পারে।
+
+এ কারণে সংশ্লিষ্ট তথ্যগুলো আলাদা টেবিলে রাখা হয় এবং
+\textbf{সম্পর্কিত ফিল্ড বা কী}-এর মাধ্যমে টেবিলগুলোর মধ্যে
+সংযোগ তৈরি করা হয়।
+
+\begin{definitionbox}{Database Relationship}
+
+একটি টেবিলের রেকর্ডের সঙ্গে অন্য টেবিলের এক বা একাধিক
+রেকর্ডের যে যৌক্তিক সংযোগ স্থাপন করা হয় তাকে
+\textbf{Database Relationship} বলে।
+
+\end{definitionbox}
+
+
+\begin{keypointbox}{Relation ও সম্পর্ক এক নয়}
+
+রিলেশনাল ডেটাবেজের ভাষায় একটি \textbf{Relation} সাধারণত
+একটি টেবিল বোঝায়। অন্যদিকে \textbf{Relationship বা সম্পর্ক} বোঝায় দুই বা ততোধিক টেবিলের
+রেকর্ডের মধ্যে যৌক্তিক সংযোগ।
+
+\end{keypointbox}
+
+
+% ============================================================
+% WHY RELATION
+% ============================================================
+
+\subsection{সম্পর্ক কেন প্রয়োজন}
+
+সম্পর্ক ব্যবহারের মাধ্যমে---
+
+\begin{itemize}
+    \item একই তথ্যের অপ্রয়োজনীয় পুনরাবৃত্তি (Data Redundancy) কমানো যায়;
+    \item সম্পর্কিত টেবিল থেকে প্রয়োজনীয় তথ্য একসঙ্গে পাওয়া যায়;
+    \item ডেটা হালনাগাদ করা তুলনামূলক সহজ হয়;
+    \item ডেটার সামঞ্জস্য বজায় রাখা সহজ হয়;
+    \item বড় ডেটাবেজকে ছোট ও যৌক্তিক টেবিলে ভাগ করে পরিচালনা করা যায়।
+\end{itemize}
+
+
+% ============================================================
+% CONDITIONS
+% ============================================================
+
+
+\subsubsection{কলেজের ডেটাবেজে Relationship-এর প্রয়োজন}
+ভর্তি অফিসে StudentID 101 ও 102—দুজনের নামই Rahim। ফলের সারণিতে শুধু Name ও Marks রাখলে কোন Rahim-এর নম্বর 80, তা নিশ্চিত করা যায় না। শিক্ষার্থীর নাম বদলালেও নাম দিয়ে আগের ফল মেলানো কঠিন হয়। ফলের সঙ্গে স্থায়ী StudentID রাখলে এই দ্ব্যর্থতা দূর হয়।
+\begin{chSixSideBySide}[.43]
+\small\textbf{পরিচয় অস্পষ্ট}\par
+\begin{tabular}{|l|l|}\hline\chSixHeader Name & Marks\\\hline
+Rahim & 80\\\hline Rahim & 65\\\hline
+\end{tabular}
+\chSixNextColumn
+\small\textbf{এক পরীক্ষার ফল: ID-সহ}\par
+\begin{tabular}{|l|l|l|}\hline\chSixHeader ResultID & StudentID (FK) & Marks\\\hline
+R01 & 101 & 80\\\hline R02 & 102 & 65\\\hline
+\end{tabular}
+\end{chSixSideBySide}
+এখানে 101 ও 102-কে Student টেবিলের বিদ্যমান PK হিসেবে ধরা হয়েছে। আগের সারণিতে শুধু নাম ছিল বলে সেই সারণি দেখে অনুমান করে ID বসানো যাবে না। ভর্তি নথির সঙ্গে তথ্য মিলিয়ে আগে নিশ্চিত হতে হবে, কোন ফলটি কোন শিক্ষার্থীর।
+
+আবার প্রতিটি ফলের রেকর্ডে বিভাগের নাম ও ফোন নম্বর বারবার লিখলে ফোন নম্বর পরিবর্তনের সময় সব কপি সংশোধন করতে হবে। কোনো কপি বাদ পড়লে সেখানে পুরোনো নম্বর থেকে যাবে। বিভাগের তথ্য আলাদা সারণিতে রেখে ID দিয়ে সম্পর্কিত রেকর্ডের সঙ্গে যুক্ত করলে বিভাগীয় তথ্য কোথায় সংশোধন করতে হবে, তা স্পষ্টভাবে নির্ধারণ করা যায়।
+
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{29mm}|Y|}\hline\chSixHeader
+ধারণা & পৃথক কাজ\\\hline
+Relationship & সম্পর্কিত ফিল্ড দিয়ে দুই টেবিলের রেকর্ডের অর্থপূর্ণ সংযোগ বোঝায়\\\hline
+JOIN & সংশ্লিষ্ট ফিল্ডের মিল ব্যবহার করে প্রয়োজনীয় ফল বের করে\\\hline
+Foreign Key & বিধি প্রয়োগ করে অবৈধ সংযোগ তৈরি হওয়া প্রতিরোধ করে\\\hline
+\end{tabularx}\end{flushleft}
+
+FK বিধি না থাকলেও JOIN লেখা সম্ভব। কিন্তু সে ক্ষেত্রে ভুল StudentID দিয়ে ফলের রেকর্ড যোগ করা নিজে থেকে বন্ধ হবে না। ফলের রেকর্ডে যে StudentID রাখা হয়েছে, সেই শিক্ষার্থী Student টেবিলে না থাকলে ফলের রেকর্ডটি orphan record হবে। তাই সম্পর্কের নকশা সঠিক করার পাশাপাশি কার্যকর বিধি প্রয়োগ ও তথ্য যাচাইও প্রয়োজন।
+
+
+\textbf{এই সমাধান অন্য কোথায় কাজে লাগে?} হাসপাতালে PatientID দিয়ে প্রতিটি সাক্ষাৎ সঠিক রোগীর সঙ্গে এবং ব্যাংকে CustomerID দিয়ে হিসাব সঠিক গ্রাহকের সঙ্গে মেলে। সামাজিক যোগাযোগের অ্যাপে Comment-এর সঙ্গে PostID রাখলে মন্তব্যটি কোন পোস্টের, তা বোঝা যায়; শুধু পোস্টের লেখা মেলানো নির্ভরযোগ্য নয়। সম্পর্কের নিয়ম পরিষ্কার থাকলে যুক্ত তথ্য পাওয়া ও ভুল সংযোগ প্রতিরোধের ব্যবস্থা করা সহজ হয়। Parent-এর তথ্য সংশোধন আর Child-এ নতুন ঘটনার রেকর্ড যোগ—দুটি কাজের পার্থক্যও তখন বোঝা যায়।
+
+\subsubsection{Cardinality ও Optionality}
+Entity–Relationship (ER) মডেলে বাস্তব সত্তাগুলোর পারস্পরিক সংযোগ প্রকাশ করা হয়। টেবিলের কী দিয়ে সেই সংযোগ সংরক্ষণ করা যায়। এখানে দুটি বৈশিষ্ট্য আলাদা: \textbf{একটি সত্তা সর্বোচ্চ কতটির সঙ্গে যুক্ত হতে পারে} এবং \textbf{সংযোগ থাকা বাধ্যতামূলক কি না}।
+
+ধরা যাক, একটি Department-এ অনেক শিক্ষার্থী থাকতে পারে এবং প্রত্যেক শিক্ষার্থীকে একটি Department-এ ভর্তি হতে হয়। এই নিয়ম অনুযায়ী Department থেকে Student-এর সম্পর্কটি 1:M। তবে সদ্য খোলা কোনো Department-এ এখনো শিক্ষার্থী ভর্তি না-ও হতে পারে। তাই 1:M সম্পর্ক লেখা মানেই প্রতিটি Department-এ অন্তত একজন শিক্ষার্থী অবশ্যই আছে, এমন নয়।
+
+আবার নমুনা টেবিলে প্রত্যেক বিভাগে একজন করে শিক্ষার্থী দেখা যেতে পারে। কিন্তু প্রতিষ্ঠানের নিয়মে একই বিভাগে একাধিক শিক্ষার্থী থাকার সুযোগ থাকলে সম্পর্কটি তখনও 1:M-ই হবে। সম্পর্কের ধরন নির্ধারণে শুধু নমুনায় বর্তমানে কতজন আছে, তা নয়; প্রতিষ্ঠানের নিয়মে কতজন থাকার সুযোগ আছে, সেটিও বিবেচনা করতে হয়।
+
+প্রত্যেক শিক্ষার্থীর বিভাগ থাকা বাধ্যতামূলক হলে Student-এর বিভাগ-পরিচিতি খালি রাখা যাবে না। শুধু FK দিয়ে বৈধ বিভাগের সঙ্গে মিল পরীক্ষা করাই যথেষ্ট নয়; খালি না রাখার বিধিও দরকার। আবার প্রত্যেক বিভাগে অন্তত একজন শিক্ষার্থী থাকতেই হবে কি না, সেটি আলাদা নিয়ম।
+
+
+\subsection{সম্পর্ক তৈরির ভিত্তি ও শর্ত}
+
+দুটি টেবিলের মধ্যে সম্পর্ক তৈরি করতে সাধারণত নিচের
+বিষয়গুলো গুরুত্বপূর্ণ।
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabularx}{0.98\linewidth}{|p{10mm}|Y|}
+\hline
+
+\chSixHeader
+\textbf{ক্রম}
+&
+\textbf{মূল বিষয়}
+\\ \hline
+
+1
+&
+দুই টেবিলের মধ্যে অর্থগতভাবে সম্পর্কিত ফিল্ড বা ফিল্ডসমষ্টি থাকতে হবে।
+\\ \hline
+
+2
+&
+Parent Table-এর Related ফিল্ড সাধারণত Primary Key বা অন্য কোনো
+Unique Key হবে।
+\\ \hline
+
+3
+&
+Child Table-এ সেই Key-এর মান Foreign Key হিসেবে ব্যবহৃত হবে।
+\\ \hline
+
+4
+&
+Related ফিল্ডগুলোর Data Type ও মানের অর্থ সামঞ্জস্যপূর্ণ হতে হবে। Access-এ সাধারণ AutoNumber (Long Integer) PK-এর সঙ্গে Number (Long Integer) FK মেলে।
+\\ \hline
+
+5
+&
+Parent-এর Key মান Unique হবে; Child-এর Foreign Key
+সম্পর্কের ধরন অনুযায়ী পুনরাবৃত্ত হতে পারে।
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+
+\begin{mistakebox}{একই নামের ফিল্ড থাকলেই সম্পর্ক হয় না}
+
+দুটি টেবিলে \texttt{Roll} নামে ফিল্ড থাকলেই তাদের মধ্যে
+সম্পর্ক বৈধ হবে---এ ধারণা ভুল। ফিল্ডের \textbf{অর্থ}, \textbf{Data Type}, \textbf{মান} এবং
+\textbf{Key-এর ভূমিকা} সামঞ্জস্যপূর্ণ হতে হবে। নাম আলাদা হলেও অর্থ ও মানের উপযুক্ত মিল থাকলে সম্পর্ক তৈরি হতে পারে।
+
+\end{mistakebox}
+
+
+% ============================================================
+% PARENT CHILD
+% ============================================================
+
+\subsection{Parent Table ও Child Table}
+
+\begin{definitionbox}{}
+
+যে টেবিলের Unique Key-কে অন্য টেবিলের Foreign Key নির্দেশ করে
+তাকে ঐ সম্পর্কের \textbf{Parent Table} বলা হয়।
+
+\end{definitionbox}
+
+\begin{definitionbox}{Child Table}
+
+যে টেবিলে Parent Table-এর Key-কে নির্দেশকারী Foreign Key থাকে
+তাকে ঐ সম্পর্কের \textbf{Child Table} বলা হয়।
+
+\end{definitionbox}
+
+
+ধরা যাক, Department টেবিলে প্রতিটি বিভাগের জন্য একটি অনন্য \texttt{DeptID} আছে। Student টেবিলের প্রত্যেক শিক্ষার্থীর সঙ্গে তার বিভাগের \texttt{DeptID} রাখা হয়েছে। এই মান মিলিয়ে বোঝা যায়, কে কোন বিভাগের শিক্ষার্থী।
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{minipage}[t]{0.39\linewidth}
+\raggedright
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Department}}\\
+\hline
+\chSixHeader
+DeptID (PK) & DeptName\\
+\hline
+D01 & Science\\
+\hline
+D02 & Humanities\\
+\hline
+D03 & Business Studies\\
+\hline
+\end{tabular}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.58\linewidth}
+\raggedright
+
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|l|}{\textbf{Student}}\\
+\hline
+\chSixHeader
+StudentID (PK) & Name & DeptID (FK)\\
+\hline
+102 & Rahim  & D01\\\hline
+109 & Nabila & D01\\\hline
+213 & Sami   & D03\\\hline
+205 & Farhan & D03\\\hline
+305 & Rima   & D02\\\hline
+306 & Mahi   & D02\\\hline
+150 & Mim    & D01\\\hline
+180 & Tania  & D03\\
+\hline
+\end{tabular}
+
+\end{minipage}
+
+\captionof{table}{Department ও Student Table-এর মধ্যে Key-ভিত্তিক সম্পর্ক}
+\end{flushleft}
+
+
+Rahim-এর \texttt{DeptID=D01}। Department টেবিলে D01-এর
+\texttt{DeptName=Science}। তাই Student টেবিলে বারবার
+``Science'' না লিখেও তার Department জানা যায়।
+
+\begin{flushleft}
+\begin{tikzpicture}[
+    node distance=17mm,
+    every node/.style={font=\small}
+]
+\node[
+    booknode,
+    text width=40mm,
+    minimum height=11mm
+] (department)
+{\textbf{Department}\\DeptID (PK)};
+\node[
+    booknode,
+    text width=40mm,
+    minimum height=11mm,
+    right=of department
+] (student)
+{\textbf{Student}\\DeptID (FK)};
+\draw[bookarrow]
+(department)
+--
+node[above]{\textbf{1 : M}}
+(student);
+\end{tikzpicture}
+
+\captionof{figure}{Department থেকে Student-এর সম্পর্ক}
+\end{flushleft}
+
+এই তীরগুলো Key-এর মাধ্যমে রেকর্ডের যৌক্তিক মিল বোঝায়; এগুলো ডেটা আদান-প্রদানের দিক নির্দেশ করে না।
+
+
+\begin{keypointbox}{Parent--Child সম্পর্কে মনে রাখো}
+
+একই টেবিল সবসময় Parent বা সবসময় Child নয়। একটি সম্পর্কে যে টেবিল Child, অন্য সম্পর্কে
+সেই টেবিল আবার Parent হতে পারে।
+
+\end{keypointbox}
+
+
+% ============================================================
+% TYPES
+% ============================================================
+
+\subsection{সম্পর্কের প্রকারভেদ}
+
+ডেটাবেজ টেবিলের রেকর্ডগুলোর মধ্যে প্রধানত নিচের ধরনের
+সম্পর্ক দেখা যায়।
+
+\begin{flushleft}
+\begin{tikzpicture}[
+    level distance=16mm,
+    level 1/.style={sibling distance=47mm},
+    every node/.style={font=\small}
+]
+\node[
+    booknode,
+    text width=39mm,
+    minimum height=10mm
+]
+{\textbf{Database Relationship}}
+child{
+    node[
+        booknode,
+        text width=30mm
+    ]
+    {\textbf{One-to-One}\\1:1}
+}
+child{
+    node[
+        booknode,
+        text width=30mm
+    ]
+    {\textbf{One-to-Many}\\1:M}
+}
+child{
+    node[
+        booknode,
+        text width=30mm
+    ]
+    {\textbf{Many-to-Many}\\M:N}
+};
+\end{tikzpicture}
+
+\captionof{figure}{Database Relationship-এর প্রধান ধরন}
+\end{flushleft}
+
+
+
+
+
+% ============================================================
+% ONE TO ONE
+% ============================================================
+
+\subsection{One-to-One Relationship}
+
+\begin{definitionbox}{}
+
+একটি টেবিলের একটি রেকর্ডের বিপরীতে অন্য টেবিলের সর্বোচ্চ
+একটি রেকর্ড এবং উল্টো দিকেও সর্বোচ্চ একটি রেকর্ড থাকতে পারলে
+তাকে \textbf{One-to-One Relationship} বলে।
+
+\end{definitionbox}
+
+
+ধরা যাক Student টেবিলে শিক্ষার্থীর পরিচয় এবং Profile টেবিলে
+তার SSC GPA সংরক্ষণ করা হয়েছে। প্রত্যেক Student-এর জন্য সর্বোচ্চ
+একটি Profile থাকবে।
+
+\input{chapters/Chapter06/latex/one_to_one_tables}
+
+তীরে 101-এর সঙ্গে 101, 102-এর সঙ্গে 102 এবং 103-এর সঙ্গে 103 মিলেছে।
+Profile-এর \texttt{StudentID} একই সঙ্গে Primary Key ও Foreign Key:
+Foreign Key নিশ্চিত করে Student আছে, আর Primary Key একই Student-এর
+দ্বিতীয় Profile রাখা আটকায়। কোনো Student-এর Profile এখনো না থাকলেও
+সর্বোচ্চ একটির নিয়ম বদলায় না; তখন ওই Student এই দুই টেবিলের INNER JOIN-এ আসবে না।
+
+\begin{mistakebox}{Foreign Key হলেই 1:1 হয় না}
+
+শুধু Child Table-এ Foreign Key থাকলেই 1:1 নিশ্চিত হয় না। Child-এর Related ফিল্ডটিও Unique হতে হবে; না হলে একই Parent-এর
+জন্য একাধিক Child রেকর্ড রাখা সম্ভব হবে এবং সম্পর্ক 1:M
+হয়ে যেতে পারে।
+
+\end{mistakebox}
+
+
+\begin{examplebox}{আরেকটি 1:1 উদাহরণ}
+
+একটি Employee টেবিলে কর্মীর পরিচয় এবং EmployeeSalary টেবিলে
+তার বর্তমান Salary Package রাখা হলো।
+
+\[
+Employee.EmpID
+\;\;1
+\longleftrightarrow
+1\;\;
+EmployeeSalary.EmpID
+\]
+
+যদি প্রতি Employee-এর জন্য সর্বোচ্চ একটি Salary রেকর্ড রাখা হয়,
+তাহলে এটি 1:1 সম্পর্ক।
+
+\end{examplebox}
+
+
+% ============================================================
+% ONE TO MANY
+% ============================================================
+
+\subsection{One-to-Many Relationship}
+
+\begin{definitionbox}{}
+
+একটি Parent রেকর্ডের সঙ্গে একাধিক Child রেকর্ড সম্পর্কিত হতে
+পারলে এবং প্রতিটি Child একটি নির্দিষ্ট Parent-কে নির্দেশ করলে
+তাকে \textbf{One-to-Many Relationship} বলে।
+
+\end{definitionbox}
+
+
+ওপরের নমুনায় প্রত্যেক শিক্ষার্থী একটি বিভাগের অন্তর্ভুক্ত। কিন্তু একই বিভাগে একাধিক শিক্ষার্থী থাকতে পারে। তাই Department থেকে Student-এর সম্পর্ক 1:M। এবার Teacher ও Routine টেবিলে একই নিয়মের প্রয়োগ দেখি।
+
+\input{chapters/Chapter06/latex/one_to_many_tables}
+
+Salma-এর \texttt{TID=11} তিনটি Routine রেকর্ড—501, 502 ও 504-এ
+আছে। কিন্তু প্রতিটি RoutineID অনন্য এবং প্রতিটি Routine একটি Teacher-কে
+নির্দেশ করে। তাই Teacher থেকে Routine = 1:M; উল্টো দিকে Routine থেকে
+Teacher = M:1। তীর সারির মিল দেখায়; মিলের ফিল্ড হলো TID, RoutineID নয়।
+
+\begin{keypointbox}{1:M-এ Foreign Key}
+
+Parent Table-এর Primary Key Child Table-এ Foreign Key হিসেবে
+একাধিক রেকর্ডে পুনরাবৃত্ত হতে পারে। তবে Child-এর নিজস্ব Primary Key অবশ্যই Unique থাকবে।
+
+\end{keypointbox}
+
+
+% ============================================================
+% MANY TO ONE
+% ============================================================
+
+\textbf{বিপরীত দিক:} একই 1:M সম্পর্ককে Child থেকে Parent-এর দিকে দেখলে M:1 হয়; নতুন সম্পর্ক বা নতুন টেবিল তৈরি হয় না। Staff ও Phone-এর পূর্ণ নমুনা সংরক্ষিত প্রয়োগে আছে।
+
+\subsection{Many-to-Many Relationship}
+
+\begin{definitionbox}{}
+
+একটি টেবিলের একটি রেকর্ড অন্য টেবিলের একাধিক রেকর্ডের সঙ্গে
+এবং বিপরীত দিকেও একটি রেকর্ড একাধিক রেকর্ডের সঙ্গে সম্পর্কিত হতে
+পারলে তাকে \textbf{Many-to-Many Relationship} বলে।
+
+\end{definitionbox}
+
+
+ধরা যাক, একজন শিক্ষক একাধিক বিষয় পড়াতে পারেন। আবার একই বিষয় একাধিক শিক্ষক পড়াতে পারেন। এই নিয়মে Teacher ও Subject-এর মধ্যে সম্পর্কটি হলো---
+
+\[
+\boxed{
+Teacher \; M:N \; Subject
+}
+\]
+
+
+কিন্তু Relational ডেটাবেজে সাধারণত M:N সম্পর্ক সরাসরি
+দুই টেবিলে বাস্তবায়ন না করে একটি তৃতীয়
+\textbf{Junction বা Joining টেবিল} ব্যবহার করা হয়।
+
+
+% ============================================================
+% TEACHER SUBJECT JUNCTION
+% ============================================================
+
+\subsubsection{Orders–OrderDetails–Product-এর পূর্ণ উদাহরণ}
+
+অনলাইন দোকানে একটি অর্ডারে একাধিক পণ্য থাকতে পারে। আবার একই পণ্য অনেক অর্ডারে বিক্রি হতে পারে। তাই Orders ও Product-এর সম্পর্ক--- \[
+Order
+\;M:N\;
+Product
+\] এ সম্পর্ক বাস্তবায়নে \textbf{OrderDetails} Junction Table ব্যবহার
+করা যায়।
+
+\input{chapters/Chapter06/latex/order_product_tables}
+
+OrderDetails-এর (1001, P01) ও (1001, P03) থেকে বোঝা যায় Rafi-র একই
+Order-এ Computer ও Keyboard আছে। আবার P03 আছে 1001 ও 1002—দুই
+Order-এ। তাই Orders থেকে OrderDetails এবং Product থেকে OrderDetails
+দুটিই 1:M; এই দুই সংযোগে Orders--Product-এর M:N বাস্তবায়িত হয়।
+এক Order-এ একটি Product একবার তালিকাভুক্ত রাখার নিয়ম হলে
+(OrderID, ProductID) জোড়াটি Composite Primary Key হতে পারে।
+
+% ============================================================
+% REFERENTIAL INTEGRITY
+% ============================================================
+
+
+\textbf{Junction Table-এর সুবিধা ও নকশার দায়িত্ব।} OrderDetails-এ প্রতিটি Order--Product সংযোগ আলাদা সারিতে রাখা হয়। ফলে একটি অর্ডারে নতুন পণ্য যোগ করা এবং নির্দিষ্ট পণ্য কোন কোন অর্ডারে আছে, তা খুঁজে বের করা সহজ হয়। এক ঘরে কয়েকটি ProductID কমা দিয়ে লিখলে প্রতিটি পণ্যের পরিমাণ আলাদাভাবে যাচাই করা ও প্রয়োজনমতো খুঁজে বের করা কঠিন হয়ে পড়ে।
+
+তবে একই পণ্য একটি অর্ডারে একাধিক পৃথক সারি বা line-এ রাখা যাবে কি না, তা ব্যবসার নিয়মের ওপর নির্ভর করে। সেই নিয়ম বিবেচনা করেই Junction Table-এর key নির্ধারণ করতে হয়। শুধু দুটি FK আছে বলেই যেকোনো key নির্বাচন সঠিক হবে, এমন নয়।
+
+\subsubsection{একই জোড়ার ঘটনা আবার ঘটলে}
+লাইব্রেরিতে একজন সদস্য একই বইয়ের কপি ফেরত দিয়ে পরে আবার নিতে পারেন। তাই শুধু (MemberID, CopyID) জোড়াকে Loan-এর Primary Key করলে দ্বিতীয়বার ধার নেওয়ার রেকর্ড আটকে যাবে। প্রতিটি ধার নেওয়ার জন্য LoanID রেখে MemberID, CopyID, IssueDate ও ReturnDate সংরক্ষণ করা যায়। Member থেকে Loan এবং BookCopy থেকে Loan---দুটিই 1:M। এভাবে পুরোনো ধার নেওয়ার ঘটনা না মুছেই নতুন ঘটনা রাখা যায়। ISBN (International Standard Book Number) বইয়ের নির্দিষ্ট সংস্করণকে চিহ্নিত করে; একই সংস্করণের একাধিক কপির পৃথক CopyID প্রয়োজন। আগে থেকে নির্ধারিত ISBN-কে নতুন AutoNumber দিয়ে প্রতিস্থাপন করা উচিত নয়।
+
+হোটেলেও RoomNo দিয়ে স্থায়ীভাবে অতিথিকে চেনা যায় না: একই কক্ষে ভিন্ন সময়ে ভিন্ন অতিথি থাকেন। একটি সরল ব্যবস্থায় প্রতি থাকার ঘটনায় একজন নিবন্ধিত অতিথি ও একটি কক্ষ ধরা হলে StayID, GuestID, RoomNo, CheckIn ও CheckOut রাখা যায়। Guest ও Room-এর সঙ্গে Stay-এর দুটি 1:M সংযোগ হয়। এখানে সময়সহ প্রতিটি ঘটনা আলাদা করে রাখাই ইতিহাস সংরক্ষণের মূল কথা; বাস্তবে একাধিক অতিথি বা এক বুকিংয়ে একাধিক কক্ষ হলে সেই নিয়ম অনুযায়ী নকশা বাড়াতে হবে।
+
+JOIN-এর SQL অংশ~\ref{sec:ch06-join}-এ আছে। Relationship নির্ধারণ করে কোন PK/FK মিলবে; JOIN সেই মান মিলিয়ে প্রয়োজনীয় ফল তৈরি করে। Library Loan ও Hotel Stay-এর ভিন্ন ঘটনা এবং সংযোগের নমুনা সংরক্ষিত প্রয়োগে রয়েছে।
+
+\subsection{Referential Integrity}
+
+\begin{definitionbox}{}
+
+Child Table-এর একটি Non-NULL Foreign Key যেন Parent Table-এর
+বিদ্যমান Unique Key-কে নির্দেশ করে---এই সামঞ্জস্যের বিধিকে
+\textbf{Referential Integrity} বলে।
+
+\end{definitionbox}
+
+
+Department-এ D01, D02 ও D03 আছে। নিচে Tania-র জন্য প্রস্তাবিত
+DeptID=D09 দেখানো হয়েছে; Parent-এ D09 না থাকায় Referential Integrity
+কার্যকর থাকলে এই এন্ট্রি গ্রহণ করা হবে না।
+
+\begin{flushleft}
+\small
+\renewcommand{\arraystretch}{1.08}
+
+\begin{minipage}[t]{0.34\linewidth}
+\raggedright
+
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Department}}\\
+\hline
+DeptID & DeptName\\
+\hline
+D01 & Science\\\hline
+D02 & Humanities\\\hline
+D03 & Business Studies\\
+\hline
+\end{tabular}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.56\linewidth}
+\raggedright
+
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|l|}{\textbf{Student}}\\
+\hline
+StudentID & Name & DeptID\\
+\hline
+101 & Rupa & D01\\\hline
+102 & Nabil & D02\\\hline
+103 & Tania & \textbf{D09}\\
+\hline
+\end{tabular}
+
+\end{minipage}
+
+\captionof{table}{অস্তিত্বহীন Foreign Key Value-এর উদাহরণ}
+\end{flushleft}
+
+
+\[
+\boxed{
+D09\notin Department
+\Rightarrow
+Invalid\ Foreign\ Key
+}
+\]
+
+
+% ============================================================
+% RI ACTIONS
+% ============================================================
+
+\subsection{রেফারেনশিয়াল ইন্টেগ্রিটি প্রয়োগের ফল}
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.09}
+
+\begin{tabularx}{0.98\linewidth}{|Y|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{প্রস্তাবিত কাজ}
+&
+\raggedright\arraybackslash\textbf{সম্ভাব্য ফল}
+\\ \hline
+
+নতুন Student-এর DeptID=D09
+&
+D09 Parent Table-এ না থাকলে Foreign Key Rule ভাঙে
+\\ \hline
+
+D01 Department Delete
+&
+D01-এর চাইল্ড রেকর্ড থাকলে Restrict/No Action নিয়মে D01 মুছে ফেলা আটকে যেতে পারে
+\\ \hline
+
+D01 পরিবর্তন করে নতুন D04
+&
+D04 আগে নেই; Cascade Update সক্রিয় থাকলে সংশ্লিষ্ট Child FK-ও D04 হয়। আগে থেকেই থাকা PK নিলে Unique নিয়ম ভাঙবে
+\\ \hline
+
+Parent Record Delete
+&
+Cascade Delete সক্রিয় থাকলে সংশ্লিষ্ট চাইল্ড রেকর্ডও মুছে যেতে পারে
+\\ \hline
+
+Child DeptID = NULL
+&
+সম্পর্কটি ঐচ্ছিক এবং NULL অনুমোদিত হলে সম্ভব
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{Referential Integrity-এর বিভিন্ন প্রভাব}
+\end{flushleft}
+
+
+\begin{mistakebox}{Cascade সবসময় ভালো নয়}
+
+Cascade Delete দিলে Parent Delete-এর সঙ্গে Child রেকর্ড-ও
+Delete হতে পারে। Result, ট্রানজেকশন বা Historical ডেটা সংরক্ষণ গুরুত্বপূর্ণ হলে
+অন্ধভাবে Cascade Delete ব্যবহার করা উচিত নয়।
+
+\end{mistakebox}
+
+
+% ============================================================
+% ER DIAGRAM
+% ============================================================
+
+\subsection{ER চিত্রে সম্পর্ক প্রকাশ}
+
+Entity--Relationship বা ER Diagram-এ সাধারণত---
+
+\begin{itemize}
+    \item Rectangle $\rightarrow$ Entity
+    \item Oval $\rightarrow$ Attribute
+    \item Diamond $\rightarrow$ Relationship
+    \item 1, M, N $\rightarrow$ Cardinality
+\end{itemize}
+
+
+উদাহরণস্বরূপ Student ও Course-এর M:N সম্পর্ক---
+
+\begin{flushleft}
+\begin{tikzpicture}[
+    every node/.style={font=\small},
+    node distance=12mm
+]
+\node[
+    booknode,
+    text width=29mm
+] (student)
+{Student};
+\node[
+    draw,
+    diamond,
+    aspect=2,
+    inner sep=2pt,
+    right=of student
+] (enrol)
+{Enrols};
+\node[
+    booknode,
+    text width=29mm,
+    right=of enrol
+] (course)
+{Course};
+\draw
+(student)
+--
+node[above]{M}
+(enrol);
+\draw
+(enrol)
+--
+node[above]{N}
+(course);
+\end{tikzpicture}
+
+\captionof{figure}{ER Diagram-এ M:N Relationship}
+\end{flushleft}
+
+
+% ============================================================
+% ACCESS RELATIONSHIP
+% ============================================================
+
+\subsection{Microsoft Access-এ সম্পর্ক তৈরি}
+
+টেবিলের Primary Key, Foreign Key এবং Data Type ঠিক করার পর
+Access-এ সম্পর্ক তৈরি করা যায়। সাধারণ ধাপ---
+
+\begin{enumerate}
+    \item Database Tools থেকে \textbf{Relationships} নির্বাচন করা।
+    \item প্রয়োজনীয় টেবিল যোগ করা।
+    \item Parent Table-এর Primary Key থেকে Child Table-এর সংশ্লিষ্ট
+          Foreign Key-তে Drag করা।
+    \item Edit Relationships সংলাপে সংযোগের ফিল্ড দুটি ঠিক আছে কি না দেখা।
+    \item প্রয়োজন হলে \textbf{Enforce Referential Integrity} নির্বাচন করা।
+    \item প্রয়োজন অনুযায়ী Cascade Option নির্ধারণ করা।
+    \item \textbf{Create} নির্বাচন করা।
+\end{enumerate}
+
+
+% Supplied raster omitted: Department.DeptID links visually to Student.Name.
+% Use the accurate PK/FK vector diagrams and tables in this topic.
+
+
+
+\begin{keypointbox}{Access-এর 1 এবং $\infty$ চিহ্ন}
+
+Access-এর Relationships উইন্ডোতে Referential Integrity কার্যকর করা হলে
+One-to-Many Relationship-এর এক পাশে সাধারণত \textbf{1} এবং
+Many পাশে \textbf{$\infty$} দেখা যায়।
+
+\end{keypointbox}
+
+
+% ============================================================
+% RELATION IDENTIFICATION STRATEGY
+% ============================================================
+
+% ============================================================
+% COMPARISON
+% ============================================================
+
+\subsection{সম্পর্কের ধরন এক নজরে}
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabularx}{0.98\linewidth}{|p{18mm}|Y|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{ধরন}
+&
+\raggedright\textbf{সহজ নিয়ম}
+&
+\raggedright\arraybackslash\textbf{উদাহরণ}
+\\ \hline
+
+1:1
+&
+এক রেকর্ড $\leftrightarrow$ সর্বোচ্চ একটি রেকর্ড
+&
+Student--Profile
+\\ \hline
+
+1:M
+&
+এক Parent $\rightarrow$ একাধিক Child
+&
+Department--Student
+\\ \hline
+
+M:1
+&
+একাধিক Child $\rightarrow$ একটি Parent
+&
+Student--Department
+\\ \hline
+
+M:N
+&
+দুই দিকেই একাধিক রেকর্ড
+&
+Student--Course
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{Relationship-এর ধরন তুলনা}
+\end{flushleft}
+
+
+% ============================================================
+% BOARD/MCQ FOCUS
+% ============================================================
+
+
+
+
+% ============================================================
+% SELECTED MCQ
+% ============================================================
+
+
+
+
+% ============================================================
+% CQ FOCUS
+% ============================================================
+
+\subsection{গুরুত্বপূর্ণ প্রশ্ন}
+\textbf{অনুশীলন:} Customer--Order, Student--Profile ও Student--Course-এর সম্পর্ক নির্ণয় করো। প্রতিটি সিদ্ধান্তের সঙ্গে প্রতিষ্ঠানের প্রয়োজনীয় নিয়ম লেখো। একই Order-এ বহু Product এবং একই Product বহু Order-এ থাকলে OrderItem-এ কোন দুটি পরিচিতি প্রয়োজন, ব্যাখ্যা করো।
+

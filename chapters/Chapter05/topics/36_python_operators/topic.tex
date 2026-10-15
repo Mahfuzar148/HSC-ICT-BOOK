@@ -1,0 +1,1722 @@
+\sectionheading{5.36 Python Operator}
+
+Program-এ Data বা Value-এর উপর Calculation, Comparison,
+Logical Test ইত্যাদি কাজ সম্পন্ন করার জন্য
+\textbf{Operator} ব্যবহৃত হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Operator কী?}
+
+\begin{definitionbox}
+
+এক বা একাধিক Value বা Variable-এর উপর নির্দিষ্ট Operation
+সম্পন্ন করতে ব্যবহৃত Symbol বা Keyword-কে
+\textbf{Operator} বলে।
+
+\end{definitionbox}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = 10\\
+b = 5\\
+c = a + b
+\end{english}
+\end{codebox}
+
+\begin{center}
+
+\textenglish{\ttfamily a, b}
+\(\longrightarrow\)
+\textbf{Operand}
+\qquad
+\textenglish{\ttfamily +}
+\(\longrightarrow\)
+\textbf{Operator}
+\qquad
+\textenglish{\ttfamily a + b}
+\(\longrightarrow\)
+\textbf{Expression}
+
+\end{center}
+
+\begin{rememberbox}
+\begin{center}
+\textbf{Operand}
+\(\longrightarrow\)
+\textbf{Operator দ্বারা Operation}
+\(\longrightarrow\)
+\textbf{Result}
+\end{center}
+\end{rememberbox}
+
+%================================================
+% Categories
+%================================================
+
+\booksubheading{Python Operator-এর প্রধান প্রকার}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.31\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Operator-এর ধরন}}
+&
+\multicolumn{1}{c|}{\textbf{প্রধান Operator}}
+\\
+\hline
+
+Arithmetic
+&
+\textenglish{\ttfamily + \quad - \quad * \quad / \quad // \quad \% \quad **}
+\\
+\hline
+
+Comparison / Relational
+&
+\textenglish{\ttfamily == \quad != \quad > \quad < \quad >= \quad <=}
+\\
+\hline
+
+Assignment
+&
+\textenglish{\ttfamily = \quad += \quad -= \quad *= \quad /= \quad //= \quad \%= \quad **=}
+\\
+\hline
+
+Logical
+&
+\textenglish{\ttfamily and \quad or \quad not}
+\\
+\hline
+
+Identity
+&
+\textenglish{\ttfamily is \quad is not}
+\\
+\hline
+
+Membership
+&
+\textenglish{\ttfamily in \quad not in}
+\\
+\hline
+
+Bitwise
+&
+\textenglish{\ttfamily
+\& \quad \textbar \quad \textasciicircum \quad
+\textasciitilde \quad << \quad >>}
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Arithmetic
+%================================================
+
+\booksubheading{১. Arithmetic Operator}
+
+সংখ্যার উপর গাণিতিক Operation করার জন্য
+Arithmetic Operator ব্যবহৃত হয়।
+
+ধরা যাক,
+\textenglish{\ttfamily a = 10}
+এবং
+\textenglish{\ttfamily b = 3}।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.13\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.24\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.29\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Operator}
+&
+\textbf{কাজ}
+&
+\textbf{Example}
+&
+\textbf{Result}
+\\
+\hline
+
+\textenglish{\ttfamily +}
+& যোগ
+& \textenglish{\ttfamily a + b}
+& \textenglish{\ttfamily 13}
+\\
+\hline
+
+\textenglish{\ttfamily -}
+& বিয়োগ
+& \textenglish{\ttfamily a - b}
+& \textenglish{\ttfamily 7}
+\\
+\hline
+
+\textenglish{\ttfamily *}
+& গুণ
+& \textenglish{\ttfamily a * b}
+& \textenglish{\ttfamily 30}
+\\
+\hline
+
+\textenglish{\ttfamily /}
+& Division
+& \textenglish{\ttfamily a / b}
+& \textenglish{\ttfamily 3.333...}
+\\
+\hline
+
+\textenglish{\ttfamily //}
+& Floor Division
+& \textenglish{\ttfamily a // b}
+& \textenglish{\ttfamily 3}
+\\
+\hline
+
+\textenglish{\ttfamily \%}
+& Remainder
+& \textenglish{\ttfamily a \% b}
+& \textenglish{\ttfamily 1}
+\\
+\hline
+
+\textenglish{\ttfamily **}
+& Power
+& \textenglish{\ttfamily a ** b}
+& \textenglish{\ttfamily 1000}
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Arithmetic examples side-by-side
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily /} ও \textenglish{\ttfamily //}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+print(7 / 2)\\
+print(7 // 2)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 3.5}
+\qquad
+\textenglish{\ttfamily 3}
+\end{center}
+
+\textenglish{\ttfamily /}
+\(\longrightarrow\)
+সাধারণ Division
+
+\medskip
+
+\textenglish{\ttfamily //}
+\(\longrightarrow\)
+Floor Division
+
+\medskip
+
+Python 3-এ
+\textenglish{\ttfamily 10 / 2}
+-এর Result
+\textenglish{\ttfamily 5.0}।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily \%} ও \textenglish{\ttfamily **}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+print(10 \% 3)\\
+print(2 ** 3)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1}
+\qquad
+\textenglish{\ttfamily 8}
+\end{center}
+
+Even Number পরীক্ষার শর্ত—
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+n \% 2 == 0
+\end{english}
+\end{sidecodebox}
+
+\textenglish{\ttfamily \%}
+\(\longrightarrow\)
+Remainder
+
+\medskip
+
+\textenglish{\ttfamily **}
+\(\longrightarrow\)
+Power
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap}
+
+\begin{center}
+
+\textenglish{\ttfamily \%}
+\(\longrightarrow\)
+Remainder
+\qquad
+\textenglish{\ttfamily **}
+\(\longrightarrow\)
+Power
+
+\qquad
+
+\textenglish{\ttfamily \textasciicircum}
+\(\longrightarrow\)
+Bitwise XOR
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% String Operators
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Python-এর বিশেষ ব্যবহার}
+
+String-এর সঙ্গেও
+\textenglish{\ttfamily +}
+ও
+\textenglish{\ttfamily *}
+Operator ব্যবহার করা যায়।
+
+\begin{center}
+
+\textenglish{\ttfamily "ICT" + "Book"}
+\(\longrightarrow\)
+\textenglish{\ttfamily "ICTBook"}
+
+\qquad
+
+\textenglish{\ttfamily "Hi" * 3}
+\(\longrightarrow\)
+\textenglish{\ttfamily "HiHiHi"}
+
+\end{center}
+
+\textenglish{\ttfamily +}
+\(\longrightarrow\)
+String Concatenation
+
+\qquad
+
+\textenglish{\ttfamily *}
+\(\longrightarrow\)
+String Repetition
+
+\end{rememberbox}
+
+%================================================
+% Comparison
+%================================================
+
+\booksubheading{২. Comparison / Relational Operator}
+
+দুটি Value-এর মধ্যে তুলনা করার জন্য Comparison Operator
+ব্যবহৃত হয়। Comparison-এর Result সাধারণত
+\textenglish{\ttfamily True}
+অথবা
+\textenglish{\ttfamily False}।
+
+ধরা যাক,
+\textenglish{\ttfamily a = 10},
+\textenglish{\ttfamily b = 5}।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.14\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.31\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Operator}
+&
+\textbf{অর্থ}
+&
+\textbf{Example}
+&
+\textbf{Result}
+\\
+\hline
+
+\textenglish{\ttfamily ==}
+& সমান কি না
+& \textenglish{\ttfamily a == b}
+& False
+\\
+\hline
+
+\textenglish{\ttfamily !=}
+& অসমান কি না
+& \textenglish{\ttfamily a != b}
+& True
+\\
+\hline
+
+\textenglish{\ttfamily >}
+& বড় কি না
+& \textenglish{\ttfamily a > b}
+& True
+\\
+\hline
+
+\textenglish{\ttfamily <}
+& ছোট কি না
+& \textenglish{\ttfamily a < b}
+& False
+\\
+\hline
+
+\textenglish{\ttfamily >=}
+& বড় অথবা সমান
+& \textenglish{\ttfamily a >= b}
+& True
+\\
+\hline
+
+\textenglish{\ttfamily <=}
+& ছোট অথবা সমান
+& \textenglish{\ttfamily a <= b}
+& False
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}খুব গুরুত্বপূর্ণ}
+
+\begin{center}
+
+\textenglish{\ttfamily x = 10}
+\(\longrightarrow\)
+\textbf{Assignment}
+
+\qquad
+
+\textenglish{\ttfamily x == 10}
+\(\longrightarrow\)
+\textbf{Equality Check}
+
+\end{center}
+
+অর্থাৎ
+\textenglish{\ttfamily =}
+এবং
+\textenglish{\ttfamily ==}
+এক নয়।
+
+\end{rememberbox}
+
+%================================================
+% Chained Comparison
+%================================================
+
+\begin{examplebox}{Python Chained Comparison}
+
+Python-এ একই Expression-এ একাধিক Comparison লেখা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 15\\
+print(10 < x < 20)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily True}
+
+এর অর্থ—
+
+\begin{center}
+
+\textenglish{\ttfamily x > 10}
+\qquad এবং \qquad
+\textenglish{\ttfamily x < 20}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Assignment
+%================================================
+
+\booksubheading{৩. Assignment Operator}
+
+Variable-এর সঙ্গে Value Assign করার জন্য
+Assignment Operator ব্যবহার করা হয়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 10
+\end{english}
+\end{codebox}
+
+Compound Assignment একই Variable-এর উপর Operation করে
+নতুন Value Assign করার সংক্ষিপ্ত পদ্ধতি।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.15\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Operator}
+&
+\textbf{উদাহরণ}
+&
+\textbf{সমতুল্য}
+\\
+\hline
+
+\textenglish{\ttfamily +=}
+&
+\textenglish{\ttfamily x += 5}
+&
+\textenglish{\ttfamily x = x + 5}
+\\
+\hline
+
+\textenglish{\ttfamily -=}
+&
+\textenglish{\ttfamily x -= 5}
+&
+\textenglish{\ttfamily x = x - 5}
+\\
+\hline
+
+\textenglish{\ttfamily *=}
+&
+\textenglish{\ttfamily x *= 5}
+&
+\textenglish{\ttfamily x = x * 5}
+\\
+\hline
+
+\textenglish{\ttfamily /=}
+&
+\textenglish{\ttfamily x /= 5}
+&
+\textenglish{\ttfamily x = x / 5}
+\\
+\hline
+
+\textenglish{\ttfamily //=}
+&
+\textenglish{\ttfamily x //= 5}
+&
+\textenglish{\ttfamily x = x // 5}
+\\
+\hline
+
+\textenglish{\ttfamily \%=}
+&
+\textenglish{\ttfamily x \%= 5}
+&
+\textenglish{\ttfamily x = x \% 5}
+\\
+\hline
+
+\textenglish{\ttfamily **=}
+&
+\textenglish{\ttfamily x **= 2}
+&
+\textenglish{\ttfamily x = x ** 2}
+\\
+\hline
+
+\end{tabularx}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 10\\
+x += 5\\
+print(x)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily 15}
+
+%================================================
+% Logical
+%================================================
+
+\booksubheading{৪. Logical Operator}
+
+একাধিক Condition যুক্ত করা বা Logical Result পরিবর্তনের জন্য
+Logical Operator ব্যবহৃত হয়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.18\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Operator}
+&
+\textbf{কাজ}
+\\
+\hline
+
+\textenglish{\ttfamily and}
+&
+উভয় Condition সত্য হলে Result সত্য।
+\\
+\hline
+
+\textenglish{\ttfamily or}
+&
+অন্তত একটি Condition সত্য হলে Result সত্য।
+\\
+\hline
+
+\textenglish{\ttfamily not}
+&
+Logical Result বিপরীত করে।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Logical Examples
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily and}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+age = 20\\
+print(age >= 18\\
+\hspace*{3mm}and age <= 30)
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily True}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily or}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+x = 5\\
+print(x < 0 or x > 3)
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily True}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily not}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+x = True\\
+print(not x)
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily False}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Truth Table
+%================================================
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{A}
+&
+\textbf{B}
+&
+\textenglish{\ttfamily A and B}
+&
+\textenglish{\ttfamily A or B}
+\\
+\hline
+
+True & True & True & True
+\\
+\hline
+
+True & False & False & True
+\\
+\hline
+
+False & True & False & True
+\\
+\hline
+
+False & False & False & False
+\\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textenglish{\ttfamily not True}
+\(\longrightarrow\)
+\textenglish{\ttfamily False}
+
+\qquad
+
+\textenglish{\ttfamily not False}
+\(\longrightarrow\)
+\textenglish{\ttfamily True}
+
+\end{center}
+
+%================================================
+% Identity + Membership
+%================================================
+
+\booksubheading{৫. Identity ও ৬. Membership Operator}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Identity Operator}
+
+দুটি Variable একই Object-কে নির্দেশ করছে কি না পরীক্ষা করে।
+
+\begin{center}
+\textenglish{\ttfamily is}
+\qquad
+\textenglish{\ttfamily is not}
+\end{center}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+a = [1, 2]\\
+b = a\\
+print(a is b)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily True}
+
+\medskip
+
+\textenglish{\ttfamily ==}
+\(\longrightarrow\)
+Value সমান কি না
+
+\medskip
+
+\textenglish{\ttfamily is}
+\(\longrightarrow\)
+একই Object কি না
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Membership Operator}
+
+কোনো Value Collection-এর মধ্যে আছে কি না পরীক্ষা করে।
+
+\begin{center}
+\textenglish{\ttfamily in}
+\qquad
+\textenglish{\ttfamily not in}
+\end{center}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30]\\
+print(20 in numbers)\\
+print(50 not in numbers)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily True, True}
+
+\medskip
+
+String-এর ক্ষেত্রেও—
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+print("Py" in "Python")
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily True}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Membership কোথায় ব্যবহার করা যায়?}
+
+\begin{center}
+
+\textenglish{\ttfamily in / not in}
+\(\longrightarrow\)
+String, List, Tuple, Set, Dictionary
+
+\end{center}
+
+Dictionary-তে
+\textenglish{\ttfamily in}
+সাধারণত \textbf{Key} পরীক্ষা করে।
+
+উদাহরণ—
+
+\begin{center}
+
+\textenglish{\ttfamily "name" in student}
+\(\longrightarrow\)
+Key আছে কি না
+
+\end{center}
+
+\end{rememberbox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}ভুল করো না}
+
+\begin{center}
+
+\textenglish{\ttfamily ==}
+\(\neq\)
+\textenglish{\ttfamily is}
+
+\qquad
+
+\textenglish{\ttfamily in}
+\(\longrightarrow\)
+আছে কি না
+
+\qquad
+
+\textenglish{\ttfamily not in}
+\(\longrightarrow\)
+নেই কি না
+
+\end{center}
+
+Value তুলনা করার জন্য সাধারণত
+\textenglish{\ttfamily ==}
+ব্যবহার করা হয়।
+
+\end{rememberbox}
+
+%================================================
+% Bitwise
+%================================================
+
+\booksubheading{৭. Bitwise Operator}
+
+Integer-এর Binary Bit-এর উপর Operation করার জন্য
+Bitwise Operator ব্যবহৃত হয়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.16\linewidth}
+|Y
+|>{\bfseries\centering\arraybackslash}p{0.16\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Operator}
+&
+\textbf{নাম}
+&
+\textbf{Operator}
+&
+\textbf{নাম}
+\\
+\hline
+
+\textenglish{\ttfamily \&}
+&
+Bitwise AND
+&
+\textenglish{\ttfamily \textbar}
+&
+Bitwise OR
+\\
+\hline
+
+\textenglish{\ttfamily \textasciicircum}
+&
+Bitwise XOR
+&
+\textenglish{\ttfamily \textasciitilde}
+&
+Bitwise NOT
+\\
+\hline
+
+\textenglish{\ttfamily <<}
+&
+Left Shift
+&
+\textenglish{\ttfamily >>}
+&
+Right Shift
+\\
+\hline
+
+\end{tabularx}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Bitwise AND}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+a = 5\\
+b = 3\\
+print(a \& b)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily 1}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Binary ধারণা}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+5 = 101\\
+3 = 011\\
+---------\\
+    001
+\end{english}
+\end{sidecodebox}
+
+Result:
+\textenglish{\ttfamily 1}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Shift Operator-এর সহজ ধারণা}
+
+Non-negative Integer-এর ক্ষেত্রে—
+
+\begin{center}
+
+\textenglish{\ttfamily x << n}
+\(\longrightarrow\)
+\(x \times 2^n\)
+
+\qquad
+
+\textenglish{\ttfamily x >> n}
+\(\longrightarrow\)
+\(x // 2^n\)
+
+\end{center}
+
+উদাহরণ—
+
+\begin{center}
+
+\textenglish{\ttfamily 5 << 1}
+\(\longrightarrow\)
+\textenglish{\ttfamily 10}
+
+\qquad
+
+\textenglish{\ttfamily 8 >> 1}
+\(\longrightarrow\)
+\textenglish{\ttfamily 4}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Unary and Binary
+%================================================
+
+\booksubheading{Unary ও Binary Operator}
+
+Operand-এর সংখ্যার ভিত্তিতেও Operator-কে Unary ও Binary
+হিসেবে বোঝা যায়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+|>{\centering\arraybackslash}p{0.20\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{ধরন}
+&
+\textbf{Operand}
+&
+\textbf{উদাহরণ}
+\\
+\hline
+
+Unary
+&
+১টি
+&
+\textenglish{\ttfamily -x,\quad not x,\quad \textasciitilde x}
+\\
+\hline
+
+Binary
+&
+২টি
+&
+\textenglish{\ttfamily a + b,\quad a > b}
+\\
+\hline
+
+\end{tabularx}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+x = 5\\
+print(-x)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily -5}
+
+%================================================
+% Precedence
+%================================================
+
+\booksubheading{Operator Precedence}
+
+একটি Expression-এ একাধিক Operator থাকলে কোন Operator আগে
+কাজ করবে তা \textbf{Operator Precedence} দ্বারা নির্ধারিত হয়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Parentheses ছাড়া}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+result = 2 + 3 * 4
+\end{english}
+\end{sidecodebox}
+
+\textbf{Result:}
+\textenglish{\ttfamily 14}
+
+\medskip
+
+কারণ
+\textenglish{\ttfamily *}
+আগে কাজ করে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Parentheses সহ}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+result = (2 + 3) * 4
+\end{english}
+\end{sidecodebox}
+
+\textbf{Result:}
+\textenglish{\ttfamily 20}
+
+\medskip
+
+কারণ Parentheses-এর অংশ আগে Evaluate হয়।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Precedence Table
+%================================================
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{অগ্রাধিকার}}
+&
+\multicolumn{1}{c|}{\textbf{Operator}}
+\\
+\hline
+
+সর্বোচ্চ
+&
+Grouping:
+\textenglish{\ttfamily ( )}
+\\
+\hline
+
+এরপর
+&
+Exponentiation:
+\textenglish{\ttfamily **}
+\\
+\hline
+
+এরপর
+&
+Unary:
+\textenglish{\ttfamily +,\;-,\;\textasciitilde}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily *,\;/,\;//,\;\%}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily +,\;-}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily <<,\;>>}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily \&}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily \textasciicircum}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily \textbar}
+\\
+\hline
+
+এরপর
+&
+Comparison,
+\textenglish{\ttfamily in},
+\textenglish{\ttfamily is}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily not}
+\\
+\hline
+
+এরপর
+&
+\textenglish{\ttfamily and}
+\\
+\hline
+
+তুলনামূলক কম
+&
+\textenglish{\ttfamily or}
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}Exam-এর জন্য মূল Precedence}
+
+\begin{center}
+
+\textenglish{\ttfamily ( )}
+\(\longrightarrow\)
+\textenglish{\ttfamily **}
+\(\longrightarrow\)
+\textenglish{\ttfamily * / // \%}
+\(\longrightarrow\)
+\textenglish{\ttfamily + -}
+
+\medskip
+
+\textbf{Comparison}
+\(\longrightarrow\)
+\textenglish{\ttfamily not}
+\(\longrightarrow\)
+\textenglish{\ttfamily and}
+\(\longrightarrow\)
+\textenglish{\ttfamily or}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Associativity
+%================================================
+
+\booksubheading{Associativity}
+
+একই Precedence-এর একাধিক Operator থাকলে কোন দিক থেকে
+Operation সম্পন্ন হবে তা \textbf{Associativity} দ্বারা বোঝানো হয়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{সাধারণত Left to Right}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+20 - 5 - 3
+\end{english}
+\end{sidecodebox}
+
+অর্থাৎ—
+
+\begin{center}
+\textenglish{\ttfamily (20 - 5) - 3 = 12}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily **} Right to Left}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+2 ** 3 ** 2
+\end{english}
+\end{sidecodebox}
+
+অর্থাৎ—
+
+\begin{center}
+
+\textenglish{\ttfamily 2 ** (3 ** 2)}
+\(\longrightarrow\)
+\textenglish{\ttfamily 2 ** 9}
+\(\longrightarrow\)
+\textenglish{\ttfamily 512}
+
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap:}
+Exponentiation
+\textenglish{\ttfamily **}
+হলো \textbf{Right Associative}।
+
+\end{rememberbox}
+
+%================================================
+% Operator Summary
+%================================================
+
+\chFiveInput{topics/36_python_operators/python_extensions.tex}
+
+\booksubheading{Operator এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.36\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Category}
+&
+\textbf{Operator}
+&
+\textbf{প্রধান কাজ}
+\\
+\hline
+
+Arithmetic
+&
+\textenglish{\ttfamily + - * / // \% **}
+&
+Calculation
+\\
+\hline
+
+Comparison
+&
+\textenglish{\ttfamily == != > < >= <=}
+&
+Value তুলনা
+\\
+\hline
+
+Assignment
+&
+\textenglish{\ttfamily = += -= *= ...}
+&
+Value Assign
+\\
+\hline
+
+Logical
+&
+\textenglish{\ttfamily and or not}
+&
+Condition যুক্ত করা
+\\
+\hline
+
+Identity
+&
+\textenglish{\ttfamily is,\;is not}
+&
+একই Object কি না
+\\
+\hline
+
+Membership
+&
+\textenglish{\ttfamily in,\;not in}
+&
+Collection-এ আছে কি না
+\\
+\hline
+
+Bitwise
+&
+\textenglish{\ttfamily
+\& \quad \textbar \quad \textasciicircum
+\quad \textasciitilde \quad << \quad >>}
+&
+Binary Bit Operation
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Combined Example
+%================================================
+
+\booksubheading{Combined Example}
+
+\begin{examplebox}{একই Program-এ একাধিক Operator}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = 10\\
+b = 3\\
+print(a + b)\\
+print(a > b)\\
+print(a \% 2 == 0)
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{center}
+
+\textenglish{\ttfamily 13}
+\qquad
+\textenglish{\ttfamily True}
+\qquad
+\textenglish{\ttfamily True}
+
+\end{center}
+
+এখানে—
+
+\begin{center}
+
+\textbf{Arithmetic}
+\(\longrightarrow\)
+\textenglish{\ttfamily +,\;\%}
+
+\qquad
+
+\textbf{Comparison}
+\(\longrightarrow\)
+\textenglish{\ttfamily >,\;==}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily =}
+ও
+\textenglish{\ttfamily ==}
+-কে একই মনে করা।
+
+\item
+\textenglish{\ttfamily /}
+ও
+\textenglish{\ttfamily //}
+-এর পার্থক্য না জানা।
+
+\item
+\textenglish{\ttfamily \%}
+-কে Percentage Operator মনে করা; Python-এ এটি Remainder/Modulus Operator।
+
+\item Power-এর জন্য
+\textenglish{\ttfamily **}
+-এর পরিবর্তে
+\textenglish{\ttfamily \textasciicircum}
+ব্যবহার করা।
+
+\item
+\textenglish{\ttfamily and},
+\textenglish{\ttfamily or},
+\textenglish{\ttfamily not}
+-এর কাজ গুলিয়ে ফেলা।
+
+\item
+\textenglish{\ttfamily ==}
+ও
+\textenglish{\ttfamily is}
+-কে একই মনে করা।
+
+\item
+\textenglish{\ttfamily in}
+ও Identity Operator-এর কাজ গুলিয়ে ফেলা।
+
+\item Operator Precedence উপেক্ষা করা।
+
+\item Parentheses-এর প্রভাব না বোঝা।
+
+\item
+\textenglish{\ttfamily **}
+-এর Right Associativity ভুলে যাওয়া।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.22\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.22\linewidth}
+Y
+}
+
+Arithmetic
+&
+\textenglish{\ttfamily + - * / // \% **}
+&
+Comparison
+&
+\textenglish{\ttfamily == != > < >= <=}
+\\[0.6mm]
+
+Assignment
+&
+\textenglish{\ttfamily =}
+&
+Logical
+&
+\textenglish{\ttfamily and or not}
+\\[0.6mm]
+
+Identity
+&
+\textenglish{\ttfamily is,\;is not}
+&
+Membership
+&
+\textenglish{\ttfamily in,\;not in}
+\\[0.6mm]
+
+Bitwise
+&
+\textenglish{\ttfamily
+\& \;\textbar\; \textasciicircum\;
+\textasciitilde\; <<\; >>}
+&
+Power
+&
+\textenglish{\ttfamily **}
+\\[0.6mm]
+
+Division
+&
+\textenglish{\ttfamily /}
+&
+Floor Division
+&
+\textenglish{\ttfamily //}
+\\[0.6mm]
+
+Remainder
+&
+\textenglish{\ttfamily \%}
+&
+Equality Check
+&
+\textenglish{\ttfamily ==}
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textenglish{\ttfamily =}
+\(\neq\)
+\textenglish{\ttfamily ==}
+\qquad
+\textenglish{\ttfamily ==}
+\(\neq\)
+\textenglish{\ttfamily is}
+
+\medskip
+
+\textenglish{\ttfamily \%}
+\(\longrightarrow\)
+Remainder
+\qquad
+\textenglish{\ttfamily **}
+\(\longrightarrow\)
+Power
+
+\medskip
+
+\textenglish{\ttfamily +}
+\(\longrightarrow\)
+String Concatenation-ও করতে পারে
+
+\qquad
+
+\textenglish{\ttfamily *}
+\(\longrightarrow\)
+String Repetition-ও করতে পারে
+
+\medskip
+
+\textbf{Precedence:}
+
+\textenglish{\ttfamily ( )}
+\(\longrightarrow\)
+\textenglish{\ttfamily **}
+\(\longrightarrow\)
+\textenglish{\ttfamily * / // \%}
+\(\longrightarrow\)
+\textenglish{\ttfamily + -}
+
+\medskip
+
+\textbf{Comparison}
+\(\longrightarrow\)
+\textenglish{\ttfamily not}
+\(\longrightarrow\)
+\textenglish{\ttfamily and}
+\(\longrightarrow\)
+\textenglish{\ttfamily or}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.37 Conditional Logic Statement
+%================================================
+

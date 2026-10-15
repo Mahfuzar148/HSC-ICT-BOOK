@@ -1,0 +1,470 @@
+\sectionheading{5.8 Oracle}
+
+Oracle মূলত একটি বহুল ব্যবহৃত
+\textbf{Relational Database Management System (RDBMS)}
+এবং Database Platform। এর সাহায্যে বিপুল পরিমাণ Data
+সুশৃঙ্খলভাবে সংরক্ষণ, অনুসন্ধান, পরিবর্তন ও পরিচালনা করা যায়।
+
+Java বা Python-এর মতো Oracle নিজে কোনো General Purpose
+Programming Language নয়। Oracle Database-এর সঙ্গে Data নিয়ে
+কাজ করার জন্য প্রধানত \textbf{SQL} এবং Programming সুবিধার জন্য
+\textbf{PL/SQL} ব্যবহার করা হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Oracle কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Oracle হলো একটি
+\textbf{Relational Database Management System (RDBMS)},
+যার সাহায্যে Database তৈরি, Data সংরক্ষণ, অনুসন্ধান, পরিবর্তন
+ও পরিচালনা করা যায়।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Oracle
+\(\;=\;\)
+Database Management System
+}
+
+\end{center}
+
+Oracle-এর প্রধান কাজ হলো Data-কে Database-এর মধ্যে
+সুশৃঙ্খলভাবে সংরক্ষণ ও পরিচালনা করা।
+
+%================================================
+% RDBMS
+%================================================
+\booksubheading{RDBMS কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}RDBMS}
+
+যে Database Management System-এ Data সাধারণত
+\textbf{Table-এর Row ও Column} আকারে সংরক্ষণ করা হয় এবং
+বিভিন্ন Table-এর মধ্যে সম্পর্ক স্থাপন করা যায়, তাকে
+\textbf{Relational Database Management System (RDBMS)} বলে।
+
+\end{definitionbox}
+
+Oracle একটি পরিচিত RDBMS।
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+একটি Student Table হতে পারে—
+
+\begin{center}
+
+\begin{tabularx}{0.72\linewidth}{|Y|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Roll}}
+&
+\multicolumn{1}{c|}{\textbf{Name}}
+&
+\multicolumn{1}{c|}{\textbf{GPA}}
+\\
+\hline
+
+101 & Rahim & 4.75\\
+\hline
+
+102 & Karim & 5.00\\
+\hline
+
+\end{tabularx}
+
+\end{center}
+
+এখানে প্রতিটি Row একটি Record এবং প্রতিটি Column একটি
+নির্দিষ্ট Field বা Attribute-এর Data প্রকাশ করে।
+
+\end{examplebox}
+
+%================================================
+% SQL
+%================================================
+\booksubheading{Oracle-এ SQL-এর ব্যবহার}
+
+Oracle Database-এ Data নিয়ে কাজ করার জন্য
+\textbf{SQL} বহুল ব্যবহৃত হয়।
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}SQL}
+
+SQL-এর পূর্ণরূপ হলো
+\textbf{Structured Query Language}।
+
+Database-এর Data সংরক্ষণ, অনুসন্ধান, পরিবর্তন ও পরিচালনার জন্য
+SQL ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+SQL-এর সাহায্যে—
+
+\begin{itemize}
+
+\item নতুন Data যোগ করা যায়।
+
+\item প্রয়োজনীয় Data খুঁজে বের করা যায়।
+
+\item Data পরিবর্তন করা যায়।
+
+\item Data মুছে ফেলা যায়।
+
+\item Table তৈরি ও পরিবর্তন করা যায়।
+
+\end{itemize}
+
+%================================================
+% SQL Example
+%================================================
+\begin{examplebox}{SQL-এর ছোট উদাহরণ}
+
+ধরা যাক, \textenglish{\ttfamily student} নামের Table-এর
+সব Data দেখতে হবে।
+
+\begin{codebox}
+
+\begin{center}
+{\textenglish{\ttfamily SELECT * FROM student;}}
+\end{center}
+
+\end{codebox}
+
+এখানে \textenglish{\ttfamily SELECT} ব্যবহার করে Database থেকে
+Data নেওয়া হচ্ছে।
+
+\end{examplebox}
+
+%================================================
+% PL SQL
+%================================================
+\booksubheading{PL/SQL কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}PL/SQL}
+
+PL/SQL-এর পূর্ণরূপ হলো
+\textbf{Procedural Language/SQL}।
+
+এটি Oracle-এর SQL-এর সঙ্গে Procedural Programming-এর বিভিন্ন
+সুবিধা যুক্ত করে।
+
+\end{definitionbox}
+
+PL/SQL-এ SQL Statement-এর পাশাপাশি—
+
+\begin{itemize}
+
+\item Variable
+
+\item Condition
+
+\item Loop
+
+\item Procedure
+
+\item Function
+
+\end{itemize}
+
+ইত্যাদি ব্যবহার করা যায়।
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+SQL
+\(\;+\;\)
+Procedural Programming
+\(\;=\;\)
+PL/SQL
+}
+
+\end{center}
+
+%================================================
+% SQL vs PL SQL
+%================================================
+\booksubheading{SQL ও PL/SQL-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{SQL}}
+&
+\multicolumn{1}{c|}{\textbf{PL/SQL}}
+\\
+\hline
+
+মূল উদ্দেশ্য
+&
+Database-এর Data নিয়ে কাজ
+&
+SQL-এর সঙ্গে Programming Logic ব্যবহার
+\\
+\hline
+
+Statement
+&
+Query ও Database Operation
+&
+একাধিক Statement Block আকারে ব্যবহার করা যায়
+\\
+\hline
+
+Variable
+&
+সাধারণ Query-তে Programming Variable ব্যবহারের ধারণা নেই
+&
+Variable ব্যবহার করা যায়
+\\
+\hline
+
+Condition
+&
+সাধারণ SQL-এর মূল Programming বৈশিষ্ট্য নয়
+&
+Condition ব্যবহার করা যায়
+\\
+\hline
+
+Loop
+&
+সাধারণ SQL-এর মূল Programming বৈশিষ্ট্য নয়
+&
+Loop ব্যবহার করা যায়
+\\
+\hline
+
+ব্যবহার
+&
+Data Insert, Search, Update, Delete
+&
+Procedure, Function ও Logic-ভিত্তিক Database কাজ
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Features
+%================================================
+\booksubheading{Oracle-এর প্রধান বৈশিষ্ট্য}
+
+\begin{compacttwocolpoints}
+
+\item বিপুল পরিমাণ Data সংরক্ষণ করা যায়।
+
+\item Table-এর মাধ্যমে Data সুশৃঙ্খলভাবে রাখা যায়।
+
+\item Data দ্রুত Search ও Process করা যায়।
+
+\item একাধিক ব্যবহারকারী Database ব্যবহার করতে পারে।
+
+\item Data-এর নিরাপত্তা নিয়ন্ত্রণের ব্যবস্থা রয়েছে।
+
+\item Backup ও Recovery-এর ব্যবস্থা রয়েছে।
+
+\item SQL ব্যবহার করে Database পরিচালনা করা যায়।
+
+\item বৃহৎ প্রতিষ্ঠানের Database System-এ ব্যবহার করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Uses
+%================================================
+\booksubheading{Oracle-এর ব্যবহার}
+
+Oracle বিভিন্ন ধরনের Data-intensive System-এ ব্যবহার করা হয়।
+যেমন—
+
+\begin{compacttwocolpoints}
+
+\item Banking System
+
+\item Educational Database
+
+\item Business Organization
+
+\item Employee Management System
+
+\item Inventory Management
+
+\item Financial System
+
+\item বড় প্রতিষ্ঠানের Information System
+
+\end{compacttwocolpoints}
+
+%================================================
+% Oracle Programming Language?
+%================================================
+\booksubheading{Oracle কি Programming Language?}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}গুরুত্বপূর্ণ}
+
+\textbf{না। Oracle নিজে Java বা Python-এর মতো General Purpose
+Programming Language নয়।}
+
+Oracle মূলত একটি—
+
+\begin{center}
+
+\textbf{
+RDBMS / Database Platform
+}
+
+\end{center}
+
+Oracle-এর সঙ্গে Database Programming ও Query-এর জন্য
+\textbf{SQL ও PL/SQL} ব্যবহার করা হয়।
+
+\end{rememberbox}
+
+%================================================
+% Java Python vs Oracle
+%================================================
+\booksubheading{Java/Python ও Oracle-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Java / Python}}
+&
+\multicolumn{1}{c|}{\textbf{Oracle}}
+\\
+\hline
+
+Programming Language
+&
+Database Management System
+\\
+\hline
+
+Program ও Application তৈরিতে ব্যবহৃত হয়
+&
+Database তৈরি ও পরিচালনায় ব্যবহৃত হয়
+\\
+\hline
+
+Programming Logic প্রকাশ করা হয়
+&
+Data সংরক্ষণ ও ব্যবস্থাপনায় প্রধান গুরুত্ব
+\\
+\hline
+
+General Purpose Programming-এ ব্যবহার করা যায়
+&
+Database-oriented কাজে ব্যবহৃত হয়
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Relationship
+%================================================
+\booksubheading{Oracle, SQL ও PL/SQL-এর সম্পর্ক}
+
+Oracle, SQL ও PL/SQL-এর সম্পর্ক সহজভাবে—
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.22\linewidth}{
+        \centering\textbf{Oracle Database}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.24\linewidth}{
+        \centering\textbf{SQL দিয়ে\\Data পরিচালনা}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.26\linewidth}{
+        \centering\textbf{PL/SQL দিয়ে\\Programming Logic}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+অর্থাৎ Oracle হলো Database Environment, SQL হলো Database-এর
+Data নিয়ে কাজ করার ভাষা এবং PL/SQL হলো SQL-এর সঙ্গে Procedural
+Programming সুবিধা যুক্ত ব্যবস্থা।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Oracle একটি \textbf{RDBMS}।
+
+\item RDBMS-এর পূর্ণরূপ
+\textbf{Relational Database Management System}।
+
+\item Oracle Java বা Python-এর মতো
+\textbf{General Purpose Programming Language নয়}।
+
+\item Oracle Database-এ \textbf{SQL} ব্যবহার করা হয়।
+
+\item SQL-এর পূর্ণরূপ
+\textbf{Structured Query Language}।
+
+\item PL/SQL-এর পূর্ণরূপ
+\textbf{Procedural Language/SQL}।
+
+\item PL/SQL-এ Variable, Condition, Loop, Procedure ও Function
+ব্যবহার করা যায়।
+
+\item SQL মূলত Data Query ও Database Operation-এর জন্য ব্যবহৃত হয়।
+
+\item Oracle বড় Database System পরিচালনায় ব্যবহৃত হয়।
+\item পরীক্ষায়
+\textbf{Oracle = Programming Language}
+লিখবে না।
+
+\item সঠিক ধারণা—
+\textbf{Oracle = RDBMS / Database Platform}।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.9 Python
+%================================================

@@ -1,0 +1,955 @@
+\sectionheading{5.31 Python Syntax-এর প্রাথমিক ধারণা}
+
+Programming Language-এ সঠিকভাবে Code লেখার জন্য কিছু
+নির্দিষ্ট নিয়ম অনুসরণ করতে হয়।
+
+এই নিয়মগুলোর সমষ্টিকে \textbf{Syntax} বলা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Syntax কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Programming Language-এ Statement বা Program
+সঠিকভাবে লেখার জন্য নির্ধারিত নিয়মকে
+\textbf{Syntax} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{Programming Language-এর Grammar}
+=
+\textbf{Syntax}
+
+\end{center}
+
+যেমন বাংলা বা English বাক্য লেখার নির্দিষ্ট নিয়ম আছে,
+তেমনি Python Code লেখারও নির্দিষ্ট নিয়ম রয়েছে।
+
+%================================================
+% Statement
+%================================================
+
+\booksubheading{১. Python Statement}
+
+Python Program-এর একটি কার্যকর Instruction-কে সাধারণভাবে
+\textbf{Statement} বলা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")\\
+x = 10
+\end{english}
+
+\end{codebox}
+
+এখানে প্রতিটি লাইন একটি Python Statement।
+
+%================================================
+% Indentation
+%================================================
+
+\booksubheading{২. Indentation}
+
+Python Syntax-এর সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্যগুলোর একটি হলো
+\textbf{Indentation}।
+
+কোনো Statement-এর শুরুতে যে ফাঁকা জায়গা রাখা হয় তাকে
+\textbf{Indentation} বলে।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if 10 > 5:\\
+\hspace*{4mm}print("Yes")
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily print("Yes")}
+Statement-এর শুরুতে ফাঁকা জায়গা রাখা হয়েছে।
+এটিই Indentation।
+
+\end{examplebox}
+
+Python-এ একই Code Block-এর Statementগুলো বোঝাতে
+Indentation ব্যবহার করা হয়।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\begin{center}
+
+\textbf{Indentation}
+\(\longrightarrow\)
+\textbf{Code Block নির্ধারণ করে}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% 4 Spaces
+%================================================
+
+\booksubheading{সাধারণত কতটি Space ব্যবহার করা হয়?}
+
+Python Code লেখার প্রচলিত Style অনুযায়ী একটি Indentation
+Level-এর জন্য সাধারণত \textbf{4টি Space} ব্যবহার করা হয়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if 5 > 2:\\
+\hspace*{4mm}print("Correct")
+\end{english}
+
+\end{codebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+একই Block-এ Indentation অসামঞ্জস্যপূর্ণ হলে Error হতে পারে।
+
+\textbf{ভুল উদাহরণ—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if 5 > 2:\\
+print("Correct")
+\end{english}
+
+\end{codebox}
+
+এখানে প্রয়োজনীয় Indentation নেই।
+
+\end{rememberbox}
+
+%================================================
+% Colon
+%================================================
+
+\booksubheading{৩. Colon \textenglish{\ttfamily :}}
+
+Python-এ
+\textenglish{\ttfamily if},
+\textenglish{\ttfamily for},
+\textenglish{\ttfamily while},
+\textenglish{\ttfamily def}
+ইত্যাদির পরে নতুন Code Block শুরু করার ক্ষেত্রে সাধারণত
+\textbf{Colon (\textenglish{\ttfamily :})}
+ব্যবহার করা হয়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if x > 0:\\
+\hspace*{4mm}print("Positive")
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily if}
+Condition-এর শেষে
+\textenglish{\ttfamily :}
+ব্যবহার করা হয়েছে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textbf{Block শুরু হওয়ার আগে}
+\(\longrightarrow\)
+\textenglish{\ttfamily :}
+\(\longrightarrow\)
+\textbf{Block-এর ভিতরে Indentation}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Case Sensitive
+%================================================
+
+\booksubheading{৪. Python Case Sensitive}
+
+Python একটি
+\textbf{Case Sensitive Programming Language}।
+
+অর্থাৎ Capital Letter ও Small Letter-কে আলাদা হিসেবে
+বিবেচনা করা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+name\\
+Name\\
+NAME
+\end{english}
+
+\end{codebox}
+
+উপরের তিনটি নাম Python-এর কাছে আলাদা।
+
+একইভাবে—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+সঠিক; কিন্তু—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Print("Hello")
+\end{english}
+
+\end{codebox}
+
+সাধারণ
+\textenglish{\ttfamily print()}
+Function হিসেবে কাজ করবে না।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+Python
+\(\longrightarrow\)
+\textbf{Case Sensitive}
+
+\end{rememberbox}
+
+%================================================
+% Quotation
+%================================================
+
+\booksubheading{৫. Quotation Mark}
+
+Python-এ Text বা String লেখার জন্য সাধারণত
+Quotation Mark ব্যবহার করা হয়।
+
+\textbf{Double Quote-এর উদাহরণ—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Bangladesh")
+\end{english}
+
+\end{codebox}
+
+\textbf{Single Quote-এর উদাহরণ—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print('Bangladesh')
+\end{english}
+
+\end{codebox}
+
+অর্থাৎ Text লেখার ক্ষেত্রে সাধারণভাবে
+Single Quote
+\textenglish{\ttfamily ' '}
+অথবা Double Quote
+\textenglish{\ttfamily " "}
+ব্যবহার করা যায়।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+Quotation শুরু করলে সঠিকভাবে শেষ করতে হবে।
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello')
+\end{english}
+
+\end{codebox}
+
+\textbf{সঠিক—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+\end{rememberbox}
+
+%================================================
+% Parentheses
+%================================================
+
+\booksubheading{৬. Parentheses \textenglish{\ttfamily ()}}
+
+Python-এর অনেক Function ব্যবহার করার সময়
+Parentheses
+\textenglish{\ttfamily ()}
+ব্যবহার করা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("ICT")
+\end{english}
+
+\end{codebox}
+
+এখানে—
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily print}
+\(\longrightarrow\)
+Function-এর নাম
+
+\item
+\textenglish{\ttfamily ()}
+\(\longrightarrow\)
+Parentheses
+
+\item
+\textenglish{\ttfamily "ICT"}
+\(\longrightarrow\)
+Function-এর ভিতরে দেওয়া Text
+
+\end{itemize}
+
+%================================================
+% Comment
+%================================================
+
+\booksubheading{৭. Comment}
+
+Python-এ এক লাইনের Comment সাধারণত
+\textbf{\textenglish{\ttfamily \#}}
+দিয়ে শুরু হয়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+\# This is a comment\\
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+\textenglish{\ttfamily \#}
+-এর পরের অংশ Comment হিসেবে বিবেচিত হয় এবং Program-এর
+কার্যকর Instruction হিসেবে Execute হয় না।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textenglish{\ttfamily \#}
+\(\longrightarrow\)
+\textbf{Single-line Comment}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% One Statement Per Line
+%================================================
+
+\booksubheading{৮. সাধারণত প্রতিটি Statement আলাদা লাইনে লেখা হয়}
+
+Python Code পরিষ্কার ও সহজবোধ্য রাখার জন্য সাধারণত
+প্রতিটি Statement আলাদা লাইনে লেখা হয়।
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+a = 10\\
+b = 20\\
+print(a + b)
+\end{english}
+
+\end{codebox}
+
+Python-এ কিছু ক্ষেত্রে Semicolon
+\textenglish{\ttfamily ;}
+ব্যবহার করে একই লাইনে একাধিক Statement লেখা সম্ভব।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+a = 10; b = 20
+\end{english}
+
+\end{codebox}
+
+তবে Beginner Program-এ পরিষ্কারভাবে আলাদা লাইনে লেখা ভালো—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+a = 10\\
+b = 20
+\end{english}
+
+\end{codebox}
+
+%================================================
+% Code Block
+%================================================
+
+\booksubheading{৯. Code Block}
+
+একই Control Structure বা Function-এর অন্তর্ভুক্ত
+Statementগুলোর সমষ্টিকে সাধারণভাবে
+\textbf{Code Block} বলা যায়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if 10 > 5:\\
+\hspace*{4mm}print("First")\\
+\hspace*{4mm}print("Second")
+\end{english}
+
+\end{codebox}
+
+এখানে Indentation করা দুটি
+\textenglish{\ttfamily print()}
+Statement একই Block-এর অংশ।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সহজভাবে মনে রাখবে}
+
+\begin{center}
+
+\textenglish{\ttfamily :}
+\(\longrightarrow\)
+\textbf{Block শুরু}
+\(\longrightarrow\)
+\textbf{Indentation}
+\(\longrightarrow\)
+\textbf{Block-এর Statement}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Curly Braces
+%================================================
+
+\booksubheading{১০. Python-এ Code Block বোঝাতে Indentation ব্যবহৃত হয়}
+
+C/C++-এর মতো অনেক Programming Language-এ Code Block
+বোঝাতে Curly Braces
+\textenglish{\ttfamily \{ \}}
+ব্যবহার করা হয়।
+
+উদাহরণস্বরূপ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+\{\\
+\hspace*{4mm}statements\\
+\}
+\end{english}
+
+\end{codebox}
+
+কিন্তু Python-এ Code Block বোঝাতে মূলত
+\textbf{Indentation} ব্যবহার করা হয়।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}পরীক্ষায় গুরুত্বপূর্ণ}
+
+\begin{center}
+
+\textbf{C/C++}
+\(\longrightarrow\)
+\textenglish{\ttfamily \{ \}}
+
+\qquad
+
+\textbf{Python}
+\(\longrightarrow\)
+\textbf{Indentation}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Syntax Error
+%================================================
+
+\booksubheading{১১. Syntax Error}
+
+Python-এর Syntax-এর নির্ধারিত নিয়ম ভুল হলে
+\textbf{Syntax Error} হতে পারে।
+
+\begin{examplebox}{Colon না দেওয়ার ভুল}
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if 10 > 5\\
+\hspace*{4mm}print("Yes")
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily if}
+Statement-এর শেষে
+\textenglish{\ttfamily :}
+নেই।
+
+\textbf{সঠিক—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+if 10 > 5:\\
+\hspace*{4mm}print("Yes")
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+\begin{examplebox}{Parenthesis বন্ধ না করার ভুল}
+
+\textbf{ভুল—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello"
+\end{english}
+
+\end{codebox}
+
+\textbf{সঠিক—}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+\end{examplebox}
+
+%================================================
+% Causes of Syntax Error
+%================================================
+
+\booksubheading{Syntax Error-এর সাধারণ কারণ}
+
+\begin{compacttwocolpoints}
+
+\item প্রয়োজনীয় Colon
+\textenglish{\ttfamily :}
+না দেওয়া।
+
+\item প্রয়োজনীয় Indentation না দেওয়া।
+
+\item Quotation Mark অসম্পূর্ণ রাখা।
+
+\item Parenthesis
+\textenglish{\ttfamily ()}
+সঠিকভাবে বন্ধ না করা।
+
+\item Keyword বা Function-এর বানান ভুল করা।
+
+\item Capital ও Small Letter গুলিয়ে ফেলা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Correct vs Incorrect
+%================================================
+
+\booksubheading{সঠিক ও ভুল Syntax-এর উদাহরণ}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.29\linewidth}
+|>{\RaggedRight\arraybackslash}p{0.29\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{ভুল}}
+&
+\multicolumn{1}{c|}{\textbf{সঠিক}}
+&
+\multicolumn{1}{c|}{\textbf{কারণ}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily Print("Hi")}
+&
+\textenglish{\ttfamily print("Hi")}
+&
+Python Case Sensitive।
+\\
+
+\hline
+
+\textenglish{\ttfamily if x > 5}
+&
+\textenglish{\ttfamily if x > 5:}
+&
+Colon অনুপস্থিত।
+\\
+
+\hline
+
+\textenglish{\ttfamily print("Hi"}
+&
+\textenglish{\ttfamily print("Hi")}
+&
+Closing Parenthesis অনুপস্থিত।
+\\
+
+\hline
+
+\textenglish{\ttfamily print("Hi')}
+&
+\textenglish{\ttfamily print("Hi")}
+&
+Quotation Mark মেলেনি।
+\\
+
+\hline
+
+\textenglish{\ttfamily if x > 5:}\\
+\textenglish{\ttfamily print(x)}
+&
+\textenglish{\ttfamily if x > 5:}\\
+\hspace*{3mm}\textenglish{\ttfamily print(x)}
+&
+Block-এর Statement-এ Indentation প্রয়োজন।
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Summary Table
+%================================================
+
+\booksubheading{Python Syntax এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.31\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{নিয়ম}}
+
+\\
+
+\hline
+
+Statement
+&
+সাধারণত আলাদা লাইনে লেখা হয়।
+\\
+
+\hline
+
+Indentation
+&
+Code Block নির্ধারণ করতে ব্যবহৃত হয়।
+\\
+
+\hline
+
+Colon
+\textenglish{\ttfamily :}
+&
+Block শুরু করার আগে প্রয়োজনীয় স্থানে ব্যবহৃত হয়।
+\\
+
+\hline
+
+Case
+&
+Python Case Sensitive।
+\\
+
+\hline
+
+Text
+&
+Single বা Double Quotation Mark-এর মধ্যে লেখা যায়।
+\\
+
+\hline
+
+Comment
+&
+\textenglish{\ttfamily \#}
+দিয়ে Single-line Comment শুরু হয়।
+\\
+
+\hline
+
+Function Call
+&
+সাধারণত Parentheses
+\textenglish{\ttfamily ()}
+ব্যবহৃত হয়।
+\\
+
+\hline
+
+Code Block
+&
+Indentation দিয়ে প্রকাশ করা হয়।
+\\
+
+\hline
+
+Syntax ভুল
+&
+Syntax Error হতে পারে।
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Python-এ Indentation শুধু Code সুন্দর করার জন্য মনে করা।
+
+\item
+\textenglish{\ttfamily if},
+\textenglish{\ttfamily for},
+\textenglish{\ttfamily while}
+ইত্যাদির পরে প্রয়োজনীয়
+\textenglish{\ttfamily :}
+ভুলে যাওয়া।
+
+\item
+\textenglish{\ttfamily print()}
+ও
+\textenglish{\ttfamily Print()}
+-কে একই মনে করা।
+
+\item Single ও Double Quote অসম্পূর্ণভাবে ব্যবহার করা।
+
+\item C/C++-এর মতো Python Code Block-এ
+\textenglish{\ttfamily \{ \}}
+ব্যবহার করা।
+
+\item একই Block-এর Indentation অসামঞ্জস্যপূর্ণ করা।
+
+\item
+\textenglish{\ttfamily \#}
+-কে Program Output-এর অংশ মনে করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+\textbf{Syntax}
+হলো Code লেখার নিয়ম।
+
+\item
+Python-এ
+\textbf{Indentation}
+অত্যন্ত গুরুত্বপূর্ণ।
+
+\item
+একটি Indentation Level-এর জন্য সাধারণত
+\textbf{4টি Space}
+ব্যবহার করা হয়।
+
+\item
+\textenglish{\ttfamily if},
+\textenglish{\ttfamily for},
+\textenglish{\ttfamily while},
+\textenglish{\ttfamily def}
+ইত্যাদির Block শুরু করার আগে
+\textenglish{\ttfamily :}
+ব্যবহৃত হয়।
+
+\item
+Python
+\textbf{Case Sensitive}।
+
+\item
+Text-এর জন্য Single বা Double Quotation Mark ব্যবহার করা যায়।
+
+\item
+\textenglish{\ttfamily \#}
+দিয়ে Single-line Comment শুরু হয়।
+
+\item
+Python Code Block বোঝাতে
+\textenglish{\ttfamily \{ \}}
+-এর পরিবর্তে
+\textbf{Indentation}
+ব্যবহার করা হয়।
+
+\item
+Syntax-এর নিয়ম ভুল হলে
+\textbf{Syntax Error}
+হতে পারে।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Syntax}
+\(\longrightarrow\)
+\textbf{Code লেখার নিয়ম}
+
+\medskip
+
+\textenglish{\ttfamily :}
+\(\longrightarrow\)
+\textbf{Block শুরু}
+\(\longrightarrow\)
+\textbf{Indentation}
+\(\longrightarrow\)
+\textbf{Block-এর Code}
+
+\medskip
+
+\textenglish{\ttfamily \#}
+\(\longrightarrow\)
+\textbf{Comment}
+
+\qquad
+
+\textbf{Python}
+\(\longrightarrow\)
+\textbf{Case Sensitive}
+
+\medskip
+
+\textbf{ভুল Syntax}
+\(\longrightarrow\)
+\textbf{Syntax Error}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.32 Variable and Data Type
+%================================================
+

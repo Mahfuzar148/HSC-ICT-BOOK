@@ -1,0 +1,198 @@
+\section{নতুন উদ্দীপক সমাধান: সব বোর্ডের প্রস্তুতি}
+
+বোর্ডভেদে ব্যক্তি, প্রতিষ্ঠানের নাম ও টেবিলের মান বদলাতে পারে। কিন্তু প্রশ্নের কাজগুলো শনাক্ত করা গেলে একই ধারণা নতুন সমস্যাতেও প্রয়োগ করা যায়। তাই শুধু একটি নমুনার উত্তর মুখস্থ না করে নিচের পদ্ধতিগুলো অনুশীলন করো।
+
+\subsection{প্রশ্নের ভাষা থেকে কাজ শনাক্ত করো}
+\begin{flushleft}
+\small
+\begin{tabularx}{0.98\linewidth}{|p{42mm}|X|}\hline
+প্রশ্নে কী বলা হয়েছে & কীভাবে উত্তর শুরু করবে\\ \hline
+সংজ্ঞা দাও / কী & প্রয়োজনীয় বৈশিষ্ট্যসহ সংক্ষিপ্ত সংজ্ঞা\\ \hline
+কেন / ব্যাখ্যা করো & কারণ এবং একটি প্রাসঙ্গিক উদাহরণ\\ \hline
+ডেটা টাইপ নির্ধারণ করো & ফিল্ড, টাইপ, উদাহরণ এবং নির্বাচনের যুক্তি\\ \hline
+কী নির্বাচন করো & অনন্যতা, NULL এবং ভবিষ্যতে পুনরাবৃত্তির সম্ভাবনা\\ \hline
+রিলেশন তৈরি / বিশ্লেষণ করো & প্যারেন্ট, চাইল্ড, সংযোগকারী কী, দিক ও চিত্র\\ \hline
+তথ্য খুঁজে দেখাও & SELECT, উৎস, WHERE এবং প্রয়োজনে JOIN\\ \hline
+ঊর্ধ্বক্রমে / নিম্নক্রমে সাজাও & সর্টিং ফিল্ড, ASC/DESC ও ফলের ক্রম\\ \hline
+সুবিধা-অসুবিধা / যৌক্তিকতা & উদ্দীপকের কাজে সুবিধা, সীমা এবং যুক্তিসহ সিদ্ধান্ত\\ \hline
+\end{tabularx}
+\end{flushleft}
+\textbf{ক/খ/গ/ঘ লেখার অভ্যাস:} ক-তে সরাসরি সংজ্ঞা; খ-তে সংজ্ঞার সঙ্গে কারণ; গ-তে উদ্দীপকের মান ব্যবহার করে প্রয়োগ; ঘ-তে প্রমাণ, তুলনা ও সিদ্ধান্ত লেখো। উত্তর বড় হলেই ভালো হয় না---প্রশ্নের প্রত্যেকটি চাহিদা পূরণ করতে হয়।
+
+\subsection{কী নির্বাচনের সিদ্ধান্ত-পদ্ধতি}
+\begin{enumerate}
+\item ফিল্ডে ডুপ্লিকেট আছে কি? থাকলে একা প্রাইমারি কী হবে না।
+\item মান অনুপস্থিত থাকার সুযোগ আছে কি? প্রাইমারি কী-এর ক্ষেত্রে থাকবে না।
+\item আজ অনন্য দেখালেও ভবিষ্যতে পুনরাবৃত্ত হতে পারে কি? ব্যক্তির Name সাধারণত নির্ভরযোগ্য শনাক্তকারী নয়।
+\item একটি ফিল্ডে না হলে কোন সমন্বয়ে অনন্যতা নিশ্চিত হয়? প্রয়োজনের অতিরিক্ত ফিল্ড যুক্ত করবে না।
+\item নির্বাচিত কী অন্য টেবিলে কীভাবে রাখা হবে? একই অর্থ ও সামঞ্জস্যপূর্ণ টাইপ নিশ্চিত করো।
+\end{enumerate}
+
+\noindent\textbf{একই রোল, ভিন্ন শ্রেণি।} বর্তমান শিক্ষাবর্ষে একটিমাত্র শাখার XI ও XII শ্রেণিতে Roll=1 আছে। এখানে (ClassName, Roll) জোড়া অনন্য হতে পারে। পরের বছর বা নতুন শাখা যোগ হলে সমন্বয়ে Year/Section লাগতে পারে। স্থায়ী StudentID দিলে শিক্ষার্থী শনাক্তে এই পরিবর্তনের ওপর নির্ভরতা কমে।
+
+\subsection{রিলেশন নির্ণয়ের চার প্রশ্ন}
+\begin{enumerate}
+\item প্রথম টেবিলের একজন/একটির বিপরীতে দ্বিতীয়টিতে কতটি রেকর্ড হতে পারে?
+\item বিপরীত দিক থেকে উত্তর কী?
+\item কোন ফিল্ডে UNIQUE নিয়ম দরকার, কোনটিতে ডুপ্লিকেট চলবে?
+\item অনুপস্থিত প্যারেন্ট বা প্যারেন্ট মুছে ফেলার ক্ষেত্রে কী নিয়ম কার্যকর হবে?
+\end{enumerate}
+“দুই টেবিলেই ৩টি রেকর্ড, তাই 1:1”---এ যুক্তি যথেষ্ট নয়। 1:N নকশাতেও কোনো মুহূর্তে প্রত্যেক প্যারেন্টের একটি চাইল্ড থাকতে পারে। প্রশ্নের নকশাগত শর্ত এবং পুনরাবৃত্ত পরিচিতির উদাহরণ একসঙ্গে ব্যবহার করো।
+
+\subsection{টাইপ নির্বাচনে দ্ব্যর্থতা দূর করো}
+\begin{flushleft}
+\small
+\begin{tabularx}{0.98\linewidth}{|p{31mm}|X|}\hline
+প্রদত্ত মান & কী লক্ষ করবে\\ \hline
+GPA = 4.75 & দশমিক Number/REAL; ০--৫-এর বৈধতা\\ \hline
+Grade = A+ & Text; অক্ষর থাকায় Number নয়\\ \hline
+Roll = 0012 & শুরুতে শূন্য রাখতে হলে Text; গণনার প্রয়োজন বিচার করো\\ \hline
+BirthDate & Access: Date/Time; SQLite-এ নির্দিষ্ট বিন্যাসের TEXT ইত্যাদি\\ \hline
+AdmissionFee & Access: Currency; টাকার দশমিক ও নির্ভুলতার প্রয়োজন\\ \hline
+Photo & Access-এ Attachment/OLE Object; শুধু ছবির ফাইলের নাম বা অবস্থান রাখলে Text ব্যবহার করা যায়\\ \hline
+Paid & Access-এ Yes/No; অন্য DBMS-এ সমর্থিত যৌক্তিক মানের উপস্থাপন\\ \hline
+\end{tabularx}
+\end{flushleft}
+এক প্রশ্নে টেবিলের শিরোনাম GPA হলেও ঘরে A+ দেওয়া থাকলে শিরোনাম ও মানের অসংগতি উল্লেখ করো: A+ হলো গ্রেডের লেখা, GPA হলো সংখ্যামান। শুধু শিরোনাম দেখে টাইপ নির্বাচন করবে না।
+
+\subsection{পূর্ণ নমুনা সমাধান ১: শিক্ষার্থী ও ফি}
+\textbf{উদ্দীপক।} একটি কলেজে নিচের দুই টেবিল আছে। এক শিক্ষার্থী বিভিন্ন মাসে ফি দেয়; প্রতিটি রসিদ আলাদা।
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{Student}\\ \hline
+StudentID & Name & ClassName\\ \hline
+1 & Ayesha & XI\\\hline
+2 & Nabil & XI\\\hline
+3 & Rupa & XII\\ \hline
+\end{tabular}
+\qquad
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|l|}{Payment}\\ \hline
+PaymentID & StudentID & Amount\\ \hline
+501 & 1 & 600\\\hline
+502 & 1 & 400\\\hline
+503 & 2 & 700\\ \hline
+\end{tabular}
+\end{flushleft}
+\begin{enumerate}
+\item[ক.] ফরেন কী কী?
+\item[খ.] Payment.StudentID একা প্রাইমারি কী হতে পারে না কেন?
+\item[গ.] Student থেকে Payment-এর সম্পর্ক ও প্রয়োজনীয় কী নির্ধারণ করো।
+\item[ঘ.] যাদের মোট জমা কমপক্ষে ৭০০, তাদের নাম ও মোট টাকা দেখানোর SQL লেখো এবং ফল ব্যাখ্যা করো।
+\end{enumerate}
+\textbf{ক-এর উত্তর:} যে ফিল্ড বা ফিল্ডসমষ্টি সম্পর্কিত টেবিলের উপযুক্ত অনন্য কী-কে রেফার করে, তাকে ফরেন কী বলে।
+
+\textbf{খ-এর উত্তর:} একই শিক্ষার্থী একাধিক রসিদ পেতে পারে। নমুনায় StudentID=1 দুইবার আছে। তাই এই ফিল্ড একা প্রতিটি Payment রেকর্ডকে আলাদাভাবে শনাক্ত করে না; PaymentID উপযুক্ত প্রাইমারি কী।
+
+\textbf{গ-এর উত্তর:} Student.StudentID প্যারেন্টের প্রাইমারি কী; Payment.PaymentID চাইল্ডের প্রাইমারি কী। Payment.StudentID হলো Student.StudentID-এর ফরেন কী। এক শিক্ষার্থীর অনেক Payment হওয়ায় Student থেকে Payment = 1:N। StudentID=1-এর দুই রসিদ এই নিয়মের উদাহরণ।
+\begin{flushleft}
+\small
+\fbox{\parbox{0.88\linewidth}{\raggedright
+Student.StudentID (PK) $\xrightarrow{\;1:N\;}$ Payment.StudentID (FK)}}
+\end{flushleft}
+\textbf{ঘ-এর উত্তর:}
+\begin{verbatim}
+SELECT s.StudentID, s.Name, SUM(p.Amount) AS TotalPaid
+FROM Student AS s
+INNER JOIN Payment AS p ON s.StudentID = p.StudentID
+GROUP BY s.StudentID, s.Name
+HAVING SUM(p.Amount) >= 700
+ORDER BY TotalPaid DESC, s.StudentID ASC;
+\end{verbatim}
+\begin{flushleft}
+\small
+\begin{tabular}{|l|l|l|}\hline
+StudentID & Name & TotalPaid\\ \hline
+1 & Ayesha & 1000\\\hline
+2 & Nabil & 700\\ \hline
+\end{tabular}
+\end{flushleft}
+Ayesha-র মোট ৬০০+৪০০=১০০০, Nabil-এর ৭০০। Rupa-র Payment নেই, তাই INNER JOIN-এর ফলেও নেই। একই নামে দুই শিক্ষার্থী থাকতে পারে বলে শুধু Name দিয়ে গ্রুপ না করে StudentID-ও দেওয়া হয়েছে। “কমপক্ষে” মানে \texttt{>=}; শুধু \texttt{>} দিলে ৭০০ বাদ যেত।
+
+\subsection{পূর্ণ নমুনা সমাধান ২: পণ্য, অনুসন্ধান ও নিরাপত্তা}
+\textbf{উদ্দীপক।} একটি সমবায়ে Product(ProductID, ProductName, UnitPrice, Stock) টেবিল আছে। ProductID অনন্য। কর্মীরা পণ্যের নাম দিয়ে খোঁজেন। ব্যবস্থাপক বেশি দাম থেকে কম দামে তালিকা চান। বিক্রয়কর্মী মজুদ দেখতে পারবেন, কিন্তু মূল্য পরিবর্তনের অনুমতি পাবেন না।
+\begin{enumerate}
+\item[ক.] ইনডেক্স কী?
+\item[খ.] সর্টিং ও ইনডেক্সিং একই কাজ নয় কেন?
+\item[গ.] ProductName-এ ইনডেক্স তৈরির SQL এবং UnitPrice অনুযায়ী তালিকা সাজানোর SQL লেখো।
+\item[ঘ.] অনুমতি, লগ ও ব্যাকআপ ব্যবস্থাকে উদ্দীপকের কাজের সঙ্গে যুক্ত করে বিশ্লেষণ করো।
+\end{enumerate}
+\textbf{ক-এর উত্তর:} ফিল্ডের মানের ভিত্তিতে দ্রুত রেকর্ড খোঁজায় সহায়তাকারী বিশেষ ডেটা কাঠামো হলো ইনডেক্স।
+
+\textbf{খ-এর উত্তর:} সর্টিং ফলের ক্রম নির্ধারণ করে; যেমন মূল্য বেশি থেকে কম। ইনডেক্স অনুসন্ধানের সহায়ক কাঠামো; যেমন নাম দিয়ে পণ্য খোঁজা। ইনডেক্স থাকলেও নির্দিষ্ট ক্রমের তালিকার জন্য ORDER BY দরকার।
+
+\textbf{গ-এর উত্তর:}
+\begin{verbatim}
+CREATE INDEX idx_product_name ON Product(ProductName);
+SELECT ProductID, ProductName, UnitPrice
+FROM Product
+ORDER BY UnitPrice DESC, ProductID ASC;
+\end{verbatim}
+প্রথম নির্দেশে ইনডেক্স তৈরি হয়; রেকর্ডের সংখ্যা বদলায় না। দ্বিতীয়টি নির্বাচিত কলামের তালিকা দেখায়; সমান মূল্যে ProductID দিয়ে ক্রম ঠিক হয়। পণ্যের নমুনা মান না দেওয়ায় নির্দিষ্ট নামের আউটপুট বানানো যাবে না।
+
+\textbf{ঘ-এর উত্তর:} বিক্রয়কর্মীর মূল্য পরিবর্তনের অনুমতি বন্ধ রেখে প্রয়োজনমতো দেখা বা বিক্রয় এন্ট্রির সুযোগ দিতে হবে। অনুমোদিত ব্যবস্থাপক মূল্য বদলালে কে কখন বদলালেন তার লগ রাখা হবে। ভুল পরিবর্তন বা ডেটা হারালে ব্যাকআপ ও পুনরুদ্ধার দরকার। শুধু পাসওয়ার্ড থাকলেই এই তিন কাজ একসঙ্গে সম্পন্ন হয় না।
+
+\subsection{SQL লেখার নিয়ম: বাক্য থেকে নির্দেশ}
+\begin{flushleft}
+\small
+\begin{tabularx}{0.98\linewidth}{|p{40mm}|X|}\hline
+প্রশ্নের শব্দ & নির্দেশ বা শর্তের ধারণা\\ \hline
+শুধু নাম ও রোল & SELECT Name, Roll\\ \hline
+বিজ্ঞান বিভাগের & WHERE GroupName = 'Science'\\ \hline
+৭০-এর বেশি / কমপক্ষে ৭০ & Marks > 70 / Marks >= 70\\ \hline
+৪০ থেকে ৭০ পর্যন্ত & Marks BETWEEN 40 AND 70\\ \hline
+বিজ্ঞান নয় & GroupName <> 'Science'\\ \hline
+দুই শর্তই / যেকোনো একটি & AND / OR; প্রয়োজনে বন্ধনী\\ \hline
+মান দেওয়া হয়নি & IS NULL\\ \hline
+একই নাম একবার & SELECT DISTINCT Name\\ \hline
+নম্বরের গড় & AVG(Marks)\\ \hline
+দলের ওপর শর্ত & GROUP BY-এর পরে HAVING\\ \hline
+\end{tabularx}
+\end{flushleft}
+\textbf{DISTINCT-এর উদাহরণ:} Science, Business, Science থাকা তিন রেকর্ড থেকে \texttt{SELECT DISTINCT GroupName FROM Student ORDER BY GroupName;} দিলে Business এবং Science একবার করে আসে। মূল রেকর্ড মুছে যায় না।
+
+\subsection{নতুন ফিল্ড, ডেটা পরিবর্তন ও কাঠামো পরিবর্তন}
+\begin{verbatim}
+ALTER TABLE Student ADD COLUMN Address TEXT;
+UPDATE Student SET Address = 'Khulna' WHERE StudentID = 2;
+SELECT StudentID, Address FROM Student ORDER BY StudentID;
+\end{verbatim}
+এগুলো আগের ফি-উদ্দীপকের Student টেবিলে SQLite দিয়ে চালালে নতুন Address ফিল্ড যোগ হবে। StudentID=2-এর মান Khulna; 1 ও 3-এর নতুন ফিল্ড NULL থাকবে। নতুন ফিল্ড যোগ করা DDL; মান বদলানো DML।
+
+টেবিলের মাঝখানে নতুন কলাম দেখানোর প্রশ্নে সফটওয়্যার বিবেচনা করো। Access Design View বা DB Browser-এর সমর্থিত নকশা-সুবিধায় ক্রম সাজানো যায়। SQLite-এর ADD COLUMN শেষে কলাম যোগ করে; প্রদর্শনের ক্রম চাইলে SELECT-এর ফিল্ড তালিকা সাজাও। কলামের প্রদর্শনক্রম ডেটার পারস্পরিক অর্থ বদলায় না।
+
+\subsection{ভুল SQL ঠিক করার অনুশীলন}
+\begin{enumerate}
+\item \texttt{WHERE GPA = NULL} $\rightarrow$ \texttt{WHERE GPA IS NULL}।
+\item \texttt{WHERE GroupName = Science} $\rightarrow$ Text মানে উদ্ধৃতি: \texttt{'Science'}।
+\item \texttt{ORDER BY GPA} দিয়ে শুধু উত্তীর্ণ শিক্ষার্থী নেওয়া $\rightarrow$ আগে WHERE-এ উত্তীর্ণের শর্ত, পরে প্রয়োজনীয় ORDER BY।
+\item দুই টেবিল FROM-এ লিখে মিলের শর্ত বাদ দেওয়া $\rightarrow$ উপযুক্ত JOIN/WHERE শর্তে কী-এর মান মেলাও।
+\item নাম দিয়ে UPDATE করলে একই নামের সবাই বদলে যাওয়া $\rightarrow$ নির্দিষ্ট রেকর্ডের অনন্য কী ব্যবহার করো।
+\item “একাধিক ফল থাকলে StudentID অনন্য করতে হবে” $\rightarrow$ ResultID অনন্য; StudentID পুনরাবৃত্ত হতে পারবে।
+\end{enumerate}
+
+\subsection{বহুপদী ও অভিন্ন উদ্দীপকের MCQ সমাধান}
+প্রথমে i, ii, iii প্রতিটি বক্তব্য আলাদাভাবে সত্য/মিথ্যা নির্ণয় করো; তারপর অপশন মেলাও। একটি ভুল বক্তব্য থাকলে সেটিসহ সব সমন্বয় বাদ দাও। উদ্দীপকের দ্বিতীয় প্রশ্নে নতুন করে হিসাব না করে প্রথমে একই টেবিলের মান ও নিয়ম পুনরায় যাচাই করো।
+
+\noindent\textbf{বক্তব্য যাচাই।} একটি টেবিলের প্রাইমারি কী সম্পর্কে---i. রেকর্ড শনাক্ত করে; ii. NULL থাকতে পারে; iii. একাধিক ফিল্ডের হতে পারে। এখানে i ও iii সঠিক, ii ভুল। “সব কী একটি ফিল্ড” ভেবে iii বাদ দিলে ভুল হবে।
+
+\textbf{অভিন্ন উদ্দীপক:} তিন শিক্ষার্থীর GPA যথাক্রমে 5.00, 4.50, 5.00; তাদের Roll 1, 2, 3।
+\begin{enumerate}
+\item GPA=5 হলে কয়টি রেকর্ড? \textbf{উত্তর:} ২।
+\item GPA DESC, Roll DESC হলে রোলের ক্রম? \textbf{উত্তর:} 3, 1, 2।
+\item DISTINCT GPA হলে কয়টি পৃথক মান? \textbf{উত্তর:} ২।
+\item GPA=5 রেকর্ডগুলো DELETE করলে কয়টি থাকবে? \textbf{উত্তর:} ১; মূল তিন রেকর্ড থেকে কাজটি করা হয়েছে ধরে।
+\end{enumerate}
+
+\subsection{পরীক্ষার আগে নিজের সক্ষমতা যাচাই}
+\begin{enumerate}
+\item নতুন টেবিলে ফিল্ড, রেকর্ড, কী ও NULL আলাদা করতে পারি।
+\item টাইপ নির্বাচনে মান, ব্যবহার ও সফটওয়্যার বিবেচনা করি।
+\item 1:1, 1:N, N:1 ও M:N-এর দিক ও কারণ দেখাতে পারি।
+\item SELECT, INSERT, UPDATE, DELETE ও CREATE/ALTER-এর কাজ আলাদা করতে পারি।
+\item শর্ত, সর্টিং, সমষ্টিগত হিসাব ও JOIN-এর ফল নিজে নির্ণয় করি।
+\item ইনডেক্সের লাভের পাশাপাশি খরচ বলতে পারি।
+\item ACID, NoSQL ও Big Data-এর বৈশিষ্ট্য এবং নিরাপত্তার পদ্ধতি উদ্দীপকের কাজে যুক্ত করতে পারি।
+\item উত্তরে নমুনার মান, প্রাসঙ্গিক কারণ ও যুক্তিসহ সিদ্ধান্ত দিই।
+\end{enumerate}

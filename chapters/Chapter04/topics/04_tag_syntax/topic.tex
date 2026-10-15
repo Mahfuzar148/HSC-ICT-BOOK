@@ -1,286 +1,372 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % ৪.৪ HTML ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট ও সিনট্যাক্স
 \section{HTML ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট ও সিনট্যাক্স}
 
+% Composition pass 2026-10-04
+একই লেখায় একটি শব্দ ক্লিকযোগ্য আর অন্যটি শুধু অনুচ্ছেদের অংশ হতে পারে।
+
+\chFourMotivation{উপাদান ও বৈশিষ্ট্য আলাদা করা $\rightarrow$ ট্যাগ, এলিমেন্ট ও অ্যাট্রিবিউট $\rightarrow$ সঠিক নিয়মে গঠন ও গন্তব্য লেখা $\rightarrow$ ব্রাউজার প্রত্যাশিত ফল দেখায়।}
+
+
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML tag, element, attribute, content ও attribute value আলাদা করতে।
-\item start tag, end tag, paired tag ও empty/void tag শনাক্ত করতে।
-\item valid HTML syntax ও common syntax mistake বোঝাতে।
-\item ছোট HTML code বিশ্লেষণ করে প্রতিটি অংশের কাজ বলতে।
+\item HTML ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট, বিষয়বস্তু ও অ্যাট্রিবিউটের মান আলাদা করতে।
+\item শুরুর ট্যাগ, শেষের ট্যাগ, জোড়া ট্যাগ ও এম্পটি/ভয়েড ট্যাগ শনাক্ত করতে।
+\item HTML-এর সঠিক সিনট্যাক্স ও সাধারণ সিনট্যাক্সের ভুল বোঝাতে।
+\item ছোট HTML কোড বিশ্লেষণ করে প্রতিটি অংশের কাজ বলতে।
 \end{itemize}
 \end{learningbox}
 
 
-\subsection{HTML Tag কী}
-\begin{definitionbox}{Tag}
-HTML document-এ content-এর ধরন বা কাজ বোঝাতে angle bracket \texttt{< >}-এর মধ্যে যে keyword লেখা হয় তাকে tag বলে। যেমন \texttt{<p>} paragraph শুরু করে এবং \texttt{</p>} paragraph শেষ করে।
+\subsection{HTML ট্যাগ কী}
+\begin{definitionbox}{ট্যাগ (Tag)}
+HTML-এ এলিমেন্টের শুরু বা শেষ চিহ্নিত করার জন্য কৌণিক বন্ধনী \texttt{< >}-সহ লেখা নির্দেশনাকে ট্যাগ বলে। যেমন, \texttt{<p>} অনুচ্ছেদ শুরু করে এবং \texttt{</p>} শেষ করে। বন্ধনীর ভেতরের \texttt{p} হলো ট্যাগের নাম।
 \end{definitionbox}
 
-\begin{definitionbox}{Content}
-Start tag ও end tag-এর মাঝখানে যে text, image, link বা অন্য element থাকে তাকে content বলা হয়। যেমন \texttt{<h1>Welcome to ICT</h1>}-এ \texttt{Welcome to ICT} content।
+\begin{definitionbox}{বিষয়বস্তু (Content)}
+শুরুর ট্যাগ ও শেষের ট্যাগের মাঝখানে যে লেখা, ছবি, লিংক বা অন্য এলিমেন্ট থাকে তাকে বিষয়বস্তু বলা হয়। যেমন \texttt{<h1>Welcome to ICT</h1>}-এ \texttt{Welcome to ICT} বিষয়বস্তু।
 \end{definitionbox}
 
-\begin{definitionbox}{Element}
-Start tag, content এবং end tag মিলিয়ে একটি HTML element তৈরি হয়। যেমন \texttt{<h1>Title</h1>} একটি heading element।
+\begin{definitionbox}{এলিমেন্ট (Element)}
+HTML ডকুমেন্টের একটি গঠনগত উপাদানকে \textbf{এলিমেন্ট} বলে। সাধারণ এলিমেন্ট শুরুর ট্যাগ, ভেতরের বিষয়বস্তু ও শেষের ট্যাগ দিয়ে লেখা হয়; যেমন \texttt{<h1>Title</h1>}। ভয়েড এলিমেন্টের শেষের ট্যাগ ও ভেতরের বিষয়বস্তু থাকে না।
 \end{definitionbox}
 
-\begin{definitionbox}{Attribute}
-Tag-এর অতিরিক্ত তথ্য বা property নির্দেশ করতে attribute ব্যবহৃত হয়। Attribute সাধারণত opening tag-এর মধ্যে লেখা হয়। যেমন \texttt{<a href="page.html">Link</a>}-এ \texttt{href} attribute।
+\begin{definitionbox}{অ্যাট্রিবিউট (Attribute)}
+HTML এলিমেন্টের বৈশিষ্ট্য বা অতিরিক্ত তথ্য প্রকাশের জন্য ব্যবহৃত নামকে অ্যাট্রিবিউট বলে। অ্যাট্রিবিউট শুরুর ট্যাগে লেখা হয়। যেমন, \texttt{<a href="page.html">Link</a>}-এ \texttt{href} গন্তব্য নির্দেশকারী অ্যাট্রিবিউট।
 \end{definitionbox}
 
-\begin{definitionbox}{Attribute value}
-Attribute-এর নির্দিষ্ট মানকে attribute value বলে। যেমন \texttt{<p align="center">ICT</p>}-এ \texttt{center} হলো \texttt{align} attribute-এর value।
+\begin{definitionbox}{অ্যাট্রিবিউটের মান (Attribute Value)}
+কোনো অ্যাট্রিবিউটে বৈশিষ্ট্যের যে নির্দিষ্ট তথ্য দেওয়া হয়, তাকে অ্যাট্রিবিউটের মান বলে। যেমন \texttt{<p align="center">ICT</p>}-এ \texttt{center} হলো \texttt{align} অ্যাট্রিবিউটের মান।
 \end{definitionbox}
 
 \begin{keypointbox}{এক নজরে}
 \begin{itemize}
-\item Tag = নির্দেশনা
-\item Element = start tag + content + end tag
-\item Attribute = অতিরিক্ত তথ্য
-\item Value = attribute-এর মান
+\item ট্যাগ = এলিমেন্টের শুরু বা শেষ বোঝানোর চিহ্ন
+\item সাধারণ এলিমেন্ট = শুরুর ট্যাগ + বিষয়বস্তু + শেষের ট্যাগ
+\item অ্যাট্রিবিউট = অতিরিক্ত তথ্য
+\item মান = অ্যাট্রিবিউটের মান
 \end{itemize}
 \end{keypointbox}
 
-\begin{center}
-\begin{tabular}{|p{0.16\textwidth}|p{0.25\textwidth}|p{0.43\textwidth}|}
+% Keep the terminology table and its compact native diagram in one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}
+\small
+\begin{tabular}{|p{0.17\linewidth}|p{0.25\linewidth}|p{0.44\linewidth}|}
 \hline
-\textbf{Term} & \textbf{সংক্ষিপ্ত অর্থ} & \textbf{উদাহরণ} \\
+\textbf{পরিভাষা} & \textbf{সংক্ষিপ্ত অর্থ} & \textbf{উদাহরণ} \\
 \hline
-Tag & angle bracket-এর মধ্যে লেখা নির্দেশনা & \texttt{<p>}, \texttt{</p>}, \texttt{<a>} \\
+ট্যাগ & কৌণিক বন্ধনীর মধ্যে লেখা নির্দেশনা & \texttt{<p>}, \texttt{</p>}, \texttt{<a>} \\
 \hline
-Element & শুরু, content ও শেষ অংশের সমষ্টি & \texttt{<p>Text</p>} \\
+এলিমেন্ট & HTML-এর গঠনগত উপাদান & \texttt{<p>Text</p>} \\
 \hline
-Attribute & tag-এর অতিরিক্ত তথ্য & \texttt{href}, \texttt{src}, \texttt{alt}, \texttt{align} \\
+অ্যাট্রিবিউট & ট্যাগের অতিরিক্ত তথ্য & \texttt{href}, \texttt{src}, \texttt{alt}, \texttt{align} \\
 \hline
-Attribute value & attribute-এর নির্দিষ্ট মান & \texttt{"page.html"}, \texttt{"center"} \\
+অ্যাট্রিবিউট মান & অ্যাট্রিবিউটের নির্দিষ্ট মান & \texttt{"page.html"}, \texttt{"center"} \\
 \hline
-Content & tag-এর মাঝের লেখা বা nested অংশ & text, image, link text, list item \\
+বিষয়বস্তু & এলিমেন্টের ভেতরের লেখা বা নেস্টেড অংশ & লেখা, ছবি, লিংকের লেখা, তালিকার উপাদান \\
 \hline
 \end{tabular}
-\end{center}
 
-\begin{figure}[H]
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}
+\centering
 \centering
 \resizebox{0.96\linewidth}{!}{%
 \begin{tikzpicture}[
-  node distance=14mm and 18mm,
-  box/.style={draw, rounded corners, align=center, inner sep=4pt, text width=31mm, fill=gray!5, font=\small},
-  elementbox/.style={draw, rounded corners, align=center, inner sep=4pt, text width=44mm, fill=gray!5, font=\small}
+  node distance=7mm and 3mm,
+  box/.style={draw, rounded corners, align=center, inner sep=4pt, text width=26mm, fill=gray!5, font=\footnotesize},
+  elementbox/.style={draw, rounded corners, align=center, inner sep=4pt, text width=34mm, fill=gray!5, font=\footnotesize}
 ]
-\node[elementbox] (element) {\textbf{HTML element}\\{\scriptsize\ttfamily <p align="center">}\\{\scriptsize\ttfamily Bangladesh}\\{\scriptsize\ttfamily </p>}};
-\node[box, above left=of element] (starttag) {\textbf{Start tag}\\{\scriptsize\ttfamily <p}\\{\scriptsize\ttfamily align="center">}};
-\node[box, above right=of element] (endtag) {\textbf{End tag}\\\texttt{</p>}};
-\node[box, below=of element] (attr) {\textbf{Attribute}\\{\scriptsize\ttfamily align="center"}};
+\node[elementbox] (element) at (0,0) {\textbf{HTML element}\\{\scriptsize\ttfamily <p align="center">}\\{\scriptsize\ttfamily Bangladesh}\\{\scriptsize\ttfamily </p>}};
+\node[box] (starttag) at (-1.7,1.9) {\textbf{Start tag}\\{\scriptsize\ttfamily <p}\\{\scriptsize\ttfamily align="center">}};
+\node[box] (endtag) at (1.7,1.9) {\textbf{End tag}\\\texttt{</p>}};
+\node[box] (attr) at (0,-1.8) {\textbf{Attribute}\\{\scriptsize\ttfamily align="center"}};
 \draw[->, thick] (starttag) -- (element);
 \draw[->, thick] (endtag) -- (element);
 \draw[->, thick] (attr) -- (element);
 \end{tikzpicture}
 }
-\caption{HTML tag, element ও attribute-এর সম্পর্ক}
+\captionof{figure}{HTML ট্যাগ, এলিমেন্ট ও অ্যাট্রিবিউটের সম্পর্ক}
 \label{fig:html-tag-element-attribute}
-\end{figure}
+
+\end{minipage}\par
+
 
 \subsection{ট্যাগের ধরন}
+জোড়া ট্যাগ ও এম্পটি ট্যাগের পার্থক্য হলো শেষের ট্যাগ ও ভেতরের বিষয়বস্তুর উপস্থিতি। অ্যাট্রিবিউট দুই ধরনের ট্যাগেই থাকতে পারে; তাই নিচের তৃতীয় সারিটি আলাদা, পরস্পর বিচ্ছিন্ন শ্রেণি নয়।
 \begin{center}
 \begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.34\textwidth}|}
 \hline
 \textbf{ধরন} & \textbf{উদাহরণ} & \textbf{কাজ} \\
 \hline
-Paired tag / container tag & \texttt{<p>...</p>} & content ঘিরে রাখে \\
+জোড়া ট্যাগ / কন্টেইনার ট্যাগ & \texttt{<p>...</p>} & বিষয়বস্তু ঘিরে রাখে \\
 \hline
-Empty tag / void tag & \texttt{<br>}, \texttt{<img>} & end tag থাকে না; নিজেই কাজ সম্পন্ন করে \\
+এম্পটি ট্যাগ / ভয়েড ট্যাগ & \texttt{<br>}, \texttt{<img>} & শেষের ট্যাগ থাকে না; নিজেই কাজ সম্পন্ন করে \\
 \hline
-Attributeসহ tag & \texttt{<img src="a.jpg" alt="A">} & অতিরিক্ত তথ্য দেয় \\
+অ্যাট্রিবিউটসহ ট্যাগ & \texttt{<img src="a.jpg" alt="A">} & অতিরিক্ত তথ্য দেয় \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{definitionbox}{Paired tag}
-যে HTML tag-এর opening tag ও closing tag দু'টি অংশ থাকে এবং মাঝখানে content থাকে, তাকে paired tag বলে। যেমন \texttt{<p>Bangladesh</p>}।
+\begin{definitionbox}{জোড়া ট্যাগ (Paired Tag)}
+যে HTML ট্যাগের শুরুর ট্যাগ ও শেষের ট্যাগ দু'টি অংশ থাকে এবং মাঝখানে বিষয়বস্তু থাকে, তাকে জোড়া ট্যাগ বলে। যেমন \texttt{<p>Bangladesh</p>}।
 \end{definitionbox}
 
-\begin{definitionbox}{Empty tag}
-যে HTML tag-এর সাধারণত কোনো closing tag থাকে না এবং যা content ঘিরে রাখে না, তাকে empty tag বলে। আধুনিক HTML-এ এগুলোকেই প্রায়শ void element বলা হয়। যেমন \texttt{<br>}, \texttt{<hr>}, \texttt{<img>}।
+\begin{definitionbox}{এম্পটি ট্যাগ ও ভয়েড এলিমেন্ট (Empty Tag / Void Element)}
+যে HTML এলিমেন্টের ভেতরে বিষয়বস্তু রাখা যায় না এবং যার শেষের ট্যাগ লেখা হয় না, তাকে \textbf{ভয়েড এলিমেন্ট} বলে। পাঠ্যবইয়ে এগুলোর শুরুর ট্যাগকে এম্পটি ট্যাগ বলা হয়। যেমন \texttt{<br>}, \texttt{<hr>}, \texttt{<img>}।
 \end{definitionbox}
 
-\begin{keypointbox}{Important empty tags}
-HSC MCQ-তে empty tag শনাক্ত করতে বলা হয়। মনে রাখবে:
+\begin{keypointbox}{গুরুত্বপূর্ণ এম্পটি ট্যাগ}
+নিচের ভয়েড এলিমেন্টগুলোর শেষের ট্যাগ লেখা হয় না।
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \texttt{<br>} - line break
-\item \texttt{<hr>} - horizontal line
-\item \texttt{<img>} - image
-\item \texttt{<meta>} - metadata/charset
-\item \texttt{<link>} - external resource link, যেমন CSS file
-\item \texttt{<base>} - relative URL-এর base address
+\item \texttt{<br>} — লাইনবিরতি
+\item \texttt{<hr>} — বিষয়গত বিভাজক, সাধারণত অনুভূমিক রেখা
+\item \texttt{<img>} — ছবি
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item \texttt{<meta>} — পেজের তথ্য বা এনকোডিং ঘোষণা
+\item \texttt{<link>} - বাহ্যিক সম্পদের লিংক, যেমন CSS ফাইল
+\item \texttt{<base>} - আপেক্ষিক URL-এর ভিত্তি ঠিকানা
+\end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
-\subsection{HTML Syntax}
-HTML code লেখার নিয়মকেই HTML syntax বলে। Syntax ঠিক না হলে browser অনেক সময় code-কে সঠিকভাবে বুঝতে পারে না।
+\subsection{HTML সিনট্যাক্স}
+সিনট্যাক্স মেনে লিখলে কোডের গঠন স্পষ্ট থাকে। ভুল কোড ব্রাউজার কখনো নিজে সামলে দেখালেও সেই ফল কাঙ্ক্ষিত গঠনের সঙ্গে নাও মিলতে পারে।
 
-\begin{definitionbox}{Syntax}
-HTML document-এ tag, element, attribute ও content সঠিকভাবে লেখার নিয়মকে syntax বলে।
+\begin{definitionbox}{সিনট্যাক্স (Syntax)}
+HTML ডকুমেন্টে ট্যাগ, এলিমেন্ট, অ্যাট্রিবিউট ও বিষয়বস্তু সঠিকভাবে লেখার নিয়মকে সিনট্যাক্স বলে।
 \end{definitionbox}
 
 \begin{center}
 \fbox{\parbox{0.92\textwidth}{
-\textbf{Basic syntax pattern}\\[4pt]
+\textbf{লেখার সাধারণ ছক}\\[4pt]
 \texttt{<tag>content</tag>}\\
 \texttt{<tag attribute="value">content</tag>}\\
 \texttt{<empty-tag>}\\[2pt]
-Tag সাধারণত angle bracket-এর মধ্যে থাকে, attribute opening tag-এর মধ্যে থাকে, আর closing tag-এ slash \texttt{/} ব্যবহার করা হয়।
+ট্যাগ সাধারণত কৌণিক বন্ধনীর মধ্যে থাকে, অ্যাট্রিবিউট শুরুর ট্যাগের মধ্যে থাকে, আর শেষের ট্যাগে স্ল্যাশ \texttt{/} ব্যবহার করা হয়।
 }}
 \end{center}
 
-\begin{keypointbox}{HTML syntax-এর প্রধান নিয়ম}
+\begin{keypointbox}{HTML সিনট্যাক্সের প্রধান নিয়ম}
 \begin{itemize}
-\item Tag অবশ্যই \texttt{< >} angle bracket-এর মধ্যে লিখতে হবে।
-\item Closing tag-এ keyword-এর আগে \texttt{/} slash থাকবে।
-\item Attribute সাধারণত opening tag-এর মধ্যে লিখতে হবে।
-\item Attribute name ও value-এর মাঝে \texttt{=} চিহ্ন থাকবে।
-\item Attribute value quote-এর মধ্যে লেখা উত্তম।
-\item Tag nesting সঠিক order-এ থাকতে হবে।
-\item HTML tag case-insensitive, তবে lowercase tag ব্যবহার করা ভালো।
-\item Empty/void tag-এর সাধারণত closing tag থাকে না।
+\item ট্যাগ অবশ্যই \texttt{< >} কৌণিক বন্ধনীর মধ্যে লিখতে হবে।
+\item শেষের ট্যাগে মূলশব্দের আগে \texttt{/} স্ল্যাশ থাকবে।
+\item অ্যাট্রিবিউট সাধারণত শুরুর ট্যাগের মধ্যে লিখতে হবে।
+\item মানসহ অ্যাট্রিবিউটে নাম ও মানের মাঝে \texttt{=} চিহ্ন থাকবে। \texttt{required}-এর মতো সত্য/মিথ্যা অবস্থা বোঝানো Boolean অ্যাট্রিবিউট শুধু নাম দিয়েও লেখা যায়।
+\item অ্যাট্রিবিউট মান উদ্ধৃতির মধ্যে লেখা উত্তম।
+\item ট্যাগ নেস্টিং সঠিক ক্রমে থাকতে হবে।
+\item HTML ট্যাগের ইংরেজি বড় ও ছোট হাতের অক্ষর একইভাবে বোঝা হয়; তবে ছোট হাতের অক্ষরে লেখা প্রচলিত ভালো অভ্যাস।
+\item ভয়েড এলিমেন্টের শেষের ট্যাগ লিখবে না।
 \end{itemize}
 \end{keypointbox}
 
-\subsection{Nested HTML Element}
+\subsection{নেস্টেড HTML এলিমেন্ট}
 
-\begin{definitionbox}{Nested element}
-একটি HTML element-এর content হিসেবে আরেকটি HTML element ব্যবহার করা হলে তাকে nested HTML element বলা হয়।
+\begin{definitionbox}{নেস্টেড এলিমেন্ট (Nested Element)}
+একটি HTML এলিমেন্টের বিষয়বস্তু হিসেবে আরেকটি HTML এলিমেন্ট ব্যবহার করা হলে তাকে নেস্টেড HTML এলিমেন্ট বলা হয়।
 \end{definitionbox}
 
-Nested element লিখতে হলে tag close করার order ঠিক রাখতে হয়। যে tag আগে শুরু হয়েছে, সাধারণত তার ভিতরের tag আগে close হবে, তারপর বাইরের tag close হবে।
+নেস্টেড এলিমেন্টে ভেতরের এলিমেন্ট আগে বন্ধ হয়, তারপর বাইরের এলিমেন্ট বন্ধ হয়। এই ক্রমে বন্ধ করলে এলিমেন্টগুলোর সম্পর্ক ঠিক থাকে।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <p>
   This is <b><i>important</i></b> text.
 </p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{ব্যাখ্যা}
-এখানে \texttt{<i>} tag \texttt{<b>} tag-এর ভিতরে আছে। তাই আগে \texttt{</i>} এবং পরে \texttt{</b>} লেখা হয়েছে। এটি correct nesting।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে \texttt{<i>} ট্যাগ \texttt{<b>} ট্যাগের ভিতরে আছে। তাই আগে \texttt{</i>} এবং পরে \texttt{</b>} লেখা হয়েছে। এটি সঠিক নেস্টিং।
+\par\smallskip
+\end{minipage}\par
 
-\begin{mistakebox}{ভুল nesting}
-\texttt{<b><i>ICT</b></i>} ভুল, কারণ এখানে \texttt{<i>} tag আগে close হওয়ার কথা ছিল, কিন্তু \texttt{</b>} আগে লেখা হয়েছে। তাই nesting order ভুল।
+
+\begin{mistakebox}{ভুল নেস্টিং}
+\texttt{<b><i>ICT</b></i>} ভুল, কারণ এখানে \texttt{<i>} ট্যাগ আগে বন্ধ হওয়ার কথা ছিল, কিন্তু \texttt{</b>} আগে লেখা হয়েছে। তাই নেস্টিং ক্রম ভুল।
 \end{mistakebox}
 
-\subsection{Correct ও Incorrect syntax}
-\begin{examplebox}{Syntax example}
-\textbf{১. Paragraph tag}
+\input{chapters/Chapter04/topics/04_tag_syntax/board_concepts}
+
+\input{chapters/Chapter04/topics/04_tag_syntax/clarity}
+
+\subsection{সঠিক ও ভুল সিনট্যাক্স}
+\begin{examplebox}{সিনট্যাক্সের উদাহরণ}
+\textbf{১. অনুচ্ছেদ ট্যাগ}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <p>ICT is an important subject.</p>
 \end{verbatim}
-সঠিক, কারণ opening tag, content এবং closing tag তিনটিই আছে।
+\end{minipage}\par
+সঠিক, কারণ শুরুর ট্যাগ, বিষয়বস্তু এবং শেষের ট্যাগ তিনটিই আছে।
 
-\vspace{6pt}
-\textbf{২. Attributeসহ tag}
+\vspace{3pt}
+\textbf{২. অ্যাট্রিবিউটসহ ট্যাগ}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <p align="center">ICT</p>
 \end{verbatim}
-এখানে \texttt{align} হলো attribute এবং \texttt{center} হলো attribute value। বইয়ের উদাহরণে এই ধরনের লেখা board question-এ খুবই দেখা যায়।
+\end{minipage}\par
+এখানে \texttt{align} হলো অ্যাট্রিবিউট এবং \texttt{center} তার মান। পরীক্ষায় এমন পুরোনো রূপ দেখা যায়। বর্তমান HTML মানে \texttt{<p>}-এর \texttt{align} পুরোনো বৈশিষ্ট্য; নতুন কাজে CSS-এর \texttt{text-align} ব্যবহার করা হয়।
 
-\vspace{6pt}
-\textbf{৩. Hyperlink tag}
+\vspace{3pt}
+\textbf{৩. হাইপারলিংক ট্যাগ}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <a href="next.html" target="_blank">Next Page</a>
 \end{verbatim}
-এখানে \texttt{href} destination page নির্দেশ করে, আর \texttt{target} link কোথায় খুলবে তা বোঝায়।
+\end{minipage}\par
+এখানে \texttt{href} গন্তব্য পেজ নির্দেশ করে, আর \texttt{target} লিংক কোথায় খুলবে তা বোঝায়।
 
-\vspace{6pt}
-\textbf{৪. Image tag}
+\vspace{3pt}
+\textbf{৪. ছবি ট্যাগ}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <img src="images/photo.jpg" alt="Photo description" width="300">
 \end{verbatim}
-\texttt{img} একটি empty tag; তাই এর closing tag নেই। \texttt{src} image-এর location দেখায় এবং \texttt{alt} বিকল্প text দেয়।
+\end{minipage}\par
+\texttt{img} একটি এম্পটি ট্যাগ; তাই এর শেষের ট্যাগ নেই। \texttt{src} ছবির অবস্থান দেখায় এবং \texttt{alt} বিকল্প লেখা দেয়।
 
-\vspace{6pt}
-\textbf{৫. ভুল nesting}
+\vspace{3pt}
+\textbf{৫. ভুল নেস্টিং}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <b><i>ICT</b></i>
 \end{verbatim}
-এটি ভুল, কারণ tag বন্ধ করার order ঠিক নেই।
+\end{minipage}\par
+এটি ভুল, কারণ ট্যাগ বন্ধ করার ক্রম ঠিক নেই।
 \end{examplebox}
 
 \begin{mistakebox}{সাধারণ ভুল}
 \begin{itemize}
-\item Tag ও element এক মনে করা।
-\item Attribute-কে content মনে করা।
-\item Attribute value quote ছাড়া লেখা।
-\item Closing tag-এ \texttt{/} না দেওয়া।
-\item Empty tag-এর closing tag লিখতে যাওয়া।
-\item Tag nesting উল্টে দেওয়া।
-\item \texttt{center} বা \texttt{photo.jpg}-এর মতো value-কে attribute বলে ভুল করা।
+\item ট্যাগ ও এলিমেন্ট এক মনে করা।
+\item অ্যাট্রিবিউটকে বিষয়বস্তু মনে করা।
+\item ফাঁক বা বিশেষ চিহ্নযুক্ত অ্যাট্রিবিউটের মান প্রয়োজনীয় উদ্ধৃতিচিহ্ন ছাড়া লেখা। কিছু সাধারণ মান উদ্ধৃতিচিহ্ন ছাড়াও বৈধ, তবে উদ্ধৃতিতে লিখলে ভুল কমে।
+\item শেষের ট্যাগে \texttt{/} না দেওয়া।
+\item এম্পটি ট্যাগের শেষের ট্যাগ লিখতে যাওয়া।
+\item ট্যাগ নেস্টিং উল্টে দেওয়া।
+\item \texttt{center} বা \texttt{photo.jpg}-এর মতো মানকে অ্যাট্রিবিউট বলে ভুল করা।
 \end{itemize}
 \end{mistakebox}
 
-\subsection{Common tag examples}
-\begin{examplebox}{Tag উদাহরণসমূহ}
-\textbf{Document skeleton}
+\subsection{পরিচিত ট্যাগের উদাহরণ}
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.52\linewidth}\vspace{0pt}\small
+{\bfseries\color{chFourTeal}ডকুমেন্টের কাঠামো}\par
 \begin{verbatim}
 <!DOCTYPE html>
 <html lang="en">
-\t<head>
-\t\t<meta charset="utf-8">
-\t\t<title>Page Title</title>
-\t</head>
-\t<body>
-\t\t<h1>Welcome to HTML</h1>
-\t\t<p>This is a simple page.</p>
-\t</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>Welcome to HTML</h1>
+    <p>This is a simple page.</p>
+  </body>
 </html>
 \end{verbatim}
-\texttt{<!DOCTYPE html>} browser-কে document type জানায়; \texttt{<html>} পুরো document ধরে; \texttt{<head>} metadata/title রাখে; \texttt{<body>} দৃশ্যমান content রাখে।
-
-\vspace{6pt}
-\textbf{Headings and paragraph}
+\end{minipage}\hfill
+\begin{minipage}[t]{.44\linewidth}\vspace{0pt}\small
+{\bfseries\color{chFourTeal}অংশগুলোর কাজ}\par
+\texttt{<!DOCTYPE html>} ব্রাউজারকে ডকুমেন্ট ধরন জানায়; \texttt{<html>} পুরো ডকুমেন্ট ধরে; \texttt{<head>} মেটাডেটা/শিরোনাম রাখে; \texttt{<body>} দৃশ্যমান বিষয়বস্তু রাখে।
+\end{minipage}\par\smallskip
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+{\bfseries\color{chFourTeal}শিরোনাম ও অনুচ্ছেদ}\par
 \begin{verbatim}
 <h1>Main heading</h1>
 <h2>Sub heading</h2>
 <p>This is a paragraph.</p>
 \end{verbatim}
-\texttt{<h1>} সবচেয়ে বড় heading, আর \texttt{<p>} paragraph তৈরি করে।
-
-\vspace{6pt}
-\textbf{Line break and horizontal rule}
+\texttt{<h1>} প্রথম স্তরের শিরোনাম, যা ব্রাউজারের স্বাভাবিক রীতিতে বড় দেখায়। \texttt{<p>} অনুচ্ছেদ তৈরি করে।
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+{\bfseries\color{chFourTeal}লাইনবিরতি ও অনুভূমিক বিভাজক}\par
 \begin{verbatim}
 Line 1<br>Line 2
 <hr>
 \end{verbatim}
-\texttt{<br>} নতুন line তৈরি করে; \texttt{<hr>} বিষয়কে আলাদা করতে একটি horizontal line দেয়।
-
-\vspace{6pt}
-\textbf{Comment}
+\texttt{<br>} নতুন লাইন তৈরি করে; \texttt{<hr>} বিষয়কে আলাদা করতে একটি অনুভূমিক লাইন দেয়।
+\end{minipage}\par\smallskip
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.52\linewidth}\vspace{0pt}\small
+{\bfseries\color{chFourTeal}মন্তব্য}\par
 \begin{verbatim}
 <!-- This is a comment -->
 \end{verbatim}
-Comment ব্রাউজারে দেখা যায় না; এটি code বুঝতে সাহায্য করে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.44\linewidth}\vspace{0pt}\small
+মন্তব্য ব্রাউজারে দেখা যায় না; এটি কোড বুঝতে সাহায্য করে।
+\end{minipage}\par\smallskip
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Tag, element, attribute ও syntax নিয়ে প্রশ্নে প্রথমে সংজ্ঞা, পরে একটি ছোট code example এবং শেষে প্রতিটি অংশের কাজ লিখলে উত্তর পরিষ্কার হয়। বিশেষ করে \texttt{<p align="center">ICT</p>} এবং \texttt{<img src="..." alt="...">} type example ভালোভাবে অনুশীলন করো।
-\end{boardbox}
+\input{chapters/Chapter04/topics/04_tag_syntax/book_concepts}
+
+
 
 \begin{practicebox}
 \begin{enumerate}
-\item HTML tag, element ও attribute-এর পার্থক্য একটি উদাহরণসহ লেখো।
-\item \texttt{<p align="center">ICT</p>} code-এ tag, attribute, value ও content শনাক্ত করো।
-\item Empty tag কাকে বলে? দুটি উদাহরণ লেখো।
-\item নিচের code-এ কোন syntax ভুল আছে তা শনাক্ত করো: \texttt{<h1>Welcome<h1>}
+\item HTML ট্যাগ, এলিমেন্ট ও অ্যাট্রিবিউটের পার্থক্য একটি উদাহরণসহ লেখো।
+\item \texttt{<p align="center">ICT</p>} কোডে ট্যাগ, অ্যাট্রিবিউট, মান ও বিষয়বস্তু শনাক্ত করো।
+\item এম্পটি ট্যাগ কাকে বলে? দুটি উদাহরণ লেখো।
+\item নিচের কোডে কোন সিনট্যাক্স ভুল আছে তা শনাক্ত করো: \texttt{<h1>Welcome<h1>}
 \end{enumerate}
 \end{practicebox}
 
-\begin{recapbox}
+
+\Needspace{7\baselineskip}
+\subsection{কোডের ভুল খুঁজে বের করা}
+
+\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\textbf{\color{chFourRose}ভুল কোড}\par
+\begin{verbatim}
+<table border="1">
+  <td>Name</td>
+  <td>Roll</td>
+</table>
+
+<image src="photo.jpg">
+<a src="index.html">Home</a>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\textbf{\color{chFourTeal}সঠিক কোড}\par
+\begin{verbatim}
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Roll</td>
+  </tr>
+</table>
+
+<img src="photo.jpg" alt="Photo">
+<a href="index.html">Home</a>
+\end{verbatim}
+\end{minipage}
+\par\smallskip
+\textbf{ভুলের কারণ:}
 \begin{itemize}
-\item Tag = angle bracket-এর মধ্যে লেখা নির্দেশনা।
-\item Element = opening tag + content + closing tag।
-\item Attribute = অতিরিক্ত তথ্য; value = attribute-এর মান।
-\item Syntax = code লেখার নিয়ম।
-\item Paired tag content ঘিরে রাখে, empty tag সাধারণত content ঘিরে রাখে না।
+\item \texttt{<td>} সরাসরি \texttt{<table>} ট্যাগের ভেতরে লেখা সঠিক গঠন নয়; ঘরগুলোকে \texttt{<tr>} সারিতে রাখতে হয়।
+\item ছবি দেখানোর সঠিক ট্যাগ হলো \texttt{<img>}; \texttt{<image>} লেখা সঠিক HTML নয়।
+\item হাইপারলিংকের গন্তব্য জানাতে \texttt{href} অ্যাট্রিবিউট ব্যবহার করতে হয়। এখানে \texttt{src} ব্যবহার ভুল।
 \end{itemize}
-\end{recapbox}
+
+
+

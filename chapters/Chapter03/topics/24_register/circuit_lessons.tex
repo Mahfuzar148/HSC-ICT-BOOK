@@ -1,0 +1,90 @@
+% Each drawing represents a complete data path; clock branches are independent.
+\newcommand{\chThreeSerialRegister}[1]{%
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i/\b in {0/3,1/2,2/1,3/0}{
+  \node[chff] (f\i) at (2.7*\i,0) {D FF\\$Q_\b$};
+  \draw (f\i.south)--++(0,-.8);
+  \node[font=\scriptsize] at (2.7*\i,-.35) {$\triangleright$};
+  \fill (2.7*\i,-1.6) circle(1.4pt);
+  \ifnum#1=1\draw (f\i.east)--++(.25,0)--++(0,1.3) node[above] {$Q_\b$};\fi
+}
+\draw (-2,0)--(f0.west) node[pos=0,left] {SI};
+\foreach \i/\j in {0/1,1/2,2/3}{\draw[->] (f\i.east)--(f\j.west);}
+\draw[->] (f3.east)--++(1.5,0) node[right] {SO};
+\draw (-1,-1.6)--(8.1,-1.6);\node[left] at (-1,-1.6) {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\ifnum#1=1\captionof{figure}{প্রতিটি Q থেকে আলাদা আউটপুটসহ চার বিটের SIPO।}
+\else\captionof{figure}{চার D flip-flop-এর ধারাবাহিক সংযোগে SISO।}\fi
+
+\end{minipage}
+\end{center}}
+
+\subsubsection*{SISO: সিরিয়াল ইনপুট, সিরিয়াল আউটপুট}
+\chThreeSerialRegister{0}
+\noindent\textbf{সার্কিটের ব্যাখ্যা:} চার D flip-flop-এর একটি Q আউটপুট পরের D ইনপুটে যুক্ত। সবগুলো একই সক্রিয় ক্লক পায়। SI থেকে প্রতি ক্লকে একটি বিট ঢোকে; পুরোনো বিটগুলো এক ধাপ ডানে সরে। SO হলো শেষ flip-flop-এর Q। একই ক্লকে সবাই \emph{আগের} Q গ্রহণ করে; একটি বিট একই ক্লকে সব ধাপ পার হয় না।
+
+\chThreeExample{১}{SISO-তে একটি বিটের যাত্রা}
+শুরু $Q_3Q_2Q_1Q_0=0000$; SI-তে প্রথমে ১, তারপর তিনবার ০।
+\chThreeAnswer $0000\to1000\to0100\to0010\to0001$। চার নম্বর সক্রিয় ক্লকের পর SO=১। SO-কে সর্বশেষ Q হিসেবে পড়া হয়েছে; বেরিয়ে যাওয়া \emph{পুরোনো} বিট পড়ার নিয়ম আলাদা করে উল্লেখ করতে হয়।
+
+\subsubsection*{SIPO: সিরিয়াল ইনপুট, প্যারালাল আউটপুট}
+\chThreeSerialRegister{1}
+\noindent\textbf{সার্কিটের ব্যাখ্যা:} ইনপুট পথ SISO-এর মতো, কিন্তু প্রতিটি Q থেকে আলাদা output tap নেওয়া হয়েছে। এজন্য সিরিয়ালভাবে ঢোকা চার বিট শেষে একসঙ্গে পড়া যায়। LED-তে একাধিক বিট পাঠানো বা serial data-কে parallel data-য় বদলাতে এটি কাজে লাগে।
+
+\chThreeExample{২}{SIPO-তে ১০১১ লোড}
+SI থেকে ক্রমান্বয়ে ১, ১, ০, ১ পাঠাও; শুরুতে 0000।
+\chThreeAnswer $0000\to1000\to1100\to0110\to1011$। এই ডান শিফটের সংযোগে কাঙ্ক্ষিত 1011 পেতে সর্বডানের বিট আগে পাঠানো হয়েছে। কোন প্রান্তে ইনপুট ঢোকে তা না জানলে bit order ঠিক করা যায় না।
+
+\subsubsection*{PISO: প্যারালাল ইনপুট, সিরিয়াল আউটপুট}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i/\b in {0/3,1/2,2/1,3/0}{
+ \node[chff] (f\i) at (3.2*\i,0) {D FF\\$Q_\b$};
+ \node[chmux] (m\i) at (3.2*\i,2) {MUX\\$L$};
+ \draw[->] (m\i.south)--(f\i.north) node[midway,right,font=\scriptsize] {D};
+ \draw[->] (3.2*\i,3.3)--(m\i.north) node[pos=0,above] {$P_\b$};
+ \draw (f\i.south)--(3.2*\i,-1.6);
+ \fill (3.2*\i,-1.6) circle(1.4pt);
+}
+\draw[->] (-1.6,2)--(m0.west) node[pos=0,left] {SI};
+\foreach \i/\j in {0/1,1/2,2/3}{\draw[->] (f\i.east)--++(.55,0)|-(m\j.west);}
+\draw[->] (f3.east)--++(1,0) node[right] {SO};
+\draw (-1,-1.6)--(9.6,-1.6) node[pos=0,left] {CLK};
+\node[font=\small] at (4.8,4.1) {সব MUX-এ একই $L$: ১=লোড, ০=শিফট};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{PISO-তে MUX প্যারালাল ডেটা অথবা আগের ধাপের Q নির্বাচন করে।}
+
+\end{minipage}
+\end{center}
+\noindent\textbf{সার্কিটের ব্যাখ্যা:} প্রতিটি D-এর আগে একটি দুই-পথের selector বা multiplexer আছে। $L=1$ হলে চারটি P ইনপুট পরের সক্রিয় ক্লকে একসঙ্গে লোড হয়। $L=0$ হলে প্রতিটি ধাপ আগের ধাপের Q গ্রহণ করে ডানে শিফট হয়। $D_3=LP_3+\overline L\,SI$ এবং $D_i=LP_i+\overline LQ_{i+1}$, $i=0,1,2$।
+
+\chThreeExample{৩}{PISO থেকে ১১০১ পাঠানো}
+লোড ক্লকের পরে Q=1101। SO থেকে বর্তমান $Q_0$ পড়ে তারপর SI=০ দিয়ে শিফট করো।
+\chThreeAnswer পাঠানো বিটের ক্রম ১, ০, ১, ১। শিফটের পর state যথাক্রমে 0110, 0011, 0001, 0000। এখানে পড়া হয়েছে শিফটের \emph{আগে}; তাই SISO উদাহরণের ``ক্লকের পরে SO'' নিয়মের সঙ্গে গুলিয়ে ফেলা যাবে না।
+
+\subsubsection*{PIPO: প্যারালাল ইনপুট, প্যারালাল আউটপুট}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i/\b in {0/3,1/2,2/1,3/0}{
+ \node[chff] (f\i) at (2.8*\i,0) {D FF\\$Q_\b$};
+ \draw[->] (2.8*\i,1.7)--(f\i.north) node[pos=0,above] {$P_\b$};
+ \draw[->] (f\i.east)--++(.6,0) node[right] {$Q_\b$};
+ \draw (f\i.south)--(2.8*\i,-1.6);\fill (2.8*\i,-1.6) circle(1.4pt);
+}
+\draw (-1,-1.6)--(8.4,-1.6) node[pos=0,left] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{চার পৃথক D ইনপুট একই ক্লকে সংরক্ষিত হয়ে চার Q আউটপুট দেয়।}
+
+\end{minipage}
+\end{center}
+\noindent\textbf{সার্কিটের ব্যাখ্যা:} প্রতিটি ইনপুট তার নিজস্ব D flip-flop-এ যায়; এক Q থেকে পরের D-তে শিফট সংযোগ নেই। এক সক্রিয় ক্লকে চার বিট লোড হয়, এবং চার আউটপুট একসঙ্গে পাওয়া যায়। এটি প্যারালাল লোড রেজিস্টারের সরল নির্মাণ।
+
+\chThreeExample{৪}{কত flip-flop, কত ক্লক?}
+আট বিট সংরক্ষণে আটটি flip-flop লাগে। SIPO-তে আট বিট ভর্তি করতে আট সক্রিয় ক্লক লাগে; PIPO-তে একটি লোড ক্লক যথেষ্ট।
+\chThreeAnswer দুটি রেজিস্টারই আট বিট রাখে; ডেটা গ্রহণের পথ আলাদা। আট flip-flop মানে আটটি সংখ্যা নয়, বরং $2^8=256$টি সম্ভাব্য আট-বিট pattern-এর যেকোনো একটি।
+
+% Mahbub teaching-type follow-up, 2026-10-14
+\chThreeExample{৫}{প্রাথমিক ডেটা বের হওয়া ও নতুন ডেটা ঢোকা}
+উপরের SISO-তে $Q_3Q_2Q_1Q_0=1010$। পরপর SI-তে ০, ১, ১, ০ দাও। প্রতিটি clock-এর আগে SO পড়লে পুরোনো ডেটা কোন ক্রমে বের হবে এবং শেষ state কী?
+\chThreeAnswer SO হলো $Q_0$। চার pulse-এ state $1010\to0101\to1010\to1101\to0110$। clock-এর আগে পড়া SO-এর ক্রম ০, ১, ০, ১: পুরোনো শব্দ LSB আগে বের হয়েছে। নতুন input ০, ১, ১, ০ শেষে state-এ বিপরীত অবস্থানক্রমে বসেছে। পুরোনো output-এর sampling এবং clock-এর পরের state একই ধাপের দুই আলাদা পর্যবেক্ষণ।

@@ -1,0 +1,34 @@
+% Replace exercise 26's PNG figure and its figure-explanation box.
+% Group Subjects is a colspan="5" row inside the table.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=7mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (0,4.5) rectangle (.96,6.5);
+  \draw (0,0) rectangle (.96,6.5);
+  \draw (0,1.5)--(.96,1.5) (0,3)--(.96,3) (0,4.5)--(.96,4.5) (0,5.5)--(.96,5.5);
+  \draw (.19,0)--(.19,5.5);
+  \draw (.3825,0)--(.3825,4.5) (.575,0)--(.575,4.5) (.7675,0)--(.7675,4.5);
+  \node[font=\scriptsize\bfseries] at (.48,6) {Group Subjects};
+  \node[font=\scriptsize\bfseries] at (.095,5) {Group};
+  \node[font=\scriptsize\bfseries] at (.575,5) {Subjects};
+  \node at (.095,3.75) {Science};
+  \node at (.28625,3.75) {Physics};
+  \node at (.47875,3.75) {Chemistry};
+  \node at (.67125,3.75) {Biology};
+  \node[text width=.18\linewidth,inner sep=0pt] at (.86375,3.75) {Mathematics};
+  \node at (.095,2.25) {Commerce};
+  \node[text width=.18\linewidth,inner sep=0pt] at (.28625,2.25) {Accountancy};
+  \node at (.47875,2.25) {Business\\Studies};
+  \node at (.67125,2.25) {Economics};
+  \node[text width=.18\linewidth,inner sep=0pt] at (.86375,2.25) {Mathematics};
+  \node[text width=.18\linewidth,inner sep=0pt] at (.095,.75) {Humanities};
+  \node at (.28625,.75) {History};
+  \node[text width=.18\linewidth,inner sep=0pt] at (.47875,.75) {Geography};
+  \node at (.67125,.75) {Political\\Science};
+  \node at (.86375,.75) {English};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 26: বিভাগভিত্তিক বিষয়}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+মূল ছকে পাঁচটি কলাম: Group-এর একটি এবং বিষয়ের চারটি। Group Subjects প্রথম সারিতে পাঁচ কলাম জুড়ে; পরের সারিতে Subjects শুধু শেষ চার কলাম জুড়ে আছে। একই শিরোনামের নিচে তিন বিভাগের বিষয় আলাদা তথ্যের সারিতে লেখা হয়েছে।
+

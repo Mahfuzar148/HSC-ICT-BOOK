@@ -1,0 +1,22 @@
+\subsection{Enable, ঠিকানা নির্বাচন ও function তৈরি}
+একটি আদর্শ active-high decoder-এ $E=1$ হলে selected output সক্রিয়; $E=0$ হলে সব আউটপুট শূন্য। যেমন 2-to-4 decoder-এ $Y_0=E\overline A\overline B$, $Y_1=E\overline AB$, $Y_2=EA\overline B$, $Y_3=EAB$। E নিয়ন্ত্রণ ইনপুট; এর জন্য address bits-এর সংখ্যা তিন হয়ে যায় না।
+
+\chThreeExample{১}{একটি memory block নির্বাচন}
+চারটি memory block-এর নির্বাচক $A,B$। $AB=10,E=1$।
+\chThreeAnswer $Y_2=1$, অন্যগুলো ০। $E=0$ করলে $AB=10$ থাকলেও কোনো block সক্রিয় হবে না। বাস্তব active-low decoder-এ selected line শূন্য হতে পারে; এটি ভিন্ন polarity।
+
+\chThreeExample{২}{ডিকোডার দিয়ে XOR}
+\chThreeAnswer 2-to-4 decoder-এর $Y_1=\overline AB$ এবং $Y_2=A\overline B$ একটি OR-এ দিলে $F=Y_1+Y_2=A\oplus B$। তাই decoder-এর minterm outputs থেকে বুলিয়ান function গঠন করা যায়।
+
+\chThreeExample{৩}{সাত segment-এ অঙ্ক দেখানো}
+চার বিট BCD $0101$ ইনপুট দিলে display-এ ৫ দেখাতে সাতটি segment-এর নির্দিষ্ট কয়েকটি জ্বালাতে হয়।
+\chThreeAnswer BCD-to-seven-segment decoder-এর সাতটি segment output $a,b,c,d,e,f,g$ থাকে; ৫-এর জন্য $a,c,d,f,g$ জ্বলে। এটি সাধারণ 4-to-16 line decoder নয়। display-এর common-anode/common-cathode ব্যবস্থা অনুযায়ী active polarity ভিন্ন হতে পারে।
+
+\chThreeExample{৪}{ধারণাভিত্তিক MCQ}
+সাধারণ binary decoder-এর পাঁচটি address input থাকলে কয়টি output line? (ক) ১০, (খ) ১৬, (গ) ২৫, (ঘ) ৩২।
+\chThreeAnswer (ঘ) ৩২; $2^5$। সব line একসঙ্গে সক্রিয় হয় না।
+
+% Mahbub teaching-type follow-up, 2026-10-14
+\chThreeExample{৫}{সক্রিয় output দেখে decoder input উদ্ধার}
+তিন-input, আট-output active-high decoder enabled আছে। শুধু $Y_6=1$। input কী এবং তার minterm কী?
+\chThreeAnswer $6=(110)_2$, তাই $ABC=110$ এবং $Y_6=AB\overline C$। A=১, B=১, C=০ বসালে $Y_6=1$; অন্য output-গুলোর অন্তত একটি প্রয়োজনীয় factor শূন্য। active-low device-এ নির্বাচিত রেখার level ০ হতে পারে; রেখার পরিচয় ৬ থাকলেও level-এর নিয়ম বদলাবে।

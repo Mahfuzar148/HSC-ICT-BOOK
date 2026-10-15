@@ -1,0 +1,456 @@
+\sectionheading{5.14 ইন্টারপ্রেটার (Interpreter)}
+
+High Level Language-এ লেখা Program কম্পিউটার সরাসরি বুঝতে পারে না।
+\textbf{Interpreter} Source Program-এর Instruction সাধারণত
+\textbf{একটি করে পড়ে, অনুবাদ করে এবং Execute করে}।
+
+একটি Instruction-এর কাজ শেষ হলে পরবর্তী Instruction-এ যায়।
+কোনো Error পাওয়া গেলে সাধারণত সেই স্থানেই কাজ থেমে যায়।
+এই কারণে Program পরীক্ষা ও ভুল সংশোধনের সময় Interpreter
+ব্যবহার সুবিধাজনক।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Interpreter কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Translator Program High Level Language-এ লেখা Source Program-কে
+\textbf{একটি করে Statement বা Line অনুবাদ করে এবং সঙ্গে সঙ্গে
+Execute করে}, তাকে \textbf{Interpreter} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+একটি Line পড়া
+\(\longrightarrow\)
+অনুবাদ
+\(\longrightarrow\)
+Execute
+\(\longrightarrow\)
+পরের Line
+}
+
+\end{center}
+
+%================================================
+% Working
+%================================================
+\booksubheading{Interpreter কীভাবে কাজ করে?}
+
+Interpreter সম্পূর্ণ Program আগে অনুবাদ না করে সাধারণত
+একটি Statement নিয়ে কাজ করে।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Source\\Statement}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.18\linewidth}{
+        \centering\textbf{Interpreter}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Translation}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.17\linewidth}{
+        \centering\textbf{Execution}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+এরপর Interpreter পরবর্তী Statement-এ যায়।
+
+%================================================
+% Example
+%================================================
+\begin{examplebox}{সহজ উদাহরণ}
+
+ধরা যাক একটি Program-এ তিনটি Statement আছে—
+
+\begin{center}
+
+\textenglish{\ttfamily Statement 1}
+
+\textenglish{\ttfamily Statement 2}
+
+\textenglish{\ttfamily Statement 3}
+
+\end{center}
+
+Interpreter প্রথমে \textenglish{\ttfamily Statement 1}
+অনুবাদ ও Execute করবে।
+
+এরপর \textenglish{\ttfamily Statement 2}, তারপর
+\textenglish{\ttfamily Statement 3}-এ যাবে।
+
+যদি \textenglish{\ttfamily Statement 2}-এ Error থাকে,
+তাহলে সাধারণত সেখানেই Execution থেমে যাবে।
+
+\end{examplebox}
+
+%================================================
+% Features
+%================================================
+\booksubheading{Interpreter-এর প্রধান বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.28\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}
+\\
+\hline
+
+Translator Program
+&
+High Level Program অনুবাদে ব্যবহৃত হয়।
+\\
+\hline
+
+Statement ভিত্তিক
+&
+সাধারণত একটি করে Statement বা Line অনুবাদ করে।
+\\
+\hline
+
+তাৎক্ষণিক Execution
+&
+অনুবাদের পর Instruction সঙ্গে সঙ্গে Execute করে।
+\\
+\hline
+
+Error-এ থামে
+&
+Error পাওয়া গেলে সাধারণত সেই Statement-এ Execution বন্ধ হয়।
+\\
+\hline
+
+Object Program
+&
+সাধারণত পৃথক পূর্ণ Object Program সংরক্ষণ করে না।
+\\
+\hline
+
+Debugging সহজ
+&
+Error-এর স্থান দ্রুত শনাক্ত করা সুবিধাজনক।
+\\
+\hline
+
+পুনরায় Translation
+&
+Program আবার চালালে Statementগুলো পুনরায় অনুবাদ করতে হয়।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Error Detection
+%================================================
+\booksubheading{Interpreter-এ Error শনাক্তকরণ}
+
+Interpreter একটি Statement অনুবাদ ও Execute করার পর পরবর্তী
+Statement-এ যায়।
+
+Error না থাকলে—
+
+\begin{center}
+
+\textbf{
+Line পড়া
+\(\longrightarrow\)
+অনুবাদ
+\(\longrightarrow\)
+Execute
+\(\longrightarrow\)
+Next Line
+}
+
+\end{center}
+
+কিন্তু Error থাকলে—
+
+\begin{center}
+
+\textbf{
+Line পড়া
+\(\longrightarrow\)
+Error
+\(\longrightarrow\)
+Execution বন্ধ
+\(\longrightarrow\)
+Error সংশোধন
+}
+
+\end{center}
+
+এই কারণে Interpreter-এ Error-এর অবস্থান দ্রুত চিহ্নিত করা
+তুলনামূলক সহজ।
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Interpreter-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item একটি করে Instruction নিয়ে কাজ করায় Error শনাক্ত করা সহজ।
+
+\item Program পরিবর্তন ও সংশোধন তুলনামূলক সহজ।
+
+\item Debugging ও Testing দ্রুত করা যায়।
+
+\item সাধারণত পৃথক পূর্ণ Object Program সংরক্ষণ না করায়
+অতিরিক্ত Storage-এর প্রয়োজন কম হতে পারে।
+
+\item Interactive Programming ও শেখার জন্য সুবিধাজনক।
+
+\item ছোট Program দ্রুত পরীক্ষা করা যায়।
+
+\item Interpreter-কে তুলনামূলক
+\textbf{User Friendly} হিসেবে বিবেচনা করা হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Disadvantages
+%================================================
+\booksubheading{Interpreter-এর অসুবিধা}
+
+\begin{itemize}
+
+\item Program চালানোর সময় Instruction বারবার অনুবাদ করতে হয়।
+
+\item Compiled Program-এর তুলনায় Execution ধীর হতে পারে।
+
+\item Program যতবার চালানো হয়, সাধারণত ততবার প্রয়োজনীয়
+Translation করতে হয়।
+
+\item বড় Program-এর ক্ষেত্রে Execution-এর সময় বেশি লাগতে পারে।
+
+\end{itemize}
+
+%================================================
+% Extra Fact
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}অতিরিক্ত MCQ তথ্য}
+
+প্রদত্ত পাঠ্যসূত্রে উল্লেখ করা হয়েছে, Compiler-এর তুলনায়
+Interpreter-এ Program চালাতে প্রায়
+\textbf{৫ থেকে ২৫ গুণ বেশি সময় লাগতে পারে}।
+
+এটি মূল ধারণার তুলনায় কম গুরুত্বপূর্ণ; MCQ-এর জন্য সংক্ষেপে
+মনে রাখলেই যথেষ্ট।
+
+\end{rememberbox}
+
+%================================================
+% Examples
+%================================================
+\booksubheading{Interpreter-এর উদাহরণ}
+
+Interpreter-ভিত্তিক Programming Environment-এর পরিচিত উদাহরণ
+হিসেবে \textbf{Python} উল্লেখ করা হয়।
+
+প্রদত্ত পাঠ্যসূত্রে Interpreter-এর উদাহরণের ক্ষেত্রে
+\textbf{Java ও Python}-এর নাম উল্লেখ রয়েছে।
+
+%================================================
+% Compiler vs Interpreter
+%================================================
+\booksubheading{Compiler ও Interpreter-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Compiler}}
+&
+\multicolumn{1}{c|}{\textbf{Interpreter}}
+\\
+\hline
+
+অনুবাদের ধরন
+&
+সম্পূর্ণ Program একসঙ্গে অনুবাদ করে
+&
+সাধারণত একটি Statement করে অনুবাদ করে
+\\
+\hline
+
+Error প্রদর্শন
+&
+Program বিশ্লেষণ শেষে একাধিক Error দেখাতে পারে
+&
+Error পাওয়া Statement-এ সাধারণত থামে
+\\
+\hline
+
+Debugging
+&
+তুলনামূলক কম সরাসরি
+&
+তুলনামূলক সহজ
+\\
+\hline
+
+Execution
+&
+Compile-এর পর তুলনামূলক দ্রুত হতে পারে
+&
+অনুবাদসহ চলায় তুলনামূলক ধীর
+\\
+\hline
+
+Object Program
+&
+সাধারণত তৈরি করে
+&
+সাধারণত পৃথক পূর্ণ Object Program তৈরি করে না
+\\
+\hline
+
+পুনরায় অনুবাদ
+&
+Source অপরিবর্তিত থাকলে প্রতিবার পুরো Compilation প্রয়োজন নাও হতে পারে
+&
+Program চালানোর সময় পুনরায় Translation প্রয়োজন হয়
+\\
+\hline
+
+Memory
+&
+Object Program সংরক্ষণের জন্য বেশি Memory লাগতে পারে
+&
+পৃথক Object Program না থাকায় তুলনামূলক কম Memory লাগতে পারে
+\\
+\hline
+
+কাজের প্রক্রিয়া
+&
+তুলনামূলক জটিল
+&
+তুলনামূলক সহজ ও User Friendly
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Shortcut
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}দ্রুত মনে রাখার কৌশল}
+
+\begin{center}
+
+\textbf{
+Compiler
+\(\rightarrow\)
+Whole Program
+\(\rightarrow\)
+Object Code
+\(\rightarrow\)
+Faster Execution
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Interpreter
+\(\rightarrow\)
+Line by Line
+\(\rightarrow\)
+Immediate Execution
+\(\rightarrow\)
+Easier Debugging
+}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Interpreter একটি \textbf{Translator Program}।
+
+\item এটি High Level Program-এর Instruction সাধারণত
+\textbf{একটি করে অনুবাদ ও Execute} করে।
+
+\item Error পাওয়া গেলে সাধারণত
+\textbf{সেই Statement-এ থেমে যায়}।
+
+\item Interpreter সাধারণত পৃথক পূর্ণ
+\textbf{Object Program তৈরি করে না}।
+
+\item Program আবার চালালে প্রয়োজনীয় Statementগুলো পুনরায়
+অনুবাদ করতে হয়।
+
+\item Interpreter-এ \textbf{Debugging সহজ}, কিন্তু Execution
+তুলনামূলক ধীর হতে পারে।
+
+\item \textbf{Python} Interpreter-ভিত্তিক Programming-এর
+পরিচিত উদাহরণ।
+
+\item সবচেয়ে গুরুত্বপূর্ণ পার্থক্য—
+
+\begin{center}
+
+\textbf{
+Compiler = পুরো Program একসঙ্গে
+}
+
+\textbf{
+Interpreter = Statement ধরে ধরে
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.15 Program Organization
+%================================================

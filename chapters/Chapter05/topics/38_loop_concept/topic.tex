@@ -1,0 +1,1034 @@
+\sectionheading{5.38 Loop — ধারণা ও প্রয়োজনীয়তা}
+
+Program-এ অনেক সময় একই কাজ বারবার করতে হয়।
+একই Statement বারবার আলাদাভাবে না লিখে নির্দিষ্ট নিয়মে
+পুনরাবৃত্তি করার জন্য \textbf{Loop} ব্যবহার করা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Loop কী?}
+
+\begin{definitionbox}
+
+কোনো নির্দিষ্ট Condition বা Sequence-এর ভিত্তিতে একই Statement
+বা Code Block বারবার Execute করার প্রক্রিয়াকে
+\textbf{Loop} বা \textbf{Iteration} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{একই কাজ}
+\(\longrightarrow\)
+\textbf{বারবার}
+\(\longrightarrow\)
+\textbf{Loop}
+
+\end{center}
+
+%================================================
+% Without loop vs loop
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Loop ছাড়া}
+
+১ থেকে ৫ পর্যন্ত সংখ্যা Print করতে—
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+print(1)\\
+print(2)\\
+print(3)\\
+print(4)\\
+print(5)
+\end{english}
+\end{sidecodebox}
+
+একই ধরনের Statement বারবার লিখতে হয়েছে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Loop ব্যবহার করে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(1, 6):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3 \quad 4 \quad 5}
+\end{center}
+
+কম Code-এ একই কাজ করা যায়।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Why Loop
+%================================================
+
+\booksubheading{Loop কেন প্রয়োজন?}
+
+Loop ব্যবহারের প্রধান প্রয়োজন—
+
+\begin{compacttwocolpoints}
+
+\item একই কাজ বারবার করার জন্য।
+
+\item একই Code বহুবার লেখা এড়াতে।
+
+\item Program ছোট, পরিষ্কার ও সহজ রাখতে।
+
+\item Code-এর Repetition কমাতে।
+
+\item List, String বা অন্যান্য Collection-এর Item Process করতে।
+
+\item Counting, Summation, Searching ইত্যাদি কাজে।
+
+\item নির্দিষ্ট Condition পূরণ হওয়া পর্যন্ত কাজ চালিয়ে যেতে।
+
+\end{compacttwocolpoints}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Loop}
+\(\longrightarrow\)
+\textbf{Repetition কমায়}
+\(\longrightarrow\)
+\textbf{Code ছোট ও সহজ হয়}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Iteration + Loop Body
+%================================================
+
+\booksubheading{Iteration ও Loop Body}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Iteration}
+
+Loop-এর প্রতিবার Code Block Execute হওয়াকে
+\textbf{Iteration} বলে।
+
+যদি কোনো Loop ৫ বার Execute হয়, তাহলে সেখানে
+\textbf{৫টি Iteration} হয়েছে।
+
+\medskip
+
+\textbf{MCQ তথ্য:}
+
+\begin{center}
+\textbf{Loop Body-এর একবার Execution}
+\(\longrightarrow\)
+\textbf{এক Iteration}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Loop Body}
+
+Loop-এর যে Statement বা Code Block বারবার Execute হয় তাকে
+\textbf{Loop Body} বলে।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(3):\\
+\hspace*{4mm}print("ICT")
+\end{english}
+\end{sidecodebox}
+
+এখানে
+\textenglish{\ttfamily print("ICT")}
+হলো Loop Body এবং এটি ৩ বার Execute হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% General Flow
+%================================================
+
+\booksubheading{Loop-এর সাধারণ কার্যধারা}
+
+সাধারণভাবে Loop-এর Logic—
+
+\begin{center}
+
+\textbf{Start}
+\(\longrightarrow\)
+\textbf{Condition / Next Item}
+\(\longrightarrow\)
+\textbf{Loop Body}
+
+\medskip
+
+\textbf{Loop Body}
+\(\longrightarrow\)
+\textbf{Update / Next Item}
+\(\longrightarrow\)
+\textbf{আবার পরীক্ষা}
+\(\longrightarrow\)
+\textbf{Stop}
+
+\end{center}
+
+Loop-এর ধরন অনুযায়ী বাস্তব গঠন কিছুটা ভিন্ন হতে পারে।
+
+%================================================
+% Important Parts
+%================================================
+
+\booksubheading{Loop-এর গুরুত্বপূর্ণ অংশ}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+Initialization
+&
+শুরুতে প্রয়োজনীয় Variable-এর প্রাথমিক Value নির্ধারণ।
+\\
+\hline
+
+Condition / Range
+&
+Loop চলবে কি না বা কতদূর চলবে তা নির্ধারণ।
+\\
+\hline
+
+Loop Body
+&
+বারবার Execute হওয়া Statement বা Code Block।
+\\
+\hline
+
+Update
+&
+প্রয়োজন অনুযায়ী Counter/Variable-এর Value পরিবর্তন।
+\\
+\hline
+
+Iteration
+&
+Loop Body-এর প্রতিবার Execution।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% while anatomy
+%================================================
+
+\begin{examplebox}{\textenglish{\ttfamily while} Loop-এ অংশগুলো চেনো}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\[0.5mm]
+while i <= 5:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{codebox}
+
+\begin{center}
+
+\textenglish{\ttfamily i = 1}
+\(\longrightarrow\)
+\textbf{Initialization}
+
+\qquad
+
+\textenglish{\ttfamily i <= 5}
+\(\longrightarrow\)
+\textbf{Condition}
+
+\medskip
+
+\textenglish{\ttfamily print(i)}
+\(\longrightarrow\)
+\textbf{Loop Body}
+
+\qquad
+
+\textenglish{\ttfamily i += 1}
+\(\longrightarrow\)
+\textbf{Update}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Counter
+%================================================
+
+\booksubheading{Counter বা Loop Variable}
+
+Loop কতবার চলছে বা কোন Item নিয়ে কাজ করছে তা নির্দেশ বা
+নিয়ন্ত্রণ করতে ব্যবহৃত Variable-কে অনেক ক্ষেত্রে
+\textbf{Counter} বা \textbf{Loop Variable} বলা হয়।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily for}-এ Loop Variable}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+এখানে
+\textenglish{\ttfamily i}
+হলো Loop Variable।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily while}-এ Counter}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{sidecodebox}
+
+এখানে
+\textenglish{\ttfamily i}
+Counter হিসেবে কাজ করছে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Types of Loop
+%================================================
+
+\booksubheading{Python-এর প্রধান Loop}
+
+Python-এ প্রধানত দুই ধরনের Loop ব্যবহৃত হয়—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.28\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Loop}}
+&
+\multicolumn{1}{c|}{\textbf{সাধারণ ব্যবহার}}
+\\
+\hline
+
+\textenglish{\ttfamily for} Loop
+&
+Sequence/Iterable-এর Item নিয়ে কাজ বা নির্দিষ্ট সংখ্যক Iteration।
+\\
+\hline
+
+\textenglish{\ttfamily while} Loop
+&
+কোনো Condition True থাকা পর্যন্ত Repetition।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily for}
+\(\longrightarrow\)
+\textbf{Sequence / নির্দিষ্ট Iteration}
+
+\qquad
+
+\textenglish{\ttfamily while}
+\(\longrightarrow\)
+\textbf{Condition-নির্ভর Repetition}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% for + while basic examples
+%================================================
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily for} Loop-এর ধারণা}
+
+\textenglish{\ttfamily for}
+সাধারণত কোনো Sequence বা Iterable-এর প্রতিটি Item নিয়ে
+একবার করে কাজ করে।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for x in [10, 20, 30]:\\
+\hspace*{4mm}print(x)
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 10 \quad 20 \quad 30}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily while} Loop-এর ধারণা}
+
+Condition যতক্ষণ True থাকে ততক্ষণ Code Block পুনরাবৃত্তি করে।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 3:\\
+\hspace*{4mm}print(i)\\
+\hspace*{4mm}i += 1
+\end{english}
+\end{sidecodebox}
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily 1 \quad 2 \quad 3}
+\end{center}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% For vs While
+%================================================
+
+\booksubheading{\textenglish{\ttfamily for} ও \textenglish{\ttfamily while}-এর প্রাথমিক পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.23\linewidth}
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textenglish{\ttfamily for}}
+&
+\multicolumn{1}{c|}{\textenglish{\ttfamily while}}
+\\
+\hline
+
+মূল ভিত্তি
+&
+Sequence/Iterable বা Iteration
+&
+Condition
+\\
+\hline
+
+সাধারণ ব্যবহার
+&
+Item বা Iteration সম্পর্কে ধারণা থাকলে সুবিধাজনক
+&
+Condition-এর উপর Repetition নির্ভর করলে সুবিধাজনক
+\\
+\hline
+
+Variable Control
+&
+Loop Variable সাধারণত Item গ্রহণ করে
+&
+প্রয়োজনে Variable Initialize/Update করতে হয়
+\\
+\hline
+
+Infinite Loop-এর ঝুঁকি
+&
+তুলনামূলক কম
+&
+Condition/Update ভুল হলে বেশি
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Finite + Infinite
+%================================================
+
+\booksubheading{Finite Loop ও Infinite Loop}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Finite Loop}
+
+যে Loop নির্দিষ্ট Iteration শেষে বন্ধ হয় তাকে
+\textbf{Finite Loop} বলা যায়।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{sidecodebox}
+
+এটি ৫ Iteration শেষে শেষ হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Infinite Loop}
+
+যে Loop-এর Ending Condition কার্যকরভাবে কখনো False হয় না,
+সে Loop চলতেই থাকে।
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+while True:\\
+\hspace*{4mm}print("Hello")
+\end{english}
+\end{sidecodebox}
+
+এটি নিজে থেকে বন্ধ হবে না।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Common infinite loop mistake
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}ভুল করো না}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+i = 1\\
+while i <= 5:\\
+\hspace*{4mm}print(i)
+\end{english}
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily i}
+Update করা হয়নি। তাই
+\textenglish{\ttfamily i <= 5}
+Condition সবসময় True থাকবে এবং Loop চলতেই থাকবে।
+
+\begin{center}
+
+\textenglish{\ttfamily while}
+Loop-এ প্রয়োজনীয়
+\textbf{Update ভুলে গেলে}
+\(\longrightarrow\)
+\textbf{Infinite Loop হতে পারে}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Loop Condition
+%================================================
+
+\booksubheading{Loop Condition}
+
+Loop কখন চলবে এবং কখন শেষ হবে তা নির্ধারণে Condition গুরুত্বপূর্ণ।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+while i <= 5:
+\end{english}
+\end{codebox}
+
+\begin{center}
+
+\textbf{Condition True}
+\(\longrightarrow\)
+\textbf{Loop Body Execute}
+
+\qquad
+
+\textbf{Condition False}
+\(\longrightarrow\)
+\textbf{Loop শেষ}
+
+\end{center}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily True}
+\(\longrightarrow\)
+\textbf{আবার Loop}
+
+\qquad
+
+\textenglish{\ttfamily False}
+\(\longrightarrow\)
+\textbf{Loop থেকে বের হও}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Benefits
+%================================================
+
+\booksubheading{Loop-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item একই Statement বারবার লিখতে হয় না।
+
+\item Code Length কমে এবং Repetition কমে।
+
+\item Program সহজে পরিবর্তন ও Maintain করা যায়।
+
+\item Repetitive Task দ্রুত করা যায়।
+
+\item Collection-এর একাধিক Item Process করা সহজ হয়।
+
+\item Counting, Searching, Summation ইত্যাদি সহজে করা যায়।
+
+\item Program বেশি Organized ও Readable হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Same output comparison
+%================================================
+
+\booksubheading{Loop ছাড়া বনাম Loop ব্যবহার}
+
+ধরা যাক,
+\textenglish{\ttfamily "Python"}
+পাঁচবার Print করতে হবে।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Loop ছাড়া}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+print("Python")\\
+print("Python")\\
+print("Python")\\
+print("Python")\\
+print("Python")
+\end{english}
+\end{sidecodebox}
+
+একই Statement ৫ বার লেখা হয়েছে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Loop ব্যবহার করে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+for i in range(5):\\
+\hspace*{4mm}print("Python")
+\end{english}
+\end{sidecodebox}
+
+Output একই, কিন্তু Code অনেক সংক্ষিপ্ত।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Nested Loop
+%================================================
+
+\booksubheading{Nested Loop-এর প্রাথমিক ধারণা}
+
+একটি Loop-এর ভিতরে আরেকটি Loop থাকলে তাকে
+\textbf{Nested Loop} বলে।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+for i in range(2):\\
+\hspace*{4mm}for j in range(3):\\
+\hspace*{8mm}print(i, j)
+\end{english}
+\end{codebox}
+
+Outer Loop-এর প্রতিটি Iteration-এর জন্য Inner Loop সম্পূর্ণভাবে
+Execute হয়।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+Nested Loop পরবর্তী
+\textbf{Loop Pattern}
+অংশে বিশেষভাবে কাজে লাগবে।
+
+\end{rememberbox}
+
+%================================================
+% Uses of Loop
+%================================================
+
+\booksubheading{Loop কোথায় ব্যবহার হয়?}
+
+\begin{tabularx}
+{\linewidth}
+{
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{ব্যবহার}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যবহার}}
+\\
+\hline
+
+১ থেকে
+\textenglish{\ttfamily n}
+পর্যন্ত সংখ্যা Print
+&
+জোড়/বিজোড় সংখ্যা বের করা
+\\
+\hline
+
+Sum বা Average নির্ণয়
+&
+Multiplication Table তৈরি
+\\
+\hline
+
+List/String-এর Item Process
+&
+Searching ও Counting
+\\
+\hline
+
+Pattern তৈরি
+&
+Condition পূরণ হওয়া পর্যন্ত Input গ্রহণ
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% break continue preview
+%================================================
+
+\booksubheading{\textenglish{\ttfamily break} ও \textenglish{\ttfamily continue}-এর প্রাথমিক ধারণা}
+
+Loop-এর স্বাভাবিক Execution পরিবর্তনের জন্য Python-এ
+\textenglish{\ttfamily break}
+ও
+\textenglish{\ttfamily continue}
+ব্যবহার করা যায়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.28\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Statement}}
+&
+\multicolumn{1}{c|}{\textbf{প্রাথমিক কাজ}}
+\\
+\hline
+
+\textenglish{\ttfamily break}
+&
+Loop সঙ্গে সঙ্গে বন্ধ করে।
+\\
+\hline
+
+\textenglish{\ttfamily continue}
+&
+বর্তমান Iteration-এর বাকি অংশ Skip করে পরবর্তী Iteration-এ যায়।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+এগুলো বিস্তারিতভাবে
+\textbf{5.41 Loop Control Statement}
+অংশে আলোচনা করা হবে।
+
+\begin{center}
+
+\textenglish{\ttfamily break}
+\(\longrightarrow\)
+\textbf{Loop বন্ধ}
+
+\qquad
+
+\textenglish{\ttfamily continue}
+\(\longrightarrow\)
+\textbf{Current Iteration Skip}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item Loop Body-তে সঠিক Indentation না দেওয়া।
+
+\item
+\textenglish{\ttfamily while}
+-এর Condition ভুল লেখা।
+
+\item
+\textenglish{\ttfamily while}
+Loop-এ প্রয়োজনীয় Counter Update না করা।
+
+\item প্রয়োজন ছাড়া Infinite Loop তৈরি করা।
+
+\item Loop কতবার Iterate করবে তা ভুল হিসাব করা।
+
+\item
+\textenglish{\ttfamily for}
+ও
+\textenglish{\ttfamily while}
+-এর ব্যবহার গুলিয়ে ফেলা।
+
+\item Loop Variable-এর Value কীভাবে পরিবর্তিত হচ্ছে তা ভুল বোঝা।
+
+\item Nested Loop-এ Outer ও Inner Loop গুলিয়ে ফেলা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+}
+
+Loop
+&
+একই কাজ বারবার
+&
+Iteration
+&
+Loop Body-এর একবার Execution
+\\[0.7mm]
+
+Loop Body
+&
+পুনরাবৃত্ত Code
+&
+Counter
+&
+Iteration নিয়ন্ত্রণ/গণনার Variable
+\\[0.7mm]
+
+\textenglish{\ttfamily for}
+&
+Sequence/Iteration ভিত্তিক
+&
+\textenglish{\ttfamily while}
+&
+Condition ভিত্তিক
+\\[0.7mm]
+
+Finite Loop
+&
+নির্দিষ্ট সময়ে শেষ
+&
+Infinite Loop
+&
+অনির্দিষ্টকাল চলতে পারে
+\\[0.7mm]
+
+Nested Loop
+&
+Loop-এর ভিতরে Loop
+&
+Update
+&
+Counter/Variable পরিবর্তন
+\\[0.7mm]
+
+\textenglish{\ttfamily break}
+&
+Loop বন্ধ
+&
+\textenglish{\ttfamily continue}
+&
+Current Iteration Skip
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Start}
+\(\longrightarrow\)
+\textbf{Condition / Next Item}
+\(\longrightarrow\)
+\textbf{Loop Body}
+
+\medskip
+
+\textbf{Loop Body}
+\(\longrightarrow\)
+\textbf{Update / Next Item}
+\(\longrightarrow\)
+\textbf{Repeat}
+\(\longrightarrow\)
+\textbf{Stop}
+
+\medskip
+
+\textenglish{\ttfamily for}
+\(\longrightarrow\)
+\textbf{Sequence / Iteration}
+
+\qquad
+
+\textenglish{\ttfamily while}
+\(\longrightarrow\)
+\textbf{Condition}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.39 Python for Loop
+%================================================
+

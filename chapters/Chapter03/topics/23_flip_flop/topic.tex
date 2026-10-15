@@ -1,0 +1,636 @@
+% =========================================================
+% 3.11 Flip-Flop
+% =========================================================
+
+\section{ফ্লিপ-ফ্লপ
+(\textenglish{Flip-Flop})}
+
+ডিজিটাল সার্কিটে শুধু তথ্য প্রক্রিয়াকরণ করলেই হয় না; অনেক সময় কোনো
+একটি বাইনারি মান কিছু সময়ের জন্য মনে রাখতেও হয়।
+
+যেমন, কোনো সার্কিটে বর্তমানে \(1\) সংরক্ষিত থাকলে নতুন নির্দেশ না
+পাওয়া পর্যন্ত সেই \(1\) ধরে রাখতে হবে। আবার প্রয়োজন হলে সেটিকে
+\(0\)-তে পরিবর্তন করতে হবে।
+
+এই ধরনের এক-বিট তথ্য সংরক্ষণের মৌলিক সার্কিট হলো
+\textbf{\textenglish{Flip-Flop}}।
+
+সহজভাবে—
+
+\[
+\boxed{
+\text{\textenglish{Input/Control Signal}}
+\rightarrow
+\text{\textenglish{Flip-Flop}}
+\rightarrow
+\text{\textenglish{Stored 0 or 1}}
+}
+\]
+
+
+% =========================================================
+% 3.11.1 What is Flip-Flop?
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপ কী?}
+
+যে দ্বি-স্থিতিশীল ডিজিটাল লজিক সার্কিট দুটি স্থিতিশীল অবস্থার
+যেকোনো একটিতে অবস্থান করে একটি বাইনারি বিট \(0\) অথবা \(1\)
+সংরক্ষণ করতে পারে, তাকে \textbf{\textenglish{Flip-Flop}} বলে।
+
+এখানে দ্বি-স্থিতিশীল বা \textenglish{Bistable} অর্থ হলো—
+সার্কিটটির দুটি স্থিতিশীল অবস্থা আছে।
+
+\[
+Q=0
+\]
+
+অথবা,
+
+\[
+Q=1
+\]
+
+অতএব,
+
+\[
+\boxed{
+1\text{টি }\text{\textenglish{Flip-Flop}}
+=
+1\text{ }\text{\textenglish{bit}}\text{ তথ্য সংরক্ষণ}
+}
+\]
+
+\textenglish{Flip-Flop}-কে তাই ডিজিটাল সার্কিটের একটি মৌলিক
+\textenglish{Memory Element} বলা হয়।
+
+
+% =========================================================
+% 3.11.2 Output
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপের আউটপুট
+(\textenglish{Output})}
+
+সাধারণভাবে \textenglish{Flip-Flop}-এর প্রধান আউটপুটকে \(Q\)
+দ্বারা প্রকাশ করা হয়।
+
+অনেক \textenglish{Flip-Flop}-এ এর বিপরীত আউটপুটও থাকে—
+
+\[
+\overline{Q}
+\]
+
+সাধারণ অবস্থায়,
+
+\[
+\overline{Q}=\overline{Q}
+\]
+
+অর্থাৎ—
+
+\[
+Q=1
+\Rightarrow
+\overline{Q}=0
+\]
+
+এবং,
+
+\[
+Q=0
+\Rightarrow
+\overline{Q}=1
+\]
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(\boldsymbol{Q}\)
+&
+\(\boldsymbol{\overline{Q}}\)
+&
+\textbf{সংরক্ষিত বিট}
+\\
+\hline
+0 & 1 & 0 \\
+\hline
+1 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\par\begingroup
+
+\textbf{মনে রাখবে:}
+\(Q\) এবং \(\overline{Q}\) সাধারণত পরস্পরের বিপরীত মান প্রকাশ করে।
+\par\endgroup
+
+
+
+% =========================================================
+% 3.11.3 Why Flip-Flop is used
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপ কেন ব্যবহার করা হয়?}
+
+কম্পিউটার ও অন্যান্য ডিজিটাল ডিভাইসে অনেক কাজের জন্য পূর্ববর্তী তথ্য
+বা অবস্থা মনে রাখা প্রয়োজন। \textenglish{Flip-Flop} এই তথ্য বা অবস্থা
+সংরক্ষণে ব্যবহৃত হয়।
+
+ফ্লিপ-ফ্লপ ব্যবহারের প্রধান কারণগুলো হলো—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textbf{বাইনারি তথ্য সংরক্ষণ:}
+    একটি \(0\) অথবা \(1\) ধরে রাখতে।
+
+    \item \textbf{পূর্ববর্তী অবস্থা মনে রাখা:}
+    সার্কিটের বর্তমান বা পূর্বের \textenglish{state} সংরক্ষণ করতে।
+
+    \item \textbf{\textenglish{Counter} তৈরি:}
+    একাধিক \textenglish{Flip-Flop} ব্যবহার করে
+    \textenglish{pulse} বা \textenglish{event} গণনা করতে।
+
+    \item \textbf{\textenglish{Register} তৈরি:}
+    একাধিক বিট একসঙ্গে সংরক্ষণ করতে।
+
+    \item \textbf{\textenglish{Shift Register} তৈরি:}
+    বিট এক অবস্থান থেকে অন্য অবস্থানে স্থানান্তর করতে।
+
+    \item \textbf{\textenglish{Clock}-এর সঙ্গে কাজ:}
+    নির্দিষ্ট সময়ে তথ্য গ্রহণ ও পরিবর্তন করতে।
+
+    \item \textbf{\textenglish{Control Circuit}:}
+    বিভিন্ন ডিজিটাল অবস্থা নিয়ন্ত্রণ করতে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.11.4 How Flip-Flop stores information
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপ কীভাবে তথ্য সংরক্ষণ করে?}
+
+\textenglish{Flip-Flop}-এর ভেতরে এমনভাবে
+\textenglish{feedback} ব্যবস্থা তৈরি করা হয়, যাতে একবার কোনো অবস্থা
+তৈরি হলে নতুন উপযুক্ত ইনপুট না আসা পর্যন্ত সেই অবস্থা ধরে রাখা যায়।
+
+ধরা যাক,
+
+\[
+Q=1
+\]
+
+অর্থাৎ \textenglish{Flip-Flop}-এ বর্তমানে \(1\) সংরক্ষিত আছে।
+
+নতুন কোনো পরিবর্তনকারী সংকেত না এলে—
+
+\[
+Q=1
+\]
+
+অবস্থাই বজায় থাকবে।
+
+আবার উপযুক্ত ইনপুট দিলে অবস্থাটি পরিবর্তিত হয়ে—
+
+\[
+Q=0
+\]
+
+হতে পারে।
+
+অর্থাৎ \textenglish{Flip-Flop} শুধু আউটপুট তৈরি করে না;
+এটি আগের আউটপুট বা অবস্থা মনে রাখতে পারে।
+
+\subsubsection*{এক বিট তথ্য সংরক্ষণের ধারণা}
+
+\[
+Q=0
+\quad\Longrightarrow\quad
+0\text{ সংরক্ষিত}
+\]
+
+\[
+Q=1
+\quad\Longrightarrow\quad
+1\text{ সংরক্ষিত}
+\]
+
+\par\begingroup
+
+\textenglish{Flip-Flop}-এর \textenglish{feedback} ব্যবস্থা
+বর্তমান অবস্থা ধরে রাখতে সাহায্য করে। তবে বিদ্যুৎ সরবরাহ বন্ধ হলে
+সাধারণ \textenglish{Flip-Flop}-এর সংরক্ষিত তথ্য হারিয়ে যায়।
+তাই এটি একটি \textenglish{volatile storage element}।
+\par\endgroup
+
+
+
+% =========================================================
+% 3.11.5 Role of Clock
+% =========================================================
+
+\subsection{ক্লকের ভূমিকা
+(\textenglish{Role of Clock})}
+
+অনেক \textenglish{Flip-Flop}-এর সঙ্গে একটি
+\textenglish{Clock (CLK)} ইনপুট থাকে।
+
+\textenglish{Clock} হলো নির্দিষ্ট সময় পরপর পরিবর্তিত হওয়া একটি
+ডিজিটাল সংকেত, যা \textenglish{Flip-Flop}-কে নির্দেশ করে
+কখন ইনপুট গ্রহণ বা অবস্থা পরিবর্তন করতে হবে।
+
+\textenglish{Clock signal} সাধারণত—
+
+\[
+0\rightarrow1\rightarrow0\rightarrow1\rightarrow\cdots
+\]
+
+এভাবে পরিবর্তিত হয়।
+
+কিছু \textenglish{Flip-Flop} ক্লকের—
+
+\[
+0\rightarrow1
+\]
+
+পরিবর্তনের সময় কাজ করে। একে
+\textenglish{Positive Edge} বলা হয়।
+
+আবার কিছু \textenglish{Flip-Flop}—
+
+\[
+1\rightarrow0
+\]
+
+পরিবর্তনের সময় কাজ করে। একে
+\textenglish{Negative Edge} বলা হয়।
+
+সহজভাবে—
+
+\[
+\boxed{
+\text{\textenglish{Clock}}
+=
+\text{কখন }\text{\textenglish{state}}
+\text{ পরিবর্তন হবে তার সময়-নিয়ন্ত্রণ সংকেত}
+}
+\]
+
+
+% =========================================================
+% 3.11.6 Characteristics
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপের বৈশিষ্ট্য}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item একটি \textenglish{Flip-Flop} সাধারণত
+    \(1\) \textenglish{bit} তথ্য সংরক্ষণ করে।
+
+    \item এর দুটি স্থিতিশীল অবস্থা—\(0\) ও \(1\)।
+
+    \item পূর্ববর্তী \textenglish{state} ধরে রাখতে পারে।
+
+    \item সাধারণত \(Q\) এবং \(\overline{Q}\)
+    আউটপুট ব্যবহৃত হয়।
+
+    \item বিভিন্ন \textenglish{Flip-Flop} ইনপুটের নিয়ম অনুযায়ী
+    অবস্থা পরিবর্তন করে।
+
+    \item \textenglish{Clock-controlled digital circuit}-এ
+    ব্যাপকভাবে ব্যবহৃত হয়।
+
+    \item বিদ্যুৎ সরবরাহ বন্ধ হলে সাধারণ
+    \textenglish{Flip-Flop}-এর সংরক্ষিত অবস্থা হারিয়ে যায়।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.11.7 History
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপের সংক্ষিপ্ত ইতিহাস}
+
+ডিজিটাল তথ্য সংরক্ষণের ধারণা বিকাশের সঙ্গে
+\textenglish{Flip-Flop}-এর ইতিহাস জড়িত।
+
+১৯১৮ সালে \textenglish{William Eccles} ও
+\textenglish{F. W. Jordan} দুটি \textenglish{vacuum tube} ব্যবহার করে
+একটি দ্বি-স্থিতিশীল সার্কিট তৈরি করেন।
+এটি আধুনিক \textenglish{Flip-Flop}-এর প্রাথমিক রূপগুলোর একটি।
+
+পরবর্তী সময়ে \textenglish{vacuum tube}-এর পরিবর্তে
+\textenglish{transistor} এবং পরে
+\textenglish{Integrated Circuit (IC)} প্রযুক্তির সাহায্যে
+\textenglish{Flip-Flop} আরও ছোট, দ্রুত ও কার্যকর হয়।
+
+বর্তমানে \textenglish{processor}, \textenglish{register},
+\textenglish{counter} এবং বিভিন্ন
+\textenglish{sequential digital circuit}-এ
+বিপুল সংখ্যক \textenglish{Flip-Flop} ব্যবহৃত হয়।
+
+
+% =========================================================
+% 3.11.8 Applications
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপের ব্যবহার}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textbf{\textenglish{Register}:}
+    একাধিক বিট সাময়িকভাবে সংরক্ষণ করতে।
+
+    \item \textbf{\textenglish{Counter}:}
+    \textenglish{clock pulse} বা
+    \textenglish{event} গণনা করতে।
+
+    \item \textbf{\textenglish{Shift Register}:}
+    বাইনারি তথ্য এক অবস্থান থেকে অন্য অবস্থানে স্থানান্তর করতে।
+
+    \item \textbf{\textenglish{Memory Circuit}:}
+    ডিজিটাল তথ্য সাময়িকভাবে সংরক্ষণ করতে।
+
+    \item \textbf{\textenglish{Frequency Divider}:}
+    \textenglish{clock frequency} ভাগ বা কমাতে।
+
+    \item \textbf{\textenglish{Control Circuit}:}
+    ডিজিটাল সিস্টেমের বিভিন্ন অবস্থা নিয়ন্ত্রণ করতে।
+
+    \item \textbf{\textenglish{Synchronizing Circuit}:}
+    \textenglish{clock}-এর সঙ্গে সংকেত সমন্বয় করতে।
+
+\end{enumerate}
+
+
+% =========================================================
+% 3.11.9 Types
+% =========================================================
+
+\subsection{ফ্লিপ-ফ্লপের প্রকারভেদ}
+
+ইনপুট ও অবস্থা পরিবর্তনের পদ্ধতি অনুযায়ী
+\textenglish{Flip-Flop} প্রধানত চার প্রকার—
+
+\begin{enumerate}[leftmargin=*,itemsep=3pt]
+
+    \item \textenglish{SR Flip-Flop (Set-Reset)}
+    \item \textenglish{JK Flip-Flop}
+    \item \textenglish{D Flip-Flop (Data/Delay)}
+    \item \textenglish{T Flip-Flop (Toggle)}
+
+\end{enumerate}
+
+
+% =========================================================
+% SR
+% =========================================================
+
+\subsubsection*{\textenglish{SR Flip-Flop (Set-Reset)}}
+
+এর প্রধান দুটি ইনপুট—
+
+\[
+S=\text{\textenglish{Set}}
+\]
+
+এবং,
+
+\[
+R=\text{\textenglish{Reset}}
+\]
+
+\textenglish{Set} ইনপুটের মাধ্যমে আউটপুটকে \(1\)-এ
+এবং \textenglish{Reset} ইনপুটের মাধ্যমে আউটপুটকে \(0\)-তে
+নেওয়া যায়।
+
+এটি \textenglish{Flip-Flop}-এর একটি মৌলিক রূপ এবং সাধারণ
+অবস্থা সংরক্ষণ ও নিয়ন্ত্রণের কাজে ব্যবহৃত হয়।
+
+
+% =========================================================
+% JK
+% =========================================================
+
+\subsubsection*{\textenglish{JK Flip-Flop}}
+
+\textenglish{JK Flip-Flop} হলো
+\textenglish{SR Flip-Flop}-এর উন্নত রূপ।
+
+এর বিশেষ বৈশিষ্ট্য হলো—
+
+\[
+J=K=1
+\]
+
+হলে আউটপুট \textenglish{Toggle} করে।
+
+অর্থাৎ,
+
+\[
+0\rightarrow1
+\]
+
+অথবা,
+
+\[
+1\rightarrow0
+\]
+
+হয়।
+
+\textenglish{Counter} এবং বিভিন্ন
+\textenglish{toggle circuit}-এ এটি ব্যবহৃত হয়।
+
+
+% =========================================================
+% D
+% =========================================================
+
+\subsubsection*{\textenglish{D Flip-Flop (Data/Delay)}}
+
+\textenglish{D Flip-Flop}-এর প্রধান ইনপুট হলো—
+
+\[
+D
+\]
+
+ক্লকের নির্দিষ্ট সক্রিয় মুহূর্তে \(D\)-এর মান
+আউটপুট \(Q\)-তে সংরক্ষিত হয়।
+
+সহজভাবে—
+
+\[
+\boxed{
+Q_{\text{\textenglish{next}}}=D
+}
+\]
+
+\textenglish{Register}, \textenglish{data storage} এবং
+\textenglish{synchronization}-এর কাজে
+\textenglish{D Flip-Flop} ব্যাপকভাবে ব্যবহৃত হয়।
+
+
+% =========================================================
+% T
+% =========================================================
+
+\subsubsection*{\textenglish{T Flip-Flop (Toggle)}}
+
+\textenglish{T Flip-Flop}-এর প্রধান ইনপুট—
+
+\[
+T
+\]
+
+যদি,
+
+\[
+T=0
+\]
+
+হয়, তাহলে আউটপুট আগের অবস্থায় থাকে।
+
+আর,
+
+\[
+T=1
+\]
+
+হলে আউটপুট \textenglish{Toggle} করে।
+
+অর্থাৎ,
+
+\[
+0\leftrightarrow1
+\]
+
+এই কারণে \textenglish{T Flip-Flop}
+\textenglish{Counter} ও
+\textenglish{Frequency Divider}-এ বিশেষভাবে উপযোগী।
+
+
+% =========================================================
+% Comparison Table
+% =========================================================
+
+\subsubsection*{এক নজরে চার ধরনের ফ্লিপ-ফ্লপ}
+
+\begin{center}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}
+{\textwidth}
+{|L{0.16\textwidth}|L{0.18\textwidth}|Y|Y|}
+
+\hline
+
+\rowcolor{ICTLightBlue}
+
+\textbf{\textenglish{Flip-Flop}}
+&
+\textbf{প্রধান ইনপুট}
+&
+\textbf{মূল কাজ}
+&
+\textbf{সাধারণ ব্যবহার}
+\\
+\hline
+
+\textenglish{SR}
+&
+\(S,R\)
+&
+\textenglish{Set} ও \textenglish{Reset}
+&
+\textenglish{State Control}
+\\
+\hline
+
+\textenglish{JK}
+&
+\(J,K\)
+&
+\textenglish{Set, Reset} ও \textenglish{Toggle}
+&
+\textenglish{Counter}
+\\
+\hline
+
+\textenglish{D}
+&
+\(D\)
+&
+\textenglish{Data} সংরক্ষণ
+&
+\textenglish{Register, Storage}
+\\
+\hline
+
+\textenglish{T}
+&
+\(T\)
+&
+\textenglish{Toggle}
+&
+\textenglish{Counter, Frequency Divider}
+\\
+\hline
+
+\end{tabularx}
+
+\end{center}
+
+
+% =========================================================
+% Memory Trick
+% =========================================================
+
+\par\begingroup
+
+
+\textbf{মনে রাখার কৌশল:}
+
+\[
+\boxed{
+\text{\textenglish{SR}}
+=
+\text{\textenglish{Set-Reset}}
+}
+\]
+
+\[
+\boxed{
+\text{\textenglish{JK}}
+=
+\text{\textenglish{Improved SR + Toggle}}
+}
+\]
+
+\[
+\boxed{
+\text{\textenglish{D}}
+=
+\text{\textenglish{Data Store}}
+}
+\]
+
+\[
+\boxed{
+\text{\textenglish{T}}
+=
+\text{\textenglish{Toggle}}
+}
+\]
+
+\par\endgroup
+
+\input{chapters/Chapter03/topics/23_flip_flop/state_examples.tex}

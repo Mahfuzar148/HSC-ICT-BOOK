@@ -1,0 +1,823 @@
+\sectionheading{5.50 সৃজনশীল প্রশ্ন (CQ)}
+
+% পুরো CQ অংশ দুই কলামে - সব প্রশ্ন একই layout-এ
+{\setlength{\columnsep}{4.7mm}%
+\begin{multicols}{2}
+\raggedcolumns
+
+%====================================================================
+% PART A
+%====================================================================
+\partheading{অংশ–A : Topic-wise CQ Practice}
+
+\cqtitle{১}{Program ও Programming Language}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} রাফি একটি দোকানের দৈনিক বিক্রয় হিসাব স্বয়ংক্রিয় করতে চায়।
+সে কম্পিউটারকে এমন কিছু নির্দেশনা দেয় যাতে বিক্রয়ের পরিমাণ ও প্রতিটি পণ্যের মূল্য গ্রহণ করে মোট টাকা হিসাব করে ফলাফল দেখানো যায়।
+\end{stimulusbox}
+\qpart{ক}{Program কী?}
+\qpart{খ}{Programming Language কেন প্রয়োজন—ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকের কাজটি সম্পন্ন করতে কম্পিউটারকে যে ধাপগুলো অনুসরণ করতে হবে, তা ধারাবাহিকভাবে লেখ।}
+\qpart{ঘ}{মানুষের ভাষায় দেওয়া নির্দেশনা সরাসরি কম্পিউটার বুঝতে না পারার কারণ বিশ্লেষণ কর।}
+
+\cqtitle{২}{Machine, Assembly, High Level ও 4GL}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} শিক্ষক শ্রেণিতে তিন ধরনের নির্দেশনা দেখালেন—
+\end{stimulusbox}
+\begin{pythoncode}
+10110000 01100001
+MOV A, B
+total = price * quantity
+\end{pythoncode}
+\begin{stimulusbox}
+তিনি আরও বললেন, আধুনিক কিছু ভাষায় অল্প নির্দেশনায় Database-ভিত্তিক জটিল কাজ তুলনামূলক সহজে করা যায়।
+\end{stimulusbox}
+\qpart{ক}{Machine Language কী?}
+\qpart{খ}{Assembly Language-কে Symbolic Language বলা হয় কেন?}
+\qpart{গ}{উদ্দীপকের তিন ধরনের নির্দেশনা কোন কোন স্তরের ভাষার বৈশিষ্ট্য প্রকাশ করে—ব্যাখ্যা কর।}
+\qpart{ঘ}{Low Level Language-এর তুলনায় High Level Language ব্যবহারের সুবিধা বিশ্লেষণ কর।}
+
+\cqtitle{৩}{Compiler, Interpreter ও Assembler}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} সাদিয়া একটি Assembly Program এবং একটি Python Program লিখল।
+প্রথম Program-টি Machine Code-এ রূপান্তরের জন্য একটি Translator প্রয়োজন হলো।
+Python Program-টি চালানোর সময় Instructionগুলো পর্যায়ক্রমে বিশ্লেষণ ও Execute হলো।
+\end{stimulusbox}
+\qpart{ক}{Translator Program কী?}
+\qpart{খ}{Compiler ও Interpreter-এর মধ্যে পার্থক্য ব্যাখ্যা কর।}
+\qpart{গ}{Assembly Program-এর জন্য কোন Translator প্রয়োজন? কারণসহ লেখ।}
+\qpart{ঘ}{উদ্দীপকের Python Program-এর Translation পদ্ধতি Compiler-ভিত্তিক পদ্ধতি থেকে কীভাবে ভিন্ন—বিশ্লেষণ কর।}
+
+\cqtitle{৪}{Program Organization ও Program Design Model}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} একটি Library Management System তৈরির আগে দলটি পুরো সমস্যাটিকে
+বই সংরক্ষণ, বই খোঁজা, বই প্রদান এবং বই ফেরত—এমন কয়েকটি অংশে সাজাল। এরপর Input, Processing ও Output নির্ধারণ করে Program-এর কাঠামো তৈরি করল।
+\end{stimulusbox}
+\qpart{ক}{Program Organization কী?}
+\qpart{খ}{Program তৈরির আগে Design করা প্রয়োজন কেন?}
+\qpart{গ}{উদ্দীপকের System-টির Input, Processing ও Output শনাক্ত কর।}
+\qpart{ঘ}{পরিকল্পনা ছাড়া সরাসরি Coding শুরু করলে কী ধরনের সমস্যা হতে পারে—বিশ্লেষণ কর।}
+
+\cqtitle{৫}{Modular Programming ও Program Development}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} একটি School Management Software-এ Admission, Attendance,
+Result এবং Fee Management আলাদা অংশ হিসেবে তৈরি করা হলো। Requirement নির্ধারণের পর Design, Coding, Testing এবং প্রয়োজনীয় সংশোধন করা হলো।
+\end{stimulusbox}
+\qpart{ক}{Module কী?}
+\qpart{খ}{Modular Programming-এর সুবিধা ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকের Software-টির সম্ভাব্য Moduleগুলো চিহ্নিত করে তাদের কাজ লেখ।}
+\qpart{ঘ}{Program Development-এর ধাপগুলো সঠিকভাবে অনুসরণ করলে Software-এর মান কীভাবে উন্নত হয়—বিশ্লেষণ কর।}
+
+\cqtitle{৬}{Computational Thinking, Problem Analysis ও IPO Model}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} একজন শিক্ষক তিনটি পরীক্ষার নম্বর থেকে একজন শিক্ষার্থীর গড় নম্বর নির্ণয় করতে চান। Programmer সমস্যাটিকে ছোট অংশে ভাগ করে প্রয়োজনীয় Data, Calculation এবং Result আলাদাভাবে নির্ধারণ করল।
+\end{stimulusbox}
+\qpart{ক}{Computational Thinking কী?}
+\qpart{খ}{Problem Analysis কেন গুরুত্বপূর্ণ?}
+\qpart{গ}{উদ্দীপকের সমস্যাটির IPO Model তৈরি কর।}
+\qpart{ঘ}{Computational Thinking ব্যবহার করে সমস্যাটির সমাধান কীভাবে ধাপে ধাপে তৈরি করা যায়—বিশ্লেষণ কর।}
+
+\cqtitle{৭}{Dry Run ও Trace Table}
+\textbf{উদ্দীপক:} নিচের Python Program-টি লক্ষ করো—
+\begin{pythoncode}
+total = 0
+for i in range(1, 5):
+    total = total + i
+print(total)
+\end{pythoncode}
+\qpart{ক}{Dry Run কী?}
+\qpart{খ}{Trace Table ব্যবহারের প্রয়োজনীয়তা ব্যাখ্যা কর।}
+\qpart{গ}{Program-টির Trace Table তৈরি করে Output নির্ণয় কর।}
+\qpart{ঘ}{\textenglish{\ttfamily range(1, 5)}-এর পরিবর্তে \textenglish{\ttfamily range(1, 6, 2)} ব্যবহার করলে Result কীভাবে পরিবর্তিত হবে—Dry Run-এর সাহায্যে বিশ্লেষণ কর।}
+
+\cqtitle{৮}{Algorithm}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} একটি Program দুইটি সংখ্যা গ্রহণ করে বড় সংখ্যাটি প্রদর্শন করবে। সংখ্যা দুটি সমান হলে \textenglish{\ttfamily "Equal"} প্রদর্শন করবে।
+\end{stimulusbox}
+\qpart{ক}{Algorithm কী?}
+\qpart{খ}{একটি ভালো Algorithm-এর ধাপগুলো সুনির্দিষ্ট হওয়া প্রয়োজন কেন?}
+\qpart{গ}{উদ্দীপকের সমস্যাটির Algorithm লেখ।}
+\qpart{ঘ}{একই Algorithm-কে তিনটি সংখ্যার মধ্যে বৃহত্তম সংখ্যা নির্ণয়ের উপযোগী করতে কী পরিবর্তন করতে হবে—বিশ্লেষণ কর।}
+
+\cqtitle{৯}{Flowchart}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} একটি Program একটি পূর্ণসংখ্যা গ্রহণ করে সংখ্যাটি জোড় না বিজোড় তা নির্ণয় করবে।
+\end{stimulusbox}
+\qpart{ক}{Flowchart কী?}
+\qpart{খ}{Flowchart-এ Decision Symbol-এর প্রয়োজনীয়তা ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকের সমস্যাটির Flowchart তৈরি কর।}
+\qpart{ঘ}{সংখ্যাটি জোড়/বিজোড়ের পাশাপাশি ধনাত্মক, ঋণাত্মক নাকি শূন্য তা নির্ণয়ের জন্য Flowchart-টি কীভাবে পরিবর্তন করতে হবে—ব্যাখ্যা কর।}
+
+\cqtitle{১০}{Python পরিচিতি, বৈশিষ্ট্য ও Programming Environment}
+\begin{stimulusbox}
+\textbf{উদ্দীপক:} মেহেদী Python শেখা শুরু করল। প্রথমে Python Environment প্রস্তুত করে ছোট ছোট Statement সরাসরি পরীক্ষা করল। পরে একটি সম্পূর্ণ Program File তৈরি করে Save ও Run করল।
+\end{stimulusbox}
+\qpart{ক}{Python কী?}
+\qpart{খ}{Python নতুন শিক্ষার্থীদের জন্য তুলনামূলক সহজ কেন?}
+\qpart{গ}{সরাসরি Command পরীক্ষা এবং File-এ Program লিখে চালানোর পদ্ধতির ব্যবহারিক পার্থক্য ব্যাখ্যা কর।}
+\qpart{ঘ}{Python-এ Program লেখা থেকে Output পাওয়া পর্যন্ত প্রয়োজনীয় ধাপগুলো ধারাবাহিকভাবে বিশ্লেষণ কর।}
+
+\cqtitle{১১}{Python Syntax, Variable ও Data Type}
+\textbf{উদ্দীপক:} নিচের Code দুটি লক্ষ করো—
+\begin{pythoncode}
+name = "Rafi"
+marks = 85
+average = 78.5
+passed = True
+\end{pythoncode}
+\begin{pythoncode}
+2marks = 80
+total-marks = 150
+\end{pythoncode}
+\qpart{ক}{Syntax কী?}
+\qpart{খ}{Variable-এর নামকরণের নিয়ম মানা প্রয়োজন কেন?}
+\qpart{গ}{প্রথম Code-এর Variableগুলোর Data Type নির্ণয় কর।}
+\qpart{ঘ}{দ্বিতীয় Code-এর Variable Nameগুলো কেন গ্রহণযোগ্য নয় এবং কীভাবে সংশোধন করা যায়—বিশ্লেষণ কর।}
+
+\cqtitle{১২}{Input, Output ও Operator}
+\textbf{উদ্দীপক:} নিচের Program-টি লক্ষ করো—
+\begin{pythoncode}
+a = int(input("First number: "))
+b = int(input("Second number: "))
+print("Sum =", a + b)
+print("Quotient =", a // b)
+print("Remainder =", a % b)
+\end{pythoncode}
+\qpart{ক}{Operator কী?}
+\qpart{খ}{\textenglish{\ttfamily input()} থেকে পাওয়া Data-কে \textenglish{\ttfamily int()} দ্বারা রূপান্তর করা হয়েছে কেন?}
+\qpart{গ}{\textenglish{\ttfamily a = 17} এবং \textenglish{\ttfamily b = 5} হলে Program-টির Output নির্ণয় কর।}
+\qpart{ঘ}{Program-টিকে দুটি সংখ্যার Sum, Average এবং Product প্রদর্শনের উপযোগী করে লেখ।}
+
+\cqtitle{১৩}{Conditional Logic Statement}
+\textbf{উদ্দীপক:} নিচের Python Program-টি লক্ষ করো—
+\begin{pythoncode}
+marks = int(input("Marks: "))
+if marks >= 80:
+    print("A+")
+elif marks >= 70:
+    print("A")
+else:
+    print("Below A")
+\end{pythoncode}
+\qpart{ক}{Conditional Statement কী?}
+\qpart{খ}{একাধিক Condition পরীক্ষা করতে \textenglish{\ttfamily elif} কেন প্রয়োজন?}
+\qpart{গ}{\textenglish{\ttfamily marks = 75} হলে Program-টির Execution ব্যাখ্যা করে Output লেখ।}
+\qpart{ঘ}{60 থেকে 69-এর জন্য \textenglish{\ttfamily "A-"} এবং 60-এর নিচে \textenglish{\ttfamily "Below A-"} প্রদর্শনের জন্য Program-টি পরিবর্তন কর।}
+
+\cqtitle{১৪}{for Loop ও range()}
+\textbf{উদ্দীপক:} নিচের Code-টি লক্ষ করো—
+\begin{pythoncode}
+total = 0
+for i in range(2, 11, 2):
+    total = total + i
+print(total)
+\end{pythoncode}
+\qpart{ক}{Loop কী?}
+\qpart{খ}{\textenglish{\ttfamily range()} Function-এর Stop Value সাধারণত Sequence-এ অন্তর্ভুক্ত হয় না—ব্যাখ্যা কর।}
+\qpart{গ}{Program-টির Dry Run করে Output নির্ণয় কর।}
+\qpart{ঘ}{১ থেকে \textenglish{\ttfamily n} পর্যন্ত সব বিজোড় সংখ্যার যোগফল নির্ণয়ের জন্য Programটি পরিবর্তন কর।}
+
+\cqtitle{১৫}{while Loop}
+\textbf{উদ্দীপক:} নিচের Program-টি লক্ষ করো—
+\begin{pythoncode}
+n = 5
+fact = 1
+i = 1
+while i <= n:
+    fact = fact * i
+    i = i + 1
+print(fact)
+\end{pythoncode}
+\qpart{ক}{\textenglish{\ttfamily while} Loop কী?}
+\qpart{খ}{\textenglish{\ttfamily while} Loop-এ Update Statement প্রয়োজন কেন?}
+\qpart{গ}{Program-টির Trace Table তৈরি করে Output নির্ণয় কর।}
+\qpart{ঘ}{একই কাজ \textenglish{\ttfamily for} Loop ব্যবহার করে সম্পন্ন করার Program লেখ এবং দুটি পদ্ধতির Logic তুলনা কর।}
+
+\cqtitle{১৬}{Loop Control ও Nested Loop}
+\textbf{উদ্দীপক–১:}
+\begin{pythoncode}
+for i in range(1, 7):
+    if i == 3:
+        continue
+    if i == 6:
+        break
+    print(i, end=" ")
+\end{pythoncode}
+\textbf{উদ্দীপক–২:}
+\begin{pythoncode}
+for i in range(3):
+    for j in range(3):
+        print("*", end=" ")
+    print()
+\end{pythoncode}
+\qpart{ক}{\textenglish{\ttfamily break} Statement কী করে?}
+\qpart{খ}{\textenglish{\ttfamily break} ও \textenglish{\ttfamily continue}-এর কার্যগত পার্থক্য ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপক–১ এর Output নির্ণয় করে কারণ ব্যাখ্যা কর।}
+\qpart{ঘ}{উদ্দীপক–২ এর Program-টি তিন লাইনে যথাক্রমে ১টি, ২টি ও ৩টি \textenglish{\ttfamily *} প্রদর্শনের উপযোগী করে পরিবর্তন কর।}
+
+\cqtitle{১৭}{List, Tuple, Set ও Dictionary}
+\textbf{উদ্দীপক:} নিচের Dataগুলো লক্ষ করো—
+\begin{pythoncode}
+marks = [80, 75, 80, 90]
+subjects = ("ICT", "Math", "Physics")
+unique_marks = {80, 75, 80, 90}
+student = {
+    "name": "Rafi",
+    "marks": 80
+}
+\end{pythoncode}
+\qpart{ক}{Data Structure কী?}
+\qpart{খ}{List ও Tuple-এর মধ্যে মূল পার্থক্য ব্যাখ্যা কর।}
+\qpart{গ}{\textenglish{\ttfamily marks} ও \textenglish{\ttfamily unique\_marks}-এ সংরক্ষিত Data-এর মধ্যে কী পার্থক্য দেখা যাবে—ব্যাখ্যা কর।}
+\qpart{ঘ}{একজন শিক্ষার্থীর নাম, Roll এবং বিভিন্ন বিষয়ের নম্বর একত্রে সংরক্ষণের জন্য উপযুক্ত Data Structure নির্বাচন করে Python Code লেখ এবং নির্বাচনের যৌক্তিকতা দেখাও।}
+
+\cqtitle{১৮}{Function, Parameter, Argument, Return ও Function Contract}
+\textbf{উদ্দীপক:} নিচের Program-টি লক্ষ করো—
+\begin{pythoncode}
+def average(a, b, c):
+    total = a + b + c
+    return total / 3
+
+result = average(80, 75, 85)
+print(result)
+\end{pythoncode}
+\qpart{ক}{Function কী?}
+\qpart{খ}{Parameter ও Argument-এর পার্থক্য ব্যাখ্যা কর।}
+\qpart{গ}{Program-টির Function Contract—Input, Processing ও Output—চিহ্নিত কর এবং Output নির্ণয় কর।}
+\qpart{ঘ}{তিনটি সংখ্যার পরিবর্তে একটি List-এর সব সংখ্যার Average নির্ণয় করতে Function-টি কীভাবে পরিবর্তন করবে—Python Program লেখ।}
+
+\cqtitle{১৯}{Scope, Local–Global Variable ও File}
+\textbf{উদ্দীপক–১:}
+\begin{pythoncode}
+x = 10
+
+def show():
+    x = 20
+    print(x)
+
+show()
+print(x)
+\end{pythoncode}
+\begin{stimulusbox}
+\textbf{উদ্দীপক–২:} একটি School Program-এ শিক্ষার্থীদের তথ্য Program বন্ধ করার পরও সংরক্ষণ করে পরবর্তী সময়ে আবার ব্যবহার করার প্রয়োজন হলো।
+\end{stimulusbox}
+\qpart{ক}{Scope কী?}
+\qpart{খ}{Local ও Global Variable-এর পার্থক্য ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপক–১ এর Output নির্ণয় করে দুইটি \textenglish{\ttfamily x}-এর Scope ব্যাখ্যা কর।}
+\qpart{ঘ}{শিক্ষার্থীদের তথ্য শুধু Variable-এ না রেখে File-এ সংরক্ষণ করা অধিক উপযোগী কেন—বিশ্লেষণ কর।}
+
+%====================================================================
+% PART B
+%====================================================================
+\partheading{অংশ–B : Board-style Mixed CQ Practice}
+
+\begin{rememberbox}
+এই অংশে numbering আবার ১ থেকে শুরু হয়েছে। প্রশ্নগুলো Topic heading অনুসরণ করে সাজানো নয়;
+একই উদ্দীপকে একাধিক ধারণা মিলিয়ে পরীক্ষার উপযোগী অনুশীলন তৈরি করা হয়েছে।
+পুরোনো C-ভিত্তিক প্রশ্নের ভাষা নকল না করে বর্তমান Python syllabus অনুযায়ী নতুন উদ্দীপক ও Code ব্যবহার করা হয়েছে।
+\end{rememberbox}
+
+%-------------------- B1 --------------------
+\boardcqtitle{১}
+\begin{stimulusbox}
+একটি প্রতিষ্ঠানে পুরোনো যন্ত্র নিয়ন্ত্রণের জন্য Symbolic Instruction-ভিত্তিক একটি Program ব্যবহৃত হয়।
+অন্যদিকে নতুন হিসাবরক্ষণ Software তৈরিতে সহজে বোধগম্য High Level Language ব্যবহার করা হয়।
+\end{stimulusbox}
+\qpart{ক}{Assembler কী?}
+\qpart{খ}{Machine Language মেশিননির্ভর কেন?}
+\qpart{গ}{প্রথম Program-এর ভাষার ধরন শনাক্ত করে তার Translator ব্যাখ্যা কর।}
+\qpart{ঘ}{দ্বিতীয় কাজের জন্য High Level Language ব্যবহার প্রথমটির তুলনায় কেন সুবিধাজনক—বিশ্লেষণ কর।}
+
+%-------------------- B2 --------------------
+\boardcqtitle{২}
+\begin{stimulusbox}
+একটি দোকানে পণ্যের মূল্য ও পরিমাণ Input হিসেবে নিয়ে মোট মূল্য নির্ণয় করা হয়। মোট মূল্য 2000 টাকা বা তার বেশি হলে 10\% Discount দিয়ে পরিশোধযোগ্য টাকা দেখাতে হবে।
+\end{stimulusbox}
+\qpart{ক}{IPO Model কী?}
+\qpart{খ}{Problem Analysis ছাড়া Coding শুরু করা ঝুঁকিপূর্ণ কেন?}
+\qpart{গ}{উদ্দীপকের সমস্যাটির IPO Model তৈরি কর।}
+\qpart{ঘ}{সমস্যাটির Algorithm লিখে Python Program তৈরির Logic ব্যাখ্যা কর।}
+
+%-------------------- B3 --------------------
+\boardcqtitle{৩}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+x = 2
+s = 0
+for i in range(1, 5):
+    s = s + x * i
+print(s)
+\end{pythoncode}
+\qpart{ক}{Trace Table কী?}
+\qpart{খ}{Dry Run Program Debugging-এ সহায়ক কেন?}
+\qpart{গ}{Program-টির Trace Table তৈরি করে Output নির্ণয় কর।}
+\qpart{ঘ}{\textenglish{\ttfamily x = 3} হলে Output কীভাবে পরিবর্তিত হবে—গাণিতিকভাবে বিশ্লেষণ কর।}
+
+%-------------------- B4 --------------------
+\boardcqtitle{৪}
+\begin{stimulusbox}
+একটি Result System-এ 80 বা তার বেশি নম্বরে A+, 70--79 নম্বরে A, 60--69 নম্বরে A- এবং 60-এর নিচে B প্রদর্শন করা হবে।
+\end{stimulusbox}
+\qpart{ক}{Boolean Expression কী?}
+\qpart{খ}{একাধিক Range পরীক্ষা করতে \textenglish{\ttfamily if-elif-else} উপযোগী কেন?}
+\qpart{গ}{উদ্দীপকের Decision Logic-এর Flowchart তৈরি কর।}
+\qpart{ঘ}{উদ্দীপকের শর্ত অনুযায়ী Python Program লেখ।}
+
+%-------------------- B5 --------------------
+\boardcqtitle{৫}
+\begin{stimulusbox}
+রিমা তিনটি ভিন্ন সংখ্যা Input নিয়ে বৃহত্তম সংখ্যাটি নির্ণয়ের জন্য Program লিখতে চায়।
+\end{stimulusbox}
+\qpart{ক}{Decision Symbol-এর আকৃতি কী?}
+\qpart{খ}{Nested Condition কখন প্রয়োজন হয়?}
+\qpart{গ}{সমস্যাটির Algorithm লেখ।}
+\qpart{ঘ}{Python ব্যবহার করে বৃহত্তম সংখ্যা নির্ণয়ের Program লেখ।}
+
+%-------------------- B6 --------------------
+\boardcqtitle{৬}
+\begin{stimulusbox}
+একটি Calendar Program-এ কোনো বছর Leap Year কি না নির্ণয় করতে হবে। বছর 400 দ্বারা বিভাজ্য হলে Leap Year; অথবা 4 দ্বারা বিভাজ্য কিন্তু 100 দ্বারা বিভাজ্য নয় হলেও Leap Year।
+\end{stimulusbox}
+\qpart{ক}{Logical Operator কী?}
+\qpart{খ}{\textenglish{\ttfamily and} ও \textenglish{\ttfamily or}-এর ভূমিকা ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকের শর্তকে একটি Boolean Expression-এ প্রকাশ কর।}
+\qpart{ঘ}{Leap Year নির্ণয়ের Python Program লেখ।}
+
+%-------------------- B7 --------------------
+\boardcqtitle{৭}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+amount = int(input("Amount: "))
+
+if amount >= 5000:
+    discount = amount * 0.15
+elif amount >= 2000:
+    discount = amount * 0.10
+else:
+    discount = 0
+
+print(amount - discount)
+\end{pythoncode}
+\qpart{ক}{Assignment Operator কী?}
+\qpart{খ}{Condition-এর ক্রম বড় Range থেকে ছোট Range-এ রাখা হয়েছে কেন?}
+\qpart{গ}{\textenglish{\ttfamily amount = 3500} হলে Output নির্ণয় কর।}
+\qpart{ঘ}{1000--1999 টাকার জন্য 5\% Discount যোগ করতে Program-টি পরিবর্তন কর।}
+
+%-------------------- B8 --------------------
+\boardcqtitle{৮}
+\begin{stimulusbox}
+একটি Program 1 থেকে \textenglish{\ttfamily n} পর্যন্ত স্বাভাবিক সংখ্যার যোগফল নির্ণয় করবে।
+\end{stimulusbox}
+\qpart{ক}{Iteration কী?}
+\qpart{খ}{Counter-controlled Loop বলতে কী বোঝায়?}
+\qpart{গ}{\textenglish{\ttfamily for} Loop ব্যবহার করে সমস্যাটির Program লেখ।}
+\qpart{ঘ}{একই কাজ \textenglish{\ttfamily while} Loop দিয়ে করে দুটি Loop-এর নিয়ন্ত্রণ পদ্ধতি তুলনা কর।}
+
+%-------------------- B9 --------------------
+\boardcqtitle{৯}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+total = 0
+for i in range(1, 11):
+    if i % 2 == 0:
+        total += i
+print(total)
+\end{pythoncode}
+\qpart{ক}{Modulus Operator কী?}
+\qpart{খ}{\textenglish{\ttfamily i \% 2 == 0} দ্বারা জোড় সংখ্যা শনাক্ত করা যায় কেন?}
+\qpart{গ}{Program-টির Output নির্ণয় কর।}
+\qpart{ঘ}{1 থেকে 20 পর্যন্ত শুধু বিজোড় সংখ্যার যোগফল বের করতে Code-টি পরিবর্তন কর।}
+
+%-------------------- B10 --------------------
+\boardcqtitle{১০}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+n = 4
+result = 1
+while n > 0:
+    result = result * n
+    n = n - 1
+print(result)
+\end{pythoncode}
+\qpart{ক}{Accumulator কী?}
+\qpart{খ}{Factorial নির্ণয়ে Initial Value 1 নেওয়া হয় কেন?}
+\qpart{গ}{Program-টির Dry Run করে Output নির্ণয় কর।}
+\qpart{ঘ}{User-এর কাছ থেকে \textenglish{\ttfamily n} নিয়ে Factorial নির্ণয়ের জন্য Program-টি পুনর্লিখন কর।}
+
+%-------------------- B11 --------------------
+\boardcqtitle{১১}
+\begin{stimulusbox}
+একজন শিক্ষার্থী Input হিসেবে একটি সংখ্যা নিয়ে তার 1 থেকে 10 পর্যন্ত নামতা প্রদর্শন করতে চায়।
+\end{stimulusbox}
+\qpart{ক}{\textenglish{\ttfamily range()} কী?}
+\qpart{খ}{\textenglish{\ttfamily range(1, 11)}-এ 11 প্রদর্শিত হয় না কেন?}
+\qpart{গ}{সমস্যাটির Flowchart তৈরি কর।}
+\qpart{ঘ}{Python Program লেখ।}
+
+%-------------------- B12 --------------------
+\boardcqtitle{১২}
+\begin{stimulusbox}
+একটি Program Input হিসেবে একটি ধনাত্মক পূর্ণসংখ্যা নিয়ে সংখ্যাটি মৌলিক কি না নির্ণয় করবে।
+\end{stimulusbox}
+\qpart{ক}{Prime Number কী?}
+\qpart{খ}{2 থেকে \textenglish{\ttfamily n-1} পর্যন্ত সম্ভাব্য ভাজক পরীক্ষা করার ধারণাটি ব্যাখ্যা কর।}
+\qpart{গ}{সমস্যাটির Algorithm লেখ।}
+\qpart{ঘ}{\textenglish{\ttfamily break} ব্যবহার করে Prime Number নির্ণয়ের Python Program লেখ।}
+
+%-------------------- B13 --------------------
+\boardcqtitle{১৩}
+\begin{stimulusbox}
+একটি Series-এর প্রথম দুটি পদ 0 ও 1 এবং পরবর্তী প্রতিটি পদ আগের দুটি পদের যোগফল। প্রথম \textenglish{\ttfamily n}টি পদ প্রদর্শনের Program তৈরি করতে হবে।
+\end{stimulusbox}
+\qpart{ক}{Series কী?}
+\qpart{খ}{এই Series তৈরিতে দুইটি পূর্ববর্তী মান সংরক্ষণ প্রয়োজন কেন?}
+\qpart{গ}{প্রথম 7টি পদের মান ধারাবাহিকভাবে নির্ণয় কর।}
+\qpart{ঘ}{Python Program লেখ।}
+
+%-------------------- B14 --------------------
+\boardcqtitle{১৪}
+\begin{stimulusbox}
+দুইটি ধনাত্মক পূর্ণসংখ্যার GCD নির্ণয় করার পর \(\mathrm{LCM}=\frac{a\times b}{\mathrm{GCD}}\) সূত্র ব্যবহার করে LCM নির্ণয় করা হবে।
+\end{stimulusbox}
+\qpart{ক}{GCD কী?}
+\qpart{খ}{একই সমস্যাকে ছোট ধাপে ভাগ করা Computational Thinking-এর কোন ধারণার সঙ্গে সম্পর্কিত—ব্যাখ্যা কর।}
+\qpart{গ}{দুই সংখ্যার GCD নির্ণয়ের Algorithm লেখ।}
+\qpart{ঘ}{GCD ও LCM দুটোই প্রদর্শনের Python Program লেখ।}
+
+%-------------------- B15 --------------------
+\boardcqtitle{১৫}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+numbers = [12, 25, 18, 40, 33]
+target = 18
+
+for x in numbers:
+    if x == target:
+        print("Found")
+        break
+\end{pythoncode}
+\qpart{ক}{List কী?}
+\qpart{খ}{উদ্দীপকে \textenglish{\ttfamily break} ব্যবহারের সুবিধা ব্যাখ্যা কর।}
+\qpart{গ}{\textenglish{\ttfamily target = 18} হলে Program-এর Execution ব্যাখ্যা কর।}
+\qpart{ঘ}{Target না পাওয়া গেলে \textenglish{\ttfamily "Not Found"} প্রদর্শনের জন্য Program-টি উন্নত কর।}
+
+%-------------------- B16 --------------------
+\boardcqtitle{১৬}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+for i in range(1, 11):
+    if i % 3 == 0:
+        continue
+    print(i, end=" ")
+\end{pythoncode}
+\qpart{ক}{\textenglish{\ttfamily continue} কী?}
+\qpart{খ}{\textenglish{\ttfamily continue} Loop বন্ধ না করেও কিছু কাজ বাদ দিতে পারে—ব্যাখ্যা কর।}
+\qpart{গ}{Program-টির Output লেখ।}
+\qpart{ঘ}{3-এর পরিবর্তে 2 ও 3 উভয় দ্বারা বিভাজ্য সংখ্যা বাদ দিতে Condition পরিবর্তন কর।}
+
+%-------------------- B17 --------------------
+\boardcqtitle{১৭}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+for i in range(1, 5):
+    for j in range(i):
+        print(i, end=" ")
+    print()
+\end{pythoncode}
+\qpart{ক}{Nested Loop কী?}
+\qpart{খ}{Outer Loop ও Inner Loop-এর কাজ আলাদা কেন?}
+\qpart{গ}{Program-টির Output লিখে প্রতিটি লাইনে কতবার Inner Loop চলে তা দেখাও।}
+\qpart{ঘ}{প্রতিটি লাইনে সংখ্যার পরিবর্তে \textenglish{\ttfamily *} প্রদর্শনের জন্য Code পরিবর্তন কর।}
+
+%-------------------- B18 --------------------
+\boardcqtitle{১৮}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+marks = [70, 80, 65, 90, 75]
+total = 0
+for m in marks:
+    total += m
+print(total / len(marks))
+\end{pythoncode}
+\qpart{ক}{\textenglish{\ttfamily len()} Function কী করে?}
+\qpart{খ}{List-এর ওপর সরাসরি Loop চালানোর সুবিধা ব্যাখ্যা কর।}
+\qpart{গ}{Program-টির Output নির্ণয় কর।}
+\qpart{ঘ}{Average-এর পাশাপাশি সর্বোচ্চ নম্বরও প্রদর্শনের জন্য Program-টি পরিবর্তন কর।}
+
+%-------------------- B19 --------------------
+\boardcqtitle{১৯}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+items = [10, 20, 30]
+items.append(40)
+items.insert(1, 15)
+items.remove(30)
+print(items)
+\end{pythoncode}
+\qpart{ক}{Mutable বলতে কী বোঝায়?}
+\qpart{খ}{List-কে Mutable Data Structure বলা হয় কেন?}
+\qpart{গ}{প্রতিটি Method প্রয়োগের পর List-এর পরিবর্তন দেখিয়ে Final Output লেখ।}
+\qpart{ঘ}{শেষ উপাদানটি অপসারণ করে আলাদা Variable-এ রাখতে কোন Method ব্যবহার করবে? Code-সহ ব্যাখ্যা কর।}
+
+%-------------------- B20 --------------------
+\boardcqtitle{২০}
+\begin{stimulusbox}
+একটি প্রতিষ্ঠানে সপ্তাহের সাত দিনের নাম পরিবর্তন না করে সংরক্ষণ করতে হবে; অন্যদিকে প্রতিদিনের বিক্রয়ের পরিমাণ নিয়মিত পরিবর্তন ও Update করতে হবে।
+\end{stimulusbox}
+\qpart{ক}{Tuple কী?}
+\qpart{খ}{Tuple-এর একটি উপাদান সরাসরি পরিবর্তন করা যায় না কেন?}
+\qpart{গ}{দুই ধরনের Data-এর জন্য উপযুক্ত Data Structure নির্বাচন করে কারণ লেখ।}
+\qpart{ঘ}{নির্বাচিত Data Structure ব্যবহার করে একটি ছোট Python Code লিখে দেখাও।}
+
+%-------------------- B21 --------------------
+\boardcqtitle{২১}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+rolls = {101, 102, 101, 103, 102}
+rolls.add(104)
+print(rolls)
+\end{pythoncode}
+\qpart{ক}{Set কী?}
+\qpart{খ}{Set-এ Duplicate Value রাখা যায় না—এর ব্যবহারিক সুবিধা ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকে Unique Value কয়টি থাকবে? ব্যাখ্যা কর।}
+\qpart{ঘ}{দুইটি Class-এর Roll Set থেকে Common Roll বের করার Logic কীভাবে তৈরি করা যায়—ব্যাখ্যা কর।}
+
+%-------------------- B22 --------------------
+\boardcqtitle{২২}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+student = {
+    "name": "Nila",
+    "roll": 12,
+    "marks": 84
+}
+
+student["marks"] = 88
+student["group"] = "Science"
+print(student["name"], student["marks"])
+\end{pythoncode}
+\qpart{ক}{Key-Value Pair কী?}
+\qpart{খ}{Student Record-এর জন্য Dictionary সুবিধাজনক কেন?}
+\qpart{গ}{Program-টির Output নির্ণয় করে Dictionary-তে কী কী পরিবর্তন হয়েছে লেখ।}
+\qpart{ঘ}{একাধিক Subject-এর Marks সংরক্ষণের জন্য Nested Dictionary-ভিত্তিক Structure প্রস্তাব কর।}
+
+%-------------------- B23 --------------------
+\boardcqtitle{২৩}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+def square(n):
+    return n * n
+
+a = square(5)
+b = square(3)
+print(a + b)
+\end{pythoncode}
+\qpart{ক}{User-defined Function কী?}
+\qpart{খ}{\textenglish{\ttfamily return} Statement কেন গুরুত্বপূর্ণ?}
+\qpart{গ}{Program-টির Output নির্ণয় কর।}
+\qpart{ঘ}{একটি সংখ্যার Square ও Cube দুটো মান Return করতে Function-টি পরিবর্তন কর।}
+
+%-------------------- B24 --------------------
+\boardcqtitle{২৪}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+def bill(price, quantity=1):
+    return price * quantity
+
+print(bill(200))
+print(bill(200, 3))
+\end{pythoncode}
+\qpart{ক}{Argument কী?}
+\qpart{খ}{Default Argument ব্যবহারের সুবিধা ব্যাখ্যা কর।}
+\qpart{গ}{Program-টির দুইটি Output নির্ণয় কর।}
+\qpart{ঘ}{Discount-এর জন্য আরেকটি Default Parameter যোগ করে Function-টি উন্নত কর।}
+
+%-------------------- B25 --------------------
+\boardcqtitle{২৫}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+def f1(x):
+    print(x * 2)
+
+def f2(x):
+    return x * 2
+
+a = f1(5)
+b = f2(5)
+print(a)
+print(b)
+\end{pythoncode}
+\qpart{ক}{\textenglish{\ttfamily None} কী?}
+\qpart{খ}{\textenglish{\ttfamily print()} ও \textenglish{\ttfamily return}-এর ভূমিকা এক নয় কেন?}
+\qpart{গ}{Program-টির Output ধারাবাহিকভাবে লেখ।}
+\qpart{ঘ}{পুনরায় গণনায় ব্যবহার করার জন্য কোন Function Design বেশি উপযোগী—বিশ্লেষণ কর।}
+
+%-------------------- B26 --------------------
+\boardcqtitle{২৬}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+x = 50
+
+def test():
+    x = 20
+    print(x)
+
+test()
+print(x)
+\end{pythoncode}
+\qpart{ক}{Local Variable কী?}
+\qpart{খ}{একই নামের Local Variable Global Variable-কে কেন পরিবর্তন করে না?}
+\qpart{গ}{Program-টির Output নির্ণয় করে Scope ব্যাখ্যা কর।}
+\qpart{ঘ}{Function-এর ভিতর থেকে Module-level \textenglish{\ttfamily x} পরিবর্তন করতে কী করতে হবে—Code-সহ দেখাও।}
+
+%-------------------- B27 --------------------
+\boardcqtitle{২৭}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+count = 0
+
+def update():
+    global count
+    count = count + 1
+
+update()
+update()
+print(count)
+\end{pythoncode}
+\qpart{ক}{Global Variable কী?}
+\qpart{খ}{উদ্দীপকে \textenglish{\ttfamily global count} লেখা হয়েছে কেন?}
+\qpart{গ}{Program-টির Output নির্ণয় কর।}
+\qpart{ঘ}{Global Variable-এর ওপর অতিরিক্ত নির্ভরতা কমিয়ে Function-টি Parameter ও Return ব্যবহার করে পুনর্লিখন কর।}
+
+%-------------------- B28 --------------------
+\boardcqtitle{২৮}
+\begin{stimulusbox}
+একটি Function দুটি সংখ্যা গ্রহণ করে প্রথম সংখ্যাকে দ্বিতীয় সংখ্যা দিয়ে ভাগ করে Result Return করবে। তবে দ্বিতীয় সংখ্যা 0 হলে ভাগ করা যাবে না।
+\end{stimulusbox}
+\qpart{ক}{Function Contract কী?}
+\qpart{খ}{Valid Input নির্ধারণ Function Design-এর গুরুত্বপূর্ণ অংশ কেন?}
+\qpart{গ}{উদ্দীপকের Function-এর Input, Processing, Output এবং Input Condition লেখ।}
+\qpart{ঘ}{Zero Division এড়ানোর জন্য উপযুক্ত Python Function লেখ।}
+
+%-------------------- B29 --------------------
+\boardcqtitle{২৯}
+\begin{stimulusbox}
+একটি Result Program চালু থাকা অবস্থায় Student-এর Name ও Mark Variable-এ থাকে। Program বন্ধ করে পুনরায় চালু করলে আগের Data প্রয়োজন হয়।
+\end{stimulusbox}
+\qpart{ক}{File কী?}
+\qpart{খ}{Variable ও File-এ Data সংরক্ষণের স্থায়িত্বের পার্থক্য ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকে File কেন প্রয়োজন—বিশ্লেষণ কর।}
+\qpart{ঘ}{একটি Result System-এ কোন কোন Data স্থায়ীভাবে File-এ রাখা যুক্তিযুক্ত—কারণসহ লেখ।}
+
+%-------------------- B30 --------------------
+\boardcqtitle{৩০}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+a = "12"
+b = 3
+x = int(a) + b * 2
+print(x)
+\end{pythoncode}
+\qpart{ক}{Type Conversion কী?}
+\qpart{খ}{Operator Precedence Result-কে কীভাবে প্রভাবিত করে?}
+\qpart{গ}{Program-টির Output নির্ণয় কর।}
+\qpart{ঘ}{\textenglish{\ttfamily int(a)} বাদ দিলে কী ধরনের সমস্যা হবে—ব্যাখ্যা কর।}
+
+%-------------------- B31 --------------------
+\boardcqtitle{৩১}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+age = 20
+has_id = True
+
+if age >= 18:
+    if has_id:
+        print("Allowed")
+    else:
+        print("ID Required")
+else:
+    print("Not Allowed")
+\end{pythoncode}
+\qpart{ক}{Nested \textenglish{\ttfamily if} কী?}
+\qpart{খ}{একটি Condition সত্য হওয়ার পর আরেকটি Condition পরীক্ষা করার প্রয়োজন কেন হতে পারে?}
+\qpart{গ}{উদ্দীপকের Output নির্ণয় কর।}
+\qpart{ঘ}{একটি Compound Condition ব্যবহার করে Logic-টি সংক্ষিপ্তভাবে প্রকাশ করা যায় কি না—ব্যাখ্যা ও Code লেখ।}
+
+%-------------------- B32 --------------------
+\boardcqtitle{৩২}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+for i in range(10, 1, -2):
+    print(i, end=" ")
+\end{pythoncode}
+\qpart{ক}{Step Value কী?}
+\qpart{খ}{Negative Step ব্যবহার করলে Start ও Stop-এর সম্পর্ক কেমন হওয়া উচিত?}
+\qpart{গ}{Program-টির Output লেখ।}
+\qpart{ঘ}{10 থেকে 1 পর্যন্ত সব সংখ্যা বিপরীতক্রমে প্রদর্শনের জন্য \textenglish{\ttfamily range()} পরিবর্তন কর।}
+
+%-------------------- B33 --------------------
+\boardcqtitle{৩৩}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+number = int(input("Number: "))
+total = 0
+
+while number != 0:
+    total += number
+    number = int(input("Number: "))
+
+print(total)
+\end{pythoncode}
+\qpart{ক}{Condition-controlled Loop কী?}
+\qpart{খ}{এখানে 0-কে Sentinel Value হিসেবে ব্যবহার করা হয়েছে কেন?}
+\qpart{গ}{Input ধারাবাহিকভাবে 5, 7, 3, 0 হলে Output নির্ণয় কর।}
+\qpart{ঘ}{Positive সংখ্যাগুলোর Count-ও প্রদর্শনের জন্য Program-টি পরিবর্তন কর।}
+
+%-------------------- B34 --------------------
+\boardcqtitle{৩৪}
+\begin{stimulusbox}
+একটি Program-এ একজন শিক্ষার্থীর নাম, Roll এবং তিন বিষয়ের নম্বর সংরক্ষণ করতে হবে। পরে একটি Function তার Average Mark Return করবে।
+\end{stimulusbox}
+\qpart{ক}{Dictionary কী?}
+\qpart{খ}{Related Data-কে একত্রে সংগঠিত রাখা প্রয়োজন কেন?}
+\qpart{গ}{উদ্দীপকের Student Data-এর জন্য উপযুক্ত Dictionary Structure তৈরি কর।}
+\qpart{ঘ}{Dictionary গ্রহণ করে Average Mark Return করবে এমন Python Function লেখ।}
+
+%-------------------- B35 --------------------
+\boardcqtitle{৩৫}
+\begin{stimulusbox}
+একটি Program একটি সংখ্যা Input নিয়ে 5 দ্বারা বিভাজ্য হলে \textenglish{\ttfamily "Divisible"}, অন্যথায় \textenglish{\ttfamily "Not Divisible"} প্রদর্শন করবে।
+\end{stimulusbox}
+\qpart{ক}{Pseudocode কী?}
+\qpart{খ}{Algorithm ও Flowchart একই সমস্যা সমাধান প্রকাশ করলেও তাদের উপস্থাপন ভিন্ন কেন?}
+\qpart{গ}{উদ্দীপকের সমস্যাটির Flowchart তৈরি কর।}
+\qpart{ঘ}{Flowchart-এর Logic অনুসারে Python Program লেখ।}
+
+%-------------------- B36 --------------------
+\boardcqtitle{৩৬}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+count = 0
+for i in range(1, 4):
+    for j in range(1, i + 1):
+        count += 1
+print(count)
+\end{pythoncode}
+\qpart{ক}{Dry Run কী কাজে ব্যবহৃত হয়?}
+\qpart{খ}{Nested Loop-এর মোট Iteration Outer Loop-এর ওপর নির্ভর করতে পারে—ব্যাখ্যা কর।}
+\qpart{গ}{Trace করে \textenglish{\ttfamily count}-এর Final Value নির্ণয় কর।}
+\qpart{ঘ}{Outer Loop \textenglish{\ttfamily range(1, 5)} হলে Final Count কত হবে—বিশ্লেষণ কর।}
+
+%-------------------- B37 --------------------
+\boardcqtitle{৩৭}
+\textbf{উদ্দীপক:}
+\begin{pythoncode}
+marks = 75
+if marks >= 60
+print("Pass")
+else:
+    print("Fail")
+\end{pythoncode}
+\qpart{ক}{Syntax Error কী?}
+\qpart{খ}{Python-এ Indentation-এর বিশেষ গুরুত্ব কেন?}
+\qpart{গ}{উদ্দীপকের Code-এ থাকা ভুলগুলো শনাক্ত কর।}
+\qpart{ঘ}{Code-টি সঠিকভাবে লিখে Output দেখাও।}
+
+%-------------------- B38 --------------------
+\boardcqtitle{৩৮}
+\begin{stimulusbox}
+একটি Result Program-এ আলাদাভাবে Total, Average এবং Grade নির্ণয় করতে হবে। Programmer প্রতিটি কাজের জন্য পৃথক Function ব্যবহারের সিদ্ধান্ত নিল।
+\end{stimulusbox}
+\qpart{ক}{Modular Programming কী?}
+\qpart{খ}{একটি বড় Program-কে ছোট Function-এ ভাগ করলে Testing সহজ হয় কেন?}
+\qpart{গ}{উদ্দীপকের Program-এর সম্ভাব্য Functionগুলো এবং তাদের Input/Output নির্ধারণ কর।}
+\qpart{ঘ}{কমপক্ষে দুটি Function ব্যবহার করে Total ও Average নির্ণয়ের Python Code লেখ।}
+
+%-------------------- B39 --------------------
+\boardcqtitle{৩৯}
+\begin{stimulusbox}
+একটি Program তিন বিষয়ের নম্বর Input নেবে, Total ও Average নির্ণয় করবে এবং Average 80 বা বেশি হলে A+, 70 বা বেশি হলে A, 60 বা বেশি হলে A-, অন্যথায় B প্রদর্শন করবে।
+\end{stimulusbox}
+\qpart{ক}{Expression কী?}
+\qpart{খ}{Program-টিতে Input, Processing ও Output কী কী—ব্যাখ্যা কর।}
+\qpart{গ}{উদ্দীপকের সমস্যাটির Algorithm লেখ।}
+\qpart{ঘ}{Function ব্যবহার করে সম্পূর্ণ Python Program লেখ।}
+
+%-------------------- B40 --------------------
+\boardcqtitle{৪০}
+\begin{stimulusbox}
+একটি ছোট দোকানের Program-এ একাধিক পণ্যের নাম ও মূল্য একটি Data Structure-এ থাকবে। User একটি পণ্যের নাম ও Quantity দিলে Bill নির্ণয় হবে। Bill 3000 টাকা বা তার বেশি হলে 10\% Discount দেওয়া হবে। ভবিষ্যতে দোকান বন্ধ করে Program পুনরায় চালালেও পণ্যের তথ্য প্রয়োজন হবে।
+\end{stimulusbox}
+\qpart{ক}{Persistent Data বলতে কী বোঝায়?}
+\qpart{খ}{পণ্যের নামের সঙ্গে মূল্য সংরক্ষণে Dictionary উপযোগী কেন?}
+\qpart{গ}{Bill নির্ণয়ের জন্য প্রয়োজনীয় IPO Model ও Function Contract তৈরি কর।}
+\qpart{ঘ}{Dictionary, Function ও Conditional Logic ব্যবহার করে সমস্যাটির মূল Python Program লেখ এবং ভবিষ্যৎ ব্যবহারের জন্য File কেন প্রয়োজন তা ব্যাখ্যা কর।}
+
+
+\end{multicols}
+}
+
+%====================================================================
+% CQ answers and solutions intentionally omitted to keep the chapter compact.
+%====================================================================
+

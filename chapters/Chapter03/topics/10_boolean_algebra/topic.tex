@@ -1,53 +1,1134 @@
-% ৩.১০ বুলিয়ান অ্যালজেবরা
-\section{Boolean Algebra}
+% =========================================================
+% 3.8 Boolean Algebra
+% File: topics/10_boolean_algebra/topic.tex
+% =========================================================
 
-\subsection{পরিচিতি}
-\begin{itemize}
-\item George Boole, Binary logic, True/False (1/0)
-\end{itemize}
+\section{বুলিয়ান অ্যালজেবরা
+(\textenglish{Boolean Algebra})}
 
-\subsection{Boolean Variable ও Operator}
-\begin{itemize}
-\item Variables: A, B, X ...
-\item Operators: AND, OR, NOT
-\end{itemize}
+সাধারণ বীজগণিতে একটি চলক বিভিন্ন সংখ্যামান গ্রহণ করতে পারে।
+কিন্তু \textbf{বুলিয়ান অ্যালজেবরায় কোনো চলকের মান কেবল ০ অথবা ১}
+হতে পারে। এখানে সাধারণভাবে ০ দ্বারা
+\textenglish{False} এবং ১ দ্বারা
+\textenglish{True} অবস্থা প্রকাশ করা হয়।
 
-\subsection{Boolean Expression}
-\begin{itemize}
-\item Logic expressions ও circuit expressions
-\end{itemize}
+বুলিয়ান অ্যালজেবরার ধারণার প্রবর্তক ছিলেন ইংরেজ গণিতবিদ
+\textbf{\textenglish{George Boole}}।
+তিনি ১৮৪৭ সালে
+\textit{\textenglish{The Mathematical Analysis of Logic}}
+এবং ১৮৫৪ সালে
+\textit{\textenglish{An Investigation of the Laws of Thought}}
+গ্রন্থে যুক্তি ও গণিতের সম্পর্ক নিয়ে আলোচনা করেন।
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item Boolean algebra-এর ধারণা, variable ও constant ব্যাখ্যা করতে।
-\item AND, OR, NOT operator ব্যবহার করে expression লিখতে।
-\item logic circuit ও Boolean expression-এর সম্পর্ক বুঝতে।
-\end{itemize}
-\end{learningbox}
+পরবর্তীতে বুলিয়ান অ্যালজেবরার ধারণা ডিজিটাল ইলেকট্রনিক্স
+ও কম্পিউটার সার্কিট বিশ্লেষণের অন্যতম ভিত্তি হিসেবে ব্যবহৃত হতে থাকে।
 
-\begin{definitionbox}{Boolean algebra}
-যে বীজগণিতে variable-এর মান কেবল 0 বা 1 হয় এবং AND, OR, NOT ধরনের logical operation ব্যবহৃত হয়, তাকে Boolean algebra বলা হয়।
-\end{definitionbox}
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+যে বীজগাণিতিক পদ্ধতিতে চলকের মান কেবল ০ ও ১ হতে পারে
+এবং \textenglish{AND}, \textenglish{OR} ও
+\textenglish{NOT}-এর মতো যৌক্তিক ক্রিয়ার মাধ্যমে
+বিভিন্ন যৌক্তিক রাশি প্রকাশ ও বিশ্লেষণ করা হয়,
+তাকে \textbf{বুলিয়ান অ্যালজেবরা
+(\textenglish{Boolean Algebra})} বলে।
+\par\endgroup
+
+
+% =========================================================
+% Characteristics
+% =========================================================
+
+\subsubsection*{বুলিয়ান অ্যালজেবরার বৈশিষ্ট্য}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item প্রতিটি বুলিয়ান চলকের মান কেবল \textbf{০ অথবা ১} হতে পারে।
+
+    \item প্রধান মৌলিক ক্রিয়া হলো
+    \textenglish{OR} \((+)\),
+    \textenglish{AND} \((\cdot)\) এবং
+    \textenglish{NOT}।
+
+    \item চলকের মানের ক্ষেত্র ০ ও ১-এর মধ্যে সীমাবদ্ধ।
+
+    \item ডিজিটাল সার্কিটের ইনপুট ও আউটপুট বিশ্লেষণে
+    এটি ব্যবহৃত হয়।
+
+    \item জটিল বুলিয়ান রাশি ও লজিক সার্কিট সরল করা যায়।
+
+    \item রাশি সরল করলে প্রয়োজনীয়
+    \textenglish{Logic Gate}-এর সংখ্যা কমানো সম্ভব হতে পারে।
+\end{enumerate}
+
+% =========================================================
+% 3.8.1 Boolean Constant and Variable
+% =========================================================
+
+\subsection{বুলিয়ান ধ্রুবক ও চলক
+(\textenglish{Boolean Constant and Variable})}
+
+\subsubsection*{বুলিয়ান ধ্রুবক (\textenglish{Boolean Constant})}
+
+\par\begingroup
+
+বুলিয়ান অ্যালজেবরায় \textbf{০ ও ১}—এই দুটি নির্দিষ্ট মানকে
+\textbf{বুলিয়ান ধ্রুবক
+(\textenglish{Boolean Constant})} বলে।
+\par\endgroup
+
+
+অর্থাৎ বুলিয়ান ধ্রুবক দুটি হলো—
+
+\[
+0,\qquad 1
+\]
+
+\subsubsection*{বুলিয়ান চলক (\textenglish{Boolean Variable})}
+
+\par\begingroup
+
+যে চলক ০ অথবা ১—এই দুই মানের যেকোনো একটি গ্রহণ করতে পারে,
+তাকে \textbf{বুলিয়ান চলক
+(\textenglish{Boolean Variable})} বলে।
+\par\endgroup
+
+
+উদাহরণ—
+
+\[
+A\in\{0,1\}
+\]
+
+অর্থাৎ \(A\)-এর মান ০ অথবা ১ হতে পারে।
+
+% =========================================================
+% 3.8.2 Boolean vs Ordinary Algebra
+% =========================================================
+
+\subsection{বুলিয়ান অ্যালজেবরা ও সাধারণ বীজগণিতের পার্থক্য}
 
 \begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.24\textwidth}|p{0.32\textwidth}|}
+\begin{tabularx}{\textwidth}{|L{0.22\textwidth}|Y|Y|}
 \hline
-\textbf{Operator} & \textbf{চিহ্ন} & \textbf{অর্থ} \\
+\rowcolor{ICTLightBlue}
+\textbf{বিষয়} &
+\textbf{বুলিয়ান অ্যালজেবরা} &
+\textbf{সাধারণ বীজগণিত} \\
 \hline
-AND & $A\cdot B$ বা $AB$ & দুই input 1 হলে output 1 \\
+
+চলকের মান &
+কেবল ০ বা ১ &
+বিভিন্ন সংখ্যামান হতে পারে \\
 \hline
-OR & $A+B$ & অন্তত একটি input 1 হলে output 1 \\
+
+প্রধান ক্রিয়া &
+\textenglish{AND}, \textenglish{OR}, \textenglish{NOT} &
+যোগ, বিয়োগ, গুণ, ভাগ ইত্যাদি \\
 \hline
-NOT & $\overline{A}$ & input উল্টে দেয় \\
+
+\(1+1\) &
+\(1\) &
+\(2\) \\
+\hline
+
+\(A+A\) &
+\(A\) &
+\(2A\) \\
+\hline
+
+\(A\cdot A\) &
+\(A\) &
+\(A^2\) \\
+\hline
+
+পূরক &
+\(A+\overline{A}=1\) &
+এ ধরনের নিয়ম প্রযোজ্য নয় \\
+\hline
+
+ব্যবহার &
+লজিক সার্কিট ও ডিজিটাল সিস্টেম &
+সাধারণ গাণিতিক হিসাব \\
+\hline
+\end{tabularx}
+\end{center}
+
+% =========================================================
+% 3.8.3 Fundamental Operations
+% =========================================================
+
+\subsection{বুলিয়ান অ্যালজেবরার মৌলিক ক্রিয়া}
+
+বুলিয়ান অ্যালজেবরায় তিনটি মৌলিক যৌক্তিক ক্রিয়া হলো—
+
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+    \item \textbf{\textenglish{OR}} — বুলিয়ান যোগ
+    \item \textbf{\textenglish{AND}} — বুলিয়ান গুণ
+    \item \textbf{\textenglish{NOT}} — বুলিয়ান পূরক
+\end{enumerate}
+
+% ---------------------------------------------------------
+% OR
+% ---------------------------------------------------------
+
+\subsubsection*{বুলিয়ান যোগ বা \textenglish{OR Operation}}
+
+\textenglish{OR} ক্রিয়াকে সাধারণত \(+\) চিহ্ন দ্বারা প্রকাশ করা হয়।
+
+দুটি ইনপুটের \textbf{যেকোনো একটি ১ হলেই ফলাফল ১} হয়।
+কেবল উভয় ইনপুট ০ হলে ফলাফল ০ হয়।
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) & \(B\) & \(A+B\) \\
+\hline
+0 & 0 & 0 \\
+\hline
+0 & 1 & 1 \\
+\hline
+1 & 0 & 1 \\
+\hline
+1 & 1 & 1 \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Expression}
-$Y=A\cdot B+\overline{C}$ expression-এ প্রথমে $A$ AND $B$, তারপর $C$-এর NOT, শেষে OR operation হবে।
-\end{examplebox}
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Boolean algebra প্রশ্নে operator precedence পরিষ্কার রাখো: NOT আগে, তারপর AND, তারপর OR। bracket থাকলে bracket আগে সমাধান করতে হবে।
-\end{boardbox}
+\[
+0+0=0,\qquad
+0+1=1,\qquad
+1+0=1,\qquad
+1+1=1
+\]
+
+\par\begingroup
+
+\textbf{মনে রাখবে:}
+
+বুলিয়ান যোগ ও বাইনারি গাণিতিক যোগ এক নয়।
+
+\[
+\text{\textenglish{Boolean:}}\quad 1+1=1
+\]
+
+কিন্তু,
+
+\[
+\text{\textenglish{Binary:}}\quad 1+1=10
+\]
+\par\endgroup
+
+
+% ---------------------------------------------------------
+% AND
+% ---------------------------------------------------------
+
+\subsubsection*{বুলিয়ান গুণ বা \textenglish{AND Operation}}
+
+\textenglish{AND} ক্রিয়াকে সাধারণত \(\cdot\) দ্বারা প্রকাশ করা হয়।
+
+\textbf{সব ইনপুট ১ হলেই কেবল ফলাফল ১} হয়।
+অন্য যেকোনো ক্ষেত্রে ফলাফল ০।
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) & \(B\) & \(A\cdot B\) \\
+\hline
+0 & 0 & 0 \\
+\hline
+0 & 1 & 0 \\
+\hline
+1 & 0 & 0 \\
+\hline
+1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+0\cdot0=0,\qquad
+0\cdot1=0,\qquad
+1\cdot0=0,\qquad
+1\cdot1=1
+\]
+
+% ---------------------------------------------------------
+% NOT
+% ---------------------------------------------------------
+
+\subsubsection*{বুলিয়ান পূরক বা \textenglish{NOT Operation}}
+
+কোনো বুলিয়ান চলকের মানকে বিপরীত মানে পরিবর্তন করার ক্রিয়াকে
+\textbf{\textenglish{NOT Operation}} বা
+\textbf{বুলিয়ান পূরক} বলে।
+
+\(A\)-এর পূরক সাধারণত—
+
+\[
+\overline{A}
+\]
+
+অথবা,
+
+\[
+A'
+\]
+
+দ্বারা প্রকাশ করা হয়।
+
+অর্থাৎ,
+
+\[
+\overline{0}=1
+\]
+
+এবং,
+
+\[
+\overline{1}=0
+\]
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) & \(\overline{A}\) \\
+\hline
+0 & 1 \\
+\hline
+1 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+পূরকের দুটি গুরুত্বপূর্ণ সূত্র হলো—
+
+\[
+A+\overline{A}=1
+\]
+
+এবং,
+
+\[
+A\cdot\overline{A}=0
+\]
+
+% =========================================================
+% 3.8.4 Precedence
+% =========================================================
+
+\subsection{বুলিয়ান ক্রিয়ার অগ্রাধিকার}
+
+একটি বুলিয়ান রাশিতে একাধিক ক্রিয়া থাকলে সাধারণভাবে
+নিচের অগ্রাধিকার অনুসরণ করা হয়—
+
+\par\begingroup
+
+\[
+\boxed{
+\text{\textenglish{Bracket}}
+\rightarrow
+\text{\textenglish{NOT}}
+\rightarrow
+\text{\textenglish{AND}}
+\rightarrow
+\text{\textenglish{OR}}
+}
+\]
+\par\endgroup
+
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\[
+A+\overline{B}\cdot C
+\]
+
+এখানে প্রথমে \(B\)-এর \textenglish{NOT},
+এরপর \textenglish{AND} এবং সবশেষে
+\textenglish{OR} ক্রিয়া সম্পন্ন হবে।
+
+% =========================================================
+% 3.8.5 Duality
+% =========================================================
+
+\subsection{বুলিয়ান দ্বৈতনীতি
+(\textenglish{Principle of Duality})}
+
+\par\begingroup
+
+কোনো বৈধ বুলিয়ান রাশিতে \(+\)-এর পরিবর্তে \(\cdot\),
+\(\cdot\)-এর পরিবর্তে \(+\), ০-এর পরিবর্তে ১ এবং
+১-এর পরিবর্তে ০ বসালে যে নতুন বৈধ বুলিয়ান রাশি পাওয়া যায়,
+তাকে মূল রাশির \textbf{দ্বৈত রূপ
+(\textenglish{Dual})} বলে।
+\par\endgroup
+
+
+অর্থাৎ—
+
+\[
++\leftrightarrow\cdot
+\]
+
+এবং,
+
+\[
+0\leftrightarrow1
+\]
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+মূল সূত্র—
+
+\[
+A+0=A
+\]
+
+এর দ্বৈত রূপ—
+
+\[
+A\cdot1=A
+\]
+
+আবার,
+
+\[
+A+1=1
+\]
+
+এর দ্বৈত রূপ—
+
+\[
+A\cdot0=0
+\]
+
+% =========================================================
+% 3.8.6 Boolean Laws
+% =========================================================
+
+\subsection{বুলিয়ান সূত্র বা উপপাদ্য}
+
+বুলিয়ান রাশি সরল ও বিশ্লেষণ করার জন্য বিভিন্ন সূত্র ব্যবহৃত হয়।
+গুরুত্বপূর্ণ সূত্রগুলো নিচের সারণিতে দেওয়া হলো।
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|L{0.27\textwidth}|Y|Y|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{সূত্রের নাম} &
+\textbf{\textenglish{OR} রূপ} &
+\textbf{\textenglish{AND} রূপ} \\
+\hline
+
+পরিচিতি সূত্র &
+\(A+0=A\) &
+\(A\cdot1=A\) \\
+\hline
+
+আধিপত্য সূত্র &
+\(A+1=1\) &
+\(A\cdot0=0\) \\
+\hline
+
+অভেদ/পুনরাবৃত্তি সূত্র &
+\(A+A=A\) &
+\(A\cdot A=A\) \\
+\hline
+
+পূরক সূত্র &
+\(A+\overline{A}=1\) &
+\(A\cdot\overline{A}=0\) \\
+\hline
+
+বিনিময় সূত্র &
+\(A+B=B+A\) &
+\(AB=BA\) \\
+\hline
+
+সংযোজন সূত্র &
+\(A+(B+C)=(A+B)+C\) &
+\(A(BC)=(AB)C\) \\
+\hline
+
+বণ্টন সূত্র &
+\(A+BC=(A+B)(A+C)\) &
+\(A(B+C)=AB+AC\) \\
+\hline
+
+শোষণ সূত্র &
+\(A+AB=A\) &
+\(A(A+B)=A\) \\
+\hline
+
+দ্বৈত পূরক সূত্র &
+\(\overline{\overline{A}}=A\) &
+--- \\
+\hline
+\end{tabularx}
+\end{center}
+
+\subsubsection*{শোষণ সূত্রের উদাহরণ}
+
+প্রমাণ করতে হবে—
+
+\[
+A+AB=A
+\]
+
+সমাধান—
+
+\[
+A+AB=A(1+B)
+\]
+
+যেহেতু,
+
+\[
+1+B=1
+\]
+
+সুতরাং,
+
+\[
+A(1+B)=A\cdot1=A
+\]
+
+অতএব,
+
+\[
+\boxed{A+AB=A}
+\]
+
+একইভাবে,
+
+\[
+\boxed{A(A+B)=A}
+\]
+
+% =========================================================
+% 3.8.7 Boolean Addition vs Binary Addition
+% =========================================================
+
+\subsection{বুলিয়ান যোগ ও বাইনারি যোগের পার্থক্য}
+
+বুলিয়ান অ্যালজেবরায় \(+\) চিহ্ন দ্বারা
+\textenglish{OR Operation} বোঝানো হয়।
+কিন্তু বাইনারি গাণিতিক যোগে \(+\) চিহ্ন দ্বারা
+গাণিতিক যোগ বোঝানো হয়।
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|L{0.25\textwidth}|Y|Y|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{বিষয়} &
+\textbf{বুলিয়ান যোগ} &
+\textbf{বাইনারি যোগ} \\
+\hline
+
+\(+\)-এর অর্থ &
+\textenglish{OR Operation} &
+গাণিতিক যোগ \\
+\hline
+
+\(1+1\) &
+\(1\) &
+\(10\) \\
+\hline
+
+\textenglish{Carry} &
+হয় না &
+হতে পারে \\
+\hline
+
+ব্যবহার &
+যৌক্তিক ক্রিয়া &
+বাইনারি গাণিতিক হিসাব \\
+\hline
+\end{tabularx}
+\end{center}
+
+\par\begingroup
+
+\textbf{ভুল করো না:}
+
+\[
+\boxed{
+\text{\textenglish{Boolean:}}\quad 1+1=1
+}
+\]
+
+কিন্তু,
+
+\[
+\boxed{
+\text{\textenglish{Binary:}}\quad 1+1=10
+}
+\]
+\par\endgroup
+
+
+% =========================================================
+% 3.8.8 Truth Table
+% =========================================================
+
+\subsection{সত্যক সারণি
+(\textenglish{Truth Table})}
+
+\par\begingroup
+
+কোনো বুলিয়ান রাশি বা লজিক সার্কিটের সম্ভাব্য সকল
+ইনপুট সমন্বয়ের বিপরীতে সংশ্লিষ্ট আউটপুটের মান
+সারণির মাধ্যমে প্রকাশ করাকে
+\textbf{সত্যক সারণি
+(\textenglish{Truth Table})} বলে।
+\par\endgroup
+
+
+সত্যক সারণির সাহায্যে—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item লজিক সার্কিটের আউটপুট নির্ণয় করা যায়।
+    \item বুলিয়ান সূত্র যাচাই করা যায়।
+    \item দুটি বুলিয়ান রাশির সমতুল্যতা যাচাই করা যায়।
+    \item সার্কিটের কার্যপ্রণালি বোঝা যায়।
+    \item সরলীকৃত রাশির ফল যাচাই করা যায়।
+\end{enumerate}
+
+\subsubsection*{সত্যক সারণিতে সারির সংখ্যা}
+
+যদি কোনো বুলিয়ান রাশিতে \(n\)টি ইনপুট চলক থাকে,
+তবে সম্ভাব্য ইনপুট সমন্বয়ের সংখ্যা—
+
+\[
+\boxed{2^n}
+\]
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+দুটি চলক \(A,B\) থাকলে—
+
+\[
+2^2=4
+\]
+
+টি সম্ভাব্য ইনপুট সমন্বয় হবে।
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) & \(B\) \\
+\hline
+0 & 0 \\
+\hline
+0 & 1 \\
+\hline
+1 & 0 \\
+\hline
+1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+আবার তিনটি চলক থাকলে—
+
+\[
+2^3=8
+\]
+
+টি সম্ভাব্য ইনপুট সমন্বয় হবে।
+
+% =========================================================
+% 3.8.9 De Morgan's Theorem
+% =========================================================
+
+\subsection{ডি-মরগ্যানের উপপাদ্য
+(\textenglish{De Morgan's Theorem})}
+
+গণিতবিদ \textbf{\textenglish{Augustus De Morgan}}-এর নামে পরিচিত
+দুটি গুরুত্বপূর্ণ উপপাদ্য বুলিয়ান রাশি ও
+লজিক সার্কিট সরলীকরণে ব্যাপকভাবে ব্যবহৃত হয়।
+
+ডি-মরগ্যানের উপপাদ্য দুটি হলো—
+
+\[
+\boxed{
+\overline{A+B}
+=
+\overline{A}\cdot\overline{B}
+}
+\]
+
+এবং,
+
+\[
+\boxed{
+\overline{AB}
+=
+\overline{A}+\overline{B}
+}
+\]
+
+% =========================================================
+% First Theorem
+% =========================================================
+
+\subsubsection*{প্রথম উপপাদ্য}
+
+\par\begingroup
+
+দুই বা ততোধিক চলকের
+\textenglish{OR}-এর পূরক তাদের পৃথক পূরকের
+\textenglish{AND}-এর সমান।
+\par\endgroup
+
+
+দুটি চলকের ক্ষেত্রে—
+
+\[
+\boxed{
+\overline{A+B}
+=
+\overline{A}\cdot\overline{B}
+}
+\]
+
+\subsubsection*{সত্যক সারণির সাহায্যে প্রথম উপপাদ্য যাচাই}
+
+\begin{center}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) &
+\(B\) &
+\(A+B\) &
+\(\overline{A+B}\) &
+\(\overline{A}\) &
+\(\overline{B}\) &
+\(\overline{A}\cdot\overline{B}\) \\
+\hline
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+\hline
+0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+\hline
+1 & 0 & 1 & 0 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+
+সারণিতে প্রতিটি ইনপুট সমন্বয়ের জন্য
+\(\overline{A+B}\) এবং
+\(\overline{A}\cdot\overline{B}\)-এর মান সমান।
+
+অতএব,
+
+\[
+\boxed{
+\overline{A+B}
+=
+\overline{A}\cdot\overline{B}
+}
+\]
+
+যাচাই হলো।
+
+% =========================================================
+% Second Theorem
+% =========================================================
+
+\subsubsection*{দ্বিতীয় উপপাদ্য}
+
+\par\begingroup
+
+দুই বা ততোধিক চলকের
+\textenglish{AND}-এর পূরক তাদের পৃথক পূরকের
+\textenglish{OR}-এর সমান।
+\par\endgroup
+
+
+দুটি চলকের ক্ষেত্রে—
+
+\[
+\boxed{
+\overline{AB}
+=
+\overline{A}+\overline{B}
+}
+\]
+
+\subsubsection*{সত্যক সারণির সাহায্যে দ্বিতীয় উপপাদ্য যাচাই}
+
+\begin{center}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) &
+\(B\) &
+\(AB\) &
+\(\overline{AB}\) &
+\(\overline{A}\) &
+\(\overline{B}\) &
+\(\overline{A}+\overline{B}\) \\
+\hline
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+\hline
+0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+\hline
+1 & 0 & 0 & 1 & 0 & 1 & 1 \\
+\hline
+1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+
+সারণিতে প্রতিটি ইনপুট সমন্বয়ের জন্য
+\(\overline{AB}\) এবং
+\(\overline{A}+\overline{B}\)-এর মান সমান।
+
+অতএব,
+
+\[
+\boxed{
+\overline{AB}
+=
+\overline{A}+\overline{B}
+}
+\]
+
+যাচাই হলো।
+
+% =========================================================
+% Three-variable De Morgan
+% =========================================================
+
+\subsubsection*{তিনটি চলকের ক্ষেত্রে ডি-মরগ্যানের উপপাদ্য}
+
+ডি-মরগ্যানের উপপাদ্য শুধু দুটি চলকের জন্য নয়;
+তিন বা ততোধিক চলকের ক্ষেত্রেও একই নিয়ম প্রযোজ্য।
+
+তিনটি চলক \(A,B,C\) হলে প্রথম উপপাদ্য—
+
+\[
+\boxed{
+\overline{A+B+C}
+=
+\overline{A}\cdot
+\overline{B}\cdot
+\overline{C}
+}
+\]
+
+এবং দ্বিতীয় উপপাদ্য—
+
+\[
+\boxed{
+\overline{ABC}
+=
+\overline{A}+
+\overline{B}+
+\overline{C}
+}
+\]
+
+তিনটি ইনপুট চলক থাকায় সম্ভাব্য ইনপুট সমন্বয়ের সংখ্যা—
+
+\[
+2^3=8
+\]
+
+টি।
+
+% =========================================================
+% Three-variable First Theorem Truth Table
+% =========================================================
+
+\subsubsection*{তিন চলকের প্রথম উপপাদ্য যাচাই}
+
+প্রমাণ করতে হবে—
+
+\[
+\overline{A+B+C}
+=
+\overline{A}\cdot
+\overline{B}\cdot
+\overline{C}
+\]
+
+\begin{center}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) &
+\(B\) &
+\(C\) &
+\(A+B+C\) &
+\(\overline{A+B+C}\) &
+\(\overline{A}\cdot\overline{B}\cdot\overline{C}\) \\
+\hline
+0 & 0 & 0 & 0 & 1 & 1 \\
+\hline
+0 & 0 & 1 & 1 & 0 & 0 \\
+\hline
+0 & 1 & 0 & 1 & 0 & 0 \\
+\hline
+0 & 1 & 1 & 1 & 0 & 0 \\
+\hline
+1 & 0 & 0 & 1 & 0 & 0 \\
+\hline
+1 & 0 & 1 & 1 & 0 & 0 \\
+\hline
+1 & 1 & 0 & 1 & 0 & 0 \\
+\hline
+1 & 1 & 1 & 1 & 0 & 0 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+
+শেষের দুটি কলামের মান প্রতিটি সারিতে সমান।
+
+সুতরাং,
+
+\[
+\boxed{
+\overline{A+B+C}
+=
+\overline{A}\cdot
+\overline{B}\cdot
+\overline{C}
+}
+\]
+
+যাচাই হলো।
+
+% =========================================================
+% Three-variable Second Theorem Truth Table
+% =========================================================
+
+\subsubsection*{তিন চলকের দ্বিতীয় উপপাদ্য যাচাই}
+
+প্রমাণ করতে হবে—
+
+\[
+\overline{ABC}
+=
+\overline{A}+
+\overline{B}+
+\overline{C}
+\]
+
+\begin{center}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) &
+\(B\) &
+\(C\) &
+\(ABC\) &
+\(\overline{ABC}\) &
+\(\overline{A}+\overline{B}+\overline{C}\) \\
+\hline
+0 & 0 & 0 & 0 & 1 & 1 \\
+\hline
+0 & 0 & 1 & 0 & 1 & 1 \\
+\hline
+0 & 1 & 0 & 0 & 1 & 1 \\
+\hline
+0 & 1 & 1 & 0 & 1 & 1 \\
+\hline
+1 & 0 & 0 & 0 & 1 & 1 \\
+\hline
+1 & 0 & 1 & 0 & 1 & 1 \\
+\hline
+1 & 1 & 0 & 0 & 1 & 1 \\
+\hline
+1 & 1 & 1 & 1 & 0 & 0 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+
+এখানেও শেষের দুটি কলামের মান প্রতিটি সারিতে সমান।
+
+অতএব,
+
+\[
+\boxed{
+\overline{ABC}
+=
+\overline{A}+
+\overline{B}+
+\overline{C}
+}
+\]
+
+যাচাই হলো।
+
+% =========================================================
+% General n-variable Formula
+% =========================================================
+
+\subsubsection*{\(n\) সংখ্যক চলকের জন্য সাধারণ সূত্র}
+
+ডি-মরগ্যানের উপপাদ্য যেকোনো সংখ্যক বুলিয়ান চলকের
+ক্ষেত্রেই প্রযোজ্য।
+
+\textbf{\textcolor{ICTOrange}{প্রথম উপপাদ্যের সাধারণ রূপ:}}
+
+\[
+\boxed{
+\overline{
+A_1+A_2+A_3+\cdots+A_n
+}
+=
+\overline{A_1}\cdot
+\overline{A_2}\cdot
+\overline{A_3}\cdots
+\overline{A_n}
+}
+\]
+
+অর্থাৎ,
+\textbf{\textenglish{OR}-এর পূরক =
+প্রত্যেক চলকের পূরকের \textenglish{AND}}।
+
+\textbf{\textcolor{ICTOrange}{দ্বিতীয় উপপাদ্যের সাধারণ রূপ:}}
+
+\[
+\boxed{
+\overline{
+A_1A_2A_3\cdots A_n
+}
+=
+\overline{A_1}
++
+\overline{A_2}
++
+\overline{A_3}
++\cdots+
+\overline{A_n}
+}
+\]
+
+অর্থাৎ,
+\textbf{\textenglish{AND}-এর পূরক =
+প্রত্যেক চলকের পূরকের \textenglish{OR}}।
+
+% =========================================================
+% De Morgan Shortcut
+% =========================================================
+
+\par\begingroup
+
+\textbf{ডি-মরগ্যানের সূত্র মনে রাখার সহজ কৌশল:}
+
+কোনো রাশির বাইরের \textenglish{Complement}
+ভেতরে প্রবেশ করলে—
+
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+    \item প্রতিটি চলকের ওপর \textenglish{Complement} বসবে।
+    \item \textenglish{OR} \((+)\) পরিবর্তিত হয়ে
+    \textenglish{AND} \((\cdot)\) হবে।
+    \item \textenglish{AND} \((\cdot)\) পরিবর্তিত হয়ে
+    \textenglish{OR} \((+)\) হবে।
+\end{enumerate}
+
+যেমন—
+
+\[
+\overline{A+B+C}
+\;\Rightarrow\;
+\overline{A}\cdot
+\overline{B}\cdot
+\overline{C}
+\]
+
+এবং,
+
+\[
+\overline{ABC}
+\;\Rightarrow\;
+\overline{A}+
+\overline{B}+
+\overline{C}
+\]
+
+\textbf{মনে রাখবে:}
+ডি-মরগ্যানের উপপাদ্য শুধু দুইটি চলকের জন্য নয়;
+দুই, তিন বা যেকোনো \(n\) সংখ্যক চলকের ক্ষেত্রেই প্রযোজ্য।
+\par\endgroup
+
+
+% =========================================================
+% 3.8.10 Importance of Boolean Algebra
+% =========================================================
+
+\subsection{বুলিয়ান অ্যালজেবরার প্রয়োজনীয়তা}
+
+ডিজিটাল সার্কিটে বিভিন্ন ইনপুটের ভিত্তিতে নির্দিষ্ট আউটপুট
+পাওয়ার জন্য লজিক গেট ব্যবহৃত হয়।
+এসব গেটের কার্যপ্রণালি বুলিয়ান অ্যালজেবরার সাহায্যে
+প্রকাশ ও বিশ্লেষণ করা যায়।
+
+বুলিয়ান রাশি সরল করলে—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item লজিক সার্কিটের গঠন সহজ হয়।
+    \item প্রয়োজনীয় লজিক গেটের সংখ্যা কমানো যায়।
+    \item সার্কিটের আকার ও বাস্তবায়ন ব্যয় কমতে পারে।
+    \item সার্কিট বিশ্লেষণ, নকশা ও বাস্তবায়ন সহজ হয়।
+\end{enumerate}
+
+\par\begingroup
+
+\textbf{এক নজরে:}
+
+বুলিয়ান চলকের মান—
+
+\[
+A\in\{0,1\}
+\]
+
+মৌলিক ক্রিয়া—
+
+\[
+\boxed{
+\text{\textenglish{OR,\ AND,\ NOT}}
+}
+\]
+
+\(n\)টি ইনপুট চলক থাকলে সম্ভাব্য ইনপুট সমন্বয়ের সংখ্যা—
+
+\[
+\boxed{2^n}
+\]
+
+বুলিয়ান সূত্র ব্যবহার করে জটিল রাশি সরল করলে
+প্রয়োজনীয় \textenglish{Logic Gate}-এর সংখ্যা কমানো যায়।
+\par\endgroup
+
+\input{chapters/Chapter03/topics/10_boolean_algebra/concept_examples.tex}
+
+\input{chapters/Chapter03/topics/10_boolean_algebra/type_examples.tex}

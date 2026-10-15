@@ -1,22 +1,27 @@
-% ৪.৩ World Wide Web, Web Browser ও Search Engine
-\section{World Wide Web, Web Browser ও Search Engine}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% ৪.৩ World Wide Web, ওয়েব ব্রাউজার ও সার্চ ইঞ্জিন
+\section{ওয়ার্ল্ড ওয়াইড ওয়েব, ব্রাউজার ও সার্চ ইঞ্জিন}
+
+% Composition pass 2026-10-04
+একটি কলেজের ঠিকানা জানা না থাকলে সরাসরি তার ওয়েবপেজ খোলা কঠিন।
+
+\chFourMotivation{ঠিকানা খোঁজার প্রয়োজন $\rightarrow$ সার্চ ইঞ্জিন $\rightarrow$ সংরক্ষিত সূচি থেকে প্রাসঙ্গিক লিংক পাওয়া $\rightarrow$ ব্রাউজারে সেই পেজ দেখা। ওয়েব এই সংযুক্ত রিসোর্সগুলোর ব্যবস্থা।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item World Wide Web বা WWW-এর সংজ্ঞা, উৎপত্তি ও কাজ ব্যাখ্যা করতে।
-\item Internet ও WWW-এর পার্থক্য লিখতে।
-\item Web browser-এর কাজ ও উদাহরণ বলতে।
-\item Search engine-এর কাজ, ধাপ ও ব্যবহার ব্যাখ্যা করতে।
-\item Browser ও search engine-এর পার্থক্য বুঝতে।
+\item World Wide Web (WWW)-এর সংজ্ঞা, উৎপত্তি ও কাজ ব্যাখ্যা করতে।
+\item ইন্টারনেট ও WWW-এর পার্থক্য লিখতে।
+\item ওয়েব ব্রাউজারের কাজ ও উদাহরণ বলতে।
+\item সার্চ ইঞ্জিনের কাজ, ধাপ ও ব্যবহার ব্যাখ্যা করতে।
+\item ব্রাউজার ও সার্চ ইঞ্জিনের পার্থক্য বুঝতে।
 \end{itemize}
 \end{learningbox}
 
 \subsection{ভূমিকা}
 
-ওয়েব ডিজাইন বুঝতে হলে তিনটি বিষয় ভালোভাবে জানা দরকার - World Wide Web বা WWW, Web Browser এবং Search Engine। কারণ HTML দিয়ে ওয়েবপেজ তৈরি করা হলেও user সেই ওয়েবপেজ দেখে web browser-এর মাধ্যমে। আবার নির্দিষ্ট website বা প্রয়োজনীয় তথ্য খুঁজে পাওয়ার জন্য search engine ব্যবহার করা হয়।
-
-সংক্ষেপে বলা যায়, WWW হলো web resource-এর বিশাল ব্যবস্থা, browser হলো সেই resource দেখার software এবং search engine হলো WWW থেকে প্রয়োজনীয় তথ্য খুঁজে বের করার tool।
+ওয়েবের তথ্য দেখার সফটওয়্যার হলো ব্রাউজার। ঠিকানা জানা থাকলে ব্রাউজারে সরাসরি পেজ খোলা যায়। ঠিকানা জানা না থাকলে সার্চ ইঞ্জিনে বিষয় লিখে প্রয়োজনীয় পেজের লিংক খুঁজে নেওয়া যায়। এই পেজ ও অন্যান্য রিসোর্সের সংযুক্ত ব্যবস্থাই WWW।
 
 \begin{center}
 \scaletikz{\begin{tikzpicture}[
@@ -39,7 +44,7 @@
 
 \node[label, anchor=east] (lbrowser) at ([xshift=-5.45cm,yshift=2.55cm]win.center) {Browser};
 \node[label, anchor=east] (lurl) at ([xshift=-5.2cm,yshift=1.55cm]win.center) {URL bar};
-\node[label, anchor=west] (lwebsite) at ([xshift=5.2cm,yshift=1.25cm]win.center) {Website name};
+\node[label, anchor=east] (lwebsite) at ([xshift=-5.2cm,yshift=1.0cm]win.center) {Website name};
 \node[label, anchor=west] (lnav) at ([xshift=5.15cm,yshift=0.45cm]win.center) {Navigation};
 \node[label, anchor=east] (lhome) at ([xshift=-5.2cm,yshift=0.15cm]win.center) {Homepage};
 \node[label, anchor=east] (lsearch) at ([xshift=-5.2cm,yshift=-2.25cm]win.center) {Search bar};
@@ -47,14 +52,16 @@
 
 \draw[bookarrow] (lbrowser.east) -- (win.north west);
 \draw[bookarrow] (lurl.east) -- (urlbar.west);
-\draw[bookarrow] (lwebsite.west) -- (logo.east);
+\draw[bookarrow] (lwebsite.east) -- (logo.west);
 \draw[bookarrow] (lnav.west) -- (nav.east);
 \draw[bookarrow] (lhome.east) -- (hero.west);
 \draw[bookarrow] (lsearch.east) -- (search.west);
 \draw[bookarrow] (llink.east) -- (link.west);
-\end{tikzpicture}}\\[3pt]
-\textit{চিত্র: Browser window-এ URL bar, website, homepage, navigation, hyperlink ও search bar}
+\end{tikzpicture}}\\*[3pt]
+\textit{চিত্র: ব্রাউজার উইন্ডোতে URL-এর বার, ওয়েবসাইট, হোমপেজ, নেভিগেশন, হাইপারলিংক ও অনুসন্ধানের ঘর}
 \end{center}
+
+চিত্রের URL বারটি ব্রাউজারের অংশ; সেখানে ওয়েব ঠিকানা লেখা হয়। পেজের ভেতরের অনুসন্ধানের ঘরটি ওই ওয়েবসাইটের নিজস্ব তথ্য খোঁজার জন্য। ওয়েবসাইটের এই ঘর এবং Google-এর মতো সার্চ ইঞ্জিন একই বিষয় নয়।
 
 \begin{center}
 \scaletikz{\begin{tikzpicture}[
@@ -66,88 +73,59 @@
 \node[box, below left=0.95cm and 1.65cm of www] (browser) {Web Browser};
 \node[box, below right=0.95cm and 1.65cm of www] (search) {Search Engine};
 \node[wide, below=1.1cm of www] (site) {Website / Webpage};
-\draw[bookarrow] (browser) -- node[left, font=\scriptsize]{opens} (site);
-\draw[bookarrow] (search) -- node[right, font=\scriptsize]{finds} (site);
+\draw[bookarrow] (browser) -- node[above, font=\scriptsize]{opens} (site);
+\draw[bookarrow] (search) -- node[above, font=\scriptsize]{finds} (site);
 \draw[bookarrow] (site) -- node[left, font=\scriptsize]{part of} (www);
 \draw[bookarrow] (browser) -- node[above, font=\scriptsize]{uses URL} (www);
 \draw[bookarrow] (search) -- node[above, font=\scriptsize]{indexes} (www);
-\end{tikzpicture}}\\[3pt]
-\textit{চিত্র: WWW, browser ও search engine-এর সম্পর্ক}
+\end{tikzpicture}}\\*[3pt]
+\textit{চিত্র: WWW, ব্রাউজার ও সার্চ ইঞ্জিনের সম্পর্ক}
 \end{center}
 
-\subsection{World Wide Web বা WWW}
+\Needspace{6\baselineskip}
+\subsection{ওয়ার্ল্ড ওয়াইড ওয়েব (World Wide Web বা WWW)}
 
 \subsubsection{WWW কী?}
 
-\begin{definitionbox}{World Wide Web}
-ইন্টারনেটের মাধ্যমে পরস্পর সংযুক্ত hypertext document, webpage, image, video ও অন্যান্য web resource প্রদর্শন ও ব্যবহারের ব্যবস্থাকে World Wide Web বা WWW বলে।
+\begin{definitionbox}{ওয়ার্ল্ড ওয়াইড ওয়েব (World Wide Web)}
+ইন্টারনেটের মাধ্যমে পরস্পর সংযুক্ত হাইপারটেক্সট ডকুমেন্ট, ওয়েবপেজ, ছবি, ভিডিও ও অন্যান্য ওয়েব রিসোর্স প্রদর্শন ও ব্যবহারের ব্যবস্থাকে World Wide Web বা WWW বলে।
 \end{definitionbox}
 
-World Wide Web-কে সংক্ষেপে Web বলা হয়। Web-এর মাধ্যমে user hyperlink ব্যবহার করে এক webpage থেকে অন্য webpage-এ যেতে পারে। Website, webpage, hyperlink, URL, browser এবং web server - এগুলো WWW ব্যবস্থার গুরুত্বপূর্ণ অংশ।
+World Wide Web-কে সংক্ষেপে ওয়েব বলা হয়। হাইপারলিংক অনুসরণ করে ব্যবহারকারী এক পেজ থেকে অন্য পেজে যান। ওয়েবপেজ ও ওয়েবসাইটের পাশাপাশি URL, ব্রাউজার ও ওয়েব সার্ভার এই ব্যবস্থার গুরুত্বপূর্ণ অংশ।
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-World Wide Web বা WWW হলো internet-এর মাধ্যমে পরস্পর সংযুক্ত hypertext document ও web resource ব্যবহারের একটি ব্যবস্থা। ব্যবহারকারী web browser-এর মাধ্যমে WWW থেকে website ও webpage দেখতে পারে।
-\end{boardbox}
+
 
 \subsubsection{WWW-এর উৎপত্তি}
 
-WWW-এর ধারণা দেন ব্রিটিশ computer scientist Tim Berners-Lee। তিনি ১৯৮৯ সালে CERN-এ কাজ করার সময় World Wide Web-এর ধারণা উপস্থাপন করেন। এর মূল উদ্দেশ্য ছিল গবেষক ও বিজ্ঞানীদের মধ্যে সহজে তথ্য বিনিময়ের ব্যবস্থা তৈরি করা।
+ব্রিটিশ কম্পিউটারবিজ্ঞানী Tim Berners-Lee ১৯৮৯ সালে CERN (European Organization for Nuclear Research)-এ ওয়েবের প্রস্তাব দেন। গবেষকদের মধ্যে তথ্য সহজে বিনিময় করাই ছিল এর উদ্দেশ্য। তিনি ১৯৯০ সালে প্রথম ওয়েব সার্ভার, ব্রাউজার/সম্পাদক ও ওয়েবসাইট তৈরি করেন। প্রথমদিকের পেজে সাধারণ HTML লেখা এবং হাইপারলিংক ছিল।
 
-\begin{boardbox}{Big Scientist Contribution}
+\begin{boardbox}{ব্যক্তি ও প্রতিষ্ঠানের অবদান}
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth}|p{0.18\textwidth}|p{0.43\textwidth}|}
 \hline
 \textbf{নাম/প্রতিষ্ঠান} & \textbf{সাল} & \textbf{অবদান} \\
 \hline
-Tim Berners-Lee & 1989--1991 & WWW-এর ধারণা দেন; HTML, HTTP, URL ধারণা এবং প্রথম web browser/server তৈরিতে প্রধান ভূমিকা রাখেন \\
+Tim Berners-Lee & 1989--1991 & WWW-এর ধারণা দেন; HTML, HTTP, URL ধারণা এবং প্রথম ওয়েব ব্রাউজার/সার্ভার তৈরিতে প্রধান ভূমিকা রাখেন \\
 \hline
-Robert Cailliau & 1990 & Web project-এর formal proposal তৈরিতে Tim Berners-Lee-এর সাথে কাজ করেন \\
+Robert Cailliau & 1990 & ওয়েব প্রকল্পের আনুষ্ঠানিক প্রস্তাব তৈরিতে Tim Berners-Lee-এর সাথে কাজ করেন \\
 \hline
-CERN & 1989--1991 & WWW-এর জন্মস্থান; গবেষকদের তথ্য বিনিময়ের প্রয়োজন থেকে Web project শুরু হয় \\
+CERN & 1989--1991 & WWW-এর জন্মস্থান; গবেষকদের তথ্য বিনিময়ের প্রয়োজন থেকে ওয়েব প্রকল্প শুরু হয় \\
 \hline
-W3C & 1994 & Web standard উন্নয়ন, HTML/CSS/accessibility guideline রক্ষণাবেক্ষণে কাজ করে \\
+W3C (World Wide Web Consortium) & 1994 & ওয়েবের মান, HTML/CSS ও সবার ব্যবহারযোগ্যতার নির্দেশনা উন্নয়নে কাজ করে \\
 \hline
-WHATWG & 2004 থেকে & আধুনিক HTML Living Standard উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখে \\
+WHATWG (Web Hypertext Application Technology Working Group) & 2004 থেকে & আধুনিক HTML Living Standard উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখে \\
 \hline
 \end{tabular}
 \end{center}
 \end{boardbox}
 
-\begin{examplebox}{Web Timeline}
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.66\textwidth}|}
-\hline
-\textbf{সাল} & \textbf{ঘটনা} \\
-\hline
-1989 & Tim Berners-Lee CERN-এ World Wide Web-এর প্রস্তাব দেন \\
-\hline
-1990 & Tim Berners-Lee ও Robert Cailliau Web proposal formal করেন \\
-\hline
-1990 & প্রথম web server ও browser/editor তৈরির কাজ শুরু হয় \\
-\hline
-1991 & Web publicভাবে পরিচিত হতে শুরু করে; প্রথমদিকের webpage HTML দিয়ে তৈরি হয় \\
-\hline
-1994 & W3C প্রতিষ্ঠিত হয় web standard উন্নয়নের জন্য \\
-\hline
-বর্তমান & WWW বিশ্বব্যাপী website, webpage, web application ও online service-এর ভিত্তি \\
-\hline
-\end{tabular}
-\end{center}
+\begin{examplebox}{প্রস্তাব থেকে বিশ্বব্যাপী ব্যবহার}
+১৯৯০ সালে Tim Berners-Lee ও Robert Cailliau আনুষ্ঠানিক প্রস্তাব তৈরি করেন। ১৯৯১ সালে ওয়েব প্রকাশ্যভাবে পরিচিত হতে শুরু করে। পরে ওয়েবসাইট, ওয়েব অ্যাপ্লিকেশন ও অনলাইন সেবার মাধ্যমে বিশ্বব্যাপী তথ্য প্রকাশে এর ব্যবহার বাড়ে।
 \end{examplebox}
-
-\begin{keypointbox}{Exam note}
-\begin{itemize}
-\item WWW-এর পূর্ণরূপ: World Wide Web।
-\item WWW-এর উদ্ভাবক: Tim Berners-Lee।
-\item উদ্ভাবনের সাল: 1989।
-\item প্রতিষ্ঠান: CERN।
-\item WWW internet-এর একটি গুরুত্বপূর্ণ service।
-\end{itemize}
-\end{keypointbox}
 
 \subsubsection{WWW কীভাবে কাজ করে?}
 
-WWW client-server পদ্ধতিতে কাজ করে। User browser-এ কোনো website address বা URL লিখলে browser web server-এ request পাঠায়। Server সেই request অনুযায়ী HTML, CSS, image, JavaScript ইত্যাদি file browser-এ পাঠায়। এরপর browser সেগুলো process করে user-এর সামনে webpage আকারে দেখায়।
+WWW ক্লায়েন্ট-সার্ভার পদ্ধতিতে কাজ করে। ব্যবহারকারী ব্রাউজারে কোনো ওয়েবসাইট ঠিকানা বা URL লিখলে ব্রাউজার ওয়েব সার্ভারে অনুরোধ পাঠায়। সার্ভার সেই অনুরোধ অনুযায়ী HTML, CSS, ছবি, JavaScript ইত্যাদি ফাইল ব্রাউজারে পাঠায়। এরপর ব্রাউজার সেগুলো প্রক্রিয়া করে ব্যবহারকারীর সামনে ওয়েবপেজ আকারে দেখায়।
 
 \begin{center}
 \begin{tikzpicture}[
@@ -157,7 +135,7 @@ WWW client-server পদ্ধতিতে কাজ করে। User browser-�
 ]
 \node[box] (user) {User};
 \node[box, right=0.65cm of user] (browser) {Browser};
-\node[box, right=0.65cm of browser] (server) {Web Server};
+\node[box, right=1.10cm of browser] (server) {Web Server};
 \node[data, below=0.85cm of server] (res) {HTML/CSS/Image\\Response};
 \node[box, below=0.85cm of browser] (out) {Browser\\Output};
 \draw[arrow] (user) -- (browser);
@@ -165,131 +143,136 @@ WWW client-server পদ্ধতিতে কাজ করে। User browser-�
 \draw[arrow] (server) -- (res);
 \draw[arrow] (res) -- node[below, font=\scriptsize]{render} (out);
 \draw[arrow] (out) -- (user);
-\end{tikzpicture}\\[3pt]
-\textit{চিত্র: WWW client-server পদ্ধতিতে কাজ করে}
+\end{tikzpicture}\\*[3pt]
+\textit{চিত্র: WWW ক্লায়েন্ট-সার্ভার পদ্ধতিতে কাজ করে}
 \end{center}
 
 \subsubsection{WWW-এর বৈশিষ্ট্য}
 
-\begin{itemize}
-\item WWW internet-এর উপর ভিত্তি করে কাজ করে।
-\item এতে webpage ও website hyperlink-এর মাধ্যমে যুক্ত থাকে।
-\item browser দিয়ে WWW access করা যায়।
-\item URL ব্যবহার করে web resource খুঁজে পাওয়া যায়।
-\item HTTP/HTTPS protocol ব্যবহার করে তথ্য আদান-প্রদান হয়।
-\item text, image, audio, video, animation ও document প্রদর্শন করা যায়।
+\begin{enumerate}
+\item WWW ইন্টারনেটের উপর ভিত্তি করে কাজ করে।
+\item এতে ওয়েবপেজ ও ওয়েবসাইট হাইপারলিংকের মাধ্যমে যুক্ত থাকে।
+\item ব্রাউজার দিয়ে ওয়েবের তথ্য ব্যবহার করা যায়।
+\item URL ব্যবহার করে ওয়েব রিসোর্স খুঁজে পাওয়া যায়।
+\item HTTP এবং HTTPS (HyperText Transfer Protocol Secure) প্রটোকল ব্যবহার করে তথ্য আদান-প্রদান হয়। HTTPS-এর সুরক্ষিত সংযোগের বিস্তারিত পরের ওয়েব পরিভাষা অংশে আছে।
+\item লেখা, ছবি, অডিও, ভিডিও, অ্যানিমেশন ও ডকুমেন্ট প্রদর্শন করা যায়।
 \item এটি বিশ্বব্যাপী তথ্য প্রকাশ ও ব্যবহারের সহজ মাধ্যম।
-\end{itemize}
+\end{enumerate}
 
-\subsection{WWW ও Internet-এর পার্থক্য}
+\subsection{WWW ও ইন্টারনেটের পার্থক্য}
 
-অনেক শিক্ষার্থী WWW ও Internet-কে একই মনে করে। কিন্তু এরা একই জিনিস নয়। Internet হলো বিশ্বব্যাপী computer network, আর WWW হলো সেই internet ব্যবহার করে webpage ও web resource access করার ব্যবস্থা।
+ইন্টারনেট হলো বিশ্বব্যাপী সংযুক্ত কম্পিউটার নেটওয়ার্ক। WWW এই নেটওয়ার্কের একটি সেবা, যার সাহায্যে ওয়েবপেজ ও অন্যান্য ওয়েব রিসোর্স ব্যবহার করা হয়। ই-মেইল, ফাইল স্থানান্তর ও ভিডিও কলের মতো আরও সেবাও ইন্টারনেটে চলে।
 
 \begin{center}
 \begin{tabular}{|p{0.20\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Internet} & \textbf{WWW} \\
+\textbf{বিষয়} & \textbf{ইন্টারনেট} & \textbf{WWW} \\
 \hline
-অর্থ & বিশ্বব্যাপী সংযুক্ত computer network & Internet ব্যবহার করে webpage/resource দেখার ব্যবস্থা \\
+অর্থ & বিশ্বব্যাপী সংযুক্ত কম্পিউটার নেটওয়ার্ক & ইন্টারনেট ব্যবহার করে ওয়েবপেজ/রিসোর্স দেখার ব্যবস্থা \\
 \hline
-প্রকৃতি & Hardware, cable, router, server ও network infrastructure & Hypertext document ও web resource system \\
+প্রকৃতি & হার্ডওয়্যার, কেবল, রাউটার, সার্ভার ও নেটওয়ার্কের অবকাঠামো & হাইপারটেক্সট ডকুমেন্ট ও ওয়েব রিসোর্স ব্যবস্থা \\
 \hline
-ব্যবহার & Email, file transfer, VoIP, web browsing ইত্যাদি & Website ও webpage দেখা \\
+ব্যবহার & ই-মেইল, ফাইল আদান-প্রদান, VoIP (Voice over Internet Protocol), ওয়েব দেখা ইত্যাদি & ওয়েবসাইট ও ওয়েবপেজ দেখা \\
 \hline
-সম্পর্ক & WWW চালাতে Internet দরকার & Internet-এর একটি service \\
+সম্পর্ক & প্রকাশ্য WWW ব্যবহারে ইন্টারনেট লাগে & ইন্টারনেটের একটি সেবা \\
 \hline
-উদাহরণ & ISP, router, cable, server network & website, webpage, hyperlink \\
+উদাহরণ & ISP (Internet Service Provider), রাউটার, কেবল, সার্ভার নেটওয়ার্ক & ওয়েবসাইট, ওয়েবপেজ, হাইপারলিংক \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{examplebox}{সহজ উদাহরণ}
-Internet হলো রাস্তা বা যোগাযোগের অবকাঠামো, আর WWW হলো সেই রাস্তা ব্যবহার করে চলা web service। তাই Internet না থাকলে WWW ব্যবহার করা যায় না, কিন্তু Internet শুধু WWW নয়; email, file transfer, online game, video call ইত্যাদিও Internet ব্যবহার করে।
+ইন্টারনেট হলো রাস্তা বা যোগাযোগের অবকাঠামো, আর WWW হলো সেই রাস্তা ব্যবহার করে চলা ওয়েব সেবা। সাধারণ প্রকাশ্য ওয়েব ব্যবহারের জন্য ইন্টারনেট সংযোগ লাগে। তবে ইন্টারনেটের সেবা শুধু ওয়েবেই সীমিত নয়; ই-মেইল, ফাইল আদান-প্রদান, অনলাইন গেম ও ভিডিও কলও ইন্টারনেট ব্যবহার করে। স্থানীয় ওয়েব সার্ভারের পেজ ইন্টারনেট ছাড়াও দেখা যেতে পারে।
 \end{examplebox}
 
-\subsection{Web Browser}
+\subsection{ওয়েব ব্রাউজার (Web Browser)}
 
-\subsubsection{Web Browser কী?}
-
-\begin{definitionbox}{Web Browser}
-WWW থেকে তথ্য অনুসন্ধান, আহরণ, প্রদর্শন ও সংরক্ষণের জন্য ব্যবহৃত application software-কে web browser বলে।
+\begin{definitionbox}{}
+ওয়েবপেজ আহরণ ও প্রদর্শনের জন্য ব্যবহৃত অ্যাপ্লিকেশন সফটওয়্যারকে \textbf{ওয়েব ব্রাউজার} বলে।
 \end{definitionbox}
-
-Web browser user-এর device-এ install করা থাকে। Browser website-এর HTML, CSS, image, video ইত্যাদি গ্রহণ করে user-এর সামনে readable webpage হিসেবে প্রদর্শন করে।
+ব্রাউজার ব্যবহারকারীর যন্ত্রে চলে। এটি সার্ভার থেকে HTML, CSS, ছবি ও ভিডিও নিয়ে পেজ দেখায়; স্থানীয় HTML ফাইলও খুলতে পারে।
 
 \begin{examplebox}{উদাহরণ}
-Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera ইত্যাদি web browser-এর উদাহরণ।
+Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera ইত্যাদি ওয়েব ব্রাউজারের উদাহরণ।
 \end{examplebox}
 
-\subsubsection{Web Browser-এর কাজ}
+\subsubsection{ওয়েব ব্রাউজারের কাজ}
 
-\begin{keypointbox}{Browser-এর প্রধান কাজ}
+\begin{keypointbox}{ব্রাউজারের প্রধান কাজ}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
 \item ওয়েবপেজ প্রদর্শন করা।
-\item URL অনুযায়ী server-এ request পাঠানো।
-\item HTML, CSS ও JavaScript interpret করে output দেখানো।
-\item image, audio, video ও document প্রদর্শন করা।
-\item hyperlink follow করা।
-\item file download করতে সাহায্য করা।
-\item bookmark, history ও save সুবিধা দেওয়া।
-\item webpage print করা।
-\item form submit ও login page ব্যবহার করতে সাহায্য করা।
+\item URL অনুযায়ী সার্ভারে অনুরোধ পাঠানো।
+\item HTML, CSS ও JavaScript ব্যাখ্যা করে ফল দেখানো।
+\item ছবি, অডিও, ভিডিও ও ডকুমেন্ট প্রদর্শন করা।
+\item হাইপারলিংক অনুসরণ করা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item ফাইল ডাউনলোড করতে সাহায্য করা।
+\item বুকমার্ক, ইতিহাস ও সংরক্ষণ সুবিধা দেওয়া।
+\item ওয়েবপেজ মুদ্রণ করা।
+\item ফর্ম জমা ও লগইন পেজ ব্যবহার করতে সাহায্য করা।
+\end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
-\subsubsection{Browser কীভাবে webpage দেখায়?}
+\subsubsection{ব্রাউজার কীভাবে ওয়েবপেজ দেখায়?}
 
-একটি webpage browser-এ দেখানোর সাধারণ ধাপ হলো:
+একটি ওয়েবপেজ ব্রাউজারে দেখানোর সাধারণ ধাপ হলো:
 
 \begin{enumerate}
-\item User browser-এ URL লেখে।
-\item Browser DNS-এর সাহায্যে domain-এর IP address খুঁজে পায়।
-\item Browser web server-এ request পাঠায়।
-\item Server HTML, CSS, image ও অন্যান্য file পাঠায়।
-\item Browser HTML code পড়ে webpage তৈরি করে।
-\item User browser window-তে webpage দেখে।
+\item ব্যবহারকারী ব্রাউজারে URL লেখে।
+\item DNS (Domain Name System)-এর সাহায্যে ব্রাউজার ডোমেইনের IP (Internet Protocol) ঠিকানা খুঁজে পায়।
+\item ব্রাউজার ওয়েব সার্ভারে অনুরোধ পাঠায়।
+\item সার্ভার HTML, CSS, ছবি ও অন্যান্য ফাইল পাঠায়।
+\item ব্রাউজার HTML কোড পড়ে ওয়েবপেজ তৈরি করে।
+\item ব্যবহারকারী ব্রাউজার উইন্ডোতে ওয়েবপেজ দেখে।
 \end{enumerate}
 
 \begin{boardbox}{মনে রাখো}
-Browser নিজে website তৈরি করে না; browser website-এর file server থেকে এনে user-এর সামনে প্রদর্শন করে।
+ব্রাউজার সার্ভার থেকে পেজের ফাইল এনে বা স্থানীয় ফাইল খুলে ব্যবহারকারীর সামনে প্রদর্শন করে। স্বাভাবিকভাবে সাইট তৈরি ও প্রকাশ করা তার প্রধান কাজ নয়।
 \end{boardbox}
 
-\subsection{Browser ও Search Engine-এর পার্থক্য}
+\subsection{ব্রাউজার ও সার্চ ইঞ্জিনের পার্থক্য}
 
 \begin{center}
 \begin{tabular}{|p{0.20\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Web Browser} & \textbf{Search Engine} \\
+\textbf{বিষয়} & \textbf{ওয়েব ব্রাউজার} & \textbf{সার্চ ইঞ্জিন} \\
 \hline
-অর্থ & webpage দেখার application software & তথ্য খোঁজার online tool/service \\
+অর্থ & ওয়েবপেজ দেখার অ্যাপ্লিকেশন সফটওয়্যার & তথ্য খোঁজার অনলাইন অনুসন্ধানসেবা \\
 \hline
-কাজ & website খুলে দেখায় & keyword অনুযায়ী website বা তথ্য খুঁজে দেয় \\
+কাজ & ওয়েবসাইট খুলে দেখায় & অনুসন্ধানের শব্দ অনুযায়ী ওয়েবসাইট বা তথ্য খুঁজে দেয় \\
 \hline
-ব্যবহার & URL লিখে website visit করা & keyword লিখে result পাওয়া \\
+ব্যবহার & URL লিখে ওয়েবসাইট দেখা & অনুসন্ধানের শব্দ লিখে ফল পাওয়া \\
 \hline
 উদাহরণ & Chrome, Firefox, Edge, Safari & Google, Bing, Yahoo, DuckDuckGo \\
 \hline
-সম্পর্ক & search engine access করতে browser লাগে & browser-এর মাধ্যমে search engine ব্যবহার করা হয় \\
+সম্পর্ক & সার্চ ইঞ্জিন ব্যবহার করতে ব্রাউজার লাগে & ব্রাউজারের মাধ্যমে সার্চ ইঞ্জিন ব্যবহার করা হয় \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{examplebox}{সহজ উদাহরণ}
-Chrome হলো browser, আর Google Search হলো search engine। Google ব্যবহার করতে Chrome, Firefox বা অন্য কোনো browser লাগে।
+Chrome হলো ব্রাউজার, আর Google Search হলো সার্চ ইঞ্জিন। Google ব্যবহার করতে Chrome, Firefox বা অন্য কোনো ব্রাউজার লাগে।
 \end{examplebox}
 
-\subsection{Search Engine}
+\subsection{সার্চ ইঞ্জিন (Search Engine)}
 
-\subsubsection{Search Engine কী?}
+\subsubsection{সার্চ ইঞ্জিন কী?}
 
-\begin{definitionbox}{Search Engine}
-ইন্টারনেট থেকে প্রয়োজনীয় তথ্য, webpage, image, video বা document খুঁজে পাওয়ার জন্য ব্যবহৃত web-based tool বা software system-কে search engine বলে।
+\begin{definitionbox}{সার্চ ইঞ্জিন (Search Engine)}
+ওয়েব থেকে প্রয়োজনীয় পেজ, ছবি, ভিডিও বা ডকুমেন্ট খুঁজে পাওয়ার জন্য ব্যবহৃত ওয়েবভিত্তিক অনুসন্ধানব্যবস্থাকে সার্চ ইঞ্জিন বলে।
 \end{definitionbox}
 
-Search engine user-এর দেওয়া keyword অনুযায়ী internet থেকে relevant website বা webpage খুঁজে result হিসেবে দেখায়।
+সার্চ ইঞ্জিন ব্যবহারকারীর অনুসন্ধানের শব্দের সঙ্গে নিজের সূচিতে রাখা তথ্য মেলায়। তারপর প্রাসঙ্গিক পেজের লিংক দেখায়। প্রতি অনুসন্ধানে পুরো ওয়েব নতুন করে ঘুরে দেখা হয় না; ওয়েবের সব পেজও এই সূচিতে থাকে না।
 
 \begin{examplebox}{উদাহরণ}
-Google, Bing, Yahoo, DuckDuckGo, Baidu ইত্যাদি search engine-এর উদাহরণ।
+Google, Bing, Yahoo, DuckDuckGo, Baidu ইত্যাদি সার্চ ইঞ্জিনের উদাহরণ। বাংলাদেশে তৈরি বাংলা সার্চ ইঞ্জিনের পরিচিত ঐতিহাসিক উদাহরণ পিপীলিকা (Pipilika)। সার্চ ইঞ্জিন ও ওয়েবসাইটের ধরন এক নয়: Wikipedia বিশ্বকোষভিত্তিক সাইট, YouTube ভিডিওভিত্তিক সেবা এবং Twitter/X সামাজিক যোগাযোগের সেবা।
 \end{examplebox}
 
 \begin{center}
@@ -314,193 +297,214 @@ Google, Bing, Yahoo, DuckDuckGo, Baidu ইত্যাদি search engine-এ�
 \draw[arrow] (lresult) -- (r1.east);
 \draw[arrow] (lurl) -- ([yshift=-0.18cm]r2.east);
 \draw[arrow] (lrank) -- (r3.west);
-\end{tikzpicture}\\[3pt]
-\textit{চিত্র: Search engine keyword নিয়ে ranked result দেখায়}
+\end{tikzpicture}\\*[3pt]
+\textit{চিত্র: সার্চ ইঞ্জিন অনুসন্ধানের শব্দ নিয়ে গুরুত্ব অনুযায়ী সাজানো ফল দেখায়}
 \end{center}
 
-\subsubsection{Search Engine কীভাবে কাজ করে?}
+\subsubsection{সার্চ ইঞ্জিন কীভাবে কাজ করে?}
 
-Search engine সাধারণত তিনটি ধাপে কাজ করে।
+সার্চ ইঞ্জিন সাধারণত তিনটি ধাপে কাজ করে।
 
 \begin{enumerate}
-\item \textbf{Crawling:} crawler বা spider বিভিন্ন website ঘুরে webpage খুঁজে বের করে।
-\item \textbf{Indexing:} খুঁজে পাওয়া webpage-এর তথ্য search engine নিজের database-এ সাজিয়ে রাখে।
-\item \textbf{Ranking/Searching:} user keyword লিখলে search engine index থেকে সবচেয়ে relevant page result হিসেবে দেখায়।
+\item \textbf{পেজ খুঁজে সংগ্রহ (Crawling):} ক্রলার বা স্পাইডার বিভিন্ন ওয়েবসাইট ঘুরে ওয়েবপেজ খুঁজে বের করে।
+\item \textbf{সূচি তৈরি (Indexing):} খুঁজে পাওয়া ওয়েবপেজের তথ্য সার্চ ইঞ্জিন নিজের ডেটাবেজে সাজিয়ে রাখে।
+\item \textbf{প্রাসঙ্গিকতা অনুযায়ী ফল সাজানো (Ranking/Searching):} ব্যবহারকারী অনুসন্ধানের শব্দ লিখলে সার্চ ইঞ্জিন সূচি থেকে প্রাসঙ্গিক পেজ বেছে নেয় এবং গুরুত্ব অনুযায়ী ফল সাজায়।
 \end{enumerate}
 
 \begin{center}
 \fbox{\parbox{0.88\textwidth}{
 \centering
-Crawler $\rightarrow$ Webpage সংগ্রহ $\rightarrow$ Index database\\
-User search $\rightarrow$ Ranking $\rightarrow$ Search result
+ক্রলার $\rightarrow$ ওয়েবপেজ সংগ্রহ $\rightarrow$ সূচি ডেটাবেজ\\
+ব্যবহারকারীর অনুসন্ধান $\rightarrow$ ফলের ক্রম নির্ধারণ $\rightarrow$ অনুসন্ধানের ফল
 }}
 \end{center}
 
-\subsubsection{Search Engine-এর ব্যবহার}
+% Related compact discussions; source reading order is retained.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{সার্চ ইঞ্জিনের ব্যবহার}
 
-\begin{itemize}
+\begin{enumerate}
 \item শিক্ষামূলক তথ্য খোঁজা।
-\item image, video, news, book বা article খোঁজা।
-\item সরকারি বা প্রাতিষ্ঠানিক website খোঁজা।
-\item online shopping product খোঁজা।
-\item map বা location খোঁজা।
-\item research paper, tutorial বা documentation খোঁজা।
-\item চাকরি, ভর্তি, পরীক্ষা বা notice খোঁজা।
-\end{itemize}
+\item ছবি, ভিডিও, সংবাদ, বই বা নিবন্ধ খোঁজা।
+\item সরকারি বা প্রাতিষ্ঠানিক ওয়েবসাইট খোঁজা।
+\item অনলাইন কেনাকাটার পণ্য খোঁজা।
+\item মানচিত্র বা অবস্থান খোঁজা।
+\item গবেষণাপত্র, টিউটোরিয়াল বা নির্দেশিকা খোঁজা।
+\item চাকরি, ভর্তি, পরীক্ষা বা নোটিশ খোঁজা।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{সার্চ ইঞ্জিনের সুবিধা}
 
-\subsubsection{Search Engine-এর সুবিধা}
-
-\begin{itemize}
+\begin{enumerate}
 \item দ্রুত তথ্য পাওয়া যায়।
-\item keyword দিয়ে সহজে খোঁজা যায়।
-\item বিভিন্ন website-এর তথ্য একসাথে দেখা যায়।
-\item image, video, news ও map আলাদাভাবে খোঁজা যায়।
+\item অনুসন্ধানের শব্দ দিয়ে সহজে খোঁজা যায়।
+\item বিভিন্ন ওয়েবসাইটের তথ্য একসাথে দেখা যায়।
+\item ছবি, ভিডিও, সংবাদ ও মানচিত্র আলাদাভাবে খোঁজা যায়।
 \item শিক্ষার্থী ও গবেষকের জন্য সহায়ক।
-\item নির্দিষ্ট website address না জানলেও তথ্য পাওয়া যায়।
-\end{itemize}
+\item নির্দিষ্ট ওয়েবসাইট ঠিকানা না জানলেও তথ্য পাওয়া যায়।
+\end{enumerate}
+\end{minipage}\par\smallskip
+\subsubsection{সার্চ ইঞ্জিন ব্যবহারে সতর্কতা}
 
-\subsubsection{Search Engine ব্যবহারে সতর্কতা}
-
-Search engine অনেক result দেখায়, কিন্তু সব তথ্য সঠিক নাও হতে পারে। তাই reliable source যাচাই করা দরকার।
+সার্চ ইঞ্জিন অনেক ফল দেখায়, কিন্তু সব তথ্য সঠিক নাও হতে পারে। তাই বিশ্বস্ত উৎস যাচাই করা দরকার।
 
 \begin{keypointbox}{সতর্কতা}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item অজানা website-এর তথ্য সরাসরি বিশ্বাস করা যাবে না।
-\item official website বেশি reliable।
-\item তথ্যের date দেখে নিতে হবে।
-\item একাধিক source মিলিয়ে দেখা ভালো।
-\item advertisement ও actual result আলাদা বুঝতে হবে।
-\item copy-paste না করে নিজের ভাষায় লিখতে হবে।
+\item অজানা ওয়েবসাইটের তথ্য সরাসরি বিশ্বাস করা যাবে না।
+\item তথ্যের বিষয় অনুযায়ী প্রাতিষ্ঠানিক বা প্রাথমিক উৎসের সঙ্গে মিলিয়ে দেখতে হবে।
+\item তথ্যের তারিখ দেখে নিতে হবে।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item একাধিক উৎস মিলিয়ে দেখা ভালো।
+\item বিজ্ঞাপন ও প্রকৃত অনুসন্ধানের ফল আলাদা বুঝতে হবে।
+\item কপি-পেস্ট না করে নিজের ভাষায় লিখতে হবে।
+\end{itemize}
+\end{minipage}\par
+
 \end{keypointbox}
 
-\subsection{WWW, Browser ও Search Engine-এর সম্পর্ক}
+\input{chapters/Chapter04/topics/03_www_browser_search/clarity}
+
+\subsection{WWW, ব্রাউজার ও সার্চ ইঞ্জিনের সম্পর্ক}
 
 এই তিনটি বিষয় পরস্পরের সাথে সম্পর্কিত।
 
+\par\noindent\begin{minipage}[t]{.60\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item WWW হলো webpage ও website-এর বিশাল তথ্যব্যবস্থা।
-\item Browser হলো WWW দেখার software।
-\item Search engine হলো WWW থেকে তথ্য খুঁজে বের করার tool।
+\item WWW হলো ওয়েবপেজ ও ওয়েবসাইটের বিশাল তথ্যব্যবস্থা।
+\item ব্রাউজার হলো WWW দেখার সফটওয়্যার।
+\item সার্চ ইঞ্জিন হলো WWW থেকে তথ্য খুঁজে বের করার উপকরণ।
 \end{itemize}
-
-\begin{center}
-\fbox{\parbox{0.76\textwidth}{
+\end{minipage}\hfill
+\begin{minipage}[t]{.36\linewidth}\vspace{0pt}\small
+\fbox{\parbox{.92\linewidth}{
 \centering
 WWW\\
-$\downarrow$ accessed by\\
-Web Browser\\
-$\downarrow$ used to visit\\
-Website/Webpage\\
-$\uparrow$ found through\\
-Search Engine
+$\downarrow$ ব্যবহার করা হয়\\
+ওয়েব ব্রাউজার\\
+$\downarrow$ প্রদর্শন করে\\
+ওয়েবসাইট/ওয়েবপেজ\\
+$\uparrow$ খুঁজে দেয়\\
+সার্চ ইঞ্জিন
 }}
-\end{center}
+\end{minipage}\par
 
-\subsection{Board/Exam Focus}
 
-\begin{keypointbox}{গুরুত্বপূর্ণ point}
-\begin{itemize}
-\item WWW-এর পূর্ণরূপ World Wide Web।
-\item WWW-এর উদ্ভাবক Tim Berners-Lee।
-\item WWW internet-এর একটি service।
-\item Browser দিয়ে webpage দেখা হয়।
-\item Search engine দিয়ে internet থেকে তথ্য খোঁজা হয়।
-\item Chrome browser, কিন্তু Google Search search engine।
-\item Website visit করতে HTTP/HTTPS protocol ব্যবহৃত হয়।
-\end{itemize}
-\end{keypointbox}
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\subsection{Exam-style Short Answer}
+% Each question keeps its answer beneath it in the same column.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{প্রশ্ন ১: WWW কী?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{প্রশ্ন ২: ওয়েব ব্রাউজার কী?}
+\end{minipage}
+\par\smallskip
 
-\subsubsection{প্রশ্ন ১: WWW কী?}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{প্রশ্ন ৩: সার্চ ইঞ্জিন কী?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{প্রশ্ন ৪: ব্রাউজার ও সার্চ ইঞ্জিনের পার্থক্য লেখ।}
+\end{minipage}
+\par\smallskip
 
-\begin{boardbox}{উত্তর}
-World Wide Web বা WWW হলো internet-এর মাধ্যমে পরস্পর সংযুক্ত hypertext document, webpage ও web resource প্রদর্শন ও ব্যবহারের একটি ব্যবস্থা। ব্যবহারকারী web browser-এর মাধ্যমে WWW থেকে website ও webpage দেখতে পারে।
-\end{boardbox}
 
-\subsubsection{প্রশ্ন ২: Web browser কী?}
+\Needspace{10\baselineskip}
+\subsection{বহুনির্বাচনি অনুশীলন}
 
-\begin{boardbox}{উত্তর}
-WWW থেকে তথ্য অনুসন্ধান, আহরণ, প্রদর্শন ও সংরক্ষণের জন্য ব্যবহৃত application software-কে web browser বলে। যেমন: Google Chrome, Mozilla Firefox, Microsoft Edge ইত্যাদি।
-\end{boardbox}
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=1,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item WWW-এর পূর্ণরূপ কী?
+\par ক) World Wide Web
+\par খ) Web World Wide
+\par গ) Wide Web World
+\par ঘ) World Web Work\\
+\chFourMCQAnswer{ক) World Wide Web}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=2,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item WWW-এর উদ্ভাবক কে?
+\par ক) Charles Babbage
+\par খ) Tim Berners-Lee
+\par গ) George Boole
+\par ঘ) E. F. Codd\\
+\chFourMCQAnswer{খ) Tim Berners-Lee}
+\end{enumerate}
+\end{minipage}
+\par
 
-\subsubsection{প্রশ্ন ৩: Search engine কী?}
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=3,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item নিচের কোনটি ওয়েব ব্রাউজার?
+\par ক) Google Chrome
+\par খ) Google Search
+\par গ) Yahoo Search
+\par ঘ) Bing\\
+\chFourMCQAnswer{ক) Google Chrome}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=4,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item নিচের কোনটি সার্চ ইঞ্জিন?
+\par ক) Chrome
+\par খ) Firefox
+\par গ) Google
+\par ঘ) Microsoft Edge\\
+\chFourMCQAnswer{গ) Google}
+\end{enumerate}
+\end{minipage}
+\par
 
-\begin{boardbox}{উত্তর}
-Internet থেকে প্রয়োজনীয় তথ্য, webpage, image, video বা document খুঁজে পাওয়ার জন্য ব্যবহৃত web-based tool বা software system-কে search engine বলে। যেমন: Google, Bing, Yahoo ইত্যাদি।
-\end{boardbox}
+\par\addvspace{4pt}\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{enumerate}[start=5,leftmargin=*,topsep=0pt,itemsep=0pt]
+\item ওয়েবসাইট দেখার জন্য সাধারণত কোন সফটওয়্যার ব্যবহৃত হয়?
+\par ক) Compiler
+\par খ) Web browser
+\par গ) Assembler
+\par ঘ) Database\\
+\chFourMCQAnswer{খ) Web browser}
+\end{enumerate}
+\end{minipage}
+\par
 
-\subsubsection{প্রশ্ন ৪: Browser ও search engine-এর মধ্যে পার্থক্য লেখ।}
 
-\begin{boardbox}{উত্তর}
-Web browser হলো webpage দেখার application software, আর search engine হলো internet থেকে তথ্য খুঁজে বের করার web-based tool। Google Chrome একটি browser, কিন্তু Google Search একটি search engine।
-\end{boardbox}
+\subsection{সৃজনশীল অনুশীলন}
 
-\subsection{Practice MCQ}
+\noindent
+\textbf{\color{chFourRose}প্রশ্ন ও উদ্দীপক}\par
+\textbf{উদ্দীপক:} রাহিম তার কলেজের ওয়েবসাইট খুঁজে বের করতে Google-এ কলেজের নাম লিখে অনুসন্ধান করল। অনুসন্ধানের ফল থেকে সে কলেজের প্রাতিষ্ঠানিক ওয়েবসাইটে প্রবেশ করল। ওয়েবসাইটের ঠিকানা ব্রাউজারে দেখা গেল এবং হোমপেজ ব্রাউজার উইন্ডোতে প্রদর্শিত হলো।
 
 \begin{enumerate}
-\item WWW-এর পূর্ণরূপ কী?\\
-ক) World Wide Web \quad খ) Web World Wide \quad গ) Wide Web World \quad ঘ) World Web Work\\
-\textbf{উত্তর:} ক) World Wide Web
-
-\item WWW-এর উদ্ভাবক কে?\\
-ক) Charles Babbage \quad খ) Tim Berners-Lee \quad গ) George Boole \quad ঘ) E. F. Codd\\
-\textbf{উত্তর:} খ) Tim Berners-Lee
-
-\item নিচের কোনটি web browser?\\
-ক) Google Chrome \quad খ) Google Search \quad গ) Yahoo Search \quad ঘ) Bing\\
-\textbf{উত্তর:} ক) Google Chrome
-
-\item নিচের কোনটি search engine?\\
-ক) Chrome \quad খ) Firefox \quad গ) Google \quad ঘ) Microsoft Edge\\
-\textbf{উত্তর:} গ) Google
-
-\item Website দেখার জন্য সাধারণত কোন software ব্যবহৃত হয়?\\
-ক) Compiler \quad খ) Web browser \quad গ) Assembler \quad ঘ) Database\\
-\textbf{উত্তর:} খ) Web browser
+\item ক. ওয়েব ব্রাউজার কী?
+\item খ. সার্চ ইঞ্জিন কেন ব্যবহার করা হয়?
+\item গ. উদ্দীপকে Google ও ব্রাউজারের ভূমিকা ব্যাখ্যা কর।
+\item ঘ. WWW, ব্রাউজার ও সার্চ ইঞ্জিন—এই তিনটির পারস্পরিক সম্পর্ক বিশ্লেষণ কর।
 \end{enumerate}
-
-\subsection{CQ Practice}
-
-\begin{practicebox}
-\textbf{উদ্দীপক:} রাহিম তার কলেজের website খুঁজে বের করতে Google-এ কলেজের নাম লিখে search করল। Search result থেকে সে কলেজের official website-এ প্রবেশ করল। Website-এর address browser-এ দেখা গেল এবং homepage browser window-তে প্রদর্শিত হলো।
-
-\begin{enumerate}
-\item ক. Web browser কী?
-\item খ. Search engine কেন ব্যবহার করা হয়?
-\item গ. উদ্দীপকে Google ও browser-এর ভূমিকা ব্যাখ্যা কর।
-\item ঘ. WWW, browser ও search engine - এই তিনটির পারস্পরিক সম্পর্ক বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\begin{boardbox}{সমাধান নির্দেশনা}
-\textbf{ক.} WWW থেকে webpage আহরণ ও প্রদর্শনের application software হলো web browser।\\
-\textbf{খ.} Search engine internet থেকে প্রয়োজনীয় তথ্য বা website খুঁজে পেতে সাহায্য করে।\\
-\textbf{গ.} Google search engine হিসেবে college website খুঁজে দিয়েছে; browser website খুলে homepage প্রদর্শন করেছে।\\
-\textbf{ঘ.} WWW হলো web resource-এর system, browser সেই resource দেখায়, আর search engine WWW থেকে প্রয়োজনীয় resource খুঁজে দেয়।
-\end{boardbox}
-
-\subsection{Common Mistake}
+\par\smallskip
+\subsection{সাধারণ ভুল}
 
 \begin{itemize}
 \item Google Chrome ও Google Search এক মনে করা।
-\item Internet ও WWW এক মনে করা।
-\item Search engine-কে browser বলা।
-\item Browser server থেকে file আনে - এই process না বোঝা।
-\item URL না জানলে search engine, আর URL জানা থাকলে browser address bar ব্যবহার করা যায় - এটি না বোঝা।
+\item ইন্টারনেট ও WWW এক মনে করা।
+\item সার্চ ইঞ্জিনকে ব্রাউজার বলা।
+\item ব্রাউজার সার্ভার থেকে ফাইল আনে—এই প্রক্রিয়া না বোঝা।
+\item URL না জানলে সার্চ ইঞ্জিন, আর URL জানা থাকলে ব্রাউজার ঠিকানার বার ব্যবহার করা যায়—এটি না বোঝা।
 \end{itemize}
 
-\subsection{মনে রাখবে}
-
-\begin{recapbox}
-\begin{itemize}
-\item WWW হলো Internet-এর একটি গুরুত্বপূর্ণ service।
-\item WWW webpage ও website দেখার ব্যবস্থা।
-\item Tim Berners-Lee WWW উদ্ভাবন করেন।
-\item Web browser দিয়ে webpage দেখা হয়।
-\item Search engine দিয়ে Internet থেকে তথ্য খোঁজা হয়।
-\item Chrome browser, কিন্তু Google Search search engine।
-\item Browser URL ব্যবহার করে server-এ request পাঠায় এবং webpage দেখায়।
-\end{itemize}
-\end{recapbox}

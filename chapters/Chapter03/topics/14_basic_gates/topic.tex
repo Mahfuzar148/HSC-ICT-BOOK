@@ -1,68 +1,333 @@
-% ৩.১৪ মৌলিক গেট
-\section{মৌলিক গেট: AND, OR, NOT}
+% =========================================================
+% Logic Gate Topic with Image-based Gate Boxes
+% Assumed image folder: resources/images/
+% Images:
+% and.png, or.png, not.png, buffer.png,
+% nand.png, nor.png, xor.png, xnor.png,
+% all gates.png
+% =========================================================
 
-\subsection{AND Gate}
-\begin{itemize}
-\item Symbol, Boolean: $Y=A\cdot B$, Truth table
-\end{itemize}
+% যদি আগে graphicx load না করা থাকে, preamble-এ দাও:
+% \usepackage{graphicx}
 
-\subsection{OR Gate}
-\begin{itemize}
-\item Symbol, Boolean: $Y=A+B$, Truth table
-\end{itemize}
-
-\subsection{NOT Gate}
-\begin{itemize}
-\item Symbol, Boolean: $Y=\overline{A}$, Truth table
-\end{itemize}
-
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item AND, OR ও NOT gate-এর symbol, Boolean expression ও truth table লিখতে।
-\item মৌলিক gate দিয়ে simple logic circuit ব্যাখ্যা করতে।
-\item বাস্তব switch analogy ব্যবহার করে gate-এর output বুঝতে।
-\end{itemize}
-\end{learningbox}
-
+% ---------------------------------------------------------
+% Helper command
+% ---------------------------------------------------------
+\newcommand{\gateimage}[2]{%
 \begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Logic gate symbol placeholders}\\[4pt]
-AND gate: দুই input বাম পাশে, output ডান পাশে।\\
-OR gate: curved input side, output ডান পাশে।\\
-NOT gate: triangle with small bubble at output।
-}}
+    \includegraphics[width=0.94\linewidth]{\detokenize{chapters/Chapter03/resources/images/#1}}
+    
+    \smallskip
+    {\small \textbf{চিত্র:} #2}
 \end{center}
+}
+
+% =========================================================
+% 3.7 Logic Gate
+% =========================================================
+
+\section{লজিক গেট}
+
+\subsection{লজিক গেট কী?}
+
+যে ইলেকট্রনিক সার্কিট এক বা একাধিক বাইনারি ইনপুট গ্রহণ করে বুলিয়ান অ্যালজেবরার নিয়ম অনুযায়ী একটি নির্দিষ্ট বাইনারি আউটপুট প্রদান করে, তাকে \textenglish{Logic Gate} বলে।
+
+লজিক গেট হলো ডিজিটাল ইলেকট্রনিক সার্কিটের মৌলিক উপাদান। কম্পিউটার ও অন্যান্য ডিজিটাল ডিভাইসে গাণিতিক ও যৌক্তিক কাজ সম্পাদনের জন্য বিভিন্ন ধরনের লজিক গেট ব্যবহার করা হয়।
+
+\textbf{লজিক গেটের ইনপুট ও আউটপুটের মান} সাধারণত দুই ধরনের হয়—
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item \(0\) : \textenglish{LOW} বা নিম্ন লজিক স্তর
+    \item \(1\) : \textenglish{HIGH} বা উচ্চ লজিক স্তর
+\end{itemize}
+
+যদি দুটি ইনপুট \(A\) ও \(B\) এবং একটি আউটপুট \(Y\) থাকে, তবে গেটের কাজকে সাধারণভাবে
+\[
+Y=f(A,B)
+\]
+দ্বারা প্রকাশ করা যায়।
+
+\subsection{লজিক গেটের প্রকারভেদ}
+
+লজিক গেটকে সাধারণভাবে তিন ভাগে আলোচনা করা যায়—
+
+\begin{enumerate}
+    \item মৌলিক গেট (\textenglish{Basic Gates})
+    \item সার্বজনীন গেট (\textenglish{Universal Gates})
+    \item বিশেষ/যৌগিক গেট (\textenglish{Special or Derived Gates})
+\end{enumerate}
+
+\textbf{মৌলিক গেট:} \textenglish{AND, OR, NOT}
+
+\textbf{সার্বজনীন গেট:} \textenglish{NAND, NOR}
+
+\textbf{বিশেষ/যৌগিক গেট:} \textenglish{XOR, XNOR, Buffer}
+
+% =========================================================
+% Basic Gates
+% =========================================================
+
+\subsection{মৌলিক গেট (\textenglish{Basic Gates})}
+
+যেসব গেটের সাহায্যে অন্যান্য লজিক সার্কিটের কার্যপ্রণালি ব্যাখ্যা করা যায়, সেগুলোকে মৌলিক গেট বলে। মৌলিক গেট তিনটি—
+
+\begin{enumerate}
+    \item \textenglish{AND} গেট
+    \item \textenglish{OR} গেট
+    \item \textenglish{NOT} গেট
+\end{enumerate}
+
+% ---------------------------------------------------------
+% AND Gate
+% ---------------------------------------------------------
+\paragraph{(ক) \textenglish{AND} গেট}
+
+\textbf{সংজ্ঞা:}
+যে লজিক গেটে সবগুলো ইনপুট \(1\) হলে তবেই আউটপুট \(1\) হয় এবং অন্য সব ক্ষেত্রে আউটপুট \(0\) হয়, তাকে \textenglish{AND Gate} বলে।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=A\cdot B
+\]
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item কোনো কাজ একাধিক শর্ত একসঙ্গে সত্য হলে সম্পন্ন করতে
+    \item নিরাপত্তা সার্কিটে দ্বৈত শর্ত যাচাই করতে
+    \item শিল্প-নিয়ন্ত্রণ সার্কিটে একাধিক সেন্সরের যৌথ সিদ্ধান্ত নিতে
+\end{itemize}
+
+\gateimage{and.png}{\textenglish{AND} গেটের প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও লজিক ডায়াগ্রাম}
+
+% ---------------------------------------------------------
+% OR Gate
+% ---------------------------------------------------------
+\paragraph{(খ) \textenglish{OR} গেট}
+
+\textbf{সংজ্ঞা:}
+যে লজিক গেটে যেকোনো একটি ইনপুট \(1\) হলেই আউটপুট \(1\) হয় এবং সব ইনপুট \(0\) হলে কেবল আউটপুট \(0\) হয়, তাকে \textenglish{OR Gate} বলে।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=A+B
+\]
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item একাধিক বিকল্পের মধ্যে যেকোনো একটি সত্য হলেই কাজ সম্পন্ন করতে
+    \item অ্যালার্ম সার্কিটে যেকোনো একটি সেন্সর সক্রিয় হলেই সংকেত দিতে
+    \item কন্ট্রোল সার্কিটে বিকল্প ইনপুট গ্রহণ করতে
+\end{itemize}
+
+\gateimage{or.png}{\textenglish{OR} গেটের প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও লজিক ডায়াগ্রাম}
+
+% ---------------------------------------------------------
+% NOT Gate
+% ---------------------------------------------------------
+\paragraph{(গ) \textenglish{NOT} গেট}
+
+\textbf{সংজ্ঞা:}
+যে লজিক গেট একটি ইনপুট গ্রহণ করে তার বিপরীত মান আউটপুট হিসেবে প্রদান করে, তাকে \textenglish{NOT Gate} বলে। একে \textenglish{Inverter}ও বলা হয়।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=\overline A
+\]
+
+অর্থাৎ, \(A=0\) হলে \(Y=1\) এবং \(A=1\) হলে \(Y=0\)।
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item কোনো সংকেতের বিপরীত মান তৈরি করতে
+    \item অ্যাকটিভ-\textenglish{LOW} ও অ্যাকটিভ-\textenglish{HIGH} কন্ট্রোল সার্কিটে
+    \item বিভিন্ন যৌগিক লজিক সার্কিট তৈরিতে
+\end{itemize}
+
+\gateimage{not.png}{\textenglish{NOT} গেটের প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও লজিক ডায়াগ্রাম}
+
+% ---------------------------------------------------------
+% Buffer Gate
+% ---------------------------------------------------------
+\paragraph{(ঘ) \textenglish{Buffer} গেট}
+
+\textbf{সংজ্ঞা:}
+যে গেট ইনপুটকে অপরিবর্তিত অবস্থায় আউটপুটে প্রদান করে, তাকে \textenglish{Buffer Gate} বলে।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=A
+\]
+
+\textbf{বিশেষত্ব:}
+\textenglish{Buffer Gate} ইনপুটের মান পরিবর্তন করে না; বরং সংকেতকে শক্তিশালী করা, বিচ্ছিন্নভাবে সরবরাহ করা বা ড্রাইভিং ক্ষমতা বাড়ানোর কাজে ব্যবহৃত হয়।
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item সংকেতকে শক্তিশালীভাবে পরবর্তী সার্কিটে পাঠাতে
+    \item এক উৎস থেকে একাধিক লোড চালাতে
+    \item ডেটা বাস ও কন্ট্রোল লাইনে সংকেত \textenglish{buffering} করতে
+\end{itemize}
+
+\gateimage{buffer.png}{\textenglish{Buffer} গেটের প্রতীকী চিহ্ন, \textenglish{signal flow} ও সত্যক সারণি}
+
+% =========================================================
+% Universal Gates
+% =========================================================
+
+\subsection{সার্বজনীন গেট (\textenglish{Universal Gates})}
+
+যে লজিক গেটের সাহায্যে অন্য কোনো মৌলিক গেটের সহায়তা ছাড়াই \textenglish{AND, OR, NOT}-সহ যেকোনো বুলিয়ান ফাংশন বাস্তবায়ন করা যায়, তাকে সার্বজনীন গেট বলে।
+
+সার্বজনীন গেট দুটি—
+\begin{enumerate}
+    \item \textenglish{NAND} গেট
+    \item \textenglish{NOR} গেট
+\end{enumerate}
+
+% ---------------------------------------------------------
+% NAND Gate
+% ---------------------------------------------------------
+\paragraph{(ক) \textenglish{NAND} গেট}
+
+\textbf{সংজ্ঞা:}
+\textenglish{AND Gate}-এর আউটপুটকে \textenglish{NOT} করলে যে গেট পাওয়া যায়, তাকে \textenglish{NAND Gate} বলে।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=\overline{A\cdot B}
+\]
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item সার্বজনীন গেট হিসেবে বিভিন্ন লজিক সার্কিট তৈরিতে
+    \item মেমোরি সার্কিটের প্রাথমিক অংশ, যেমন \textenglish{latch} তৈরিতে
+    \item ডিজিটাল কন্ট্রোল সার্কিটে যৌক্তিক সিদ্ধান্তে
+\end{itemize}
+
+\gateimage{nand.png}{\textenglish{NAND} গেটের প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও লজিক ডায়াগ্রাম}
+
+% ---------------------------------------------------------
+% NOR Gate
+% ---------------------------------------------------------
+\paragraph{(খ) \textenglish{NOR} গেট}
+
+\textbf{সংজ্ঞা:}
+\textenglish{OR Gate}-এর আউটপুটকে \textenglish{NOT} করলে যে গেট পাওয়া যায়, তাকে \textenglish{NOR Gate} বলে।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=\overline{A+B}
+\]
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item সার্বজনীন গেট হিসেবে বিভিন্ন লজিক সার্কিট বাস্তবায়নে
+    \item \textenglish{SR latch} এবং স্মৃতি-ধারণকারী সার্কিট তৈরিতে
+    \item কন্ট্রোল ও টাইমিং সার্কিটে
+\end{itemize}
+
+\gateimage{nor.png}{\textenglish{NOR} গেটের প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও লজিক ডায়াগ্রাম}
+
+% =========================================================
+% Difference Table
+% =========================================================
+
+\subsection{মৌলিক ও সার্বজনীন গেটের পার্থক্য}
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|L{0.19\linewidth}|L{0.33\linewidth}|L{0.33\linewidth}|}
 \hline
-$A$ & $B$ & $A\cdot B$ & $A+B$ \\
+\textbf{বিষয়} & \textbf{মৌলিক গেট} & \textbf{সার্বজনীন গেট} \\
 \hline
-0 & 0 & 0 & 0 \\
+গেটের নাম & \textenglish{AND, OR, NOT} & \textenglish{NAND, NOR} \\
 \hline
-0 & 1 & 0 & 1 \\
+প্রধান কাজ & মৌলিক যৌক্তিক ক্রিয়া সম্পাদন & অন্যান্য গেট ও বুলিয়ান ফাংশন বাস্তবায়ন \\
 \hline
-1 & 0 & 0 & 1 \\
+অন্য গেট তৈরির ক্ষমতা & এককভাবে সব ধরনের ফাংশন বাস্তবায়ন করতে পারে না & যেকোনো একটি গেট দিয়েই \textenglish{AND, OR, NOT} তৈরি করা যায় \\
 \hline
-1 & 1 & 1 & 1 \\
+ব্যবহার & সাধারণ লজিক অপারেশন ও সার্কিট বোঝাতে & সম্পূর্ণ ডিজিটাল সার্কিট বাস্তবায়ন ও সরলীকরণে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-$A$ & $\overline{A}$ \\
-\hline
-0 & 1 \\
-\hline
-1 & 0 \\
-\hline
-\end{tabular}
-\end{center}
+% =========================================================
+% XOR and XNOR
+% =========================================================
 
-\begin{examplebox}{Switch analogy}
-AND gate হলো series switch-এর মতো: দুই switch on না হলে current যাবে না। OR gate হলো parallel switch-এর মতো: যেকোনো একটি switch on হলেই current যেতে পারে।
-\end{examplebox}
+\subsection{বিশেষ/যৌগিক গেট (\textenglish{XOR} ও \textenglish{XNOR})}
+
+% ---------------------------------------------------------
+% XOR
+% ---------------------------------------------------------
+\paragraph{(ক) \textenglish{XOR} গেট}
+
+\textbf{সংজ্ঞা:}
+যে গেটে ইনপুট দুটি ভিন্ন হলে আউটপুট \(1\) হয় এবং একই হলে আউটপুট \(0\) হয়, তাকে \textenglish{XOR Gate} বলে। \textenglish{XOR} এর পূর্ণরূপ \textenglish{Exclusive OR}।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=A\oplus B=\overline AB+A\overline B
+\]
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item বাইনারি যোগে \textenglish{sum} নির্ণয়ে (\textenglish{Half Adder})
+    \item সমতা/অসমতা যাচাই করতে
+    \item ত্রুটি সনাক্তকরণ সার্কিটে
+\end{itemize}
+
+\gateimage{xor.png}{\textenglish{XOR} গেটের সংজ্ঞা, প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও মৌলিক গেট দিয়ে বাস্তবায়ন}
+
+% ---------------------------------------------------------
+% XNOR
+% ---------------------------------------------------------
+\paragraph{(খ) \textenglish{XNOR} গেট}
+
+\textbf{সংজ্ঞা:}
+যে গেটে ইনপুট দুটি সমান হলে আউটপুট \(1\) হয় এবং ভিন্ন হলে আউটপুট \(0\) হয়, তাকে \textenglish{XNOR Gate} বলে। এটি \textenglish{XOR Gate}-এর পরিপূরক।
+
+\textbf{বুলিয়ান রাশি:}
+\[
+Y=\overline{A\oplus B}=AB+\overline A\,\overline B
+\]
+
+\textbf{বাস্তব ব্যবহার:}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item দুই বিট সমান কি না তা যাচাই করতে
+    \item \textenglish{equality checker} বা তুলনামূলক সার্কিটে
+    \item ডিজিটাল যাচাইকরণ ও নিয়ন্ত্রণ ব্যবস্থায়
+\end{itemize}
+
+\gateimage{xnor.png}{\textenglish{XNOR} গেটের সংজ্ঞা, প্রতীকী চিহ্ন, \textenglish{switching circuit}, সত্যক সারণি ও মৌলিক গেট দিয়ে বাস্তবায়ন}
+
+% =========================================================
+% Important Notes
+% =========================================================
+
+\subsection{পরীক্ষার জন্য মনে রাখবে}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item \textenglish{AND}: সব ইনপুট \(1\) হলে আউটপুট \(1\)
+    \item \textenglish{OR}: অন্তত একটি ইনপুট \(1\) হলে আউটপুট \(1\)
+    \item \textenglish{NOT}: ইনপুটের বিপরীত আউটপুট
+    \item \textenglish{Buffer}: ইনপুট অপরিবর্তিত রেখে আউটপুট দেয়
+    \item \textenglish{NAND}: \textenglish{AND}-এর বিপরীত
+    \item \textenglish{NOR}: \textenglish{OR}-এর বিপরীত
+    \item \textenglish{XOR}: ইনপুট ভিন্ন হলে আউটপুট \(1\)
+    \item \textenglish{XNOR}: ইনপুট সমান হলে আউটপুট \(1\)
+    \item সার্বজনীন গেট হলো \textenglish{NAND} ও \textenglish{NOR}
+\end{itemize}
+
+% =========================================================
+% All Gates at the End
+% =========================================================
+
+\subsection{সব গেট একসাথে}
+
+নিচের চিত্রে আলোচিত সব গেট একসাথে দেখানো হলো, যাতে তাদের প্রতীক, কাজ ও সম্পর্ক এক নজরে বোঝা যায়।
+
+\gateimage{all_gates.png}{আলোচিত সব লজিক গেটের সমন্বিত চিত্র}
+
+\input{chapters/Chapter03/topics/14_basic_gates/applied_examples.tex}
+
+\input{chapters/Chapter03/topics/14_basic_gates/type_examples.tex}

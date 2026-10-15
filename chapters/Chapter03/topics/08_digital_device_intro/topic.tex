@@ -1,0 +1,458 @@
+% =========================================================
+% Topic 3.7
+% ডিজিটাল ডিভাইসের পরিচিতি
+% Introduction to Digital Device
+% =========================================================
+
+\section{ডিজিটাল ডিভাইসের পরিচিতি
+(\textenglish{Introduction to Digital Device})}
+
+বর্তমান যুগে আমাদের দৈনন্দিন জীবন, শিক্ষা, চিকিৎসা, ব্যাংকিং,
+যোগাযোগ, শিল্পকারখানা ও বিনোদনের প্রায় প্রতিটি ক্ষেত্রেই
+ডিজিটাল প্রযুক্তির ব্যবহার রয়েছে।
+
+মোবাইল ফোন, কম্পিউটার, ল্যাপটপ, ডিজিটাল ঘড়ি,
+\textenglish{ATM}, ডিজিটাল ক্যামেরা, প্রিন্টার,
+টেলিভিশন, বিভিন্ন চিকিৎসা-যন্ত্র এবং স্বয়ংক্রিয় নিয়ন্ত্রণব্যবস্থা—
+এসবই ডিজিটাল প্রযুক্তিনির্ভর যন্ত্রের উদাহরণ।
+
+ডিজিটাল ব্যবস্থায় তথ্যকে সাধারণত বিচ্ছিন্ন অবস্থার মাধ্যমে প্রকাশ করা হয়।
+কম্পিউটার ও অধিকাংশ ডিজিটাল ইলেকট্রনিক সার্কিটে
+এই অবস্থাগুলোকে প্রধানত \textbf{০ এবং ১} দ্বারা প্রকাশ করা হয়।
+
+সাধারণভাবে—
+
+\[
+0 \rightarrow \text{\textenglish{OFF/Low}}
+\]
+
+\[
+1 \rightarrow \text{\textenglish{ON/High}}
+\]
+
+অর্থাৎ ডিজিটাল সার্কিটে দুটি পৃথক বৈদ্যুতিক অবস্থার মাধ্যমে
+তথ্য প্রকাশ ও প্রক্রিয়াকরণ করা হয়।
+
+% =========================================================
+% What is Digital Device
+% =========================================================
+
+\subsection{ডিজিটাল ডিভাইস কী?
+(\textenglish{What is a Digital Device?})}
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+যে ইলেকট্রনিক যন্ত্র বা সার্কিট ডিজিটাল সংকেত ব্যবহার করে
+তথ্য গ্রহণ, প্রক্রিয়াকরণ, সংরক্ষণ অথবা ফলাফল প্রদান করে,
+তাকে \textbf{ডিজিটাল ডিভাইস
+(\textenglish{Digital Device})} বলে।
+\par\endgroup
+
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+মোবাইল ফোন, কম্পিউটার, ক্যালকুলেটর, ডিজিটাল ঘড়ি,
+\textenglish{ATM}, ডিজিটাল ক্যামেরা ইত্যাদি।
+
+% =========================================================
+% Main Working Flow
+% =========================================================
+
+\subsection{ডিজিটাল ডিভাইসের কাজের মূল ধারা}
+
+একটি ডিজিটাল ডিভাইস সাধারণভাবে তিনটি ধাপে কাজ করে—
+
+\[
+\boxed{
+\text{\textenglish{Input}}
+\rightarrow
+\text{\textenglish{Processing}}
+\rightarrow
+\text{\textenglish{Output}}
+}
+\]
+
+\subsubsection*{উদাহরণ: ক্যালকুলেটরে $7+4$}
+
+ক্যালকুলেটরে $7+4$ ইনপুট দিলে ডিভাইসটি সংখ্যাগুলোকে
+অভ্যন্তরীণভাবে বাইনারি সংকেতে প্রকাশ করে।
+
+\[
+7_{10}=0111_2
+\]
+
+\[
+4_{10}=0100_2
+\]
+
+এখন যোগ করলে—
+
+\[
+0111_2+0100_2=1011_2
+\]
+
+এবং,
+
+\[
+1011_2=11_{10}
+\]
+
+তাই ক্যালকুলেটরের ডিসপ্লেতে ফলাফল হিসেবে
+\textbf{11} দেখা যায়।
+
+% =========================================================
+% Why 0 and 1
+% =========================================================
+
+\subsection{কেন ০ ও ১ ব্যবহার করা হয়?}
+
+ইলেকট্রনিক সার্কিটে দুটি পৃথক বৈদ্যুতিক অবস্থা
+তৈরি ও শনাক্ত করা তুলনামূলক সহজ।
+
+যেমন—
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item বিদ্যুৎ প্রবাহ নেই বা কম $\rightarrow 0$
+    \item বিদ্যুৎ প্রবাহ আছে বা বেশি $\rightarrow 1$
+\end{itemize}
+
+এই কারণে বাইনারি পদ্ধতি ডিজিটাল ইলেকট্রনিক্সে
+অত্যন্ত উপযোগী।
+
+\par\begingroup
+
+\textbf{মনে রাখবে:}
+
+\[
+\boxed{0,\;1}
+\]
+
+ডিজিটাল ইলেকট্রনিক্সে বহুল ব্যবহৃত দুটি যৌক্তিক অবস্থা।
+\par\endgroup
+
+
+% =========================================================
+% Components
+% =========================================================
+
+\subsection{ডিজিটাল ডিভাইসের অভ্যন্তরে গুরুত্বপূর্ণ উপাদান}
+
+একটি ডিজিটাল ডিভাইসের ভেতরে বিভিন্ন ইলেকট্রনিক উপাদান
+ও সার্কিট থাকে। গুরুত্বপূর্ণ কয়েকটি হলো—
+
+\begin{enumerate}
+    \item \textenglish{Transistor}
+    \item \textenglish{Logic Gate}
+    \item \textenglish{Integrated Circuit (IC)}
+    \item \textenglish{Encoder}
+    \item \textenglish{Decoder}
+    \item \textenglish{Adder}
+    \item \textenglish{Register}
+    \item \textenglish{Counter}
+\end{enumerate}
+
+এগুলো একসঙ্গে কাজ করে বিভিন্ন ধরনের ডিজিটাল ব্যবস্থা তৈরি করে।
+
+% =========================================================
+% Transistor
+% =========================================================
+
+\subsection{ট্রানজিস্টর
+(\textenglish{Transistor})}
+
+ডিজিটাল ইলেকট্রনিক্সের অন্যতম মৌলিক উপাদান হলো
+\textenglish{Transistor}।
+
+এটি বিভিন্ন কাজে ব্যবহৃত হলেও ডিজিটাল সার্কিটে
+ট্রানজিস্টরকে অনেক সময় একটি ইলেকট্রনিক
+\textenglish{Switch} হিসেবে ব্যবহার করা হয়।
+
+ট্রানজিস্টরের দুটি অবস্থা ধরা যায়—
+
+\[
+\text{\textenglish{OFF}}\rightarrow0
+\]
+
+\[
+\text{\textenglish{ON}}\rightarrow1
+\]
+
+অর্থাৎ ট্রানজিস্টরের \textenglish{ON/OFF} অবস্থার সাহায্যে
+বাইনারি ০ ও ১ প্রকাশ করা যায়।
+
+\par\begingroup
+
+\textbf{সহজ ধারণা:}
+
+অনেকগুলো \textenglish{Transistor} নির্দিষ্ট নিয়মে সংযুক্ত করে
+\textenglish{Logic Gate} এবং আরও জটিল ডিজিটাল সার্কিট তৈরি করা যায়।
+\par\endgroup
+
+
+\[
+\boxed{
+\text{\textenglish{Transistor}}
+\rightarrow
+\text{\textenglish{Logic Gate}}
+\rightarrow
+\text{\textenglish{Digital Circuit}}
+}
+\]
+
+% =========================================================
+% Logic Gate
+% =========================================================
+
+\subsection{লজিক গেট
+(\textenglish{Logic Gate})}
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+যে ইলেকট্রনিক সার্কিট এক বা একাধিক বাইনারি ইনপুট গ্রহণ করে
+নির্দিষ্ট যৌক্তিক নিয়ম অনুযায়ী একটি বাইনারি আউটপুট প্রদান করে,
+তাকে \textbf{\textenglish{Logic Gate}} বলে।
+\par\endgroup
+
+
+\textenglish{Logic Gate}-কে ডিজিটাল সার্কিটের মৌলিক
+\textenglish{Building Block} বলা হয়।
+
+প্রধান \textenglish{Logic Gate} হলো—
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item \textenglish{AND}
+    \item \textenglish{OR}
+    \item \textenglish{NOT}
+    \item \textenglish{NAND}
+    \item \textenglish{NOR}
+    \item \textenglish{XOR}
+    \item \textenglish{XNOR}
+\end{itemize}
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+\textenglish{AND Gate}-এ সব ইনপুট ১ হলে আউটপুট ১ হয়।
+
+\[
+1\cdot1=1
+\]
+
+অন্যথায় আউটপুট ০ হয়।
+
+\par\begingroup
+
+\textenglish{Logic Gate} নিয়ে পরবর্তী অংশে বিস্তারিত আলোচনা করা হবে।
+\par\endgroup
+
+
+% =========================================================
+% IC
+% =========================================================
+
+\subsection{\textenglish{Integrated Circuit (IC)}}
+
+\par\begingroup
+
+\textbf{সংজ্ঞা:}
+
+একটি ছোট \textenglish{Semiconductor Chip}-এর মধ্যে
+বহু ইলেকট্রনিক উপাদান ও সার্কিট একত্রে তৈরি করা হলে
+তাকে \textbf{\textenglish{Integrated Circuit (IC)}} বলে।
+\par\endgroup
+
+
+একটি \textenglish{IC}-এর মধ্যে অনেক
+\textenglish{Transistor}, \textenglish{Logic Gate}
+এবং অন্যান্য ইলেকট্রনিক উপাদান থাকতে পারে।
+
+বর্তমানের \textenglish{Processor}, \textenglish{Memory},
+\textenglish{Controller} এবং বিভিন্ন
+\textenglish{Digital System} তৈরিতে
+\textenglish{IC} অত্যন্ত গুরুত্বপূর্ণ।
+
+\textbf{\textcolor{ICTOrange}{উদাহরণ:}}
+
+কম্পিউটার, মোবাইল ফোন, ক্যালকুলেটর ও অন্যান্য
+ডিজিটাল যন্ত্রে বিভিন্ন ধরনের \textenglish{IC} ব্যবহৃত হয়।
+
+% =========================================================
+% Relation
+% =========================================================
+
+\subsection{ট্রানজিস্টর, লজিক গেট ও \textenglish{IC}-এর সম্পর্ক}
+
+ডিজিটাল ইলেকট্রনিক্সের গঠনকে সহজভাবে এভাবে দেখানো যায়—
+
+\[
+\boxed{
+\text{\textenglish{Transistor}}
+\rightarrow
+\text{\textenglish{Logic Gate}}
+\rightarrow
+\text{\textenglish{IC/Digital Circuit}}
+\rightarrow
+\text{\textenglish{Digital Device}}
+}
+\]
+
+অর্থাৎ \textenglish{Transistor} থেকে
+\textenglish{Logic Gate},
+\textenglish{Logic Gate} থেকে জটিল
+\textenglish{Digital Circuit}
+এবং এসব সার্কিট ব্যবহার করে বিভিন্ন
+\textenglish{Digital Device} তৈরি করা হয়।
+
+% =========================================================
+% Everyday Use
+% =========================================================
+
+\subsection{দৈনন্দিন জীবনে ডিজিটাল ডিভাইসের ব্যবহার}
+
+ডিজিটাল ডিভাইসের ব্যবহার বর্তমানে অত্যন্ত ব্যাপক।
+
+যেমন—
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+    \item মোবাইল ফোন
+    \item কম্পিউটার ও ল্যাপটপ
+    \item ডিজিটাল ঘড়ি
+    \item \textenglish{ATM}
+    \item ডিজিটাল ক্যামেরা
+    \item প্রিন্টার
+    \item স্মার্ট টেলিভিশন
+    \item ক্যালকুলেটর
+    \item বিভিন্ন চিকিৎসা-যন্ত্র
+    \item শিল্পকারখানার স্বয়ংক্রিয় নিয়ন্ত্রণব্যবস্থা
+\end{itemize}
+
+% =========================================================
+% Digital Device and Boolean Algebra
+% =========================================================
+
+\subsection{ডিজিটাল ডিভাইস ও
+\textenglish{Boolean Algebra}}
+
+ডিজিটাল সার্কিটে ০ ও ১-এর ওপর বিভিন্ন যৌক্তিক কাজ করা হয়।
+এই যৌক্তিক কাজগুলো বিশ্লেষণ ও প্রকাশের জন্য
+\textenglish{Boolean Algebra} ব্যবহার করা হয়।
+
+অন্যদিকে \textenglish{Boolean Algebra}-এর বিভিন্ন যৌক্তিক
+\textenglish{Operation}-কে বাস্তবে ইলেকট্রনিক সার্কিটের মাধ্যমে
+বাস্তবায়ন করে \textenglish{Logic Gate}।
+
+তাই \textenglish{Digital Device} বুঝতে হলে
+পরবর্তী ধাপে \textenglish{Boolean Algebra} ও
+\textenglish{Logic Gate} সম্পর্কে জানা প্রয়োজন।
+
+\[
+\boxed{
+\text{\textenglish{Boolean Algebra}}
+\rightarrow
+\text{\textenglish{Logic Gate}}
+\rightarrow
+\text{\textenglish{Digital Circuit}}
+}
+\]
+
+% =========================================================
+% Summary
+% =========================================================
+
+\subsection{এক নজরে}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|L{0.28\textwidth}|Y|}
+\hline
+\rowcolor{ICTLightBlue}
+\textbf{বিষয়} &
+\textbf{মূল ধারণা} \\
+\hline
+
+\textenglish{Digital Device} &
+ডিজিটাল সংকেত ব্যবহারকারী ইলেকট্রনিক যন্ত্র \\
+\hline
+
+\textenglish{Binary State} &
+০ ও ১ \\
+\hline
+
+\textenglish{Transistor} &
+\textenglish{Electronic Switch} হিসেবে কাজ করতে পারে \\
+\hline
+
+\textenglish{Logic Gate} &
+বাইনারি ইনপুটের ওপর যৌক্তিক কাজ করে \\
+\hline
+
+\textenglish{IC} &
+ছোট \textenglish{Chip}-এ বহু ইলেকট্রনিক উপাদান ও সার্কিট \\
+\hline
+
+মূল ধারা &
+\textenglish{Input}
+$\rightarrow$
+\textenglish{Processing}
+$\rightarrow$
+\textenglish{Output} \\
+\hline
+
+\end{tabularx}
+\end{center}
+
+% =========================================================
+% Final Remember Box
+% =========================================================
+
+\par\begingroup
+
+\textbf{মনে রাখবে}
+
+\[
+\boxed{
+\text{\textenglish{Input}}
+\rightarrow
+\text{\textenglish{Processing}}
+\rightarrow
+\text{\textenglish{Output}}
+}
+\]
+
+\[
+\boxed{
+0\leftrightarrow\text{\textenglish{OFF}},
+\qquad
+1\leftrightarrow\text{\textenglish{ON}}
+}
+\]
+
+\[
+\boxed{
+\text{\textenglish{Transistor}}
+\rightarrow
+\text{\textenglish{Logic Gate}}
+\rightarrow
+\text{\textenglish{Digital Circuit}}
+}
+\]
+\par\endgroup
+
+
+% =========================================================
+% Exam-ready Definition
+% =========================================================
+
+\par\begingroup
+\smallhead{\textbf{পরীক্ষার জন্য সংজ্ঞা}}
+
+
+ডিজিটাল সংকেত ব্যবহার করে তথ্য গ্রহণ, প্রক্রিয়াকরণ,
+সংরক্ষণ অথবা ফলাফল প্রদানকারী ইলেকট্রনিক যন্ত্র বা সার্কিটকে
+\textbf{ডিজিটাল ডিভাইস
+(\textenglish{Digital Device})} বলে।
+
+\par\endgroup
+
+\input{chapters/Chapter03/topics/08_digital_device_intro/foundation_examples.tex}

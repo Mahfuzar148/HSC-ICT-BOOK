@@ -1,67 +1,76 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % Topic 18: Full Webpage Designing Practical
-\section{Full Webpage Designing Practical}
+\section{পূর্ণাঙ্গ ওয়েবপেজ তৈরির ব্যবহারিক অনুশীলন}
+
+% Composition pass 2026-10-04
+আলাদা ট্যাগ জানা আছে; এখন একই পেজে শিরোনাম, মেনু, ছবি ও ফলের সারণি দরকার।
+
+\chFourMotivation{বিভিন্ন উপাদান একত্র করা $\rightarrow$ পূর্ণাঙ্গ ওয়েবপেজ $\rightarrow$ পরিকল্পনা অনুসারে HTML অংশ বসানো ও পরীক্ষা $\rightarrow$ ABC College-এর ব্যবহারযোগ্য পৃষ্ঠা।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item একটি পূর্ণাঙ্গ webpage-এর প্রধান অংশগুলো শনাক্ত করতে।
-\item header, menu, main content, image, list, table ও footer ব্যবহার করে webpage তৈরি করতে।
-\item \texttt{<div>}, \texttt{<a>}, \texttt{<img>}, \texttt{<ul>}, \texttt{<li>} ও table tag একসাথে ব্যবহার করতে।
-\item full webpage code-এর প্রতিটি অংশের কাজ ব্যাখ্যা করতে।
-\item HSC practical/CQ question-এর জন্য সম্পূর্ণ webpage design code লিখতে।
+\item একটি পূর্ণাঙ্গ ওয়েবপেজের প্রধান অংশগুলো শনাক্ত করতে।
+\item হেডার, মেনু, মূল বিষয়বস্তু, ছবি, তালিকা, সারণি ও ফুটার মিলিয়ে ওয়েবপেজ তৈরি করতে।
+\item \texttt{<div>}, \texttt{<a>}, \texttt{<img>}, \texttt{<ul>}, \texttt{<li>} ও সারণির ট্যাগ একসঙ্গে ব্যবহার করতে।
+\item পূর্ণাঙ্গ ওয়েবপেজের কোডের প্রতিটি অংশের কাজ ব্যাখ্যা করতে।
+\item ব্যবহারিক ও সৃজনশীল প্রশ্নের চাহিদা অনুযায়ী সম্পূর্ণ ওয়েবপেজের কোড লিখতে।
 \end{itemize}
 \end{learningbox}
 
-এই পর্যন্ত আমরা HTML-এর basic tag, heading, paragraph, list, hyperlink, image, table, rowspan/colspan, div/span ও style attribute শিখেছি। এখন এগুলো একসাথে ব্যবহার করে একটি সম্পূর্ণ webpage তৈরি করা শিখব। HSC ICT Chapter 4-এ webpage designing একটি practical-based topic, কারণ এখানে আলাদা আলাদা tag মুখস্থ করার পাশাপাশি সেগুলো একসাথে ব্যবহার করে একটি ব্যবহারযোগ্য page তৈরি করতে হয়।
+এ পর্যন্ত HTML-এর মৌলিক ট্যাগ, শিরোনাম, অনুচ্ছেদ, তালিকা, হাইপারলিংক, ছবি ও সারণি শিখেছি। সারণিতে ঘর একত্র করতে rowspan/colspan এবং বিষয়বস্তু সাজাতে div/span ও style অ্যাট্রিবিউটও ব্যবহার করেছি। এবার এগুলো একসঙ্গে ব্যবহার করে একটি সম্পূর্ণ ওয়েবপেজ তৈরি করব। একটি ব্যবহারযোগ্য পেজ তৈরিতে ট্যাগগুলো একসঙ্গে প্রয়োগ করতে হয়। এই অনুশীলনে আলাদা ট্যাগের কাজের সঙ্গে পেজের পুরো গঠন মিলিয়ে দেখা হবে।
 
-\subsection{Full Webpage Design কী?}
+\subsection{পূর্ণাঙ্গ ওয়েবপেজ ডিজাইন (Full Webpage Design)}
 
-\begin{definitionbox}{Full Webpage Designing}
-HTML tag ব্যবহার করে webpage-এর header, navigation menu, content, image, list, table, hyperlink ও footer অংশ পরিকল্পিতভাবে সাজানোর প্রক্রিয়াকে full webpage designing বলে।
+\begin{definitionbox}{}
+HTML ট্যাগ ব্যবহার করে ওয়েবপেজের হেডার, নেভিগেশন মেনু, বিষয়বস্তু, ছবি, তালিকা, সারণি, হাইপারলিংক ও ফুটার পরিকল্পিতভাবে সাজানোর প্রক্রিয়াকে \textbf{পূর্ণাঙ্গ ওয়েবপেজ ডিজাইন} বলে।
 \end{definitionbox}
 
-একটি full webpage-এ সাধারণত website-এর পরিচয়, page navigation, মূল content, প্রয়োজনীয় image/list/table এবং footer থাকে। এতে page তথ্যবহুল ও ব্যবহারবান্ধব হয়।
+একটি পূর্ণাঙ্গ ওয়েবপেজে সাধারণত ওয়েবসাইটের পরিচয়, অন্য পেজে যাওয়ার ব্যবস্থা, মূল বিষয়বস্তু, প্রয়োজনীয় ছবি/তালিকা/সারণি এবং ফুটার থাকে। প্রয়োজন অনুযায়ী এসব অংশ সাজালে পেজ তথ্যবহুল ও ব্যবহারবান্ধব হয়।
 
-\subsection{একটি ভালো Webpage-এর প্রধান অংশ}
+\subsection{একটি ওয়েবপেজের প্রধান অংশ}
 
 \begin{center}
 \begin{tabular}{|p{0.28\textwidth}|p{0.55\textwidth}|}
 \hline
 \textbf{অংশ} & \textbf{কাজ} \\
 \hline
-Header & ওয়েবসাইটের নাম, logo, title দেখায় \\
+হেডার (Header) & ওয়েবসাইটের নাম, লোগো ও শিরোনাম দেখায় \\
 \hline
-Navigation/Menu & অন্য page-এ যাওয়ার link রাখে \\
+নেভিগেশন/মেনু (Navigation/Menu) & অন্য পেজে যাওয়ার লিংক রাখে \\
 \hline
-Main Content & মূল লেখা, image, list, table থাকে \\
+মূল বিষয়বস্তু (Main Content) & মূল লেখা, ছবি, তালিকা ও সারণি থাকে \\
 \hline
-Sidebar & অতিরিক্ত link বা notice রাখা যায় \\
+সাইডবার (Sidebar) & অতিরিক্ত লিংক বা বিজ্ঞপ্তি রাখা যায় \\
 \hline
-Footer & copyright, contact, address ইত্যাদি থাকে \\
+ফুটার (Footer) & কপিরাইট, যোগাযোগের তথ্য ও ঠিকানা ইত্যাদি থাকে \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Webpage Design করার আগে পরিকল্পনা}
+\subsection{ওয়েবপেজ তৈরির আগে পরিকল্পনা}
 
-Code লেখার আগে page-এর layout পরিকল্পনা করা দরকার। উদাহরণ হিসেবে একটি college website-এর layout হতে পারে:
+কোড লেখার আগে পেজের বিন্যাস পরিকল্পনা করা দরকার। একটি কলেজের ওয়েবসাইটে অংশগুলো এভাবে সাজানো যেতে পারে:
 
 \begin{enumerate}
-\item \textbf{Header}: College name ও subtitle
-\item \textbf{Menu}: Home, About, Notice, Result, Contact
-\item \textbf{Main Content}: Welcome paragraph, campus image, subject list, result table
-\item \textbf{Footer}: Copyright ও contact email
+\item \textbf{হেডার}: কলেজের নাম ও উপশিরোনাম
+\item \textbf{মেনু}: Home, About, Notice, Result ও Contact লিংক
+\item \textbf{মূল বিষয়বস্তু}: স্বাগত জানিয়ে অনুচ্ছেদ, ক্যাম্পাসের ছবি, বিষয়ের তালিকা ও ফলের সারণি
+\item \textbf{ফুটার}: কপিরাইট ও যোগাযোগের ইমেইল
 \end{enumerate}
 
 \begin{keypointbox}{পরীক্ষার কৌশল}
-CQ বা practical exam-এ figure দেখে code লিখতে হলে আগে page-এর section ভাগ করে নাও। তারপর প্রতিটি section-এর tag আলাদা করে লিখলে ভুল কম হবে।
+পেজের অংশগুলো আগে শনাক্ত করলে কোডের গঠন পরিষ্কার থাকে। প্রতিটি অংশে তার বিষয়বস্তু অনুযায়ী ট্যাগ প্রয়োগ করা হয়।
 \end{keypointbox}
 
-\subsection{Webpage Design করার ধাপ}
+\subsection{ওয়েবপেজ তৈরির ধাপ}
 
-\subsubsection{ধাপ ১: Basic HTML structure লিখবে}
+নিচের ধাপগুলোতে আগে মৌলিক কাঠামো, তারপর হেডার, মেনু, বিষয়বস্তু ও ফুটার যোগ করা হবে।
 
-\begin{examplebox}{Code}
+\subsubsection{ধাপ ১: মৌলিক HTML কাঠামো লেখা}
+
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -75,9 +84,9 @@ CQ বা practical exam-এ figure দেখে code লিখতে হলে 
 \end{verbatim}
 \end{examplebox}
 
-\subsubsection{ধাপ ২: Header section তৈরি করবে}
+\subsubsection{ধাপ ২: হেডার তৈরি}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <div>
   <h1>ABC College</h1>
@@ -86,9 +95,9 @@ CQ বা practical exam-এ figure দেখে code লিখতে হলে 
 \end{verbatim}
 \end{examplebox}
 
-\subsubsection{ধাপ ৩: Menu বা Navigation তৈরি করবে}
+\subsubsection{ধাপ ৩: মেনু বা নেভিগেশন তৈরি}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <div>
   <a href="index.html">Home</a> |
@@ -100,13 +109,13 @@ CQ বা practical exam-এ figure দেখে code লিখতে হলে 
 \end{verbatim}
 \end{examplebox}
 
-\subsubsection{ধাপ ৪: Main content তৈরি করবে}
+\subsubsection{ধাপ ৪: মূল বিষয়বস্তু রাখা}
 
-Main content অংশে প্রয়োজন অনুযায়ী paragraph, image, list, table ও hyperlink ব্যবহার করবে।
+মূল বিষয়বস্তুর অংশে প্রয়োজন অনুযায়ী অনুচ্ছেদ, ছবি, তালিকা, সারণি ও হাইপারলিংক ব্যবহার করবে।
 
-\subsubsection{ধাপ ৫: Footer তৈরি করবে}
+\subsubsection{ধাপ ৫: ফুটার তৈরি}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <div>
   <p>&copy; 2026 ABC College</p>
@@ -114,11 +123,15 @@ Main content অংশে প্রয়োজন অনুযায়ী paragraph,
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Full Webpage Example Code}
+\input{chapters/Chapter04/topics/13_full_webpage_practical/clarity}
 
-নিচের code-টি HSC ICT practical section-এর জন্য একটি সম্পূর্ণ webpage design example হিসেবে ব্যবহারযোগ্য।
+\subsection{পূর্ণাঙ্গ ওয়েবপেজের উদাহরণ কোড}
 
-\begin{examplebox}{Code}
+নিচের কোডটি পূর্ণাঙ্গ ওয়েবপেজ তৈরির ব্যবহারিক উদাহরণ। এখানে ABC College একটি কাল্পনিক প্রতিষ্ঠান। \texttt{campus.jpg} ফাইলটি HTML ফাইলের একই ফোল্ডারে রাখতে হবে। মেনুর প্রতিটি লিংক চালাতে সংশ্লিষ্ট HTML ফাইলও তৈরি করতে হবে। উদাহরণে কিছু পুরোনো উপস্থাপনা অ্যাট্রিবিউট আছে; নতুন ওয়েবসাইটে এসব সাজানোর কাজে CSS ব্যবহার করা হয়।
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -165,19 +178,13 @@ Main content অংশে প্রয়োজন অনুযায়ী paragraph,
         <th colspan="3">HSC Test Result</th>
       </tr>
       <tr>
-        <th>Roll</th>
-        <th>Name</th>
-        <th>GPA</th>
+        <th>Roll</th><th>Name</th><th>GPA</th>
       </tr>
       <tr>
-        <td>101</td>
-        <td>Rafi</td>
-        <td>5.00</td>
+        <td>101</td><td>Rafi</td><td>5.00</td>
       </tr>
       <tr>
-        <td>102</td>
-        <td>Sakib</td>
-        <td>4.75</td>
+        <td>102</td><td>Sakib</td><td>4.75</td>
       </tr>
     </table>
   </div>
@@ -189,13 +196,14 @@ Main content অংশে প্রয়োজন অনুযায়ী paragraph,
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Code Explanation}
 
-\subsubsection{Header অংশ}
+\subsection{কোডের ব্যাখ্যা}
 
-\begin{examplebox}{Code}
+\subsubsection{হেডার অংশ}
+
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <div style="background-color:#003366; color:white; padding:15px; text-align:center;">
   <h1>ABC College</h1>
@@ -204,31 +212,44 @@ Main content অংশে প্রয়োজন অনুযায়ী paragraph,
 \end{verbatim}
 \end{examplebox}
 
-এখানে \texttt{<div>} দিয়ে header section তৈরি করা হয়েছে। \texttt{background-color} background color, \texttt{color} text color, \texttt{padding} ভিতরের space এবং \texttt{text-align} alignment নিয়ন্ত্রণ করে।
+এখানে \texttt{<div>} দিয়ে হেডারের অংশটি আলাদা করা হয়েছে। \texttt{background-color} পটভূমির রং, \texttt{color} লেখার রং, \texttt{padding} ভেতরের ফাঁকা জায়গা এবং \texttt{text-align} লেখার সারিবিন্যাস নিয়ন্ত্রণ করে।
 
-\subsubsection{Menu অংশ}
+\subsubsection{মেনু অংশ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <a href="index.html">Home</a>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে \texttt{<a>} ট্যাগ দিয়ে হাইপারলিংক তৈরি করা হয়েছে। \texttt{href} অ্যাট্রিবিউট লিংকের গন্তব্য নির্ধারণ করে।
+\end{minipage}\par
+\subsubsection{ছবির অংশ}
 
-এখানে \texttt{<a>} tag দিয়ে hyperlink তৈরি করা হয়েছে। \texttt{href} attribute link-এর destination নির্ধারণ করে।
-
-\subsubsection{Image অংশ}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <img src="campus.jpg" alt="ABC College Campus" width="400" height="250">
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে \texttt{<img>} ট্যাগ দিয়ে ছবি দেখানো হয়েছে। \texttt{src} ছবির উৎস বা পথ নির্ধারণ করে, \texttt{alt} ছবির বিকল্প লেখা দেয়, আর \texttt{width} ও \texttt{height} ছবির প্রস্থ ও উচ্চতা নির্ধারণ করে।
+\end{minipage}\par
+\subsubsection{তালিকার অংশ}
 
-এখানে \texttt{<img>} tag দিয়ে image দেখানো হয়েছে। \texttt{src} image-এর source/path নির্ধারণ করে, \texttt{alt} alternative text দেয়, আর \texttt{width} ও \texttt{height} image size নির্ধারণ করে।
-
-\subsubsection{List অংশ}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <ul type="square">
   <li>Bangla</li>
@@ -236,117 +257,185 @@ Main content অংশে প্রয়োজন অনুযায়ী paragraph,
   <li>ICT</li>
 </ul>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে \texttt{<ul>} দিয়ে অক্রমিক তালিকা এবং \texttt{<li>} দিয়ে তালিকার প্রতিটি উপাদান তৈরি করা হয়েছে।
+\end{minipage}\par
+\subsubsection{সারণির অংশ}
 
-এখানে \texttt{<ul>} দিয়ে unordered list এবং \texttt{<li>} দিয়ে প্রতিটি list item তৈরি করা হয়েছে।
-
-\subsubsection{Table অংশ}
-
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <table border="1" cellspacing="0" cellpadding="5">
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে সারণিতে সীমানা দেওয়া হয়েছে। \texttt{cellspacing="0"} দিয়ে ঘরগুলোর মধ্যবর্তী ফাঁক শূন্য করা হয়েছে। \texttt{cellpadding="5"} দিয়ে ঘরের বিষয়বস্তুর চারপাশে ৫ পিক্সেল ফাঁকা জায়গা রাখা হয়েছে।
+\end{minipage}\par
+\subsection{ব্রাউজারে ফল কেমন হবে?}
 
-এখানে table-এর border দেওয়া হয়েছে, cell-এর মাঝের gap \texttt{cellspacing="0"} দিয়ে কমানো হয়েছে এবং cell content-এর চারপাশে ৫ pixel space \texttt{cellpadding="5"} দিয়ে দেওয়া হয়েছে।
-
-\subsection{Output কেমন হবে?}
-
-\begin{examplebox}{Output Preview}
+\begin{examplebox}{ফলের পূর্বদর্শন}
 \begin{enumerate}
-\item উপরে dark blue header থাকবে।
-\item Header-এ ``ABC College'' ও subtitle থাকবে।
-\item তার নিচে menu link থাকবে।
-\item Main section-এ welcome text থাকবে।
-\item Campus image দেখা যাবে।
-\item Subject list square bullet সহ দেখা যাবে।
-\item Result table border সহ দেখা যাবে।
-\item নিচে footer থাকবে।
+\item উপরে গাঢ় নীল হেডার থাকবে।
+\item হেডারে ``ABC College'' ও উপশিরোনাম থাকবে।
+\item তার নিচে মেনুর লিংক থাকবে।
+\item মূল অংশে স্বাগত জানিয়ে লেখা থাকবে।
+\item ক্যাম্পাসের ছবি দেখা যাবে।
+\item বিষয়ের তালিকা বর্গাকার বুলেটসহ দেখা যাবে।
+\item ফলের সারণি সীমানাসহ দেখা যাবে।
+\item নিচে ফুটার থাকবে।
 \end{enumerate}
 \end{examplebox}
 
-\subsection{Book Design Tip}
+\subsection{কোড, ফল ও ব্যাখ্যা মিলিয়ে শেখা}
 
-এই practical topic বইয়ে তিন ভাগে দিলে শিক্ষার্থীরা ভালোভাবে বুঝবে:
-
-\begin{enumerate}
-\item \textbf{Code}: সম্পূর্ণ HTML code।
-\item \textbf{Output Preview}: Code run করলে কী দেখা যাবে--লেখা বা diagram দিয়ে বোঝানো।
-\item \textbf{Explanation}: প্রতিটি tag-এর কাজ line-by-line বোঝানো।
-\end{enumerate}
-
-এভাবে দিলে student শুধু code মুখস্থ করবে না, বরং বুঝে লিখতে পারবে।
-
-\subsection{Exam-style Short Answer}
+ব্যবহারিক উদাহরণটি তিনভাবে মিলিয়ে দেখো:
 
 \begin{enumerate}
-\item \textbf{একটি webpage-এর প্রধান অংশগুলো কী কী?}\\
-উত্তর: একটি webpage-এর প্রধান অংশ হলো header, navigation/menu, main content, sidebar এবং footer। Header-এ website-এর নাম বা logo থাকে, menu-তে বিভিন্ন page-এর link থাকে, main content-এ মূল তথ্য থাকে এবং footer-এ copyright/contact information থাকে।
-
-\item \textbf{Webpage-এ menu তৈরি করতে কোন tag ব্যবহার করা হয়?}\\
-উত্তর: Webpage-এ menu তৈরি করতে সাধারণত \texttt{<a>} tag ব্যবহার করে hyperlink তৈরি করা হয়। একাধিক link একসাথে লিখে navigation menu তৈরি করা যায়।
-
-\item \textbf{Full webpage design-এ \texttt{<div>} tag কেন ব্যবহার করা হয়?}\\
-উত্তর: \texttt{<div>} tag webpage-এর header, menu, content ও footer-এর মতো বড় section আলাদা করে group করতে ব্যবহৃত হয়। এর মাধ্যমে CSS style প্রয়োগ করে webpage সুন্দরভাবে সাজানো যায়।
+\item \textbf{কোড}: সম্পূর্ণ HTML কোডের কাঠামো ও ব্যবহৃত ট্যাগ শনাক্ত করো।
+\item \textbf{ফলের পূর্বদর্শন}: কোড চালালে কী দেখা যাবে, তা লেখা বা চিত্রের সঙ্গে মিলিয়ে দেখো।
+\item \textbf{ব্যাখ্যা}: প্রতিটি ট্যাগের কাজ কোডের সংশ্লিষ্ট লাইনের সঙ্গে মিলিয়ে বোঝো।
 \end{enumerate}
 
-\subsection{Practice Task}
+কোডের প্রতিটি অংশের সঙ্গে দৃশ্যমান ফল মিলিয়ে দেখলে ট্যাগের কাজ বোঝা যায়।
+
+\subsection{ট্যাগ নির্বাচনের চিত্র}
+
+বিষয়বস্তুর ধরন অনুযায়ী ট্যাগের কাজ আলাদা। নিচের চিত্রে লেখা, ছবি, লিংক, তালিকা, সারণি ও ফর্মের সঙ্গে সংশ্লিষ্ট ট্যাগ দেখানো হয়েছে।
+
+\begin{center}
+\begin{tikzpicture}[
+  level distance=1.15cm,
+  level 1/.style={sibling distance=3.35cm},
+  level 2/.style={sibling distance=1.65cm},
+  every node/.style={draw, rounded corners, align=center, fill=green!5, inner sep=3pt, font=\scriptsize}
+]
+\node {বিষয়বস্তুর ধরন}
+  child { node {Text}
+    child { node {Heading\\\texttt{<h1>-<h6>}} }
+    child { node {Paragraph\\\texttt{<p>}} }
+  }
+  child { node {Media/Link}
+    child { node {Image\\\texttt{<img>}} }
+    child { node {Link\\\texttt{<a>}} }
+  }
+  child { node {Structured Data}
+    child { node {List\\\texttt{<ul>/<ol>}} }
+    child { node {Table\\\texttt{<table>}} }
+  }
+  child { node {Input/Section}
+    child { node {Form\\\texttt{<form>}} }
+    child { node {Section\\\texttt{<div>}} }
+  };
+\end{tikzpicture}
+\end{center}
+
+\subsection{কলেজের পেজ তৈরির একটি প্রয়োগ}
+
+শিরোনাম, মেনু, ছবি, তালিকা ও ফলের সারণি নিয়ে কলেজের একটি পেজের বিষয়বস্তু পরিকল্পনা করা যায়।
+
+\begin{examplebox}{কলেজের পেজের পরিকল্পনা}
+এই পেজে শিরোনাম, মেনুর লিংক, ছবি, বিষয়ের তালিকা ও ফলের সারণি থাকবে।
+
+\textbf{ধাপ ১: চাহিদার চিত্র বিশ্লেষণ করো}\\
+শিরোনাম, মেনুর লিংক, ছবি, তালিকা ও সারণি আছে।
+
+\textbf{ধাপ ২: ট্যাগ বেছে নাও}\\
+\texttt{<h1>} শিরোনামের জন্য, \texttt{<a>} মেনুর লিংকের জন্য, \texttt{<img>} ছবির জন্য, \texttt{<ul>} ও \texttt{<li>} তালিকার জন্য, \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} সারণির জন্য।
+
+\textbf{ধাপ ৩: মূল কাঠামো লেখো}\\
+\begin{examplebox}{কোড}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Page</title>
+</head>
+<body>
+
+</body>
+</html>
+\end{verbatim}
+\end{examplebox}
+
+\textbf{ধাপ ৪: অংশ অনুযায়ী কোড বসাও}\\
+প্রথমে হেডার, তারপর মেনু ও ছবি/তালিকা/সারণি এবং শেষে ফুটার লিখবে।
+
+\textbf{ধাপ ৫: ফল যাচাই করো}\\
+ব্রাউজারে দেখে সারি/কলাম, ছবির পথ, লিংকের ঠিকানা, বানান ও সমাপ্তি ট্যাগ মিলিয়ে নেবে।
+\end{examplebox}
+
+
+\subsection{সংক্ষিপ্ত অনুশীলন}
+
+% Each question keeps its answer beneath it in the same column.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{একটি ওয়েবপেজের প্রধান অংশগুলো কী কী?}}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ওয়েবপেজে মেনু তৈরি করতে কোন ট্যাগ ব্যবহার করা হয়?}}
+\end{minipage}\par\smallskip
+\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{পূর্ণাঙ্গ ওয়েবপেজ ডিজাইনে \texttt{<div>} ট্যাগ কেন ব্যবহার করা হয়?}}
+\end{minipage}\par
+
+
+\subsection{ব্যবহারিক কাজ}
 
 \begin{practicebox}
-\textbf{Task 1: Personal Webpage তৈরি করো}\\
-নিচের বিষয়গুলো থাকবে: Name heading, short paragraph, profile image, skill list, contact link।
+\textbf{কাজ ১: ব্যক্তিগত ওয়েবপেজ তৈরি করো}\\
+নিচের বিষয়গুলো থাকবে: নামের শিরোনাম, ছোট অনুচ্ছেদ, প্রোফাইল ছবি, দক্ষতার তালিকা ও যোগাযোগের লিংক।
 
-\textbf{Task 2: College Webpage তৈরি করো}\\
-নিচের section থাকবে: Header, Menu, Notice, Subject list, Result table, Footer।
+\textbf{কাজ ২: কলেজের ওয়েবপেজ তৈরি করো}\\
+নিচের অংশগুলো থাকবে: হেডার, মেনু, বিজ্ঞপ্তি, বিষয়ের তালিকা, ফলের সারণি ও ফুটার।
 
-\textbf{Task 3: Product Webpage তৈরি করো}\\
-নিচের section থাকবে: Product name, product image, feature list, price table, buy link।
+\textbf{কাজ ৩: পণ্যের ওয়েবপেজ তৈরি করো}\\
+নিচের বিষয়গুলো থাকবে: পণ্যের নাম, ছবি, বৈশিষ্ট্যের তালিকা, মূল্যের সারণি ও কেনার লিংক।
 \end{practicebox}
 
-\subsection{CQ Practice}
+\subsection{সৃজনশীল অনুশীলন}
 
 \begin{practicebox}
-\textbf{উদ্দীপক:} তানভীর তার কলেজের জন্য একটি webpage তৈরি করতে চায়। Page-এর উপরে কলেজের নাম থাকবে। এরপর Home, About, Notice, Result ও Contact link থাকবে। Main content অংশে কলেজের একটি image, subject list এবং result table থাকবে। নিচে footer-এ copyright information থাকবে।
+\textbf{উদ্দীপক:} তানভীর তার কলেজের জন্য একটি ওয়েবপেজ তৈরি করতে চায়। পেজের উপরে কলেজের নাম থাকবে। এরপর Home, About, Notice, Result ও Contact লিংক থাকবে। মূল অংশে কলেজের ছবি, বিষয়ের তালিকা ও ফলের সারণি থাকবে। নিচে ফুটারে কপিরাইটের তথ্য থাকবে।
 
 \textbf{প্রশ্ন}\\
-ক. Full webpage design কী?\\
-খ. Webpage-এ \texttt{<div>} tag ব্যবহারের প্রয়োজনীয়তা ব্যাখ্যা কর।\\
-গ. উদ্দীপকের জন্য HTML code লেখ।\\
-ঘ. Header, menu, image, list ও table একসাথে ব্যবহার করলে webpage-এর মান কীভাবে বৃদ্ধি পায়--বিশ্লেষণ কর।
+ক. পূর্ণাঙ্গ ওয়েবপেজ ডিজাইন কী?\\
+খ. ওয়েবপেজে \texttt{<div>} ট্যাগ ব্যবহারের প্রয়োজনীয়তা ব্যাখ্যা কর।\\
+গ. উদ্দীপকের জন্য HTML কোড লেখ।\\
+ঘ. হেডার, মেনু, ছবি, তালিকা ও সারণি একসঙ্গে ব্যবহার করলে ওয়েবপেজের মান কীভাবে বৃদ্ধি পায়—বিশ্লেষণ কর।
 \end{practicebox}
 
-\subsubsection{উত্তর নির্দেশনা}
-
-\textbf{ক.} HTML tag ব্যবহার করে webpage-এর বিভিন্ন section ও content পরিকল্পিতভাবে সাজিয়ে একটি পূর্ণাঙ্গ webpage তৈরি করাকে full webpage design বলে।
-
-\textbf{খ.} \texttt{<div>} tag দিয়ে webpage-এর বড় section--যেমন header, menu, content ও footer--group করা যায়। এতে style প্রয়োগ ও layout তৈরি সহজ হয়।
-
-\textbf{গ.} উপরের ``Full Webpage Example Code'' অনুসরণ করে code লেখা যাবে।
-
-\textbf{ঘ.} Header website-এর পরিচিতি দেয়, menu navigation সহজ করে, image page-কে আকর্ষণীয় করে, list তথ্যকে সংক্ষিপ্তভাবে সাজায় এবং table তথ্যকে row-column আকারে পরিষ্কারভাবে উপস্থাপন করে। তাই এগুলো একসাথে ব্যবহার করলে webpage ব্যবহারবান্ধব, তথ্যবহুল ও professional হয়।
-
-\subsection{Common Mistake}
+\subsection{সাধারণ ভুল}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \texttt{<body>} tag-এর বাইরে content লেখা।
-\item \texttt{<div>} close না করা।
-\item Menu link-এ \texttt{href} না দেওয়া।
-\item Image path ভুল দেওয়া।
-\item Table row ও column সংখ্যা মিল না রাখা।
-\item \texttt{cellpadding} ও \texttt{cellspacing} গুলিয়ে ফেলা।
-\item Header, menu, content, footer আলাদা না করা।
-\item Inline style syntax ভুল লেখা, যেমন \texttt{color=red}।
+\item \texttt{<body>} ট্যাগের বাইরে দৃশ্যমান বিষয়বস্তু লেখা।
+\item \texttt{<div>} ট্যাগ শেষ না করা।
+\item মেনুর লিংকে \texttt{href} না দেওয়া।
+\item ছবির ফাইলের পথ ভুল দেওয়া।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item সারণির সারি ও কলামের সংখ্যা না মেলানো।
+\item \texttt{cellpadding} ও \texttt{cellspacing} গুলিয়ে ফেলা।
+\item হেডার, মেনু, মূল বিষয়বস্তু ও ফুটারের বিন্যাস আলাদা না করা।
+\item ইনলাইন CSS-এর লেখার নিয়ম ভুল করা, যেমন \texttt{color=red} লেখা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-Full webpage design-এ অনেক HTML tag একসাথে ব্যবহার হয়। \texttt{<div>} দিয়ে webpage section ভাগ করা যায়। \texttt{<a>} দিয়ে menu link তৈরি হয়। \texttt{<img>} দিয়ে image দেখানো হয়। \texttt{<ul>}/\texttt{<ol>} ও \texttt{<li>} দিয়ে list তৈরি হয়। \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} দিয়ে table তৈরি হয়। HSC practical/CQ-তে figure দেখে full webpage code লিখতে practice করতে হবে।
-\end{recapbox}
-
-
-\begin{boardbox}{পরবর্তী টপিক}
-পরের টপিক: Multi-page Website--\texttt{index.html}, \texttt{about.html}, \texttt{contact.html} link করে website তৈরি।
+\begin{boardbox}{এক পেজ থেকে একাধিক পেজ}
+এই অধ্যায়ের ছোট প্রকল্পে \texttt{index.html}, \texttt{about.html} ও \texttt{contact.html}-সহ একাধিক পেজ লিংক করে ওয়েবসাইট তৈরির অনুশীলন আছে।
 \end{boardbox}

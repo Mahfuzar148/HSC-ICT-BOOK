@@ -1,0 +1,195 @@
+\subsection{কাউন্টারের সার্কিট ও গণনা বিশ্লেষণ}
+কাউন্টারের ক্লক সংযোগ ও পরবর্তী অবস্থা নির্ধারণের logic দেখে তার কাজ বোঝা যায়। একই Mod-10 কাজ synchronous বা asynchronous দুইভাবেই করা সম্ভব; শুধু modulus দেখে ক্লক ব্যবস্থার ধরন বলা যায় না। নিচের সার্কিটগুলো আদর্শ flip-flop ও নির্দিষ্ট প্রাথমিক অবস্থার ভিত্তিতে ব্যাখ্যা করা হয়েছে।
+
+\subsubsection*{অ্যাসিঙ্ক্রোনাস Up ও Down counter}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i in {0,1,2}{
+ \node[chff,minimum height=21mm] (f\i) at (3.3*\i,0) {T FF\\$T=1$\\$\downarrow CLK$};
+ \draw[->] (f\i.north)--++(0,.8) node[above] {$Q_\i$};
+ \draw (f\i.south)--(3.3*\i,-1.7);\fill (3.3*\i,-1.7) circle(1.4pt);
+}
+\draw[->] (-2,0)--(f0.west) node[pos=0,left] {CLK};
+\foreach \i/\j in {0/1,1/2}{\draw[->] (f\i.east)--(f\j.west) node[midway,above] {$Q_\i$};}
+\draw (-1,-1.7)--(6.6,-1.7) node[pos=0,left] {$\overline{CLR}$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{নামা প্রান্তে কাজ করা T flip-flop দিয়ে তিন বিটের ripple up counter।}
+
+\end{minipage}
+\end{center}
+\textbf{Up-এর ব্যাখ্যা:} প্রতিটি T=১, তাই নিজস্ব সক্রিয় clock edge-এ toggle করে। FF0 সরাসরি বাইরের clock পায়। FF1-এর clock হলো $Q_0$, FF2-এর clock হলো $Q_1$। $Q_0$ যখন ১ থেকে ০ হয়, FF1 toggle করে; $Q_1$ যখন ১ থেকে ০ হয়, FF2 toggle করে। ফলে $Q_2Q_1Q_0$-তে $000,001,010,\ldots,111,000$ ক্রম পাওয়া যায়।
+
+\textbf{Down-এর সংযোগ:} একই falling-edge flip-flop-এ পরের clock-এ Q-এর বদলে $\overline Q$ দাও। তখন $000\to111\to110\to101\to\cdots\to000$ হবে। rising-edge flip-flop নিলে সংযোগের নিয়মও সেই edge অনুযায়ী বদলাতে হবে। Q না $\overline Q$—এটি না বলে যেকোনো ripple সংযোগকে Up বলা ভুল।
+
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i in {0,1,2}{\node[chff,minimum height=21mm] (f\i) at (3.3*\i,0) {T FF\\$T=1$\\$\downarrow CLK$};\draw[->] (f\i.north)--++(0,.8) node[above] {$Q_\i$};}
+\draw[->] (-2,0)--(f0.west) node[pos=0,left] {CLK};
+\foreach \i/\j in {0/1,1/2}{\draw[->] (f\i.east)--(f\j.west) node[midway,above] {$\overline Q_\i$};}
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{নামা প্রান্তের flip-flop-এ পরের clock হিসেবে পূরক Q দিয়ে ripple down counter।}
+
+\end{minipage}
+\end{center}
+
+\chThreeExample{১}{রিপল বিলম্ব}
+প্রতিটি flip-flop-এর propagation delay ৮ ns। তিন বিটের ripple-এ তিন ধাপ বদলাতে সর্বোচ্চ আনুমানিক $3\times8=24$ ns লাগতে পারে।
+\chThreeAnswer 011 থেকে 100-তে বদলানোর মধ্যে অস্থায়ী 010 ও 000 দেখা যেতে পারে। স্থির ফল পড়ার আগে settling time দিতে হয়। এই সংখ্যাটি উদাহরণের নির্ধারিত delay; সব IC-এর স্থায়ী মান নয়।
+
+\subsubsection*{সিঙ্ক্রোনাস তিন বিটের Up counter}
+T flip-flop-এ $T_0=1$, $T_1=Q_0$, $T_2=Q_1Q_0$ দাও। সব clock এক সাধারণ লাইনে। JK ব্যবহার করলে প্রতিটি ধাপে $J_i=K_i=T_i$ দিলেও একই কাজ হয়।
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i in {0,1,2}{
+ \node[chff] (f\i) at (3.5*\i,0) {T FF\\$Q_\i$};
+ \draw (f\i.south)--(3.5*\i,-1.7);\fill (3.5*\i,-1.7) circle(1.4pt);
+ \draw[->] (f\i.east)--++(.7,0) node[right] {$Q_\i$};
+}
+\draw[->] (0,2.5)--(f0.north) node[pos=0,above] {$T_0=1$};
+\draw[->] (1,0)--(1,3.3)--(3.5,3.3)--(f1.north);
+\node[above] at (2.6,3.3) {$T_1=Q_0$};
+\fill (1,0) circle(1.4pt);
+\node[and gate US,chgate] (a) at (5.5,2.2) {};
+\draw (1,2.5)--(4,2.5)|-(a.input 1);\fill (1,2.5) circle(1.4pt);
+\draw (4.5,0)--(4.5,1.6)|-(a.input 2);\fill (4.5,0) circle(1.4pt);
+\draw[->] (a.output)--(7,2.2)--(f2.north) node[midway,right] {$T_2$};
+\draw (-1,-1.7)--(7,-1.7) node[pos=0,left] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{একই ক্লকে তিন flip-flop; নিচের বিটগুলো ১ হলে উপরের বিট toggle হয়।}
+
+\end{minipage}
+\end{center}
+\textbf{ব্যাখ্যা:} প্রতি ক্লকে $Q_0$ বদলায়। $Q_0=1$ থাকলে carry হওয়ার কারণে পরের ক্লকে $Q_1$ বদলায়। $Q_1Q_0=11$ হলে $Q_2$ বদলায়। সিদ্ধান্ত নেওয়া হয় clock-এর \emph{আগের} মান দিয়ে; একটি ধাপের output-কে পরের ধাপের clock করা হয়নি।
+
+\chThreeExample{২}{সিঙ্ক্রোনাস 011 থেকে পরের অবস্থা}
+\chThreeAnswer $T_0=1,T_1=1,T_2=1$। পরের ক্লকে তিন বিট toggle হয়ে 100। সব flip-flop একই clock পায়; বাস্তব ছোট propagation delay থাকলেও ripple clock chain নেই।
+
+\subsubsection*{সিঙ্ক্রোনাস Down এবং Up-Down counter}
+Down-এ নিচের সব বিট ০ থাকলে ওপরের বিট বদলাবে। তাই $T_0=1$, $T_1=\overline Q_0$, $T_2=\overline Q_1\overline Q_0$। আগের synchronous চিত্রে FF1-এর T-তে $\overline Q_0$ এবং AND-এর দুই ইনপুটে $\overline Q_1,\overline Q_0$ দিলে Down circuit হয়।
+
+\begin{center}\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i in {0,1,2}{\node[chff] (f\i) at (3.5*\i,0) {T FF\\$Q_\i$};\draw (f\i.south)--(3.5*\i,-1.6);\fill (3.5*\i,-1.6) circle(1.4pt);\draw[->] (f\i.east)--++(.6,0) node[right] {$Q_\i$};}
+\draw[->] (0,2.6)--(f0.north) node[pos=0,above] {$T_0=1$};
+\node[not gate US,draw,minimum size=9mm] (n) at (2.2,2.6) {};
+\node[nor gate US,chgate] (r) at (5.6,2.6) {};
+\draw (n.input)--++(-.65,0) node[left] {$Q_0$};
+\draw[->] (n.output)--(3.5,2.6)--(f1.north) node[midway,right] {$T_1$};
+\draw (r.input 1)--++(-.65,0) node[left] {$Q_0$};\draw (r.input 2)--++(-.65,0) node[left] {$Q_1$};
+\draw[->] (r.output)--(7,2.6)--(f2.north) node[midway,right] {$T_2$};
+\draw (-1,-1.6)--(7,-1.6) node[pos=0,left] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{NOT ও NOR দিয়ে নিচের বিট শূন্য থাকার শর্ত তৈরি করে synchronous down counter।}
+\end{minipage}\end{center}
+চিত্রে $Q_0,Q_1$ নামযুক্ত gate input সংশ্লিষ্ট flip-flop-এর Q আউটপুটের সঙ্গে যুক্ত। NOR-এ $T_2=\overline{Q_0+Q_1}=\overline Q_0\overline Q_1$; একই ক্লকে প্রয়োজনীয় বিটগুলো একসঙ্গে toggle হয়।
+
+Up-Down-এ U=১-এ Up এবং U=০-এ Down। তার পূর্ণ next-state logic:
+\[\begin{aligned}
+T_0&=1,\\
+T_1&=UQ_0+\overline U\,\overline Q_0,\\
+T_2&=UQ_1Q_0+\overline U\,\overline Q_1\overline Q_0.
+\end{aligned}\]
+প্রতিটি T-এর দুই AND পদ OR করে flip-flop-এ দাও; সাধারণ clock অপরিবর্তিত।
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i in {0,1,2}{\node[chff] (f\i) at (4*\i,0) {T FF\\$Q_\i$};\draw (f\i.south)--(4*\i,-1.6);\fill (4*\i,-1.6) circle(1.4pt);\draw[->] (f\i.east)--++(.6,0) node[right] {$Q_\i$};}
+\draw[->] (0,2.3)--(f0.north) node[pos=0,above] {$T_0=1$};
+\node[xnor gate US,chgate] (x0) at (1.8,3.5) {};
+\node[xnor gate US,chgate] (x1) at (4.8,2.5) {};
+\node[and gate US,chgate] (a) at (7,3.2) {};
+\draw (x0.input 1)--++(-.7,0) node[left] {$U$};\draw (x0.input 2)--++(-.7,0) node[left] {$Q_0$};
+\draw (x1.input 1)--++(-.7,0) node[left] {$U$};\draw (x1.input 2)--++(-.7,0) node[left] {$Q_1$};
+\draw (x0.output)--(3.1,3.5)--(6,3.5)|-(a.input 1);
+\draw[->] (3.1,3.5)--(3.1,1.3)--(4,1.3)--(f1.north) node[midway,right] {$T_1$};\fill (3.1,3.5) circle(1.4pt);
+\draw (x1.output)--(6,2.5)|-(a.input 2);
+\draw[->] (a.output)--(8,3.2)--(f2.north) node[midway,right] {$T_2$};
+\draw (-1,-1.6)--(8,-1.6) node[pos=0,left] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{দুই XNOR ও একটি AND-এ U অনুযায়ী একই counter-এর Up/Down নির্বাচন।}
+
+\end{minipage}
+\end{center}
+
+এখানে $T_1=\overline{U\oplus Q_0}$ ও $T_2=\overline{U\oplus Q_0}\,\overline{U\oplus Q_1}$। U=১-এ দুই XNOR সরাসরি Q-এর মান দেয়; U=০-এ তাদের পূরক দেয়। ফলে উপরের Up/Down সমীকরণই পাওয়া যায়। Q-নামযুক্ত input সংশ্লিষ্ট Q output-এর সঙ্গে যুক্ত।
+
+\chThreeExample{৩}{দিক পরিবর্তন}
+বর্তমান Q=101। U=১-এ পরের state 110; U=০-এ পরের state 100।
+\chThreeAnswer একই stored value-এর সঙ্গে direction control পরের state ঠিক করছে। U-কে clock edge-এর কাছে অস্থিরভাবে বদলালে বাস্তব সার্কিটে timing সমস্যা হতে পারে।
+
+\subsubsection*{Mod-N ও Decade counter-এর reset circuit}
+একটি binary counter-এ প্রয়োজনীয় Nটি state-এর পরে reset যোগ করলে Mod-N পাওয়া যায়। binary state encoding-এ ন্যূনতম flip-flop সংখ্যা এমন ক্ষুদ্রতম n, যাতে $2^n\geq N$। তাই $n=\lceil\log_2N\rceil$।
+
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\node[draw,minimum width=42mm,minimum height=22mm,align=center] (c) at (0,0) {চার বিট counter\\$Q_3Q_2Q_1Q_0$};
+\node[nand gate US,chgate] (n) at (5,0) {};
+\draw[->] (-3.5,0)--(c.west) node[pos=0,left] {CLK};
+\draw (c.east)--++(.8,0)|-(n.input 1) node[pos=.65,above] {$Q_3$};
+\draw (c.east)++(0,-.65)--++(1.1,0)|-(n.input 2) node[pos=.55,below] {$Q_1$};
+\draw[->] (n.output)--++(1,0)--++(0,-2)--(0,-2)--(c.south) node[pos=.65,below] {$\overline{CLR}$};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{শূন্য থেকে শুরু করা চার বিট counter-এ 1010 শনাক্ত করে active-low clear।}
+
+\end{minipage}
+\end{center}
+\textbf{ব্যাখ্যা:} এই asynchronous-clear উদাহরণে NAND-এর আউটপুট $\overline{CLR}=\overline{Q_3Q_1}$। ০ থেকে বাড়ার পথে প্রথম $Q_3=Q_1=1$ হয় 1010-তে, অর্থাৎ দশমিকে ১০। clear সক্রিয় হয়ে 0000-তে ফিরে আসে; স্থির গণনা ০–৯, modulus ১০। 1010 অল্প সময়ের reset-detection অবস্থা, অতিরিক্ত স্থির গণনা নয়। অন্য initial state বা অনিয়মিত sequence-এ শুধু দুই বিট শনাক্তের যুক্তি যথেষ্ট নাও হতে পারে।
+
+সিঙ্ক্রোনাস Mod-10-এ 1001-এর পরবর্তী clock-এ 0000 লোড করার logic দেওয়া যায়। এতে reset হওয়ার মুহূর্ত clock দ্বারা নির্ধারিত হয়। ripple reset-এর ক্ষণস্থায়ী glitch এবং বাস্তব clear pulse-এর minimum duration বিবেচনা করতে হয়; এ চিত্র আদর্শ কার্যনীতি দেখায়।
+
+\chThreeExample{৪}{Mod-12-এর flip-flop সংখ্যা}
+\chThreeAnswer $2^3=8<12\leq16=2^4$; চারটি লাগে। full state detect করলে $R=Q_3Q_2\overline Q_1\overline Q_0$ দিয়ে 1100 শনাক্ত করে clear করা যায়। ১২টি প্রয়োজনীয় state এবং ১৬টি সম্ভাব্য bit pattern এক নয়।
+
+\subsubsection*{Ring counter-এর circuit}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i/\b in {0/3,1/2,2/1,3/0}{
+\node[chff] (f\i) at (2.7*\i,0) {D FF\\$Q_\b$};
+\draw (f\i.south)--(2.7*\i,-1.6);\fill (2.7*\i,-1.6) circle(1.4pt);}
+\foreach \i/\j in {0/1,1/2,2/3}{\draw[->] (f\i.east)--(f\j.west);}
+\draw[->] (f3.east)--++(.8,0)--++(0,2)--(-1.6,2)|-(f0.west);
+\node[above] at (3.5,2) {$Q_0$ ফিরে যায় $D_3$-তে};
+\draw (-1,-1.6)--(8.1,-1.6) node[pos=0,left] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{শেষ Q-কে প্রথম D-তে ফেরত দিয়ে চার বিটের ring counter।}
+
+\end{minipage}
+\end{center}
+\textbf{ব্যাখ্যা:} parallel initialization-এ 1000 বসাও। চার flip-flop একই clock-এ শিফট করে, শেষের বিট প্রথমে ফিরে আসে। $1000\to0100\to0010\to0001\to1000$। একটি ১ ঘুরছে বলে চারটি ব্যবহারযোগ্য state। 0000 দিয়ে শুরু করলে ১ সৃষ্টি হবে না; counter 0000-তেই আটকে থাকবে। one-hot n-bit ring-এর modulus n, $2^n$ নয়।
+
+\subsubsection*{Johnson counter-এর circuit}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\foreach \i/\b in {0/3,1/2,2/1,3/0}{
+\node[chff] (f\i) at (2.7*\i,0) {D FF\\$Q_\b$};
+\draw (f\i.south)--(2.7*\i,-1.6);\fill (2.7*\i,-1.6) circle(1.4pt);}
+\foreach \i/\j in {0/1,1/2,2/3}{\draw[->] (f\i.east)--(f\j.west);}
+\node[not gate US,draw,minimum size=9mm,rotate=180] (n) at (6.4,2) {};
+\draw (f3.east)--++(.9,0)--++(0,2)--(n.input);
+\draw[->] (n.output)--(-1.6,2)|-(f0.west);
+\node[above] at (2.8,2) {$\overline Q_0$ ফিরে যায় $D_3$-তে};
+\draw (-1,-1.6)--(8.1,-1.6) node[pos=0,left] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{Johnson counter-এ শেষ বিটের পূরক প্রথম D-তে ফেরত আসে।}
+
+\end{minipage}
+\end{center}
+\textbf{ব্যাখ্যা:} শেষ Q NOT গেটে উল্টে প্রথম D-তে ফিরে যায়। শূন্য থেকে শুরু করলে $0000\to1000\to1100\to1110\to1111\to0111\to0011\to0001\to0000$। চার flip-flop-এ আটটি state, অর্থাৎ সঠিক initialization-এ modulus $2n$। অন্য bit pattern দিয়ে শুরু করলে অন্য cycle-এ আটকে যেতে পারে।
+
+\chThreeExample{৫}{একই চার flip-flop, ভিন্ন গণনা}
+\chThreeAnswer পূর্ণ binary counter-এ ১৬ state; one-hot ring-এ ৪; valid Johnson cycle-এ ৮; decade-এ ১০। শুধু flip-flop সংখ্যা দিয়ে ব্যবহৃত modulus জানা যায় না; feedback/reset ও initial state-ও জানতে হয়।
+
+\chThreeExample{৬}{অনেক পালসের পরে state}
+শূন্য থেকে শুরু করা Mod-8 up counter-এ ১৯ পালস এসেছে।
+\chThreeAnswer $19=2\times8+3$; দুই পূর্ণ cycle শেষে state $3=011$। তিন বিটে ১৯-এর পুরো সংখ্যা সংরক্ষিত হয়নি; শুধু cycle-এর বর্তমান অবস্থা আছে।
+
+\chThreeExample{৭}{ফ্রিকোয়েন্সি ভাগ}
+একটি free-running চার বিট binary ripple counter-এ clock ১৬ kHz।
+\chThreeAnswer $Q_0$-এ ৮ kHz, $Q_1$-এ ৪ kHz, $Q_2$-এ ২ kHz এবং $Q_3$-এ ১ kHz। সাধারণ ভাগ $f_{Q_i}=f_{CLK}/2^{i+1}$। এটি full binary cycle ও toggle সংযোগের জন্য; যেকোনো Mod-N counter-এর প্রতিটি output-এ একই নিয়ম সরাসরি বসানো যাবে না।
+
+\chThreeExample{৮}{সেকেন্ড গণনা ও সময়ের শর্ত}
+এক সেকেন্ড পরপর একটি নির্ভরযোগ্য পালস এবং Mod-60 counter দিয়ে ০–৫৯ সেকেন্ড গণনা করা যায়।
+\chThreeAnswer ছয় বিট লাগে, কারণ $32<60\leq64$। প্রতি ৬০ পালসে পরের minute counter-এ একটি carry/event signal দিতে হয়। প্রতি clock-কে এক সেকেন্ড ধরা যাবে কেবল clock frequency ১ Hz হলে।
+
+% Mahbub teaching-type follow-up, 2026-10-14
+\chThreeExample{৯}{counter-এর output থেকে pulse সংখ্যা}
+শূন্য থেকে শুরু করা তিন-বিট Up counter-এর বর্তমান state 101। মোট কয়টি pulse এসেছে?
+\chThreeAnswer state-এর মান ৫। প্রথম cycle-এর মধ্যে হলে pulse সংখ্যা ৫; cycle-এর সংখ্যা জানা না থাকলে $N=8k+5$, যেখানে $k=0,1,2,\ldots$। ফলে ৫, ১৩, ২১ ইত্যাদি pulse-এর পর একই state আসে। বর্তমান state দেখে মোট elapsed pulse সবসময় এককভাবে নির্ণয় করা যায় না।

@@ -1,479 +1,124 @@
-% Chapter 02.1: কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ
-\section{কমিউনিকেশন সিস্টেম ও ব্যান্ডউইডথ}
+% Approved topic 2.1 pass: canonical concepts C01.01--C01.13.
+% Source/provenance and retained/moved decisions: CHAPTER02_TOPIC01_CHANGELOG.md.
+\begingroup
+% Keep this topic's ordinary explanations >=11 actual PDF points.
+% Shared presentation and other topics are intentionally outside this text pass.
+\chTwoReadableTopicStyle
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item কমিউনিকেশন, কমিউনিকেশন সিস্টেম ও ডেটা কমিউনিকেশন ব্যাখ্যা করতে।
-\item কমিউনিকেশন সিস্টেমের প্রধান উপাদানগুলো শনাক্ত করতে।
-\item Data, Information ও Signal-এর পার্থক্য বুঝতে।
-\item Analog signal ও Digital signal-এর বৈশিষ্ট্য তুলনা করতে।
-\item Bandwidth, Data rate ও Latency-এর সম্পর্ক ব্যাখ্যা করতে।
-\item Narrow band, Voice band ও Broadband সম্পর্কে exam-standard উত্তর লিখতে।
-\item Bandwidth calculation করতে।
-\end{itemize}
-\end{learningbox}
+\section{কমিউনিকেশন সিস্টেম ও ব্যান্ডউইথ}
+\label{ch2:communication-bandwidth}
+কলেজে ভর্তির ফরম পাঠানোর পর শিক্ষার্থী একটি নিশ্চিতকরণ বার্তা আশা করে। বার্তাটি না এলে আবেদন জমা হয়েছে কি না, তা বোঝা কঠিন হয়। সফল যোগাযোগের জন্য তাই শুধু ইন্টারনেট সংযোগ থাকলেই চলে না। তথ্য সঠিক গন্তব্যে, সঠিকভাবে এবং প্রয়োজনীয় সময়ে পৌঁছাতে হয়। যোগাযোগের উপাদান ও সংযোগের বহনক্ষমতা জানা থাকলে এমন সমস্যার কারণ খুঁজে পাওয়া সহজ হয়।
 
-\subsection{বাস্তব জীবনের শুরু}
+% C01.01: one definition of each distinct foundational term.
+\subsection{যোগাযোগ ও ডেটা কমিউনিকেশন}
+\label{ch2:c01-01}
+\begin{definitionbox}{যোগাযোগ (Communication)}
+ব্যক্তি, যন্ত্র বা সিস্টেমের মধ্যে বার্তা বা তথ্য আদান-প্রদানের প্রক্রিয়াকে যোগাযোগ বলে।
+\end{definitionbox}
+\begin{definitionbox}{যোগাযোগব্যবস্থা (Communication System)}
+বার্তা আদান-প্রদানের জন্য প্রেরক, প্রাপক, মাধ্যম, প্রয়োজনীয় যন্ত্র ও যোগাযোগের নিয়মের সমন্বয়ে গঠিত সম্পূর্ণ ব্যবস্থাকে যোগাযোগব্যবস্থা বলে।
+\end{definitionbox}
+\begin{definitionbox}{ডেটা কমিউনিকেশন (Data Communication)}
+যোগাযোগমাধ্যম ও নির্দিষ্ট নিয়ম মেনে এক যন্ত্র থেকে অন্য যন্ত্রে ডেটা আদান-প্রদানের প্রক্রিয়াকে ডেটা কমিউনিকেশন বলে। আদান-প্রদান করা ডেটা ডিজিটাল বা অ্যানালগ রূপে প্রকাশিত হতে পারে।
+\end{definitionbox}
+ফোনে কথা বলা, ই-মেইল আদান-প্রদান, ভিডিও ক্লাস, অনলাইন ব্যাংকিং ও ফাইল পাঠানো যোগাযোগব্যবস্থার পরিচিত ব্যবহার। ভর্তির আবেদন গ্রহণের পর কলেজের সার্ভার শিক্ষার্থীকে ফিরতি বার্তা পাঠায়। শিক্ষার্থী দূরে থেকেই আবেদন জমা দিতে পারে এবং জমা হওয়ার খবর জানতে পারে।
+\chTwoPair{\textbf{স্থানীয় যোগাযোগ (Local Communication):} কাছাকাছি থাকা ব্যক্তিরা সরাসরি কথা, লেখা বা ইশারায় যোগাযোগ করলে তাকে স্থানীয় যোগাযোগ বলে। যেমন, শ্রেণিকক্ষে শিক্ষক বোর্ডের একটি চিত্র ইশারায় বোঝান।}{\textbf{দূরবর্তী যোগাযোগ (Remote Communication):} দূরে থাকা ব্যক্তি বা যন্ত্রের সঙ্গে মাধ্যম ও প্রয়োজনীয় প্রযুক্তির সাহায্যে যোগাযোগকে দূরবর্তী যোগাযোগ বলে। অন্য শহরের শিক্ষকের সঙ্গে ফোনে কথা বলা বা অনলাইন ক্লাস করা এর উদাহরণ।}
+বৈদ্যুতিক বা বিদ্যুৎচৌম্বক সংকেতের সাহায্যে দূরবর্তী স্থানে যোগাযোগকে টেলিকমিউনিকেশন (Telecommunication) বলে। স্থানীয় ও দূরবর্তী যোগাযোগ দিয়ে যোগাযোগের পরিস্থিতি বোঝানো হয়। অন্যদিকে, LAN/WAN দিয়ে নেটওয়ার্কের বিস্তৃতি বোঝানো হয়।
 
-ধরা যাক, একজন শিক্ষার্থী laptop দিয়ে তার বন্ধুকে একটি email পাঠাল। Email পাঠানোর সময় শিক্ষার্থীর laptop হলো \textbf{Sender}, email-এর লেখা ও attachment হলো \textbf{Message/Data}, internet connection হলো \textbf{Medium}, আর email পাঠানোর নিয়ম হলো \textbf{Protocol}। বন্ধুর mobile বা laptop হলো \textbf{Receiver/Destination}।
+\subsection{পাঁচটি উপাদান ও তাদের কাজ}
+\label{ch2:c01-02}
+\textbf{কাজের দুটি দিক:} ডেটা কমিউনিকেশনে ডেটা প্রক্রিয়াকরণ (Data Processing) এবং ডেটা পাঠানো (Data Transmission) পৃথক কাজ। প্রক্রিয়াকরণের সময় ডেটা প্রস্তুত ও বিন্যস্ত করা হয়, প্রয়োজনে উপযোগী রূপে বদলানো হয়। এরপর যোগাযোগমাধ্যম দিয়ে ডেটা অন্য প্রান্তে পাঠানো হয়।
 
-এই পুরো প্রক্রিয়াটিই একটি communication system-এর বাস্তব উদাহরণ। অর্থাৎ ICT-তে communication system মানে শুধু কথা বলা নয়; বরং যেকোনো data, text, image, audio, video বা file এক device থেকে অন্য device-এ পাঠানোর সম্পূর্ণ ব্যবস্থা।
+ভর্তি ফরমের ঘরগুলো যাচাই করে পাঠানোর উপযোগী করা প্রক্রিয়াকরণের কাজ। ফরমটি সার্ভারে পাঠানো ডেটা প্রেরণের কাজ। নিচের পাঁচটি উপাদান যোগাযোগব্যবস্থার অংশ বোঝায়; কাজের এই দুই দিকের সঙ্গে উপাদানের সংখ্যা এক করে দেখা যাবে না।
 
-\begin{keypointbox}{মূল ধারণা}
-Communication system বুঝতে ৫টি প্রশ্ন মনে রাখলেই concept পরিষ্কার হয়:
-\begin{itemize}
-\item কে পাঠাচ্ছে? — Sender
-\item কী পাঠাচ্ছে? — Message/Data
-\item কোন পথে পাঠাচ্ছে? — Medium
-\item কোন নিয়মে পাঠাচ্ছে? — Protocol
-\item কে গ্রহণ করছে? — Receiver
-\end{itemize}
+\begin{tabularx}{\linewidth}{|p{.20\linewidth}|X|X|}
+\hline
+\textbf{উপাদান} & \textbf{কাজ} & \textbf{ভর্তি ফরমের উদাহরণ}\\\hline
+প্রেরক (Sender) & ডেটা পাঠায়। & শিক্ষার্থীর ফোন।\\\hline
+বার্তা (Message) & যে ডেটা পাঠানো হয়। & নাম, রোল, ছবি ও আবেদন।\\\hline
+মাধ্যম (Medium) & সংকেত বহন করার পথ। & Wi-Fi-এর রেডিও তরঙ্গ ও পথে থাকা কেবল।\\\hline
+প্রাপক (Receiver) & ডেটা গ্রহণ করে। & কলেজের সার্ভার।\\\hline
+প্রোটোকল (Protocol) & ডেটার বিন্যাস, সময় ও আদান-প্রদানের নিয়ম নির্ধারণ করে। & দুই পক্ষ যে নিয়মে আবেদন পাঠায় ও বোঝে।\\\hline
+\end{tabularx}
+
+\chTwoPair{\textbf{প্রোটোকলের প্রয়োজন:} অর্থপূর্ণ যোগাযোগের জন্য দুই পক্ষকে ডেটার বিন্যাস ও আদান-প্রদানের একই নিয়ম অনুসরণ করতে হয়। প্রোটোকল এই নিয়ম নির্ধারণ করে। ফিরতি বার্তা পাঠানোর সময় সার্ভার প্রেরক হয় এবং শিক্ষার্থীর ফোন প্রাপক হয়।}{\chTwoImage{chapters/Chapter02/images/communication_process_flow_diagram.png}{বার্তা মাধ্যমে যায়; দুই প্রান্ত একই নিয়ম অনুসরণ করে}}
+ইন্টারনেট অনেক নেটওয়ার্ক নিয়ে গঠিত; এটি কোনো নির্দিষ্ট ভৌত কেবল নয়। প্রোটোকলও যন্ত্র বা যোগাযোগমাধ্যম নয়, বরং আদান-প্রদানের নিয়ম। ওয়েবে আদান-প্রদানে HTTP, ফাইল স্থানান্তরে FTP এবং ই-মেইল পাঠাতে SMTP ব্যবহৃত হয়।
+
+\textbf{প্রোটোকলের তিনটি দিক:} বার্তার বিন্যাসকে Syntax বলা হয়। Semantics দিয়ে বার্তার প্রতিটি অংশের অর্থ ও সে অনুযায়ী করণীয় বোঝানো হয়। Timing নির্ধারণ করে কখন, কী ক্রমে এবং কী হারে ডেটা আদান-প্রদান হবে।
+
+ভর্তি ফরমে রোল কোন ঘরে থাকবে, তা বিন্যাসের উদাহরণ। সফল বা ব্যর্থ হওয়ার বার্তার অর্থ বোঝা তাৎপর্যের উদাহরণ। অনুরোধ ও ফিরতি বার্তা কখন পাঠানো হবে, তা সময়ের সমন্বয়ের উদাহরণ। একই কেবল ব্যবহার করলেও দুই পক্ষের নিয়ম না মিললে অর্থপূর্ণ যোগাযোগ হয় না।
+
+\begin{keypointbox}{প্রথম ব্যবহারের পূর্ণরূপ}
+TCP = Transmission Control Protocol; IP = Internet Protocol; HTTP = Hypertext Transfer Protocol; FTP = File Transfer Protocol; SMTP = Simple Mail Transfer Protocol। TCP/IP একাধিক যোগাযোগ-প্রোটোকল নিয়ে গঠিত একটি সমষ্টি, যাকে প্রোটোকল স্যুট (Protocol Suite) বলে।
 \end{keypointbox}
 
-\subsection{কমিউনিকেশন}
-
-\begin{definitionbox}{কমিউনিকেশন}
-এক ব্যক্তি, যন্ত্র বা সিস্টেম থেকে অন্য ব্যক্তি, যন্ত্র বা সিস্টেমে তথ্য, ধারণা, বার্তা বা ডেটা আদান-প্রদানের প্রক্রিয়াকে কমিউনিকেশন বলা হয়।
-\end{definitionbox}
-
-কমিউনিকেশন মানুষের মধ্যে হতে পারে, আবার যন্ত্রের মধ্যেও হতে পারে। যেমন—মানুষ mobile phone দিয়ে কথা বলে, computer server থেকে website data পাঠায়, router data packet forward করে, cloud server file সংরক্ষণ ও সরবরাহ করে। ICT-তে communication সাধারণত signal-এর মাধ্যমে সম্পন্ন হয়।
-
-\begin{examplebox}{বাস্তব উদাহরণ}
-Mobile call, SMS, email, online class, video conference, website browsing, ATM transaction, bKash/Nagad transaction, cloud storage-এ file upload—সবই communication-এর উদাহরণ।
-\end{examplebox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-“Communication কী?” প্রশ্নে শুধু তথ্য আদান-প্রদান বললে উত্তর ছোট হয়ে যায়। ভালো উত্তর লিখতে হলে sender, receiver, message এবং medium-এর ধারণা যুক্ত করা উচিত।
-\end{boardbox}
-
-\subsection{কমিউনিকেশন সিস্টেম}
-
-\begin{definitionbox}{কমিউনিকেশন সিস্টেম}
-Sender থেকে receiver-এর কাছে message বা data পাঠানোর জন্য sender, receiver, message, medium, protocol এবং প্রয়োজনীয় device নিয়ে গঠিত সম্পূর্ণ ব্যবস্থাকে communication system বলা হয়।
-\end{definitionbox}
-
-একটি communication system সফল হতে হলে data সঠিকভাবে, নির্দিষ্ট সময়ে এবং নির্ভরযোগ্যভাবে receiver-এর কাছে পৌঁছাতে হবে। Data যদি ভুলভাবে পৌঁছে, দেরিতে পৌঁছে, মাঝপথে হারিয়ে যায় বা unauthorized ব্যক্তি access করে, তাহলে communication system কার্যকর হয় না।
-
-\begin{figure}[!htbp]
+\subsection{উৎস থেকে গন্তব্য: সংকেতের পথ}
+\label{ch2:c01-03}
+\noindent\begin{minipage}{\linewidth}
 \centering
-\IfFileExists{chapters/Chapter02/images/communication_process_flow_diagram.png}{
-\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/communication_process_flow_diagram.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.8cm}
-Sender \quad $\longrightarrow$ \quad Encoder / Transmitter \quad $\longrightarrow$ \quad Medium \quad $\longrightarrow$ \quad Decoder / Receiver \quad $\longrightarrow$ \quad Destination
-\vspace{0.8cm}
-}}
-}
-\caption{সাধারণ কমিউনিকেশন মডেল}
-\end{figure}
+\begin{tikzpicture}[node distance=3mm]
+\node[chTwoNode,text width=1.65cm] (s) {Source};
+\node[chTwoNode,text width=2.05cm,right=of s] (t) {Transmitter};
+\node[chTwoNode,text width=1.8cm,right=of t] (c) {Channel};
+\node[chTwoNode,text width=1.8cm,right=of c] (r) {Receiver};
+\node[chTwoNode,text width=2.05cm,right=of r] (d) {Destination};
+\draw[chTwoArrow] (s)--(t);\draw[chTwoArrow] (t)--(c);
+\draw[chTwoArrow] (c)--(r);\draw[chTwoArrow] (r)--(d);
+\end{tikzpicture}
+\par\raggedright\captionof{figure}{উৎসের ডেটা প্রেরণযোগ্য সংকেত হয়ে মাধ্যমে যায় এবং গন্তব্যে ব্যবহারযোগ্য হয়}
+\end{minipage}
+\textbf{উৎস (Source)} ডেটা তৈরি করে। \textbf{প্রেরণযন্ত্র (Transmitter)} ডেটাকে মাধ্যমে পাঠানোর উপযোগী সংকেতে রূপ দেয়। \textbf{চ্যানেল (Channel)} সেই সংকেত বহন করে। \textbf{গ্রহণযন্ত্র (Receiver)} সংকেত থেকে ডেটা উদ্ধার করে এবং \textbf{গন্তব্য (Destination)} সেই ডেটা ব্যবহার করে।
 
-\begin{keypointbox}{কমিউনিকেশন সিস্টেমের উপাদান}
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.62\textwidth}|}
-\hline
-\textbf{উপাদান} & \textbf{কাজ} \\
-\hline
-Sender & যে ব্যক্তি, device বা system data পাঠায়। \\
-\hline
-Message & যে data, information, text, image, audio বা video পাঠানো হয়। \\
-\hline
-Medium & যে পথ দিয়ে data sender থেকে receiver-এর কাছে যায়। যেমন—cable, fiber, radio wave, internet। \\
-\hline
-Receiver & যে ব্যক্তি, device বা system data গ্রহণ করে। \\
-\hline
-Protocol & data আদান-প্রদানের নিয়ম, format ও procedure। \\
-\hline
-\end{tabular}
-\end{center}
-\end{keypointbox}
+উদাহরণ হিসেবে মাইক্রোফোন থেকে কণ্ঠস্বরের ডেটা পাওয়া যায়; অপর প্রান্তের স্পিকার তা শোনার উপযোগী করে প্রকাশ করে। প্রচলিত মডেম প্রেরক প্রান্তে মডুলেশন (Modulation) এবং গ্রাহক প্রান্তে ডিমডুলেশন (Demodulation) করতে পারে। মডেমের কাজ নেটওয়ার্ক ডিভাইসের অংশে বিস্তারিত আলোচনা করা হয়েছে।
 
-\subsection{কমিউনিকেশন সিস্টেমের কার্যপ্রণালি}
-
-কমিউনিকেশন সিস্টেমে sender প্রথমে message তৈরি করে। Message সরাসরি medium দিয়ে যেতে পারে না; তাই অনেক ক্ষেত্রে message-কে signal-এ রূপান্তর করা হয়। এই কাজ encoder বা transmitter করে। এরপর signal medium দিয়ে receiver-এর দিকে যায়। Receiver side-এ decoder signal-কে আবার বুঝতে পারার মতো data বা information-এ রূপান্তর করে।
-
-\begin{examplebox}{Mobile message example}
-যখন একজন শিক্ষার্থী mobile থেকে message পাঠায়, তখন message digital data হিসেবে mobile network-এ যায়। Mobile network সেই data signal আকারে বহন করে। Receiver-এর mobile signal গ্রহণ করে আবার readable message হিসেবে দেখায়।
-\end{examplebox}
-
-\begin{mistakebox}{Sender বনাম Transmitter}
-অনেকে Sender এবং Transmitter-কে একই মনে করে। Sender হলো যে data পাঠায়; Transmitter হলো যে data বা message-কে transmission-এর উপযোগী signal-এ রূপান্তর করে পাঠায়।
+\begin{mistakebox}{দুটি মডেলের ভিত্তি আলাদা}
+পাঁচ উপাদানের মডেলে \textbf{বার্তা ও প্রোটোকল} অন্তর্ভুক্ত থাকে। সংকেত প্রবাহের মডেলে \textbf{উৎস, রূপান্তর ও গন্তব্যের ভূমিকা} দেখানো হয়। তাই প্রেরক ও প্রেরণযন্ত্র, কিংবা গ্রহণযন্ত্র ও গন্তব্যের কাজ সব ক্ষেত্রে এক নয়। তবে একই যন্ত্র একাধিক ভূমিকা পালন করতে পারে।
 \end{mistakebox}
 
-\subsection{ডেটা কমিউনিকেশন}
-
-\begin{definitionbox}{ডেটা কমিউনিকেশন}
-Digital বা analog data-কে নির্দিষ্ট communication medium ও protocol ব্যবহার করে এক device থেকে অন্য device-এ পাঠানো ও গ্রহণ করার প্রক্রিয়াকে data communication বলা হয়।
+\subsection{ডেটা বহন করে সিগন্যাল}
+\label{ch2:c01-04}
+ডেটা ও তথ্যের পার্থক্য প্রথম অধ্যায়ে আলোচনা করা হয়েছে। পরীক্ষার বিষয়ভিত্তিক নম্বরগুলো ডেটা; নম্বরগুলো ব্যবহার করে তৈরি ফলাফল অর্থপূর্ণ তথ্য। ফলাফল ফোনে পাঠানোর সময় বৈদ্যুতিক পালস, আলো বা রেডিও তরঙ্গ সেই ডেটা বহন করে।
+\begin{definitionbox}{সিগন্যাল (Signal)}
+ডেটা বহনকারী বৈদ্যুতিক, আলোকীয় বা বিদ্যুৎচৌম্বক পরিবর্তনকে সংকেত বা সিগন্যাল বলে। বার্তা হলো পাঠানো বিষয়বস্তু; সংকেত হলো সেই বিষয়বস্তু বহনের রূপ।
 \end{definitionbox}
 
-Data communication আধুনিক ICT-এর ভিত্তি। Internet, LAN, WAN, mobile network, online banking, cloud computing, e-mail, video call—সবকিছু data communication-এর উপর নির্ভরশীল। Computer network-এ data communication সাধারণত digital signal, protocol এবং network device-এর সাহায্যে সম্পন্ন হয়।
-
-\begin{keypointbox}{ভালো ডেটা কমিউনিকেশনের বৈশিষ্ট্য}
-\begin{itemize}
-\item \textbf{Delivery}: data সঠিক receiver-এর কাছে পৌঁছাতে হবে।
-\item \textbf{Accuracy}: data ভুল বা বিকৃত হওয়া যাবে না।
-\item \textbf{Timeliness}: data প্রয়োজনীয় সময়ের মধ্যে পৌঁছাতে হবে।
-\item \textbf{Security}: unauthorized access থেকে data নিরাপদ থাকতে হবে।
-\item \textbf{Reliability}: data loss কম হতে হবে এবং error হলে correction-এর ব্যবস্থা থাকতে হবে।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{Exam-standard answer}
-ডেটা কমিউনিকেশন হলো এমন একটি প্রক্রিয়া যার মাধ্যমে digital বা analog data নির্দিষ্ট medium ও protocol ব্যবহার করে এক device থেকে অন্য device-এ পাঠানো ও গ্রহণ করা হয়। এতে sender, receiver, message, medium এবং protocol থাকে। যেমন—email পাঠানো, mobile message, online class ইত্যাদি।
-\end{boardbox}
-
-\subsection{Data, Information ও Signal}
-
-\begin{definitionbox}{Data}
-Data হলো কাঁচা fact, symbol, number, text, image, audio বা video, যা processing-এর আগে বা পরে communication-এ ব্যবহৃত হতে পারে।
+\subsection{অ্যানালগ ও ডিজিটাল সিগন্যাল}
+\label{ch2:c01-05}
+\chTwoPair{\begin{definitionbox}{Analog Signal}
+যে সংকেতের মান নির্দিষ্ট সীমার মধ্যে ধারাবাহিকভাবে পরিবর্তিত হতে পারে, তাকে অ্যানালগ সংকেত বলে।
 \end{definitionbox}
-
-\begin{definitionbox}{Information}
-Data প্রক্রিয়াকরণের ফলে যে অর্থপূর্ণ ফলাফল পাওয়া যায়, তাকে information বলা হয়।
+মাইক্রোফোনে কণ্ঠস্বরের বৈদ্যুতিক প্রকাশ অ্যানালগ সংকেতের উদাহরণ। এই সংকেতে মধ্যবর্তী মানও থাকতে পারে।}{\begin{definitionbox}{Digital Signal}
+যে সংকেত নির্দিষ্ট বিচ্ছিন্ন স্তরের সাহায্যে ডেটা প্রকাশ করে, তাকে ডিজিটাল সংকেত বলে। প্রচলিত বাইনারি ব্যবস্থায় দুটি স্তর দিয়ে 0 ও 1 প্রকাশ করা হয়।
 \end{definitionbox}
+কম্পিউটারের বাইনারি ডেটা সংরক্ষণ ও আদান-প্রদানে ডিজিটাল সংকেত উপযোগী।}
 
-\begin{definitionbox}{Signal}
-Signal হলো electrical, optical বা electromagnetic পরিবর্তন, যার মাধ্যমে data এক স্থান থেকে অন্য স্থানে বহন করা হয়।
-\end{definitionbox}
-
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\begin{tabularx}{\linewidth}{|p{.16\linewidth}|X|X|}
 \hline
-\textbf{বিষয়} & \textbf{Data} & \textbf{Information} & \textbf{Signal} \\
-\hline
-প্রকৃতি & কাঁচা উপাদান & অর্থপূর্ণ ফলাফল & data বহনের রূপ \\
-\hline
-ব্যবহার & processing ও storage & decision making & transmission \\
-\hline
-উদাহরণ & 85, Rifat, image file & GPA result, report & electric pulse, light wave \\
-\hline
-\end{tabular}
-\end{center}
+\textbf{বিষয়} & \textbf{Analog Signal} & \textbf{Digital Signal}\\\hline
+মান & ধারাবাহিক; মধ্যবর্তী মান থাকতে পারে & নির্দিষ্ট বিচ্ছিন্ন স্তর\\\hline
+আদর্শ চিত্র & মসৃণ রেখা বা তরঙ্গ & স্তর বদলানো পালস\\\hline
+উদ্ধার & সংকেতের মানের পরিবর্তন অনুসরণ & স্তর শনাক্ত করে বিট পুনর্গঠন; ত্রুটি পরীক্ষাও সম্ভব\\\hline
+উদাহরণ & মাইক্রোফোনের অ্যানালগ আউটপুট & বাইনারি ডেটার বৈদ্যুতিক পালস\\\hline
+\end{tabularx}
 
-\begin{examplebox}{সহজ উদাহরণ}
-পরীক্ষায় একজন শিক্ষার্থীর subject-wise নম্বরগুলো হলো data। সেই নম্বর থেকে GPA বের করলে সেটি information। আর এই result online server থেকে mobile-এ পাঠানোর সময় electrical বা electromagnetic signal ব্যবহৃত হয়।
-\end{examplebox}
+\noindent\begin{minipage}{\linewidth}\centering
+\begin{tikzpicture}[x=.9cm,y=.65cm]
+\draw[chTwoArrow] (0,0)--(5.8,0);\draw[chTwoArrow] (0,-1.2)--(0,1.3);
+\node[font=\small,below right] at (5.8,0){Time};\node[font=\small,left] at (0,1.3){Level};
+\draw[chTwoLink,domain=0:5.5,samples=70] plot (\x,{sin(\x*130)});
+\node[font=\small] at (2.7,1.7){Analog: continuous values};
+\begin{scope}[xshift=6.8cm]
+\draw[chTwoArrow] (0,-1)--(5.8,-1);\draw[chTwoArrow] (0,-1.2)--(0,1.3);
+\node[font=\small,below right] at (5.8,-1){Time};\node[font=\small,left] at (0,1.3){Level};
+\draw[chTwoLink] (0,-.7)--(1,-.7)--(1,.7)--(2,.7)--(2,-.7)--(3,-.7)--(3,.7)--(5,.7)--(5,-.7)--(5.5,-.7);
+\node[font=\small] at (2.7,1.7){Digital: two-level example};
+\node[font=\small,left] at (0,.7){1};\node[font=\small,left] at (0,-.7){0};
+\end{scope}
+\end{tikzpicture}\par\raggedright
+\captionof{figure}{একদিকে ধারাবাহিক মান; অন্যদিকে নির্দিষ্ট স্তর দিয়ে বিট প্রকাশের আদর্শ চিত্র}
+\end{minipage}
+ডিজিটাল সংকেতের নির্দিষ্ট স্তর শনাক্ত করে গ্রহণকারী বিট উদ্ধার ও পুনর্গঠন করতে পারে। তবে নয়েজ বেশি হলে ভুল বিট পড়তে পারে। তাই ডিজিটাল যোগাযোগও সবসময় ত্রুটিমুক্ত নয়। রেডিও তরঙ্গ দিয়ে ডিজিটাল ডেটা বহন করা যায়। মাধ্যমের নাম থেকে তাই ডেটা অ্যানালগ না ডিজিটাল, তা নির্ধারণ করা যায় না।
 
-\subsection{Analog Signal ও Digital Signal}
-
-\begin{definitionbox}{Analog signal}
-যে signal-এর মান সময়ের সাথে continuousভাবে পরিবর্তিত হয়, তাকে analog signal বলা হয়।
-\end{definitionbox}
-
-Analog signal সাধারণত smooth wave আকারে থাকে। মানুষের কণ্ঠস্বর, পুরনো telephone signal এবং radio wave analog signal-এর উদাহরণ হতে পারে। Analog signal continuous হওয়ায় noise বা disturbance দ্বারা বেশি প্রভাবিত হতে পারে।
-
-\begin{definitionbox}{Digital signal}
-যে signal-এর মান discrete বা নির্দিষ্ট স্তরে পরিবর্তিত হয় এবং সাধারণত 0 ও 1 দিয়ে প্রকাশ করা হয়, তাকে digital signal বলা হয়।
-\end{definitionbox}
-
-Digital signal computer system-এর জন্য বেশি উপযোগী, কারণ computer binary system অর্থাৎ 0 ও 1 ব্যবহার করে কাজ করে। Digital signal noise-এর বিরুদ্ধে তুলনামূলক বেশি reliable এবং error detection/correction সহজ।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/analog_vs_digital_signal_comparison.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.8cm}
-Analog Signal\\[6pt]
-Smooth Wave\\[14pt]
-Digital Signal\\[6pt]
-0 \quad 1 \quad 0 \quad 1 \quad 1 \quad 0
-\vspace{0.8cm}
-}}
-}
-\caption{অ্যানালগ ও ডিজিটাল সিগন্যালের ধারণা}
-\end{figure}
-
-\begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Analog Signal} & \textbf{Digital Signal} \\
-\hline
-প্রকৃতি & Continuous & Discrete \\
-\hline
-মান & অসংখ্য intermediate value থাকতে পারে & সাধারণত 0 ও 1 দ্বারা প্রকাশিত \\
-\hline
-Wave shape & Smooth wave & Pulse বা step-like wave \\
-\hline
-Noise effect & তুলনামূলক বেশি প্রভাবিত হয় & তুলনামূলক কম প্রভাবিত হয় \\
-\hline
-ব্যবহার & পুরনো radio/telephone system & computer, internet, mobile data \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{mistakebox}{Digital signal}
-Digital signal noise-এর বিরুদ্ধে reliable হলেও এটি সবসময় error-free নয়। বাস্তবে error detection, correction, encoding এবং protocol দরকার হয়।
-\end{mistakebox}
-
-\subsection{কমিউনিকেশন সিস্টেমের সংক্ষিপ্ত ইতিহাস}
-
-Communication system ধীরে ধীরে উন্নত হয়েছে। প্রথমে মানুষ চিঠি, সংকেত ও telegraph ব্যবহার করত। পরে telephone, radio, television, computer network, internet, Wi-Fi, mobile communication এবং cloud computing communication ব্যবস্থাকে দ্রুত ও বিশ্বব্যাপী করেছে।
-
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.30\textwidth}|p{0.36\textwidth}|}
-\hline
-\textbf{সময়/ধাপ} & \textbf{ঘটনা/প্রযুক্তি} & \textbf{গুরুত্ব} \\
-\hline
-Telegraph যুগ & Electric signal দিয়ে বার্তা পাঠানো & দূরবর্তী communication দ্রুত হয়। \\
-\hline
-Telephone যুগ & Voice communication & সরাসরি কথা বলা সম্ভব হয়। \\
-\hline
-Radio/TV যুগ & Wireless broadcasting & এক sender থেকে অনেক receiver-এ বার্তা যায়। \\
-\hline
-Computer network & Device-to-device data sharing & LAN, WAN ও internet-এর ভিত্তি তৈরি হয়। \\
-\hline
-Mobile network & Cellular communication & চলমান অবস্থায় voice ও data service সম্ভব হয়। \\
-\hline
-Cloud যুগ & Internet-based storage/service & যেকোনো স্থান থেকে resource ব্যবহার সম্ভব হয়। \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{keypointbox}{গুরুত্বপূর্ণ অবদানকারী}
-\begin{itemize}
-\item \textbf{Claude Shannon}: Information theory ও communication theory-এর ভিত্তি তৈরিতে গুরুত্বপূর্ণ অবদান রাখেন।
-\item \textbf{Alexander Graham Bell}: Telephone উদ্ভাবনের সাথে যুক্ত অন্যতম গুরুত্বপূর্ণ ব্যক্তি।
-\item \textbf{Vint Cerf ও Robert Kahn}: TCP/IP ধারণা ও Internet architecture উন্নয়নে গুরুত্বপূর্ণ অবদান রাখেন।
-\item \textbf{Robert Metcalfe}: Ethernet প্রযুক্তির উন্নয়নে গুরুত্বপূর্ণ অবদান রাখেন।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{পরীক্ষায় কীভাবে লিখবে}
-History বা contributor প্রশ্ন সাধারণত ছোট আকারে আসে। তাই বড় paragraph না লিখে নাম, অবদান এবং প্রযুক্তি—এই তিনটি বিষয় table আকারে লিখলে উত্তর পরিষ্কার হয়।
-\end{boardbox}
-
-\subsection{ব্যান্ডউইডথ}
-
-\begin{definitionbox}{Bandwidth}
-কোনো communication channel নির্দিষ্ট সময়ে কত পরিমাণ data বহন করতে পারে, সেই ক্ষমতাকে bandwidth বলা হয়।
-\end{definitionbox}
-
-Digital communication-এ bandwidth সাধারণত bits per second বা bps দিয়ে প্রকাশ করা হয়। Bandwidth বেশি হলে একই সময়ে বেশি data পাঠানো সম্ভব হয়। তবে bandwidth বেশি হলেই সবসময় user experience ভালো হবে—এমন নয়; latency, server capacity, network congestion, signal strength এবং device performance-ও speed-এর উপর প্রভাব ফেলে।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/low_vs_high_bandwidth_comparison.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.8cm}
-Low Bandwidth \quad $\longrightarrow$ \quad Small Data Flow\\[12pt]
-High Bandwidth \quad $\longrightarrow$ \quad Large Data Flow
-\vspace{0.8cm}
-}}
-}
-\caption{কম ও বেশি ব্যান্ডউইডথের ধারণা}
-\end{figure}
-
-\begin{keypointbox}{Bandwidth-এর একক}
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.22\textwidth}|}
-\hline
-\textbf{একক} & \textbf{পূর্ণরূপ} & \textbf{মান} \\
-\hline
-bps & bits per second & প্রতি সেকেন্ডে bit \\
-\hline
-Kbps & kilobits per second & 1000 bps \\
-\hline
-Mbps & megabits per second & 1000 Kbps \\
-\hline
-Gbps & gigabits per second & 1000 Mbps \\
-\hline
-\end{tabular}
-\end{center}
-\end{keypointbox}
-
-\subsection{Bandwidth, Data Rate ও Latency}
-
-Bandwidth, data rate এবং latency কাছাকাছি concept হলেও এক নয়।
-
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.58\textwidth}|}
-\hline
-\textbf{Term} & \textbf{ব্যাখ্যা} \\
-\hline
-Bandwidth & communication channel-এর সর্বোচ্চ data বহন ক্ষমতা। \\
-\hline
-Data rate & বাস্তবে প্রতি সেকেন্ডে কত data transfer হচ্ছে। \\
-\hline
-Latency & data sender থেকে receiver-এ পৌঁছাতে যে বিলম্ব হয়। \\
-\hline
-Throughput & বাস্তবে সফলভাবে transfer হওয়া data-এর পরিমাণ। \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{examplebox}{সহজ তুলনা}
-রাস্তার lane বেশি হলে একসাথে বেশি গাড়ি চলতে পারে—এটি bandwidth-এর মতো। কিন্তু গাড়ির গতি, traffic jam এবং signal delay বাস্তব speed কমাতে পারে—এগুলো data rate ও latency-এর সাথে তুলনীয়।
-\end{examplebox}
-
-\begin{mistakebox}{Bandwidth বনাম speed}
-অনেকে bandwidth ও internet speed একই মনে করে। Bandwidth হলো capacity, আর actual speed নির্ভর করে bandwidth, latency, congestion, server response এবং device performance-এর উপর।
-\end{mistakebox}
-
-\subsection{Bandwidth-এর শ্রেণিবিভাগ}
-
-Bandwidth সাধারণত data বহনের ক্ষমতা অনুযায়ী বিভিন্ন ভাগে আলোচনা করা হয়। HSC পর্যায়ে Narrow band, Voice band এবং Broadband বেশি গুরুত্বপূর্ণ।
-
-\begin{center}
-\begin{tabular}{|p{0.23\textwidth}|p{0.32\textwidth}|p{0.30\textwidth}|}
-\hline
-\textbf{ধরন} & \textbf{ধারণা} & \textbf{উদাহরণ/ব্যবহার} \\
-\hline
-Narrow band & কম bandwidth; ধীরগতির data communication & Telegraph, low-speed sensor data \\
-\hline
-Voice band & voice communication-এর জন্য উপযোগী bandwidth & Telephone voice communication \\
-\hline
-Broadband & উচ্চ bandwidth; দ্রুত data, audio, video transmission & Fiber internet, cable broadband, 4G/5G \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Bandwidth-এর শ্রেণিবিভাগ লেখার সময় শুধু নাম লিখলে হবে না। প্রতিটির data বহন ক্ষমতা, ব্যবহার এবং উদাহরণ দিলে উত্তর পূর্ণাঙ্গ হবে।
-\end{boardbox}
-
-\subsection{Bandwidth Calculation}
-
-Data communication-এ bandwidth calculation খুব গুরুত্বপূর্ণ। সাধারণভাবে,
-
-\[
-\text{Bandwidth} = \frac{\text{Total transmitted data}}{\text{Time}}
-\]
-
-\begin{examplebox}{সমাধান ১}
-একটি channel দিয়ে ৪ সেকেন্ডে ৮০০০ bit data পাঠানো হলো। Bandwidth কত?
-
-\[
-\text{Bandwidth} = \frac{8000}{4} = 2000 \text{ bps}
-\]
-
-অতএব, bandwidth = 2000 bps।
-\end{examplebox}
-
-\begin{examplebox}{সমাধান ২}
-একটি file 20,000 bit এবং এটি 10 second-এ transfer হলো।
-
-\[
-\text{Bandwidth} = \frac{20000}{10} = 2000 \text{ bps}
-\]
-
-অতএব, channel-এর data transfer rate = 2000 bps।
-\end{examplebox}
-
-\begin{examplebox}{সমাধান ৩: Byte থেকে bit}
-একটি file-এর size 500 Byte এবং এটি 2 second-এ transfer হলো। Bandwidth কত?
-
-প্রথমে Byte থেকে bit-এ রূপান্তর করতে হবে।
-
-\[
-500 \text{ Byte} = 500 \times 8 = 4000 \text{ bit}
-\]
-
-\[
-\text{Bandwidth} = \frac{4000}{2} = 2000 \text{ bps}
-\]
-
-অতএব, bandwidth = 2000 bps।
-\end{examplebox}
-
-\begin{mistakebox}{Byte বনাম bit}
-Bandwidth calculation-এ অনেকেই Byte ও bit গুলিয়ে ফেলে। মনে রাখতে হবে: 1 Byte = 8 bits। প্রশ্নে যদি Byte দেওয়া থাকে, প্রথমে bit-এ convert করতে হবে।
-\end{mistakebox}
-
-\subsection{Exam-style প্রশ্ন ও উত্তর}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: ডেটা কমিউনিকেশন কী?}
-ডিজিটাল বা অ্যানালগ data-কে নির্দিষ্ট communication medium ও protocol ব্যবহার করে এক device থেকে অন্য device-এ প্রেরণ ও গ্রহণ করার প্রক্রিয়াকে data communication বলা হয়। এতে sender, receiver, message, medium এবং protocol থাকে। যেমন—email পাঠানো, mobile message, online class ইত্যাদি।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Bandwidth কেন গুরুত্বপূর্ণ?}
-Bandwidth গুরুত্বপূর্ণ কারণ এটি নির্ধারণ করে কোনো communication channel নির্দিষ্ট সময়ে কত data বহন করতে পারবে। Bandwidth বেশি হলে audio, video, file transfer এবং internet browsing দ্রুত ও কার্যকর হয়। তবে বাস্তব speed latency, network congestion ও device performance-এর উপরও নির্ভর করে।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: Analog signal ও Digital signal}
-Analog signal continuousভাবে পরিবর্তিত হয়, কিন্তু digital signal discrete value ধারণ করে। Analog signal noise-এ বেশি প্রভাবিত হয়, আর digital signal তুলনামূলকভাবে reliable। পুরনো radio system analog signal ব্যবহার করে, কিন্তু computer network ও internet communication digital signal ব্যবহার করে।
-\end{boardbox}
-
-\subsection{Brainstorming Critical Question}
-
-\begin{practicebox}
-একজন শিক্ষার্থী গ্রামের বাড়ি থেকে online class করছে। তার internet connection 4G হলেও video মাঝে মাঝে আটকে যায়, audio delay হয় এবং file upload হতে সময় লাগে।
-
-\begin{enumerate}
-\item ক. Bandwidth কী?
-\item খ. Digital signal কেন computer communication-এ বেশি ব্যবহৃত হয়?
-\item গ. উদ্দীপকের সমস্যার সাথে bandwidth ও latency-এর সম্পর্ক ব্যাখ্যা কর।
-\item ঘ. শুধু 4G connection থাকলেই ভালো online class নিশ্চিত হয় কি? যুক্তিসহ বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\begin{itemize}
-\item Communication হলো তথ্য, বার্তা বা data আদান-প্রদানের প্রক্রিয়া।
-\item Communication system-এর প্রধান উপাদান: Sender, Receiver, Message, Medium, Protocol।
-\item Data হলো কাঁচা উপাদান, Information হলো অর্থপূর্ণ ফলাফল, Signal হলো data বহনের রূপ।
-\item Analog signal continuous, Digital signal discrete।
-\item Digital signal সাধারণত 0 ও 1 দ্বারা প্রকাশ করা হয়।
-\item Bandwidth হলো channel-এর data বহন ক্ষমতা।
-\item Bandwidth বেশি হলেও latency ও congestion থাকলে speed কম মনে হতে পারে।
-\item Bandwidth calculation: Total data ÷ Time।
-\item 1 Byte = 8 bits।
-\end{itemize}
-\end{recapbox}
-
-\subsection{অনুশীলন}
-
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item কমিউনিকেশন সিস্টেমে data পাঠায় কোন অংশ?\\
-ক. Receiver \quad খ. Sender \quad গ. Medium \quad ঘ. Noise
-
-\item Digital signal সাধারণত কোন দুটি value দিয়ে প্রকাশ করা হয়?\\
-ক. A ও B \quad খ. 1 ও 2 \quad গ. 0 ও 1 \quad ঘ. X ও Y
-
-\item Bandwidth-এর একক কোনটি?\\
-ক. meter \quad খ. bps \quad গ. volt \quad ঘ. watt
-
-\item ৮০০০ bit data ৪ সেকেন্ডে transfer হলে bandwidth কত?\\
-ক. 500 bps \quad খ. 1000 bps \quad গ. 2000 bps \quad ঘ. 4000 bps
-
-\item Communication system-এ নিয়ম বা procedure নির্দেশ করে কোনটি?\\
-ক. Protocol \quad খ. Receiver \quad গ. Cable \quad ঘ. Noise
-
-\item Analog signal-এর প্রকৃতি কেমন?\\
-ক. Discrete \quad খ. Continuous \quad গ. Binary only \quad ঘ. Packet-based
-\end{enumerate}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Communication system-এর উপাদানগুলো লেখ।
-\item Data, Information ও Signal-এর মধ্যে পার্থক্য লেখ।
-\item Analog signal ও Digital signal-এর মধ্যে তিনটি পার্থক্য লেখ।
-\item Bandwidth কী? উদাহরণসহ ব্যাখ্যা কর।
-\item Narrow band, Voice band ও Broadband-এর ব্যবহার লেখ।
-\item Bandwidth ও latency-এর মধ্যে পার্থক্য লেখ।
-\end{enumerate}
-
-\textbf{সৃজনশীল প্রশ্ন}
-একটি কলেজের শিক্ষার্থীরা online class, email, cloud storage এবং video conference ব্যবহার করে। কিন্তু internet speed কম থাকলে video quality খারাপ হয় এবং file upload দেরিতে হয়।
-
-\begin{enumerate}
-\item ক. Protocol কী?
-\item খ. Signal বলতে কী বোঝায়?
-\item গ. উদ্দীপকে কোন কোন communication system component আছে? ব্যাখ্যা কর।
-\item ঘ. Bandwidth ও latency উদ্দীপকের সমস্যাকে কীভাবে প্রভাবিত করে—বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
+\input{chapters/Chapter02/topics/01_communication_system_and_bandwidth/concept_enrichment.tex}
+\input{chapters/Chapter02/topics/01_communication_system_and_bandwidth/applied_examples.tex}
+\endgroup

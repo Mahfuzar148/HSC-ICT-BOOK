@@ -1,60 +1,35 @@
-% chapter.tex (Chapter 02)
+% Chapter 2: scoped composition; other chapters retain their own styles.
+\input{chapters/Chapter02/latex/page_layout}
+\ifdefined\chTwoStandalone\else\savegeometry{chTwoPrevious}\chTwoGeometry{\newgeometry}\fi
+\begingroup
+\input{chapters/Chapter02/latex/visual_style}
+\input{chapters/Chapter02/latex/composition}
+\setlength{\headwidth}{\textwidth}
 \chapter{কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং}
+
+একটি কলেজে অনলাইন ভর্তি চলছে। শিক্ষার্থীর ফোন থেকে ভর্তি ফরমের ডেটা কলেজের সার্ভারে পৌঁছায়। শিক্ষক Wi-Fi দিয়ে ক্লাস নেন। ল্যাবের কম্পিউটারগুলো একই প্রিন্টার ব্যবহার করে এবং নোট ক্লাউডে সংরক্ষণ করা হয়। এসব কাজের জন্য ডেটা কমিউনিকেশন, উপযুক্ত মাধ্যম, নেটওয়ার্ক ডিভাইস ও সঠিক সংযোগবিন্যাস প্রয়োজন। এই অধ্যায়ে যোগাযোগব্যবস্থার কাজ এবং প্রয়োজন অনুযায়ী উপযুক্ত ব্যবস্থা নির্বাচন শেখানো হয়েছে।
 
 \begin{learningbox}
 এই অধ্যায় শেষে শিক্ষার্থী পারবে:
+\begin{multicols}{2}
 \begin{itemize}
-\item ডেটা কমিউনিকেশন সিস্টেমের উপাদান, ব্যান্ডউইডথ এবং সিগন্যাল ব্যাখ্যা করতে।
-\item ডেটা ট্রান্সমিশন মেথড, মোড এবং কমিউনিকেশন মিডিয়ার শ্রেণিবিভাগ করতে।
-\item তারযুক্ত ও তারবিহীন মাধ্যমের ব্যবহার, সুবিধা ও সীমাবদ্ধতা তুলনা করতে।
-\item মোবাইল কমিউনিকেশন, কম্পিউটার নেটওয়ার্ক, নেটওয়ার্ক ডিভাইস ও টপোলজি বিশ্লেষণ করতে।
-\item ক্লাউড কম্পিউটিংয়ের ধারণা, সেবা মডেল এবং বাস্তব ব্যবহার ব্যাখ্যা করতে।
+\item ডেটা, তথ্য ও সংকেতের পার্থক্য করতে; প্রেরক, প্রাপক, বার্তা, মাধ্যম ও প্রোটোকলের ভূমিকা এবং অ্যানালগ ও ডিজিটাল সংকেত ব্যাখ্যা করতে।
+\item ব্যান্ডউইথ, ডেটা হার, বিলম্ব ও প্রচলিত ব্যান্ডউইথের শ্রেণি আলাদা করতে; বিট, বাইট, ডেটা হার ও প্রেরণের দক্ষতার হিসাব করতে।
+\item Serial ও Parallel এবং Asynchronous, Synchronous ও Isochronous পদ্ধতি তুলনা করতে।
+\item Simplex, Half-duplex, Full-duplex এবং Unicast, Broadcast ও Multicast চিনতে।
+\item তারযুক্ত ও তারবিহীন মাধ্যমের গঠন, প্রতিফলন, কাজ, সুবিধা ও সীমাবদ্ধতা ব্যাখ্যা করতে; দূরত্ব, নয়েজ, খরচ ও নিরাপত্তা অনুযায়ী মাধ্যম নির্বাচন করতে।
+\item Bluetooth, Wi-Fi, WiMAX, সেল, বেস স্টেশন, Handoff, Roaming এবং 1G–5G-এর পরিবর্তন ও ব্যবহার ব্যাখ্যা করতে।
+\item রিসোর্স ও ডেটা ভাগাভাগির প্রয়োজন ব্যাখ্যা করতে; PAN, LAN, CAN, MAN, WAN, Client–server, Peer-to-peer, Internet, Intranet ও Extranet আলাদা করতে।
+\item NIC, মডেম, হাব, সুইচ, রাউটার, রিপিটার, ব্রিজ, গেটওয়ে, AP ও ফায়ারওয়ালের কাজ তুলনা করতে।
+\item ভৌত ও যৌক্তিক টপোলজি শনাক্ত করতে; Bus, Star, Ring, Mesh, Tree ও Hybrid-এর চিত্র, সংযোগ নষ্ট হওয়ার ফল ও সম্প্রসারণ বিশ্লেষণ করতে।
+\item ক্লাউডের কাজ, স্টোরেজ, অ্যাপ্লিকেশন, সেবা ও স্থাপনা মডেল, ব্যাকআপ, খরচ ও নিরাপত্তা ব্যাখ্যা করতে; উদ্দীপক থেকে MCQ/CQ সমাধান করতে।
 \end{itemize}
+\end{multicols}
 \end{learningbox}
 
-\begin{keypointbox}{এই অধ্যায় কেন গুরুত্বপূর্ণ}
-আমরা প্রতিদিন mobile phone, Wi-Fi, online class, social media, cloud storage, online payment এবং internet ব্যবহার করি। এগুলোর পেছনে মূল ভিত্তি হলো data communication, transmission media, network device, topology এবং cloud computing। তাই এই অধ্যায় শুধু পরীক্ষার জন্য নয়, বাস্তব ICT বুঝতেও খুব গুরুত্বপূর্ণ।
+\begin{keypointbox}{অধ্যায়ের ধারণা মানচিত্র}
+যোগাযোগের উপাদান ও সংকেত $\rightarrow$ ডেটা হার ও প্রেরণ $\rightarrow$ তারযুক্ত ও তারবিহীন মাধ্যম $\rightarrow$ মোবাইল নেটওয়ার্ক $\rightarrow$ কম্পিউটার নেটওয়ার্ক ও ডিভাইস $\rightarrow$ টপোলজি $\rightarrow$ ক্লাউড সেবা।
 \end{keypointbox}
-
-\begin{figure}[!htbp]
-\centering
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-Communication System\\[4pt]
-$\downarrow$\\[4pt]
-Data Transmission\\[4pt]
-$\downarrow$\\[4pt]
-Transmission Media\\[4pt]
-$\downarrow$\\[4pt]
-Mobile Communication\\[4pt]
-$\downarrow$\\[4pt]
-Computer Network\\[4pt]
-$\downarrow$\\[4pt]
-Network Devices \quad Topology\\[4pt]
-$\downarrow$\\[4pt]
-Cloud Computing
-}}
-\caption{দ্বিতীয় অধ্যায়ের ধারণা মানচিত্র}
-\end{figure}
-
-\begin{keypointbox}{High-yield অংশ}
-\begin{itemize}
-\item কমিউনিকেশন সিস্টেম: Sender, Receiver, Message, Medium, Protocol।
-\item ব্যান্ডউইডথ: bps, Kbps, Mbps, Gbps; Narrow band, Voice band, Broadband।
-\item ট্রান্সমিশন মেথড: Parallel, Serial; Serial-এর মধ্যে Asynchronous, Synchronous, Isochronous।
-\item ট্রান্সমিশন মোড: Simplex, Half duplex, Full duplex।
-\item ডেলিভারি মোড: Unicast, Broadcast, Multicast।
-\item মিডিয়া: Guided/Wired এবং Unguided/Wireless।
-\item নেটওয়ার্ক: PAN, LAN, CAN, MAN, WAN।
-\item টপোলজি: Bus, Ring, Star, Tree, Mesh, Hybrid।
-\item ক্লাউড কম্পিউটিং: IaaS, PaaS, SaaS; Public, Private, Hybrid, Community cloud।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড ও ভর্তি পরীক্ষার জন্য নির্দেশনা}
-এই অধ্যায়ে diagram, comparison table এবং বাস্তব উদাহরণ খুব গুরুত্বপূর্ণ। সংজ্ঞা মুখস্থ করার পাশাপাশি প্রতিটি term কোথায় ব্যবহার হয় তা বুঝতে হবে। বিশেষ করে bandwidth calculation, transmission mode, media comparison, network device এবং topology থেকে MCQ ও CQ বেশি হওয়ার সম্ভাবনা থাকে।
-\end{boardbox}
 
 \input{chapters/Chapter02/topics/01_communication_system_and_bandwidth/topic}
 \input{chapters/Chapter02/topics/02_data_transmission_method_and_mode/topic}
@@ -69,4 +44,7 @@ Cloud Computing
 \input{chapters/Chapter02/topics/11_exercises/topic}
 \input{chapters/Chapter02/topics/mcq_questions/topic}
 
-% Resource linked: resources/HSC ICT Chapter 02 Handnote.pdf
+
+\clearpage
+\endgroup
+\ifdefined\chTwoStandalone\else\loadgeometry{chTwoPrevious}\fi

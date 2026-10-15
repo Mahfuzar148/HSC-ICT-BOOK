@@ -1,0 +1,1051 @@
+% ============================================================
+% 15. DATA SECURITY
+% Chapter 06 — Database Management System
+%
+% Focus:
+% NCTB syllabus + board/CQ/MCQ concepts
+% Compact textbook layout
+% ============================================================
+
+\section{Data Security}
+\label{sec:ch06-data-security}
+
+\textbf{এই অংশে:} নিরাপত্তার প্রয়োজন, সিস্টেম স্তরের নিরাপত্তা (System Security), ডেটা বা অবজেক্ট স্তরের নিরাপত্তা (Data/Object Security), পরিচয় যাচাই, কাজের অনুমতি এবং ব্যবহারকারীর অধিকার বোঝা হবে। বিভিন্ন ধরনের ব্যর্থতা, ডেটা হারিয়ে যাওয়া (Data Loss) বা বিকৃতি (Data Corruption), ব্যাকআপ ও পুনরুদ্ধার (Recovery), অডিট (Audit) ও এনক্রিপশনের ভূমিকা আলাদা করে দেখা হবে।
+
+
+একটি ডেটাবেজে ব্যক্তিগত তথ্য, আর্থিক হিসাব, পরীক্ষার ফলাফল,
+বেতন, ব্যবসায়িক লেনদেন প্রভৃতি গুরুত্বপূর্ণ ডেটা থাকতে পারে।
+ধরা যাক, কলেজের ডেটাবেজে শিক্ষার্থীদের ফল সংরক্ষিত আছে। যে কেউ ডেটাবেজ খুলে ফল পরিবর্তন বা মুছে ফেলতে পারলে তথ্যের ওপর আস্থা রাখা যাবে না। আবার কম্পিউটার বা তথ্য রাখার ডিস্ক নষ্ট হয়ে ডেটা হারালেও বড় সমস্যা হবে।
+
+তাই ডেটাবেজের ডেটাকে অননুমোদিত ব্যবহার, পরিবর্তন, মুছে ফেলা,
+প্রকাশ, ক্ষতি বা হারিয়ে যাওয়া থেকে রক্ষা করার ব্যবস্থা প্রয়োজন।
+এই সামগ্রিক ব্যবস্থার একটি গুরুত্বপূর্ণ অংশ হলো
+\textbf{ডেটা নিরাপত্তা}।
+
+
+% ============================================================
+% 15.1 DATA SECURITY
+% ============================================================
+
+
+\subsubsection{Data Security-এর ঝুঁকির উদাহরণ}
+অনুমতি ছাড়া ফল দেখা গোপনীয়তার ক্ষতি; নম্বর বদলানো তথ্যের অখণ্ডতার ক্ষতি; ডিস্ক নষ্ট হয়ে ফল পাওয়া না যাওয়া প্রাপ্যতার ক্ষতি। তাই শুধু লগইন ব্যবস্থা যথেষ্ট নয়। পরিচয় ও অধিকার অনুযায়ী প্রবেশ, অনুমোদিত পরিবর্তন এবং পরীক্ষিত ব্যাকআপ ও পুনরুদ্ধার দরকার। ব্যাংকের হিসাব, হাসপাতালের ব্যক্তিগত তথ্য ও গ্রাহকের ঠিকানা রক্ষাতেও এসব ব্যবস্থা একসঙ্গে কাজ করে।
+
+\subsection{Data Security-এর সংজ্ঞা}
+
+\begin{definitionbox}{}
+
+ডেটাবেজের ডেটাকে অননুমোদিত ব্যবহার, প্রকাশ ও পরিবর্তন এবং ক্ষতি বা হারিয়ে যাওয়া থেকে রক্ষা করার ব্যবস্থাকে \textbf{Data Security} বলে। এতে ডেটার ব্যবহার ও প্রবেশাধিকার নিয়ন্ত্রণ এবং অনুমোদিত ব্যবহারকারীর জন্য নির্ভরযোগ্যভাবে তথ্য পাওয়ার ব্যবস্থা অন্তর্ভুক্ত থাকে।
+
+\end{definitionbox}
+
+অর্থাৎ ডেটা নিরাপত্তা শুধু পাসওয়ার্ড দেওয়ার বিষয় নয়। কে ডেটা
+দেখতে পারবে, কে নতুন ডেটা যোগ করবে, কে পরিবর্তন বা মুছে ফেলবে,
+কে ডেটাবেজের কোন অবজেক্ট (Database Object) ব্যবহার করবে এবং ডেটা হারিয়ে গেলে কীভাবে
+পুনরুদ্ধার করা হবে---এসব বিষয়ও ডেটাবেজের নিরাপত্তার অন্তর্ভুক্ত।
+
+\begin{keypointbox}{সহজভাবে মনে রাখো}
+
+\par\smallskip
+\noindent\(\displaystyle \boxed{
+\text{Data Security}
+=
+\text{Protection}
++
+\text{Controlled Access}
++
+\text{Recovery}
+}\)\par\smallskip
+
+অর্থাৎ ডেটাকে রক্ষা করা, অনুমতি অনুযায়ী ব্যবহার করানো এবং
+ক্ষতির পরে প্রয়োজন হলে পুনরুদ্ধারের ব্যবস্থা রাখা।
+
+\end{keypointbox}
+
+
+% ============================================================
+% WHY SECURITY
+% ============================================================
+
+\subsubsection{CIA: Confidentiality, Integrity ও Availability}
+তথ্য নিরাপত্তার তিনটি প্রধান লক্ষ্য হলো \textbf{গোপনীয়তা, অখণ্ডতা ও প্রাপ্যতা}। ফলের ডেটাবেজে অনুমতি ছাড়া তথ্য দেখা, নম্বর বদলানো এবং প্রয়োজনের সময় ফল না পাওয়া—এই তিন ক্ষতি যথাক্রমে তিনটি লক্ষ্যের সঙ্গে সম্পর্কিত।
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{36mm}|Y|Y|}\hline\chSixHeader
+লক্ষ্য & সহজ সংজ্ঞা & কলেজের উদাহরণ\\\hline
+গোপনীয়তা (Confidentiality) & অনুমতি অনুযায়ী তথ্য দেখা ও প্রকাশ সীমিত রাখা & অন্য শিক্ষার্থীর ব্যক্তিগত নথি দেখা বন্ধ\\\hline
+অখণ্ডতা (Integrity) & অনুচিত পরিবর্তন বা ধ্বংস থেকে তথ্য রক্ষা & অনুমতি ছাড়া নম্বর বদলানো প্রতিরোধ\\\hline
+প্রাপ্যতা (Availability) & অনুমোদিত ব্যবহারকারীর প্রয়োজনমতো নির্ভরযোগ্য প্রবেশের সুযোগ & ফল প্রকাশের সময়ে সেবা সচল রাখা\\\hline
+\end{tabularx}
+\end{flushleft}
+শুধু সবার প্রবেশ বন্ধ করে দিলে তথ্য গোপন থাকতে পারে, কিন্তু অনুমোদিত কাজও বন্ধ হয়। তাই নিরাপত্তা মানে ব্যবহার পুরো বন্ধ করা নয়; নির্ধারিত অধিকার ও প্রয়োজন মেনে নির্ভরযোগ্য ব্যবহার নিশ্চিত করা।
+
+
+\subsubsection{Data Security-এর প্রয়োজনীয়তা}
+
+\begin{chSixSideBySide}[.48]
+ডেটাবেজের নিরাপত্তা প্রয়োজন, কারণ ডেটা---
+
+\begin{itemize}
+    \item অননুমোদিত ব্যক্তি দেখতে পারে;
+    \item অনুমতি ছাড়া পরিবর্তন করা হতে পারে;
+    \item মুছে ফেলা হতে পারে;
+    \item ভুল ব্যবহার বা ত্রুটির কারণে বিকৃত (Corrupt) হতে পারে;
+    \item হার্ডওয়্যার বা সিস্টেমের ব্যর্থতার (System Failure) কারণে হারিয়ে যেতে পারে;
+    \item গুরুত্বপূর্ণ বা গোপন তথ্য অন্যের হাতে চলে যেতে পারে।
+\end{itemize}
+\chSixNextColumn
+\noindent
+\textbf{উদাহরণ:}
+কলেজের ডেটাবেজে একজন শিক্ষার্থী নিজের ফল দেখতে পারে, কিন্তু পরিবর্তন করতে পারে না। অর্থাৎ তার কাজের অনুমতি সীমিত। অন্যদিকে দায়িত্বপ্রাপ্ত শিক্ষক অনুমতি অনুযায়ী ফল সংশোধন করতে পারেন।
+
+অর্থাৎ---
+
+\par\smallskip
+\noindent\(\displaystyle \boxed{\text{সব User-এর Permission এক নয়}}\)\par\smallskip
+\end{chSixSideBySide}
+% ============================================================
+% SECURITY TYPES
+% ============================================================
+
+\subsubsection{Database Security-এর প্রকারভেদ}
+
+পাঠ্যবইভিত্তিক আলোচনায় ডেটাবেজের নিরাপত্তাকে প্রধানত দুই ভাগে
+দেখানো যায়---
+
+\begin{flushleft}
+\begin{minipage}{0.92\linewidth}
+\raggedright
+\small
+
+\begin{tikzpicture}[
+    level distance=16mm,
+    level 1/.style={sibling distance=62mm},
+    every node/.style={font=\small}
+]
+\node[
+    booknode,
+    text width=37mm,
+    minimum height=10mm
+]
+{\textbf{Database Security}}
+child{
+    node[
+        booknode,
+        text width=34mm,
+        minimum height=10mm
+    ]
+    {\textbf{System Security}}
+}
+child{
+    node[
+        booknode,
+        text width=39mm,
+        minimum height=10mm
+    ]
+    {\textbf{Data/Object Security}}
+};
+\end{tikzpicture}
+
+\captionof{figure}{ডেটাবেজের নিরাপত্তার প্রধান দুটি অংশ}
+
+\end{minipage}
+\end{flushleft}
+
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabularx}{0.98\linewidth}{|p{29mm}|Y|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{বিষয়}
+&
+\raggedright\textbf{System Security}
+&
+\raggedright\arraybackslash\textbf{Data/Object Security}
+\\ \hline
+
+মূল প্রশ্ন
+&
+ব্যবহারকারী সিস্টেম বা ডেটাবেজ ব্যবহার করতে পারবেন কি না
+&
+কোন ব্যবহারকারী কোন ডেটা বা অবজেক্টে কী কাজ করতে পারবেন
+\\ \hline
+
+নিয়ন্ত্রণ
+&
+Login, Resource, System-level Rights
+&
+Read, Insert, Update, Delete
+\\ \hline
+
+উদাহরণ
+&
+ব্যবহারকারী ডেটাবেজ খোলার অনুমতি পাবেন কি না
+&
+শিক্ষার্থী ফল দেখতে পারবে, কিন্তু বদলাতে পারবে না
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{সিস্টেম নিরাপত্তা ও ডেটা বা অবজেক্ট স্তরের নিরাপত্তার তুলনা}
+\end{flushleft}
+
+
+% ============================================================
+% MAIN IMAGE
+% ============================================================
+
+
+
+
+\subsubsection{Authentication ও Authorization-এর পার্থক্য}
+কলেজের শিক্ষার্থী ও শিক্ষক দুজনই সঠিক পাসওয়ার্ড দিয়ে লগইন করতে পারেন। কিন্তু তাই বলে দুজনকে একই কাজের অনুমতি দেওয়া যায় না। শিক্ষার্থী নিজের ফল দেখতে পারেন; তাঁকে নম্বর বদলানোর সুযোগ দিলে ফলের বিশ্বাসযোগ্যতা নষ্ট হবে। তাই প্রথমে পরিচয় যাচাই (Authentication) এবং পরে অনুরোধ করা কাজের অনুমতি পরীক্ষা (Authorization) করতে হয়।
+
+ওয়েবসাইটেও ক্রেতা নিজের অর্ডার দেখেন, আর সেবাকর্মী অভিযোগ সামলান। তাঁদের কাজের অধিকার আলাদা। এই সীমা রক্ষার জন্য শুধু পর্দার বোতাম লুকিয়ে রাখা যথেষ্ট নয়। পেছনের সেবাতেও প্রতিটি অনুরোধের অনুমতি যাচাই করতে হয়।
+
+\subsection{System Security}
+
+\begin{definitionbox}{}
+
+ডেটাবেজ ব্যবস্থার সামগ্রিক স্তরে ডেটায় প্রবেশ ও ডেটাবেজ ব্যবহারের জন্য গৃহীত নিরাপত্তামূলক ব্যবস্থাকে \textbf{System Security} বলে।
+
+\end{definitionbox}
+
+সিস্টেম নিরাপত্তার মাধ্যমে সাধারণত পরীক্ষা বা নিয়ন্ত্রণ করা হয়---
+
+\begin{itemize}
+    \item ব্যবহারকারী ডেটাবেজ খোলার জন্য অনুমোদিত কি না;
+    \item ব্যবহারকারীর পরিচয় বা লগইন তথ্য সঠিক কি না;
+    \item ব্যবহারকারীর জন্য সিস্টেমের কতটুকু সম্পদ (System Resource) বা ডিস্কের কতটুকু স্থান (Disk Space) বরাদ্দ আছে;
+    \item ব্যবহারকারী ডেটাবেজে কোন ধরনের কাজ চালাতে পারবে;
+    \item সিস্টেমের ব্যর্থতায় ডেটা কীভাবে পুনরুদ্ধার করা হবে।
+\end{itemize}
+
+
+% ============================================================
+% AUTHENTICATION VS AUTHORIZATION
+% ============================================================
+
+\subsubsection{Authentication ও Authorization}
+
+ডেটাবেজ ব্যবহার করার আগে ব্যবহারকারীর পরিচয় যাচাই করা নিরাপত্তার
+গুরুত্বপূর্ণ অংশ।
+
+\begin{definitionbox}{Authentication (অথেনটিকেশন)}
+
+ব্যবহারকারী যে পরিচয় দাবি করছেন, সেটি যাচাই করার প্রক্রিয়াকে \textbf{Authentication} বলে।
+
+\end{definitionbox}
+
+সাধারণ উদাহরণ---
+
+\par\smallskip
+\noindent\(\displaystyle \text{User Name}
++
+\text{Password}
+\rightarrow
+\text{Identity Check}\)\par\smallskip
+
+সঠিক লগইন তথ্য মিললে দাবি করা অ্যাকাউন্টের পরিচয় যাচাই সফল হয়;
+ভুল হলে প্রবেশাধিকার প্রত্যাখ্যাত হতে পারে।
+
+\begin{definitionbox}{Authorization (অথরাইজেশন)}
+
+পরিচয় যাচাইয়ের পরে ব্যবহারকারী কোন সম্পদ ব্যবহার করতে পারবেন এবং কী কাজের অধিকার পাবেন, তা নির্ধারণের প্রক্রিয়াকে \textbf{Authorization} বলে।
+
+\end{definitionbox}
+
+
+\begin{flushleft}
+\small
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabularx}{0.96\linewidth}{|p{34mm}|Y|Y|}
+\hline
+
+\chSixHeader
+\textbf{বিষয়}
+&
+\textbf{Authentication}
+&
+\textbf{Authorization}
+\\ \hline
+
+মূল প্রশ্ন
+&
+ব্যবহারকারী কে?
+&
+ব্যবহারকারী কী করতে পারবে?
+\\ \hline
+
+উদাহরণ
+&
+User Name/পাসওয়ার্ড যাচাই
+&
+Read/Update/Delete Permission
+\\ \hline
+
+ক্রম
+&
+সাধারণত আগে
+&
+সাধারণত পরিচয় যাচাইয়ের পরে
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+
+\begin{mistakebox}{MCQ-তে সাধারণ ভুল}
+
+\textbf{Authentication} এবং \textbf{Authorization} একই বিষয় নয়। Authentication $\rightarrow$ পরিচয় যাচাই। Authorization $\rightarrow$ অনুমতি নির্ধারণ। লগইন সফল হয়েছে মানেই ব্যবহারকারী সব ডেটা পরিবর্তন বা মুছে ফেলার
+অনুমতি পেয়েছে---এ ধারণা ভুল।
+
+\end{mistakebox}
+
+
+% ============================================================
+% SYSTEM SECURITY CONTROLS
+% ============================================================
+
+\subsubsection{System Security-এর নিয়ন্ত্রণের ক্ষেত্র}
+
+ডেটাবেজের নিরাপত্তার সিস্টেম স্তরে নিচের বিষয়গুলো নিয়ন্ত্রণ
+করা যেতে পারে---
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.98\linewidth}{|p{38mm}|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{নিয়ন্ত্রণের বিষয়}
+&
+\raggedright\arraybackslash\textbf{ব্যাখ্যা}
+\\ \hline
+
+User Access
+&
+কোন ব্যবহারকারী ডেটাবেজ ব্যবহার করতে পারবে
+\\ \hline
+
+User Rights
+&
+ব্যবহারকারী কোন কাজ করতে পারবে
+\\ \hline
+
+System Resource
+&
+ব্যবহারকারী কী পরিমাণ System Resource ব্যবহার করতে পারবে
+\\ \hline
+
+Disk Usage
+&
+ব্যবহারকারীর জন্য কতটুকু Disk Space বরাদ্দ থাকবে
+\\ \hline
+
+User Action
+&
+ব্যবহারকারী কী ধরনের কাজ চালাতে পারবে
+\\ \hline
+
+Data Usage Limit
+&
+ব্যবহারকারী কতটুকু ডেটা দেখতে বা পরিবর্তন করতে পারবে
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{ডেটাবেজের নিরাপত্তার নিয়ন্ত্রণ ক্ষেত্র}
+\end{flushleft}
+
+
+% ============================================================
+% SYSTEM LEVEL AUTH
+% ============================================================
+
+\subsection{Permissions: ডেটা ও কাঠামো ব্যবহারের অধিকার}
+
+সিস্টেম স্তরে ডেটাবেজের বিভিন্ন অবজেক্ট বা সম্পদ ব্যবহারের
+অনুমতি আলাদাভাবে দেওয়া যেতে পারে।
+\textbf{পাঠ্যবইয়ে ব্যবহৃত পরিভাষা:} এখানে Index, Resource, Alteration ও Drop Authorization-এর কাজ দেখানো হয়েছে; বাস্তব DBMS-এ অনুমতির নাম, স্তর ও প্রয়োগপদ্ধতি ভিন্ন হতে পারে।
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.98\linewidth}{|p{39mm}|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{Authorization}
+&
+\raggedright\arraybackslash\textbf{কাজ}
+\\ \hline
+
+Index Authorization
+&
+ব্যবহারকারী ইনডেক্স তৈরি বা মুছে ফেলার অনুমতি পেতে পারে
+\\ \hline
+
+Resource Authorization
+&
+নতুন রিলেশন বা টেবিল তৈরির অনুমতি পেতে পারে
+\\ \hline
+
+Alteration Authorization
+&
+রিলেশনের অ্যাট্রিবিউট পরিবর্তন, যোগ বা বাদ দেওয়ার অনুমতি
+\\ \hline
+
+Drop Authorization
+&
+রিলেশন বা টেবিল মুছে ফেলার অনুমতি
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{সিস্টেম স্তরে অনুমতি নির্ধারণের উদাহরণ}
+\end{flushleft}
+
+
+
+
+
+% ============================================================
+% OBJECT LEVEL
+% ============================================================
+
+\subsubsection{Object-level Security}
+
+সিস্টেম নিরাপত্তা পুরো ডেটাবেজ ব্যবস্থার ব্যবহার নিয়ন্ত্রণ করে।
+অন্যদিকে ডেটা বা অবজেক্ট স্তরের নিরাপত্তা নির্ধারণ করে---
+
+\par\smallskip
+\noindent\(\displaystyle \boxed{
+\text{কোন User}
+\rightarrow
+\text{কোন Data/Object}
+\rightarrow
+\text{কী কাজ করতে পারবে}
+}\)\par\smallskip
+
+ধরা যাক, A নামের ব্যবহারকারী Student টেবিলের ডেটা দেখতে পারেন, কিন্তু মুছতে পারেন না। ডেটাবেজ খোলার অনুমতি থাকলেও প্রতিটি কাজের অধিকার আলাদাভাবে নির্ধারিত হতে পারে।
+
+
+% ============================================================
+% FOUR AUTHORIZATIONS
+% ============================================================
+
+\subsubsection{Data ব্যবহারের চারটি গুরুত্বপূর্ণ অনুমতি}
+
+ডেটা সংযোজন, দেখা, পরিবর্তন ও মুছে ফেলার ভিত্তিতে অনুমতি
+চারটি গুরুত্বপূর্ণ ভাগে বোঝানো যায়---
+
+\begin{multicols}{2}
+\subsubsection{Data পড়ার অনুমতি}
+
+SQL-ভিত্তিক ব্যবস্থায় ডেটা পড়ার অধিকার সাধারণত \texttt{SELECT} privilege নামে প্রকাশ পায়। নিচের Read/Insert/Update/Delete নামগুলো কাজের ধরন বোঝায়; DBMS-ভেদে নির্দিষ্ট অনুমতি ও প্রয়োগ আলাদা হতে পারে।
+
+\begin{definitionbox}{Read Authorization}
+
+ব্যবহারকারীকে ডেটাবেজের ডেটা শুধু পড়া বা দেখার অনুমতি দেওয়া হলে
+তাকে \textbf{Read Authorization} বলে।
+
+\end{definitionbox}
+
+এক্ষেত্রে ব্যবহারকারী ডেটা দেখতে পারবে, কিন্তু অন্য অনুমতি না থাকলে
+নতুন ডেটা যোগ, পুরোনো ডেটা সংশোধন বা মুছে ফেলতে পারবে না।
+
+
+
+
+\subsubsection{নতুন Data যোগ করার অনুমতি}
+
+ব্যবহারকারীকে ডেটাবেজে নতুন ডেটা বা রেকর্ড যোগ করার অনুমতি দেওয়া
+হলে তাকে \textbf{Insert Authorization} বলে। অন্য অনুমতি না থাকলে নতুন ডেটা যোগ করতে পারলেও পুরোনো ডেটা
+পরিবর্তন বা মুছে ফেলতে পারবে না।
+
+
+\subsubsection{Data সংশোধনের অনুমতি}
+
+ডেটাবেজে সংরক্ষিত ডেটা পরিবর্তন বা সংশোধনের অনুমতিকে
+\textbf{Update Authorization} বলে। যেমন দায়িত্বপ্রাপ্ত শিক্ষকের ফলাফল সংশোধনের অনুমতি
+থাকতে পারে।
+
+
+\subsubsection{Data মুছে ফেলার অনুমতি}
+
+ডেটাবেজ থেকে ডেটা মুছে ফেলার অনুমতিকে
+\textbf{Delete Authorization} বলে।
+
+
+
+
+\end{multicols}
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.95\linewidth}{|p{26mm}|p{27mm}|Y|}
+\hline
+
+\chSixHeader
+\textbf{Permission}
+&
+\textbf{SQL ধারণা}
+&
+\textbf{কাজ}
+\\ \hline
+
+Read
+&
+SELECT
+&
+ডেটা দেখা/পড়া
+\\ \hline
+
+Insert
+&
+INSERT
+&
+নতুন ডেটা যোগ
+\\ \hline
+
+Update
+&
+UPDATE
+&
+পুরোনো ডেটা পরিবর্তন
+\\ \hline
+
+Delete
+&
+DELETE
+&
+Data Delete
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{ডেটা ব্যবহারের অনুমতি এক নজরে}
+\end{flushleft}
+
+
+% ============================================================
+% USER ROLE EXAMPLE
+% ============================================================
+
+\subsubsection{ব্যবহারকারী অনুযায়ী অনুমতি: বাস্তব উদাহরণ}
+
+ডেটাবেজের নিরাপত্তার গুরুত্বপূর্ণ নীতি হলো কাজের প্রয়োজন অনুযায়ী
+ব্যবহারকারীকে অনুমতি দেওয়া। একটি College Result ডেটাবেজের ধারণামূলক উদাহরণ---
+
+\begin{chSixSideBySide}[.65]
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+\textbf{User/Role}
+&
+\textbf{Read}
+&
+\textbf{Insert}
+&
+\textbf{Update}
+&
+\textbf{Delete}
+\\ \hline
+
+Student
+&
+$\checkmark$
+&
+$\times$
+&
+$\times$
+&
+$\times$
+\\ \hline
+
+Teacher
+&
+$\checkmark$
+&
+$\checkmark$
+&
+$\checkmark$
+&
+$\times$
+\\ \hline
+
+Result Publisher
+&
+$\checkmark$
+&
+$\times$
+&
+$\times$
+&
+$\times$
+\\ \hline
+
+Authorized Administrator
+&
+$\checkmark$
+&
+$\checkmark$
+&
+$\checkmark$
+&
+নীতিমাফিক
+\\ \hline
+
+\end{tabular}
+
+\captionof{table}{ভিন্ন ব্যবহারকারীর ভিন্ন অনুমতির উদাহরণ}
+\chSixNextColumn
+\begin{keypointbox}{প্রয়োজনমাফিক অনুমতি}
+
+\textbf{Least Privilege} নীতি অনুযায়ী, ব্যবহারকারীকে কাজের জন্য যতটুকু অনুমতি প্রয়োজন, সাধারণত ততটুকুই দেওয়া নিরাপদ। অপ্রয়োজনীয় অনুমতি দিলে ভুল বা অপব্যবহারের ক্ষতি বেড়ে যেতে পারে।
+
+\end{keypointbox}
+\end{chSixSideBySide}
+এখানে Student শুধু নিজের অনুমোদিত Result দেখতে পারে।
+Teacher দায়িত্বপ্রাপ্ত বিষয়ের Result দেখতে, যোগ করতে ও সংশোধন
+করতে পারে। Result Publisher-এর কাজ শুধু তথ্য পড়া ও প্রতিবেদন
+প্রস্তুত করা হলে তার Delete অনুমতি প্রয়োজন নেই।
+Authorized Administrator প্রতিষ্ঠানের নীতি অনুযায়ী বেশি অনুমতি
+পেতে পারেন।
+
+\subsubsection{ডেটাবেজে প্রবেশ ও কাজের সহজ ধাপ}
+
+\begin{chSixSideBySide}[.39]
+\raggedright
+\small
+
+\begin{tikzpicture}[
+    node distance=3.5mm,
+    every node/.style={
+        booknode,
+        font=\small,
+        text width=48mm,
+        minimum height=8mm
+    }
+]
+\node (user)
+{User};
+\node (login) [below=of user]
+{Authentication: User Name / Password};
+\node (auth) [below=of login]
+{Authorization Check};
+\node (permission) [below=of auth]
+{Read / Insert / Update / Delete Permission};
+\node (data) [below=of permission]
+{Allowed Database Operation};
+\draw[bookarrow] (user)--(login);
+\draw[bookarrow] (login)--(auth);
+\draw[bookarrow] (auth)--(permission);
+\draw[bookarrow] (permission)--(data);
+\end{tikzpicture}
+
+\captionof{figure}{ডেটাবেজে প্রবেশ ও কাজের অনুমতির ধারণামূলক ধাপ}
+\chSixNextColumn
+
+
+
+
+প্রথমে ব্যবহারকারীর পরিচয় যাচাই হয়। পরিচয় সঠিক হলে কাজের অনুমতি নির্ধারণের মাধ্যমে ঠিক করা হয় তিনি কোন তথ্য নিয়ে কী কাজ করতে পারবেন। ফলে সফল লগইন মানেই সব রেকর্ড দেখা বা পরিবর্তনের অনুমতি নয়। Read অনুমতি থাকলে তথ্য দেখা যায়; Insert, Update ও Delete-এর জন্য সংশ্লিষ্ট অনুমতি প্রয়োজন।
+
+\textbf{ব্যাংকের উদাহরণ:} অনুমোদিত Accountant প্রয়োজনমাফিক Customer-এর Balance হালনাগাদ করতে পারেন, অন্য Officer শুধু অনুমোদিত তথ্য দেখতে পারেন। একই ডেটাবেজ ব্যবহার করলেও কাজের দায়িত্ব আলাদা বলে অধিকারও আলাদা। এই পার্থক্য অনিচ্ছাকৃত পরিবর্তন ও অপব্যবহারের সুযোগ কমায়।
+
+\textbf{মনে রাখবে:} শিক্ষককে ফল সংশোধনের অনুমতি দেওয়া মানে নিজের অ্যাকাউন্টের ভূমিকা বা অনুমতি বদলানোর অধিকার দেওয়া নয়। সিস্টেম ব্যবহারের অনুমতি এবং নির্দিষ্ট ডেটা বা অবজেক্টে কাজের অনুমতি পৃথকভাবে নির্ধারিত হতে পারে।
+\end{chSixSideBySide}
+
+
+
+% ============================================================
+% DATA LOSS
+% ============================================================
+
+
+\subsection{Data Loss ও System Failure}
+ডেটা নিরাপত্তা অননুমোদিত ব্যবহার ঠেকানোর পাশাপাশি প্রয়োজনের সময় নির্ভরযোগ্য তথ্য পাওয়ার নিশ্চয়তা দিতেও সহায়তা করে। বিদ্যুৎ বিভ্রাটে কাজ থেমে যাওয়া, সফটওয়্যার বন্ধ হওয়া এবং সংরক্ষণযন্ত্র নষ্ট হওয়ার ক্ষতি এক রকম নয়। কোন অংশ ক্ষতিগ্রস্ত হয়েছে, তা বুঝে পুনরুদ্ধারের ব্যবস্থা নিতে হয়।
+
+ট্রানজেকশন ব্যর্থ হলে তার অসম্পূর্ণ পরিবর্তন বাতিল করতে হতে পারে। সিস্টেম হঠাৎ বন্ধ হয়ে গেলে (System Crash) চলমান কাজ থেমে যায়। ডিস্ক নষ্ট হলে (Disk Failure) সংরক্ষিত ফাইলও হারাতে পারে। সব ধরনের ব্যর্থতায় সব ডেটা হারায় না। লগইন পাসওয়ার্ড এসব ক্ষতি প্রতিরোধের বিকল্পও নয়।
+
+\begin{flushleft}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.98\linewidth}{|p{35mm}|Y|}
+\hline
+
+\chSixHeader
+\raggedright\textbf{Failure}
+&
+\raggedright\arraybackslash\textbf{সহজ ধারণা}
+\\ \hline
+
+Transaction Failure
+&
+কোনো ট্রানজেকশন সম্পূর্ণ হওয়ার আগে ত্রুটি ঘটতে পারে
+\\ \hline
+
+System Crash
+&
+কম্পিউটার বা ডেটাবেজ ব্যবস্থা হঠাৎ বন্ধ হয়ে যেতে পারে
+\\ \hline
+
+Disk Failure
+&
+সংরক্ষণের ডিস্ক নষ্ট হয়ে ডেটা ক্ষতিগ্রস্ত বা হারিয়ে যেতে পারে
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{ডেটাবেজের ডেটা হারিয়ে যাওয়ার গুরুত্বপূর্ণ কারণ}
+\end{flushleft}
+
+
+% ============================================================
+% LOSS VS CORRUPTION
+% ============================================================
+
+
+\subsubsection{Data Loss ও Data Corruption}
+\textbf{Data Loss} হলো প্রয়োজনীয় ডেটা সম্পূর্ণ বা আংশিক হারিয়ে যাওয়া। যেমন নষ্ট ডিস্ক থেকে শিক্ষার্থীর Result ফাইল আর পাওয়া গেল না। \textbf{Data Corruption} ডেটা থাকতে পারে, কিন্তু তার গঠন বা মান ক্ষতিগ্রস্ত বা অসামঞ্জস্যপূর্ণ হয়। ফলে ফাইল খোলা গেলেও তথ্যকে নির্ভুল ধরে নেওয়া যায় না।
+
+ধরা যাক, অননুমোদিত বা ত্রুটিপূর্ণ পরিবর্তনে GPA 5.00-এর বদলে 3.50 হয়েছে। রেকর্ডটি আছে, কিন্তু সংরক্ষিত মান সঠিক নেই—এটি ডেটার শুদ্ধতা নষ্ট হওয়ার উদাহরণ। শুধু রেকর্ড গুনে এই ভুল ধরা যাবে না; অনুমোদিত মূল ফল ও পরিবর্তনের নথির সঙ্গে মিলিয়ে দেখতে হবে। বৈধভাবে সংশোধিত মানকে অবশ্য ডেটার বিকৃতি বলা যাবে না।
+
+\begin{flushleft}
+\small
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}{0.94\linewidth}{|p{31mm}|Y|Y|}
+\hline
+
+\chSixHeader
+\textbf{বিষয়}
+&
+\textbf{Data Loss}
+&
+\textbf{Data Corruption}
+\\ \hline
+
+অবস্থা
+&
+ডেটা হারিয়ে গেছে
+&
+ডেটা আছে কিন্তু ভুল/অসামঞ্জস্যপূর্ণ
+\\ \hline
+
+উদাহরণ
+&
+ডিস্ক নষ্ট হয়ে ফাইল হারানো
+&
+GPA 5.00 বদলে ভুলভাবে 3.50 হওয়া
+\\ \hline
+
+\end{tabularx}
+\end{flushleft}
+
+
+% ============================================================
+% RECOVERY
+% ============================================================
+
+\subsubsection{Data Recovery ও Backup}
+
+\begin{definitionbox}{}
+
+সিস্টেমের ব্যর্থতা, ডিস্ক নষ্ট হওয়া বা অন্য কারণে হারিয়ে যাওয়া বা
+ক্ষতিগ্রস্ত ডেটাকে পুনরায় ব্যবহারযোগ্য অবস্থায় ফিরিয়ে আনার
+প্রক্রিয়াকে \textbf{Data Recovery} বলে।
+
+\end{definitionbox}
+
+
+
+পুনরুদ্ধার হলো ক্ষতির পর তথ্য ব্যবহারযোগ্য করার কাজ, আর ব্যাকআপ হলো তার জন্য আগে থেকে রাখা পুনরুদ্ধারযোগ্য কপি। কেবল কপি তৈরি করাই যথেষ্ট নয়; কপিটি কোন সময়ের এবং তা সঠিকভাবে ফিরিয়ে আনা যায় কি না জানা প্রয়োজন। যেমন সোমবারের ব্যাকআপ মঙ্গলবার ফিরিয়ে আনলে মঙ্গলবারের নতুন রেকর্ড সেই কপিতে থাকবে না। তাই তথ্য যত ঘন ঘন বদলায়, ব্যাকআপের সময়সূচিও তত গুরুত্ব দিয়ে নির্ধারণ করতে হয়।
+
+\begin{chSixSideBySide}[.48]
+\begin{definitionbox}{Backup}
+মূল ডেটা হারিয়ে গেলে পুনরুদ্ধারের জন্য ডেটার নিরাপদ, পুনরুদ্ধারযোগ্য কপি সংরক্ষণ করাকে ব্যাকআপ বলে।
+\end{definitionbox}
+\chSixNextColumn
+\begin{mistakebox}{পাসওয়ার্ড সব সমস্যার সমাধান নয়}
+পাসওয়ার্ড অননুমোদিত প্রবেশ কমাতে পারে; নষ্ট ডিস্কের হারানো তথ্য ফেরায় না। সেক্ষেত্রে ব্যাকআপ ও পুনরুদ্ধার প্রয়োজন।
+\end{mistakebox}
+\end{chSixSideBySide}
+
+\subsubsection{পুনরুদ্ধারের ধাপের উদাহরণ}
+পুনরুদ্ধারের আগে ক্ষতির ধরন শনাক্ত করতে হয়। শুধু অ্যাপ্লিকেশন বন্ধ হওয়া, ডেটা নষ্ট হওয়া এবং ভুল করে রেকর্ড মুছে ফেলার ব্যবস্থা এক নয়। ত্রুটির কারণ নিয়ন্ত্রণ করে প্রয়োজন হলে নির্ভরযোগ্য ব্যাকআপ থেকে ডেটা পুনঃস্থাপন (Restore) করা হয়। কারণ না সরিয়ে পুরোনো কপি ফিরিয়ে আনলে একই সমস্যা আবার ঘটতে পারে।
+
+পুনঃস্থাপনের পরে ফাইল খোলা যাচ্ছে কি না দেখার সঙ্গে রেকর্ড সংখ্যা, সাম্প্রতিক লেনদেন, প্যারেন্ট ও চাইল্ড টেবিলের সম্পর্ক এবং প্রতিবেদনের মোট হিসাব মিলিয়ে সেবা চালু করতে হয়। একটি ব্যাকআপ ক্ষতিগ্রস্ত হলে আগের পরীক্ষিত কপি প্রয়োজন হতে পারে। তাই নিয়মিত ব্যাকআপ নেওয়া এবং তা থেকে সত্যিই পুনরুদ্ধার করা যায় কি না পরীক্ষা করা—দুটিই গুরুত্বপূর্ণ।
+
+\subsection{Auditing ও Monitoring}
+
+\begin{definitionbox}{}
+
+কে, কখন ডেটাবেজে প্রবেশ করেছে এবং কোন ডেটায় কী কাজ করেছে
+তার নথি রাখার প্রক্রিয়াকে \textbf{Auditing} বলা হয়।
+
+\end{definitionbox}
+
+\begin{chSixSideBySide}[.48]
+\textbf{Monitoring} ডেটাবেজের কার্যকলাপ নিয়মিত নজরে রেখে
+অস্বাভাবিক ঘটনা শনাক্ত করার চেষ্টা করা হয়।
+
+যেমন Result প্রকাশের পরে কোনো নম্বর পরিবর্তন হলে জানতে প্রয়োজন
+হতে পারে---
+
+\begin{itemize}
+    \item কখন পরিবর্তন হয়েছে;
+    \item কোন ব্যবহারকারী কাজ করেছে;
+    \item কী কাজ চালানো হয়েছে;
+    \item কোন রেকর্ড পরিবর্তিত হয়েছে।
+\end{itemize}
+\chSixNextColumn
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+Time
+&
+UserID
+&
+Action
+&
+RecordID
+\\ \hline
+
+10:15
+&
+T11
+&
+Read
+&
+101
+\\ \hline
+
+10:18
+&
+O02
+&
+Update
+&
+103
+\\ \hline
+
+10:20
+&
+T11
+&
+Login failed
+&
+---
+\\ \hline
+
+\end{tabular}
+
+\captionof{table}{ডেটাবেজের কার্যকলাপের সরল কাল্পনিক অডিট লগ (Audit Log)}
+
+
+
+\begin{keypointbox}{অডিট লগ কী করে?}
+
+অডিট লগ সাধারণত কে কী কাজ করেছেন, তার নথি রাখে। এটি নিজে সব ভুল বা অননুমোদিত কাজ থামায় না। তবে ঘটনার তদন্ত, কার্যকলাপ পর্যবেক্ষণ এবং দায় নির্ধারণে সাহায্য করে।
+
+\end{keypointbox}
+\end{chSixSideBySide}
+
+
+
+% ============================================================
+% NETWORK PROTECTION
+% ============================================================
+
+\subsubsection{Network Security: Firewall ও IDS}
+
+নেটওয়ার্ক দিয়ে ডেটাবেজ ব্যবহার করলে ডেটাবেজ সার্ভারের সংযোগও
+সুরক্ষিত রাখতে হয়।
+
+\textbf{Firewall} নির্ধারিত নিয়ম অনুযায়ী নেটওয়ার্ক যোগাযোগ
+অনুমোদন বা বাধা দিতে সাহায্য করে।
+
+\textbf{Intrusion Detection System (IDS)} সন্দেহজনক বা
+অননুমোদিত প্রবেশের চেষ্টা শনাক্ত করতে সহায়তা করে। ব্যবহারকারীর পরিচয় যাচাইয়ে পাসওয়ার্ডের পাশাপাশি প্রয়োজন অনুযায়ী
+অতিরিক্ত প্রমাণ বা বায়োমেট্রিক তথ্য (Biometric) ব্যবহার করা যেতে পারে।
+
+তবে---
+
+\par\smallskip
+\noindent\(\displaystyle \boxed{
+\text{পরিচয় নিশ্চিত হওয়া}
+\neq
+\text{সব Data পরিবর্তনের Permission পাওয়া}
+}\)\par\smallskip
+
+
+% ============================================================
+% DATA MASKING
+% ============================================================
+
+\subsubsection{Data Masking}
+
+\begin{definitionbox}{}
+
+সংবেদনশীল ডেটার পুরো মান প্রকাশ না করে প্রয়োজনীয় অংশ
+আড়াল করে প্রদর্শনের পদ্ধতিকে \textbf{Data Masking} বলা হয়।
+
+\end{definitionbox}
+
+যেমন, একটি কাল্পনিক মোবাইল নম্বরের কিছু অঙ্ক আড়াল করে নিচের মতো
+
+\par\smallskip
+\noindent\(\displaystyle \texttt{017*****321}\)\par\smallskip
+
+দেখানো যেতে পারে। এতে পুরো নম্বর প্রকাশ না করেও প্রয়োজনীয় পরিচিতি বোঝা যায়।
+
+\begin{mistakebox}{মাস্কিং ও এনক্রিপশন এক নয়}
+
+\textbf{ডেটা মাস্কিং} $\rightarrow$ ডেটা আংশিকভাবে আড়াল করে দেখায়।
+
+\textbf{এনক্রিপশন} $\rightarrow$ কী (Key) ও অ্যালগরিদম (Algorithm) ব্যবহার করে ডেটাকে
+অপাঠ্য সাইফারটেক্সটে (Ciphertext) রূপান্তর করে। একটি অন্যটির বিকল্প নয়।
+
+\end{mistakebox}
+
+
+% ============================================================
+% SECURITY AND ENCRYPTION
+% ============================================================
+
+\subsubsection{নিরাপত্তা ও Encryption}
+এনক্রিপশন গোপনীয় তথ্যকে এমন সংকেতরূপে সংরক্ষণ করে, যাতে উপযুক্ত কী ছাড়া তা সহজে বোঝা না যায়। এটি ডেটা নিরাপত্তার একটি পদ্ধতি; অ্যালগরিদম, কী ও এনক্রিপশনের ধরন পরের অংশে আলোচনা করা হয়েছে।
+
+\subsubsection{কোন সমস্যায় কোন নিরাপত্তা ব্যবস্থা}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
+\begin{longtable}[l]{|p{39mm}|>{\raggedright\arraybackslash}p{\dimexpr\dimexpr0.98\linewidth-39mm-4\tabcolsep-3\arrayrulewidth\relax/1\relax}|}
+
+\hline
+
+\chSixHeader
+\raggedright\textbf{ঝুঁকি/সমস্যা}
+&
+\raggedright\arraybackslash\textbf{উপযুক্ত ব্যবস্থা}
+\\ \hline
+\endfirsthead
+
+\hline
+
+\chSixHeader
+\raggedright\textbf{ঝুঁকি/সমস্যা}
+&
+\raggedright\arraybackslash\textbf{উপযুক্ত ব্যবস্থা}
+\\ \hline
+\endhead
+
+
+অননুমোদিত ব্যবহারকারী Login
+&
+Authentication, পাসওয়ার্ড, অতিরিক্ত Identity Check
+\\ \hline
+
+অনুমোদিত ব্যবহারকারীর অতিরিক্ত কাজ
+&
+Authorization ও সীমিত অনুমতি
+\\ \hline
+
+Network-এর অননুমোদিত যোগাযোগ
+&
+Firewall
+\\ \hline
+
+সন্দেহজনক অনুপ্রবেশ
+&
+Monitoring ও IDS
+\\ \hline
+
+কে কখন ডেটা পরিবর্তন করেছে জানা
+&
+Audit Log / Auditing
+\\ \hline
+
+ডিস্ক/System Failure-এ ডেটা হারানো
+&
+ব্যাকআপ ও Recovery
+\\ \hline
+
+সংবেদনশীল মান পুরোটা না দেখানো
+&
+Data Masking
+\\ \hline
+
+ডেটা অন্যের হাতে গেলেও পাঠযোগ্য না রাখা
+&
+Encryption
+\\ \hline
+
+
+\caption{ঝুঁকি অনুযায়ী Security ব্যবস্থা নির্বাচন}\\
+\end{longtable}
+\endgroup
+
+
+% ============================================================
+% WHAT SECURITY PROTECTS
+% ============================================================
+
+
+
+কলেজের Result ব্যবস্থায় শিক্ষার্থী নিজের ফল পড়বে; দায়িত্বপ্রাপ্ত শিক্ষক সংশ্লিষ্ট বিষয়ের নম্বর যোগ বা সংশোধন করবেন। পরিচয় যাচাই, সীমিত অধিকার, audit log, network নিয়ন্ত্রণ এবং backup একসঙ্গে কাজে লাগাতে হয়—একটি ব্যবস্থা অন্যগুলোর বিকল্প নয়।
+
+\textbf{নিরাপত্তার ব্যবস্থাটি কাজে লাগছে কি না:} কলেজে আলাদা লগইন থাকলেও দায়িত্ব ছেড়ে যাওয়া শিক্ষকের Update অধিকার বহাল থাকলে নিয়ন্ত্রণ অসম্পূর্ণ। নিয়মিত অনুমতি পর্যালোচনা, পরিবর্তনের নথি দেখা এবং ব্যাকআপ থেকে পরীক্ষামূলকভাবে তথ্য পুনঃস্থাপন করে দেখা—তিনটি ভিন্ন যাচাই। এগুলোর সময় ও পরিচালনার খরচ আছে, কিন্তু শুধু ব্যবস্থার নাম লেখা থাকলেই তথ্য সুরক্ষিত হয় না।
+
+
+
+
+% ============================================================
+% CONCEPT CHECK
+% ============================================================
+
+
+
+
+
+
+% ============================================================
+% CQ FOCUS
+% ============================================================
+
+
+

@@ -1,0 +1,155 @@
+\subsection{লাইব্রেরির ডেটাবেজে Query}
+
+\subsubsection{Book Table}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+BookID & BookName & Author & Price & Category\\
+\hline
+B01 & Database Basics & Rahman & 450 & Computer\\\hline
+B02 & Easy SQL & Karim & 520 & Computer\\\hline
+B03 & Physics Plus & Nabil & 600 & Science\\\hline
+B04 & Web Design & Rafi & 480 & Computer\\\hline
+B05 & English Grammar & Hasan & 350 & Language\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Book Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৫}{Computer শ্রেণির বইগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT BookID, BookName, Author
+FROM Book
+WHERE Category='Computer';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+BookID & BookName & Author\\\hline
+B01 & Database Basics & Rahman\\\hline
+B02 & Easy SQL & Karim\\\hline
+B04 & Web Design & Rafi\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৬}{যেসব বইয়ের Price 500-এর বেশি, সেগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT BookName, Price
+FROM Book
+WHERE Price>500;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+BookName & Price\\\hline
+Easy SQL & 520\\\hline
+Physics Plus & 600\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৭}{Rahman-এর লেখা বইগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT BookName, Price
+FROM Book
+WHERE Author='Rahman';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+BookName & Price\\\hline
+Database Basics & 450\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\subsubsection{LibraryIssue Table}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+IssueID & StudentID & BookID & IssueDate & ReturnDate\\
+\hline
+I01 & S01 & B01 & 2026-08-01 & 2026-08-07\\\hline
+I02 & S02 & B03 & 2026-08-03 & NULL\\\hline
+I03 & S01 & B04 & 2026-08-04 & NULL\\\hline
+I04 & S05 & B02 & 2026-08-05 & 2026-08-12\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{LibraryIssue Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৮}{যেসব বই এখনো ফেরত দেওয়া হয়নি, সেগুলোর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT StudentID, BookID
+FROM LibraryIssue
+WHERE ReturnDate IS NULL;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+StudentID & BookID\\\hline
+S02 & B03\\\hline
+S01 & B04\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+B03 ও B04 বইয়ের ফেরতের তারিখ নেই, তাই এগুলো ফলাফলে দেখা যাবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৯}{ধার দেওয়া বইগুলোর নামসহ সংশ্লিষ্ট তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT i.IssueID,
+       b.BookName,
+       i.StudentID
+FROM LibraryIssue AS i
+INNER JOIN Book AS b
+ON i.BookID=b.BookID;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+IssueID & BookName & StudentID\\\hline
+I01 & Database Basics & S01\\\hline
+I02 & Physics Plus & S02\\\hline
+I03 & Web Design & S01\\\hline
+I04 & Easy SQL & S05\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+এখানে— \texttt{LibraryIssue.BookID} এবং \texttt{Book.BookID} মিলিয়ে সম্পর্কিত রেকর্ড একসঙ্গে দেখানো হয়েছে।
+

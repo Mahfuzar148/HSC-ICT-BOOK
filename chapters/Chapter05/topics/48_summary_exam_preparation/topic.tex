@@ -1,0 +1,2089 @@
+\sectionheading{5.48 অধ্যায়ের সারসংক্ষেপ ও পরীক্ষাভিত্তিক প্রস্তুতি}
+
+এই অংশে পুরো অধ্যায়ের গুরুত্বপূর্ণ ধারণা, সংজ্ঞাভিত্তিক সংক্ষিপ্ত প্রশ্ন,
+CQ-তে সম্ভাব্য প্রশ্নের ধরন, Programming Problem চিনে সমাধানের কৌশল,
+Dry Run, Common Mistake এবং Last-minute Revision একসঙ্গে সাজানো হয়েছে।
+
+\begin{rememberbox}
+
+\begin{center}
+\textbf{এই অংশটি নতুন Theory শেখার জন্য নয়; বরং পুরো Chapter দ্রুত Revision ও Exam Preparation-এর জন্য।}
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% 1
+%================================================
+\booksubheading{১. Chapter Overview — পুরো অধ্যায় এক নজরে}
+
+\begin{revisionbox}{Programming Language থেকে Python পর্যন্ত সম্পর্ক}
+
+\begin{center}
+
+\textbf{Program}
+
+\(\downarrow\)
+
+\textbf{Programming Language}
+
+\(\downarrow\)
+
+Machine Language
+\(\rightarrow\)
+Assembly Language
+\(\rightarrow\)
+Mid Level
+\(\rightarrow\)
+High Level
+\(\rightarrow\)
+4GL
+
+\medskip
+
+\(\downarrow\)
+
+\textbf{Translator Program}
+
+Compiler
+\(\rightarrow\)
+Interpreter
+\(\rightarrow\)
+Assembler
+
+\medskip
+
+\(\downarrow\)
+
+\textbf{Program Organization ও Design}
+
+Program Design Model
+\(\rightarrow\)
+Modular Programming
+\(\rightarrow\)
+Program Development
+
+\medskip
+
+\(\downarrow\)
+
+\textbf{Computational Thinking}
+
+Problem Analysis
+\(\rightarrow\)
+IPO Model
+\(\rightarrow\)
+Dry Run / Trace Table
+
+\medskip
+
+\(\downarrow\)
+
+\textbf{Algorithm}
+\(\rightarrow\)
+\textbf{Flowchart}
+
+\medskip
+
+\(\downarrow\)
+
+\textbf{Python Programming}
+
+Syntax
+\(\rightarrow\)
+Variable
+\(\rightarrow\)
+Data Type
+\(\rightarrow\)
+Input/Output
+\(\rightarrow\)
+Operator
+
+\medskip
+
+\(\downarrow\)
+
+Conditional
+\(\rightarrow\)
+for Loop
+\(\rightarrow\)
+while Loop
+\(\rightarrow\)
+Loop Control
+\(\rightarrow\)
+Pattern
+
+\medskip
+
+\(\downarrow\)
+
+List
+\(\rightarrow\)
+Tuple
+\(\rightarrow\)
+Set
+\(\rightarrow\)
+Dictionary
+
+\medskip
+
+\(\downarrow\)
+
+Function
+\(\rightarrow\)
+Parameter
+\(\rightarrow\)
+Argument
+\(\rightarrow\)
+Return
+
+\medskip
+
+\(\downarrow\)
+
+Function Contract
+\(\rightarrow\)
+Scope
+\(\rightarrow\)
+Local / Global
+\(\rightarrow\)
+File
+
+\end{center}
+
+\end{revisionbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Problem}
+\(\rightarrow\)
+\textbf{Analysis}
+\(\rightarrow\)
+\textbf{Algorithm}
+\(\rightarrow\)
+\textbf{Flowchart}
+\(\rightarrow\)
+\textbf{Code}
+\(\rightarrow\)
+\textbf{Dry Run / Test}
+\(\rightarrow\)
+\textbf{Output}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% 2
+%================================================
+\booksubheading{২. অধ্যায়ের মূল ধারণা — এক লাইনে}
+
+\begin{longtable}{
+|L{0.28\textwidth}
+|L{0.64\textwidth}|
+}
+
+\twocoltablehead{বিষয়}{এক লাইনের সারকথা}
+\endfirsthead
+
+\twocoltablehead{বিষয়}{এক লাইনের সারকথা}
+\endhead
+
+Program
+&
+কম্পিউটারকে নির্দিষ্ট কাজ করানোর জন্য সাজানো নির্দেশনার সমষ্টি।
+\\
+\hline
+
+Programming Language
+&
+Program লেখার জন্য ব্যবহৃত নিয়ম, Symbol ও Syntax-সমৃদ্ধ ভাষা।
+\\
+\hline
+
+Machine Language
+&
+0 ও 1 ভিত্তিক কম্পিউটারের সরাসরি বোধগম্য ভাষা।
+\\
+\hline
+
+Assembly Language
+&
+Mnemonic বা Symbolic Instruction-ভিত্তিক Low Level Language।
+\\
+\hline
+
+High Level Language
+&
+মানুষের জন্য তুলনামূলক সহজ ও Problem-oriented Programming Language।
+\\
+\hline
+
+4GL
+&
+কম Code ব্যবহার করে Application বা Database-ভিত্তিক কাজ সহজ করার উচ্চতর প্রজন্মের ভাষা।
+\\
+\hline
+
+Translator Program
+&
+Source Program-কে অন্য ভাষায় রূপান্তরকারী Program।
+\\
+\hline
+
+Compiler
+&
+পুরো Source Program একসঙ্গে অনুবাদ করে।
+\\
+\hline
+
+Interpreter
+&
+সাধারণত Statement ধরে ধরে অনুবাদ ও Execute করে।
+\\
+\hline
+
+Assembler
+&
+Assembly Language-কে Machine Language-এ রূপান্তর করে।
+\\
+\hline
+
+Program Organization
+&
+Program-এর বিভিন্ন অংশকে পরিকল্পিতভাবে সাজানো।
+\\
+\hline
+
+Modular Programming
+&
+বড় Program-কে ছোট ছোট Module-এ ভাগ করে তৈরি করার পদ্ধতি।
+\\
+\hline
+
+Computational Thinking
+&
+সমস্যা বিশ্লেষণ করে যৌক্তিক ও বাস্তবায়নযোগ্য সমাধান তৈরির চিন্তাপদ্ধতি।
+\\
+\hline
+
+IPO Model
+&
+Input
+\(\rightarrow\)
+Processing
+\(\rightarrow\)
+Output ভিত্তিক Problem Analysis।
+\\
+\hline
+
+Dry Run
+&
+Program না চালিয়ে হাতে ধাপে ধাপে Execution যাচাই।
+\\
+\hline
+
+Trace Table
+&
+Execution-এর বিভিন্ন ধাপে Variable-এর Value পরিবর্তন Table-এ দেখানো।
+\\
+\hline
+
+Algorithm
+&
+সমস্যা সমাধানের সসীম, ধারাবাহিক ও সুনির্দিষ্ট ধাপ।
+\\
+\hline
+
+Flowchart
+&
+Algorithm-এর Standard Symbol-ভিত্তিক চিত্ররূপ।
+\\
+\hline
+
+Python
+&
+সহজ Syntax-সম্পন্ন High Level, General-purpose Programming Language।
+\\
+\hline
+
+Syntax
+&
+Programming Language-এ Code লেখার নিয়ম।
+\\
+\hline
+
+Variable
+&
+Data সংরক্ষণের জন্য ব্যবহৃত নাম।
+\\
+\hline
+
+Data Type
+&
+কোনো Data কী ধরনের Value বহন করে তার শ্রেণি।
+\\
+\hline
+
+Input
+&
+Program-এ Data গ্রহণ।
+\\
+\hline
+
+Output
+&
+Program-এর Result প্রদর্শন।
+\\
+\hline
+
+Operator
+&
+Operand-এর উপর Operation সম্পাদনকারী Symbol বা Keyword।
+\\
+\hline
+
+Conditional Statement
+&
+Condition-এর ফল অনুযায়ী ভিন্ন কাজ সম্পাদনের Statement।
+\\
+\hline
+
+Loop
+&
+একই কাজ প্রয়োজন অনুযায়ী বারবার সম্পাদনের পদ্ধতি।
+\\
+\hline
+
+\py{break}
+&
+চলমান Loop সম্পূর্ণ বন্ধ করে।
+\\
+\hline
+
+\py{continue}
+&
+বর্তমান Iteration বাদ দিয়ে পরবর্তী Iteration-এ যায়।
+\\
+\hline
+
+\py{pass}
+&
+কোনো কাজ না করে Placeholder হিসেবে থাকে।
+\\
+\hline
+
+List
+&
+Ordered ও Mutable Collection।
+\\
+\hline
+
+Tuple
+&
+Ordered কিন্তু Immutable Collection।
+\\
+\hline
+
+Set
+&
+Unique Element সংরক্ষণকারী Collection।
+\\
+\hline
+
+Dictionary
+&
+Key--Value Pair-ভিত্তিক Collection।
+\\
+\hline
+
+Function
+&
+নির্দিষ্ট কাজের জন্য reusable Code Block।
+\\
+\hline
+
+Parameter
+&
+Function Definition-এ ব্যবহৃত Input Variable।
+\\
+\hline
+
+Argument
+&
+Function Call-এর সময় পাঠানো Actual Value।
+\\
+\hline
+
+Return Value
+&
+Function থেকে Caller-এর কাছে ফেরত পাঠানো Result।
+\\
+\hline
+
+Function Contract
+&
+Function কী Input নেবে, কী করবে এবং কী Output দেবে তার নিয়ম।
+\\
+\hline
+
+Scope
+&
+Program-এর কোন অংশে কোনো Variable বা Name ব্যবহারযোগ্য তার সীমা।
+\\
+\hline
+
+Local Variable
+&
+সাধারণত Function-এর ভিতরে তৈরি ও সেই Function-এর Scope-এ ব্যবহৃত Variable।
+\\
+\hline
+
+Global Variable
+&
+Function-এর বাইরে Module Level-এ তৈরি Variable।
+\\
+\hline
+
+File
+&
+Program শেষ হওয়ার পরও Data সংরক্ষণের মাধ্যম।
+\\
+\hline
+
+\end{longtable}
+
+%================================================
+% 3
+%================================================
+\booksubheading{৩. খুব সংক্ষিপ্ত প্রশ্ন — Definition / এক কথায় উত্তর}
+
+এই প্রশ্নগুলো Definition, এক কথায় উত্তর, মৌখিক Revision এবং
+জ্ঞানমূলক প্রশ্নের প্রস্তুতির জন্য উপযোগী।
+
+\begin{longtable}{
+|L{0.33\textwidth}
+|L{0.59\textwidth}|
+}
+
+\twocoltablehead{প্রশ্ন}{সংক্ষিপ্ত উত্তর}
+\endfirsthead
+
+\twocoltablehead{প্রশ্ন}{সংক্ষিপ্ত উত্তর}
+\endhead
+
+১. Program কী?
+&
+কম্পিউটারকে নির্দিষ্ট কাজ করানোর জন্য সাজানো নির্দেশনার সমষ্টি।
+\\
+\hline
+
+২. Programming Language কী?
+&
+Program লেখার জন্য ব্যবহৃত নিয়ম, Symbol ও Syntax-সমৃদ্ধ ভাষা।
+\\
+\hline
+
+৩. Machine Language কী?
+&
+0 ও 1 দিয়ে গঠিত কম্পিউটারের সরাসরি বোধগম্য ভাষা।
+\\
+\hline
+
+৪. Assembly Language কী?
+&
+Mnemonic Code-ভিত্তিক Low Level Programming Language।
+\\
+\hline
+
+৫. Translator Program কী?
+&
+এক ভাষায় লেখা Program-কে অন্য ভাষায় রূপান্তরকারী Program।
+\\
+\hline
+
+৬. Compiler কী?
+&
+পুরো Source Program একসঙ্গে অনুবাদকারী Translator।
+\\
+\hline
+
+৭. Interpreter কী?
+&
+সাধারণত Statement ধরে ধরে অনুবাদ ও Execute করা Translator।
+\\
+\hline
+
+৮. Assembler কী?
+&
+Assembly Language-কে Machine Language-এ রূপান্তরকারী Translator।
+\\
+\hline
+
+৯. Modular Programming কী?
+&
+বড় Program-কে ছোট ছোট Module-এ ভাগ করে তৈরির পদ্ধতি।
+\\
+\hline
+
+১০. Computational Thinking কী?
+&
+সমস্যাকে বিশ্লেষণ করে যৌক্তিক ও বাস্তবায়নযোগ্য ধাপে সমাধান তৈরির চিন্তাপদ্ধতি।
+\\
+\hline
+
+১১. IPO-এর পূর্ণরূপ কী?
+&
+Input -- Processing -- Output।
+\\
+\hline
+
+১২. Dry Run কী?
+&
+Program Execute না করে হাতে ধাপে ধাপে Logic যাচাই করার প্রক্রিয়া।
+\\
+\hline
+
+১৩. Trace Table কী?
+&
+Execution-এর বিভিন্ন ধাপে Variable-এর Value পরিবর্তন Table-এ দেখানোর পদ্ধতি।
+\\
+\hline
+
+১৪. Algorithm কী?
+&
+সমস্যা সমাধানের সসীম ও সুনির্দিষ্ট ধাপসমূহ।
+\\
+\hline
+
+১৫. Flowchart কী?
+&
+Algorithm-এর Standard Symbol-ভিত্তিক চিত্ররূপ।
+\\
+\hline
+
+১৬. Python কী?
+&
+একটি High Level, General-purpose Programming Language।
+\\
+\hline
+
+১৭. Syntax কী?
+&
+Programming Language-এ সঠিকভাবে Code লেখার নিয়ম।
+\\
+\hline
+
+১৮. Variable কী?
+&
+Data সংরক্ষণের জন্য ব্যবহৃত নাম।
+\\
+\hline
+
+১৯. Data Type কী?
+&
+Data-এর ধরন বা প্রকৃতি নির্দেশকারী শ্রেণি।
+\\
+\hline
+
+২০. Operator কী?
+&
+Operand-এর উপর Operation সম্পাদনকারী Symbol বা Keyword।
+\\
+\hline
+
+২১. Conditional Statement কী?
+&
+Condition-এর ফল অনুযায়ী ভিন্ন Statement Execute করার পদ্ধতি।
+\\
+\hline
+
+২২. Loop কী?
+&
+কোনো কাজ বারবার সম্পাদনের Programming Structure।
+\\
+\hline
+
+২৩. \py{break} কী করে?
+&
+চলমান Loop সম্পূর্ণ বন্ধ করে।
+\\
+\hline
+
+২৪. \py{continue} কী করে?
+&
+বর্তমান Iteration বাদ দিয়ে পরবর্তী Iteration শুরু করে।
+\\
+\hline
+
+২৫. \py{pass} কী?
+&
+কোনো Operation না করা Placeholder Statement।
+\\
+\hline
+
+২৬. List কী?
+&
+Ordered ও Mutable Collection।
+\\
+\hline
+
+২৭. Tuple কী?
+&
+Ordered কিন্তু Immutable Collection।
+\\
+\hline
+
+২৮. Set কী?
+&
+Unique Element সংরক্ষণকারী Collection।
+\\
+\hline
+
+২৯. Dictionary কী?
+&
+Key--Value Pair আকারে Data সংরক্ষণকারী Collection।
+\\
+\hline
+
+৩০. Function কী?
+&
+নির্দিষ্ট কাজ সম্পন্ন করার জন্য তৈরি reusable Code Block।
+\\
+\hline
+
+৩১. Parameter কী?
+&
+Function Definition-এ Input গ্রহণকারী Variable।
+\\
+\hline
+
+৩২. Argument কী?
+&
+Function Call-এর সময় Parameter-এর জন্য পাঠানো Actual Value।
+\\
+\hline
+
+৩৩. Return Value কী?
+&
+Function থেকে Caller-এর কাছে ফেরত পাঠানো Result।
+\\
+\hline
+
+৩৪. Function Contract কী?
+&
+Function-এর Input, Processing এবং Expected Output সম্পর্কিত নির্ধারিত নিয়ম।
+\\
+\hline
+
+৩৫. Scope কী?
+&
+Program-এর যে অংশে কোনো Variable বা Name ব্যবহারযোগ্য সেই অঞ্চল।
+\\
+\hline
+
+৩৬. Local Variable কী?
+&
+সাধারণত Function-এর ভিতরে তৈরি ও সেই Function-এর Scope-এ ব্যবহৃত Variable।
+\\
+\hline
+
+৩৭. Global Variable কী?
+&
+Function-এর বাইরে Module Level-এ তৈরি Variable।
+\\
+\hline
+
+৩৮. \py{global} Keyword কেন ব্যবহৃত হয়?
+&
+Function-এর ভিতরে Global Variable-এ Assignment করার জন্য।
+\\
+\hline
+
+৩৯. File কী?
+&
+Persistentভাবে Data সংরক্ষণের মাধ্যম।
+\\
+\hline
+
+৪০. Variable ও File-এর মূল পার্থক্য কী?
+&
+Variable সাধারণত Runtime Data রাখে; File Program শেষ হওয়ার পরও Data রাখতে পারে।
+\\
+\hline
+
+\end{longtable}
+
+%================================================
+% 4
+%================================================
+\booksubheading{৪. “কেন / ব্যাখ্যা কর” ধরনের সংক্ষিপ্ত প্রশ্ন}
+
+\begin{longtable}{
+|L{0.38\textwidth}
+|L{0.54\textwidth}|
+}
+
+\twocoltablehead{প্রশ্ন}{উত্তরের মূল ধারণা}
+\endfirsthead
+
+\twocoltablehead{প্রশ্ন}{উত্তরের মূল ধারণা}
+\endhead
+
+Compiler ও Interpreter-এর পার্থক্য কেন গুরুত্বপূর্ণ?
+&
+Compiler পুরো Program একসঙ্গে Translate করে; Interpreter সাধারণত Statement ধরে Translate/Execute করে। ফলে Translation ও Error handling-এর পদ্ধতি ভিন্ন।
+\\
+\hline
+
+Algorithm আগে তৈরি করা হয় কেন?
+&
+Code লেখার আগে Problem-এর Logic পরিষ্কার হয় এবং ভুল কমে।
+\\
+\hline
+
+Flowchart ব্যবহার করা হয় কেন?
+&
+Program Logic দৃশ্যমানভাবে বোঝা, বিশ্লেষণ এবং ব্যাখ্যা করা সহজ হয়।
+\\
+\hline
+
+IPO Model কেন গুরুত্বপূর্ণ?
+&
+Problem-এর Input, Processing এবং Expected Output আলাদাভাবে শনাক্ত করতে সাহায্য করে।
+\\
+\hline
+
+Dry Run কেন করা হয়?
+&
+Program Execute করার আগেই Logic ও Variable-এর পরিবর্তন যাচাই করা যায়।
+\\
+\hline
+
+Python-এ Indentation গুরুত্বপূর্ণ কেন?
+&
+Indentation দ্বারা Python-এর Code Block নির্ধারিত হয়।
+\\
+\hline
+
+\py{input()}-এর Result অনেক সময় Convert করতে হয় কেন?
+&
+\py{input()} সাধারণত String দেয়; Arithmetic করার জন্য প্রয়োজন অনুযায়ী \py{int()} বা \py{float()} দরকার হয়।
+\\
+\hline
+
+\py{range(1, n+1)}-এ \py{n+1} কেন?
+&
+\py{range()}-এর Stop Value অন্তর্ভুক্ত হয় না; তাই \(n\) পর্যন্ত Value পেতে \py{n+1} দেওয়া হয়।
+\\
+\hline
+
+Factorial-এর ক্ষেত্রে \py{fact = 1} নেওয়া হয় কেন?
+&
+Factorial-এ বারবার গুণ হয় এবং Multiplication-এর Neutral Initial Value হলো 1।
+\\
+\hline
+
+Sum-এর ক্ষেত্রে \py{total = 0} নেওয়া হয় কেন?
+&
+Addition-এর Neutral Initial Value হলো 0।
+\\
+\hline
+
+Function ব্যবহার করা ভালো কেন?
+&
+Code reuse, modularity, readability এবং maintenance সহজ হয়।
+\\
+\hline
+
+\py{return} কেন গুরুত্বপূর্ণ?
+&
+Function-এর Result Caller-এর কাছে ফেরত দেয়; ফলে Result অন্য জায়গায় ব্যবহার করা যায়।
+\\
+\hline
+
+Global Variable কম ব্যবহার করা ভালো কেন?
+&
+অপ্রয়োজনীয় Global Variable Program-এর বিভিন্ন অংশের মধ্যে Dependency বাড়াতে পারে।
+\\
+\hline
+
+File কেন প্রয়োজন?
+&
+Program বন্ধ হওয়ার পরও Data সংরক্ষণ বা পরে আবার ব্যবহার করার প্রয়োজন হতে পারে।
+\\
+\hline
+
+\end{longtable}
+
+%================================================
+% 5
+%================================================
+\booksubheading{৫. গুরুত্বপূর্ণ পার্থক্য — এক নজরে}
+
+\begin{longtable}{
+|L{0.23\textwidth}
+|L{0.335\textwidth}
+|L{0.335\textwidth}|
+}
+
+\threecoltablehead{তুলনা}{প্রথমটি}{দ্বিতীয়টি}
+\endfirsthead
+
+\threecoltablehead{তুলনা}{প্রথমটি}{দ্বিতীয়টি}
+\endhead
+
+Machine vs Assembly
+&
+Binary Code
+&
+Mnemonic / Symbolic Code
+\\
+\hline
+
+Low Level vs High Level
+&
+Machine-oriented
+&
+User / Problem-oriented
+\\
+\hline
+
+Compiler vs Interpreter
+&
+পুরো Program একসঙ্গে Translate
+&
+সাধারণত Statement ধরে Translate/Execute
+\\
+\hline
+
+Algorithm vs Flowchart
+&
+লিখিত ধাপ
+&
+চিত্রভিত্তিক উপস্থাপন
+\\
+\hline
+
+\py{=} vs \py{==}
+&
+Assignment
+&
+Comparison
+\\
+\hline
+
+\py{/} vs \py{//}
+&
+সাধারণ Division
+&
+Floor Division
+\\
+\hline
+
+\py{for} vs \py{while}
+&
+Range/Iterable-ভিত্তিক পুনরাবৃত্তিতে সুবিধাজনক
+&
+Condition-ভিত্তিক পুনরাবৃত্তিতে সুবিধাজনক
+\\
+\hline
+
+\py{break} vs \py{continue}
+&
+Loop বন্ধ
+&
+বর্তমান Iteration Skip
+\\
+\hline
+
+List vs Tuple
+&
+Mutable
+&
+Immutable
+\\
+\hline
+
+List vs Set
+&
+Ordered, Duplicate থাকতে পারে
+&
+Unique Element
+\\
+\hline
+
+List vs Dictionary
+&
+Element Collection
+&
+Key--Value Pair
+\\
+\hline
+
+Parameter vs Argument
+&
+Function Definition-এ
+&
+Function Call-এ
+\\
+\hline
+
+\py{print()} vs \py{return}
+&
+Output প্রদর্শন
+&
+Function থেকে Value ফেরত
+\\
+\hline
+
+Local vs Global
+&
+Function-এর Local Scope
+&
+Module-level Scope
+\\
+\hline
+
+Variable vs File
+&
+Runtime Data
+&
+Persistent Data
+\\
+\hline
+
+\end{longtable}
+
+%================================================
+% 6
+%================================================
+\booksubheading{৬. CQ Question-এর ধরন বুঝে উত্তর দাও}
+
+\begin{definitionbox}
+
+CQ-এর প্রতিটি অংশে একই ধরনের কাজ চাওয়া হয় না। প্রশ্নের নির্দেশনা পড়ে
+কোন Skill যাচাই করা হচ্ছে তা আগে বুঝতে হবে।
+
+\end{definitionbox}
+
+\begin{tabularx}{\linewidth}{
+|C{0.10\linewidth}
+|L{0.28\linewidth}
+|Y|
+}
+\hline
+
+\rowcolor{softBlue}
+\textbf{\color{darkTeal}অংশ}
+&
+\textbf{\color{darkTeal}সাধারণ প্রকৃতি}
+&
+\textbf{\color{darkTeal}কীভাবে প্রস্তুতি নেবে}
+\\
+\hline
+
+\textbf{ক}
+&
+জ্ঞানমূলক
+&
+সংজ্ঞা, পূর্ণরূপ, সরাসরি ধারণা ও এক কথায় উত্তর।
+\\
+\hline
+
+\textbf{খ}
+&
+অনুধাবনমূলক
+&
+ব্যাখ্যা, কারণ, পার্থক্য, সুবিধা বা Concept বোঝানোর প্রস্তুতি।
+\\
+\hline
+
+\textbf{গ}
+&
+প্রয়োগমূলক
+&
+উদ্দীপকের তথ্য ব্যবহার করে Algorithm, Flowchart, Code, Output বা প্রয়োগ।
+\\
+\hline
+
+\textbf{ঘ}
+&
+উচ্চতর দক্ষতা
+&
+বিশ্লেষণ, তুলনা, পরিবর্তন, Logic, যুক্তি বা বিকল্প সমাধান।
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}ভুল ধারণা:}
+
+\begin{center}
+“গ মানেই Program” অথবা “ঘ মানেই Program” — এটি ঠিক নয়।
+\end{center}
+
+প্রশ্নে কী চাওয়া হয়েছে সেটিই অনুসরণ করবে।
+
+\end{rememberbox}
+
+%================================================
+% 7
+%================================================
+\booksubheading{৭. CQ-তে যেসব Programming Pattern অনুশীলন করবে}
+
+\begin{tabularx}{\linewidth}{
+|L{0.27\linewidth}
+|Y|
+}
+\hline
+
+\rowcolor{softBlue}
+\textbf{\color{darkTeal}Problem Type}
+&
+\textbf{\color{darkTeal}গুরুত্বপূর্ণ Practice}
+\\
+\hline
+
+Arithmetic / Formula
+&
+Sum, Average, Area, Perimeter, Temperature Conversion, Unit Conversion
+\\
+\hline
+
+Conditional
+&
+Even/Odd, Positive/Negative, Largest/Smallest, Grade, Divisibility, Leap Year
+\\
+\hline
+
+Loop
+&
+1 থেকে n, Odd/Even Number, Sum, Factorial, Repeated Output
+\\
+\hline
+
+Series
+&
+\(1+2+\cdots+n\), Square Series, Odd/Even Series, Power Series
+\\
+\hline
+
+Nested Loop
+&
+Number Pattern, Symbol Pattern
+\\
+\hline
+
+List
+&
+Traversal, Sum, Average, Largest/Smallest, Search
+\\
+\hline
+
+Function
+&
+Definition, Parameter, Argument, Return, Function Call
+\\
+\hline
+
+Dry Run
+&
+Loop Output, Variable Update, Conditional Result
+\\
+\hline
+
+Algorithm / Flowchart
+&
+Problem থেকে Algorithm, Algorithm থেকে Flowchart, Flowchart থেকে Program
+\\
+\hline
+
+Code Analysis
+&
+Output নির্ণয়, Error শনাক্ত, Logic ব্যাখ্যা
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 8
+%================================================
+\booksubheading{৮. Question-এর Keyword দেখেই কী করবে}
+
+\begin{longtable}{
+|L{0.30\textwidth}
+|L{0.62\textwidth}|
+}
+
+\twocoltablehead{Question-এর শব্দ}{Answer-এর ধরন}
+\endfirsthead
+
+\twocoltablehead{Question-এর শব্দ}{Answer-এর ধরন}
+\endhead
+
+কী / কাকে বলে
+&
+সরাসরি Definition।
+\\
+\hline
+
+পূর্ণরূপ লিখ
+&
+Full Form।
+\\
+\hline
+
+ব্যাখ্যা কর
+&
+মূল বক্তব্য + সংক্ষিপ্ত ব্যাখ্যা।
+\\
+\hline
+
+কেন
+&
+কারণ লিখবে।
+\\
+\hline
+
+পার্থক্য লিখ
+&
+Table বা Point-wise Difference।
+\\
+\hline
+
+তুলনা কর
+&
+দুটি Concept-এর বৈশিষ্ট্য পাশাপাশি লিখবে।
+\\
+\hline
+
+সুবিধা লিখ
+&
+প্রাসঙ্গিক Advantage।
+\\
+\hline
+
+নির্ণয় কর
+&
+Calculation বা Logic দেখাবে।
+\\
+\hline
+
+Algorithm লেখ
+&
+Serial Step লিখবে।
+\\
+\hline
+
+Flowchart আঁক
+&
+Standard Symbol ও Arrow ব্যবহার করবে।
+\\
+\hline
+
+Program লেখ
+&
+Complete Logic + Correct Python Syntax।
+\\
+\hline
+
+Output নির্ণয় কর
+&
+Dry Run / Trace করবে।
+\\
+\hline
+
+বিশ্লেষণ কর
+&
+Result + Logic + কারণ।
+\\
+\hline
+
+যৌক্তিকতা দেখাও
+&
+সিদ্ধান্ত + Supporting Reasoning।
+\\
+\hline
+
+\end{longtable}
+
+%================================================
+% 9
+%================================================
+\booksubheading{৯. Problem দেখে কোন Concept ব্যবহার করবে?}
+
+\begin{tabularx}{\linewidth}{
+|L{0.40\linewidth}
+|Y|
+}
+\hline
+
+\rowcolor{softBlue}
+\textbf{\color{darkTeal}Problem-এর Signal}
+&
+\textbf{\color{darkTeal}সম্ভাব্য Concept}
+\\
+\hline
+
+“যদি”, “শর্ত”, “বড়/ছোট”
+&
+\py{if}, \py{elif}, \py{else}
+\\
+\hline
+
+“বারবার”, “১ থেকে n”
+&
+Loop
+\\
+\hline
+
+নির্দিষ্ট Range
+&
+\py{for} + \py{range()}
+\\
+\hline
+
+Condition True থাকা পর্যন্ত
+&
+\py{while}
+\\
+\hline
+
+Loop সঙ্গে সঙ্গে বন্ধ
+&
+\py{break}
+\\
+\hline
+
+একটি Iteration বাদ
+&
+\py{continue}
+\\
+\hline
+
+অনেক Data একসঙ্গে
+&
+List / Tuple / Set / Dictionary
+\\
+\hline
+
+একই কাজ বারবার দরকার
+&
+Function
+\\
+\hline
+
+Result অন্য জায়গায় ব্যবহার
+&
+\py{return}
+\\
+\hline
+
+Program বন্ধের পরও Data দরকার
+&
+File
+\\
+\hline
+
+Variable কোথায় ব্যবহারযোগ্য
+&
+Scope
+\\
+\hline
+
+Value ধাপে ধাপে পরিবর্তিত হচ্ছে
+&
+Dry Run / Trace Table
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 10
+%================================================
+\booksubheading{১০. Algorithm থেকে Flowchart থেকে Python Shortcut}
+
+\begin{revisionbox}{Algorithm তৈরির সবচেয়ে সহজ কৌশল}
+
+প্রথমে তিনটি প্রশ্নের উত্তর বের করো—
+
+\begin{center}
+
+\textbf{Input কী?}
+
+\(\downarrow\)
+
+\textbf{Processing / Condition কী?}
+
+\(\downarrow\)
+
+\textbf{Output কী?}
+
+\end{center}
+
+তারপর Algorithm-এর সাধারণ কাঠামো—
+
+\begin{center}
+
+\textbf{Start}
+\(\rightarrow\)
+\textbf{Input}
+\(\rightarrow\)
+\textbf{Processing / Decision}
+\(\rightarrow\)
+\textbf{Output}
+\(\rightarrow\)
+\textbf{End}
+
+\end{center}
+
+\end{revisionbox}
+
+\begin{tabularx}{\linewidth}{
+|L{0.31\linewidth}
+|L{0.27\linewidth}
+|Y|
+}
+\hline
+
+\rowcolor{softBlue}
+\textbf{\color{darkTeal}কাজ}
+&
+\textbf{\color{darkTeal}Flowchart}
+&
+\textbf{\color{darkTeal}Python}
+\\
+\hline
+
+Program শুরু / শেষ
+&
+Oval
+&
+Program-এর শুরু / শেষ
+\\
+\hline
+
+Input / Output
+&
+Parallelogram
+&
+\py{input()}, \py{print()}
+\\
+\hline
+
+Processing
+&
+Rectangle
+&
+Assignment / Arithmetic
+\\
+\hline
+
+Decision
+&
+Diamond
+&
+\py{if}, \py{elif}, \py{else}
+\\
+\hline
+
+Repetition
+&
+Looping Flow
+&
+\py{for}, \py{while}
+\\
+\hline
+
+Loop বন্ধ
+&
+Flow Exit
+&
+\py{break}
+\\
+\hline
+
+Iteration Skip
+&
+Next Iteration
+&
+\py{continue}
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 11
+%================================================
+\booksubheading{১১. Dry Run / Output Question সমাধানের নিয়ম}
+
+\begin{tabularx}{\linewidth}{
+|>{\RaggedRight\arraybackslash}X
+|>{\RaggedRight\arraybackslash}X|
+}
+\hline
+
+\rowcolor{darkTeal}
+\multicolumn{2}{|l|}{
+\color{white}\bfseries উদাহরণ: Loop-এর Output Dry Run
+}
+\\
+\hline
+
+\rowcolor{softGreen}
+\textbf{\color{darkTeal}Python Code}
+&
+\textbf{\color{darkTeal}Trace Table}
+\\
+\hline
+
+\begin{minipage}[t]{\linewidth}
+\vspace{0pt}
+
+\begin{english}
+\ttfamily
+total = 0\\[0.5mm]
+for i in range(1, 5):\\
+\hspace*{4mm}total = total + i\\[0.5mm]
+print(total)
+\end{english}
+
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{0pt}
+
+\centering
+
+\begin{tabular}{|c|c|}
+\hline
+\textbf{i} & \textbf{total} \\
+\hline
+শুরু & 0 \\
+\hline
+1 & 1 \\
+\hline
+2 & 3 \\
+\hline
+3 & 6 \\
+\hline
+4 & 10 \\
+\hline
+\end{tabular}
+
+\medskip
+
+\textbf{Final Output = 10}
+
+\end{minipage}
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\textbf{Dry Run Shortcut:}
+
+\begin{center}
+
+Initial Value
+\(\rightarrow\)
+Loop Range
+\(\rightarrow\)
+প্রতি Iteration-এর Update
+\(\rightarrow\)
+Condition
+\(\rightarrow\)
+Final Output
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% 12
+%================================================
+\booksubheading{১২. Code দেখে Output বের করার কৌশল}
+
+\begin{enumerate}
+
+\item Variable-এর Initial Value কত দেখো।
+
+\item Input থাকলে কোন Value নেওয়া হয়েছে তা নির্ধারণ করো।
+
+\item Condition True না False তা পরীক্ষা করো।
+
+\item Loop কয়বার চলবে তা বের করো।
+
+\item প্রতিবার কোন Variable পরিবর্তিত হচ্ছে লিখে রাখো।
+
+\item \py{break} বা \py{continue} আছে কি না দেখো।
+
+\item শেষে কোন Statement Print হচ্ছে তা নির্ধারণ করো।
+
+\end{enumerate}
+
+%================================================
+% 13
+%================================================
+\booksubheading{১৩. Common Exam Trap — ভুল করো না}
+
+\begin{trapbox}
+
+\textbf{\color{deepOrange}১. \py{=} এবং \py{==}}
+
+\py{=}
+\(\rightarrow\)
+Assignment
+
+\py{==}
+\(\rightarrow\)
+Comparison
+
+\medskip
+
+\textbf{\color{deepOrange}২. \py{input()}}
+
+\py{input()} সাধারণত String Return করে।
+
+\begin{english}
+\ttfamily
+age = int(input("Age: "))
+\end{english}
+
+\medskip
+
+\textbf{\color{deepOrange}৩. \py{range()}}
+
+\py{range(1, 5)} দিলে পাওয়া যায়—
+
+\py{1, 2, 3, 4}
+
+অর্থাৎ Stop Value 5 অন্তর্ভুক্ত হয় না।
+
+\medskip
+
+\textbf{\color{deepOrange}৪. Sum-এর Initial Value}
+
+\begin{english}
+\ttfamily
+total = 0
+\end{english}
+
+\medskip
+
+\textbf{\color{deepOrange}৫. Factorial-এর Initial Value}
+
+\begin{english}
+\ttfamily
+fact = 1
+\end{english}
+
+\medskip
+
+\textbf{\color{deepOrange}৬. while Loop}
+
+Update ভুলে গেলে Infinite Loop হতে পারে।
+
+\medskip
+
+\textbf{\color{deepOrange}৭. break বনাম continue}
+
+\py{break}
+\(\rightarrow\)
+পুরো Loop বন্ধ।
+
+\py{continue}
+\(\rightarrow\)
+শুধু বর্তমান Iteration বাদ।
+
+\medskip
+
+\textbf{\color{deepOrange}৮. List Index}
+
+প্রথম Element-এর Index হলো \py{0}।
+
+\medskip
+
+\textbf{\color{deepOrange}৯. print() বনাম return}
+
+\py{print()}
+\(\rightarrow\)
+Output দেখায়।
+
+\py{return}
+\(\rightarrow\)
+Function থেকে Value ফেরত দেয়।
+
+\medskip
+
+\textbf{\color{deepOrange}১০. Local বনাম Global}
+
+Function-এর Local Variable সাধারণত Function-এর বাইরে সরাসরি ব্যবহার করা যায় না।
+
+\medskip
+
+\textbf{\color{deepOrange}১১. Variable বনাম File}
+
+Variable Runtime Data-এর জন্য; File Persistent Data সংরক্ষণে ব্যবহৃত হয়।
+
+\medskip
+
+\textbf{\color{deepOrange}১২. Power Operator}
+
+Python-এ Power-এর জন্য \py{**} ব্যবহার হয়।
+
+\end{trapbox}
+
+%================================================
+% 14
+%================================================
+\booksubheading{১৪. ৩০ সেকেন্ডে Chapter Revision}
+
+\begin{revisionbox}{একবার চোখ বুলিয়ে নাও}
+
+\begin{center}
+
+Program
+\(\rightarrow\)
+Programming Language
+\(\rightarrow\)
+Machine / Assembly / High Level
+
+\medskip
+
+\(\downarrow\)
+
+Translator
+\(\rightarrow\)
+Compiler / Interpreter / Assembler
+
+\medskip
+
+\(\downarrow\)
+
+Program Design
+\(\rightarrow\)
+Computational Thinking
+\(\rightarrow\)
+IPO
+\(\rightarrow\)
+Dry Run
+
+\medskip
+
+\(\downarrow\)
+
+Algorithm
+\(\rightarrow\)
+Flowchart
+
+\medskip
+
+\(\downarrow\)
+
+Python Syntax
+\(\rightarrow\)
+Variable
+\(\rightarrow\)
+Data Type
+\(\rightarrow\)
+Input / Output
+\(\rightarrow\)
+Operator
+
+\medskip
+
+\(\downarrow\)
+
+Conditional
+\(\rightarrow\)
+Loop
+\(\rightarrow\)
+Loop Control
+\(\rightarrow\)
+Pattern
+
+\medskip
+
+\(\downarrow\)
+
+List
+\(\rightarrow\)
+Tuple
+\(\rightarrow\)
+Set
+\(\rightarrow\)
+Dictionary
+
+\medskip
+
+\(\downarrow\)
+
+Function
+\(\rightarrow\)
+Parameter
+\(\rightarrow\)
+Argument
+\(\rightarrow\)
+Return
+
+\medskip
+
+\(\downarrow\)
+
+Function Contract
+\(\rightarrow\)
+Scope
+\(\rightarrow\)
+Local / Global
+\(\rightarrow\)
+File
+
+\end{center}
+
+\end{revisionbox}
+
+%================================================
+% 15
+%================================================
+\booksubheading{১৫. Last-minute Revision Checklist}
+
+\begin{tabularx}{\linewidth}{
+|C{0.08\linewidth}
+|Y|
+}
+\hline
+
+\rowcolor{softBlue}
+\textbf{\color{darkTeal}\(\checkmark\)}
+&
+\textbf{\color{darkTeal}পরীক্ষার আগে নিশ্চিত হও}
+\\
+\hline
+
+\(\square\)
+&
+Program ও Programming Language-এর সংজ্ঞা বলতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+Machine, Assembly ও High Level Language-এর পার্থক্য জানি।
+\\
+\hline
+
+\(\square\)
+&
+Compiler, Interpreter ও Assembler আলাদা করতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+IPO Model বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+Algorithm লিখতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+Flowchart-এর Standard Symbol চিনি।
+\\
+\hline
+
+\(\square\)
+&
+Dry Run ও Trace Table করতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+Python Syntax ও Indentation বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+Variable ও Data Type বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+\py{input()} ও \py{print()} ব্যবহার করতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+Operator চিনতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+\py{if-elif-else} লিখতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+\py{for} ও \py{while} Loop লিখতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+\py{break}, \py{continue}, \py{pass} বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+List, Tuple, Set ও Dictionary আলাদা করতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+Function Define ও Call করতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+Parameter ও Argument-এর পার্থক্য জানি।
+\\
+\hline
+
+\(\square\)
+&
+\py{return} কী করে বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+Local ও Global Variable বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+Function Contract ও Scope বলতে পারি।
+\\
+\hline
+
+\(\square\)
+&
+File কেন প্রয়োজন বুঝি।
+\\
+\hline
+
+\(\square\)
+&
+অন্তত ১০--১৫টি গুরুত্বপূর্ণ Program নিজে লিখতে পারি।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 16
+%================================================
+\booksubheading{১৬. Mini Self-Test}
+
+\begin{revisionbox}{নিজেকে যাচাই করো}
+
+\begin{enumerate}
+
+\item Algorithm কী?
+
+\item IPO-এর পূর্ণরূপ কী?
+
+\item Compiler ও Interpreter-এর একটি মৌলিক পার্থক্য লেখ।
+
+\item Python-এ \py{input()} সাধারণত কোন Data Type Return করে?
+
+\item \py{break} ও \py{continue}-এর কাজ কী?
+
+\item নিচের Code-এর Output কত?
+
+\begin{english}
+\ttfamily
+x = 5\\[0.5mm]
+if x > 3:\\
+\hspace*{4mm}print("Yes")\\
+else:\\
+\hspace*{4mm}print("No")
+\end{english}
+
+\item নিচের Code-এর Output নির্ণয় কর।
+
+\begin{english}
+\ttfamily
+total = 0\\[0.5mm]
+for i in range(1, 4):\\
+\hspace*{4mm}total += i\\[0.5mm]
+print(total)
+\end{english}
+
+\item ১ থেকে \(n\) পর্যন্ত Even Number প্রদর্শনের Algorithm লেখ।
+
+\item তিনটি সংখ্যার মধ্যে বৃহত্তম নির্ণয়ের একটি Decision Condition লেখ।
+
+\item Function-এর Parameter ও Argument-এর মধ্যে পার্থক্য কী?
+
+\end{enumerate}
+
+\end{revisionbox}
+
+%================================================
+% 17
+%================================================
+\booksubheading{১৭. Mini Self-Test Answer Key}
+
+\begin{longtable}{
+|C{0.08\textwidth}
+|L{0.84\textwidth}|
+}
+
+\twocoltablehead{নং}{উত্তর}
+\endfirsthead
+
+\twocoltablehead{নং}{উত্তর}
+\endhead
+
+১
+&
+সমস্যা সমাধানের সসীম ও সুনির্দিষ্ট ধাপসমূহ।
+\\
+\hline
+
+২
+&
+Input -- Processing -- Output।
+\\
+\hline
+
+৩
+&
+Compiler পুরো Program একসঙ্গে Translate করে; Interpreter সাধারণত Statement ধরে Translate/Execute করে।
+\\
+\hline
+
+৪
+&
+\py{str}
+\\
+\hline
+
+৫
+&
+\py{break} Loop বন্ধ করে; \py{continue} বর্তমান Iteration Skip করে।
+\\
+\hline
+
+৬
+&
+\py{Yes}
+\\
+\hline
+
+৭
+&
+\py{6}
+\\
+\hline
+
+৮
+&
+Start
+\(\rightarrow\)
+\(n\) Input
+\(\rightarrow\)
+\(i=2\)
+\(\rightarrow\)
+\(i\le n\) হলে Print
+\(\rightarrow\)
+\(i=i+2\)
+\(\rightarrow\)
+Repeat
+\(\rightarrow\)
+End।
+\\
+\hline
+
+৯
+&
+উদাহরণ:
+\py{a >= b and a >= c}
+\\
+\hline
+
+১০
+&
+Parameter Function Definition-এ থাকে; Argument Function Call-এর সময় পাঠানো Actual Value।
+\\
+\hline
+
+\end{longtable}
+
+%================================================
+% Final Revision
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}শেষ মুহূর্তের প্রস্তুতির সূত্র}
+
+\begin{center}
+
+\textbf{সংজ্ঞা জানো}
+
+\(\downarrow\)
+
+\textbf{পার্থক্য বোঝো}
+
+\(\downarrow\)
+
+\textbf{Problem-এর Logic ধরো}
+
+\(\downarrow\)
+
+\textbf{Algorithm লেখো}
+
+\(\downarrow\)
+
+\textbf{Flowchart আঁকো}
+
+\(\downarrow\)
+
+\textbf{Python Code লেখো}
+
+\(\downarrow\)
+
+\textbf{Dry Run করে Output যাচাই করো}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+

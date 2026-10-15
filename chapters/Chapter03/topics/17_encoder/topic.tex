@@ -1,54 +1,1150 @@
-% ৩.১৭ এনকোডার
-\section{Encoder}
+% =========================================================
+% 3.11 Encoder
+% Full Replacement Code
+% =========================================================
 
-\subsection{সংজ্ঞা ও কাজ}
-\begin{itemize}
-\item Encoder কি: 2\textsuperscript{n} input থেকে n-bit output
-\item Priority encoder ধারণা
-\end{itemize}
+\section{এনকোডার
+(\textenglish{Encoder})}
 
-\subsection{ব্যবহার}
-\begin{itemize}
-\item Keyboard encoding, data compression
-\end{itemize}
+% =========================================================
+% 3.11.1 Concept of Encoder
+% =========================================================
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item encoder-এর input-output relation লিখতে।
-\item $2^n$ input থেকে $n$ output ধারণা বুঝতে।
-\item priority encoder-এর প্রয়োজনীয়তা ব্যাখ্যা করতে।
-\end{itemize}
-\end{learningbox}
+\subsection{এনকোডারের ধারণা
+(\textenglish{Concept of Encoder})}
 
-\begin{definitionbox}{Encoder}
-যে combinational circuit একাধিক input line-এর সক্রিয় অবস্থাকে কম সংখ্যক binary output line-এ code করে, তাকে encoder বলা হয়। সাধারণ encoder-এ $2^n$ input এবং $n$ output থাকে।
-\end{definitionbox}
+আমরা যখন কিবোর্ডে কোনো অক্ষর, সংখ্যা বা চিহ্ন লিখি,
+তখন কম্পিউটার সেটিকে মানুষের মতো সরাসরি বুঝতে পারে না।
+কম্পিউটার মূলত \(0\) ও \(1\)-এর মাধ্যমে তথ্য প্রক্রিয়াকরণ করে।
+
+তাই বিভিন্ন \textenglish{input signal}-কে নির্দিষ্ট
+\textenglish{code}-এ রূপান্তর করার প্রয়োজন হয়।
+কোনো তথ্য বা \textenglish{input}-কে নির্দিষ্ট
+\textenglish{code}-এ রূপান্তর করার প্রক্রিয়াকে
+\textbf{এনকোডিং (\textenglish{Encoding})} বলে।
+
+আর এ কাজের জন্য ব্যবহৃত ডিজিটাল সার্কিটকে
+\textbf{এনকোডার (\textenglish{Encoder})} বলে।
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Block diagram placeholder: 4-to-2 Encoder}\\[4pt]
-Inputs: $D_0,D_1,D_2,D_3$ $\rightarrow$ Encoder block $\rightarrow$ Outputs: $Y_1,Y_0$
-}}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=3.2cm,
+    minimum height=1.0cm
+] (in)
+{\textenglish{Input Signal}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightGreen,
+    minimum width=3.0cm,
+    minimum height=1.0cm,
+    right=1.5cm of in
+] (enc)
+{\textbf{\textenglish{Encoder}}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightOrange,
+    minimum width=3.4cm,
+    minimum height=1.0cm,
+    right=1.5cm of enc
+] (out)
+{\textenglish{Coded Output}};
+
+\draw[->] (in) -- (enc);
+\draw[->] (enc) -- (out);
+
+\end{tikzpicture}
+\end{chThreeDiagram}
 \end{center}
 
+\par\begingroup
+
+কিবোর্ডের অক্ষর ও চিহ্নকে বাইনারি কোডে প্রকাশ করতে
+\textenglish{ASCII}, \textenglish{Unicode} ইত্যাদি
+\textenglish{character code} ব্যবহৃত হয়।
+তাই কিবোর্ডের সম্পূর্ণ কার্যক্রমকে শুধু একটি সাধারণ
+\textenglish{Encoder}-এর কাজ বলা ঠিক নয়।
+\par\endgroup
+
+
+
+% =========================================================
+% 3.11.2 Definition
+% =========================================================
+
+\subsection{এনকোডারের সংজ্ঞা
+(\textenglish{Definition of Encoder})}
+
+\par\begingroup
+
+যে সমবায় লজিক সার্কিট
+(\textenglish{Combinational Logic Circuit})
+একাধিক \textenglish{input}-এর মধ্যে সক্রিয়
+\textenglish{input}-এর অবস্থান অনুযায়ী নির্দিষ্ট
+বাইনারি \textenglish{code output} প্রদান করে,
+তাকে \textbf{এনকোডার (\textenglish{Encoder})} বলে।
+\par\endgroup
+
+
+সাধারণভাবে,
+
+\[
+\boxed{
+2^n\text{টি \textenglish{input}}
+\longrightarrow
+n\text{টি \textenglish{output}}
+}
+\]
+
+উদাহরণ—
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+    \item \textenglish{4-to-2 Encoder}:
+    ৪টি \textenglish{input} ও ২টি \textenglish{output}।
+
+    \item \textenglish{8-to-3 Encoder}:
+    ৮টি \textenglish{input} ও ৩টি \textenglish{output}।
+
+    \item \textenglish{16-to-4 Encoder}:
+    ১৬টি \textenglish{input} ও ৪টি \textenglish{output}।
+
+\end{itemize}
+
+
+% =========================================================
+% 3.11.3 Structure and Working Principle
+% =========================================================
+
+\subsection{এনকোডারের গঠন ও কার্যপ্রণালি}
+
+সাধারণ \textenglish{Encoder}-এ একাধিক
+\textenglish{input line} এবং কয়েকটি
+\textenglish{output line} থাকে।
+
+একই সময়ে সাধারণত একটি \textenglish{input}
+সক্রিয় অর্থাৎ \(\text{\textenglish{Logic }}1\) থাকে
+এবং অন্য \textenglish{input}-গুলো
+\(\text{\textenglish{Logic }}0\) থাকে।
+
+সক্রিয় \textenglish{input}-এর অবস্থান অনুযায়ী
+\textenglish{output}-এ তার বাইনারি কোড পাওয়া যায়।
+
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=4cm,
+    minimum height=2.4cm
+] (enc)
+{\Large\textbf{\textenglish{Encoder}}};
+
+\draw[->]
+($(enc.west)+(-1.6,0.7)$)
+--
+node[above] {\(D_0\)}
+($(enc.west)+(0,0.7)$);
+
+\draw[->]
+($(enc.west)+(-1.6,0.2)$)
+--
+node[above] {\(D_1\)}
+($(enc.west)+(0,0.2)$);
+
+\draw[->]
+($(enc.west)+(-1.6,-0.25)$)
+--
+node[above] {\(\vdots\)}
+($(enc.west)+(0,-0.25)$);
+
+\draw[->]
+($(enc.west)+(-1.6,-0.75)$)
+--
+node[below] {\(D_{2^n-1}\)}
+($(enc.west)+(0,-0.75)$);
+
+\draw[->]
+($(enc.east)+(0,0.5)$)
+--
+++(1.6,0)
+node[right] {\(Y_{n-1}\)};
+
+\draw[->]
+($(enc.east)+(0,0)$)
+--
+++(1.6,0)
+node[right] {\(\vdots\)};
+
+\draw[->]
+($(enc.east)+(0,-0.5)$)
+--
+++(1.6,0)
+node[right] {\(Y_0\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+
+% =========================================================
+% 3.11.4 Characteristics
+% =========================================================
+
+\subsection{এনকোডারের বৈশিষ্ট্য}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+    \item এনকোডার একটি সমবায় লজিক সার্কিট
+    (\textenglish{Combinational Logic Circuit})।
+
+    \item সাধারণ এনকোডারে \(2^n\)টি
+    \textenglish{input}-এর জন্য \(n\)টি
+    \textenglish{output} থাকে।
+
+    \item সক্রিয় \textenglish{input}-এর অবস্থান অনুযায়ী
+    \textenglish{output}-এ বাইনারি কোড পাওয়া যায়।
+
+    \item সাধারণ এনকোডারে একই সময়ে একাধিক
+    \textenglish{input} সক্রিয় হলে
+    \textenglish{output} অস্পষ্ট হতে পারে।
+
+    \item একাধিক \textenglish{input} সক্রিয় থাকলে
+    অগ্রাধিকার নির্ধারণের জন্য
+    \textenglish{Priority Encoder} ব্যবহার করা হয়।
+
+\end{itemize}
+
+
+% =========================================================
+% 3.11.5 4-to-2 Encoder
+% =========================================================
+
+\subsection{\textenglish{4-to-2 Encoder}}
+
+একটি \textenglish{4-to-2 Encoder}-এ চারটি
+\textenglish{input}—
+
+\[
+D_0,\;D_1,\;D_2,\;D_3
+\]
+
+এবং দুটি \textenglish{output}—
+
+\[
+A,\;B
+\]
+
+থাকে।
+
+কারণ,
+
+\[
+4=2^2
+\]
+
+অর্থাৎ ২-বিট বাইনারি কোড দ্বারা ৪টি
+\textenglish{input position} প্রকাশ করা যায়।
+
+
+% ---------------------------------------------------------
+% 4-to-2 Block Diagram
+% ---------------------------------------------------------
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=4cm,
+    minimum height=2.7cm,
+    align=center
+] (enc)
+{\textbf{\textenglish{4-to-2}}\\
+\textbf{\textenglish{Encoder}}};
+
+\draw[->]
+($(enc.west)+(-1.5,0.85)$)
+--
+node[above] {\(D_0\)}
+($(enc.west)+(0,0.85)$);
+
+\draw[->]
+($(enc.west)+(-1.5,0.28)$)
+--
+node[above] {\(D_1\)}
+($(enc.west)+(0,0.28)$);
+
+\draw[->]
+($(enc.west)+(-1.5,-0.28)$)
+--
+node[above] {\(D_2\)}
+($(enc.west)+(0,-0.28)$);
+
+\draw[->]
+($(enc.west)+(-1.5,-0.85)$)
+--
+node[below] {\(D_3\)}
+($(enc.west)+(0,-0.85)$);
+
+\draw[->]
+($(enc.east)+(0,0.4)$)
+--
+++(1.5,0)
+node[right] {\(A\)};
+
+\draw[->]
+($(enc.east)+(0,-0.4)$)
+--
+++(1.5,0)
+node[right] {\(B\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+
+% =========================================================
+% 3.11.5.1 Truth Table
+% =========================================================
+
+\subsubsection*{সত্যক সারণি
+(\textenglish{Truth Table})}
+
+এখানে একই সময়ে একটি মাত্র
+\textenglish{input} সক্রিয় বলে ধরা হয়েছে।
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\textbf{Active input} & $Y_1$ & $Y_0$ \\
+
+\rowcolor{ICTLightBlue}
+\(\mathbf{D_0}\) &
+\(\mathbf{D_1}\) &
+\(\mathbf{D_2}\) &
+\(\mathbf{D_3}\) &
+\(\mathbf{A}\) &
+\(\mathbf{B}\)
+\\
 \hline
-$D_0$ & 0 & 0 \\
+
+1&0&0&0&0&0\\
 \hline
-$D_1$ & 0 & 1 \\
+0&1&0&0&0&1\\
 \hline
-$D_2$ & 1 & 0 \\
+0&0&1&0&1&0\\
 \hline
-$D_3$ & 1 & 1 \\
+0&0&0&1&1&1\\
 \hline
+
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{সাধারণ ভুল}
-Encoder-এ সাধারণত এক সময়ে একটি input active ধরা হয়। একাধিক input active হলে priority encoder দরকার হয়।
-\end{mistakebox}
+অর্থাৎ—
+
+\[
+D_0=1\Rightarrow AB=00
+\]
+
+\[
+D_1=1\Rightarrow AB=01
+\]
+
+\[
+D_2=1\Rightarrow AB=10
+\]
+
+\[
+D_3=1\Rightarrow AB=11
+\]
+
+
+% =========================================================
+% 3.11.5.2 Boolean Equations
+% =========================================================
+
+\subsubsection*{বুলিয়ান সমীকরণ
+(\textenglish{Boolean Equations})}
+
+সত্যক সারণি থেকে—
+
+\[
+\boxed{A=D_2+D_3}
+\]
+
+এবং,
+
+\[
+\boxed{B=D_1+D_3}
+\]
+
+এখানে \(+\) চিহ্নটি
+\textenglish{OR operation} বোঝায়।
+
+
+% =========================================================
+% 3.11.5.3 4-to-2 Encoder Logic Circuit
+% =========================================================
+
+\subsubsection*{লজিক সার্কিট
+(\textenglish{Logic Circuit})}
+
+দুটি বুলিয়ান সমীকরণ অনুযায়ী
+দুটি \textenglish{OR Gate} ব্যবহার করে
+\textenglish{4-to-2 Encoder} বাস্তবায়ন করা যায়।
+
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    line width=0.75pt,
+    x=0.85cm,
+    y=0.85cm
+]
+
+% =========================================================
+% D0 to D3 vertical input lines
+% =========================================================
+
+\foreach \x/\lab in {
+    0/{D_0},
+    0.65/{D_1},
+    1.30/{D_2},
+    1.95/{D_3}
+}{
+    \draw (\x,3.35) -- (\x,-3.35);
+    \node[above,font=\small] at (\x,3.35) {\(\lab\)};
+}
+
+% =========================================================
+% OR Gates
+% =========================================================
+
+\node[
+    or gate US,
+    draw,
+    fill=white,
+    logic gate inputs=nn,
+    logic gate input sep=0.60cm,
+    minimum height=1.20cm,
+    minimum width=1.95cm
+] (orA) at (6.35,1.15) {};
+
+\node[
+    or gate US,
+    draw,
+    fill=white,
+    logic gate inputs=nn,
+    logic gate input sep=0.60cm,
+    minimum height=1.20cm,
+    minimum width=1.95cm
+] (orB) at (6.35,-1.65) {};
+
+% =========================================================
+% A = D2 + D3
+% =========================================================
+
+\draw
+(1.30,0 |- orA.input 1)
+-- (orA.input 1);
+
+\draw
+(1.95,0 |- orA.input 2)
+-- (orA.input 2);
+
+% =========================================================
+% B = D1 + D3
+% Input lines shifted downward by 0.5 cm
+% =========================================================
+
+\draw
+(0.65,0 |- orB.input 1)
+-- (orB.input 1);
+
+\draw
+(1.95,0 |- orB.input 2)
+-- (orB.input 2);
+
+% =========================================================
+% Outputs
+% =========================================================
+
+\draw
+(orA.output)
+-- ++(1.45,0)
+node[right] {\(A\)};
+
+\draw
+(orB.output)
+-- ++(1.45,0)
+node[right] {\(B\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+\smallskip
+
+{\small
+\textbf{চিত্র:}
+\((4\times 2)\) \textenglish{Encoder}-এর লজিক সার্কিট
+}
+
+\par\begingroup
+
+
+\textenglish{4-to-2 Encoder}-এ—
+
+\[
+A=D_2+D_3
+\qquad\text{এবং}\qquad
+B=D_1+D_3
+\]
+
+\(D_0\) কোনো \textenglish{OR Gate}-এর সঙ্গে যুক্ত হয় না,
+কারণ \(D_0=1\) হলে—
+
+\[
+AB=00
+\]
+
+\par\endgroup
+
+
+
+% =========================================================
+% 3.11.6 8-to-3 Encoder
+% =========================================================
+
+\subsection{\textenglish{8-to-3 Encoder}}
+
+একটি \textenglish{8-to-3 Encoder}-এ আটটি
+\textenglish{input}—
+
+\[
+D_0,D_1,D_2,D_3,D_4,D_5,D_6,D_7
+\]
+
+এবং তিনটি \textenglish{output}—
+
+\[
+A,\;B,\;C
+\]
+
+থাকে।
+
+কারণ,
+
+\[
+2^3=8
+\]
+
+অর্থাৎ ৩-বিট বাইনারি কোড দ্বারা ৮টি ভিন্ন
+\textenglish{input position} প্রকাশ করা যায়।
+
+
+% ---------------------------------------------------------
+% 8-to-3 Block Diagram
+% ---------------------------------------------------------
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    scale=0.95
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=4.2cm,
+    minimum height=4.3cm,
+    align=center
+] (enc)
+{\textbf{\textenglish{8-to-3}}\\
+\textbf{\textenglish{Encoder}}};
+
+\foreach \lab/\y in {
+    D_0/1.50,
+    D_1/1.07,
+    D_2/0.64,
+    D_3/0.21,
+    D_4/-0.22,
+    D_5/-0.65,
+    D_6/-1.08,
+    D_7/-1.51
+}{
+    \draw[->]
+    ($(enc.west)+(-1.4,\y)$)
+    --
+    node[above,font=\small] {\(\lab\)}
+    ($(enc.west)+(0,\y)$);
+}
+
+\draw[->]
+($(enc.east)+(0,0.70)$)
+--
+++(1.5,0)
+node[right] {\(A\)};
+
+\draw[->]
+($(enc.east)+(0,0)$)
+--
+++(1.5,0)
+node[right] {\(B\)};
+
+\draw[->]
+($(enc.east)+(0,-0.70)$)
+--
+++(1.5,0)
+node[right] {\(C\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+
+% =========================================================
+% 3.11.6.1 Truth Table
+% =========================================================
+
+\subsubsection*{সত্যক সারণি
+(\textenglish{Truth Table})}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+
+\rowcolor{ICTLightBlue}
+\textbf{সক্রিয় \textenglish{Input}} &
+\(\mathbf{A}\) &
+\(\mathbf{B}\) &
+\(\mathbf{C}\) &
+\textbf{বাইনারি কোড}
+\\
+\hline
+
+\(D_0=1\)&0&0&0&000\\
+\hline
+\(D_1=1\)&0&0&1&001\\
+\hline
+\(D_2=1\)&0&1&0&010\\
+\hline
+\(D_3=1\)&0&1&1&011\\
+\hline
+\(D_4=1\)&1&0&0&100\\
+\hline
+\(D_5=1\)&1&0&1&101\\
+\hline
+\(D_6=1\)&1&1&0&110\\
+\hline
+\(D_7=1\)&1&1&1&111\\
+\hline
+
+\end{tabular}
+\end{center}
+
+
+% =========================================================
+% 3.11.6.2 Boolean Equations
+% =========================================================
+
+\subsubsection*{বুলিয়ান সমীকরণ
+(\textenglish{Boolean Equations})}
+
+সত্যক সারণি থেকে পাই—
+
+\[
+\boxed{
+A=D_4+D_5+D_6+D_7
+}
+\]
+
+\[
+\boxed{
+B=D_2+D_3+D_6+D_7
+}
+\]
+
+\[
+\boxed{
+C=D_1+D_3+D_5+D_7
+}
+\]
+
+
+% =========================================================
+% 3.11.6.3 Logic Circuit
+% Screenshot-style vertical input lines
+% =========================================================
+
+\subsubsection*{লজিক সার্কিট
+(\textenglish{Logic Circuit})}
+
+তিনটি বুলিয়ান সমীকরণ অনুযায়ী
+তিনটি ৪-\textenglish{input OR Gate} ব্যবহার করে
+\textenglish{8-to-3 Encoder} বাস্তবায়ন করা যায়।
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    line width=0.75pt,
+    x=0.85cm,
+    y=0.85cm
+]
+
+% =========================================================
+% D0 to D7 vertical input lines
+% =========================================================
+
+\foreach \x/\lab in {
+    0/{D_0},
+    0.65/{D_1},
+    1.30/{D_2},
+    1.95/{D_3},
+    2.60/{D_4},
+    3.25/{D_5},
+    3.90/{D_6},
+    4.55/{D_7}
+}{
+    \draw (\x,4.2) -- (\x,-4.2);
+    \node[above,font=\small] at (\x,4.2) {\(\lab\)};
+}
+
+% =========================================================
+% OR Gates
+% =========================================================
+
+\node[
+    or gate US,
+    draw,
+    logic gate inputs=nnnn,
+    scale=1.0
+] (orA) at (8.0,2.5) {};
+
+\node[
+    or gate US,
+    draw,
+    logic gate inputs=nnnn,
+    scale=1.0
+] (orB) at (8.0,0) {};
+
+\node[
+    or gate US,
+    draw,
+    logic gate inputs=nnnn,
+    scale=1.0
+] (orC) at (8.0,-2.5) {};
+
+% =========================================================
+% A = D4 + D5 + D6 + D7
+% =========================================================
+
+\draw
+(2.60,3.10)
+-- (6.20,3.10)
+|- (orA.input 1);
+
+\draw
+(3.25,2.75)
+-- (6.35,2.75)
+|- (orA.input 2);
+
+\draw
+(3.90,2.40)
+-- (6.50,2.40)
+|- (orA.input 3);
+
+\draw
+(4.55,2.05)
+-- (6.65,2.05)
+|- (orA.input 4);
+
+% =========================================================
+% B = D2 + D3 + D6 + D7
+% =========================================================
+
+\draw
+(1.30,0.60)
+-- (6.20,0.60)
+|- (orB.input 1);
+
+\draw
+(1.95,0.20)
+-- (6.35,0.20)
+|- (orB.input 2);
+
+\draw
+(3.90,-0.20)
+-- (6.50,-0.20)
+|- (orB.input 3);
+
+\draw
+(4.55,-0.60)
+-- (6.65,-0.60)
+|- (orB.input 4);
+
+% =========================================================
+% C = D1 + D3 + D5 + D7
+% =========================================================
+
+\draw
+(0.65,-1.90)
+-- (6.20,-1.90)
+|- (orC.input 1);
+
+\draw
+(1.95,-2.30)
+-- (6.35,-2.30)
+|- (orC.input 2);
+
+\draw
+(3.25,-2.70)
+-- (6.50,-2.70)
+|- (orC.input 3);
+
+\draw
+(4.55,-3.10)
+-- (6.65,-3.10)
+|- (orC.input 4);
+
+% =========================================================
+% Outputs
+% =========================================================
+
+\draw
+(orA.output)
+-- ++(1.7,0)
+node[right] {\(A\)};
+
+\draw
+(orB.output)
+-- ++(1.7,0)
+node[right] {\(B\)};
+
+\draw
+(orC.output)
+-- ++(1.7,0)
+node[right] {\(C\)};
+
+% Gate labels
+\node[
+    right=0.12cm of orA,
+    yshift=0.55cm
+] {\textenglish{OR}};
+
+\node[
+    right=0.12cm of orB,
+    yshift=0.55cm
+] {\textenglish{OR}};
+
+\node[
+    right=0.12cm of orC,
+    yshift=0.55cm
+] {\textenglish{OR}};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+
+\smallskip
+
+{\small
+\textbf{চিত্র:}
+তিনটি \textenglish{OR Gate}-এর মাধ্যমে
+\textenglish{8-to-3 Encoder}-এর আউটপুট তৈরি করা হয়।
+সংযোগগুলো \(A\), \(B\) ও \(C\)-এর সমীকরণ অনুযায়ী।
+}
+
+\end{center}
+
+\par\begingroup
+
+\textenglish{8-to-3 Encoder}-এ—
+
+\[
+A=D_4+D_5+D_6+D_7
+\]
+
+\[
+B=D_2+D_3+D_6+D_7
+\]
+
+\[
+C=D_1+D_3+D_5+D_7
+\]
+
+\(D_0\) কোনো \textenglish{OR Gate}-এর সঙ্গে যুক্ত হয় না,
+কারণ \(D_0=1\) হলে—
+
+\[
+ABC=000
+\]
+\par\endgroup
+
+
+
+% =========================================================
+% 3.11.6.4 Example
+% =========================================================
+
+\subsubsection*{উদাহরণ}
+
+একটি \textenglish{8-to-3 Encoder}-এ
+\(D_6=1\) এবং অন্য সব \textenglish{input} \(0\)
+হলে আউটপুট নির্ণয় করো।
+
+\textbf{সমাধান:}
+
+\[
+\begin{aligned}
+A
+&=D_4+D_5+D_6+D_7\\
+&=0+0+1+0\\
+&=1
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+B
+&=D_2+D_3+D_6+D_7\\
+&=0+0+1+0\\
+&=1
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+C
+&=D_1+D_3+D_5+D_7\\
+&=0+0+0+0\\
+&=0
+\end{aligned}
+\]
+
+অতএব,
+
+\[
+\boxed{ABC=110}
+\]
+
+
+% =========================================================
+% 3.11.7 Types of Encoder
+% =========================================================
+
+\subsection{এনকোডারের প্রকারভেদ
+(\textenglish{Types of Encoder})}
+
+এনকোডারের কয়েকটি প্রচলিত ধরন হলো—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+    \item \textbf{\textenglish{4-to-2 Encoder}:}
+    ৪টি \textenglish{input} থেকে ২-বিট
+    \textenglish{output} প্রদান করে।
+
+    \item \textbf{\textenglish{8-to-3 Encoder}:}
+    ৮টি \textenglish{input} থেকে ৩-বিট
+    \textenglish{output} প্রদান করে।
+
+    \item \textbf{\textenglish{Decimal-to-BCD Encoder}:}
+    দশমিক \textenglish{input}-কে
+    \textenglish{BCD code}-এ রূপান্তর করে।
+
+    \item \textbf{\textenglish{Priority Encoder}:}
+    একাধিক \textenglish{input} একই সঙ্গে সক্রিয় হলে
+    নির্ধারিত অগ্রাধিকারের ভিত্তিতে একটি
+    \textenglish{input} নির্বাচন করে
+    \textenglish{code output} প্রদান করে।
+
+\end{enumerate}
+
+\par\begingroup
+
+\textbf{\textenglish{Priority Encoder} কেন প্রয়োজন?}
+
+সাধারণ \textenglish{Encoder}-এ একই সময়ে
+একটি মাত্র \textenglish{input} সক্রিয় থাকবে বলে ধরা হয়।
+
+একাধিক \textenglish{input} একই সঙ্গে সক্রিয় হলে
+সাধারণ \textenglish{Encoder}-এর
+\textenglish{output} অস্পষ্ট হতে পারে।
+
+এই সমস্যা সমাধানে
+\textenglish{Priority Encoder} নির্ধারিত অগ্রাধিকার অনুযায়ী
+সর্বোচ্চ অগ্রাধিকারপ্রাপ্ত সক্রিয়
+\textenglish{input}-কে \textenglish{encode} করে।
+\par\endgroup
+
+
+
+% =========================================================
+% 3.11.8 Applications
+% =========================================================
+
+\subsection{এনকোডারের ব্যবহার
+(\textenglish{Applications of Encoder})}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+    \item কিবোর্ড ও বিভিন্ন
+    \textenglish{input device}-এ সংকেত কোডিংয়ের কাজে।
+
+    \item ডিজিটাল যোগাযোগ ব্যবস্থায় তথ্যকে
+    নির্দিষ্ট কোডে প্রকাশ করতে।
+
+    \item বিভিন্ন \textenglish{input signal}-কে
+    বাইনারি কোডে রূপান্তর করতে।
+
+    \item মাইক্রোপ্রসেসরের
+    \textenglish{Interrupt Request (IRQ)}
+    ব্যবস্থায় অগ্রাধিকার নির্ধারণে।
+
+    \item রোবটিকস ও ডিজিটাল নিয়ন্ত্রণ ব্যবস্থায়
+    \textenglish{input signal} শনাক্ত করতে।
+
+    \item কিছু \textenglish{ADC architecture}-এ
+    কোড তৈরির পর্যায়ে।
+
+\end{itemize}
+
+
+% =========================================================
+% 3.11.9 Exercise
+% =========================================================
+
+\subsection{অনুশীলনী}
+
+\textbf{১. একটি এনকোডারে ৩২টি
+\textenglish{input} থাকলে
+\textenglish{output line} কয়টি হবে?}
+
+\[
+2^n=32=2^5
+\]
+
+\[
+\boxed{n=5}
+\]
+
+\textbf{উত্তর:} ৫টি \textenglish{output line}।
+
+\medskip
+
+\textbf{২. \textenglish{8-to-3 Encoder}-এ
+\(D_5=1\) হলে আউটপুট কত?}
+
+\[
+\boxed{ABC=101}
+\]
+
+\medskip
+
+\textbf{৩. \textenglish{4-to-2 Encoder}-এ
+\(D_3=1\) হলে আউটপুট কত?}
+
+\[
+\boxed{AB=11}
+\]
+
+\medskip
+
+\textbf{৪. Encoder-এর বিপরীত কাজ করে কোন সার্কিট?}
+
+\textbf{উত্তর:}
+ডিকোডার (\textenglish{Decoder})।
+
+\medskip
+
+\textbf{৫. \textenglish{8-to-3 Encoder}-এ
+কতটি \textenglish{input} ও
+\textenglish{output} থাকে?}
+
+\textbf{উত্তর:}
+৮টি \textenglish{input} ও ৩টি
+\textenglish{output}।
+
+\medskip
+
+\textbf{৬. সাধারণ Encoder-এ একাধিক input
+একই সঙ্গে সক্রিয় হলে কী সমস্যা হতে পারে?}
+
+\textbf{উত্তর:}
+\textenglish{Output} অস্পষ্ট হতে পারে।
+এ সমস্যা সমাধানে
+\textenglish{Priority Encoder} ব্যবহার করা হয়।
+
+
+% =========================================================
+% Final Reminder
+% =========================================================
+
+\par\begingroup
+
+\textbf{পরীক্ষার জন্য মনে রাখবে:}
+
+\[
+\boxed{
+2^n\text{টি \textenglish{input}}
+\longrightarrow
+n\text{টি \textenglish{output}}
+}
+\]
+
+\textbf{\textenglish{4-to-2 Encoder}:}
+
+\[
+\boxed{
+A=D_2+D_3,
+\qquad
+B=D_1+D_3
+}
+\]
+
+\textbf{\textenglish{8-to-3 Encoder}:}
+
+\[
+\boxed{
+\begin{aligned}
+A&=D_4+D_5+D_6+D_7\\
+B&=D_2+D_3+D_6+D_7\\
+C&=D_1+D_3+D_5+D_7
+\end{aligned}
+}
+\]
+
+সাধারণ \textenglish{Encoder}-এ একই সময়ে
+একটি \textenglish{input} সক্রিয় থাকে বলে ধরা হয়।
+একাধিক \textenglish{input} সক্রিয় হলে
+\textenglish{Priority Encoder} ব্যবহার করা হয়।
+
+\par\endgroup
+
+\input{chapters/Chapter03/topics/17_encoder/concept_examples.tex}

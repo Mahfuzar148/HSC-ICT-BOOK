@@ -1,417 +1,262 @@
 % Chapter 02.5: তারবিহীন মাধ্যম ও সিস্টেম
+\begingroup
+\chTwoReadableTopicStyle
 \section{তারবিহীন মাধ্যম ও সিস্টেম}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item তারবিহীন মাধ্যম বা unguided media কী তা ব্যাখ্যা করতে।
-\item Radio wave, Microwave, Infrared ও Satellite communication-এর বৈশিষ্ট্য বুঝতে।
-\item Bluetooth, Wi-Fi ও WiMAX-এর ধারণা ও ব্যবহার ব্যাখ্যা করতে।
-\item Wireless communication-এর সুবিধা, অসুবিধা ও সীমাবদ্ধতা বিশ্লেষণ করতে।
-\item Line-of-sight, interference, coverage, mobility ও security-এর ধারণা বুঝতে।
-\item বাস্তব scenario থেকে উপযুক্ত wireless medium বা system নির্বাচন করতে।
-\item বোর্ড ও ভর্তি পরীক্ষার জন্য wireless media-based উত্তর লিখতে।
-\end{itemize}
-\end{learningbox}
-
-\subsection{বাস্তব জীবনের শুরু}
-
-একজন শিক্ষার্থী mobile phone দিয়ে internet ব্যবহার করছে, Bluetooth দিয়ে earphone connect করছে, Wi-Fi দিয়ে online class করছে এবং TV remote দিয়ে television control করছে। এই সব communication-এ কোনো physical cable ব্যবহার করা হচ্ছে না। Data বা signal বাতাসের মাধ্যমে electromagnetic wave আকারে যাচ্ছে।
-
-এই ধরনের communication-কে বলা হয় wireless communication, আর যে মাধ্যমের মাধ্যমে signal cable ছাড়া বাতাস, মহাকাশ বা free space দিয়ে যায় তাকে বলা হয় unguided media বা wireless media।
-
-\begin{keypointbox}{মূল ধারণা}
-Wireless media বুঝতে ৫টি বিষয় মনে রাখো:
-\begin{itemize}
-\item কোনো physical cable লাগে না।
-\item electromagnetic wave ব্যবহার করে data পাঠানো হয়।
-\item mobility বেশি।
-\item interference ও obstacle দ্বারা প্রভাবিত হতে পারে।
-\item security নিশ্চিত করতে encryption দরকার।
-\end{itemize}
-\end{keypointbox}
-
-\subsection{তারবিহীন মাধ্যম বা Unguided Media}
-
-\begin{definitionbox}{তারবিহীন মাধ্যম}
-যে communication medium-এ data বা signal কোনো physical cable ছাড়াই বাতাস, মহাকাশ বা free space-এর মাধ্যমে electromagnetic wave আকারে sender থেকে receiver-এর কাছে যায়, তাকে তারবিহীন মাধ্যম বা unguided media বলা হয়।
-\end{definitionbox}
-
-Wireless communication-এ sender একটি antenna বা transmitter ব্যবহার করে signal পাঠায়। Receiver side-এ antenna বা receiver সেই signal গ্রহণ করে। Mobile communication, Wi-Fi, Bluetooth, radio broadcasting, satellite communication—সবই wireless communication-এর উদাহরণ।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/wireless_media_overview.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/wireless_media_overview.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Sender Antenna \quad $\longrightarrow$ \quad Electromagnetic Wave \quad $\longrightarrow$ \quad Receiver Antenna
-\vspace{0.7cm}
-}}
-}
-\caption*{তারবিহীন মাধ্যমে সিগন্যাল প্রবাহ}
-\end{figure}
-
-\begin{keypointbox}{Wireless media-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item physical cable ছাড়াই data communication করা যায়।
-\item electromagnetic wave ব্যবহার করা হয়।
-\item mobile device ও portable device-এর জন্য উপযোগী।
-\item large area coverage দেওয়া সম্ভব।
-\item installation দ্রুত ও flexible।
-\item obstacle, weather, interference ও distance signal quality কমাতে পারে।
-\item unauthorized access ঠেকাতে security mechanism দরকার।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-Unguided media-এর উত্তরে অবশ্যই লিখবে: physical cable লাগে না, electromagnetic wave ব্যবহার করে, mobility বেশি, কিন্তু interference ও security risk থাকতে পারে।
-\end{boardbox}
-
-\subsection{তারবিহীন মাধ্যমের প্রকারভেদ}
-
-HSC ICT-তে তারবিহীন মাধ্যম হিসেবে নিচের বিষয়গুলো বেশি গুরুত্বপূর্ণ:
-
-\begin{itemize}
-\item Radio Wave
-\item Microwave
-\item Infrared
-\item Satellite Communication
-\end{itemize}
-
-এছাড়া wireless system হিসেবে Bluetooth, Wi-Fi ও WiMAX গুরুত্বপূর্ণ।
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/wireless_media_types_tree.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/wireless_media_types_tree.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Wireless Media / System\\[8pt]
-Radio Wave \quad Microwave \quad Infrared \quad Satellite\\[8pt]
-Bluetooth \quad Wi-Fi \quad WiMAX
-\vspace{0.7cm}
-}}
-}
-\caption*{তারবিহীন মাধ্যম ও সিস্টেমের শ্রেণিবিভাগ}
-\end{figure}
-
+\subsection{Phone, Remote ও দূরের সংযোগ}
+ফোন থেকে হেডফোনে Bluetooth, কক্ষের ল্যাপটপে Wi-Fi এবং টেলিভিশনের রিমোটে অবলোহিত রশ্মি ব্যবহার হতে পারে। দূরের দ্বীপে যোগাযোগের জন্য স্যাটেলাইট সংযোগ নেওয়া যায়। বেতার মাধ্যমের সংজ্ঞা আগের অংশে আছে। এখানে তরঙ্গের বৈশিষ্ট্য ও যোগাযোগব্যবস্থাগুলোর কাজ ব্যাখ্যা করা হয়েছে। যোগাযোগের জন্য অ্যান্টেনা বা গ্রাহক যন্ত্র, কার্যকর সেবার পরিসর এবং অনুমোদিত প্রবেশাধিকার প্রয়োজন।
+\chTwoPair{\chTwoImage{chapters/Chapter02/images/wireless_media_overview.png}{বেতার সংকেত পাঠানো ও গ্রহণ}}{\chTwoImage{chapters/Chapter02/images/wireless_media_types_tree.png}{তরঙ্গ ও যোগাযোগব্যবস্থার পরিচয়}}
 \subsection{Radio Wave}
 
 \begin{definitionbox}{Radio Wave}
-যে electromagnetic wave তুলনামূলকভাবে কম frequency ও বেশি wavelength ব্যবহার করে wireless communication-এ signal বহন করে, তাকে radio wave বলা হয়।
+বেতার যোগাযোগে ব্যবহৃত রেডিও বর্ণালির বিদ্যুৎচৌম্বক তরঙ্গকে রেডিও তরঙ্গ বলে। ফ্রিকোয়েন্সি অনুযায়ী তরঙ্গের বৈশিষ্ট্য বদলায়। মাইক্রোওয়েভও এই বিস্তৃত বর্ণালির অংশ।
 \end{definitionbox}
 
-Radio wave সাধারণত চারদিকে ছড়িয়ে পড়ে এবং obstacle কিছুটা অতিক্রম করতে পারে। তাই radio broadcasting, mobile communication, Wi-Fi, Bluetooth ইত্যাদিতে radio wave-এর ধারণা গুরুত্বপূর্ণ।
+রেডিও তরঙ্গ সাধারণত চারদিকে ছড়িয়ে পড়ে এবং কিছু বাধা অতিক্রম করতে পারে। বেতার সম্প্রচার, মোবাইল যোগাযোগ, Wi-Fi ও Bluetooth-এর কাজ বুঝতে রেডিও তরঙ্গের ধারণা প্রয়োজন।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/radio_wave_communication.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/radio_wave_communication.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Radio Tower \quad $\sim\sim\sim$ \quad Radio / Mobile / Wi-Fi Device
-\vspace{0.7cm}
-}}
-}
-\caption*{Radio wave communication}
-\end{figure}
+\textbf{বেতার টেলিগ্রাফির বিকাশ:} Guglielmo Marconi-র ১৮৯৫ সালের পরীক্ষা এবং ১৮৯৬ সালের ব্রিটিশ পেটেন্ট আবেদন ব্যবহারযোগ্য বেতার টেলিগ্রাফির ইতিহাসে গুরুত্বপূর্ণ। এই প্রযুক্তির বিকাশে অবদানের জন্য Marconi ও Karl Ferdinand Braun ১৯০৯ সালে যৌথভাবে পদার্থবিজ্ঞানে নোবেল পুরস্কার পান। রেডিও তরঙ্গ প্রকৃতিতে বিদ্যমান। মানুষ এই তরঙ্গ দিয়ে যোগাযোগের যন্ত্র ও পদ্ধতি তৈরি করেছে।
 
-\begin{keypointbox}{Radio wave-এর বৈশিষ্ট্য}
+
+\chTwoPair{\begin{keypointbox}{Radio wave-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item antenna ব্যবহার করে signal পাঠানো ও গ্রহণ করা হয়।
-\item large area coverage দিতে পারে।
-\item obstacle কিছুটা অতিক্রম করতে পারে।
-\item broadcasting communication-এর জন্য উপযোগী।
-\item interference ও noise দ্বারা প্রভাবিত হতে পারে।
-\item security না থাকলে signal অন্য device capture করতে পারে।
+\item অ্যান্টেনা দিয়ে সংকেত পাঠানো ও গ্রহণ করা হয়।
+\item বড় এলাকায় সেবা দিতে পারে।
+\item কিছু বাধা অতিক্রম করতে পারে।
+\item সম্প্রচারের জন্য উপযোগী।
+\item বিঘ্ন ও নয়েজে প্রভাবিত হতে পারে।
+\item সুরক্ষা না থাকলে অন্য যন্ত্র সংকেত ধরে ফেলতে পারে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/radio_wave_communication.png}{রেডিও তরঙ্গের সাহায্যে যোগাযোগ}}
+
 
 \begin{examplebox}{বাস্তব উদাহরণ}
-FM radio, television broadcast, mobile phone communication, Wi-Fi এবং Bluetooth—এসব ক্ষেত্রে radio wave-এর ধারণা ব্যবহার করা হয়।
+FM রেডিও, টেলিভিশন সম্প্রচার, মোবাইল ফোন, Wi-Fi ও Bluetooth-এ রেডিও তরঙ্গ ব্যবহৃত হয়।
 \end{examplebox}
+
+\subsection{Spectrum ও Line-of-sight: নামের সঙ্গে কারণ}
+\begin{tabularx}{\linewidth}{|p{.18\linewidth}|p{.26\linewidth}|X|}\hline
+\textbf{পরিচয়} & \textbf{প্রচলিত Frequency} & \textbf{Signal-এর পথ ও ব্যবহার}\\\hline
+Radio Spectrum & প্রায় ৩ kHz--৩০০ GHz; প্রচলিত আনুমানিক পরিসর & ফ্রিকোয়েন্সি অনুযায়ী Ground/Sky/LOS পথ; সম্প্রচার ও মোবাইল যোগাযোগ।\\\hline
+Microwave & প্রায় ৩০০ MHz--৩০০ GHz & রেডিও বর্ণালির উচ্চ ফ্রিকোয়েন্সির অংশ; দিকনির্দেশিত টাওয়ার ও স্যাটেলাইট সংযোগ।\\\hline
+Infrared & প্রায় ৩০০ GHz--৪০০ THz & দৃশ্যমান লাল আলোর চেয়ে দীর্ঘ তরঙ্গদৈর্ঘ্য; রিমোট ও সেন্সরে ব্যবহার; সাধারণ দেয়াল ভেদ করে না।\\\hline
+\end{tabularx}
+ছকের পরিসরগুলো প্রচলিত আনুমানিক শ্রেণিসীমা। সংজ্ঞাভেদে সীমা কিছুটা ভিন্ন হতে পারে। মাইক্রোওয়েভ রেডিও বর্ণালির অংশ। রেডিও বা মাইক্রোওয়েভ-সংক্রান্ত কিছু প্রচলিত প্রশ্নে ১০ kHz--১০০ GHz-এর বিস্তৃত পরিসর দেওয়া হয়। এই পরিসরকে প্রচলিত মাইক্রোওয়েভ শ্রেণির নির্ভুল সংজ্ঞা বলা যায় না। অ্যান্টেনা ও ফ্রিকোয়েন্সি অনুযায়ী তরঙ্গের দিক এবং বাধা অতিক্রমের ক্ষমতা বদলায়।
+\textbf{Line-of-sight (LOS)} হলো প্রেরক ও গ্রাহক অ্যান্টেনার মধ্যকার কার্যকর সরাসরি পথ। স্থলভিত্তিক মাইক্রোওয়েভ সংযোগের মাঝখানে পাহাড় বা উঁচু ভবন থাকলে সংকেত বাধা পেতে পারে। দীর্ঘ পথে টাওয়ার বা পুনঃপ্রেরণকেন্দ্র প্রয়োজন হতে পারে। অবলোহিত রিমোট সাধারণত স্বল্প দূরত্বে কাজ করে এবং দেয়াল ভেদ করে না। সরাসরি পথ, প্রতিফলন ও বাধা এর কার্যকারিতাকে প্রভাবিত করে।
+\textbf{রেডিও তরঙ্গের তিনটি পথ:} Ground Wave ভূপৃষ্ঠ অনুসরণ করে চলে। কম ফ্রিকোয়েন্সিতে দীর্ঘ দূরত্বের যোগাযোগে এই পথ ব্যবহৃত হয়। Sky Wave-এ উপযুক্ত HF (প্রায় 3--30 MHz) তরঙ্গ আয়নমণ্ডলে বেঁকে পৃথিবীতে ফিরে আসে। এতে দিগন্তের বাইরেও যোগাযোগ সম্ভব হয়। Line-of-sight পথে তরঙ্গ সরাসরি এক অ্যান্টেনা থেকে অন্য অ্যান্টেনায় যায়। সব ফ্রিকোয়েন্সির তরঙ্গ আয়নমণ্ডল থেকে একইভাবে ফিরে আসে না। স্যাটেলাইটের মাইক্রোওয়েভ সংযোগ ও Sky Wave তাই একই ঘটনা নয়।
 
 \subsection{Microwave}
 
 \begin{definitionbox}{Microwave}
-উচ্চ frequency ও তুলনামূলকভাবে ছোট wavelength-এর electromagnetic wave, যা point-to-point wireless communication-এ ব্যবহৃত হয়, তাকে microwave বলা হয়।
+উচ্চ ফ্রিকোয়েন্সি ও তুলনামূলক ছোট তরঙ্গদৈর্ঘ্যের বিদ্যুৎচৌম্বক তরঙ্গকে মাইক্রোওয়েভ বলে। দুই নির্দিষ্ট প্রান্তের মধ্যে বেতার যোগাযোগে এই তরঙ্গ ব্যবহৃত হয়।
 \end{definitionbox}
 
-Microwave communication সাধারণত line-of-sight communication-এর উপর নির্ভর করে। অর্থাৎ transmitter ও receiver-এর মধ্যে সরাসরি path থাকা দরকার। Tower-to-tower communication, satellite communication, mobile network backbone ইত্যাদিতে microwave ব্যবহৃত হয়।
+মাইক্রোওয়েভ যোগাযোগ সাধারণত সরাসরি দৃষ্টিপথের ওপর নির্ভর করে। অর্থাৎ প্রেরক ও গ্রাহকের মধ্যে কার্যকর সরাসরি পথ প্রয়োজন। এক টাওয়ার থেকে অন্য টাওয়ারে, স্যাটেলাইটে এবং মোবাইল নেটওয়ার্কের প্রধান সংযোগে মাইক্রোওয়েভ ব্যবহৃত হয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/microwave_line_of_sight.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/microwave_line_of_sight.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Microwave Tower \quad $\longrightarrow$ \quad Line of Sight \quad $\longrightarrow$ \quad Microwave Tower
-\vspace{0.7cm}
-}}
-}
-\caption*{Microwave line-of-sight communication}
-\end{figure}
 
-\begin{keypointbox}{Microwave-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Microwave-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item high frequency electromagnetic wave ব্যবহার করে।
-\item point-to-point communication-এর জন্য উপযোগী।
-\item line-of-sight path প্রয়োজন হতে পারে।
-\item long distance communication-এ tower বা repeater ব্যবহার করা হয়।
-\item obstacle, rain, weather condition ও alignment problem signal quality কমাতে পারে।
-\item satellite communication-এ microwave signal ব্যবহৃত হয়।
+\item উচ্চ ফ্রিকোয়েন্সির বিদ্যুৎচৌম্বক তরঙ্গ ব্যবহার করে।
+\item দুই নির্দিষ্ট প্রান্তের যোগাযোগে উপযোগী।
+\item সরাসরি দৃষ্টিপথ প্রয়োজন হতে পারে।
+\item দীর্ঘ দূরত্বের যোগাযোগে টাওয়ার বা রিপিটার ব্যবহৃত হয়।
+\item বাধা, বৃষ্টি, আবহাওয়া ও অ্যান্টেনার সঠিক অবস্থান না থাকা সংকেতের মান কমাতে পারে।
+\item স্যাটেলাইট যোগাযোগে মাইক্রোওয়েভ সংকেত ব্যবহৃত হয়।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/microwave_line_of_sight.png}{সরাসরি দৃষ্টিপথে মাইক্রোওয়েভ যোগাযোগ}}
+
 
 \begin{examplebox}{বাস্তব উদাহরণ}
-Mobile tower-to-tower link, satellite link, long-distance wireless backbone এবং radar system-এ microwave ব্যবহৃত হয়।
+মোবাইলের এক টাওয়ার থেকে অন্য টাওয়ারের সংযোগ, স্যাটেলাইট, দূরের বেতার প্রধান সংযোগ এবং রাডারে মাইক্রোওয়েভ ব্যবহৃত হয়।
 \end{examplebox}
 
 \begin{mistakebox}{Microwave ধারণা}
-অনেকে microwave মানেই microwave oven মনে করে। ICT-তে microwave বলতে wireless communication-এ ব্যবহৃত high frequency electromagnetic wave বোঝায়।
+মাইক্রোওয়েভের ব্যবহার শুধু ওভেনে সীমাবদ্ধ নয়। ICT-তে বেতার যোগাযোগে ব্যবহৃত উচ্চ ফ্রিকোয়েন্সির বিদ্যুৎচৌম্বক তরঙ্গ বোঝাতে নামটি ব্যবহৃত হয়।
 \end{mistakebox}
 
 \subsection{Infrared}
 
 \begin{definitionbox}{Infrared}
-Infrared হলো এমন electromagnetic radiation যা short-range wireless communication-এ ব্যবহৃত হয় এবং সাধারণত line-of-sight প্রয়োজন হয়।
+দৃশ্যমান লাল আলোর চেয়ে দীর্ঘ তরঙ্গদৈর্ঘ্যের বিদ্যুৎচৌম্বক বিকিরণকে অবলোহিত রশ্মি বা Infrared বলে। স্বল্প দূরত্বের বেতার যোগাযোগে এই রশ্মি ব্যবহৃত হয়। যোগাযোগে সাধারণত সরাসরি দৃষ্টিপথ প্রয়োজন হয়।
 \end{definitionbox}
 
-Infrared signal wall বা obstacle অতিক্রম করতে পারে না। তাই এটি সাধারণত short distance communication-এ ব্যবহৃত হয়। TV remote, AC remote, কিছু sensor-based device ইত্যাদিতে infrared ব্যবহৃত হয়।
+অবলোহিত সংকেত দেয়াল বা বাধা অতিক্রম করতে পারে না। তাই স্বল্প দূরত্বের যোগাযোগে এই রশ্মি ব্যবহৃত হয়। টেলিভিশন ও শীতাতপনিয়ন্ত্রকের রিমোট এবং কিছু সেন্সরভিত্তিক যন্ত্র এর উদাহরণ।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/infrared_short_range.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/infrared_short_range.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Remote Control \quad $\longrightarrow$ \quad Infrared Signal \quad $\longrightarrow$ \quad TV / AC
-\vspace{0.7cm}
-}}
-}
-\caption*{Infrared short-range communication}
-\end{figure}
+\textbf{আবিষ্কারের ইতিহাস:} William Herschel ১৮০০ সালে দৃশ্যমান আলোর বিভিন্ন রঙের তাপমাত্রা পরীক্ষা করেন। লাল আলোর সীমানার বাইরেও তাপমাত্রা বাড়তে দেখে তিনি অবলোহিত বিকিরণ শনাক্ত করেন। সালটি অবলোহিত রশ্মি আবিষ্কারের; রিমোট কন্ট্রোল যন্ত্র আবিষ্কারের নয়।
 
-\begin{keypointbox}{Infrared-এর বৈশিষ্ট্য}
+
+\chTwoPair{\begin{keypointbox}{Infrared-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item short-range communication-এ ব্যবহৃত হয়।
-\item line-of-sight দরকার।
-\item wall বা obstacle অতিক্রম করতে পারে না।
-\item cost কম।
-\item interference তুলনামূলক কম হতে পারে কারণ signal নির্দিষ্ট direction-এ যায়।
-\item TV remote, AC remote ও কিছু sensor device-এ ব্যবহৃত হয়।
+\item স্বল্প দূরত্বের যোগাযোগে ব্যবহৃত হয়।
+\item সরাসরি দৃষ্টিপথ প্রয়োজন।
+\item দেয়াল বা বাধা অতিক্রম করতে পারে না।
+\item খরচ কম।
+\item সংকেত নির্দিষ্ট দিকে যায় বলে বিঘ্ন তুলনামূলক কম হতে পারে।
+\item টেলিভিশন ও শীতাতপনিয়ন্ত্রকের রিমোট এবং কিছু সেন্সর যন্ত্রে ব্যবহৃত হয়।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/infrared_short_range.png}{অবলোহিত রশ্মিতে স্বল্প দূরত্বের যোগাযোগ}}
+
 
 \subsection{Satellite Communication}
-
 \begin{definitionbox}{Satellite Communication}
-যে communication system-এ earth station থেকে signal satellite-এ পাঠানো হয় এবং satellite সেই signal অন্য earth station-এ retransmit করে, তাকে satellite communication বলা হয়।
+কৃত্রিম উপগ্রহকে সংকেত পুনঃপ্রেরণের কেন্দ্র হিসেবে ব্যবহার করে ভূকেন্দ্রগুলোর মধ্যে যোগাযোগের ব্যবস্থাকে স্যাটেলাইট কমিউনিকেশন বলে।
 \end{definitionbox}
+টেলিভিশন সম্প্রচার, দূরাঞ্চলে ডেটা পাঠানো এবং আন্তর্জাতিক যোগাযোগে স্যাটেলাইট ব্যবহৃত হয়। পথনির্দেশ বা GPS এবং আবহাওয়া পর্যবেক্ষণেও উপগ্রহের ব্যবহার আছে। কাজ অনুযায়ী উপগ্রহ ও কক্ষপথ আলাদা হয়।
 
-Satellite communication সাধারণত microwave signal ব্যবহার করে। Earth station থেকে satellite-এ signal পাঠানোকে uplink এবং satellite থেকে earth station-এ signal পাঠানোকে downlink বলা হয়। এটি বড় area coverage, international communication, TV broadcasting, GPS, weather forecasting এবং remote area communication-এর জন্য গুরুত্বপূর্ণ।
+\textbf{ব্যবহারের ক্ষেত্র:} দুর্গম ব্যাংক শাখার লেনদেনের তথ্য পাঠাতে স্যাটেলাইট সংযোগ নেওয়া যায়। দূরের রোগীর তথ্য বা ভিডিও চিকিৎসকের কাছে পাঠানো, অর্থাৎ Telemedicine, এবং E-learning চালাতেও এই সংযোগ উপযোগী। দুর্যোগে স্থলসংযোগ বিচ্ছিন্ন হলে যোগাযোগ বজায় রাখতে স্যাটেলাইট ব্যবহার করা যায়। প্রতিরক্ষা ও জরুরি সেবাতেও প্রয়োজন অনুযায়ী এই মাধ্যম নেওয়া হয়। তথ্যের নিরাপত্তার জন্য আলাদা পরিচয় যাচাই ও এনক্রিপশন প্রয়োজন। বাংলাদেশের প্রথম ভূস্থির যোগাযোগ উপগ্রহ ২০১৮ সালে উৎক্ষেপিত হয়। সম্প্রচার, VSAT, Telemedicine ও E-learning এর সেবার উদাহরণ।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/satellite_wireless_system.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/satellite_wireless_system.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.7cm}
-Earth Station \quad $\longrightarrow$ \quad Uplink \quad $\longrightarrow$ \quad Satellite\\[8pt]
-Satellite \quad $\longrightarrow$ \quad Downlink \quad $\longrightarrow$ \quad Earth Station
-\vspace{0.7cm}
-}}
-}
-\caption*{Satellite wireless communication system}
-\end{figure}
+\subsection{Geostationary Satellite, Transponder ও VSAT}
+\begin{definitionbox}{Geostationary Satellite}
+নিরক্ষীয় বৃত্তাকার কক্ষপথে পৃথিবীর ঘূর্ণনের একই দিকে ও একই কৌণিক বেগে ঘোরে এমন উপগ্রহকে ভূস্থির বা Geostationary Satellite বলে। ভূপৃষ্ঠ থেকে উপগ্রহটিকে একই স্থানের ওপর স্থির মনে হয়। এর উচ্চতা প্রায় ৩৫,৭৮৬ km; আনুমানিক হিসাবে প্রায় ৩৬,০০০ km ধরা হয়।
+প্রদক্ষিণকাল পৃথিবীর নিজের অক্ষের ঘূর্ণনকালের সমান, প্রায় ২৪ ঘণ্টা।
+\end{definitionbox}
+\chTwoDiagramRow{satellite}{Satellite Link কীভাবে কাজ করে?}{ভূকেন্দ্র থেকে উপগ্রহে পাঠানো সংকেত হলো Uplink। উপগ্রহের Transponder সংকেত গ্রহণ করে। এরপর সংকেত প্রক্রিয়াকরণ বা বর্ধন করে উপযুক্ত Downlink ফ্রিকোয়েন্সিতে আবার পাঠায়। উপগ্রহ থেকে ভূকেন্দ্রে আসা সংকেত হলো Downlink। সব উপগ্রহ ভূস্থির নয়; অন্য কক্ষপথেও উপগ্রহ রয়েছে।}
+\chTwoPair{\textbf{Satellite-এর ইতিহাস}\par
+Arthur C. Clarke ১৯৪৫ সালে ভূস্থির যোগাযোগব্যবস্থার পরিকল্পনা ব্যাখ্যা করেন। ১৯৫৭ সালের Sputnik 1 প্রথম কৃত্রিম পৃথিবী-উপগ্রহ, তবে ভূস্থির ছিল না। ১৯৬৪ সালের Syncom 3 প্রথম ভূস্থির উপগ্রহ হিসেবে গুরুত্বপূর্ণ।}{\textbf{GEO Link-এ Delay-এর হিসাব}\par
+আদর্শ উল্লম্ব পথে ভূকেন্দ্র--উপগ্রহ--ভূকেন্দ্রের দূরত্ব প্রায় $2\times35786=71572$ km। $c\approx300000$ km/s ধরলে শুধু সংকেতের যাত্রায় প্রায় ০.২৪ s লাগে। যাওয়া--ফেরায় লাগে প্রায় ০.৪৮ s। তির্যক পথ, প্রক্রিয়াকরণ ও অন্য সংযোগের সময় যোগ হলে মোট সময় বাড়ে।}
 
-\begin{keypointbox}{Satellite communication-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item খুব বড় geographical area cover করতে পারে।
-\item remote area communication-এর জন্য কার্যকর।
-\item TV broadcasting, GPS ও international communication-এ ব্যবহৃত হয়।
-\item uplink ও downlink signal থাকে।
-\item delay বা latency থাকতে পারে।
-\item installation ও operation cost বেশি।
-\item weather condition signal quality প্রভাবিত করতে পারে।
-\end{itemize}
-\end{keypointbox}
+\textbf{মাইক্রোওয়েভ পুনঃপ্রেরণকেন্দ্রের ব্যবধান:} প্রচলিত ব্যবস্থার উদাহরণে প্রায় ৪০--৫০ km অন্তর টাওয়ার বসানো হয়। সব মাইক্রোওয়েভ সংযোগের জন্য এটি স্থির সীমা নয়। পৃথিবীর বক্রতা, টাওয়ারের উচ্চতা, ফ্রিকোয়েন্সি, বাধা ও আবহাওয়া বিবেচনা করে দূরত্ব নির্ধারণ করা হয়।
 
+\textbf{VSAT (Very Small Aperture Terminal):} ছোট ডিশ অ্যান্টেনাযুক্ত স্যাটেলাইট ভূকেন্দ্রকে VSAT বলে। দূরের ব্যাংক শাখা, নৌযান বা স্থলসংযোগ কঠিন এমন অঞ্চলে ডেটা যোগাযোগে এটি ব্যবহার করা যায়। GEO সংযোগে সংকেতকে অনেক দূর যেতে হয় বলে পৌঁছাতে উল্লেখযোগ্য সময় লাগে। বৃষ্টি এবং সংকেতের শক্তি ও ক্ষয়ের হিসাবও বিবেচনা করতে হয়। স্যাটেলাইট বড় এলাকায় সেবা দিলেও সব সরাসরি সম্প্রচার বা তাৎক্ষণিক কাজের জন্য সর্বনিম্ন বিলম্ব দেয় না।
+
+\subsection{LEO, MEO ও GEO: উচ্চতা বদলালে কাজও বদলায়}
+\begin{tabularx}{\linewidth}{|p{.15\linewidth}|p{.27\linewidth}|X|X|}\hline
+\textbf{কক্ষপথ} & \textbf{ভূপৃষ্ঠ থেকে উচ্চতা} & \textbf{প্রদক্ষিণকাল ও অবস্থান} & \textbf{ব্যবহার/সমঝোতা}\\\hline
+LEO: Low Earth Orbit & সাধারণত প্রায় ২০০--২০০০ km & নিচের কক্ষপথের উদাহরণে প্রায় ৯০ মিনিট; পৃথিবীর তুলনায় চলমান & পৃথিবী পর্যবেক্ষণ ও কিছু ব্রডব্যান্ড ব্যবস্থায় ব্যবহার; পথ ছোট হওয়ায় বিলম্ব কম। বিস্তৃত সেবায় বহু উপগ্রহ ও সংযোগ হস্তান্তর দরকার।\\\hline
+MEO: Medium Earth Orbit & LEO-এর ওপরে, GEO-এর নিচে; GPS-এর উদাহরণ প্রায় ২০,২০০ km & GPS-এ প্রায় ১২ ঘণ্টা; সব MEO-তে একই সময় নয় & পথনির্দেশে ব্যবহার; যেমন GPS। উচ্চতা অনুযায়ী সেবার পরিসর ও বিলম্ব বদলায়।\\\hline
+GEO: Geostationary Earth Orbit & প্রায় ৩৫,৭৮৬ $\approx$ ৩৬,০০০ km & নিরক্ষীয় বৃত্তাকার পথে প্রায় ২৪ ঘণ্টা; একই স্থানের ওপর স্থির মনে হয় & টিভি ও যোগাযোগে বড় এলাকায় সেবা এবং স্থির ডিশ অ্যান্টেনার সুবিধা; LEO-এর তুলনায় সংকেতের পথ দীর্ঘ ও বিলম্ব বেশি।\\\hline
+\end{tabularx}
+উচ্চতা ভূপৃষ্ঠ থেকে মাপা হয়; পৃথিবীর কেন্দ্র থেকে মাপা ব্যাসার্ধ আলাদা। ৯০ মিনিট ও ১২ ঘণ্টা নির্দিষ্ট উদাহরণ, সব LEO বা MEO উপগ্রহের স্থির প্রদক্ষিণকাল নয়। নিচু উপগ্রহ তুলনামূলক ছোট এলাকা ঢাকে এবং দ্রুত স্থান বদলায়। বড় এলাকায় ধারাবাহিক সেবা দিতে একাধিক উপগ্রহের সমন্বয় প্রয়োজন।
 \subsection{Bluetooth}
+\label{ch2:bluetooth-numeric}
 
 \begin{definitionbox}{Bluetooth}
-Bluetooth হলো short-range wireless communication technology, যার মাধ্যমে কাছাকাছি থাকা device-গুলোর মধ্যে data আদান-প্রদান করা যায়।
+কাছাকাছি যন্ত্রের মধ্যে ডেটা আদান-প্রদানের স্বল্প দূরত্বের বেতার প্রযুক্তিকে Bluetooth বলে।
 \end{definitionbox}
 
-Bluetooth সাধারণত personal area network বা PAN তৈরি করতে ব্যবহৃত হয়। Mobile phone, wireless earphone, speaker, keyboard, mouse, smartwatch ইত্যাদি device Bluetooth ব্যবহার করে connect হতে পারে।
+Bluetooth সাধারণত ব্যক্তিগত নেটওয়ার্ক বা PAN তৈরি করতে ব্যবহৃত হয়। মোবাইল ফোন, বেতার ইয়ারফোন, স্পিকার, কিবোর্ড, মাউস ও স্মার্টওয়াচ এই প্রযুক্তি দিয়ে সংযুক্ত হতে পারে।
+\textbf{উৎপত্তি ও নাম:} Ericsson-এর গবেষণা দলে Jaap Haartsen ও সহকর্মীদের ১৯৯৪ সালের কাজ Bluetooth-এর ভিত্তি গড়ে। Sven Mattisson-ও গুরুত্বপূর্ণ অবদান রাখেন। ১৯৯৮ সালে Bluetooth SIG (Special Interest Group) গঠিত হয়। রাজা Harald Bluetooth-এর নাম থেকে প্রযুক্তির নাম এসেছে। এটি কোনো শব্দগুচ্ছের সংক্ষিপ্ত রূপ নয়। বিভিন্ন প্রতিষ্ঠানের যন্ত্রের পারস্পরিক কাজের জন্য SIG প্রযুক্তিগত নির্দেশনা উন্নয়ন করে।
+প্রথম Bluetooth Specification 1.0a প্রকাশিত হয় ১৯৯৯ সালে; গবেষণা শুরুর সাল, SIG গঠনের সাল ও Specification প্রকাশের সাল আলাদা।
 
-Bluetooth technology সাধারণত 2.4 GHz ISM band ব্যবহার করে। Bluetooth Classic audio streaming ও simple data transfer-এ বেশি দেখা যায়; Bluetooth Low Energy বা BLE কম power খরচ করে sensor, smartwatch, health device, beacon এবং IoT device-এ বেশি ব্যবহৃত হয়। BLE point-to-point ছাড়াও broadcast ও mesh communication support করতে পারে, তাই modern smart device ecosystem-এ Bluetooth শুধু file sharing নয়, device discovery, positioning এবং automation-এর সাথেও যুক্ত।
+\textbf{কত দূরে কাজ করে?} সাধারণ Phone/Peripheral সংযোগের উদাহরণে প্রায় ৩--১০ m; কিছু শক্তিশালী ঐতিহাসিক Device-এ প্রায় ১০০ m-এর উদাহরণ আছে। প্রচলিত Classic Power Class-এর আনুমানিক তুলনা:
+\begin{tabularx}{\linewidth}{|p{.20\linewidth}|X|X|}\hline
+\textbf{Power Class} & \textbf{প্রচলিত সর্বোচ্চ Power} & \textbf{Range-এর উদাহরণ}\\\hline
+Class 1 & ১০০ mW & প্রায় ১০০ m\\\hline
+Class 2 & ২.৫ mW & প্রায় ১০ m\\\hline
+Class 3 & ১ mW & প্রায় ১ m\\\hline
+\end{tabularx}
+ছকের দূরত্বগুলো ঐতিহাসিক শক্তি-শ্রেণিভিত্তিক উদাহরণ; নিশ্চিত কার্যকর দূরত্ব নয়। অ্যান্টেনা, বাধা, দুই প্রান্তের শক্তি ও গ্রাহক যন্ত্র এবং PHY অনুযায়ী দূরত্ব বদলায়। আধুনিক কিছু Bluetooth সংযোগ এক km-এর বেশিও হতে পারে। শুধু ব্যাটারি বড় করলে একই যন্ত্রের বেতার পরিসর বাড়ে না।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/bluetooth_piconet_model.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/bluetooth_piconet_model.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.7cm}
-Smartphone \quad $\sim$ \quad Earphone\\[8pt]
-Smartwatch \quad $\sim$ \quad Speaker \quad $\sim$ \quad Keyboard
-\vspace{0.7cm}
-}}
-}
-\caption*{Bluetooth piconet model}
-\end{figure}
+\textbf{ব্যান্ড, চ্যানেল ও ডেটা হার:} ২.৪ GHz ISM ব্যান্ডের পরিচয়ে আনুমানিক ২.৪৫ GHz-ও ব্যবহৃত হয়। Classic-এ ৭৯টি ১ MHz এবং LE-তে ৪০টি ২ MHz চ্যানেল আছে। Classic Basic Rate ১ Mbps; EDR-এ ২ বা ৩ Mbps। BLE-এর পরিচিত Uncoded PHY-তে হার ১ বা ২ Mbps। অ্যাপ্লিকেশনের কার্যকর হার কম হতে পারে। পুরোনো Bluetooth 3.0+HS-এর ২৪ Mbps উদাহরণে দ্রুত ডেটার জন্য সহায়ক 802.11 বেতার সংযোগ ব্যবহৃত হয়। এটি সাধারণ Classic বেতার সংযোগের ২৪ Mbps নয়।
 
-\begin{keypointbox}{Bluetooth-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item short-range communication-এর জন্য ব্যবহৃত হয়।
-\item সাধারণত 2.4 GHz ISM band ব্যবহার করে।
-\item low power consumption।
-\item personal device connection-এর জন্য উপযোগী।
-\item PAN বা piconet তৈরি করতে পারে।
-\item Bluetooth Classic audio/data transfer-এ এবং BLE low-power IoT/sensor device-এ ব্যবহৃত হয়।
-\item BLE point-to-point, broadcast ও mesh ধরনের communication support করতে পারে।
-\item speed ও range Wi-Fi-এর তুলনায় কম।
-\item file sharing ও peripheral connection-এ ব্যবহৃত হয়।
-\end{itemize}
+\begin{keypointbox}{Piconet ও Scatternet: Active Device-এর সংখ্যা}
+Classic Bluetooth Piconet-এ \textbf{১টি Central + সর্বোচ্চ ৭টি Active Peripheral = মোট ৮টি Device} থাকে। পুরোনো নাম Master ও Slave। Central ঘড়ি ও যোগাযোগের সময় সমন্বয় করে। Peripheral নির্ধারিত সুযোগে ডেটা পাঠায় বা গ্রহণ করে। একাধিক Piconet সংযুক্ত হলে Scatternet হতে পারে।
 \end{keypointbox}
+\textbf{পুরোনো Park Mode-এর ২৫৫:} ঐতিহাসিক ৮-bit PM\_ADDR দিয়ে ২৫৫টি নিষ্ক্রিয় Parked Peripheral শনাক্ত করা যেত। এগুলো একই সময়ে সক্রিয় সংযোগ নয়। বর্তমান সব Bluetooth সংস্করণ বা BLE-তে পুরোনো সীমাটি প্রযোজ্য নয়।
+\chTwoPair{Bluetooth Classic সাধারণত অডিও স্ট্রিমিং ও সাধারণ ডেটা পাঠাতে ব্যবহৃত হয়। Bluetooth Low Energy বা BLE কম শক্তি খরচ করে। সেন্সর, স্মার্টওয়াচ, স্বাস্থ্য পর্যবেক্ষণের যন্ত্র, বিকন ও IoT যন্ত্রে BLE বেশি ব্যবহৃত হয়। দুই প্রান্তের যোগাযোগ ছাড়াও BLE ব্রডকাস্ট ও মেশ যোগাযোগ সমর্থন করতে পারে। তাই Bluetooth দিয়ে শুধু ফাইল ভাগ করা নয়, যন্ত্র শনাক্ত করা, অবস্থান নির্ণয় এবং স্বয়ংক্রিয় নিয়ন্ত্রণের কাজও করা যায়।
 
-\begin{examplebox}{বাস্তব উদাহরণ}
-Mobile phone থেকে wireless earphone, smartwatch, Bluetooth speaker, wireless keyboard বা mouse connect করা Bluetooth-এর ব্যবহার।
-\end{examplebox}
+
+}{\chTwoImage{chapters/Chapter02/images/bluetooth_piconet_model.png}{ব্যক্তিগত যন্ত্রের Bluetooth সংযোগ}}
 
 \subsection{Wi-Fi}
+\label{ch2:wifi-numeric}
 
 \begin{definitionbox}{Wi-Fi}
-Wi-Fi হলো wireless local area network technology, যার মাধ্যমে device-গুলো access point বা router ব্যবহার করে local network বা internet-এর সাথে যুক্ত হয়।
+অ্যাকসেস পয়েন্ট বা রাউটার দিয়ে যন্ত্রগুলোকে স্থানীয় নেটওয়ার্ক বা ইন্টারনেটে যুক্ত করার বেতার LAN প্রযুক্তিকে Wi-Fi বলে।
 \end{definitionbox}
 
-Wi-Fi সাধারণত home, school, college, office, library, airport, restaurant ইত্যাদি জায়গায় wireless internet access দিতে ব্যবহৃত হয়। Wi-Fi system-এ একটি router বা access point থাকে, যা wireless signal ছড়িয়ে device-গুলোকে network-এ যুক্ত করে।
+বাসা, বিদ্যালয়, কলেজ, অফিস, গ্রন্থাগার, বিমানবন্দর ও রেস্তোরাঁয় বেতার ইন্টারনেট সংযোগ দিতে Wi-Fi ব্যবহৃত হয়। রাউটার বা অ্যাকসেস পয়েন্ট বেতার সংকেতের সাহায্যে যন্ত্রগুলোকে নেটওয়ার্কে যুক্ত করে।
 
-Wi-Fi মূলত IEEE 802.11 standard family-এর উপর ভিত্তি করে তৈরি WLAN technology। তাই Wi-Fi-এর উত্তরে শুধু “wireless internet” লিখলে উত্তর অসম্পূর্ণ হতে পারে; access point/router, WLAN, radio signal, security এবং multiple device connectivity—এই ধারণাগুলো যুক্ত করলে উত্তর বেশি পূর্ণ হয়।
+\textbf{কার্যকর পরিসরের প্রচলিত সংখ্যা:} পরীক্ষায় প্রচলিত পরিসরের উদাহরণ প্রায় ৫০--২০০ m বা ৫০--৩০০ m। ঘরের দেয়াল, বাধা, ডেটা হার ও যন্ত্রভেদে দূরত্ব কমতে পারে। বাইরের উপযুক্ত অ্যান্টেনায় বেশি দূরত্বেও কাজ করতে পারে। এগুলো একটি অ্যাকসেস পয়েন্ট বা সংযোগের উদাহরণ; সব Wi-Fi-এর অপরিবর্তনীয় সীমা নয়। কয়েকটি অ্যাকসেস পয়েন্ট দিয়ে বড় ক্যাম্পাসে সেবা দিলে প্রতিটির কার্যকর পরিসর ও পুরো নেটওয়ার্কের বিস্তৃতি আলাদাভাবে হিসাব করতে হয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/wifi_hotspot_model.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/wifi_hotspot_model.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-Internet \quad $\longrightarrow$ \quad Wi-Fi Router / Access Point\\[8pt]
-Laptop \quad Mobile \quad Tablet \quad Smart TV
-\vspace{0.7cm}
-}}
-}
-\caption*{Wi-Fi hotspot model}
-\end{figure}
+\textbf{মানভেদে ডেটা হার:} প্রচলিত ব্যবহারিক উদাহরণে ১০--৫০ Mbps দেওয়া হয়। এটি সব Wi-Fi সংযোগের স্থির গতি নয়। নির্দিষ্ট IEEE মান অনুযায়ী ভৌত স্তরের আদর্শ ডেটা হার বা PHY Rate আলাদা:
+\begin{tabularx}{\linewidth}{|p{.20\linewidth}|p{.13\linewidth}|X|X|}\hline
+\textbf{Standard} & \textbf{সাল} & \textbf{Band} & \textbf{আদর্শ সর্বোচ্চ Rate}\\\hline
+802.11b & ১৯৯৯ & ২.৪ GHz & ১১ Mbps\\\hline
+802.11a & ১৯৯৯ & ৫ GHz & ৫৪ Mbps\\\hline
+802.11g & ২০০৩ & ২.৪ GHz & ৫৪ Mbps\\\hline
+802.11n & ২০০৯ & ২.৪/৫ GHz & ৬০০ Mbps; উপযুক্ত চ্যানেল ও একাধিক স্থানিক সংকেতপ্রবাহ প্রয়োজন\\\hline
+\end{tabularx}
+ঘোষিত PHY হার পুরো ইন্টারনেট ডাউনলোডের হার নয়। ঐতিহাসিক 802.11a/g-এর ২০ MHz OFDM উদাহরণে ৬৪-point FFT-এর মধ্যে ৫২টি সাবক্যারিয়ার ব্যবহৃত হয়। এর ৪৮টি ডেটা এবং ৪টি Pilot বহন করে। এই সংখ্যা সব Wi-Fi প্রজন্মের জন্য প্রযোজ্য নয়।
 
-\begin{keypointbox}{Wi-Fi-এর বৈশিষ্ট্য}
+\Needspace{4\baselineskip}
+\textbf{বিকাশে কার অবদান?} IEEE 802.11 Working Group-এর নেতৃত্বের জন্য Vic Hayes ``Father of Wi-Fi'' নামে পরিচিত। প্রথম 802.11 মান প্রকাশিত হয় ১৯৯৭ সালে। Wi-Fi Alliance শুরু হয় ১৯৯৯ সালে। John O'Sullivan-এর নেতৃত্বে CSIRO দলের ১৯৯২ সালের WLAN গবেষণা ও ১৯৯৬ সালের মার্কিন পেটেন্ট দ্রুত WLAN-এর গুরুত্বপূর্ণ ভিত্তি। মান তৈরি, গবেষণা ও যন্ত্রের পারস্পরিক কাজের প্রত্যয়নে অবদান পৃথক। বহু দল ও প্রতিষ্ঠান Wi-Fi-এর বিকাশে কাজ করেছে।
+
+\chTwoPair{\textbf{Infrastructure Mode:} যন্ত্রগুলো অ্যাকসেস পয়েন্ট দিয়ে যুক্ত হয়। কলেজের শিক্ষক ও শিক্ষার্থীর ল্যাপটপ একই AP দিয়ে প্রিন্টার বা ইন্টারনেট ব্যবহার করতে পারে।\par
+\textbf{Ad hoc Mode:} উপযুক্ত যন্ত্র সরাসরি নিজেদের মধ্যে অস্থায়ী বেতার নেটওয়ার্ক গড়ে। মাঝখানে AP প্রয়োজন হয় না। এটি পুরোনো 802.11-এর পরিচিত সংযোগরূপ। প্রতিটি আধুনিক ফোনে একই মোড থাকে না।}{\textbf{সংযোগের নিরাপত্তা:} SSID (Service Set Identifier) হলো নেটওয়ার্কের পরিচিত নাম। পাসওয়ার্ড বা অন্য পরিচয় যাচাই করে অনুমোদিত ব্যবহারকারী শনাক্ত করা হয়। WPA2/WPA3-এর এনক্রিপশন বেতার পথে চলা ডেটা অন্যের পড়ে ফেলার ঝুঁকি কমায়। নেটওয়ার্কের নাম জানলেই প্রবেশের অনুমতি পাওয়া যায় না। ফোনের হটস্পট স্থানীয় Wi-Fi সংযোগ দেয়। ইন্টারনেটে যাওয়ার জন্য হটস্পটকে সেলুলার ডেটার মতো আলাদা বহির্মুখী সংযোগ ব্যবহার করতে হয়।}
+
+
+\chTwoPair{\begin{keypointbox}{Wi-Fi-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item IEEE 802.11 standard family-এর উপর ভিত্তি করে WLAN তৈরি করে।
-\item WLAN বা Wireless LAN তৈরি করে।
-\item router বা access point ব্যবহার করে।
-\item multiple device একসাথে connect হতে পারে।
-\item home, office ও campus network-এ ব্যবহৃত হয়।
-\item range সীমিত।
-\item wall, distance, interference ও user সংখ্যা speed কমাতে পারে।
-\item password ও encryption ব্যবহার করে security নিশ্চিত করা হয়।
+\item IEEE 802.11 মানের ভিত্তিতে WLAN তৈরি করে।
+\item রাউটার বা অ্যাকসেস পয়েন্ট ব্যবহার করে।
+\item একাধিক যন্ত্র একসঙ্গে সংযুক্ত হতে পারে।
+\item বাসা, অফিস ও ক্যাম্পাসের নেটওয়ার্কে ব্যবহৃত হয়।
+\item কার্যকর পরিসর সীমিত।
+\item দেয়াল, দূরত্ব, বিঘ্ন ও ব্যবহারকারীর সংখ্যা গতি কমাতে পারে।
+\item পাসওয়ার্ড ও এনক্রিপশন অননুমোদিত প্রবেশ ও ডেটা পড়ার ঝুঁকি কমায়।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/wifi_hotspot_model.png}{Wi-Fi হটস্পটের মডেল}}
+
 
 \begin{examplebox}{বাস্তব উদাহরণ}
-বাসা, school computer lab, college campus, office network এবং public hotspot-এ Wi-Fi ব্যবহৃত হয়।
+বাসা, বিদ্যালয়ের কম্পিউটার ল্যাব, কলেজ ক্যাম্পাস, অফিস এবং জনসাধারণের হটস্পটে Wi-Fi ব্যবহৃত হয়।
 \end{examplebox}
 
 \subsection{WiMAX}
+\label{ch2:wimax-numeric}
 
 \begin{definitionbox}{WiMAX}
-WiMAX হলো long-range wireless broadband technology, যা বড় area-তে wireless internet service দিতে ব্যবহৃত হয়।
+বড় এলাকায় বেতার ইন্টারনেট সেবা দেওয়ার দীর্ঘ দূরত্বের ব্রডব্যান্ড প্রযুক্তিকে WiMAX বলে।
 \end{definitionbox}
 
-WiMAX শব্দটি Worldwide Interoperability for Microwave Access থেকে এসেছে। এটি Wi-Fi-এর তুলনায় বেশি area cover করতে পারে। Metropolitan area বা বড় area-তে wireless broadband access দেওয়ার জন্য WiMAX ধারণাটি ব্যবহৃত হয়।
+WiMAX-এর পূর্ণরূপ Worldwide Interoperability for Microwave Access। বেস স্টেশন ও গ্রাহক স্টেশন দিয়ে বড় এলাকায় ব্রডব্যান্ড সংযোগ দিতে এই প্রযুক্তি ব্যবহৃত হয়।
+\textbf{দুই অফিস ৬০ km দূরে হলে:} একটি অফিসের ভেতরে IEEE 802.11 অ্যাকসেস পয়েন্ট দিয়ে স্থানীয় WLAN তৈরি করা যায়। দূরের শাখা যুক্ত করার উদ্দীপকে IEEE 802.16 বড় এলাকার WiMAX সংযোগ নির্দেশ করে। বাস্তবে সেই দূরত্বে সেবা পেতে টাওয়ার, অ্যান্টেনা, বাধা ও সংকেতের শক্তির হিসাব বা Link Budget যাচাই করতে হয়। এখানে ৬০ km নির্দিষ্ট পরিস্থিতির দূরত্ব; প্রত্যেক WiMAX যন্ত্রের নিশ্চিত কার্যকর পরিসর নয়। শুধু স্থানীয় অ্যাকসেস পয়েন্ট বসালে দূরের শাখায় ইন্টারনেট পৌঁছায় না।
+\textbf{মূল ব্যবস্থা:} সেবাদাতার প্রধান নেটওয়ার্কে যুক্ত বেস স্টেশন এবং গ্রাহক স্টেশন বা গ্রাহক যন্ত্রের মধ্যে বেতার সংযোগ তৈরি হয়। দূরের শাখায় কেবল টানা কঠিন হলে ছাদে গ্রাহক যন্ত্র বসিয়ে স্টেশনের ব্রডব্যান্ড সেবা নেওয়া যায়। এজন্য টাওয়ার, অ্যান্টেনা ও সেবার পরিসর পরিকল্পনা করতে হয়।
+\textbf{দূরত্ব ও ডেটা হারের প্রচলিত উদাহরণ:} WiMAX-এর সাধারণ পরিচয়ে প্রায় ১০--৫০ km পাওয়া যায়। টাওয়ার ও গ্রাহক যন্ত্রের কিছু আলোচনায় ৫০--৮০ km বা ১০--৬০ km এবং তুলনায় প্রায় ৭০ km-ও দেওয়া হয়। এগুলো পৃথক নকশা ও পরিকল্পনার উদাহরণ; একই সংযোগের একটি নিশ্চিত পরিসর নয়। নির্দিষ্ট দূরত্বে প্রয়োজনীয় ডেটা হার পেতে LOS/NLOS, অ্যান্টেনা, ফ্রিকোয়েন্সি ব্যান্ড ও সংকেতের শক্তির হিসাব মিলতে হয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/wimax_coverage_model.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/wimax_coverage_model.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.7cm}
-WiMAX Base Station\\[8pt]
-Home \quad Office \quad School \quad Mobile User
-\vspace{0.7cm}
-}}
-}
-\caption*{WiMAX coverage model}
-\end{figure}
+পুরোনো ডেটা হারের ছকে প্রায় ৩০--৭৫ Mbps এবং উন্নত ব্যবস্থার আলোচনায় ৮০ Mbps--১ Gbps-এর উদাহরণ আছে। সংস্করণ, চ্যানেলের প্রস্থ, বেতার যন্ত্রের বিন্যাস ও সেলের ভাগাভাগি করা বহনক্ষমতা না জেনে কোনো হারকে প্রত্যেক গ্রাহকের স্থির গতি বলা যায় না। সর্বোচ্চ দূরত্ব ও সর্বোচ্চ ডেটা হার একই সঙ্গে পাওয়া নিশ্চিত নয়। IEEE 802.16 মান এবং ২০০১ সালে গঠিত WiMAX Forum-এর যন্ত্রের পারস্পরিক সামঞ্জস্যের উদ্যোগ এই প্রযুক্তির বিকাশে গুরুত্বপূর্ণ। WiMAX-এর একক সর্বজনস্বীকৃত আবিষ্কারকের নাম নেই।
 
-\begin{keypointbox}{WiMAX-এর বৈশিষ্ট্য}
+\chTwoPair{\textbf{Fixed WiMAX:} IEEE 802.16-2004 স্থির গ্রাহকের ব্রডব্যান্ড সংযোগের পরিচিত ভিত্তি।\par
+\textbf{Mobile WiMAX:} 802.16e-2005 সংশোধনীতে চলমান গ্রাহককে সেবা দেওয়ার সমর্থন যোগ হয়। সংশোধনী অনুমোদিত হয় ২০০৫ সালে এবং প্রকাশিত হয় ২০০৬ সালে।}{\textbf{LOS ও NLOS:} প্রথম দিকের 10--66 GHz ব্যবস্থায় সরাসরি দৃষ্টিপথ গুরুত্বপূর্ণ। 2--11 GHz-সংক্রান্ত সম্প্রসারণে উপযুক্ত পরিবেশে সরাসরি দৃষ্টিপথ ছাড়াও Non-line-of-sight (NLOS) সেবা সম্ভব হয়। তবে পাহাড় বা ভবনের পেছনে সংকেত পাওয়ার নিশ্চয়তা নেই। ফ্রিকোয়েন্সি, বাধা ও সংকেতের শক্তির হিসাব বিবেচনা করতে হয়।}
+
+\chTwoPair{\begin{keypointbox}{WiMAX-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item long-range wireless broadband access দিতে পারে।
-\item Metropolitan Area Network বা MAN ধারণার সাথে সম্পর্কযুক্ত।
-\item base station ব্যবহার করে বড় area cover করতে পারে।
-\item Wi-Fi-এর তুলনায় coverage area বেশি।
-\item internet service provider wireless broadband দিতে ব্যবহার করতে পারে।
-\item বাস্তবে availability ও ব্যবহার দেশ/অঞ্চলভেদে ভিন্ন হতে পারে।
+\item দীর্ঘ দূরত্বে বেতার ব্রডব্যান্ড সংযোগ দিতে পারে।
+\item Metropolitan Area Network বা MAN ধারণার সঙ্গে সম্পর্কযুক্ত।
+\item বেস স্টেশন দিয়ে বড় এলাকায় সেবা দিতে পারে।
+\item Wi-Fi-এর তুলনায় সেবার পরিসর বড়।
+\item ইন্টারনেট সেবাদাতা বেতার ব্রডব্যান্ড দিতে ব্যবহার করতে পারে।
+\item সেবার প্রাপ্যতা ও ব্যবহার দেশ বা অঞ্চলভেদে ভিন্ন হতে পারে।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/wimax_coverage_model.png}{WiMAX-এর সেবার পরিসর}}
 
-\subsection{Bluetooth, Wi-Fi ও WiMAX-এর তুলনা}
 
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\subsection{কম শক্তির ছোট সংযোগ: Zigbee ও NFC}
+\chTwoPair{\textbf{Zigbee:} IEEE 802.15.4-ভিত্তিক এই যোগাযোগব্যবস্থা কম শক্তিতে অল্প ডেটা পাঠায়। সেন্সর, স্মার্ট বাতি ও মিটারের ছোট বার্তা বহনে উপযোগী। মেশ নেটওয়ার্কে অন্য নোডের সাহায্যে বার্তা পৌঁছাতে পারে। প্রচলিত 2.4 GHz ব্যান্ড ছাড়াও নির্দিষ্ট অঞ্চলে অন্য ব্যান্ড ব্যবহৃত হয়। ঘরের তাপমাত্রার সেন্সরে দীর্ঘদিন ব্যাটারি চালানোর প্রয়োজন মেটাতে এই ব্যবস্থা উপযোগী; বড় ভিডিও ফাইল পাঠানো এর প্রধান উদ্দেশ্য নয়।}{\textbf{NFC (Near Field Communication):} খুব কাছাকাছি, সাধারণত কয়েক সেন্টিমিটারের মধ্যে 13.56 MHz-এ তড়িৎচৌম্বক আবেশের সাহায্যে যোগাযোগ করে। ফোন বা কার্ড কাছে এনে অর্থ পরিশোধ, দরজায় পরিচয় যাচাই এবং ট্যাগ পড়তে ব্যবহৃত হয়। রিডারের ক্ষেত্র থেকে নিষ্ক্রিয় ট্যাগ শক্তি পেতে পারে। তাই সব ট্যাগে ব্যাটারি লাগে না। NFC বড় এলাকার নেটওয়ার্ক বা দূরে ফাইল পাঠানোর বিকল্প নয়।}
+
+\subsection{Bluetooth, Wi-Fi ও WiMAX: পরিচয় ও প্রয়োগ}
+\begin{tabularx}{\linewidth}{|p{.18\linewidth}|X|X|X|}
 \hline
-\textbf{বিষয়} & \textbf{Bluetooth} & \textbf{Wi-Fi} & \textbf{WiMAX} \\
-\hline
-Coverage & খুব কম range & local area & বড় area \\
-\hline
-Network type & PAN & WLAN & MAN/Wireless broadband \\
-\hline
-ব্যবহার & earphone, speaker, keyboard & home/office internet & long-range wireless broadband \\
-\hline
-Power consumption & কম & মাঝারি & তুলনামূলক বেশি \\
-\hline
-Device connection & personal device & multiple LAN device & wide-area users \\
-\hline
-\end{tabular}
-\end{center}
+\textbf{বিষয়} & \textbf{Bluetooth} & \textbf{Wi-Fi} & \textbf{WiMAX}\\\hline
+Network & WPAN & WLAN & WMAN / Broadband Access\\\hline
+Standard পরিচয় & ঐতিহাসিক IEEE 802.15.1; বর্তমান Specification Bluetooth SIG & IEEE 802.11 Family & IEEE 802.16 Family\\\hline
+উদাহরণ & Phone–Headphone; কম শক্তির ব্যক্তিগত সংযোগ & কক্ষ/Office-এর বহু Device-এর LAN & Base/Subscriber Station দিয়ে বড় এলাকার Broadband Link\\\hline
+সংখ্যাগত বিবরণ & Class, Range ও Rate: অংশ \ref{ch2:bluetooth-numeric} & Coverage ও Standard: অংশ \ref{ch2:wifi-numeric} & Distance ও Version: অংশ \ref{ch2:wimax-numeric}\\\hline
+\end{tabularx}
+প্রতিটি প্রযুক্তির সংখ্যাগত তথ্য তার নিজস্ব অংশে দেওয়া হয়েছে। তুলনা করার সময় কার্যকর দূরত্ব, ডেটা হার ও প্রযোজ্য শর্ত একসঙ্গে বিবেচনা করতে হয়।
+\textbf{বেতার নেটওয়ার্কের এলাকার শ্রেণি:} WPAN = Wireless Personal Area Network; WLAN = Wireless Local Area Network; WMAN = Wireless Metropolitan Area Network; WWAN = Wireless Wide Area Network। প্রথম তিনটির উদাহরণ ছকে আছে। সেলুলার অপারেটরের বিস্তৃত মোবাইল নেটওয়ার্ক WWAN-এর উদাহরণ। এগুলো নেটওয়ার্কের এলাকার শ্রেণি; মোবাইল প্রযুক্তির প্রজন্ম নয়।
 
 \subsection{Wireless Media-এর সুবিধা}
 
 \begin{keypointbox}{সুবিধা}
 \begin{itemize}
-\item cable ছাড়া communication করা যায়।
-\item mobility বেশি।
-\item installation flexible ও দ্রুত।
-\item remote area-তে communication দেওয়া সম্ভব।
-\item temporary network তৈরি সহজ।
-\item mobile device, IoT device ও portable device-এর জন্য উপযোগী।
-\item বড় area coverage দেওয়া যায়, বিশেষ করে satellite ও cellular network-এ।
+\item কেবল ছাড়াই যোগাযোগ করা যায়।
+\item চলাচলের সুবিধা বেশি।
+\item প্রয়োজন অনুযায়ী দ্রুত ও সহজে স্থাপন করা যায়।
+\item দূরবর্তী এলাকায় যোগাযোগসেবা দেওয়া সম্ভব।
+\item অস্থায়ী নেটওয়ার্ক তৈরি সহজ।
+\item মোবাইল, IoT ও বহনযোগ্য যন্ত্রের জন্য উপযোগী।
+\item বিশেষত স্যাটেলাইট ও সেলুলার নেটওয়ার্কে বড় এলাকায় সেবা দেওয়া যায়।
 \end{itemize}
 \end{keypointbox}
 
@@ -419,151 +264,84 @@ Device connection & personal device & multiple LAN device & wide-area users \\
 
 \begin{keypointbox}{অসুবিধা}
 \begin{itemize}
-\item interference দ্বারা signal quality কমতে পারে।
-\item wall, building, tree, weather ও distance signal দুর্বল করতে পারে।
-\item security risk বেশি, কারণ signal বাতাসে ছড়ায়।
-\item encryption না থাকলে data intercept হওয়ার ঝুঁকি থাকে।
-\item bandwidth অনেক ক্ষেত্রে wired media-এর তুলনায় কম বা unstable হতে পারে।
-\item network congestion হলে speed কমে যেতে পারে।
-\item battery-powered device-এ power management গুরুত্বপূর্ণ।
+\item বিঘ্নের কারণে সংকেতের মান কমতে পারে।
+\item দেয়াল, ভবন, গাছ, আবহাওয়া ও দূরত্ব সংকেত দুর্বল করতে পারে।
+\item সংকেত বাতাসে ছড়ায় বলে নিরাপত্তার ঝুঁকি বেশি।
+\item এনক্রিপশন না থাকলে অন্যের ডেটা ধরে ফেলার ঝুঁকি থাকে।
+\item অনেক ক্ষেত্রে তারযুক্ত মাধ্যমের তুলনায় ব্যান্ডউইথ কম বা অস্থিতিশীল হতে পারে।
+\item নেটওয়ার্কে অতিরিক্ত ভিড় হলে গতি কমে যেতে পারে।
+\item ব্যাটারিচালিত যন্ত্রে শক্তির ব্যবহার নিয়ন্ত্রণ করা গুরুত্বপূর্ণ।
 \end{itemize}
 \end{keypointbox}
 
 \subsection{Wireless Medium নির্বাচন করার কৌশল}
 
-সব wireless technology একই কাজের জন্য নয়। কাজের ধরন অনুযায়ী medium বা system নির্বাচন করতে হয়।
+সব বেতার প্রযুক্তি একই কাজের জন্য উপযুক্ত নয়। কাজের প্রয়োজন অনুযায়ী মাধ্যম বা যোগাযোগব্যবস্থা নির্বাচন করতে হয়।
 
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.26\textwidth}|p{0.30\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.30\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.26\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.30\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{পরিস্থিতি} & \textbf{উপযুক্ত প্রযুক্তি} & \textbf{কারণ} \\
 \hline
-Wireless earphone connect & Bluetooth & short-range, low power, personal device connection \\
+\endfirsthead
 \hline
-বাসায় internet sharing & Wi-Fi & multiple device local wireless access \\
+\textbf{পরিস্থিতি} & \textbf{উপযুক্ত প্রযুক্তি} & \textbf{কারণ} \\
 \hline
-TV remote control & Infrared & short-range line-of-sight control \\
-\hline
-Tower-to-tower link & Microwave & point-to-point long-distance communication \\
-\hline
-Remote island communication & Satellite & বড় area coverage ও remote access \\
-\hline
-Large area wireless broadband & WiMAX & long-range wireless broadband coverage \\
-\hline
-\end{tabular}
-\end{center}
+\endhead
 
-\subsection{Common Mistake Zone}
+তারবিহীন ইয়ারফোনের সংযোগ & Bluetooth & স্বল্প দূরত্ব, কম শক্তি, ব্যক্তিগত যন্ত্রের সংযোগ \\
+\hline
+বাসায় ইন্টারনেট ভাগাভাগি & Wi-Fi & একাধিক যন্ত্রের স্থানীয় বেতার সংযোগ \\
+\hline
+টিভির রিমোট নিয়ন্ত্রণ & Infrared & স্বল্প দূরত্বে দৃষ্টিপথে নিয়ন্ত্রণ \\
+\hline
+টাওয়ারগুলোর সংযোগ & Microwave & দুটি নির্দিষ্ট প্রান্তে দীর্ঘ দূরত্বের যোগাযোগ \\
+\hline
+দূরবর্তী দ্বীপের যোগাযোগ & Satellite & বড় এলাকার আওতা ও দূরবর্তী প্রবেশ \\
+\hline
+বৃহৎ এলাকার বেতার ব্রডব্যান্ড & WiMAX & দীর্ঘ দূরত্বের বেতার ব্রডব্যান্ড সেবা \\
+\hline
+\end{longtable}
+\endgroup
+
+\input{chapters/Chapter02/topics/05_wireless_media_and_systems/concept_enrichment.tex}
+\input{chapters/Chapter02/topics/05_wireless_media_and_systems/applied_examples.tex}
+
+\subsection{সাধারণ ভুল ও সংশোধন}
 
 \smallhead{১. Bluetooth ও Wi-Fi একই মনে করা}
-অনেকে Bluetooth ও Wi-Fi একই মনে করে। Bluetooth সাধারণত short-range personal device connection-এর জন্য, আর Wi-Fi local area internet/network access-এর জন্য ব্যবহৃত হয়।
+Bluetooth সাধারণত কাছাকাছি ব্যক্তিগত যন্ত্র যুক্ত করে। Wi-Fi স্থানীয় নেটওয়ার্ক বা ইন্টারনেটে প্রবেশের সুযোগ দেয়। দুটি প্রযুক্তির কাজ তাই এক নয়।
 
 \smallhead{২. Wireless মানেই সবসময় faster মনে করা}
-Wireless মানেই সবসময় faster—এটি ভুল। Wireless connection distance, wall, interference, user সংখ্যা ও signal strength দ্বারা প্রভাবিত হয়।
+বেতার সংযোগ সবসময় দ্রুত নয়। দূরত্ব, দেয়াল, বিঘ্ন, ব্যবহারকারীর সংখ্যা ও সংকেতের শক্তি এর কার্যকারিতাকে প্রভাবিত করে।
 
 \smallhead{৩. Infrared ও radio wave এক মনে করা}
-Infrared ও radio wave এক নয়। Infrared short-range line-of-sight communication-এ ব্যবহৃত হয়, আর radio wave বড় area cover করতে পারে।
+অবলোহিত রশ্মি ও রেডিও তরঙ্গ এক নয়। অবলোহিত রশ্মি স্বল্প দূরত্বে সরাসরি দৃষ্টিপথের যোগাযোগে ব্যবহৃত হয়। রেডিও তরঙ্গ বড় এলাকায় সেবা দিতে পারে।
 
 \smallhead{৪. Microwave-এ obstacle problem না ভাবা}
-Microwave communication-এ অনেক ক্ষেত্রে line-of-sight দরকার। মাঝখানে obstacle থাকলে communication problem হতে পারে।
+মাইক্রোওয়েভ যোগাযোগে অনেক ক্ষেত্রে সরাসরি দৃষ্টিপথ প্রয়োজন। মাঝখানে বাধা থাকলে যোগাযোগ বিঘ্নিত হতে পারে।
 
-\subsection{Exam-style প্রশ্ন ও উত্তর}
+\subsection{MCQ অনুশীলন}
 
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Wireless media কী?}
-যে communication medium-এ data বা signal কোনো physical cable ছাড়া বাতাস, মহাকাশ বা free space-এর মাধ্যমে electromagnetic wave আকারে sender থেকে receiver-এর কাছে যায়, তাকে wireless media বা unguided media বলা হয়। যেমন—radio wave, microwave, infrared ও satellite communication।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Microwave communication-এ line-of-sight কেন দরকার?}
-Microwave উচ্চ frequency electromagnetic wave ব্যবহার করে point-to-point communication করে। অনেক microwave signal সরল পথে চলতে চায় এবং obstacle দ্বারা বাধাগ্রস্ত হতে পারে। তাই transmitter ও receiver-এর মধ্যে সরাসরি path বা line-of-sight থাকা গুরুত্বপূর্ণ।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Wi-Fi ও Bluetooth-এর পার্থক্য লেখ।}
-Bluetooth short-range personal device connection-এর জন্য ব্যবহৃত হয়, যেমন earphone, speaker, keyboard। Wi-Fi wireless local area network তৈরি করে এবং router/access point ব্যবহার করে multiple device-কে internet বা network access দেয়। Bluetooth সাধারণত কম power ব্যবহার করে, Wi-Fi তুলনামূলক বেশি range ও speed দিতে পারে।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Satellite communication-এর সুবিধা লেখ।}
-Satellite communication বড় geographical area cover করতে পারে, remote area communication-এ কার্যকর, TV broadcasting, GPS, weather forecasting এবং international communication-এ ব্যবহৃত হয়। তবে এতে cost বেশি এবং latency থাকতে পারে।
-\end{boardbox}
-
-\subsection{Brainstorming Critical Question}
-
-\begin{practicebox}
-একটি শিক্ষা প্রতিষ্ঠান campus-এ wireless internet দিতে চায়। Classroom-এ Wi-Fi থাকবে, auditorium-এ live streaming হবে, দূরবর্তী গ্রামের শিক্ষার্থীদের জন্য satellite-based backup link বিবেচনা করা হচ্ছে এবং শিক্ষকরা Bluetooth microphone ব্যবহার করবেন।
-
-\begin{enumerate}
-\item ক. Wireless media কী?
-\item খ. Bluetooth কেন personal area communication-এর জন্য উপযোগী?
-\item গ. Classroom wireless internet-এর জন্য Wi-Fi কেন ব্যবহারযোগ্য? ব্যাখ্যা কর।
-\item ঘ. দূরবর্তী গ্রামের শিক্ষার্থীদের জন্য satellite link ব্যবহার কতটা যুক্তিযুক্ত? সুবিধা ও সীমাবদ্ধতা বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\begin{itemize}
-\item Wireless media physical cable ছাড়া data পাঠায়।
-\item Wireless communication electromagnetic wave ব্যবহার করে।
-\item Radio wave broadcasting ও mobile/Wi-Fi/Bluetooth communication-এর সাথে সম্পর্কিত।
-\item Microwave point-to-point এবং satellite communication-এ গুরুত্বপূর্ণ।
-\item Infrared short-range line-of-sight communication-এ ব্যবহৃত হয়।
-\item Satellite communication uplink ও downlink ব্যবহার করে।
-\item Bluetooth PAN-এর জন্য ব্যবহৃত হয়।
-\item Wi-Fi WLAN তৈরি করে।
-\item WiMAX long-range wireless broadband ধারণার সাথে সম্পর্কিত।
-\item Wireless media mobility দেয়, তবে interference ও security risk থাকতে পারে।
-\end{itemize}
-\end{recapbox}
-
-\subsection{অনুশীলন}
-
-\begin{practicebox}
+\par
 \textbf{MCQ}
-\begin{enumerate}
-\item নিচের কোনটি wireless media?\\
-ক. Twisted pair cable \quad খ. Optical fiber \quad গ. Radio wave \quad ঘ. Coaxial cable
-
-\item TV remote সাধারণত কোন technology ব্যবহার করে?\\
-ক. Infrared \quad খ. Coaxial \quad গ. Fiber optic \quad ঘ. UTP
-
-\item Bluetooth সাধারণত কোন network-এর সাথে সম্পর্কিত?\\
-ক. PAN \quad খ. WAN \quad গ. MAN \quad ঘ. Internet backbone
-
-\item Wi-Fi কোন ধরনের network তৈরি করে?\\
-ক. Wired LAN \quad খ. Wireless LAN \quad গ. Satellite WAN \quad ঘ. Optical backbone
-
-\item Microwave communication-এ কোনটি গুরুত্বপূর্ণ?\\
-ক. Line-of-sight \quad খ. Paper size \quad গ. Printer speed \quad ঘ. Keyboard layout
-
-\item Satellite communication-এ earth station থেকে satellite-এ signal পাঠানোকে কী বলা হয়?\\
-ক. Downlink \quad খ. Uplink \quad গ. Bluetooth \quad ঘ. Infrared
-
-\item Wireless media-এর একটি বড় সুবিধা কোনটি?\\
-ক. cable বাধ্যতামূলক \quad খ. mobility বেশি \quad গ. physical wire লাগে \quad ঘ. সবসময় interference-free
-
-\item Bluetooth-এর উপযুক্ত ব্যবহার কোনটি?\\
-ক. Submarine cable \quad খ. Wireless earphone \quad গ. Coaxial TV line \quad ঘ. Fiber backbone
-\end{enumerate}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Wireless media কী?
-\item Radio wave-এর বৈশিষ্ট্য লেখ।
-\item Microwave communication কী?
-\item Infrared কোথায় ব্যবহৃত হয়?
-\item Satellite communication-এ uplink ও downlink কী?
-\item Bluetooth ও Wi-Fi-এর মধ্যে পার্থক্য লেখ।
-\item WiMAX কী?
-\item Wireless media-এর সুবিধা ও অসুবিধা লেখ।
-\end{enumerate}
-
-\textbf{সৃজনশীল প্রশ্ন}
-একটি smart campus network তৈরি করা হচ্ছে। Students Wi-Fi দিয়ে internet ব্যবহার করবে, teachers Bluetooth device ব্যবহার করবে, campus security camera wireless link ব্যবহার করবে এবং দূরবর্তী branch campus-এর সাথে satellite backup link রাখা হবে।
-
-\begin{enumerate}
-\item ক. Wi-Fi কী?
-\item খ. Wireless communication-এ security কেন গুরুত্বপূর্ণ?
-\item গ. Students-এর internet access-এর জন্য Wi-Fi কীভাবে কাজ করবে? ব্যাখ্যা কর।
-\item ঘ. Bluetooth, Wi-Fi ও Satellite link—এই তিনটির ব্যবহার scenario অনুযায়ী বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
+\begin{multicols}{2}\begin{enumerate}
+\item\chTwoMCQBlock{নিচের কোনটি তারবিহীন মাধ্যম?
+\par ক. টুইস্টেড পেয়ার কেবল \quad খ. অপটিক্যাল ফাইবার \par গ. রেডিও তরঙ্গ \quad ঘ. কোঅ্যাক্সিয়াল কেবল }
+\item\chTwoMCQBlock{প্রচলিত টিভির রিমোট সাধারণত কোন প্রযুক্তি ব্যবহার করে?
+\par ক. অবলোহিত রশ্মি \quad খ. কোঅ্যাক্সিয়াল কেবল \par গ. ফাইবার অপটিক \quad ঘ. UTP }
+\item\chTwoMCQBlock{Bluetooth সাধারণত কোন এলাকার নেটওয়ার্কের সঙ্গে সম্পর্কিত?
+\par ক. PAN \quad খ. WAN \par গ. MAN \quad ঘ. ইন্টারনেট ব্যাকবোন }
+\item\chTwoMCQBlock{Wi-Fi কোন ধরনের নেটওয়ার্ক তৈরি করে?
+\par ক. তারযুক্ত LAN \quad খ. বেতার LAN \par গ. স্যাটেলাইট WAN \quad ঘ. আলোকসংকেতের ব্যাকবোন }
+\item\chTwoMCQBlock{স্থলভিত্তিক মাইক্রোওয়েভ সংযোগে সাধারণত কোনটি গুরুত্বপূর্ণ?
+\par ক. সরাসরি দৃষ্টিপথ \quad খ. আয়নমণ্ডল থেকে ফিরে আসা পথ \par গ. তামার তারে সংকেত বহন \quad ঘ. পূর্ণ অভ্যন্তরীণ প্রতিফলন }
+\item\chTwoMCQBlock{ভূকেন্দ্র থেকে স্যাটেলাইটে সংকেত পাঠানোকে কী বলে?
+\par ক. Downlink \quad খ. Uplink \par গ. Bluetooth \quad ঘ. Infrared }
+\item\chTwoMCQBlock{তারবিহীন মাধ্যমের একটি প্রধান সুবিধা কোনটি?
+\par ক. কেবল ব্যবহার বাধ্যতামূলক \quad খ. চলাচলের সুবিধা বেশি \par গ. ভৌত তার প্রয়োজন \quad ঘ. সবসময় বিঘ্নমুক্ত }
+\item\chTwoMCQBlock{Bluetooth-এর উপযুক্ত ব্যবহার কোনটি?
+\par ক. সমুদ্রতলদেশের কেবল \quad খ. তারবিহীন ইয়ারফোন \par গ. কোঅ্যাক্সিয়াল টিভি লাইন \quad ঘ. ফাইবার ব্যাকবোন }
+\end{enumerate}\end{multicols}
+\textbf{উত্তরমালা: ১. গ, ২. ক, ৩. ক, ৪. খ, ৫. ক, ৬. খ, ৭. খ, ৮. খ}
+\endgroup

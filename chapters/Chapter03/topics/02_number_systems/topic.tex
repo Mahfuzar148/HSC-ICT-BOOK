@@ -1,76 +1,278 @@
-% ৩.২ সংখ্যা পদ্ধতি
-\section{সংখ্যা পদ্ধতি}
+\section{সংখ্যা পদ্ধতি (\textenglish{Number System})}
+একটি শ্রেণিতে ৩৭ জন শিক্ষার্থী আছে—এখানে ৩৭ একটি পরিমাণের প্রকাশ। একই পরিমাণ বাইনারিতে 100101 লেখা যায়। লেখাটি বদলালেও পরিমাণ বদলায় না; কীভাবে অঙ্ক বসিয়ে তার মান বুঝতে হবে, সেটিই সংখ্যা পদ্ধতি নির্ধারণ করে।
 
-\subsection{সংখ্যা পদ্ধতির ধারণা}
-\begin{itemize}
-\item সংখ্যা পদ্ধতি কী, অঙ্ক/ Digit
-\item ভিত্তি / Base বা Radix
-\item Place value ও Face value
-\item Positional ও Non-positional system
-\end{itemize}
+\subsection{সংখ্যা, অঙ্ক ও সংখ্যা পদ্ধতি}
+\textbf{সংখ্যা (Number)} দিয়ে গণনা, ক্রম বা পরিমাণ প্রকাশ করা হয়। \textbf{অঙ্ক (Digit)} হলো সংখ্যা লেখার মৌলিক প্রতীক। আর নির্দিষ্ট প্রতীক, তাদের অবস্থান ও গণনার নিয়ম অনুসরণ করে সংখ্যা প্রকাশের ব্যবস্থাকে \textbf{সংখ্যা পদ্ধতি} বলে।
+
+৩ এবং ৭ আলাদা অঙ্ক; পাশাপাশি বসে ৩৭ সংখ্যাটি প্রকাশ করেছে। ৭ নিজেও এক অঙ্কের সংখ্যা হতে পারে। হেক্সাডেসিমালে A–F সংখ্যামানের প্রতীক হিসেবে ব্যবহৃত হয়; সেখানে A একটি বৈধ অঙ্ক, যদিও দৈনন্দিন লেখায় এটি ইংরেজি বর্ণ।
 
 \subsection{সংখ্যা পদ্ধতির প্রকারভেদ}
-\paragraph{Decimal (Base 10)}\mbox{}\\
-\begin{itemize}\item Digit: 0--9\item দৈনন্দিন ব্যবহার\end{itemize}
+\textbf{অস্থানিক পদ্ধতি:} প্রতীকের নিজস্ব নির্দিষ্ট মান এবং প্রতীক সাজানোর নিয়ম দিয়ে সংখ্যামান পাওয়া যায়; নিয়মিত ভিত্তির ঘাত দিয়ে প্রতিটি স্থানকে ওজন দেওয়া হয় না। মিশরীয় প্রতীক ও রোমান লিখন এর পরিচিত উদাহরণ। রোমান পদ্ধতির বিশেষ বিয়োগের নিয়মও মেনে চলতে হয়।
 
-\paragraph{Binary (Base 2)}\mbox{}\\
-\begin{itemize}\item Digit: 0,1\item কম্পিউটারের মূল সংখ্যা পদ্ধতি\end{itemize}
+\textbf{স্থানিক পদ্ধতি:} একটি অঙ্কের অবদান নির্ভর করে তার নিজস্ব মান, পদ্ধতির ভিত্তি এবং সংখ্যাটিতে অঙ্কটির অবস্থানের ওপর। দশমিক, বাইনারি, অক্টাল ও হেক্সাডেসিমাল এই শ্রেণির অন্তর্ভুক্ত। $(343)_5$-এ দুইটি ৩-এর নিজস্ব মান একই, কিন্তু বামের ৩-এর অবদান $3\times5^2=75$ এবং ডানেরটির অবদান $3\times5^0=3$।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.2\linewidth}|Y|Y|}\hline
+\rowcolor{ICTLightBlue}বিষয়&স্থানিক&অস্থানিক\\\hline
+মান নির্ণয়&অঙ্ক, ভিত্তি ও অবস্থানের ওজন&প্রতীকের নির্দিষ্ট মান ও বিন্যাসের নিয়ম\\\hline
+স্থানমান&নিয়মিত ভিত্তির ঘাত আছে&আধুনিক স্থানমানের নিয়ম নেই\\\hline
+শূন্যের কাজ&সংখ্যামান ও স্থানধারক&সব পদ্ধতিতে স্থানধারক শূন্য নেই\\\hline
+উদাহরণ&দশমিক, বাইনারি, অক্টাল, হেক্সাডেসিমাল&মিশরীয় প্রতীক ও রোমান লিখন\\\hline
+\end{tabularx}\end{center}
 
-\paragraph{Octal (Base 8) and Hexadecimal (Base 16)}\mbox{}\\
-\begin{itemize}\item Octal: 0--7\item Hex: 0--9, A--F\end{itemize}
+\subsection{র‍্যাডিক্স পয়েন্ট, পূর্ণাংশ ও ভগ্নাংশ}
+স্থানিক সংখ্যায় পূর্ণাংশ ও ভগ্নাংশকে আলাদা করা বিন্দুটি \textbf{র‍্যাডিক্স পয়েন্ট (Radix point)}। দশমিক পদ্ধতিতে এর নাম দশমিক বিন্দু; অন্য ভিত্তিতেও একই ধরনের বিভাজক ব্যবহার হয়। $(426.35)_{10}$-এ পূর্ণাংশ 426 এবং ভগ্নাংশ $0.35$; শুধু 35 পূর্ণসংখ্যাটি ভগ্নাংশের মান নয়।
+\begin{center}\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[font=\Large] (a) at (0,0) {$426$};
+\node[font=\Large,text=ICTBlue] (p) at (17,0) {$.$};
+\node[font=\Large] (f) at (30,0) {$35$};
+\node[font=\small,text=ICTBlue] (al) at (-10,13) {পূর্ণাংশ};
+\node[font=\small,text=ICTBlue] (fl) at (40,13) {ভগ্নাংশের অঙ্ক};
+\node[font=\small,text=ICTGreen!65!black] (pl) at (17,-15) {র‍্যাডিক্স পয়েন্ট};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (al.south)--(a.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (fl.south)--(f.north);
+\draw[-{Stealth},draw=ICTGreen!65!black,line width=.9pt] (pl.north)--(p.south);
+\end{tikzpicture}\end{chThreeDiagram}\end{center}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item base/radix, digit, bit, place value ও face value ব্যাখ্যা করতে।
-\item binary, octal, decimal ও hexadecimal সংখ্যা পদ্ধতির digit set লিখতে।
-\item positional ও non-positional system আলাদা করতে।
-\end{itemize}
-\end{learningbox}
+\subsection{ভিত্তি, বৈধ অঙ্ক ও স্থানমান}
+স্থানিক পদ্ধতিতে ব্যবহৃত স্বতন্ত্র অঙ্কের মোট সংখ্যা হলো \textbf{ভিত্তি (Base/Radix)}। প্রচলিত পূর্ণসংখ্যা ভিত্তি $b\ge2$ হলে প্রতিটি অঙ্কের মান $0\le d<b$। একটি সংখ্যায় যতটি অঙ্ক লেখা আছে, তা পদ্ধতির ভিত্তি নয়। যেমন $(101)_2$-এ তিনটি অঙ্ক, কিন্তু ভিত্তি ২।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.22\linewidth}|c|Y|c|}\hline
+\rowcolor{ICTLightBlue}পদ্ধতি&ভিত্তি&বৈধ অঙ্ক&একই পরিমাণের প্রকাশ\\\hline
+দশমিক&10&0–9&$(37)_{10}$\\\hline
+বাইনারি&2&0,1&$(100101)_2$\\\hline
+অক্টাল&8&0–7&$(45)_8$\\\hline
+হেক্সাডেসিমাল&16&0–9, A–F&$(25)_{16}$\\\hline
+\end{tabularx}\end{center}
+\textbf{বৈধতা পরীক্ষা:} $(128)_8$-এ ৮ থাকায় লেখাটি অবৈধ; $(1G)_{16}$-এ G-ও অবৈধ। কোনো সংখ্যায় বৃহত্তম অঙ্ক ৭ থাকলে ভিত্তি অন্তত ৮ হতে হবে; শুধু ওই অঙ্ক দেখে ভিত্তি ঠিক ৮ বলা যায় না।
 
-\begin{definitionbox}{সংখ্যা পদ্ধতি}
-সংখ্যা প্রকাশের জন্য নির্দিষ্ট digit, নিয়ম এবং base ব্যবহার করে যে পদ্ধতি গঠিত হয়, তাকে সংখ্যা পদ্ধতি বলা হয়।
-\end{definitionbox}
+বিন্দুর বামের প্রথম স্থানের ওজন $b^0=1$; তার বামে $b^1,b^2,\ldots$। বিন্দুর ডানে যথাক্রমে $b^{-1},b^{-2},\ldots$। পাশের বাম স্থানের ওজন $b$ গুণ এবং পাশের ডান স্থানের ওজন $1/b$ গুণ।
+\[V=\sum_{i=-m}^{n}d_i b^i.\]
+এখানে $d_i$ অঙ্কের নিজস্ব মান, $b^i$ স্থানের ওজন এবং $d_ib^i$ অঙ্কটির অবদান। প্রশ্নে ``স্থানীয় মান'' বলতে কোনটি চাওয়া হয়েছে তা দেখে ওজন ও অবদান আলাদা করে লেখো।
 
-\begin{definitionbox}{Base বা Radix}
-কোনো সংখ্যা পদ্ধতিতে মোট যতটি পৃথক digit ব্যবহার করা হয়, সেই সংখ্যাটিকে ঐ পদ্ধতির base বা radix বলা হয়। যেমন binary-এর base 2, decimal-এর base 10।
-\end{definitionbox}
+\smallhead{একই অঙ্কের অবস্থান বদল}
+$(35)_8=3\times8+5=29$; $(53)_8=5\times8+3=43$। দ্বিতীয়টিতে ৫-এর অবদান ৪০, প্রথমটিতে ৫। দুই সংখ্যার পার্থক্য ১৪।
 
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.18\textwidth}|p{0.28\textwidth}|p{0.24\textwidth}|}
-\hline
-\textbf{পদ্ধতি} & \textbf{Base} & \textbf{Digit} & \textbf{ব্যবহার} \\
-\hline
-Binary & 2 & 0, 1 & computer circuit, memory \\
-\hline
-Octal & 8 & 0--7 & binary group সহজ করা \\
-\hline
-Decimal & 10 & 0--9 & দৈনন্দিন গণনা \\
-\hline
-Hexadecimal & 16 & 0--9, A--F & memory address, color code \\
-\hline
-\end{tabular}
-\end{center}
+\subsection{গুরুত্বপূর্ণ অঙ্ক: MSD ও LSD}
+লিখিত সংখ্যায় সর্বোচ্চ ওজনের স্থানের অঙ্ক হলো \textbf{MSD (Most Significant Digit)}, সর্বনিম্ন ওজনের স্থানের অঙ্ক হলো \textbf{LSD (Least Significant Digit)}। বাইনারির ক্ষেত্রে অঙ্ককে বিট বলা হয়, তাই নাম \textbf{MSB} ও \textbf{LSB}।
+$(426.35)_{10}$-এ MSD হলো ৪ এবং LSD হলো ৫। লিখিত ভগ্নাংশের শেষ অঙ্কের ওজন এখানে $10^{-2}$; পূর্ণাংশের এককের অঙ্ক ৬-কে LSD ধরলে ভুল হবে। অসীম ভগ্নাংশের একটি শেষ অঙ্ক থাকে না; নির্দিষ্ট সংখ্যক বিট সংরক্ষণ করলে সেই সংরক্ষিত অংশের সর্বশেষ স্থান ধরা হয়।
+\subsection{দশমিক সংখ্যা পদ্ধতি}
+দশটি অঙ্ক 0–9 এবং ভিত্তি ১০ নিয়ে দশমিক পদ্ধতি গঠিত। দৈনন্দিন হিসাব, পরিমাপ ও আর্থিক তথ্য সাধারণত এ পদ্ধতিতে লেখা হয়। ৯-এর পর এককের ঘর শূন্য করে দশকের ঘরে ১ লেখা হয়: $9+1=(10)_{10}$।
+\smallhead{উদাহরণ: পূর্ণাংশ ও ভগ্নাংশের স্থানমান}
+নিচের চিত্রে প্রথম সারিতে অঙ্ক, দ্বিতীয় সারিতে ওজন এবং তৃতীয় সারিতে অঙ্কের অবদান দেখানো হয়েছে।
 
-\begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Place value diagram placeholder}\\[4pt]
-$(735)_{10}=7\times10^2+3\times10^1+5\times10^0$\\
-একইভাবে $(1011)_2=1\times2^3+0\times2^2+1\times2^1+1\times2^0$
-}}
-\end{center}
+\begin{center}\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d0) at (0,0) {$\mathrm{4}$};
+\node (w0) at (0,-12) {$ 10^{2} $};
+\node[text=ICTGreen!65!black] (v0) at (0,-27) {$ 400 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d0.south)--(w0.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w0.south)--(v0.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d1) at (20,0) {$\mathrm{2}$};
+\node (w1) at (20,-12) {$ 10^{1} $};
+\node[text=ICTGreen!65!black] (v1) at (20,-27) {$ 20 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d1.south)--(w1.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w1.south)--(v1.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d2) at (40,0) {$\mathrm{6}$};
+\node (w2) at (40,-12) {$ 10^{0} $};
+\node[text=ICTGreen!65!black] (v2) at (40,-27) {$ 6 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d2.south)--(w2.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w2.south)--(v2.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d3) at (69,0) {$\mathrm{3}$};
+\node (w3) at (69,-12) {$ 10^{-1} $};
+\node[text=ICTGreen!65!black] (v3) at (69,-27) {$ \frac{3}{10} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d3.south)--(w3.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w3.south)--(v3.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d4) at (89,0) {$\mathrm{5}$};
+\node (w4) at (89,-12) {$ 10^{-2} $};
+\node[text=ICTGreen!65!black] (v4) at (89,-27) {$ \frac{1}{20} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d4.south)--(w4.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w4.south)--(v4.north);
+\node[font=\Large] at (54.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}\end{center}
+\[(426.35)_{10}=4\times10^{2}+2\times10^{1}+6\times10^{0}+3\times10^{-1}+5\times10^{-2}=426.35.\]
 
-\begin{mistakebox}{সাধারণ ভুল}
-Hexadecimal-এ A, B, C, D, E, F হলো digit; এগুলোর মান যথাক্রমে 10, 11, 12, 13, 14, 15। এগুলো variable নয়।
-\end{mistakebox}
+৪-এর নিজস্ব মান ৪, কিন্তু অবদান ৪০০। পূর্ণাংশের শুরুর শূন্য বা ভগ্নাংশের শেষের শূন্য বাদ দিলে সংখ্যামান বদলায় না: $0426.350=426.35$। মাঝের বা ভগ্নাংশের শুরুর শূন্য বাদ দেওয়ার এই অনুমতি নেই।
 
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item Binary number system-এর base কত?\\
-ক. 2 \quad খ. 8 \quad গ. 10 \quad ঘ. 16
-\item Hexadecimal-এ F-এর decimal মান কত?\\
-ক. 10 \quad খ. 12 \quad গ. 15 \quad ঘ. 16
-\end{enumerate}
-\end{practicebox}
+\subsection{বাইনারি সংখ্যা পদ্ধতি}
+ভিত্তি ২-এর পদ্ধতিতে শুধু 0 ও 1 অঙ্ক ব্যবহৃত হয়। একটি বাইনারি অঙ্ক হলো বিট। এর ওজন পূর্ণাংশে ১, ২, ৪, ৮, ১৬,\ldots; ভগ্নাংশে $1/2,1/4,1/8,\ldots$। গণনার শুরু: $0,1,10,11,100,101,110,111,1000$।
+\smallhead{উদাহরণ: বাইনারি সংখ্যার মান}
+
+\begin{center}\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d0) at (0,0) {$\mathrm{1}$};
+\node (w0) at (0,-12) {$ 2^{4} $};
+\node[text=ICTGreen!65!black] (v0) at (0,-27) {$ 16 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d0.south)--(w0.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w0.south)--(v0.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d1) at (20,0) {$\mathrm{0}$};
+\node (w1) at (20,-12) {$ 2^{3} $};
+\node[text=ICTGreen!65!black] (v1) at (20,-27) {$ 0 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d1.south)--(w1.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w1.south)--(v1.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d2) at (40,0) {$\mathrm{1}$};
+\node (w2) at (40,-12) {$ 2^{2} $};
+\node[text=ICTGreen!65!black] (v2) at (40,-27) {$ 4 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d2.south)--(w2.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w2.south)--(v2.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d3) at (60,0) {$\mathrm{1}$};
+\node (w3) at (60,-12) {$ 2^{1} $};
+\node[text=ICTGreen!65!black] (v3) at (60,-27) {$ 2 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d3.south)--(w3.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w3.south)--(v3.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d4) at (80,0) {$\mathrm{0}$};
+\node (w4) at (80,-12) {$ 2^{0} $};
+\node[text=ICTGreen!65!black] (v4) at (80,-27) {$ 0 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d4.south)--(w4.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w4.south)--(v4.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d5) at (109,0) {$\mathrm{1}$};
+\node (w5) at (109,-12) {$ 2^{-1} $};
+\node[text=ICTGreen!65!black] (v5) at (109,-27) {$ \frac{1}{2} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d5.south)--(w5.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w5.south)--(v5.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d6) at (129,0) {$\mathrm{0}$};
+\node (w6) at (129,-12) {$ 2^{-2} $};
+\node[text=ICTGreen!65!black] (v6) at (129,-27) {$ 0 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d6.south)--(w6.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w6.south)--(v6.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d7) at (149,0) {$\mathrm{1}$};
+\node (w7) at (149,-12) {$ 2^{-3} $};
+\node[text=ICTGreen!65!black] (v7) at (149,-27) {$ \frac{1}{8} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d7.south)--(w7.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w7.south)--(v7.north);
+\node[font=\Large] at (94.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}\end{center}
+\[(10110.101)_{2}=1\times2^{4}+0\times2^{3}+1\times2^{2}+1\times2^{1}+0\times2^{0}+1\times2^{-1}+0\times2^{-2}+1\times2^{-3}=22.625.\]
+
+\smallhead{কম্পিউটারে বাইনারি সুবিধাজনক কেন?}
+ডিজিটাল সার্কিটে দুটি পৃথক ভোল্টেজ-পরিসর দিয়ে ০ ও ১ বোঝানো সুবিধাজনক। সামান্য বৈদ্যুতিক পরিবর্তন হলেও নির্ধারিত সীমার মধ্যে থাকলে একই logical state পাওয়া যায়। এই দুটি অবস্থা দিয়ে স্মৃতিতে তথ্য রাখা এবং লজিক গেটের সাহায্যে গণনা করা যায়। বিট ০ মানেই সর্বত্র একেবারে বিদ্যুৎ নেই—এমন অর্থ নয়; ০ ও ১ হলো নির্ধারিত অবস্থার প্রতীক। দীর্ঘ বাইনারি লেখা পড়ার সুবিধায় অক্টাল ও হেক্সাডেসিমাল ব্যবহার করা হয়।
+
+\subsection{অক্টাল সংখ্যা পদ্ধতি}
+ভিত্তি ৮-এর পদ্ধতিতে 0–7 অঙ্ক ব্যবহৃত হয়। ৭-এর পরের পূর্ণসংখ্যা $(10)_8$; এখানে ৮ বা ৯ অঙ্ক নেই। $8=2^3$ হওয়ায় প্রতিটি অক্টাল অঙ্ককে ঠিক ৩ বিটে প্রকাশ করা যায়। ফলে বাইনারির দীর্ঘ লেখা সংক্ষিপ্ত হয়। কিছু কম্পিউটার ব্যবস্থায় অনুমতি বা mode প্রকাশেও অক্টাল দেখা যায়।
+\smallhead{উদাহরণ: অক্টালের পূর্ণ ও ভগ্নাংশ}
+
+\begin{center}\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d0) at (0,0) {$\mathrm{2}$};
+\node (w0) at (0,-12) {$ 8^{2} $};
+\node[text=ICTGreen!65!black] (v0) at (0,-27) {$ 128 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d0.south)--(w0.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w0.south)--(v0.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d1) at (20,0) {$\mathrm{6}$};
+\node (w1) at (20,-12) {$ 8^{1} $};
+\node[text=ICTGreen!65!black] (v1) at (20,-27) {$ 48 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d1.south)--(w1.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w1.south)--(v1.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d2) at (40,0) {$\mathrm{4}$};
+\node (w2) at (40,-12) {$ 8^{0} $};
+\node[text=ICTGreen!65!black] (v2) at (40,-27) {$ 4 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d2.south)--(w2.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w2.south)--(v2.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d3) at (69,0) {$\mathrm{3}$};
+\node (w3) at (69,-12) {$ 8^{-1} $};
+\node[text=ICTGreen!65!black] (v3) at (69,-27) {$ \frac{3}{8} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d3.south)--(w3.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w3.south)--(v3.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d4) at (89,0) {$\mathrm{5}$};
+\node (w4) at (89,-12) {$ 8^{-2} $};
+\node[text=ICTGreen!65!black] (v4) at (89,-27) {$ \frac{5}{64} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d4.south)--(w4.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w4.south)--(v4.north);
+\node[font=\Large] at (54.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}\end{center}
+\[(264.35)_{8}=2\times8^{2}+6\times8^{1}+4\times8^{0}+3\times8^{-1}+5\times8^{-2}=180.453125.\]
+
+বিন্দুর ডানের প্রথম ওজন $1/8$, দ্বিতীয়টি $1/64$। তাই $(0.1)_8$-কে দশমিক ০.১ ধরা যাবে না; এর দশমিক মান ০.১২৫।
+
+\subsection{হেক্সাডেসিমাল সংখ্যা পদ্ধতি}
+ভিত্তি ১৬-এর পদ্ধতিতে 0–9 এবং A–F মোট ১৬টি অঙ্ক ব্যবহৃত হয়। এখানে A=10, B=11, C=12, D=13, E=14, F=15। F-এর পরের সংখ্যা $(10)_{16}$। $16=2^4$ হওয়ায় প্রতি অঙ্কে ৪ বিট লাগে। এক বাইটের মান দুইটি হেক্সাডেসিমাল অঙ্কে লেখা যায়।
+\Needspace{10\baselineskip}
+\smallhead{উদাহরণ: অক্ষর-প্রতীকের সংখ্যামান}
+
+\begin{center}\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d0) at (0,0) {$\mathrm{3}$};
+\node (w0) at (0,-12) {$ 16^{1} $};
+\node[text=ICTGreen!65!black] (v0) at (0,-27) {$ 48 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d0.south)--(w0.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w0.south)--(v0.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d1) at (20,0) {$\mathrm{B}$};
+\node (w1) at (20,-12) {$ 16^{0} $};
+\node[text=ICTGreen!65!black] (v1) at (20,-27) {$ 11 $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d1.south)--(w1.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w1.south)--(v1.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d2) at (49,0) {$\mathrm{9}$};
+\node (w2) at (49,-12) {$ 16^{-1} $};
+\node[text=ICTGreen!65!black] (v2) at (49,-27) {$ \frac{9}{16} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d2.south)--(w2.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w2.south)--(v2.north);
+\node[font=\large,fill=ICTLightBlue,rounded corners=1pt,inner sep=2pt] (d3) at (69,0) {$\mathrm{C}$};
+\node (w3) at (69,-12) {$ 16^{-2} $};
+\node[text=ICTGreen!65!black] (v3) at (69,-27) {$ \frac{3}{64} $};
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (d3.south)--(w3.north);
+\draw[-{Stealth},draw=ICTBlue,line width=.9pt] (w3.south)--(v3.north);
+\node[font=\Large] at (34.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}\end{center}
+\[(3B.9C)_{16}=3\times16^{1}+11\times16^{0}+9\times16^{-1}+12\times16^{-2}=59.609375.\]
+
+এখানে B ও C-এর মান যথাক্রমে ১১ ও ১২। মেমোরি ঠিকানা, মেশিন নির্দেশের byte এবং রঙের মান সংক্ষেপে দেখাতে হেক্সাডেসিমাল সুবিধাজনক। যেমন RGB রঙের তিনটি byte প্রায়ই ছয়টি হেক্সাডেসিমাল অঙ্কে লেখা হয়।
+
+\subsection{চার পদ্ধতির তুলনা ও ধারাবাহিক গণনা}
+নিচের প্রতিটি সারি একই পরিমাণের চারটি প্রকাশ। বাইনারির শুরুতে প্রয়োজনমতো শূন্য বসিয়ে চার বিট রাখা হয়েছে, যাতে হেক্সাডেসিমাল অঙ্কের সঙ্গে মিল বোঝা যায়।
+\begin{center}\begin{tabular}{|c|c|c|c|}\hline
+\rowcolor{ICTLightBlue}দশমিক&বাইনারি&অক্টাল&হেক্সাডেসিমাল\\\hline
+0&0000&0&0\\\hline
+1&0001&1&1\\\hline
+2&0010&2&2\\\hline
+3&0011&3&3\\\hline
+4&0100&4&4\\\hline
+5&0101&5&5\\\hline
+6&0110&6&6\\\hline
+7&0111&7&7\\\hline
+8&1000&10&8\\\hline
+9&1001&11&9\\\hline
+10&1010&12&A\\\hline
+11&1011&13&B\\\hline
+12&1100&14&C\\\hline
+13&1101&15&D\\\hline
+14&1110&16&E\\\hline
+15&1111&17&F\\\hline
+16&10000&20&10\\\hline
+31&11111&37&1F\\\hline
+32&100000&40&20\\\hline
+63&111111&77&3F\\\hline
+64&1000000&100&40\\\hline
+\end{tabular}\end{center}
+\textbf{একই ১০-এর অর্থ:} যেকোনো ভিত্তি $b$-তে $(10)_b=b$। তাই $(10)_2=2$, $(10)_8=8$ এবং $(10)_{16}=16$ দশমিক মান প্রকাশ করে। শুধু লেখার দৈর্ঘ্য দেখে ভিন্ন ভিত্তির দুটি সংখ্যা তুলনা করা যায় না।
+
+\smallhead{উদাহরণ: আগের ও পরের পূর্ণসংখ্যা}
+\begin{center}\begin{tabular}{|c|c|c|}\hline
+আগের সংখ্যা&প্রদত্ত সংখ্যা&পরের সংখ্যা\\\hline
+$(76)_8$&$(77)_8$&$(100)_8$\\\hline
+$(2E)_{16}$&$(2F)_{16}$&$(30)_{16}$\\\hline
+$(1110)_2$&$(1111)_2$&$(10000)_2$\\\hline
+\end{tabular}\end{center}
+সর্বোচ্চ অঙ্কে ১ যোগ হলে ০ রেখে বাম ঘরে ক্যারি যায়। ঠিক আগের সংখ্যা পেতে প্রয়োজন হলে বাম ঘর থেকে ধার নিতে হয়। চার বিটের সীমা বেঁধে দিলে 1111-এর পর অতিরিক্ত ক্যারি বাদ দিয়ে 0000 থাকে; সীমাহীন পূর্ণসংখ্যা গণনায় পরের মান 10000।
+
+\subsection{বিট, নিবল, বাইট ও ওয়ার্ড}
+\begin{center}\begin{tabularx}{\linewidth}{|L{.18\linewidth}|L{.22\linewidth}|Y|}\hline
+\rowcolor{ICTLightBlue}একক&সম্পর্ক&ব্যাখ্যা\\\hline
+বিট&একটি 0 বা 1&দুইটি পৃথক অবস্থা প্রকাশ করে\\\hline
+নিবল&4 বিট&একটি হেক্সাডেসিমাল অঙ্কের সমান দৈর্ঘ্য\\\hline
+বাইট&8 বিট&দুই নিবল; ২৫৬টি পৃথক bit pattern\\\hline
+ওয়ার্ড&স্থাপত্যনির্ভর দৈর্ঘ্য&প্রসেসরের স্বাভাবিক তথ্যপ্রক্রিয়াকরণ একক; সব ক্ষেত্রে এক বাইট নয়\\\hline
+\end{tabularx}\end{center}
+৩২-বিট ওয়ার্ডে ৪ বাইট, ৬৪-বিট ওয়ার্ডে ৮ বাইট। একটি ক্যারেক্টার সবসময় এক বাইটে থাকে না; কোন encoding ব্যবহৃত হয়েছে তার ওপর দৈর্ঘ্য নির্ভর করে। বড় এককে decimal prefix ও binary prefix আলাদা: $1\,\mathrm{kB}=1000\,\mathrm{B}$, $1\,\mathrm{KiB}=1024\,\mathrm{B}$। একইভাবে $1\,\mathrm{MiB}=2^{20}\,\mathrm{B}$।
+
+\smallhead{অবস্থার সংখ্যা, পরিসর ও প্রয়োজনীয় বিট}
+$n$ বিটে $2^n$টি পৃথক pattern পাওয়া যায়। চিহ্নবিহীন পূর্ণসংখ্যা হিসেবে মানের পরিসর $0$ থেকে $2^n-1$। $N$টি আলাদা বস্তু শনাক্ত করতে ক্ষুদ্রতম এমন $n$ নিতে হবে যেন $2^n\ge N$।
+
+\textbf{উদাহরণ ১:} ৫ বিটে ৩২টি অবস্থা; সর্বোচ্চ unsigned মান $31=(11111)_2$। ৩২টি অবস্থা মানে সর্বোচ্চ মান ৩২ নয়, কারণ শূন্যও একটি অবস্থা।\\
+\textbf{উদাহরণ ২:} ৭০টি যন্ত্রের আলাদা পরিচয় দিতে ৭ বিট প্রয়োজন: $2^6=64<70\le128=2^7$। ৮০টি পরিচয় হলে একই ৭ বিট যথেষ্ট।\\
+\textbf{উদাহরণ ৩:} অক্টালের একটি অঙ্কের জন্য ৩ বিট এবং হেক্সাডেসিমালের জন্য ৪ বিট লাগে। পুরো সংখ্যার দৈর্ঘ্য অঙ্কসংখ্যা ও leading zero রাখার শর্তের ওপর নির্ভর করে।
+
+\subsection{ধারণা থেকে সমাধান}
+\smallhead{অজানা ভিত্তি নির্ণয়}
+$(12)_b+(15)_b=(30)_b$ হলে $(b+2)+(b+5)=3b$। তাই $b=7$। বৃহত্তম অঙ্ক ৫ ভিত্তির চেয়ে ছোট হওয়ায় ফল গ্রহণযোগ্য। দশমিক যাচাই: $9+12=21$। কেবল সমীকরণ মিললেই হবে না; প্রতিটি অঙ্কও বৈধ হতে হবে।
+
+\smallhead{জ্ঞান ও অনুধাবন}
+\textbf{ক. র‍্যাডিক্স পয়েন্ট কী?} স্থানিক সংখ্যার পূর্ণাংশ ও ভগ্নাংশের বিভাজক।\\
+\textbf{খ. একই অঙ্কের মান অবস্থানভেদে বদলায় কেন?} অঙ্কের অবদান হয় নিজস্ব মান ও অবস্থানের ওজনের গুণফল; অবস্থান বদলালে ওজন বদলায়।\\
+\textbf{খ. হেক্সাডেসিমাল কম্পিউটারের তথ্য দেখাতে সুবিধাজনক কেন?} চারটি বাইনারি বিটকে একটি অঙ্কে দেখানো যায়, ফলে দীর্ঘ bit pattern সংক্ষিপ্ত ও সহজপাঠ্য হয়।
+
+\smallhead{ধারণাভিত্তিক MCQ}
+$(65)_b$ বৈধ হলে $b$-এর সর্বনিম্ন মান কত? (ক) ৫, (খ) ৬, (গ) ৭, (ঘ) ৮।\\
+\textbf{সমাধান:} (গ) ৭। বৃহত্তম অঙ্ক ৬; ভিত্তি তার চেয়ে বড় হতে হবে। এটি সর্বনিম্ন গ্রহণযোগ্য ভিত্তি, একমাত্র সম্ভাব্য ভিত্তি নয়।

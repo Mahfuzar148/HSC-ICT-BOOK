@@ -1,0 +1,14 @@
+% Reusable styles shared by all generated visual conversion lessons.
+\usetikzlibrary{arrows.meta,calc,decorations.pathreplacing}
+\definecolor{vcBlue}{HTML}{166A9E}
+\definecolor{vcGreen}{HTML}{087563}
+\definecolor{vcPad}{HTML}{945000}
+\tikzset{vcnum/.style={font=\normalsize,inner sep=.5pt,minimum height=4mm},
+vc digit/.style={font=\large,inner sep=1.3pt,minimum height=4mm,text=vcBlue!80!black,fill=vcBlue!7,rounded corners=1pt},
+vc result/.style={vc digit,text=vcGreen!80!black,fill=vcGreen!8},
+vc bit/.style={font=\normalsize,inner sep=.5pt,minimum height=4mm},
+vcnote/.style={font=\small,inner sep=.5pt,align=center},
+vc arrow/.style={-{Stealth[length=1.9mm,width=1.3mm]},draw=vcBlue,line width=.9pt,shorten <=.7pt,shorten >=.7pt},
+vc line/.style={draw=vcBlue!75!black,line width=.8pt},
+vc brace/.style={decorate,decoration={brace,mirror,amplitude=1.2mm},draw=vcBlue,line width=.85pt}}
+\newcommand{\convExample}[2]{\par\vspace{2mm}\noindent\textcolor{ICTGreen!65!black}{\textbf{উদাহরণ #1: #2}}\par\vspace{1mm}}

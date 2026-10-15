@@ -1,0 +1,169 @@
+\subsection{Salary/Payroll টেবিলে বেতন হিসাব: রাশি ও সারসংক্ষেপের Query}
+
+নিচের সারণিতে HR (Human Resources) মানবসম্পদ বিভাগ এবং IT (Information Technology) তথ্যপ্রযুক্তি বিভাগ বোঝায়।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\scriptsize
+
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+EmpID & Name & Department & BasicSalary & Allowance & Medical & Deduction\\
+\hline
+E101 & Rafi & Accounts & 30000 & 5000 & 1500 & 2000\\\hline
+E102 & Nila & HR & 35000 & 6000 & 1800 & 2500\\\hline
+E103 & Sami & IT & 45000 & 8000 & 2200 & 3000\\\hline
+E104 & Mitu & Accounts & 28000 & 4500 & 1400 & 1500\\\hline
+E105 & Hasan & IT & 50000 & 9000 & 2500 & 3500\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Salary Table}
+
+\end{minipage}\end{flushleft}
+
+\chSixExample{৭.৫৮}{প্রত্যেক কর্মীর প্রাপ্য বেতন বা Net Salary দেখাও।}
+
+ধরি—
+
+\par NetSalary = BasicSalary + Allowance + Medical - Deduction.\par
+
+SQL—
+
+\noindent\begin{minipage}{\linewidth}
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name, BasicSalary + Allowance
+       + Medical - Deduction AS NetSalary
+FROM Salary;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Name, NetSalary}{\mbox{Rafi, 34500}; \mbox{Nila, 40300}; \mbox{Sami, 52200}; \mbox{Mitu, 32400}; \mbox{Hasan, 58000}}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+এখানে NetSalary কুয়েরির মাধ্যমে হিসাব করা ফল। মূল টেবিলে এই নামে আলাদা ফিল্ড থাকা বাধ্যতামূলক নয়।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৫৯}{যেসব কর্মীর Basic Salary 35000-এর বেশি, তাঁদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT EmpID, Name, BasicSalary
+FROM Salary
+WHERE BasicSalary>35000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+EmpID & Name & BasicSalary\\\hline
+E103 & Sami & 45000\\\hline
+E105 & Hasan & 50000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+ফলাফলে Sami ও Hasan-এর তথ্য পাওয়া যাবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬০}{IT বিভাগের কর্মীদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name, BasicSalary
+FROM Salary
+WHERE Department='IT';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Name & BasicSalary\\\hline
+Sami & 45000\\\hline
+Hasan & 50000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬১}{Basic Salary-এর সর্বোচ্চ মান বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT MAX(BasicSalary) AS HighestSalary
+FROM Salary;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+HighestSalary\\\hline
+50000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬২}{Basic Salary-এর গড় বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT AVG(BasicSalary) AS AverageSalary
+FROM Salary;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+AverageSalary\\\hline
+37600\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৩}{প্রতিটি বিভাগের গড় Basic Salary দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Department,
+       AVG(BasicSalary) AS AverageSalary
+FROM Salary
+GROUP BY Department;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Department & AverageSalary\\\hline
+Accounts & 29000\\\hline
+HR & 35000\\\hline
+IT & 47500\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৬৪}{যেসব বিভাগের গড় Basic Salary 30000-এর বেশি, সেগুলো দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Department,
+       AVG(BasicSalary) AS AverageSalary
+FROM Salary
+GROUP BY Department
+HAVING AVG(BasicSalary)>30000;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Department & AverageSalary\\\hline
+HR & 35000\\\hline
+IT & 47500\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+HR ও IT বিভাগের গড় বেতন শর্ত পূরণ করে, তাই এই বিভাগ দুটির তথ্য পাওয়া যাবে।
+
+\Needspace{18\baselineskip}

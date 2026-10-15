@@ -1,65 +1,66 @@
-% ৩.৩ সংখ্যা পদ্ধতির রূপান্তর
-\section{সংখ্যা রূপান্তর (Conversion)}
+% VISUAL_CONVERSION_V2: generated lessons; original snapshot is in build/chapter03_update/visual_conversion/baseline.
+\Needspace{9\baselineskip}
+\section{সংখ্যা পদ্ধতির রূপান্তর (\textenglish{Conversion of Number Systems})}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/styles.tex}
+\subsection{রূপান্তরের নিয়ম ও পথ নির্বাচন}
+রূপান্তরে সংখ্যার মান অপরিবর্তিত থাকে; অঙ্ক ও ভিত্তি বদলায়। যেমন $(13)_{10}=(1101)_2$। বিন্দুর আগে পূর্ণাংশ এবং পরে ভগ্নাংশ; দুই অংশের নিয়ম আলাদা।
+\begin{center}\begin{tabularx}{\linewidth}{|L{.26\linewidth}|Y|L{.23\linewidth}|}\hline
+রূপান্তর & করণীয় & পড়ার ক্রম\\\hline
+Decimal পূর্ণাংশ & লক্ষ্য ভিত্তি দিয়ে ভাগ; নতুন ভাগফল নিয়ে আবার ভাগ & ভাগশেষ নিচ থেকে ওপরে\\\hline
+Decimal ভগ্নাংশ & লক্ষ্য ভিত্তি দিয়ে গুণ; নতুন ভগ্নাংশ নিয়ে আবার গুণ & প্রাপ্ত অঙ্ক ওপর থেকে নিচে\\\hline
+Base-$b$ থেকে Decimal & অঙ্ক $\times b^{\text{অবস্থান}}$; সব অবদান যোগ & বিন্দুতে $b^0$ ও $b^{-1}$\\\hline
+Binary ও Octal & ৩ বিটে একটি অক্টাল অঙ্ক & বিন্দু থেকে দুই দিকে\\\hline
+Binary ও Hexadecimal & ৪ বিটে একটি হেক্সাডেসিমাল অঙ্ক & বিন্দু থেকে দুই দিকে\\\hline
+Octal ও Hexadecimal & প্রতিটি অঙ্কের binary; তারপর নতুন grouping & অঙ্ক ও বিটের ক্রম একই\\\hline
+Base-$m$ থেকে Base-$n$ & প্রথমে Decimal, তারপর লক্ষ্য ভিত্তি & পূর্ণাংশ ও ভগ্নাংশ পৃথক\\\hline
+\end{tabularx}\end{center}
+\smallhead{সংক্ষিপ্ত কাজের ধাপ}
+\begin{compactenum}
+\item source ও target base এবং বৈধ digit যাচাই করো।
+\item পূর্ণাংশ ও ভগ্নাংশ আলাদা করো; প্রযোজ্য নিয়মে সব ধাপ দেখাও।
+\item প্রতিটি group বা ধাপের digit সঠিক ক্রমে বসিয়ে base লিখো।
+\item স্থানমান বা বিপরীত রূপান্তরে মান যাচাই করো।
+\end{compactenum}
+\smallhead{হেক্সাডেসিমাল অঙ্কের প্রয়োজনীয় মান}
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+দশমিক&10&11&12&13&14&15\\\hline
+অঙ্ক&A&B&C&D&E&F\\\hline
+\end{tabular}\end{center}
+প্রথম প্রাপ্ত ভাগশেষ পূর্ণাংশের LSB, শেষটি MSB; উত্তর লেখা হয় MSB থেকে। ভগ্নাংশে প্রথম অঙ্ক সবচেয়ে গুরুত্বপূর্ণ, তাই পাওয়া ক্রমেই লেখা হয়। নির্দিষ্ট দৈর্ঘ্যে অসীম ভগ্নাংশ থামালে ফলের আগে $\approx$ দিতে হবে।
+\smallhead{পূর্ণাংশে ভাগ কেন, ভগ্নাংশে গুণ কেন?}
+পূর্ণসংখ্যা $N$-কে ভিত্তি $b$ দিয়ে ভাগ করলে $N=bq+r$, যেখানে $0\le r<b$। তাই $r$ এককের অঙ্ক, আর $q$-তে বাকি অঙ্কগুলো থাকে। ভাগ চালিয়ে শেষ ভাগশেষ থেকে পড়লে উচ্চ ওজনের অঙ্ক আগে পাওয়া যায়। ভগ্নাংশ $f$-এর জন্য $bf=d+f'$; এখানে পূর্ণাংশ $d$ প্রথম ভগ্নাংশ অঙ্ক এবং অবশিষ্ট $f'$ নিয়ে পরের ধাপ হয়। এজন্য গুণে পাওয়া অঙ্ক প্রথম থেকে পড়তে হয়।
 
-\subsection{Decimal থেকে Binary}
-\begin{itemize}
-\item ভাগ ও remainder পদ্ধতি
-\item ভগ্নাংশ রূপান্তরের সারমর্ম
-\end{itemize}
+\smallhead{গ্রুপিং কোথা থেকে শুরু হবে?}
+পূর্ণাংশে বিন্দু থেকে বামে এবং ভগ্নাংশে বিন্দু থেকে ডানে গ্রুপ করো। $8=2^3$ বলে অক্টালে ৩ বিট, $16=2^4$ বলে হেক্সাডেসিমালে ৪ বিট এক অঙ্ক। অসম্পূর্ণ গ্রুপ পূরণে পূর্ণাংশের একেবারে বামে বা ভগ্নাংশের একেবারে ডানে ০ বসে। এই ০ নতুন পরিমাণ যোগ করে না; মাঝখানে বা ভগ্নাংশের শুরুতে বসালে মান বদলাবে।
 
-\subsection{Binary থেকে Decimal}
-\begin{itemize}
-\item positional value এবং 2-এর ঘাত ব্যবহার
-\end{itemize}
+\textbf{চিত্রের সংকেত:} নীল arrow ধাপের সংযোগ, নীল brace বিটের দল, সবুজ অঙ্ক রূপান্তরের ফল এবং বাদামি টীকা প্রয়োজনীয় zero padding নির্দেশ করে। দাগঘেরা সীমানা থাকায় সাদা-কালো ছাপাতেও padding চেনা যায়।
 
-\subsection{Decimal ও Octal/Hexadecimal এবং Binary ও Octal/Hex মধ্যে রূপান্তর}
-\begin{itemize}
-\item Decimal থেকে Octal/Hex: পুনরাবৃত্ত ভাগ
-\item Binary থেকে Octal: 3-bit grouping
-\item Binary থেকে Hex: 4-bit grouping
-\item Octal/Hex এর মধ্যে রূপান্তর: Binary intermediary
-\end{itemize}
+\smallhead{দশমিক ও বাইনারির পারস্পরিক রূপান্তর}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/decimal_binary.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/binary_decimal.tex}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item decimal থেকে binary/octal/hex রূপান্তর করতে।
-\item binary থেকে decimal, octal ও hexadecimal রূপান্তর করতে।
-\item fraction রূপান্তরে multiplication method-এর ধারণা ব্যবহার করতে।
-\end{itemize}
-\end{learningbox}
+\smallhead{অক্টালের সঙ্গে দশমিক ও বাইনারি}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/decimal_octal.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/octal_decimal.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/octal_binary.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/binary_octal.tex}
 
-\begin{keypointbox}{রূপান্তরের shortcut}
-\begin{itemize}
-\item Decimal থেকে অন্য base: base দিয়ে বারবার ভাগ, remainder নিচ থেকে ওপর।
-\item অন্য base থেকে Decimal: প্রতিটি digit $\times$ base-এর ঘাত যোগ।
-\item Binary থেকে Octal: ডান দিক থেকে 3-bit group।
-\item Binary থেকে Hex: ডান দিক থেকে 4-bit group।
-\end{itemize}
-\end{keypointbox}
+\smallhead{হেক্সাডেসিমালের সঙ্গে দশমিক ও বাইনারি}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/hexadecimal_decimal.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/decimal_hexadecimal.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/hexadecimal_binary.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/binary_hexadecimal.tex}
 
-\begin{examplebox}{Decimal থেকে Binary}
-$(25)_{10}$ রূপান্তর: $25\div2=12$ remainder 1, $12\div2=6$ remainder 0, $6\div2=3$ remainder 0, $3\div2=1$ remainder 1, $1\div2=0$ remainder 1। তাই $(25)_{10}=(11001)_2$।
-\end{examplebox}
+\smallhead{অক্টাল ও হেক্সাডেসিমালের পারস্পরিক রূপান্তর}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/octal_hexadecimal.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/hexadecimal_octal.tex}
 
-\begin{examplebox}{Binary থেকে Decimal}
-$(10110)_2=1\times2^4+0\times2^3+1\times2^2+1\times2^1+0\times2^0=16+4+2=22$।
-\end{examplebox}
-
-\begin{center}
-\fbox{\parbox{0.9\textwidth}{
-\centering
-\textbf{Conversion flowchart placeholder}\\[4pt]
-Decimal $\leftrightarrow$ Binary $\leftrightarrow$ Octal/Hex\\
-Octal ও Hex-এর মধ্যে সরাসরি না করে binary intermediary ব্যবহার দেখাতে হবে।
-}}
-\end{center}
-
-\begin{practicebox}
-\textbf{অনুশীলন}
-\begin{enumerate}
-\item $(43)_{10}$ কে binary-তে রূপান্তর কর।
-\item $(101101)_2$ কে decimal-এ রূপান্তর কর।
-\item $(11011101)_2$ কে hexadecimal-এ রূপান্তর কর।
-\end{enumerate}
-\end{practicebox}
+\smallhead{সাধারণ ভিত্তি ও দুই ধাপের রূপান্তর}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/decimal_base_n.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/binary_base_n.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/octal_base_n.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/hexadecimal_base_n.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/base_m_decimal.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/general_decimal_base_n.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/base_m_base_n.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/visual/applications.tex}

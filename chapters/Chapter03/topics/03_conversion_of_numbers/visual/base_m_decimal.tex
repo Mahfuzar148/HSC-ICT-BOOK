@@ -1,0 +1,90 @@
+\subsection{\texorpdfstring{$m$ ভিত্তি থেকে দশমিক}{m ভিত্তি থেকে দশমিক}}
+বিন্দুর বামে ওজন $b^0,b^1,\ldots$; ডানে $b^{-1},b^{-2},\ldots$। প্রতিটি অঙ্কের সঙ্গে তার ওজন গুণ করে অবদানগুলো যোগ করো।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (231)_{5} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC065}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 2 $};
+\node[vcnum] (w0) at (0,-10) {$ 5^{2} $};
+\node[vcnum] (v0) at (0,-25) {$ 50 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 3 $};
+\node[vcnum] (w1) at (19,-10) {$ 5^{1} $};
+\node[vcnum] (v1) at (19,-25) {$ 15 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 1 $};
+\node[vcnum] (w2) at (38,-10) {$ 5^{0} $};
+\node[vcnum] (v2) at (38,-25) {$ 1 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=2\times 5^{2}+3\times 5^{1}+1\times 5^{0}\\&=50+15+1=66.\end{aligned}\]
+\[\therefore\ (231)_{5}=(66)_{10}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.23)_{4} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC066}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 0 $};
+\node[vcnum] (w0) at (0,-10) {$ 4^{0} $};
+\node[vcnum] (v0) at (0,-25) {$ 0 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (27,0) {$ 2 $};
+\node[vcnum] (w1) at (27,-10) {$ 4^{-1} $};
+\node[vcnum] (v1) at (27,-25) {$ \frac{1}{2} $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (46,0) {$ 3 $};
+\node[vcnum] (w2) at (46,-10) {$ 4^{-2} $};
+\node[vcnum] (v2) at (46,-25) {$ \frac{3}{16} $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] at (13.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=0\times 4^{0}+2\times 4^{-1}+3\times 4^{-2}\\&=\frac{1}{2}+\frac{3}{16}=0.6875.\end{aligned}\]
+\[\therefore\ (0.23)_{4}=(0.6875)_{10}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (143.2)_{5} $-কে ১০ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC067}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-10) {$ 5^{2} $};
+\node[vcnum] (v0) at (0,-25) {$ 25 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 4 $};
+\node[vcnum] (w1) at (19,-10) {$ 5^{1} $};
+\node[vcnum] (v1) at (19,-25) {$ 20 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 3 $};
+\node[vcnum] (w2) at (38,-10) {$ 5^{0} $};
+\node[vcnum] (v2) at (38,-25) {$ 3 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (65,0) {$ 2 $};
+\node[vcnum] (w3) at (65,-10) {$ 5^{-1} $};
+\node[vcnum] (v3) at (65,-25) {$ \frac{2}{5} $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] at (51.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 5^{2}+4\times 5^{1}+3\times 5^{0}+2\times 5^{-1}\\&=25+20+3+\frac{2}{5}=48.4.\end{aligned}\]
+\[\therefore\ (143.2)_{5}=(48.4)_{10}.\]
+\end{minipage}\par

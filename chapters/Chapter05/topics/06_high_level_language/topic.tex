@@ -1,0 +1,564 @@
+\sectionheading{5.6 উচ্চস্তরের ভাষা (High Level Language)}
+
+Machine Language ও Assembly Language কম্পিউটারের Hardware-এর খুব
+কাছাকাছি হলেও মানুষের জন্য এসব ভাষায় Program লেখা তুলনামূলক কঠিন।
+বিশেষ করে Processor, Register, Memory Address এবং Machine-specific
+Instruction সম্পর্কে বিস্তারিত ধারণা প্রয়োজন হয়।
+
+এই সমস্যা কমিয়ে মানুষের জন্য সহজ, বোধগম্য ও দ্রুত Program লেখার
+উদ্দেশ্যে এমন Programming Language তৈরি করা হয়, যার শব্দ ও গঠন
+মানুষের পরিচিত ভাষা ও গাণিতিক প্রকাশের তুলনামূলক কাছাকাছি।
+এ ধরনের ভাষাকে \textbf{High Level Language} বলা হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{উচ্চস্তরের ভাষা কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Programming Language-এর \textbf{শব্দ, প্রতীক ও নির্দেশ মানুষের
+ভাষা ও গাণিতিক প্রকাশের তুলনামূলক কাছাকাছি}, ফলে সহজে Program
+লেখা, পড়া ও বোঝা যায়, তাকে
+\textbf{উচ্চস্তরের ভাষা (High Level Language)} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+মানুষের জন্য সহজ ও বোধগম্য Programming Language
+\(\;=\;\)
+High Level Language
+}
+
+\end{center}
+
+High Level Language ব্যবহার করার সময় Programmer-কে সাধারণত
+Processor-এর Binary Instruction বা Hardware-এর অভ্যন্তরীণ গঠন
+নিয়ে সরাসরি কাজ করতে হয় না।
+
+%================================================
+% Why easy
+%================================================
+\booksubheading{High Level Language কেন মানুষের জন্য সহজ?}
+
+High Level Language-এ সাধারণত অর্থবোধক Keyword, Variable,
+Mathematical Operator, Conditional Statement, Loop, Function
+ইত্যাদি ব্যবহার করা হয়।
+
+\begin{examplebox}{সহজ উদাহরণ}
+
+ধরা যাক—
+
+\begin{center}
+
+{\textenglish{\ttfamily total = a + b}}
+
+\end{center}
+
+Instructionটি দেখেই সহজে বোঝা যায় যে
+\textenglish{\ttfamily a} ও \textenglish{\ttfamily b}-এর মান যোগ করে
+ফলাফল \textenglish{\ttfamily total}-এ রাখা হচ্ছে।
+
+Machine Language-এ একই ধরনের কাজ 0 ও 1-এর Binary Instruction
+দিয়ে প্রকাশ করতে হয়।
+
+\end{examplebox}
+
+%================================================
+% Examples
+%================================================
+\booksubheading{High Level Language-এর উদাহরণ}
+
+High Level Language-এর পরিচিত উদাহরণ হলো—
+
+\begin{center}
+
+\textbf{
+Python, Java, C++, BASIC, Pascal, FORTRAN
+}
+
+\end{center}
+
+নতুন সিলেবাস অনুযায়ী \textbf{Java, Oracle ও Python} সম্পর্কে
+পরবর্তী অংশে আলাদাভাবে আলোচনা করা হবে।
+
+%================================================
+% Features
+%================================================
+\booksubheading{High Level Language-এর বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}
+\\
+\hline
+
+সহজ ও বোধগম্য
+&
+Program লেখা, পড়া ও বোঝা তুলনামূলক সহজ।
+\\
+\hline
+
+Problem-oriented
+&
+Hardware-এর সূক্ষ্ম বিষয় অপেক্ষা Problem Solving-এর ওপর বেশি
+গুরুত্ব দেওয়া যায়।
+\\
+\hline
+
+Machine Independent
+&
+নির্দিষ্ট Hardware-এর ওপর সরাসরি নির্ভরশীলতা তুলনামূলক কম।
+\\
+\hline
+
+Translator প্রয়োজন
+&
+কম্পিউটার High Level Code সরাসরি বুঝতে পারে না।
+\\
+\hline
+
+সহজ Syntax
+&
+অর্থবোধক Keyword ও পরিচিত Mathematical Expression ব্যবহার করা যায়।
+\\
+\hline
+
+Debugging সহজ
+&
+Error খুঁজে বের ও সংশোধন তুলনামূলক সহজ।
+\\
+\hline
+
+Portability বেশি
+&
+প্রয়োজনীয় Translator/Runtime থাকলে একই Source Program ভিন্ন
+System-এ ব্যবহার করা তুলনামূলক সহজ।
+\\
+\hline
+
+Library সুবিধা
+&
+অনেক High Level Language-এ Built-in Function ও Library পাওয়া যায়।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Translation
+%================================================
+\booksubheading{High Level Language কীভাবে কম্পিউটারে চলে?}
+
+কম্পিউটার High Level Language সরাসরি বুঝতে পারে না।
+তাই High Level Language-এ লেখা Program-কে কম্পিউটারের বোধগম্য
+রূপে পরিবর্তন করার জন্য \textbf{Translator Program} প্রয়োজন হয়।
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.25\linewidth}{
+        \centering\textbf{High Level Program}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.20\linewidth}{
+        \centering\textbf{Compiler / Interpreter}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.27\linewidth}{
+        \centering\textbf{Machine-understandable Code}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+Compiler ও Interpreter সম্পর্কে Translator Program অংশে
+বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Source Program
+%================================================
+\booksubheading{Source Program কী?}
+
+High Level Language-এ Programmer যে মূল Program লেখে,
+তাকে সাধারণভাবে \textbf{Source Program বা Source Code} বলা হয়।
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}Source Program}
+
+Programmer কোনো Programming Language ব্যবহার করে যে মূল
+Program বা Code লেখে, তাকে \textbf{Source Program} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{
+Programmer-এর লেখা Code
+\(\;=\;\)
+Source Program
+}
+
+\end{center}
+
+Translator এই Source Program-কে Machine-এর উপযোগী রূপে
+রূপান্তর করে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+High Level Language-এ লেখা মূল Program হলো
+\textbf{Source Program বা Source Code}।
+
+অনুবাদের পর Machine-এর উপযোগী Code-কে প্রসঙ্গ অনুযায়ী
+Target Code বা Object Code বলা হতে পারে।
+
+\end{rememberbox}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{High Level Language-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item Program লেখা তুলনামূলক \textbf{সহজ ও দ্রুত}।
+
+\item Program পড়া ও Logic বুঝতে সহজ।
+
+\item Machine বা Assembly Language-এর তুলনায় কম Instruction-এ
+বড় কাজ করা যায়।
+
+\item Program-এ Error হওয়ার সম্ভাবনা তুলনামূলক কম।
+
+\item Error খুঁজে বের ও সংশোধন বা \textbf{Debugging} সহজ।
+
+\item Program পরিবর্তন ও Maintenance সহজ।
+
+\item Hardware-এর সূক্ষ্ম গঠন সম্পর্কে গভীর ধারণা ছাড়াই
+সাধারণ Program লেখা যায়।
+
+\item Built-in Function ও Library ব্যবহার করে দ্রুত Program তৈরি করা যায়।
+
+\item Program ভিন্ন Machine/System-এ ব্যবহার করা তুলনামূলক সহজ।
+
+\item বড় ও জটিল Application তৈরি করা সুবিধাজনক।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Disadvantages
+%================================================
+\booksubheading{High Level Language-এর অসুবিধা}
+
+\begin{itemize}
+
+\item কম্পিউটার সরাসরি High Level Language বুঝতে পারে না।
+
+\item Machine Code-এ রূপান্তরের জন্য
+\textbf{Compiler বা Interpreter} প্রয়োজন হয়।
+
+\item Low Level Language-এর তুলনায় Hardware-এর ওপর সরাসরি
+নিয়ন্ত্রণ কম।
+
+\item অনেক ক্ষেত্রে Low Level Program-এর তুলনায় বেশি Memory বা
+System Resource প্রয়োজন হতে পারে।
+
+\item Hardware-specific কাজের ক্ষেত্রে Low Level Language-এর মতো
+সরাসরি নিয়ন্ত্রণ নাও পাওয়া যেতে পারে।
+
+\item Program লেখার জন্য সংশ্লিষ্ট Language-এর Syntax ও নিয়ম জানতে হয়।
+
+\end{itemize}
+
+%================================================
+% Uses
+%================================================
+\booksubheading{High Level Language-এর ব্যবহার}
+
+High Level Language বিভিন্ন ধরনের Software Development ও
+Problem Solving-এ ব্যবহার করা হয়। যেমন—
+
+\begin{compacttwocolpoints}
+
+\item Application Program তৈরিতে।
+
+\item Data Processing-এর কাজে।
+
+\item Web ও Software Development-এ।
+
+\item বৈজ্ঞানিক ও গাণিতিক Problem সমাধানে।
+
+\item Business Application তৈরিতে।
+
+\item Database-ভিত্তিক System তৈরিতে।
+
+\item Automation-এর কাজে।
+
+\item শিক্ষা ও গবেষণায়।
+
+\item Data Analysis ও Artificial Intelligence-এর মতো আধুনিক ক্ষেত্রে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Machine Language ও High Level Language-এর পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.20\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Machine Language}}
+&
+\multicolumn{1}{c|}{\textbf{High Level Language}}
+\\
+\hline
+
+ভাষার রূপ
+&
+0 ও 1-এর Binary Code
+&
+অর্থবোধক শব্দ, প্রতীক ও Statement
+\\
+\hline
+
+মানুষের জন্য
+&
+লেখা ও বোঝা কঠিন
+&
+তুলনামূলক সহজ
+\\
+\hline
+
+কম্পিউটার
+&
+সরাসরি বুঝতে পারে
+&
+সরাসরি বুঝতে পারে না
+\\
+\hline
+
+Translator
+&
+প্রয়োজন নেই
+&
+Compiler বা Interpreter প্রয়োজন
+\\
+\hline
+
+Machine Dependence
+&
+বেশি
+&
+তুলনামূলক কম
+\\
+\hline
+
+Program লেখা
+&
+কঠিন ও সময়সাপেক্ষ
+&
+সহজ ও দ্রুত
+\\
+\hline
+
+Error শনাক্ত
+&
+কঠিন
+&
+তুলনামূলক সহজ
+\\
+\hline
+
+Debugging
+&
+কঠিন
+&
+সহজ
+\\
+\hline
+
+Hardware Knowledge
+&
+বেশি প্রয়োজন
+&
+তুলনামূলক কম প্রয়োজন
+\\
+\hline
+
+Portability
+&
+কম
+&
+তুলনামূলক বেশি
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Machine Independence
+%================================================
+\booksubheading{High Level Language কেন Machine Independent বলা হয়?}
+
+High Level Language-এ Program লেখার সময় Programmer কোনো একটি
+নির্দিষ্ট Processor-এর Binary Instruction ব্যবহার করে না।
+
+তাই একই Source Program প্রয়োজনীয় Translator বা Runtime-এর সাহায্যে
+ভিন্ন System-এ ব্যবহার করা তুলনামূলক সহজ।
+
+\begin{examplebox}{সহজভাবে বোঝো}
+
+একটি Python Source Program Programmer একইভাবে লিখতে পারে।
+ভিন্ন Operating System বা Machine-এ প্রয়োজনীয় Python Environment
+থাকলে সেই Program ব্যবহার করা সম্ভব হতে পারে।
+
+অর্থাৎ Source Code সরাসরি কোনো একটি নির্দিষ্ট Processor-এর
+Binary Instruction-এর ওপর নির্ভর করে না।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+Machine Independent বলার অর্থ এই নয় যে একই Executable File
+সব Machine-এ সরাসরি চলবে।
+
+প্রয়োজনীয় \textbf{Translator, Runtime বা Platform Support}
+থাকতে হয়।
+
+\end{rememberbox}
+
+%================================================
+% Why Popular
+%================================================
+\booksubheading{High Level Language কেন জনপ্রিয়?}
+
+High Level Language Programmer-কে Hardware-এর জটিল Binary
+Instruction বা Register নিয়ে সরাসরি কাজ করার প্রয়োজন অনেকটাই কমিয়ে দেয়।
+
+ফলে Programmer বেশি গুরুত্ব দিতে পারে—
+
+\begin{compacttwocolpoints}
+
+\item Problem বোঝায়,
+
+\item Logic তৈরিতে,
+
+\item Algorithm তৈরি করতে,
+
+\item Program দ্রুত Development করতে,
+
+\item Testing ও Debugging করতে।
+
+\end{compacttwocolpoints}
+
+এ কারণেই আধুনিক Software Development-এ High Level Language
+ব্যাপকভাবে ব্যবহৃত হয়।
+
+%================================================
+% Generation
+%================================================
+\booksubheading{High Level Language ও Generation}
+
+Programming Language-এর Generation-ভিত্তিক আলোচনায়
+\textbf{Third Generation Language (3GL)}-এর অধিকাংশ ভাষাই
+High Level Language।
+
+যেমন—
+
+\begin{center}
+
+\textbf{
+FORTRAN, BASIC, Pascal, C
+}
+
+\end{center}
+
+3GL-এর পরিচিত উদাহরণ হিসেবে প্রচলিত পাঠ্যবইয়ে আলোচনা করা হয়।
+
+তবে—
+
+\begin{center}
+
+\textbf{
+High Level Language
+\(\;\neq\;\)
+Third Generation Language (3GL)
+}
+
+\end{center}
+
+দুটি সম্পূর্ণ একই শ্রেণিবিভাগ নয়।
+
+High Level Language মূলত ভাষার \textbf{সহজবোধ্যতা ও Hardware-এর
+সঙ্গে সম্পর্ক} বোঝায়, আর 3GL হলো Programming Language-এর
+\textbf{Generation-ভিত্তিক শ্রেণিবিভাগ}।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item High Level Language মানুষের জন্য
+\textbf{সহজ ও বোধগম্য}।
+
+\item এটি Hardware-এর পরিবর্তে
+\textbf{Problem Solving-এর কাছাকাছি}।
+
+\item High Level Program কম্পিউটার
+\textbf{সরাসরি বুঝতে পারে না}।
+
+\item তাই \textbf{Compiler বা Interpreter} প্রয়োজন হয়।
+
+\item Programmer-এর লেখা মূল Code হলো
+\textbf{Source Program বা Source Code}।
+
+\item High Level Language সাধারণভাবে
+\textbf{Machine Independent} এবং Portability বেশি।
+
+\item Program লেখা, Error শনাক্ত ও Debugging তুলনামূলক সহজ।
+
+\item Python ও Java হলো High Level Language-এর পরিচিত উদাহরণ।
+
+\item High Level Language এবং 3GL
+\textbf{সম্পূর্ণ একই শ্রেণিবিভাগ নয়}।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.7 Java
+%================================================

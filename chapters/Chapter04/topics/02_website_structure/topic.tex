@@ -1,72 +1,92 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % ৪.৫ ওয়েবসাইটের কাঠামো
-\section{ওয়েবসাইটের কাঠামো}
+\section{ওয়েবসাইটের কাঠামো (Website Structure)}
+
+% Composition pass 2026-10-04
+একটি কলেজের অনেক বিভাগ ও পেজ থাকলে পথ হারিয়ে প্রয়োজনীয় তথ্য খুঁজতে সময় লাগে।
+
+\chFourMotivation{পেজগুলোর সম্পর্ক নির্ধারণ $\rightarrow$ ওয়েবসাইটের কাঠামো $\rightarrow$ ধারাবাহিক, শাখাভিত্তিক বা একাধিক লিংকে সংগঠন $\rightarrow$ ভর্তি ও একাডেমিক তথ্য সহজে পাওয়া।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item website structure-এর সংজ্ঞা ও প্রয়োজনীয়তা ব্যাখ্যা করতে।
-\item home page, main section page, subsection page ও navigation-এর সম্পর্ক বুঝতে।
-\item Linear, Tree, Network/Web-linked ও Hybrid structure আলাদা করতে।
-\item কোন ধরনের website-এর জন্য কোন structure বেশি উপযোগী তা নির্ণয় করতে।
-\item board-style প্রশ্নে diagram ও যুক্তিসহ উত্তর লিখতে।
+\item ওয়েবসাইটের কাঠামোর সংজ্ঞা ও প্রয়োজনীয়তা ব্যাখ্যা করতে।
+\item হোমপেজ, প্রধান বিষয়ের পেজ, উপবিষয়ের পেজ ও নেভিগেশনের সম্পর্ক বুঝতে।
+\item Linear, Tree, নেটওয়ার্ক/Web-linked ও হাইব্রিড কাঠামো আলাদা করতে।
+\item কোন ধরনের ওয়েবসাইটের জন্য কোন কাঠামো বেশি উপযোগী তা নির্ণয় করতে।
+\item পরীক্ষার আদলে প্রশ্নে চিত্র ও যুক্তিসহ উত্তর লিখতে।
 \end{itemize}
 \end{learningbox}
 
 \subsection{ভূমিকা}
-
-একটি ওয়েবসাইটে সাধারণত একাধিক ওয়েবপেজ থাকে। যেমন: Home, About, Notice, Admission, Result, Contact ইত্যাদি। এই page-গুলো কীভাবে একটির সাথে আরেকটি যুক্ত থাকবে, কোন page থেকে কোন page-এ যাওয়া যাবে এবং তথ্যগুলো কীভাবে সাজানো থাকবে—এই সামগ্রিক বিন্যাসকেই \textbf{ওয়েবসাইটের কাঠামো} বলা হয়।
-
-ভালো website structure থাকলে user সহজে প্রয়োজনীয় তথ্য খুঁজে পায়। Structure দুর্বল হলে website দেখতে সুন্দর হলেও user বিভ্রান্ত হতে পারে।
+ওয়েবসাইটের পেজগুলো যুক্ত করার পরিকল্পনা থাকলে ব্যবহারকারী সহজে প্রয়োজনীয় তথ্যে পৌঁছান। Home, About, Notice, Admission, Result ও Contact পেজের মধ্যে কোন পথে যাওয়া যাবে, তা এই পরিকল্পনায় নির্ধারিত হয়। পেজ দেখতে সুন্দর হলেও সংযোগ দুর্বল হলে তথ্য খুঁজে পাওয়া কঠিন হয়।
 
 \subsection{ওয়েবসাইটের কাঠামো কী?}
 
-\begin{definitionbox}{ওয়েবসাইটের কাঠামো}
-যে বিন্যাস বা সংগঠন অনুসারে একটি ওয়েবসাইটের বিভিন্ন ওয়েবপেজ, তথ্য, link, menu ও navigation system পরস্পরের সাথে যুক্ত ও উপস্থাপিত থাকে, তাকে ওয়েবসাইটের কাঠামো বলে।
+\begin{definitionbox}{ওয়েবসাইটের কাঠামো (Website Structure)}
+ওয়েবসাইটের পেজ ও তথ্যের পারস্পরিক সম্পর্ক এবং পেজগুলোর সংযোগের বিন্যাসকে ওয়েবসাইটের কাঠামো বলে। মেনু ও লিংক এই সম্পর্ক অনুযায়ী সাজানো হয়।
 \end{definitionbox}
 
-আরও সহজভাবে বলা যায়, website-এর কোন page কোথায় থাকবে এবং কোন page থেকে কোন page-এ যাওয়া যাবে—এই পরিকল্পনাই website structure।
+
 
 \begin{examplebox}{সহজ উদাহরণ}
-একটি college website-এ Home page থেকে About, Notice, Result ও Contact page-এ যাওয়া যায়। আবার Notice page থেকে Result page-এর link থাকতে পারে। এই page-গুলোর সম্পর্ক ও link বিন্যাসই website structure।
+একটি কলেজ ওয়েবসাইটে Home পেজ থেকে About, Notice, Result ও Contact পেজে যাওয়া যায়। আবার Notice পেজ থেকে Result পেজের লিংক থাকতে পারে। এই পেজগুলোর সম্পর্ক ও লিংক বিন্যাসই ওয়েবসাইটের কাঠামো।
 \end{examplebox}
 
 \subsection{ওয়েবসাইটের কাঠামো কেন গুরুত্বপূর্ণ?}
 
-একটি ভালো ওয়েবসাইটের জন্য সুন্দর color বা design যতটা দরকার, তার চেয়েও বেশি দরকার সঠিক structure। কারণ user মূলত তথ্য খুঁজতে website ব্যবহার করে।
+একটি ভালো ওয়েবসাইটে দৃশ্যমান নকশার পাশাপাশি তথ্য ও পেজের সঠিক কাঠামো দরকার। কারণ ব্যবহারকারী মূলত তথ্য খুঁজতে ওয়েবসাইট ব্যবহার করে।
 
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item user সহজে তথ্য খুঁজে পায়।
-\item page-গুলোর মধ্যে সম্পর্ক বোঝা সহজ হয়।
-\item menu ও navigation সুন্দরভাবে তৈরি করা যায়।
-\item website maintain ও update করা সহজ হয়।
-\item নতুন page যুক্ত করা সহজ হয়।
-\item শিক্ষা প্রতিষ্ঠান, business website, news portal বা organization website ভালোভাবে সাজানো যায়।
-\item search engine website-এর page বুঝতে ও index করতে সুবিধা পায়।
-\item user experience ভালো হয়।
+\item ব্যবহারকারী সহজে তথ্য খুঁজে পায়।
+\item পেজগুলোর মধ্যে সম্পর্ক বোঝা সহজ হয়।
+\item মেনু ও নেভিগেশন সুন্দরভাবে তৈরি করা যায়।
+\item ওয়েবসাইট রক্ষণাবেক্ষণ ও হালনাগাদ করা সহজ হয়।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item নতুন পেজ যুক্ত করা সহজ হয়।
+\item শিক্ষা প্রতিষ্ঠান, ব্যবসায়িক ওয়েবসাইট, সংবাদ পোর্টাল বা প্রতিষ্ঠানের ওয়েবসাইট ভালোভাবে সাজানো যায়।
+\item সার্চ ইঞ্জিন ওয়েবসাইটের পেজ বুঝতে ও সূচিতে রাখতে সুবিধা পায়।
+\item ব্যবহারকারীর অভিজ্ঞতা ভালো হয়।
+\end{itemize}
+\end{minipage}\par
 
+
+\Needspace{6\baselineskip}
 \subsection{ওয়েবসাইটের কাঠামোর প্রধান উপাদান}
 
-\subsubsection{Home Page}
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\subsubsection{হোমপেজ (Home Page)}
 
-কোনো website-এ প্রবেশ করলে প্রথম যে প্রধান page দেখা যায়, তাকে home page বলা হয়। এখান থেকেই সাধারণত website-এর গুরুত্বপূর্ণ page-গুলোর link দেওয়া থাকে।
+হোমপেজ হলো ওয়েবসাইটের প্রধান প্রবেশপথ। সাইটের মূল ঠিকানা খুললে সাধারণত এটি আগে দেখা যায়; অন্য পেজের সরাসরি লিংক খুললে সেই পেজ আগে আসতে পারে। হোমপেজে গুরুত্বপূর্ণ পেজগুলোর লিংক থাকে।
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\subsubsection{প্রধান বিষয়ের পেজ (Main Section Page)}
 
-\subsubsection{Main Section Page}
+ওয়েবসাইটের বড় বড় বিভাগ বা বিষয়ভিত্তিক পেজকে প্রধান বিষয়ের পেজ বলা যায়। যেমন: Academic, Admission, Notice, Result, Contact।
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\subsubsection{উপবিষয়ের পেজ (Subsection Page)}
 
-Website-এর বড় বড় category বা বিষয়ভিত্তিক page-কে main section page বলা যায়। যেমন: Academic, Admission, Notice, Result, Contact।
+প্রধান বিষয়ের অধীনে থাকা ছোট পেজ হলো উপবিষয়ের পেজ। যেমন: Academic অংশের অধীনে Science, Business Studies ও Humanities পেজ থাকতে পারে।
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\subsubsection{নেভিগেশন (Navigation)}
 
-\subsubsection{Subsection Page}
-
-Main section-এর অধীনে থাকা ছোট page হলো subsection page। যেমন: Academic section-এর অধীনে Science, Business Studies ও Humanities page থাকতে পারে।
-
-\subsubsection{Navigation}
-
-Navigation হলো page-গুলোর মধ্যে চলাচলের ব্যবস্থা। Menu bar, dropdown menu, footer link, breadcrumb, search box, Previous/Next button এবং internal hyperlink—এসব navigation-এর অংশ।
+নেভিগেশন হলো পেজগুলোর মধ্যে চলাচলের ব্যবস্থা। মেনু বার, ড্রপডাউন মেনু, ফুটার লিংক, ব্রেডক্রাম্ব, অনুসন্ধানের ঘর, Previous/Next বোতাম এবং অভ্যন্তরীণ হাইপারলিংক—এসব নেভিগেশনের অংশ।
+\end{minipage}\par\smallskip
+\end{multicols}
 
 \begin{center}
 \fbox{\parbox{0.92\textwidth}{
 \centering
-\textbf{Example: College Website Page Relationship}\\[6pt]
+\textbf{উদাহরণ: কলেজের ওয়েবসাইটে পেজগুলোর সম্পর্ক}\\[6pt]
 \scaletikz{\begin{tikzpicture}[
   node distance=1.15cm and 1.2cm,
   page/.style={draw, rounded corners=2pt, fill=blue!8, minimum width=2.4cm, minimum height=0.72cm, align=center},
@@ -86,33 +106,33 @@ Navigation হলো page-গুলোর মধ্যে চলাচলের 
 \draw (about) -- (academic);
 \draw[dashed, <->] (notice) -- (contact);
 \end{tikzpicture}}\\[4pt]
-Home page থেকে main page-গুলোতে link থাকে; কিছু page আবার related page-এর সাথে যুক্ত থাকতে পারে।
+Home পেজ থেকে প্রধান পেজগুলোতে লিংক থাকে; কিছু পেজ আবার সংশ্লিষ্ট পেজের সাথে যুক্ত থাকতে পারে।
 }}
 \end{center}
 
 \subsection{ওয়েবসাইটের কাঠামোর প্রকারভেদ}
 
-HSC ICT-এর জন্য চার ধরনের website structure সবচেয়ে গুরুত্বপূর্ণ:
+HSC ICT-এর জন্য চার ধরনের ওয়েবসাইটের কাঠামো সবচেয়ে গুরুত্বপূর্ণ:
 
 \begin{enumerate}
-\item Linear বা Sequential Structure
-\item Tree বা Hierarchical Structure
-\item Network বা Web-linked Structure
-\item Hybrid Structure
+\item Linear বা Sequential কাঠামো
+\item Tree বা Hierarchical কাঠামো
+\item নেটওয়ার্ক বা Web-linked কাঠামো
+\item হাইব্রিড কাঠামো
 \end{enumerate}
 
-\subsection{Linear বা Sequential Structure}
+\subsection{লিনিয়ার বা ধারাবাহিক কাঠামো (Linear/Sequential Structure)}
 
-\subsubsection{Linear Structure কী?}
+\subsubsection{লিনিয়ার কাঠামো কী?}
 
-\begin{definitionbox}{Linear Structure}
-যে ওয়েবসাইট কাঠামোতে ওয়েবপেজগুলো ধারাবাহিকভাবে একটির পর একটি যুক্ত থাকে এবং ব্যবহারকারী নির্দিষ্ট ক্রম অনুসারে page পরিবর্তন করে, তাকে Linear বা Sequential Structure বলে।
+\begin{definitionbox}{লিনিয়ার কাঠামো (Linear Structure)}
+যে কাঠামোতে ওয়েবপেজগুলো নির্দিষ্ট ক্রমে একটির পর একটি যুক্ত থাকে, তাকে লিনিয়ার বা ধারাবাহিক কাঠামো বলে। ব্যবহারকারী সেই ক্রমে পেজগুলো দেখেন।
 \end{definitionbox}
 
 \begin{center}
 \fbox{\parbox{0.90\textwidth}{
 \centering
-\textbf{Linear Structure Diagram}\\[6pt]
+\textbf{লিনিয়ার কাঠামোর চিত্র}\\[6pt]
 \scaletikz{\begin{tikzpicture}[
   node distance=0.75cm,
   page/.style={draw, rounded corners=2pt, fill=orange!10, minimum width=1.85cm, minimum height=0.68cm, align=center},
@@ -126,62 +146,67 @@ HSC ICT-এর জন্য চার ধরনের website structure সব�
 \draw (p1) -- (p2);
 \draw (p2) -- (end);
 \end{tikzpicture}}\\[4pt]
-যেমন: Instruction $\rightarrow$ Question 1 $\rightarrow$ Question 2 $\rightarrow$ Submit $\rightarrow$ Result
+যেমন: Instruction $\rightarrow$ Question 1 $\rightarrow$ Question 2 $\rightarrow$ জমা $\rightarrow$ Result
 }}
 \end{center}
 
+% Related compact discussions; source reading order is retained.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{বৈশিষ্ট্য}
 
-\begin{itemize}
-\item page-গুলো একটির পর একটি সাজানো থাকে।
-\item user সাধারণত Next বা Previous link ব্যবহার করে।
-\item শেখার ধাপ, quiz, tutorial, registration form-এর জন্য উপযোগী।
-\item user-কে নির্দিষ্ট path follow করতে হয়।
-\item structure সহজ, কিন্তু বড় website-এর জন্য সবসময় উপযোগী নয়।
-\end{itemize}
-
+\begin{enumerate}
+\item পেজগুলো একটির পর একটি সাজানো থাকে।
+\item ব্যবহারকারী সাধারণত Next বা Previous লিংক ব্যবহার করে।
+\item ধারাবাহিক কাজের মূল পথ নির্দিষ্ট থাকে; প্রয়োজনে Previous লিংক দিয়ে আগের ধাপে ফেরা যায়।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{ব্যবহার}
 
-\begin{itemize}
-\item online quiz
-\item step-by-step tutorial
-\item online course lesson
-\item registration form
-\item survey form
-\item exam instruction page
-\item product checkout process
-\end{itemize}
+\begin{enumerate}
+\item অনলাইন কুইজ
+\item ধাপে ধাপে শেখানোর টিউটোরিয়াল
+\item অনলাইন কোর্সের পাঠ
+\item নিবন্ধন ফর্ম
+\item জরিপের ফর্ম
+\item পরীক্ষার নির্দেশনার পেজ
+\item পণ্য কেনার শেষ ধাপগুলো
+\end{enumerate}
+\end{minipage}\par\smallskip
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{সুবিধা}
+\begin{enumerate}
+\item সহজে বোঝা যায়।
+\item ধাপে ধাপে শেখার জন্য ভালো।
+\item কুইজ বা টিউটোরিয়াল পরিচালনায় কার্যকর।
+\item অগ্রগতি পর্যবেক্ষণ করা সহজ।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{অসুবিধা}
+\begin{enumerate}
+\item মাঝের পেজ বাদ দিয়ে অন্য পেজে যাওয়া কঠিন।
+\item বড় ওয়েবসাইটের মূল কাঠামো হিসেবে সবসময় উপযোগী নয়।
+\item ব্যবহারকারীর চলাচলের স্বাধীনতা কম থাকে।
+\item অনেক পেজ হলে বিরক্তিকর হতে পারে।
+\end{enumerate}
+\end{minipage}\par
 
-\subsubsection{সুবিধা ও অসুবিধা}
+\Needspace{6\baselineskip}
+\subsection{ট্রি বা স্তরভিত্তিক কাঠামো (Tree/Hierarchical Structure)}
 
-\begin{center}
-\begin{tabular}{|p{0.43\textwidth}|p{0.43\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-সহজে বোঝা যায় & মাঝের page বাদ দিয়ে অন্য page-এ যাওয়া কঠিন \\
-\hline
-step-by-step learning-এর জন্য ভালো & বড় website-এর জন্য উপযোগী নয় \\
-\hline
-quiz বা tutorial পরিচালনায় কার্যকর & user freedom কম থাকে \\
-\hline
-progress track করা সহজ & অনেক page হলে বিরক্তিকর হতে পারে \\
-\hline
-\end{tabular}
-\end{center}
+\subsubsection{ট্রি কাঠামো কী?}
 
-\subsection{Tree বা Hierarchical Structure}
-
-\subsubsection{Tree Structure কী?}
-
-\begin{definitionbox}{Tree Structure}
-যে ওয়েবসাইট কাঠামোতে home page থেকে বিভিন্ন main section এবং subsection শাখা-প্রশাখার মতো বিন্যস্ত থাকে, তাকে Tree বা Hierarchical Structure বলে।
+\begin{definitionbox}{ট্রি কাঠামো (Tree Structure)}
+যে কাঠামোতে হোমপেজের অধীনে প্রধান বিষয় এবং তার অধীনে উপবিষয়ের পেজ শাখা-প্রশাখার মতো সাজানো থাকে, তাকে ট্রি বা স্তরভিত্তিক কাঠামো বলে।
 \end{definitionbox}
 
 \begin{center}
 \fbox{\parbox{0.90\textwidth}{
 \centering
-\textbf{Tree Structure Diagram}\\[6pt]
+\textbf{ট্রি কাঠামোর চিত্র}\\[6pt]
 \scaletikz{\begin{tikzpicture}[
   level distance=1.1cm,
   sibling distance=2.4cm,
@@ -201,58 +226,62 @@ progress track করা সহজ & অনেক page হলে বিরক্
 }}
 \end{center}
 
+% Related compact discussions; source reading order is retained.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{বৈশিষ্ট্য}
 
-\begin{itemize}
-\item একটি root বা main page থাকে।
-\item home page থেকে category ও subcategory তৈরি হয়।
-\item parent-child relationship থাকে।
-\item institution বা organization website-এর জন্য খুব উপযোগী।
-\item বড় website সহজে organize করা যায়।
-\item navigation menu, dropdown menu ও breadcrumb ব্যবহার করা যায়।
-\end{itemize}
-
+\begin{enumerate}
+\item একটি মূল বা প্রধান পেজ থাকে।
+\item হোমপেজ থেকে বিভাগ ও উপবিভাগ তৈরি হয়।
+\item মূল পেজ ও তার অধীন পেজের সম্পর্ক থাকে।
+\item নেভিগেশন মেনু, ড্রপডাউন মেনু ও ব্রেডক্রাম্ব ব্যবহার করা যায়।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{ব্যবহার}
 
-\begin{itemize}
-\item school/college website
-\item university website
-\item government website
-\item e-commerce category website
-\item library website
-\item organization website
-\end{itemize}
+\begin{enumerate}
+\item স্কুল বা কলেজের ওয়েবসাইট
+\item বিশ্ববিদ্যালয়ের ওয়েবসাইট
+\item সরকারি ওয়েবসাইট
+\item ই-কমার্সের বিষয়ভিত্তিক ওয়েবসাইট
+\item গ্রন্থাগারের ওয়েবসাইট
+\item প্রতিষ্ঠানের ওয়েবসাইট
+\end{enumerate}
+\end{minipage}\par\smallskip
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{সুবিধা}
+\begin{enumerate}
+\item বড় ওয়েবসাইট সহজে সাজানো যায়।
+\item বিভাগ ও উপবিভাগ পরিষ্কার বোঝা যায়।
+\item মেনু ব্যবস্থা সুন্দর হয়।
+\item শিক্ষাপ্রতিষ্ঠান ও অন্যান্য সংস্থার ওয়েবসাইটের জন্য কার্যকর।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{অসুবিধা}
+\begin{enumerate}
+\item কাঠামো বেশি গভীর হলে ব্যবহারকারী বিভ্রান্ত হতে পারে।
+\item অনেক উপবিভাগ হলে নেভিগেশন জটিল হয়।
+\item ভুল পরিকল্পনা হলে গুরুত্বপূর্ণ পেজ খুঁজে পাওয়া কঠিন।
+\item আগে থেকে ভালো সাইটম্যাপ তৈরি করা দরকার।
+\end{enumerate}
+\end{minipage}\par
 
-\subsubsection{সুবিধা ও অসুবিধা}
+\subsection{নেটওয়ার্ক বা জালিকাবদ্ধ কাঠামো (Network/Web-linked Structure)}
 
-\begin{center}
-\begin{tabular}{|p{0.43\textwidth}|p{0.43\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-বড় website সহজে সাজানো যায় & structure বেশি গভীর হলে user confuse হতে পারে \\
-\hline
-category ও subcategory পরিষ্কার বোঝা যায় & অনেক subcategory হলে navigation জটিল হয় \\
-\hline
-menu system সুন্দর হয় & ভুল planning হলে গুরুত্বপূর্ণ page খুঁজে পাওয়া কঠিন \\
-\hline
-শিক্ষা প্রতিষ্ঠান ও organization website-এর জন্য কার্যকর & আগে থেকে ভালো sitemap তৈরি করা দরকার \\
-\hline
-\end{tabular}
-\end{center}
+\subsubsection{নেটওয়ার্ক কাঠামো কী?}
 
-\subsection{Network বা Web-linked Structure}
-
-\subsubsection{Network Structure কী?}
-
-\begin{definitionbox}{Network Structure}
-যে ওয়েবসাইট কাঠামোতে ওয়েবপেজগুলো পরস্পরের সাথে জালের মতো বহু link দ্বারা সংযুক্ত থাকে, তাকে Network বা Web-linked Structure বলে।
+\begin{definitionbox}{নেটওয়ার্ক কাঠামো (Network Structure)}
+যে কাঠামোতে সম্পর্কিত ওয়েবপেজগুলো বহু লিংকে জালের মতো যুক্ত থাকে, তাকে নেটওয়ার্ক বা জালিকাবদ্ধ কাঠামো বলে। এতে একটি পেজ থেকে একাধিক সংশ্লিষ্ট পেজে সরাসরি যাওয়া যায়।
 \end{definitionbox}
 
 \begin{center}
 \fbox{\parbox{0.90\textwidth}{
 \centering
-\textbf{Network/Web-linked Structure Diagram}\\[6pt]
+\textbf{নেটওয়ার্ক কাঠামোর চিত্র}\\[6pt]
 \scaletikz{\begin{tikzpicture}[
   node distance=1.6cm and 1.8cm,
   page/.style={draw, rounded corners=2pt, fill=purple!8, minimum width=1.75cm, minimum height=0.66cm, align=center}
@@ -269,63 +298,68 @@ menu system সুন্দর হয় & ভুল planning হলে গুর�
 \draw[<->] (d) -- (e);
 \draw[<->, dashed] (b) -- (e);
 \end{tikzpicture}}\\[4pt]
-একটি page থেকে একাধিক related page-এ যাওয়া যায়।
+একটি পেজ থেকে একাধিক সংশ্লিষ্ট পেজে যাওয়া যায়।
 }}
 \end{center}
 
+% Related compact discussions; source reading order is retained.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{বৈশিষ্ট্য}
 
-\begin{itemize}
-\item page-গুলোর মধ্যে অনেক link থাকে।
-\item user স্বাধীনভাবে বিভিন্ন page-এ যেতে পারে।
-\item নির্দিষ্ট single path থাকে না।
-\item বড় information-based website-এ ব্যবহার হয়।
-\item related content সহজে link করা যায়।
-\end{itemize}
-
+\begin{enumerate}
+\item পেজগুলোর মধ্যে অনেক লিংক থাকে।
+\item ব্যবহারকারী স্বাধীনভাবে বিভিন্ন পেজে যেতে পারে।
+\item একটি নির্দিষ্ট পথ থাকে না।
+\item সংশ্লিষ্ট বিষয়বস্তু সহজে লিংক করা যায়।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{ব্যবহার}
 
-\begin{itemize}
-\item wiki-type website
-\item news portal
-\item blog website
-\item research/documentation website
-\item online knowledge base
-\item large information portal
-\end{itemize}
+\begin{enumerate}
+\item বড় তথ্যভিত্তিক ওয়েবসাইট, যেমন উইকির মতো ওয়েবসাইট
+\item সংবাদ পোর্টাল
+\item ব্লগ ওয়েবসাইট
+\item গবেষণা বা নির্দেশিকা প্রকাশের ওয়েবসাইট
+\item অনলাইন জ্ঞানভান্ডার
+\item বড় তথ্য পোর্টাল
+\end{enumerate}
+\end{minipage}\par\smallskip
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{সুবিধা}
+\begin{enumerate}
+\item সংশ্লিষ্ট পেজে দ্রুত যাওয়া যায়।
+\item তথ্যসমৃদ্ধ ওয়েবসাইটের জন্য ভালো।
+\item পেজ দেখার সুযোগ নমনীয় হয়।
+\item নির্দিষ্ট তথ্য খোঁজা ও সম্পর্কিত পেজ ঘুরে দেখা সহজ হয়।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{অসুবিধা}
+\begin{enumerate}
+\item অতিরিক্ত লিংক ব্যবহারকারীকে বিভ্রান্ত করতে পারে।
+\item পরিকল্পনা না থাকলে ওয়েবসাইট জটিল হয়।
+\item অকার্যকর লিংক বেশি হওয়ার ঝুঁকি থাকে।
+\item নতুন ব্যবহারকারী কোথা থেকে শুরু করবে বুঝতে পারে না।
+\end{enumerate}
+\end{minipage}\par
 
-\subsubsection{সুবিধা ও অসুবিধা}
+\subsection{হাইব্রিড কাঠামো (Hybrid Structure)}
 
-\begin{center}
-\begin{tabular}{|p{0.43\textwidth}|p{0.43\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-related page-এ দ্রুত যাওয়া যায় & অতিরিক্ত link user-কে confuse করতে পারে \\
-\hline
-information-rich website-এর জন্য ভালো & planning না থাকলে website জটিল হয় \\
-\hline
-browsing flexible হয় & broken link বেশি হওয়ার ঝুঁকি থাকে \\
-\hline
-search ও exploration সহজ হয় & নতুন user কোথা থেকে শুরু করবে বুঝতে পারে না \\
-\hline
-\end{tabular}
-\end{center}
+\subsubsection{হাইব্রিড কাঠামো কী?}
 
-\subsection{Hybrid Structure}
-
-\subsubsection{Hybrid Structure কী?}
-
-\begin{definitionbox}{Hybrid Structure}
-যে ওয়েবসাইট কাঠামোতে প্রয়োজন অনুযায়ী Linear, Tree ও Network structure-এর বৈশিষ্ট্য একসাথে ব্যবহার করা হয়, তাকে Hybrid Structure বলে।
+\begin{definitionbox}{হাইব্রিড কাঠামো (Hybrid Structure)}
+দুই বা ততোধিক ধরনের কাঠামোর বৈশিষ্ট্য মিলিয়ে তৈরি ওয়েবসাইটের কাঠামোকে হাইব্রিড বা মিশ্র কাঠামো বলে। প্রয়োজন অনুযায়ী লিনিয়ার, ট্রি ও নেটওয়ার্ক কাঠামো একত্রে ব্যবহার করা যায়।
 \end{definitionbox}
 
 \begin{center}
 \fbox{\parbox{0.90\textwidth}{
 \centering
-\textbf{Hybrid Structure Diagram}\\[6pt]
-\scaletikz{\begin{tikzpicture}[
-  node distance=0.95cm and 1.25cm,
+\textbf{হাইব্রিড কাঠামোর চিত্র}\\[6pt]
+\resizebox{.72\linewidth}{!}{\begin{tikzpicture}[
+  node distance=0.38cm and 1.25cm,
   page/.style={draw, rounded corners=2pt, fill=teal!8, minimum width=2.1cm, minimum height=0.65cm, align=center},
   flowstep/.style={draw, rounded corners=2pt, fill=orange!10, minimum width=1.8cm, minimum height=0.62cm, align=center},
   every path/.style={-latex}
@@ -347,50 +381,54 @@ search ও exploration সহজ হয় & নতুন user কোথা থে�
 \draw (notice) -- (result);
 \draw[dashed, <->] (result) -- (academic);
 \end{tikzpicture}}\\[4pt]
-Home থেকে section-গুলো tree আকারে; Admission অংশ linear; Notice/Result related link-এ যুক্ত।
+Home থেকে অংশগুলো ট্রি আকারে; Admission অংশ লিনিয়ার; Notice/Result সংশ্লিষ্ট লিংকে যুক্ত।
 }}
 \end{center}
 
+% Related compact discussions; source reading order is retained.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{বৈশিষ্ট্য}
 
-\begin{itemize}
-\item বাস্তব website-এ সবচেয়ে বেশি ব্যবহৃত।
-\item Home page থেকে category page থাকে।
-\item কিছু page linear sequence follow করে।
-\item কিছু page পরস্পরের সাথে hyperlink দিয়ে যুক্ত থাকে।
-\item user-friendly ও flexible।
-\item বড় website-এর জন্য উপযোগী।
-\end{itemize}
-
+\begin{enumerate}
+\item প্রয়োজন অনুযায়ী একাধিক কাঠামো মিলিয়ে বাস্তব ওয়েবসাইটে ব্যবহার করা যায়।
+\item Home পেজ থেকে বিভাগভিত্তিক পেজে যাওয়ার লিংক থাকে।
+\item কিছু পেজ ধারাবাহিক ক্রম অনুসরণ করে।
+\item কিছু পেজ পরস্পরের সাথে হাইপারলিংক দিয়ে যুক্ত থাকে।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \subsubsection{ব্যবহার}
 
-\begin{itemize}
-\item college website
-\item e-commerce website
-\item learning platform
-\item news portal
-\item government portal
-\item online admission system
-\item large organization website
-\end{itemize}
-
-\subsubsection{সুবিধা ও অসুবিধা}
-
-\begin{center}
-\begin{tabular}{|p{0.43\textwidth}|p{0.43\textwidth}|}
-\hline
-\textbf{সুবিধা} & \textbf{অসুবিধা} \\
-\hline
-বাস্তব website design-এর জন্য সবচেয়ে উপযোগী & design planning ভালো না হলে জটিল হয় \\
-\hline
-বড় website সুন্দরভাবে সাজানো যায় & maintain করতে বেশি দক্ষতা লাগে \\
-\hline
-user স্বাধীনভাবে browse করতে পারে & page relation ভুল হলে user confuse হতে পারে \\
-\hline
-যেখানে দরকার sequential flow রাখা যায় & navigation system ভালোভাবে না করলে website অগোছালো লাগে \\
-\hline
-\end{tabular}
-\end{center}
+\begin{enumerate}
+\item কলেজ ওয়েবসাইট
+\item ই-কমার্স ওয়েবসাইট
+\item শেখার প্ল্যাটফর্ম
+\item সংবাদ পোর্টাল
+\item সরকারি পোর্টাল
+\item অনলাইন ভর্তি ব্যবস্থা
+\item বড় প্রতিষ্ঠানের ওয়েবসাইট
+\end{enumerate}
+\end{minipage}\par\smallskip
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{সুবিধা}
+\begin{enumerate}
+\item বিভিন্ন ধরনের কাজ এক সাইটে থাকলে উপযোগী; ব্যবহারবান্ধব ও নমনীয় বিন্যাস করা যায়।
+\item বড় ওয়েবসাইট সুন্দরভাবে সাজানো যায়।
+\item ব্যবহারকারী স্বাধীনভাবে পেজ দেখতে পারে।
+\item যেখানে দরকার ধারাবাহিক প্রবাহ রাখা যায়।
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\subsubsection{অসুবিধা}
+\begin{enumerate}
+\item নকশার পরিকল্পনা ভালো না হলে জটিল হয়।
+\item রক্ষণাবেক্ষণ করতে বেশি দক্ষতা লাগে।
+\item পেজের সম্পর্ক ভুল হলে ব্যবহারকারী বিভ্রান্ত হতে পারে।
+\item নেভিগেশন ব্যবস্থা ভালোভাবে না করলে ওয়েবসাইট অগোছালো লাগে।
+\end{enumerate}
+\end{minipage}\par
 
 \subsection{চার ধরনের কাঠামোর তুলনা}
 
@@ -399,142 +437,148 @@ user স্বাধীনভাবে browse করতে পারে & page r
 \hline
 \textbf{কাঠামো} & \textbf{বিন্যাস} & \textbf{উপযোগী ক্ষেত্র} & \textbf{প্রধান বৈশিষ্ট্য} \\
 \hline
-Linear & একটির পর একটি page & quiz, tutorial, form & নির্দিষ্ট sequence থাকে \\
+Linear & একটির পর একটি পেজ & কুইজ, টিউটোরিয়াল, ফর্ম & নির্দিষ্ট ক্রম থাকে \\
 \hline
-Tree & Home থেকে শাখা-প্রশাখা & school, college, organization & category ও subcategory থাকে \\
+Tree & Home থেকে শাখা-প্রশাখা & স্কুল, কলেজ, প্রতিষ্ঠান & বিভাগ ও উপবিভাগ থাকে \\
 \hline
-Network & pageগুলো বহু link-এ যুক্ত & news, blog, wiki & flexible browsing \\
+নেটওয়ার্ক & পেজগুলো বহু লিংকে যুক্ত & সংবাদ, ব্লগ, wiki & স্বাধীনভাবে পেজ দেখার সুযোগ \\
 \hline
-Hybrid & একাধিক structure মিলিত & বড় বাস্তব website & practical ও flexible \\
+Hybrid & একাধিক কাঠামো মিলিত & বড় বাস্তব ওয়েবসাইট & ব্যবহারিক ও নমনীয় \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Website Structure ও Navigation}
+\subsection{ওয়েবসাইটের কাঠামো ও নেভিগেশন}
 
-Website structure হলো page-গুলোর ভিতরের সম্পর্ক; আর navigation হলো user কীভাবে সেই structure ব্যবহার করবে তার দৃশ্যমান ব্যবস্থা।
+ওয়েবসাইটের কাঠামো হলো পেজগুলোর পারস্পরিক সম্পর্কের বিন্যাস; আর নেভিগেশন সেই সম্পর্ক ব্যবহার করে পেজে যাওয়ার দৃশ্যমান উপায়।
 
 \begin{center}
 \begin{tabular}{|p{0.32\textwidth}|p{0.56\textwidth}|}
 \hline
-\textbf{Navigation উপাদান} & \textbf{কাজ} \\
+\textbf{নেভিগেশন উপাদান} & \textbf{কাজ} \\
 \hline
-Menu bar & গুরুত্বপূর্ণ page-এর link একসাথে দেখায় \\
+মেনু বার & গুরুত্বপূর্ণ পেজের লিংক একসাথে দেখায় \\
 \hline
-Dropdown menu & category ও subcategory দেখায় \\
+ড্রপডাউন মেনু & বিভাগ ও উপবিভাগ দেখায় \\
 \hline
-Footer link & page-এর শেষে useful link রাখে \\
+ফুটার লিংক & পেজের শেষে প্রয়োজনীয় লিংক রাখে \\
 \hline
-Breadcrumb & user বর্তমানে website-এর কোন level-এ আছে বোঝায় \\
+ব্রেডক্রাম্ব (Breadcrumb) & ব্যবহারকারী বর্তমানে ওয়েবসাইটের কোন স্তরে আছে বোঝায় \\
 \hline
-Previous/Next button & linear flow-তে page পরিবর্তন করে \\
+Previous/Next বোতাম & লিনিয়ার প্রবাহে পেজ পরিবর্তন করে \\
 \hline
-Internal hyperlink & related page বা section-এ নিয়ে যায় \\
+অভ্যন্তরীণ হাইপারলিংক & সংশ্লিষ্ট পেজ বা অংশে নিয়ে যায় \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{mistakebox}{সাধারণ ভুল}
-Menu আর website structure একই জিনিস নয়। Menu হলো navigation-এর দৃশ্যমান অংশ; structure হলো page-গুলোর সামগ্রিক সম্পর্ক।
+মেনু আর ওয়েবসাইটের কাঠামো একই জিনিস নয়। মেনু হলো নেভিগেশনের দৃশ্যমান অংশ; কাঠামো হলো পেজগুলোর সামগ্রিক সম্পর্ক।
 \end{mistakebox}
 
-\subsection{বইয়ে কোন structure সবচেয়ে গুরুত্বপূর্ণ?}
+\subsection{প্রয়োজন অনুযায়ী কাঠামো নির্বাচন}
 
-HSC ICT book-এর জন্য চারটিই শেখানো দরকার। তবে exam ও practical perspective থেকে \textbf{Linear} এবং \textbf{Tree} বেশি গুরুত্বপূর্ণ।
+চার ধরনের কাঠামোই বুঝতে হবে। ধারাবাহিক কাজের ক্ষেত্রে \textbf{Linear} এবং বিষয়ভিত্তিক পেজ সাজানোর ক্ষেত্রে \textbf{Tree} বিশেষভাবে উপযোগী।
 
-\begin{keypointbox}{Board Focus}
-Quiz competition বা step-by-step tutorial-এর জন্য Linear Structure বেশি সুবিধাজনক, কারণ user ধারাবাহিকভাবে এক page থেকে পরের page-এ যায়। College বা institution website-এর জন্য Tree অথবা Hybrid Structure বেশি উপযোগী, কারণ এতে Home page থেকে বিভিন্ন section ও subsection সাজানো যায়।
+\begin{keypointbox}{পরীক্ষায় গুরুত্বপূর্ণ বিষয়}
+কুইজের প্রশ্ন বা টিউটোরিয়ালের ধাপ নির্দিষ্ট ক্রমে দেখাতে হলে লিনিয়ার কাঠামো সুবিধাজনক, কারণ ব্যবহারকারী ধারাবাহিকভাবে এক পেজ থেকে পরের পেজে যায়। কলেজ বা প্রতিষ্ঠানের বিষয়ভিত্তিক তথ্য সাজাতে ট্রি অথবা হাইব্রিড কাঠামো উপযোগী, কারণ এতে Home পেজ থেকে বিভিন্ন অংশ ও উপবিষয় সাজানো যায়।
 \end{keypointbox}
 
-\subsection{Exam-style Short Answer}
+\input{chapters/Chapter04/topics/02_website_structure/board_concepts}
 
-\textbf{প্রশ্ন ১: ওয়েবসাইটের কাঠামো কী?}\\
-উত্তর: যে বিন্যাস বা সংগঠন অনুসারে একটি ওয়েবসাইটের বিভিন্ন ওয়েবপেজ, তথ্য ও link পরস্পরের সাথে যুক্ত ও উপস্থাপিত থাকে, তাকে ওয়েবসাইটের কাঠামো বলে।
+\input{chapters/Chapter04/topics/02_website_structure/clarity}
 
-\textbf{প্রশ্ন ২: Linear Structure কী?}\\
-উত্তর: যে ওয়েবসাইট কাঠামোতে ওয়েবপেজগুলো ধারাবাহিকভাবে একটির পর একটি যুক্ত থাকে এবং user নির্দিষ্ট ক্রম অনুসারে page পরিবর্তন করে, তাকে Linear বা Sequential Structure বলে।
-
-\textbf{প্রশ্ন ৩: Tree Structure কী?}\\
-উত্তর: যে ওয়েবসাইট কাঠামোতে home page থেকে বিভিন্ন main section ও subsection শাখা-প্রশাখার মতো বিন্যস্ত থাকে, তাকে Tree বা Hierarchical Structure বলে।
-
-\textbf{প্রশ্ন ৪: Network Structure কী?}\\
-উত্তর: যে ওয়েবসাইট কাঠামোতে বিভিন্ন webpage পরস্পরের সাথে বহু hyperlink দ্বারা যুক্ত থাকে এবং user যেকোনো page থেকে বিভিন্ন page-এ যেতে পারে, তাকে Network বা Web-linked Structure বলে।
-
-\textbf{প্রশ্ন ৫: Hybrid Structure কী?}\\
-উত্তর: যে ওয়েবসাইট কাঠামোতে প্রয়োজন অনুযায়ী Linear, Tree ও Network structure-এর বৈশিষ্ট্য একসাথে ব্যবহার করা হয়, তাকে Hybrid Structure বলে।
-
-\subsection{Board-style Analysis Answer}
-
-\begin{boardbox}{প্রশ্ন: Quiz competition পরিচালনার জন্য Linear ও Tree structure-এর মধ্যে কোনটি বেশি সুবিধাজনক?}
-Quiz competition পরিচালনার জন্য Linear Structure বেশি সুবিধাজনক। কারণ quiz-এর প্রশ্নগুলো সাধারণত ধারাবাহিকভাবে সাজানো থাকে। একজন প্রতিযোগী প্রথম প্রশ্ন থেকে পরের প্রশ্নে, তারপর তার পরের প্রশ্নে যায়। ফলে progress track করা সহজ হয় এবং user নির্দিষ্ট flow অনুসরণ করে। Tree Structure-এ প্রশ্নগুলো বিভিন্ন category ও subcategory-তে ভাগ হয়ে যেতে পারে, যা quiz পরিচালনার জন্য কিছুটা জটিল ও বিভ্রান্তিকর হতে পারে। তাই quiz competition-এর জন্য Linear Structure ব্যবহার করা অধিক সুবিধাজনক।
-\end{boardbox}
-
-\subsection{Practice MCQ}
-
+\subsection{সংক্ষিপ্ত অনুশীলন}
 \begin{enumerate}
-\item ওয়েবসাইটের বিভিন্ন page কীভাবে সাজানো থাকবে—একে কী বলে?\\
-ক) Web browser \quad খ) Website structure \quad গ) Search engine \quad ঘ) Web protocol\\
-\textbf{উত্তর:} খ) Website structure
-
-\item যে কাঠামোতে page-গুলো একটির পর একটি ধারাবাহিকভাবে সাজানো থাকে, সেটি কোন structure?\\
-ক) Tree \quad খ) Linear \quad গ) Network \quad ঘ) Hybrid\\
-\textbf{উত্তর:} খ) Linear
-
-\item College website-এর জন্য সাধারণত কোন structure বেশি উপযোগী?\\
-ক) Tree \quad খ) Only Linear \quad গ) Only Random \quad ঘ) None\\
-\textbf{উত্তর:} ক) Tree
-
-\item যে structure-এ বিভিন্ন page জালের মতো link দ্বারা সংযুক্ত থাকে, সেটি কোনটি?\\
-ক) Linear \quad খ) Tree \quad গ) Network \quad ঘ) Sequential\\
-\textbf{উত্তর:} গ) Network
-
-\item বাস্তব website-এ একাধিক structure মিলিয়ে ব্যবহার করলে তাকে কী বলে?\\
-ক) Hybrid Structure \quad খ) Empty Structure \quad গ) Static Structure \quad ঘ) Protocol Structure\\
-\textbf{উত্তর:} ক) Hybrid Structure
+\item ওয়েবসাইটের কাঠামো কী?
+\item লিনিয়ার, ট্রি, নেটওয়ার্ক ও হাইব্রিড কাঠামোর বৈশিষ্ট্য লেখ।
+\item নির্দিষ্ট ক্রমের কুইজ এবং বিষয় বেছে নেওয়া কুইজের জন্য কাঠামো নির্বাচনের কারণ ব্যাখ্যা কর।
 \end{enumerate}
 
-\subsection{CQ Practice}
+\Needspace{10\baselineskip}
+\subsection{বহুনির্বাচনি অনুশীলন}
+
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ওয়েবসাইটের বিভিন্ন পেজ কীভাবে সাজানো থাকবে—একে কী বলে?
+\par ক) Web browser
+\par খ) Website structure
+\par গ) Search engine
+\par ঘ) Web protocol\\
+\chFourMCQAnswer{খ) Website structure}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+যে কাঠামোতে পেজগুলো একটির পর একটি ধারাবাহিকভাবে সাজানো থাকে, সেটি কোন কাঠামো?
+\par ক) Tree
+\par খ) Linear
+\par গ) Network
+\par ঘ) Hybrid\\
+\chFourMCQAnswer{খ) Linear}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+কলেজ ওয়েবসাইটের জন্য সাধারণত কোন কাঠামো বেশি উপযোগী?
+\par ক) Tree
+\par খ) Only Linear
+\par গ) Only Random
+\par ঘ) None\\
+\chFourMCQAnswer{ক) Tree}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+যে কাঠামোতে বিভিন্ন পেজ জালের মতো লিংক দ্বারা সংযুক্ত থাকে, সেটি কোনটি?
+\par ক) Linear
+\par খ) Tree
+\par গ) Network
+\par ঘ) Sequential\\
+\chFourMCQAnswer{গ) Network}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+বাস্তব ওয়েবসাইটে একাধিক কাঠামো মিলিয়ে ব্যবহার করলে তাকে কী বলে?
+\par ক) Hybrid Structure
+\par খ) Empty Structure
+\par গ) Static Structure
+\par ঘ) Protocol Structure\\
+\chFourMCQAnswer{ক) Hybrid Structure}
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+\subsection{সৃজনশীল অনুশীলন}
 
 \begin{practicebox}
-\textbf{উদ্দীপক:} একটি শিক্ষা প্রতিষ্ঠান তাদের website তৈরি করতে চায়। Website-এ Home, About, Admission, Notice, Result ও Contact page থাকবে। Admission section-এ শিক্ষার্থীকে Step 1, Step 2, Payment এবং Confirmation page ধারাবাহিকভাবে পূরণ করতে হবে। Notice page থেকে Result page এবং Contact page-এ link থাকবে।
+\textbf{উদ্দীপক:} একটি শিক্ষা প্রতিষ্ঠান তাদের ওয়েবসাইট তৈরি করতে চায়। ওয়েবসাইটে Home, About, Admission, Notice, Result ও Contact পেজ থাকবে। Admission অংশে শিক্ষার্থীকে Step 1, Step 2, Payment এবং Confirmation পেজ ধারাবাহিকভাবে পূরণ করতে হবে। Notice পেজ থেকে Result পেজ এবং Contact পেজে লিংক থাকবে।
 
 \begin{enumerate}
 \item ক. ওয়েবসাইটের কাঠামো কী?
-\item খ. Tree Structure শিক্ষা প্রতিষ্ঠানের website-এর জন্য উপযোগী কেন?
-\item গ. উদ্দীপকে Admission section কোন structure অনুসরণ করেছে—ব্যাখ্যা কর।
-\item ঘ. উদ্দীপকের website-টি Hybrid Structure বলা যায় কি? বিশ্লেষণ কর।
+\item খ. ট্রি কাঠামো শিক্ষা প্রতিষ্ঠানের ওয়েবসাইটের জন্য উপযোগী কেন?
+\item গ. উদ্দীপকে Admission অংশ কোন কাঠামো অনুসরণ করেছে—ব্যাখ্যা কর।
+\item ঘ. উদ্দীপকের ওয়েবসাইটটি হাইব্রিড কাঠামো বলা যায় কি? বিশ্লেষণ কর।
 \end{enumerate}
 \end{practicebox}
 
-\begin{boardbox}{উত্তর নির্দেশনা}
-\textbf{ক.} ওয়েবসাইটের page ও information কীভাবে যুক্ত ও সাজানো থাকে, সেটিই ওয়েবসাইটের কাঠামো।\\
-\textbf{খ.} শিক্ষা প্রতিষ্ঠানে About, Admission, Notice, Result, Contact ইত্যাদি অনেক category থাকে। এগুলো home page থেকে শাখা-প্রশাখার মতো সাজানো যায়, তাই Tree Structure উপযোগী।\\
-\textbf{গ.} Admission section Linear Structure অনুসরণ করেছে, কারণ Step 1 $\rightarrow$ Step 2 $\rightarrow$ Payment $\rightarrow$ Confirmation ধারাবাহিকভাবে সম্পন্ন করতে হয়।\\
-\textbf{ঘ.} উদ্দীপকের website-টি Hybrid Structure, কারণ এতে home page থেকে বিভিন্ন section tree আকারে আছে, Admission section linear flow অনুসরণ করছে এবং Notice থেকে Result/Contact page-এ link আছে। অর্থাৎ একাধিক structure একসাথে ব্যবহৃত হয়েছে।
-\end{boardbox}
 
-\subsection{Common Mistake}
 
+\subsection{সাধারণ ভুল}
+
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Linear ও Tree structure গুলিয়ে ফেলা।
-\item Network structure-কে computer network topology মনে করা।
-\item Hybrid structure বোঝাতে শুধু ``mixed'' লিখে ব্যাখ্যা না দেওয়া।
-\item Diagram না আঁকা।
-\item Quiz-এর জন্য Tree structure লিখে ফেলা।
-\item Website structure ও HTML document structure এক মনে করা।
-\item Menu ও website structure-কে একই মনে করা।
+\item Linear ও ট্রি কাঠামো গুলিয়ে ফেলা।
+\item নেটওয়ার্ক কাঠামোকে কম্পিউটার নেটওয়ার্ক টপোলজি মনে করা।
+\item হাইব্রিড কাঠামো বোঝাতে শুধু ``মিশ্র'' লিখে ব্যাখ্যা না দেওয়া।
+\item প্রশ্নে কাঠামোর চিত্র চাওয়া হলেও তা না আঁকা।
 \end{itemize}
-
-\subsection{মনে রাখবে}
-
-\begin{keypointbox}{সংক্ষেপে}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Website structure হলো page ও information সাজানোর পদ্ধতি।
-\item Linear structure ধারাবাহিক page-এর জন্য ভালো।
-\item Tree structure category ও subcategory website-এর জন্য ভালো।
-\item Network structure link-heavy information website-এর জন্য ভালো।
-\item Hybrid structure বাস্তব website-এর জন্য সবচেয়ে practical।
-\item Quiz বা tutorial-এর জন্য Linear structure বেশি উপযোগী।
-\item College/organization website-এর জন্য Tree বা Hybrid structure বেশি ভালো।
+\item ধারাবাহিক কুইজের উদ্দীপকেও কোনো যুক্তি ছাড়া ট্রি কাঠামো নির্বাচন করা।
+\item ওয়েবসাইটের কাঠামো ও HTML ডকুমেন্ট কাঠামো এক মনে করা।
+\item মেনু ও ওয়েবসাইটের কাঠামোকে একই মনে করা।
 \end{itemize}
-\end{keypointbox}
+\end{minipage}\par
+
+

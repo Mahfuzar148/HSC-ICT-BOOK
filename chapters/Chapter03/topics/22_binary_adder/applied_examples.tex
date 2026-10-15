@@ -1,0 +1,26 @@
+\subsection{অ্যাডারের সংখ্যা এবং প্রতিটি ধাপের ফল}
+বাহ্যিক carry-in না থাকলে সবচেয়ে ডান বিটে একটি half adder এবং বাকি $n-1$ বিটে full adder দিয়ে $n$-বিট যোগ করা যায়। সব ধাপে full adder ব্যবহার করাও যায়; তখন প্রথমটির carry-in শূন্য। বাহ্যিক carry-in গ্রহণ করতে হলে প্রথম ধাপেও full adder প্রয়োজন।
+
+\chThreeExample{১}{চার বিটের যোগে carry propagation}
+$(1101)_2+(0111)_2$ এবং $C_0=0$।
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|}\hline
+বিট $i$ & $A_i$ & $B_i$ & $C_i$ & $S_i$ & $C_{i+1}$\\\hline
+0&1&1&0&0&1\\\hline
+1&0&1&1&0&1\\\hline
+2&1&1&1&1&1\\\hline
+3&1&0&1&0&1\\\hline
+\end{tabular}\end{center}
+\chThreeAnswer ফল $C_4S_3S_2S_1S_0=10100_2=20_{10}$। চার বিটের sum output শুধু $0100$; $C_4$ আলাদা রাখলে সম্পূর্ণ চিহ্নবিহীন যোগফল পাওয়া যায়।
+
+\chThreeExample{২}{ধারণাভিত্তিক MCQ}
+বাহ্যিক carry-in ছাড়া দুটি আট বিট সংখ্যা যোগে half adder-সহ সরল নির্মাণ কোনটি? (ক) ৮ half adder, (খ) ১ half ও ৭ full adder, (গ) ৭ half ও ১ full adder, (ঘ) ১ full adder।
+\chThreeAnswer (খ)। পরের বিটগুলোতে আগের carry গ্রহণের জন্য full adder লাগে। আট full adder-ও একটি বিকল্প নির্মাণ, কিন্তু প্রশ্নের নির্দিষ্ট half-adder-সহ নির্মাণটি (খ)।
+
+% Mahbub teaching-type follow-up, 2026-10-14
+\chThreeExample{৩}{চার বিটের যোগে Sum ও Carry আলাদা}
+একটি চার-বিট adder-এ $A=1101$, $B=1011$, প্রথম carry $C_0=0$। চারটি sum bit ও শেষ carry লেখো।
+\chThreeAnswer ডান থেকে $1+1+0=10$, $0+1+1=10$, $1+0+1=10$, $1+1+1=11$। তাই $S_3S_2S_1S_0=1000$, $C_4=1$। পূর্ণ unsigned ফল $C_4S_3S_2S_1S_0=11000_2=24$; শুধু sum port-এ দেখা মান ৮। পাঁচ-বিট যোগফল এবং চার-বিট sum output পৃথক। signed হিসেবে input দুটি $-3$ ও $-5$ হলে চার-বিট sum $1000=-8$ সঠিক; carry থাকার অর্থ signed overflow নয়।
+
+\chThreeExample{৪}{Sum ও Carry থেকে সম্ভাব্য input}
+একটি half adder-এ $S=1,C=0$; আর একটি full adder-এ $S=1,C_{out}=1$। সম্ভাব্য input নির্ণয় করো।
+\chThreeAnswer half adder-এর যোগফল ১, তাই input জোড়া 01 অথবা 10। শুধু output থেকে কোন রেখাটি ১ ছিল তা নিশ্চিত নয়। full adder-এর পূর্ণ যোগফল $2C_{out}+S=3$; তিনটি এক-বিট input-এর যোগফল ৩ হতে হলে $A=B=C_{in}=1$। বিপরীত সমস্যায় প্রতিটি output combination-এর সঙ্গে কয়টি input মেলে তা সারণি থেকে পরীক্ষা করতে হয়।

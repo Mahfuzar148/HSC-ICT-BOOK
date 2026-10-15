@@ -1,0 +1,98 @@
+\textbf{পূর্ণ উদাহরণ:} $(107.5703125)_{10}$-কে প্রথমে হেক্সাডেসিমালে,
+পরে বাইনারি গ্রুপের সাহায্যে অক্টালে প্রকাশ করো।
+
+\cvStep{১}{পূর্ণাংশে বারবার ১৬ দিয়ে ভাগ; ভগ্নাংশে বারবার ১৬ দিয়ে গুণ}
+\begin{minipage}[t]{.49\linewidth}
+\centering\textbf{পূর্ণাংশ: ১০৭}\par\vspace{2mm}
+\begin{tikzpicture}[x=1mm,y=1mm]
+ \path[use as bounding box] (-8,9) rectangle (72,-51);
+ \cvDivisionRung{0}{0}{16}{107}{B}
+ \cvDivisionRung{7}{-12}{16}{6}{6}
+ \node[cv bit] at (24,-24) {$0$};
+ \node[cv note,anchor=west] at (41,-12) {\quad$(11)$};
+ \node[cv note] at (52,4) {ভাগশেষ};
+ \node[cv note] at (60,-8) {LSB};
+ \node[cv note] at (60,-28) {MSB};
+ \draw[cv arrow] (60,-24)--(60,-12);
+ \node[cv note] at (30,-38) {ভাগফল ০ হলে থামো};
+ \node[cv note] at (30,-46) {উত্তর পড়ো নিচ থেকে ওপরে};
+\end{tikzpicture}\par
+$(107)_{10}=(6B)_{16}$
+\end{minipage}\hfill
+\begin{minipage}[t]{.49\linewidth}
+\centering\textbf{ভগ্নাংশ: ০.৫৭০৩১২৫}\par\vspace{2mm}
+\begin{tikzpicture}[x=1mm,y=1mm]
+ \path[use as bounding box] (-8,9) rectangle (72,-51);
+ \node[cv note] at (12,8) {প্রাপ্ত অঙ্ক};
+ \node[cv note] at (43,8) {ভগ্নাংশ};
+ \node[cv bit] at (43,0) {$0.5703125$};
+ \node[cv bit] at (43,-7) {$\times16$};
+ \draw[line width=.65pt] (5,-12)--(62,-12);
+ \node[cv digit] (fraction-nine) at (12,-19) {$9$};
+ \node[cv bit] (fraction-carry) at (43,-19) {$0.125$};
+ \node[cv bit] (second-multiply) at (43,-26) {$\times16$};
+ \draw[line width=.65pt] (5,-31)--(62,-31);
+ \node[cv digit] (fraction-two) at (12,-38) {$2$};
+ \node[cv bit] at (43,-38) {$0.000$};
+ \draw[line width=.65pt] (23,4)--(23,-43);
+ \node[cv note] at (0,-14) {MSB};
+ \node[cv note] at (0,-44) {LSB};
+ \draw[cv arrow] (0,-19)--(0,-38);
+ \draw[cv arrow] (fraction-carry.east)--(68,-19)--(68,-26)--(second-multiply.east);
+ \node[cv note] at (36,-48) {০ ভগ্নাংশ পেলে থামো; পড়ো ওপর থেকে নিচে};
+\end{tikzpicture}\par
+$(0.5703125)_{10}=(0.92)_{16}$
+\end{minipage}
+
+\vspace{2mm}
+\noindent\textbf{দুই অংশ মিলে:}\quad $(107.5703125)_{10}=(6B.92)_{16}$।
+
+\cvStep{২}{প্রতি অঙ্কে চার বিট; একই বিটগুলো তিন বিট করে সাজাও}
+\begin{center}
+\begin{tikzpicture}[x=1mm,y=1mm]
+ \cvCanvas{-56}
+ \cvDigit{hex-six}{27}{0}{6}
+ \cvDigit{hex-b}{51}{0}{B}
+ \cvDigit{hex-nine}{93}{0}{9}
+ \cvDigit{hex-two}{117}{0}{2}
+ \node[cv digit] at (72,0) {$.$};
+ \cvBits{raw}{-14}{18/0,24/1,30/1,36/0,42/1,48/0,54/1,60/1,84/1,90/0,96/0,102/1,108/0,114/0,120/1,126/0}
+ \node[cv digit] at (72,-14) {$.$};
+ \cvMapArrow{hex-six}{27}{-10}
+ \cvMapArrow{hex-b}{51}{-10}
+ \cvMapArrow{hex-nine}{93}{-10}
+ \cvMapArrow{hex-two}{117}{-10}
+ \foreach \a/\b in {15/39,39/63,81/105,105/129}{\cvBraceAt{\a}{\b}{-18}}
+ \cvBits{regrouped}{-34}{18/0,24/1,30/1,36/0,42/1,48/0,54/1,60/1,84/1,90/0,96/0,102/1,108/0,114/0,120/1,126/0}
+ % Start below upper braces; every arrow stays in its own bit column.
+ \foreach \x [count=\i] in {18,24,30,36,42,48,54,60,84,90,96,102,108,114,120,126}{
+   \draw[cv arrow,draw=black!65] (\x,-23)--(regrouped-\i.north);
+ }
+ \cvDigit{zero-left}{12}{-34}{0}
+ \cvDigit{zero-right}{132}{-34}{0}
+ \node[cv padding,inner sep=1mm,fit=(zero-left)] (left-padding) {};
+ \node[cv padding,inner sep=1mm,fit=(zero-right)] (right-padding) {};
+ \node[cv note] (left-note) at (2,-23) {বামে ০};
+ \draw[cv arrow] (left-note.south)--(left-padding.north west);
+ \node[cv note] (right-note) at (146,-23) {ডানে ০};
+ \draw[cv arrow] (right-note.south)--(right-padding.north east);
+ \node[cv digit] at (72,-34) {$.$};
+ \cvCompactOctal{octal-one}{18}{12}{24}{1}
+ \cvCompactOctal{octal-five}{36}{30}{42}{5}
+ \cvCompactOctal{octal-three}{54}{48}{60}{3}
+ \cvCompactOctal{octal-four-a}{90}{84}{96}{4}
+ \cvCompactOctal{octal-four-b}{108}{102}{114}{4}
+ \cvCompactOctal{octal-four-c}{126}{120}{132}{4}
+ \node[cv digit] at (72,-51) {$.$};
+ \node[cv note,anchor=west] at (141,-14) {৪ বিট};
+ \node[cv note,anchor=west] at (141,-38) {৩ বিট};
+\end{tikzpicture}
+\end{center}
+\noindent দাগঘেরা দুটি ০ শুধু গ্রুপ পূর্ণ করেছে: পূর্ণাংশে বামে, ভগ্নাংশে ডানে। বিন্দুর দুই পাশ আলাদা; বিটের ক্রম অপরিবর্তিত।
+
+\cvStep{৩}{মূল সংখ্যার পূর্ণ ফল}
+\[
+ \boxed{(107.5703125)_{10}=(6B.92)_{16}=(153.444)_8}
+\]
+\textbf{যাচাই:}\quad $6\times16+11+9/16+2/256=107.5703125$।\par
+অক্টালেও $1\times64+5\times8+3+4/8+4/64+4/512$ একই মান দেয়।

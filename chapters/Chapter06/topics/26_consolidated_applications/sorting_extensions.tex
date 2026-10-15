@@ -1,0 +1,279 @@
+\subsection{প্রয়োগ: কর্মচারীর বেতনের তালিকা}
+Employee টেবিলের নিচের তথ্য থেকে আগে বেশি বেতন এবং সমান বেতনে নাম বর্ণানুক্রমে দেখতে চাই। প্রথমে Salary, পরে Name অগ্রাধিকার পাবে।
+\begin{chSixSideBySide}[.48]
+\small
+\begin{tabular}{|l|l|l|l|}\hline
+ID & Name & Designation & Salary\\\hline
+1 & Rahim & Officer & 40000\\\hline2 & Karim & Manager & 55000\\\hline
+3 & Arif & Officer & 40000\\\hline4 & Nila & Officer & 50000\\\hline
+5 & Sumi & Manager & 55000\\\hline
+\end{tabular}
+\chSixNextColumn
+\begin{verbatim}
+SELECT ID, Name, Designation, Salary
+FROM Employee
+ORDER BY Salary DESC, Name ASC;
+\end{verbatim}
+\end{chSixSideBySide}
+ফলে ID-ক্রম 2, 5, 4, 3, 1। Karim ও Sumi-র বেতন 55000 সমান বলে Karim আগে; Arif ও Rahim-এর বেতন 40000 সমান বলে Arif আগে। কোনো নতুন উদ্দীপকে একই পদ্ধতি প্রয়োগের সময় আগে শর্ত, তারপর প্রথম সর্টিং ফিল্ড ও তার ক্রম, এরপর সমান মানের জন্য পরবর্তী ফিল্ড চিহ্নিত করতে হয়।
+
+\subsection{বহু ফিল্ডের Sorting: ধাপে ধাপে ফল}
+ClassName, SectionName ও Roll একত্রে সাজানোর অগ্রাধিকার বোঝার জন্য নিচের ClassList টেবিলটি ব্যবহার করি। এখানে XI ও XII-এর অক্ষরক্রম এই উদাহরণে প্রত্যাশিত শ্রেণিক্রমের সঙ্গে মিলে যায়; অন্য নামকরণে প্রয়োজনীয় শ্রেণিক্রম আলাদাভাবে নির্ধারণ করতে হতে পারে।
+\begin{chSixSideBySide}[.48]
+\small\setlength{\tabcolsep}{2pt}\textbf{মূল ClassList}\par
+\begin{tabular}{|l|l|l|l|l|}\hline
+ID & ClassName & SectionName & Roll & Name\\\hline
+1 & XI & B & 2 & Rupa\\\hline
+2 & XII & A & 1 & Nabil\\\hline
+3 & XI & A & 3 & Tania\\\hline
+4 & XII & B & 2 & Hasan\\\hline
+5 & XI & A & 1 & Mim\\\hline
+6 & XII & A & 3 & Rafi\\\hline
+\end{tabular}
+
+\chSixNextColumn
+\small\setlength{\tabcolsep}{2pt}\textbf{প্রথম বিন্যাসের ফল}\par
+\begin{tabular}{|l|l|l|l|l|}\hline
+ID & ClassName & SectionName & Roll & Name\\\hline
+5 & XI & A & 1 & Mim\\\hline
+3 & XI & A & 3 & Tania\\\hline
+1 & XI & B & 2 & Rupa\\\hline
+2 & XII & A & 1 & Nabil\\\hline
+6 & XII & A & 3 & Rafi\\\hline
+4 & XII & B & 2 & Hasan\\\hline
+\end{tabular}
+
+\end{chSixSideBySide}
+
+\textbf{প্রথম বিন্যাস: শ্রেণি আগে, তারপর শাখা, শেষে রোল।} নিচের ORDER BY-তে বাম থেকে ডানে অগ্রাধিকার কাজ করে। XI আগে; XI-এর ভেতরে A আগে; XI--A-এর মধ্যে Roll 1 আগে। এরপর একই নিয়মে XII সাজানো হয়।
+\begin{verbatim}
+SELECT ID,ClassName,SectionName,Roll,Name FROM ClassList
+ORDER BY ClassName ASC,SectionName ASC,Roll ASC;
+\end{verbatim}
+
+দ্বিতীয় ফিল্ড SectionName কেবল একই ClassName-এর মধ্যে কাজ করেছে। Rupa-র Roll 2 হলেও XI--A-এর Tania (Roll 3)-এর পরে এসেছে, কারণ SectionName-এর অগ্রাধিকার Roll-এর আগে। সর্টিংয়ের প্রতিটি পরের ফিল্ড শুধু আগের সমান মানের দলের মধ্যে সিদ্ধান্ত নেয়।
+
+\textbf{দ্বিতীয় বিন্যাস: শাখা আগে, তারপর শ্রেণি।} এবার SectionName-কে প্রধান করলে সব A শাখা আগে একত্র হয়। তার মধ্যে XI ও XII সাজে; এরপর B শাখার রেকর্ডগুলো আসে।
+\begin{verbatim}
+SELECT ID,ClassName,SectionName,Roll FROM ClassList
+ORDER BY SectionName ASC,ClassName ASC,Roll ASC;
+\end{verbatim}
+ফলের ID ক্রম 5, 3, 2, 6, 1, 4। প্রথম বিন্যাসে ID 1, ID 2-এর আগে ছিল; দ্বিতীয়টিতে ID 2 আগে এসেছে। কেবল ফিল্ডের তালিকার অবস্থান বদলেই ফল বদলেছে, কোনো মূল মান বদলায়নি।
+
+\textbf{তৃতীয় বিন্যাস: বিপরীত দিকের সমন্বয়।} \texttt{ORDER BY ClassName DESC, SectionName ASC, Roll DESC} দিলে আগে XII; তার A শাখায় Roll 3-এর Rafi, তারপর Roll 1-এর Nabil; এরপর XII--B-এর Hasan। তারপর XI-এর A শাখায় Tania ও Mim, শেষে B শাখার Rupa। ID ক্রম 6, 2, 4, 3, 5, 1। এখানে শুধু ClassName ও Roll অবরোহী, SectionName আরোহী।
+
+
+\subsubsection{Sorting-এর ব্যবহার}
+\begin{enumerate}
+\item \textbf{মেধাতালিকা:} GPA ধরে সাজালে তুলনা সহজ হয়।
+\item \textbf{বেতনবিবরণী:} Salary ধরে সাজালে তুলনা সহজ হয়।
+\item \textbf{কাজের তালিকা:} তারিখ ধরে সাজালে তুলনা সহজ হয়।
+\end{enumerate}
+\subsubsection{সীমাবদ্ধতা}
+\begin{enumerate}
+\item \textbf{টাইপ ও অগ্রাধিকার:} নম্বরের মতো দেখতে Text ঠিকমতো সংখ্যার ক্রমে নাও সাজতে পারে; টাইপ ও দ্বিতীয় অগ্রাধিকার আগেই নির্ধারণ করতে হয়।
+\item \textbf{ডেটা সংশোধন নয়:} সর্টিং ভুল GPA সংশোধন করে না।
+\item \textbf{রেকর্ড বাছাই নয়:} শুধু সাজালেই কোনো রেকর্ড বাদ যায় না।
+\end{enumerate}
+
+\subsection{সমান মান ও স্থির ফলক্রম}
+দুটি রেকর্ডের সব নির্বাচিত সর্টিং ফিল্ডের মান সমান হলে তাদের নিজেদের মধ্যে নির্দিষ্ট ক্রম নিশ্চিত হয় না। তালিকায় একই অবস্থান বারবার প্রয়োজন হলে শেষে অনন্য ID দেওয়া যায়। যেমন \texttt{ORDER BY GPA DESC, Name ASC, StudentID ASC}। শেষ ফিল্ডটি একই GPA ও একই Name-এর দুই শিক্ষার্থীকে স্থির ক্রমে আনতে সাহায্য করে।
+
+\subsubsection{জন্মতারিখের ক্রম থেকে বয়স বোঝা}
+Customer সারণিতে 201-এর জন্মতারিখ 2007-10-15, 202-এর 2006-09-05 এবং 203-এর 2008-12-20। জন্মতারিখ ঊর্ধ্বক্রমে সাজালে আগে জন্ম নেওয়া ব্যক্তি প্রথমে আসে। তাই বয়সে বড় ব্যক্তির পরিচিতি 202। তারিখের মান দিয়ে তুলনা করতে হয়; শুধু প্রথম অঙ্ক দিয়ে নয়।
+\begin{verbatim}
+SELECT CustomerID, District, BirthDate
+FROM Customer
+ORDER BY BirthDate ASC;
+\end{verbatim}
+\textbf{ফল:} 202--Khulna--2006-09-05; 201--Dhaka--2007-10-15; 203--Bhola--2008-12-20।
+
+\subsection{ভিন্ন ফিল্ডে সাজানোর SQL প্রয়োগ}
+
+\begin{chSixSideBySide}[.48]
+1. Student টেবিল থেকে Roll ছোট থেকে বড় দেখানোর SQL লেখো।
+
+    \textbf{কোড:}
+
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+ORDER BY Roll ASC;
+\end{verbatim}
+\chSixNextColumn
+2. Name Z থেকে A সাজাও।
+
+    \textbf{কোড:}
+
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+ORDER BY Name DESC;
+\end{verbatim}
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+3. GPA বেশি থেকে কম সাজাও।
+
+    \textbf{কোড:}
+
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC;
+\end{verbatim}
+\chSixNextColumn
+4. GPA বেশি থেকে কম এবং GPA সমান হলে Roll ছোট থেকে বড় সাজাও।
+
+    \textbf{কোড:}
+
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC, Roll ASC;
+\end{verbatim}
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+5. Class বড় থেকে ছোট এবং Class সমান হলে Name A থেকে Z
+    সাজানোর SQL লেখো।
+
+    \textbf{কোড:}
+
+\begin{verbatim}
+SELECT Class, Roll, Name
+FROM Student
+ORDER BY Class DESC, Name ASC;
+\end{verbatim}
+\chSixNextColumn
+6. BirthDate অনুযায়ী সবচেয়ে নতুন Date আগে দেখাও।
+
+    \textbf{কোড:}
+
+\begin{verbatim}
+SELECT Name, BirthDate
+FROM Student
+ORDER BY BirthDate DESC;
+\end{verbatim}
+\end{chSixSideBySide}
+7. \texttt{ORDER BY GPA, Roll DESC;} Statement-এ কোন ফিল্ডের
+    Priority বেশি?
+
+    \textbf{কোড:}
+    GPA। GPA-এর Default Order Ascending এবং GPA সমান হলে
+    Roll Descending ব্যবহৃত হবে।
+
+\subsubsection{নম্বর সমান হলে রোলের ক্রম}
+\par\smallskip\noindent
+\begin{minipage}[t]{.34\linewidth}\vspace{0pt}\raggedright
+\small\textbf{মূল সারণি}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Roll & Name & Marks
+\\ \hline
+4 & D & 70
+\\ \hline
+2 & B & 90
+\\ \hline
+1 & A & 80
+\\ \hline
+3 & C & 90
+\\ \hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.63\linewidth}\vspace{0pt}\raggedright
+প্রথমে Marks বেশি থেকে কম সাজানো হয়: 90, 90, 80, 70। সমান 90 নম্বরের দুই রেকর্ডে দ্বিতীয় শর্ত Roll ছোট থেকে বড় করে, তাই Roll 2 আগে এবং Roll 3 পরে আসে।
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}[c]{.55\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Marks
+FROM Result
+ORDER BY Marks DESC,
+         Roll ASC;
+\end{verbatim}
+\end{minipage}\hfill\(\longrightarrow\)\hfill
+\begin{minipage}[c]{.35\linewidth}\small\textbf{ফল}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Roll & Name & Marks
+\\ \hline
+2 & B & 90
+\\ \hline
+3 & C & 90
+\\ \hline
+1 & A & 80
+\\ \hline
+4 & D & 70
+\\ \hline
+\end{tabular}
+\end{minipage}\par\smallskip
+
+\subsubsection{GPA সমান হলে নামের ক্রম}
+\par\smallskip\noindent
+\begin{minipage}[t]{.34\linewidth}\vspace{0pt}\raggedright
+\small\textbf{মূল সারণি}
+
+\begin{tabular}{|l|l|}
+\hline
+Name & GPA
+\\ \hline
+Rahim & 5.00
+\\ \hline
+Arif & 4.75
+\\ \hline
+Karim & 5.00
+\\ \hline
+Nusrat & 5.00
+\\ \hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.63\linewidth}\vspace{0pt}\raggedright
+GPA বেশি থেকে কম সাজানোর পরে সমান 5.00 পাওয়া শিক্ষার্থীদের Name ছোট থেকে বড়, অর্থাৎ A--Z ক্রমে সাজানো হয়। তাই Karim, Nusrat ও Rahim এই ক্রমে আসে; Arif-এর GPA 4.75 হওয়ায় সে পরে থাকে।
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}[c]{.55\linewidth}
+\begin{verbatim}
+SELECT Name, GPA
+FROM Student
+ORDER BY GPA DESC,
+         Name ASC;
+\end{verbatim}
+\end{minipage}\hfill\(\longrightarrow\)\hfill
+\begin{minipage}[c]{.35\linewidth}\small\textbf{ফল}
+
+\begin{tabular}{|l|l|}
+\hline
+Name & GPA
+\\ \hline
+Karim & 5.00
+\\ \hline
+Nusrat & 5.00
+\\ \hline
+Rahim & 5.00
+\\ \hline
+Arif & 4.75
+\\ \hline
+\end{tabular}
+\end{minipage}\par\smallskip
+
+\subsubsection{শর্ত প্রয়োগ ও Sorting}
+
+\textbf{প্রয়োগ:}
+
+একটি কলেজের স্বাধীন Student টেবিলে \texttt{Roll}, \texttt{Name}, \texttt{GroupName} ও \texttt{GPA} ফিল্ড আছে। এই উদ্দীপকে বিভাগের ফিল্ডের নাম GroupName; কুয়েরি অংশের মূল নমুনার Department ফিল্ড ব্যবহার করবে না।
+
+Science বিভাগের শিক্ষার্থীদের Roll, Name ও GPA দেখানোর SQL লেখো। প্রথমে GPA বেশি থেকে কম সাজাবে; GPA সমান হলে Roll ছোট থেকে বড় দেখাবে।
+
+\begin{chSixSideBySide}[.48]
+\textbf{সমাধানের যুক্তি:} WHERE দিয়ে প্রথমে Science Group-এর রেকর্ড বাছাই করতে হবে। এরপর \texttt{GPA DESC} বেশি GPA আগে দেখাবে; শুধু GPA সমান হলে \texttt{Roll ASC} ছোট Roll আগে রাখবে। দ্বিতীয় ফিল্ড প্রথমটির অগ্রাধিকার বাতিল করে না। SELECT-এ Roll, Name ও GPA থাকবে, কারণ এই তথ্যই ফলাফলে দেখাতে হবে।
+\chSixNextColumn
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE GroupName = 'Science'
+ORDER BY GPA DESC,
+         Roll ASC;
+\end{verbatim}
+\end{chSixSideBySide}
+
+নিচের স্বাধীন অনুশীলনগুলোতে Student টেবিলে প্রশ্নে উল্লিখিত ফিল্ডগুলো যথাযথ ডেটা টাইপে আছে ধরে নাও।
+

@@ -1,0 +1,240 @@
+\providecommand{\chLogicExample}[3]{\chThreeExample{#2}{#3}\label{ex:#1}}
+\subsection{ধরন অনুযায়ী বুলিয়ান রাশির সমাধান}
+প্রথমে রাশির পূরকের সীমা এবং বন্ধনী দেখো। তারপর কোন সূত্রে পদ কমবে তা নির্বাচন করো। নিচে প্রতিটি ধরনের দুইটি সমাধান রয়েছে; সমাধানের পরে সূত্রের কারণ বলা হয়েছে। বুলিয়ানে $+$ হলো OR, পাশাপাশি লেখা চলক বা $\cdot$ হলো AND।
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ১: অপারেশনের ক্রম ও মান বসানো}
+আগে বন্ধনী ও পূরক, তারপর AND, সবশেষে OR করো। সাধারণ যোগের carry এখানে নেই।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA01.1}{১.১}{একই ১-এর দুই রকম যোগ}
+$A=B=1,C=0$ হলে $F=A+B\overline C$ এবং বাইনারি যোগ $A+B$-এর ফল তুলনা করো.
+\chThreeAnswer $\overline C=1$, তাই $B\overline C=1$ এবং বুলিয়ান $F=1+1=1$। কিন্তু বাইনারি গাণিতিক যোগে $1_2+1_2=10_2$। অপারেশন বোঝার আগে সংখ্যার চিহ্ন দেখে যোগ করা যাবে না।
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA01.2}{১.২}{আংশিক পূরকের মান}
+$A=0,B=1,C=1$ হলে $F=(A+\overline B)C+\overline{AC}$ নির্ণয় করো.
+\chThreeAnswer $\overline B=0$, $(A+\overline B)C=0$ এবং $AC=0$ থেকে $\overline{AC}=1$। তাই $F=0+1=1$। শেষ পূরকটি পুরো $AC$-এর।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ২: দ্বৈত রূপ নির্ণয়}
+AND ও OR পরস্পর বদলাও; ০ ও ১ বদলাও। চলক এবং চলকের পূরক যেমন আছে তেমন থাকবে। দ্বৈত রূপকে মূল রাশির পূরক ভাববে না।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA02.1}{২.১}{বন্ধনীসহ দ্বৈত রূপ}
+$F=(A+\overline B)(C+0)$-এর দ্বৈত রূপ লেখো.
+\chThreeAnswer $F^d=A\overline B+C\cdot1=A\overline B+C$। $\overline B$ একই থাকে। মূল রাশিটি $C(A+\overline B)$, তাই দ্বৈত রূপের সঙ্গে সব input-এ সমান হওয়ার প্রয়োজন নেই।
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA02.2}{২.২}{ধ্রুবকসহ সূত্রের দ্বৈত}
+$A\cdot1+AB=A$ সূত্রের দ্বৈত লিখে যাচাই করো.
+\chThreeAnswer দ্বৈত হলো $(A+0)(A+B)=A$। বামপক্ষ $A(A+B)=A+AB=A$। একটি সত্য সূত্রের দ্বৈতও সত্য; চলকের নাম বদলানোর প্রয়োজন নেই।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৩: সম্পূর্ণ রাশির পূরক}
+ডি-মরগ্যানে OR-এর পূরক AND হয়, AND-এর পূরক OR হয়। প্রতিটি পদের পূরক নিতে হবে; দ্বৈত পূরক উঠে যায়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA03.1}{৩.১}{যোগফলের পূরক}
+$Y=\overline AB+BC$ হলে $\overline Y$ নির্ণয় করো.
+\chThreeAnswer $\overline Y=\overline{\overline AB}\,\overline{BC}=(A+\overline B)(\overline B+\overline C)$। একই চলক বারবার থাকলেও প্রতিটি পদের পূরক আলাদাভাবে নেওয়া হয়েছে।
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA03.2}{৩.২}{গুণফলের পূরক}
+$Y=(A+\overline C)(\overline B+D)$ হলে $\overline Y$ বের করো.
+\chThreeAnswer $\overline Y=\overline{A+\overline C}+\overline{\overline B+D}=\overline AC+B\overline D$। এখানে বাইরের AND বদলে OR হয়েছে।
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৪: সাধারণ গুণক নিয়ে পূরক জোড়া করা}
+একই গুণক বের করো। অবশিষ্ট অংশে $X+\overline X=1$ বা $X\overline X=0$ থাকলে তা ব্যবহার করো।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA04.1}{৪.১}{এক চলক বাদ পড়া}
+$F=\overline AB\overline C+\overline ABC+AD$ সরল করো.
+\chThreeAnswer প্রথম দুই পদের $\overline AB$ এক; C শুধু দুটি সম্ভাবনাই প্রকাশ করছে।
+\[\begin{aligned}F&=\overline AB\overline C+\overline ABC+AD\\
+&=\overline AB(\overline C+C)+AD\\
+&=\overline AB+AD\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA04.2}{৪.২}{একাধিক পূরক জোড়া}
+$F=A\overline B\overline C+A\overline BC+AB\overline C+ABC$ সরল করো.
+\chThreeAnswer সব পদের A এক। B ও C-এর সব সম্ভাবনা থাকায় তাদের মান output নির্ধারণ করে না।
+\[\begin{aligned}F&=A\overline B\overline C+A\overline BC+AB\overline C+ABC\\
+&=A\overline B(\overline C+C)+AB(\overline C+C)\\
+&=A(\overline B+B)\\
+&=A\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৫: বড় শর্তের মধ্যে ছোট শর্ত শোষিত হওয়া}
+$X+XY=X$ এবং $X(X+Y)=X$। X একটি যৌগিক পদও হতে পারে।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA05.1}{৫.১}{যৌগিক পদের absorption}
+$F=AC+ABC+ACD$ সরল করো.
+\chThreeAnswer $1+B+D=1$। তাই বাড়তি অনুমতি B,D ফল বদলায় না।
+\[\begin{aligned}F&=AC+ABC+ACD\\
+&=AC(1+B+D)\\
+&=AC\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA05.2}{৫.২}{POS-এ absorption}
+$F=(A+D)(A+D+B)(A+D+C)$ সরল করো.
+\chThreeAnswer $X=A+D$ ধরলে $X(X+B)(X+C)=X$।
+\[\begin{aligned}F&=(A+D)(A+D+B)(A+D+C)\\
+&=(A+D)\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৬: পূরকসহ elimination}
+$X+\overline XY=X+Y$ এবং $X(\overline X+Y)=XY$। সরাসরি absorption-এর সঙ্গে এই সূত্রের পার্থক্য আছে।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA06.1}{৬.১}{যৌগিক Y নিয়ে elimination}
+$F=\overline D+DAB$ সরল করো.
+\chThreeAnswer $X=\overline D$, $Y=AB$। বণ্টন সূত্রে প্রথম গুণক ১ হয়।
+\[\begin{aligned}F&=\overline D+DAB\\
+&=(\overline D+D)(\overline D+AB)\\
+&=\overline D+AB\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA06.2}{৬.২}{AND শর্তে বিপরীত চলক}
+$F=(A+C)(\overline A\,\overline C+B)$ সরল করো.
+\chThreeAnswer $\overline{A+C}=\overline A\,\overline C$। X ও তার পূরকের গুণফল শূন্য।
+\[\begin{aligned}F&=(A+C)(\overline A\,\overline C+B)\\
+&=(A+C)\overline A\,\overline C+(A+C)B\\
+&=B(A+C)\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৭: POS প্রসারণ ও SOP-তে factor করা}
+$X+YZ=(X+Y)(X+Z)$ এবং $(X+Y)(X+Z)=X+YZ$। সাধারণ বীজগণিতে প্রথম সূত্রটি একইভাবে চলে না।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA07.1}{৭.১}{সাধারণ OR পদ}
+$F=(\overline A+B)(\overline A+C)$-কে SOP করো.
+\chThreeAnswer $\overline A\,\overline A=\overline A$; তার সঙ্গে থাকা B,C পদ absorption-এ বাদ পড়ে।
+\[\begin{aligned}F&=(\overline A+B)(\overline A+C)\\
+&=\overline A+\overline AC+\overline AB+BC\\
+&=\overline A+BC\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA07.2}{৭.২}{একাধিক গুণকের factor}
+$F=AB+CD$-কে POS-এ লেখো.
+\chThreeAnswer দুইবার বণ্টন সূত্র প্রয়োগ করো। এই রূপের সব গুণক রাখতে হবে।
+\[\begin{aligned}F&=AB+CD\\
+&=(AB+C)(AB+D)\\
+&=(A+C)(B+C)(A+D)(B+D)\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৮: একাধিক স্তরের পূরক}
+সবচেয়ে বাইরের পূরক খুলে এক স্তর করে এগোও। প্রতিটি overbar কোন পদের ওপর আছে তা চিহ্নিত করো।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA08.1}{৮.১}{ভেতরের পূরক উঠে যাওয়া}
+$F=\overline{\overline{AB}+C}$ সরল করো.
+\chThreeAnswer ভেতরের AB দ্বৈত পূরক হয়ে ফিরে আসে।
+\[\begin{aligned}F&=\overline{\overline{AB}+C}\\
+&=\overline{\overline{AB}}\,\overline C\\
+&=AB\overline C\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA08.2}{৮.২}{বন্ধনীর ওপর দ্বিতীয় পূরক}
+$F=\overline{(A+\overline B)\overline{C+D}}$ সরল করো.
+\chThreeAnswer বাইরের AND-এর পূরক OR; দ্বিতীয় পদের দ্বৈত পূরক উঠে যায়।
+\[\begin{aligned}F&=\overline{(A+\overline B)\overline{C+D}}\\
+&=\overline{A+\overline B}+\overline{\overline{C+D}}\\
+&=\overline AB+C+D\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ৯: ধ্রুবক ০ বা ১ পাওয়া}
+পরস্পরবিরোধী প্রয়োজন একসঙ্গে AND হলে output ০। সব সম্ভাবনাকে OR করলে output ১।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA09.1}{৯.১}{দুটি বিপরীত শর্ত}
+$F=(A+C)\overline A\,\overline C$ সরল করো.
+\chThreeAnswer একই সঙ্গে A অথবা C-কে ১ এবং দুটিকেই ০ চাওয়া হয়েছে।
+\[\begin{aligned}F&=(A+C)\overline A\,\overline C\\
+&=A\overline A\,\overline C+C\overline A\,\overline C\\
+&=0\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA09.2}{৯.২}{সব সম্ভাবনায় output ১}
+$F=AB+A\overline B+\overline AC+\overline A\,\overline C$ সরল করো.
+\chThreeAnswer A=১ ও A=০—দুটির জন্যই অন্য চলকের সব সম্ভাবনা রাখা হয়েছে।
+\[\begin{aligned}F&=AB+A\overline B+\overline AC+\overline A\,\overline C\\
+&=A(B+\overline B)+\overline A(C+\overline C)\\
+&=A+\overline A\\
+&=1\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ১০: Consensus-এ অপ্রয়োজনীয় পদ বাদ দেওয়া}
+এক চলক বিপরীত অবস্থায় দুই পদে থাকলে তাদের অন্য অংশের গুণফল অনেক সময় আগেই অন্তর্ভুক্ত থাকে। পদ বাদ দেওয়ার আগে সূত্রের তিন অংশ মেলাও।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA10.1}{১০.১}{SOP consensus}
+$F=AC+\overline A D+CD$ সরল করো.
+\chThreeAnswer $CD=CD(A+\overline A)=ACD+\overline ACD$; নতুন পদদুটি প্রথম দুই পদের মধ্যে আছে।
+\[\begin{aligned}F&=AC+\overline A D+CD\\
+&=AC+\overline A D+ACD+\overline ACD\\
+&=AC+\overline A D\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA10.2}{১০.২}{POS consensus}
+$F=(A+C)(\overline A+D)(C+D)$ সরল করো.
+\chThreeAnswer প্রথম দুই বন্ধনী ১ হলে তৃতীয়টিও ১: A=০ হলে C=১ লাগবে; A=১ হলে D=১ লাগবে।
+\[\begin{aligned}F&=(A+C)(\overline A+D)(C+D)\\
+&=(A+C)(\overline A+D)\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ১১: রাশিতে XOR বা XNOR চেনা}
+দুই চলকের বিপরীত মানের পদদুটি XOR; একই মানের পদদুটি XNOR। Gate-এর bubble থাকলে শেষ পূরকটিও দেখো।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA11.1}{১১.১}{POS থেকে XOR}
+$F=(A+D)(\overline A+\overline D)$ সরল করে gate চিহ্নিত করো.
+\chThreeAnswer $A\overline D+\overline AD=A\oplus D$।
+\[\begin{aligned}F&=(A+D)(\overline A+\overline D)\\
+&=A\overline A+A\overline D+D\overline A+D\overline D\\
+&=A\overline D+\overline AD\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA11.2}{১১.২}{XOR-এর পূরকে সমতা}
+$F=\overline{B\overline C+\overline BC}$ সরল করো.
+\chThreeAnswer এটি $\overline{B\oplus C}$ বা XNOR।
+\[\begin{aligned}F&=\overline{B\overline C+\overline BC}\\
+&=(\overline B+C)(B+\overline C)\\
+&=\overline B\,\overline C+BC\end{aligned}\]
+
+\end{minipage}\par\smallskip
+\Needspace{12\baselineskip}
+\subsubsection*{ধরন ১২: সূত্র প্রমাণ ও ভুল সমতা খণ্ডন}
+সমতুল্যতা প্রমাণে সব input-এ output মিলতে হবে। একটি বিপরীত ফল পেলেই দাবিটি ভুল প্রমাণিত হয়।
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA12.1}{১২.১}{সত্যক সারণিতে যৌগিক সূত্র}
+$AB+A\overline B=A$ সত্যক সারণিতে দেখাও.
+\chThreeAnswer প্রতিটি সারিতে শেষ দুই column সমান।
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|}\hline
+$A$ & $B$ & $AB$ & $A\overline B$ & $AB+A\overline B$ & $A$\\\hline
+0 & 0 & 0 & 0 & 0 & 0\\\hline
+0 & 1 & 0 & 0 & 0 & 0\\\hline
+1 & 0 & 0 & 1 & 1 & 1\\\hline
+1 & 1 & 1 & 0 & 1 & 1\\\hline
+\end{tabular}\end{center}
+
+\end{minipage}\par\smallskip
+\par\smallskip\noindent\begin{minipage}{\linewidth}
+\chLogicExample{BA12.2}{১২.২}{একটি input দিয়ে ভুল ধরা}
+এক শিক্ষার্থী লিখেছে $\overline{A+B}=\overline A+\overline B$। দাবিটি পরীক্ষা করো.
+\chThreeAnswer $A=0,B=1$-এ বামপক্ষ ০, ডানপক্ষ $1+0=1$। তাই সমতা ভুল। সঠিক সূত্র $\overline{A+B}=\overline A\,\overline B$। শুধু 00 input পরীক্ষা করলে ভুলটি ধরা পড়ত না।
+
+\end{minipage}\par\smallskip
+\smallhead{ক--খ প্রশ্নের ধারণা}
+বুলিয়ান $1+1=1$ কারণ অন্তত একটি সত্য শর্তে OR সত্য হয়। ডি-মরগ্যানের সূত্র দিয়ে বড় পূরক ভেঙে পৃথক input-এর পূরক এবং AND/OR দিয়ে সমতুল্য রাশি পাওয়া যায়। সরলীকরণে সত্যক সারণি অপরিবর্তিত রেখে প্রয়োজনীয় gate ও সংযোগ কমতে পারে। দ্বৈত রূপ এবং পূরক পৃথক প্রক্রিয়া।

@@ -1,69 +1,376 @@
-% ৩.১৯ অ্যাডার
-\section{Adder}
+% =========================================================
+% 3.13 Adder
+% =========================================================
 
-\subsection{Half Adder}
-\begin{itemize}
-\item Input: A, B; Output: Sum, Carry
-\item Truth table ও তীরযুক্ত diagram (placeholder)
+\section{অ্যাডার (\textenglish{Adder})}
+
+কম্পিউটার বিভিন্ন ধরনের গাণিতিক কাজ করলেও তার অভ্যন্তরে সব তথ্য
+\(0\) ও \(1\)-এর সমন্বয়ে প্রক্রিয়াকরণ করা হয়। তাই আমরা কম্পিউটার বা
+ক্যালকুলেটরে দশমিক সংখ্যা লিখলেও ডিজিটাল সার্কিট সরাসরি দশমিক অঙ্ক নিয়ে
+যোগ করে না; সংখ্যাগুলো আগে উপযুক্ত
+\textenglish{binary representation}-এ প্রকাশিত হয় এবং এরপর
+\textenglish{binary addition} সম্পন্ন হয়।
+
+ধরা যাক, আমরা লিখলাম—
+
+\[
+4+7
+\]
+
+এখানে,
+
+\[
+(4)_{10}=(0100)_2,
+\qquad
+(7)_{10}=(0111)_2
+\]
+
+ডিজিটাল সার্কিটের ভেতরে মূলত যোগ হয়—
+
+\[
+\begin{array}{r}
+0100\\[-1mm]
++\,0111\\
+\hline
+1011
+\end{array}
+\]
+
+এবং,
+
+\[
+(1011)_2=(11)_{10}
+\]
+
+অতএব ব্যবহারকারী ফলাফল হিসেবে \(11\) দেখে।
+
+\par\begingroup
+
+\textbf{মনে রাখবে:}
+\textenglish{Adder} সরাসরি দশমিক অঙ্কের অর্থ বোঝে না।
+ডিজিটাল সিস্টেমে সংখ্যা আগে \textenglish{binary/code} আকারে প্রকাশিত হয়;
+\textenglish{Adder} সেই বাইনারি বিটগুলোর উপর যোগ সম্পন্ন করে।
+\par\endgroup
+
+
+
+% =========================================================
+% 3.13.1 What is Adder?
+% =========================================================
+
+\subsection{অ্যাডার কী?
+(\textenglish{What is Adder?})}
+
+\par\begingroup
+
+যে সমবায় লজিক সার্কিট
+(\textenglish{Combinational Logic Circuit})
+বাইনারি বিটসমূহের যোগ সম্পন্ন করে এবং প্রয়োজন অনুযায়ী
+\textenglish{Sum} ও \textenglish{Carry} তৈরি করে, তাকে
+\textbf{অ্যাডার (\textenglish{Adder})} বলে।
+\par\endgroup
+
+
+\textenglish{Adder} হলো ডিজিটাল কম্পিউটারের
+\textenglish{arithmetic operation}-এর একটি মৌলিক সার্কিট।
+\textenglish{Processor}-এর
+\textenglish{ALU (Arithmetic Logic Unit)}-তে বাইনারি যোগ সম্পন্ন করার
+জন্য \textenglish{Adder} ব্যবহৃত হয়।
+
+\begin{center}
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    node distance=1.0cm
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=3.1cm,
+    minimum height=0.9cm
+] (in) {\textenglish{Binary Inputs}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightGreen,
+    minimum width=2.5cm,
+    minimum height=0.9cm,
+    right=of in
+] (adder) {\textbf{\textenglish{Adder}}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightOrange,
+    minimum width=3.0cm,
+    minimum height=0.9cm,
+    right=of adder
+] (out) {\textenglish{Sum + Carry}};
+
+\draw[->] (in) -- (adder);
+\draw[->] (adder) -- (out);
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+
+% =========================================================
+% 3.13.2 Why Adder is Needed
+% =========================================================
+
+\subsection{কেন অ্যাডার প্রয়োজন?}
+
+কম্পিউটারের বহু \textenglish{arithmetic operation}-এর সঙ্গে যোগের প্রত্যক্ষ
+বা পরোক্ষ সম্পর্ক রয়েছে। তাই \textenglish{Adder} শুধু \(+\) চিহ্নের যোগের
+জন্যই নয়, বিভিন্ন \textenglish{digital arithmetic circuit}-এর ভিত্তি
+হিসেবেও ব্যবহৃত হয়।
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+\item দুটি বা একাধিক বাইনারি বিট বা সংখ্যা যোগ করতে।
+
+\item \textenglish{ALU}-তে
+\textenglish{arithmetic operation} সম্পন্ন করতে।
+
+\item বহু-বিট \textenglish{binary adder} তৈরিতে।
+
+\item \textenglish{Address calculation} ও বিভিন্ন
+\textenglish{digital arithmetic circuit}-এ।
+
+\item উপযুক্ত পদ্ধতিতে \textenglish{subtraction}-সহ অন্যান্য
+\textenglish{arithmetic operation} বাস্তবায়নে।
+
 \end{itemize}
 
-\subsection{Full Adder}
-\begin{itemize}
-\item Input: A, B, Carry-in; Output: Sum, Carry-out
-\item Cascade করে multi-bit addition
-\end{itemize}
 
-\subsection{Half vs Full Adder}
-\begin{itemize}
-\item পার্থক্য ও ব্যবহার
-\end{itemize}
+% =========================================================
+% 3.13.3 Binary Addition and Carry
+% =========================================================
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item half adder ও full adder-এর input-output লিখতে।
-\item Sum ও Carry-এর Boolean expression নির্ণয় করতে।
-\item multi-bit binary addition-এ full adder-এর প্রয়োজন ব্যাখ্যা করতে।
-\end{itemize}
-\end{learningbox}
+\subsection{বাইনারি যোগ ও ক্যারি
+(\textenglish{Binary Addition and Carry})}
 
-\begin{definitionbox}{Half adder}
-দুইটি single-bit binary input যোগ করে Sum ও Carry output দেয় যে combinational circuit, তাকে half adder বলা হয়।
-\end{definitionbox}
+\textenglish{Adder} বোঝার আগে বাইনারি যোগের চারটি মৌলিক নিয়ম জানা প্রয়োজন।
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
-$A$ & $B$ & Sum $S=A\oplus B$ & Carry $C=A\cdot B$ \\
+
+\rowcolor{ICTLightBlue}
+
+\(\mathbf A\)
+&
+\(\mathbf B\)
+&
+\textbf{\textenglish{Sum}}
+&
+\textbf{\textenglish{Carry}}
+\\
+
 \hline
-0 & 0 & 0 & 0 \\
+0&0&0&0\\
 \hline
-0 & 1 & 1 & 0 \\
+
+0&1&1&0\\
 \hline
-1 & 0 & 1 & 0 \\
+
+1&0&1&0\\
 \hline
-1 & 1 & 0 & 1 \\
+
+1&1&0&1\\
 \hline
+
 \end{tabular}
 \end{center}
 
-\begin{definitionbox}{Full adder}
-তিনটি input $A$, $B$ এবং carry-in যোগ করে Sum ও carry-out দেয় যে circuit, তাকে full adder বলা হয়।
-\end{definitionbox}
+প্রথম তিনটি ক্ষেত্রে কোনো \textenglish{Carry} তৈরি হয় না। কিন্তু—
 
-\begin{keypointbox}{Formula}
-\begin{itemize}
-\item Half adder: $S=A\oplus B$, $C=A\cdot B$
-\item Full adder: $S=A\oplus B\oplus C_{in}$
-\item Full adder carry: $C_{out}=AB+BC_{in}+AC_{in}$
-\end{itemize}
-\end{keypointbox}
+\[
+1+1=(10)_2
+\]
+
+এখানে ডান পাশের \(0\) হলো \textenglish{Sum}
+এবং বাম পাশের \(1\) হলো \textenglish{Carry}।
+
+অর্থাৎ,
+
+\[
+S=0,
+\qquad
+C=1
+\]
+
+
+% =========================================================
+% 3.13.4 Types of Adder
+% =========================================================
+
+\subsection{অ্যাডারের প্রকারভেদ}
+
+প্রাথমিকভাবে \textenglish{Adder} দুই প্রকার—
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+
+\item
+\textbf{অর্ধযোগক (\textenglish{Half Adder})}
+
+\item
+\textbf{পূর্ণযোগক (\textenglish{Full Adder})}
+
+\end{enumerate}
+
+\textenglish{Half Adder} দুটি \textenglish{input bit} যোগ করতে পারে,
+কিন্তু পূর্ববর্তী ধাপ থেকে আসা \textenglish{Carry} গ্রহণ করতে পারে না।
+
+অন্যদিকে \textenglish{Full Adder} দুটি \textenglish{input bit}-এর সঙ্গে
+পূর্ববর্তী ধাপ থেকে আসা \textenglish{Carry-in}-ও যোগ করতে পারে।
+
+
+% =========================================================
+% 3.13.5 Half Adder
+% =========================================================
+
+\subsection{অর্ধযোগক
+(\textenglish{Half Adder})}
+
+\par\begingroup
+
+যে সমবায় লজিক সার্কিট দুটি ১-বিট বাইনারি
+\textenglish{input} যোগ করে একটি \textenglish{Sum}
+এবং একটি \textenglish{Carry output} প্রদান করে,
+তাকে \textbf{অর্ধযোগক (\textenglish{Half Adder})} বলে।
+\par\endgroup
+
+
+\textenglish{Half Adder}-এর দুটি \textenglish{input} হলো
+
+\[
+A,\;B
+\]
+
+এবং দুটি \textenglish{output} হলো
+
+\[
+S,\;C
+\]
+
+যেখানে,
+
+\[
+S=\text{\textenglish{Sum}},
+\qquad
+C=\text{\textenglish{Carry}}
+\]
+
+
+% =========================================================
+% Sum Boolean Expression
+% =========================================================
+
+\subsubsection*{\textenglish{Sum} \(S\)-এর বুলিয়ান রাশি নির্ণয়}
+
+\textenglish{Truth Table}-এ \(S=1\) হয় যখন—
+
+\[
+A=0,\;B=1
+\]
+
+অথবা,
+
+\[
+A=1,\;B=0
+\]
+
+তাই,
+
+\[
+S=\bar A B+A\bar B
+\]
+
+আবার \textenglish{XOR}-এর সংজ্ঞা অনুযায়ী,
+
+\[
+A\oplus B
+=
+\bar A B+A\bar B
+\]
+
+অতএব,
+
+\[
+\boxed{S=A\oplus B}
+\]
+
+
+% =========================================================
+% Carry Boolean Expression
+% =========================================================
+
+\subsubsection*{\textenglish{Carry} \(C\)-এর বুলিয়ান রাশি নির্ণয়}
+
+\textenglish{Truth Table}-এ \(C=1\) হয় শুধু যখন—
+
+\[
+A=1,\;B=1
+\]
+
+তাই,
+
+\[
+C=A\cdot B
+\]
+
+অতএব,
+
+\[
+\boxed{C=AB}
+\]
+
+
+% =========================================================
+% Half Adder Final 3-Column Figure
+% =========================================================
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
-\centering
-\textbf{Circuit placeholders}\\[4pt]
-Half adder: XOR gate for Sum, AND gate for Carry।\\
-Full adder: দুটি half adder + একটি OR gate দেখাতে হবে।
-}}
+
+\includegraphics[
+    width=0.98\textwidth,
+    keepaspectratio
+]{half_adder_box.png}
+
 \end{center}
+
+\vspace{-1mm}
+
+\begin{center}
+{\small
+\textbf{চিত্র:}
+\textenglish{Half Adder}-এর সত্যক সারণি এবং
+যৌগিক ও মৌলিক গেট দিয়ে বাস্তবায়ন
+}
+\end{center}
+
+
+% =========================================================
+% Half Adder Limitation
+% =========================================================
+
+\par\begingroup
+
+
+\textbf{হাফ অ্যাডারের সীমাবদ্ধতা:}
+
+\textenglish{Half Adder} পূর্ববর্তী
+\textenglish{bit-position} থেকে আসা
+\textenglish{Carry-in} গ্রহণ করতে পারে না।
+
+তাই \textenglish{Carry}-সহ তিনটি ১-বিট
+\textenglish{input} যোগ করতে
+\textenglish{Full Adder} প্রয়োজন।
+
+\par\endgroup

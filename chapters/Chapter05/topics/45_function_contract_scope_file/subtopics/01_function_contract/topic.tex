@@ -1,0 +1,277 @@
+\booksubheading{Function Contract}
+
+একটি Function তৈরি করার সময় আগে নির্ধারণ করা হয়—
+
+\begin{center}
+
+\textbf{কী Input নেবে}
+\(\longrightarrow\)
+\textbf{কী Processing করবে}
+\(\longrightarrow\)
+\textbf{কী Output দেবে}
+
+\end{center}
+
+\begin{definitionbox}
+
+\textbf{Function Contract:}
+কোনো Function \textbf{কী Input গ্রহণ করবে, কী কাজ বা Processing করবে
+এবং কী Output/Return Value প্রদান করবে}—এ সম্পর্কে নির্ধারিত নিয়ম বা
+শর্তকে \textbf{Function Contract} বলা হয়।
+
+\end{definitionbox}
+
+%================================================
+% Contract Example
+%================================================
+
+\begin{codeoutputbox}{Function Contract-এর উদাহরণ}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def square(n):\\
+\hspace*{4mm}return n * n\\[0.5mm]
+print(square(5))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 25}
+\end{center}
+
+এখানে—
+
+\textenglish{\ttfamily n}
+\(\longrightarrow\)
+Input
+
+\medskip
+
+\textenglish{\ttfamily n * n}
+\(\longrightarrow\)
+Processing
+
+\medskip
+
+Return করা Square
+\(\longrightarrow\)
+Output
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.29\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{বিষয়}
+&
+\textbf{তথ্য}
+\\
+\hline
+
+Function
+&
+\textenglish{\ttfamily square()}
+\\
+\hline
+
+Input
+&
+একটি Number
+\textenglish{\ttfamily n}
+\\
+\hline
+
+Processing
+&
+\textenglish{\ttfamily n * n}
+\\
+\hline
+
+Output
+&
+Number-এর Square
+\\
+\hline
+
+\end{tabularx}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Function Contract}
+=
+\textbf{Input + Processing + Expected Output}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Contract and IPO
+%================================================
+
+\booksubheading{Function Contract ও IPO Model-এর সম্পর্ক}
+
+Function Contract-কে IPO Model-এর সঙ্গেও মিলিয়ে বোঝা যায়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.28\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{IPO অংশ}
+&
+\textbf{Function-এর অংশ}
+\\
+\hline
+
+Input
+&
+Parameter / Argument
+\\
+\hline
+
+Processing
+&
+Function Body-এর Calculation বা Logic
+\\
+\hline
+
+Output
+&
+Return Value
+\\
+\hline
+
+\end{tabularx}
+
+\begin{codeoutputbox}{IPO ভিত্তিক Function}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def area(length, width):\\
+\hspace*{4mm}return length * width\\[0.5mm]
+print(area(5, 4))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 20}
+\end{center}
+
+\textenglish{\ttfamily 5, 4}
+\(\longrightarrow\)
+Input
+
+\medskip
+
+\textenglish{\ttfamily length * width}
+\(\longrightarrow\)
+Processing
+
+\medskip
+
+\textenglish{\ttfamily 20}
+\(\longrightarrow\)
+Output
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Why contract
+%================================================
+
+\booksubheading{Function Contract কেন গুরুত্বপূর্ণ?}
+
+\begin{compacttwocolpoints}
+
+\item Function কী কাজ করবে তা পরিষ্কার হয়।
+
+\item কী ধরনের Input দিতে হবে বোঝা যায়।
+
+\item কী Result আশা করা যায় তা জানা যায়।
+
+\item Function আলাদাভাবে Test করা সহজ হয়।
+
+\item বড় Problem-কে ছোট Function-এ ভাগ করা সহজ হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Valid input
+%================================================
+
+\booksubheading{Valid Input-এর বিষয়}
+
+Function Design-এর সময় কোন Input গ্রহণযোগ্য তা-ও বিবেচনা করা প্রয়োজন।
+
+\begin{codeoutputbox}{Input-এর শর্ত}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def divide(a, b):\\
+\hspace*{4mm}return a / b\\[0.5mm]
+print(divide(10, 0))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+এখানে Error হবে।
+
+কারণ Division-এর ক্ষেত্রে Divisor
+\textenglish{\ttfamily 0}
+হতে পারে না।
+
+\medskip
+
+অর্থাৎ Function-এর Contract-এর অংশ হিসেবে
+Valid Input-এর শর্তও বিবেচনা করা দরকার।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Scope
+%================================================
+

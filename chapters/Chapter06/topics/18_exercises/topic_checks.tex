@@ -1,0 +1,244 @@
+\subsection{সম্পর্ক ও কী: ধারণা যাচাই}
+\textbf{নির্বাচিত MCQ}
+\begin{chSixSideBySide}[.48]
+\small 1. একটি বিভাগের একাধিক শিক্ষার্থী থাকলে বিভাগ থেকে শিক্ষার্থীর সম্পর্ক কোনটি?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. 1:1 & খ. 1:M \\
+গ. M:N & ঘ. 0:1 \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\chSixNextColumn
+\small 2. Many-to-Many Relationship বাস্তবায়নে সাধারণত কোনটি ব্যবহার করা হয়?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Report & খ. Junction Table \\
+গ. Index & ঘ. Form \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\small 3. Child Table-এর যে ফিল্ড Parent-এর Key নির্দেশ করে তাকে কী বলে?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Primary Key & খ. Foreign Key \\
+গ. Sort Key & ঘ. Index Key \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\chSixNextColumn
+\small 4. Parent Table-এ নেই এমন Foreign Key মান প্রতিরোধের সঙ্গে
+কোন ধারণা সবচেয়ে বেশি সম্পর্কিত?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Sorting & খ. Referential Integrity \\
+গ. Report & ঘ. Form \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\end{chSixSideBySide}
+
+
+\begin{practicebox}
+
+\textbf{নিজে যাচাই করো}
+
+একটি College ডেটাবেজে নিচের টেবিল আছে---
+
+\noindent\texttt{Department(DeptID, DeptName)}\par
+
+\noindent\texttt{Student(StudentID, Name, DeptID)}\par
+
+\noindent\texttt{Result(ResultID, StudentID, ICTMark)}\par
+
+প্রতিটি শিক্ষার্থী একটি Department-এর অন্তর্ভুক্ত। একজন শিক্ষার্থীর
+একাধিক পরীক্ষার ফল আলাদা ResultID দিয়ে সংরক্ষিত হতে পারে।
+
+প্রশ্ন:
+
+\begin{enumerate}
+    \item কোন ফিল্ডগুলো Primary Key হতে পারে?
+    \item কোন ফিল্ডগুলো Foreign Key?
+    \item Department ও Student-এর সম্পর্ক কী?
+    \item Student ও Result-এর সম্পর্ক কী?
+    \item Result থেকে Student-এর সম্পর্ক কোন দিক থেকে কী নামে পরিচিত?
+\end{enumerate}
+
+\end{practicebox}
+
+
+
+
+
+\par\nointerlineskip\vspace{4pt}\noindent\begin{minipage}{\linewidth}
+\subsection{সমন্বিত CQ: অনুমতি ও পুনরুদ্ধার}
+কলেজের ফলাফলের ডেটাবেজের সর্বশেষ ব্যাকআপ নেওয়া হয়েছিল সোমবার বিকেল ৫টায়। মঙ্গলবার নতুন ফল যোগ করার পর ডিস্ক নষ্ট হয়ে যায়। শিক্ষক নিজের বিষয়ের ফল সংশোধন করতে পারেন; প্রকাশনা কর্মকর্তা শুধু অনুমোদিত ফল পড়তে পারেন। সোমবারের ব্যাকআপ ব্যবহার করে ডেটাবেজটি পুনরুদ্ধার করা হলো।
+\textbf{প্রশ্ন}
+\begin{enumerate}[label=(\alph*)]
+\item ব্যাকআপ কী?
+\item সঠিক পাসওয়ার্ড থাকলেও প্রকাশনা কর্মকর্তা ফল বদলাতে পারেন না কেন?
+\item ডেটাবেজ ফিরিয়ে আনার পরে কোন তথ্যগুলো যাচাই করতে হবে?
+\item সোমবারের ব্যাকআপ-ই মঙ্গলবারের সব তথ্য ফেরানোর নিশ্চয়তা দেয়—বিশ্লেষণ করো।
+\end{enumerate}
+\end{minipage}\par
+% Preserved practice moved from theory to the end-of-chapter bank.
+
+\subsection{Data Security: ধারণা যাচাই}
+\begin{multicols}{2}
+\small
+\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}
+একজন শিক্ষার্থী নিজের ফল দেখতে পারে, কিন্তু পরিবর্তন
+          করতে পারে না। তাকে কোন ধরনের Authorization দেওয়া হয়েছে?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+একজন শিক্ষক সঠিক পরিচয়ে লগইন করেছেন, কিন্তু অন্য বিভাগের ফল
+          পরিবর্তনের অনুমতি পাননি। এই কাজের সীমা নির্ধারণে Authentication না
+          Authorization কাজ করছে?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+ডিস্ক নষ্ট হয়ে ফলাফলের ডেটাবেজ হারিয়ে গেছে।
+          পাসওয়ার্ড জানা থাকলে কি হারানো ডেটা ফিরে পাওয়া যাবে? কেন?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+ডেটাবেজে GPA-এর রেকর্ড আছে, কিন্তু সংরক্ষিত মান ভুল হয়ে গেছে।
+          এটি Data Loss নাকি Data Corruption?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+কে কখন ফল পরিবর্তন করেছে তা জানতে নিরাপত্তার কোন ব্যবস্থা
+          সবচেয়ে প্রাসঙ্গিক?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+Mobile Number
+          \texttt{017*****321}
+          আকারে দেখানো হলে কোন নিরাপত্তাপদ্ধতি ব্যবহার করা হয়েছে?
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+
+
+\textbf{নির্বাচিত MCQ}
+\begin{chSixSideBySide}[.48]
+\small 1. ব্যবহারকারীর পরিচয় যাচাই করে কোনটি?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Authorization & খ. Authentication \\
+গ. Recovery & ঘ. Masking \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\chSixNextColumn
+\small 2. ডেটা শুধু পড়ার অনুমতি কোনটি?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Read Authorization & খ. Drop Authorization \\
+গ. Alteration Authorization & ঘ. Resource Authorization \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{ক}
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\small 3. সংরক্ষণের ডিস্ক নষ্ট হয়ে ডেটা হারানো কোন ধরনের ব্যর্থতার উদাহরণ?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Transaction Failure & খ. Disk Failure \\
+গ. Authorization Failure & ঘ. Read Failure \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\chSixNextColumn
+\small 4. কে কখন রেকর্ড পরিবর্তন করেছে তা জানতে সবচেয়ে উপযোগী কোনটি?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Data Masking & খ. Audit Log \\
+গ. Drop Authorization & ঘ. Sorting \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\end{chSixSideBySide}
+
+
+\Needspace{7\baselineskip}
+
+\subsection{ডেটা এনক্রিপশন: ধারণা যাচাই}
+\begin{multicols}{2}
+\small
+\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}
+Plaintext এবং Ciphertext-এর পার্থক্য কী?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+Symmetric এনক্রিপশনে একই কী ব্যবহারের প্রধান
+          সুবিধা ও সমস্যা কী?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+Asymmetric পদ্ধতিতে Public Key ও Private Key-এর কাজ কী?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+Caesar Cipher-এ \(k=3\) হলে \texttt{ABC} কী হবে?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+এনক্রিপ্ট করা ব্যাকআপ ফাইলের কী হারিয়ে গেলে কী সমস্যা হবে?
+\end{minipage}
+\item \begin{minipage}[t]{\linewidth}
+কেন এনক্রিপশনকে ব্যাকআপের বিকল্প বলা যায় না?
+\end{minipage}
+\end{enumerate}
+\end{multicols}
+
+
+
+\textbf{নির্বাচিত MCQ}
+\begin{chSixSideBySide}[.48]
+\small 1. এনক্রিপশনের আগে মূল বার্তাকে কী বলা হয়?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Ciphertext & খ. Plaintext \\
+গ. Key & ঘ. Algorithm \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\chSixNextColumn
+\small 2. একই Secret Key দিয়ে এনক্রিপশন ও ডিক্রিপশন কোন পদ্ধতিতে হয়?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Asymmetric & খ. Symmetric \\
+গ. Public-only & ঘ. Hashing \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\end{chSixSideBySide}
+\begin{chSixSideBySide}[.48]
+\small 3. কোনটি Asymmetric Algorithm-এর পরিচিত উদাহরণ?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. AES & খ. DES \\
+গ. RSA & ঘ. IDEA \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{গ}
+\chSixNextColumn
+\small 4. কোন Key গোপন রাখতে হয়?
+
+\par
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+ক. Public Key & খ. Private Key \\
+গ. দুটিই প্রকাশ্য & ঘ. কোনোটিই নয় \\
+\end{tabularx}
+\smallskip
+\chSixMCQAnswer{খ}
+\end{chSixSideBySide}

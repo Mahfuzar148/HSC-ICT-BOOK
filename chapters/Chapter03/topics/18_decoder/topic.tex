@@ -1,62 +1,1006 @@
-% ৩.১৮ ডিকোডার
-\section{Decoder}
+% =========================================================
+% 3.12 Decoder
+% FINAL VERSION
+% Fixed 3-column layout:
+% Truth Table | Boolean Equations | Logic Circuit
+% =========================================================
 
-\subsection{সংজ্ঞা}
-\begin{itemize}
-\item Decoder: n-bit input থেকে 2\textsuperscript{n} output
-\item 2-to-4, 3-to-8 decoder উদাহরণ
-\end{itemize}
+\section{ডিকোডার (\textenglish{Decoder})}
 
-\subsection{ব্যবহার}
-\begin{itemize}
-\item Memory address decoding, display selection
-\end{itemize}
+% =========================================================
+% 3.12.1 Concept
+% =========================================================
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item decoder-এর input-output relation লিখতে।
-\item $n$ input থেকে $2^n$ output ধারণা ব্যাখ্যা করতে।
-\item encoder ও decoder-এর পার্থক্য লিখতে।
-\end{itemize}
-\end{learningbox}
+\subsection{ডিকোডারের ধারণা
+(\textenglish{Concept of Decoder})}
 
-\begin{definitionbox}{Decoder}
-যে combinational circuit binary input code গ্রহণ করে নির্দিষ্ট একটি output line সক্রিয় করে, তাকে decoder বলা হয়। সাধারণ decoder-এ $n$ input এবং $2^n$ output থাকে।
-\end{definitionbox}
+কম্পিউটার ও ডিজিটাল সিস্টেমে তথ্য সাধারণত বাইনারি কোডে প্রক্রিয়াকরণ করা হয়।
+অনেক ক্ষেত্রে এই বাইনারি কোডের ভিত্তিতে একটি নির্দিষ্ট
+\textenglish{output line}, ডিভাইস বা মেমোরি অবস্থান নির্বাচন করতে হয়।
+
+যে প্রক্রিয়ায় বাইনারি কোড অনুযায়ী নির্দিষ্ট
+\textenglish{output} নির্বাচন করা হয়, তাকে
+\textbf{ডিকোডিং (\textenglish{Decoding})} বলে।
+এ কাজের জন্য ব্যবহৃত ডিজিটাল সার্কিটকে
+\textbf{ডিকোডার (\textenglish{Decoder})} বলে।
 
 \begin{center}
-\fbox{\parbox{0.88\textwidth}{
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    node distance=1.0cm
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=2.8cm,
+    minimum height=0.9cm
+] (in) {\textenglish{Binary Input}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightGreen,
+    minimum width=2.5cm,
+    minimum height=0.9cm,
+    right=of in
+] (dec) {\textbf{\textenglish{Decoder}}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightOrange,
+    minimum width=3.0cm,
+    minimum height=0.9cm,
+    right=of dec
+] (out) {\textenglish{Selected Output}};
+
+\draw[->] (in) -- (dec);
+\draw[->] (dec) -- (out);
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+\end{center}
+
+% =========================================================
+% 3.12.2 Definition
+% =========================================================
+
+\subsection{ডিকোডারের সংজ্ঞা
+(\textenglish{Definition of Decoder})}
+
+\par\begingroup
+
+যে সমবায় লজিক সার্কিট
+(\textenglish{Combinational Logic Circuit})
+\(n\)-বিট বাইনারি \textenglish{input} গ্রহণ করে এবং
+\textenglish{input}-এর মান অনুযায়ী সর্বোচ্চ \(2^n\)টি
+\textenglish{output}-এর মধ্যে একটি নির্দিষ্ট
+\textenglish{output} সক্রিয় করে, তাকে
+\textbf{ডিকোডার (\textenglish{Decoder})} বলে।
+\par\endgroup
+
+
+\[
+\boxed{
+n\text{টি input}
+\longrightarrow
+2^n\text{টি output}
+}
+\]
+
+উদাহরণ:
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+\item
+\textenglish{2-to-4 Decoder}:
+২টি \textenglish{input}, ৪টি \textenglish{output}।
+
+\item
+\textenglish{3-to-8 Decoder}:
+৩টি \textenglish{input}, ৮টি \textenglish{output}।
+
+\item
+\textenglish{4-to-16 Decoder}:
+৪টি \textenglish{input}, ১৬টি \textenglish{output}।
+
+\end{itemize}
+
+% =========================================================
+% 3.12.3 Working Principle
+% =========================================================
+
+\subsection{ডিকোডারের গঠন ও কার্যপ্রণালি}
+
+ডিকোডারের \textenglish{input}-এ একটি বাইনারি কোড দেওয়া হয়।
+কোডটির মান অনুযায়ী \textenglish{output line}-গুলোর মধ্যে
+একটি নির্দিষ্ট \textenglish{output} সক্রিয় হয়।
+
+উদাহরণস্বরূপ, \textenglish{2-to-4 Decoder}-এ—
+
+\[
+AB=00\Rightarrow Y_0,
+\qquad
+AB=01\Rightarrow Y_1
+\]
+
+\[
+AB=10\Rightarrow Y_2,
+\qquad
+AB=11\Rightarrow Y_3
+\]
+
+অর্থাৎ \textenglish{input code} পরিবর্তিত হলে সক্রিয়
+\textenglish{output}-ও পরিবর্তিত হয়।
+
+% =========================================================
+% 3.12.4 Characteristics
+% =========================================================
+
+\subsection{ডিকোডারের বৈশিষ্ট্য
+(\textenglish{Characteristics})}
+
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+\item
+ডিকোডার একটি সমবায় লজিক সার্কিট।
+
+\item
+\(n\)টি \textenglish{input}-এর জন্য সর্বোচ্চ
+\(2^n\)টি \textenglish{output} থাকতে পারে।
+
+\item
+প্রতিটি বাইনারি \textenglish{input combination}-এর জন্য
+একটি নির্দিষ্ট \textenglish{output} নির্বাচন করা যায়।
+
+\item
+সাধারণ \textenglish{Active-High Decoder}-এ নির্বাচিত
+\textenglish{output} \(1\) হয় এবং অন্য
+\textenglish{output}-গুলো \(0\) থাকে।
+
+\item
+অনেক ডিকোডারে \textenglish{Enable input} থাকে,
+যা সার্কিটের কার্যক্রম চালু বা বন্ধ করতে ব্যবহৃত হয়।
+
+\end{itemize}
+
+% =========================================================
+% 3.12.5 2-to-4 Decoder
+% =========================================================
+
+\subsection{\textenglish{2-to-4 Decoder}}
+
+একটি \textenglish{2-to-4 Decoder}-এ দুটি
+\textenglish{input} \(A,B\) এবং চারটি
+\textenglish{output} \(Y_0,Y_1,Y_2,Y_3\) থাকে।
+
+\[
+2^2=4
+\]
+
+অতএব, ২-বিট \textenglish{input}-এর চারটি সম্ভাব্য সমন্বয়ের জন্য
+চারটি পৃথক \textenglish{output} থাকে।
+
+% =========================================================
+% 2-to-4 Decoder: 3-column compact box
+% Truth Table | Boolean Equations | Logic Circuit
+% =========================================================
+
+\par\begingroup
+
+
+\begin{minipage}[t]{0.29\textwidth}
 \centering
-\textbf{Block diagram placeholder: 2-to-4 Decoder}\\[4pt]
-Inputs: $A_1,A_0$ $\rightarrow$ Decoder block $\rightarrow$ Outputs: $D_0,D_1,D_2,D_3$
-}}
-\end{center}
+
+\textbf{সত্যক সারণি}\\[-1mm]
+{\footnotesize \textenglish{Truth Table}}
+
+\vspace{4mm}
+
+{\renewcommand{\arraystretch}{1.24}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) & \(B\) & \textbf{সক্রিয়} \\
+\hline
+0 & 0 & \(Y_0\) \\ \hline
+0 & 1 & \(Y_1\) \\ \hline
+1 & 0 & \(Y_2\) \\ \hline
+1 & 1 & \(Y_3\) \\ \hline
+\end{tabular}
+
+}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\centering
+
+\textbf{বুলিয়ান সমীকরণ}\\[-1mm]
+{\footnotesize \textenglish{Boolean Equations}}
+
+\vspace{3mm}
+
+\[
+\begin{array}{c}
+Y_0=\bar A\bar B\\[2.2mm]
+Y_1=\bar A B\\[2.2mm]
+Y_2=A\bar B\\[2.2mm]
+Y_3=AB
+\end{array}
+\]
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\textwidth}
+\centering
+
+\textbf{লজিক সার্কিট}\\[-1mm]
+{\footnotesize \textenglish{Logic Circuit}}
+
+\vspace{1mm}
+
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    line width=0.65pt,
+    scale=0.66,
+    transform shape
+]
+
+\coordinate (A) at (0,0);
+\draw (0,4.1) -- (0,-3.8);
+\node[above,font=\small] at (0,4.1) {\(A\)};
+
+\node[
+    not gate US,
+    draw,
+    scale=0.85
+] (notA) at (0.85,3.6) {};
+
+\draw (0,3.6) -- (notA.input);
+\draw (notA.output) -- (1.55,3.6);
+\draw (1.55,3.6) -- (1.55,-3.8);
+
+\node[above,font=\small] at (1.55,3.6)
+{\(\bar A\)};
+
+\coordinate (Abar) at (1.55,0);
+
+\coordinate (B) at (2.45,0);
+\draw (2.45,4.1) -- (2.45,-3.8);
+\node[above,font=\small] at (2.45,4.1) {\(B\)};
+
+\node[
+    not gate US,
+    draw,
+    scale=0.85
+] (notB) at (3.30,3.6) {};
+
+\draw (2.45,3.6) -- (notB.input);
+\draw (notB.output) -- (4.00,3.6);
+\draw (4.00,3.6) -- (4.00,-3.8);
+
+\node[above,font=\small] at (4.00,3.6)
+{\(\bar B\)};
+
+\coordinate (Bbar) at (4.00,0);
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g0) at (7.3,2.7) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g1) at (7.3,0.9) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g2) at (7.3,-0.9) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g3) at (7.3,-2.7) {};
+
+\foreach \g/\sone/\stwo in {
+    g0/Abar/Bbar,
+    g1/Abar/B,
+    g2/A/Bbar,
+    g3/A/B
+}{
+    \coordinate (\g-up) at
+    ($(\g.west)+(0,0.28)$);
+
+    \coordinate (\g-dn) at
+    ($(\g.west)+(0,-0.28)$);
+
+    \draw
+    (\sone |- \g-up)
+    -- (\g-up);
+
+    \draw
+    (\stwo |- \g-dn)
+    -- (\g-dn);
+
+    \fill
+    (\sone |- \g-up)
+    circle (1.35pt);
+
+    \fill
+    (\stwo |- \g-dn)
+    circle (1.35pt);
+}
+
+\draw
+(g0.output)
+-- ++(0.8,0)
+node[right] {\(Y_0\)};
+
+\draw
+(g1.output)
+-- ++(0.8,0)
+node[right] {\(Y_1\)};
+
+\draw
+(g2.output)
+-- ++(0.8,0)
+node[right] {\(Y_2\)};
+
+\draw
+(g3.output)
+-- ++(0.8,0)
+node[right] {\(Y_3\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+
+\end{minipage}
+
+\par\endgroup
+
+\par\begingroup
+
+\textenglish{2-to-4 Decoder} বাস্তবায়নে সাধারণভাবে
+২টি \textenglish{NOT Gate} এবং
+৪টি ২-\textenglish{input AND Gate} ব্যবহৃত হয়।
+\par\endgroup
+
+
+% =========================================================
+% 2-to-4 Example
+% =========================================================
+
+\subsubsection*{উদাহরণ}
+
+একটি \textenglish{2-to-4 Decoder}-এ
+\(A=1\) এবং \(B=0\) হলে—
+
+\[
+Y_0=\bar A\bar B
+=0\cdot1
+=0
+\]
+
+\[
+Y_1=\bar A B
+=0\cdot0
+=0
+\]
+
+\[
+Y_2=A\bar B
+=1\cdot1
+=1
+\]
+
+\[
+Y_3=AB
+=1\cdot0
+=0
+\]
+
+অতএব,
+
+\[
+\boxed{Y_2=1}
+\]
+
+এবং অন্য সব \textenglish{output} \(0\)।
+
+% =========================================================
+% 3.12.6 3-to-8 Decoder
+% =========================================================
+
+\subsection{\textenglish{3-to-8 Decoder}}
+
+একটি \textenglish{3-to-8 Decoder}-এ তিনটি
+\textenglish{input} \(A,B,C\) এবং আটটি
+\textenglish{output} \(Y_0\) থেকে \(Y_7\) থাকে।
+
+\[
+2^3=8
+\]
+
+অর্থাৎ ৩-বিট \textenglish{input}-এর আটটি সম্ভাব্য সমন্বয়ের জন্য
+আটটি পৃথক \textenglish{output} থাকে।
+
+% =========================================================
+% 3-to-8: FIXED THREE-COLUMN BOX
+% =========================================================
+
+\par\begingroup
+
+
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+
+\textbf{সত্যক সারণি}\\[-1mm]
+{\footnotesize \textenglish{Truth Table}}
+
+\vspace{4mm}
+
+{\renewcommand{\arraystretch}{1.24}
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{ICTLightBlue}
+\(A\) & \(B\) & \(C\) & \textbf{সক্রিয়} \\
+\hline
+0 & 0 & 0 & \(Y_0\) \\ \hline
+0 & 0 & 1 & \(Y_1\) \\ \hline
+0 & 1 & 0 & \(Y_2\) \\ \hline
+0 & 1 & 1 & \(Y_3\) \\ \hline
+1 & 0 & 0 & \(Y_4\) \\ \hline
+1 & 0 & 1 & \(Y_5\) \\ \hline
+1 & 1 & 0 & \(Y_6\) \\ \hline
+1 & 1 & 1 & \(Y_7\) \\ \hline
+\end{tabular}
+
+}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+
+\textbf{বুলিয়ান সমীকরণ}\\[-1mm]
+{\footnotesize \textenglish{Boolean Equations}}
+
+\vspace{2mm}
+
+\[
+\begin{array}{c}
+Y_0=\bar A\bar B\bar C\\[1.5mm]
+Y_1=\bar A\bar B C\\[1.5mm]
+Y_2=\bar A B\bar C\\[1.5mm]
+Y_3=\bar A BC\\[1.5mm]
+Y_4=A\bar B\bar C\\[1.5mm]
+Y_5=A\bar B C\\[1.5mm]
+Y_6=AB\bar C\\[1.5mm]
+Y_7=ABC
+\end{array}
+\]
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\centering
+
+\textbf{লজিক সার্কিট}\\[-1mm]
+{\footnotesize \textenglish{Logic Circuit}}
+
+\vspace{1mm}
+
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    line width=0.58pt,
+    scale=0.51,
+    transform shape
+]
+
+\coordinate (A) at (0,0);
+\draw (0,7.9) -- (0,-7.5);
+\node[above,font=\small] at (0,7.9) {\(A\)};
+
+\node[
+    not gate US,
+    draw,
+    scale=0.82
+] (notA) at (0.8,7.35) {};
+
+\draw (0,7.35) -- (notA.input);
+\draw (notA.output) -- (1.45,7.35);
+\draw (1.45,7.35) -- (1.45,-7.5);
+
+\node[above,font=\small] at (1.45,7.35)
+{\(\bar A\)};
+
+\coordinate (Abar) at (1.45,0);
+
+\coordinate (B) at (2.35,0);
+\draw (2.35,7.9) -- (2.35,-7.5);
+\node[above,font=\small] at (2.35,7.9) {\(B\)};
+
+\node[
+    not gate US,
+    draw,
+    scale=0.82
+] (notB) at (3.15,7.35) {};
+
+\draw (2.35,7.35) -- (notB.input);
+\draw (notB.output) -- (3.80,7.35);
+\draw (3.80,7.35) -- (3.80,-7.5);
+
+\node[above,font=\small] at (3.80,7.35)
+{\(\bar B\)};
+
+\coordinate (Bbar) at (3.80,0);
+
+\coordinate (C) at (4.70,0);
+\draw (4.70,7.9) -- (4.70,-7.5);
+\node[above,font=\small] at (4.70,7.9) {\(C\)};
+
+\node[
+    not gate US,
+    draw,
+    scale=0.82
+] (notC) at (5.50,7.35) {};
+
+\draw (4.70,7.35) -- (notC.input);
+\draw (notC.output) -- (6.15,7.35);
+\draw (6.15,7.35) -- (6.15,-7.5);
+
+\node[above,font=\small] at (6.15,7.35)
+{\(\bar C\)};
+
+\coordinate (Cbar) at (6.15,0);
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g0) at (10.9,6.7) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g1) at (10.9,4.8) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g2) at (10.9,2.9) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g3) at (10.9,1.0) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g4) at (10.9,-1.0) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g5) at (10.9,-2.9) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g6) at (10.9,-4.8) {};
+
+\node[
+    and gate US,
+    draw,
+    minimum width=1.55cm,
+    minimum height=1.12cm
+] (g7) at (10.9,-6.7) {};
+
+\newcommand{\decoderthreeinputs}[4]{%
+
+    \coordinate (#1-u) at
+    ($(#1.west)+(0,0.34)$);
+
+    \coordinate (#1-m) at
+    ($(#1.west)+(0,0)$);
+
+    \coordinate (#1-d) at
+    ($(#1.west)+(0,-0.34)$);
+
+    \draw
+    (#2 |- #1-u)
+    -- (#1-u);
+
+    \draw
+    (#3 |- #1-m)
+    -- (#1-m);
+
+    \draw
+    (#4 |- #1-d)
+    -- (#1-d);
+
+    \fill
+    (#2 |- #1-u)
+    circle (1.2pt);
+
+    \fill
+    (#3 |- #1-m)
+    circle (1.2pt);
+
+    \fill
+    (#4 |- #1-d)
+    circle (1.2pt);
+}
+
+\decoderthreeinputs{g0}{Abar}{Bbar}{Cbar}
+\decoderthreeinputs{g1}{Abar}{Bbar}{C}
+\decoderthreeinputs{g2}{Abar}{B}{Cbar}
+\decoderthreeinputs{g3}{Abar}{B}{C}
+\decoderthreeinputs{g4}{A}{Bbar}{Cbar}
+\decoderthreeinputs{g5}{A}{Bbar}{C}
+\decoderthreeinputs{g6}{A}{B}{Cbar}
+\decoderthreeinputs{g7}{A}{B}{C}
+
+\draw
+(g0.output)
+-- ++(0.75,0)
+node[right] {\(Y_0\)};
+
+\draw
+(g1.output)
+-- ++(0.75,0)
+node[right] {\(Y_1\)};
+
+\draw
+(g2.output)
+-- ++(0.75,0)
+node[right] {\(Y_2\)};
+
+\draw
+(g3.output)
+-- ++(0.75,0)
+node[right] {\(Y_3\)};
+
+\draw
+(g4.output)
+-- ++(0.75,0)
+node[right] {\(Y_4\)};
+
+\draw
+(g5.output)
+-- ++(0.75,0)
+node[right] {\(Y_5\)};
+
+\draw
+(g6.output)
+-- ++(0.75,0)
+node[right] {\(Y_6\)};
+
+\draw
+(g7.output)
+-- ++(0.75,0)
+node[right] {\(Y_7\)};
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+
+\end{minipage}
+
+\par\endgroup
+
+\par\begingroup
+
+\textenglish{3-to-8 Decoder} বাস্তবায়নে সাধারণভাবে
+৩টি \textenglish{NOT Gate} এবং
+৮টি ৩-\textenglish{input AND Gate} ব্যবহৃত হয়।
+\par\endgroup
+
+
+% =========================================================
+% 3-to-8 Example
+% =========================================================
+
+\subsubsection*{উদাহরণ}
+
+যদি
+
+\[
+ABC=101
+\]
+
+হয়, তবে
+
+\[
+(101)_2=(5)_{10}
+\]
+
+সুতরাং,
+
+\[
+\boxed{Y_5=1}
+\]
+
+এবং অন্য সব \textenglish{output} \(0\)।
+
+সমীকরণ থেকেও—
+
+\[
+Y_5=A\bar B C
+=1\cdot1\cdot1
+=1
+\]
+
+% =========================================================
+% 3.12.7 Applications
+% =========================================================
+
+\subsection{ডিকোডারের ব্যবহার
+(\textenglish{Applications of Decoder})}
+\begin{itemize}[label={{\bulletfont\textbullet}}, leftmargin=*, nosep]
+
+\item
+কম্পিউটার মেমোরির নির্দিষ্ট
+\textenglish{address} বা অবস্থান নির্বাচন করতে।
+
+\item
+বাইনারি কোড অনুযায়ী নির্দিষ্ট
+ডিভাইস বা সার্কিট সক্রিয় করতে।
+
+\item
+ডিজিটাল নিয়ন্ত্রণ ব্যবস্থায় নির্দিষ্ট
+\textenglish{output} নির্বাচন করতে।
+
+\item
+প্রসেসর ও ডিজিটাল সিস্টেমে
+\textenglish{instruction/address decoding}-এ।
+
+\item
+\textenglish{BCD-to-Seven-Segment Decoder}-এর মাধ্যমে
+\textenglish{Seven-Segment Display} নিয়ন্ত্রণে।
+
+\end{itemize}
+
+% =========================================================
+% 3.12.8 Relationship
+% =========================================================
+
+\subsection{এনকোডার ও ডিকোডারের সম্পর্ক
+(\textenglish{Relationship between Encoder and Decoder})}
+
+এনকোডার (\textenglish{Encoder}) ও ডিকোডার
+(\textenglish{Decoder}) পরস্পর বিপরীতধর্মী কাজ করে।
+
+এনকোডার সক্রিয় \textenglish{input signal}-এর অবস্থানকে
+বাইনারি \textenglish{code}-এ রূপান্তর করে।
+অন্যদিকে ডিকোডার সেই বাইনারি \textenglish{code}-এর মান অনুযায়ী
+একটি নির্দিষ্ট \textenglish{output} নির্বাচন বা সক্রিয় করে।
+
+কম্পিউটার ব্যবস্থায় মানুষের দেওয়া কিছু \textenglish{input}
+প্রথমে উপযুক্ত কোডে রূপান্তরিত হয়ে প্রক্রিয়াকৃত হতে পারে।
+পরবর্তীতে প্রয়োজন অনুযায়ী সেই কোডের ভিত্তিতে নির্দিষ্ট
+\textenglish{output} নির্বাচন বা প্রদর্শনের কাজে
+ডিকোডিং ব্যবহৃত হতে পারে।
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$A_1$ & $A_0$ & $D_0$ & $D_1$ & $D_2$ & $D_3$ \\
-\hline
-0 & 0 & 1 & 0 & 0 & 0 \\
-\hline
-0 & 1 & 0 & 1 & 0 & 0 \\
-\hline
-1 & 0 & 0 & 0 & 1 & 0 \\
-\hline
-1 & 1 & 0 & 0 & 0 & 1 \\
-\hline
-\end{tabular}
+
+\begin{chThreeDiagram}
+\begin{tikzpicture}[
+    >=Stealth,
+    line width=0.8pt,
+    node distance=0.65cm
+]
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=2.1cm,
+    minimum height=0.85cm,
+    align=center
+] (i) {\textenglish{Input Signal}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightGreen,
+    minimum width=1.9cm,
+    minimum height=0.85cm,
+    right=of i
+] (e) {\textenglish{Encoder}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightOrange,
+    minimum width=2.1cm,
+    minimum height=0.85cm,
+    right=of e
+] (c) {\textenglish{Binary Code}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightGreen,
+    minimum width=1.9cm,
+    minimum height=0.85cm,
+    right=of c
+] (d) {\textenglish{Decoder}};
+
+\node[
+    draw,
+    rounded corners=2pt,
+    fill=ICTLightBlue,
+    minimum width=2.4cm,
+    minimum height=0.85cm,
+    right=of d
+] (o) {\textenglish{Selected Output}};
+
+\draw[->] (i) -- (e);
+\draw[->] (e) -- (c);
+\draw[->] (c) -- (d);
+\draw[->] (d) -- (o);
+
+\end{tikzpicture}
+\end{chThreeDiagram}
+
 \end{center}
 
+\par\begingroup
+
+
+\textbf{সহজভাবে মনে রাখবে:}\quad
+
+\textenglish{Encoder: Signal}
+\(\rightarrow\)
+\textenglish{Code},
+
+\qquad
+
+\textenglish{Decoder: Code}
+\(\rightarrow\)
+\textenglish{Selected Output}।
+
+ডিকোডারের মূল কাজ হলো
+\textenglish{input code} অনুযায়ী
+নির্দিষ্ট \textenglish{output} নির্বাচন করা।
+
+\par\endgroup
+
+
+% =========================================================
+% 3.12.9 Comparison
+% =========================================================
+
+\subsection{এনকোডার ও ডিকোডারের তুলনামূলক পার্থক্য}
+
 \begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+
+\footnotesize
+
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabularx}
+{\textwidth}
+{|L{0.18\textwidth}|Y|Y|}
+
 \hline
-\textbf{ভিত্তি} & \textbf{Encoder} & \textbf{Decoder} \\
+
+\rowcolor{ICTLightBlue}
+
+\textbf{তুলনার বিষয়}
+&
+\textbf{এনকোডার (\textenglish{Encoder})}
+&
+\textbf{ডিকোডার (\textenglish{Decoder})}
+\\
 \hline
-রূপান্তর & $2^n$ input থেকে $n$ output & $n$ input থেকে $2^n$ output \\
+
+সংজ্ঞা
+&
+সক্রিয় \textenglish{input}-এর অবস্থানকে
+নির্দিষ্ট কোডে রূপান্তর করে।
+&
+কোডেড \textenglish{input} অনুযায়ী
+নির্দিষ্ট \textenglish{output} সক্রিয় করে।
+\\
 \hline
-কাজ & code তৈরি করে & code decode করে output select করে \\
+
+প্রধান কাজ
+&
+সংকেতকে কোডে রূপান্তর করা।
+&
+কোড অনুযায়ী \textenglish{output} নির্বাচন করা।
+\\
 \hline
-\end{tabular}
+
+\textenglish{Input} সংখ্যা
+&
+সাধারণত \(2^n\)টি।
+&
+সাধারণত \(n\)টি।
+\\
+\hline
+
+\textenglish{Output} সংখ্যা
+&
+সাধারণত \(n\)টি।
+&
+সর্বোচ্চ \(2^n\)টি।
+\\
+\hline
+
+উদাহরণ
+&
+\textenglish{4-to-2},
+\textenglish{8-to-3}
+&
+\textenglish{2-to-4},
+\textenglish{3-to-8}
+\\
+\hline
+
+কার্যপ্রণালি
+&
+সক্রিয় \textenglish{input}-এর অবস্থানকে
+বাইনারি কোডে প্রকাশ করে।
+&
+বাইনারি \textenglish{input}-এর মান অনুযায়ী
+নির্দিষ্ট \textenglish{output} সক্রিয় করে।
+\\
+\hline
+
+ব্যবহার
+&
+\textenglish{Input signal coding}
+ও সংকেত শনাক্তকরণে।
+&
+মেমোরি নির্বাচন, ঠিকানা ডিকোডিং
+ও \textenglish{output selection}-এ।
+\\
+\hline
+
+\end{tabularx}
+
 \end{center}
+
+\par\begingroup
+
+
+\textbf{মনে রাখার কৌশল:}
+এনকোডার কোড তৈরি করে,
+আর ডিকোডার সেই কোড অনুযায়ী
+নির্দিষ্ট \textenglish{output} নির্বাচন করে।
+
+\par\endgroup
+
+\input{chapters/Chapter03/topics/18_decoder/concept_examples.tex}

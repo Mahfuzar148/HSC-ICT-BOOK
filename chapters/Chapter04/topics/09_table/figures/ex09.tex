@@ -1,0 +1,26 @@
+% Replace exercise 9's PNG figure and its figure-explanation box.
+% The two data rows and every cell's text match the adjacent HTML.
+\begin{center}
+\begin{tikzpicture}[x=\linewidth,y=7mm,
+  every node/.style={font=\scriptsize,align=center},line width=.5pt]
+  \fill[chFourTint] (0,3) rectangle (.94,4);
+  \draw (0,0) rectangle (.94,4);
+  \draw (0,1.5)--(.94,1.5) (0,3)--(.94,3);
+  \draw (.313,0)--(.313,4) (.627,0)--(.627,4);
+  \node[font=\scriptsize\bfseries] at (.1565,3.5) {Left};
+  \node[font=\scriptsize\bfseries] at (.47,3.5) {Center};
+  \node[font=\scriptsize\bfseries] at (.7835,3.5) {Right};
+  \foreach \y in {.75,2.25} {
+    \node[anchor=west,align=left,text width=.28\linewidth,inner sep=0pt]
+      at (.015,\y) {This text is left aligned.};
+    \node[align=center,text width=.28\linewidth,inner sep=0pt]
+      at (.47,\y) {This text is center aligned.};
+    \node[anchor=east,align=right,text width=.28\linewidth,inner sep=0pt]
+      at (.925,\y) {This text is right aligned.};
+  }
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 9: ঘরের লেখার অবস্থান}
+\end{center}
+\par\smallskip\textbf{চিত্র ব্যাখ্যা:} 
+শিরোনামের নিচে কোড অনুযায়ী দুটি তথ্যের সারি আছে। একই লেখা প্রথম কলামে বামে, দ্বিতীয় কলামে মাঝখানে এবং তৃতীয় কলামে ডানে বসেছে। ঘরের প্রস্থ কম হলে লেখা একাধিক লাইনে ভাঙতে পারে; অবস্থানের নিয়ম একই থাকে।
+

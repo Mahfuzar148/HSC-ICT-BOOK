@@ -1,40 +1,50 @@
-﻿% ৪.x HTML-এ Text Formatting
-\section{HTML-এ Text Formatting}
+% Density revision 2026-10-04: answers below questions; compact related content.
+﻿% ৪.x HTML-এ লেখা বিন্যাস
+\section{HTML-এ লেখা বিন্যাস (Text Formatting)}
+
+% Composition pass 2026-10-04
+একটি বিজ্ঞপ্তিতে শিরোনাম, অনুচ্ছেদ ও গুরুত্বপূর্ণ শব্দ একইভাবে দেখালে পড়া কঠিন হয়।
+
+\chFourMotivation{লেখার স্তর ও গুরুত্ব বোঝানো $\rightarrow$ বিন্যাসের ট্যাগ $\rightarrow$ শিরোনাম, অনুচ্ছেদ ও জোর দেওয়ার অংশ চিহ্নিত করা $\rightarrow$ পাঠযোগ্য কলেজ নোটিশ।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML text formatting কী তা ব্যাখ্যা করতে।
-\item heading, paragraph, line break ও horizontal rule tag ব্যবহার করতে।
-\item bold, italic, underline, inserted, deleted, subscript, superscript ও preformatted text tag লিখতে।
-\item \texttt{<font>} tag-এর \texttt{size}, \texttt{color}, \texttt{face} attribute ব্যাখ্যা করতে।
-\item color, background color ও text alignment-এর basic HTML/CSS style ব্যবহার বুঝতে।
-\item HSC practical code-এ text formatting tag প্রয়োগ করতে।
-\item \texttt{<marquee>} tag-এর basic direction attribute চিনতে।
+\item HTML-এ লেখা বিন্যাস কী তা ব্যাখ্যা করতে।
+\item শিরোনাম, অনুচ্ছেদ, লাইন বিরতি ও অনুভূমিক বিভাজক ট্যাগ ব্যবহার করতে।
+\item মোটা অক্ষরের, বাঁকা অক্ষরের, নিচে রেখাযুক্ত, যোগ করা, বাদ দেওয়া, নিচের সূচক, উপরের সূচক ও উৎসের বিন্যাস অক্ষুণ্ণ রাখা লেখা ট্যাগ লিখতে।
+\item \texttt{<font>} ট্যাগের \texttt{size}, \texttt{color}, \texttt{face} অ্যাট্রিবিউট ব্যাখ্যা করতে।
+\item রং, পটভূমির রং ও লেখা সাজানোর অবস্থানের মৌলিক HTML/CSS রীতি বুঝতে।
+\item HSC-এর ব্যবহারিক অনুশীলনের কোডে লেখা বিন্যাস ট্যাগ প্রয়োগ করতে।
+\item \texttt{<marquee>} ট্যাগের মৌলিক \texttt{direction} অ্যাট্রিবিউট চিনতে।
 \end{itemize}
 \end{learningbox}
 
-\subsection{Text Formatting কী?}
 
-\begin{definitionbox}{Text Formatting}
-HTML-এ text formatting হলো বিভিন্ন HTML tag ব্যবহার করে web page-এর text-এর আকার, style ও উপস্থাপন পরিবর্তন করার প্রক্রিয়া।
+
+\subsection{লেখা বিন্যাস কী?}
+
+\begin{definitionbox}{লেখা বিন্যাস (Text Formatting)}
+HTML ট্যাগ দিয়ে লেখার ধরন, গুরুত্ব ও উপস্থাপন নির্ধারণের প্রক্রিয়াকে লেখা বিন্যাস বলে। অক্ষরের আকার, রং ও অবস্থান নিয়ন্ত্রণে CSS-ও ব্যবহৃত হয়।
 \end{definitionbox}
 
-Text formatting ব্যবহার করে web page-এর text bold, italic, underline, small, big, subscript, superscript, deleted, inserted বা preformatted আকারে দেখানো যায়। এতে web page পড়তে সহজ হয় এবং গুরুত্বপূর্ণ অংশ আলাদা করে বোঝানো যায়।
+বিন্যাসের ট্যাগ দিয়ে লেখাকে মোটা বা বাঁকা অক্ষরে এবং নিচে রেখাসহ দেখানো যায়। ছোট-বড় অক্ষর, নিচের ও উপরের সূচক, যোগ করা বা বাদ দেওয়া লেখা এবং উৎসের ফাঁক ও লাইনবিরতিও প্রকাশ করা যায়। সঠিক বিন্যাসে পাঠক লেখার স্তর ও গুরুত্বপূর্ণ অংশ সহজে বুঝতে পারেন।
 
-\begin{boardbox}{পরীক্ষার সংক্ষিপ্ত উত্তর}
-HTML-এ text formatting হলো বিভিন্ন HTML tag ব্যবহার করে text-এর আকার, style ও উপস্থাপন পরিবর্তন করার প্রক্রিয়া।
-\end{boardbox}
 
-\subsection{Heading Tag: \texttt{<h1>} থেকে \texttt{<h6>}}
 
-\begin{definitionbox}{Heading tag}
-Heading tag web page-এ শিরোনাম বা heading প্রদর্শনের জন্য ব্যবহৃত হয়।
+\subsection{শিরোনামের ট্যাগ: \texttt{<h1>} থেকে \texttt{<h6>}}
+
+\begin{definitionbox}{শিরোনামের ট্যাগ (Heading Tag)}
+ওয়েবপেজের বিষয়বস্তুর শিরোনাম ও তার স্তর প্রকাশের জন্য ব্যবহৃত HTML ট্যাগকে শিরোনামের ট্যাগ বলে।
 \end{definitionbox}
 
-HTML-এ মোট ৬ ধরনের heading tag আছে। \texttt{<h1>} সবচেয়ে বড় এবং গুরুত্বপূর্ণ heading, আর \texttt{<h6>} সবচেয়ে ছোট heading।
+HTML-এ ছয় স্তরের শিরোনামের ট্যাগ আছে। \texttt{<h1>} প্রথম স্তরের এবং \texttt{<h6>} ষষ্ঠ স্তরের শিরোনাম। ব্রাউজারের স্বাভাবিক রীতিতে প্রথমটি সবচেয়ে বড় এবং শেষটি সবচেয়ে ছোট দেখা যায়; CSS দিয়ে আকার বদলানো যায়।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>
@@ -43,48 +53,59 @@ HTML-এ মোট ৬ ধরনের heading tag আছে। \texttt{<h1>} �
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{ব্যবহার}
-Page title, section title, subsection title, chapter heading বা article heading দেখাতে heading tag ব্যবহার করা হয়।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যবহার}\par
+পেজ, অংশ, উপবিভাগ, অধ্যায় বা নিবন্ধের শিরোনাম দেখাতে শিরোনামের ট্যাগ ব্যবহার করা হয়।
+\par\smallskip
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Heading 1 সবচেয়ে বড়, এরপর Heading 2, Heading 3 ক্রমান্বয়ে ছোট হতে থাকে।\\
-\textbf{ব্যাখ্যা:} \texttt{<h1>} সাধারণত page-এর প্রধান শিরোনাম, \texttt{<h2>} section heading এবং \texttt{<h3>} subsection heading হিসেবে ব্যবহার করা হয়।
-\end{examplebox}
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} স্বাভাবিক রীতিতে \texttt{Heading 1} সবচেয়ে বড় দেখায়; \texttt{Heading 2} থেকে পরের স্তরগুলোর আকার ক্রমে ছোট হয়।\\
+\textbf{ব্যাখ্যা:} \texttt{<h1>} সাধারণত পেজের প্রধান শিরোনাম, \texttt{<h2>} অংশ শিরোনাম এবং \texttt{<h3>} উপবিভাগ শিরোনাম হিসেবে ব্যবহার করা হয়।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{Paragraph Tag: \texttt{<p>}}
 
-\begin{definitionbox}{Paragraph tag}
-\texttt{<p>} tag web page-এ paragraph বা অনুচ্ছেদ লেখার জন্য ব্যবহৃত হয়।
+\subsection{অনুচ্ছেদের ট্যাগ: \texttt{<p>}}
+
+\begin{definitionbox}{অনুচ্ছেদের ট্যাগ (Paragraph Tag)}
+ওয়েবপেজের লেখাকে অনুচ্ছেদ হিসেবে প্রকাশ করতে \texttt{<p>} ট্যাগ ব্যবহার করা হয়।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>This is a paragraph.</p>
 <p>This is another paragraph.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} দুইটি paragraph আলাদা block হিসেবে দেখা যাবে।\\
-\textbf{ব্যাখ্যা:} \texttt{<p>} tag browser-কে জানায় যে text-টি একটি অনুচ্ছেদ। Paragraph-এর আগে ও পরে browser সাধারণত কিছু vertical space রাখে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} দুইটি অনুচ্ছেদ আলাদা ব্লক হিসেবে দেখা যাবে।\\
+\end{minipage}
+\chFourWhy{\texttt{<p>} ট্যাগ ব্রাউজারকে জানায় যে লেখাটি একটি অনুচ্ছেদ। অনুচ্ছেদের আগে ও পরে ব্রাউজার সাধারণত কিছু উল্লম্ব ফাঁক রাখে।}
+\end{chFourWholeExample}
 
-\begin{keypointbox}{Important note}
-Browser সাধারণত HTML source code-এর extra space বা line break ignore করে। তাই আলাদা paragraph লেখার জন্য \texttt{<p>} এবং একই paragraph-এর ভিতরে line break দরকার হলে \texttt{<br>} ব্যবহার করা হয়।
+\begin{keypointbox}{মনে রাখার বিষয়}
+ব্রাউজারের স্বাভাবিক প্রদর্শনে HTML কোডের পরপর একাধিক ফাঁক ও লাইনবিরতি সাধারণত একটি ফাঁকে সংকুচিত হয়। \texttt{<pre>} বা উপযুক্ত CSS ব্যবহার করলে এগুলো ধরে রাখা যায়। তাই আলাদা অনুচ্ছেদ লেখার জন্য \texttt{<p>} এবং একই অনুচ্ছেদের ভিতরে লাইন বিরতি দরকার হলে \texttt{<br>} ব্যবহার করা হয়।
 \end{keypointbox}
 
-\subsection{Line Break Tag: \texttt{<br>}}
+\subsection{লাইনবিরতির ট্যাগ: \texttt{<br>}}
 
-\begin{definitionbox}{Line break}
-\texttt{<br>} tag নতুন line তৈরি করার জন্য ব্যবহৃত হয়।
+\begin{definitionbox}{লাইনবিরতি (Line Break)}
+\texttt{<br>} ট্যাগ নতুন লাইন তৈরি করার জন্য ব্যবহৃত হয়।
 \end{definitionbox}
 
-\texttt{<br>} একটি empty tag; এর আলাদা closing tag নেই।
+\texttt{<br>} একটি এম্পটি ট্যাগ; এর আলাদা শেষের ট্যাগ নেই।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>
 ICT College<br>
@@ -92,268 +113,342 @@ Dhaka, Bangladesh<br>
 Class: HSC
 </p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
-ICT College, Dhaka, Bangladesh এবং Class: HSC - তিনটি text আলাদা line-এ দেখা যাবে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+ICT College, Dhaka, Bangladesh এবং Class: HSC - তিনটি লেখা আলাদা লাইনে দেখা যাবে।
+\end{minipage}
+
+\end{chFourWholeExample}
 
 \begin{keypointbox}{ব্যাখ্যা}
-\texttt{<br>} paragraph ভাঙে না; একই paragraph-এর ভিতরে শুধু নতুন line তৈরি করে। তাই address, poem line বা short line break দেখাতে এটি ব্যবহার করা যায়।
+\texttt{<br>} অনুচ্ছেদ ভাঙে না; একই অনুচ্ছেদের ভিতরে শুধু নতুন লাইন তৈরি করে। তাই ঠিকানা, কবিতার লাইন বা ছোট লাইন বিরতি দেখাতে এটি ব্যবহার করা যায়।
 \end{keypointbox}
 
-\subsection{Horizontal Rule: \texttt{<hr>}}
+\subsection{অনুভূমিক বিভাজক: \texttt{<hr>}}
 
-\begin{definitionbox}{Horizontal line}
-\texttt{<hr>} tag web page-এ একটি horizontal line বা অনুভূমিক রেখা তৈরি করে।
+\begin{definitionbox}{বিষয়গত বিভাজক (Horizontal Rule)}
+\texttt{<hr>} ওয়েবপেজের বিষয়বস্তুর মধ্যে বিষয়গত বিভাজন বোঝায়। ব্রাউজার সাধারণত এটিকে একটি অনুভূমিক রেখা হিসেবে দেখায়।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <h1>HSC ICT</h1>
 <hr>
 <p>Chapter 4: HTML</p>
 \end{verbatim}
-\end{examplebox}
 
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{itemize}
-\item section আলাদা করতে ব্যবহার করা যায়।
-\item title-এর নিচে line দিতে ব্যবহার করা যায়।
-\item content division বোঝাতে ব্যবহার করা যায়।
+\item অংশ আলাদা করতে ব্যবহার করা যায়।
+\item শিরোনামের নিচে লাইন দিতে ব্যবহার করা যায়।
+\item বিষয়বস্তু বিভাগ বোঝাতে ব্যবহার করা যায়।
 \end{itemize}
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} \texttt{HSC ICT} শিরোনামের নিচে একটি অনুভূমিক লাইন দেখা যাবে, তারপর অনুচ্ছেদ দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{<hr>} একটি এম্পটি ট্যাগ; এটি বিষয়বস্তুর বিষয়গত বিরতি বা অংশ বিভাগ বোঝাতে সাহায্য করে।
+\par\smallskip
+\end{minipage}\par
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \texttt{HSC ICT} heading-এর নিচে একটি horizontal line দেখা যাবে, তারপর paragraph দেখা যাবে।\\
-\textbf{ব্যাখ্যা:} \texttt{<hr>} একটি empty tag; এটি content-এর thematic break বা section division বোঝাতে সাহায্য করে।
-\end{examplebox}
 
 \begin{center}
 \footnotesize
 \begin{tabular}{|p{0.16\textwidth}|p{0.28\textwidth}|p{0.15\textwidth}|p{0.25\textwidth}|}
 \hline
-\textbf{Tag} & \textbf{কাজ} & \textbf{Type} & \textbf{স্মরণযোগ্য কথা} \\
+\textbf{ট্যাগ} & \textbf{কাজ} & \textbf{ধরন} & \textbf{স্মরণযোগ্য কথা} \\
 \hline
-\texttt{<h1>--<h6>} & heading বা শিরোনাম তৈরি করে & container tag & structure বোঝাতে ব্যবহার হয়; \texttt{<h1>} সবচেয়ে বড় \\
+\texttt{<h1>--<h6>} & শিরোনামের স্তর প্রকাশ করে & কন্টেইনার ট্যাগ & কাঠামো বোঝাতে ব্যবহার হয়; \texttt{<h1>} সবচেয়ে বড় \\
 \hline
-\texttt{<p>} & paragraph বা অনুচ্ছেদ তৈরি করে & container tag & নতুন idea/block লেখার জন্য \\
+\texttt{<p>} & অনুচ্ছেদ তৈরি করে & কন্টেইনার ট্যাগ & নতুন বিষয়/ব্লক লেখার জন্য \\
 \hline
-\texttt{<br>} & forced line break দেয় & empty tag & একই block-এর মধ্যে line ভাঙে \\
+\texttt{<br>} & নির্দিষ্ট লাইন বিরতি দেয় & এম্পটি ট্যাগ & একই ব্লকের মধ্যে লাইন ভাঙে \\
 \hline
-\texttt{<hr>} & thematic/section break দেয় & empty tag & বিষয় আলাদা করতে visual divider \\
+\texttt{<hr>} & বিষয়গত বিভাজন বোঝায় & এম্পটি ট্যাগ & বিষয় আলাদা করে; সাধারণত রেখা দেখায় \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Common Text Formatting Tags}
+\subsection{লেখা বিন্যাসের পরিচিত ট্যাগ}
 
-\subsubsection{Bold Text: \texttt{<b>} ও \texttt{<strong>}}
+\subsubsection{মোটা অক্ষরের লেখা: \texttt{<b>} ও \texttt{<strong>}}
 
-\texttt{<b>} tag text bold করে দেখায়।
+\texttt{<b>} ট্যাগ লেখা মোটা অক্ষরে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>This is <b>bold</b> text.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} This is \textbf{bold} text.\\
-\textbf{ব্যাখ্যা:} \texttt{<b>} শুধু text visually bold করে; এটি text গুরুত্বপূর্ণ কি না, সেই অর্থ সবসময় প্রকাশ করে না।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} This is \textbf{bold} text.\\
+\end{minipage}
+\chFourWhy{\texttt{<b>} বিশেষ গুরুত্ব না বাড়িয়ে লেখার প্রতি দৃষ্টি আকর্ষণ করতে ব্যবহৃত হয়; ব্রাউজার সাধারণত তা মোটা অক্ষরে দেখায়। তাই \texttt{<b>} ও \texttt{<strong>}-এর অর্থ এক নয়।}
+\end{chFourWholeExample}
 
-\texttt{<strong>} tag গুরুত্বপূর্ণ text বোঝাতে ব্যবহৃত হয়। সাধারণত browser এটিকে bold করে দেখায়।
+\texttt{<strong>} ট্যাগ গুরুত্বপূর্ণ লেখা বোঝাতে ব্যবহৃত হয়। সাধারণত ব্রাউজার এটিকে মোটা অক্ষরে দেখায়।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <p><strong>Warning:</strong> Read the notice carefully.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \textbf{Warning:} Read the notice carefully.\\
-\textbf{ব্যাখ্যা:} \texttt{<strong>} গুরুত্বপূর্ণ, জরুরি বা সতর্কতামূলক text বোঝাতে ব্যবহৃত হয়। Browser সাধারণত এটিকে bold করে দেখায়।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} \textbf{Warning:} Read the notice carefully.\\
+\textbf{ব্যাখ্যা:} \texttt{<strong>} গুরুত্বপূর্ণ, জরুরি বা সতর্কতামূলক লেখা বোঝাতে ব্যবহৃত হয়। ব্রাউজার সাধারণত এটিকে মোটা অক্ষরে দেখায়।
+\par\smallskip
+\end{minipage}\par
 
-\begin{keypointbox}{HSC note}
-Simple visual bold দেখাতে \texttt{<b>} ব্যবহার করা যায়। গুরুত্বপূর্ণ অর্থ বোঝাতে \texttt{<strong>} ব্যবহার করা ভালো।
+
+\begin{keypointbox}{পরীক্ষায় মনে রাখবে}
+বিশেষ গুরুত্ব না বাড়িয়ে লেখার প্রতি দৃষ্টি আকর্ষণ করতে \texttt{<b>} ব্যবহার করা যায়। গুরুত্বপূর্ণ অর্থ বোঝাতে \texttt{<strong>} ব্যবহার করা ভালো।
 \end{keypointbox}
 
-\subsubsection{Italic Text: \texttt{<i>} ও \texttt{<em>}}
+\subsubsection{বাঁকা অক্ষরের লেখা: \texttt{<i>} ও \texttt{<em>}}
 
-\texttt{<i>} tag text italic করে দেখায়।
+\texttt{<i>} ট্যাগ লেখা বাঁকা অক্ষরে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>This is <i>italic</i> text.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} This is \textit{italic} text.\\
-\textbf{ব্যাখ্যা:} \texttt{<i>} text visually italic করে। বিশেষ term, foreign word বা alternate voice দেখাতে এটি ব্যবহার করা যায়।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} This is \textit{italic} text.\\
+\end{minipage}
+\chFourWhy{\texttt{<i>} লেখা দেখতে বাঁকা অক্ষরে। বিশেষ পরিভাষা, বিদেশি শব্দ বা ভিন্ন স্বর দেখাতে এটি ব্যবহার করা যায়।}
+\end{chFourWholeExample}
 
-\texttt{<em>} tag emphasized text বোঝাতে ব্যবহৃত হয়। সাধারণত browser এটিকে italic করে দেখায়।
+\texttt{<em>} ট্যাগ জোর দেওয়া লেখা বোঝাতে ব্যবহৃত হয়। সাধারণত ব্রাউজার এটিকে বাঁকা অক্ষরে দেখায়।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <p>You must <em>practice</em> HTML regularly.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} You must \textit{practice} HTML regularly.\\
-\textbf{ব্যাখ্যা:} \texttt{<em>} emphasized text বোঝায়। অর্থাৎ লেখক কোনো word-এ জোর দিতে চাইলে এটি ব্যবহার করা হয়।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} You must \textit{practice} HTML regularly.\\
+\textbf{ব্যাখ্যা:} \texttt{<em>} জোর দেওয়া লেখা বোঝায়। অর্থাৎ লেখক কোনো শব্দে জোর দিতে চাইলে এটি ব্যবহার করা হয়।
+\par\smallskip
+\end{minipage}\par
 
-\subsubsection{Underline Text: \texttt{<u>}}
 
-\texttt{<u>} tag text-এর নিচে underline দেখায়।
+\subsubsection{নিচে রেখাযুক্ত লেখা: \texttt{<u>}}
 
-\begin{examplebox}{Code}
+\texttt{<u>} ট্যাগ লেখার নিচে রেখা দেখায়।
+
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>This is <u>underlined</u> text.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} This is \underline{underlined} text.\\
-\textbf{ব্যাখ্যা:} \texttt{<u>} text-এর নিচে line দেখায়। Link-এর সাথে confusion এড়াতে web page-এ underline ব্যবহার বুঝে করা উচিত।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} This is \underline{underlined} text.\\
+\end{minipage}
+\chFourWhy{\texttt{<u>} সাধারণত লেখার নিচে রেখা দেখায় এবং বানানচিহ্নের মতো ভাষাগত নয় এমন টীকা বোঝাতে পারে। শুধু সজ্জার জন্য নিচে রেখা চাইলে CSS ব্যবহার করা যায়। লিংকের সঙ্গে বিভ্রান্তি এড়াতে রেখার ব্যবহার বুঝে করতে হবে।}
+\end{chFourWholeExample}
 
-\subsubsection{Inserted Text: \texttt{<ins>}}
+\subsubsection{যোগ করা লেখা: \texttt{<ins>}}
 
-\texttt{<ins>} tag inserted বা নতুন যোগ করা text বোঝাতে ব্যবহার করা হয়। সাধারণত browser এটিকে underline আকারে দেখায়।
+\texttt{<ins>} ট্যাগ নতুন যোগ করা লেখা বোঝাতে ব্যবহার করা হয়। সাধারণত ব্রাউজার এটিকে নিচে রেখাযুক্ত আকারে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>New topic: <ins>HTML5</ins></p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} New topic: \underline{HTML5}\\
-\textbf{ব্যাখ্যা:} \texttt{<ins>} document-এ নতুন যোগ করা text বোঝায়। Browser সাধারণত inserted text underline করে দেখায়।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} New topic: \underline{HTML5}\\
+\end{minipage}
+\chFourWhy{\texttt{<ins>} ডকুমেন্টে নতুন যোগ করা লেখা বোঝায়। ব্রাউজার সাধারণত যোগ করা লেখা নিচে রেখাযুক্ত করে দেখায়।}
+\end{chFourWholeExample}
 
-\subsubsection{Deleted Text: \texttt{<del>}, \texttt{<s>}, \texttt{<strike>}}
+\subsubsection{বাদ দেওয়া লেখা: \texttt{<del>}, \texttt{<s>}, \texttt{<strike>}}
 
-\texttt{<del>} tag deleted text বোঝাতে ব্যবহৃত হয়।
+\texttt{<del>} ট্যাগ বাদ দেওয়া লেখা বোঝাতে ব্যবহৃত হয়।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <p>Old price: <del>500</del> New price: 400</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Old price: \sout{500} New price: 400\\
-\textbf{ব্যাখ্যা:} \texttt{<del>} deleted বা বাতিল করা text বোঝাতে ব্যবহৃত হয়। Notice update, old price বা removed information দেখাতে কাজে লাগে।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} Old price: \sout{500} New price: 400\\
+\textbf{ব্যাখ্যা:} \texttt{<del>} বাদ দেওয়া বা বাতিল করা লেখা বোঝাতে ব্যবহৃত হয়। নোটিশে পরিবর্তন, পুরোনো মূল্য বা মুছে দেওয়া তথ্য বোঝাতে এই ট্যাগ কাজে লাগে।
+\par\smallskip
+\end{minipage}\par
 
-\texttt{<s>} tag text-এর মাঝখানে line-through দেখায়।
 
-\begin{examplebox}{Code}
+\texttt{<s>} ট্যাগ লেখার মাঝখানে রেখা দেখায়।
+
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p><s>Old notice</s></p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \sout{Old notice}\\
-\textbf{ব্যাখ্যা:} \texttt{<s>} এমন text দেখাতে ব্যবহৃত হয় যা আর সঠিক বা প্রযোজ্য নয়, কিন্তু delete history বোঝানো মূল উদ্দেশ্য নয়।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} \sout{Old notice}\\
+\end{minipage}
+\chFourWhy{\texttt{<s>} এমন লেখা দেখাতে ব্যবহৃত হয় যা আর সঠিক বা প্রযোজ্য নয়, কিন্তু বাদ দেওয়ার ইতিহাস বোঝানো মূল উদ্দেশ্য নয়।}
+\end{chFourWholeExample}
 
-\texttt{<strike>} পুরনো HTML-এ strikethrough text দেখাতে ব্যবহার করা হতো।
+\texttt{<strike>} পুরোনো HTML-এ মাঝে রেখাযুক্ত লেখা দেখাতে ব্যবহার করা হতো।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p><strike>Old text</strike></p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \sout{Old text}\\
-\textbf{ব্যাখ্যা:} \texttt{<strike>} পুরনো strikethrough tag। HSC exam-এ চিনে রাখা দরকার, তবে modern code-এ \texttt{<s>} বা \texttt{<del>} উত্তম।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} \sout{Old text}\\
+\end{minipage}
+\chFourWhy{\texttt{<strike>} পুরোনো মাঝে রেখাযুক্ত ট্যাগ। HSC পরীক্ষায় চিনে রাখা দরকার, তবে আধুনিক কোডে \texttt{<s>} বা \texttt{<del>} উত্তম।}
+\end{chFourWholeExample}
 
-\begin{mistakebox}{Modern note}
-Modern HTML-এ \texttt{<strike>} না ব্যবহার করে \texttt{<s>} বা \texttt{<del>} ব্যবহার করা ভালো। তবে HSC বই/PDF-এ \texttt{<strike>} থাকলে পরীক্ষার জন্য tag-টি চিনে রাখা দরকার।
+\begin{mistakebox}{আধুনিক HTML-এর নিয়ম}
+আধুনিক HTML-এ \texttt{<strike>} না ব্যবহার করে \texttt{<s>} বা \texttt{<del>} ব্যবহার করা ভালো। তবে পুরোনো উদাহরণে \texttt{<strike>} থাকলে পরীক্ষার জন্য ট্যাগটি চিনে রাখা দরকার।
 \end{mistakebox}
 
-\subsubsection{Small ও Big Text: \texttt{<small>} ও \texttt{<big>}}
+\subsubsection{ছোট ও বড় অক্ষরের লেখা: \texttt{<small>} ও \texttt{<big>}}
 
-\texttt{<small>} tag text ছোট করে দেখায়।
+\texttt{<small>} ট্যাগ লেখা ছোট করে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p><small>This is small text.</small></p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} {\small This is small text.}\\
-\textbf{ব্যাখ্যা:} \texttt{<small>} secondary note, copyright note বা less-important side comment ছোট করে দেখাতে ব্যবহার করা যায়।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} {\small This is small text.}\\
+\end{minipage}
+\chFourWhy{\texttt{<small>} পার্শ্বমন্তব্য, শর্তসংক্রান্ত ছোট লেখা বা কপিরাইটের বিজ্ঞপ্তি বোঝায়। ব্রাউজার সাধারণত ছোট অক্ষরে দেখায়; এর অর্থ সব ক্ষেত্রে কম গুরুত্বপূর্ণ তথ্য নয়।}
+\end{chFourWholeExample}
 
-\texttt{<big>} tag text বড় করে দেখায়।
+\texttt{<big>} ট্যাগ লেখা বড় করে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p><big>This is big text.</big></p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} {\large This is big text.}\\
-\textbf{ব্যাখ্যা:} \texttt{<big>} text বড় করে দেখায়। এটি পুরনো HTML tag; modern design-এ CSS দিয়ে font size নিয়ন্ত্রণ করা ভালো।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} {\large This is big text.}\\
+\end{minipage}
+\chFourWhy{\texttt{<big>} লেখা বড় করে দেখায়। এটি পুরোনো HTML ট্যাগ; আধুনিক নকশায় CSS দিয়ে অক্ষরের আকার নিয়ন্ত্রণ করা ভালো।}
+\end{chFourWholeExample}
 
-\begin{mistakebox}{Modern note}
-\texttt{<big>} modern HTML-এ obsolete হিসেবে ধরা হয়। বাস্তব web design-এ font size পরিবর্তনের জন্য CSS ব্যবহার করা ভালো। HSC exam-এর জন্য \texttt{<big>} tag-এর কাজ জানা দরকার।
+\begin{mistakebox}{আধুনিক HTML-এর নিয়ম}
+\texttt{<big>} বর্তমান HTML মানে নতুন নথিতে ব্যবহার করা হয় না। বাস্তব ওয়েব নকশায় অক্ষরের আকার পরিবর্তনের জন্য CSS ব্যবহার করা ভালো। HSC পরীক্ষার জন্য \texttt{<big>} ট্যাগের কাজ জানা দরকার।
 \end{mistakebox}
 
-\subsubsection{Subscript Text: \texttt{<sub>}}
+\subsubsection{নিচের সূচক: \texttt{<sub>}}
 
-\texttt{<sub>} tag text-কে নিচের দিকে ছোট করে দেখায়।
+\texttt{<sub>} ট্যাগ লেখাকে নিচের দিকে ছোট করে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>H<sub>2</sub>O</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
 H\textsubscript{2}O
-\end{examplebox}
+\end{minipage}
+
+\end{chFourWholeExample}
 
 \begin{keypointbox}{ব্যাখ্যা}
-\texttt{<sub>} chemical formula, footnote marker বা নিচের index লেখার জন্য দরকার হয়। যেমন, \texttt{H<sub>2</sub>O} browser-এ H\textsubscript{2}O দেখা যায়।
+\texttt{<sub>} রাসায়নিক সংকেত, পাদটীকার চিহ্ন বা নিচের সূচক লেখার জন্য দরকার হয়। যেমন, \texttt{H<sub>2</sub>O} ব্রাউজারে H\textsubscript{2}O দেখা যায়।
 \end{keypointbox}
 
-\subsubsection{Superscript Text: \texttt{<sup>}}
+\subsubsection{উপরের সূচক: \texttt{<sup>}}
 
-\texttt{<sup>} tag text-কে উপরের দিকে ছোট করে দেখায়।
+\texttt{<sup>} ট্যাগ লেখাকে উপরের দিকে ছোট করে দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <p>a<sup>2</sup> + b<sup>2</sup></p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ধারণা}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
 a\textsuperscript{2} + b\textsuperscript{2}
-\end{examplebox}
+\end{minipage}
+
+\end{chFourWholeExample}
 
 \begin{keypointbox}{ব্যাখ্যা}
-\texttt{<sup>} power, exponent, ordinal marker বা উপরের index লেখার জন্য ব্যবহৃত হয়। যেমন, \texttt{a<sup>2</sup>} browser-এ a\textsuperscript{2} দেখা যায়।
+\texttt{<sup>} ঘাত, ক্রমবাচক চিহ্ন বা উপরের সূচক লেখার জন্য ব্যবহৃত হয়। যেমন, \texttt{a<sup>2</sup>} ব্রাউজারে a\textsuperscript{2} দেখা যায়।
 \end{keypointbox}
 
-\subsubsection{Preformatted Text: \texttt{<pre>}}
+\subsubsection{উৎসের বিন্যাস অক্ষুণ্ণ রাখা লেখা: \texttt{<pre>}}
 
-\texttt{<pre>} tag text-কে source code-এ যেভাবে line break ও spacing সহ লেখা হয়েছে, browser-এ প্রায় সেভাবেই দেখায়।
+\texttt{<pre>} ট্যাগ লেখাকে উৎস কোডে যেভাবে লাইন বিরতি ও ফাঁক সহ লেখা হয়েছে, ব্রাউজারে প্রায় সেভাবেই দেখায়।
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <pre>
 Name      Roll
@@ -361,94 +456,115 @@ Sakib     01
 Asraful   02
 </pre>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Name ও Roll-এর spacing source code-এর মতো ধরে রেখে table-like text দেখা যাবে।\\
-\textbf{ব্যাখ্যা:} \texttt{<pre>} tag line break ও multiple space preserve করে। Code block, ASCII table বা fixed spacing text দেখাতে এটি ব্যবহার করা যায়।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} Name ও Roll-এর ফাঁক উৎস কোডের মতো ধরে রেখে সারণির মতো লেখা দেখা যাবে।\\
+\end{minipage}
+\chFourWhy{\texttt{<pre>} ট্যাগ লাইন বিরতি ও একাধিক ফাঁক অক্ষুণ্ণ রাখে। কোড ব্লক, ASCII সারণি বা নির্দিষ্ট ফাঁকসহ লেখা দেখাতে এটি ব্যবহার করা যায়।}
+\end{chFourWholeExample}
 
-\subsection{Font Tag: \texttt{<font>}}
+\input{chapters/Chapter04/topics/06_formatting/book_contact}
 
-\begin{definitionbox}{Font tag}
-\texttt{<font>} tag text-এর font size, color ও face নির্ধারণ করতে ব্যবহৃত হয়।
+\subsection{ফন্ট ট্যাগ: \texttt{<font>}}
+
+\begin{definitionbox}{ফন্ট ট্যাগ (Font Tag)}
+\texttt{<font>} ট্যাগ পুরোনো HTML-এ অক্ষরের আকার, রং ও ফন্টের ধরন নির্ধারণে ব্যবহৃত হত।
 \end{definitionbox}
 
-\begin{examplebox}{Code}
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <font size="5" color="red" face="Arial">
   HSC ICT
 </font>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} \texttt{HSC ICT} text বড় size-এ, red color-এ এবং Arial font style-এ দেখানোর চেষ্টা করবে।\\
-\textbf{ব্যাখ্যা:} \texttt{size} font size, \texttt{color} text color এবং \texttt{face} font family নির্দেশ করে। Browser-এ font available না থাকলে fallback font ব্যবহার হতে পারে।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} \texttt{HSC ICT} লেখা বড় আকারে, লাল রঙে এবং Arial ফন্টের রীতিতে দেখানোর চেষ্টা করবে।\\
+\end{minipage}
+\chFourWhy{\texttt{size} অক্ষরের আকার, \texttt{color} লেখার রং এবং \texttt{face} ফন্ট পরিবার নির্দেশ করে। ব্রাউজারে নির্দিষ্ট ফন্ট পাওয়া না গেলে বিকল্প ফন্ট ব্যবহার হতে পারে।}
+\end{chFourWholeExample}
 
 \begin{center}
 \begin{tabular}{|p{0.22\textwidth}|p{0.58\textwidth}|}
 \hline
-\textbf{Attribute} & \textbf{কাজ} \\
+\textbf{অ্যাট্রিবিউট} & \textbf{কাজ} \\
 \hline
-\texttt{size} & font size নির্ধারণ করে \\
+\texttt{size} & পুরোনো রীতিতে 1--7 স্তর; 1 সবচেয়ে ছোট, স্বাভাবিক মান 3। এটি পিক্সেলের সংখ্যা নয়। \texttt{+1} বা \texttt{-1} স্বাভাবিক 3-এর তুলনায় এক স্তর বাড়ানো বা কমানো বোঝায়। \\
 \hline
-\texttt{color} & text color নির্ধারণ করে \\
+\texttt{color} & লেখার রং নির্ধারণ করে \\
 \hline
-\texttt{face} & font type/name নির্ধারণ করে \\
+\texttt{face} & ফন্টের ধরন বা নাম নির্ধারণ করে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{mistakebox}{Modern note}
-\texttt{<font>} tag modern HTML-এ deprecated/obsolete। বাস্তবে CSS ব্যবহার করা ভালো। তবে HSC exam-এ \texttt{<font>} tag-এর \texttt{size}, \texttt{color}, \texttt{face} attribute গুরুত্বপূর্ণ।
+\begin{mistakebox}{আধুনিক HTML-এর নিয়ম}
+\texttt{<font>} ট্যাগ আধুনিক HTML-এ পুরোনো এবং বর্তমান মানে নতুন কোডে ব্যবহারযোগ্য নয়। বাস্তবে CSS ব্যবহার করা ভালো। তবে HSC পরীক্ষায় \texttt{<font>} ট্যাগের \texttt{size}, \texttt{color}, \texttt{face} অ্যাট্রিবিউট গুরুত্বপূর্ণ।
 \end{mistakebox}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <p style="color:red; font-size:24px; font-family:Arial;">
   HSC ICT
 </p>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Color ব্যবহার}
+\subsection{রং ব্যবহার}
 
-Web page-এ color value সাধারণত তিনভাবে লেখা যায়: color name, hexadecimal code এবং RGB code।
+ওয়েবপেজে রঙের মান সাধারণত তিনভাবে লেখা যায়: রঙের নাম, হেক্সাডেসিম্যাল কোড এবং RGB (Red, Green, Blue) কোড।
 
 \begin{center}
 \begin{tabular}{|p{0.28\textwidth}|p{0.34\textwidth}|}
 \hline
-\textbf{পদ্ধতি} & \textbf{Example} \\
+\textbf{পদ্ধতি} & \textbf{উদাহরণ} \\
 \hline
-Color name & \texttt{red} \\
+রঙের নাম & \texttt{red} \\
 \hline
-Hexadecimal code & \texttt{\#ff0000} \\
+হেক্সাডেসিম্যাল কোড & \texttt{\#ff0000} \\
 \hline
-RGB code & \texttt{rgb(255,0,0)} \\
+RGB কোড & \texttt{rgb(255,0,0)} \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <p style="color:red;">This is red text.</p>
 <p style="color:#ff0000;">This is also red text.</p>
 <p style="color:rgb(255,0,0);">This is red text too.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} তিনটি paragraph-ই red color-এ দেখা যাবে।\\
-\textbf{ব্যাখ্যা:} Color name, hexadecimal code এবং RGB code - তিনভাবে একই color নির্দেশ করা যায়। HSC practical-এ color name সহজ, কিন্তু professional design-এ hex/RGB বেশি ব্যবহৃত হয়।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} তিনটি অনুচ্ছেদই লাল রঙে দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} রঙের নাম, হেক্সাডেসিম্যাল কোড এবং RGB কোড - তিনভাবে একই রং নির্দেশ করা যায়। HSC ব্যবহারিক অনুশীলনে রঙের নাম সহজ, কিন্তু নকশায় নির্দিষ্ট রঙের মান প্রকাশ করতে হেক্সাডেসিম্যাল বা RGB কোড সুবিধাজনক।
+\par\smallskip
+\end{minipage}\par
 
-\subsection{Background Color: \texttt{bgcolor} attribute}
 
-\texttt{bgcolor} attribute ব্যবহার করে web page-এর background color নির্ধারণ করা যায়।
+\input{chapters/Chapter04/topics/06_formatting/book_color}
 
-\begin{examplebox}{Code}
+\subsection{পটভূমির রং: \texttt{bgcolor} অ্যাট্রিবিউট}
+
+\texttt{bgcolor} অ্যাট্রিবিউট ব্যবহার করে ওয়েবপেজের পটভূমির রং নির্ধারণ করা যায়।
+
+\begin{chFourWholeExample}{কোড ও ব্রাউজারে ফল}
+\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}
+
 \begin{verbatim}
 <html>
 <body bgcolor="#E6E6FA">
@@ -456,155 +572,167 @@ RGB code & \texttt{rgb(255,0,0)} \\
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} Web page-এর background light lavender color হবে এবং body-তে Hello World heading দেখা যাবে।\\
-\textbf{ব্যাখ্যা:} \texttt{bgcolor} attribute পুরনো HTML style হলেও HSC প্রশ্নে আসতে পারে। Modern HTML/CSS-এ \texttt{background-color} ব্যবহার করা ভালো।
-\end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}
+\textbf{ফল:} ওয়েবপেজের পটভূমি হালকা ল্যাভেন্ডার রঙের হবে এবং পেজে \texttt{Hello World} শিরোনাম দেখা যাবে।\\
+\end{minipage}
+\chFourWhy{\texttt{bgcolor} অ্যাট্রিবিউট পুরোনো HTML রীতি হলেও HSC প্রশ্নে আসতে পারে। আধুনিক HTML/CSS-এ \texttt{background-color} ব্যবহার করা ভালো।}
+\end{chFourWholeExample}
 
-Modern CSS version:
+আধুনিক CSS-এর রূপ:
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <body style="background-color:#E6E6FA;">
   <h1>Hello World!</h1>
 </body>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Text Alignment: \texttt{align} attribute}
+\subsection{লেখা সাজানোর অবস্থান: \texttt{align} অ্যাট্রিবিউট}
 
-Text বা paragraph left, right, center, justify করতে HSC book-style code-এ \texttt{align} attribute ব্যবহার করা হয়।
+লেখা বা অনুচ্ছেদ বামে, ডানে, কেন্দ্রে কিংবা দুই পাশে সমান করে সাজাতে পুরোনো HTML কোডে \texttt{align} অ্যাট্রিবিউট ব্যবহার করা হয়।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <p align="center">ICT College, Dhaka</p>
 <p align="right">Date: 26 May 2026</p>
 <p align="justify">This is a justified paragraph.</p>
 \end{verbatim}
-\end{examplebox}
 
-\begin{examplebox}{Output ও ব্যাখ্যা}
-\textbf{Output:} প্রথম paragraph center-এ, দ্বিতীয়টি right side-এ এবং তৃতীয়টি justify alignment-এ দেখা যাবে।\\
-\textbf{ব্যাখ্যা:} \texttt{align} attribute HSC-style basic code-এ দেখা যায়। Modern design-এ same কাজ CSS-এর \texttt{text-align} property দিয়ে করা হয়।
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও ব্যাখ্যা}\par
+\textbf{ফল:} প্রথম অনুচ্ছেদ কেন্দ্রে, দ্বিতীয়টি ডানে এবং তৃতীয়টি দুই পাশ সমান করে সাজানো অবস্থায় দেখা যাবে।\\
+\textbf{ব্যাখ্যা:} \texttt{align} অ্যাট্রিবিউট পরীক্ষায় পরিচিত মৌলিক কোডে দেখা যায়। আধুনিক নকশায় একই কাজ CSS-এর \texttt{text-align} বৈশিষ্ট্য দিয়ে করা হয়।
+\par\smallskip
+\end{minipage}\par
 
-Modern CSS version:
 
-\begin{examplebox}{Code}
+আধুনিক CSS-এর রূপ:
+
+\begin{examplebox}{কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
 <p style="text-align:center;">ICT College, Dhaka</p>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\subsection{Marquee Tag: \texttt{<marquee>}}
+\subsection{চলমান লেখার ট্যাগ (Marquee): \texttt{<marquee>}}
 
-\begin{definitionbox}{Marquee tag}
-\texttt{<marquee>} একটি পুরনো HTML tag, যা text বা image-কে নির্দিষ্ট দিকে চলমানভাবে দেখাতে ব্যবহৃত হত।
+\begin{definitionbox}{চলমান লেখার ট্যাগ (Marquee)}
+\texttt{<marquee>} একটি পুরোনো HTML ট্যাগ, যা লেখা বা ছবিকে নির্দিষ্ট দিকে চলমানভাবে দেখাতে ব্যবহৃত হত।
 \end{definitionbox}
 
-\begin{boardbox}{Concept}
-HSC basic question-এ \texttt{<marquee>} tag-এর direction attribute দেখা যেতে পারে। \texttt{direction="left"}, \texttt{direction="right"}, \texttt{direction="up"} এবং \texttt{direction="down"} দিয়ে চলার দিক নির্ধারণ করা হয়।
+\begin{boardbox}{ধারণা}
+HSC মৌলিক প্রশ্নে \texttt{<marquee>} ট্যাগের \texttt{direction} অ্যাট্রিবিউট দেখা যেতে পারে। \texttt{direction="left"}, \texttt{direction="right"}, \texttt{direction="up"} এবং \texttt{direction="down"} দিয়ে চলার দিক নির্ধারণ করা হয়।
 \end{boardbox}
 
-\begin{center}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
 \IfFileExists{chapters/Chapter04/topics/images/3d_marquee_direction.png}{
-\includegraphics[width=0.82\textwidth]{chapters/Chapter04/topics/images/3d_marquee_direction.png}
+\includegraphics[width=\linewidth,height=.24\textheight,keepaspectratio]{chapters/Chapter04/topics/images/3d_marquee_direction.png}
 }{
-\fbox{\parbox{0.78\textwidth}{\centering\vspace{0.4cm}
+\fbox{\parbox{0.92\linewidth}{\centering\vspace{0.4cm}
 \textbf{চিত্র}\\
-File: \texttt{chapters/Chapter04/topics/images/3d\_marquee\_direction.png}
+ফাইল: \texttt{chapters/Chapter04/topics/images/3d\_marquee\_direction.png}
 \vspace{0.4cm}}}
 }
-\captionof{figure}{Marquee tag-এর direction attribute}
-\end{center}
-
+\captionof{figure}{চলমান লেখার ট্যাগের \texttt{direction} অ্যাট্রিবিউট}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
 \begin{keypointbox}{চিত্র ব্যাখ্যা}
-চিত্রে marquee text চারদিকে চলতে পারে তা দেখানো হয়েছে। Left direction text-কে বামে, right direction ডানে, up direction উপরে এবং down direction নিচে move করায়।
+চিত্রে লেখার চলার চারটি দিক দেখানো হয়েছে। \texttt{left} বামে, \texttt{right} ডানে, \texttt{up} উপরে এবং \texttt{down} নিচে চলার নির্দেশ দেয়।
 \end{keypointbox}
 
-\begin{keypointbox}{চিত্র দেখে code লেখার ধাপ}
-প্রথমে moving text লিখবে। তারপর \texttt{<marquee>} tag ব্যবহার করবে। text কোন দিকে চলবে তা দেখে \texttt{direction} attribute বসাবে।
+\begin{keypointbox}{চিত্র দেখে কোড লেখার ধাপ}
+\texttt{<marquee>}-এর ভেতরের লেখা বা ছবি চলমান থাকে। \texttt{direction} অ্যাট্রিবিউটের মান চলার দিক নির্ধারণ করে।
 \end{keypointbox}
+\end{minipage}\par
 
-\begin{examplebox}{Highlighted HTML Code}
+
+\begin{examplebox}{বিশেষভাবে দেখানো HTML কোড}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{verbatim}
-<html>
-<body>
 <marquee direction="left">Welcome to HSC ICT</marquee>
 <marquee direction="right">HTML Marquee Example</marquee>
 <marquee direction="up" height="80">Move Up</marquee>
 <marquee direction="down" height="80">Move Down</marquee>
-</body>
-</html>
 \end{verbatim}
+\end{minipage}\par
 \end{examplebox}
 
-\begin{mistakebox}{Modern সতর্কতা}
-\texttt{marquee} old/non-standard tag। HSC basic concept হিসেবে জানা দরকার, কিন্তু modern website-এ CSS animation ব্যবহার করা ভালো।
+\begin{mistakebox}{আধুনিক সতর্কতা}
+\texttt{<marquee>} বর্তমান HTML-এ পুরোনো ও নতুন কোডে ব্যবহারযোগ্য নয় এমন বৈশিষ্ট্য। পরীক্ষার উদাহরণ বোঝার জন্য এটি জানা দরকার। নতুন ওয়েবসাইটে চলমান দৃশ্যের জন্য CSS অ্যানিমেশন ব্যবহার করা হয়।
 \end{mistakebox}
 
-\subsection{Text Formatting Tag Table}
+\subsection{লেখা বিন্যাসের ট্যাগ ও কাজ}
 
 \begin{center}
 \footnotesize
 \begin{tabular}{|p{0.17\textwidth}|p{0.30\textwidth}|p{0.37\textwidth}|}
 \hline
-\textbf{Tag} & \textbf{কাজ} & \textbf{Example} \\
+\textbf{ট্যাগ} & \textbf{কাজ} & \textbf{উদাহরণ} \\
 \hline
-\texttt{<h1>--<h6>} & heading তৈরি করে & \texttt{<h1>Title</h1>} \\
+\texttt{<h1>--<h6>} & শিরোনাম তৈরি করে & \texttt{<h1>Title</h1>} \\
 \hline
-\texttt{<p>} & paragraph তৈরি করে & \texttt{<p>Text</p>} \\
+\texttt{<p>} & অনুচ্ছেদ তৈরি করে & \texttt{<p>Text</p>} \\
 \hline
-\texttt{<br>} & নতুন line তৈরি করে & \texttt{Line 1<br>Line 2} \\
+\texttt{<br>} & নতুন লাইন তৈরি করে & \texttt{Line 1<br>Line 2} \\
 \hline
-\texttt{<hr>} & horizontal line তৈরি করে & \texttt{<hr>} \\
+\texttt{<hr>} & অনুভূমিক লাইন তৈরি করে & \texttt{<hr>} \\
 \hline
-\texttt{<b>} & bold text & \texttt{<b>Bold</b>} \\
+\texttt{<b>} & মোটা অক্ষরের লেখা & \texttt{<b>Bold</b>} \\
 \hline
-\texttt{<strong>} & important text & \texttt{<strong>Important</strong>} \\
+\texttt{<strong>} & গুরুত্বপূর্ণ লেখা & \texttt{<strong>Important</strong>} \\
 \hline
-\texttt{<i>} & italic text & \texttt{<i>Italic</i>} \\
+\texttt{<i>} & বাঁকা অক্ষরের লেখা & \texttt{<i>Italic</i>} \\
 \hline
-\texttt{<em>} & emphasized text & \texttt{<em>Emphasis</em>} \\
+\texttt{<em>} & জোর দেওয়া লেখা & \texttt{<em>Emphasis</em>} \\
 \hline
-\texttt{<u>} & underline text & \texttt{<u>Underline</u>} \\
+\texttt{<u>} & নিচে রেখাযুক্ত লেখা & \texttt{<u>Underline</u>} \\
 \hline
-\texttt{<ins>} & inserted text & \texttt{<ins>New</ins>} \\
+\texttt{<ins>} & যোগ করা লেখা & \texttt{<ins>New</ins>} \\
 \hline
-\texttt{<del>} & deleted text & \texttt{<del>Old</del>} \\
+\texttt{<del>} & বাদ দেওয়া লেখা & \texttt{<del>Old</del>} \\
 \hline
-\texttt{<s>} & strikethrough & \texttt{<s>Old</s>} \\
+\texttt{<s>} & মাঝে রেখাযুক্ত & \texttt{<s>Old</s>} \\
 \hline
-\texttt{<strike>} & strikethrough পুরনো tag & \texttt{<strike>Old</strike>} \\
+\texttt{<strike>} & মাঝে রেখাযুক্ত পুরোনো ট্যাগ & \texttt{<strike>Old</strike>} \\
 \hline
-\texttt{<small>} & small text & \texttt{<small>Small</small>} \\
+\texttt{<small>} & ছোট লেখা & \texttt{<small>Small</small>} \\
 \hline
-\texttt{<big>} & big text & \texttt{<big>Big</big>} \\
+\texttt{<big>} & বড় লেখা & \texttt{<big>Big</big>} \\
 \hline
-\texttt{<sub>} & subscript & \texttt{H<sub>2</sub>O} \\
+\texttt{<sub>} & নিচের সূচক & \texttt{H<sub>2</sub>O} \\
 \hline
-\texttt{<sup>} & superscript & \texttt{a<sup>2</sup>} \\
+\texttt{<sup>} & উপরের সূচক & \texttt{a<sup>2</sup>} \\
 \hline
-\texttt{<pre>} & preformatted text & \texttt{<pre>Text</pre>} \\
+\texttt{<pre>} & উৎসের বিন্যাস অক্ষুণ্ণ রাখা লেখা & \texttt{<pre>Text</pre>} \\
 \hline
-\texttt{<font>} & font size/color/face & \texttt{<font color="red">Text</font>} \\
+\texttt{<font>} & অক্ষরের আকার, রং ও ফন্টের ধরন & \texttt{<font color="red">Text</font>} \\
 \hline
 \end{tabular}
 \normalsize
 \end{center}
 
-\subsection{Complete Example Code}
+\input{chapters/Chapter04/topics/06_formatting/clarity}
 
-\begin{examplebox}{Code}
+\subsection{পূর্ণাঙ্গ উদাহরণ}
+
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>HTML Text Formatting</title>
-</head>
 <body bgcolor="#F5F5F5">
 
   <h1 align="center">HSC ICT Chapter 4</h1>
@@ -637,84 +765,124 @@ Asraful   02
   </pre>
 
 </body>
-</html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\begin{examplebox}{Output ধারণা}
-Browser-এ center aligned heading, horizontal line, bold/italic/underline text, H\textsubscript{2}O subscript, a\textsuperscript{2}+b\textsuperscript{2} superscript, deleted/inserted text, blue Arial font text এবং preformatted table-like text দেখা যাবে।
+
+\begin{examplebox}{ফল কী হবে?}
+ব্রাউজারে কেন্দ্রে সাজানো শিরোনাম, অনুভূমিক লাইন, মোটা অক্ষরের/বাঁকা অক্ষরের/নিচে রেখাযুক্ত লেখা, H\textsubscript{2}O নিচের সূচক, a\textsuperscript{2}+b\textsuperscript{2} উপরের সূচক, বাদ দেওয়া/যোগ করা লেখা, নীল Arial ফন্ট লেখা এবং আগের বিন্যাসে রাখা সারণির মতো লেখা দেখা যাবে।
 \end{examplebox}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \texttt{<br>} tag-কে container tag মনে করা।
+\item \texttt{<br>} ট্যাগকে কন্টেইনার ট্যাগ মনে করা।
 \item \texttt{<title>} আর \texttt{<h1>} একই মনে করা।
-\item \texttt{<b>} ও \texttt{<strong>} tag-এর meaning পার্থক্য না বোঝা।
-\item \texttt{<i>} ও \texttt{<em>} tag-এর semantic পার্থক্য না বোঝা।
-\item \texttt{<sub>} আর \texttt{<sup>} উল্টো করে ফেলা।
-\item \texttt{<font>} tag modern HTML-এ obsolete - এই note না দেওয়া।
-\item বাংলা text ঠিক দেখাতে \texttt{UTF-8} না দেওয়া।
-\item tag ঠিকভাবে close না করা।
+\item \texttt{<b>} ও \texttt{<strong>} ট্যাগের অর্থের পার্থক্য না বোঝা।
+\item \texttt{<i>} ও \texttt{<em>} ট্যাগের অর্থগত পার্থক্য না বোঝা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item \texttt{<sub>} আর \texttt{<sup>} উল্টো করে ফেলা।
+\item \texttt{<font>} ট্যাগ আধুনিক HTML-এ বর্তমান মানে ব্যবহারযোগ্য নয় - এই বাড়তি তথ্য না দেওয়া।
+\item বাংলা লেখা ঠিক দেখাতে \texttt{UTF-8} না দেওয়া।
+\item ট্যাগ ঠিকভাবে বন্ধ না করা।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\subsection{পরীক্ষার জন্য সংক্ষিপ্ত উত্তর}
 
-HTML text formatting tag ব্যবহার করে web page-এর text সুন্দরভাবে সাজানো যায়। Heading দেখানোর জন্য \texttt{<h1>} থেকে \texttt{<h6>}, paragraph লেখার জন্য \texttt{<p>}, line break-এর জন্য \texttt{<br>} এবং horizontal line-এর জন্য \texttt{<hr>} ব্যবহৃত হয়। Text bold, italic, underline, small, big, subscript, superscript, deleted বা inserted আকারে দেখাতে বিভিন্ন formatting tag ব্যবহার করা যায়। HSC ICT পরীক্ষার জন্য \texttt{<b>}, \texttt{<i>}, \texttt{<u>}, \texttt{<sub>}, \texttt{<sup>}, \texttt{<br>}, \texttt{<hr>} এবং \texttt{<font>} tag খুব গুরুত্বপূর্ণ। তবে modern web design-এ color, font size, alignment ও background control করার জন্য CSS ব্যবহার করা বেশি standard।
+\input{chapters/Chapter04/topics/06_formatting/enrichment}
 
-\subsection{ছোট প্রশ্নোত্তর}
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\begin{enumerate}
-\item Heading tag কয়টি?\\
-\textbf{উত্তর:} ৬টি - \texttt{<h1>} থেকে \texttt{<h6>}।
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{শিরোনাম ট্যাগ কয়টি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{অনুচ্ছেদ লেখার ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{লাইন বিরতি করার ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{অনুভূমিক লাইন তৈরির ট্যাগ কোনটি?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{লেখা মোটা অক্ষরের করতে কোন ট্যাগ ব্যবহার হয়?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{লেখা বাঁকা অক্ষরের করতে কোন ট্যাগ ব্যবহার হয়?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{H\textsubscript{2}O লেখার জন্য কোন ট্যাগ ব্যবহার হবে?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{a\textsuperscript{2} লেখার জন্য কোন ট্যাগ ব্যবহার হবে?}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\texttt{<font>} ট্যাগের অ্যাট্রিবিউট কী কী?}
+\end{minipage}\par\smallskip
+\end{multicols}
 
-\item Paragraph লেখার tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<p>}।
+\Needspace{10\baselineskip}
+\subsection{পরীক্ষাভিত্তিক বহুনির্বাচনি প্রশ্ন}
 
-\item Line break করার tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<br>}।
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ব্রাউজারের স্বাভাবিক রীতিতে সবচেয়ে বড় শিরোনাম কোনটি?
+\par ক) \texttt{<h6>}
+\par খ) \texttt{<h3>}
+\par গ) \texttt{<h1>}
+\par ঘ) \texttt{<head>}
+\end{minipage}
 
-\item Horizontal line তৈরির tag কোনটি?\\
-\textbf{উত্তর:} \texttt{<hr>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+অনুচ্ছেদ ট্যাগ কোনটি?
+\par ক) \texttt{<para>}
+\par খ) \texttt{<p>}
+\par গ) \texttt{<br>}
+\par ঘ) \texttt{<hr>}
+\end{minipage}
 
-\item Text bold করতে কোন tag ব্যবহার হয়?\\
-\textbf{উত্তর:} \texttt{<b>} অথবা \texttt{<strong>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+নতুন লাইন তৈরি করতে কোন ট্যাগ ব্যবহৃত হয়?
+\par ক) \texttt{<br>}
+\par খ) \texttt{<b>}
+\par গ) \texttt{<i>}
+\par ঘ) \texttt{<u>}
+\end{minipage}
 
-\item Text italic করতে কোন tag ব্যবহার হয়?\\
-\textbf{উত্তর:} \texttt{<i>} অথবা \texttt{<em>}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+H\textsubscript{2}O লেখার জন্য কোন ট্যাগ দরকার?
+\par ক) \texttt{<sup>}
+\par খ) \texttt{<sub>}
+\par গ) \texttt{<small>}
+\par ঘ) \texttt{<big>}
+\end{minipage}
 
-\item H\textsubscript{2}O লেখার জন্য কোন tag ব্যবহার হবে?\\
-\textbf{উত্তর:} \texttt{<sub>} tag।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+a\textsuperscript{2} লেখার জন্য কোন ট্যাগ দরকার?
+\par ক) \texttt{<sub>}
+\par খ) \texttt{<sup>}
+\par গ) \texttt{<del>}
+\par ঘ) \texttt{<ins>}
+\end{minipage}
 
-\item a\textsuperscript{2} লেখার জন্য কোন tag ব্যবহার হবে?\\
-\textbf{উত্তর:} \texttt{<sup>} tag।
-
-\item \texttt{<font>} tag-এর attribute কী কী?\\
-\textbf{উত্তর:} \texttt{size}, \texttt{color}, \texttt{face}।
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+\texttt{<font>} ট্যাগের অ্যাট্রিবিউট কোনগুলো?
+\par ক) \texttt{size}, \texttt{color}, \texttt{face}
+\par খ) \texttt{src}, \texttt{alt}, \texttt{width}
+\par গ) \texttt{href}, \texttt{target}, \texttt{title}
+\par ঘ) \texttt{rowspan}, \texttt{colspan}, \texttt{border}
+\end{minipage}
 \end{enumerate}
+\end{multicols}
 
-\subsection{Exam Focus MCQ}
-
-\begin{enumerate}
-\item সবচেয়ে বড় heading কোনটি?\\
-ক) \texttt{<h6>} \quad খ) \texttt{<h3>} \quad গ) \texttt{<h1>} \quad ঘ) \texttt{<head>}
-
-\item Paragraph tag কোনটি?\\
-ক) \texttt{<para>} \quad খ) \texttt{<p>} \quad গ) \texttt{<br>} \quad ঘ) \texttt{<hr>}
-
-\item নতুন line তৈরি করতে কোন tag ব্যবহৃত হয়?\\
-ক) \texttt{<br>} \quad খ) \texttt{<b>} \quad গ) \texttt{<i>} \quad ঘ) \texttt{<u>}
-
-\item H\textsubscript{2}O লেখার জন্য কোন tag দরকার?\\
-ক) \texttt{<sup>} \quad খ) \texttt{<sub>} \quad গ) \texttt{<small>} \quad ঘ) \texttt{<big>}
-
-\item a\textsuperscript{2} লেখার জন্য কোন tag দরকার?\\
-ক) \texttt{<sub>} \quad খ) \texttt{<sup>} \quad গ) \texttt{<del>} \quad ঘ) \texttt{<ins>}
-
-\item \texttt{<font>} tag-এর attribute কোনগুলো?\\
-ক) size, color, face \quad খ) src, alt, width \quad গ) href, target, title \quad ঘ) rowspan, colspan, border
-\end{enumerate}
-
-\begin{boardbox}{Answer key}
-১-গ, ২-খ, ৩-ক, ৪-খ, ৫-খ, ৬-ক
-\end{boardbox}
+\chFourMCQAnswer{১-গ, ২-খ, ৩-ক, ৪-খ, ৫-খ, ৬-ক}

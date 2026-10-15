@@ -1,0 +1,1818 @@
+\sectionheading{5.46 ব্যবহারিক Python Program অনুশীলন}
+
+Programming শেখার সবচেয়ে কার্যকর উপায় হলো Problem বুঝে নিজে
+Logic তৈরি করে Program লেখা।
+
+\begin{center}
+
+\textbf{Input নির্ধারণ}
+\(\longrightarrow\)
+\textbf{Processing/Condition}
+\(\longrightarrow\)
+\textbf{Code লেখা}
+\(\longrightarrow\)
+\textbf{Output যাচাই}
+
+\end{center}
+
+%================================================
+% Strategy
+%================================================
+
+\booksubheading{Program লেখার সাধারণ কৌশল}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.48\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{প্রশ্ন}
+&
+\textbf{কী নির্ধারণ করবে?}
+\\
+\hline
+
+কী কী Data নিতে হবে?
+&
+Input
+\\
+\hline
+
+কী Calculation বা Condition লাগবে?
+&
+Processing
+\\
+\hline
+
+কী Result দেখাতে হবে?
+&
+Output
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 1 Sum
+%================================================
+
+\booksubheading{১. দুটি সংখ্যার যোগফল}
+
+\begin{codeoutputbox}{দুটি সংখ্যার Sum}
+
+\noindent
+\begin{minipage}[t]{0.57\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+a = int(input("Enter first number: "))\\
+b = int(input("Enter second number: "))\\[0.5mm]
+sum = a + b\\
+print("Sum =", sum)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 10, 20}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Sum = 30}
+
+\medskip
+
+\textbf{IPO:}
+
+Input \(\rightarrow\) \textenglish{\ttfamily a, b}
+
+Processing \(\rightarrow\)
+\textenglish{\ttfamily a + b}
+
+Output \(\rightarrow\) Sum
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 2 Rectangle
+%================================================
+
+\booksubheading{২. আয়তক্ষেত্রের ক্ষেত্রফল}
+
+সূত্র—
+\[
+\text{Area} = \text{Length} \times \text{Width}
+\]
+
+\begin{codeoutputbox}{Rectangle Area}
+
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+length = float(input("Enter length: "))\\
+width = float(input("Enter width: "))\\[0.5mm]
+area = length * width\\
+print("Area =", area)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 5, 4}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Area = 20.0}
+
+\medskip
+
+\textenglish{\ttfamily float()}
+ব্যবহার করায় Decimal Input-ও গ্রহণ করা যাবে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 3 Average
+%================================================
+
+\booksubheading{৩. তিনটি সংখ্যার গড়}
+
+\[
+\text{Average}=\frac{a+b+c}{3}
+\]
+
+\begin{codeoutputbox}{Average নির্ণয়}
+
+\noindent
+\begin{minipage}[t]{0.59\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+a = float(input("Enter first number: "))\\
+b = float(input("Enter second number: "))\\
+c = float(input("Enter third number: "))\\[0.5mm]
+avg = (a + b + c) / 3\\
+print("Average =", avg)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.37\linewidth}
+\outputheading
+
+\textbf{Input:}
+
+\textenglish{\ttfamily 10, 20, 30}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Average = 20.0}
+
+\medskip
+
+তিনটি সংখ্যার যোগফলকে 3 দিয়ে ভাগ করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 4 Celsius Fahrenheit
+%================================================
+
+\booksubheading{৪. Celsius থেকে Fahrenheit}
+
+সূত্র—
+
+\[
+F=\frac{9C}{5}+32
+\]
+
+\begin{codeoutputbox}{Temperature Conversion}
+
+\noindent
+\begin{minipage}[t]{0.56\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+c = float(input("Enter Celsius: "))\\[0.5mm]
+f = (9 * c) / 5 + 32\\
+print("Fahrenheit =", f)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 25}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Fahrenheit = 77.0}
+
+\medskip
+
+Formula অনুযায়ী Celsius-কে Fahrenheit-এ রূপান্তর করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 5 Even Odd
+%================================================
+
+\booksubheading{৫. সংখ্যা জোড় না বিজোড়}
+
+\begin{codeoutputbox}{Even / Odd}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\[0.5mm]
+if n \% 2 == 0:\\
+\hspace*{4mm}print("Even")\\
+else:\\
+\hspace*{4mm}print("Odd")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 8}
+
+\medskip
+
+\textbf{Output:}
+\textenglish{\ttfamily Even}
+
+\medskip
+
+\textenglish{\ttfamily n \% 2 == 0}
+হলে 2 দিয়ে ভাগশেষ 0।
+
+তাই সংখ্যাটি Even।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textenglish{\ttfamily n \% 2 == 0}
+\(\longrightarrow\)
+\textbf{Even}
+
+\qquad
+
+অন্যথায়
+\(\longrightarrow\)
+\textbf{Odd}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% 6 Positive Negative
+%================================================
+
+\booksubheading{৬. সংখ্যা ধনাত্মক, ঋণাত্মক নাকি শূন্য}
+
+\begin{codeoutputbox}{Positive / Negative / Zero}
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = float(input("Enter a number: "))\\[0.5mm]
+if n > 0:\\
+\hspace*{4mm}print("Positive")\\
+elif n < 0:\\
+\hspace*{4mm}print("Negative")\\
+else:\\
+\hspace*{4mm}print("Zero")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\outputheading
+
+তিনটি সম্ভাবনা—
+
+\medskip
+
+\textenglish{\ttfamily n > 0}
+\(\rightarrow\)
+Positive
+
+\medskip
+
+\textenglish{\ttfamily n < 0}
+\(\rightarrow\)
+Negative
+
+\medskip
+
+অন্যথায়
+\(\rightarrow\)
+Zero
+
+\medskip
+
+তাই
+\textenglish{\ttfamily if-elif-else}
+ব্যবহার করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 7 Largest of two
+%================================================
+
+\booksubheading{৭. দুটি সংখ্যার মধ্যে বড় সংখ্যা}
+
+\begin{codeoutputbox}{দুটি সংখ্যার তুলনা}
+
+\noindent
+\begin{minipage}[t]{0.57\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+a = int(input("Enter first number: "))\\
+b = int(input("Enter second number: "))\\[0.5mm]
+if a > b:\\
+\hspace*{4mm}print(a, "is larger")\\
+elif b > a:\\
+\hspace*{4mm}print(b, "is larger")\\
+else:\\
+\hspace*{4mm}print("Both are equal")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\linewidth}
+\outputheading
+
+দুটি Number-এর মধ্যে—
+
+\medskip
+
+\textenglish{\ttfamily a > b}
+হলে
+\textenglish{\ttfamily a}
+বড়।
+
+\medskip
+
+\textenglish{\ttfamily b > a}
+হলে
+\textenglish{\ttfamily b}
+বড়।
+
+\medskip
+
+সমান হলে
+\textenglish{\ttfamily else}
+Execute হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 8 Largest three
+%================================================
+
+\booksubheading{৮. তিনটি সংখ্যার মধ্যে বৃহত্তম সংখ্যা}
+
+\begin{codeoutputbox}{Largest of Three}
+
+\noindent
+\begin{minipage}[t]{0.59\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+a = int(input("Enter first number: "))\\
+b = int(input("Enter second number: "))\\
+c = int(input("Enter third number: "))\\[0.5mm]
+if a >= b and a >= c:\\
+\hspace*{4mm}largest = a\\
+elif b >= a and b >= c:\\
+\hspace*{4mm}largest = b\\
+else:\\
+\hspace*{4mm}largest = c\\[0.5mm]
+print("Largest =", largest)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.37\linewidth}
+\outputheading
+
+\textbf{Input:}
+
+\textenglish{\ttfamily 10, 25, 15}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Largest = 25}
+
+\medskip
+
+প্রতিটি Number-কে বাকি দুইটির সঙ্গে তুলনা করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 9 Grade
+%================================================
+
+\booksubheading{৯. Marks থেকে Grade নির্ণয়}
+
+\begin{codeoutputbox}{Grade নির্ণয়}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+marks = int(input("Enter marks: "))\\[0.5mm]
+if marks >= 80:\\
+\hspace*{4mm}print("A+")\\
+elif marks >= 70:\\
+\hspace*{4mm}print("A")\\
+elif marks >= 60:\\
+\hspace*{4mm}print("A-")\\
+elif marks >= 50:\\
+\hspace*{4mm}print("B")\\
+elif marks >= 40:\\
+\hspace*{4mm}print("C")\\
+elif marks >= 33:\\
+\hspace*{4mm}print("D")\\
+else:\\
+\hspace*{4mm}print("F")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+Conditionগুলো উচ্চ Marks থেকে নিচের দিকে সাজানো হয়েছে।
+
+\medskip
+
+যেমন
+\textenglish{\ttfamily marks = 75}
+হলে—
+
+\begin{center}
+\textenglish{\ttfamily A}
+\end{center}
+
+Print হবে।
+
+\medskip
+
+একাধিক Range পরীক্ষা করতে
+\textenglish{\ttfamily if-elif-else}
+ব্যবহার করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 10 1 to n
+%================================================
+
+\booksubheading{১০. ১ থেকে n পর্যন্ত সংখ্যা Print}
+
+\begin{codeoutputbox}{১ থেকে n}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter n: "))\\[0.5mm]
+for i in range(1, n + 1):\\
+\hspace*{4mm}print(i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\outputheading
+
+যদি
+\textenglish{\ttfamily n = 5},
+Output—
+
+\begin{english}
+\ttfamily
+1\\
+2\\
+3\\
+4\\
+5
+\end{english}
+
+\textenglish{\ttfamily range()}
+-এর Stop Value Excluded, তাই
+\textenglish{\ttfamily n + 1}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 11 Sum 1 to n
+%================================================
+
+\booksubheading{১১. ১ থেকে n পর্যন্ত সংখ্যার যোগফল}
+
+\begin{codeoutputbox}{Accumulator ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter n: "))\\
+total = 0\\[0.5mm]
+for i in range(1, n + 1):\\
+\hspace*{4mm}total += i\\[0.5mm]
+print("Sum =", total)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 5}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Sum = 15}
+
+\medskip
+
+\textenglish{\ttfamily total}
+প্রতিটি Iteration-এর Sum জমা রাখছে।
+
+তাই এটি \textbf{Accumulator}।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.30\linewidth}
+|>{\centering\arraybackslash}Y|
+}
+
+\hline
+\rowcolor{softBlue}
+\textbf{\textenglish{\ttfamily i}}
+&
+\textbf{\textenglish{\ttfamily total}}
+\\
+\hline
+1 & 1 \\
+\hline
+2 & 3 \\
+\hline
+3 & 6 \\
+\hline
+4 & 10 \\
+\hline
+5 & 15 \\
+\hline
+
+\end{tabularx}
+
+%================================================
+% 12 Multiplication table
+%================================================
+
+\booksubheading{১২. গুণের নামতা}
+
+\begin{codeoutputbox}{Multiplication Table}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\[0.5mm]
+for i in range(1, 11):\\
+\hspace*{4mm}print(n, "x", i, "=", n * i)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+যদি
+\textenglish{\ttfamily n = 5}—
+
+\begin{english}
+\ttfamily
+5 x 1 = 5\\
+5 x 2 = 10\\
+5 x 3 = 15\\
+...\\
+5 x 10 = 50
+\end{english}
+
+Loop 1 থেকে 10 পর্যন্ত চলে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 13 Factorial
+%================================================
+
+\booksubheading{১৩. Factorial নির্ণয়}
+
+\[
+n! = 1 \times 2 \times 3 \times \cdots \times n
+\]
+
+\begin{codeoutputbox}{Factorial}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\
+fact = 1\\[0.5mm]
+for i in range(1, n + 1):\\
+\hspace*{4mm}fact *= i\\[0.5mm]
+print("Factorial =", fact)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 5}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Factorial = 120}
+
+\medskip
+
+Multiplication জমা করার জন্য শুরুতে—
+
+\begin{center}
+\textenglish{\ttfamily fact = 1}
+\end{center}
+
+নেওয়া হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+Factorial-এ
+\textenglish{\ttfamily fact = 0}
+নিলে প্রতিটি Multiplication-এর Result 0 হয়ে যাবে।
+
+তাই Initial Value সাধারণত
+\textenglish{\ttfamily 1}।
+
+\end{rememberbox}
+
+%================================================
+% 14 Prime
+%================================================
+
+\booksubheading{১৪. একটি সংখ্যা Prime কি না}
+
+Prime Number-এর ঠিক দুটি Positive Divisor থাকে—
+\textenglish{\ttfamily 1}
+এবং সংখ্যাটি নিজে।
+
+\begin{codeoutputbox}{Prime Number Test}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\
+is\_prime = True\\[0.5mm]
+if n < 2:\\
+\hspace*{4mm}is\_prime = False\\
+else:\\
+\hspace*{4mm}for i in range(2, n):\\
+\hspace*{8mm}if n \% i == 0:\\
+\hspace*{12mm}is\_prime = False\\
+\hspace*{12mm}break\\[0.5mm]
+if is\_prime:\\
+\hspace*{4mm}print("Prime")\\
+else:\\
+\hspace*{4mm}print("Not Prime")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 7}
+
+\medskip
+
+\textbf{Output:}
+\textenglish{\ttfamily Prime}
+
+\medskip
+
+2 থেকে
+\textenglish{\ttfamily n-1}
+পর্যন্ত কোনো Number দিয়ে নিঃশেষে ভাগ যায় কি না দেখা হয়।
+
+\medskip
+
+Divisor পাওয়া গেলে
+\textenglish{\ttfamily break}
+দিয়ে Loop বন্ধ হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 15 Fibonacci
+%================================================
+
+\booksubheading{১৫. Fibonacci Series}
+
+Fibonacci Series-এ প্রতিটি নতুন সংখ্যা আগের দুই সংখ্যার যোগফল।
+
+\begin{center}
+\textenglish{\ttfamily 0, 1, 1, 2, 3, 5, 8, ...}
+\end{center}
+
+\begin{codeoutputbox}{Fibonacci Series}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("How many terms: "))\\
+a = 0\\
+b = 1\\[0.5mm]
+for i in range(n):\\
+\hspace*{4mm}print(a, end=" ")\\
+\hspace*{4mm}a, b = b, a + b
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+যদি
+\textenglish{\ttfamily n = 7}—
+
+\begin{center}
+\textenglish{\ttfamily 0 1 1 2 3 5 8}
+\end{center}
+
+প্রতি Iteration-এ—
+
+\begin{center}
+\textenglish{\ttfamily a, b = b, a + b}
+\end{center}
+
+দিয়ে পরবর্তী দুইটি Value Update হয়।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 16 Digit sum
+%================================================
+
+\booksubheading{১৬. একটি সংখ্যার Digit-এর যোগফল}
+
+উদাহরণ—
+
+\[
+1234 \longrightarrow 1+2+3+4=10
+\]
+
+\begin{codeoutputbox}{Sum of Digits}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\
+total = 0\\[0.5mm]
+while n > 0:\\
+\hspace*{4mm}digit = n \% 10\\
+\hspace*{4mm}total += digit\\
+\hspace*{4mm}n //= 10\\[0.5mm]
+print("Sum of digits =", total)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 1234}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Sum of digits = 10}
+
+\medskip
+
+\textenglish{\ttfamily n \% 10}
+\(\rightarrow\)
+শেষ Digit
+
+\medskip
+
+\textenglish{\ttfamily n // 10}
+\(\rightarrow\)
+শেষ Digit বাদ
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 17 Reverse
+%================================================
+
+\booksubheading{১৭. সংখ্যা Reverse করা}
+
+\begin{codeoutputbox}{Number Reverse}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\
+reverse = 0\\[0.5mm]
+while n > 0:\\
+\hspace*{4mm}digit = n \% 10\\
+\hspace*{4mm}reverse = reverse * 10 + digit\\
+\hspace*{4mm}n //= 10\\[0.5mm]
+print("Reverse =", reverse)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 1234}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Reverse = 4321}
+
+\medskip
+
+প্রতিবার শেষ Digit নিয়ে
+\textenglish{\ttfamily reverse}
+Variable-এর ডান পাশে যোগ করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 18 Palindrome
+%================================================
+
+\booksubheading{১৮. Palindrome Number পরীক্ষা}
+
+যে Number উল্টো করলেও একই থাকে তাকে
+\textbf{Palindrome Number} বলে।
+
+যেমন—
+\textenglish{\ttfamily 121, 1331}।
+
+\begin{codeoutputbox}{Palindrome Test}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+n = int(input("Enter a number: "))\\
+original = n\\
+reverse = 0\\[0.5mm]
+while n > 0:\\
+\hspace*{4mm}digit = n \% 10\\
+\hspace*{4mm}reverse = reverse * 10 + digit\\
+\hspace*{4mm}n //= 10\\[0.5mm]
+if original == reverse:\\
+\hspace*{4mm}print("Palindrome")\\
+else:\\
+\hspace*{4mm}print("Not Palindrome")
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 121}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Palindrome}
+
+\medskip
+
+প্রথমে Original Number রাখা হয়েছে।
+
+তারপর Reverse বের করে—
+
+\begin{center}
+\textenglish{\ttfamily original == reverse}
+\end{center}
+
+পরীক্ষা করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 19 Pattern
+%================================================
+
+\booksubheading{১৯. Increasing Star Pattern}
+
+\begin{codeoutputbox}{Star Pattern}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+for i in range(1, 5):\\
+\hspace*{4mm}for j in range(i):\\
+\hspace*{8mm}print("*", end=" ")\\
+\hspace*{4mm}print()
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+*\\
+* *\\
+* * *\\
+* * * *
+\end{english}
+
+\medskip
+
+Outer Loop
+\(\rightarrow\)
+Row
+
+\medskip
+
+Inner Loop
+\(\rightarrow\)
+প্রতি Row-এর Star
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 20 List sum
+%================================================
+
+\booksubheading{২০. List-এর সব সংখ্যার যোগফল}
+
+\begin{codeoutputbox}{List Sum}
+
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 20, 30, 40]\\
+total = 0\\[0.5mm]
+for x in numbers:\\
+\hspace*{4mm}total += x\\[0.5mm]
+print("Sum =", total)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily Sum = 100}
+\end{center}
+
+List-এর প্রতিটি Item
+\textenglish{\ttfamily x}
+-এর মধ্যে এসেছে এবং
+\textenglish{\ttfamily total}
+-এ যোগ হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 21 Largest in list
+%================================================
+
+\booksubheading{২১. List-এর বৃহত্তম সংখ্যা}
+
+\begin{codeoutputbox}{Largest Item}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [12, 45, 8, 30]\\
+largest = numbers[0]\\[0.5mm]
+for x in numbers:\\
+\hspace*{4mm}if x > largest:\\
+\hspace*{8mm}largest = x\\[0.5mm]
+print("Largest =", largest)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily Largest = 45}
+\end{center}
+
+প্রথম Item-কে শুরুতে Largest ধরা হয়েছে।
+
+তারপর প্রতিটি Item-এর সঙ্গে তুলনা করে
+\textenglish{\ttfamily largest}
+Update হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 22 Even count
+%================================================
+
+\booksubheading{২২. List-এ Even Number গণনা}
+
+\begin{codeoutputbox}{Counter ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+numbers = [10, 15, 20, 27, 30]\\
+count = 0\\[0.5mm]
+for x in numbers:\\
+\hspace*{4mm}if x \% 2 == 0:\\
+\hspace*{8mm}count += 1\\[0.5mm]
+print("Even count =", count)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\textbf{Output:}
+
+\begin{center}
+\textenglish{\ttfamily Even count = 3}
+\end{center}
+
+Even Itemগুলো—
+
+\begin{center}
+\textenglish{\ttfamily 10, 20, 30}
+\end{center}
+
+প্রতিবার Even পাওয়া গেলে
+\textenglish{\ttfamily count}
+এক বাড়ে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+\textbf{Accumulator}
+\(\longrightarrow\)
+Value যোগ/জমা করে।
+
+\qquad
+
+\textbf{Counter}
+\(\longrightarrow\)
+কতবার ঘটনা ঘটেছে তা গণনা করে।
+
+\end{rememberbox}
+
+%================================================
+% 23 Dictionary
+%================================================
+
+\booksubheading{২৩. Dictionary থেকে Student-এর তথ্য দেখানো}
+
+\begin{codeoutputbox}{Student Record}
+
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+student = \{\\
+\hspace*{4mm}"name": "Rafi",\\
+\hspace*{4mm}"marks": 85\\
+\}\\[0.5mm]
+print("Name:", student["name"])\\
+print("Marks:", student["marks"])
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.41\linewidth}
+\outputheading
+
+\begin{english}
+\ttfamily
+Name: Rafi\\
+Marks: 85
+\end{english}
+
+\medskip
+
+Dictionary-তে Position-এর পরিবর্তে
+\textbf{Key} ব্যবহার করে Value Access করা হয়েছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 24 Function addition
+%================================================
+
+\booksubheading{২৪. Function দিয়ে দুটি সংখ্যার যোগ}
+
+\begin{codeoutputbox}{Function দিয়ে Sum}
+
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def add(a, b):\\
+\hspace*{4mm}return a + b\\[0.5mm]
+x = int(input("Enter first number: "))\\
+y = int(input("Enter second number: "))\\[0.5mm]
+result = add(x, y)\\
+print("Sum =", result)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\outputheading
+
+\textbf{Input:}
+
+\textenglish{\ttfamily 10, 20}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Sum = 30}
+
+\medskip
+
+\textbf{Contract:}
+
+Input
+\(\rightarrow\)
+\textenglish{\ttfamily a, b}
+
+Processing
+\(\rightarrow\)
+\textenglish{\ttfamily a+b}
+
+Output
+\(\rightarrow\)
+Sum
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% 25 Function even odd
+%================================================
+
+\booksubheading{২৫. Function দিয়ে Even/Odd পরীক্ষা}
+
+\begin{codeoutputbox}{Even/Odd Function}
+
+\noindent
+\begin{minipage}[t]{0.57\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+def check\_even\_odd(n):\\
+\hspace*{4mm}if n \% 2 == 0:\\
+\hspace*{8mm}return "Even"\\
+\hspace*{4mm}else:\\
+\hspace*{8mm}return "Odd"\\[0.5mm]
+number = int(input("Enter a number: "))\\
+print(check\_even\_odd(number))
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\linewidth}
+\outputheading
+
+\textbf{Input:}
+\textenglish{\ttfamily 7}
+
+\medskip
+
+\textbf{Output:}
+
+\textenglish{\ttfamily Odd}
+
+\medskip
+
+Function Number গ্রহণ করে Condition পরীক্ষা করেছে এবং
+\textenglish{\ttfamily "Even"}
+বা
+\textenglish{\ttfamily "Odd"}
+Return করেছে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+%================================================
+% Multiple solutions
+%================================================
+
+\booksubheading{একই Problem একাধিকভাবে সমাধান}
+
+Programming-এ একই Problem-এর একাধিক সঠিক Solution থাকতে পারে।
+
+উদাহরণস্বরূপ তিনটি সংখ্যার বৃহত্তম Value Built-in Function দিয়েও—
+
+\begin{codeoutputbox}{Built-in \textenglish{\ttfamily max()} ব্যবহার}
+
+\noindent
+\begin{minipage}[t]{0.50\linewidth}
+\codeheading
+
+\begin{english}
+\ttfamily
+a = 10\\
+b = 25\\
+c = 15\\[0.5mm]
+largest = max(a, b, c)\\
+print(largest)
+\end{english}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\outputheading
+
+\begin{center}
+\textenglish{\ttfamily 25}
+\end{center}
+
+একই Problem আগে
+\textenglish{\ttfamily if-elif-else}
+দিয়েও সমাধান করা হয়েছে।
+
+\medskip
+
+একই Problem-এর একাধিক সঠিক Algorithm থাকতে পারে।
+
+\end{minipage}
+
+\end{codeoutputbox}
+
+\begin{rememberbox}
+
+পরীক্ষা ও শেখার ক্ষেত্রে শুধু Built-in Function-এর উপর নির্ভর না করে
+\textbf{Condition, Loop, Data Structure এবং Function ব্যবহার করে Logic তৈরি করতে পারা}
+গুরুত্বপূর্ণ।
+
+\end{rememberbox}
+
+%================================================
+% Shortcut
+%================================================
+
+\booksubheading{Practical Program Solve করার Shortcut}
+
+Problem দেখলে—
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.13\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{ধাপ}
+&
+\textbf{প্রশ্ন}
+\\
+\hline
+
+১
+&
+Input কী?
+\\
+\hline
+
+২
+&
+Formula বা Condition কী?
+\\
+\hline
+
+৩
+&
+Loop লাগবে কি?
+\\
+\hline
+
+৪
+&
+Counter বা Accumulator লাগবে কি?
+\\
+\hline
+
+৫
+&
+Output কী হবে?
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Problem mapping
+%================================================
+
+\booksubheading{কোন Problem-এ কোন ধারণা?}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.46\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Problem}
+&
+\textbf{প্রধান ধারণা}
+\\
+\hline
+
+যোগ, গড়, ক্ষেত্রফল
+&
+Operator
+\\
+\hline
+
+Even/Odd
+&
+\textenglish{\ttfamily \%} + Conditional
+\\
+\hline
+
+Positive/Negative
+&
+\textenglish{\ttfamily if-elif-else}
+\\
+\hline
+
+Largest
+&
+Conditional
+\\
+\hline
+
+Grade
+&
+Multiple
+\textenglish{\ttfamily elif}
+\\
+\hline
+
+১ থেকে n
+&
+\textenglish{\ttfamily for}
+Loop
+\\
+\hline
+
+Sum
+&
+Accumulator
+\\
+\hline
+
+নামতা
+&
+Loop
+\\
+\hline
+
+Factorial
+&
+Loop + Multiplication
+\\
+\hline
+
+Prime
+&
+Loop + Condition +
+\textenglish{\ttfamily break}
+\\
+\hline
+
+Fibonacci
+&
+Variable Update
+\\
+\hline
+
+Digit Sum
+&
+\textenglish{\ttfamily while + \% + //}
+\\
+\hline
+
+Reverse
+&
+\textenglish{\ttfamily while}
+Loop
+\\
+\hline
+
+Palindrome
+&
+Reverse + Condition
+\\
+\hline
+
+Pattern
+&
+Nested Loop
+\\
+\hline
+
+List Sum
+&
+List + Loop
+\\
+\hline
+
+Largest in List
+&
+Traversal + Comparison
+\\
+\hline
+
+Even Count
+&
+Counter
+\\
+\hline
+
+Student Record
+&
+Dictionary
+\\
+\hline
+
+Reusable Calculation
+&
+Function
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item
+\textenglish{\ttfamily input()}
+থেকে পাওয়া String-কে প্রয়োজনমতো
+\textenglish{\ttfamily int()}
+বা
+\textenglish{\ttfamily float()}
+-এ Convert না করা।
+
+\item Assignment
+\textenglish{\ttfamily =}
+এবং Comparison
+\textenglish{\ttfamily ==}
+গুলিয়ে ফেলা।
+
+\item Even/Odd পরীক্ষায়
+\textenglish{\ttfamily \%}
+-এর পরিবর্তে
+\textenglish{\ttfamily /}
+ব্যবহার করা।
+
+\item
+\textenglish{\ttfamily range()}
+-এর Stop Value Excluded—এটি ভুলে যাওয়া।
+
+\item Accumulator-এর Initial Value ভুল দেওয়া।
+
+\item Factorial-এ
+\textenglish{\ttfamily fact = 0}
+দেওয়া।
+
+\item
+\textenglish{\ttfamily while}
+Loop-এ Variable Update না করা।
+
+\item Nested Loop-এ Indentation ভুল করা।
+
+\item Prime Test-এ Divisor পাওয়া যাওয়ার পরও অপ্রয়োজনীয় Loop চালানো।
+
+\item List-এর প্রথম Index
+\textenglish{\ttfamily 0}
+—এটি ভুলে যাওয়া।
+
+\item Function Define করলেও Call না করা।
+
+\item
+\textenglish{\ttfamily print()}
+ও
+\textenglish{\ttfamily return}
+-এর পার্থক্য ভুলে যাওয়া।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.25\linewidth}
+Y
+}
+
+Input
+&
+\textenglish{\ttfamily input()}
+&
+Integer Input
+&
+\textenglish{\ttfamily int(input())}
+\\[0.5mm]
+
+Decimal Input
+&
+\textenglish{\ttfamily float(input())}
+&
+Remainder
+&
+\textenglish{\ttfamily \%}
+\\[0.5mm]
+
+Integer Division
+&
+\textenglish{\ttfamily //}
+&
+Decision
+&
+\textenglish{\ttfamily if / elif / else}
+\\[0.5mm]
+
+নির্দিষ্টবার Loop
+&
+\textenglish{\ttfamily for}
+&
+Condition-based Loop
+&
+\textenglish{\ttfamily while}
+\\[0.5mm]
+
+Sum জমা
+&
+Accumulator
+&
+সংখ্যা গণনা
+&
+Counter
+\\[0.5mm]
+
+Loop বন্ধ
+&
+\textenglish{\ttfamily break}
+&
+Pattern
+&
+Nested Loop
+\\[0.5mm]
+
+একাধিক Data
+&
+List / Dictionary
+&
+Reusable Logic
+&
+Function
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Problem বুঝো}
+\(\longrightarrow\)
+\textbf{Input চিহ্নিত করো}
+\(\longrightarrow\)
+\textbf{Logic/Formula তৈরি করো}
+
+\medskip
+
+\(\longrightarrow\)
+\textbf{Code লেখো}
+\(\longrightarrow\)
+\textbf{Dry Run করো}
+\(\longrightarrow\)
+\textbf{Output যাচাই করো}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% Main Title
+%================================================

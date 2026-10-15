@@ -1,913 +1,196 @@
-\section{ভার্চুয়াল রিয়েলিটি}
-
-% (Removed manual per-topic index — Table of Contents now lists sections/subsections)
-
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item ভার্চুয়াল রিয়েলিটির ধারণা ও বৈশিষ্ট্য ব্যাখ্যা করতে।
-\item VR system-এর hardware ও software উপাদান চিহ্নিত করতে।
-\item শিক্ষা, চিকিৎসা, প্রতিরক্ষা, প্রশিক্ষণ ও বিনোদনে VR-এর ব্যবহার লিখতে।
-\item VR-এর সুবিধা ও সীমাবদ্ধতা তুলনা করতে।
-\item VR, AR ও সাধারণ simulation-এর পার্থক্য বুঝতে।
-\end{itemize}
-\end{learningbox}
-
-\subsection{ভার্চুয়াল রিয়েলিটির ধারণা}\label{sec:definition}
-
-ভার্চুয়াল রিয়েলিটি বা \textenglish{Virtual Reality (VR)} হলো তথ্য ও যোগাযোগ প্রযুক্তির একটি আধুনিক প্রয়োগ, যার মাধ্যমে কম্পিউটার, গ্রাফিক্স, সেন্সর, অডিও সিস্টেম এবং বিশেষ সফটওয়্যার ব্যবহার করে বাস্তবের মতো একটি কৃত্রিম বা কাল্পনিক পরিবেশ তৈরি করা হয়। ব্যবহারকারী বাস্তবে একটি নির্দিষ্ট স্থানে অবস্থান করলেও VR system ব্যবহারের মাধ্যমে সে অনুভব করে যেন সে অন্য একটি পরিবেশে উপস্থিত আছে এবং সেই পরিবেশের বস্তু, দৃশ্য বা ঘটনার সঙ্গে সরাসরি interaction করতে পারছে।
-
-VR সাধারণ ভিডিও দেখার মতো একমুখী অভিজ্ঞতা নয়। সাধারণ ভিডিওতে ব্যবহারকারী শুধু দেখে, কিন্তু VR-এ ব্যবহারকারী virtual environment-এর সঙ্গে কাজ করতে পারে। ব্যবহারকারী মাথা ঘোরালে দৃশ্য পরিবর্তিত হয়, controller নাড়ালে virtual object নড়ে, data glove ব্যবহার করলে হাতের movement শনাক্ত হয় এবং haptic device থাকলে স্পর্শের মতো feedback পাওয়া যায়। তাই VR-কে interactive, immersive এবং computer-generated simulated environment বলা যায়।
-
-সাধারণত VR পরিবেশে ব্যবহারকারী \textenglish{Head Mounted Display (HMD)}, \textenglish{Data Glove}, \textenglish{Controller}, \textenglish{Sensor} অথবা \textenglish{Body Suit} ব্যবহার করে। এসব device ব্যবহারকারীর চোখ, কান, হাত, মাথা ও শরীরের নড়াচড়া শনাক্ত করে কম্পিউটারে সংকেত পাঠায়। কম্পিউটার সেই সংকেত বিশ্লেষণ করে virtual দৃশ্য, শব্দ এবং কখনো স্পর্শের অনুভূতি পরিবর্তন করে। ফলে ব্যবহারকারীর কাছে কৃত্রিম পরিবেশটি বাস্তবের মতো মনে হয়।
-
-\begin{definitionbox}{সংজ্ঞা}
-হার্ডওয়্যার ও সফটওয়্যারের সমন্বয়ে কম্পিউটার দ্বারা তৈরি এমন ত্রিমাত্রিক কৃত্রিম পরিবেশ, যেখানে ব্যবহারকারী বিশেষ device ব্যবহার করে বাস্তবের মতো দেখা, শোনা, চলাফেরা ও interaction করার অভিজ্ঞতা পায়, তাকে ভার্চুয়াল রিয়েলিটি বা \textenglish{Virtual Reality} বলে।
-\end{definitionbox}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.72\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter01/topics/03_virtual_reality/images/vr_concept_scene.png}
-\caption{ভার্চুয়াল রিয়েলিটির মৌলিক ধারণা}
-\label{fig:vr-concept-scene}
-\vspace{0.15cm}
-\small\textit{চিত্রে একজন ব্যবহারকারী VR headset ব্যবহার করে কম্পিউটার-সৃষ্ট ত্রিমাত্রিক কৃত্রিম পরিবেশ অনুভব করছে।}
-\end{figure}
-
-% (figure caption and description already included above)
-
-\subsubsection{সহজ ভাষায় VR}
-
-সহজভাবে বলা যায়, ভার্চুয়াল রিয়েলিটি হলো এমন এক ধরনের computer simulation, যেখানে মানুষ বাস্তবে উপস্থিত না থেকেও কোনো পরিবেশে উপস্থিত থাকার অনুভূতি পায়। অর্থাৎ, বাস্তব পরিবেশের মতো দৃশ্য, শব্দ এবং movement response তৈরি করে ব্যবহারকারীকে virtual জগতে প্রবেশ করার অভিজ্ঞতা দেওয়া হয়।
-
-যেমন—
-\begin{itemize}
-\item একজন শিক্ষার্থী VR headset পরে মানবদেহের heart, brain বা skeleton ত্রিমাত্রিকভাবে দেখতে পারে;
-\item একজন pilot বাস্তব aircraft ব্যবহার না করেও virtual cockpit-এ flight practice করতে পারে;
-\item একজন trainee surgeon বাস্তব রোগীর ঝুঁকি ছাড়াই virtual operation theatre-এ surgery practice করতে পারে;
-\item একজন engineer কোনো machine-এর parts virtualভাবে খুলে-জোড়া লাগানোর অনুশীলন করতে পারে;
-\item একজন দর্শক ঘরে বসে virtual museum বা historical place ঘুরে দেখতে পারে।
-\end{itemize}
-
-\begin{examplebox}{সহজ উদাহরণ}
-একজন trainee pilot VR simulator ব্যবহার করে virtual cockpit-এ বসে ঝড়, emergency landing বা night flying practice করতে পারে। বাস্তব aircraft ব্যবহার না করেও সে প্রায় বাস্তব training experience পায়। এতে খরচ কমে, দুর্ঘটনার ঝুঁকি কমে এবং একই পরিস্থিতি বারবার practice করা যায়।
-\end{examplebox}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter01/topics/03_virtual_reality/images/vr_simple_examples.png}
-\caption{VR-এর সহজ উদাহরণ}
-\label{fig:vr-simple-examples}
-\vspace{0.15cm}
-\small\textit{চিত্রে শিক্ষা, ফ্লাইট প্রশিক্ষণ এবং চিকিৎসা প্রশিক্ষণে ভার্চুয়াল রিয়েলিটির ব্যবহার দেখানো হয়েছে।}
-\end{figure}
-
-
-
-
-\subsubsection{ভার্চুয়াল রিয়েলিটির মূল ভিত্তি}
-
-VR প্রযুক্তির কার্যকারিতা মূলত তিনটি বিষয়ের উপর নির্ভর করে:
-
-\begin{enumerate}
-    \item \textbf{Immersion:} ব্যবহারকারীর মনে হওয়া যে সে কৃত্রিম পরিবেশের ভেতরে অবস্থান করছে।
-    \item \textbf{Interaction:} ব্যবহারকারী virtual object বা environment-এর সঙ্গে কাজ করতে পারা।
-    \item \textbf{Presence:} ব্যবহারকারী মানসিকভাবে নিজেকে virtual environment-এর অংশ মনে করা।
-\end{enumerate}
-
-\paragraph{১. Immersion}
-
-Immersion হলো VR-এর এমন একটি বৈশিষ্ট্য, যার মাধ্যমে ব্যবহারকারী তার চারপাশের বাস্তব পরিবেশকে সাময়িকভাবে ভুলে গিয়ে computer-generated environment-এর মধ্যে ডুবে যায়। VR headset-এর 3D দৃশ্য, realistic sound এবং movement response ব্যবহারকারীর মনোযোগ virtual environment-এর দিকে নিয়ে যায়।
-
-\begin{definitionbox}{Immersion}
-VR-এ immersion হলো এমন একটি অনুভূতি, যেখানে ব্যবহারকারী চারপাশের বাস্তব পরিবেশ ভুলে গিয়ে computer-generated environment-এর ভেতরে ডুবে যায়।
-\end{definitionbox}
-
-\paragraph{২. Interaction}
-
-Interaction হলো VR environment-এর সঙ্গে ব্যবহারকারীর সক্রিয় অংশগ্রহণ। VR-এ ব্যবহারকারী শুধু দর্শক নয়; সে controller, sensor, data glove বা body movement-এর মাধ্যমে virtual object নির্বাচন, সরানো, ধরা বা পরিবর্তন করতে পারে।
-
-\begin{definitionbox}{Interaction}
-VR-এ interaction হলো ব্যবহারকারীর input অনুযায়ী virtual environment-এর পরিবর্তন। যেমন, ব্যবহারকারী মাথা ঘোরালে দৃশ্য পরিবর্তিত হওয়া, controller নড়ালে object সরানো বা data glove ব্যবহার করলে কোনো virtual object ধরার অনুভূতি পাওয়া।
-\end{definitionbox}
-
-\paragraph{৩. Presence}
-
-Presence হলো VR-এর সবচেয়ে গুরুত্বপূর্ণ মানসিক অভিজ্ঞতার একটি। এখানে ব্যবহারকারী জানে যে পরিবেশটি বাস্তব নয়, তবুও তার মনে হয় সে সেই পরিবেশের ভেতরেই আছে। ভালো VR system ব্যবহারকারীর মধ্যে এই “আমি এখানে আছি” অনুভূতি তৈরি করে।
-
-\begin{definitionbox}{Presence}
-Presence হলো ব্যবহারকারীর মানসিক অনুভূতি, যেখানে সে জানে পরিবেশটি কৃত্রিম, তবুও নিজেকে সেই virtual environment-এর ভেতরে উপস্থিত মনে করে।
-\end{definitionbox}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.86\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter01/topics/03_virtual_reality/images/vr_three_pillars.png}
-\caption{VR-এর মূল ভিত্তি: Immersion, Interaction ও Presence}
-\label{fig:vr-three-pillars}
-\vspace{0.15cm}
-\small\textit{চিত্রে ভার্চুয়াল রিয়েলিটির তিনটি গুরুত্বপূর্ণ ভিত্তি—Immersion, Interaction ও Presence—দেখানো হয়েছে।}
-\end{figure}
-
-
-\begin{keypointbox}{মূল কথা}
-VR-এর প্রধান লক্ষ্য হলো ব্যবহারকারীকে এমন অনুভূতি দেওয়া যে সে computer-generated কৃত্রিম পরিবেশের ভেতরে উপস্থিত আছে এবং সেই পরিবেশের সঙ্গে বাস্তবের মতো কাজ করতে পারছে।
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড পরীক্ষায় মনে রাখবে}
-\begin{itemize}
-\item VR হলো computer-generated 3D artificial environment।
-\item VR-এ ব্যবহারকারী শুধু দেখে না, বরং virtual environment-এর সঙ্গে interact করে।
-\item VR-এর মূল ভিত্তি: \textbf{Immersion}, \textbf{Interaction}, \textbf{Presence}।
-\item VR environment তৈরিতে HMD, Data Glove, Sensor, Controller এবং Body Suit ব্যবহার হতে পারে।
-\end{itemize}
-\end{boardbox}
-
-
-\subsubsection{VR System-এর প্রধান উপাদান}
-
-একটি VR system সম্পূর্ণভাবে কাজ করার জন্য hardware, software, sensor, display, audio এবং user interaction system প্রয়োজন হয়। শুধু headset থাকলেই পূর্ণ VR experience তৈরি হয় না; বরং tracking, processing, display এবং feedback—সবকিছুর সমন্বয়ে VR environment তৈরি হয়।
-
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.56\textwidth}|}
-\hline
-\textbf{উপাদান} & \textbf{কাজ} \\
-\hline
-\textenglish{Head Mounted Display (HMD)} & মাথায় বা চোখে পরা display device; এর মাধ্যমে ব্যবহারকারী 3D virtual দৃশ্য দেখতে পায়। \\
-\hline
-\textenglish{Data Glove} & হাতে পরা বিশেষ glove; হাতের নড়াচড়া, আঙুলের অবস্থান ও gesture শনাক্ত করে। \\
-\hline
-\textenglish{Body Suit} & শরীরের বিভিন্ন অংশের movement শনাক্ত করে virtual environment-এর সঙ্গে body interaction তৈরি করে। \\
-\hline
-\textenglish{Motion Sensor} & মাথা, হাত বা শরীরের গতি ও অবস্থান শনাক্ত করে। \\
-\hline
-\textenglish{Controller} & virtual object নির্বাচন, ধরা, সরানো বা command দেওয়ার জন্য ব্যবহৃত হয়। \\
-\hline
-\textenglish{Audio System} & বাস্তবের মতো শব্দের পরিবেশ তৈরি করে; যেমন ডান দিক থেকে শব্দ এলে ব্যবহারকারী ডান দিক থেকেই শব্দ শুনতে পায়। \\
-\hline
-\textenglish{Haptic Device} & vibration বা force feedback-এর মাধ্যমে স্পর্শের অনুভূতি দেয়। \\
-\hline
-\textenglish{Computer / Graphics System} & virtual environment তৈরি, process, render ও display করে। \\
-\hline
-\textenglish{Simulation Software} & virtual object, scene, movement, rule এবং interaction নিয়ন্ত্রণ করে। \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{boardbox}{বোর্ড পরীক্ষায় গুরুত্বপূর্ণ}
-VR পরিবেশ তৈরির জন্য \textenglish{Head Mounted Display}, \textenglish{Data Glove} এবং \textenglish{Body Suit} খুব গুরুত্বপূর্ণ device। এগুলোর কাজ আলাদা করে লিখলে উত্তর বেশি মানসম্মত হয়।
-\end{boardbox}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsubsection{ভার্চুয়াল রিয়েলিটি কীভাবে কাজ করে}
-
-VR system সাধারণত input, processing, output এবং feedback—এই ধাপগুলো অনুসরণ করে কাজ করে।
-
-\begin{center}
-\begin{tabular}{|p{0.22\textwidth}|p{0.62\textwidth}|}
-\hline
-\textbf{ধাপ} & \textbf{ব্যাখ্যা} \\
-\hline
-Input & Headset, sensor, controller বা data glove ব্যবহারকারীর movement ও command শনাক্ত করে। \\
-\hline
-Processing & Computer ও simulation software input বিশ্লেষণ করে virtual scene বা object পরিবর্তন করে। \\
-\hline
-Output & Headset-এ 3D দৃশ্য, audio system-এ শব্দ এবং haptic device-এ স্পর্শের feedback পাওয়া যায়। \\
-\hline
-Feedback & ব্যবহারকারীর পরবর্তী movement অনুযায়ী system আবার environment update করে। \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{examplebox}{VR কাজ করার উদাহরণ}
-ব্যবহারকারী যদি VR headset পরে মাথা ডান দিকে ঘোরায়, motion sensor সেই নড়াচড়া শনাক্ত করে। Computer সঙ্গে সঙ্গে virtual scene ডান দিকে ঘুরিয়ে দেখায়। ফলে ব্যবহারকারীর মনে হয় সে সত্যিই virtual environment-এর ভেতরে চারদিকে তাকাচ্ছে।
-\end{examplebox}
-
-
-
-
-
-
-
-\subsubsection{ভার্চুয়াল রিয়েলিটির প্রধান বৈশিষ্ট্য}
-
-\begin{keypointbox}{VR-এর প্রধান বৈশিষ্ট্য}
-\begin{itemize}
-    \item VR একটি computer-generated ত্রিমাত্রিক পরিবেশ তৈরি করে।
-    \item ব্যবহারকারী virtual environment-এর সঙ্গে real-time interaction করতে পারে।
-    \item head movement বা body movement অনুযায়ী দৃশ্য পরিবর্তিত হয়।
-    \item visual, audio এবং কখনো haptic feedback পাওয়া যায়।
-    \item বাস্তব পরিবেশের মতো অনুভূতি সৃষ্টি করা যায়।
-    \item ঝুঁকিপূর্ণ কাজ নিরাপদে practice করা যায়।
-    \item training, education, medicine, research, defense, entertainment ও industry-তে ব্যবহার করা যায়।
-    \item একই scenario বারবার repeat করে practice করা সম্ভব।
-\end{itemize}
-\end{keypointbox}
-
-
-
-
-
-
-
-
-\subsubsection{VR, সাধারণ ভিডিও এবং Simulation-এর পার্থক্য}
-
-VR-কে অনেক সময় সাধারণ video বা simulation-এর সঙ্গে গুলিয়ে ফেলা হয়। কিন্তু এগুলোর মধ্যে পার্থক্য আছে।
-
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{ধরন} & \textbf{মূল ধারণা} & \textbf{উদাহরণ} \\
-\hline
-সাধারণ ভিডিও & ব্যবহারকারী শুধু দেখে; পরিবেশের সঙ্গে interaction করতে পারে না। & YouTube video, documentary \\
-\hline
-Simulation & বাস্তব কোনো system-এর model তৈরি করে practice বা analysis করা হয়। & Traffic simulation, weather model \\
-\hline
-Virtual Reality & ব্যবহারকারী computer-generated 3D environment-এ প্রবেশ করে interaction করতে পারে। & Flight simulator, surgical VR, virtual lab \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsubsection{চিকিৎসা প্রশিক্ষণে VR-এর ধারণাগত গুরুত্ব}
-
-চিকিৎসা শিক্ষায় VR অত্যন্ত গুরুত্বপূর্ণ। বাস্তব রোগীর উপর সরাসরি operation practice করা ঝুঁকিপূর্ণ। তাই trainee doctor বা surgeon VR surgical simulator ব্যবহার করে operation theatre-এর মতো পরিবেশে বিভিন্ন surgical step practice করতে পারে। এতে শিক্ষার্থী বাস্তব operation-এর মতো অভিজ্ঞতা পায়, কিন্তু রোগীর কোনো ঝুঁকি থাকে না।
-
-\begin{examplebox}{Medical Training Example}
-একজন শিক্ষানবিশ surgeon laparoscopic surgery শেখার আগে VR simulator-এ camera movement, instrument handling, cutting, stitching এবং decision-making practice করতে পারে। এতে তার হাতের দক্ষতা ও আত্মবিশ্বাস বাড়ে।
-\end{examplebox}
-
-\subsubsection{VR কেন বাস্তব অনুভূতি দেয়}
-
-VR বাস্তব অনুভূতি দেয় কারণ এটি মানুষের একাধিক ইন্দ্রিয়কে একসঙ্গে প্রভাবিত করে। চোখে 3D দৃশ্য, কানে spatial sound, হাতে controller বা glove-এর feedback এবং মাথা/শরীরের নড়াচড়া অনুযায়ী দৃশ্য পরিবর্তন—এসব মিলিয়ে ব্যবহারকারী মনে করে সে সত্যিই সেই পরিবেশে আছে।
-
-\begin{keypointbox}{বাস্তব অনুভূতি তৈরির কারণ}
-\begin{itemize}
-    \item চোখের সামনে 3D stereoscopic দৃশ্য দেখানো হয়।
-    \item মাথা ঘোরালে দৃশ্যও সঙ্গে সঙ্গে পরিবর্তিত হয়।
-    \item শব্দের দিক ও দূরত্ব বাস্তবের মতো তৈরি করা যায়।
-    \item controller বা glove দিয়ে virtual object ধরার অনুভূতি দেওয়া যায়।
-    \item body movement track করে environment update করা যায়।
-\end{itemize}
-\end{keypointbox}
-
-\subsubsection{বোর্ড পরীক্ষার জন্য মনে রাখো}
-
-\begin{boardbox}{মনে রাখার বিষয়}
-\begin{itemize}
-    \item VR হলো computer-generated 3D artificial environment।
-    \item VR-এর মূল ধারণা: \textbf{Immersion, Interaction, Presence}।
-    \item VR device: \textenglish{Head Mounted Display}, \textenglish{Data Glove}, \textenglish{Body Suit}, sensor, controller।
-    \item VR ব্যবহার: medical training, flight training, military training, education, gaming, architecture।
-    \item VR-এর সবচেয়ে বড় সুবিধা: ঝুঁকিপূর্ণ training নিরাপদে করা যায়।
-\end{itemize}
-\end{boardbox}
-
-\subsection{ভার্চুয়াল রিয়েলিটির উপাদান}\label{sec:components}
-
-একটি VR system সাধারণত hardware, software, content এবং user interaction-এর সমন্বয়ে কাজ করে। শুধু headset থাকলেই পূর্ণ VR হয় না; tracking, rendering, input, feedback ও content design—সব মিলেই VR অভিজ্ঞতা তৈরি হয়।
-
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.56\textwidth}|}
-\hline
-\textbf{উপাদান} & \textbf{কাজ} \\
-\hline
-Head-Mounted Display বা VR headset & চোখের সামনে stereoscopic 3D দৃশ্য দেখায় \\
-\hline
-Motion sensor ও tracking system & মাথা, হাত বা শরীরের অবস্থান detect করে \\
-\hline
-Controller বা data glove & virtual object ধরতে, সরাতে বা command দিতে সাহায্য করে \\
-\hline
-Audio system & 3D/spatial sound দিয়ে presence বাড়ায় \\
-\hline
-Haptic device & vibration বা force feedback দিয়ে স্পর্শের অনুভূতি দেয় \\
-\hline
-Graphics engine ও simulation software & virtual environment তৈরি ও real-time update করে \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{definitionbox}{Presence}
-VR-এ presence হলো ব্যবহারকারীর এমন মানসিক অনুভূতি, যেখানে সে জানে পরিবেশটি কৃত্রিম, তবুও নিজেকে সেই virtual environment-এর ভেতরে উপস্থিত মনে করে।
-\end{definitionbox}
-
-\begin{mistakebox}{সাধারণ ভুল}
-360-degree video আর full VR একই নয়। 360-degree video-তে ব্যবহারকারী চারদিকে তাকাতে পারে, কিন্তু সবসময় object-এর সঙ্গে interact করতে পারে না। Full VR-এ movement, tracking ও interaction বেশি গুরুত্বপূর্ণ।
-\end{mistakebox}
-
-\subsection{VR, AR ও Simulation-এর পার্থক্য}\label{sec:vr_ar_sim}
-
-\begin{center}
-\begin{tabular}{|p{0.20\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{ধরন} & \textbf{মূল ধারণা} & \textbf{উদাহরণ} \\
-\hline
-VR & সম্পূর্ণ computer-generated পরিবেশে ব্যবহারকারী প্রবেশ করে & flight simulator, virtual lab \\
-\hline
-AR & বাস্তব পরিবেশের ওপর digital object/information বসানো হয় & mobile camera-তে 3D furniture দেখা \\
-\hline
-Simulation & কোনো বাস্তব system-এর model তৈরি করে practice বা analysis করা & traffic simulation, weather model \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsection{প্রাত্যহিক জীবনে ভার্চুয়াল রিয়েলিটির প্রভাব}\label{sec:impact}
-
-VR মানুষের শেখা, কাজ, চিকিৎসা, বিনোদন ও যোগাযোগের অভিজ্ঞতা বদলে দিচ্ছে। আগে যে কাজ বাস্তবে করা ব্যয়বহুল বা ঝুঁকিপূর্ণ ছিল, তা virtual environment-এ কম ঝুঁকিতে practice করা সম্ভব হচ্ছে। যেমন: surgery training, fire safety training, industrial machine operation, architecture walkthrough, museum tour, virtual meeting, gaming, sports training।
-
-\begin{keypointbox}{প্রাত্যহিক জীবনে প্রভাব}
-\begin{itemize}
-\item \textbf{শিক্ষা}: কঠিন concept visual ও interactive করে শেখানো যায়।
-\item \textbf{প্রশিক্ষণ}: বিমান চালনা, surgery, safety drill ঝুঁকি ছাড়াই practice করা যায়।
-\item \textbf{চিকিৎসা}: rehabilitation, pain management, phobia therapy, medical training-এ ব্যবহার হয়।
-\item \textbf{ব্যবসা}: product demo, virtual showroom, real estate walkthrough করা যায়।
-\item \textbf{বিনোদন}: gaming, virtual concert, museum tour, immersive storytelling।
-\end{itemize}
-\end{keypointbox}
-
-Frontiers in Psychology-তে প্রকাশিত VR/AR research review-তে দেখা যায়, VR গবেষণা computer graphics থেকে শুরু হয়ে clinical, educational, industrial, entertainment এবং behavioral research-সহ বহু ক্ষেত্রে বিস্তৃত হয়েছে। সাম্প্রতিক গবেষণায় realism-এর পাশাপাশি interaction, haptic feedback ও natural movement আরও গুরুত্বপূর্ণ হয়ে উঠছে।
-\subsection{ভার্চুয়াল রিয়েলিটির ইতিহাস}\label{sec:history}
-
-VR-এর উন্নয়ন বহু বছরের গবেষণা ও উদ্ভাবনের ফল। প্রথম দিকে Morton Heilig (1950s) ভিশন তৈরি করেন একটি "Experience Theatre" যা সব ইন্দ্রিয়কে ব্যবহার করবে। ১962 সালে তিনি Sensorama নামক প্রথম VR মেশিন তৈরি করেন—যেখানে stereoscopic display, sound, vibration সব ছিল। ১968 সালে Ivan Sutherland "The Sword of Damocles" তৈরি করেন—প্রথম head-mounted display system। এটি ছিল অত্যন্ত ভারী এবং ceiling-এ ঝুলানো থাকতে হতো, কিন্তু এটি ছিল groundbreaking।
-
-\begin{center}
-\begin{tabular}{|p{0.15\textwidth}|p{0.35\textwidth}|p{0.40\textwidth}|}
-\hline
-\textbf{বছর} & \textbf{ব্যক্তি/কোম্পানি} & \textbf{উদ্ভাবন} \\
-\hline
-1962 & Morton Heilig & Sensorama (প্রথম immersive device) \\
-\hline
-1968 & Ivan Sutherland & Sword of Damocles (প্রথম HMD) \\
-\hline
-1980s & Jaron Lanier, VPL & DataGlove, EyePhone, commercial VR \\
-\hline
-1991 & Carolina Cruz-Neira & CAVE (তিন মাত্রিক immersive room) \\
-\hline
-2010 & Palmer Luckey & Oculus Rift prototype \\
-\hline
-2016 & HTC, Valve & HTC Vive (আধুনিক consumer VR) \\
-\hline
-2020-2026 & Meta, Apple, Sony & Meta Quest 3S, Vision Pro, PSVR2 \\
-\hline
-\end{tabular}
-\end{center}
-
-1980s-এ Jaron Lanier এবং তার VPL Research কোম্পানি commercial VR system তৈরি করে। তারা DataGlove (হাতের জন্য gesture recognition), EyePhone (আই-ট্র্যাকিং), এবং Reality Built For Two (RB2) networking system উদ্ভাবন করে। এগুলি ছিল অত্যন্ত ব্যয়বহুল (\$73,000+) কিন্তু শক্তিশালী।
-
-1990s-এ VR আরও উন্নত হয়। CAVE (Cave Automatic Virtual Environment) প্রযুক্তি তিন পাশের screen দিয়ে immersive experience তৈরি করে। এই সময়ে Virtuality নামক প্রথম commercial VR arcade games লঞ্চ হয়। Nintendo Virtual Boy (1995) ছিল প্রথম portable VR console কিন্তু বাণিজ্যিক সাফল্য ছিল সীমিত।
-
-2010s-এ Palmer Luckey Oculus Rift নিয়ে বিপ্লব ঘটান। তার prototype ছিল 90-degree field of view এবং low latency—যা আগে কখনো consumer market-এ দেখা যায়নি। Facebook ২014 সালে Oculus VR কিনে নেয় \$3 বিলিয়ন-এ। একই সময়ে HTC Vive এবং Valve SteamVR তৈরি হয় (2016), এবং Sony PlayStation VR লঞ্চ করে।
-
-\subsection{আধুনিক ভার্চুয়াল রিয়েলিটি হার্ডওয়্যার (VR Headsets)}\label{sec:hardware}
-
-আজকের VR বাজারে বিভিন্ন উচ্চমানের headset রয়েছে যা বিভিন্ন উদ্দেশ্যের জন্য ডিজাইন করা:
-
-\smallhead{প্রধান VR প্ল্যাটফর্ম ও বৈশিষ্ট্য}
+% Original Bengali editorial revision; unique theory integrated below.
+\begin{topicbody}
+\section{ভার্চুয়াল রিয়েলিটি}
+\label{sec:ch1-vr}
+\subsection{ভার্চুয়াল রিয়েলিটির ধারণা}
+\definition{ভার্চুয়াল রিয়েলিটি}{কম্পিউটারের হার্ডওয়্যার ও সফটওয়্যার দিয়ে তৈরি এমন ত্রিমাত্রিক কৃত্রিম পরিবেশ, যেখানে ব্যবহারকারী বিশেষ যন্ত্রের সাহায্যে নিজেকে উপস্থিত মনে করে এবং পরিবেশের সঙ্গে কাজ করতে পারে, তাকে ভার্চুয়াল রিয়েলিটি (Virtual Reality বা VR) বলে।}
+VR-এ কম্পিউটার গ্রাফিক্স, সেন্সর, শব্দ এবং প্রদর্শনযন্ত্র মিলিয়ে বাস্তবের মতো অভিজ্ঞতা তৈরি করা হয়। ব্যবহারকারী বাস্তবে এক জায়গায় থাকলেও অন্য কোনো পরিবেশে থাকার অনুভূতি পেতে পারে। মাথা ঘোরালে দৃশ্য বদলায়; নিয়ন্ত্রক নাড়ালে কোনো বস্তু ধরা বা সরানো যায়। সাধারণ ভিডিওতে দর্শক আগে ধারণ করা দৃশ্য দেখে; VR-এ ব্যবহারকারীর কাজ অনুযায়ী পরিবেশের প্রতিক্রিয়া বদলাতে পারে।
+\chOneFigureExplain{\chaponeimg/vr_concept_scene.png}{ভার্চুয়াল পরিবেশের অভিজ্ঞতা}{fig:ch1-pair-16}{হেডসেট চোখের সামনে দৃশ্য দেখায়। সেন্সর ব্যবহারকারীর নড়াচড়া শনাক্ত করে এবং কম্পিউটার সেই অনুযায়ী দৃশ্য ও শব্দ বদলায়। নিয়ন্ত্রক দিয়ে পরিবেশের বস্তুর সঙ্গে কাজ করা যায়।}
+\subsection{অভিজ্ঞতার মূল ভিত্তি}
+VR-এর পরিচিত Three-I মডেল হলো Immersion, Interaction ও Imagination। এগুলোর সঙ্গে সম্পর্কিত আরেকটি গুরুত্বপূর্ণ ধারণা হলো Presence।
 \begin{compactpoints}
-\item \term{Meta Quest 3S}: বাজেট-বান্ধব standalone headset; 1832x1920 resolution প্রতি চোখে, 128GB-256GB storage, প্রায় 2-2.5 ঘন্টা battery life।
-\item \term{Meta Quest 3}: mid-range premium headset; 2064x2208 resolution, mixed reality passthrough, better color ও depth perception।
-\item \term{HTC Vive XR Elite}: professional/tethered headset; PC-based use, enterprise/developer work, advanced controller tracking ও base station support।
-\item \term{PlayStation VR2}: gaming-focused headset; PS5 support, OLED display, eye-tracking, foveated rendering, haptic controller।
-\item \term{Apple Vision Pro}: premium spatial-computing device; AR/VR hybrid experience, M2 chip, eye-tracking, gesture recognition।
+\item \term{নিমগ্নতা (Immersion)}: দৃশ্য ও শব্দের প্রভাবে কৃত্রিম পরিবেশে ডুবে থাকার অভিজ্ঞতা। বিস্তৃত দৃশ্য, স্বাভাবিক শব্দ ও দ্রুত প্রতিক্রিয়া এই অভিজ্ঞতা বাড়ায়।
+\item \term{মিথস্ক্রিয়া (Interaction)}: ব্যবহারকারীর কাজ অনুযায়ী পরিবেশের পরিবর্তন। যেমন, নিয়ন্ত্রক দিয়ে একটি ভার্চুয়াল বস্তু সরানো।
+\item \term{কল্পনা (Imagination)}: বাস্তবে উপস্থিত নয় এমন পরিবেশ কল্পনা করে নির্মাণ করা।
+\item \term{উপস্থিতির অনুভূতি (Presence)}: পরিবেশ কৃত্রিম জেনেও ব্যবহারকারীর নিজেকে সেখানে উপস্থিত মনে হওয়া। এটি Three-I-এর তৃতীয় ইংরেজি শব্দ নয়।
 \end{compactpoints}
-
-\subsubsection{VR হার্ডওয়্যার কম্পোনেন্ট বিস্তারিত}
-
-\smallhead{VR সিস্টেম-এর প্রধান কম্পোনেন্ট}
+নিমগ্নতা পরিবেশের অভিজ্ঞতার দিকটি বোঝায়; মিথস্ক্রিয়া বোঝায় ব্যবহারকারীর কাজের প্রতিক্রিয়া। উপস্থিতি ব্যবহারকারীর মানসিক অনুভূতি। স্বাভাবিক দৃশ্য ও যথাযথ প্রতিক্রিয়া উপস্থিতির অনুভূতি জোরালো করতে পারে।
+\chOneFigureExplain{\chaponeimg/vr_three_pillars.png}{Three-I ও উপস্থিতির অনুভূতি}{fig:ch1-pair-17}{পরিবেশ নির্মাণ, সেই পরিবেশে নিমগ্ন হওয়া এবং সেখানে কাজ করার সম্পর্ক চিত্রে দেখানো হয়েছে।}
+\subsection{প্রধান উপাদান ও কাজ}
+VR-এর যন্ত্রগুলো ইনপুট নেওয়া, তথ্য প্রক্রিয়াকরণ এবং অভিজ্ঞতা প্রদর্শনের কাজ করে। ব্যবস্থাভেদে যন্ত্রের সমন্বয় বদলায়; সব ব্যবস্থায় নিচের সব যন্ত্র একসঙ্গে লাগে না।
+\begin{compacttable}
+\begin{longtable}{|p{\dimexpr.30\linewidth-7pt\relax}|p{\dimexpr.70\linewidth-7pt\relax}|}
+\hline\textbf{উপাদান} & \textbf{কাজ}\\\hline\endfirsthead
+\hline\textbf{উপাদান} & \textbf{কাজ}\\\hline\endhead
+হেড-মাউন্টেড ডিসপ্লে (Head-Mounted Display বা HMD) & চোখের সামনে দুই চোখের জন্য পৃথক দৃশ্য দেখিয়ে গভীরতার অনুভূতি তৈরি করে। অনেক হেডসেটে মাথার নড়াচড়া মাপার সেন্সরও থাকে।\\\hline
+মোশন সেন্সর ও ট্র্যাকার & মাথা, হাত বা শরীরের অবস্থান, দিক ও নড়াচড়া মাপে।\\\hline
+নিয়ন্ত্রক (Controller) & নির্দেশ দেওয়া, বস্তু নির্বাচন, ধরা ও সরানোর সুযোগ দেয়।\\\hline
+ডেটা গ্লাভ (Data Glove) & হাত ও আঙুলের অবস্থান ও নড়াচড়া ইনপুট হিসেবে নেয়।\\\hline
+বডি স্যুট (Body Suit) & সেন্সরের সাহায্যে শরীরের নড়াচড়া মাপে; কোনো নকশায় স্পর্শের প্রতিক্রিয়াও দিতে পারে।\\\hline
+অডিও ব্যবস্থা & শব্দের দিক ও দূরত্ব বোঝাতে স্থানিক শব্দ (Spatial Audio) তৈরি করে।\\\hline
+হ্যাপটিক যন্ত্র (Haptic Device) & কম্পন বা বলের প্রতিক্রিয়া দিয়ে স্পর্শ বা চাপের অনুভূতি দেয়।\\\hline
+কম্পিউটার ও গ্রাফিক্স প্রসেসর (GPU) & ইনপুট বিশ্লেষণ করে দ্রুত দৃশ্য তৈরি ও হালনাগাদ করে।\\\hline
+সিমুলেশন সফটওয়্যার & পরিবেশের বস্তু, গতি, পদার্থবিজ্ঞানের নিয়ম ও ব্যবহারকারীর কাজের প্রতিক্রিয়া নিয়ন্ত্রণ করে।\\\hline
+\end{longtable}
+\end{compacttable}
+সেন্সর, নিয়ন্ত্রক, ডেটা গ্লাভ ও বডি স্যুট মূলত ইনপুট ও নড়াচড়ার তথ্য দেয়। কম্পিউটার, GPU ও সফটওয়্যার সেই তথ্য প্রক্রিয়াকরণ করে। HMD, স্পিকার ও হ্যাপটিক যন্ত্র ফল প্রদর্শন বা অনুভব করায়।
+\remember{কিছু উদাহরণে দশটি সেন্সরযুক্ত বডি স্যুট দেখানো হয়। এটি নির্দিষ্ট নকশার তথ্য; সব বডি স্যুটে সেন্সরের সংখ্যা দশটি নয়।}
+\chOneFigureExplain{\chaponeimg/vr_system_components.png}{VR ব্যবস্থার উপাদান}{fig:ch1-pair-18}{ইনপুট, প্রক্রিয়াকরণ ও অভিজ্ঞতা প্রদর্শনের যন্ত্রগুলো একসঙ্গে কাজ করে।}
+\subsection{কাজের পদ্ধতি}
+\begin{compactenum}
+\item ব্যবহারকারীর মাথা, হাত বা শরীরের নড়াচড়া এবং নির্দেশ ইনপুট হিসেবে নেওয়া হয়।
+\item ট্র্যাকার অবস্থান ও দিক নির্ণয় করে কম্পিউটারে পাঠায়।
+\item সফটওয়্যার তথ্য বিশ্লেষণ করে পরিবেশের পরিবর্তন হিসাব করে।
+\item ত্রিমাত্রিক গঠন থেকে দেখানোর উপযোগী দৃশ্য তৈরি হয়। এ কাজকে রেন্ডারিং (Rendering) বলে।
+\item হেডসেটে দৃশ্য, স্পিকারে শব্দ এবং উপযুক্ত যন্ত্রে স্পর্শের প্রতিক্রিয়া পাওয়া যায়।
+\item ব্যবহারকারীর পরবর্তী কাজ অনুযায়ী একই প্রক্রিয়ায় পরিবেশ আবার হালনাগাদ হয়।
+\end{compactenum}
+যেমন, মাথা ডানে ঘোরালে সেন্সর সেই পরিবর্তন জানায়। কম্পিউটার নতুন দিকের দৃশ্য দেখায়। ফলে ব্যবহারকারী চারদিকে তাকানোর অভিজ্ঞতা পায়।
+\chOneFigureExplain{\chaponeimg/vr_working_process.png}{VR-এ ইনপুট থেকে প্রতিক্রিয়া}{fig:ch1-pair-19}{ব্যবহারকারীর কাজ থেকে তথ্য নিয়ে দৃশ্য তৈরি করা এবং পরবর্তী কাজ অনুযায়ী দৃশ্য বদলানোর চক্র দেখানো হয়েছে।}
+VR নির্মাণের চারটি ধারণাগত অংশও বোঝা যায়: \term{Tracker} নড়াচড়া মাপে; \term{Simulator} পরিবেশের নিয়ম ও প্রতিক্রিয়া হিসাব করে; \term{Application} নির্দিষ্ট কাজ বা অভিজ্ঞতা নির্ধারণ করে; \term{Geometry} ত্রিমাত্রিক গঠন দেয়। এগুলো কাজের দিক; চারটি পৃথক যন্ত্র কেনার তালিকা নয়। CAD-এ তৈরি ত্রিমাত্রিক মডেল VR-এ ব্যবহার করা যায়; CAD-এর মূল আলোচনা অংশ~\ref{sec:ch1-production}-এ রয়েছে। মডেল তৈরি, ভার্চুয়াল পরিবেশে অনুশীলন এবং EHR-এ রোগীর তথ্য রাখা ভিন্ন কাজ।
+\subtopichead{স্বাভাবিক অভিজ্ঞতার শর্ত}
 \begin{compactpoints}
-\item \term{Display Technology}: OLED উচ্চ refresh rate ও কম latency দেয়; LCD কম power নেয়; resolution 1832x1920 থেকে 4K পর্যন্ত হতে পারে; 60Hz-144Hz refresh rate motion sickness কমাতে সাহায্য করে।
-\item \term{Tracking System}: inside-out tracking headset camera দিয়ে environment scan করে; outside-in tracking external sensor/base station ব্যবহার করে; gyroscope ও accelerometer মাথার motion detect করে।
-\item \term{Audio System}: spatial audio শব্দকে 3D space-এ অনুভব করায়; binaural recording দুই কানে আলাদা signal দেয়; HRTF spatial sound বোঝাতে সাহায্য করে।
-\item \term{Controller ও Input Device}: motion controller হাতের অবস্থান track করে; haptic feedback vibration দিয়ে touch simulate করে; data glove finger joint track করতে পারে; gesture recognition hand gesture বুঝে।
+\item \term{কম বিলম্ব (Low Latency)}: নড়াচড়া ও দৃশ্য বদলানোর ব্যবধান কম হওয়া দরকার। বেশি বিলম্বে দেখা দৃশ্য ও শরীরের অনুভূতি না মিললে অস্বস্তি বা মাথা ঘোরা হতে পারে।
+\item \term{উচ্চ ফ্রেম হার}: প্রতি সেকেন্ডে যথেষ্ট সংখ্যক দৃশ্য দেখালে চলাচল মসৃণ লাগে।
+\item \term{দৃষ্টিক্ষেত্র (Field of View বা FOV)}: চোখের সামনে দৃশ্যের বিস্তার বেশি হলে নিমগ্নতা বাড়তে পারে।
+\item \term{নির্ভুল ট্র্যাকিং}: মাথা ও হাতের নড়াচড়া সঠিকভাবে মাপলে কাজের প্রতিক্রিয়া স্বাভাবিক হয়।
+\item শব্দের দিক ও দূরত্ব এবং উপযুক্ত স্পর্শের প্রতিক্রিয়া পরিবেশকে বাস্তবসম্মত করতে সাহায্য করে।
 \end{compactpoints}
-
-\subsection{VR Tracking এবং Motion Capture সিস্টেম}\label{sec:tracking}
-
-\subsubsection{Inside-Out vs Outside-In Tracking}
-
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{দিক} & \textbf{Inside-Out Tracking} & \textbf{Outside-In Tracking} \\
-\hline
-ক্যামেরা অবস্থান & Headset-এ সংযুক্ত & বাইরে ইনস্টল করা (base stations) \\
-\hline
-সুবিধা & Standalone, setup সহজ & অত্যন্ত সঠিক, large area \\
-\hline
-অসুবিধা & কম accurate, lighting dependency & ব্যয়বহুল, space-dependent \\
-\hline
-উদাহরণ & Meta Quest, Apple Vision Pro & HTC Vive, PlayStation VR \\
-\hline
-নির্ভুলতা & ±2-5cm পর্যন্ত & ±1cm পর্যন্ত \\
-\hline
-Latency & 20-30ms & 10-15ms \\
-\hline
+\subsection{সংক্ষিপ্ত ইতিহাস}
+সিমুলেশন, কম্পিউটার গ্রাফিক্স, প্রদর্শনযন্ত্র ও সেন্সরের ধারাবাহিক উন্নয়ন থেকে আধুনিক VR গড়ে উঠেছে।
+\begin{compacttable}
+\begin{tabular}{|p{\dimexpr.20\linewidth-7pt\relax}|p{\dimexpr.80\linewidth-7pt\relax}|}
+\hline\textbf{সময়} & \textbf{উন্নয়ন}\\\hline
+1950s--1960s & Morton Heilig-এর Sensorama-তে দৃশ্য, শব্দ ও নড়াচড়া মিলিয়ে বহু ইন্দ্রিয়ের অভিজ্ঞতা তৈরির চেষ্টা করা হয়।\\\hline
+1968 & Ivan Sutherland-এর প্রাথমিক HMD ব্যবস্থা মাথায় পরা প্রদর্শনযন্ত্রের বিকাশে গুরুত্বপূর্ণ ছিল।\\\hline
+1980s & Jaron Lanier ও VPL Research-এর কাজে DataGlove এবং বাণিজ্যিক VR পরিচিতি পায়।\\\hline
+1990s & CAVE-এ ঘরজুড়ে প্রক্ষেপিত দৃশ্য ব্যবহার করা হয়; গবেষণা ও VR arcade-এর চর্চা বাড়ে।\\\hline
+2010s থেকে & Oculus Rift, HTC Vive, PlayStation VR ও Meta Quest-এর মতো যন্ত্র সাধারণ ব্যবহারকারীর কাছে VR পৌঁছে দেয়। স্বতন্ত্র হেডসেট নিজস্ব প্রসেসর দিয়ে কাজ করতে পারে।\\\hline
 \end{tabular}
-\end{center}
-
-\subsubsection{Motion Capture প্রযুক্তি}\label{sec:motioncapture}
-
-Motion Capture (mocap) হল এমন প্রযুক্তি যা real-world movement-কে digital data-তে রূপান্তরিত করে:
-
-\begin{definitionbox}{Motion Capture Method}
-\begin{itemize}
-\item \textbf{Optical Mocap}: Infrared cameras ও retro-reflective markers ব্যবহার করে। Hollywood films-এ ব্যবহৃত হয়। যেমন: Avatar, Avengers।
-\item \textbf{Magnetic Mocap}: Magnetic sensors ব্যবহার করে। Medical/industrial applications-এ ব্যবহৃত।
-\item \textbf{Inertial Mocap}: IMU (Inertial Measurement Units) সেন্সর দিয়ে। VR controllers-এ এটি ব্যবহৃত।
-\item \textbf{Markerless Mocap}: Computer vision algorithm ব্যবহার করে human skeleton detect করে। Deep learning এ এটি আরও শক্তিশালী হচ্ছে।
-\end{itemize}
-\end{definitionbox}
-
-% ===== Image placeholder: motion capture / dataglove =====
-\begin{figure}[!htbp]
-\centering
-% \includegraphics[width=0.6\textwidth,height=0.27\textheight,keepaspectratio]{images/vr_motion_capture.jpg}
-\caption{মোশন ক্যাপচার / ডাটা গ্লাভ (প্লেসহোল্ডার)}
-\label{fig:motion_capture}
-\end{figure}
-
-\subsection{চিকিৎসা শিক্ষা এবং অস্ত্রোপচার প্রশিক্ষণে VR}\label{sec:surgical}
-
-VR চিকিৎসা ক্ষেত্রে বিপ্লব ঘটাচ্ছে, বিশেষ করে surgical training-এ:
-
-\begin{keypointbox}{VR Surgical Training-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item \textbf{LapSim Platform}: Laparoscopic (minimal invasive) surgery practice
-  \begin{itemize}
-  \item Realistic 3D anatomy models
-  \item Real-time feedback ও scoring system
-  \item Multiple surgical scenarios (cholecystectomy, nephrectomy, hysterectomy)
-  \item Haptic feedback gloves (surgeon hand feel করতে পারেন)
-  \end{itemize}
-
-\item \textbf{সুবিধা}:
-  \begin{itemize}
-  \item Real patients-এ practice করার আগে skill develop করা যায়
-  \item Mistakes safe environment-এ করা যায়
-  \item Repeated practice সম্ভব (একই procedure হাজার বার করা যায়)
-  \item Real equipment-এর তুলনায় অনেক সাশ্রয়ী
-  \item Objective performance metrics পাওয়া যায়
-  \end{itemize}
-
-\item \textbf{ফলাফল}:
-  \begin{itemize}
-  \item Studies দেখায় VR training করা surgeons বেশি accurate ও দ্রুত
-  \item Error rate 50\% পর্যন্ত কমানো যায়
-  \item Surgery time 15-20\% কমানো যায়
-  \item Patient safety উল্লেখযোগ্যভাবে বৃদ্ধি পায়
-  \end{itemize}
-\end{itemize}
-\end{keypointbox}
-
-% ===== Image placeholder: surgical training =====
-\begin{figure}[!htbp]
-\centering
-% \includegraphics[width=0.6\textwidth,height=0.27\textheight,keepaspectratio]{images/vr_surgical_training.jpg}
-\caption{Surgical VR training (প্লেসহোল্ডার)}
-\label{fig:vr_surgery}
-\end{figure}
-
-\subsection{মেডিকেল রিহ্যাবিলিটেশন এবং থেরাপিতে VR}\label{sec:rehab}
-
-\begin{definitionbox}{VR থেরাপিউটিক অ্যাপ্লিকেশন}
-\begin{itemize}
-\item \textbf{Physical Rehabilitation}:
-  \begin{itemize}
-  \item Stroke survivors-দের motor control ফিরিয়ে আনা
-  \item Balance ও coordination improvement exercises
-  \item Gamified rehabilitation (রোগীরা খেলার মাধ্যমে exercise করে)
-  \item 2018 systematic review: 23 randomized controlled trials, সব VR rehabilitation-এর উপকার দেখিয়েছে
-  \end{itemize}
-
-\item \textbf{Mental Health Therapy}:
-  \begin{itemize}
-  \item VRET (Virtual Reality Exposure Therapy): PTSD, phobia, anxiety disorder চিকিৎসা
-  \item Safe environment-এ phobia exposure করা যায় (heights, public speaking, flying)
-  \item Cognitive Behavioral Therapy (CBT) tools integrate করা যায়
-  \end{itemize}
-
-\item \textbf{Elderly Care (বয়স্কদের জন্য)}:
-  \begin{itemize}
-  \item Alzheimer's patients-দের reminiscence therapy (পুরনো স্মৃতি জাগানো)
-  \item Fall prevention exercises (balance ও coordination)
-  \item Social isolation কমানো (virtual social environments)
-  \item Mobility improvement (elderly যারা বাড়ির বাইরে যেতে পারেন না)
-  \end{itemize}
-
-\item \textbf{Pain Management}:
-  \begin{itemize}
-  \item Distraction therapy: severe pain কমাতে immersive VR games
-  \item Phantom limb pain: Mirror therapy simulation দিয়ে
-  \item Chronic pain conditions-এ proven efficacy
-  \end{itemize}
-\end{itemize}
-\end{definitionbox}
-
-% ===== Image placeholder: medical rehabilitation =====
-\begin{figure}[!htbp]
-\centering
-% \includegraphics[width=0.6\textwidth,height=0.27\textheight,keepaspectratio]{images/vr_rehab.jpg}
-\caption{Medical rehabilitation VR (প্লেসহোল্ডার)}
-\label{fig:vr_rehab}
-\end{figure}
-
-\subsection{পাইলট এবং ফ্লাইট সিমুলেটর প্রশিক্ষণ}\label{sec:flight}
-
-\begin{keypointbox}{ফ্লাইট সিমুলেটর-এ VR-এর ব্যবহার}
-\begin{itemize}
-\item \textbf{History}: ফ্লাইট simulator সবচেয়ে পুরানো simulation system (1920s থেকে)
-\item \textbf{Modern VR Flight Simulators}:
-  \begin{itemize}
-  \item Full-motion simulator cabin দিয়ে realistic motion feedback
-  \item Loft Dynamics VR Helicopter Training: EASA approved (2021), FAA approved (2024)
-  \item FSTD (Flight Simulation Training Device) হিসেবে recognized
-  \item Pilots risky maneuvers practice করতে পারেন without risk (ঝড়, emergency landing, night flying)
-  \end{itemize}
-
-\item \textbf{সাশ্রয়}:
-  \begin{itemize}
-  \item একটি ফ্লাইট simulator session: \$3,000-5,000 ঘন্টায়
-  \item Real aircraft training: \$5,000-7,000 ঘন্টায়
-  \item এত সাশ্রয় করে মানেই বিশাল cost reduction
-  \end{itemize}
-
-\item \textbf{নিরাপত্তা উন্নতি}:
-  \begin{itemize}
-  \item Rotorcraft training accidents 20\% কমেছে VR সিমুলেটরের কারণে
-  \item High-risk scenarios সেফলিতে practice করা যায়
-  \item Repeated emergency training সম্ভব
-  \end{itemize}
-\end{itemize}
-\end{keypointbox}
-
-% ===== Image placeholder: flight simulator =====
-\begin{figure}[!htbp]
-\centering
-% \includegraphics[width=0.7\textwidth,height=0.27\textheight,keepaspectratio]{images/vr_flight_simulator.jpg}
-\caption{Flight simulator VR (প্লেসহোল্ডার)}
-\label{fig:vr_flight}
-\end{figure}
-
-\subsection{গেমিং এবং বিনোদনে ভার্চুয়াল রিয়েলিটি}\label{sec:gaming}
-
-VR gaming সবচেয়ে জনপ্রিয় এবং commercially successful VR অ্যাপ্লিকেশন:
-
-\begin{definitionbox}{জনপ্রিয় VR গেমস ও অভিজ্ঞতা}
-\begin{itemize}
-\item \textbf{অ্যাকশন গেমস}:
-  \begin{itemize}
-  \item Half-Life: Alyx (Valve): এক্সক্লুসিভ VR title, অসাধারণ storytelling
-  \item Resident Evil 7 in VR: Horror game immersive experience
-  \item Beat Saber: Rhythm game, music beat এ objects cut করা
-  \end{itemize}
-
-\item \textbf{সোশ্যাল VR প্ল্যাটফর্ম}:
-  \begin{itemize}
-  \item VRChat: Users virtual avatars দিয়ে অন্যদের সাথে interact করে
-  \item Horizon Worlds (Meta): Social metaverse platform
-  \item Rec Room: Multiplayer VR game ও hangout space
-  \end{itemize}
-
-\item \textbf{ভার্চুয়াল কনসার্ট ও ইভেন্ট}:
-  \begin{itemize}
-  \item 2020-এ COVID-তে Jean-Michel Jarre VRChat concert করেছেন
-  \item Justin Bieber, Post Malone, Imagine Dragons সবাই VR concerts করেছেন
-  \item Meta Venues platform দিয়ে live performers stream করা হয়
-  \end{itemize}
-
-\item \textbf{মিউজিয়াম ট্যুর ও সাংস্কৃতিক অভিজ্ঞতা}:
-  \begin{itemize}
-  \item Virtual museum tours (Louvre, British Museum)
-  \item Historical site reconstruction (Angkor Wat, Pompeii)
-  \item Virtual Ganjali Khan Project: খনন সাইট virtually explore করা
-  \end{itemize}
-\end{itemize}
-\end{definitionbox}
-
-% ===== Image placeholder: gaming =====
-\begin{figure}[!htbp]
-\centering
-% \includegraphics[width=0.6\textwidth,height=0.27\textheight,keepaspectratio]{images/vr_gaming.jpg}
-\caption{VR gaming experience (প্লেসহোল্ডার)}
-\label{fig:vr_gaming}
-\end{figure}
-
-\subsection{ডাটা গ্লাভ এবং মোশন ট্র্যাকিং ডিভাইস}\label{sec:dataglove}
-
-\begin{definitionbox}{মোশন ক্যাপচার ডিভাইসের প্রকার}
-\begin{itemize}
-\item \textbf{DataGlove (1989)}:
-  \begin{itemize}
-  \item Jaron Lanier দ্বারা invented (VPL Research)
-  \item Fiber optic sensors প্রতিটি joint-এ
-  \item Hand gesture recognize করা যায়
-  \item Mattel এটি Power Glove হিসেবে commercialize করে
-  \end{itemize}
-
-\item \textbf{আধুনিক Controller (2020s)}:
-  \begin{itemize}
-  \item Meta Touch Pro: Fine finger tracking, 12+ hour battery
-  \item HTC Vive Controller: Precise motion tracking
-  \item PlayStation VR2 Sense Controller: Haptic feedback, adaptive triggers
-  \end{itemize}
-
-\item \textbf{অ্যাডভান্সড গ্লাভ সিস্টেম}:
-  \begin{itemize}
-  \item Haptic Feedback Gloves: শক্তিশালী vibration দিয়ে টাচ simulation
-  \item Wireality Gloves: Multi-string haptics, complex geometry touch করা যায়
-  \item bHaptics TactSuit: পুরো শরীরের জন্য haptic feedback
-  \end{itemize}
-\end{itemize}
-\end{definitionbox}
-
-\subsection{ভার্চুয়াল রিয়েলিটির গুরুত্বপূর্ণ পরামিতি এবং মেট্রিক্স}\label{sec:metrics}
-
-HSC পরীক্ষার জন্য গুরুত্বপূর্ণ technical parameters:
-
-\begin{keypointbox}{VR সিস্টেম Specification}
-\begin{itemize}
-\item \textbf{Field of View (FOV)}:
-  \begin{itemize}
-  \item মানুষের FOV: ~110 degree horizontal
-  \item Consumer VR headsets: 90-110 degree
-  \item Professional VR: 120-140 degree
-  \item FOV যত বেশি, তত immersive অনুভূতি
-  \end{itemize}
-
-\item \textbf{Resolution}:
-  \begin{itemize}
-  \item আর্কিটেকচারাল ভিশন রেসোলিউশন: 30-65 arc-seconds
-  \item 1 meter দূরত্বে: 0.29mm pixel separation প্রয়োজন
-  \item 2 meter দূরত্বে: 0.58mm pixel separation প্রয়োজন
-  \item Current headsets: 1832x1920 থেকে 4K
-  \end{itemize}
-
-\item \textbf{Refresh Rate (Hz)}:
-  \begin{itemize}
-  \item 60Hz: ছোট latency (দৃশ্যমান artifact নেই)
-  \item 90Hz: মসৃণ motion (Meta Quest 3)
-  \item 120Hz+: প্রফেশনাল applications (Valve Index: 144Hz)
-  \item Refresh rate কম হলে motion sickness বৃদ্ধি পায়
-  \end{itemize}
-
-\item \textbf{Latency}:
-  \begin{itemize}
-  \item \textbf{End-to-End Latency}: ব্যবহারকারী head move করে থেকে screen update হওয়া পর্যন্ত
-  \item Acceptable range: <20ms (comfortable), 20-30ms (bearable), >50ms (VR sickness)
-  \item Critical immersion-এর জন্য
-  \end{itemize}
-
-\item \textbf{Degrees of Freedom (DoF)}:
-  \begin{itemize}
-  \item 3 DoF: Rotation only (pitch, yaw, roll) - mobile VR
-  \item 6 DoF: Rotation + Position (x, y, z movement) - consumer VR
-  \item 9+ DoF: Full body tracking - advanced systems
-  \item বেশি DoF = আরও immersive ও realistic
-  \end{itemize}
-\end{itemize}
-\end{keypointbox}
-
-\subsection{ভার্চুয়াল রিয়েলিটির স্বাস্থ্য ঝুঁকি এবং সতর্কতা (HSC এর জন্য গুরুত্বপূর্ণ)}\label{sec:health}
-
-দীর্ঘ সময় VR ব্যবহারে কিছু স্বাস্থ্য সমস্যা হতে পারে যা HSC পরীক্ষায় আসে:
-
-\begin{mistakebox}{VR Health Risks এবং সমাধান}
-\begin{itemize}
-\item \textbf{Cybersickness (VR Motion Sickness)}:
-  \begin{itemize}
-  \item কারণ: Visual input ও vestibular system (balance system)-এর মধ্যে mismatch
-  \item লক্ষণ: Nausea, dizziness, disorientation, sweating, pallor
-  \item প্রভাবিত মানুষ: 25-40\% users প্রথম exposure-এ
-  \item নারী-পুরুষ পার্থক্য: Women 77\%, Men 33\% affected (statistical difference)
-  \item সমাধান: High refresh rate (90Hz+), low latency, gradual exposure
-  \end{itemize}
-
-\item \textbf{Eye Strain এবং Myopia Risk}:
-  \begin{itemize}
-  \item কারণ: Continuous screen exposure, reduced blinking
-  \item ফলাফল: Dry eyes, fatigue, temporary vision blur
-  \item Long-term effect: VR headsets কি myopia (অদূরদর্শিতা) বৃদ্ধি করে তা নিয়ে সংশয় আছে
-  \item সমাধান: Focal length যদি দূরে থাকে তাহলে ঝুঁকি কম
-  \end{itemize}
-
-\item \textbf{Vergence-Accommodation Conflict (VAC)}:
-  \begin{itemize}
-  \item মূল কারণ: চোখ একটি দূরত্বে focus করে (accommodation) কিন্তু অন্য দূরত্বে converge করে (vergence)
-  \item প্রভাব: Eye fatigue, headache, blurred vision
-  \item সমাধান: Advanced optics ও foveated rendering দিয়ে simulate করা যায়
-  \end{itemize}
-
-\item \textbf{শারীরিক আঘাত (Physical Injury)}:
-  \begin{itemize}
-  \item কারণ: VR পরা অবস্থায় চারপাশ না দেখে চলাফেরা
-  \item 2022 WSJ রিপোর্ট: VR use এ leg, hand, arm, neck injuries বৃদ্ধি পেয়েছে
-  \item গুরুতর cases: Cervical vertebrae injury, broken bones
-  \item সমাধান: Safe play area define করা, guardian boundary system ব্যবহার করা
-  \end{itemize}
-
-\item \textbf{Children ও Adolescents-এ বিশেষ ঝুঁকি}:
-  \begin{itemize}
-  \item 8-12 বছরের বাচ্চারা VR-কে বেশি realistic মনে করে
-  \item আচরণগত প্রভাব: Violent content exposure থেকে aggressive behavior বৃদ্ধি
-  \item Self-concept damage: VR-এ experiences real life-এ apply করার প্রবণতা
-  \item প্রস্তাবনা: 13 বছরের নিচে VR use সীমিত করা
-  \end{itemize}
-
-\item \textbf{Privacy Concerns}:
-  \begin{itemize}
-  \item Eye-tracking data: Ethnicity, personality traits, fears, emotions reveal করতে পারে
-  \item Motion tracking: সম্পূর্ণ physical movements record হয়
-  \item Data breach risk: VR ডেটা অত্যন্ত sensitive ও personal
-  \item Meta-Oculus controversy: Facebook account mandatory করা নিয়ে privacy issues
-  \end{itemize}
-\end{itemize}
-\end{mistakebox}
-
-\subsection{ভবিষ্যতের ভার্চুয়াল রিয়েলিটি (HSC এর জন্য ভবিষ্যত দৃষ্টিভঙ্গি)}\label{sec:future}
-
-VR প্রযুক্তি ভবিষ্যতে আরও উন্নত হবে এবং নতুন সম্ভাবনা তৈরি করবে:
-
-\begin{keypointbox}{ভবিষ্যতের VR প্রযুক্তি ট্রেন্ড}
-\begin{itemize}
-\item \textbf{Hardware Advancement}:
-  \begin{itemize}
-  \item Lighter weight headsets: বর্তমান 500-700g থেকে 100-200g এ নামবে
-  \item Higher resolution: 8K ও 16K displays commercial হবে
-  \item Wider FOV: 180-200 degree field of view সাধারণ হবে
-  \item Standalone power: বাহ্যিক computing power ছাড়াই powerful VR সম্ভব হবে
-  \item Wireless technology: Completely cable-free experience
-  \end{itemize}
-
-\item \textbf{Eye-Tracking ও Face-Tracking}:
-  \begin{itemize}
-  \item Gaze-based interaction: চোখ দিয়েই interface control করা যাবে
-  \item Foveated rendering: শুধু যেখানে দেখছি সেখানেই high quality render, অন্যত্র lower quality
-  \item Power efficiency: 30-50\% power saving সম্ভব হবে
-  \item Affective computing: Emotional state detect করে adaptive experience
-  \end{itemize}
-
-\item \textbf{Advanced Haptic Feedback}:
-  \begin{itemize}
-  \item Full-body haptics: Suit-এর মাধ্যমে সম্পূর্ণ শরীর tactile feedback পাবে
-  \item Ultrasonic haptics: স্পর্শ ছাড়াই haptic sensation
-  \item Temperature feedback: গরম-ঠাণ্ডা sensation simulate করা
-  \item Proprioceptive feedback: শরীরের position সম্পর্কে information
-  \end{itemize}
-
-\item \textbf{Brain-Computer Interface (BCI)}:
-  \begin{itemize}
-  \item Neural input: সরাসরি মস্তিষ্ক থেকে instruction নেওয়া (Elon Musk এর Neuralink)
-  \item Direct sensory simulation: অনুভূতি directly neural level-এ জেনারেট করা
-  \item নৈতিক প্রশ্ন: Privacy, autonomy, neural data protection এগুলো গুরুত্বপূর্ণ হবে
-  \end{itemize}
-
-\item \textbf{Metaverse Integration}:
-  \begin{itemize}
-  \item Persistent virtual worlds: বন্ধ হলেও বাস্তব সময়ে চলতে থাকে
-  \item Cross-platform compatibility: Meta, Apple, Microsoft সব একসাথে কাজ করবে
-  \item Digital economy: Virtual real estate, goods, services-এ actual money transaction
-  \item Social implication: আমাদের সামাজিক জীবন ভবিষ্যতে virtual ও physical দুই world-এ হবে
-  \end{itemize}
-
-\item \textbf{Artificial Intelligence Integration}:
-  \begin{itemize}
-  \item Intelligent NPCs: AI-powered non-player characters realistic behavior দেবে
-  \item Natural language processing: Conversational AI-এর সাথে talk করা যাবে
-  \item Procedural content generation: AI দিয়ে infinite amount of VR content তৈরি
-  \item Personalized experience: প্রতিটি user-এর পছন্দ অনুযায়ী customize করা
-  \end{itemize}
-
-\item \textbf{নতুন অ্যাপ্লিকেশন ক্ষেত্র}:
-  \begin{itemize}
-  \item Space exploration: NASA astronaut training (current) → virtual space missions
-  \item Climate change education: Virtual world-এ climate impact visualize করা
-  \item Telepresence: প্রকৃত উপস্থিতি ছাড়াই দূর থেকে উপস্থিত থাকা (remote work, surgery)
-  \item Grieving ও remembrance: Deceased individuals এর virtual replicas (ethical debates চলছে)
-  \end{itemize}
-\end{itemize}
-\end{keypointbox}
-
-\subsection{ভার্চুয়াল রিয়েলিটি এবং সামাজিক প্রভাব (HSC সমাজ বিজ্ঞানের জন্য)}\label{sec:social}
-
-\begin{definitionbox}{VR-এর সামাজিক ও নৈতিক প্রশ্ন}
-\begin{itemize}
-\item \textbf{Digital Divide}: VR expensive, তাই সবার access নেই। এটি inequality বৃদ্ধি করতে পারে।
-\item \textbf{Addiction Risk}: Immersive experience বেশি addictive হতে পারে regular gaming-এর চেয়ে।
-\item \textbf{Mental Health Impact}: Extended VR use depression, anxiety বৃদ্ধি করতে পারে।
-\item \textbf{Privacy এবং Surveillance}: Eye-tracking ও motion data অত্যন্ত invasive হতে পারে।
-\item \textbf{Digital Rights}: Virtual world-এ user rights কীভাবে protect করা হবে?
-\item \textbf{Age-appropriate Content}: Children-দের জন্য কী content safe এবং কী না তা regulate করা জরুরী।
-\item \textbf{Cybersecurity}: Virtual worlds-এ fraud, hacking, theft-এর ঝুঁকি বাড়বে।
-\end{itemize}
-\end{definitionbox}
-\subsection{ভার্চুয়াল রিয়েলিটির ব্যবহারক্ষেত্র}
-
-\begin{examplebox}{শিক্ষা ও প্রশিক্ষণ}
-Biology class-এ শিক্ষার্থী VR ব্যবহার করে মানবদেহের heart বা brain 3D model হিসেবে দেখতে পারে। Physics-এ electric field বা wave motion visual করা যায়। Engineering student virtual machine খুলে-জোড়া লাগানোর practice করতে পারে।
-\end{examplebox}
-
-\begin{examplebox}{চিকিৎসা}
-Medical student surgery simulator-এ operation practice করতে পারে। Physiotherapy বা rehabilitation-এ রোগীকে game-like virtual task দিয়ে movement practice করানো যায়। কিছু therapy-তে fear বা anxiety কমাতে controlled virtual environment ব্যবহার করা হয়।
-\end{examplebox}
-
-\begin{examplebox}{প্রতিরক্ষা ও নিরাপত্তা}
-সৈনিক, pilot বা emergency responder বাস্তব ঝুঁকি ছাড়াই যুদ্ধক্ষেত্র, আগুন, দুর্ঘটনা বা rescue operation-এর training নিতে পারে। Britannica VR training discussion-এ simulation-এর safety ও cost advantage বিশেষভাবে উল্লেখ করা হয়েছে।
-\end{examplebox}
-
-\begin{examplebox}{স্থাপত্য ও শিল্প}
-স্থপতি building তৈরি হওয়ার আগে client-কে virtual walkthrough দেখাতে পারেন। শিল্পকারখানায় machine operation, assembly line design এবং worker training VR দিয়ে করা যায়।
-\end{examplebox}
-
-\subsection{ভার্চুয়াল রিয়েলিটির সুবিধা}
-
-\begin{keypointbox}{সুবিধা}
-\begin{itemize}
-\item ঝুঁকিপূর্ণ training নিরাপদে করা যায়।
-\item ব্যয়বহুল equipment ব্যবহার না করেও practice সম্ভব।
-\item একই scenario বারবার repeat করা যায়।
-\item learner ভুল করলে বাস্তব ক্ষতি হয় না।
-\item visual ও interactive হওয়ায় জটিল বিষয় বোঝা সহজ হয়।
-\item remote collaboration ও virtual meeting আরও immersive করা যায়।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-VR-এর সুবিধা লিখতে শুধু “বিনোদন” লিখলে উত্তর দুর্বল হয়। শিক্ষা, চিকিৎসা, প্রতিরক্ষা, গবেষণা, শিল্প ও training—কমপক্ষে ৪টি ক্ষেত্র উদাহরণসহ লিখলে উত্তর ভালো হয়।
-\end{boardbox}
-
-\subsection{ভার্চুয়াল রিয়েলিটির অসুবিধা}
-
-VR শক্তিশালী প্রযুক্তি হলেও এর সীমাবদ্ধতা আছে। ভালো VR setup-এর দাম বেশি হতে পারে, দীর্ঘ সময় ব্যবহার করলে চোখে চাপ, মাথা ঘোরা বা motion sickness হতে পারে। অনুপযুক্ত content, privacy risk, অতিরিক্ত gaming, সামাজিক বিচ্ছিন্নতা এবং physical safety-র সমস্যাও দেখা দিতে পারে।
-
-\begin{mistakebox}{সতর্কতা}
-VR headset ব্যবহার করার সময় আশেপাশে পর্যাপ্ত খালি জায়গা থাকা দরকার। বাস্তব ঘরের দেয়াল, টেবিল, fan বা অন্য মানুষের অবস্থান না বুঝে চলাফেরা করলে দুর্ঘটনা ঘটতে পারে।
-\end{mistakebox}
-
-\begin{center}
-\begin{tabular}{|p{0.28\textwidth}|p{0.58\textwidth}|}
-\hline
-\textbf{সমস্যা} & \textbf{ব্যাখ্যা} \\
-\hline
-ব্যয় & headset, controller, sensor ও powerful computer দরকার হতে পারে \\
-\hline
-স্বাস্থ্যঝুঁকি & motion sickness, eye strain, headache হতে পারে \\
-\hline
-Content quality & ভুল বা দুর্বল simulation শেখাকে বিভ্রান্ত করতে পারে \\
-\hline
-Privacy & device movement, voice, biometric-like interaction data সংরক্ষিত হতে পারে \\
-\hline
-সামাজিক প্রভাব & অতিরিক্ত ব্যবহার বাস্তব সামাজিক সম্পর্ক কমাতে পারে \\
-\hline
+\end{compacttable}
+\chOneFigureExplain{\chaponeimg/vr_history_timeline.png}{VR-এর বিকাশের ধারা}{fig:ch1-pair-20}{প্রাথমিক বহু ইন্দ্রিয়ভিত্তিক ব্যবস্থা থেকে আধুনিক হেডসেট পর্যন্ত বিকাশের ধাপ দেখানো হয়েছে।}
+\subsection{সিমুলেশন, VR, AR ও MR}
+\definition{সিমুলেশন}{বাস্তব কোনো ব্যবস্থার মডেল তৈরি করে তার আচরণ, ফলাফল বা কাজের পদ্ধতি পর্যবেক্ষণ ও অনুশীলন করাকে সিমুলেশন (Simulation) বলে।}
+আবহাওয়ার মডেল, যানবাহনের চলাচলের মডেল কিংবা স্প্রেডশিটে হিসাবভিত্তিক মডেলও সিমুলেশন হতে পারে। সব সিমুলেশনে ব্যবহারকারী ভার্চুয়াল পরিবেশে উপস্থিত থাকার অভিজ্ঞতা পায় না।
+\begin{compacttable}
+\begin{tabular}{|p{\dimexpr.18\linewidth-7pt\relax}|p{\dimexpr.51\linewidth-7pt\relax}|p{\dimexpr.31\linewidth-7pt\relax}|}
+\hline\textbf{ধরন} & \textbf{পরিবেশ ও কাজ} & \textbf{উদাহরণ}\\\hline
+VR & কম্পিউটার-নির্মিত পরিবেশে উপস্থিতি ও মিথস্ক্রিয়ার অভিজ্ঞতা দেয়। & ভার্চুয়াল ল্যাব ও প্রশিক্ষণ\\\hline
+AR (Augmented Reality) & বাস্তব দৃশ্যের ওপর ডিজিটাল বস্তু বা তথ্য যোগ করে। & ক্যামেরায় বাস্তব ঘরে আসবাবের মডেল দেখা\\\hline
+MR (Mixed Reality) & বাস্তব ও ভার্চুয়াল বস্তু একই পরিসরে থেকে পারস্পরিক প্রতিক্রিয়ায় অংশ নিতে পারে। & মিশ্র বাস্তবতার প্রশিক্ষণ\\\hline
+সাধারণ ভিডিও & আগে ধারণ করা দৃশ্য দেখায়; দর্শকের কাজ অনুযায়ী বস্তুর আচরণ বদলায় না। & প্রামাণ্যচিত্র বা ধারণ করা পাঠ\\\hline
 \end{tabular}
-\end{center}
+\end{compacttable}
+সাধারণ পর্দায় অভিজ্ঞতা দেখানো হলে তা নন-ইমারসিভ, বড় পর্দা বা প্রক্ষেপণভিত্তিক প্রশিক্ষণব্যবস্থায় সেমি-ইমারসিভ এবং সাধারণত HMD ও ট্র্যাকিং দিয়ে গভীর নিমগ্নতা তৈরি হলে ইমারসিভ VR বলা হয়। 360-degree ভিডিওতে চারদিকে তাকানো গেলেও সব ক্ষেত্রে বস্তু ধরা বা সরানো যায় না।
+\term{মেটাভার্স (Metaverse)} হলো পারস্পরিক যোগাযোগের জন্য ভাগাভাগি করে ব্যবহার করা ভার্চুয়াল পরিবেশের ধারণা। কোনো একক অ্যাপ বা হেডসেটের নাম দিয়ে এর অর্থ সম্পূর্ণ হয় না।
+\chOneFigureExplain{\chaponeimg/vr_vs_ar_simulation.png}{ভার্চুয়াল ও বাস্তব পরিবেশের সম্পর্ক}{fig:ch1-pair-21}{বাস্তব দৃশ্য বজায় রাখা, কৃত্রিম পরিবেশে প্রবেশ এবং মডেল চালিয়ে ফল দেখার পার্থক্য চিত্রে দেখানো হয়েছে।}
+\subsection{ব্যবহারক্ষেত্র}
+ঝুঁকিপূর্ণ, ব্যয়বহুল, দূরবর্তী বা জটিল পরিবেশে কাজ শেখার জন্য VR উপযোগী। তবে অনুশীলনের ফল বাস্তবে প্রয়োগ করতে প্রশিক্ষকের নির্দেশ এবং বাস্তব দক্ষতার মূল্যায়নও দরকার।
+\chOneFigureExplain{\chaponeimg/vr_applications_map.png}{VR-এর ব্যবহারক্ষেত্র}{fig:ch1-pair-22}{শিক্ষা, চিকিৎসা, বিমান চালনা, প্রতিরক্ষা, শিল্প, স্থাপত্য, বিনোদন ও পুনর্বাসনে ব্যবহারের ক্ষেত্র দেখানো হয়েছে।}
+\subtopichead{শিক্ষা}
+জীববিজ্ঞানে হৃৎপিণ্ড, মস্তিষ্ক ও কঙ্কালের ত্রিমাত্রিক গঠন দেখা যায়। পদার্থবিজ্ঞানে তরঙ্গ, তড়িৎক্ষেত্র ও মহাকাশে গতি বোঝানো যায়। রসায়নে অণুর গঠন ও বিক্রিয়ার মডেল দেখা যায়। ভার্চুয়াল ল্যাবে বাস্তব রাসায়নিক দুর্ঘটনার ঝুঁকি ছাড়া অনুশীলন এবং প্রকৌশলে যন্ত্র খুলে জোড়া লাগানো শেখা যায়। নিজস্ব গতিতে বারবার অনুশীলন ও দূর থেকে অংশগ্রহণের সুযোগ থাকে।
+\subtopichead{চিকিৎসা প্রশিক্ষণ ও সহায়তা}
+শিক্ষানবিশ চিকিৎসক ভার্চুয়াল অপারেশন কক্ষে অস্ত্রোপচারের ধাপ, যন্ত্র চালানো এবং ল্যাপারোস্কোপিক পদ্ধতি অনুশীলন করতে পারে। অঙ্গ ও টিস্যুর মডেল দেখে গঠন বোঝে। ভুল ধাপ, সময়, চাপ ও নির্ভুলতার প্রতিক্রিয়া পেয়ে সংশোধনের সুযোগ পায়; অনুশীলনে বাস্তব রোগীর ক্ষতি হয় না।
+পুনর্বাসনে নড়াচড়ার দক্ষতা ফিরে পেতে অনুশীলন, ব্যথা থেকে মনোযোগ সরানো এবং চিকিৎসকের তত্ত্বাবধানে ভীতি, উদ্বেগ বা PTSD-তে নিয়ন্ত্রিত অভিজ্ঞতা দেওয়ার কাজেও VR ব্যবহৃত হয়। চিকিৎসকদের যৌথ প্রশিক্ষণ ও চিকিৎসাসংক্রান্ত সিমুলেশনেও এর ব্যবহার আছে।
+\chOneFigureExplain{\chaponeimg/vr_medical_training.png}{ভার্চুয়াল অস্ত্রোপচার প্রশিক্ষণ}{fig:ch1-pair-23}{ত্রিমাত্রিক অঙ্গের মডেল, যন্ত্র চালানো এবং কাজের প্রতিক্রিয়া শিক্ষানবিশকে অনুশীলনে সাহায্য করে।}
+\subtopichead{বিমান চালনা, প্রতিরক্ষা ও জরুরি সেবা}
+কৃত্রিম ককপিটে প্রশিক্ষণার্থী নিয়ন্ত্রণযন্ত্র ব্যবহার করে বিমান চালনা ও দিকনির্দেশ শেখে। ঝড়, কুয়াশা, বৃষ্টি, রাতের উড্ডয়ন, ইঞ্জিন বিকল হওয়া, রানওয়ের সমস্যা ও জরুরি অবতরণ বারবার অনুশীলন করা যায়। প্রশিক্ষক কাজ পর্যবেক্ষণ করে নম্বর ও প্রতিক্রিয়া দিতে পারেন। বাস্তব বিমান, অস্ত্র বা বিপজ্জনক পরিস্থিতি ব্যবহারের ব্যয় ও ঝুঁকি কমানো যায়। সামরিক কৌশল, উদ্ধারকাজ, অগ্নিনিরাপত্তা এবং জরুরি পরিস্থিতির সাড়াদানেও একই সুবিধা পাওয়া যায়।
+\chOneFigureExplain{\chaponeimg/vr_flight_simulator_training.png}{বিমান চালনার অনুশীলন}{fig:ch1-pair-24}{আবহাওয়া ও জরুরি পরিস্থিতি বদলে প্রশিক্ষণ দেওয়া এবং কাজের মূল্যায়ন করা যায়।}
+\subtopichead{ব্যবসা, স্থাপত্য ও শিল্প}
+ভার্চুয়াল শোরুমে পণ্য দেখানো এবং ভবন নির্মাণের আগে ঘুরে দেখার অভিজ্ঞতা দেওয়া যায়। ক্রেতা ঘরের আকার, আলো, আসবাবের অবস্থান ও বারান্দার দৃশ্য দেখে সিদ্ধান্ত নিতে পারে। নকশার ত্রুটি নির্মাণের আগেই সংশোধন করা যায়। কারখানায় যন্ত্র চালনা, রক্ষণাবেক্ষণ, নিরাপত্তা মহড়া, নকশা পর্যালোচনা ও নমুনা পণ্যের পরীক্ষা করা যায়।
+\subtopichead{বিনোদন, সংস্কৃতি ও যোগাযোগ}
+গেম, অংশগ্রহণমূলক গল্প, ভার্চুয়াল কনসার্ট, জাদুঘর, ঐতিহাসিক স্থান ও পর্যটন অভিজ্ঞতায় VR ব্যবহৃত হয়। অবতার দিয়ে সামাজিক যোগাযোগ, সভা ও দূরবর্তী যৌথ কাজ করা যায়। ক্রীড়া প্রশিক্ষণ এবং সাংস্কৃতিক ঐতিহ্যের দৃশ্যায়নও এর ব্যবহার।
+\subsection{সীমাবদ্ধতা ও নিরাপদ ব্যবহার}
+ভালো হেডসেট, নিয়ন্ত্রক, সেন্সর ও কম্পিউটারের ব্যয় বেশি হতে পারে। পর্যাপ্ত যন্ত্র না থাকলে শিক্ষার্থী ও প্রতিষ্ঠানের সুযোগে বৈষম্য তৈরি হয়। দুর্বল সিমুলেশন ভুল ধারণা দিতে পারে; অতিরিক্ত গেম বা নিমগ্ন অভিজ্ঞতা আসক্তির ঝুঁকি বাড়াতে পারে।
+দীর্ঘ সময় হেডসেট পরলে চোখে চাপ, ক্লান্তি, মাথাব্যথা, মাথা ঘোরা বা বমিভাব হতে পারে। দেখা নড়াচড়া ও শরীরের অনুভূতি না মেলা, বেশি বিলম্ব এবং কম দৃশ্য-হালনাগাদ হার অস্বস্তি বাড়াতে পারে। চারপাশের দেয়াল বা আসবাব না দেখে চললে আঘাত পাওয়ার আশঙ্কা থাকে।
+VR ব্যবস্থা নড়াচড়া, অবস্থান, কণ্ঠস্বর, হাতের ভঙ্গি, চোখের গতিবিধি, ব্যবহারের ধরন ও অ্যাকাউন্টের তথ্য সংগ্রহ করতে পারে। এসব তথ্য অনিরাপদভাবে রাখা বা ভাগ করলে ব্যক্তিগত গোপনীয়তা ক্ষতিগ্রস্ত হয়।
+\begin{compactpoints}
+\item ব্যবহারের আগে চারপাশে খালি জায়গা নিশ্চিত করতে হবে; নিরাপদ সীমানা বা guardian ব্যবস্থা ব্যবহার করা যায়।
+\item একটানা দীর্ঘ সময় ব্যবহার না করে বিরতি নিতে হবে। মাথা ঘোরা বা অস্বস্তি হলে হেডসেট খুলে বিশ্রাম নিতে হবে।
+\item শিশুদের জন্য বয়সোপযোগী বিষয়বস্তু ও সময়সীমা মানতে হবে।
+\item বিশ্বস্ত বিষয়বস্তু, নিরাপদ অ্যাকাউন্ট, অনুমতি নিয়ন্ত্রণ এবং তথ্য ব্যবহারের নীতি সম্পর্কে সচেতন থাকতে হবে।
+\end{compactpoints}
+\chOneFigureExplain{\chaponeimg/vr_health_safety.png}{VR ব্যবহারে স্বাস্থ্য ও নিরাপত্তা}{fig:ch1-pair-25}{ব্যবহারের সময়সীমা, নিরাপদ স্থান ও ব্যক্তিগত তথ্যের সুরক্ষা বিবেচনা করতে হয়।}
+\subsection{অনুশীলন}
 
-\begin{recapbox}
-\begin{itemize}
-\item VR হলো computer-generated 3D interactive environment।
-\item VR-এর মূল ধারণা: immersion, interaction, presence।
-\item প্রধান উপাদান: headset, sensor, controller, haptic device, audio, graphics software।
-\item ব্যবহার: education, medical training, defense, industry, architecture, entertainment।
-\item সুবিধা: নিরাপদ training, repeat practice, cost reduction, visual learning।
-\item অসুবিধা: দাম, health issue, privacy risk, poor content, social isolation।
-\end{itemize}
-\end{recapbox}
+\qhead{MCQ}
+\begin{multicols}{2}\begin{compactenum}
+\item \begin{minipage}[t]{\linewidth}VR-এর পূর্ণরূপ কোনটি?\par \mcqoption{Virtual Reality}{Visual Router}{Video Record}{Virtual Radio}\chOneAnswerBox{ক}\par\end{minipage}
 
-\begin{boardbox}{পরীক্ষায় যেভাবে আসতে পারে}
-\begin{enumerate}
-\item ভার্চুয়াল রিয়েলিটি কী?
-\item VR system-এর প্রধান উপাদানগুলো ব্যাখ্যা কর।
-\item চিকিৎসা ও প্রতিরক্ষায় VR-এর ব্যবহার লিখ।
-\item VR ও AR-এর মধ্যে পার্থক্য লেখ।
-\item “VR ঝুঁকিপূর্ণ প্রশিক্ষণকে নিরাপদ করে”—ব্যাখ্যা কর।
-\end{enumerate}
-\end{boardbox}
+\item \begin{minipage}[t]{\linewidth}VR-এ ব্যবহারকারীর মাথার নড়াচড়া শনাক্ত করে কোন উপাদান?\par \mcqoption{Printer}{Motion sensor}{Scanner}{Modem}\chOneAnswerBox{খ}\par\end{minipage}
 
-\begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item VR-এ ব্যবহারকারীর মাথার নড়াচড়া শনাক্ত করে কোন উপাদান?\\
-ক. Printer \quad খ. Motion sensor \quad গ. Scanner \quad ঘ. Modem
-\item VR-এর সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্য কোনটি?\\
-ক. শুধু text দেখা \quad খ. Immersion ও interaction \quad গ. কাগজে print করা \quad ঘ. offline storage
-\end{enumerate}
+\item \begin{minipage}[t]{\linewidth}VR-এর গুরুত্বপূর্ণ বৈশিষ্ট্য কোনটি?\par \mcqoption{শুধু text দেখা}{কাগজ print করা}{Immersion ও Interaction}{offline storage}\chOneAnswerBox{গ}\par\end{minipage}
 
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}Head Mounted Display-এর কাজ কী?\par \mcqoption{paper scan করা}{network cable কাটা}{password তৈরি করা}{3D virtual scene দেখানো}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Haptic device কী দেয়?\par \mcqoption{স্পর্শ/feedback-এর অনুভূতি}{শুধু print output}{শুধু text input}{শুধু storage}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}VR সবচেয়ে বেশি উপকারী কোন ক্ষেত্রে?\par \mcqoption{manual handwriting}{ঝুঁকিপূর্ণ training}{কাগজ ভাঁজ করা}{দেয়াল রং করা}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}VR ও সাধারণ video-এর মূল পার্থক্য কী?\par \mcqoption{video-তে interaction বেশি}{দুইটি একই}{VR-এ interaction থাকে}{VR কাগজে দেখা হয়}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}AR-এর কাজ কী?\par \mcqoption{সম্পূর্ণ virtual world তৈরি}{শুধু database রাখা}{sound বন্ধ করা}{বাস্তব environment-এর ওপর digital object বসানো}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}VR ব্যবহারে একটি স্বাস্থ্যঝুঁকি হলো—\par \mcqoption{motion sickness}{typing speed কমে যাওয়া}{paper jam}{printer heating}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Surgical training-এ VR কেন উপকারী?\par \mcqoption{রোগীকে বাদ দিয়ে সব চিকিৎসা হয়}{রোগীর ঝুঁকি ছাড়াই practice করা যায়}{doctor দরকার হয় না}{medicine লাগে না}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}VR-এ প্রতিক্রিয়ার বিলম্ব বেশি হলে কী সমস্যা হতে পারে?\par \mcqoption{printer speed বাড়ে}{storage কমে যায়}{motion sickness হতে পারে}{network cable নষ্ট হয়}\chOneAnswerBox{গ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Data Glove কোন ধরনের তথ্য detect করতে সাহায্য করে?\par \mcqoption{কাগজের size}{বিদ্যুতের bill}{database password}{হাত ও আঙুলের movement}\chOneAnswerBox{ঘ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}Presence বলতে কী বোঝায়?\par \mcqoption{virtual environment-এ নিজেকে উপস্থিত মনে হওয়া}{শুধু screen brightness}{file compression}{network address}\chOneAnswerBox{ক}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}VR-এ spatial audio কেন ব্যবহার করা হয়?\par \mcqoption{ফাইল print করতে}{শব্দের দিক ও দূরত্ব বোঝাতে}{keyboard lock করতে}{virus scan করতে}\chOneAnswerBox{খ}\par\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}নিচের কোনটি VR-এর privacy risk-এর সঙ্গে সম্পর্কিত?\par \mcqoption{paper folding}{monitor cleaning}{movement ও usage data collection}{ink shortage}\chOneAnswerBox{গ}\par\end{minipage}
+\end{compactenum}\end{multicols}
+
+\qhead{সংক্ষিপ্ত প্রশ্ন}
+\begin{compactenum}
+\item ভার্চুয়াল রিয়েলিটি কী?
+\item VR-এর তিনটি মূল ভিত্তি লেখ।
+\item Head Mounted Display কী?
+\item Data Glove-এর কাজ কী?
 \item Haptic feedback কী?
-\item VR কেন medical training-এ উপকারী?
-\end{enumerate}
+\item VR system কীভাবে কাজ করে?
+\item VR ও AR-এর মধ্যে পার্থক্য লেখ।
+\item VR ও সাধারণ video-এর মধ্যে পার্থক্য লেখ।
+\item চিকিৎসা প্রশিক্ষণে VR-এর ব্যবহার লেখ।
+\item ফ্লাইট প্রশিক্ষণে VR কেন গুরুত্বপূর্ণ?
+\item VR-এর তিনটি সুবিধা লেখ।
+\item VR-এর তিনটি স্বাস্থ্যঝুঁকি লেখ।
+\item VR ব্যবহারে কী কী সতর্কতা প্রয়োজন?
+\end{compactenum}
 
-\textbf{সৃজনশীল অনুশীলন}
-একটি training centre নতুন pilot ও doctor-দের জন্য simulation lab তৈরি করল। সেখানে headset, controller, sensor এবং haptic device ব্যবহার করে training দেওয়া হয়। উদ্দীপকের আলোকে VR-এর উপাদান ও সুবিধা বিশ্লেষণ কর।
-\end{practicebox}
+\qhead{সৃজনশীল প্রশ্ন}
+একটি training centre নতুন pilot ও surgeon-দের জন্য VR lab তৈরি করল। সেখানে headset, controller, motion sensor, data glove ও haptic device ব্যবহার করে virtual cockpit এবং virtual operation theatre তৈরি করা হলো। Trainee-রা ঝড়ের মধ্যে aircraft landing practice করে এবং surgical procedure বারবার অনুশীলন করে।
+
+\begin{compactenum}
+\item ক. VR কী?
+\item খ. Haptic feedback বলতে কী বোঝায়?
+\item গ. উদ্দীপকে ব্যবহৃত VR device-গুলোর কাজ ব্যাখ্যা কর।
+\item ঘ. উদ্দীপকের আলোকে ঝুঁকিপূর্ণ training-এ VR-এর সুবিধা বিশ্লেষণ কর।
+\end{compactenum}
+
+\qhead{আরেকটি সৃজনশীল প্রশ্ন}
+একটি স্কুলে science class-এর জন্য VR headset ব্যবহার করা হলো। শিক্ষার্থীরা human heart-এর 3D model দেখল, virtual lab-এ experiment করল এবং teacher-এর সঙ্গে virtual classroom-এ discussion করল। তবে কিছু শিক্ষার্থী দীর্ঘ সময় headset ব্যবহারের পর চোখে চাপ ও মাথা ঘোরার কথা জানাল।
+
+\begin{compactenum}
+\item ক. Immersion কী?
+\item খ. VR কীভাবে learning experience উন্নত করে?
+\item গ. উদ্দীপকে শিক্ষাক্ষেত্রে VR-এর ব্যবহার ব্যাখ্যা কর।
+\item ঘ. উদ্দীপকের আলোকে VR ব্যবহারের সুবিধা ও সতর্কতা বিশ্লেষণ কর।
+\end{compactenum}
+
+\qhead{সৃজনশীল প্রশ্ন: ব্যবসা ও স্থাপত্য}
+একটি real estate company buyer-দের জন্য VR walkthrough চালু করল। Buyer-রা headset পরে flat-এর room layout, lighting, furniture placement ও balcony view দেখে সিদ্ধান্ত নিতে পারছে। Company একই সঙ্গে buyer-এর viewing behaviour ও preference data সংরক্ষণ করছে।
+
+\begin{compactenum}
+\item ক. Head Mounted Display কী?
+\item খ. VR ও AR-এর মূল পার্থক্য ব্যাখ্যা কর।
+\item গ. উদ্দীপকে ব্যবসা ও স্থাপত্যে VR-এর ব্যবহার ব্যাখ্যা কর।
+\item ঘ. উদ্দীপকের আলোকে VR ব্যবহারের সুবিধা এবং privacy risk বিশ্লেষণ কর।
+\end{compactenum}
+
+\end{topicbody}

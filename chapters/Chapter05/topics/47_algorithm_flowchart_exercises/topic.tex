@@ -1,0 +1,2938 @@
+\sectionheading{5.47 Exercise — Algorithm, Flowchart ও Python Program}
+
+এই অংশে প্রতিটি Problem-এর
+\textbf{Algorithm, Flowchart, Python Code এবং Output/ব্যাখ্যা}
+একই Table-এর মধ্যে দেওয়া হয়েছে। ফলে একটি Problem-এর সম্পূর্ণ
+Solution একসঙ্গে দেখা যাবে।
+
+\begin{rememberbox}
+
+\begin{center}
+
+\textbf{Problem}
+\(\longrightarrow\)
+\textbf{Algorithm}
+\(\longrightarrow\)
+\textbf{Flowchart}
+\(\longrightarrow\)
+\textbf{Python Code}
+\(\longrightarrow\)
+\textbf{Output}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% PART A
+%================================================
+
+\partheading{অংশ–A : Basic Input, Output ও Arithmetic}
+
+%================================================
+% 1
+%================================================
+
+\exerciseTable
+{১. তিনটি সংখ্যার যোগফল ও গড় নির্ণয়}
+{
+১. Start।\\
+২. \(a,b,c\) Input নাও।\\
+৩. \(sum=a+b+c\)।\\
+৪. \(average=sum/3\)।\\
+৫. Sum ও Average প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{a,b,c Input}
+{sum=a+b+c\\average=sum/3}
+{sum, average প্রদর্শন}
+}
+{
+a = float(input("Enter first number: "))\\
+b = float(input("Enter second number: "))\\
+c = float(input("Enter third number: "))\\[0.5mm]
+total = a + b + c\\
+average = total / 3\\
+print("Sum =", total)\\
+print("Average =", average)
+}
+{
+Input:
+\textenglish{\ttfamily 10, 20, 30}
+
+\medskip
+
+Output:
+
+\textenglish{\ttfamily Sum = 60.0}
+
+\textenglish{\ttfamily Average = 20.0}
+
+\medskip
+
+Input তিনটি Number।
+Processing হলো Sum ও Average নির্ণয়।
+}
+
+%================================================
+% 2
+%================================================
+
+\exerciseTable
+{২. দুটি সংখ্যার যোগফল}
+{
+১. Start।\\
+২. \(a,b\) Input নাও।\\
+৩. \(sum=a+b\)।\\
+৪. Sum প্রদর্শন করো।\\
+৫. End।
+}
+{
+\linearflow
+{a,b Input}
+{sum=a+b}
+{sum প্রদর্শন}
+}
+{
+a = int(input("Enter a: "))\\
+b = int(input("Enter b: "))\\
+sum = a + b\\
+print("Sum =", sum)
+}
+{
+Input:
+\textenglish{\ttfamily 12, 8}
+
+\medskip
+
+Output:
+
+\textenglish{\ttfamily Sum = 20}
+}
+
+%================================================
+% 3
+%================================================
+
+\exerciseTable
+{৩. একটি Character Input নিয়ে প্রদর্শন}
+{
+১. Start।\\
+২. Character Input নাও।\\
+৩. Character প্রদর্শন করো।\\
+৪. End।
+}
+{
+\linearflow
+{Character Input}
+{Character সংরক্ষণ}
+{Character প্রদর্শন}
+}
+{
+ch = input("Enter a character: ")\\
+print("Character:", ch)
+}
+{
+Input:
+\textenglish{\ttfamily A}
+
+\medskip
+
+Output:
+
+\textenglish{\ttfamily Character: A}
+}
+
+%================================================
+% 4
+%================================================
+
+\exerciseTable
+{৪. Character, String ও Number Input নিয়ে প্রদর্শন}
+{
+১. Start।\\
+২. Character Input নাও।\\
+৩. String Input নাও।\\
+৪. Number Input নাও।\\
+৫. সব Value প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{Character, String, Number Input}
+{Valueগুলো সংরক্ষণ}
+{সব Value প্রদর্শন}
+}
+{
+ch = input("Enter a character: ")\\
+text = input("Enter a string: ")\\
+number = int(input("Enter a number: "))\\[0.5mm]
+print("Character:", ch)\\
+print("String:", text)\\
+print("Number:", number)
+}
+{
+\textenglish{\ttfamily input()}
+সাধারণত String দেয়।
+
+\medskip
+
+Number-এর ক্ষেত্রে
+\textenglish{\ttfamily int()}
+ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 5
+%================================================
+
+\exerciseTable
+{৫. বয়সের সম্পর্ক থেকে তিনজনের মোট বয়স}
+{
+১. Start।\\
+২. Rakib-এর বয়স \(r\) Input নাও।\\
+৩. \(a=5r\)।\\
+৪. \(f=a+10\)।\\
+৫. \(total=r+a+f\)।\\
+৬. Total প্রদর্শন করো।\\
+৭. End।
+}
+{
+\linearflow
+{r Input}
+{a=5r,\; f=a+10\\total=r+a+f}
+{total প্রদর্শন}
+}
+{
+r = int(input("Rakib's age: "))\\
+a = 5 * r\\
+f = a + 10\\
+total = r + a + f\\
+print("Total age =", total)
+}
+{
+একটি Input থেকে সম্পর্ক অনুযায়ী অন্য বয়সগুলো নির্ণয় করা হয়েছে।
+}
+
+%================================================
+% PART B
+%================================================
+
+\partheading{অংশ–B : Conditional Program}
+
+%================================================
+% 6
+%================================================
+
+\exerciseTable
+{৬. Pass/Fail নির্ণয়}
+{
+১. Start।\\
+২. Marks Input নাও।\\
+৩. Marks \(\ge33\) কি না পরীক্ষা করো।\\
+৪. সত্য হলে Pass, অন্যথায় Fail।\\
+৫. End।
+}
+{
+\binaryflow
+{Marks Input}
+{marks \(\ge33\)?}
+{Pass}
+{Fail}
+}
+{
+marks = int(input("Enter marks: "))\\[0.5mm]
+if marks >= 33:\\
+\hspace*{4mm}print("Pass")\\
+else:\\
+\hspace*{4mm}print("Fail")
+}
+{
+Input:
+\textenglish{\ttfamily 65}
+
+\medskip
+
+Output:
+
+\textenglish{\ttfamily Pass}
+}
+
+%================================================
+% 7
+%================================================
+
+\exerciseTable
+{৭. সংখ্যা Positive, Negative নাকি Zero}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. \(n>0\) হলে Positive।\\
+৪. \(n<0\) হলে Negative।\\
+৫. অন্যথায় Zero।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{n-এর Sign পরীক্ষা}
+{Positive / Negative / Zero}
+}
+{
+n = float(input("Enter a number: "))\\[0.5mm]
+if n > 0:\\
+\hspace*{4mm}print("Positive")\\
+elif n < 0:\\
+\hspace*{4mm}print("Negative")\\
+else:\\
+\hspace*{4mm}print("Zero")
+}
+{
+তিনটি সম্ভাবনা থাকায়
+\textenglish{\ttfamily if-elif-else}
+ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 8
+%================================================
+
+\exerciseTable
+{৮. দুটি সংখ্যার মধ্যে বড় সংখ্যা}
+{
+১. Start।\\
+২. \(a,b\) Input নাও।\\
+৩. \(a>b\) হলে \(a\) বড়।\\
+৪. \(b>a\) হলে \(b\) বড়।\\
+৫. অন্যথায় দুটি সমান।\\
+৬. End।
+}
+{
+\linearflow
+{a,b Input}
+{দুটি সংখ্যা তুলনা}
+{বড় সংখ্যা / Equal}
+}
+{
+a = int(input("Enter a: "))\\
+b = int(input("Enter b: "))\\[0.5mm]
+if a > b:\\
+\hspace*{4mm}print(a, "is larger")\\
+elif b > a:\\
+\hspace*{4mm}print(b, "is larger")\\
+else:\\
+\hspace*{4mm}print("Both are equal")
+}
+{
+দুটি Number Comparison করে বড় Value নির্ণয় করা হয়েছে।
+}
+
+%================================================
+% 9
+%================================================
+
+\exerciseTable
+{৯. তিনটি সংখ্যার মধ্যে বৃহত্তম}
+{
+১. Start।\\
+২. \(a,b,c\) Input নাও।\\
+৩. \(a\) অন্য দুইটির চেয়ে বড়/সমান কি না দেখো।\\
+৪. না হলে \(b\) পরীক্ষা করো।\\
+৫. অন্যথায় \(c\) বৃহত্তম।\\
+৬. Largest প্রদর্শন করো।\\
+৭. End।
+}
+{
+\linearflow
+{a,b,c Input}
+{তিনটি সংখ্যা তুলনা}
+{largest প্রদর্শন}
+}
+{
+a = int(input("Enter a: "))\\
+b = int(input("Enter b: "))\\
+c = int(input("Enter c: "))\\[0.5mm]
+if a >= b and a >= c:\\
+\hspace*{4mm}largest = a\\
+elif b >= a and b >= c:\\
+\hspace*{4mm}largest = b\\
+else:\\
+\hspace*{4mm}largest = c\\
+print("Largest =", largest)
+}
+{
+Input:
+\textenglish{\ttfamily 10,25,15}
+
+\medskip
+
+Output:
+
+\textenglish{\ttfamily Largest = 25}
+}
+
+%================================================
+% 10
+%================================================
+
+\exerciseTable
+{১০. তিনটি সংখ্যার মধ্যে ক্ষুদ্রতম}
+{
+১. Start।\\
+২. \(a,b,c\) Input নাও।\\
+৩. তিনটি Value তুলনা করো।\\
+৪. Smallest নির্ধারণ করো।\\
+৫. Result প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{a,b,c Input}
+{তিনটি সংখ্যা তুলনা}
+{smallest প্রদর্শন}
+}
+{
+a = int(input("Enter a: "))\\
+b = int(input("Enter b: "))\\
+c = int(input("Enter c: "))\\[0.5mm]
+if a <= b and a <= c:\\
+\hspace*{4mm}smallest = a\\
+elif b <= a and b <= c:\\
+\hspace*{4mm}smallest = b\\
+else:\\
+\hspace*{4mm}smallest = c\\
+print("Smallest =", smallest)
+}
+{
+Largest-এর বিপরীত Comparison Logic ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 11
+%================================================
+
+\exerciseTable
+{১১. সংখ্যা জোড় না বিজোড়}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. \(n\bmod2=0\) কি না পরীক্ষা করো।\\
+৪. সত্য হলে Even, অন্যথায় Odd।\\
+৫. End।
+}
+{
+\binaryflow
+{n Input}
+{n \% 2 == 0 ?}
+{Even}
+{Odd}
+}
+{
+n = int(input("Enter n: "))\\[0.5mm]
+if n \% 2 == 0:\\
+\hspace*{4mm}print("Even")\\
+else:\\
+\hspace*{4mm}print("Odd")
+}
+{
+\textenglish{\ttfamily \%}
+দিয়ে ভাগশেষ পাওয়া যায়।
+
+\medskip
+
+ভাগশেষ 0 হলে সংখ্যাটি Even।
+}
+
+%================================================
+% 12
+%================================================
+
+\exerciseTable
+{১২. Capital, Small নাকি অন্য Character}
+{
+১. Start।\\
+২. Character Input নাও।\\
+৩. `A-Z' Range পরীক্ষা করো।\\
+৪. না হলে `a-z' Range পরীক্ষা করো।\\
+৫. Type প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{Character Input}
+{Capital / Small Range পরীক্ষা}
+{Character Type প্রদর্শন}
+}
+{
+ch = input("Enter character: ")\\[0.5mm]
+if 'A' <= ch <= 'Z':\\
+\hspace*{4mm}print("Capital letter")\\
+elif 'a' <= ch <= 'z':\\
+\hspace*{4mm}print("Small letter")\\
+else:\\
+\hspace*{4mm}print("Other character")
+}
+{
+Python-এ Character Range সরাসরি Compare করা যায়।
+}
+
+%================================================
+% 13
+%================================================
+
+\exerciseTable
+{১৩. Vowel নাকি Consonant}
+{
+১. Start।\\
+২. Letter Input নাও।\\
+৩. Letterটি a,e,i,o,u-এর কোনোটি কি না পরীক্ষা করো।\\
+৪. Vowel বা Consonant প্রদর্শন করো।\\
+৫. End।
+}
+{
+\binaryflow
+{Letter Input}
+{Vowel list-এ আছে?}
+{Vowel}
+{Consonant}
+}
+{
+ch = input("Enter a letter: ")\\[0.5mm]
+if ch.lower() in "aeiou":\\
+\hspace*{4mm}print("Vowel")\\
+else:\\
+\hspace*{4mm}print("Consonant")
+}
+{
+\textenglish{\ttfamily lower()}
+ব্যবহার করায় Capital ও Small উভয় Letter কাজ করবে।
+}
+
+%================================================
+% 14
+%================================================
+
+\exerciseTable
+{১৪. বয়স অনুযায়ী শ্রেণি নির্ধারণ}
+{
+১. Start।\\
+২. Age Input নাও।\\
+৩. Age Range পরীক্ষা করো।\\
+৪. Category নির্ধারণ করো।\\
+৫. Result প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{Age Input}
+{Age Range পরীক্ষা}
+{Category প্রদর্শন}
+}
+{
+age = int(input("Enter age: "))\\[0.5mm]
+if age <= 12:\\
+\hspace*{4mm}print("Child")\\
+elif age <= 19:\\
+\hspace*{4mm}print("Teenager")\\
+elif age <= 40:\\
+\hspace*{4mm}print("Young")\\
+else:\\
+\hspace*{4mm}print("Other")
+}
+{
+Rangeগুলো ক্রমানুসারে পরীক্ষা করা হয়েছে।
+}
+
+%================================================
+% 15
+%================================================
+
+\exerciseTable
+{১৫. ৫ ও ৭ দ্বারা বিভাজ্যতা পরীক্ষা}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. ৫ ও ৭ উভয় দ্বারা বিভাজ্য কি না দেখো।\\
+৪. শুধু ৫ বা শুধু ৭ দ্বারা বিভাজ্য কি না দেখো।\\
+৫. নির্ধারিত Message প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{5 ও 7 দ্বারা divisibility পরীক্ষা}
+{Message প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\[0.5mm]
+if n \% 5 == 0 and n \% 7 == 0:\\
+\hspace*{4mm}print("Good")\\
+elif n \% 5 == 0:\\
+\hspace*{4mm}print("Flower")\\
+elif n \% 7 == 0:\\
+\hspace*{4mm}print("River")\\
+else:\\
+\hspace*{4mm}print("Try again")
+}
+{
+উভয় দ্বারা বিভাজ্যতার Condition প্রথমে পরীক্ষা করতে হবে।
+}
+
+%================================================
+% 16
+%================================================
+
+\exerciseTable
+{১৬. Roll অনুযায়ী Group নির্ধারণ}
+{
+১. Start।\\
+২. Roll Input নাও।\\
+৩. 1--30 হলে A।\\
+৪. 31--60 হলে B।\\
+৫. 61--100 হলে C।\\
+৬. অন্যথায় Invalid।\\
+৭. End।
+}
+{
+\linearflow
+{Roll Input}
+{Roll Range পরীক্ষা}
+{Group প্রদর্শন}
+}
+{
+roll = int(input("Enter roll: "))\\[0.5mm]
+if 1 <= roll <= 30:\\
+\hspace*{4mm}print("Group A")\\
+elif roll <= 60:\\
+\hspace*{4mm}print("Group B")\\
+elif roll <= 100:\\
+\hspace*{4mm}print("Group C")\\
+else:\\
+\hspace*{4mm}print("Invalid")
+}
+{
+এটি Range-based Conditional-এর উদাহরণ।
+}
+
+%================================================
+% 17
+%================================================
+
+\exerciseTable
+{১৭. Marks থেকে Grade নির্ণয়}
+{
+১. Start।\\
+২. Marks Input নাও।\\
+৩. সর্বোচ্চ Range থেকে Condition পরীক্ষা করো।\\
+৪. Grade নির্ধারণ করো।\\
+৫. Grade প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{Marks Input}
+{Marks Range পরীক্ষা}
+{Grade প্রদর্শন}
+}
+{
+marks = int(input("Enter marks: "))\\[0.5mm]
+if marks >= 80:\\
+\hspace*{4mm}grade = "A+"\\
+elif marks >= 70:\\
+\hspace*{4mm}grade = "A"\\
+elif marks >= 60:\\
+\hspace*{4mm}grade = "A-"\\
+elif marks >= 50:\\
+\hspace*{4mm}grade = "B"\\
+elif marks >= 40:\\
+\hspace*{4mm}grade = "C"\\
+elif marks >= 33:\\
+\hspace*{4mm}grade = "D"\\
+else:\\
+\hspace*{4mm}grade = "F"\\
+print("Grade =", grade)
+}
+{
+Condition সর্বোচ্চ Marks থেকে নিচে নামানো হয়েছে।
+}
+
+%================================================
+% PART C
+%================================================
+
+\partheading{অংশ–C : Loop ও Series ভিত্তিক Program}
+
+%================================================
+% 18
+%================================================
+
+\exerciseTable
+{১৮. কোনো Text নির্দিষ্ট সংখ্যকবার Print}
+{
+১. Start।\\
+২. Text ও \(n\) Input নাও।\\
+৩. Loop \(n\) বার চালাও।\\
+৪. প্রতিবার Text Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{Text, n Input}
+{Loop n বার}
+{Text Print}
+}
+{
+text = input("Enter text: ")\\
+n = int(input("How many times: "))\\
+for i in range(n):\\
+\hspace*{4mm}print(text)
+}
+{
+\textenglish{\ttfamily range(n)}
+Loop-কে \(n\) বার চালায়।
+}
+
+%================================================
+% 19
+%================================================
+
+\exerciseTable
+{১৯. ১ থেকে ১০ পর্যন্ত সংখ্যা প্রদর্শন}
+{
+১. Start।\\
+২. 1 থেকে 10 পর্যন্ত Loop চালাও।\\
+৩. প্রতিটি Value Print করো।\\
+৪. End।
+}
+{
+\linearflow
+{i=1}
+{i=1 থেকে 10 পর্যন্ত Loop}
+{i প্রদর্শন}
+}
+{
+for i in range(1, 11):\\
+\hspace*{4mm}print(i, end=" ")
+}
+{
+Output:
+
+\textenglish{\ttfamily 1 2 3 4 5 6 7 8 9 10}
+}
+
+%================================================
+% 20
+%================================================
+
+\exerciseTable
+{২০. ১০ থেকে ১ উল্টোভাবে প্রদর্শন}
+{
+১. Start।\\
+২. \(i=10\) নাও।\\
+৩. Value Print করো।\\
+৪. \(i=i-1\)।\\
+৫. 1 পর্যন্ত Repeat করো।\\
+৬. End।
+}
+{
+\linearflow
+{i=10}
+{প্রতি ধাপে i এক কমাও}
+{10 থেকে 1 Print}
+}
+{
+for i in range(10, 0, -1):\\
+\hspace*{4mm}print(i, end=" ")
+}
+{
+Negative Step ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 21
+%================================================
+
+\exerciseTable
+{২১. ১ থেকে n পর্যন্ত Odd Number}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 1 থেকে শুরু করো।\\
+৪. Step 2 করে \(n\) পর্যন্ত Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{n Input}
+{1 থেকে n, Step=2}
+{Odd Number Print}
+}
+{
+n = int(input("Enter n: "))\\
+for i in range(1, n + 1, 2):\\
+\hspace*{4mm}print(i, end=" ")
+}
+{
+Step 2 হওয়ায় শুধু Odd Number পাওয়া যায়।
+}
+
+%================================================
+% 22
+%================================================
+
+\exerciseTable
+{২২. ১ থেকে n পর্যন্ত Even Number}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 2 থেকে শুরু করো।\\
+৪. Step 2 করে \(n\) পর্যন্ত Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{n Input}
+{2 থেকে n, Step=2}
+{Even Number Print}
+}
+{
+n = int(input("Enter n: "))\\
+for i in range(2, n + 1, 2):\\
+\hspace*{4mm}print(i, end=" ")
+}
+{
+Loop সরাসরি Even Value তৈরি করছে।
+}
+
+%================================================
+% 23
+%================================================
+
+\exerciseTable
+{২৩. ১০ থেকে ১০০ পর্যন্ত ১০-এর ব্যবধানে সংখ্যা}
+{
+১. Start।\\
+২. 10 থেকে শুরু করো।\\
+৩. Step 10 করে 100 পর্যন্ত Value নাও।\\
+৪. প্রতিটি Value Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{i=10}
+{i=10,20,\dots,100}
+{i প্রদর্শন}
+}
+{
+for i in range(10, 101, 10):\\
+\hspace*{4mm}print(i, end=" ")
+}
+{
+\textenglish{\ttfamily range(start, stop, step)}
+ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 24
+%================================================
+
+\exerciseTable
+{২৪. ছোট হাতের a--z প্রদর্শন}
+{
+১. Start।\\
+২. a-এর Character Code থেকে শুরু করো।\\
+৩. z পর্যন্ত প্রতিটি Code Traverse করো।\\
+৪. Character Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{a থেকে z}
+{Character Code Traverse}
+{a--z প্রদর্শন}
+}
+{
+for code in range(ord('a'), ord('z') + 1):\\
+\hspace*{4mm}print(chr(code), end=" ")
+}
+{
+\textenglish{\ttfamily ord()}
+Character-এর Code দেয়।
+
+\medskip
+
+\textenglish{\ttfamily chr()}
+Code থেকে Character দেয়।
+}
+
+%================================================
+% 25
+%================================================
+
+\exerciseTable
+{২৫. বড় হাতের A--Z প্রদর্শন}
+{
+১. Start।\\
+২. A-এর Character Code থেকে শুরু করো।\\
+৩. Z পর্যন্ত Traverse করো।\\
+৪. Character Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{A থেকে Z}
+{Character Code Traverse}
+{A--Z প্রদর্শন}
+}
+{
+for code in range(ord('A'), ord('Z') + 1):\\
+\hspace*{4mm}print(chr(code), end=" ")
+}
+{
+Capital Alphabet ধারাবাহিকভাবে Print হবে।
+}
+
+%================================================
+% 26
+%================================================
+
+\exerciseTable
+{২৬. ১ থেকে ১০০-এর মধ্যে ৭ দ্বারা বিভাজ্য সংখ্যা}
+{
+১. Start।\\
+২. 1 থেকে 100 পর্যন্ত Loop চালাও।\\
+৩. \(i\bmod7=0\) পরীক্ষা করো।\\
+৪. সত্য হলে \(i\) Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{1 থেকে 100}
+{i \% 7 == 0 পরীক্ষা}
+{সত্য হলে Print}
+}
+{
+for i in range(1, 101):\\
+\hspace*{4mm}if i \% 7 == 0:\\
+\hspace*{8mm}print(i, end=" ")
+}
+{
+Condition True হওয়া Value-গুলোই Print হয়।
+}
+
+%================================================
+% 27
+%================================================
+
+\exerciseTable
+{২৭. একটি সংখ্যার সব Divisor}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 1 থেকে \(n\) পর্যন্ত Loop চালাও।\\
+৪. \(n\bmod i=0\) হলে \(i\) Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{n Input}
+{1..n দিয়ে divisibility পরীক্ষা}
+{Divisor Print}
+}
+{
+n = int(input("Enter n: "))\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}if n \% i == 0:\\
+\hspace*{8mm}print(i, end=" ")
+}
+{
+যে Number দিয়ে নিঃশেষে ভাগ যায় সেটিই Divisor।
+}
+
+%================================================
+% 28
+%================================================
+
+\exerciseTable
+{২৮. ১ থেকে ৫ পর্যন্ত সংখ্যার Square}
+{
+১. Start।\\
+২. 1 থেকে 5 পর্যন্ত Loop চালাও।\\
+৩. প্রতিটি Value-এর Square নির্ণয় করো।\\
+৪. Result Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{i=1..5}
+{square=i*i}
+{i ও square Print}
+}
+{
+for i in range(1, 6):\\
+\hspace*{4mm}print(i, "square =", i * i)
+}
+{
+প্রতিটি Number-এর Square প্রদর্শিত হবে।
+}
+
+%================================================
+% 29
+%================================================
+
+\exerciseTable
+{২৯. ১ থেকে ১০ পর্যন্ত সংখ্যার Cube-এর যোগফল}
+{
+১. Start।\\
+২. \(sum=0\)।\\
+৩. 1 থেকে 10 পর্যন্ত Loop চালাও।\\
+৪. \(sum=sum+i^3\)।\\
+৫. Sum প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{i=1..10}
+{sum=sum+i\(^3\)}
+{sum প্রদর্শন}
+}
+{
+total = 0\\
+for i in range(1, 11):\\
+\hspace*{4mm}total += i ** 3\\
+print("Sum =", total)
+}
+{
+\textenglish{\ttfamily **}
+হলো Python-এর Power Operator।
+}
+
+%================================================
+% 30
+%================================================
+
+\exerciseTable
+{৩০. ১ থেকে n পর্যন্ত সংখ্যার যোগফল}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. \(sum=0\)।\\
+৪. 1 থেকে \(n\) পর্যন্ত Value যোগ করো।\\
+৫. Sum প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{1..n Accumulate}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}total += i\\
+print("Sum =", total)
+}
+{
+\textenglish{\ttfamily total}
+Accumulator হিসেবে কাজ করছে।
+}
+
+%================================================
+% 31
+%================================================
+
+\exerciseTable
+{৩১. ১ থেকে n পর্যন্ত Even সংখ্যার যোগফল}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. Even Value তৈরি করো।\\
+৪. প্রতিটি Even Value Sum-এ যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{Even Value Accumulate}
+{Even Sum Print}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(2, n + 1, 2):\\
+\hspace*{4mm}total += i\\
+print("Even sum =", total)
+}
+{
+Step 2 ব্যবহার করে সরাসরি Even Value নেওয়া হয়েছে।
+}
+
+%================================================
+% 32
+%================================================
+
+\exerciseTable
+{৩২. ১ থেকে n পর্যন্ত Odd সংখ্যার যোগফল}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. Odd Value তৈরি করো।\\
+৪. প্রতিটি Odd Value Sum-এ যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{Odd Value Accumulate}
+{Odd Sum Print}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(1, n + 1, 2):\\
+\hspace*{4mm}total += i\\
+print("Odd sum =", total)
+}
+{
+Step 2 দিয়ে Odd Series পাওয়া যায়।
+}
+
+%================================================
+% 33
+%================================================
+
+\exerciseTable
+{৩৩. \(10+9+8+\cdots+Y\)}
+{
+১. Start।\\
+২. \(Y\) Input নাও।\\
+৩. \(i=10\), \(sum=0\) নাও।\\
+৪. \(Y\) পর্যন্ত Descending Value যোগ করো।\\
+৫. Sum প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{Y Input}
+{10 থেকে Y পর্যন্ত Descending Sum}
+{sum প্রদর্শন}
+}
+{
+y = int(input("Enter Y: "))\\
+total = 0\\
+for i in range(10, y - 1, -1):\\
+\hspace*{4mm}total += i\\
+print("Sum =", total)
+}
+{
+Negative Step ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 34
+%================================================
+
+\exerciseTable
+{৩৪. \(5+10+15+\cdots+n\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 5 থেকে Step 5 করে Value তৈরি করো।\\
+৪. প্রতিটি Value Sum-এ যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{5,10,15,\dots,n যোগ}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(5, n + 1, 5):\\
+\hspace*{4mm}total += i\\
+print(total)
+}
+{
+Step 5 প্রতিটি পরবর্তী Term তৈরি করছে।
+}
+
+%================================================
+% 35
+%================================================
+
+\exerciseTable
+{৩৫. \(1^2+2^2+3^2+\cdots+n^2\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 1 থেকে \(n\) পর্যন্ত Loop চালাও।\\
+৪. \(i^2\) Sum-এ যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{sum=sum+i\(^2\)}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}total += i ** 2\\
+print(total)
+}
+{
+প্রতিটি Term হলো \(i^2\)।
+}
+
+%================================================
+% 36
+%================================================
+
+\exerciseTable
+{৩৬. \(1^2+3^2+5^2+\cdots+17^2\)}
+{
+১. Start।\\
+২. 1 থেকে 17 পর্যন্ত Odd Value নাও।\\
+৩. প্রতিটি Value-এর Square নির্ণয় করো।\\
+৪. Squareগুলো যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{Odd 1..17}
+{sum=sum+i\(^2\)}
+{sum প্রদর্শন}
+}
+{
+total = 0\\
+for i in range(1, 18, 2):\\
+\hspace*{4mm}total += i ** 2\\
+print(total)
+}
+{
+শুধু Odd Number-এর Square যোগ করা হয়েছে।
+}
+
+%================================================
+% 37
+%================================================
+
+\exerciseTable
+{৩৭. \(2^2+4^2+6^2+\cdots+n^2\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. Even Value তৈরি করো।\\
+৪. প্রতিটি Value-এর Square যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{Even i-এর Square যোগ}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(2, n + 1, 2):\\
+\hspace*{4mm}total += i ** 2\\
+print(total)
+}
+{
+শুধু Even base ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 38
+%================================================
+
+\exerciseTable
+{৩৮. \(1^5+2^5+\cdots+n^5\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 1 থেকে \(n\) পর্যন্ত Loop চালাও।\\
+৪. \(i^5\) যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{sum=sum+i\(^5\)}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}total += i ** 5\\
+print(total)
+}
+{
+\textenglish{\ttfamily i ** 5}
+মানে \(i^5\)।
+}
+
+%================================================
+% 39
+%================================================
+
+\exerciseTable
+{৩৯. \(3^6+5^6+7^6+\cdots+n^6\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 3 থেকে Odd Value তৈরি করো।\\
+৪. প্রতিটি Value-এর 6th Power যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{Odd Term-এর 6th Power যোগ}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(3, n + 1, 2):\\
+\hspace*{4mm}total += i ** 6\\
+print(total)
+}
+{
+3, 5, 7, \dots Series ব্যবহৃত হয়েছে।
+}
+
+%================================================
+% 40
+%================================================
+
+\exerciseTable
+{৪০. \(2^4+4^4+6^4+\cdots+n^4\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. Even Value তৈরি করো।\\
+৪. প্রতিটি Value-এর 4th Power যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{Even Term-এর 4th Power যোগ}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(2, n + 1, 2):\\
+\hspace*{4mm}total += i ** 4\\
+print(total)
+}
+{
+Even Terms-এর Fourth Power যোগ করা হয়েছে।
+}
+
+%================================================
+% 41
+%================================================
+
+\exerciseTable
+{৪১. \(1+\frac{1}{2^2}+\frac{1}{3^2}+\cdots+\frac{1}{n^2}\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 1 থেকে \(n\) পর্যন্ত Loop চালাও।\\
+৪. \(1/i^2\) যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{sum=sum+1/i\(^2\)}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0.0\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}total += 1 / (i ** 2)\\
+print(total)
+}
+{
+Fraction থাকায় Result সাধারণত Float হবে।
+}
+
+%================================================
+% 42
+%================================================
+
+\exerciseTable
+{৪২. \(1\times2+2\times3+3\times4+\cdots+n(n+1)\)}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 1 থেকে \(n\) পর্যন্ত Loop চালাও।\\
+৪. \(i(i+1)\) যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{sum=sum+i(i+1)}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+total = 0\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}total += i * (i + 1)\\
+print(total)
+}
+{
+প্রতিটি Term-এ দুটি ধারাবাহিক Integer গুণ করা হয়েছে।
+}
+
+%================================================
+% 43
+%================================================
+
+\exerciseTable
+{৪৩. Factorial নির্ণয়}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. \(fact=1\)।\\
+৪. 1 থেকে \(n\) পর্যন্ত সব Value দ্বারা fact গুণ করো।\\
+৫. Result প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{fact=1; 1..n Multiply}
+{fact প্রদর্শন}
+}
+{
+n = int(input("Enter n: "))\\
+fact = 1\\
+for i in range(1, n + 1):\\
+\hspace*{4mm}fact *= i\\
+print("Factorial =", fact)
+}
+{
+Input 5 হলে—
+
+\textenglish{\ttfamily Factorial = 120}
+
+\medskip
+
+Multiplication-এর Initial Value 1।
+}
+
+%================================================
+% 44
+%================================================
+
+\exerciseTable
+{৪৪. Geometric Series: \(1+3+9+27+\cdots+N\)}
+{
+১. Start।\\
+২. \(N\) Input নাও।\\
+৩. term=1, sum=0।\\
+৪. term \(\le N\) পর্যন্ত যোগ করো।\\
+৫. term-কে 3 দিয়ে গুণ করো।\\
+৬. Sum প্রদর্শন করো।\\
+৭. End।
+}
+{
+\linearflow
+{N Input}
+{sum+=term; term*=3}
+{sum প্রদর্শন}
+}
+{
+n = int(input("Enter last term: "))\\
+term = 1\\
+total = 0\\
+while term <= n:\\
+\hspace*{4mm}total += term\\
+\hspace*{4mm}term *= 3\\
+print("Sum =", total)
+}
+{
+প্রতিটি নতুন Term আগের Term-এর 3 গুণ।
+}
+
+%================================================
+% 45
+%================================================
+
+\exerciseTable
+{৪৫. Increasing Number Pattern}
+{
+১. Start।\\
+২. Outer Loop Row নিয়ন্ত্রণ করবে।\\
+৩. Inner Loop 1 থেকে Row Number পর্যন্ত চলবে।\\
+৪. প্রতিটি Row শেষে New Line।\\
+৫. End।
+}
+{
+\linearflow
+{Row 1..5}
+{প্রতি Row-এ 1..i Print}
+{Pattern প্রদর্শন}
+}
+{
+for i in range(1, 6):\\
+\hspace*{4mm}for j in range(1, i + 1):\\
+\hspace*{8mm}print(j, end=" ")\\
+\hspace*{4mm}print()
+}
+{
+\begin{english}
+\ttfamily
+1\\
+1 2\\
+1 2 3\\
+1 2 3 4\\
+1 2 3 4 5
+\end{english}
+}
+
+%================================================
+% 46
+%================================================
+
+\exerciseTable
+{৪৬. ২ থেকে n পর্যন্ত Prime Number}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. 2 থেকে \(n\) পর্যন্ত প্রতিটি Number পরীক্ষা করো।\\
+৪. Divisor পাওয়া গেলে Prime নয়।\\
+৫. Divisor না পেলে Prime Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n Input}
+{প্রতিটি Number-এর Divisor পরীক্ষা}
+{Prime হলে Print}
+}
+{
+n = int(input("Enter highest range: "))\\
+for num in range(2, n + 1):\\
+\hspace*{4mm}is\_prime = True\\
+\hspace*{4mm}for d in range(2, num):\\
+\hspace*{8mm}if num \% d == 0:\\
+\hspace*{12mm}is\_prime = False\\
+\hspace*{12mm}break\\
+\hspace*{4mm}if is\_prime:\\
+\hspace*{8mm}print(num, end=" ")
+}
+{
+Divisor পাওয়া গেলে
+\textenglish{\ttfamily break}
+দিয়ে Inner Loop বন্ধ করা হয়েছে।
+}
+
+%================================================
+% 47
+%================================================
+
+\exerciseTable
+{৪৭. প্রতি ৭ দিন পরপর জানুয়ারি মাসের Date}
+{
+১. Start।\\
+২. Day = 1 নাও।\\
+৩. Step 7 করে 31 পর্যন্ত Date তৈরি করো।\\
+৪. প্রতিটি Date Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{day=1}
+{Step=7,\; day \(\le31\)}
+{Date প্রদর্শন}
+}
+{
+for day in range(1, 32, 7):\\
+\hspace*{4mm}print(day, "January")
+}
+{
+Output:
+
+\textenglish{\ttfamily 1, 8, 15, 22, 29}
+}
+
+%================================================
+% 48
+%================================================
+
+\exerciseTable
+{৪৮. ১০–৫০-এর মধ্যে ১৫ ও ২৫ বাদ দিয়ে Print}
+{
+১. Start।\\
+২. 10 থেকে 50 পর্যন্ত Loop চালাও।\\
+৩. 15 বা 25 হলে Skip করো।\\
+৪. অন্য Value Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{i=10..50}
+{i=15 বা 25 হলে continue}
+{অন্য Value Print}
+}
+{
+for i in range(10, 51):\\
+\hspace*{4mm}if i == 15 or i == 25:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}print(i, end=" ")
+}
+{
+15 এবং 25 Output-এ থাকবে না।
+}
+
+%================================================
+% 49
+%================================================
+
+\exerciseTable
+{৪৯. Positive Number না পাওয়া পর্যন্ত Input নেওয়া}
+{
+১. Start।\\
+২. Number Input নাও।\\
+৩. \(n\le0\) হলে আবার Input নাও।\\
+৪. Positive হলে Loop বন্ধ করো।\\
+৫. Number প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{Number Input}
+{Positive না হওয়া পর্যন্ত Repeat}
+{Positive Number প্রদর্শন}
+}
+{
+while True:\\
+\hspace*{4mm}n = int(input("Enter positive: "))\\
+\hspace*{4mm}if n <= 0:\\
+\hspace*{8mm}continue\\
+\hspace*{4mm}break\\
+print(n)
+}
+{
+Positive Input পাওয়া গেলে
+\textenglish{\ttfamily break}
+Loop বন্ধ করে।
+}
+
+%================================================
+% PART D
+%================================================
+
+\partheading{অংশ–D : List, String ও Search}
+
+%================================================
+% 50
+%================================================
+
+\exerciseTable
+{৫০. List-এর সব Element প্রদর্শন}
+{
+১. Start।\\
+২. List তৈরি করো।\\
+৩. প্রতিটি Element Traverse করো।\\
+৪. Element Print করো।\\
+৫. End।
+}
+{
+\linearflow
+{List}
+{প্রতিটি Element Traverse}
+{Element Print}
+}
+{
+numbers = [65, 78, 84]\\
+for x in numbers:\\
+\hspace*{4mm}print(x)
+}
+{
+List-এর প্রতিটি Item একবার করে পাওয়া যায়।
+}
+
+%================================================
+% 51
+%================================================
+
+\exerciseTable
+{৫১. List-এর সব সংখ্যার যোগফল}
+{
+১. Start।\\
+২. List তৈরি করো।\\
+৩. \(total=0\) নাও।\\
+৪. প্রতিটি Item total-এ যোগ করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{List}
+{সব Item Accumulate}
+{total প্রদর্শন}
+}
+{
+numbers = [12, 32, 34, 54, 65, 16, 21]\\
+total = 0\\
+for x in numbers:\\
+\hspace*{4mm}total += x\\
+print("Sum =", total)
+}
+{
+\textenglish{\ttfamily total}
+Accumulator।
+}
+
+%================================================
+% 52
+%================================================
+
+\exerciseTable
+{৫২. User Input থেকে List তৈরি করে Average}
+{
+১. Start।\\
+২. \(n\) Input নাও।\\
+৩. \(n\)টি Number List-এ রাখো।\\
+৪. Sum-কে \(n\) দিয়ে ভাগ করো।\\
+৫. Average Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{n ও nটি Number Input}
+{average=sum(numbers)/n}
+{average প্রদর্শন}
+}
+{
+n = int(input("How many numbers: "))\\
+numbers = []\\
+for i in range(n):\\
+\hspace*{4mm}x = float(input("Enter number: "))\\
+\hspace*{4mm}numbers.append(x)\\
+average = sum(numbers) / n\\
+print("Average =", average)
+}
+{
+প্রতিটি Input
+\textenglish{\ttfamily append()}
+দিয়ে List-এ রাখা হয়েছে।
+}
+
+%================================================
+% 53
+%================================================
+
+\exerciseTable
+{৫৩. String-এর Length Loop দিয়ে নির্ণয়}
+{
+১. Start।\\
+২. String Input নাও।\\
+৩. count = 0 নাও।\\
+৪. প্রতিটি Character-এর জন্য count এক বাড়াও।\\
+৫. Length Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{String Input}
+{প্রতিটি Character Count}
+{Length প্রদর্শন}
+}
+{
+text = input("Enter a string: ")\\
+count = 0\\
+for ch in text:\\
+\hspace*{4mm}count += 1\\
+print("Length =", count)
+}
+{
+Built-in
+\textenglish{\ttfamily len()}
+ব্যবহার না করে Counting Logic দেখানো হয়েছে।
+}
+
+%================================================
+% 54
+%================================================
+
+\exerciseTable
+{৫৪. List-এ নির্দিষ্ট সংখ্যা Search}
+{
+১. Start।\\
+২. List ও Key নাও।\\
+৩. প্রতিটি Item-এর সঙ্গে Key তুলনা করো।\\
+৪. Match হলে Found এবং Loop বন্ধ।\\
+৫. না হলে Not Found।\\
+৬. End।
+}
+{
+\linearflow
+{List ও Key}
+{প্রতিটি Item-এর সঙ্গে Key তুলনা}
+{Found / Not Found}
+}
+{
+numbers = [3, 5, 6, 9, 12, 21, 27, 31]\\
+key = int(input("Search: "))\\
+found = False\\
+for x in numbers:\\
+\hspace*{4mm}if x == key:\\
+\hspace*{8mm}found = True\\
+\hspace*{8mm}break\\
+if found:\\
+\hspace*{4mm}print("Found")\\
+else:\\
+\hspace*{4mm}print("Not found")
+}
+{
+প্রতিটি Item একে একে পরীক্ষা করা হয়েছে।
+
+\medskip
+
+এটি Linear Search।
+}
+
+%================================================
+% 55
+%================================================
+
+\exerciseTable
+{৫৫. List-এর বৃহত্তম সংখ্যা}
+{
+১. Start।\\
+২. প্রথম Item-কে largest ধরো।\\
+৩. বাকি Item Traverse করো।\\
+৪. বড় Value পেলে largest Update করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{List}
+{Compare ও largest Update}
+{largest প্রদর্শন}
+}
+{
+numbers = [3, 5, 9, 4, 13]\\
+largest = numbers[0]\\
+for x in numbers:\\
+\hspace*{4mm}if x > largest:\\
+\hspace*{8mm}largest = x\\
+print("Largest =", largest)
+}
+{
+Output:
+
+\textenglish{\ttfamily Largest = 13}
+}
+
+%================================================
+% 56
+%================================================
+
+\exerciseTable
+{৫৬. দুটি String তুলনা}
+{
+১. Start।\\
+২. দুটি String Input নাও।\\
+৩. Equality পরীক্ষা করো।\\
+৪. Equal না হলে Lexicographic Comparison করো।\\
+৫. Result Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{s1,s2 Input}
+{String Comparison}
+{Result প্রদর্শন}
+}
+{
+s1 = input("First string: ")\\
+s2 = input("Second string: ")\\
+if s1 == s2:\\
+\hspace*{4mm}print("Equal")\\
+elif s1 > s2:\\
+\hspace*{4mm}print(s1, "comes after", s2)\\
+else:\\
+\hspace*{4mm}print(s1, "comes before", s2)
+}
+{
+Python-এ String সরাসরি Compare করা যায়।
+}
+
+%================================================
+% PART E
+%================================================
+
+\partheading{অংশ–E : Function ভিত্তিক Program}
+
+%================================================
+% 57
+%================================================
+
+\exerciseTable
+{৫৭. Function দিয়ে তিনটি সংখ্যার যোগফল}
+{
+১. Start।\\
+২. তিনটি Number Input নাও।\\
+৩. \textenglish{\ttfamily add()} Function Call করো।\\
+৪. Function Sum Return করবে।\\
+৫. Result প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{x,y,z Input}
+{add(x,y,z) Call}
+{Returned Sum Print}
+}
+{
+def add(a, b, c):\\
+\hspace*{4mm}return a + b + c\\
+x = int(input("Enter x: "))\\
+y = int(input("Enter y: "))\\
+z = int(input("Enter z: "))\\
+print("Sum =", add(x, y, z))
+}
+{
+\textbf{Function Contract:}
+
+Input → তিনটি Number
+
+Processing → Addition
+
+Output → Sum
+}
+
+%================================================
+% 58
+%================================================
+
+\exerciseTable
+{৫৮. একই Function একাধিকবার Call}
+{
+১. Start।\\
+২. Function Define করো।\\
+৩. Function Call করো।\\
+৪. আবার Function Call করো।\\
+৫. End।
+}
+{
+\linearflow
+{Function Define}
+{Function দুইবার Call}
+{একই কাজ দুইবার Execute}
+}
+{
+def hello():\\
+\hspace*{4mm}print("Welcome")\\
+\hspace*{4mm}print("Python")\\
+hello()\\
+hello()
+}
+{
+একই Code আবার না লিখেও Function পুনরায় ব্যবহার করা যায়।
+}
+
+%================================================
+% PART F
+%================================================
+
+\partheading{অংশ–F : গুরুত্বপূর্ণ Mathematical Program}
+
+%================================================
+% 59
+%================================================
+
+\exerciseTable
+{৫৯. GCD / গ.সা.গু নির্ণয়}
+{
+১. Start।\\
+২. \(a,b\) Input নাও।\\
+৩. \(b\neq0\) পর্যন্ত remainder বের করো।\\
+৪. \(a=b,\;b=remainder\)।\\
+৫. শেষে \(a\) হলো GCD।\\
+৬. End।
+}
+{
+\linearflow
+{a,b Input}
+{Euclidean Remainder Process}
+{GCD প্রদর্শন}
+}
+{
+a = int(input("Enter a: "))\\
+b = int(input("Enter b: "))\\
+while b != 0:\\
+\hspace*{4mm}r = a \% b\\
+\hspace*{4mm}a = b\\
+\hspace*{4mm}b = r\\
+print("GCD =", a)
+}
+{
+Euclidean Algorithm ব্যবহার করা হয়েছে।
+}
+
+%================================================
+% 60
+%================================================
+
+\exerciseTable
+{৬০. LCM / ল.সা.গু নির্ণয়}
+{
+১. Start।\\
+২. \(a,b\) Input নাও।\\
+৩. বড় Value থেকে Search শুরু করো।\\
+৪. উভয় দ্বারা বিভাজ্য না হওয়া পর্যন্ত বাড়াও।\\
+৫. LCM Print করো।\\
+৬. End।
+}
+{
+\linearflow
+{a,b Input}
+{Common Multiple Search}
+{LCM প্রদর্শন}
+}
+{
+a = int(input("Enter a: "))\\
+b = int(input("Enter b: "))\\
+lcm = max(a, b)\\
+while True:\\
+\hspace*{4mm}if lcm \% a == 0 and lcm \% b == 0:\\
+\hspace*{8mm}break\\
+\hspace*{4mm}lcm += 1\\
+print("LCM =", lcm)
+}
+{
+প্রথম Common Multiple পাওয়া গেলে Loop বন্ধ হয়।
+}
+
+%================================================
+% 61
+%================================================
+
+\exerciseTable
+{৬১. Leap Year নির্ণয়}
+{
+১. Start।\\
+২. Year Input নাও।\\
+৩. 400 দ্বারা বিভাজ্য হলে Leap Year।\\
+৪. অথবা 4 দ্বারা বিভাজ্য কিন্তু 100 দ্বারা নয় হলে Leap Year।\\
+৫. অন্যথায় Not Leap Year।\\
+৬. End।
+}
+{
+\linearflow
+{Year Input}
+{Leap Year Condition পরীক্ষা}
+{Result প্রদর্শন}
+}
+{
+year = int(input("Enter year: "))\\
+if ((year \% 4 == 0 and year \% 100 != 0)\\
+\hspace*{8mm}or year \% 400 == 0):\\
+\hspace*{4mm}print("Leap Year")\\
+else:\\
+\hspace*{4mm}print("Not Leap Year")
+}
+{
+Century Year-এর ক্ষেত্রে 400 দ্বারা বিভাজ্যতার Condition গুরুত্বপূর্ণ।
+}
+
+%================================================
+% PART G
+%================================================
+
+\partheading{অংশ–G : Formula ভিত্তিক Program Bank}
+
+\begin{rememberbox}
+
+Formula-based Program-এর সাধারণ ধাপ—
+
+\begin{center}
+
+\textbf{Start}
+\(\rightarrow\)
+\textbf{Input}
+\(\rightarrow\)
+\textbf{Formula প্রয়োগ}
+\(\rightarrow\)
+\textbf{Result}
+\(\rightarrow\)
+\textbf{End}
+
+\end{center}
+
+প্রতিটি Problem-এর নিজস্ব Algorithm, Flowchart এবং Python Code
+একই Table-এর মধ্যে দেওয়া হয়েছে।
+
+\end{rememberbox}
+
+%================================================
+% 62
+%================================================
+
+\formulaexercise
+{৬২}
+{Celsius থেকে Fahrenheit}
+{\(C\)}
+{c = float(input("Celsius: "))}
+{f = 9 * c / 5 + 32}
+{f}
+{\(F=\frac{9C}{5}+32\)}
+
+%================================================
+% 63
+%================================================
+
+\formulaexercise
+{৬৩}
+{Celsius থেকে Kelvin}
+{\(C\)}
+{c = float(input("Celsius: "))}
+{k = c + 273.15}
+{k}
+{\(K=C+273.15\)}
+
+%================================================
+% 64
+%================================================
+
+\formulaexercise
+{৬৪}
+{Fahrenheit থেকে Celsius}
+{\(F\)}
+{f = float(input("Fahrenheit: "))}
+{c = 5 * (f - 32) / 9}
+{c}
+{\(C=\frac{5(F-32)}{9}\)}
+
+%================================================
+% 65
+%================================================
+
+\formulaexercise
+{৬৫}
+{Fahrenheit থেকে Kelvin}
+{\(F\)}
+{f = float(input("Fahrenheit: "))}
+{k = 5 * (f - 32) / 9 + 273.15}
+{k}
+{\(K=\frac{5(F-32)}{9}+273.15\)}
+
+%================================================
+% 66
+%================================================
+
+\formulaexercise
+{৬৬}
+{Kelvin থেকে Fahrenheit}
+{\(K\)}
+{k = float(input("Kelvin: "))}
+{f = 9 * (k - 273.15) / 5 + 32}
+{f}
+{\(F=\frac{9(K-273.15)}{5}+32\)}
+
+%================================================
+% 67
+%================================================
+
+\formulaexercise
+{৬৭}
+{Kelvin থেকে Celsius}
+{\(K\)}
+{k = float(input("Kelvin: "))}
+{c = k - 273.15}
+{c}
+{\(C=K-273.15\)}
+
+%================================================
+% 68
+%================================================
+
+\formulaexercise
+{৬৮}
+{Centimeter থেকে Inch}
+{\(cm\)}
+{cm = float(input("Centimeter: "))}
+{inch = cm / 2.54}
+{inch}
+{\(inch=\frac{cm}{2.54}\)}
+
+%================================================
+% 69
+%================================================
+
+\formulaexercise
+{৬৯}
+{Inch থেকে Centimeter}
+{\(inch\)}
+{inch = float(input("Inch: "))}
+{cm = inch * 2.54}
+{cm}
+{\(cm=inch\times2.54\)}
+
+%================================================
+% 70
+%================================================
+
+\formulaexercise
+{৭০}
+{Foot থেকে Meter}
+{\(ft\)}
+{ft = float(input("Foot: "))}
+{m = ft / 3.28}
+{m}
+{\(m=\frac{ft}{3.28}\)}
+
+%================================================
+% 71
+%================================================
+
+\formulaexercise
+{৭১}
+{Meter থেকে Foot}
+{\(m\)}
+{m = float(input("Meter: "))}
+{ft = m * 3.28}
+{ft}
+{\(ft=m\times3.28\)}
+
+%================================================
+% 72
+%================================================
+
+\formulaexercise
+{৭২}
+{বৃত্তের ক্ষেত্রফল}
+{\(r\)}
+{r = float(input("Radius: "))}
+{area = 3.1416 * r * r}
+{area}
+{\(A=\pi r^2\)}
+
+%================================================
+% 73
+%================================================
+
+\formulaexercise
+{৭৩}
+{বৃত্তের পরিধি}
+{\(r\)}
+{r = float(input("Radius: "))}
+{circumference = 2 * 3.1416 * r}
+{circumference}
+{\(C=2\pi r\)}
+
+%================================================
+% 74
+%================================================
+
+\formulaexercise
+{৭৪}
+{আয়তক্ষেত্রের ক্ষেত্রফল}
+{\(l,w\)}
+{l = float(input("Length: "))\\
+w = float(input("Width: "))}
+{area = l * w}
+{area}
+{\(A=lw\)}
+
+%================================================
+% 75
+%================================================
+
+\formulaexercise
+{৭৫}
+{আয়তক্ষেত্রের পরিসীমা}
+{\(l,w\)}
+{l = float(input("Length: "))\\
+w = float(input("Width: "))}
+{p = 2 * (l + w)}
+{p}
+{\(P=2(l+w)\)}
+
+%================================================
+% 76
+%================================================
+
+\formulaexercise
+{৭৬}
+{বর্গক্ষেত্রের ক্ষেত্রফল}
+{\(a\)}
+{a = float(input("Side: "))}
+{area = a * a}
+{area}
+{\(A=a^2\)}
+
+%================================================
+% 77
+%================================================
+
+\formulaexercise
+{৭৭}
+{বর্গক্ষেত্রের পরিসীমা}
+{\(a\)}
+{a = float(input("Side: "))}
+{p = 4 * a}
+{p}
+{\(P=4a\)}
+
+%================================================
+% 78
+%================================================
+
+\formulaexercise
+{৭৮}
+{সামান্তরিকের ক্ষেত্রফল}
+{\(b,h\)}
+{b = float(input("Base: "))\\
+h = float(input("Height: "))}
+{area = b * h}
+{area}
+{\(A=bh\)}
+
+%================================================
+% 79
+%================================================
+
+\formulaexercise
+{৭৯}
+{সামান্তরিকের পরিসীমা}
+{\(a,b\)}
+{a = float(input("Side a: "))\\
+b = float(input("Side b: "))}
+{p = 2 * (a + b)}
+{p}
+{\(P=2(a+b)\)}
+
+%================================================
+% 80
+%================================================
+
+\formulaexercise
+{৮০}
+{রম্বসের ক্ষেত্রফল}
+{\(d_1,d_2\)}
+{d1 = float(input("Diagonal 1: "))\\
+d2 = float(input("Diagonal 2: "))}
+{area = d1 * d2 / 2}
+{area}
+{\(A=\frac{d_1d_2}{2}\)}
+
+%================================================
+% 81
+%================================================
+
+\formulaexercise
+{৮১}
+{রম্বসের পরিসীমা}
+{\(a\)}
+{a = float(input("Side: "))}
+{p = 4 * a}
+{p}
+{\(P=4a\)}
+
+%================================================
+% 82
+%================================================
+
+\formulaexercise
+{৮২}
+{ত্রিভুজের ক্ষেত্রফল}
+{\(b,h\)}
+{b = float(input("Base: "))\\
+h = float(input("Height: "))}
+{area = b * h / 2}
+{area}
+{\(A=\frac{bh}{2}\)}
+
+%================================================
+% 83
+%================================================
+
+\formulaexercise
+{৮৩}
+{ত্রিভুজের পরিসীমা}
+{\(a,b,c\)}
+{a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))}
+{p = a + b + c}
+{p}
+{\(P=a+b+c\)}
+
+%================================================
+% 84
+%================================================
+
+\formulaexercise
+{৮৪}
+{ত্রিভুজের অর্ধপরিসীমা}
+{\(a,b,c\)}
+{a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))}
+{s = (a + b + c) / 2}
+{s}
+{\(s=\frac{a+b+c}{2}\)}
+
+%================================================
+% 85
+%================================================
+
+\exerciseTable
+{৮৫. Heron's Formula দিয়ে ত্রিভুজের ক্ষেত্রফল}
+{
+১. Start।\\
+২. \(a,b,c\) Input নাও।\\
+৩. \(s=(a+b+c)/2\)।\\
+৪. \(A=\sqrt{s(s-a)(s-b)(s-c)}\)।\\
+৫. Area প্রদর্শন করো।\\
+৬. End।
+}
+{
+\linearflow
+{a,b,c Input}
+{s ও Heron's Formula প্রয়োগ}
+{area প্রদর্শন}
+}
+{
+a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))\\
+s = (a + b + c) / 2\\
+area = (s * (s-a) * (s-b) * (s-c)) ** 0.5\\
+print("Area =", area)
+}
+{
+প্রথমে Semi-perimeter নির্ণয় করা হয়।
+
+\medskip
+
+তারপর Heron's Formula প্রয়োগ করা হয়।
+}
+
+%================================================
+% 86
+%================================================
+
+\formulaexercise
+{৮৬}
+{সমবাহু ত্রিভুজের ক্ষেত্রফল}
+{\(a\)}
+{a = float(input("Side: "))}
+{area = (3 ** 0.5) * a * a / 4}
+{area}
+{\(A=\frac{\sqrt3\,a^2}{4}\)}
+
+%================================================
+% 87
+%================================================
+
+\formulaexercise
+{৮৭}
+{সমবাহু ত্রিভুজের পরিসীমা}
+{\(a\)}
+{a = float(input("Side: "))}
+{p = 3 * a}
+{p}
+{\(P=3a\)}
+
+%================================================
+% 88
+%================================================
+
+\formulaexercise
+{৮৮}
+{সমদ্বিবাহু ত্রিভুজের ক্ষেত্রফল}
+{\(a,b\)}
+{a = float(input("Equal side: "))\\
+b = float(input("Base: "))}
+{area = b * ((4*a*a - b*b) ** 0.5) / 4}
+{area}
+{\(A=\frac{b\sqrt{4a^2-b^2}}{4}\)}
+
+%================================================
+% 89
+%================================================
+
+\formulaexercise
+{৮৯}
+{Trapezoid-এর ক্ষেত্রফল}
+{\(a,b,h\)}
+{a = float(input("Side a: "))\\
+b = float(input("Side b: "))\\
+h = float(input("Height: "))}
+{area = (a + b) * h / 2}
+{area}
+{\(A=\frac{(a+b)h}{2}\)}
+
+%================================================
+% 90
+%================================================
+
+\formulaexercise
+{৯০}
+{Trapezoid-এর পরিসীমা}
+{\(a,b,c,d\)}
+{a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))\\
+d = float(input("d: "))}
+{p = a + b + c + d}
+{p}
+{\(P=a+b+c+d\)}
+
+%================================================
+% 91
+%================================================
+
+\formulaexercise
+{৯১}
+{Cuboid-এর Surface Area}
+{\(a,b,c\)}
+{a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))}
+{area = 2 * (a*b + b*c + c*a)}
+{area}
+{\(A=2(ab+bc+ca)\)}
+
+%================================================
+% 92
+%================================================
+
+\formulaexercise
+{৯২}
+{Cuboid-এর Diagonal}
+{\(a,b,c\)}
+{a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))}
+{d = (a*a + b*b + c*c) ** 0.5}
+{d}
+{\(d=\sqrt{a^2+b^2+c^2}\)}
+
+%================================================
+% 93
+%================================================
+
+\formulaexercise
+{৯৩}
+{Cuboid-এর Volume}
+{\(a,b,c\)}
+{a = float(input("a: "))\\
+b = float(input("b: "))\\
+c = float(input("c: "))}
+{v = a * b * c}
+{v}
+{\(V=abc\)}
+
+%================================================
+% 94
+%================================================
+
+\formulaexercise
+{৯৪}
+{Cube-এর Diagonal}
+{\(a\)}
+{a = float(input("Side: "))}
+{d = (3 ** 0.5) * a}
+{d}
+{\(d=\sqrt3\,a\)}
+
+%================================================
+% 95
+%================================================
+
+\formulaexercise
+{৯৫}
+{Cube-এর Volume}
+{\(a\)}
+{a = float(input("Side: "))}
+{v = a ** 3}
+{v}
+{\(V=a^3\)}
+
+%================================================
+% 96
+%================================================
+
+\formulaexercise
+{৯৬}
+{Cube-এর Surface Area}
+{\(a\)}
+{a = float(input("Side: "))}
+{area = 6 * a * a}
+{area}
+{\(A=6a^2\)}
+
+%================================================
+% 97
+%================================================
+
+\formulaexercise
+{৯৭}
+{Cone-এর Slant Height}
+{\(r,h\)}
+{r = float(input("Radius: "))\\
+h = float(input("Height: "))}
+{l = (r*r + h*h) ** 0.5}
+{l}
+{\(l=\sqrt{r^2+h^2}\)}
+
+%================================================
+% 98
+%================================================
+
+\formulaexercise
+{৯৮}
+{Cone-এর Curved Surface Area}
+{\(r,l\)}
+{r = float(input("Radius: "))\\
+l = float(input("Slant height: "))}
+{area = 3.1416 * r * l}
+{area}
+{\(A=\pi rl\)}
+
+%================================================
+% 99
+%================================================
+
+\formulaexercise
+{৯৯}
+{Cone-এর Base Area}
+{\(r\)}
+{r = float(input("Radius: "))}
+{area = 3.1416 * r * r}
+{area}
+{\(A=\pi r^2\)}
+
+%================================================
+% 100
+%================================================
+
+\formulaexercise
+{১০০}
+{Cone-এর Volume}
+{\(r,h\)}
+{r = float(input("Radius: "))\\
+h = float(input("Height: "))}
+{v = 3.1416 * r * r * h / 3}
+{v}
+{\(V=\frac{\pi r^2h}{3}\)}
+
+%================================================
+% 101
+%================================================
+
+\formulaexercise
+{১০১}
+{Square Root নির্ণয়}
+{\(n\)}
+{n = float(input("Number: "))}
+{root = n ** 0.5}
+{root}
+{\(root=\sqrt n\)}
+
+%================================================
+% 102
+%================================================
+
+\exerciseTable
+{১০২. Absolute Value নির্ণয়}
+{
+১. Start।\\
+২. Number Input নাও।\\
+৩. Absolute Value নির্ণয় করো।\\
+৪. Result প্রদর্শন করো।\\
+৫. End।
+}
+{
+\linearflow
+{n Input}
+{value=abs(n)}
+{value প্রদর্শন}
+}
+{
+n = float(input("Number: "))\\
+value = abs(n)\\
+print("Absolute =", value)
+}
+{
+Negative Input হলেও Result non-negative হবে।
+}
+
+%================================================
+% 103
+%================================================
+
+\formulaexercise
+{১০৩}
+{Power নির্ণয়}
+{\(a,b\)}
+{a = float(input("Base: "))\\
+b = float(input("Power: "))}
+{p = a ** b}
+{p}
+{\(p=a^b\)}
+
+%================================================
+% Revision Map
+%================================================
+
+\chFiveInput{topics/47_algorithm_flowchart_exercises/python_extensions.tex}
+
+\partheading{Exercise Revision Map}
+
+\begin{tabularx}{\linewidth}{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.29\linewidth}
+|Y
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Problem Type}
+&
+\textbf{মূল Logic}
+&
+\textbf{Python Concept}
+\\
+\hline
+
+Sum / Average
+&
+Accumulator
+&
+Operator + Loop
+\\
+\hline
+
+Largest / Smallest
+&
+Comparison
+&
+if-elif-else
+\\
+\hline
+
+Even / Odd
+&
+Remainder
+&
+\textenglish{\ttfamily \%}
+\\
+\hline
+
+Grade / Range
+&
+Multiple Condition
+&
+if-elif-else
+\\
+\hline
+
+Series
+&
+Repeated Term Generation
+&
+for / while
+\\
+\hline
+
+Factorial
+&
+Repeated Multiplication
+&
+Loop
+\\
+\hline
+
+Prime
+&
+Divisor Test
+&
+Nested Loop + break
+\\
+\hline
+
+List
+&
+Traversal
+&
+for
+\\
+\hline
+
+Search
+&
+Sequential Comparison
+&
+Loop + break
+\\
+\hline
+
+Function
+&
+Reusable Logic
+&
+def + return
+\\
+\hline
+
+GCD
+&
+Repeated Remainder
+&
+while
+\\
+\hline
+
+LCM
+&
+Common Multiple Search
+&
+while
+\\
+\hline
+
+Formula Program
+&
+Input → Formula → Output
+&
+Arithmetic Operator
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\partheading{Exercise-এ সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item Algorithm-এ Start ও End বাদ দেওয়া।
+
+\item Flowchart-এ Input/Output এবং Processing-এর পার্থক্য না রাখা।
+
+\item Decision Flowchart-এ Yes/No Branch না দেখানো।
+
+\item Python Code-এ Indentation ভুল করা।
+
+\item
+\textenglish{\ttfamily input()}
+থেকে পাওয়া Data প্রয়োজনমতো
+\textenglish{\ttfamily int()}
+বা
+\textenglish{\ttfamily float()}
+-এ Convert না করা।
+
+\item
+\textenglish{\ttfamily =}
+ও
+\textenglish{\ttfamily ==}
+গুলিয়ে ফেলা।
+
+\item
+\textenglish{\ttfamily range()}
+-এর Stop Value Excluded ভুলে যাওয়া।
+
+\item Sum-এর Initial Value 0 এবং Factorial-এর Initial Value 1—এটি ভুল করা।
+
+\item
+\textenglish{\ttfamily while}
+Loop-এ Update না দেওয়া।
+
+\item Prime Number পরীক্ষায় 0 ও 1-কে Prime মনে করা।
+
+\item Formula-তে Bracket ভুল দেওয়া।
+
+\item Python-এ Power-এর জন্য
+\textenglish{\ttfamily **}
+ব্যবহার করতে হয়।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textbf{Algorithm}
+\(\longrightarrow\)
+Problem সমাধানের ধাপ
+
+\medskip
+
+\textbf{Flowchart}
+\(\longrightarrow\)
+Algorithm-এর চিত্ররূপ
+
+\medskip
+
+\textbf{Python Program}
+\(\longrightarrow\)
+Algorithm-এর বাস্তব Code
+
+\medskip
+
+\textbf{Output}
+\(\longrightarrow\)
+Program চালানোর ফলাফল
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% TITLE
+%================================================

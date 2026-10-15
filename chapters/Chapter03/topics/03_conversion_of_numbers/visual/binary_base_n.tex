@@ -1,0 +1,215 @@
+\subsection{\texorpdfstring{বাইনারি থেকে $n$ ভিত্তি}{বাইনারি থেকে n ভিত্তি}}
+প্রথমে স্থানমান ব্যবহার করে দশমিকে আনো; তারপর লক্ষ্য ভিত্তিতে ভাগ ও গুণ করো। দুই ধাপের পূর্ণাংশ ও ভগ্নাংশ আলাদাভাবে মিলিয়ে নাও।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (11010)_{2} $-কে ৬ ভিত্তিতে রূপান্তর করো।\par
+\textbf{প্রথম ধাপ: দশমিক মান}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC026}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-10) {$ 2^{4} $};
+\node[vcnum] (v0) at (0,-25) {$ 16 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 1 $};
+\node[vcnum] (w1) at (19,-10) {$ 2^{3} $};
+\node[vcnum] (v1) at (19,-25) {$ 8 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 0 $};
+\node[vcnum] (w2) at (38,-10) {$ 2^{2} $};
+\node[vcnum] (v2) at (38,-25) {$ 0 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (57,0) {$ 1 $};
+\node[vcnum] (w3) at (57,-10) {$ 2^{1} $};
+\node[vcnum] (v3) at (57,-25) {$ 2 $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] (d4) at (76,0) {$ 0 $};
+\node[vcnum] (w4) at (76,-10) {$ 2^{0} $};
+\node[vcnum] (v4) at (76,-25) {$ 0 $};
+\draw[vc arrow] (d4.south)--(w4.north);
+\draw[vc arrow] (w4.south)--(v4.north);
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 2^{4}+1\times 2^{3}+0\times 2^{2}+1\times 2^{1}+0\times 2^{0}\\&=16+8+2=26.\end{aligned}\]
+\textbf{দ্বিতীয় ধাপ: লক্ষ্য ভিত্তি}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC027}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-28);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 6 $};
+\node[vcnum] at (10.0,0) {$ 26 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ 2 $};
+\node[vcnum] at (1.5,-7) {$ 6 $};
+\node[vcnum] at (11.5,-7) {$ 4 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 4 $};
+\node[vcnum] at (13.0,-14) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-19) {MSB};
+\draw[vc arrow] (61,-14)--(61,-7);
+\node[vcnote] at (31,-26) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (11010)_{2}=(42)_{6}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.11)_{2} $-কে ৬ ভিত্তিতে রূপান্তর করো।\par
+\textbf{প্রথম ধাপ: দশমিক মান}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC028}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 0 $};
+\node[vcnum] (w0) at (0,-10) {$ 2^{0} $};
+\node[vcnum] (v0) at (0,-25) {$ 0 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (27,0) {$ 1 $};
+\node[vcnum] (w1) at (27,-10) {$ 2^{-1} $};
+\node[vcnum] (v1) at (27,-25) {$ \frac{1}{2} $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (46,0) {$ 1 $};
+\node[vcnum] (w2) at (46,-10) {$ 2^{-2} $};
+\node[vcnum] (v2) at (46,-25) {$ \frac{1}{4} $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] at (13.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=0\times 2^{0}+1\times 2^{-1}+1\times 2^{-2}\\&=\frac{1}{2}+\frac{1}{4}=0.75.\end{aligned}\]
+\textbf{দ্বিতীয় ধাপ: লক্ষ্য ভিত্তি}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC029}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-39);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.75 $};
+\draw[vc line] (26,3)--(26,-27);
+\node[vcnum] (m0) at (45,-5) {$\times 6$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ 4 $};
+\node[vcnum] (f0) at (45,-12) {$ 0.5 $};
+\node[vcnum] (m1) at (45,-17) {$\times 6$};
+\draw[vc line] (7,-20)--(65,-20);
+\node[vcnum] at (14,-24) {$ 3 $};
+\node[vcnum] (f1) at (45,-24) {$ 0 $};
+\draw[vc arrow] (f0.east)--(72,-12)--(72,-17)--(m1.east);
+\node[vcnote] at (0,-8) {MSB};
+\node[vcnote] at (0,-29) {LSB};
+\draw[vc arrow] (0,-12)--(0,-24);
+\node[vcnote] at (34,-36) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (0.11)_{2}=(0.43)_{6}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (101101.1)_{2} $-কে ৬ ভিত্তিতে রূপান্তর করো।\par
+\textbf{প্রথম ধাপ: দশমিক মান}\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC030}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\node[vc digit] (d0) at (0,0) {$ 1 $};
+\node[vcnum] (w0) at (0,-10) {$ 2^{5} $};
+\node[vcnum] (v0) at (0,-25) {$ 32 $};
+\draw[vc arrow] (d0.south)--(w0.north);
+\draw[vc arrow] (w0.south)--(v0.north);
+\node[vc digit] (d1) at (19,0) {$ 0 $};
+\node[vcnum] (w1) at (19,-10) {$ 2^{4} $};
+\node[vcnum] (v1) at (19,-25) {$ 0 $};
+\draw[vc arrow] (d1.south)--(w1.north);
+\draw[vc arrow] (w1.south)--(v1.north);
+\node[vc digit] (d2) at (38,0) {$ 1 $};
+\node[vcnum] (w2) at (38,-10) {$ 2^{3} $};
+\node[vcnum] (v2) at (38,-25) {$ 8 $};
+\draw[vc arrow] (d2.south)--(w2.north);
+\draw[vc arrow] (w2.south)--(v2.north);
+\node[vc digit] (d3) at (57,0) {$ 1 $};
+\node[vcnum] (w3) at (57,-10) {$ 2^{2} $};
+\node[vcnum] (v3) at (57,-25) {$ 4 $};
+\draw[vc arrow] (d3.south)--(w3.north);
+\draw[vc arrow] (w3.south)--(v3.north);
+\node[vc digit] (d4) at (76,0) {$ 0 $};
+\node[vcnum] (w4) at (76,-10) {$ 2^{1} $};
+\node[vcnum] (v4) at (76,-25) {$ 0 $};
+\draw[vc arrow] (d4.south)--(w4.north);
+\draw[vc arrow] (w4.south)--(v4.north);
+\node[vc digit] (d5) at (95,0) {$ 1 $};
+\node[vcnum] (w5) at (95,-10) {$ 2^{0} $};
+\node[vcnum] (v5) at (95,-25) {$ 1 $};
+\draw[vc arrow] (d5.south)--(w5.north);
+\draw[vc arrow] (w5.south)--(v5.north);
+\node[vc digit] (d6) at (122,0) {$ 1 $};
+\node[vcnum] (w6) at (122,-10) {$ 2^{-1} $};
+\node[vcnum] (v6) at (122,-25) {$ \frac{1}{2} $};
+\draw[vc arrow] (d6.south)--(w6.north);
+\draw[vc arrow] (w6.south)--(v6.north);
+\node[vc digit] at (108.5,0) {$.$};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+\[\begin{aligned}V&=1\times 2^{5}+0\times 2^{4}+1\times 2^{3}+1\times 2^{2}+0\times 2^{1}+1\times 2^{0}+1\times 2^{-1}\\&=32+8+4+1+\frac{1}{2}=45.5.\end{aligned}\]
+\textbf{দ্বিতীয় ধাপ: লক্ষ্য ভিত্তি}\par
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering\textbf{পূর্ণাংশ}\par\vspace{1mm}
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC031}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-35);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 6 $};
+\node[vcnum] at (10.0,0) {$ 45 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ 3 $};
+\node[vcnum] at (1.5,-7) {$ 6 $};
+\node[vcnum] at (11.5,-7) {$ 7 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 1 $};
+\node[vcnum] at (3.0,-14) {$ 6 $};
+\node[vcnum] at (13.0,-14) {$ 1 $};
+\draw[vc line] (8.0,-11)--(8.0,-17.5)--(50,-17.5);
+\node[vcnum] (r2) at (44,-21) {$ 1 $};
+\node[vcnum] at (14.5,-21) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-26) {MSB};
+\draw[vc arrow] (61,-21)--(61,-7);
+\node[vcnote] at (31,-33) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+$ (113)_{6} $
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering\textbf{ভগ্নাংশ}\par\vspace{1mm}
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC032}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-27);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.5 $};
+\draw[vc line] (26,3)--(26,-15);
+\node[vcnum] (m0) at (45,-5) {$\times 6$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ 3 $};
+\node[vcnum] (f0) at (45,-12) {$ 0 $};
+\node[vcnote] at (0,-10) {MSB=LSB};
+\draw[vc arrow] (0,-14)--(0,-20);
+\node[vcnote] at (34,-24) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+$ (0.3)_{6} $
+\end{minipage}\par
+\[\therefore\ (101101.1)_{2}=(113.3)_{6}.\]
+\end{minipage}\par

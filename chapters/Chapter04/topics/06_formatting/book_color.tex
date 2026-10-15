@@ -1,0 +1,23 @@
+\subsubsection{RGB থেকে হেক্স রং বুঝে লেখা}
+RGB-তে লাল, সবুজ ও নীল আলোর তিনটি উপাদানের মান দেওয়া হয়। এখানে ব্যবহৃত 8-bit রীতিতে প্রতিটি মান 0--255: 0 মানে ওই উপাদান নেই, 255 সর্বোচ্চ মান। তিনটিই 0 হলে কালো; তিনটিই 255 হলে সাদা। এই তিন উপাদানের জন্য $256^3=16{,}777{,}216$ সমন্বয় পাওয়া যায়।
+
+ছয় অঙ্কের হেক্স রূপ \texttt{\#RRGGBB}-তে প্রথম জোড়া লাল, মাঝের জোড়া সবুজ এবং শেষ জোড়া নীল। প্রতি জোড়ার পরিসর \texttt{00}--\texttt{FF}, অর্থাৎ দশমিকে 0--255। \texttt{A}--\texttt{F} যথাক্রমে 10--15। যেমন, \texttt{\#36A2C8}-তে $3\times16+6=54$, $10\times16+2=162$, $12\times16+8=200$; তাই সমতুল্য RGB হলো \texttt{rgb(54,162,200)}।
+
+\par\noindent\begin{minipage}[t]{.50\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}একই রঙের দুটি রূপ}\par
+\begin{verbatim}
+<p style="color:#36A2C8;">
+  Club notice
+</p>
+<p style="color:rgb(54,162,200);">
+  Club notice
+</p>
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ফল ও কারণ}\par
+\textcolor[HTML]{36A2C8}{Club notice}\par
+\textcolor[HTML]{36A2C8}{Club notice}\par
+দুটি লেখার রং একই; মান লেখার পদ্ধতি আলাদা। রং বাছাইয়ে পটভূমির সঙ্গে লেখা স্পষ্ট দেখা যায় কি না যাচাই করবে।
+\end{minipage}\par
+\texttt{\#0000FF}-এর সমতুল্য মান \texttt{rgb(0,0,255)}। এখানে লাল ও সবুজ নেই, নীলের মান সর্বোচ্চ। শুধু রং দিয়ে জরুরি নোটিশ চিহ্নিত না করে ``জরুরি কথাটিও লিখলে অর্থ স্পষ্ট থাকে।

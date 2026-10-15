@@ -1,0 +1,42 @@
+% Chapter-local layout additions; never mutate shared preamble defaults.
+\renewtcolorbox{learningbox}{chTwoBox,breakable=false,title={শিখনফল},fontupper=\small\raggedright}
+\tcbset{chTwoPlain/.style={enhanced,breakable,frame hidden,colback=white,colbacktitle=white,coltitle=chTwoTeal,left=0pt,right=0pt,top=1pt,bottom=1pt,before skip=2pt,after skip=2pt,fonttitle=\small\bfseries,fontupper=\small\raggedright}}
+\renewtcolorbox{keypointbox}[1]{chTwoPlain,title={#1}}
+\renewtcolorbox{boardbox}[1]{chTwoPlain,title={#1}}
+\renewtcolorbox{practicebox}{chTwoPlain,title={অনুশীলন}}
+\renewtcolorbox{recapbox}{chTwoPlain,title={দ্রুত রিভিশন}}
+\renewtcolorbox{explanationbox}[1]{chTwoPlain,title={#1}}
+\renewtcolorbox{examanswerbox}[1]{chTwoPlain,title={#1}}
+\setlist[itemize]{leftmargin=*,topsep=1pt,itemsep=.5pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=*,topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\chapter}{0pt}{0pt}{5pt}
+\renewcommand{\chTwoQA}[2]{\par\addvspace{2pt}\noindent{\small\bfseries\color{chTwoRose}#1}\par\nobreak\noindent{\small\textbf{\color{chTwoTeal}উত্তর:} #2\par}\addvspace{2pt}}
+\newcommand{\chTwoPair}[2]{\par\addvspace{3pt}\noindent\begin{minipage}[t]{.49\linewidth}\vspace{0pt}\tcbset{chTwoPlain/.append style={breakable=false}}#1\end{minipage}\hfill\begin{minipage}[t]{.47\linewidth}\vspace{0pt}\tcbset{chTwoPlain/.append style={breakable=false}}#2\end{minipage}\par\addvspace{3pt}}
+\newcommand{\chTwoImage}[2]{\par\noindent\begin{minipage}{\linewidth}\centering\chTwoGraphic{#1}\par\raggedright\captionof{figure}{#2}\end{minipage}\par}
+\newcommand{\chTwoGraphic}[1]{\ifcsname chTwoAsset#1\endcsname\csname chTwoAsset#1\endcsname\else\includegraphics[width=.98\linewidth,height=7cm,keepaspectratio]{#1}\fi}
+\newcommand{\chTwoDiagramRow}[3]{\chTwoPair{{\color{chTwoTeal}\bfseries #2}\par #3}{\chTwoNative{\csname chTwoDiagramKey#1\endcsname}\par\small\raggedright\textbf{চিত্র:} #2}}
+\expandafter\def\csname chTwoDiagramKeyasyncframe\endcsname{Asyncframe}
+\expandafter\def\csname chTwoDiagramKeysatellite\endcsname{Satellite}
+\expandafter\def\csname chTwoDiagramKeyswitch\endcsname{Switch}
+\expandafter\def\csname chTwoDiagramKeymesh\endcsname{Mesh}
+\expandafter\def\csname chTwoDiagramKeytree\endcsname{Tree}
+\expandafter\def\csname chTwoDiagramKeyhybrid\endcsname{Hybrid}
+\expandafter\def\csname chTwoDiagramKeycloudbackup\endcsname{Cloudbackup}
+\input{chapters/Chapter02/latex/diagrams}
+\input{chapters/Chapter02/latex/asset_map}
+\renewenvironment{rightimageblock}[2]{\def\chTwoRightPath{#1}\def\chTwoRightCaption{#2}\par\noindent\begin{minipage}[t]{.51\linewidth}\vspace{0pt}}{\end{minipage}\hfill\begin{minipage}[t]{.45\linewidth}\vspace{0pt}\chTwoImage{\chTwoRightPath}{\chTwoRightCaption}\end{minipage}\par\addvspace{2pt}}
+\RenewDocumentCommand{\smallimage}{O{.56\linewidth} m m}{\par\noindent\begin{minipage}{#1}\chTwoImage{#2}{#3}\end{minipage}\par}
+\newcommand{\chTwoMCQBlock}[1]{\par\noindent\begin{minipage}[t]{\linewidth}\small\raggedright#1\end{minipage}\par\addvspace{3pt}}
+\captionsetup{font=small,skip=2pt}
+\raggedbottom
+
+\raggedcolumns
+\setlength{\multicolsep}{4pt}
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+\setlength{\LTpre}{3pt}
+\setlength{\LTpost}{3pt}
+
+% Short examples remain whole, including inside figure/explanation pairs.
+\renewtcolorbox{examplebox}[1]{chTwoPlain,breakable=false,title={#1}}

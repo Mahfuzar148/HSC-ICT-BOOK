@@ -1,0 +1,21 @@
+% !TeX program = lualatex
+\documentclass[12pt,twoside,openany]{book}
+\input{preamble.tex}
+\input{chapters/Chapter03/latex/text_font.tex}
+\geometry{a4paper,left=16mm,right=16mm,top=16mm,bottom=16mm,headheight=30pt,includehead,includefoot,bindingoffset=0mm}
+\AtBeginDocument{\setlength{\headwidth}{\textwidth}\setlength{\headheight}{30pt}}
+\begin{document}
+\input{chapters/Chapter03/latex/visual_style.tex}
+\frontmatter
+\renewcommand{\contentsname}{সূচিপত্র}
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{2}
+\chapter{সংখ্যা পদ্ধতি}
+\input{chapters/Chapter03/topics/01_history_of_numbers/topic.tex}
+\input{chapters/Chapter03/topics/02_number_systems/topic.tex}
+\input{chapters/Chapter03/topics/03_conversion_of_numbers/topic.tex}
+\input{chapters/Chapter03/topics/04_binary_add_sub/topic.tex}
+\input{chapters/Chapter03/topics/05_signed_numbers/topic.tex}
+\input{chapters/Chapter03/topics/07_codes_overview/topic.tex}
+\end{document}

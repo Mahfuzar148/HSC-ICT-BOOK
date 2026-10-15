@@ -1,0 +1,55 @@
+% Original native schematics. English labels are short; explanations are Bengali.
+\tikzset{chOneNode/.style={draw=chOneTeal,rounded corners=2pt,fill=chOneTint,align=center,text width=2.2cm,minimum height=.9cm,font=\small},chOneArrow/.style={-{Stealth[length=2mm]},thick,draw=chOneTeal}}
+\newcommand{\chOneNative}[1]{\resizebox{.98\linewidth}{!}{\csname chOneDraw#1\endcsname}}
+\newcommand{\chOneFlow}[4]{\begin{tikzpicture}\node[chOneNode](a)at(0,0){#1};\node[chOneNode](b)at(3.1,0){#2};\node[chOneNode](c)at(3.1,-1.6){#3};\node[chOneNode](d)at(0,-1.6){#4};\draw[chOneArrow](a)--(b);\draw[chOneArrow](b)--(c);\draw[chOneArrow](c)--(d);\end{tikzpicture}}
+\newcommand{\chOneDrawData}{\chOneFlow{Raw data}{Processing}{Information}{Decision}}
+\newcommand{\chOneDrawVillage}{\begin{tikzpicture}\node[chOneNode,text width=2.5cm](c)at(0,0){ICT-enabled\par Global village};\foreach \chOneNodeText/\x/\y in {Hardware/-3/1.6,Software/3/1.6,Connectivity/-3/-1.6,Data/3/-1.6,Skills/0/-3.2}{\node[chOneNode](n)at(\x,\y){\chOneNodeText};\draw[chOneArrow](n)--(c);}\end{tikzpicture}}
+\newcommand{\chOneDrawVR}{\chOneFlow{Tracking\par User action}{3D simulation\par Processing}{Display / audio\par Haptic feedback}{User experience}}
+\newcommand{\chOneDrawPillars}{\begin{tikzpicture}\node[chOneNode](a)at(0,0){Immersion};\node[chOneNode](b)at(3,0){Interaction};\node[chOneNode](c)at(1.5,-1.5){Imagination};\node[align=center,font=\small]at(1.5,-2.5){Presence: feeling of being there};\end{tikzpicture}}
+\newcommand{\chOneDrawAI}{\chOneFlow{Input data}{Rules / trained model}{Prediction / advice}{Human review\par Appropriate action}}
+\newcommand{\chOneDrawTraining}{\begin{tikzpicture}\node[chOneNode](a)at(0,0){Training data};\node[chOneNode](b)at(3,0){Learning};\node[chOneNode](c)at(3,-1.5){Trained model};\node[chOneNode](d)at(0,-1.5){New input};\node[chOneNode](e)at(1.5,-3){Inference / output};\draw[chOneArrow](a)--(b);\draw[chOneArrow](b)--(c);\draw[chOneArrow](c)--(e);\draw[chOneArrow](d)--(e);\end{tikzpicture}}
+\newcommand{\chOneDrawExpert}{\begin{tikzpicture}\node[chOneNode](u)at(0,0){User facts};\node[chOneNode](i)at(3,0){Inference engine};\node[chOneNode](k)at(3,-1.5){Knowledge base\par Facts + rules};\node[chOneNode](o)at(0,-1.5){Advice + explanation};\draw[chOneArrow](u)--(i);\draw[chOneArrow](k)--(i);\draw[chOneArrow](i)--(o);\end{tikzpicture}}
+\newcommand{\chOneDrawRelation}{\begin{tikzpicture}\draw[draw=chOneTeal,fill=chOneTint,rounded corners](0,0)rectangle(6,4);\node[anchor=north west,font=\small\bfseries]at(.15,3.9){AI};\draw[fill=white,rounded corners](.6,.4)rectangle(5.4,3.3);\node[anchor=north west,font=\small\bfseries]at(.75,3.2){Machine Learning};\draw[fill=chOneTint,rounded corners](1.2,.8)rectangle(4.8,2.5);\node[font=\small\bfseries]at(3,1.65){Deep Learning};\end{tikzpicture}}
+\newcommand{\chOneDrawRobot}{\begin{tikzpicture}\node[chOneNode](s)at(0,0){Sensor\par Sense};\node[chOneNode](c)at(3,0){Controller\par Decide};\node[chOneNode](a)at(3,-1.5){Actuator\par Move};\node[chOneNode](e)at(0,-1.5){End effector\par Work};\draw[chOneArrow](s)--(c);\draw[chOneArrow](c)--(a);\draw[chOneArrow](a)--(e);\draw[chOneArrow](e.west)--++(-.7,0)|-(s.west);\end{tikzpicture}}
+\newcommand{\chOneDrawCryo}{\chOneFlow{Abnormal tissue\par Target}{Controlled cold\par Cryogen / probe}{Freeze + thaw\par Cell damage}{Local tissue\par destruction}}
+\newcommand{\chOneDrawCryoHistory}{\chOneFlow{Early cold\par treatment}{Arnott\par 19th century}{Cryogen +\par Cryoprobe}{Image-guided\par cryoablation}}
+\newcommand{\chOneDrawTelemetry}{\begin{tikzpicture}\node[chOneNode](s)at(0,0){Spacecraft sensor};\node[chOneNode](t)at(3,0){Telemetry};\node[chOneNode](m)at(3,-1.5){Mission control};\node[chOneNode](c)at(0,-1.5){Command\par transmitter};\draw[chOneArrow](s)--(t);\draw[chOneArrow](t)--(m);\draw[chOneArrow](m)--(c);\draw[chOneArrow](c.west)--++(-.7,0)|-(s.west);\end{tikzpicture}}
+\newcommand{\chOneDrawGPS}{\begin{tikzpicture}\node[chOneNode,text width=2cm](r)at(1.5,-2){GPS receiver};\foreach \x/\y/\id in {-1/0/1,1.5/.5/2,4/0/3,4/-3.5/4}{\node[chOneNode,text width=1.6cm](s\id)at(\x,\y){Satellite \id};\draw[chOneArrow](s\id)--(r);}\node[align=center,font=\small]at(0,-4){One-way timing signals};\end{tikzpicture}}
+\newcommand{\chOneDrawProduction}{\chOneFlow{CAD\par Design}{CAM / CNC\par Manufacture}{Sensor / inspection\par Quality check}{Database / RFID\par Record + track}}
+\newcommand{\chOneDrawBiometric}{\begin{tikzpicture}\node[chOneNode](a)at(0,0){Enrolment\par Capture features};\node[chOneNode](b)at(3,0){Stored template};\node[chOneNode](c)at(0,-1.7){New sample};\node[chOneNode](d)at(3,-1.7){Feature extraction};\node[chOneNode](e)at(3,-3.4){Matching};\node[chOneNode](f)at(0,-3.4){Accept / reject};\draw[chOneArrow](a)--(b);\draw[chOneArrow](c)--(d);\draw[chOneArrow](d)--(e);\draw[chOneArrow](b.east)--++(.7,0)|-(e.east);\draw[chOneArrow](e)--(f);\end{tikzpicture}}
+\newcommand{\chOneDrawBioinformatics}{\begin{tikzpicture}\node[chOneNode](a)at(0,0){DNA / RNA / protein\par Sequence data};\node[chOneNode](b)at(3.1,0){Database\par Store / retrieve};\node[chOneNode](c)at(3.1,-2.5){Algorithm / BLAST\par Compare sequences};\node[chOneNode](d)at(0,-2.5){Biological\par interpretation};\draw[chOneArrow](a)--(b);\draw[chOneArrow](b)--(c);\draw[chOneArrow](c)--(d);\end{tikzpicture}}
+\newcommand{\chOneDrawGenetic}{\begin{tikzpicture}\node[chOneNode](a)at(0,0){Desired gene};\node[chOneNode](b)at(3,0){Restriction enzyme\par Cut gene / vector};\node[chOneNode](c)at(3,-1.5){Ligase\par Join DNA};\node[chOneNode](d)at(0,-1.5){Recombinant DNA};\node[chOneNode](e)at(0,-3){Host cell};\node[chOneNode](f)at(3,-3){Select + express\par Desired product};\draw[chOneArrow](a)--(b);\draw[chOneArrow](b)--(c);\draw[chOneArrow](c)--(d);\draw[chOneArrow](d)--(e);\draw[chOneArrow](e)--(f);\end{tikzpicture}}
+\newcommand{\chOneDrawNano}{\begin{tikzpicture}\node[chOneNode](a)at(0,0){Bulk material};\node[chOneNode](b)at(3.6,-1.3){Nano structure};\node[chOneNode](c)at(0,-2.6){Atoms / molecules};\draw[chOneArrow](a.east)-|(b.north);\node[font=\small,above]at(2.5,0){Top-down};\draw[chOneArrow](c.east)-|(b.south);\node[font=\small,below]at(2.5,-2.6){Bottom-up};\node[align=center,font=\small]at(1.5,-3.8){Approx. 1--100 nm\par $1\,\mathrm{nm}=10^{-9}\,\mathrm m$};\end{tikzpicture}}
+\newcommand{\chOneDrawEthics}{\chOneFlow{Check source}{Respect consent\par and permission}{Protect private data}{Publish responsibly}}
+\newcommand{\chOneDrawEconomy}{\chOneFlow{ICT + skills}{Faster service\par Lower waste}{Wider market\par New work}{Income / productivity\par With inclusion}}
+\newcommand{\chOneDrawLLMDetail}{\begin{tikzpicture}
+\node[chOneNode](p)at(0,0){Prompt + context};
+\node[chOneNode](e)at(3.6,0){Tokens + embeddings};
+\node[chOneNode](t)at(3.6,-2.3){Transformer\par Attention};
+\node[chOneNode](s)at(0,-2.3){Next-token scores};
+\node[chOneNode](d)at(0,-4.6){Decoding\par Select token};
+\node[chOneNode](o)at(3.6,-4.6){Response\par Stop};
+\draw[chOneArrow](p)--(e);\draw[chOneArrow](e)--(t);\draw[chOneArrow](t)--(s);\draw[chOneArrow](s)--(d);\draw[chOneArrow](d)--(o);
+\node[align=center,font=\small]at(1.8,-5.7){Repeat selection until stopping};
+\end{tikzpicture}}
+\newcommand{\chOneDrawNeuralDetail}{\begin{tikzpicture}
+\tikzset{chOneNeuron/.style={circle,draw=chOneTeal,fill=chOneTint,minimum size=.75cm,font=\small}}
+\foreach \y/\n in {0/1,-1.7/2}{\node[chOneNeuron](i\n)at(0,\y){$x_{\n}$};}
+\foreach \y/\n in {.65/1,-.85/2,-2.35/3}{\node[chOneNeuron](h\n)at(2.7,\y){$h_{\n}$};}
+\foreach \y/\n in {0/1,-1.7/2}{\node[chOneNeuron](o\n)at(5.4,\y){$y_{\n}$};}
+\foreach \i in {1,2}{\foreach \j in {1,2,3}{\draw[chOneArrow](i\i)--(h\j);}}
+\foreach \j in {1,2,3}{\foreach \k in {1,2}{\draw[chOneArrow](h\j)--(o\k);}}
+\node[font=\small]at(0,1.5){Input};\node[font=\small]at(2.7,1.5){Hidden};\node[font=\small]at(5.4,1.5){Output};
+\node[align=center,font=\small]at(2.7,-3.2){Learned weights on connections};
+\end{tikzpicture}}
+\newcommand{\chOneDrawAgentDetail}{\begin{tikzpicture}
+\node[chOneNode](g)at(0,0){Goal + constraints};
+\node[chOneNode](m)at(3.6,0){Model / controller};
+\node[chOneNode](t)at(3.6,-2.3){Tool action};
+\node[chOneNode](o)at(0,-2.3){Observation\par Tool result};
+\node[chOneNode](s)at(0,-4.6){State\par Progress};
+\node[chOneNode](v)at(3.6,-4.6){Verify / review\par Stop or continue};
+\draw[chOneArrow](g)--(m);\draw[chOneArrow](m)--(t);\draw[chOneArrow](t)--(o);\draw[chOneArrow](o)--(s);\draw[chOneArrow](s)--(v);
+\draw[chOneArrow](v.east)--++(.7,0)|-(m.east);
+\node[align=center,font=\small]at(1.8,-5.7){Continue with observed results};
+\end{tikzpicture}}

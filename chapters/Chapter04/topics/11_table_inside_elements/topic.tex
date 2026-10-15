@@ -1,57 +1,66 @@
-% Topic 16: Elements inside HTML Table
-\section{Table-এর ভিতরে List, Image, Hyperlink ও Nested Table}
+% Density revision 2026-10-04: answers below questions; compact related content.
+% Topic 16: Elements ভেতরে HTML সারণি
+\section{সারণির ঘরে তালিকা, ছবি, হাইপারলিংক ও নেস্টেড সারণি}
+
+% Composition pass 2026-10-04
+লাইব্রেরির তালিকায় একই বইয়ের নাম, প্রচ্ছদ, বিষয় ও বিস্তারিত লিংক একসঙ্গে দরকার।
+
+\chFourMotivation{সম্পর্কিত তথ্য একই ঘরে রাখা $\rightarrow$ ঘরের ভেতর HTML এলিমেন্ট $\rightarrow$ td/th-এর মধ্যে তালিকা, ছবি ও লিংক বসানো $\rightarrow$ বই বা পণ্যের সমন্বিত সারণি।}
+
 
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
+এই অংশ শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML table cell-এর ভিতরে list, image, hyperlink ও formatting tag ব্যবহার করতে।
-\item table cell-এর ভিতরে ordered list ও unordered list বসাতে।
-\item image hyperlink তৈরি করতে।
-\item Nested Table কী তা ব্যাখ্যা করতে এবং basic nested table code লিখতে।
-\item HSC CQ/practical question-এ table-এর ভিতরে multiple HTML element ব্যবহার করে code লিখতে।
+\item HTML সারণির ঘরের ভেতরে তালিকা, ছবি, হাইপারলিংক ও ফরম্যাটিং ট্যাগ ব্যবহার করতে।
+\item সারণির ঘরের ভেতরে ক্রমিক তালিকা ও অক্রমিক তালিকা বসাতে।
+\item ছবির হাইপারলিংক তৈরি করতে।
+\item নেস্টেড সারণি কী তা ব্যাখ্যা করতে এবং নেস্টেড সারণির সহজ কোড লিখতে।
+\item সৃজনশীল ও ব্যবহারিক প্রশ্নে সারণির ভেতরে একাধিক HTML উপাদান ব্যবহার করে কোড লিখতে।
 \end{itemize}
 \end{learningbox}
 
-HTML table-এর cell-এর ভিতরে শুধু text রাখা যায় না; সেখানে list, image, hyperlink, formatting tag, এমনকি আরেকটি table-ও রাখা যায়। তাই HSC ICT Chapter 4-এর practical/CQ অংশে table-এর ভিতরে list, image, link, underline text, rowspan/colspan--এসব একসাথে ব্যবহার করে code লিখতে বলা হয়।
 
-\subsection{Table Cell-এর ভিতরে কী কী রাখা যায়?}
 
-HTML table-এর \texttt{<td>} বা \texttt{<th>} cell-এর ভিতরে অনেক ধরনের HTML element রাখা যায়।
+একটি বইয়ের তালিকায় এক কলামে বইয়ের নাম এবং পাশের কলামে তার ছবি, বিষয়গুলোর তালিকা ও বিস্তারিত জানার লিংক দেখাতে চাই। HTML সারণির ঘরে কেবল লেখা নয়; তালিকা, ছবি, হাইপারলিংক ও আরেকটি সারণিও রাখা যায়। এবার আগের ট্যাগগুলো একসঙ্গে ব্যবহার করে এমন চিত্রের কোড লিখব। ঘর ও তার ভেতরের উপাদানের শুরু--শেষ সঠিকভাবে মিলিয়ে রাখাই এখানে প্রধান কাজ।
+
+\subsection{সারণির ঘরে রাখা যায় যেসব উপাদান}
+
+HTML সারণির \texttt{<td>} বা \texttt{<th>} ঘরের ভেতরে অনেক ধরনের HTML উপাদান রাখা যায়।
 
 \begin{center}
 \footnotesize
 \begin{tabular}{|p{0.30\textwidth}|p{0.52\textwidth}|}
 \hline
-\textbf{Cell-এর ভিতরে রাখা যায়} & \textbf{Example} \\
+\textbf{ঘরের ভেতরে রাখা যায়} & \textbf{উদাহরণ} \\
 \hline
-সাধারণ text & \texttt{<td>ICT</td>} \\
+সাধারণ লেখা & \texttt{<td>ICT</td>} \\
 \hline
-Bold/underline text & \texttt{<td><u>ICT</u></td>} \\
+বোল্ড/আন্ডারলাইন লেখা & \texttt{<td><u>ICT</u></td>} \\
 \hline
-Hyperlink & \texttt{<td><a href="board.html">Board</a></td>} \\
+হাইপারলিংক & \texttt{<td><a href="board.html">Board</a></td>} \\
 \hline
-Image & \texttt{<td><img src="book.jpg" width="100"></td>} \\
+ছবি & \texttt{<td><img src="book.jpg" alt="Book" width="100"></td>} \\
 \hline
-Ordered list & \texttt{<td><ol><li>Book</li></ol></td>} \\
+ক্রমিক তালিকা & \texttt{<td><ol><li>Book</li></ol></td>} \\
 \hline
-Unordered list & \texttt{<td><ul><li>Pen</li></ul></td>} \\
+অক্রমিক তালিকা & \texttt{<td><ul><li>Pen</li></ul></td>} \\
 \hline
-Nested table & \texttt{<td><table>...</table></td>} \\
+নেস্টেড সারণি & \texttt{<td><table>...</table></td>} \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{keypointbox}{মূল ধারণা}
-Table cell-এর ভিতরে content রাখার সময় content অবশ্যই \texttt{<td>} বা \texttt{<th>} tag-এর ভিতরে রাখতে হবে। \texttt{<table>} tag-এর ভিতরে সরাসরি \texttt{<ol>}, \texttt{<ul>}, \texttt{<img>} বা \texttt{<a>} লেখা ঠিক নয়।
+সারণির ঘরের ভেতরে বিষয়বস্তু রাখার সময় বিষয়বস্তু অবশ্যই \texttt{<td>} বা \texttt{<th>} ট্যাগের ভেতরে রাখতে হবে। \texttt{<table>} ট্যাগের ভেতরে সরাসরি \texttt{<ol>}, \texttt{<ul>}, \texttt{<img>} বা \texttt{<a>} লেখা ঠিক নয়।
 \end{keypointbox}
 
-\subsection{Table-এর ভিতরে List}
+\subsection{সারণির ঘরে তালিকা}
 
-কোনো table cell-এর ভিতরে ordered list বা unordered list বসাতে হলে \texttt{<td>} tag-এর ভিতরে \texttt{<ol>} বা \texttt{<ul>} লিখতে হয়।
+কোনো সারণির ঘরের ভেতরে ক্রমিক তালিকা বা অক্রমিক তালিকা বসাতে হলে \texttt{<td>} ট্যাগের ভেতরে \texttt{<ol>} বা \texttt{<ul>} লিখতে হয়।
 
-\subsubsection{সাধারণ Syntax}
+\subsubsection{লেখার সাধারণ রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <td>
   <ol>
@@ -62,9 +71,10 @@ Table cell-এর ভিতরে content রাখার সময় content অ�
 \end{verbatim}
 \end{examplebox}
 
+\Needspace{10\baselineskip}
 অথবা--
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <td>
   <ul>
@@ -75,9 +85,9 @@ Table cell-এর ভিতরে content রাখার সময় content অ�
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Example: Ordered List ও Unordered List Table}
+\subsection{উদাহরণ: ক্রমিক ও অক্রমিক তালিকা}
 
-\begin{examplebox}{Output ধারণা}
+\begin{examplebox}{ফলের ধারণা}
 \begin{center}
 \begin{tabular}{|p{0.36\textwidth}|p{0.36\textwidth}|}
 \hline
@@ -85,13 +95,15 @@ Table cell-এর ভিতরে content রাখার সময় content অ�
 \hline
 \textbf{Order List} & \textbf{Unorder List} \\
 \hline
-i. Book \newline ii. Paper \newline iii. Note Book & Marker \newline Ink \newline Pencil \\
+i. Book \newline ii. Paper \newline iii. Note Book & \rule{.6ex}{.6ex} Marker \newline \rule{.6ex}{.6ex} Ink \newline \rule{.6ex}{.6ex} Pencil \\
 \hline
 \end{tabular}
 \end{center}
 \end{examplebox}
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -104,8 +116,7 @@ i. Book \newline ii. Paper \newline iii. Note Book & Marker \newline Ink \newlin
       <th colspan="2" align="center">A & H Company Ltd.</th>
     </tr>
     <tr>
-      <th>Order List</th>
-      <th>Unorder List</th>
+      <th>Order List</th><th>Unorder List</th>
     </tr>
     <tr>
       <td>
@@ -127,142 +138,139 @@ i. Book \newline ii. Paper \newline iii. Note Book & Marker \newline Ink \newlin
 </body>
 </html>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\begin{boardbox}{Exam note}
-HSC board-style CQ practice-এ table-এর cell-এর ভিতরে ordered list ও unordered list বসিয়ে code লিখতে বলা হয়। তাই \texttt{<td>} tag-এর ভিতরে \texttt{<ol>} বা \texttt{<ul>} বসানোর নিয়ম ভালোভাবে practice করতে হবে।
+
+\begin{boardbox}{পরীক্ষার জন্য মনে রাখবে}
+ওপরের উদাহরণের Order List ও Unorder List দুটি দৃশ্যমান শিরোনাম। তালিকার সঠিক পরিভাষা Ordered List ও Unordered List। দুই ধরনের তালিকাই ঘরের ভেতরে শুরু ও শেষ হয়েছে।
 \end{boardbox}
 
-\subsection{Table-এর ভিতরে Hyperlink}
+\subsection{সারণির ঘরে হাইপারলিংক}
 
-Table cell-এর ভিতরে link বসাতে \texttt{<td>} tag-এর ভিতরে \texttt{<a href="">...</a>} লিখতে হয়।
+সারণির ঘরের ভেতরে লিংক বসাতে \texttt{<td>} ট্যাগের ভেতরে \texttt{<a href="">...</a>} লিখতে হয়।
 
-\subsubsection{Syntax}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\subsubsection{লেখার রূপ}
 
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <td>
   <a href="url">Link Text</a>
 </td>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\subsubsection{উদাহরণ}
 
-\subsubsection{Example}
-
-\begin{examplebox}{Code}
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <td>
   <a href="https://www.educationboard.gov.bd">Board</a>
 </td>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
 
-নতুন tab/window-এ link open করতে \texttt{target="\_blank"} attribute ব্যবহার করা হয়।
 
-\subsection{Example: Table Cell-এর ভিতরে Link}
+\texttt{target="\_blank"} দিলে নতুন ব্রাউজিং প্রসঙ্গে লিংক খোলার অনুরোধ করা হয়। ব্রাউজার ও ব্যবহারকারীর সেটিং অনুযায়ী এটি নতুন ট্যাব বা উইন্ডো হতে পারে। বাহ্যিক লিংকে এটি দেওয়া বাধ্যতামূলক নয়; অ্যাট্রিবিউট না দিলে সাধারণত বর্তমান ট্যাবেই পেজ খোলে।
+\end{minipage}\par
+\subsection{উদাহরণ: বিষয়ের পাশে লিংক}
 
-\begin{examplebox}{Output ধারণা}
+\begin{examplebox}{ফলের ধারণা}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Subject} & \textbf{Board} \\
 \hline
-ICT & Board \\
+ICT & \underline{Board} \\
 \hline
 \end{tabular}
 \end{center}
-Board text-এ click করলে নির্দিষ্ট website open হবে।
+Board লেখাটি লিংক; এতে ক্লিক করলে \texttt{href}-এ দেওয়া ঠিকানায় যাওয়া যায়।
 \end{examplebox}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Link in Table</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th>Subject</th>
-      <th>Board</th>
-    </tr>
-    <tr>
-      <td>ICT</td>
-      <td>
-        <a href="https://www.educationboard.gov.bd" target="_blank">
-          Board
-        </a>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Subject</th>
+    <th>Board</th>
+  </tr>
+  <tr>
+    <td>ICT</td>
+    <td>
+      <a href="https://www.educationboard.gov.bd" target="_blank">
+        Board
+      </a>
+    </td>
+  </tr>
+</table>
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Table-এর ভিতরে Image}
+\subsection{সারণির ঘরে ছবি}
 
-Table cell-এর ভিতরে image বসাতে \texttt{<td>} tag-এর ভিতরে \texttt{<img>} tag লিখতে হয়।
+সারণির ঘরের ভেতরে ছবি বসাতে \texttt{<td>} ট্যাগের ভেতরে \texttt{<img>} ট্যাগ লিখতে হয়।
 
-\subsubsection{Syntax}
+\subsubsection{লেখার রূপ}
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <td>
   <img src="image.jpg" alt="Image" width="100" height="80">
 </td>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এই উদাহরণে \texttt{src} ছবির ঠিকানা এবং \texttt{alt} বিকল্প লেখা জানায়। \texttt{width} ও \texttt{height} ছবির প্রদর্শিত প্রস্থ ও উচ্চতা নির্ধারণ করে।
+\end{minipage}\par
+\subsection{উদাহরণ: বইয়ের ছবি}
 
-এখানে \texttt{src} দ্বারা ছবির source নির্ধারণ করা হয়, \texttt{alt} দ্বারা বিকল্প text দেওয়া হয় এবং \texttt{width}, \texttt{height} দ্বারা ছবির প্রস্থ ও উচ্চতা নির্ধারণ করা হয়।
-
-\subsection{Example: Book Image in Table}
-
-\begin{examplebox}{Output ধারণা}
+\begin{examplebox}{ফলের ধারণা}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Book} & \textbf{Image} \\
 \hline
-ICT Book & book.jpg \\
+ICT Book & \fbox{\parbox[c][15mm][c]{24mm}{\centering ছবির স্থান\\\texttt{book.jpg}}} \\
 \hline
 \end{tabular}
 \end{center}
 \end{examplebox}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Image in Table</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th>Book</th>
-      <th>Image</th>
-    </tr>
-    <tr>
-      <td>ICT Book</td>
-      <td>
-        <img src="book.jpg" alt="ICT Book" width="100" height="80">
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Book</th>
+    <th>Image</th>
+  </tr>
+  <tr>
+    <td>ICT Book</td>
+    <td>
+      <img src="book.jpg" alt="ICT Book" width="100" height="80">
+    </td>
+  </tr>
+</table>
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Table-এর ভিতরে Image Hyperlink}
+এখানে ছবির জায়গাটি বোঝানো হয়েছে। একই ফোল্ডারে \texttt{book.jpg} থাকলে ব্রাউজারে সেই ছবি দেখা যাবে; ফাইলের নাম দেখানোর নির্দেশ এটি নয়।
 
-যদি table cell-এর ভিতরের image-এ click করলে কোনো page বা website open হয়, তাহলে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হবে।
+\subsection{সারণির ঘরে ছবির হাইপারলিংক}
 
-\subsubsection{Syntax}
+সারণির ঘরের ছবিতে ক্লিক করে কোনো পেজ বা ওয়েবসাইটে যেতে চাইলে \texttt{<a>} ট্যাগের ভেতরে \texttt{<img>} ট্যাগ বসাতে হবে।
 
-\begin{examplebox}{Code}
+\subsubsection{লেখার রূপ}
+
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <td>
   <a href="url">
@@ -272,77 +280,59 @@ ICT Book & book.jpg \\
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Example: Book Image-এ Click করলে Website Open}
+\subsection{উদাহরণ: বইয়ের ছবিতে ক্লিক করে গন্তব্যে যাওয়া}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Image Link in Table</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th>Book</th>
-      <th>Image Link</th>
-    </tr>
-    <tr>
-      <td>ICT Book</td>
-      <td>
-        <a href="https://www.book.com" target="_blank">
-          <img src="book.jpg" alt="ICT Book" width="100" height="80">
-        </a>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Book</th>
+    <th>Image Link</th>
+  </tr>
+  <tr>
+    <td>ICT Book</td>
+    <td>
+      <a href="https://www.book.com" target="_blank">
+        <img src="book.jpg" alt="ICT Book" width="100" height="80">
+      </a>
+    </td>
+  </tr>
+</table>
 \end{verbatim}
 \end{examplebox}
 
 \begin{keypointbox}{মনে রাখবে}
-Clickable text তৈরি করতে \texttt{<a>} tag-এর ভিতরে text লিখতে হয়। Clickable image তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag লিখতে হয়।
+ক্লিক করা যায় এমন লেখা তৈরি করতে \texttt{<a>} ট্যাগের ভেতরে লেখা লিখতে হয়। ক্লিক করা যায় এমন ছবি তৈরি করতে \texttt{<a>} ট্যাগের ভেতরে \texttt{<img>} ট্যাগ লিখতে হয়।
 \end{keypointbox}
 
-\subsection{Table-এর ভিতরে List + Hyperlink একসাথে}
+\subsection{তালিকার ভেতরে লিংক: ঘরেও প্রয়োগ করা যায়}
 
-List item-এর ভিতরেও link বসানো যায়। যেমন Fruits item-এ click করলে কোনো website নতুন tab-এ open হবে।
+তালিকার উপাদানের ভেতরেও লিংক বসানো যায়। নিচের স্বতন্ত্র তালিকায় Fruits একটি লিংক এবং তার অধীনে Ripe ও Dried উপতালিকা আছে। এখানে \texttt{start="4"} দেওয়ায় উপতালিকার রোমান ক্রম iv ও v থেকে শুরু হয়। এই উদাহরণে সারণি নেই; সারণির ঘরে চাইলে পুরো \texttt{<ul>...</ul>} অংশটি \texttt{<td>...</td>}-এর ভেতরে বসাবে।
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>List and Link</title>
-</head>
-<body>
-  <ul type="circle">
-    <li>Vegetables</li>
-    <li>
-      <a href="https://www.fruitbox.com" target="_blank">Fruits</a>
-      <ol type="i" start="4">
-        <li>Ripe</li>
-        <li>Dried</li>
-      </ol>
-    </li>
-  </ul>
-</body>
-</html>
+<ul type="circle">
+  <li>Vegetables</li>
+  <li>
+    <a href="https://www.fruitbox.com" target="_blank">Fruits</a>
+    <ol type="i" start="4">
+      <li>Ripe</li>
+      <li>Dried</li>
+    </ol>
+  </li>
+</ul>
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Nested Table কী?}
+\subsection{নেস্টেড সারণির প্রয়োগ}
 
-\begin{definitionbox}{Nested Table}
-HTML document-এ একটি table-এর \texttt{<td>} বা \texttt{<th>} cell-এর ভিতরে আরেকটি table তৈরি করা হলে তাকে Nested Table বলে।
-\end{definitionbox}
+একটি সারণির ঘরের ভেতরে থাকা আরেকটি সারণিকে নেস্টেড সারণি (Nested Table) বলে। নিচে একজন শিক্ষার্থীর Marks ঘরে বিষয় ও নম্বরের একটি উপসারণি রাখা হয়েছে।
 
-Nested table technically করা যায়। তবে বেশি nested table ব্যবহার করলে code জটিল হয় এবং accessibility ও responsive design-এ সমস্যা হতে পারে। তাই প্রয়োজন ছাড়া nested table ব্যবহার করা উচিত নয়।
+নেস্টেড সারণিতে বাইরের ঘর বন্ধ করার আগে ভেতরের পুরো সারণি বন্ধ করতে হয়। অপ্রয়োজনে বহু স্তরের সারণি করলে কোড পড়া কঠিন হয়। ছোট পর্দায় বিন্যাস ও সহায়ক প্রযুক্তিতে তথ্য বোঝার সমস্যাও হতে পারে। তথ্যের উপসারণি প্রয়োজন হলেই নেস্টেড সারণি ব্যবহার করা উচিত।
 
-\subsection{Nested Table-এর Syntax}
+\subsection{নেস্টেড সারণি লেখার রূপ}
 
-\begin{examplebox}{Code}
+\begin{examplebox}{কোড}
 \begin{verbatim}
 <table border="1">
   <tr>
@@ -361,79 +351,78 @@ Nested table technically করা যায়। তবে বেশি nested ta
 \end{verbatim}
 \end{examplebox}
 
-\subsection{Example: Student Info with Nested Marks Table}
+\subsection{উদাহরণ: শিক্ষার্থীর ঘরে নম্বরের সারণি}
 
-\begin{examplebox}{Output ধারণা}
+\begin{examplebox}{ফলের ধারণা}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Student} & \textbf{Marks} \\
 \hline
-Rafi & Bangla 85 \newline English 90 \\
+Rafi & \begin{tabular}{|c|c|}\hline
+\textbf{Subject} & \textbf{Mark}\\\hline
+Bangla & 85\\\hline
+English & 90\\\hline
+\end{tabular} \\
 \hline
 \end{tabular}
 \end{center}
 \end{examplebox}
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Nested Table Example</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <th>Student</th>
-      <th>Marks</th>
-    </tr>
-    <tr>
-      <td>Rafi</td>
-      <td>
-        <table border="1" cellspacing="0" cellpadding="5">
-          <tr>
-            <th>Subject</th>
-            <th>Mark</th>
-          </tr>
-          <tr>
-            <td>Bangla</td>
-            <td>85</td>
-          </tr>
-          <tr>
-            <td>English</td>
-            <td>90</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Student</th><th>Marks</th>
+  </tr>
+  <tr>
+    <td>Rafi</td>
+    <td>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>Subject</th><th>Mark</th>
+        </tr>
+        <tr>
+          <td>Bangla</td><td>85</td>
+        </tr>
+        <tr>
+          <td>English</td><td>90</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 \end{verbatim}
-\end{examplebox}
+\end{multicols}
 
-\subsection{Nested Table ব্যবহারে সতর্কতা}
+
+\Needspace{11\baselineskip}
+\subsection{নেস্টেড সারণিতে যে নিয়মগুলো দেখবে}
 
 \begin{mistakebox}{সতর্কতা}
 \begin{itemize}
-\item Nested table code পড়া কঠিন হয়।
-\item ভুল closing tag দিলে layout নষ্ট হয়।
-\item accessibility সমস্যা হতে পারে।
-\item mobile responsive design-এ সমস্যা হতে পারে।
-\item শুধুমাত্র tabular data-এর ভিতরে sub-table দরকার হলে ব্যবহার করা উচিত।
+\item অনেক স্তরের নেস্টেড সারণির কোড পড়া কঠিন হয়।
+\item ভুল সমাপ্তি ট্যাগ দিলে বিন্যাস নষ্ট হয়।
+\item সহায়ক প্রযুক্তিতে ব্যবহারের সমস্যা হতে পারে।
+\item ছোট পর্দায় বিন্যাসে সমস্যা হতে পারে।
+\item শুধুমাত্র সারণিভিত্তিক তথ্যের ভেতরে উপসারণি দরকার হলে ব্যবহার করা উচিত।
 \end{itemize}
 \end{mistakebox}
 
-\begin{boardbox}{Book note}
-HSC exam-এর জন্য nested table জানা ভালো, কিন্তু professional web design-এ layout তৈরির জন্য table ব্যবহার না করে CSS layout ব্যবহার করা উত্তম।
+\begin{boardbox}{ব্যবহারের ক্ষেত্র}
+নেস্টেড সারণি দিয়ে সারণির ভেতরে তথ্যের উপসারণি দেখানো যায়। পুরো ওয়েবপেজের বিন্যাস তৈরির জন্য আধুনিক ওয়েব ডিজাইনে CSS ব্যবহার করবে।
 \end{boardbox}
 
-\subsection{Table-এর ভিতরে Multiple Elements}
+\subsection{একটি ঘরে একাধিক উপাদান}
 
-একটি cell-এর ভিতরে একাধিক element একসাথে থাকতে পারে।
+একটি ঘরের ভেতরে একাধিক উপাদান একসঙ্গে থাকতে পারে।
 
-\begin{examplebox}{Code}
+% Split revision: code and its explanation share one row.
+\par\noindent
+\begin{minipage}[t]{.54\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}কোড}\par
 \begin{verbatim}
 <td>
   <h3>ICT Book</h3>
@@ -442,203 +431,357 @@ HSC exam-এর জন্য nested table জানা ভালো, কিন�
   <a href="book.html">Details</a>
 </td>
 \end{verbatim}
-\end{examplebox}
+\par\smallskip
+\end{minipage}\hfill
+\begin{minipage}[t]{.42\linewidth}\vspace{0pt}\small
+\textbf{\color{chFourTeal}ব্যাখ্যা}\par
+এখানে একই ঘরের ভেতরে শিরোনাম, ছবি, অনুচ্ছেদ ও লিংক আছে।
+\end{minipage}\par
+\subsection{পূর্ণ অনুশীলন: সারণি, তালিকা, ছবি ও লিংক}
 
-এখানে একই cell-এর ভিতরে heading, image, paragraph ও link আছে।
-
-\subsection{Full Practice Example: Table + List + Image + Link}
-
-\begin{examplebox}{Output ধারণা}
+\begin{examplebox}{ফলের ধারণা}
 \begin{center}
-\begin{tabular}{|c|c|}
+\textbf{ICT Learning Materials}\par\smallskip
+\begin{tabular}{|c|l|}
 \hline
 \textbf{Item} & \textbf{Details} \\
 \hline
-Book & image + link \\
+Book & \begin{tabular}{@{}c@{}}\fbox{\parbox[c][15mm][c]{24mm}{\centering ছবির স্থান\\\texttt{book.jpg}}}\\\underline{Buy Book}\end{tabular} \\
 \hline
-Subjects & ordered list \\
+Subjects & \begin{tabular}{@{}l@{}}1. Web Design\\2. HTML\\3. Database\end{tabular} \\
 \hline
 \end{tabular}
 \end{center}
 \end{examplebox}
 
-\begin{examplebox}{Code}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
 \begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Table with Multiple Elements</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <caption>ICT Learning Materials</caption>
-    <tr>
-      <th>Item</th>
-      <th>Details</th>
-    </tr>
-    <tr>
-      <td>Book</td>
-      <td>
-        <a href="https://www.book.com" target="_blank">
-          <img src="book.jpg" alt="ICT Book" width="100" height="80">
-        </a>
-        <br>
-        <a href="https://www.book.com" target="_blank">Buy Book</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Subjects</td>
-      <td>
-        <ol type="1">
-          <li>Web Design</li>
-          <li>HTML</li>
-          <li>Database</li>
-        </ol>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>ICT Learning Materials</caption>
+  <tr>
+    <th>Item</th><th>Details</th>
+  </tr>
+  <tr>
+    <td>Book</td>
+    <td>
+      <a href="https://www.book.com" target="_blank">
+        <img src="book.jpg" alt="ICT Book" width="100" height="80">
+      </a>
+      <br>
+      <a href="https://www.book.com" target="_blank">Buy Book</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Subjects</td>
+    <td>
+      <ol type="1">
+        <li>Web Design</li>
+        <li>HTML</li>
+        <li>Database</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+\end{verbatim}
+\end{multicols}
+
+
+ওপরের পূর্ণ অনুশীলনে ছবির জায়গা ও Buy Book লিংক দেখানো হয়েছে। ছবিতে বা লেখায় ক্লিক করলে কোডের গন্তব্যে যাওয়া যায়। পরের সৃজনশীল অনুশীলনটি স্বতন্ত্র; সেখানে Subjects-এর তালিকা HTML, CSS ও JavaScript। বাহ্যিক ঠিকানাগুলো লিংকের গঠন শেখানোর উদাহরণ; প্রয়োজনমতো বৈধ গন্তব্য ব্যবহার করবে।
+
+\input{chapters/Chapter04/topics/11_table_inside_elements/clarity}
+\subsection{প্রয়োগ: ঘরের লেখা, লিংক, ছবি ও তালিকা}
+
+টেবিলের ঘরের ভিতরে লেখা ছাড়াও অন্য HTML এলিমেন্ট রাখা যায়। এখানে ছবি, তালিকা, ফর্মের নিয়ন্ত্রণ, আড়াআড়ি রেখা, হাইপারলিংক এবং আরেকটি টেবিল রাখার উদাহরণ আছে। ফলে ফলাফলের সঙ্গে শিক্ষার্থীর ছবি, পণ্যের তালিকার সঙ্গে কেনার লিংক এবং কোর্স পরিকল্পনার সঙ্গে ক্রমযুক্ত তালিকা দেখানো যায়। বিস্তারিত তথ্যের জন্য কোনো ঘরে আরেকটি টেবিলও রাখা যায়।
+
+\begin{keypointbox}{ঘরের ভিতরে বিষয়বস্তু রাখার নিয়ম}
+ঘরের ভিতরে বিষয়বস্তু রাখতে হলে বিষয়বস্তু অবশ্যই \texttt{<td>} বা \texttt{<th>} ট্যাগের শুরুর ও শেষের ট্যাগের মাঝখানে লিখতে হবে। যেমন ছবি বসাতে \texttt{<td><img src="photo.jpg"></td>} এবং লিংক বসাতে \texttt{<td><a href="page.html">Open</a></td>} লিখতে হবে।
+\end{keypointbox}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.50\textwidth}|p{0.18\textwidth}|}
+\hline
+\textbf{বিষয়বস্তুর ধরন} & \textbf{ঘরের ভিতরে কোডের উদাহরণ} & \textbf{ট্যাগ} \\
+\hline
+লেখা & \texttt{<td>Rafi</td>} & \texttt{<td>} \\
+\hline
+ছবি & \texttt{<td><img src="a.jpg"></td>} & \texttt{<img>} \\
+\hline
+লিংক & \texttt{<td><a href="a.html">Open</a></td>} & \texttt{<a>} \\
+\hline
+তালিকা & \texttt{<td><ol>...</ol></td>} & \texttt{<ol>}, \texttt{<li>} \\
+\hline
+আড়াআড়ি রেখা & \texttt{<td><hr></td>} & \texttt{<hr>} \\
+\hline
+ফর্মের নিয়ন্ত্রণ & \texttt{<td><input type="text"></td>} & \texttt{<input>} \\
+\hline
+ভেতরের টেবিল & \texttt{<td><table>...</table></td>} & \texttt{<table>} \\
+\hline
+\end{tabular}
+\end{center}
+
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+\subsubsection{লেখার বিন্যাস}
+\begin{chFourWholeExample}{কোড}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <td><b>ICT</b></td>
+    <td><u>HSC</u></td>
+    <td><i>Book</i></td>
+  </tr>
+</table>
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+\subsubsection{হাইপারলিংক}
+\begin{chFourWholeExample}{কোড}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <td>
+      <a href="https://www.educationboard.gov.bd">Education Board</a>
+    </td>
+  </tr>
+</table>
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\par\smallskip
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+\subsubsection{ছবি}
+\begin{chFourWholeExample}{কোড}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <td>
+      <img src="photo.jpg" width="100" height="80" alt="Photo">
+    </td>
+  </tr>
+</table>
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\small
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{chapters/Chapter04/topics/images/3d_content_inside_cell.png}
+\captionof{figure}{টেবিলের ঘরের ভিতরে লেখা, লিংক, ছবি ও তালিকা}\par\smallskip
+\end{minipage}\par\smallskip
+\subsubsection{তালিকা}
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.52\linewidth}\vspace{0pt}\small
+\begin{chFourWholeExample}{কোড}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <td>
+      <ol>
+        <li>Dhaka</li>
+        <li>Dinajpur</li>
+        <li>Rangpur</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\hfill
+\begin{minipage}[t]{.44\linewidth}\vspace{0pt}\small
+\noindent{\color{chFourTeal}\bfseries চিত্র ব্যাখ্যা:}
+চিত্রে টেবিলের ঘরের ভিতরে চার ধরনের বিষয়বস্তু দেখানো হয়েছে: সাধারণ লেখা, হাইপারলিংক, ছবি এবং ক্রমযুক্ত তালিকা। তালিকা থাকা ঘরে \texttt{<ol>} ও \texttt{<li>} ট্যাগ ব্যবহার করা হয়েছে।
+
+\begin{keypointbox}{চিত্র দেখে কোড লেখার ধাপ}
+যে ঘরের ভিতরে তালিকা থাকবে, সেখানে প্রথমে \texttt{<td>} লিখবে। তারপর ঘরের ভিতরে \texttt{<ol>} বা \texttt{<ul>} ট্যাগ লিখে তালিকার প্রতিটি বিষয় \texttt{<li>} দিয়ে লিখবে।
+\end{keypointbox}
+\end{minipage}\par\smallskip
+
+\subsection{প্রয়োগ: Parent Cell-এর পাশে উপসারণি}
+
+% Image layout revision: related content in two fixed columns.
+\par\noindent
+\begin{minipage}[t]{.52\linewidth}\vspace{0pt}\small
+\begin{examplebox}{কোড}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td>Parent Cell</td>
+    <td>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>Child</th><th>Table</th>
+        </tr>
+        <tr>
+          <td>A</td><td>B</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 \end{verbatim}
 \end{examplebox}
+\end{minipage}\hfill
+\begin{minipage}[t]{.44\linewidth}\vspace{0pt}\small
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{chapters/Chapter04/topics/images/3d_nested_table.png}
+\captionof{figure}{টেবিলের ভিতরে ভেতরের টেবিল}\par\smallskip
 
-\subsection{Board/Exam Focus}
+\textbf{\color{chFourTeal}চিত্র ব্যাখ্যা:} চিত্রে বাইরের টেবিলের একটি ঘরের ভিতরে ভেতরের টেবিল বসানো হয়েছে। এটিকে ভেতরের টেবিল বা টেবিলের ভিতরে টেবিল বলা হয়।
+\end{minipage}\par\smallskip
 
-\begin{boardbox}{বেশি গুরুত্বপূর্ণ}
-\begin{itemize}
-\item Table-এর cell-এর ভিতরে ordered/unordered list বসানো।
-\item Table-এর cell-এর ভিতরে hyperlink তৈরি করা।
-\item Table-এর cell-এর ভিতরে image বসানো।
-\item Image-কে link হিসেবে ব্যবহার করা।
-\item Table-এর cell-এর ভিতরে underline/bold formatting ব্যবহার করা।
-\item \texttt{rowspan}, \texttt{colspan}, \texttt{align}, \texttt{target}, \texttt{src}, \texttt{width}, \texttt{height} একসাথে ব্যবহার করা।
-\item Figure দেখে HTML code লেখা।
-\end{itemize}
-\end{boardbox}
 
-\subsection{Exam-style Short Answer}
+\begin{keypointbox}{ভেতরের টেবিল লেখার সতর্কতা}
+ভেতরের টেবিল লিখলে বাইরের টেবিল ও ভেতরের টেবিলের ট্যাগ আলাদা করে শেষ করতে হবে। প্রথমে ভেতরের টেবিলের \texttt{</table>} শেষ করবে, তারপর বাইরের টেবিলের ঘরের \texttt{</td>} এবং শেষে বাইরের টেবিল শেষ করবে। ভুল জায়গায় \texttt{</table>} দিলে প্রদর্শিত টেবিলের বিন্যাস ভেঙে যায়।
+\end{keypointbox}
 
-\begin{enumerate}
-\item \textbf{Table-এর cell-এর ভিতরে list কীভাবে লেখা যায়?}\\
-উত্তর: Table-এর \texttt{<td>} বা \texttt{<th>} tag-এর ভিতরে \texttt{<ol>} অথবা \texttt{<ul>} tag ব্যবহার করে list লেখা যায়। প্রতিটি item লেখার জন্য \texttt{<li>} tag ব্যবহার করতে হয়।
 
-\item \textbf{Table-এর ভিতরে hyperlink কীভাবে তৈরি করা যায়?}\\
-উত্তর: Table cell-এর ভিতরে \texttt{<a href="url">Link Text</a>} লিখে hyperlink তৈরি করা যায়। যেমন: \texttt{<td><a href="board.html">Board</a></td>}।
 
-\item \textbf{Table-এর ভিতরে image কীভাবে বসানো যায়?}\\
-উত্তর: Table cell-এর ভিতরে \texttt{<img>} tag ব্যবহার করে image বসানো যায়। যেমন: \texttt{<td><img src="book.jpg" alt="Book" width="100"></td>}।
+\subsection{সংক্ষিপ্ত অনুশীলন}
 
-\item \textbf{Nested Table কী?}\\
-উত্তর: একটি table-এর \texttt{<td>} বা \texttt{<th>} cell-এর ভিতরে আরেকটি সম্পূর্ণ table তৈরি করা হলে তাকে Nested Table বলে।
+% Each question keeps its answer beneath it in the same column.
+\begin{multicols}{2}
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{সারণির ঘরের ভেতরে তালিকা কীভাবে লেখা যায়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{সারণির ভেতরে হাইপারলিংক কীভাবে তৈরি করা যায়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{সারণির ভেতরে ছবি কীভাবে বসানো যায়?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{নেস্টেড সারণি কী?}}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\chFourReviewQuestion{\textbf{ছবির হাইপারলিংক কীভাবে তৈরি করা যায়?}}
+\end{minipage}\par\smallskip
+\end{multicols}
 
-\item \textbf{Image hyperlink কীভাবে তৈরি করা যায়?}\\
-উত্তর: Image hyperlink তৈরি করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাতে হয়। যেমন: \texttt{<a href="index.html"><img src="logo.png" alt="Logo"></a>}।
+\Needspace{10\baselineskip}
+\subsection{বহুনির্বাচনি অনুশীলন}
+
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+সারণির ঘরের ভেতরে ছবি বসাতে কোন ট্যাগ ব্যবহার হয়?
+\par ক) \texttt{<a>}
+\par খ) \texttt{<img>}
+\par গ) \texttt{<ol>}
+\par ঘ) \texttt{<tr>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+সারণির ঘরের ভেতরে লিংক তৈরি করতে কোন ট্যাগ ব্যবহার হয়?
+\par ক) \texttt{<a>}
+\par খ) \texttt{<td>}
+\par গ) \texttt{<br>}
+\par ঘ) \texttt{<hr>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+সারণির ঘরের ভেতরে ক্রমিক তালিকা বসাতে কোন ট্যাগ ব্যবহার হবে?
+\par ক) \texttt{<ul>}
+\par খ) \texttt{<ol>}
+\par গ) \texttt{<img>}
+\par ঘ) \texttt{<caption>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ছবির হাইপারলিংক তৈরির সঠিক গঠন কোনটি?
+\par ক) \texttt{<img href="home.html">}
+\par খ) \texttt{<a href="home.html"><img src="logo.png" alt="Logo"></a>}
+\par গ) \texttt{<a src="logo.png">Home</a>}
+\par ঘ) \texttt{<table img="logo.png">}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+একটি সারণির ঘরের ভেতরে আরেকটি সারণি থাকলে তাকে কী বলে?
+\par ক) Empty Table
+\par খ) Nested Table
+\par গ) Ordered Table
+\par ঘ) External Table
+\end{minipage}
 \end{enumerate}
+\end{multicols}
 
-\subsection{Practice MCQ}
+\chFourMCQAnswer{১-খ, ২-ক, ৩-খ, ৪-খ, ৫-খ}
 
-\begin{enumerate}
-\item Table cell-এর ভিতরে image বসাতে কোন tag ব্যবহার হয়?\\
-ক) \texttt{<a>} \quad খ) \texttt{<img>} \quad গ) \texttt{<ol>} \quad ঘ) \texttt{<tr>}
+\subsection{প্রয়োগ: একটি ছকে বইয়ের ছবি, লিংক ও বিষয়}
 
-\item Table cell-এর ভিতরে link তৈরি করতে কোন tag ব্যবহার হয়?\\
-ক) \texttt{<a>} \quad খ) \texttt{<td>} \quad গ) \texttt{<br>} \quad ঘ) \texttt{<hr>}
 
-\item Table cell-এর ভিতরে ordered list বসাতে কোন tag ব্যবহার হবে?\\
-ক) \texttt{<ul>} \quad খ) \texttt{<ol>} \quad গ) \texttt{<img>} \quad ঘ) \texttt{<caption>}
+\Needspace{6\baselineskip}
+\par\noindent{\color{chFourTeal}\bfseries\small কোড: বাম কলাম শেষে ডান কলাম পড়বে}\par
+\begin{multicols}{2}
+\begin{verbatim}
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>ICT Learning Materials</caption>
+  <tr>
+    <th>Item</th><th>Details</th>
+  </tr>
+  <tr>
+    <td>Book</td>
+    <td>
+      <a href="book.html">
+        <img src="book.jpg" alt="ICT Book" width="100" height="80">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>Subjects</td>
+    <td>
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+\end{verbatim}
+\end{multicols}
 
-\item Image hyperlink তৈরির সঠিক structure কোনটি?\\
-ক) \texttt{<img href="home.html">}\\
-খ) \texttt{<a href="home.html"><img src="logo.png" alt="Logo"></a>}\\
-গ) \texttt{<a src="logo.png">Home</a>}\\
-ঘ) \texttt{<table img="logo.png">}
 
-\item একটি table-এর cell-এর ভিতরে আরেকটি table থাকলে তাকে কী বলে?\\
-ক) Empty Table \quad খ) Nested Table \quad গ) Ordered Table \quad ঘ) External Table
-\end{enumerate}
 
-\begin{boardbox}{MCQ Answer Key}
-১-খ, ২-ক, ৩-খ, ৪-খ, ৫-খ
-\end{boardbox}
-
-\subsection{CQ Practice}
+\subsection{সৃজনশীল অনুশীলন}
 
 \begin{practicebox}
-\textbf{উদ্দীপক:} একটি webpage-এ ``ICT Learning Materials'' নামে একটি table তৈরি করতে হবে। Table-এ দুইটি column থাকবে: Item ও Details। Book row-এর Details cell-এ \texttt{book.jpg} image থাকবে এবং image-এ click করলে \texttt{book.html} page open হবে। Subjects row-এর Details cell-এ ordered list হিসেবে HTML, CSS, JavaScript থাকবে।
+\textbf{উদ্দীপক:} একটি ওয়েবপেজে ``ICT Learning Materials'' নামে একটি সারণি তৈরি করতে হবে। সারণিতে দুইটি কলাম থাকবে: Item ও Details। Book সারির Details ঘরে \texttt{book.jpg} ছবি থাকবে এবং ছবিতে ক্লিক করলে \texttt{book.html} পেজ খোলা হবে। Subjects সারির Details ঘরে ক্রমিক তালিকা হিসেবে HTML, CSS, JavaScript থাকবে।
 
 \textbf{প্রশ্ন}\\
-ক. Nested Table কী?\\
-খ. Image hyperlink তৈরির নিয়ম ব্যাখ্যা কর।\\
-গ. উদ্দীপকের জন্য HTML code লেখ।\\
-ঘ. Table-এর cell-এর ভিতরে list, image ও hyperlink ব্যবহারের সুবিধা বিশ্লেষণ কর।
+ক. নেস্টেড সারণি কী?\\
+খ. ছবির হাইপারলিংক তৈরির নিয়ম ব্যাখ্যা কর।\\
+গ. উদ্দীপকের জন্য HTML কোড লেখ।\\
+ঘ. সারণির ঘরের ভেতরে তালিকা, ছবি ও হাইপারলিংক ব্যবহারের সুবিধা বিশ্লেষণ কর।
 \end{practicebox}
 
-\subsubsection{গ. Code}
-
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ICT Learning Materials</title>
-</head>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <caption>ICT Learning Materials</caption>
-    <tr>
-      <th>Item</th>
-      <th>Details</th>
-    </tr>
-    <tr>
-      <td>Book</td>
-      <td>
-        <a href="book.html">
-          <img src="book.jpg" alt="ICT Book" width="100" height="80">
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>Subjects</td>
-      <td>
-        <ol>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ol>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
-
-\subsubsection{ঘ. বিশ্লেষণ}
-
-Table-এর cell-এর ভিতরে list ব্যবহার করলে তথ্য category-wise সুন্দরভাবে সাজানো যায়। Image ব্যবহার করলে table visual ও আকর্ষণীয় হয়। Hyperlink ব্যবহার করলে table থেকেই অন্য page বা resource-এ যাওয়া যায়। তাই table-এর ভিতরে list, image ও hyperlink ব্যবহার করলে webpage আরও তথ্যবহুল, ব্যবহারবান্ধব ও practical হয়।
-
-\subsection{Common Mistake}
+\subsection{সাধারণ ভুল}
 
 \begin{mistakebox}{সাধারণ ভুল}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item \texttt{<td>} tag-এর বাইরে list লিখে ফেলা।
-\item \texttt{<td>} close করার আগে \texttt{<ol>} বা \texttt{<ul>} ঠিকভাবে close না করা।
-\item Image link করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} না রাখা।
-\item \texttt{href} ও \texttt{src} attribute গুলিয়ে ফেলা।
-\item \texttt{<table>} tag-এর ভিতরে সরাসরি \texttt{<ol>} লিখে ফেলা; cell দরকার।
-\item Nested table-এর closing tag ভুল করা।
-\item Table cell-এর ভিতরে content বেশি দিলে layout অগোছালো করা।
-\item External link-এ \texttt{target="\_blank"} লিখতে ভুল করা।
+\item \texttt{<td>} ট্যাগের বাইরে তালিকা লিখে ফেলা।
+\item \texttt{<td>} শেষ করার আগে \texttt{<ol>} বা \texttt{<ul>} ঠিকভাবে শেষ না করা।
+\item ছবির লিংক করতে \texttt{<a>} ট্যাগের ভেতরে \texttt{<img>} না রাখা।
+\item \texttt{href} ও \texttt{src} অ্যাট্রিবিউট গুলিয়ে ফেলা।
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item \texttt{<table>} ট্যাগের ভেতরে সরাসরি \texttt{<ol>} লিখে ফেলা; ঘর দরকার।
+\item নেস্টেড সারণির সমাপ্তি ট্যাগ ভুল করা।
+\item সারণির ঘরের ভেতরে বিষয়বস্তু বেশি দিলে বিন্যাস অগোছালো করা।
+\item সব বাহ্যিক লিংকে \texttt{target="\_blank"} বাধ্যতামূলক ভাবা; এটি নতুন ট্যাব/উইন্ডোতে খোলার প্রয়োজন অনুযায়ী দেওয়া হয়।
+\end{itemize}
+\end{minipage}\par
+
 \end{mistakebox}
 
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-Table cell-এর ভিতরে list, image, hyperlink ও formatting tag রাখা যায়। List বসাতে \texttt{<td>}-এর ভিতরে \texttt{<ol>} বা \texttt{<ul>} লিখবে। Image বসাতে \texttt{<td>}-এর ভিতরে \texttt{<img>} লিখবে। Link বসাতে \texttt{<td>}-এর ভিতরে \texttt{<a href="">...</a>} লিখবে। Image link করতে \texttt{<a>} tag-এর ভিতরে \texttt{<img>} tag বসাবে। Nested table হলো table-এর cell-এর ভিতরে আরেকটি table।
-\end{recapbox}
-
-
 \begin{boardbox}{পরবর্তী টপিক}
-পরের টপিক: Division, Span ও Style Attribute--\texttt{<div>}, \texttt{<span>} এবং inline CSS basic।
+পরের অংশে \texttt{<div>}, \texttt{<span>} ও \texttt{style} অ্যাট্রিবিউট দিয়ে বিষয়বস্তু সাজানো এবং ইনলাইন CSS-এর মৌলিক প্রয়োগ দেখব।
 \end{boardbox}
+
+\setcounter{collectmore}{-4}

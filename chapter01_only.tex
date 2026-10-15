@@ -1,0 +1,16 @@
+% !TeX program = lualatex
+% Standalone Chapter 1, using chapter-local styling.
+\documentclass[12pt,twoside,openany]{book}
+\input{preamble.tex}
+\input{chapters/Chapter01/latex/page_layout}
+\input{chapters/Chapter01/latex/text_font}
+\chOneGeometry{\geometry}
+\setlength{\headwidth}{\textwidth}
+\let\cleardoublepage\clearpage
+\begin{document}
+\frontmatter
+\setcounter{tocdepth}{1}
+\tableofcontents
+\mainmatter
+\input{chapters/Chapter01/latex/chapter}
+\end{document}

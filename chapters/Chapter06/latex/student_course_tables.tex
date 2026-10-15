@@ -1,0 +1,28 @@
+% Same records used by SQL example 10.2; the junction sits between its parents.
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\small,inner sep=0pt,align=left}]
+\node (student) {\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Student}}\\\hline
+\chSixHeader StudentID & Name\\\hline
+101 & Rupa\\\hline 102 & Nabil\\\hline
+\end{tabular}};
+\node[anchor=north west] (enrolment) at ([xshift=12mm]student.north east)
+{\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Enrolment}}\\\hline
+\chSixHeader StudentID & CourseID\\\hline
+101 & C01\\\hline 101 & C02\\\hline 102 & C01\\\hline
+\end{tabular}};
+\node[anchor=north west] (course) at ([xshift=12mm]enrolment.north east)
+{\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Course}}\\\hline
+\chSixHeader CourseID & CourseName\\\hline
+C01 & ICT\\\hline C02 & English\\\hline
+\end{tabular}};
+\draw[bookarrow] (student.east)--node[pos=.2,above=2pt]{1}node[pos=.8,above=2pt]{M}(enrolment.west);
+\draw[bookarrow] (course.west)--node[pos=.2,above=2pt]{1}node[pos=.8,above=2pt]{M}(enrolment.east);
+\node[anchor=north west,font=\footnotesize] at ([yshift=-2mm]student.south west) {StudentID = PK};
+\node[anchor=north west,font=\footnotesize,text width=38mm] at ([yshift=-2mm]enrolment.south west) {StudentID ও CourseID = FK};
+\node[anchor=north west,font=\footnotesize] at ([yshift=-2mm]course.south west) {CourseID = PK};
+\end{tikzpicture}
+\captionof{table}{Student ও Course-এর মাঝখানে Enrolment Junction Table}
+\end{flushleft}

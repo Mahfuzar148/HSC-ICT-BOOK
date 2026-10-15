@@ -1,0 +1,67 @@
+\noindent\textbf{উদাহরণ:} $(6B.9)_{16}$-কে অক্টালে রূপান্তর করো।
+
+\cvStep{১}{প্রতিটি হেক্সাডেসিমাল অঙ্কের জন্য চারটি বিট}
+\begin{center}
+\begin{tikzpicture}[x=1mm,y=1mm]
+ \cvCanvas{-34}
+ \cvDigit{hex-six}{38}{0}{6}
+ \cvDigit{hex-b}{70}{0}{B}
+ \cvDigit{hex-nine}{118}{0}{9}
+ \node[cv digit] at (94,0) {$.$};
+ \cvBits{hex-bits}{-18}{26/0,34/1,42/1,50/0,58/1,66/0,74/1,82/1,106/1,114/0,122/0,130/1}
+ \node[cv digit] at (94,-18) {$.$};
+ \cvMapArrow{hex-six}{38}{-14}
+ \cvMapArrow{hex-b}{70}{-14}
+ \cvMapArrow{hex-nine}{118}{-14}
+ \cvFourBrace{38}
+ \cvFourBrace{70}
+ \cvFourBrace{118}
+\end{tikzpicture}
+\end{center}
+\noindent $6=0110_2$, $B=11_{10}=1011_2$, $9=1001_2$। বিটের ক্রম ঠিক রেখে:
+\[
+ (6B.9)_{16}=(01101011.1001)_2.
+\]
+
+\cvStep{২}{বিন্দু থেকে দুই দিকে তিন বিট করে নতুন গ্রুপ}
+\noindent পূর্ণাংশের বামে একটি ০ এবং ভগ্নাংশের ডানে দুটি ০ বসাও।
+\begin{center}
+\begin{tikzpicture}[x=1mm,y=1mm]
+ \cvCanvas{-45}
+ % Unpadded row and padded row share the same bit columns and radix point.
+ \cvBits{original}{0}{26/0,34/1,42/1,50/0,58/1,66/0,74/1,82/1,106/1,114/0,122/0,130/1}
+ \node[cv digit] at (94,0) {$.$};
+ \cvBits{kept}{-18}{26/0,34/1,42/1,50/0,58/1,66/0,74/1,82/1,106/1,114/0,122/0,130/1}
+ \foreach \i in {1,...,12}{\draw[cv arrow,draw=black!65] (original-\i.south)--(kept-\i.north);}
+ \cvDigit{pad-left}{18}{-18}{0}
+ \cvDigit{pad-right-one}{138}{-18}{0}
+ \cvDigit{pad-right-two}{146}{-18}{0}
+ \node[cv padding,fit=(pad-left)] (left-zero) {};
+ \node[cv padding,fit=(pad-right-one)(pad-right-two)] (right-zeros) {};
+ \node[cv note] (left-note) at (6,-5) {বামে ১টি ০};
+ \draw[cv arrow] (left-note.south)--(left-zero.north west);
+ \node[cv note] (right-note) at (145,-5) {ডানে ২টি ০};
+ \draw[cv arrow] (right-note.south)--(right-zeros.north);
+ \node[cv digit] at (94,-18) {$.$};
+ % Each brace covers exactly three columns; arrows end on its own digit.
+ \cvOctalGroup{octal-one}{26}{18}{34}{1}
+ \cvOctalGroup{octal-five}{50}{42}{58}{5}
+ \cvOctalGroup{octal-three}{74}{66}{82}{3}
+ \cvOctalGroup{octal-four-a}{114}{106}{122}{4}
+ \cvOctalGroup{octal-four-b}{138}{130}{146}{4}
+ \node[cv digit] at (94,-40) {$.$};
+\end{tikzpicture}
+\end{center}
+\noindent দাগঘেরা বিটগুলো নতুন যোগ করা শূন্য। মূল বিটগুলো সোজা নিচে নেমেছে; তাদের স্থান বদলায়নি। প্রতিটি brace-এর তিন বিট থেকে নিচের একটি অক্টাল অঙ্ক পাওয়া যায়।
+
+\cvStep{৩}{অঙ্কগুলো একই ক্রমে একত্র করো}
+\[
+ \boxed{\therefore\ (6B.9)_{16}=(153.44)_8}
+\]
+\noindent\textbf{মান যাচাই:}
+\[
+ 6\times16+11+\frac9{16}
+ =1\times64+5\times8+3+\frac4{8}+\frac4{64}
+ =107.5625.
+\]
+\noindent পূর্ণাংশের বামে বা ভগ্নাংশের শেষে শূন্য বসালে মান বদলায় না।

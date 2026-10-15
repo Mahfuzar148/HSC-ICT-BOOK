@@ -1,0 +1,19 @@
+\begin{center}
+\textbf{বাইরের টেবিল (Parent Table)}\par\smallskip
+\begin{tikzpicture}[x=.113\linewidth,y=6mm,every node/.style={font=\small,align=center}]
+\fill[chFourTint] (0,4) rectangle (8,5);
+\draw[line width=.7pt] (0,0) rectangle (8,5);
+\draw[line width=.7pt] (2.5,0)--(2.5,5) (0,4)--(8,4);
+\node[font=\small\bfseries] at (1.25,4.5) {নাম};
+\node[font=\small\bfseries] at (5.25,4.5) {বিস্তারিত};
+\node at (1.25,2) {রাফি};
+\fill[chFourRose!10] (3,2.5) rectangle (7.5,3.5);
+\draw (3,.5) rectangle (7.5,3.5);
+\draw (5.5,.5)--(5.5,3.5) (3,1.5)--(7.5,1.5) (3,2.5)--(7.5,2.5);
+\node[font=\small\bfseries] at (4.25,3) {বিষয়};\node[font=\small\bfseries] at (6.5,3) {নম্বর};
+\node at (4.25,2) {গণিত};\node at (6.5,2) {৮৫};
+\node at (4.25,1) {বিজ্ঞান};\node at (6.5,1) {৯০};
+\end{tikzpicture}
+\captionof{figure}{অনুশীলন 32: রাফির বিস্তারিত ঘরে বিষয়ের নম্বরের টেবিল}
+\end{center}
+\textbf{চিত্র ব্যাখ্যা:} বাইরের টেবিলে নাম ও বিস্তারিত দুটি কলাম আছে। রাফির বিস্তারিত ঘরের মধ্যে বিষয় ও নম্বরের ছোট টেবিলটি রাখা হয়েছে। আগে ছোট টেবিলের \texttt{</table>}, তারপর বিস্তারিত ঘরের \texttt{</td>} লিখে বড় টেবিল শেষ করতে হবে।

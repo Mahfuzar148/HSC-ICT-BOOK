@@ -1,75 +1,74 @@
-% chapter.tex (Chapter 05)
-\chapter{প্রোগ্রামিং ভাষা}
-
-\begin{learningbox}
-এই অধ্যায় শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item প্রোগ্রাম, প্রোগ্রামিং ভাষা, ভাষার প্রজন্ম ও translator program ব্যাখ্যা করতে।
-\item algorithm, flowchart, program development step ও programming model বুঝতে।
-\item C program-এর structure, data type, constant, variable, operator ও expression ব্যবহার করতে।
-\item input/output, condition, loop, array ও function দিয়ে basic C program লিখতে।
-\item board-style code output, error correction, algorithm ও flowchart প্রশ্ন সমাধান করতে।
-\end{itemize}
-\end{learningbox}
-
-\begin{center}
-\fbox{\parbox{0.92\textwidth}{
-\centering
-\textbf{অধ্যায় মানচিত্র}\\[4pt]
-Program concept $\rightarrow$ Language generation $\rightarrow$ Translator $\rightarrow$ Algorithm/Flowchart $\rightarrow$ Programming model $\rightarrow$ C basics $\rightarrow$ Control/Array/Function $\rightarrow$ Practical programs
-}}
-\end{center}
-
-\begin{keypointbox}{High-yield অংশ}
-\begin{itemize}
-\item Machine, assembly, high-level, 4GL এবং compiler/interpreter/assembler তুলনা।
-\item Algorithm ও flowchart symbol।
-\item C program structure, data type, variable, operator, keyword।
-\item \texttt{printf}, \texttt{scanf}, \texttt{if}, \texttt{switch}, \texttt{for}, \texttt{while}, array, function।
-\item CQ-তে algorithm + flowchart + C code + output একসাথে চাইতে পারে।
-\end{itemize}
-\end{keypointbox}
-
-\input{chapters/Chapter05/topics/01_overview/topic}
-\input{chapters/Chapter05/topics/02_program_concept/topic}
-\input{chapters/Chapter05/topics/03_programming_language_concept/topic}
-\input{chapters/Chapter05/topics/04_generations_of_language/topic}
-\input{chapters/Chapter05/topics/05_low_level_language/topic}
-\input{chapters/Chapter05/topics/06_machine_language/topic}
-\input{chapters/Chapter05/topics/07_assembly_language/topic}
-\input{chapters/Chapter05/topics/08_mid_level_language/topic}
-\input{chapters/Chapter05/topics/09_high_level_language/topic}
-\input{chapters/Chapter05/topics/10_4gl/topic}
-\input{chapters/Chapter05/topics/11_translator_program/topic}
-\input{chapters/Chapter05/topics/12_compiler/topic}
-\input{chapters/Chapter05/topics/13_interpreter/topic}
-\input{chapters/Chapter05/topics/14_assembler/topic}
-\input{chapters/Chapter05/topics/15_program_organization/topic}
-\input{chapters/Chapter05/topics/16_steps_of_development/topic}
-\input{chapters/Chapter05/topics/17_algorithm/topic}
-\input{chapters/Chapter05/topics/18_flowchart/topic}
-\input{chapters/Chapter05/topics/19_program_design_model/topic}
-\input{chapters/Chapter05/topics/20_structured_programming/topic}
-\input{chapters/Chapter05/topics/21_visual_programming/topic}
-\input{chapters/Chapter05/topics/22_oop/topic}
-\input{chapters/Chapter05/topics/23_event_driven_programming/topic}
-\input{chapters/Chapter05/topics/24_c_intro/topic}
-\input{chapters/Chapter05/topics/25_c_characteristics/topic}
-\input{chapters/Chapter05/topics/26_c_compiling/topic}
-\input{chapters/Chapter05/topics/27_c_structure/topic}
-\input{chapters/Chapter05/topics/28_data_type/topic}
-\input{chapters/Chapter05/topics/29_constant/topic}
-\input{chapters/Chapter05/topics/30_variable/topic}
-\input{chapters/Chapter05/topics/31_operator/topic}
-\input{chapters/Chapter05/topics/32_expression/topic}
-\input{chapters/Chapter05/topics/33_keyword/topic}
-\input{chapters/Chapter05/topics/34_io_statement/topic}
-\input{chapters/Chapter05/topics/35_conditional_statement/topic}
-\input{chapters/Chapter05/topics/36_loop_statement/topic}
-\input{chapters/Chapter05/topics/37_array/topic}
-\input{chapters/Chapter05/topics/38_function/topic}
-\input{chapters/Chapter05/topics/39_practical_program_practice/topic}
-\input{chapters/Chapter05/topics/40_exercises/topic}
-\input{chapters/Chapter05/topics/mcq_questions/topic}
-
-% Resource linked: resources/HSC ICT Chapter 05 Handnote.pdf
+% Chapter 5 body: compatible with the standalone and book wrappers.
+\ifdefined\chFiveInput\else
+  \def\chFiveRoot{chapters/Chapter05}
+  \newcommand{\chFiveInput}[1]{\input{\chFiveRoot/#1}}
+\fi
+\begingroup
+\ifdefined\chFiveStandaloneLayout\else
+  \makeatletter
+  \edef\input@path{{\chFiveRoot/}}
+  \makeatother
+  \graphicspath{{chapters/Chapter05/}}
+  \chFiveInput{latex/book_style.tex}
+  \refstepcounter{chapter}
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}প্রোগ্রামিং ভাষা}
+  \setcounter{chaptertopic}{0}
+\fi
+\chFiveInput{topics/00_overview/topic.tex}%
+\chFiveInput{topics/01_program_concept/topic.tex}%
+\chFiveInput{topics/02_programming_language/topic.tex}%
+\chFiveInput{topics/03_machine_language/topic.tex}%
+\chFiveInput{topics/04_assembly_language/topic.tex}%
+\chFiveInput{topics/05_middle_level_language/topic.tex}%
+\chFiveInput{topics/06_high_level_language/topic.tex}%
+\chFiveInput{topics/07_java/topic.tex}%
+\chFiveInput{topics/08_oracle/topic.tex}%
+\chFiveInput{topics/09_python_overview/topic.tex}%
+\chFiveInput{topics/10_fourth_generation_language/topic.tex}%
+\chFiveInput{topics/11_translator_program/topic.tex}%
+\chFiveInput{topics/12_compiler/topic.tex}%
+\chFiveInput{topics/13_assembler/topic.tex}%
+\chFiveInput{topics/14_interpreter/topic.tex}%
+\chFiveInput{topics/15_program_organization/topic.tex}%
+\chFiveInput{topics/16_program_design_model/topic.tex}%
+\chFiveInput{topics/17_modular_programming/topic.tex}%
+\chFiveInput{topics/18_program_design_techniques/topic.tex}%
+\chFiveInput{topics/19_computational_thinking/topic.tex}%
+\chFiveInput{topics/20_problem_analysis_ipo/topic.tex}%
+\chFiveInput{topics/21_program_development/topic.tex}%
+\chFiveInput{topics/22_dry_run_trace_table/topic.tex}%
+\chFiveInput{topics/23_algorithm/topic.tex}%
+\chFiveInput{topics/24_flowchart/topic.tex}%
+\chFiveInput{topics/25_python_introduction/topic.tex}%
+\chFiveInput{topics/26_python_characteristics/topic.tex}%
+\chFiveInput{topics/27_programming_environment/topic.tex}%
+\chFiveInput{topics/28_python_installation/topic.tex}%
+\chFiveInput{topics/29_python_code_editors/topic.tex}%
+\chFiveInput{topics/30_first_python_program/topic.tex}%
+\chFiveInput{topics/31_python_syntax/topic.tex}%
+\chFiveInput{topics/32_variable_data_type/topic.tex}%
+\chFiveInput{topics/33_python_variables/topic.tex}%
+\chFiveInput{topics/34_python_data_types/topic.tex}%
+\chFiveInput{topics/35_input_output/topic.tex}%
+\chFiveInput{topics/36_python_operators/topic.tex}%
+\chFiveInput{topics/37_conditional_logic/topic.tex}%
+\chFiveInput{topics/38_loop_concept/topic.tex}%
+\chFiveInput{topics/39_for_loop/topic.tex}%
+\chFiveInput{topics/40_while_loop/topic.tex}%
+\chFiveInput{topics/41_loop_control/topic.tex}%
+\chFiveInput{topics/42_loop_patterns/topic.tex}%
+\chFiveInput{topics/43_data_structures/topic.tex}%
+\chFiveInput{topics/44_python_functions/topic.tex}%
+\chFiveInput{topics/45_function_contract_scope_file/topic.tex}%
+\chFiveInput{topics/46_practical_programs/topic.tex}%
+\chFiveInput{topics/47_algorithm_flowchart_exercises/topic.tex}%
+\chFiveInput{topics/48_summary_exam_preparation/topic.tex}%
+% Start the assessment bank on a fresh page, clear of the preceding longtable.
+\clearpage
+\chFiveInput{topics/49_mcq/topic.tex}%
+\chFiveInput{topics/50_cq/topic.tex}%
+\pdfbookmark[1]{সহায়ক গ্রন্থ ও তথ্যসূত্র}{chapter05.sources}
+\chFiveInput{topics/51_sources/topic.tex}%
+\clearpage
+\ifdefined\chFiveRemoveStyleHooks\chFiveRemoveStyleHooks\fi
+\endgroup

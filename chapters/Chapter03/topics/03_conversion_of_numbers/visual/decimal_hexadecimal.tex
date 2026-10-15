@@ -1,0 +1,118 @@
+\subsection{দশমিক থেকে হেক্সাডেসিমাল}
+পূর্ণাংশে লক্ষ্য ভিত্তি দিয়ে ভাগ করো; ভাগশেষ নিচ থেকে ওপরে পড়ো। ভগ্নাংশে একই ভিত্তি দিয়ে গুণ করে পাওয়া অঙ্ক ওপর থেকে নিচে পড়ো।
+হেক্সাডেসিমালে দশমিক ১০–১৫-এর অঙ্ক যথাক্রমে A–F; আগের mapping table দেখো।
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{১}{পূর্ণসংখ্যা}
+$ (345)_{10} $-কে ১৬ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC009}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-35);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 16 $};
+\node[vcnum] at (10.0,0) {$ 345 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ 9 $};
+\node[vcnum] at (1.5,-7) {$ 16 $};
+\node[vcnum] at (11.5,-7) {$ 21 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 5 $};
+\node[vcnum] at (3.0,-14) {$ 16 $};
+\node[vcnum] at (13.0,-14) {$ 1 $};
+\draw[vc line] (8.0,-11)--(8.0,-17.5)--(50,-17.5);
+\node[vcnum] (r2) at (44,-21) {$ 1 $};
+\node[vcnum] at (14.5,-21) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-26) {MSB};
+\draw[vc arrow] (61,-21)--(61,-7);
+\node[vcnote] at (31,-33) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (345)_{10}=(159)_{16}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{২}{শুধু ভগ্নাংশ}
+$ (0.703125)_{10} $-কে ১৬ ভিত্তিতে রূপান্তর করো।\par
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC010}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-39);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.703125 $};
+\draw[vc line] (26,3)--(26,-27);
+\node[vcnum] (m0) at (45,-5) {$\times 16$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ \mathrm{B}\,( 11 ) $};
+\node[vcnum] (f0) at (45,-12) {$ 0.25 $};
+\node[vcnum] (m1) at (45,-17) {$\times 16$};
+\draw[vc line] (7,-20)--(65,-20);
+\node[vcnum] at (14,-24) {$ 4 $};
+\node[vcnum] (f1) at (45,-24) {$ 0 $};
+\draw[vc arrow] (f0.east)--(72,-12)--(72,-17)--(m1.east);
+\node[vcnote] at (0,-8) {MSB};
+\node[vcnote] at (0,-29) {LSB};
+\draw[vc arrow] (0,-12)--(0,-24);
+\node[vcnote] at (34,-36) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+\[\therefore\ (0.703125)_{10}=(0.B4)_{16}.\]
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\convExample{৩}{মিশ্র সংখ্যা}
+$ (107.5703125)_{10} $-কে ১৬ ভিত্তিতে রূপান্তর করো।\par
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering\textbf{পূর্ণাংশ}\par\vspace{1mm}
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC011}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-3,9) rectangle (72,-28);
+\node[vcnote] at (15,7) {ভাজ্য/ভাগফল};
+\node[vcnote] at (44,7) {ভাগশেষ};
+\node[vcnum] at (0.0,0) {$ 16 $};
+\node[vcnum] at (10.0,0) {$ 107 $};
+\draw[vc line] (5.0,3)--(5.0,-3.5)--(50,-3.5);
+\node[vcnum] (r0) at (44,-7) {$ \mathrm{B} $};
+\node[vcnum] at (1.5,-7) {$ 16 $};
+\node[vcnum] at (11.5,-7) {$ 6 $};
+\draw[vc line] (6.5,-4)--(6.5,-10.5)--(50,-10.5);
+\node[vcnum] (r1) at (44,-14) {$ 6 $};
+\node[vcnum] at (13.0,-14) {$0$};
+\node[vcnote] at (61,-3) {LSB};
+\node[vcnote] at (61,-19) {MSB};
+\draw[vc arrow] (61,-14)--(61,-7);
+\node[vcnote] at (31,-26) {নিচ থেকে ওপরে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+$ (6B)_{16} $
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering\textbf{ভগ্নাংশ}\par\vspace{1mm}
+\par\noindent\begin{minipage}{\linewidth}\centering
+\phantomsection\label{VC012}
+\begin{chThreeDiagram}\begin{tikzpicture}[x=1mm,y=1mm]
+\path[use as bounding box] (-9,9) rectangle (76,-39);
+\node[vcnote] at (14,7) {প্রাপ্ত অঙ্ক};
+\node[vcnote] at (45,7) {ভগ্নাংশ};
+\node[vcnum] at (45,0) {$ 0.5703125 $};
+\draw[vc line] (26,3)--(26,-27);
+\node[vcnum] (m0) at (45,-5) {$\times 16$};
+\draw[vc line] (7,-8)--(65,-8);
+\node[vcnum] at (14,-12) {$ 9 $};
+\node[vcnum] (f0) at (45,-12) {$ 0.125 $};
+\node[vcnum] (m1) at (45,-17) {$\times 16$};
+\draw[vc line] (7,-20)--(65,-20);
+\node[vcnum] at (14,-24) {$ 2 $};
+\node[vcnum] (f1) at (45,-24) {$ 0 $};
+\draw[vc arrow] (f0.east)--(72,-12)--(72,-17)--(m1.east);
+\node[vcnote] at (0,-8) {MSB};
+\node[vcnote] at (0,-29) {LSB};
+\draw[vc arrow] (0,-12)--(0,-24);
+\node[vcnote] at (34,-36) {ওপর থেকে নিচে পড়ো};
+\end{tikzpicture}\end{chThreeDiagram}
+\end{minipage}\par
+
+$ (0.92)_{16} $
+\end{minipage}\par
+\[\therefore\ (107.5703125)_{10}=(6B.92)_{16}.\]
+\end{minipage}\par

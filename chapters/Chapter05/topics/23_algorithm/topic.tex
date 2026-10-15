@@ -1,0 +1,624 @@
+\sectionheading{5.23 অ্যালগরিদম (Algorithm)}
+
+কোনো Problem সমাধানের জন্য সরাসরি Programming Language-এ
+Code লেখা শুরু না করে প্রথমে সমাধানের কাজগুলো
+\textbf{কোন ক্রমে সম্পন্ন হবে}, তা ধাপে ধাপে সাজিয়ে নেওয়া ভালো।
+
+Problem সমাধানের এই ধারাবাহিক ও যৌক্তিক ধাপসমূহই হলো
+\textbf{Algorithm}।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Algorithm কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো নির্দিষ্ট Problem সমাধানের জন্য প্রয়োজনীয় কাজগুলোকে
+\textbf{যুক্তিসংগত ও পর্যায়ক্রমিক ধাপে সাজিয়ে লিখিতভাবে প্রকাশ
+করাকে Algorithm} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Problem
+\(\longrightarrow\)
+ধাপে ধাপে Solution
+\(\longrightarrow\)
+Algorithm
+}
+
+\end{center}
+
+অর্থাৎ Algorithm বলে দেয়—
+\textbf{কোন কাজটি আগে হবে, তার পরে কী হবে এবং কীভাবে কাঙ্ক্ষিত
+Result পাওয়া যাবে।}
+
+%================================================
+% Origin
+%================================================
+\booksubheading{Algorithm শব্দের উৎপত্তি — সংক্ষিপ্ত তথ্য}
+
+Algorithm শব্দটির উৎপত্তি গণিতবিদ
+\textbf{মুসা আল-খারিজমি (Musa Al-Khwarizmi)}
+এর নামের সঙ্গে সম্পর্কিত।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\textbf{Algorithm} শব্দটির সঙ্গে
+\textbf{Musa Al-Khwarizmi}-এর নাম সম্পর্কিত।
+
+এটি মূল ধারণার তুলনায় কম গুরুত্বপূর্ণ;
+MCQ-এর জন্য সংক্ষেপে মনে রাখলেই যথেষ্ট।
+
+\end{rememberbox}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Algorithm কেন প্রয়োজন?}
+
+Program লেখার আগে Algorithm তৈরি করলে—
+
+\begin{compacttwocolpoints}
+
+\item Problem-এর Solution সহজে বোঝা যায়।
+
+\item কাজের সঠিক ক্রম নির্ধারণ করা যায়।
+
+\item Programming Language-এ Code লেখা সহজ হয়।
+
+\item Program-এর Logic আগেই যাচাই করা যায়।
+
+\item ভুল শনাক্ত ও সংশোধনে সুবিধা হয়।
+
+\item অন্য কেউ Solution সহজে বুঝতে পারে।
+
+\item পরবর্তীতে Program পরিবর্তন বা উন্নয়ন করা সহজ হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Rules
+%================================================
+\booksubheading{Algorithm লেখার সাধারণ নিয়ম}
+
+Algorithm লেখার সময়—
+
+\begin{enumerate}
+
+\item প্রথম ধাপে \textbf{শুরু} লিখতে হয়।
+
+\item প্রয়োজনীয় \textbf{Input} গ্রহণের ধাপ লিখতে হয়।
+
+\item Calculation, Formula বা প্রয়োজনীয় কাজ সঠিক ক্রমে লিখতে হয়।
+
+\item প্রয়োজনীয় \textbf{Output} প্রদর্শনের ধাপ লিখতে হয়।
+
+\item সর্বশেষ ধাপে \textbf{শেষ} লিখতে হয়।
+
+\item প্রতিটি ধাপ সংক্ষিপ্ত, স্পষ্ট ও দ্ব্যর্থহীন হওয়া উচিত।
+
+\end{enumerate}
+
+\textbf{সাধারণ কাঠামো—}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.13\linewidth}{
+        \centering\textbf{শুরু}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.14\linewidth}{
+        \centering\textbf{Input}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.15\linewidth}{
+        \centering\textbf{Process}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.14\linewidth}{
+        \centering\textbf{Output}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.13\linewidth}{
+        \centering\textbf{শেষ}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+%================================================
+% Examples
+%================================================
+\booksubheading{Algorithm-এর উদাহরণ}
+
+%================================================
+% Example 1
+%================================================
+\begin{examplebox}{উদাহরণ–১: দুটি সংখ্যার যোগফল নির্ণয়}
+
+\textbf{Problem:}
+দুটি সংখ্যার যোগফল নির্ণয় করতে হবে।
+
+\medskip
+
+\textbf{\color{darkTeal}Algorithm}
+
+\textbf{ধাপ–১:} শুরু।
+
+\textbf{ধাপ–২:} \textenglish{\ttfamily a} ও
+\textenglish{\ttfamily b} দুটি সংখ্যা গ্রহণ করি।
+
+\textbf{ধাপ–৩:}
+\textenglish{\ttfamily sum = a + b} নির্ণয় করি।
+
+\textbf{ধাপ–৪:}
+\textenglish{\ttfamily sum} প্রদর্শন করি।
+
+\textbf{ধাপ–৫:} শেষ।
+
+\medskip
+
+\textbf{সংক্ষেপে—}
+
+\begin{center}
+
+\textbf{
+Input a, b
+\(\longrightarrow\)
+sum = a + b
+\(\longrightarrow\)
+Print sum
+}
+
+\end{center}
+
+\textbf{\color{darkTeal}Algorithm থেকে Python Code}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = int(input("Enter first number: "))\\
+b = int(input("Enter second number: "))\\[0.8mm]
+sum = a + b\\[0.8mm]
+print("Sum =", sum)
+\end{english}
+\end{codebox}
+
+এখানে—
+
+\begin{itemize}
+
+\item Algorithm-এর \textbf{Input}
+\(\rightarrow\) Python-এর \textenglish{\ttfamily input()}
+
+\item Algorithm-এর \textbf{Process}
+\(\rightarrow\) \textenglish{\ttfamily sum = a + b}
+
+\item Algorithm-এর \textbf{Output}
+\(\rightarrow\) \textenglish{\ttfamily print()}
+
+\end{itemize}
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+এখানে Python Code-এর উদ্দেশ্য শুধু
+\textbf{Algorithm কীভাবে Program Code-এ রূপ নেয়} তা বোঝানো।
+
+Python-এর Input/Output পরবর্তী অংশে বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Example 2
+%================================================
+\begin{examplebox}{উদাহরণ–২: ত্রিভুজের ক্ষেত্রফল নির্ণয়}
+
+\textbf{Problem:}
+ত্রিভুজের ভূমি ও উচ্চতা দেওয়া থাকলে ক্ষেত্রফল নির্ণয় করতে হবে।
+
+\medskip
+
+\textbf{Formula:}
+
+\begin{center}
+
+\textbf{
+Area = \(\frac{1}{2}\) \(\times\) ভূমি \(\times\) উচ্চতা
+}
+
+\end{center}
+
+\textbf{\color{darkTeal}Algorithm}
+
+\textbf{ধাপ–১:} শুরু।
+
+\textbf{ধাপ–২:} ভূমি \textenglish{\ttfamily b} এবং
+উচ্চতা \textenglish{\ttfamily h} গ্রহণ করি।
+
+\textbf{ধাপ–৩:}
+\textenglish{\ttfamily Area = 1/2 * b * h} হিসাব করি।
+
+\textbf{ধাপ–৪:}
+\textenglish{\ttfamily Area} প্রদর্শন করি।
+
+\textbf{ধাপ–৫:} শেষ।
+
+\end{examplebox}
+
+%================================================
+% Example 3
+%================================================
+\begin{examplebox}{উদাহরণ–৩: পাঁচটি সংখ্যার যোগফল নির্ণয়}
+
+\textbf{Problem:}
+পাঁচটি সংখ্যার যোগফল নির্ণয় করতে হবে।
+
+\medskip
+
+\textbf{\color{darkTeal}Algorithm}
+
+\textbf{ধাপ–১:} শুরু।
+
+\textbf{ধাপ–২:}
+\textenglish{\ttfamily A, B, C, D, E}
+পাঁচটি সংখ্যা গ্রহণ করি।
+
+\textbf{ধাপ–৩:}
+
+\begin{center}
+
+\textenglish{\ttfamily S = A + B + C + D + E}
+\end{center}
+
+নির্ণয় করি।
+
+\textbf{ধাপ–৪:}
+\textenglish{\ttfamily S} প্রদর্শন করি।
+
+\textbf{ধাপ–৫:} শেষ।
+
+\medskip
+
+\textbf{Shortcut—}
+
+\begin{center}
+
+\textbf{
+A, B, C, D, E
+\(\longrightarrow\)
+যোগ
+\(\longrightarrow\)
+S
+}
+
+\end{center}
+
+\end{examplebox}
+
+%================================================
+% Example 4
+%================================================
+\begin{examplebox}{উদাহরণ–৪: তিনটি সংখ্যার গড় নির্ণয়}
+
+\textbf{Problem:}
+তিনটি সংখ্যার Average নির্ণয় করতে হবে।
+
+\medskip
+
+\textbf{\color{darkTeal}Algorithm}
+
+\textbf{ধাপ–১:} শুরু।
+
+\textbf{ধাপ–২:}
+\textenglish{\ttfamily a, b, c}
+তিনটি সংখ্যা গ্রহণ করি।
+
+\textbf{ধাপ–৩:}
+
+\begin{center}
+
+\textenglish{\ttfamily sum = a + b + c}
+\end{center}
+
+নির্ণয় করি।
+
+\textbf{ধাপ–৪:}
+
+\begin{center}
+
+\textenglish{\ttfamily avg = sum / 3}
+\end{center}
+
+নির্ণয় করি।
+
+\textbf{ধাপ–৫:}
+\textenglish{\ttfamily avg} প্রদর্শন করি।
+
+\textbf{ধাপ–৬:} শেষ।
+
+\medskip
+
+এখানে একটি Problem সমাধানের জন্য
+\textbf{একাধিক Processing Step} ব্যবহার করা হয়েছে।
+
+\end{examplebox}
+
+%================================================
+% Types of Logic
+%================================================
+\booksubheading{Algorithm-এর সাধারণ Logic সহজভাবে}
+
+Algorithm-এর Solution বিভিন্ন ধরনের Logic ব্যবহার করে তৈরি হতে পারে।
+মূল ধারণাগুলো হলো—
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.25\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Logic}}
+&
+\multicolumn{1}{c|}{\textbf{মূল ধারণা}}
+&
+\multicolumn{1}{c|}{\textbf{উদাহরণ}}
+\\
+\hline
+
+Sequence
+&
+একটির পর একটি কাজ ধারাবাহিকভাবে সম্পন্ন হয়
+&
+যোগফল, ক্ষেত্রফল, Average
+\\
+\hline
+
+Selection
+&
+কোনো Condition অনুযায়ী একটি পথ নির্বাচন করা হয়
+&
+শর্তভিত্তিক Problem
+\\
+\hline
+
+Repetition
+&
+একই কাজ প্রয়োজন অনুযায়ী বারবার করা হয়
+&
+পুনরাবৃত্তিমূলক Problem
+\\
+\hline
+
+\end{tabularx}
+
+Selection ও Repetition পরবর্তী Programming অংশে
+বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Characteristics
+%================================================
+\booksubheading{একটি ভালো Algorithm-এর বৈশিষ্ট্য}
+
+একটি ভালো Algorithm—
+
+\begin{compacttwocolpoints}
+
+\item সহজ ও বোধগম্য হবে।
+
+\item ধাপগুলো সঠিক ও যৌক্তিক ক্রমে থাকবে।
+
+\item প্রতিটি ধাপ স্পষ্ট ও দ্ব্যর্থহীন হবে।
+
+\item অপ্রয়োজনীয় ধাপ থাকবে না।
+
+\item প্রয়োজনীয় Input ও Output পরিষ্কার থাকবে।
+
+\item Problem-এর সঠিক Solution প্রদান করবে।
+
+\item বাস্তবায়নের উপযোগী হবে।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Algorithm vs Program
+%================================================
+\booksubheading{Algorithm ও Program-এর সম্পর্ক}
+
+Algorithm এবং Program একই বিষয় নয়।
+
+\textbf{Algorithm} হলো Problem সমাধানের পরিকল্পিত ধাপ।
+
+\textbf{Program} হলো সেই ধাপগুলোকে Programming Language-এ
+Code আকারে বাস্তবায়ন।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Algorithm}}
+&
+\multicolumn{1}{c|}{\textbf{Program}}
+\\
+\hline
+
+রূপ
+&
+Problem সমাধানের ধাপ
+&
+Programming Code
+\\
+\hline
+
+প্রকাশ
+&
+সাধারণ ভাষা বা সহজ নির্দেশনায় লেখা যায়
+&
+Programming Language-এ লেখা হয়
+\\
+\hline
+
+উদ্দেশ্য
+&
+Solution পরিকল্পনা করা
+&
+Solution Computer-এ বাস্তবায়ন করা
+\\
+\hline
+
+অবস্থান
+&
+সাধারণত Coding-এর আগে
+&
+Algorithm বা Design-এর পরে
+\\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textbf{
+Algorithm = Solution-এর পরিকল্পনা
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Program = সেই পরিকল্পনার Code
+}
+
+\end{center}
+
+Algorithm থেকে Program Code-এ যাওয়ার সাধারণ ধারণা—
+
+\begin{center}
+
+\textbf{
+Problem
+\(\longrightarrow\)
+Algorithm
+\(\longrightarrow\)
+Python Code
+\(\longrightarrow\)
+Output
+}
+
+\end{center}
+
+%================================================
+% Common Mistakes
+%================================================
+\booksubheading{Algorithm লেখার সময় সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item ধাপের সঠিক ক্রম না রাখা।
+
+\item Input গ্রহণের প্রয়োজনীয় ধাপ বাদ দেওয়া।
+
+\item Formula বা Calculation ভুল লেখা।
+
+\item Output প্রদর্শনের ধাপ বাদ দেওয়া।
+
+\item অপ্রয়োজনীয় ধাপ যোগ করা।
+
+\item কোনো ধাপ অস্পষ্ট বা দ্ব্যর্থকভাবে লেখা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item \textbf{Algorithm} হলো Problem সমাধানের
+\textbf{Step-by-Step পদ্ধতি}।
+
+\item Algorithm সাধারণত Program Coding-এর আগে তৈরি করা হয়।
+
+\item Algorithm-এর সাধারণ কাঠামো—
+
+\begin{center}
+
+\textbf{
+শুরু
+\(\rightarrow\)
+Input
+\(\rightarrow\)
+Process
+\(\rightarrow\)
+Output
+\(\rightarrow\)
+শেষ
+}
+
+\end{center}
+
+\item Algorithm নির্দিষ্ট Programming Language-এর
+Syntax-এর ওপর নির্ভরশীল নয়।
+
+\item Algorithm-এ
+\textbf{Sequence, Selection ও Repetition}
+ধরনের Logic থাকতে পারে।
+
+\item Algorithm থেকে Programming Code তৈরি করা সহজ হয়।
+
+\item Algorithm-এর ধাপগুলো
+\textbf{স্পষ্ট, সংক্ষিপ্ত ও যৌক্তিক ক্রমে} হওয়া উচিত।
+
+\item Algorithm শব্দটি
+\textbf{Musa Al-Khwarizmi}-এর নামের সঙ্গে সম্পর্কিত।
+
+\item দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{
+Problem বুঝি
+\(\longrightarrow\)
+Solution-এর ধাপ সাজাই
+\(\longrightarrow\)
+Algorithm লিখি
+\(\longrightarrow\)
+Code করি
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.24 Flowchart
+%================================================
+

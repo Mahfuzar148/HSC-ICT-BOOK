@@ -1,91 +1,46 @@
-\subsection{বায়োমেট্রিক্স}
-
-\begin{learningbox}
-এই অংশ শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item বায়োমেট্রিক্সের ধারণা ব্যাখ্যা করতে।
-\item fingerprint, face, iris, retina ও voice recognition-এর ব্যবহার লিখতে।
-\item authentication ও identification-এর পার্থক্য বুঝতে।
-\item বায়োমেট্রিক্সের সুবিধা, সীমাবদ্ধতা ও privacy risk বিশ্লেষণ করতে।
-\end{itemize}
-\end{learningbox}
-
-\subsubsection{বায়োমেট্রিক্সের ধারণা}
-
-মানুষের কিছু শারীরিক ও আচরণগত বৈশিষ্ট্য তুলনামূলকভাবে অনন্য। যেমন আঙুলের ছাপ, মুখমণ্ডল, চোখের iris, কণ্ঠস্বর বা হাতের লেখা। এসব বৈশিষ্ট্য digital পদ্ধতিতে মেপে পরিচয় যাচাই বা শনাক্ত করার প্রযুক্তিকে বায়োমেট্রিক্স বলা হয়।
-
-\begin{definitionbox}{সংজ্ঞা}
-বায়োমেট্রিক্স হলো মানুষের অনন্য শারীরিক বা আচরণগত বৈশিষ্ট্য digitalভাবে সংগ্রহ, বিশ্লেষণ ও তুলনা করে পরিচয় যাচাই বা শনাক্ত করার প্রযুক্তি।
-\end{definitionbox}
-
-NIST-এর biometric guidance অনুযায়ী biometric system সাধারণত capture, feature extraction, template storage এবং matching ধাপে কাজ করে। অর্থাৎ সরাসরি “আঙুলের ছবি” নয়; অনেক ক্ষেত্রে বৈশিষ্ট্য থেকে template তৈরি করে তুলনা করা হয়।
-
-\subsubsection{ফিঙ্গারপ্রিন্ট শনাক্তকরণ}
-
-Fingerprint recognition আঙুলের ridge, valley, minutiae point ইত্যাদি বিশ্লেষণ করে। Mobile unlock, attendance system, passport/ID verification এবং criminal investigation-এ fingerprint ব্যবহৃত হয়।
-
-\subsubsection{মুখমণ্ডল শনাক্তকরণ}
-
-Face recognition camera image থেকে মুখের feature বিশ্লেষণ করে template তৈরি করে। Smartphone unlock, airport security, surveillance এবং photo organization-এ ব্যবহৃত হয়। আলো, angle, mask বা image quality performance কমাতে পারে।
-
-\subsubsection{আইরিস ও রেটিনা স্ক্যান}
-
-Iris হলো চোখের রঙিন অংশ; এর pattern খুব অনন্য। Retina scan চোখের পেছনের blood vessel pattern বিশ্লেষণ করে। উচ্চ নিরাপত্তা দরকার এমন ক্ষেত্রে iris/retina-based system ব্যবহার করা যায়।
-
-\subsubsection{ভয়েস রিকগনিশন}
-
-Voice recognition কণ্ঠস্বরের pitch, tone, rhythm ও speech pattern বিশ্লেষণ করে। Call center verification, voice assistant এবং accessibility system-এ ব্যবহার হয়। তবে noise, অসুস্থতা বা mimicry problem হতে পারে।
-
-\subsubsection{বায়োমেট্রিক্সের ব্যবহারক্ষেত্র}
-
-\begin{keypointbox}{ব্যবহারক্ষেত্র}
-\begin{itemize}
-\item জাতীয় পরিচয়পত্র, পাসপোর্ট ও immigration।
-\item অফিস attendance ও access control।
-\item smartphone unlock ও mobile payment।
-\item ব্যাংকিং ও financial verification।
-\item আইনশৃঙ্খলা ও forensic investigation।
-\item পরীক্ষাকেন্দ্র বা secure lab-এ identity verification।
-\end{itemize}
-\end{keypointbox}
-
-\begin{center}
-\begin{tabular}{|p{0.30\textwidth}|p{0.56\textwidth}|}
-\hline
-\textbf{ধরন} & \textbf{উদাহরণ} \\
-\hline
-শারীরিক বৈশিষ্ট্য & fingerprint, face, iris, retina, palm vein \\
-\hline
-আচরণগত বৈশিষ্ট্য & voice, signature, typing rhythm, gait \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{keypointbox}{সুবিধা ও সীমাবদ্ধতা}
-\begin{itemize}
-\item সুবিধা: password মনে রাখতে হয় না, পরিচয় যাচাই দ্রুত, নকল করা কঠিন।
-\item সীমাবদ্ধতা: sensor error, false match, injury বা lighting problem, privacy risk।
-\item নিরাপত্তা: biometric data leak হলে password-এর মতো সহজে বদলানো যায় না।
-\end{itemize}
-\end{keypointbox}
-
-\begin{boardbox}{বোর্ড ফোকাস}
-বায়োমেট্রিক্সের উত্তরে “মানুষের অনন্য বৈশিষ্ট্য” শব্দটি অবশ্যই রাখবে। fingerprint, face, iris, voice—কমপক্ষে চারটি উদাহরণ মনে রাখো।
-\end{boardbox}
-
+\subsection{বায়োমেট্রিক্স}
+\label{sec:ch1-biometrics}
+\subsubsection{ধারণা ও পদ্ধতি}
+\definition{বায়োমেট্রিক্স}{মানুষের স্বতন্ত্র শারীরিক বা আচরণগত বৈশিষ্ট্য ডিজিটালভাবে সংগ্রহ ও তুলনা করে পরিচয় যাচাই বা শনাক্ত করার প্রযুক্তিকে বায়োমেট্রিক্স (Biometrics) বলে।}
+প্রথমবার নমুনা নিয়ে পরিচয় নিবন্ধন করা Enrollment। সেন্সরের নমুনা থেকে বৈশিষ্ট্য বের করে Reference Template রাখা হয়। পরে নতুন নমুনার বৈশিষ্ট্য সেই রেকর্ডের সঙ্গে মেলানো হয়। গ্রহণের সীমামান বা Threshold অনুযায়ী সিদ্ধান্ত হয়; প্রতিবার হুবহু একই ছবি লাগবে না।
+\chOnePair{\chOneNative{Biometric}}{নমুনা সংগ্রহ, বৈশিষ্ট্য নির্ণয়, রেফারেন্স সংরক্ষণ এবং নতুন নমুনা মেলানোর ধাপ দেখানো হয়েছে।}
+\begin{compacttable}
+\begin{longtable}{|p{\dimexpr.31\linewidth-7pt\relax}|p{\dimexpr.69\linewidth-7pt\relax}|}
+\hline\textbf{পদ্ধতি} & \textbf{মাপা বৈশিষ্ট্য}\\\hline\endfirsthead
+\hline\textbf{পদ্ধতি} & \textbf{মাপা বৈশিষ্ট্য}\\\hline\endhead
+Fingerprint & আঙুলের উঁচু Ridge, খাঁজ Valley ও Minutiae; যেমন রেখার শেষ ও বিভাজন।\\\hline
+Hand Geometry & হাতের আকার ও আঙুলের দৈর্ঘ্য-প্রস্থের সম্পর্ক।\\\hline
+Face Recognition & মুখের বৈশিষ্ট্যের বিন্যাস; ক্যামেরায় নমুনা নেওয়া হয়।\\\hline
+Iris Recognition & চোখের রঙিন অংশের নকশা। Iris, চোখের মণি বা Pupil এবং Retina পৃথক অংশ।\\\hline
+Retina Scan & চোখের পেছনের আলোকসংবেদনশীল স্তরের রক্তনালির বিন্যাস।\\\hline
+Palm Vein & হাতের তালুর শিরার বিন্যাস।\\\hline
+DNA Profiling & পরিচয় বা আত্মীয়তা নির্ণয়ে নির্দিষ্ট পরিবর্তনশীল DNA Marker-এর বিন্যাস।\\\hline
+Signature Dynamics & স্বাক্ষরের গতি, চাপ ও কলমের টানের আচরণ।\\\hline
+Keystroke Dynamics & বোতাম চাপা ও দুটি বোতামের মধ্যবর্তী সময়।\\\hline
+Voice/Speaker Recognition & স্বরের উচ্চতা, সুর, ছন্দ ও কণ্ঠের বৈশিষ্ট্য। শারীরিক গঠন ও বলার অভ্যাস উভয়ের প্রভাব থাকে।\\\hline
+Gait & হাঁটার ধরন।\\\hline
+\end{longtable}
+\end{compacttable}
+আঙুল, মুখ, iris, retina ও শিরা সাধারণত শারীরিক বৈশিষ্ট্য। স্বাক্ষর, টাইপের ছন্দ, হাঁটা ও কণ্ঠকে প্রচলিত শ্রেণিতে আচরণগত ধরা হয়; কণ্ঠে শারীরিক প্রভাবও আছে। কথার বিষয় শনাক্ত এবং বক্তার পরিচয় মেলানো পৃথক কাজ; মূল পার্থক্য AI-এর কণ্ঠস্বর অংশে আছে।
+ছবি, নকল আঙুলের ছাপ বা রেকর্ড করা কণ্ঠ দিয়ে পরিচয় যাচাইয়ের ব্যবস্থা ফাঁকি দেওয়ার চেষ্টা হতে পারে। জীবন্ত ব্যক্তির উপস্থিতি যাচাই, অতিরিক্ত পরিচয়পদ্ধতি ও নিয়মিত নিরাপত্তা পরীক্ষা এই ঝুঁকি কমাতে সাহায্য করে।
+\subsubsection{পরিচয় যাচাই ও শনাক্তকরণ}
+\term{Verification}-এ দাবি করা পরিচয়ের একটি রেকর্ডের সঙ্গে তুলনা হয়: 1:1। যেমন, নিজের ID দিয়ে আঙুল মেলানো। \term{Identification}-এ বহু রেকর্ড থেকে সম্ভাব্য পরিচয় খোঁজা হয়: 1:N। যেমন, অজ্ঞাত নমুনার পরিচয় খোঁজা।
+DNA-এর জন্য উপযুক্ত রক্ত, লালা, টিস্যু, দাঁত বা চুলের গোড়া নেওয়া যায়। সব চুলের অংশে একই মানের DNA থাকে না। পরীক্ষাগারে প্রক্রিয়াকরণ ও প্রোফাইল তুলনা লাগে; এটি সাধারণ দরজায় আঙুল রাখার মতো তাৎক্ষণিক ব্যবস্থা নয়। অধিকাংশ DNA মিললেও পরিবর্তনশীল marker পরিচয়ে সহায়ক। প্রচলিত পরীক্ষায় অভিন্ন যমজের সীমা আছে। ক্ষতিগ্রস্ত মৃতদেহ শনাক্তে ভালো নমুনা ও আত্মীয়ের বা সংরক্ষিত রেফারেন্স দরকার।
+\subsubsection{ব্যবহার, সুবিধা ও সীমা}
+জাতীয় পরিচয়পত্র, পাসপোর্ট, অভিবাসন, অফিসের উপস্থিতি, প্রবেশাধিকার, ফোন, অর্থ পরিশোধ, ব্যাংক, অপরাধ তদন্ত, ফরেনসিক কাজ, পরীক্ষাকেন্দ্র ও সুরক্ষিত ল্যাবে পরিচয় যাচাই করা যায়। মুখ শনাক্তে বিমানবন্দর, নজরদারি ও ছবি সাজানোর ব্যবহারও আছে। পাসওয়ার্ড মনে না রেখেও দ্রুত তুলনা করা যায়; বৈশিষ্ট্য নকল করা কঠিন হলেও অসম্ভব নয়।
+অননুমোদিত ব্যক্তিকে গ্রহণ করা False Acceptance; প্রকৃত ব্যক্তিকে প্রত্যাখ্যান করা False Rejection। সীমামান কঠোর করলে প্রথম ঝুঁকি কমলেও দ্বিতীয়টি বাড়তে পারে। আঙুলের ক্ষত, ময়লা বা শুষ্কতা; মুখে আলো, কোণ, মাস্ক ও ছবির মান; কণ্ঠে নয়েজ, অসুস্থতা বা অনুকরণ ফল বদলায়। নিরাপত্তা, ব্যয়, পরিবেশ, গোপনীয়তা ও সুবিধা মিলিয়ে পদ্ধতি বেছে নিতে হয়।
+আঙুলে ক্ষতে উপস্থিতি না মিললে অনুমোদিত ID ও কর্মকর্তার যাচাইয়ের মতো বিকল্প দরকার। সম্মতি, নিরাপদ টেমপ্লেট, সীমিত প্রবেশাধিকার এবং প্রয়োজন শেষে তথ্য অপসারণ জরুরি। বায়োমেট্রিক তথ্য ফাঁস হলে পাসওয়ার্ডের মতো সহজে বৈশিষ্ট্য বদলানো যায় না।
 \begin{practicebox}
 \textbf{MCQ}
-\begin{enumerate}
-\item আঙুলের ছাপ দিয়ে পরিচয় যাচাই কোন প্রযুক্তির উদাহরণ?\\
-ক. Biometrics \quad খ. Blogging \quad গ. Formatting \quad ঘ. Spreadsheet
-\item চোখের রঙিন অংশের pattern শনাক্তকরণ কোনটি?\\
-ক. Iris recognition \quad খ. OCR \quad গ. GPS \quad ঘ. Router
-\end{enumerate}
+\begin{multicols}{2}\begin{enumerate}
+\item \begin{minipage}[t]{\linewidth}আঙুলের ছাপ দিয়ে পরিচয় যাচাই কোন প্রযুক্তির উদাহরণ?\par \mcqoption{Biometrics}{Blogging}{Formatting}{Spreadsheet}\chOneAnswerBox{ক}\par\end{minipage}
+\item \begin{minipage}[t]{\linewidth}চোখের রঙিন অংশের pattern শনাক্তকরণ কোনটি?\par \mcqoption{OCR}{Iris recognition}{GPS}{Router}\chOneAnswerBox{খ}\par\end{minipage}
+\end{enumerate}\end{multicols}
 
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
-\item বায়োমেট্রিক্স কী?
-\item বায়োমেট্রিক্সের দুটি privacy risk লেখ।
+\item বায়োমেট্রিক্স কী?
+\item বায়োমেট্রিক্সের দুটি privacy risk লেখ।
 \end{enumerate}
 \end{practicebox}
 

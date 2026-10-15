@@ -1,0 +1,601 @@
+\sectionheading{5.22 ড্রাই রান ও ট্রেস টেবিল (Dry Run and Trace Table)}
+
+Program বা Algorithm তৈরি করার পর Computer-এ Execute করার আগেই
+কাগজে-কলমে ধাপে ধাপে পরীক্ষা করলে অনেক Logical Error সহজে
+শনাক্ত করা যায়।
+
+Program বাস্তবে Execute না করে হাতে ধাপে ধাপে পরীক্ষা করার
+এই পদ্ধতিকে \textbf{Dry Run} বলা হয়।
+
+Dry Run-এর সময় বিভিন্ন Variable ও Condition-এর পরিবর্তিত মান
+সুশৃঙ্খলভাবে Table-এ লিখে রাখলে Program-এর কার্যপ্রবাহ আরও
+সহজে বোঝা যায়। এই Table-ই হলো \textbf{Trace Table}।
+
+%================================================
+% Dry Run Definition
+%================================================
+\booksubheading{Dry Run কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+কোনো Program বা Algorithm Computer-এ বাস্তবে Execute না করে
+\textbf{নির্দিষ্ট Input ব্যবহার করে কাগজে-কলমে প্রতিটি ধাপ অনুসরণ
+করে Result যাচাই করার প্রক্রিয়াকে Dry Run} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Program না চালিয়ে
+\(\longrightarrow\)
+হাতে ধাপ অনুসরণ
+\(\longrightarrow\)
+Result পরীক্ষা
+=
+Dry Run
+}
+
+\end{center}
+
+%================================================
+% Importance
+%================================================
+\booksubheading{Dry Run কেন করা হয়?}
+
+Dry Run-এর মাধ্যমে—
+
+\begin{compacttwocolpoints}
+
+\item Program-এর Logic সঠিক কি না যাচাই করা যায়।
+
+\item Variable-এর মান কীভাবে পরিবর্তিত হচ্ছে তা বোঝা যায়।
+
+\item Condition কোন ক্ষেত্রে True বা False হচ্ছে তা দেখা যায়।
+
+\item Loop কতবার চলছে তা অনুসরণ করা যায়।
+
+\item Expected Output পাওয়া যাচ্ছে কি না যাচাই করা যায়।
+
+\item Logical Error শনাক্ত করা সহজ হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% General Steps
+%================================================
+\booksubheading{Dry Run করার সাধারণ পদ্ধতি}
+
+Dry Run করার সময় সাধারণত—
+
+\begin{enumerate}
+
+\item একটি Sample Input নেওয়া হয়।
+
+\item Program-এর প্রথম Instruction থেকে শুরু করা হয়।
+
+\item প্রতিটি Statement অনুযায়ী Variable-এর মান পরিবর্তন করা হয়।
+
+\item Condition থাকলে True বা False নির্ণয় করা হয়।
+
+\item Loop থাকলে প্রতিটি Iteration অনুসরণ করা হয়।
+
+\item শেষে পাওয়া Output প্রত্যাশিত Result-এর সঙ্গে মিলিয়ে দেখা হয়।
+
+\end{enumerate}
+
+%================================================
+% Trace Table
+%================================================
+\booksubheading{Trace Table}
+
+Dry Run করার সময় Variable-এর মানগুলো এলোমেলোভাবে লিখলে
+Program অনুসরণ করা কঠিন হতে পারে।
+
+তাই প্রতিটি ধাপে Variable, Condition এবং Output-এর প্রয়োজনীয়
+পরিবর্তিত মান Table-এ লিখে রাখা হয়।
+
+%================================================
+% Trace Table Definition
+%================================================
+\booksubheading{Trace Table কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Program বা Algorithm Dry Run করার সময়
+\textbf{প্রতিটি ধাপ বা Iteration-এ গুরুত্বপূর্ণ Variable,
+Condition ও Output-এর পরিবর্তিত মান সারণিতে লিপিবদ্ধ করার
+পদ্ধতিকে Trace Table} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{
+Dry Run-এর ধাপগুলো Table-এ লিখে রাখা
+=
+Trace Table
+}
+
+\end{center}
+
+%================================================
+% Example 1
+%================================================
+\begin{examplebox}{উদাহরণ ১: সাধারণ হিসাবের Dry Run}
+
+ধরা যাক—
+
+\begin{codebox}
+
+\textenglish{\ttfamily a = 5}
+
+\textenglish{\ttfamily b = 3}
+
+\textenglish{\ttfamily c = a + b}
+
+\textenglish{\ttfamily c = c * 2}
+
+\end{codebox}
+
+Trace Table হবে—
+
+\begin{tabularx}{\linewidth}{
+|>{\RaggedRight\arraybackslash}Y|
+>{\centering\arraybackslash}p{0.10\linewidth}|
+>{\centering\arraybackslash}p{0.10\linewidth}|
+>{\centering\arraybackslash}p{0.12\linewidth}|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{ধাপ}}
+&
+\textbf{a}
+&
+\textbf{b}
+&
+\textbf{c}
+\\
+\hline
+
+\textenglish{\ttfamily a = 5}
+&
+5
+&
+--
+&
+--
+\\
+\hline
+
+\textenglish{\ttfamily b = 3}
+&
+5
+&
+3
+&
+--
+\\
+\hline
+
+\textenglish{\ttfamily c = a + b}
+&
+5
+&
+3
+&
+8
+\\
+\hline
+
+\textenglish{\ttfamily c = c * 2}
+&
+5
+&
+3
+&
+16
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{1mm}
+
+সুতরাং শেষ Result—
+
+\begin{center}
+
+\textbf{\textenglish{\ttfamily c = 16}}
+
+\end{center}
+
+Trace Table দেখে সহজেই বোঝা যায় কোন Statement-এর পরে
+\textenglish{\ttfamily c}-এর মান কীভাবে পরিবর্তিত হয়েছে।
+
+\end{examplebox}
+
+%================================================
+% Example 2 Loop
+%================================================
+\begin{examplebox}{উদাহরণ ২: Loop-এর Trace Table}
+
+ধরা যাক 1 থেকে 3 পর্যন্ত সংখ্যার যোগফল নির্ণয়ের Logic—
+
+\begin{codebox}
+
+\textenglish{\ttfamily sum = 0}
+
+\textenglish{\ttfamily for i = 1 to 3}
+
+\hspace{8mm}\textenglish{\ttfamily sum = sum + i}
+
+\end{codebox}
+
+Trace Table—
+
+\begin{tabularx}{\linewidth}{
+|>{\centering\arraybackslash}p{0.20\linewidth}|
+>{\centering\arraybackslash}p{0.15\linewidth}|
+>{\centering\arraybackslash}Y|
+>{\centering\arraybackslash}Y|}
+\hline
+
+\rowcolor{softBlue}
+\textbf{Iteration}
+&
+\textbf{i}
+&
+\textbf{আগের sum}
+&
+\textbf{নতুন sum}
+\\
+\hline
+
+1
+&
+1
+&
+0
+&
+1
+\\
+\hline
+
+2
+&
+2
+&
+1
+&
+3
+\\
+\hline
+
+3
+&
+3
+&
+3
+&
+6
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{1mm}
+
+অতএব—
+
+\begin{center}
+
+\textbf{Final sum = 6}
+
+\end{center}
+
+এই ধরনের Trace Table Loop-এর প্রতিটি Iteration বোঝার ক্ষেত্রে
+বিশেষভাবে কার্যকর।
+
+\end{examplebox}
+
+%================================================
+% Condition Example
+%================================================
+\booksubheading{Condition-এর ক্ষেত্রে Trace Table}
+
+ধরা যাক—
+
+\begin{center}
+
+\textenglish{\ttfamily n = 8}
+\end{center}
+
+এবং পরীক্ষা করতে হবে—
+
+\begin{center}
+
+\textenglish{\ttfamily n \% 2 == 0}
+\end{center}
+
+তাহলে Trace Table—
+
+\begin{tabularx}{\linewidth}{
+|>{\centering\arraybackslash}p{0.16\linewidth}|
+>{\centering\arraybackslash}Y|
+>{\centering\arraybackslash}Y|}
+\hline
+
+\rowcolor{softBlue}
+\textbf{n}
+&
+\textbf{Condition}
+&
+\textbf{Result}
+\\
+\hline
+
+8
+&
+\textenglish{\ttfamily 8 \% 2 == 0}
+&
+True \(\rightarrow\) Even
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{1mm}
+
+অর্থাৎ Trace Table-এ শুধু Variable নয়,
+প্রয়োজনে \textbf{Condition-এর Result}-ও লেখা যায়।
+
+%================================================
+% Columns
+%================================================
+\booksubheading{Trace Table-এ কী কী Column থাকবে?}
+
+সব Program-এর জন্য একই Column প্রয়োজন হয় না।
+
+Problem অনুযায়ী সাধারণত রাখা যেতে পারে—
+
+\begin{compacttwocolpoints}
+
+\item Step বা Iteration
+
+\item Input Variable
+
+\item Counter Variable
+
+\item পরিবর্তিত Variable
+
+\item Condition-এর Result
+
+\item Output
+
+\end{compacttwocolpoints}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+যেসব Variable বা Condition-এর মান পরিবর্তন অনুসরণ করা প্রয়োজন,
+শুধু সেগুলো Trace Table-এ রাখলেই যথেষ্ট।
+
+অপ্রয়োজনীয় Column যোগ করলে Table জটিল হয়ে যেতে পারে।
+
+\end{rememberbox}
+
+%================================================
+% Dry Run vs Trace Table
+%================================================
+\booksubheading{Dry Run ও Trace Table-এর সম্পর্ক ও পার্থক্য}
+
+Dry Run এবং Trace Table একই বিষয় নয়, তবে দুটি একে অপরের সঙ্গে
+ঘনিষ্ঠভাবে সম্পর্কিত।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Dry Run}}
+&
+\multicolumn{1}{c|}{\textbf{Trace Table}}
+\\
+\hline
+
+কী
+&
+Program হাতে ধাপে ধাপে পরীক্ষা করা
+&
+পরিবর্তিত মানগুলো Table-এ লেখা
+\\
+\hline
+
+মূল উদ্দেশ্য
+&
+Logic ও Result যাচাই
+&
+মানের পরিবর্তন সহজে অনুসরণ
+\\
+\hline
+
+রূপ
+&
+ধাপে ধাপে হাতে পরীক্ষা
+&
+সারণিভিত্তিক Record
+\\
+\hline
+
+বিশেষ সুবিধা
+&
+Program-এর Flow বোঝা
+&
+Variable, Loop ও Condition পরিষ্কারভাবে দেখা
+\\
+\hline
+
+\end{tabularx}
+
+\begin{center}
+
+\textbf{
+Dry Run = পরীক্ষা করার প্রক্রিয়া
+}
+
+\vspace{0.5mm}
+
+\textbf{
+Trace Table = পরীক্ষার মান লিখে রাখার সারণি
+}
+
+\end{center}
+
+%================================================
+% Dry Run vs Debugging
+%================================================
+\booksubheading{Dry Run ও Debugging কি একই?}
+
+না, দুটি একই বিষয় নয়।
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.24\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Dry Run}}
+&
+\multicolumn{1}{c|}{\textbf{Debugging}}
+\\
+\hline
+
+কাজ
+&
+Program না চালিয়ে Logic হাতে পরীক্ষা
+&
+Program-এর Error শনাক্ত ও সংশোধন
+\\
+\hline
+
+Computer Execution
+&
+অবশ্যই প্রয়োজন হয় না
+&
+সাধারণত Program পরীক্ষা/চালানোর সঙ্গে সম্পর্কিত
+\\
+\hline
+
+মূল লক্ষ্য
+&
+Logic ও Expected Output যাচাই
+&
+Error দূর করা
+\\
+\hline
+
+\end{tabularx}
+
+Dry Run Logical Error খুঁজে বের করতে এবং Debugging সহজ করতে
+সহায়তা করতে পারে।
+
+%================================================
+% Quick Process
+%================================================
+\booksubheading{Dry Run-এর দ্রুত ধারা}
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.17\linewidth}{
+        \centering\textbf{Sample\\Input}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.18\linewidth}{
+        \centering\textbf{Step\\Follow}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.18\linewidth}{
+        \centering\textbf{Value\\Change}
+    }
+}
+\(\longrightarrow\)
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.19\linewidth}{
+        \centering\textbf{Output\\Check}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Computer-এ Execute করার আগে হাতে Program বা Algorithm
+পরীক্ষা করাকে \textbf{Dry Run} বলে।
+
+\item Dry Run-এ Sample Input দিয়ে Statementগুলো ধারাবাহিকভাবে
+অনুসরণ করা হয়।
+
+\item Variable-এর মান কীভাবে পরিবর্তিত হচ্ছে তা দেখা
+Dry Run-এর গুরুত্বপূর্ণ কাজ।
+
+\item Dry Run-এর তথ্য সারণিতে লিখে রাখলে তাকে
+\textbf{Trace Table} বলা হয়।
+
+\item Trace Table বিশেষভাবে
+\textbf{Loop, Variable ও Condition} বিশ্লেষণে কার্যকর।
+
+\item Trace Table-এর Column Problem অনুযায়ী নির্ধারণ করতে হয়।
+
+\item \textbf{Dry Run = Process}
+
+\item \textbf{Trace Table = Record/Table}
+
+\item Dry Run-এর প্রধান উদ্দেশ্য হলো
+\textbf{Program-এর Logic ও Expected Output যাচাই করা}।
+
+\item দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{
+Input
+\(\rightarrow\)
+Step Follow
+\(\rightarrow\)
+Value Track
+\(\rightarrow\)
+Output Verify
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.23 Algorithm
+%================================================

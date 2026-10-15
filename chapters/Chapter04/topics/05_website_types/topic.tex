@@ -1,204 +1,251 @@
-﻿% ৪.৫ ওয়েবসাইটের প্রকারভেদ: Static, Dynamic, Local, Remote
+% Density revision 2026-10-04: answers below questions; compact related content.
+% ৪.৫ ওয়েবসাইটের প্রকারভেদ: স্ট্যাটিক, ডাইনামিক, লোকাল, রিমোট
 \section{ওয়েবসাইটের প্রকারভেদ}
 
+% Composition pass 2026-10-04
+পরিচিতি পেজে সবার জন্য একই লেখা থাকে, কিন্তু ফল খোঁজার পেজে রোলভেদে তথ্য বদলায়।
+
+\chFourMotivation{চাহিদা অনুযায়ী প্রযুক্তি নির্বাচন $\rightarrow$ স্ট্যাটিক/ডাইনামিক সাইট $\rightarrow$ প্রস্তুত ফাইল বা প্রোগ্রামে তৈরি ফল $\rightarrow$ পরিচিতি প্রকাশ ও শিক্ষার্থীভিত্তিক সেবা। লোকাল/রিমোট বোঝায় সাইট কোথায় আছে।}
+
+
 \begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী Static ও Dynamic ওয়েবসাইটের মধ্যে পার্থক্য, এবং Local ও Remote ওয়েবসাইট কী তা ব্যাখ্যা করতে পারবে।
+এই অংশ শেষে শিক্ষার্থী স্ট্যাটিক ও ডাইনামিক ওয়েবসাইটের মধ্যে পার্থক্য, এবং লোকাল ও রিমোট ওয়েবসাইট কী তা ব্যাখ্যা করতে পারবে।
 \end{learningbox}
 
 \subsection{ভূমিকা}
-ওয়েবসাইট সবসময় একই ধরনের হয় না। কোনো ওয়েবসাইটে তথ্য স্থির থাকে; আবার কোনো ওয়েবসাইটে ব্যবহারকারীর input বা database-এর ওপর ভিত্তি করে তথ্য পরিবর্তিত হয়। অবস্থানের ভিত্তিতেও website local বা remote হতে পারে। এই টপিকটি HSC ICT-এ প্রাসঙ্গিক কনসেপ্টগুলো সরলভাবে তুলে ধরে।
+ওয়েবসাইটকে এখানে দুটি ভিত্তিতে ভাগ করা হয়েছে। বিষয়বস্তু পরিবেশনের ধরন অনুযায়ী সাইট স্ট্যাটিক বা ডাইনামিক; সার্ভারের অবস্থান অনুযায়ী লোকাল বা রিমোট। একটি স্ট্যাটিক সাইট যেমন দূরবর্তী সার্ভারে প্রকাশ করা যায়, তেমনি ডাইনামিক সাইটও নিজের কম্পিউটারে পরীক্ষা করা যায়।
 
-\subsection{Static Website}
-\begin{definitionbox}{Static Website}
-Static Website হলো এমন ওয়েবসাইট যার content সাধারণত fixed থাকে এবং ব্যবহারকারীভেদে স্বয়ংক্রিয়ভাবে পরিবর্তিত হয় না।
+\subsection{স্ট্যাটিক ওয়েবসাইট (Static Website)}
+\begin{definitionbox}{}
+যে ওয়েবসাইট প্রস্তুত পেজ পরিবেশন করে এবং সাধারণভাবে ব্যবহারকারীভেদে বিষয়বস্তু তৈরি করে না, তাকে \textbf{স্ট্যাটিক ওয়েবসাইট} বলে। বিষয়বস্তু বদলাতে সংরক্ষিত পেজ সম্পাদনা করতে হয়।
 \end{definitionbox}
 
-\begin{keypointbox}{Static ওয়েবসাইটের বৈশিষ্ট্য}
-\begin{itemize}
-\item Content fixed থাকে; সাধারণত HTML/CSS দিয়ে তৈরি।
-\item Database connection থাকে না।
-\item দ্রুত load হয়; তৈরি ও maintain করা সহজ।
-\item উপযোগী: portfolio, brochure, notice page ইত্যাদি।
-\end{itemize}
+\begin{keypointbox}{স্ট্যাটিক ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{প্রস্তুত বিষয়বস্তু:} বিষয়বস্তু স্থির থাকে; সাধারণত HTML/CSS দিয়ে তৈরি।
+\item \textbf{পেজ পরিবেশন:} সরল স্ট্যাটিক সাইটে পেজ পাঠানোর সময় ডেটাবেজ থেকে নতুন HTML তৈরি করার প্রয়োজন হয় না।
+\end{enumerate}
 \end{keypointbox}
+\subsubsection{সুবিধা}
+\begin{enumerate}
+\item \textbf{সহজ নির্মাণ:} সরল পেজ তৈরি ও রক্ষণাবেক্ষণ সহজ।
+\item \textbf{লোড হওয়ার গতি:} সরল পেজ সাধারণত দ্রুত লোড হয়; গতি ফাইলের আকার ও সংযোগের ওপরও নির্ভর করে।
+\end{enumerate}
+\subsubsection{ব্যবহার}
+\begin{enumerate}
+\item \textbf{পরিচিতি ও বিজ্ঞপ্তি:} পোর্টফোলিও, বিবরণী ও নোটিশ পেজে উপযোগী।
+\end{enumerate}
 
-\subsection{Dynamic Website}
-\begin{definitionbox}{Dynamic Website}
-Dynamic Website হলো এমন ওয়েবসাইট যার content user input, database বা অন্যান্য condition অনুযায়ী পরিবর্তিত হতে পারে।
+\subsection{ডাইনামিক ওয়েবসাইট (Dynamic Website)}
+\begin{definitionbox}{}
+যে ওয়েবসাইট ব্যবহারকারীর ইনপুট, সময়, ডেটাবেজ বা প্রোগ্রামের শর্ত অনুযায়ী বিষয়বস্তু তৈরি বা পরিবর্তন করে, তাকে \textbf{ডাইনামিক ওয়েবসাইট} বলে।
 \end{definitionbox}
 
-\begin{keypointbox}{Dynamic ওয়েবসাইটের বৈশিষ্ট্য}
-\begin{itemize}
-\item Content পরিবর্তনশীল; database ও server-side scripting ব্যবহার করে।
-\item Login, registration, comment, search, online order ইত্যাদি সম্ভব।
-\item উপযোগী: e-commerce, social media, online result system ইত্যাদি।
-\end{itemize}
+\begin{keypointbox}{ডাইনামিক ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{পরিবর্তনশীল বিষয়বস্তু:} সার্ভার বা ক্লায়েন্টে চলা স্ক্রিপ্ট বিষয়বস্তু পরিবর্তন করতে পারে; প্রয়োজন অনুযায়ী ডেটাবেজ ব্যবহার হয়।
+\item \textbf{সেবার ব্যবস্থা:} লগইন, নিবন্ধন, মন্তব্য, অনুসন্ধান ও অনলাইন অর্ডারের ব্যবস্থা থাকতে পারে।
+\end{enumerate}
 \end{keypointbox}
+\subsubsection{ব্যবহার}
+\begin{enumerate}
+\item \textbf{ব্যক্তিভিত্তিক ও অনলাইন সেবা:} ই-কমার্স, সামাজিক যোগাযোগমাধ্যম, শিক্ষার্থীর লগইন পোর্টাল ও অনলাইন ফল অনুসন্ধানে ব্যবহার হয়।
+\end{enumerate}
 
-\subsection{Static vs Dynamic (তালিকা)}
+
+\subsubsection{HTML ফাইল ও সার্ভারের স্ক্রিপ্ট}
+HTML ফাইলের প্রচলিত এক্সটেনশন \texttt{.html} বা \texttt{.htm}। ডাইনামিক পেজ তৈরিতে PHP-এর মতো সার্ভারে চলা স্ক্রিপ্ট ব্যবহার করা যায়। PHP-এর পূর্ণরূপ PHP: Hypertext Preprocessor; এর ফাইলের প্রচলিত এক্সটেনশন \texttt{.php}। সার্ভার স্ক্রিপ্ট চালিয়ে যে HTML তৈরি করে, ব্রাউজার তা পায় ও দেখায়। তাই PHP কোডকে সাধারণ HTML ফাইলের মতো শুধু ব্রাউজারে খুললে সার্ভারের কাজ হয় না।
+
+কোনো URL-এ এক্সটেনশন দেখা বা না দেখা থেকেই সাইট স্ট্যাটিক না ডাইনামিক, তা নিশ্চিত করা যায় না। সার্ভারের নিয়মে এক্সটেনশন আড়াল করা যায়; একই সাইটে প্রস্তুত পেজ ও প্রোগ্রামে তৈরি পেজ দুটোই থাকতে পারে।
+
+\input{chapters/Chapter04/topics/05_website_types/clarity}
+
+\subsection{স্ট্যাটিক ও ডাইনামিক ওয়েবসাইটের তুলনা}
 \begin{center}
 \begin{tabular}{|p{0.22\textwidth}|p{0.29\textwidth}|p{0.29\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Static} & \textbf{Dynamic} \\
+\textbf{বিষয়} & \textbf{স্ট্যাটিক} & \textbf{ডাইনামিক} \\
 \hline
-Content & Fixed & পরিবর্তনশীল \\
+বিষয়বস্তু & স্থির & পরিবর্তনশীল \\
 \hline
-Database & না & আছে \\
+ডেটাবেজ & সরল পেজ পাঠাতে সাধারণত লাগে না & প্রয়োজন অনুযায়ী ব্যবহার করা যায় \\
 \hline
-User interaction & কম & বেশি \\
+ব্যবহারকারীর অংশগ্রহণ & কম & বেশি \\
 \hline
-Load speed & দ্রুত & তুলনামূলক ধীর \\
+লোড হওয়ার গতি & সরল পেজে সাধারণত দ্রুত & প্রক্রিয়াকরণ ও নকশার ওপর নির্ভর করে \\
 \hline
-Use cases & Portfolio, brochure & E-commerce, portals \\
+উপযোগী ক্ষেত্র & পোর্টফোলিও, বিবরণী & ই-কমার্স, পোর্টাল \\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Local Website}
-\begin{definitionbox}{Local Website}
-Local Website হলো এমন website বা web page যা নিজের computer বা local server-এ থাকে এবং সাধারণত development/testing-এর জন্য ব্যবহৃত হয়।
+\subsection{লোকাল ওয়েবসাইট (Local Website)}
+\begin{definitionbox}{}
+নিজ কম্পিউটার বা স্থানীয় সার্ভারে রাখা ও ব্যবহার করা ওয়েবসাইটকে \textbf{লোকাল ওয়েবসাইট} বলে। সাধারণত সাইট তৈরি ও পরীক্ষার সময় এই ব্যবস্থা ব্যবহৃত হয়।
 \end{definitionbox}
 
-\begin{keypointbox}{Local ওয়েবসাইটের বৈশিষ্ট্য}
-\begin{itemize}
-\item Offline বা local environment-এ test করা যায় (XAMPP, WAMP, Live Server ইত্যাদি)।
-\item Hosting cost লাগে না; ত্রুটি পরীক্ষা ও rapid development-এর জন্য উপযোগী।
-\end{itemize}
+\begin{keypointbox}{লোকাল ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{স্থানীয় পরিবেশ:} অফলাইন বা স্থানীয় পরিবেশে পরীক্ষা করা যায়; XAMPP, WAMP ও Live Server পরিচিত সহায়ক সফটওয়্যার।
+\end{enumerate}
 \end{keypointbox}
+\subsubsection{সুবিধা}
+\begin{enumerate}
+\item \textbf{হোস্টিং খরচ:} নিজের যন্ত্র ব্যবহার করলে সাধারণত আলাদা হোস্টিং খরচ লাগে না।
+\end{enumerate}
+\subsubsection{ব্যবহার}
+\begin{enumerate}
+\item \textbf{নির্মাণ ও পরীক্ষা:} ত্রুটি পরীক্ষা ও দ্রুত নির্মাণের জন্য উপযোগী।
+\end{enumerate}
 
-\subsection{Remote Website}
-\begin{definitionbox}{Remote Website}
-Remote Website হলো এমন website যা দূরবর্তী web server/hosting server-এ রাখা থাকে এবং internet-এর মাধ্যমে public access করা যায়।
+\subsection{রিমোট ওয়েবসাইট (Remote Website)}
+\begin{definitionbox}{}
+ব্যবহারকারীর নিজের কম্পিউটারের বাইরে দূরবর্তী সার্ভারে রাখা ওয়েবসাইটকে \textbf{রিমোট ওয়েবসাইট} বলে। এটি ইন্টারনেটের মাধ্যমে ব্যবহার করা যায়; প্রবেশাধিকার প্রকাশ্য বা নিয়ন্ত্রিত হতে পারে।
 \end{definitionbox}
 
-\begin{keypointbox}{Remote ওয়েবসাইটের বৈশিষ্ট্য}
-\begin{itemize}
-\item অনলাইনে public user access করতে পারে; domain ও hosting প্রয়োজন।
-\item Maintenance, backup ও security জরুরি।
-\end{itemize}
+\begin{keypointbox}{রিমোট ওয়েবসাইটের বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{অনলাইন প্রবেশ:} বিভিন্ন স্থান থেকে ব্যবহার করা যায়।
+\item \textbf{সার্ভার ও ঠিকানা:} সার্ভারে রাখার ব্যবস্থা ও উপযুক্ত ঠিকানা প্রয়োজন। আলাদা ডোমেইন নাম সাধারণত ব্যবহার করা হয়, তবে প্রতিটি ক্ষেত্রে তা কেনা বাধ্যতামূলক নয়।
+\end{enumerate}
 \end{keypointbox}
+\subsubsection{রক্ষণাবেক্ষণের শর্ত}
+\begin{enumerate}
+\item \textbf{সুরক্ষা ও সংরক্ষণ:} রক্ষণাবেক্ষণ, ব্যাকআপ ও নিরাপত্তা জরুরি।
+\end{enumerate}
 
-\subsection{Local vs Remote (তালিকা)}
+\subsection{লোকাল ও রিমোট ওয়েবসাইটের তুলনা}
 \begin{center}
 \begin{tabular}{|p{0.20\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
 \hline
-\textbf{বিষয়} & \textbf{Local} & \textbf{Remote} \\
+\textbf{বিষয়} & \textbf{লোকাল} & \textbf{রিমোট} \\
 \hline
-অবস্থান & নিজের computer/local server & hosting/remote server \\
+অবস্থান & নিজের কম্পিউটার/লোকাল সার্ভার & হোস্টিং/দূরবর্তী সার্ভার \\
 \hline
-Access & নিজের device থেকে & world-wide via internet \\
+প্রবেশের সুযোগ & নিজের যন্ত্র বা অনুমোদিত স্থানীয় নেটওয়ার্ক থেকে & ইন্টারনেটের মাধ্যমে; অনুমতির শর্ত থাকতে পারে \\
 \hline
-Use case & development/testing & production/public use \\
+উপযোগী ক্ষেত্র & তৈরি ও পরীক্ষা & চালু ওয়েবসাইট বা প্রকাশ্য ব্যবহার \\
 \hline
-Cost & কম/নেই & hosting/domain cost লাগে \\
+খরচ & নিজের যন্ত্র ব্যবহার করলে অতিরিক্ত খরচ কম হতে পারে & হোস্টিং বা ডোমেইনের খরচ থাকতে পারে \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{examplebox}{Website type diagram}
-Static: User → Browser → Web Server → Fixed HTML Page \\
-Dynamic: User → Browser → Web Server → Server Script → Database → Generated Page \\
-Local vs Remote: Computer → Browser → (Local file) / (Internet → Web Server)
+\begin{examplebox}{ওয়েবসাইটের ধরন বোঝার ধাপ}
+স্ট্যাটিক: ব্যবহারকারী → ব্রাউজার → ওয়েব সার্ভার → স্থির HTML পেজ \\
+ডাইনামিক: ব্যবহারকারী → ব্রাউজার → ওয়েব সার্ভার → সার্ভার স্ক্রিপ্ট → ডেটাবেজ → তৈরি করা পেজ
+
+ডাইনামিক উদাহরণে ডেটাবেজ দেখানো হয়েছে; সব ডাইনামিক সাইটে এটি বাধ্যতামূলক নয়। স্ট্যাটিক ও ডাইনামিক বিষয়বস্তু পরিবেশনের ধরন, আর লোকাল ও রিমোট সাইটের অবস্থান বোঝায়। তাই একটি স্ট্যাটিক সাইটও রিমোট হতে পারে। \\
+লোকাল ও রিমোট: কম্পিউটার → ব্রাউজার → (লোকাল ফাইল) / (ইন্টারনেট → ওয়েব সার্ভার)
 \end{examplebox}
 
-\subsection{Static Website কোথায় ব্যবহার করা ভালো?}
+\subsection{স্ট্যাটিক ওয়েবসাইটের উপযোগী ক্ষেত্র}
 
-যেসব website-এ তথ্য ঘন ঘন পরিবর্তন হয় না এবং user login/input দরকার হয় না, সেখানে static website যথেষ্ট। HSC practical-এ simple HTML page, college notice page, personal profile page, portfolio page ইত্যাদি static website হিসেবে দেখানো যায়।
+যেখানে তথ্য ঘন ঘন বদলায় না এবং ব্যবহারকারীর জন্য আলাদা তথ্য তৈরি করতে হয় না, সেখানে সাধারণ স্ট্যাটিক সাইট যথেষ্ট হতে পারে। HTML/CSS দিয়ে এমন পেজ তৈরি করা সহজ। ছবির আকার ও ইন্টারনেট সংযোগ অনুকূল থাকলে পেজ দ্রুত খোলে।
 
-\begin{examplebox}{Static website example}
+\begin{examplebox}{স্ট্যাটিক ওয়েবসাইটের উদাহরণ}
 \begin{itemize}
-\item Personal portfolio
-\item College notice page
-\item Product information page
-\item Event announcement page
-\item Basic company profile
+\item ব্যক্তিগত পোর্টফোলিও
+\item কলেজ নোটিশ পেজ
+\item পণ্যের তথ্য পেজ
+\item অনুষ্ঠানের ঘোষণার পেজ
+\item প্রতিষ্ঠানের সংক্ষিপ্ত পরিচিতি
 \end{itemize}
 \end{examplebox}
 
-\subsection{Dynamic Website কোথায় ব্যবহার করা ভালো?}
+Facebook-এর নিউজ ফিডে ব্যবহারকারীভেদে ভিন্ন পোস্ট দেখা যায়। এটি পরিবর্তনশীল বিষয়বস্তুর একটি পরিচিত উদাহরণ। ডেটাবেজ, প্রোগ্রাম ও নিরাপত্তাব্যবস্থা থাকায় ডাইনামিক সাইটের রক্ষণাবেক্ষণ তুলনামূলক জটিল হতে পারে।
 
-যেসব website user input, login, search, database, online payment বা real-time content update ব্যবহার করে, সেগুলো dynamic website। এই ধরনের website সাধারণত HTML/CSS-এর পাশাপাশি server-side language, database ও security system ব্যবহার করে।
+\subsection{ডাইনামিক ওয়েবসাইটের উপযোগী ক্ষেত্র}
 
-\begin{examplebox}{Dynamic website example}
+ব্যবহারকারীর ইনপুট যাচাই করে আলাদা ফল দেখানো বা তথ্য সংরক্ষণের জন্য প্রোগ্রাম দরকার হয়। HTML/CSS-এর সঙ্গে সার্ভারের প্রোগ্রাম ও প্রয়োজনে ডেটাবেজ এই কাজ করে। লগইন ও অর্থ পরিশোধের মতো কাজে নিরাপত্তার ব্যবস্থাও প্রয়োজন।
+
+\begin{examplebox}{ডাইনামিক ওয়েবসাইটের উদাহরণ}
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
 \begin{itemize}
-\item Online admission system
-\item Online result system
-\item E-commerce website
-\item Social media platform
-\item News portal
-\item Online banking বা ticket booking system
+\item অনলাইন ভর্তি ব্যবস্থা
+\item অনলাইন ফল প্রকাশের ব্যবস্থা
+\item ই-কমার্স ওয়েবসাইট
 \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{itemize}
+\item সামাজিক যোগাযোগমাধ্যম
+\item সংবাদ পোর্টাল
+\item অনলাইন ব্যাংকিং বা টিকিট বুকিং ব্যবস্থা
+\end{itemize}
+\end{minipage}\par
+
 \end{examplebox}
 
-\subsection{Static থেকে Dynamic হওয়ার উদাহরণ}
+\subsection{স্ট্যাটিক থেকে ডাইনামিক হওয়ার উদাহরণ}
 
-একটি college website প্রথমে শুধু notice, image ও contact information দেখালে সেটি static হতে পারে। কিন্তু একই website-এ যদি student login, online result search, admission form submission বা database থেকে notice update করার system থাকে, তাহলে সেটি dynamic website হবে।
+একটি কলেজ ওয়েবসাইট প্রথমে শুধু নোটিশ, ছবি ও যোগাযোগের তথ্য দেখালে সেটি স্ট্যাটিক হতে পারে। কিন্তু একই ওয়েবসাইটে যদি শিক্ষার্থী লগইন, অনলাইন ফল অনুসন্ধান, ভর্তি ফর্ম জমা দেওয়ার ব্যবস্থা বা ডেটাবেজ থেকে নোটিশ হালনাগাদ করার ব্যবস্থা থাকে, তাহলে সেটি ডাইনামিক ওয়েবসাইট হবে।
 
 \begin{keypointbox}{সহজ সিদ্ধান্ত নেওয়ার নিয়ম}
 \begin{itemize}
-\item শুধু fixed information দেখালে: Static website।
-\item user input নিয়ে result/search/login দেখালে: Dynamic website।
-\item নিজের computer-এ test করলে: Local website।
-\item internet server-এ upload করে public করলে: Remote website।
+\item শুধু স্থির তথ্য দেখালে: স্ট্যাটিক ওয়েবসাইট।
+\item ব্যবহারকারীর ইনপুট নিয়ে ফল/অনুসন্ধান/লগইন দেখালে: ডাইনামিক ওয়েবসাইট।
+\item নিজের কম্পিউটারে পরীক্ষা করলে: লোকাল ওয়েবসাইট।
+\item দূরবর্তী সার্ভারে রেখে ইন্টারনেটে ব্যবহার করলে: রিমোট ওয়েবসাইট; এটি প্রকাশ্য হওয়া বাধ্যতামূলক নয়।
 \end{itemize}
 \end{keypointbox}
 
-\subsection{Website Type Selection Tree}
+\subsection{ওয়েবসাইটের ধরন শনাক্ত করার চিত্র}
 
 \begin{center}
 \scaletikz{\begin{tikzpicture}[
-  level distance=1.15cm,
-  level 1/.style={sibling distance=4.2cm},
-  level 2/.style={sibling distance=2.2cm},
-  every node/.style={draw, rounded corners, align=center, fill=yellow!8, inner sep=4pt, font=\small}
+  level distance=1.45cm,
+  level 1/.style={sibling distance=7cm},
+  level 2/.style={sibling distance=3cm},
+  every node/.style={draw, rounded corners, align=center, text width=2.6cm, minimum height=.8cm, fill=yellow!8, inner sep=4pt, font=\small}
 ]
-\node {Website কোন ধরনের?}
-  child { node {Content fixed?}
-    child { node {হ্যাঁ\\Static} }
-    child { node {না\\Dynamic} }
+\node {ওয়েবসাইটের ধরন}
+  child { node {বিষয়বস্তুর ধরন}
+    child { node {সাধারণত স্থির\\স্ট্যাটিক} }
+    child { node {ইনপুট/শর্তভেদে পরিবর্তন\\ডাইনামিক} }
   }
-  child { node {কোথায় রাখা?}
-    child { node {নিজ computer\\Local} }
-    child { node {Internet server\\Remote} }
+  child { node {সার্ভারের অবস্থান}
+    child { node {নিজের/স্থানীয় সার্ভার\\লোকাল} }
+    child { node {দূরবর্তী সার্ভার\\রিমোট} }
   };
-\end{tikzpicture}}
+\end{tikzpicture}}\\*[3pt]
+\textit{চিত্র: বিষয়বস্তুর ধরন ও সার্ভারের অবস্থান—দুটি আলাদা ভিত্তিতে শ্রেণিবিভাগ}
 \end{center}
 
-\subsection{Problem Solution}
+\subsection{সমস্যা ও সমাধান}
 
 \begin{practicebox}
-\textbf{Problem:} একটি college website-এ শুধু college পরিচিতি, image, subject list এবং contact address আছে। কিন্তু আরেকটি website-এ student roll দিলে database থেকে result দেখা যায়। কোনটি static এবং কোনটি dynamic?
+\textbf{সমস্যা:} একটি কলেজ ওয়েবসাইটে শুধু কলেজ পরিচিতি, ছবি, বিষয়ের তালিকা এবং যোগাযোগের ঠিকানা আছে। কিন্তু আরেকটি ওয়েবসাইটে শিক্ষার্থীর রোল দিলে ডেটাবেজ থেকে ফল দেখা যায়। কোনটি স্ট্যাটিক এবং কোনটি ডাইনামিক?
 
-\textbf{Solution:}
+\textbf{সমাধান:}
 \begin{itemize}
-\item প্রথম website-এ শুধু fixed information আছে, তাই এটি static website।
-\item দ্বিতীয় website user input নেয় এবং database থেকে result দেখায়, তাই এটি dynamic website।
-\item যদি প্রথম website নিজের computer-এ test করা হয়, তাহলে সেটি local website।
-\item যদি server-এ upload করে internet-এ দেখা যায়, তাহলে সেটি remote website।
+\item প্রথম ওয়েবসাইটে শুধু স্থির তথ্য আছে, তাই এটি স্ট্যাটিক ওয়েবসাইট।
+\item দ্বিতীয় ওয়েবসাইট ব্যবহারকারীর ইনপুট নেয় এবং ডেটাবেজ থেকে ফল দেখায়, তাই এটি ডাইনামিক ওয়েবসাইট।
+\item যদি প্রথম ওয়েবসাইট নিজের কম্পিউটারে পরীক্ষা করা হয়, তাহলে সেটি লোকাল ওয়েবসাইট।
+\item যদি সার্ভারে আপলোড করে ইন্টারনেটে দেখা যায়, তাহলে সেটি রিমোট ওয়েবসাইট।
 \end{itemize}
 \end{practicebox}
 
-\begin{boardbox}{Board focus}
-Static vs Dynamic এবং Local vs Remote website-এর পার্থক্য HSC exam-এ short question, MCQ ও CQ reasoning হিসেবে আসতে পারে। উদাহরণসহ উত্তর লিখলে নম্বর ভালো পাওয়া যায়।
-\end{boardbox}
+
 
 \begin{mistakebox}{সাধারণ ভুল}
 \begin{itemize}
-\item শুধু online আছে বলেই website-কে dynamic বলা।
-\item database না থাকলেও সব website-কে dynamic ভাবা।
-\item local website মানে ছোট website মনে করা।
-\item remote website মানে শুধু বিদেশি website মনে করা।
-\item static website-এ কখনো image/link/table থাকতে পারে না--এমন ভুল ধারণা রাখা।
+\item শুধু অনলাইন আছে বলেই ওয়েবসাইটকে ডাইনামিক বলা।
+\item ডেটাবেজ থাকলেই ডাইনামিক এবং না থাকলেই স্ট্যাটিক—এমন সিদ্ধান্ত নেওয়া।
+\item লোকাল ওয়েবসাইট মানে ছোট ওয়েবসাইট মনে করা।
+\item রিমোট ওয়েবসাইট মানে শুধু বিদেশি ওয়েবসাইট মনে করা।
+\item স্ট্যাটিক ওয়েবসাইটে কখনো ছবি/লিংক/সারণি থাকতে পারে না--এমন ভুল ধারণা রাখা।
 \end{itemize}
 \end{mistakebox}
 
 
 \begin{practicebox}
 \begin{enumerate}
-\item একটি static ও একটি dynamic website-এর উদাহরণ লেখ।
-\item Local ও Remote website-এর মধ্যে ৩টি পার্থক্য লেখ।
-\item কেন dynamic website-এ security বেশি গুরুত্বপূর্ণ—সংক্ষিপ্ত ব্যাখ্যা কর।
-\item Online result system static না dynamic? কারণসহ লেখ।
-\item নিজের computer-এ \texttt{index.html} open করলে সেটি local না remote? ব্যাখ্যা কর।
+\item একটি স্ট্যাটিক ও একটি ডাইনামিক ওয়েবসাইটের উদাহরণ লেখ।
+\item লোকাল ও রিমোট ওয়েবসাইটের মধ্যে ৩টি পার্থক্য লেখ।
+\item লগইন, ব্যক্তিগত তথ্য ও অর্থ পরিশোধের কাজযুক্ত ডাইনামিক সাইটে নিরাপত্তা বিশেষভাবে গুরুত্বপূর্ণ কেন—ব্যাখ্যা কর।
+\item অনলাইন ফল প্রকাশের ব্যবস্থা স্ট্যাটিক না ডাইনামিক? কারণসহ লেখ।
+\item নিজের কম্পিউটারে \texttt{index.html} খুললে সেটি লোকাল না রিমোট? ব্যাখ্যা কর।
 \end{enumerate}
 \end{practicebox}

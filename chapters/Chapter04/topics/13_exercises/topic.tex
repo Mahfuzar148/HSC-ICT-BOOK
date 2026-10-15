@@ -1,335 +1,105 @@
+% Density revision 2026-10-04: answers below questions; compact related content.
 % ৪.১৩ অনুশীলনী
 \section{অনুশীলনী}
+
+% Composition pass 2026-10-04
+এই অনুশীলনে ধারণা ব্যাখ্যা, কোড লেখা এবং ফলের চিত্র বিশ্লেষণের প্রশ্ন রয়েছে।
+
+\chFourMotivation{বোঝা ধারণার প্রয়োগ $\rightarrow$ অনুশীলন $\rightarrow$ উপাদান শনাক্ত, কোড লেখা ও ফল মিলিয়ে ভুল সংশোধন $\rightarrow$ MCQ, CQ ও ব্যবহারিক প্রশ্নের প্রস্তুতি।}
+
 
 \begin{learningbox}
 এই অনুশীলন শেষে শিক্ষার্থী পারবে:
 \begin{itemize}
-\item HTML tag, attribute, table, form ও hyperlink নিয়ে board-style প্রশ্ন সমাধান করতে।
-\item একটি simple webpage-এর structure লিখতে।
-\item website publishing ও design workflow ব্যাখ্যা করতে।
+\item HTML ট্যাগ, অ্যাট্রিবিউট, সারণি, ফর্ম ও হাইপারলিংক নিয়ে পরীক্ষার উপযোগী প্রশ্ন সমাধান করতে।
+\item একটি সহজ ওয়েবপেজের কাঠামো লিখতে।
+\item ওয়েবসাইট প্রকাশ ও নকশা তৈরির কাজের ধারা ব্যাখ্যা করতে।
 \end{itemize}
 \end{learningbox}
 
 \begin{practicebox}
-\textbf{MCQ}
-\begin{enumerate}
-\item HTML-এর পূর্ণরূপ কোনটি?\\
-ক. Hyper Transfer Markup Language \quad খ. HyperText Markup Language \quad গ. HighText Machine Language \quad ঘ. Hyperlink Text Mode Language
-\item Image দেখানোর tag কোনটি?\\
-ক. \texttt{<a>} \quad খ. \texttt{<img>} \quad গ. \texttt{<table>} \quad ঘ. \texttt{<form>}
-\item Hyperlink তৈরিতে কোন attribute সবচেয়ে গুরুত্বপূর্ণ?\\
-ক. src \quad খ. href \quad গ. alt \quad ঘ. method
-\item Table row তৈরির tag কোনটি?\\
-ক. \texttt{<tr>} \quad খ. \texttt{<td>} \quad গ. \texttt{<th>} \quad ঘ. \texttt{<br>}
-\item Form-এর sensitive data পাঠাতে কোন method বেশি উপযোগী?\\
-ক. GET \quad খ. POST \quad গ. LINK \quad ঘ. IMG
+\textbf{বহুনির্বাচনি প্রশ্ন (MCQ)}
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*,itemsep=5pt]
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+HTML-এর পূর্ণরূপ কোনটি?
+\par ক. Hyper Transfer Markup Language
+\par খ. HyperText Markup Language
+\par গ. HighText Machine Language
+\par ঘ. Hyperlink Text Mode Language
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+ছবি দেখানোর ট্যাগ কোনটি?
+\par ক. \texttt{<a>}
+\par খ. \texttt{<img>}
+\par গ. \texttt{<table>}
+\par ঘ. \texttt{<form>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+হাইপারলিংকের গন্তব্য নির্ধারণ করে কোন অ্যাট্রিবিউট?
+\par ক. src
+\par খ. href
+\par গ. alt
+\par ঘ. method
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+সারণির সারি তৈরির ট্যাগ কোনটি?
+\par ক. \texttt{<tr>}
+\par খ. \texttt{<td>}
+\par গ. \texttt{<th>}
+\par ঘ. \texttt{<br>}
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}\vspace{0pt}
+HTTPS সংযোগে ফর্মের সংবেদনশীল তথ্য URL-এ না দিয়ে পাঠাতে কোন পদ্ধতি বেশি উপযোগী?
+\par ক. GET
+\par খ. POST
+\par গ. LINK
+\par ঘ. IMG
+\end{minipage}
 \end{enumerate}
+\end{multicols}
+\chFourMCQAnswer{১. খ; ২. খ; ৩. খ; ৪. ক; ৫. খ।}
 \end{practicebox}
 
 \begin{practicebox}
 \textbf{সংক্ষিপ্ত প্রশ্ন}
 \begin{enumerate}
 \item ওয়েব পেজ কী?
-\item Static ও dynamic website-এর পার্থক্য লেখ।
-\item Tag, element ও attribute উদাহরণসহ ব্যাখ্যা কর।
-\item \texttt{alt} attribute কেন দরকার?
+\item স্ট্যাটিক ও ডায়নামিক ওয়েবসাইটের পার্থক্য লেখ।
+\item ট্যাগ, এলিমেন্ট ও অ্যাট্রিবিউট উদাহরণসহ ব্যাখ্যা কর।
+\item \texttt{alt} অ্যাট্রিবিউট কেন দরকার?
 \item \texttt{rowspan} ও \texttt{colspan}-এর কাজ লেখ।
-\item Domain name ও web hosting-এর পার্থক্য লেখ।
+\item ডোমেইন নাম ও ওয়েব হোস্টিংয়ের পার্থক্য লেখ।
 \end{enumerate}
 \end{practicebox}
 
 \begin{practicebox}
 \textbf{সৃজনশীল অনুশীলন ১}\\
-একটি কলেজ website-এ Home, Notice, Routine, Gallery ও Contact page আছে। Notice page-এ PDF link, Routine page-এ table এবং Contact page-এ form রাখা হয়েছে।
+একটি কলেজের ওয়েবসাইটে Home, Notice, Routine, Gallery ও Contact পেজ আছে। Notice পেজে PDF লিংক, Routine পেজে সারণি এবং Contact পেজে ফর্ম রাখা হয়েছে।
 
 \begin{enumerate}
-\item ক. Home page কী?
-\item খ. Hyperlink কেন website navigation-এর জন্য গুরুত্বপূর্ণ?
-\item গ. Routine page-এর জন্য table tag ব্যবহার করে structure ব্যাখ্যা কর।
-\item ঘ. Contact page-এর form design করতে কোন কোন tag ও validation দরকার হবে বিশ্লেষণ কর।
+\item ক. হোম পেজ কী?
+\item খ. ওয়েবসাইটের বিভিন্ন পেজে যেতে হাইপারলিংক কেন গুরুত্বপূর্ণ?
+\item গ. Routine পেজের জন্য সারণির ট্যাগ ব্যবহার করে কাঠামো ব্যাখ্যা কর।
+\item ঘ. Contact পেজের ফর্ম তৈরি করতে কোন ট্যাগ এবং কী ধরনের তথ্য যাচাই দরকার হবে—বিশ্লেষণ কর।
 \end{enumerate}
 \end{practicebox}
 
 \begin{practicebox}
 \textbf{সৃজনশীল অনুশীলন ২}\\
-একজন শিক্ষার্থী একটি personal portfolio তৈরি করছে। সে একটি profile image, education table, project link এবং feedback form রাখতে চায়। websiteটি mobile-এও সুন্দর দেখাতে হবে।
+একজন শিক্ষার্থী নিজের কাজ ও যোগ্যতা দেখাতে একটি ব্যক্তিগত পোর্টফোলিও তৈরি করছে। সে প্রোফাইল ছবি, শিক্ষাগত যোগ্যতার সারণি, প্রকল্পের লিংক ও মতামত দেওয়ার ফর্ম রাখতে চায়। ওয়েবসাইটটি মোবাইলেও পাঠযোগ্য ও ব্যবহারযোগ্য হতে হবে।
 
 \begin{enumerate}
-\item ক. Responsive design কী?
-\item খ. Image-এর \texttt{alt} attribute কেন ব্যবহার করা হয়?
-\item গ. portfolio page-এর একটি layout plan তৈরি কর।
-\item ঘ. website publish করার আগে কী কী test করা উচিত? যুক্তিসহ লেখ।
+\item ক. রেসপনসিভ ডিজাইন কী?
+\item খ. ছবির জন্য \texttt{alt} অ্যাট্রিবিউট কেন ব্যবহার করা হয়?
+\item গ. পোর্টফোলিও পেজের বিন্যাস পরিকল্পনা কর।
+\item ঘ. ওয়েবসাইট প্রকাশের আগে কী কী পরীক্ষা করা উচিত? যুক্তিসহ লেখ।
 \end{enumerate}
 \end{practicebox}
 
-\subsection{Final Tag Reference}
 
-Chapter 4-এর HTML practical অংশে tag মুখস্থ করার চেয়ে tag-এর কাজ, syntax, output এবং ব্যবহার বুঝে শেখা বেশি গুরুত্বপূর্ণ। নিচের ছোট ছোট reference table final revision হিসেবে ব্যবহার করা যাবে।
 
-\begin{keypointbox}{Important document ও text tag}
-\begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.18}
-\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.26\textwidth}|}
-\hline
-\textbf{Tag} & \textbf{কাজ} & \textbf{ছোট syntax} \\
-\hline
-\texttt{<html>} & সম্পূর্ণ HTML document ধরে। & \texttt{<html>...</html>} \\
-\hline
-\texttt{<head>} & title, meta, style, link ইত্যাদি page information রাখে। & \texttt{<head>...</head>} \\
-\hline
-\texttt{<title>} & browser tab-এ page title দেখায়। & \texttt{<title>...</title>} \\
-\hline
-\texttt{<body>} & browser-এ visible content রাখে। & \texttt{<body>...</body>} \\
-\hline
-\texttt{<h1>}--\texttt{<h6>} & বড় থেকে ছোট heading তৈরি করে। & \texttt{<h1>Title</h1>} \\
-\hline
-\texttt{<p>} & paragraph তৈরি করে। & \texttt{<p>Text</p>} \\
-\hline
-\texttt{<br>} & একই paragraph-এর ভিতরে নতুন line দেয়। & \texttt{Line 1<br>} \\
-\hline
-\texttt{<div>} & বড় block/section group করে। & \texttt{<div>...</div>} \\
-\hline
-\texttt{<span>} & inline text বা word group করে। & \texttt{<span>Text</span>} \\
-\hline
-\end{tabular}
-\end{center}
-\end{keypointbox}
-
-\begin{keypointbox}{Important link, image, list ও table tag}
-\begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.18}
-\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.26\textwidth}|}
-\hline
-\textbf{Tag/Attribute} & \textbf{কাজ} & \textbf{ছোট syntax} \\
-\hline
-\texttt{<a>} & hyperlink তৈরি করে। & \texttt{<a href="">Text</a>} \\
-\hline
-\texttt{<img>} & image দেখায়। & \texttt{<img src="" alt="">} \\
-\hline
-\texttt{<ul>} & unordered বা bullet list তৈরি করে। & \texttt{<ul>...</ul>} \\
-\hline
-\texttt{<ol>} & ordered বা serial list তৈরি করে। & \texttt{<ol>...</ol>} \\
-\hline
-\texttt{<li>} & list item লেখে। & \texttt{<li>Item</li>} \\
-\hline
-\texttt{<table>} & row-column table তৈরি করে। & \texttt{<table>...</table>} \\
-\hline
-\texttt{<tr>} & table row তৈরি করে। & \texttt{<tr>...</tr>} \\
-\hline
-\texttt{<th>} & table heading cell তৈরি করে। & \texttt{<th>Name</th>} \\
-\hline
-\texttt{<td>} & table data cell তৈরি করে। & \texttt{<td>Rafi</td>} \\
-\hline
-\texttt{rowspan} & একটি cell একাধিক row জুড়ে দেখায়। & \texttt{rowspan="2"} \\
-\hline
-\texttt{colspan} & একটি cell একাধিক column জুড়ে দেখায়। & \texttt{colspan="3"} \\
-\hline
-\end{tabular}
-\end{center}
-\end{keypointbox}
-
-\begin{keypointbox}{Important form ও style tag}
-\begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.18}
-\begin{tabular}{|p{0.20\textwidth}|p{0.42\textwidth}|p{0.26\textwidth}|}
-\hline
-\textbf{Tag/Attribute} & \textbf{কাজ} & \textbf{ছোট syntax} \\
-\hline
-\texttt{style} & inline CSS style দেয়। & \texttt{style="color:red;"} \\
-\hline
-\texttt{<form>} & user input নেওয়ার form তৈরি করে। & \texttt{<form>...</form>} \\
-\hline
-\texttt{<input>} & text, password, radio, checkbox, submit ইত্যাদি input তৈরি করে। & \texttt{<input type="text">} \\
-\hline
-\texttt{<textarea>} & বড় message/comment box তৈরি করে। & \texttt{<textarea>} \\
-\hline
-\texttt{<select>} & dropdown list তৈরি করে। & \texttt{<select>} \\
-\hline
-\texttt{<option>} & dropdown-এর option তৈরি করে। & \texttt{<option>Science} \\
-\hline
-\end{tabular}
-\end{center}
-\end{keypointbox}
-
-\subsection{Tag Selection Tree}
-
-Output দেখে code লেখার সময় আগে বুঝতে হবে কোন content-এর জন্য কোন tag দরকার। নিচের tree follow করলে tag select করা সহজ হবে।
-
-\begin{center}
-\begin{tikzpicture}[
-  level distance=1.15cm,
-  level 1/.style={sibling distance=3.35cm},
-  level 2/.style={sibling distance=1.65cm},
-  every node/.style={draw, rounded corners, align=center, fill=green!5, inner sep=3pt, font=\scriptsize}
-]
-\node {Output কী দেখাচ্ছে?}
-  child { node {Text}
-    child { node {Heading\\\texttt{<h1>-<h6>}} }
-    child { node {Paragraph\\\texttt{<p>}} }
-  }
-  child { node {Media/Link}
-    child { node {Image\\\texttt{<img>}} }
-    child { node {Link\\\texttt{<a>}} }
-  }
-  child { node {Structured Data}
-    child { node {List\\\texttt{<ul>/<ol>}} }
-    child { node {Table\\\texttt{<table>}} }
-  }
-  child { node {Input/Section}
-    child { node {Form\\\texttt{<form>}} }
-    child { node {Section\\\texttt{<div>}} }
-  };
-\end{tikzpicture}
-\end{center}
-
-\subsection{Problem Solution Format}
-
-Board practical বা CQ-তে output দেখে code লিখতে হলে নিচের format follow করবে।
-
-\begin{practicebox}
-\textbf{Problem:} নিচের output তৈরি করো--একটি college webpage যেখানে heading, menu link, image, subject list এবং result table থাকবে।
-
-\textbf{Step 1: Output analyze করো}\\
-Heading আছে, menu link আছে, image আছে, list আছে, table আছে।
-
-\textbf{Step 2: Tag select করো}\\
-\texttt{<h1>} heading-এর জন্য, \texttt{<a>} menu link-এর জন্য, \texttt{<img>} image-এর জন্য, \texttt{<ul>} ও \texttt{<li>} list-এর জন্য, \texttt{<table>}, \texttt{<tr>}, \texttt{<th>}, \texttt{<td>} table-এর জন্য।
-
-\textbf{Step 3: Skeleton লেখো}\\
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>College Page</title>
-</head>
-<body>
-
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
-
-\textbf{Step 4: Section অনুযায়ী code বসাও}\\
-প্রথমে header, তারপর menu, তারপর image/list/table, শেষে footer লিখবে।
-
-\textbf{Step 5: Output verify করো}\\
-Browser-এ দেখে row/column, image path, link address, spelling ও closing tag মিলিয়ে নেবে।
-\end{practicebox}
-
-\subsection{Find the Mistake}
-
-\begin{practicebox}
-\textbf{ভুল code:}
-\begin{examplebox}{Code}
-\begin{verbatim}
-<table border="1">
-  <td>Name</td>
-  <td>Roll</td>
-</table>
-
-<image src="photo.jpg">
-<a src="index.html">Home</a>
-\end{verbatim}
-\end{examplebox}
-
-\textbf{সমাধান:}
-\begin{itemize}
-\item \texttt{<td>} সরাসরি \texttt{<table>} tag-এর ভিতরে লেখা যাবে না; \texttt{<tr>} দরকার।
-\item image দেখানোর tag \texttt{<image>} নয়, সঠিক tag হলো \texttt{<img>}.
-\item hyperlink-এর জন্য \texttt{src} নয়, \texttt{href} attribute ব্যবহার করতে হয়।
-\end{itemize}
-
-\textbf{সঠিক code:}
-\begin{examplebox}{Code}
-\begin{verbatim}
-<table border="1">
-  <tr>
-    <td>Name</td>
-    <td>Roll</td>
-  </tr>
-</table>
-
-<img src="photo.jpg" alt="Photo">
-<a href="index.html">Home</a>
-\end{verbatim}
-\end{examplebox}
-\end{practicebox}
-
-\subsection{Important CQ Pattern}
-
-২০২৩-২০২৫ board-style CQ-তে Chapter 4 থেকে বারবার কয়েক ধরনের practical problem এসেছে। এগুলো আলাদা করে practice করলে output দেখে code লেখা সহজ হয়।
-
-\begin{center}
-\begin{tabular}{|p{0.25\textwidth}|p{0.34\textwidth}|p{0.25\textwidth}|}
-\hline
-\textbf{Pattern} & \textbf{যা করতে হয়} & \textbf{প্রধান tag/attribute} \\
-\hline
-Nested list & category-এর ভিতরে subcategory দেখানো & \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>}, \texttt{type}, \texttt{start} \\
-\hline
-List থেকে table & list item গুলো row/column আকারে দেখানো & \texttt{<table>}, \texttt{<tr>}, \texttt{<td>}, \texttt{rowspan} \\
-\hline
-Result/marks table & title, heading, marks, merged cell & \texttt{colspan}, \texttt{rowspan}, \texttt{cellpadding}, \texttt{cellspacing} \\
-\hline
-Image link & image-এ click করলে website/page open & \texttt{<a href="">}, \texttt{<img src="">} \\
-\hline
-Full webpage & header, menu, image, list, table, footer & \texttt{<div>}, \texttt{<a>}, \texttt{<img>}, \texttt{<table>} \\
-\hline
-Publishing issue & website নির্দিষ্ট সময় পর দেখা যাচ্ছে না কেন & domain expiry, hosting expiry, DNS/server problem \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{practicebox}
-\textbf{CQ Pattern Practice: List থেকে Table}\\
-Output-এ River cell তিনটি row জুড়ে থাকবে এবং পাশে Padma, Jamuna, Meghna থাকবে। Flower cell তিনটি row জুড়ে থাকবে এবং পাশে Adenium, Rose, Lily থাকবে।
-
-\textbf{Code:}
-\begin{examplebox}{Code}
-\begin{verbatim}
-<!DOCTYPE html>
-<html>
-<body>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr>
-      <td rowspan="3" align="center">River</td>
-      <td>Padma</td>
-    </tr>
-    <tr>
-      <td>Jamuna</td>
-    </tr>
-    <tr>
-      <td>Meghna</td>
-    </tr>
-    <tr>
-      <td rowspan="3" align="center">Flower</td>
-      <td>Adenium</td>
-    </tr>
-    <tr>
-      <td>Rose</td>
-    </tr>
-    <tr>
-      <td>Lily</td>
-    </tr>
-  </table>
-</body>
-</html>
-\end{verbatim}
-\end{examplebox}
-
-\textbf{কেন \texttt{rowspan="3"}?}\\
-River-এর পাশে তিনটি river name আছে, তাই River cell তিনটি row জুড়ে থাকবে। Flower-এর ক্ষেত্রেও একই কারণে \texttt{rowspan="3"} ব্যবহার করা হয়েছে।
-\end{practicebox}
-
-\begin{recapbox}
-\begin{itemize}
-\item HTML structure দেয়, CSS style দেয়, JavaScript behavior যোগ করে।
-\item \texttt{href} link-এর গন্তব্য, \texttt{src} image/file path, \texttt{alt} বিকল্প text।
-\item Table: \texttt{table} $\rightarrow$ \texttt{tr} $\rightarrow$ \texttt{th}/\texttt{td}।
-\item Form: input গ্রহণ করে; GET search/filter-এ, POST sensitive submission-এ বেশি উপযোগী।
-\item Publish করার আগে link, image, form, mobile view ও browser compatibility test করতে হয়।
-\end{itemize}
-\end{recapbox}

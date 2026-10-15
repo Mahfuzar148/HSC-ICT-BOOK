@@ -1,833 +1,414 @@
 % Chapter 02.8: নেটওয়ার্ক ডিভাইস
+\begingroup
+\chTwoReadableTopicStyle
 \section{নেটওয়ার্ক ডিভাইস}
 
-\begin{learningbox}
-এই টপিক শেষে শিক্ষার্থী পারবে:
-\begin{itemize}
-\item নেটওয়ার্ক ডিভাইস কী তা ব্যাখ্যা করতে।
-\item NIC, Modem, Hub, Switch, Router, Repeater, Bridge, Gateway, Access Point ও Firewall-এর কাজ বুঝতে।
-\item Hub, Switch ও Router-এর পার্থক্য লিখতে।
-\item কোন device কোন network layer-এ কাজ করে তা ধারণা নিতে।
-\item বাস্তব network scenario থেকে উপযুক্ত network device নির্বাচন করতে।
-\item বোর্ড পরীক্ষার জন্য সংক্ষিপ্ত, পার্থক্যভিত্তিক ও সৃজনশীল উত্তর লিখতে।
-\end{itemize}
-\end{learningbox}
+\subsection{বাস্তব সমস্যা ও প্রয়োজন}
 
-\subsection{বাস্তব জীবনের শুরু}
+একটি কম্পিউটার ল্যাবের সব কম্পিউটার নেটওয়ার্কে যুক্ত করতে \textbf{সুইচ} ব্যবহার করা হয়। ল্যাবের নেটওয়ার্ককে ইন্টারনেটে যুক্ত করতে \textbf{রাউটার} ও \textbf{মডেম} ব্যবহার করা হতে পারে। তারবিহীন ইন্টারনেট সেবা দিতে \textbf{অ্যাকসেস পয়েন্ট} বা Wi-Fi রাউটার প্রয়োজন হয়।
 
-একটি computer lab কল্পনা করো। সেখানে অনেকগুলো computer আছে। সব computer-কে একসাথে network-এ যুক্ত করতে একটি \textbf{switch} ব্যবহার করা হয়। আবার lab-এর network-কে internet-এর সাথে যুক্ত করতে \textbf{router} ও \textbf{modem} ব্যবহার করা হয়। যদি wireless internet দিতে হয়, তাহলে \textbf{access point} বা Wi-Fi router দরকার হয়।
-
-অর্থাৎ শুধু computer থাকলেই network তৈরি হয় না। Computer, server, printer, internet line এবং wireless device-গুলোকে যুক্ত, নিয়ন্ত্রণ, signal বৃদ্ধি, data forward এবং network নিরাপদ রাখতে বিভিন্ন hardware device প্রয়োজন হয়। এগুলোই হলো \textbf{network devices}।
+কম্পিউটার, সার্ভার, প্রিন্টার, ইন্টারনেট সংযোগ ও তারবিহীন ডিভাইস যুক্ত করতে বিভিন্ন হার্ডওয়্যার যন্ত্র প্রয়োজন। এসব যন্ত্র সংযোগ নিয়ন্ত্রণ, সংকেতের শক্তি বাড়ানো, ডেটা ফরওয়ার্ড করা ও নিরাপত্তা নিয়ন্ত্রণেও সাহায্য করে। এগুলোকে \textbf{নেটওয়ার্ক ডিভাইস} বলে।
 
 \begin{keypointbox}{মূল ধারণা}
-Network devices বুঝতে চারটি প্রশ্ন মনে রাখো:
+নেটওয়ার্ক ডিভাইসের কাজ বুঝতে চারটি বিষয় দেখতে হয়:
 \begin{itemize}
-\item device-টি network-এর ভিতরে কাজ করছে, নাকি ভিন্ন network connect করছে?
-\item device-টি signal বাড়াচ্ছে, নাকি data ঠিক destination-এ পাঠাচ্ছে?
-\item device-টি wired connection দিচ্ছে, নাকি wireless connection দিচ্ছে?
-\item device-টি security বা filtering করছে কি না?
+\item ডিভাইসটি নেটওয়ার্কের ভেতরে কাজ করে, নাকি ভিন্ন নেটওয়ার্ক সংযুক্ত করে?
+\item ডিভাইসটি সংকেতের শক্তি বাড়ায়, নাকি ডেটা সঠিক গন্তব্যে পাঠায়?
+\item ডিভাইসটি তারযুক্ত সংযোগ দেয়, নাকি বেতার সংযোগ দেয়?
+\item ডিভাইসটি নিরাপত্তা নিয়ন্ত্রণ বা ট্রাফিক বাছাই করে কি না?
 \end{itemize}
 \end{keypointbox}
 
 \subsection{নেটওয়ার্ক ডিভাইস}
 
 \begin{definitionbox}{নেটওয়ার্ক ডিভাইস}
-কম্পিউটার নেটওয়ার্কে device, computer, server, printer বা বিভিন্ন network-কে সংযুক্ত করা, data আদান-প্রদান নিয়ন্ত্রণ করা, signal পুনরুদ্ধার করা, route নির্ধারণ করা এবং security নিশ্চিত করার জন্য ব্যবহৃত hardware বা hardware-software সমন্বিত উপাদানকে network device বলা হয়।
+কম্পিউটার, সার্ভার, প্রিন্টার ও বিভিন্ন নেটওয়ার্ক সংযুক্ত করা, ডেটা আদান-প্রদান নিয়ন্ত্রণ, সংকেত পুনর্গঠন, পথ নির্ধারণ বা নিরাপত্তা নিয়ন্ত্রণে ব্যবহৃত হার্ডওয়্যার কিংবা হার্ডওয়্যার-সফটওয়্যার সমন্বিত উপাদানকে নেটওয়ার্ক ডিভাইস বলে।
 \end{definitionbox}
 
-Network device-কে networking hardware-ও বলা হয়। এগুলো ছাড়া LAN, MAN, WAN, internet connection বা wireless network কার্যকরভাবে পরিচালনা করা কঠিন।
+নেটওয়ার্ক ডিভাইসকে Networking Hardware-ও বলা হয়। LAN, MAN, WAN, ইন্টারনেট সংযোগ বা তারবিহীন নেটওয়ার্ক কার্যকরভাবে পরিচালনায় এসব যন্ত্র প্রয়োজন।
 
 \begin{examplebox}{সহজ উদাহরণ}
 \begin{itemize}
-\item Computer lab-এ অনেক PC যুক্ত করতে switch ব্যবহার করা হয়।
-\item বাসার Wi-Fi network-এ router internet ভাগ করে দেয়।
-\item ISP line থেকে digital data নিতে modem ব্যবহার করা হয়।
-\item বড় cable distance-এ দুর্বল signal পুনরায় শক্তিশালী করতে repeater ব্যবহার করা হয়।
-\item ভিন্ন protocol বা ভিন্ন network system connect করতে gateway ব্যবহার করা হয়।
+\item কম্পিউটার ল্যাবে অনেক PC যুক্ত করতে সুইচ ব্যবহার করা হয়।
+\item বাসার Wi-Fi নেটওয়ার্কে রাউটার একাধিক যন্ত্রকে ইন্টারনেট ব্যবহারের সুযোগ দেয়।
+\item ISP-এর উপযুক্ত সংযোগ থেকে ডিজিটাল ডেটা নিতে মডেম ব্যবহার করা হয়।
+\item দীর্ঘ কেবলপথে দুর্বল সংকেত পুনর্গঠন করে আবার পাঠাতে রিপিটার ব্যবহার করা হয়।
+\item ভিন্ন প্রোটোকল বা নেটওয়ার্ক ব্যবস্থা যুক্ত করতে গেটওয়ে ব্যবহার করা হয়।
 \end{itemize}
 \end{examplebox}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/network_devices_overview.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/network_devices_overview.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.6cm}
-Network Devices\\[8pt]
-NIC \quad Modem \quad Hub \quad Switch \quad Router\\[6pt]
-Repeater \quad Bridge \quad Gateway \quad Access Point \quad Firewall
-\vspace{0.6cm}
-}}
-}
-\caption{নেটওয়ার্ক ডিভাইসের সারসংক্ষেপ}
-\end{figure}
+
+\chTwoImage{chapters/Chapter02/images/network_devices_overview.png}{নেটওয়ার্ক ডিভাইসের সারসংক্ষেপ}
+
 
 \subsection{Network Device কেন প্রয়োজন?}
 
-একটি network-এ data শুধু cable দিয়ে যায় না; data কোথায় যাবে, কোন device-এর কাছে যাবে, কোন network-এ যাবে, signal দুর্বল হলে কী হবে, unauthorized access আটকাবে কীভাবে—এসব কাজ network device দ্বারা সম্পন্ন হয়।
+নেটওয়ার্কে ডেটা কেবল দিয়ে চলাচল করলেই সব কাজ শেষ হয় না। কোন ডিভাইস বা নেটওয়ার্কে ডেটা পাঠাতে হবে, দুর্বল সংকেত কীভাবে পুনর্গঠন করতে হবে এবং অননুমোদিত প্রবেশ কীভাবে নিয়ন্ত্রণ করতে হবে—এসব কাজে নেটওয়ার্ক ডিভাইস প্রয়োজন।
 
 \begin{keypointbox}{Network device-এর প্রয়োজনীয়তা}
 \begin{itemize}
-\item একাধিক computer বা device network-এ যুক্ত করে।
-\item data packet সঠিক destination-এ পৌঁছাতে সাহায্য করে।
-\item local network-কে internet বা অন্য network-এর সাথে যুক্ত করে।
-\item দুর্বল signal regenerate বা amplify করতে পারে।
-\item wireless device-কে network access দেয়।
-\item network traffic নিয়ন্ত্রণ করে performance বাড়ায়।
-\item unauthorized access ও malicious traffic filter করতে পারে।
+\item একাধিক কম্পিউটার বা ডিভাইস নেটওয়ার্কে যুক্ত করে।
+\item ডেটা প্যাকেট সঠিক গন্তব্যে পৌঁছাতে সাহায্য করে।
+\item স্থানীয় নেটওয়ার্ককে ইন্টারনেট বা অন্য নেটওয়ার্কের সঙ্গে যুক্ত করে।
+\item যন্ত্রের কাজ অনুযায়ী দুর্বল সংকেত পুনর্গঠন বা বর্ধন করতে পারে।
+\item বেতার ডিভাইসকে নেটওয়ার্কে যুক্ত হওয়ার সুযোগ দেয়।
+\item নেটওয়ার্ক ট্রাফিক নিয়ন্ত্রণ করে কার্যক্ষমতা বাড়াতে সাহায্য করে।
+\item অননুমোদিত প্রবেশ ও ক্ষতিকর ট্রাফিক বাছাই করে বাধা দিতে পারে।
 \end{itemize}
 \end{keypointbox}
 
 \subsection{OSI Layer অনুযায়ী Network Device}
 
-Network device-গুলো OSI model-এর বিভিন্ন layer-এ কাজ করে। HSC পরীক্ষায় layer অনুযায়ী device মনে রাখলে answer ভালো হয়।
+\chTwoPair{ডিভাইস কোন তথ্য ব্যবহার করে সিদ্ধান্ত নেয়, তা OSI স্তরের সঙ্গে মিলিয়ে বোঝা যায়। NIC-এ ভৌত ইন্টারফেস ও ডেটা লিংক স্তরের কাজ দুটিই আছে। Multilayer Switch একাধিক স্তরে কাজ করতে পারে। গেটওয়ের স্তর নির্ভর করে রূপান্তরের ধরনের ওপর।
 
+}{\chTwoImage{chapters/Chapter02/images/osi_layer_network_devices_map.png}{OSI স্তর অনুযায়ী নেটওয়ার্ক ডিভাইস}}
 \begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.34\textwidth}|p{0.30\textwidth}|}
+\begin{tabular}{|p{\dimexpr 0.2714\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.3844\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.3392\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{OSI Layer} & \textbf{Device} & \textbf{প্রধান কাজ} \\
 \hline
-Physical Layer & Repeater, Hub, Modem & signal transmit, repeat বা convert করা \\
+Physical Layer & Repeater, Hub, Modem & সংকেত পাঠানো, পুনর্গঠন বা রূপান্তর করা \\
 \hline
-Data Link Layer & NIC, Bridge, Switch & MAC address অনুযায়ী frame forwarding \\
+Data Link Layer & NIC, Bridge, Switch & ফ্রেম তৈরি ও গ্রহণ; ব্রিজ ও সুইচে MAC-ভিত্তিক ফরওয়ার্ডিং \\
 \hline
-Network Layer & Router & IP address অনুযায়ী packet routing \\
+Network Layer & Router & IP Address অনুযায়ী প্যাকেটের পথ নির্ধারণ \\
 \hline
-Multiple Layer & Gateway, Firewall & protocol conversion, filtering, security \\
+Multiple Layer & Gateway, Firewall & প্রোটোকল রূপান্তর, ট্রাফিক বাছাই ও নিরাপত্তা \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/osi_layer_network_devices_map.png}{
-\includegraphics[width=0.92\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/osi_layer_network_devices_map.png}
-}{
-\fbox{
-\parbox{0.90\textwidth}{
-\centering
-\vspace{0.6cm}
-Physical Layer: Hub, Repeater, Modem\\[5pt]
-Data Link Layer: NIC, Bridge, Switch\\[5pt]
-Network Layer: Router\\[5pt]
-Multiple Layers: Gateway, Firewall
-\vspace{0.6cm}
-}}
-}
-\caption{OSI layer অনুযায়ী network device}
-\end{figure}
+
+
+
 
 \subsection{Network Interface Card বা NIC}
 
 \begin{definitionbox}{NIC}
-Network Interface Card বা NIC হলো এমন একটি hardware component যার মাধ্যমে computer বা device network-এর সাথে যুক্ত হয়।
+কম্পিউটার বা অন্য ডিভাইসকে নেটওয়ার্কে সংযুক্ত করার হার্ডওয়্যার উপাদানকে Network Interface Card বা NIC বলে।
 \end{definitionbox}
 
-NIC computer-কে network medium-এর সাথে connect করে। প্রতিটি NIC-এর সাধারণত একটি unique physical address থাকে, যাকে MAC address বলা হয়। Wired NIC Ethernet cable-এর মাধ্যমে network-এ যুক্ত হয়, আর wireless NIC Wi-Fi signal ব্যবহার করে।
+প্রচলিত Ethernet MAC (Media Access Control) Address ৪৮ bit বা ৬ Byte দীর্ঘ। এটি ১২টি হেক্সাডেসিমাল অঙ্ক দিয়ে লেখা যায়; যেমন 02:1A:2B:3C:4D:5E। MAC ডেটা লিংক স্তরের ঠিকানা এবং IP Address নেটওয়ার্ক স্তরের ঠিকানা।
+\textbf{IP Address-এর দৈর্ঘ্য:} IPv4 ঠিকানা ৩২ bit বা ৪ Byte এবং IPv6 ঠিকানা ১২৮ bit বা ১৬ Byte দীর্ঘ। MAC ও IP ঠিকানার বিটসংখ্যা আলাদা। রাউটার কোন ধরনের ঠিকানা ব্যবহার করে, তার সঙ্গে দৈর্ঘ্যের তথ্য মিলিয়ে বুঝতে হয়।
+\textbf{ফ্রেমের ঠিকানার উৎস:} হোস্টের নেটওয়ার্ক সফটওয়্যার ও NIC ফ্রেম প্রস্তুত করে। Source MAC ওই লিংকের প্রেরক ইন্টারফেসের ঠিকানা। Destination MAC একই লিংকের প্রাপক বা পরবর্তী ধাপের ইন্টারফেসের ঠিকানা। সুইচ এই ঠিকানা ব্যবহার করে। ঠিকানা শেখার ধাপ সুইচের অংশে আছে।
 
-\begin{keypointbox}{NIC-এর বৈশিষ্ট্য}
+
+NIC কম্পিউটারকে নেটওয়ার্কের মাধ্যমের সঙ্গে যুক্ত করে। প্রতিটি NIC-এর সাধারণত একটি স্বতন্ত্র ভৌত ঠিকানা থাকে, যার নাম MAC Address। তারযুক্ত NIC Ethernet কেবল এবং তারবিহীন NIC Wi-Fi সংকেত ব্যবহার করে।
+
+\chTwoPair{\begin{keypointbox}{NIC-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item computer বা device-কে network-এ connect করে।
-\item wired বা wireless দুই ধরনের হতে পারে।
-\item MAC address ব্যবহার করে device identification করা যায়।
-\item LAN communication-এ গুরুত্বপূর্ণ ভূমিকা রাখে।
-\item motherboard-এ built-in থাকতে পারে বা আলাদা card/adapter হিসেবে থাকতে পারে।
+\item কম্পিউটার বা অন্য ডিভাইসকে নেটওয়ার্কে সংযুক্ত করে।
+\item তারযুক্ত বা তারবিহীন—উভয় ধরনের হতে পারে।
+\item MAC Address দিয়ে সংশ্লিষ্ট নেটওয়ার্ক ইন্টারফেস শনাক্ত করা যায়।
+\item LAN-এর যোগাযোগে গুরুত্বপূর্ণ ভূমিকা রাখে।
+\item মাদারবোর্ডে যুক্ত থাকতে পারে বা পৃথক কার্ড কিংবা অ্যাডাপ্টার হতে পারে।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-Desktop computer-এর Ethernet port বা laptop-এর Wi-Fi adapter হলো NIC-এর উদাহরণ।
-\end{examplebox}
+ডেস্কটপ কম্পিউটারের Ethernet পোর্ট বা ল্যাপটপের Wi-Fi অ্যাডাপ্টার NIC-এর উদাহরণ।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/nic_connection_model.png}{NIC দিয়ে কম্পিউটারকে নেটওয়ার্কে যুক্ত করা}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/nic_connection_model.png}{
-\includegraphics[width=0.86\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/nic_connection_model.png}
-}{
-\fbox{
-\parbox{0.84\textwidth}{
-\centering
-\vspace{0.6cm}
-Computer \quad $\longrightarrow$ \quad NIC / Ethernet Port \quad $\longrightarrow$ \quad Network
-\vspace{0.6cm}
-}}
-}
-\caption{NIC দিয়ে computer network-এ যুক্ত হওয়া}
-\end{figure}
 
 \subsection{Modem}
 
 \begin{definitionbox}{Modem}
-Modem হলো এমন একটি network device যা analog signal-কে digital signal-এ এবং digital signal-কে analog signal-এ রূপান্তর করে data communication সম্ভব করে।
+ডেটা অনুযায়ী ক্যারিয়ার সংকেতের বৈশিষ্ট্য পরিবর্তন বা Modulation এবং প্রাপ্ত ক্যারিয়ার থেকে ডেটা উদ্ধার বা Demodulation করে যে যন্ত্র, তাকে মডেম বলে। পুরোনো টেলিফোন মডেমের কাজ ডিজিটাল–অ্যানালগ রূপান্তর দিয়ে বোঝানো হয়। আধুনিক সব ইন্টারফেসে একই রূপান্তর ঘটে না।
 \end{definitionbox}
 
-Modem শব্দটি এসেছে Modulator এবং Demodulator থেকে। Internet connection-এ modem ISP-এর signal গ্রহণ করে user-এর device বা router-এর জন্য উপযোগী data signal তৈরি করে।
+Modulator ও Demodulator শব্দ দুটি থেকে Modem নাম এসেছে। মডেম ISP-এর সংযোগ থেকে সংকেত গ্রহণ করে ব্যবহারকারীর ডিভাইস বা রাউটারের উপযোগী ডেটা সংকেত তৈরি করে।
 
-\begin{keypointbox}{Modem-এর কাজ}
+\chTwoPair{\begin{keypointbox}{Modem-এর কাজ}
 \begin{itemize}
-\item signal modulation ও demodulation করে।
-\item ISP line এবং local network/device-এর মধ্যে সংযোগ তৈরি করে।
-\item broadband, DSL, cable বা fiber connection-এর ক্ষেত্রে ভিন্ন ধরনের modem/ONT ব্যবহৃত হতে পারে।
-\item internet connection চালু করতে গুরুত্বপূর্ণ device।
+\item সংকেতের Modulation ও Demodulation করে।
+\item ISP-এর সংযোগ ও স্থানীয় নেটওয়ার্ক বা ডিভাইসের মধ্যে যোগাযোগ তৈরি করে।
+\item ব্রডব্যান্ড, DSL, কেবল বা ফাইবার সংযোগে প্রযুক্তি অনুযায়ী মডেম বা ONT ব্যবহার করা হয়।
+\item ইন্টারনেট সংযোগ চালু করতে গুরুত্বপূর্ণ।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-বাসায় broadband internet connection-এ ISP line থেকে signal এনে router বা computer-এ internet দেওয়ার জন্য modem/ONT ব্যবহার করা হয়।
-\end{examplebox}
+বাসার ব্রডব্যান্ড সংযোগে ISP-এর সংকেত গ্রহণ করে রাউটার বা কম্পিউটারে ইন্টারনেট ব্যবহারের সুযোগ দিতে সংযোগের ধরন অনুযায়ী মডেম বা ONT ব্যবহার করা হয়।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/modem_internet_connection_model.png}{মডেম দিয়ে ইন্টারনেট সংযোগ}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/modem_internet_connection_model.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/modem_internet_connection_model.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-ISP Line \quad $\longrightarrow$ \quad Modem / ONT \quad $\longrightarrow$ \quad Router / Computer
-\vspace{0.6cm}
-}}
-}
-\caption{Modem ব্যবহার করে internet connection}
-\end{figure}
 
 \subsection{Hub}
 
 \begin{definitionbox}{Hub}
-Hub হলো একটি basic network device যা একাধিক device-কে LAN-এ যুক্ত করে এবং received data signal সব port-এ পাঠিয়ে দেয়।
+একাধিক ডিভাইসকে LAN-এ সংযুক্ত করে এক পোর্টে প্রাপ্ত ডেটাবাহী সংকেত আগত পোর্ট ছাড়া অন্য পোর্টগুলোতে পাঠায় যে যন্ত্র, তাকে হাব বলে।
 \end{definitionbox}
 
-Hub সাধারণত Physical Layer device। এটি intelligent filtering করে না। Hub কোনো data কোন device-এর জন্য তা বুঝতে পারে না; তাই একটি port থেকে data পেলে বাকি সব port-এ পাঠিয়ে দেয়। এজন্য hub-এ traffic বেশি হয় এবং collision-এর সম্ভাবনা বাড়ে।
+হাব সাধারণত ভৌত স্তরে কাজ করে এবং ঠিকানা দেখে সংকেত বাছাই করে না। সংকেত কোন ডিভাইসের জন্য পাঠানো হয়েছে, হাব তা নির্ধারণ করে না। এক পোর্টে সংকেত পেলে আগত পোর্ট ছাড়া অন্য পোর্টগুলোতে পাঠায়। ফলে অপ্রয়োজনীয় ট্রাফিক ও সংঘর্ষের সম্ভাবনা বাড়ে।
 
-\begin{keypointbox}{Hub-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Hub-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item একাধিক device connect করতে ব্যবহৃত হয়।
-\item data সব connected device-এর দিকে পাঠায়।
-\item MAC address table ব্যবহার করে না।
-\item security ও efficiency কম।
-\item আধুনিক network-এ hub-এর পরিবর্তে switch বেশি ব্যবহৃত হয়।
+\item একাধিক ডিভাইস সংযুক্ত করতে ব্যবহৃত হয়।
+\item আগত পোর্ট ছাড়া অন্য সংযুক্ত পোর্টে সংকেত পাঠায়।
+\item MAC Address-এর সারণি ব্যবহার করে না।
+\item ঠিকানাভিত্তিক বাছাই করে না; অপ্রয়োজনীয় সংকেত ও একই মাধ্যমে সংঘর্ষের সমস্যা থাকে।
+\item আধুনিক নেটওয়ার্কে হাবের পরিবর্তে সুইচ বেশি ব্যবহৃত হয়।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{সহজ উদাহরণ}
-একটি পুরনো computer lab-এ ৫টি computer hub দিয়ে যুক্ত করলে, এক computer data পাঠালে hub সেটি অন্য সব computer-এর দিকে পাঠাবে।
-\end{examplebox}
+পুরোনো একটি ল্যাবের ৫টি কম্পিউটার হাবে যুক্ত আছে। একটি কম্পিউটার ডেটা পাঠালে হাব অন্য সব কম্পিউটারের দিকে সেই সংকেত পাঠাবে।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/hub_broadcast_model.png}{হাব আগত পোর্ট ছাড়া অন্য পোর্টে সংকেত পাঠায়}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/hub_broadcast_model.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/hub_broadcast_model.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.6cm}
-PC A sends data to Hub\\[6pt]
-Hub sends the same data to PC B, PC C, PC D, PC E\\[6pt]
-No filtering
-\vspace{0.6cm}
-}}
-}
-\caption{Hub সব port-এ data পাঠায়}
-\end{figure}
 
 \subsection{Switch}
 
 \begin{definitionbox}{Switch}
-Switch হলো একটি network device যা LAN-এর একাধিক device-কে যুক্ত করে এবং MAC address ব্যবহার করে data frame নির্দিষ্ট destination device-এর কাছে পাঠায়।
+LAN-এর একাধিক ডিভাইস সংযুক্ত করে MAC Address-এর ভিত্তিতে ডেটা ফ্রেম গন্তব্যে পাঠায় যে নেটওয়ার্ক ডিভাইস, তাকে সুইচ বলে।
 \end{definitionbox}
 
-Switch hub-এর তুলনায় বেশি intelligent। Switch প্রতিটি connected device-এর MAC address শিখে একটি MAC address table তৈরি করে। এরপর data frame আসলে switch table দেখে নির্দিষ্ট port-এ frame পাঠায়। ফলে unnecessary traffic কমে এবং network performance বৃদ্ধি পায়।
 
-\begin{keypointbox}{Switch-এর বৈশিষ্ট্য}
-\begin{itemize}
-\item LAN-এর device-গুলোকে connect করে।
-\item MAC address অনুযায়ী data forwarding করে।
-\item hub-এর মতো সব port-এ data পাঠায় না।
-\item collision কমায় এবং performance বাড়ায়।
-\item computer lab, office network ও campus LAN-এ বহুল ব্যবহৃত।
-\end{itemize}
-\end{keypointbox}
-
-\begin{examplebox}{বাস্তব উদাহরণ}
-School computer lab-এর ৩০টি computer একটি switch-এর সাথে যুক্ত থাকলে, এক PC থেকে printer-এ data গেলে switch নির্দিষ্ট port ব্যবহার করে data পাঠায়।
-\end{examplebox}
-
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/switch_mac_forwarding_model.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/switch_mac_forwarding_model.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-PC A \quad $\longrightarrow$ \quad Switch checks MAC table \quad $\longrightarrow$ \quad PC C\\[6pt]
-Only the correct port receives data
-\vspace{0.6cm}
-}}
-}
-\caption{Switch MAC address অনুযায়ী data forward করে}
-\end{figure}
-
+\chTwoDiagramRow{switch}{MAC Table তৈরি ও ব্যবহার}{A থেকে ফ্রেম এলে সুইচ প্রেরকের Source MAC এবং আগত পোর্টের তথ্য শেখে। এরপর Destination MAC খোঁজে। B-এর পোর্ট জানা থাকলে শুধু সেই পোর্টে ফ্রেম পাঠায়। গন্তব্য অজানা হলে বা ফ্রেমটি Broadcast হলে সংশ্লিষ্ট LAN/VLAN-এর অন্য ফরওয়ার্ডিং পোর্টে ছড়িয়ে দেয়। আগত পোর্টে ফেরত পাঠায় না।}
+\textbf{সংঘর্ষ ও LAN-এর সীমা:} প্রচলিত Ethernet হাবে সংযুক্ত ডিভাইসগুলো একই Collision Domain ভাগ করে। সুইচের পৃথক ফুল-ডুপ্লেক্স লিংকে সংঘর্ষ ঘটে না। VLAN-সমর্থিত সুইচে একাধিক পৃথক যৌক্তিক LAN থাকতে পারে। একটি সুইচে একটি LAN থাকার ধারণা সাধারণ অবিভক্ত উদাহরণে প্রযোজ্য। Broadcast সংশ্লিষ্ট VLAN-এর মধ্যে সীমাবদ্ধ থাকে।
+\textbf{ব্যবহারের উদাহরণ:} ল্যাবের কম্পিউটার থেকে প্রিন্টারে ফ্রেম পাঠাতে সুইচের শেখা পোর্টের সারণি কাজে লাগে। সুইচ প্রেরক কম্পিউটারের MAC তৈরি করে না। Source MAC ফ্রেমে আগে থেকেই থাকে।
 \subsection{Router}
 
 \begin{definitionbox}{Router}
-Router হলো একটি network device যা দুই বা ততোধিক network-কে সংযুক্ত করে এবং IP address ব্যবহার করে data packet-এর সঠিক পথ বা route নির্ধারণ করে।
+দুই বা ততোধিক নেটওয়ার্ক সংযুক্ত করে IP Address-এর ভিত্তিতে ডেটা প্যাকেট পাঠানোর উপযুক্ত পথ নির্ধারণ করে যে ডিভাইস, তাকে রাউটার বলে।
 \end{definitionbox}
 
-Router LAN-কে WAN বা internet-এর সাথে যুক্ত করতে ব্যবহৃত হয়। এটি routing table ব্যবহার করে data packet কোন network path দিয়ে যাবে তা নির্ধারণ করে। বাসার Wi-Fi router সাধারণত LAN device-গুলোকে internet access দেয়।
+রাউটার LAN-কে WAN বা ইন্টারনেটের সঙ্গে যুক্ত করে। রাউটিং টেবিলের তথ্য অনুযায়ী প্যাকেট পাঠানোর পরবর্তী পথ নির্ধারণ করে। বাসার Wi-Fi রাউটার সাধারণত স্থানীয় ডিভাইসগুলোকে ইন্টারনেট ব্যবহারের সুযোগ দেয়।
 
-\begin{keypointbox}{Router-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Router-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item একাধিক network connect করে।
-\item IP address ব্যবহার করে packet forwarding করে।
-\item routing table ব্যবহার করে best path নির্ধারণ করতে পারে।
-\item LAN-কে internet-এর সাথে যুক্ত করে।
-\item NAT, DHCP, firewall feature ইত্যাদি অনেক router-এ থাকতে পারে।
+\item একাধিক নেটওয়ার্ক সংযুক্ত করে।
+\item IP Address-এর ভিত্তিতে প্যাকেট পাঠায়।
+\item রাউটিং টেবিলের তথ্য ও মানদণ্ড অনুযায়ী উপযুক্ত পথ নির্ধারণ করে।
+\item LAN-কে ইন্টারনেটে যুক্ত করে।
+\item অনেক রাউটারে NAT, DHCP ও ফায়ারওয়ালের সুবিধা থাকে।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-বাসার Wi-Fi router laptop, mobile ও smart TV-কে local network-এ যুক্ত করে এবং modem/ISP-এর মাধ্যমে internet access দেয়।
-\end{examplebox}
+বাসার Wi-Fi রাউটার ল্যাপটপ, মোবাইল ফোন ও স্মার্ট টিভিকে স্থানীয় নেটওয়ার্কে যুক্ত করে। মডেম বা ISP-এর সংযোগ দিয়ে ইন্টারনেট ব্যবহারের সুযোগ দেয়।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/router_connects_networks_model.png}{রাউটার ভিন্ন নেটওয়ার্ক সংযুক্ত করে}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/router_connects_networks_model.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/router_connects_networks_model.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-LAN 1 \quad $\longleftrightarrow$ \quad Router \quad $\longleftrightarrow$ \quad Internet / LAN 2\\[6pt]
-IP-based packet routing
-\vspace{0.6cm}
-}}
-}
-\caption{Router এক network-কে অন্য network-এর সাথে যুক্ত করে}
-\end{figure}
 
 \subsection{Repeater}
 
 \begin{definitionbox}{Repeater}
-Repeater হলো এমন একটি network device যা দুর্বল বা বিকৃত signal গ্রহণ করে পুনরায় শক্তিশালী বা regenerate করে পরবর্তী অংশে পাঠায়।
+দুর্বল বা বিকৃত সংকেত গ্রহণ করে পুনর্গঠন ও শক্তিশালী করে পরবর্তী অংশে পাঠায় যে নেটওয়ার্ক ডিভাইস, তাকে রিপিটার বলে। সংকেত পুনর্গঠন সাধারণ সংকেত বর্ধনের সমার্থক নয়।
 \end{definitionbox}
 
-দীর্ঘ distance অতিক্রম করলে signal attenuation-এর কারণে দুর্বল হয়ে যায়। Repeater সেই signal নতুন করে তৈরি করে বা শক্তিশালী করে network range বাড়াতে সাহায্য করে। Wired network ও wireless network—দুই ক্ষেত্রেই repeater ধারণা ব্যবহার করা যায়।
+দীর্ঘ দূরত্ব অতিক্রম করতে গিয়ে ক্ষয়ের কারণে সংকেত দুর্বল হয়। রিপিটার সংকেত নতুন করে তৈরি ও শক্তিশালী করে নেটওয়ার্কের কার্যকর দূরত্ব বাড়াতে সাহায্য করে। তারযুক্ত ও তারবিহীন—উভয় নেটওয়ার্কে এই ধারণা ব্যবহৃত হয়।
 
-\begin{keypointbox}{Repeater-এর কাজ}
+\textbf{পুনর্গঠন ও বর্ধনের পার্থক্য:} ডিজিটাল রিপিটার দুর্বল পালস থেকে বিট শনাক্ত করে নতুন পালস তৈরি করে। এতে সংকেতের সময়গত মিল ও আকৃতি পুনর্গঠনে সাহায্য হয়। সাধারণ অ্যাম্প্লিফায়ার সংকেতের সঙ্গে নয়েজও বাড়াতে পারে। হারিয়ে যাওয়া বা ভুল শনাক্ত করা বিট রিপিটার নিশ্চিতভাবে উদ্ধার করতে পারে না।\par
+\chTwoPair{\begin{keypointbox}{Repeater-এর কাজ}
 \begin{itemize}
-\item দুর্বল signal regenerate করে।
-\item network distance বা coverage বাড়ায়।
-\item Physical Layer-এ কাজ করে।
-\item data filtering বা routing করে না।
-\item long cable link বা Wi-Fi range extension-এ ব্যবহার করা যায়।
+\item দুর্বল সংকেত পুনর্গঠন করে।
+\item নেটওয়ার্কের কার্যকর দূরত্ব বা সেবার আওতা বাড়ায়।
+\item ভৌত স্তরে কাজ করে।
+\item ডেটা বাছাই বা রাউটিং করে না।
+\item দীর্ঘ কেবল সংযোগ বা Wi-Fi-এর আওতা বাড়াতে ব্যবহার করা যায়।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-বড় building-এ Wi-Fi signal দুর্বল হলে Wi-Fi repeater/range extender ব্যবহার করে coverage বাড়ানো যায়।
-\end{examplebox}
+বড় ভবনের কিছু স্থানে Wi-Fi সংকেত দুর্বল হলে রিপিটার বা রেঞ্জ এক্সটেন্ডার দিয়ে সেবার আওতা বাড়ানো যায়।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/repeater_signal_regeneration.png}{রিপিটার দুর্বল ডিজিটাল সংকেত পুনর্গঠন করে}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/repeater_signal_regeneration.png}{
-\includegraphics[width=0.88\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/repeater_signal_regeneration.png}
-}{
-\fbox{
-\parbox{0.86\textwidth}{
-\centering
-\vspace{0.6cm}
-Strong Signal \quad $\longrightarrow$ \quad Weak Signal \quad $\longrightarrow$ \quad Repeater \quad $\longrightarrow$ \quad Strong Signal
-\vspace{0.6cm}
-}}
-}
-\caption{Repeater দুর্বল signal পুনরায় শক্তিশালী করে}
-\end{figure}
 
 \subsection{Bridge}
 
 \begin{definitionbox}{Bridge}
-Bridge হলো একটি network device যা একই ধরনের network-এর দুই বা ততোধিক segment-কে যুক্ত করে এবং MAC address ব্যবহার করে traffic filter করে।
+একই ধরনের নেটওয়ার্কের দুই বা ততোধিক অংশ সংযুক্ত করে MAC Address-এর ভিত্তিতে ট্রাফিক বাছাই করে যে ডিভাইস, তাকে ব্রিজ বলে।
 \end{definitionbox}
 
-Bridge LAN segment ভাগ করতে ব্যবহৃত হয়। এটি কোন frame কোন segment-এ পাঠাতে হবে তা MAC address দেখে সিদ্ধান্ত নিতে পারে। ফলে unnecessary traffic কমে এবং network performance উন্নত হয়। Modern switch-কে অনেক সময় multiport bridge হিসেবেও বোঝানো হয়।
+ব্রিজ LAN-এর অংশগুলো সংযুক্ত করে। MAC Address দেখে কোন অংশে ফ্রেম পাঠাতে হবে, তা নির্ধারণ করে। এতে অপ্রয়োজনীয় ট্রাফিক কমে এবং নেটওয়ার্কের কার্যকারিতা বাড়তে পারে। আধুনিক সুইচকে একাধিক পোর্টবিশিষ্ট ব্রিজ হিসেবেও বোঝানো হয়।
 
-\begin{keypointbox}{Bridge-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Bridge-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item LAN segment connect করে।
-\item MAC address দেখে frame filtering করে।
-\item unnecessary traffic কমায়।
-\item Data Link Layer-এ কাজ করে।
-\item ছোট network segment management-এ ব্যবহার করা যায়।
+\item LAN-এর অংশগুলো সংযুক্ত করে।
+\item MAC Address দেখে ফ্রেম বাছাই করে।
+\item অপ্রয়োজনীয় ট্রাফিক কমায়।
+\item ডেটা লিংক স্তরে কাজ করে।
+\item ছোট নেটওয়ার্কের অংশ পরিচালনায় ব্যবহার করা যায়।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{সহজ উদাহরণ}
-একটি office-এর accounts section ও admin section একই LAN-এর দুই segment হলে bridge ব্যবহার করে segment দুটিকে যুক্ত ও traffic control করা যায়।
-\end{examplebox}
+অফিসের হিসাব ও প্রশাসন শাখা একই LAN-এর দুটি অংশ হলে ব্রিজ দিয়ে অংশ দুটি সংযুক্ত এবং ট্রাফিক নিয়ন্ত্রণ করা যায়।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/bridge_network_segmentation.png}{ব্রিজ LAN-এর অংশগুলো সংযুক্ত করে}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/bridge_network_segmentation.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/bridge_network_segmentation.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-LAN Segment A \quad $\longleftrightarrow$ \quad Bridge \quad $\longleftrightarrow$ \quad LAN Segment B\\[6pt]
-MAC-based filtering
-\vspace{0.6cm}
-}}
-}
-\caption{Bridge LAN segment যুক্ত করে}
-\end{figure}
 
 \subsection{Gateway}
 
 \begin{definitionbox}{Gateway}
-Gateway হলো এমন একটি network device বা node যা ভিন্ন protocol, ভিন্ন architecture বা ভিন্ন ধরনের network-এর মধ্যে data communication সম্ভব করে।
+ভিন্ন প্রোটোকল, আর্কিটেকচার বা ধরনের নেটওয়ার্কের মধ্যে ডেটা যোগাযোগ সম্ভব করে যে ডিভাইস বা নোড, তাকে গেটওয়ে বলে।
 \end{definitionbox}
 
-Gateway-কে protocol converter বলা হয়। Router সাধারণত IP network-এর মধ্যে packet path নির্ধারণ করে, কিন্তু gateway ভিন্ন ধরনের network বা protocol-এর মধ্যে translation করতে পারে। অনেক home network-এ router default gateway হিসেবে কাজ করে।
+প্রোটোকল রূপান্তরের কাজ করা গেটওয়েকে Protocol Converter বলা হয়। রাউটার সাধারণত IP নেটওয়ার্কের মধ্যে প্যাকেটের পথ নির্ধারণ করে। গেটওয়ে ভিন্ন ব্যবস্থা বা প্রোটোকলের মধ্যে প্রয়োজনীয় রূপান্তর করতে পারে। বাসার নেটওয়ার্কে রাউটার সাধারণত Default Gateway-এর ভূমিকা নেয়।
 
-\begin{keypointbox}{Gateway-এর বৈশিষ্ট্য}
+\chTwoPair{\begin{keypointbox}{Gateway-এর বৈশিষ্ট্য}
 \begin{itemize}
-\item ভিন্ন network বা protocol connect করে।
-\item protocol conversion করতে পারে।
-\item network-এর entry ও exit point হিসেবে কাজ করতে পারে।
-\item router-এর তুলনায় বেশি complex হতে পারে।
-\item internet access বা enterprise network integration-এ গুরুত্বপূর্ণ।
+\item ভিন্ন নেটওয়ার্ক বা প্রোটোকলের ব্যবস্থা সংযুক্ত করে।
+\item প্রোটোকল রূপান্তর করতে পারে।
+\item নেটওয়ার্কের প্রবেশ ও নির্গমনপথের ভূমিকা নিতে পারে।
+\item প্রোটোকল রূপান্তরের কাজ রাউটিংয়ের তুলনায় জটিল হতে পারে।
+\item ইন্টারনেট প্রবেশ বা প্রতিষ্ঠানের বিভিন্ন নেটওয়ার্ক সমন্বয়ে গুরুত্বপূর্ণ।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-Local network থেকে internet-এ data পাঠানোর সময় default gateway ব্যবহার করা হয়। আবার ভিন্ন protocol-ভিত্তিক দুই system connect করতেও gateway দরকার হতে পারে।
-\end{examplebox}
+স্থানীয় নেটওয়ার্ক থেকে ইন্টারনেটে ডেটা পাঠাতে Default Gateway ব্যবহৃত হয়। আবার ভিন্ন প্রোটোকলভিত্তিক দুটি ব্যবস্থা যুক্ত করতে প্রোটোকল রূপান্তরকারী গেটওয়ে প্রয়োজন হতে পারে।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/gateway_protocol_conversion.png}{গেটওয়ে ভিন্ন নেটওয়ার্ক বা প্রোটোকল ব্যবস্থা যুক্ত করে}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/gateway_protocol_conversion.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/gateway_protocol_conversion.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-Network A / Protocol A \quad $\longleftrightarrow$ \quad Gateway \quad $\longleftrightarrow$ \quad Network B / Protocol B\\[6pt]
-Protocol conversion
-\vspace{0.6cm}
-}}
-}
-\caption{Gateway ভিন্ন network বা protocol যুক্ত করে}
-\end{figure}
 
 \subsection{Access Point}
 
 \begin{definitionbox}{Access Point}
-Access Point বা AP হলো এমন একটি network device যা wireless device-গুলোকে wired network বা LAN-এর সাথে যুক্ত হওয়ার সুযোগ দেয়।
+তারবিহীন ডিভাইসকে তারযুক্ত স্থানীয় নেটওয়ার্ক বা LAN-এ যুক্ত হওয়ার সুযোগ দেয় যে নেটওয়ার্ক ডিভাইস, তাকে Access Point বা AP বলে।
 \end{definitionbox}
 
-Access point Wi-Fi signal তৈরি করে। Mobile, laptop, tablet ইত্যাদি wireless device access point-এর মাধ্যমে network access পায়। অনেক home router-এর মধ্যে built-in access point থাকে।
+অ্যাকসেস পয়েন্ট Wi-Fi সংকেত দিয়ে মোবাইল ফোন, ল্যাপটপ ও ট্যাবলেটকে নেটওয়ার্ক ব্যবহারের সুযোগ দেয়। বাসার অনেক রাউটারে অ্যাকসেস পয়েন্ট যুক্ত থাকে।
 
-\begin{keypointbox}{Access Point-এর কাজ}
+\chTwoPair{\begin{keypointbox}{Access Point-এর কাজ}
 \begin{itemize}
-\item wireless LAN তৈরি করে।
-\item Wi-Fi device-কে network access দেয়।
-\item wired network ও wireless user-এর মধ্যে connection point হিসেবে কাজ করে।
-\item school, office, library, campus ও home network-এ ব্যবহৃত হয়।
-\item coverage area বাড়াতে একাধিক access point ব্যবহার করা যায়।
+\item তারবিহীন LAN তৈরি করে।
+\item Wi-Fi ডিভাইসকে নেটওয়ার্ক ব্যবহারের সুযোগ দেয়।
+\item তারযুক্ত নেটওয়ার্ক ও তারবিহীন ব্যবহারকারীর সংযোগস্থল হিসেবে কাজ করে।
+\item বিদ্যালয়, অফিস, গ্রন্থাগার, ক্যাম্পাস ও বাসার নেটওয়ার্কে ব্যবহৃত হয়।
+\item সেবার আওতা বাড়াতে একাধিক অ্যাকসেস পয়েন্ট ব্যবহার করা যায়।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-একটি কলেজ campus-এ students-দের Wi-Fi internet দিতে বিভিন্ন জায়গায় access point বসানো হয়।
-\end{examplebox}
+কলেজ ক্যাম্পাসের বিভিন্ন স্থানে অ্যাকসেস পয়েন্ট বসিয়ে শিক্ষার্থীদের Wi-Fi সংযোগ দেওয়া যায়। নেটওয়ার্কে ইন্টারনেট সংযোগ থাকলে তাঁরা ইন্টারনেটও ব্যবহার করতে পারেন।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/access_point_wireless_lan.png}{অ্যাকসেস পয়েন্ট বেতার যন্ত্রকে নেটওয়ার্কে যুক্ত করে}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/access_point_wireless_lan.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/access_point_wireless_lan.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-Switch / Router \quad $\longrightarrow$ \quad Access Point\\[6pt]
-$\swarrow$ \quad $\downarrow$ \quad $\searrow$\\[6pt]
-Laptop \quad Mobile \quad Tablet
-\vspace{0.6cm}
-}}
-}
-\caption{Access Point wireless device-কে network-এ যুক্ত করে}
-\end{figure}
 
 \subsection{Firewall}
 
 \begin{definitionbox}{Firewall}
-Firewall হলো network security device বা software system যা predefined security rules অনুযায়ী incoming ও outgoing network traffic monitor এবং filter করে।
+পূর্বনির্ধারিত নিরাপত্তানীতি অনুযায়ী আগত ও বহির্গামী নেটওয়ার্ক ট্রাফিক পর্যবেক্ষণ ও বাছাই করে যে নিরাপত্তা ডিভাইস বা সফটওয়্যার ব্যবস্থা, তাকে ফায়ারওয়াল বলে।
 \end{definitionbox}
 
-Firewall unauthorized access, harmful traffic, suspicious connection বা unwanted data block করতে সাহায্য করে। এটি hardware firewall, software firewall বা router-integrated firewall হতে পারে।
+ফায়ারওয়াল অননুমোদিত প্রবেশ, ক্ষতিকর ট্রাফিক, সন্দেহজনক সংযোগ ও অবাঞ্ছিত ডেটা আটকাতে সাহায্য করে। এটি হার্ডওয়্যার, সফটওয়্যার বা রাউটারের অন্তর্ভুক্ত ব্যবস্থা হতে পারে।
 
-\begin{keypointbox}{Firewall-এর কাজ}
+\chTwoPair{\begin{keypointbox}{Firewall-এর কাজ}
 \begin{itemize}
-\item network traffic monitor করে।
-\item security rules অনুযায়ী traffic allow বা block করে।
-\item unauthorized access কমাতে সাহায্য করে।
-\item malware, attack বা unwanted connection থেকে network রক্ষা করতে সাহায্য করে।
-\item home router, operating system এবং enterprise network-এ firewall ব্যবহৃত হয়।
+\item নেটওয়ার্ক ট্রাফিক পর্যবেক্ষণ করে।
+\item নিরাপত্তানীতি অনুযায়ী ট্রাফিক অনুমোদন বা বাধা দেয়।
+\item অননুমোদিত প্রবেশ কমাতে সাহায্য করে।
+\item ম্যালওয়্যার, আক্রমণ বা অবাঞ্ছিত সংযোগের ঝুঁকি কমাতে সাহায্য করে।
+\item বাসার রাউটার, অপারেটিং সিস্টেম ও প্রতিষ্ঠানের নেটওয়ার্কে ফায়ারওয়াল ব্যবহৃত হয়।
 \end{itemize}
 \end{keypointbox}
-
 \begin{examplebox}{বাস্তব উদাহরণ}
-একটি office network-এ firewall ব্যবহার করে বাইরের unauthorized user বা harmful traffic server-এ ঢোকা থেকে আটকানো যায়।
-\end{examplebox}
+অফিসের নেটওয়ার্কে ফায়ারওয়াল ব্যবহার করে বাইরের অননুমোদিত ব্যবহারকারী বা ক্ষতিকর ট্রাফিকের সার্ভারে প্রবেশ নিয়ন্ত্রণ করা যায়।
+\end{examplebox}}{\chTwoImage{chapters/Chapter02/images/firewall_filtering_model.png}{ফায়ারওয়াল ট্রাফিক বাছাই করে}}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/firewall_filtering_model.png}{
-\includegraphics[width=0.90\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/firewall_filtering_model.png}
-}{
-\fbox{
-\parbox{0.88\textwidth}{
-\centering
-\vspace{0.6cm}
-Internet \quad $\longrightarrow$ \quad Firewall checks rules \quad $\longrightarrow$ \quad LAN / Server\\[6pt]
-Allowed traffic passes, blocked traffic stops
-\vspace{0.6cm}
-}}
-}
-\caption{Firewall traffic filter করে}
-\end{figure}
 
 \subsection{Home Network-এ Network Device-এর ব্যবহার}
 
-একটি সাধারণ home network-এ modem/ONT, router, switch, access point এবং NIC একসাথে কাজ করতে পারে।
+বাসার সাধারণ নেটওয়ার্কে মডেম বা ONT, রাউটার, সুইচ, অ্যাকসেস পয়েন্ট ও NIC একসঙ্গে কাজ করতে পারে।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/home_network_devices_layout.png}{
-\includegraphics[width=0.94\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/home_network_devices_layout.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.6cm}
-ISP \quad $\longrightarrow$ \quad Modem / ONT \quad $\longrightarrow$ \quad Wi-Fi Router\\[6pt]
-$\swarrow$ \quad $\downarrow$ \quad $\searrow$\\[6pt]
-Laptop via Wi-Fi \quad Desktop via Ethernet \quad Mobile via Wi-Fi
-\vspace{0.6cm}
-}}
-}
-\caption{Home network-এ network device-এর ব্যবহার}
-\end{figure}
 
-\begin{keypointbox}{Home network flow}
+\chTwoPair{\begin{keypointbox}{Home network flow}
 \begin{itemize}
-\item ISP থেকে signal modem/ONT-এ আসে।
-\item Router local device-গুলোকে internet access দেয়।
-\item Router-এর built-in access point Wi-Fi signal দেয়।
-\item Desktop computer NIC/Ethernet port দিয়ে router-এ connect করে।
-\item Mobile ও laptop wireless NIC দিয়ে Wi-Fi network-এ connect করে।
+\item ISP-এর সংকেত মডেম বা ONT-এ আসে।
+\item রাউটার স্থানীয় ডিভাইসগুলোকে ইন্টারনেট ব্যবহারের সুযোগ দেয়।
+\item রাউটারের অন্তর্ভুক্ত অ্যাকসেস পয়েন্ট Wi-Fi সংকেত দেয়।
+\item ডেস্কটপ কম্পিউটার NIC বা Ethernet পোর্ট দিয়ে রাউটারে যুক্ত হয়।
+\item মোবাইল ফোন ও ল্যাপটপ তারবিহীন NIC দিয়ে Wi-Fi নেটওয়ার্কে যুক্ত হয়।
 \end{itemize}
-\end{keypointbox}
+\end{keypointbox}}{\chTwoImage{chapters/Chapter02/images/home_network_devices_layout.png}{বাসার নেটওয়ার্কে ডিভাইসের ব্যবহার}}
+
 
 \subsection{School Computer Lab Network}
 
-School বা college computer lab-এ সাধারণত switch, router, modem/ONT, server, printer এবং PC ব্যবহৃত হয়।
+বিদ্যালয় বা কলেজের কম্পিউটার ল্যাবে সাধারণত সুইচ, রাউটার, মডেম বা ONT, সার্ভার, প্রিন্টার ও কম্পিউটার ব্যবহৃত হয়।
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/school_lab_network_devices_layout.png}{
-\includegraphics[width=0.94\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/school_lab_network_devices_layout.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.6cm}
-Internet / ISP \quad $\longrightarrow$ \quad Modem / ONT \quad $\longrightarrow$ \quad Router \quad $\longrightarrow$ \quad Switch\\[6pt]
-Switch connects: PC 1, PC 2, PC 3, Server, Printer
-\vspace{0.6cm}
-}}
-}
-\caption{School computer lab network layout}
-\end{figure}
 
-\subsection{Hub, Switch ও Router-এর পার্থক্য}
+\chTwoImage{chapters/Chapter02/images/school_lab_network_devices_layout.png}{বিদ্যালয়ের কম্পিউটার ল্যাবের নেটওয়ার্ক বিন্যাস}
 
-\begin{center}
-\begin{tabular}{|p{0.18\textwidth}|p{0.24\textwidth}|p{0.25\textwidth}|p{0.23\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Hub} & \textbf{Switch} & \textbf{Router} \\
-\hline
-প্রধান কাজ & device connect করে data সব port-এ পাঠায় & LAN device connect করে নির্দিষ্ট port-এ data পাঠায় & একাধিক network connect করে packet route করে \\
-\hline
-Address ব্যবহার & address বুঝে না & MAC address ব্যবহার করে & IP address ব্যবহার করে \\
-\hline
-Layer & Physical Layer & Data Link Layer & Network Layer \\
-\hline
-Traffic control & কম & বেশি & network-to-network routing করে \\
-\hline
-Efficiency & কম & hub-এর চেয়ে বেশি & ভিন্ন network communication-এ গুরুত্বপূর্ণ \\
-\hline
-উদাহরণ & পুরনো LAN hub & computer lab switch & home/office router \\
-\hline
-\end{tabular}
-\end{center}
 
-\begin{figure}[!htbp]
-\centering
-\IfFileExists{chapters/Chapter02/images/hub_switch_router_comparison.png}{
-\includegraphics[width=0.94\textwidth,height=0.27\textheight,keepaspectratio]{chapters/Chapter02/images/hub_switch_router_comparison.png}
-}{
-\fbox{
-\parbox{0.92\textwidth}{
-\centering
-\vspace{0.6cm}
-Hub: sends to all ports\\[5pt]
-Switch: sends to selected port using MAC address\\[5pt]
-Router: connects networks using IP address
-\vspace{0.6cm}
-}}
-}
-\caption{Hub, Switch ও Router-এর তুলনা}
-\end{figure}
-
-\subsection{Switch ও Bridge-এর পার্থক্য}
-
-\begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Bridge} & \textbf{Switch} \\
-\hline
-Port সংখ্যা & সাধারণত কম port & অনেক port থাকতে পারে \\
-\hline
-প্রধান কাজ & LAN segment connect ও filter করে & অনেক device connect করে data নির্দিষ্ট port-এ পাঠায় \\
-\hline
-Address & MAC address ব্যবহার করে & MAC address ব্যবহার করে \\
-\hline
-Speed & তুলনামূলক কম হতে পারে & তুলনামূলক বেশি \\
-\hline
-ধারণা & segment-level device & multiport bridge হিসেবে ধরা যায় \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsection{Router ও Gateway-এর পার্থক্য}
-
-\begin{center}
-\begin{tabular}{|p{0.24\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
-\hline
-\textbf{বিষয়} & \textbf{Router} & \textbf{Gateway} \\
-\hline
-প্রধান কাজ & network-to-network packet routing করে & ভিন্ন network/protocol-এর মধ্যে communication করে \\
-\hline
-Address/Protocol & IP address ব্যবহার করে route নির্ধারণ করে & protocol conversion করতে পারে \\
-\hline
-Complexity & তুলনামূলক কম complex & বেশি complex হতে পারে \\
-\hline
-ব্যবহার & LAN to internet, inter-network routing & ভিন্ন architecture/protocol integration \\
-\hline
-উদাহরণ & home router, office router & default gateway, protocol converter \\
-\hline
-\end{tabular}
-\end{center}
-
+\subsection{ডিভাইসের পার্থক্য: কোন সূত্রে চিনবে?}
+\begin{longtable}{|p{\dimexpr .24\linewidth-7pt\relax}|p{\dimexpr .76\linewidth-7pt\relax}|}\hline
+\textbf{তুলনা} & \textbf{সিদ্ধান্তের মূল পার্থক্য}\\\hline
+\endfirsthead\hline\textbf{তুলনা} & \textbf{সিদ্ধান্তের মূল পার্থক্য}\\\hline\endhead
+Hub / Switch & হাব ঠিকানা শেখে না। সুইচ MAC Table দিয়ে পরিচিত Unicast-এর অপ্রয়োজনীয় ট্রাফিক কমায়। গন্তব্য অজানা হলে সুইচও ফ্রেম ছড়িয়ে দিতে পারে।\\\hline
+Bridge / Switch & দুটিই ব্রিজিং ও MAC-ভিত্তিক বাছাই করে। সুইচ মূলত একাধিক পোর্টবিশিষ্ট ব্রিজ। পুরোনো ব্রিজে সাধারণত পোর্ট ও বহনক্ষমতা কম ছিল। তবে কোনো শ্রেণির গতি সর্বজনীন স্থির মান নয়।\\\hline
+Repeater / Bridge & রিপিটার সংকেত পুনর্গঠন করে। ব্রিজ MAC দেখে ফ্রেম পাঠানোর প্রয়োজনীয় অংশ বেছে নেয়। সংকেতের দূরত্ব বাড়ানো এবং ট্রাফিক বাছাই আলাদা কাজ।\\\hline
+Switch / Router & সাধারণ Layer-2 সুইচ একই LAN/VLAN-এর ফ্রেম নিয়ে কাজ করে। রাউটার ভিন্ন IP নেটওয়ার্কের প্যাকেটের পথ নির্ধারণ করে।\\\hline
+Router / Protocol Gateway & রাউটার IP-ভিত্তিক পথ নির্ধারণ করে; প্রোটোকল গেটওয়ে প্রোটোকল বা অ্যাপ্লিকেশনের রূপান্তর করে। রাউটার Default Gateway হতে পারে। সেই ভূমিকা মানেই প্রোটোকল রূপান্তর নয়।\\\hline
+Modem / Router & মডেমের মূল কাজ Modulation/Demodulation; রাউটারের কাজ IP নেটওয়ার্কের মধ্যে পথ নির্ধারণ। একই যন্ত্রে দুটি সুবিধা থাকতে পারে।\\\hline
+NIC / Modem & NIC হোস্টের নেটওয়ার্ক ইন্টারফেস। মডেম ক্যারিয়ার ও ডেটার রূপান্তরের যন্ত্র। সব NIC মডেম নয়।\\\hline
+\end{longtable}
+\chTwoImage{chapters/Chapter02/images/hub_switch_router_comparison.png}{সংকেত, MAC ও IP-ভিত্তিক কাজের পার্থক্য}
 \subsection{কোন পরিস্থিতিতে কোন device ব্যবহার হবে?}
 
-\begin{center}
-\begin{tabular}{|p{0.36\textwidth}|p{0.24\textwidth}|p{0.28\textwidth}|}
+\begingroup
+\begin{longtable}{|p{\dimexpr 0.4070\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.2714\linewidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr 0.3166\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \hline
 \textbf{পরিস্থিতি} & \textbf{উপযুক্ত device} & \textbf{কারণ} \\
 \hline
-এক computer-কে network-এ যুক্ত করা & NIC & computer-এর network interface দরকার \\
+\endfirsthead
 \hline
-ISP line থেকে internet নেওয়া & Modem/ONT & ISP signal device/network-এর জন্য উপযোগী করে \\
+\textbf{পরিস্থিতি} & \textbf{উপযুক্ত device} & \textbf{কারণ} \\
 \hline
-Lab-এর অনেক PC connect করা & Switch & LAN device efficiently connect করে \\
-\hline
-দুর্বল signal দূরে পাঠানো & Repeater & signal regenerate করে range বাড়ায় \\
-\hline
-দুই LAN segment যুক্ত করা & Bridge & segment connect ও filter করে \\
-\hline
-LAN-কে internet-এর সাথে যুক্ত করা & Router & ভিন্ন network connect ও route করে \\
-\hline
-ভিন্ন protocol network connect করা & Gateway & protocol conversion করতে পারে \\
-\hline
-Wireless internet দেওয়া & Access Point & Wi-Fi device connect করে \\
-\hline
-Unauthorized access ঠেকানো & Firewall & traffic filter ও security দেয় \\
-\hline
-\end{tabular}
-\end{center}
+\endhead
 
-\subsection{Common Mistake Zone}
+কম্পিউটারকে নেটওয়ার্কে যুক্ত করা & NIC & কম্পিউটারের নেটওয়ার্ক ইন্টারফেস প্রয়োজন \\
+\hline
+ISP-এর সংযোগে ইন্টারনেট নেওয়া & Modem/ONT & প্রযুক্তি অনুযায়ী ISP-এর সংকেত স্থানীয় যন্ত্র বা নেটওয়ার্কের উপযোগী করে \\
+\hline
+ল্যাবের অনেক কম্পিউটার যুক্ত করা & Switch & LAN-এর ডিভাইসগুলো দক্ষতার সঙ্গে সংযুক্ত করে \\
+\hline
+দুর্বল সংকেত দূরে পাঠানো & Repeater & সংকেত পুনর্গঠন করে কার্যকর দূরত্ব বাড়ায় \\
+\hline
+LAN-এর দুটি অংশ যুক্ত করা & Bridge & অংশগুলো সংযুক্ত করে ফ্রেম বাছাই করে \\
+\hline
+LAN-কে ইন্টারনেটে যুক্ত করা & Router & ভিন্ন নেটওয়ার্ক যুক্ত করে পথ নির্ধারণ করে \\
+\hline
+ভিন্ন প্রোটোকলের ব্যবস্থা যুক্ত করা & Gateway & প্রোটোকল রূপান্তর করতে পারে \\
+\hline
+তারবিহীন ইন্টারনেট ব্যবহারের সুযোগ দেওয়া & Access Point & Wi-Fi ডিভাইস যুক্ত করে; নেটওয়ার্কে ইন্টারনেট সংযোগ প্রয়োজন \\
+\hline
+অননুমোদিত প্রবেশ নিয়ন্ত্রণ & Firewall & নিরাপত্তানীতি অনুযায়ী ট্রাফিক বাছাই করে \\
+\hline
+\end{longtable}
+\endgroup
+
+\input{chapters/Chapter02/topics/08_network_devices/concept_enrichment.tex}
+\input{chapters/Chapter02/topics/08_network_devices/applied_examples.tex}
+
+\subsection{সাধারণ ভুল ও সংশোধন}
 
 \smallhead{১. Switch ও router একই মনে করা}
-অনেকে switch ও router একই মনে করে। Switch একই LAN-এর device-গুলোর মধ্যে data forward করে, কিন্তু router ভিন্ন network connect করে এবং IP address অনুযায়ী route নির্ধারণ করে।
+সুইচ একই LAN-এর ডিভাইসগুলোর মধ্যে ফ্রেম পাঠায়। রাউটার ভিন্ন নেটওয়ার্ক সংযুক্ত করে এবং IP Address-এর ভিত্তিতে প্যাকেটের পথ নির্ধারণ করে। তাই সুইচ ও রাউটারের কাজ আলাদা।
 
 \smallhead{২. Hub ও switch দেখতে একই বলে কাজও একই মনে করা}
-Hub ও switch দেখতে একই রকম মনে হতে পারে, কিন্তু hub data সব port-এ পাঠায়; switch destination MAC address দেখে নির্দিষ্ট port-এ data পাঠায়।
+হাব ও সুইচ দেখতে একই রকম হতে পারে। হাব আগত পোর্ট ছাড়া অন্য পোর্টে সংকেত পাঠায়। সুইচ গন্তব্যের MAC Address দেখে পরিচিত গন্তব্যের উপযুক্ত পোর্টে ফ্রেম পাঠায়।
 
 \smallhead{৩. Modem ও router এক জিনিস মনে করা}
-Modem ও router এক জিনিস নয়। Modem ISP signal convert করে, আর router local network-এর device-গুলোকে network/internet access দেয়।
+মডেম ISP-এর সংকেত রূপান্তর করে। রাউটার স্থানীয় ডিভাইসগুলোকে অন্য নেটওয়ার্ক বা ইন্টারনেটে যোগাযোগের সুযোগ দেয়। দুটি কাজ পৃথক।
 
 \smallhead{৪. Gateway ও router concept গুলিয়ে ফেলা}
-Gateway ও router অনেক সময় একই device-এ থাকতে পারে, কিন্তু concept আলাদা। Gateway ভিন্ন protocol বা ভিন্ন network-এর মধ্যে entry/exit point ও translator হিসেবে কাজ করতে পারে।
+গেটওয়ে ও রাউটারের সুবিধা একই যন্ত্রে থাকতে পারে; তবে ধারণা দুটি আলাদা। গেটওয়ে নেটওয়ার্কের প্রবেশ ও নির্গমনপথের ভূমিকা নিতে পারে। প্রোটোকল গেটওয়ে ভিন্ন ব্যবস্থার মধ্যে প্রয়োজনীয় রূপান্তরও করতে পারে।
 
-\subsection{Exam-style প্রশ্ন ও উত্তর}
+\subsection{MCQ অনুশীলন}
 
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Network device কী?}
-কম্পিউটার নেটওয়ার্কে device বা network-কে সংযুক্ত করা, data আদান-প্রদান নিয়ন্ত্রণ করা, signal পুনরুদ্ধার করা, route নির্ধারণ করা এবং security নিশ্চিত করার জন্য ব্যবহৃত hardware বা hardware-software সমন্বিত উপাদানকে network device বলা হয়। যেমন—NIC, modem, hub, switch, router, repeater, bridge, gateway, access point ও firewall।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: NIC কী?}
-NIC বা Network Interface Card হলো এমন একটি hardware component যার মাধ্যমে computer বা device network-এর সাথে যুক্ত হয়। NIC wired বা wireless হতে পারে এবং device identification-এর জন্য MAC address ব্যবহার করে।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Modem কী?}
-Modem হলো এমন একটি network device যা analog signal-কে digital signal-এ এবং digital signal-কে analog signal-এ রূপান্তর করে data communication সম্ভব করে। Modem শব্দটি Modulator ও Demodulator থেকে এসেছে।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Hub কী?}
-Hub হলো basic network device যা একাধিক device-কে LAN-এ যুক্ত করে এবং received data সব connected port-এ পাঠিয়ে দেয়। এটি address filtering করে না, তাই efficiency কম।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Switch কী?}
-Switch হলো LAN device connecting network device, যা MAC address ব্যবহার করে data frame নির্দিষ্ট destination device-এর port-এ পাঠায়। ফলে unnecessary traffic কমে এবং network performance বাড়ে।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Router কী?}
-Router হলো network device যা দুই বা ততোধিক network-কে সংযুক্ত করে এবং IP address ব্যবহার করে data packet-এর সঠিক route নির্ধারণ করে। LAN-কে internet-এর সাথে যুক্ত করতে router ব্যবহৃত হয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Repeater কী?}
-Repeater হলো network device যা দুর্বল signal গ্রহণ করে পুনরায় শক্তিশালী বা regenerate করে পরবর্তী অংশে পাঠায়। এটি network range বাড়াতে ব্যবহৃত হয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Bridge কী?}
-Bridge হলো network device যা একই ধরনের network-এর দুই বা ততোধিক LAN segment যুক্ত করে এবং MAC address অনুযায়ী traffic filter করে।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Gateway কী?}
-Gateway হলো network device বা node যা ভিন্ন protocol, ভিন্ন architecture বা ভিন্ন ধরনের network-এর মধ্যে data communication সম্ভব করে। Gateway-কে protocol converter-ও বলা হয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Access Point কী?}
-Access Point হলো network device যা wireless device-গুলোকে wired network বা LAN-এর সাথে যুক্ত হওয়ার সুযোগ দেয়। এটি Wi-Fi signal তৈরি করে mobile, laptop ও tablet-কে network access দেয়।
-\end{boardbox}
-
-\begin{boardbox}{সংক্ষিপ্ত প্রশ্ন: Firewall কী?}
-Firewall হলো network security device বা software system যা predefined security rules অনুযায়ী incoming ও outgoing network traffic monitor এবং filter করে। এটি unauthorized access ও harmful traffic থেকে network রক্ষা করতে সাহায্য করে।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: Hub ও Switch}
-Hub received data সব port-এ পাঠায় এবং address filtering করে না। তাই traffic ও collision বেশি হতে পারে। অন্যদিকে switch MAC address table ব্যবহার করে data নির্দিষ্ট destination port-এ পাঠায়। তাই switch বেশি efficient এবং আধুনিক LAN-এ hub-এর পরিবর্তে switch ব্যবহার করা হয়।
-\end{boardbox}
-
-\begin{boardbox}{পার্থক্য: Switch ও Router}
-Switch একই LAN-এর একাধিক device connect করে এবং MAC address অনুযায়ী frame forward করে। Router দুই বা ততোধিক network connect করে এবং IP address অনুযায়ী packet route নির্ধারণ করে। তাই switch LAN-এর ভিতরে বেশি ব্যবহৃত হয়, আর router LAN-কে internet বা অন্য network-এর সাথে যুক্ত করে।
-\end{boardbox}
-
-\subsection{Brainstorming Critical Question}
-
-\begin{practicebox}
-একটি কলেজ তাদের ICT lab modernize করতে চায়। Lab-এ ৪০টি computer, ১টি server, ২টি printer, campus Wi-Fi, internet connection এবং network security দরকার। ISP থেকে একটি fiber line এসেছে। Lab-এর কিছু অংশে signal দুর্বল হয়।
-
-\begin{enumerate}
-\item ক. Network device কী?
-\item খ. Switch hub-এর তুলনায় বেশি efficient কেন?
-\item গ. ৪০টি computer ও printer এক LAN-এ যুক্ত করতে কোন device ব্যবহার করা যুক্তিযুক্ত? ব্যাখ্যা কর।
-\item ঘ. internet connection, campus Wi-Fi, weak signal এবং security নিশ্চিত করতে কোন কোন network device ব্যবহার করা উচিত—বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
-
-\subsection{১ মিনিটে রিভিশন}
-
-\begin{recapbox}
-\begin{itemize}
-\item Network device network তৈরি, data forwarding, routing, signal regeneration ও security নিশ্চিত করতে ব্যবহৃত হয়।
-\item NIC computer বা device-কে network-এ যুক্ত করে।
-\item Modem signal modulation-demodulation করে।
-\item Hub data সব port-এ পাঠায়।
-\item Switch MAC address অনুযায়ী নির্দিষ্ট port-এ data পাঠায়।
-\item Router IP address অনুযায়ী packet route করে এবং network connect করে।
-\item Repeater দুর্বল signal regenerate করে।
-\item Bridge LAN segment connect ও filter করে।
-\item Gateway ভিন্ন network/protocol connect করে।
-\item Access Point wireless device-কে network access দেয়।
-\item Firewall traffic filter করে network security বাড়ায়।
-\item Hub, Repeater, Modem মূলত Physical Layer device হিসেবে বোঝানো যায়।
-\item Switch ও Bridge Data Link Layer-এ কাজ করে।
-\item Router Network Layer-এ কাজ করে।
-\end{itemize}
-\end{recapbox}
-
-\subsection{অনুশীলন}
-
-\begin{practicebox}
+\par
 \textbf{MCQ}
 
-\begin{enumerate}
-\item Computer-কে network-এ যুক্ত করতে কোনটি দরকার?\\
-ক. NIC \quad খ. Monitor \quad গ. Scanner \quad ঘ. Speaker
-
-\item কোন device MAC address অনুযায়ী data forward করে?\\
-ক. Hub \quad খ. Switch \quad গ. Modem \quad ঘ. Keyboard
-
-\item কোন device IP address অনুযায়ী packet route করে?\\
-ক. Router \quad খ. Hub \quad গ. Repeater \quad ঘ. Mouse
-
-\item Hub data কোথায় পাঠায়?\\
-ক. শুধু নির্দিষ্ট port-এ \quad খ. সব connected port-এ \quad গ. শুধু internet-এ \quad ঘ. কোথাও না
-
-\item দুর্বল signal পুনরায় শক্তিশালী করতে কোন device ব্যবহৃত হয়?\\
-ক. Repeater \quad খ. Printer \quad গ. Scanner \quad ঘ. Monitor
-
-\item ভিন্ন protocol network connect করতে কোন device বেশি উপযোগী?\\
-ক. Gateway \quad খ. Keyboard \quad গ. Speaker \quad ঘ. Projector
-
-\item Wi-Fi device-কে network access দিতে কোন device ব্যবহৃত হয়?\\
-ক. Access Point \quad খ. Plotter \quad গ. Barcode reader \quad ঘ. Joystick
-
-\item Network traffic filter করে security দিতে কোন device ব্যবহৃত হয়?\\
-ক. Firewall \quad খ. Hub \quad গ. Mouse \quad ঘ. Monitor
-\end{enumerate}
+\begin{multicols}{2}\begin{enumerate}
+\item\chTwoMCQBlock{কম্পিউটারকে নেটওয়ার্কে যুক্ত করতে কোন উপাদান প্রয়োজন?
+\par ক. NIC \quad খ. মনিটর \par গ. স্ক্যানার \quad ঘ. স্পিকার }
+\item\chTwoMCQBlock{কোন ডিভাইস MAC Address-এর ভিত্তিতে ফ্রেম ফরওয়ার্ড করে?
+\par ক. হাব \quad খ. সুইচ \par গ. মডেম \quad ঘ. কিবোর্ড }
+\item\chTwoMCQBlock{কোন ডিভাইস IP Address-এর ভিত্তিতে প্যাকেটের পথ নির্ধারণ করে?
+\par ক. রাউটার \quad খ. হাব \par গ. রিপিটার \quad ঘ. মাউস }
+\item\chTwoMCQBlock{হাব প্রাপ্ত সংকেত কোথায় পাঠায়?
+\par ক. শুধু নির্দিষ্ট পোর্টে \par খ. আগত পোর্ট ছাড়া অন্য সংযুক্ত পোর্টে \par গ. শুধু ইন্টারনেটে \quad ঘ. কোথাও পাঠায় না }
+\item\chTwoMCQBlock{দুর্বল ডিজিটাল সংকেত পুনর্গঠনে কোন ডিভাইস ব্যবহার করা হয়?
+\par ক. রিপিটার \quad খ. প্রিন্টার \par গ. স্ক্যানার \quad ঘ. মনিটর }
+\item\chTwoMCQBlock{ভিন্ন প্রোটোকলের ব্যবস্থা যুক্ত করতে কোন ডিভাইস উপযোগী?
+\par ক. গেটওয়ে \quad খ. কিবোর্ড \par গ. স্পিকার \quad ঘ. প্রজেক্টর }
+\item\chTwoMCQBlock{Wi-Fi ডিভাইসকে নেটওয়ার্কে যুক্ত করতে কোনটি ব্যবহৃত হয়?
+\par ক. অ্যাকসেস পয়েন্ট \quad খ. প্লটার \par গ. বারকোড রিডার \quad ঘ. জয়স্টিক }
+\item\chTwoMCQBlock{নিরাপত্তানীতি অনুযায়ী নেটওয়ার্ক ট্রাফিক বাছাই করে কোনটি?
+\par ক. ফায়ারওয়াল \quad খ. হাব \par গ. মাউস \quad ঘ. মনিটর }
+\end{enumerate}\end{multicols}
 
 \textbf{উত্তরমালা:}
 ১. ক, ২. খ, ৩. ক, ৪. খ, ৫. ক, ৬. ক, ৭. ক, ৮. ক
 
-\vspace{0.3cm}
-
-\textbf{সংক্ষিপ্ত প্রশ্ন}
-\begin{enumerate}
-\item Network device কী?
-\item NIC-এর কাজ লেখ।
-\item Modem কেন ব্যবহৃত হয়?
-\item Hub ও Switch-এর মধ্যে পার্থক্য লেখ।
-\item Router-এর কাজ কী?
-\item Repeater কীভাবে network range বাড়ায়?
-\item Bridge কী কাজে ব্যবহৃত হয়?
-\item Gateway-কে protocol converter বলা হয় কেন?
-\item Access Point-এর কাজ লেখ।
-\item Firewall কেন গুরুত্বপূর্ণ?
-\end{enumerate}
-
-\textbf{সৃজনশীল প্রশ্ন}
-একটি hospital network-এ patient management server, doctors' chamber-এর desktop computer, Wi-Fi zone, internet connection এবং security system দরকার। Hospital building বড় হওয়ায় কিছু জায়গায় wireless signal দুর্বল।
-
-\begin{enumerate}
-\item ক. NIC কী?
-\item খ. Router ভিন্ন network connect করতে পারে কেন?
-\item গ. doctors' chamber-এর desktop computer ও server একই LAN-এ যুক্ত করতে কোন device প্রয়োজন? ব্যাখ্যা কর।
-\item ঘ. internet access, Wi-Fi coverage, weak signal এবং security নিশ্চিত করতে কোন কোন network device ব্যবহার যুক্তিযুক্ত—বিশ্লেষণ কর।
-\end{enumerate}
-\end{practicebox}
+\smallskip
+\endgroup

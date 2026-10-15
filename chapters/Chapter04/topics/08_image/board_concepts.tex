@@ -1,0 +1,24 @@
+% Technical basis: MDN img. Correct modern syntax alongside legacy exam conventions.
+\subsubsection{ছবির মাপ থেকে সঠিক কোড নির্বাচন}
+প্রশ্নে উচ্চতা ও প্রস্থ যে ক্রমে লেখা থাকুক, \texttt{height} উচ্চতা এবং \texttt{width} প্রস্থ নির্দেশ করে। ছবির নাম বা পথ থাকে \texttt{src}-এ; \texttt{href} দিয়ে ছবি বসানো হয় না।
+
+\par\noindent
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{chFourWholeExample}{HTML অ্যাট্রিবিউট: সংখ্যার সঙ্গে একক নয়}
+\begin{verbatim}
+<img src="badge.png"
+     width="160" height="100"
+     alt="Science club badge">
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+\begin{chFourWholeExample}{CSS-এ মাপ: px এককসহ}
+\begin{verbatim}
+<img src="badge.png"
+     style="width:160px;height:100px"
+     alt="Science club badge">
+\end{verbatim}
+\end{chFourWholeExample}
+\end{minipage}\par
+উভয় উদাহরণে প্রদর্শনের প্রস্থ ১৬০ ও উচ্চতা ১০০ CSS পিক্সেল। বর্তমান HTML-এ \texttt{width="160px"} সঠিক অ্যাট্রিবিউট মান নয়; \texttt{width="160"} লিখবে। পুরোনো প্রশ্নের বিকল্পে এমন এককযুক্ত মান থাকলে সেটিকে বর্তমান লেখার নিয়ম হিসেবে গ্রহণ করবে না; ট্যাগ, \texttt{src}, ফাইলের নাম এবং চাওয়া মাপ আলাদা করে বিচার করবে।

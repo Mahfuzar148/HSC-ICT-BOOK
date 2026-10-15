@@ -1,0 +1,9 @@
+% Technical basis: WHATWG HTML syntax. Own examples, not a reproduced board solution.
+\subsubsection{HTML কেস সেনসিটিভ নয়: কথাটির সীমা}
+HTML সিনট্যাক্সে ট্যাগের নাম ও অ্যাট্রিবিউটের নামের বড় ও ছোট হাতের অক্ষর একই অর্থে ব্যবহৃত হয়। তাই \texttt{<P>ICT</P>} এবং \texttt{<p>ICT</p>} একই অনুচ্ছেদ তৈরি করে; \texttt{SRC} ও \texttt{src}-ও একই অ্যাট্রিবিউটের নাম। সহজে পড়া ও নিয়ম বজায় রাখার জন্য ছোট হাতের অক্ষর লিখবে।
+
+\begin{mistakebox}{সব মানকে একই নিয়মে বদলাবে না}
+ট্যাগের নামের এই নিয়ম থেকে ফাইলের নাম, পথ বা সব অ্যাট্রিবিউটের মানকে ইচ্ছামতো বদলানো যায় না। সার্ভারে \texttt{Photo.jpg} ও \texttt{photo.jpg} আলাদা ফাইল হতে পারে। \texttt{<ol type="A">} বড় হাতের অক্ষরের চিহ্ন দেয়, কিন্তু \texttt{type="a"} ছোট হাতের চিহ্ন দেয়। \texttt{href}, \texttt{src} ও \texttt{id}-এর মান লিখতে মূল বানান অনুসরণ করবে।
+\end{mistakebox}
+\texttt{<font color="blue">HSC</font>}-এ ট্যাগের নাম \texttt{font}, অ্যাট্রিবিউটের নাম \texttt{color}, মান \texttt{blue} এবং বিষয়বস্তু \texttt{HSC}। অ্যাট্রিবিউটের নাম ও মান আলাদা অংশ। এটি পুরোনো HTML উদাহরণ; নতুন নথিতে রং দিতে CSS ব্যবহার করা হয়।
+

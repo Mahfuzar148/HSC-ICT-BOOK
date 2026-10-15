@@ -1,0 +1,1171 @@
+\sectionheading{5.37 Conditional Logic Statement}
+
+Program-এ সব Statement সবসময় Execute করতে হয় না।
+কোনো Condition সত্য বা মিথ্যা হওয়ার উপর নির্ভর করে
+নির্দিষ্ট Code Block Execute করার জন্য
+\textbf{Conditional Logic Statement} ব্যবহার করা হয়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Conditional Statement কী?}
+
+\begin{definitionbox}
+
+কোনো Condition পরীক্ষা করে তার ফলাফল অনুযায়ী Program-এর
+নির্দিষ্ট Statement বা Code Block Execute করার পদ্ধতিকে
+\textbf{Conditional Statement} বলে।
+
+\end{definitionbox}
+
+\begin{center}
+
+\textbf{Condition পরীক্ষা}
+\(\longrightarrow\)
+\textenglish{\ttfamily True / False}
+\(\longrightarrow\)
+\textbf{প্রয়োজনীয় Code Block Execute}
+
+\end{center}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+age = 18\\
+if age >= 18:\\
+\hspace*{4mm}print("Adult")
+\end{english}
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily age >= 18}
+Condition সত্য হলে
+\textenglish{\ttfamily Adult}
+প্রদর্শিত হবে।
+
+%================================================
+% Main Forms
+%================================================
+
+\booksubheading{Python-এর প্রধান Conditional Statement}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.31\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Conditional Form}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যবহার}}
+\\
+\hline
+
+\textenglish{\ttfamily if}
+&
+Condition True হলে Code Execute।
+\\
+\hline
+
+\textenglish{\ttfamily if ... else}
+&
+True/False অনুযায়ী দুইটি Block-এর একটি Execute।
+\\
+\hline
+
+\textenglish{\ttfamily if ... elif ... else}
+&
+একাধিক Condition পর্যায়ক্রমে পরীক্ষা।
+\\
+\hline
+
+Nested \textenglish{\ttfamily if}
+&
+একটি
+\textenglish{\ttfamily if}
+-এর ভিতরে আরেকটি
+\textenglish{\ttfamily if}।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% IF
+%================================================
+
+\booksubheading{১. \textenglish{\ttfamily if} Statement}
+
+কোনো Condition
+\textenglish{\ttfamily True}
+হলে নির্দিষ্ট Code Block Execute করতে
+\textenglish{\ttfamily if}
+Statement ব্যবহার করা হয়।
+
+\textbf{Syntax—}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+if condition:\\
+\hspace*{4mm}statement
+\end{english}
+\end{codebox}
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+marks = 80\\
+if marks >= 40:\\
+\hspace*{4mm}print("Pass")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily Pass}
+
+\end{examplebox}
+
+\begin{center}
+
+\textbf{Condition True}
+\(\longrightarrow\)
+\textenglish{\ttfamily if}
+Block Execute
+
+\qquad
+
+\textbf{Condition False}
+\(\longrightarrow\)
+Block Skip
+
+\end{center}
+
+%================================================
+% Colon + indentation
+%================================================
+
+\booksubheading{Colon \textenglish{\ttfamily :} ও Indentation}
+
+Python Conditional Statement-এ দুটি বিষয় খুব গুরুত্বপূর্ণ—
+
+\begin{itemize}
+
+\item Condition-এর শেষে
+\textenglish{\ttfamily :}
+দিতে হয়।
+
+\item
+\textenglish{\ttfamily if}
+Block-এর Statement Indented হতে হয়।
+
+\item সাধারণভাবে 4 Spaces Indentation ব্যবহার করা হয়।
+
+\end{itemize}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{ভুল}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+if marks >= 40\\
+print("Pass")
+\end{english}
+\end{sidecodebox}
+
+Colon নেই এবং Indentation-ও নেই।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{সঠিক}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+if marks >= 40:\\
+\hspace*{4mm}print("Pass")
+\end{english}
+\end{sidecodebox}
+
+Colon ও Indentation সঠিক।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ Trap}
+
+Python-এ Code Block নির্ধারণে
+\textbf{Indentation} গুরুত্বপূর্ণ।
+
+\begin{center}
+
+\textbf{C/C++}
+\(\longrightarrow\)
+\textenglish{\ttfamily \{ \}}
+
+\qquad
+
+\textbf{Python}
+\(\longrightarrow\)
+\textbf{Indentation}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% IF ELSE
+%================================================
+
+\booksubheading{২. \textenglish{\ttfamily if ... else} Statement}
+
+Condition True হলে একটি Block এবং False হলে অন্য Block
+Execute করার জন্য
+\textenglish{\ttfamily if ... else}
+ব্যবহার করা হয়।
+
+\textbf{Syntax—}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+if condition:\\
+\hspace*{4mm}statement1\\
+else:\\
+\hspace*{4mm}statement2
+\end{english}
+\end{codebox}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Pass–Fail}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+marks = 35\\
+if marks >= 40:\\
+\hspace*{4mm}print("Pass")\\
+else:\\
+\hspace*{4mm}print("Fail")
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily Fail}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Even–Odd}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+n = int(input())\\
+if n \% 2 == 0:\\
+\hspace*{4mm}print("Even")\\
+else:\\
+\hspace*{4mm}print("Odd")
+\end{english}
+\end{sidecodebox}
+
+\textenglish{\ttfamily n \% 2 == 0}
+হলে Even, অন্যথায় Odd।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textenglish{\ttfamily n \% 2 == 0}
+\(\longrightarrow\)
+Even
+
+\qquad
+
+\textenglish{\ttfamily n \% 2 != 0}
+\(\longrightarrow\)
+Odd
+
+\end{center}
+
+\textenglish{\ttfamily if ... else}
+-এ দুইটি Block-এর মধ্যে একটিমাত্র Execute হয়।
+
+\end{rememberbox}
+
+%================================================
+% ELIF
+%================================================
+
+\booksubheading{৩. \textenglish{\ttfamily if ... elif ... else}}
+
+একাধিক Condition পর্যায়ক্রমে পরীক্ষা করার জন্য
+\textenglish{\ttfamily elif}
+ব্যবহার করা হয়।
+
+\begin{center}
+\textenglish{\ttfamily elif}
+=
+\textbf{else if}
+\end{center}
+
+\textbf{Syntax—}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+if condition1:\\
+\hspace*{4mm}statement1\\
+elif condition2:\\
+\hspace*{4mm}statement2\\
+else:\\
+\hspace*{4mm}statement3
+\end{english}
+\end{codebox}
+
+\begin{examplebox}{Grade নির্ণয়}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+marks = 75\\
+if marks >= 80:\\
+\hspace*{4mm}print("A+")\\
+elif marks >= 70:\\
+\hspace*{4mm}print("A")\\
+elif marks >= 60:\\
+\hspace*{4mm}print("A-")\\
+else:\\
+\hspace*{4mm}print("Below A-")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily A}
+
+\end{examplebox}
+
+%================================================
+% How elif works
+%================================================
+
+\booksubheading{\textenglish{\ttfamily elif} কীভাবে কাজ করে?}
+
+Python ওপর থেকে নিচে Condition পরীক্ষা করে।
+যে Condition প্রথম
+\textenglish{\ttfamily True}
+হয়, তার Block Execute হয় এবং পরবর্তী
+\textenglish{\ttfamily elif/else}
+Blockগুলো আর Execute হয় না।
+
+\begin{center}
+
+\textbf{Condition 1?}
+\(\longrightarrow\)
+False
+\(\longrightarrow\)
+\textbf{Condition 2?}
+\(\longrightarrow\)
+False
+\(\longrightarrow\)
+\textbf{Condition 3?}
+\(\longrightarrow\)
+\textbf{else}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}গুরুত্বপূর্ণ}
+
+একাধিক Condition True হলেও
+\textbf{প্রথম True Condition-এর Block-ই Execute হয়}।
+
+\end{rememberbox}
+
+%================================================
+% Condition Order
+%================================================
+
+\booksubheading{Condition-এর Order গুরুত্বপূর্ণ}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{ভুল Order}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+marks = 85\\
+if marks >= 40:\\
+\hspace*{4mm}print("Pass")\\
+elif marks >= 80:\\
+\hspace*{4mm}print("A+")
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily Pass}
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{ভালো Order}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+marks = 85\\
+if marks >= 80:\\
+\hspace*{4mm}print("A+")\\
+elif marks >= 40:\\
+\hspace*{4mm}print("Pass")
+\end{english}
+\end{sidecodebox}
+
+Output:
+\textenglish{\ttfamily A+}
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+\begin{rememberbox}
+
+Range বা Grade পরীক্ষা করার সময় সাধারণত
+\textbf{বড়/Specific Condition আগে}
+দেওয়া সুবিধাজনক।
+
+\end{rememberbox}
+
+%================================================
+% Optional elif/else
+%================================================
+
+\booksubheading{\textenglish{\ttfamily elif} ও \textenglish{\ttfamily else} কি বাধ্যতামূলক?}
+
+না। প্রয়োজন অনুযায়ী শুধু
+\textenglish{\ttfamily if}
+ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+if x > 0:\\
+\hspace*{4mm}print("Positive")
+\end{english}
+\end{codebox}
+
+আবার
+\textenglish{\ttfamily else}
+ছাড়াও
+\textenglish{\ttfamily elif}
+ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+if x > 0:\\
+\hspace*{4mm}print("Positive")\\
+elif x < 0:\\
+\hspace*{4mm}print("Negative")
+\end{english}
+\end{codebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\begin{center}
+
+\textenglish{\ttfamily if}
+\(\longrightarrow\)
+প্রধান Condition
+
+\qquad
+
+\textenglish{\ttfamily elif}
+\(\longrightarrow\)
+0 বা একাধিক হতে পারে
+
+\qquad
+
+\textenglish{\ttfamily else}
+\(\longrightarrow\)
+Optional
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Nested if
+%================================================
+
+\booksubheading{৪. Nested \textenglish{\ttfamily if}}
+
+একটি
+\textenglish{\ttfamily if}
+বা
+\textenglish{\ttfamily else}
+Block-এর ভিতরে আরেকটি
+\textenglish{\ttfamily if}
+Statement থাকলে তাকে
+\textbf{Nested if} বলে।
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Nested \textenglish{\ttfamily if}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+age = 20\\
+citizen = True\\
+if age >= 18:\\
+\hspace*{4mm}if citizen:\\
+\hspace*{8mm}print("Eligible")
+\end{english}
+\end{sidecodebox}
+
+Outer Condition True হলে Inner Condition পরীক্ষা হয়।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Logical \textenglish{\ttfamily and} দিয়ে}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+age = 20\\
+citizen = True\\
+if age >= 18 and citizen:\\
+\hspace*{4mm}print("Eligible")
+\end{english}
+\end{sidecodebox}
+
+অনেক ক্ষেত্রে Nested
+\textenglish{\ttfamily if}
+-এর Logic সংক্ষেপে লেখা যায়।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Comparison and Logical Operators
+%================================================
+
+\booksubheading{Condition-এ Comparison ও Logical Operator}
+
+Conditional Statement-এ Comparison Operator খুব বেশি ব্যবহৃত হয়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\centering\arraybackslash}p{0.15\linewidth}
+|Y
+|>{\bfseries\centering\arraybackslash}p{0.15\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\textbf{Operator}
+&
+\textbf{অর্থ}
+&
+\textbf{Operator}
+&
+\textbf{অর্থ}
+\\
+\hline
+
+\textenglish{\ttfamily ==}
+&
+সমান
+&
+\textenglish{\ttfamily !=}
+&
+অসমান
+\\
+\hline
+
+\textenglish{\ttfamily >}
+&
+বড়
+&
+\textenglish{\ttfamily <}
+&
+ছোট
+\\
+\hline
+
+\textenglish{\ttfamily >=}
+&
+বড় বা সমান
+&
+\textenglish{\ttfamily <=}
+&
+ছোট বা সমান
+\\
+\hline
+
+\end{tabularx}
+
+একাধিক Condition যুক্ত করতে
+\textenglish{\ttfamily and},
+\textenglish{\ttfamily or}
+ও
+\textenglish{\ttfamily not}
+ব্যবহার করা হয়।
+
+\noindent
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily and}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+if age >= 18\\
+\hspace*{3mm}and age <= 30:\\
+\hspace*{4mm}print("Eligible")
+\end{english}
+\end{sidecodebox}
+
+সব Condition True হতে হবে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily or}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+if day == "Friday"\\
+\hspace*{3mm}or day == "Saturday":\\
+\hspace*{4mm}print("Holiday")
+\end{english}
+\end{sidecodebox}
+
+অন্তত একটি True হলেই যথেষ্ট।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+
+\begin{sideexamplebox}{\textenglish{\ttfamily not}}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+if not raining:\\
+\hspace*{4mm}print("Go outside")
+\end{english}
+\end{sidecodebox}
+
+Logical Result বিপরীত করে।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Boolean directly
+%================================================
+
+\booksubheading{Boolean Value সরাসরি Condition হিসেবে}
+
+Boolean Variable সরাসরি
+\textenglish{\ttfamily if}
+Statement-এ ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+logged\_in = True\\
+if logged\_in:\\
+\hspace*{4mm}print("Welcome")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily Welcome}
+
+\begin{rememberbox}
+
+\textenglish{\ttfamily if logged\_in:}
+লেখাই যথেষ্ট।
+
+\textenglish{\ttfamily logged\_in == True}
+লেখা সম্ভব হলেও সাধারণত প্রয়োজন নেই।
+
+\end{rememberbox}
+
+%================================================
+% Truthy and Falsy
+%================================================
+
+\booksubheading{Truthy ও Falsy-এর প্রাথমিক ধারণা}
+
+Python-এ Condition-এর মধ্যে কিছু Value
+\textenglish{\ttfamily False}
+হিসেবে বিবেচিত হয়। এগুলোকে সাধারণভাবে
+\textbf{Falsy Value} বলা হয়।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.27\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Falsy Type}}
+&
+\multicolumn{1}{c|}{\textbf{উদাহরণ}}
+\\
+\hline
+
+Boolean
+&
+\textenglish{\ttfamily False}
+\\
+\hline
+
+None
+&
+\textenglish{\ttfamily None}
+\\
+\hline
+
+Zero
+&
+\textenglish{\ttfamily 0,\;0.0}
+\\
+\hline
+
+Empty String
+&
+\textenglish{\ttfamily ""}
+\\
+\hline
+
+Empty List / Tuple
+&
+\textenglish{\ttfamily [],\;()}
+\\
+\hline
+
+Empty Set / Dictionary
+&
+\textenglish{\ttfamily set(),\;\{\}}
+\\
+\hline
+
+\end{tabularx}
+
+উদাহরণ—
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+name = ""\\
+if name:\\
+\hspace*{4mm}print("Name exists")\\
+else:\\
+\hspace*{4mm}print("Empty")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily Empty}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য:}
+\quad
+\textenglish{\ttfamily 0},
+Empty String এবং Empty Collection সাধারণত Falsy।
+
+\end{rememberbox}
+
+%================================================
+% Chained comparison
+%================================================
+
+\booksubheading{Chained Comparison Condition-এ}
+
+Python-এর Chained Comparison
+\textenglish{\ttfamily if}
+Statement-এ ব্যবহার করা যায়।
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+age = 20\\
+if 18 <= age <= 30:\\
+\hspace*{4mm}print("Eligible")
+\end{english}
+\end{codebox}
+
+এটি মূলত—
+
+\begin{center}
+
+\textenglish{\ttfamily age >= 18 and age <= 30}
+
+\end{center}
+
+-এর সমতুল্য Logic প্রকাশ করে।
+
+%================================================
+% Short if + conditional expression
+%================================================
+
+\booksubheading{Short-hand \textenglish{\ttfamily if} ও Conditional Expression}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Short-hand \textenglish{\ttfamily if}}
+
+এক লাইনে ছোট
+\textenglish{\ttfamily if}
+লেখা সম্ভব—
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+if age >= 18: print("Adult")
+\end{english}
+\end{sidecodebox}
+
+ছোট Logic-এর জন্য ব্যবহার করা যায়; বড় Program-এ Indented
+Style বেশি readable।
+
+\end{sideexamplebox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+
+\begin{sideexamplebox}{Conditional Expression}
+
+\begin{sidecodebox}
+\begin{english}
+\ttfamily
+result = "Pass" if marks >= 40 else "Fail"
+\end{english}
+\end{sidecodebox}
+
+সাধারণ Structure—
+
+\begin{center}
+\textbf{True Value}
+\textenglish{\ttfamily if}
+\textbf{Condition}
+\textenglish{\ttfamily else}
+\textbf{False Value}
+\end{center}
+
+এটিকে Conditional/Ternary Expression বলা হয়।
+
+\end{sideexamplebox}
+
+\end{minipage}
+
+%================================================
+% Comparison table
+%================================================
+
+\booksubheading{\textenglish{\ttfamily if}, \textenglish{\ttfamily elif}, \textenglish{\ttfamily else}-এর পার্থক্য}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+|Y|
+}
+
+\hline
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{Keyword}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+\textenglish{\ttfamily if}
+&
+প্রথম Condition পরীক্ষা করে।
+\\
+\hline
+
+\textenglish{\ttfamily elif}
+&
+আগের Condition False হলে নতুন Condition পরীক্ষা করে।
+\\
+\hline
+
+\textenglish{\ttfamily else}
+&
+আগের সব Condition False হলে Execute হয়।
+\\
+\hline
+
+Nested \textenglish{\ttfamily if}
+&
+একটি
+\textenglish{\ttfamily if}
+Block-এর ভিতরে আরেক Condition পরীক্ষা করে।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Largest of three
+%================================================
+
+\booksubheading{তিন সংখ্যার মধ্যে বড় নির্ণয়ের উদাহরণ}
+
+\begin{examplebox}{Program}
+
+\begin{codebox}
+\begin{english}
+\ttfamily
+a = 10\\
+b = 25\\
+c = 15\\[0.5mm]
+if a >= b and a >= c:\\
+\hspace*{4mm}print("a is largest")\\
+elif b >= a and b >= c:\\
+\hspace*{4mm}print("b is largest")\\
+else:\\
+\hspace*{4mm}print("c is largest")
+\end{english}
+\end{codebox}
+
+\textbf{Output:}
+\textenglish{\ttfamily b is largest}
+
+\end{examplebox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{rememberbox}
+
+\begin{itemize}
+
+\item Condition-এর শেষে
+\textenglish{\ttfamily :}
+না দেওয়া।
+
+\item Indentation না দেওয়া বা অসমান Indentation দেওয়া।
+
+\item Comparison-এর জায়গায়
+\textenglish{\ttfamily =}
+ব্যবহার করা।
+
+\item
+\textenglish{\ttfamily ==}
+এবং
+\textenglish{\ttfamily =}
+গুলিয়ে ফেলা।
+
+\item
+\textenglish{\ttfamily elif}
+-এর পরিবর্তে
+\textenglish{\ttfamily else if}
+লেখা।
+
+\item
+\textenglish{\ttfamily True/False}
+-এর Capital Letter ভুল করা।
+
+\item Grade বা Range Condition ভুল Order-এ লেখা।
+
+\item Nested
+\textenglish{\ttfamily if}
+-এর Indentation ভুল করা।
+
+\item একাধিক Condition যুক্ত করতে
+\textenglish{\ttfamily and/or}
+ভুলভাবে ব্যবহার করা।
+
+\item প্রয়োজন থাকা সত্ত্বেও সব Condition False হলে কী হবে তা
+Handle না করা।
+
+\end{itemize}
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{tabularx}
+{\linewidth}
+{
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+>{\bfseries\RaggedRight\arraybackslash}p{0.24\linewidth}
+Y
+}
+
+\textenglish{\ttfamily if}
+&
+True হলে Execute
+&
+\textenglish{\ttfamily else}
+&
+False হলে Execute
+\\[0.7mm]
+
+\textenglish{\ttfamily elif}
+&
+একাধিক Condition পরীক্ষা
+&
+Nested \textenglish{\ttfamily if}
+&
+\textenglish{\ttfamily if}-এর ভিতরে \textenglish{\ttfamily if}
+\\[0.7mm]
+
+Colon
+&
+Condition শেষে
+\textenglish{\ttfamily :}
+&
+Block
+&
+Indentation
+\\[0.7mm]
+
+\textenglish{\ttfamily =}
+&
+Assignment
+&
+\textenglish{\ttfamily ==}
+&
+Comparison
+\\[0.7mm]
+
+\textenglish{\ttfamily and}
+&
+সব Condition True
+&
+\textenglish{\ttfamily or}
+&
+অন্তত একটি True
+\\[0.7mm]
+
+\textenglish{\ttfamily not}
+&
+Logical Result বিপরীত
+&
+\textenglish{\ttfamily elif}
+&
+else if
+\\
+
+\end{tabularx}
+
+\medskip
+
+\begin{center}
+
+\textbf{Condition}
+\(\longrightarrow\)
+\textenglish{\ttfamily True}
+\(\longrightarrow\)
+\textbf{একটি পথ}
+
+\qquad
+
+\textbf{Condition}
+\(\longrightarrow\)
+\textenglish{\ttfamily False}
+\(\longrightarrow\)
+\textbf{অন্য পথ}
+
+\medskip
+
+\textbf{Python Block}
+\(\longrightarrow\)
+\textbf{Indentation}
+
+\qquad
+
+\textenglish{\ttfamily n \% 2 == 0}
+\(\longrightarrow\)
+\textbf{Even}
+
+\end{center}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.38 Loop
+%================================================
+

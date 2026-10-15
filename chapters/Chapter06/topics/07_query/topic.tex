@@ -1,52 +1,2627 @@
-% ৭. Query
-\section{Query}
-ডেটাবেজে প্রচুর ডেটা থাকলে প্রয়োজনীয় ডেটা দ্রুত বের করার জন্য কুয়েরি ব্যবহার করা হয়। কুয়েরি নির্দিষ্ট শর্ত অনুযায়ী টেবিল থেকে রেকর্ড নির্বাচন, গণনা, সাজানো বা পরিবর্তনের নির্দেশ দিতে পারে।
 
-\subsection{Query কী}
-\begin{definitionbox}{Query}
-ডেটাবেজ থেকে নির্দিষ্ট শর্ত অনুযায়ী প্রয়োজনীয় ডেটা খুঁজে বের করা, প্রদর্শন করা বা পরিবর্তনের নির্দেশকে Query বলে।
+
+\section{Query ও SQL}
+
+
+
+\subsection{Query}
+
+\begin{definitionbox}{}
+
+ডেটাবেজ থেকে নির্দিষ্ট শর্ত অনুযায়ী প্রয়োজনীয় তথ্য বের করা
+অথবা ডেটাবেজের ডেটার ওপর নির্দিষ্ট কাজ সম্পাদনের অনুরোধকে
+\textbf{Query} বলে।
+
 \end{definitionbox}
 
-\subsection{Query-এর ধরন ও Condition}
-\begin{keypointbox}{SQL-এর মৌলিক রূপ}
-\begin{verbatim}
-SELECT field1, field2
-FROM table_name
-WHERE condition
-ORDER BY field_name;
-\end{verbatim}
+যেমন—
+
+\begin{multicols}{2}
+\begin{itemize}
+
+\item Science বিভাগের শিক্ষার্থীদের নাম দেখাও;
+
+\item GPA 5.00 পাওয়া শিক্ষার্থীদের রেকর্ড দেখাও;
+
+\item যেসব কর্মীর Salary 50,000 টাকার বেশি, তাদের খুঁজে বের করো;
+
+\item Account Balance বড় থেকে ছোট ক্রমে সাজাও;
+
+\item একজন Customer-এর Balance পরিবর্তন করো;
+
+\item নির্দিষ্ট রেকর্ড মুছে ফেলো;
+
+\item Department অনুযায়ী মোট Employee সংখ্যা বের করো;
+
+\item সম্পর্কিত দুটি টেবিল থেকে Name ও Result একসঙ্গে দেখাও।
+
+\end{itemize}
+\end{multicols}
+
+\begin{keypointbox}{কুয়েরি কেন প্রয়োজন?}
+
+বড় ডেটাবেজে হাজার বা লাখ রেকর্ড থাকতে পারে। সব রেকর্ড একসঙ্গে
+দেখলে প্রয়োজনীয় তথ্য দ্রুত পাওয়া কঠিন। কুয়েরি প্রয়োজনীয়
+\textbf{ফিল্ড}, \textbf{রেকর্ড}, \textbf{শর্ত} ও
+\textbf{সাজানোর ক্রম} নির্ধারণ করে অপ্রয়োজনীয় ডেটা বাদ দিয়ে কাঙ্ক্ষিত
+ফলাফল বের করতে সাহায্য করে।
+
 \end{keypointbox}
 
-\subsection{প্র্যাকটিক্যাল উদাহরণ}
-\begin{examplebox}{নমুনা SQL}
+সব কুয়েরি মূল ডেটা পরিবর্তন করে না। কিছু কুয়েরি শুধু ডেটা দেখায়, আবার কিছু কুয়েরি ডেটা যোগ, পরিবর্তন
+অথবা মুছে ফেলে।
+
+\subsubsection{Query-এর বৈশিষ্ট্য}
+\begin{enumerate}
+\item \textbf{কাজের পরিসর:} এক বা একাধিক উৎস থেকে তথ্য নির্বাচন, হিসাব এবং প্রয়োজন অনুযায়ী ডেটা পরিবর্তন করা যায়।
+\item \textbf{নির্দেশ সংরক্ষণ:} সংরক্ষিত Select Query-তে ফল পাওয়ার নির্দেশ থাকে; আগের ফলের স্থির অনুলিপি নয়।
+\item \textbf{বর্তমান তথ্যের ব্যবহার:} আবার চালালে তখনকার উৎসের তথ্য ও দেওয়া Parameter অনুযায়ী ফল পাওয়া যায়।
+\end{enumerate}
+\textbf{উদাহরণ:} নতুন শিক্ষার্থী ভর্তি হলে বিভাগের সংরক্ষিত Select Query আবার চালিয়ে তার তথ্যও পাওয়া যায়। Select-এর ফল থেকে রেকর্ড বাদ পড়া মানে মূল রেকর্ড মুছে যাওয়া নয়।
+\textbf{মনে রাখবে:} Make-table Query ফল দিয়ে নতুন টেবিল তৈরি করে। পরে উৎস বদলালেই সেই টেবিল স্বয়ংক্রিয়ভাবে বদলায় না। তাই বর্তমান তথ্য বারবার দেখা ও আলাদা টেবিল তৈরি করা পৃথক উদ্দেশ্য।
+
+\subsection{Query-এর প্রকারভেদ}
+
+\begingroup\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}\setlength{\LTpre}{2pt}\setlength{\LTpost}{2pt}
+
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{longtable}[l]{|p{37mm}|>{\raggedright\arraybackslash}p{\dimexpr.98\linewidth-37mm-4\tabcolsep-3\arrayrulewidth\relax}|}
+\hline
+
+\chSixHeader
+\textbf{কুয়েরির ধরন}
+&
+\textbf{প্রধান কাজ}
+\\ \hline\endfirsthead
+\hline
+
+\chSixHeader
+\textbf{কুয়েরির ধরন}
+&
+\textbf{প্রধান কাজ}
+\\ \hline\endhead
+
+
+Select Query
+&
+টেবিল বা কুয়েরি থেকে প্রয়োজনীয় ফিল্ড ও রেকর্ড নির্বাচন করে
+Result প্রদর্শন করে।
+\\ \hline
+
+Parameter Query
+&
+কুয়েরি চালানোর সময় ব্যবহারকারীর কাছ থেকে মান গ্রহণ করে এবং সেই
+মান অনুযায়ী Result দেখায়।
+\\ \hline
+
+Crosstab Query
+&
+একটি বিষয়কে সারি এবং অন্য বিষয়কে কলাম হিসেবে সাজিয়ে
+Summary Result প্রদর্শন করে।
+\\ \hline
+
+Find Unmatched Query
+&
+একটি টেবিলে আছে কিন্তু সম্পর্কিত অন্য টেবিলে যার মিল নেই
+এমন রেকর্ড খুঁজে বের করে।
+\\ \hline
+
+Append Query
+&
+এক বা একাধিক রেকর্ড অন্য টেবিলে যোগ করে।
+\\ \hline
+
+Update Query
+&
+বিদ্যমান রেকর্ডের এক বা একাধিক ফিল্ডের মান পরিবর্তন করে।
+\\ \hline
+
+Delete Query
+&
+শর্ত অনুযায়ী এক বা একাধিক রেকর্ড বাদ দেয়।
+\\ \hline
+
+Make-table Query
+&
+Query Result ব্যবহার করে নতুন টেবিল তৈরি করে।
+\\ \hline
+
+\end{longtable}
+
+\captionof{table}{কুয়েরির গুরুত্বপূর্ণ প্রকারভেদ}
+
+\endgroup
+
+\begin{definitionbox}{Select Query}
+
+যে কুয়েরি মূল ডেটা পরিবর্তন না করে প্রয়োজনীয় ডেটা নির্বাচন করে
+ফলাফল প্রদর্শন করে তাকে \textbf{Select Query} বলে।
+
+\end{definitionbox}
+
+\begin{definitionbox}{Action Query}
+
+যে কুয়েরি ডেটাবেজের ডেটা বা টেবিলে পরিবর্তন ঘটায় তাকে
+\textbf{Action Query} বলা হয়। Append, Update, Delete এবং Make-table হলো পরিচিত Action Query।
+
+\end{definitionbox}
+
+\begin{flushleft}
+
+\small
+
+\begin{tabularx}{0.92\linewidth}{|p{30mm}|X|X|}
+\hline
+
+\chSixHeader
+\textbf{বিষয়}
+&
+\textbf{Select Query}
+&
+\textbf{Action Query}
+\\ \hline
+
+মূল উদ্দেশ্য
+&
+ডেটা দেখা
+&
+ডেটা/টেবিল পরিবর্তন
+\\ \hline
+
+ডেটা পরিবর্তিত হয়?
+&
+সাধারণত না
+&
+হ্যাঁ
+\\ \hline
+
+উদাহরণ
+&
+SELECT
+&
+Append, Update, Delete, Make-table
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+\subsection{Query Language}
+
+\begin{definitionbox}{}
+
+ডেটাবেজের কাছে কুয়েরি বা ডেটার ওপর কোনো কাজের নির্দেশ প্রকাশ করার জন্য ব্যবহৃত
+ভাষা বা পদ্ধতিকে \textbf{Query Language} বলে।
+
+\end{definitionbox}
+
+\begin{flushleft}
+
+\small
+\renewcommand{\arraystretch}{1.14}
+
+\begin{tabularx}{0.96\linewidth}{|p{27mm}|X|}
+\hline
+
+\chSixHeader
+\textbf{নাম}
+&
+\textbf{ধারণা}
+\\ \hline
+
+SQL
+&
+Structured Query Language; Relational ডেটাবেজ ব্যবস্থায় বহুল
+ব্যবহৃত Query Language।
+\\ \hline
+
+QBE
+&
+Query By Example; Grid বা উদাহরণের মাধ্যমে ফিল্ড, Sort ও
+Criteria নির্বাচন করে কুয়েরি তৈরি করা হয়।
+\\ \hline
+
+QUEL
+&
+INGRES Database System-এর সঙ্গে ঐতিহাসিকভাবে সম্পর্কিত
+Query Language।
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+\subsubsection{QUEL-এর ঐতিহাসিক পরিভাষা}
+INGRES-এর QUEL-এ CREATE নতুন টেবিল তৈরি করে, RANGE টেবিলের সঙ্গে একটি range variable যুক্ত করে, INDEX ইনডেক্স তৈরি করে এবং MODIFY টেবিল বা ইনডেক্সের সংরক্ষণ-সংক্রান্ত বৈশিষ্ট্য পরিবর্তন করে। এখানে RANGE কোনো সংখ্যার নিম্ন ও ঊর্ধ্ব সীমা নির্বাচনের নাম নয়; MODIFY-ও সাধারণভাবে একটি রেকর্ডের বেতন বদলানোর SQL UPDATE-এর সমার্থক নয়। SQL, QUEL ও QBE একই সিনট্যাক্সের তিনটি নাম নয়।
+
+\subsection{SQL (Structured Query Language)}
+
+\begin{definitionbox}{}
+
+রিলেশনাল ডেটাবেজের কাঠামো তৈরি ও ডেটা নিয়ে কাজ করার ভাষাকে
+\textbf{SQL (Structured Query Language)} বলে। SQL দিয়ে ডেটা নির্বাচন,
+নতুন ডেটা সংযোজন, বিদ্যমান ডেটা পরিবর্তন, ডেটা মুছে ফেলা এবং
+ডেটাবেজের বিভিন্ন কাজ সম্পাদন করা যায়।
+
+\end{definitionbox}
+
+\begin{keypointbox}{কুয়েরি ও SQL-এর পার্থক্য}
+কুয়েরি হলো ডেটাবেজকে দেওয়া একটি নির্দিষ্ট অনুরোধ। SQL হলো সেই অনুরোধ এবং ডেটাবেজ পরিচালনার অন্যান্য নির্দেশ প্রকাশের ভাষা। একই প্রয়োজন SQL লিখে বা QBE-এর গ্রিড ব্যবহার করে প্রকাশ করা যায়।
+\end{keypointbox}
+
+\subsubsection{SQL-এর Declarative প্রকৃতি}
+
+SQL-এ ব্যবহারকারী সাধারণত জানান, \textbf{কী ফল প্রয়োজন}। কিন্তু সংরক্ষিত ডেটার কোন রেকর্ড আগে খুঁজতে হবে বা কোন ইনডেক্স ব্যবহার করতে হবে, তার ধাপ লিখতে হয় না। DBMS নিজেই কাজটি করার উপযুক্ত পদ্ধতি নির্ধারণ করে। তাই SQL-কে সাধারণত
+\textbf{Declarative} বা \textbf{Non-procedural Language}
+বলা হয়।
+
+\begin{keypointbox}{SQL-এর গুরুত্বপূর্ণ বৈশিষ্ট্য}
+
+
+\begin{enumerate}
+
+
+
+
+
+
+
+\item কীওয়ার্ডের সাহায্যে নির্দেশ লেখার নিয়ম তুলনামূলক সহজ।
+
+\item SQL-এর ANSI ও ISO মান রয়েছে।
+
+\item বিভিন্ন RDBMS SQL সমর্থন করে।
+
+\item DBMS-ভেদে নির্দেশ লেখার কিছু নিয়ম আলাদা হতে পারে।
+
+\item SQL কীওয়ার্ডের ক্ষেত্রে ইংরেজি বড় ও ছোট হাতের অক্ষর একই অর্থ প্রকাশ করে (case-insensitive)। তবে সংরক্ষিত লেখার মান মিলবে কি না, তা DBMS-এর তুলনার নিয়মের ওপর নির্ভর করে। 
+\end{enumerate}
+
+
+এখানে \textbf{ANSI} হলো American National Standards Institute এবং \textbf{ISO} হলো International Organization for Standardization।
+
+\textbf{নির্দেশ লেখার নিয়ম:} নির্দেশ একাধিক লাইনে লেখা যায়।
+Statement terminator হিসেবে semicolon (;) প্রচলিত; environment বা API-ভেদে একক নির্দেশে এর ব্যবহার বাধ্যতামূলক নাও হতে পারে।
+\end{keypointbox}
+
+\subsection{SQL নির্দেশের শ্রেণিবিভাগ}
+
+SQL নির্দেশকে কাজ অনুযায়ী বিভিন্ন শ্রেণিতে ভাগ করা হয়।
+
+\begin{definitionbox}{ডেটা সংজ্ঞা, ব্যবস্থাপনা ও অনুসন্ধানের নির্দেশ}
+\raggedright
+\textbf{DDL (Data Definition Language)} হলো ডেটাবেজের কাঠামো বা স্কিমা তৈরি, পরিবর্তন ও অপসারণের নির্দেশসমষ্টি। \textbf{DML (Data Manipulation Language)} হলো ডেটা নিয়ে কাজ করার নির্দেশসমষ্টি। তথ্য উদ্ধারের নির্দেশকে আলাদা করে \textbf{DQL (Data Query Language)} বলাও হয়।
+\end{definitionbox}
+INSERT, UPDATE ও DELETE হলো DML নির্দেশ; এগুলো যথাক্রমে রেকর্ড যোগ, পরিবর্তন ও বাদ দেয়। তথ্য উদ্ধারের SELECT-কে প্রচলিত শ্রেণিবিন্যাসে DQL-এর মধ্যে রাখা হয়।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabularx}{0.98\linewidth}{|p{17mm}|p{41mm}|X|}
+\hline
+
+\chSixHeader
+\textbf{শ্রেণি}
+&
+\textbf{পূর্ণরূপ}
+&
+\textbf{উদাহরণ}
+\\ \hline
+
+DDL
+&
+Data Definition Language
+&
+CREATE, ALTER, DROP
+\\ \hline
+
+DML
+&
+Data Manipulation Language
+&
+INSERT, UPDATE, DELETE
+\\ \hline
+
+DQL
+&
+Data Query Language
+&
+SELECT
+\\ \hline
+
+DCL
+&
+Data Control Language
+&
+GRANT, REVOKE
+\\ \hline
+
+TCL
+&
+Transaction Control Language
+&
+COMMIT, ROLLBACK
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{SQL Command-এর প্রচলিত শ্রেণিবিভাগ}
+
+\end{minipage}\end{flushleft}
+
+\begin{keypointbox}{SELECT-এর শ্রেণিবিভাগ নিয়ে বিভ্রান্তি}
+
+কিছু বইয়ে \texttt{SELECT}-কে DML-এর বিস্তৃত অর্থের মধ্যে ধরা হয়। অন্য বইয়ে তথ্য উদ্ধারের নির্দেশকে আলাদা \textbf{DQL} শ্রেণিতে রাখা হয়। পরীক্ষায় নির্ধারিত পাঠ্যবই বা প্রশ্নে দেওয়া শ্রেণিবিন্যাস অনুসরণ করবে। শ্রেণির নাম আলাদা হলেও SELECT-এর কাজ তথ্য উদ্ধার করা।
+
+\end{keypointbox}
+
+\begin{keypointbox}{পুরোনো বইয়ে দেখা কিছু শব্দ}
+
+কিছু পুরোনো ডেটাবেজ বই বা নির্দিষ্ট সফটওয়্যারের আলোচনায়
+\textbf{CLOSE, MODIFY, INDEX, FIND, STORE} ইত্যাদি শব্দ দেখা যেতে
+পারে। এগুলো সব আধুনিক DBMS-এ একই অর্থে প্রমিত SQL নির্দেশ নয়।
+
+প্রশ্নের প্রেক্ষিত অনুযায়ী শব্দের কাজ বুঝবে; প্রমিত SQL
+নির্দেশের সঙ্গে অযথা এক করে ফেলবে না।
+
+\end{keypointbox}
+
+\subsection{SQL ও SQLite এক নয়}
+
+\textbf{SQL} হলো একটি কুয়েরি ভাষা। অন্যদিকে \textbf{SQLite} হলো একটি ডেটাবেজ ইঞ্জিন, যা SQL-এর
+বড় একটি অংশ সমর্থন করে।
+
+\begin{flushleft}
+
+\small
+
+\begin{tabularx}{0.98\linewidth}{|p{32mm}|X|X|}
+\hline
+
+\chSixHeader
+\textbf{বিষয়}
+&
+\textbf{কিছু SQL DBMS}
+&
+\textbf{SQLite}
+\\ \hline
+
+ডেটাবেজ তৈরি
+&
+কিছু DBMS-এ \texttt{CREATE DATABASE}
+&
+Database File Create/Open
+\\ \hline
+
+ডেটাবেজ নির্বাচন
+&
+কিছু DBMS-এ \texttt{USE database}
+&
+সাধারণত প্রয়োজন নেই
+\\ \hline
+
+প্রথম কয়েকটি রেকর্ড
+&
+TOP বা LIMIT
+&
+LIMIT
+\\ \hline
+
+TRUNCATE
+&
+কিছু DBMS সমর্থন করে
+&
+\texttt{TRUNCATE TABLE} নেই
+\\ \hline
+
+LIKE Wildcard
+&
+Dialect অনুযায়ী পার্থক্য হতে পারে
+&
+\texttt{\%} ও \texttt{\_}
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+\subsection{SELECT Statement}
+
+\begin{definitionbox}{}
+
+ডেটাবেজ টেবিল থেকে প্রয়োজনীয় ফিল্ড ও রেকর্ড নির্বাচন করে
+ফলাফল প্রদর্শনের জন্য \textbf{SELECT Statement} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{কখন ব্যবহার করবে?} যখন ডেটাবেজের ডেটা পরিবর্তন না করে শুধু প্রয়োজনীয় তথ্য দেখতে
+চাইবে তখন SELECT ব্যবহার করবে।
+
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+\end{verbatim}
+\end{minipage}\par
+
+সব ফিল্ড দেখাতে—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT *
+FROM table_name;
+\end{verbatim}
+\end{minipage}\par
+
+\subsubsection{SELECT Query-এর অংশ}
+SELECT কোন কলাম বা রাশি দেখাবে, FROM কোন উৎস ব্যবহার করবে এবং WHERE কোন রেকর্ড বাছাই করবে তা নির্ধারণ করে। GROUP BY একই মানের রেকর্ডের দল তৈরি করে, HAVING দলের ফল বাছাই করে এবং ORDER BY ফলের ক্রম ঠিক করে।
+SELECT কুয়েরির বিভিন্ন অংশ লেখার সাধারণ ক্রম—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT ... FROM ... WHERE ...
+GROUP BY ... HAVING ... ORDER BY ...;
+\end{verbatim}
+\end{minipage}\par
+
+প্রতিটি কুয়েরিতে সব অংশ ব্যবহার করতে হয় না।
+
+\begin{keypointbox}{SQL-সংক্রান্ত প্রশ্ন বোঝার সহজ নিয়ম}
+
+\noindent\textbf{কী দেখাবে $\rightarrow$ কোন টেবিল $\rightarrow$ কোন শর্ত $\rightarrow$ কোন ক্রম।}
+
+\end{keypointbox}
+
+\begin{keypointbox}{উদাহরণ পড়ার নিয়ম}
+প্রতিটি উদাহরণে সংশ্লিষ্ট মূল সারণির ডেটা ধরে ফল দেখানো হয়েছে। INSERT, UPDATE ও DELETE-এর উদাহরণগুলো স্বাধীন; একটির পরিবর্তিত ডেটা পরেরটিতে ধরে নেওয়া হয়নি। ORDER BY না থাকলে ফলের সারির নির্দিষ্ট ক্রম নিশ্চিত নয়; সারণিতে দেখানো সারি ও মান মিলিয়ে বুঝতে হবে। গড়ের ভগ্নাংশ প্রয়োজনমতো দুই দশমিক ঘর পর্যন্ত দেখানো হয়েছে।
+\end{keypointbox}
+\subsection{একই Student টেবিলে মৌলিক SQL-এর প্রয়োগ}
+\label{sec:ch06-student-master}
+
+নিচের Student টেবিলটি SELECT, WHERE, Operator, BETWEEN, IN,
+LIKE, NULL, DISTINCT, Alias, Expression ও সর্টিং বোঝার
+মূল সারণি হিসেবে ব্যবহার করা হবে।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+\textbf{Roll}
+&
+\textbf{Name}
+&
+\textbf{Department}
+&
+\textbf{GPA}
+&
+\textbf{Fee}
+&
+\textbf{Email}
+\\ \hline
+
+102 & Rahim  & Science          & 5.00 & 600 & rahim@test.com\\\hline
+109 & Nabila & Science          & 4.80 & 550 & \textit{NULL}\\\hline
+213 & Sami   & Business Studies & 5.00 & 600 & sami@test.com\\\hline
+205 & Farhan & Business Studies & 4.80 & 500 & farhan@test.com\\\hline
+305 & Rima   & Humanities       & 5.00 & 550 & rima@test.com\\\hline
+306 & Mahi   & Humanities       & 4.50 & 500 & mahi@test.com\\\hline
+150 & Mim    & Science          & 4.20 & 450 & mim@test.com\\\hline
+180 & Tania  & Business Studies & 3.90 & 450 & tania@test.com\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Student Table}
+
+\end{minipage}\end{flushleft}
+
+\begin{keypointbox}{Student টেবিলের পূর্ণ কাঠামোর উদাহরণ (Schema)}
+
+\texttt{
+Student(
+StudentID,
+Roll,
+Name,
+FatherName,
+Gender,
+DateOfBirth,
+Class,
+Department,
+GPA,
+Mobile,
+Email,
+Fee
+)
+} একটি কুয়েরি শেখাতে সব ফিল্ড টেবিলে দেখানো প্রয়োজন হয় না।
+প্রয়োজনীয় কলাম নিয়েই উদাহরণ টেবিল তৈরি করা যায়।
+
+\end{keypointbox}
+
+\subsubsection{সব Field ও সব Record নির্বাচন}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.১}{Student টেবিলের সব ফিল্ড ও সব রেকর্ড দেখাও।}
+
+\begin{verbatim}
+SELECT *
+FROM Student;
+\end{verbatim}
+\noindent{\color{chSixTeal}$\Downarrow$}\quad\textbf{ফল}\par\smallskip
+{\raggedright\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|l|l|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA & Fee & Email\\\hline
+102 & Rahim & Science & 5.00 & 600 & rahim@test.com\\\hline
+109 & Nabila & Science & 4.80 & 550 & \textit{NULL}\\\hline
+213 & Sami & Business Studies & 5.00 & 600 & sami@test.com\\\hline
+205 & Farhan & Business Studies & 4.80 & 500 & farhan@test.com\\\hline
+305 & Rima & Humanities & 5.00 & 550 & rima@test.com\\\hline
+306 & Mahi & Humanities & 4.50 & 500 & mahi@test.com\\\hline
+150 & Mim & Science & 4.20 & 450 & mim@test.com\\\hline
+180 & Tania & Business Studies & 3.90 & 450 & tania@test.com\\
+\hline\end{tabular}\par}
+\end{minipage}\par\smallskip
+
+\textbf{ব্যাখ্যা:} \texttt{*} দ্বারা সব ফিল্ড বোঝানো হয়েছে। WHERE না থাকায় সব রেকর্ড ফলাফলে আসবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২}{শুধু Roll, Name ও GPA দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student;
+\end{verbatim}
+\smallskip\small SELECT-এ দেওয়া ফিল্ডের তালিকা ফলাফলের কলাম নির্ধারণ করে।
+
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+213 & Sami & 5.00\\\hline
+205 & Farhan & 4.80\\\hline
+305 & Rima & 5.00\\\hline
+306 & Mahi & 4.50\\\hline
+150 & Mim & 4.20\\\hline
+180 & Tania & 3.90\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+
+
+SELECT-এ কম ফিল্ড লিখলে মূল টেবিলের কোনো রেকর্ড মুছে যায় না।
+
+\subsection{WHERE Clause}
+
+\begin{definitionbox}{}
+
+নির্দিষ্ট শর্ত পূরণ করে এমন রেকর্ড নির্বাচন করার জন্য
+\textbf{WHERE Clause} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{কখন ব্যবহার করবে?} যখন সব রেকর্ড নয়, বরং নির্দিষ্ট শর্ত পূরণকারী রেকর্ড দরকার হবে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩}{Science বিভাগের শিক্ষার্থীদের Roll, Name ও GPA দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
 \begin{verbatim}
 SELECT Roll, Name, GPA
 FROM Student
-WHERE GPA >= 5.00;
-
-SELECT Name, GroupName
-FROM Student
-WHERE GroupName = 'Science'
-ORDER BY Name ASC;
+WHERE Department='Science';
 \end{verbatim}
-\end{examplebox}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+109 & Nabila & 4.80\\\hline
+150 & Mim & 4.20\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
 
-\begin{center}
-\begin{tabular}{|l|p{0.56\textwidth}|}
+টেক্সট মান একক উদ্ধৃতিচিহ্নের মধ্যে লেখা হয়েছে।
+
+\noindent\par\smallskip
+
+\subsection{Comparison Operator}
+
+\begin{definitionbox}{}
+
+দুটি মানের মধ্যে তুলনা করে শর্ত তৈরি করার জন্য ব্যবহৃত
+অপারেটরকে \textbf{Comparison Operator} বলে।
+
+\end{definitionbox}
+
+\begin{chSixSideBySide}[.32]
+\small
+
+\begin{tabular}{|l|l|}
 \hline
-অপারেটর & কাজ \\
+
+\chSixHeader
+\textbf{Operator} & \textbf{অর্থ}\\
 \hline
-=, <, >, <=, >= & তুলনা করা \\
+= & সমান\\
 \hline
-AND, OR, NOT & একাধিক শর্ত যুক্ত করা \\
+<> & অসমান\\
 \hline
-LIKE & প্যাটার্ন মিলিয়ে খোঁজা \\
+> & বড়\\
 \hline
-BETWEEN & নির্দিষ্ট সীমার মধ্যে মান খোঁজা \\
+< & ছোট\\
 \hline
+>= & বড় অথবা সমান\\
+\hline
+<= & ছোট অথবা সমান\\
+\hline
+
 \end{tabular}
-\end{center}
+\chSixNextColumn
+\begin{keypointbox}{লেখা ও সংখ্যার মান}
 
-\begin{boardbox}{বোর্ড ফোকাস}
-Select query, Parameter query, Action query, Update query, Delete query, Append query ইত্যাদি কুয়েরির ধরন হিসেবে জানতে হবে। HSC ব্যবহারিকে সাধারণত Select query বেশি ব্যবহৃত হয়।
+সংখ্যার সঙ্গে তুলনায় সাধারণত উদ্ধৃতিচিহ্ন লাগে না; যেমন Roll-এর মান 213: 
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Roll=213
+\end{verbatim}
+\end{minipage}\par
+
+টেক্সট মান একক উদ্ধৃতিচিহ্নের মধ্যে থাকে; এখানে Science একটি মান: 
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Department='Science'
+\end{verbatim}
+\end{minipage}\par
+
+\end{keypointbox}
+\end{chSixSideBySide}
+
+
+\noindent\par\smallskip
+
+ফলে Sami-এর রেকর্ড আসবে। এখানে \texttt{*} সব ফিল্ড বোঝায়, কিন্তু WHERE-এর কারণে সব রেকর্ড আসে না। \texttt{GPA>4.80} দিলে 4.80 বাদ পড়ে; \texttt{GPA>=4.80} দিলে সীমার মানটিও অন্তর্ভুক্ত হয়।
+
+\noindent\par\smallskip
+
+
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭}{GPA 5.00 পাওয়া শিক্ষার্থীদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE GPA=5;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+213 & Sami & 5.00\\\hline
+305 & Rima & 5.00\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+ফলে Rahim, Sami ও Rima আসবে।
+
+\subsection{AND, OR ও NOT}
+
+\begin{definitionbox}{Logical Operator}
+
+একাধিক শর্ত যুক্ত করা অথবা কোনো শর্তের বিপরীত
+অবস্থা প্রকাশ করতে ব্যবহৃত অপারেটরকে
+\textbf{Logical Operator} বলা হয়। প্রধান যৌক্তিক অপারেটর হলো AND, OR ও NOT।
+
+\end{definitionbox}
+
+\textbf{AND:} সব শর্ত সত্য হলে রেকর্ডটি ফলাফলে আসে।
+
+\textbf{OR:} যেকোনো একটি শর্ত সত্য হলেই রেকর্ড আসতে পারে।
+
+\textbf{NOT:} শর্তের বিপরীত অর্থ প্রকাশ করে।
+
+\begin{flushleft}
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+A & B & A AND B & A OR B & NOT A\\
+\hline
+সত্য & সত্য & সত্য & সত্য & মিথ্যা\\
+\hline
+সত্য & মিথ্যা & মিথ্যা & সত্য & মিথ্যা\\
+\hline
+মিথ্যা & সত্য & মিথ্যা & সত্য & সত্য\\
+\hline
+মিথ্যা & মিথ্যা & মিথ্যা & মিথ্যা & সত্য\\
+\hline
+
+\end{tabular}
+
+\end{flushleft}
+
+\noindent\par\smallskip
+
+মূল Student টেবিলে \texttt{Department='Science' AND GPA=5} শর্ত দিলে শুধু Rahim-এর তথ্য পাওয়া যায়; তাঁর রেকর্ড দুটি শর্তই পূরণ করে।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.১৪}{Science অথবা Humanities বিভাগের শিক্ষার্থীদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Department
+FROM Student
+WHERE Department='Science'
+   OR Department='Humanities';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & Department\\\hline
+102 & Rahim & Science\\\hline
+109 & Nabila & Science\\\hline
+305 & Rima & Humanities\\\hline
+306 & Mahi & Humanities\\\hline
+150 & Mim & Science\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.১৬}{Science বা Business Studies বিভাগের যেসব শিক্ষার্থী GPA 5 পেয়েছে, তাদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Department, GPA
+FROM Student
+WHERE (Department='Science'
+    OR Department='Business Studies')
+  AND GPA=5;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA\\\hline
+102 & Rahim & Science & 5.00\\\hline
+213 & Sami & Business Studies & 5.00\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+বিভাগ ও GPA-এর শর্ত মেলানোয় Rahim ও Sami-এর তথ্য পাওয়া যাবে।
+
+\begin{mistakebox}{AND ও OR একসঙ্গে থাকলে}
+
+AND-এর অগ্রাধিকার সাধারণত OR-এর আগে। জটিল শর্তে বন্ধনী ব্যবহার করলে কোন শর্তগুলো একসঙ্গে বিবেচিত হবে, তা স্পষ্ট থাকে।
+
+\end{mistakebox}
+
+\subsection{BETWEEN ও NOT BETWEEN}
+
+\begin{definitionbox}{}
+
+নির্দিষ্ট দুটি সীমার মধ্যে থাকা মান নির্বাচন করার জন্য
+\textbf{BETWEEN} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE field BETWEEN lower_value AND upper_value
+\end{verbatim}
+\end{minipage}\par
+
+নিম্ন ও ঊর্ধ্ব সীমা দুটিই অন্তর্ভুক্ত থাকে।
+
+\noindent\par\smallskip
+
+\begin{boardbox}{MCQ Focus}
+
+\texttt{BETWEEN 4.80 AND 5.00}-এ 4.80 এবং 5.00—
+দুই সীমাই অন্তর্ভুক্ত।
+
 \end{boardbox}
+
+\begin{definitionbox}{NOT BETWEEN}
+
+নির্দিষ্ট সীমার বাইরে থাকা মান নির্বাচন করার জন্য
+\textbf{NOT BETWEEN} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\noindent\par\smallskip
+
+
+
+\subsection{IN ও NOT IN}
+
+\begin{definitionbox}{IN Operator}
+
+একই ফিল্ডের মান একটি নির্দিষ্ট তালিকার কোনো মানের সঙ্গে
+মিলে কি না পরীক্ষা করতে \textbf{IN} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+একই ফিল্ডের কয়েকটি বিকল্প মান OR দিয়ে মেলানোর পরিবর্তে IN ব্যবহার করলে কুয়েরি সংক্ষিপ্ত হয়।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.১০}{Rahim, Sami ও Farhan-এর তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.46\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Department, GPA
+FROM Student
+WHERE Name IN
+('Rahim','Sami','Farhan');
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.47\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA\\\hline
+102 & Rahim & Science & 5.00\\\hline
+213 & Sami & Business Studies & 5.00\\\hline
+205 & Farhan & Business Studies & 4.80\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.১২}{Science ও Humanities বিভাগের শিক্ষার্থীদের তথ্য দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, Department
+FROM Student
+WHERE Department IN
+('Science','Humanities');
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & Department\\\hline
+102 & Rahim & Science\\\hline
+109 & Nabila & Science\\\hline
+305 & Rima & Humanities\\\hline
+306 & Mahi & Humanities\\\hline
+150 & Mim & Science\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+একই কাজ OR দিয়ে—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Department='Science'
+   OR Department='Humanities'
+\end{verbatim}
+\end{minipage}\par
+
+লেখা যায়।
+
+\subsection{LIKE ও Wildcard}
+
+\begin{chSixSideBySide}[.57]
+\begin{definitionbox}{LIKE Operator}
+
+লেখার সম্পূর্ণ মান না জানলেও নির্দিষ্ট ধরন বা প্যাটার্ন (Pattern) মেলাতে \textbf{LIKE} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+যেমন নামের প্রথম অক্ষর জানা থাকলে সেই অক্ষর দিয়ে শুরু হওয়া নাম খোঁজা যায়।
+
+যেমন—
+\chSixNextColumn
+\small
+
+\begin{tabularx}{\linewidth}{|p{18mm}|X|}
+\hline
+
+\chSixHeader
+\textbf{Pattern} & \textbf{অর্থ}\\
+\hline
+
+\texttt{'M\%'}
+&
+M দিয়ে শুরু
+\\ \hline
+
+\texttt{'\%a'}
+&
+a দিয়ে শেষ
+\\ \hline
+
+\texttt{'\%mi\%'}
+&
+মাঝে mi আছে
+\\ \hline
+
+\texttt{'\_a\%'}
+&
+দ্বিতীয় Character a
+\\ \hline
+
+\end{tabularx}
+\end{chSixSideBySide}
+
+
+\noindent\par\smallskip
+
+Mahi ও Mim-এর নাম M দিয়ে শুরু, তাই ফলাফলে এই নাম দুটি পাওয়া যাবে।
+
+\begin{keypointbox}{Wildcard-এর সফটওয়্যার ভেদ}
+
+SQLite, MySQL এবং SQL ব্যবহার করা হয় এমন অনেক পরিবেশে—
+
+\texttt{\%} = শূন্য বা একাধিক অক্ষর।
+
+\texttt{\_} = ঠিক একটি অক্ষর। Microsoft Access-এর প্রচলিত ANSI-89 মোডে
+\texttt{*} ও \texttt{?} Wildcard দেখা যায়।
+
+\end{keypointbox}
+
+\subsection{NULL মান পরীক্ষা}
+
+\begin{definitionbox}{}
+
+কোনো ফিল্ডের মান অজানা, অনুপস্থিত অথবা এখনো নির্ধারিত হয়নি
+এমন অবস্থা বোঝাতে \textbf{NULL} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{25mm}|Y|}\hline\chSixHeader
+মান & অর্থ ও পরীক্ষা\\\hline
+\texttt{NULL} & অজানা বা অনুপস্থিত মান; \texttt{IS NULL} বা \texttt{IS NOT NULL} দিয়ে পরীক্ষা\\\hline
+\texttt{0} & নির্দিষ্ট সংখ্যামান শূন্য; সাধারণ সংখ্যার তুলনা প্রযোজ্য\\\hline
+\texttt{''} & ফাঁকা লেখা; \texttt{NULL}-এর সমার্থক নয়\\\hline
+\end{tabularx}\end{flushleft}
+\texttt{NULL}-কে সাধারণ সমান/অসমান তুলনায় পরীক্ষা করা যায় না।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.১৮}{যাদের Email জানা নেই তাদের Roll ও Name দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+WHERE Email IS NULL;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Roll & Name\\\hline
+109 & Nabila\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+Nabila-এর Email অজানা, তাই তার রেকর্ডটি ফলাফলে দেখা যাবে।
+
+\begin{mistakebox}{NULL পরীক্ষার সঠিক পদ্ধতি}
+
+ভুল—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Email=NULL
+\end{verbatim}
+\end{minipage}\par
+
+সঠিক—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Email IS NULL
+\end{verbatim}
+\end{minipage}\par
+
+\end{mistakebox}
+
+মান আছে এমন রেকর্ড—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Email IS NOT NULL
+\end{verbatim}
+\end{minipage}\par
+
+\subsubsection{একই শর্তের কয়েকটি রূপ}
+একটি প্রয়োজন একাধিক সঠিক SQL রূপে প্রকাশ করা যায়। নিচে মূল Student সারণির জন্য শুধু WHERE-এর শর্ত ও নির্বাচিত নাম দেখানো হয়েছে। GPA অজানা হলে তাকে ``5 নয়'' বলে ধরে নেওয়া যাবে না; অজানা মানের জন্য আলাদা IS NULL পরীক্ষা প্রয়োজন।
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{.57\linewidth}|X|}\hline\chSixHeader
+সমতুল্য শর্ত & নির্বাচিত শিক্ষার্থী\\\hline
+\texttt{GPA<>5} বা \texttt{NOT (GPA=5)} বা \texttt{GPA NOT IN (5)} & Nabila, Farhan, Mahi, Mim, Tania\\\hline
+\texttt{GPA>=4.80 AND GPA<=5.00} বা \texttt{GPA BETWEEN 4.80 AND 5.00} & Rahim, Nabila, Sami, Farhan, Rima\\\hline
+\texttt{Department NOT IN}\newline\texttt{('Science','Humanities')} & Sami, Farhan, Tania\\\hline
+\texttt{Name LIKE '\%a'} & Nabila, Rima, Tania\\\hline
+\texttt{Name NOT LIKE 'M\%'} & Mahi ও Mim ছাড়া বাকি ছয়জন\\\hline
+\texttt{Name LIKE '\_a\%'} & Rahim, Nabila, Sami, Farhan, Mahi, Tania\\\hline
+\texttt{Email IS NOT NULL} & Nabila ছাড়া বাকি সাতজন\\\hline
+\end{tabularx}\end{flushleft}
+IN-এর তালিকায় NULL রেখে অজানা মান খোঁজা যায় না। বিশেষত NOT IN-এর তালিকায় NULL থাকলে প্রত্যাশিত ফল নাও আসতে পারে; অজানা মান পরীক্ষায় IS NULL-ই ব্যবহার করবে।
+\subsection{DISTINCT}
+
+\begin{definitionbox}{}
+
+কুয়েরির ফলাফলে নির্বাচিত কলামগুলোর একই মানের সমন্বয় বারবার না দেখিয়ে একবার করে প্রদর্শনের
+জন্য \textbf{DISTINCT} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\noindent\par\smallskip
+
+\begin{boardbox}{MCQ Focus}
+
+DISTINCT ফলাফলে একই মানের পুনরাবৃত্তি বাদ দেয়; মূল টেবিলের কোনো রেকর্ড মুছে ফেলে না। একাধিক কলাম নির্বাচন করলে সেই কলামগুলোর সম্পূর্ণ মানের সমন্বয় বিবেচনা করে।
+
+\end{boardbox}
+
+\begin{minipage}{\linewidth}
+\chSixExample{৭.২০}{Department-এর নামগুলো পুনরাবৃত্তি ছাড়া দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT DISTINCT Department
+FROM Student;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+Department\\\hline
+Science\\\hline
+Business Studies\\\hline
+Humanities\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}
+
+\subsection{Alias বা বিকল্প নাম}
+
+\begin{definitionbox}{}
+
+কুয়েরিতে ফিল্ড, রাশি বা টেবিলের জন্য সাময়িকভাবে
+বিকল্প নাম ব্যবহার করাকে \textbf{Alias} বলে।
+
+\end{definitionbox}
+
+\noindent\par\smallskip
+
+\texttt{AS} মূল টেবিলের ফিল্ডের নাম পরিবর্তন করে না। শুধু কুয়েরির ফলাফলে কলামের শিরোনাম বদলায়।
+
+\begin{minipage}{\linewidth}
+\chSixExample{৭.১৯}{ফলাফলে Name কলামের শিরোনাম StudentName হিসেবে দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name AS StudentName, GPA
+FROM Student;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{StudentName, GPA}{\mbox{Rahim, 5.00}; \mbox{Nabila, 4.80}; \mbox{Sami, 5.00}; \mbox{Farhan, 4.80}; \mbox{Rima, 5.00}; \mbox{Mahi, 4.50}; \mbox{Mim, 4.20}; \mbox{Tania, 3.90}}
+\end{minipage}
+\end{minipage}
+
+\subsection{Literal, Expression ও Operator}
+
+\begin{definitionbox}{}
+
+SQL নির্দেশে সরাসরি লেখা নির্দিষ্ট ধ্রুবক মানকে
+\textbf{Literal} বলা যায়।
+
+\end{definitionbox}
+
+যেমন—
+
+\[
+600,
+\qquad
+4.80,
+\qquad
+\texttt{'Science'}
+\]
+
+\begin{definitionbox}{Expression}
+
+ফিল্ড, লিটারাল, ফাংশন ও অপারেটর ব্যবহার করে নতুন মান
+হিসাব করার রাশিকে \textbf{Expression} বলা হয়।
+
+\end{definitionbox}
+
+\noindent\par\smallskip
+
+
+
+\begin{minipage}{\linewidth}
+\chSixExample{৭.২১}{Fee-কে মাসিক ফি ধরে প্রত্যেক শিক্ষার্থীর ১২ মাসের মোট ফি হিসাব করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Name,
+       Fee*12 AS AnnualFee
+FROM Student;
+\end{verbatim}
+\smallskip\small AnnualFee মূল Student টেবিলে নতুন ফিল্ড তৈরি করেনি।
+এটি শুধু কুয়েরির ফলাফলে হিসাব করে পাওয়া মান।
+
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{Name, AnnualFee}{\mbox{Rahim, 7200}; \mbox{Nabila, 6600}; \mbox{Sami, 7200}; \mbox{Farhan, 6000}; \mbox{Rima, 6600}; \mbox{Mahi, 6000}; \mbox{Mim, 5400}; \mbox{Tania, 5400}}
+\end{minipage}
+\end{minipage}
+\subsubsection{অপারেটরের প্রধান ধরন}
+
+\begin{flushleft}
+
+\small
+
+\begin{tabularx}{0.92\linewidth}{|p{33mm}|X|}
+\hline
+
+\chSixHeader
+Arithmetic Operator
+&
+\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}
+\\ \hline
+
+Comparison Operator
+&
+\texttt{=}, \texttt{<>}, \texttt{>}, \texttt{<},
+\texttt{>=}, \texttt{<=}
+\\ \hline
+
+Logical Operator
+&
+AND, OR, NOT
+\\ \hline
+
+Range/List
+&
+BETWEEN, IN
+\\ \hline
+
+Pattern
+&
+LIKE
+\\ \hline
+
+NULL Test
+&
+IS NULL, IS NOT NULL
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+\subsection{ORDER BY ও Sorting}
+ফলের নির্দিষ্ট ক্রমের জন্য \texttt{ORDER BY} ব্যবহার করা হয়। Ascending-এর নির্দেশ \texttt{ASC}, Descending-এর নির্দেশ \texttt{DESC}। একাধিক ফিল্ডের অগ্রাধিকার, সমান মান ও Date/Text-এর শর্ত Sorting অংশে একত্রে ব্যাখ্যা করা হয়েছে; সংরক্ষিত প্রয়োগে আগের সব SQL/output উদাহরণ আছে।
+
+\subsection{প্রথম বা সর্বোচ্চ কয়েকটি Record নির্বাচন}
+
+অনেক সময় সব রেকর্ড নয়, ফলাফলের প্রথম কয়েকটি রেকর্ড প্রয়োজন হয়।
+
+\chSixExample{৭.২৫}{GPA বড় থেকে ছোট সাজিয়ে প্রথম তিনজন শিক্ষার্থীর তথ্য দেখাও।}
+
+\textbf{Microsoft Access:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT TOP 3 Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC, Roll ASC;
+\end{verbatim}
+\end{minipage}\par
+
+\textbf{SQLite:}
+
+\noindent\begin{minipage}{\linewidth}
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+ORDER BY GPA DESC, Roll ASC
+LIMIT 3;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Roll & Name & GPA\\\hline
+102 & Rahim & 5.00\\\hline
+213 & Sami & 5.00\\\hline
+305 & Rima & 5.00\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\begin{keypointbox}{TOP/LIMIT-এর আগে সর্টিং কেন?}
+
+ORDER BY ছাড়া ``প্রথম তিনটি রেকর্ড'' মানেই
+``সর্বোচ্চ GPA-এর তিনটি রেকর্ড'' নয়। প্রথমে GPA বড় থেকে ছোট ক্রমে সাজিয়ে তারপর প্রথম তিনটি নিতে হবে।
+
+\end{keypointbox}
+
+\subsection{সমষ্টিগত হিসাব: Aggregate Function}
+
+\begin{definitionbox}{}
+
+একাধিক রেকর্ডের মানের ওপর হিসাব করে একটি সারসংক্ষেপ
+তৈরি করে এমন ফাংশনকে
+\textbf{Aggregate Function} বলে।
+
+\end{definitionbox}
+
+\begin{flushleft}
+
+\small
+
+\begin{tabularx}{0.86\linewidth}{|p{25mm}|X|}
+\hline
+
+\chSixHeader
+\textbf{Function}
+&
+\textbf{কাজ}
+\\ \hline
+
+MIN
+&
+সর্বনিম্ন মান নির্ণয়
+\\ \hline
+
+MAX
+&
+সর্বোচ্চ মান নির্ণয়
+\\ \hline
+
+COUNT
+&
+রেকর্ড বা Non-NULL মানের সংখ্যা গণনা
+\\ \hline
+
+AVG
+&
+Average বা গড় নির্ণয়
+\\ \hline
+
+SUM
+&
+মোট যোগফল নির্ণয়
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+\subsubsection{Result টেবিলে সমষ্টিগত ফাংশনের প্রয়োগ}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+Roll & Name & Department & Marks & Grade\\
+\hline
+102 & Rahim & Science & 398 & A\\\hline
+109 & Nabila & Science & 392 & A\\\hline
+213 & Sami & Business Studies & 430 & A+\\\hline
+205 & Farhan & Business Studies & 452 & A+\\\hline
+305 & Rima & Humanities & 445 & A+\\\hline
+306 & Mahi & Humanities & 437 & A+\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Result Table: একটি কাল্পনিক সমন্বিত পরীক্ষার ফল}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২৬}{Marks-এর সর্বনিম্ন মান বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT MIN(Marks) AS LowestMarks
+FROM Result;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+LowestMarks\\\hline
+392\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২৭}{Marks-এর সর্বোচ্চ মান বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT MAX(Marks) AS HighestMarks
+FROM Result;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+HighestMarks\\\hline
+452\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২৮}{Result টেবিলের মোট রেকর্ডসংখ্যা বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT COUNT(*) AS TotalRecord
+FROM Result;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+TotalRecord\\\hline
+6\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.২৯}{Marks-এর গড় বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT AVG(Marks) AS AverageMarks
+FROM Result;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+AverageMarks\\\hline
+425.67\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\par AverageMarks = (398+392+430+452+445+437)/6 = 425.67.\par
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩০}{সব Marks-এর মোট যোগফল বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SUM(Marks) AS TotalMarks
+FROM Result;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+TotalMarks\\\hline
+2554\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\begin{keypointbox}{COUNT(*) ও COUNT(Field)}
+
+\texttt{COUNT(*)} Result-এর সব সারি গণনা করে। \texttt{COUNT(Field)} ওই ফিল্ডের NULL নয় এমন মান গণনা করে।
+
+\end{keypointbox}
+
+মূল Student সারণিতে \texttt{COUNT(*)}=8 কিন্তু \texttt{COUNT(Email)}=7, কারণ Nabila-এর Email NULL। SUM, AVG, MIN ও MAX-ও সংশ্লিষ্ট কলামের NULL মান বাদ দিয়ে হিসাব করে। যেমন 80, NULL ও 100-এর গড় $(80+100)/2=90$; NULL-কে শূন্য ধরে তিন দিয়ে ভাগ করা ঠিক নয়।
+\subsection{GROUP BY ও HAVING}
+
+\begin{definitionbox}{}
+
+নির্দিষ্ট ফিল্ডের একই মান থাকা রেকর্ডগুলোকে দলে ভাগ করে প্রতিটি দলের
+সারসংক্ষেপ বের করার জন্য \textbf{GROUP BY} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\begin{definitionbox}{HAVING}
+
+GROUP BY দিয়ে দল তৈরির পরে দলভিত্তিক ফলাফলের ওপর শর্ত
+প্রয়োগ করতে \textbf{HAVING} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+ID & Name & Department & TuitionFee\\
+\hline
+1 & Rafi & Science & 1200\\\hline
+2 & Nila & Science & 1500\\\hline
+3 & Sami & Humanities & 900\\\hline
+4 & Mitu & Humanities & 1100\\\hline
+5 & Rina & Business Studies & 1000\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{FeeList Table}
+
+\end{minipage}\end{flushleft}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩১}{প্রতিটি Department-এর মোট TuitionFee দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Department,
+       SUM(TuitionFee) AS TotalFee
+FROM FeeList
+GROUP BY Department;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Department & TotalFee\\\hline
+Business Studies & 1000\\\hline
+Humanities & 2000\\\hline
+Science & 2700\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩২}{যেসব বিভাগের গড় TuitionFee 1100-এর বেশি, সেগুলো দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT Department,
+       AVG(TuitionFee) AS AverageFee
+FROM FeeList
+GROUP BY Department
+HAVING AVG(TuitionFee)>1100;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Department & AverageFee\\\hline
+Science & 1350\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+শুধু Science বিভাগের তথ্য আসবে। কারণ—
+
+\par $(1200+1500)/2=1350$।\par
+
+\begin{mistakebox}{WHERE ও HAVING এক নয়}
+
+\textbf{WHERE} শর্ত মিলিয়ে পৃথক রেকর্ড বাছাই করে।
+
+\textbf{HAVING} দলভিত্তিক ফলের ওপর শর্ত প্রয়োগ করে। যেমন—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+WHERE Salary>30000
+\end{verbatim}
+\end{minipage}\par
+
+একেকটি Employee রেকর্ড পরীক্ষা করে। কিন্তু—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+HAVING AVG(Salary)>30000
+\end{verbatim}
+\end{minipage}\par
+
+প্রতিটি দলের গড় বেতন পরীক্ষা করে।
+
+\end{mistakebox}
+
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{24mm}|X|X|}\hline\chSixHeader
+বিষয় & WHERE & HAVING\\\hline
+কী বাছাই করে & পৃথক রেকর্ড & গ্রুপ বা সমষ্টিগত ফল\\\hline
+কাজের ধাপ & গ্রুপ তৈরির আগে রেকর্ড ছাঁকে & গ্রুপের হিসাবের পরে ফল ছাঁকে\\\hline
+উদাহরণ & \texttt{WHERE TuitionFee>1000} & \texttt{HAVING AVG(TuitionFee)>1100}\\\hline
+একসঙ্গে ব্যবহার & আগে প্রয়োজনীয় রেকর্ড নেয় & পরে কাঙ্ক্ষিত গ্রুপ রাখে\\\hline
+\end{tabularx}\end{flushleft}
+GROUP BY-সহ সাধারণ SELECT-এ সমষ্টিগত ফাংশনের বাইরে যে কলাম দেখানো হয়, তা GROUP BY-তে রাখা উচিত। যেমন বিভাগের মোট ফি দেখাতে Department ও SUM(TuitionFee) উপযুক্ত; কোনো শিক্ষার্থীর Name যোগ করলে সেটি কোন শিক্ষার্থীর নাম বোঝাবে, তা অস্পষ্ট হয়ে যায়।
+\subsection{Employee টেবিলে DDL ও DML শেখা}
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+
+\chSixHeader
+EmpID & Name & Designation & Salary & City\\
+\hline
+E01 & Javed & Manager & 32000 & Dhaka\\\hline
+E02 & Tareq & Accountant & 22000 & Khulna\\\hline
+E03 & Atiq & Operator & 19000 & Cumilla\\\hline
+E04 & Sakib & Officer & 17000 & Dhaka\\\hline
+E05 & Mamun & Operator & 10000 & Cumilla\\
+\hline
+
+\end{tabular}
+
+\captionof{table}{Employee Table}
+
+\end{minipage}\end{flushleft}
+
+\subsubsection{CREATE TABLE Statement}
+
+\begin{definitionbox}{}
+
+নতুন টেবিল অথবা ডেটাবেজের অন্য অবজেক্ট তৈরি করার জন্য
+\textbf{CREATE Statement} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{কখন ব্যবহার করবে?} যখন ডেটাবেজে প্রথমবার নতুন টেবিল তৈরি করতে হবে।
+
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+\end{verbatim}
+\end{minipage}\par
+
+Employee টেবিল—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+CREATE TABLE Employee (
+    EmpID TEXT NOT NULL PRIMARY KEY,
+    Name TEXT NOT NULL,
+    Designation TEXT,
+    Salary INTEGER,
+    City TEXT
+);
+\end{verbatim}
+\end{minipage}\par
+
+\Needspace{5\baselineskip}
+এখানে—
+
+\begin{itemize}
+
+\item \texttt{Employee} = টেবিলের নাম;
+
+\item \texttt{EmpID}, \texttt{Name}, \texttt{Salary} ইত্যাদি = ফিল্ড;
+
+\item \texttt{TEXT}, \texttt{INTEGER} = ডেটার ধরন;
+
+\item \texttt{PRIMARY KEY} = রেকর্ড শনাক্তকারী কী;
+
+\item \texttt{NOT NULL} = মান অবশ্যই দিতে হবে।
+
+\end{itemize}
+
+\subsubsection{কাঠামোর নিয়ম ও ডেটার বৈধতা}
+\textbf{PRIMARY KEY ও UNIQUE:} PRIMARY KEY রেকর্ডের পরিচিতি অনন্য রাখে এবং NULL গ্রহণ করে না। UNIQUE একই মানের অনাকাঙ্ক্ষিত পুনরাবৃত্তি ঠেকায়।
+
+\textbf{NOT NULL ও CHECK:} NOT NULL মান থাকা বাধ্যতামূলক করে। CHECK দিয়ে গ্রহণযোগ্য মানের শর্ত নির্ধারণ করা যায়। যেমন \texttt{GPA REAL NOT NULL CHECK (GPA BETWEEN 0 AND 5)} হলে GPA দিতে হবে এবং তা 0 থেকে 5-এর মধ্যে হতে হবে।
+
+\textbf{DEFAULT ও FOREIGN KEY:} DEFAULT থাকলে কোনো কলামের মান উল্লেখ না করলে নির্ধারিত প্রাথমিক মান বসতে পারে। FOREIGN KEY অন্য টেবিলের পরিচিতির সঙ্গে সংযোগের নিয়ম প্রকাশ করে।
+
+এসব নিয়ম ডেটার ভুল কমায়। তবে গ্রহণযোগ্য সীমার মধ্যে থাকা মানও ভুল হতে পারে। যেমন প্রাপ্ত নম্বরের সীমা 0--100 হলে 85-এর বদলে 58 লিখলেও সীমা পরীক্ষায় ধরা পড়বে না।
+\subsubsection{INSERT Statement}
+
+\begin{definitionbox}{}
+
+টেবিলে নতুন রেকর্ড সংযোজনের জন্য
+\textbf{INSERT INTO Statement} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+INSERT INTO table_name
+(column1, column2, ...)
+VALUES
+(value1, value2, ...);
+\end{verbatim}
+\end{minipage}\par
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩৩}{Employee টেবিলে Jabbar-এর রেকর্ড যোগ করো। তাঁর EmpID হবে E06, Designation হবে Driver, Salary হবে 15000 এবং City হবে Barishal।}
+
+\begin{verbatim}
+INSERT INTO Employee
+(EmpID, Name, Designation, Salary, City)
+VALUES
+('E06','Jabbar','Driver',15000,'Barishal');
+\end{verbatim}
+\noindent{\color{chSixTeal}$\Downarrow$}\quad\textbf{ফল}\par\smallskip
+{\raggedright\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|l|l|l|l|l|}\hline\chSixHeader
+EmpID & Name & Designation & Salary & City\\\hline
+E06 & Jabbar & Driver & 15000 & Barishal\\
+\hline\end{tabular}\par}
+\end{minipage}\par\smallskip
+
+উপরের ফলের সারিটি Employee-তে নতুন যোগ হয়েছে।
+
+\subsubsection{একসঙ্গে একাধিক Record যোগ করা}
+
+আগের একক INSERT-এর বিকল্প হিসেবে মূল পাঁচ রেকর্ডের টেবিলে নিচের নির্দেশ চালানো যায়। একই E06 দুবার যোগ করা যাবে না। SQLite ও MySQL-এ এই বহু-সারি VALUES রূপ চলে; Access-এ পৃথক INSERT নির্দেশ ব্যবহার করতে হয়।
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+INSERT INTO Employee
+(EmpID, Name, Designation, Salary, City)
+VALUES
+('E06','Jabbar','Driver',15000,'Barishal'),
+('E07','Rafi','Officer',21000,'Rajshahi');
+\end{verbatim}
+\end{minipage}\par
+
+\begin{keypointbox}{INSERT-এর ফিল্ড ও মান}
+
+\begin{itemize}
+
+\item ফিল্ডের তালিকা এবং VALUES-এর মানের ক্রম মিলতে হবে।
+
+\item ডেটার ধরনের সঙ্গে মান সামঞ্জস্যপূর্ণ হতে হবে।
+
+\item প্রয়োজনীয় ফিল্ড বাদ দেওয়া যাবে না।
+
+\item যেসব ফিল্ড NULL গ্রহণ করে, মান না দিলে সেগুলো NULL হতে পারে।
+
+\item ডেটার বৈধতার নিয়ম ভাঙলে INSERT ব্যর্থ হতে পারে।
+
+\end{itemize}
+
+\end{keypointbox}
+
+\subsubsection{UPDATE Statement}
+
+\begin{definitionbox}{}
+
+টেবিলের বিদ্যমান রেকর্ডের এক বা একাধিক ফিল্ডের মান পরিবর্তন
+করার জন্য \textbf{UPDATE Statement} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+UPDATE table_name
+SET column=new_value
+WHERE condition;
+\end{verbatim}
+\end{minipage}\par
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩৪}{Javed-এর City Dhaka থেকে Barishal করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+UPDATE Employee
+SET City='Barishal'
+WHERE EmpID='E01';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+EmpID & Name & City\\\hline
+E01 & Javed & Barishal\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+আগে E01 পরিচিতির Javed-এর City ছিল Dhaka। UPDATE-এর পরে একই রেকর্ডে City হলো Barishal। তাঁর EmpID ও Name অপরিবর্তিত আছে।
+
+\textbf{একাধিক ফিল্ড পরিবর্তন:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+UPDATE Employee
+SET Salary=35000,
+    City='Rajshahi'
+WHERE EmpID='E01';
+\end{verbatim}
+\end{minipage}\par
+
+\subsubsection{DELETE Statement}
+
+\begin{definitionbox}{}
+
+টেবিল থেকে শর্ত অনুযায়ী এক বা একাধিক রেকর্ড বাদ দেওয়ার
+জন্য \textbf{DELETE Statement} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+DELETE FROM table_name
+WHERE condition;
+\end{verbatim}
+\end{minipage}\par
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩৫}{যে রেকর্ডের EmpID E05, সেটি বাদ দাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+DELETE FROM Employee
+WHERE EmpID='E05';
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\chSixResultList{EmpID, Name}{\mbox{E01, Javed}; \mbox{E02, Tareq}; \mbox{E03, Atiq}; \mbox{E04, Sakib}}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+Mamun-এর রেকর্ড বাদ যাবে। Employee টেবিলের কাঠামো থাকবে।
+
+\begin{mistakebox}{UPDATE/DELETE-এ WHERE বাদ দিলে}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+UPDATE Employee
+SET Salary=20000;
+\end{verbatim}
+\end{minipage}\par
+
+সব Employee-এর Salary 20000 হবে। আবার—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+DELETE FROM Employee;
+\end{verbatim}
+\end{minipage}\par
+
+টেবিলের সব রেকর্ড বাদ যাবে। তাই UPDATE বা DELETE-এর আগে শর্ত ঠিক আছে কি না যাচাই জরুরি।
+
+\end{mistakebox}
+
+\subsubsection{ALTER TABLE Statement}
+
+\begin{definitionbox}{}
+
+বিদ্যমান টেবিলের কাঠামো পরিবর্তনের জন্য
+\textbf{ALTER TABLE Statement} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+Employee টেবিলে জন্মতারিখের DOB (Date of Birth) ফিল্ড যোগ—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+ALTER TABLE Employee
+ADD COLUMN DOB TEXT;
+\end{verbatim}
+\end{minipage}\par
+
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{26mm}|Y|Y|}\hline\chSixHeader
+বিষয় & ALTER & UPDATE\\\hline
+কাজ & টেবিলের কাঠামো পরিবর্তন & রেকর্ডের ডেটা পরিবর্তন\\\hline
+Salary-এর উদাহরণ & Salary কলাম যোগ বা তার কাঠামো বদলানো & Salary-এর সংরক্ষিত মান পরিবর্তন\\\hline
+নির্দেশের শ্রেণি & DDL & DML\\\hline
+নির্বাচিত রেকর্ড & কলামের সংজ্ঞা বদলাতে WHERE দিয়ে রেকর্ড বাছাই করা হয় না & WHERE দিয়ে নির্দিষ্ট রেকর্ড বাছাই করা যায়\\\hline
+\end{tabularx}\end{flushleft}
+
+
+কলাম যোগ বা নাম পরিবর্তনের রূপ DBMS-ভেদে কিছুটা আলাদা। উদাহরণে DOB-তে ISO রীতির তারিখ (যেমন 2008-05-21) লেখা হিসেবে রাখা যায়; Access-এ Date/Time ব্যবহার করা হয়।
+
+\subsubsection{DROP TABLE Statement}
+
+\begin{definitionbox}{}
+
+একটি টেবিলকে তার কাঠামোসহ ডেটাবেজ থেকে অপসারণের জন্য
+\textbf{DROP TABLE} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+DROP TABLE Employee;
+\end{verbatim}
+\end{minipage}\par
+
+\begin{mistakebox}{DELETE ও DROP TABLE-এর পার্থক্য}
+
+\begin{flushleft}
+
+\small
+
+\begin{tabularx}{0.92\linewidth}{|p{28mm}|X|X|}
+\hline
+
+\chSixHeader
+\textbf{বিষয়}
+&
+\textbf{DELETE}
+&
+\textbf{DROP TABLE}
+\\ \hline
+
+কী বাদ দেয়?
+&
+Record/Data
+&
+Table Structure + Data
+\\ \hline
+
+WHERE ব্যবহার
+&
+হতে পারে
+&
+রেকর্ড Filter হিসেবে নয়
+\\ \hline
+
+টেবিল থাকে?
+&
+হ্যাঁ
+&
+না
+\\ \hline
+
+শ্রেণি
+&
+DML
+&
+DDL
+\\ \hline
+
+\end{tabularx}
+
+\end{flushleft}
+
+\end{mistakebox}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৩৬}{Employee টেবিলের মোট Salary বের করো।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT SUM(Salary) AS TotalSalary
+FROM Employee;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|}\hline\chSixHeader
+TotalSalary\\\hline
+100000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\par 32000+22000+19000+17000+10000 = 100000.\par
+
+\subsubsection{লেনদেন ও অধিকার নিয়ন্ত্রণ}
+TCL দিয়ে লেনদেনের শুরু, স্থায়ীকরণ ও বাতিল নিয়ন্ত্রণ করা হয়। বিস্তারিত ধারণা ও ACID-এর প্রয়োগ \ref{sec:ch06-transaction} অংশে; নিচে একটি নির্দেশের পরিবর্তন ফিরিয়ে দেখানো হলো।
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+BEGIN;
+UPDATE Student SET Fee=650 WHERE Roll=102;
+ROLLBACK;
+\end{verbatim}
+\end{minipage}\par
+এই স্বাধীন SQLite উদাহরণে Rahim-এর Fee শেষে 600-ই থাকে। ROLLBACK-এর বদলে COMMIT দিলে 650 স্থায়ী হতো। আগে COMMIT করা যেকোনো পরিবর্তন ROLLBACK দিয়ে ফিরিয়ে আনা যায় না। DCL-এর GRANT অধিকার দেওয়া এবং REVOKE অধিকার প্রত্যাহার বোঝায়। সব DBMS-এ একই অধিকার-ব্যবস্থা নেই; SQLite-এ GRANT/REVOKE নির্দেশ নেই।
+
+\subsubsection{নাম পরিবর্তন ও সব Record বাদ দেওয়ার পার্থক্য}
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{20mm}|Y|Y|Y|Y|}\hline\chSixHeader
+বিবেচনা & RENAME & DELETE & TRUNCATE & DROP\\\hline
+কাজ & টেবিলের নাম বদলায়; ডেটার মান নয় & রেকর্ড বাদ দেয় & সব রেকর্ড বাদ দেয় & সংজ্ঞাসহ টেবিল অপসারণ করে\\\hline
+টেবিলের সংজ্ঞা & থাকে & থাকে & থাকে & থাকে না\\\hline
+WHERE & রেকর্ড বাছাইয়ের কাজ নয় & নির্দিষ্ট রেকর্ড বাদ দিতে WHERE ব্যবহার করতে হয় & রেকর্ড বাছাইয়ের WHERE থাকে না & রেকর্ড বাছাইয়ের কাজ নয়\\\hline
+SQLite প্রসঙ্গ & \texttt{ALTER TABLE Employee RENAME TO Staff;} Employee-এর নাম Staff করে & সমর্থিত & সমর্থিত নয়; কিছু অন্য DBMS-এ আছে & সমর্থিত\\\hline
+\end{tabularx}
+\end{flushleft}
+
+\subsection{একাধিক সম্পর্কিত Table থেকে তথ্য নির্বাচন}
+\label{sec:ch06-join}
+দুই টেবিলের মিল খুঁজতে কোন পরিচিতি কাকে নির্দেশ করছে, তা আগে বুঝতে হয়। PK/FK, Parent/Child ও Relationship-এর ব্যাখ্যা \ref{sec:ch06-relationships} অংশে আছে; প্রয়োজন হলে সেটি পড়ে নিচের JOIN প্রয়োগে আসবে।
+
+\begin{definitionbox}{JOIN}
+
+সম্পর্কিত ফিল্ডের মান মিলিয়ে দুই বা ততোধিক টেবিলের সংশ্লিষ্ট
+রেকর্ডকে একই ফলাফলে প্রদর্শনের প্রক্রিয়াকে
+\textbf{JOIN} বলে।
+
+\end{definitionbox}
+
+\textbf{কেন JOIN দরকার?} রিলেশনাল ডেটাবেজে সব তথ্য একটি বড় টেবিলে না রেখে
+বিষয়ভিত্তিক একাধিক টেবিলে রাখা হয়। তাই প্রয়োজনের সময় সম্পর্কিত ফিল্ডের মাধ্যমে টেবিলগুলোকে
+মিলিয়ে তথ্য দেখাতে হয়।
+
+\noindent
+\begin{minipage}[t]{0.47\linewidth}
+
+\vspace{0pt}
+\raggedright
+
+\textbf{StudentInfo}
+
+\smallskip
+
+\small
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabular}{|l|l|l|}
+\hline
+
+\chSixHeader
+\textbf{ID} & \textbf{Roll} & \textbf{Name}\\
+\hline
+1 & 101 & Miron\\ \hline
+2 & 102 & Hasan\\ \hline
+3 & 103 & Jashim\\ \hline
+4 & 104 & Shirin\\ \hline
+5 & 105 & Mahi\\ \hline
+
+\end{tabular}
+\par\smallskip\footnotesize ID = PK; Roll = Unique Key
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+
+\vspace{0pt}
+\raggedright
+
+\textbf{ExamResult}
+
+\smallskip
+
+\small
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{tabular}{|l|l|l|}
+\hline
+
+\chSixHeader
+\textbf{Roll} & \textbf{Marks} & \textbf{GPA}\\
+\hline
+101 & 452 & 5.00\\ \hline
+102 & 397 & 4.80\\ \hline
+103 & 405 & 5.00\\ \hline
+104 & 392 & 4.80\\ \hline
+105 & 412 & 5.00\\ \hline
+
+\end{tabular}
+\par\smallskip\footnotesize Roll = PK, FK
+
+\end{minipage}
+
+
+\par\smallskip
+এই নমুনায় StudentInfo.ID হলো Primary Key এবং Roll-ও Unique। প্রতিটি
+শিক্ষার্থীর একটি পরীক্ষার ফল রাখায় ExamResult.Roll হলো Primary Key ও
+Foreign Key; এটি StudentInfo.Roll নির্দেশ করে। Roll=101 দিয়ে Miron-এর
+সঙ্গে তাঁর Marks=452 ও GPA=5.00 মেলে। ID দিয়ে Marks বা Roll দিয়ে GPA
+মেলানো যাবে না—মিলের ফিল্ড দুটির অর্থ একই শিক্ষার্থীকে নির্দেশ করতে হবে।
+
+একাধিক পরীক্ষার ফল রাখার নিয়ম হলে ExamResult টেবিলে একই Roll-এর একাধিক রেকর্ড থাকতে পারে;
+তখন প্রতিটি ফলের রেকর্ডের আলাদা শনাক্তকারী দরকার। এই নমুনার এক পরীক্ষার নিয়ম থেকে
+সব StudentInfo--ExamResult সম্পর্ককে 1:1 ধরে নেওয়া যাবে না।
+
+\subsubsection{INNER JOIN লেখার নিয়ম}
+
+\begin{definitionbox}{}
+
+সম্পর্কিত দুটি টেবিলের মিলের ফিল্ডের মান মেলে
+এমন রেকর্ডগুলোকে ফলাফলে প্রদর্শন করার জন্য
+\textbf{INNER JOIN} ব্যবহার করা হয়।
+
+\end{definitionbox}
+
+\Needspace{8\baselineskip}
+\textbf{লেখার সাধারণ রূপ:}
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT field_list
+FROM table1
+INNER JOIN table2
+ON table1.common_field = table2.common_field;
+\end{verbatim}
+\end{minipage}\par
+
+\noindent\begin{minipage}{\linewidth}
+\textbf{একই Roll-এ নাম ও ফল একসঙ্গে দেখানো}\par\smallskip
+\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT s.Roll,
+       s.Name,
+       r.Marks,
+       r.GPA
+FROM StudentInfo AS s
+INNER JOIN ExamResult AS r
+ON s.Roll=r.Roll;
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[c]{.04\linewidth}$\Rightarrow$\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\footnotesize\setlength{\tabcolsep}{2pt}
+\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|l|}
+\hline
+
+\chSixHeader
+\textbf{Roll} & \textbf{Name} & \textbf{Marks} & \textbf{GPA}\\
+\hline
+101 & Miron & 452 & 5.00\\ \hline
+102 & Hasan & 397 & 4.80\\ \hline
+103 & Jashim & 405 & 5.00\\ \hline
+104 & Shirin & 392 & 4.80\\ \hline
+105 & Mahi & 412 & 5.00\\ \hline
+
+\end{tabular}
+\end{minipage}\end{minipage}\par\smallskip
+\texttt{StudentInfo AS s} ও \texttt{ExamResult AS r}-এ s ও r হলো টেবিলের
+সংক্ষিপ্ত নাম (Alias)। \texttt{s.Roll=r.Roll} মিলের শর্ত। Name আসে
+StudentInfo থেকে, Marks ও GPA আসে ExamResult থেকে; প্রতিটি মিল একসঙ্গে
+ফলাফলের একটি সারি তৈরি করে। টেবিলের সংরক্ষিত তথ্য এতে পরিবর্তিত হয় না।
+
+\subsubsection{পাঠ্যবইয়ে JOIN লেখার সহজ নিয়ম}
+
+একই কাজের SQL নিচের রূপেও লেখা যায়—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT StudentInfo.Roll,
+       StudentInfo.Name,
+       ExamResult.Marks,
+       ExamResult.GPA
+FROM StudentInfo, ExamResult
+WHERE StudentInfo.Roll=ExamResult.Roll;
+\end{verbatim}
+\end{minipage}\par
+
+এখানে FROM-এ দুটি মূল সারণি এবং WHERE-এ রেকর্ড মেলার শর্ত আছে।
+আগের \texttt{INNER JOIN ... ON} ও এই কমা-সহ FROM/WHERE রূপটি এই
+সমতার শর্তে একই ফলাফল দেয়। একটি রূপ ঠিকভাবে লিখলেই যথেষ্ট।
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭৩}
+{যেসব শিক্ষার্থীর Marks 400 বা তার বেশি, তাদের Name ও Marks দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT s.Name,
+       r.Marks
+FROM StudentInfo AS s
+INNER JOIN ExamResult AS r
+ON s.Roll=r.Roll
+WHERE r.Marks>=400;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|}\hline\chSixHeader
+Name & Marks\\\hline
+Miron & 452\\\hline
+Jashim & 405\\\hline
+Mahi & 412\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\textbf{মিলের শর্ত ও বাছাইয়ের শর্ত আলাদা।} \texttt{ON s.Roll=r.Roll}
+একজনের নামের সঙ্গে তাঁর নিজের ফল মেলায়। \texttt{WHERE r.Marks>=400}
+সেই মিল পাওয়া সারিগুলোর মধ্যে প্রয়োজনীয় নম্বর বেছে নেয়। তাই Miron,
+Jashim ও Mahi আসে; Hasan ও Shirin-এর নম্বর 400-এর কম।
+
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|Y|p{15mm}|Y|}\hline
+\chSixHeader শর্তের অবস্থা & সারি & কারণ\\\hline
+Roll মেলানোর শর্ত নেই & 25 & 5টি নামের সঙ্গে 5টি ফলের সব জোড়া হয়।\\\hline
+শুধু Marks $\geq400$ & 15 & প্রত্যেক নামের সঙ্গে নির্বাচিত 3টি ফল জোড়া হয়; অন্যের নম্বরও আসে।\\\hline
+Roll-এর মিল ও Marks $\geq400$ & 3 & নিজের ফলের সঙ্গে মেলা এবং নম্বরের শর্ত পূরণ করা শিক্ষার্থী থাকে।\\\hline
+\end{tabularx}
+\end{flushleft}
+এগুলো বোঝার জন্য ধারণাগত ধাপ; DBMS-এর কাজ সম্পাদনের অভ্যন্তরীণ ক্রমের
+বর্ণনা নয়। দুই টেবিলে Roll থাকায় \texttt{s.Roll} ও \texttt{r.Roll} লিখে
+উৎস স্পষ্ট করেছি। শুধু \texttt{Roll} লিখলে কোন টেবিলের ফিল্ড বোঝাচ্ছে তা
+অস্পষ্ট হতে পারে। Key ও সম্পর্কের ধরন অংশ~\ref{sec:ch06-relationships}-এ
+বাস্তব সারণি ও তীর দিয়ে দেখানো হয়েছে।
+
+\subsubsection{BankCustomer ও Account টেবিলে JOIN}
+
+\noindent\begin{minipage}{\linewidth}
+\chSixExample{৭.৭৪}
+{গ্রাহকের Name এবং তাঁর হিসাবের AccountNo ও Balance একসঙ্গে দেখাও।}
+
+\noindent\begin{minipage}[c]{.53\linewidth}
+\begin{verbatim}
+SELECT c.Name,
+       a.AccountNo,
+       a.Balance
+FROM BankCustomer AS c
+INNER JOIN Account AS a
+ON c.CustomerID=a.CustomerID;
+\end{verbatim}
+\end{minipage}\hfill\begin{minipage}[c]{.04\linewidth}\raggedright{\color{chSixTeal}$\Rightarrow$}\end{minipage}\hfill
+\begin{minipage}[c]{.40\linewidth}\raggedright\footnotesize\setlength{\tabcolsep}{2pt}\textbf{ফল}\par\smallskip
+\begin{tabular}{|l|l|l|}\hline\chSixHeader
+Name & AccountNo & Balance\\\hline
+Rafi & A1001 & 150000\\\hline
+Rafi & A1003 & 70000\\\hline
+Nila & A1002 & 85000\\\hline
+Sami & A1004 & 220000\\\hline
+Mitu & A1005 & 45000\\
+\hline\end{tabular}
+\end{minipage}
+\end{minipage}\par\smallskip
+
+\textbf{ব্যাখ্যা:} BankCustomer টেবিলে গ্রাহকের ব্যক্তিগত তথ্য এবং Account টেবিলে তাঁর হিসাবের Balance ও Account Type আছে। গ্রাহকের নামের সঙ্গে তাঁর হিসাবের স্থিতি দেখাতে দুই টেবিলের \texttt{CustomerID} মেলানো হয়েছে।
+
+\begin{keypointbox}{এক Customer কেন একাধিকবার আসতে পারে?}
+
+যদি একই Customer-এর একাধিক Account থাকে, JOIN-এর ফলাফলে তার
+Name একাধিক সারিতে আসতে পারে। এটি পুনরাবৃত্তির ত্রুটি নয়। প্রতিটি সারি আলাদা Account-এর সঙ্গে সম্পর্কিত।
+
+\end{keypointbox}
+
+\begin{mistakebox}{JOIN ও Foreign Key একই কাজ নয়}
+Foreign Key ঘোষণা করলেই SELECT-এ অন্য টেবিলের কলাম চলে আসে—এ ধারণা
+ভুল। Foreign Key/Referential Integrity বৈধ সংযোগ সংরক্ষণে সহায়তা করে;
+JOIN মিলের শর্ত দিয়ে ফলাফল তৈরি করে। ঘোষিত Foreign Key ছাড়াও SQL-এ
+JOIN লেখা যায়, কিন্তু তাতে সংরক্ষিত ডেটার বৈধতা স্বয়ংক্রিয়ভাবে নিশ্চিত হয় না।
+\end{mistakebox}
+
+
+\subsection{Parameter Query}
+
+\begin{definitionbox}{}
+
+কুয়েরি চালানোর সময় ব্যবহারকারীর কাছ থেকে মান নিয়ে সেই মানের
+ভিত্তিতে ফলাফল তৈরি করে এমন কুয়েরিকে
+\textbf{Parameter Query} বলে।
+
+\end{definitionbox}
+
+\textbf{কেন ব্যবহার করা হয়?} একই কুয়েরিকে প্রতিবার নতুন শর্ত লিখে সম্পাদনা না করে ভিন্ন মান
+দিয়ে ব্যবহার করা যায়। Access-এর Criteria-তে—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+[Enter roll:]
+\end{verbatim}
+\end{minipage}\par
+
+দিলে কুয়েরি চালানোর সময় Roll চাওয়া যায়।
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+FROM Student
+WHERE Roll=[Enter roll:];
+\end{verbatim}
+\end{minipage}\par
+
+যদি ব্যবহারকারী 213 দেয়, Sami-এর রেকর্ড আসবে।
+
+\subsection{Crosstab Query}
+
+\begin{definitionbox}{}
+
+একটি ফিল্ডকে সারির শিরোনাম, অন্য ফিল্ডকে কলামের শিরোনাম এবং
+সারসংক্ষেপের মানকে সংশ্লিষ্ট ঘরে দেখায় এমন কুয়েরিকে
+\textbf{Crosstab Query} বলে।
+
+\end{definitionbox}
+
+যেমন—
+
+\begin{flushleft}
+
+\small
+
+\begin{tabular}{|l|l|l|}
+\hline
+
+\chSixHeader
+Department & 2025 & 2026\\
+\hline
+Science & 82 & 91\\\hline
+Humanities & 61 & 66\\\hline
+Business Studies & 54 & 58\\
+\hline
+
+\end{tabular}
+
+\end{flushleft}
+
+এখানে পৃথক Student রেকর্ড নয়। Department ও Year অনুযায়ী শিক্ষার্থীর সংখ্যা দেখানো হয়েছে। যেমন Science বিভাগের 2025 সালের ঘরে 82 মানে ঐ বিভাগের ঐ বছরের মোট শিক্ষার্থী 82 জন।
+
+\subsection{Find Unmatched Query}
+
+\begin{definitionbox}{}
+
+একটি টেবিলে রেকর্ড আছে কিন্তু সম্পর্কিত অন্য টেবিলে সেই
+রেকর্ডের মিল নেই—এমন রেকর্ড শনাক্ত করার কুয়েরিকে
+\textbf{Find Unmatched Query} বলে।
+
+\end{definitionbox}
+
+ধরা যাক StudentInfo টেবিলে Roll 101--105 আছে। এবার স্বাধীন উদাহরণ হিসেবে ধরি, ExamResult টেবিলে শুধু—
+
+\[
+101,\quad 103,\quad 105
+\]
+
+আছে। তাহলে Hasan (102) ও Shirin (104)-এর রেকর্ডের মিল পাওয়া যায় না। আগের পূর্ণ ExamResult-এ পাঁচজনের ফলই ছিল; এই উদাহরণে 102 ও 104-এর ফল এখনো লেখা হয়নি। SQL—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT s.Roll, s.Name
+FROM StudentInfo AS s
+LEFT JOIN ExamResult AS r
+ON s.Roll=r.Roll
+WHERE r.Roll IS NULL;
+\end{verbatim}
+\end{minipage}\par
+
+\begin{keypointbox}{Find Unmatched-এর ব্যবহার}
+
+যেমন—
+
+\begin{itemize}
+
+\item যেসব Student-এর Result এখনো দেওয়া হয়নি;
+
+\item যেসব Customer-এর কোনো Order নেই;
+
+\item যেসব Employee-এর Attendance রেকর্ড নেই।
+
+\end{itemize}
+
+\end{keypointbox}
+
+\subsubsection{Access-এর SQL-specific Query}
+Access-এ SQL View-তে নির্দেশ লিখে তৈরি করা Union, Pass-through ও Data-definition Query-কে SQL-specific Query বলা হয়। \textbf{Union} একই রকম কলামযুক্ত একাধিক ফলের সারি একত্র করে; যেমন বর্তমান ও প্রাক্তন শিক্ষার্থীর নামের একটি তালিকা। এটি JOIN-এর মতো কী মিলিয়ে পাশাপাশি কলাম আনে না। \textbf{Pass-through} নির্দেশ সরাসরি অন্য ডেটাবেজ সার্ভারে পাঠায়। \textbf{Data-definition Query} টেবিল বা ইনডেক্স তৈরি, পরিবর্তন কিংবা অপসারণের কাজ করে।
+
+\subsubsection{Subquery}
+\begin{definitionbox}{}
+অন্য কুয়েরির ভেতরে থাকা কুয়েরিকে \textbf{Subquery} বলে।
+\end{definitionbox}
+যেমন গড় বেতনের বেশি বেতনপ্রাপ্ত কর্মী বাছাইয়ের আগে ভেতরের কুয়েরি দিয়ে গড় বের করা যায়। এটি কুয়েরির গঠনের ধারণা। Access-এর SQL-specific Query-র ওপরের তিন ধরন এবং Subquery-কে একই ভিত্তির চারটি আলাদা শ্রেণি ভাবা ঠিক নয়।
+
+\subsection{Action Query-এর প্রয়োগ}
+Append, Update, Delete ও Make-table-কে Action Query বলা Microsoft Access-এর প্রচলিত পরিভাষা। এগুলোর সংশ্লিষ্ট SQL নির্দেশ ও Query-এর উদ্দেশ্য মিলিয়ে বুঝতে হবে।
+\begin{boardbox}{Action Query চালানোর আগে}
+
+Update বা Delete Query চালানোর আগে একই শর্ত দিয়ে Select Query
+চালিয়ে কোন রেকর্ড প্রভাবিত হবে তা দেখে নেওয়া ভালো অভ্যাস।
+
+\end{boardbox}
+
+\subsubsection{একাধিক নির্দেশের পরে কোন অবস্থার ফল?}
+প্রতিটি স্বাধীন উদাহরণে তার দেওয়া মূল সারণি থেকে কাজ শুরু করতে হয়। কিন্তু একই ডেটাবেজে নির্দেশগুলো ধারাবাহিকভাবে চালানোর কথা থাকলে পরের নির্দেশ আগের সফল পরিবর্তনের পরের ডেটায় কাজ করে। ধরা যাক B-এর Balance 5000 এবং C-এর 8000। প্রথমে B-এর Balance 15000 করা, তারপর C-কে মুছে ফেলা হলে শেষে B-এর মান 15000-ই থাকবে; C মুছলে B-এর আগের মান ফিরে আসে না। বিপরীতে দুটি স্বতন্ত্র উপপ্রশ্ন মূল সারণি ধরে করতে বললে একটির পরিবর্তন অন্যটির ফলের মধ্যে ধরে নেওয়া যাবে না।
+
+নতুন স্থিতি নির্ধারণ করা এবং পুরোনো স্থিতির সঙ্গে টাকা যোগ করা আলাদা কাজ। “Balance বেড়ে 15000 হলো” বোঝালে 	\texttt{SET Balance=15000}; “Balance 15000 বাড়ল” বোঝালে 	\texttt{SET Balance=Balance+15000} লিখতে হয়। পরিচিতি Text হলে তার মান উদ্ধৃতিতে থাকে। শুধু Name দিয়ে UPDATE বা DELETE করলে একই নামের সব শর্তমেলা রেকর্ড প্রভাবিত হতে পারে। নির্দিষ্ট ব্যক্তির রেকর্ড পরিবর্তনে তাঁর অনন্য ID দিয়ে শর্ত দেওয়া প্রয়োজন।
+
+\subsubsection{Append-এর SQL ধারণা}
+
+ধরি, NewStudent টেবিলে নতুন ভর্তির একটি রেকর্ড আছে। মূল Student-এ এই Roll এখনো নেই।
+\begin{flushleft}\small
+\begin{tabular}{|l|l|l|l|}\hline\chSixHeader
+Roll & Name & Department & GPA\\\hline
+402 & Nadia & Science & 4.70\\\hline
+\end{tabular}\end{flushleft}
+নিচের Append Query চালালে মূল আটটির সঙ্গে Nadia-এর রেকর্ড যোগ হবে, মোট রেকর্ড হবে নয়টি। এখানে Fee ও Email বাদ দেওয়া হয়েছে; ঐ কলামগুলো NULL গ্রহণ করলে এবং DEFAULT না থাকলে নতুন সারিতে NULL থাকবে।
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+INSERT INTO Student
+(Roll, Name, Department, GPA)
+
+SELECT Roll, Name, Department, GPA
+FROM NewStudent;
+\end{verbatim}
+\end{minipage}\par
+
+\Needspace{12\baselineskip}
+\subsubsection{Make-table-এর SQL ধারণা}
+
+SQLite-এর একটি উদাহরণ—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+CREATE TABLE ScienceList AS
+
+SELECT Roll, Name, GPA
+FROM Student
+WHERE Department='Science';
+\end{verbatim}
+\end{minipage}\par
+
+Microsoft Access-এ একই ধরনের কাজে—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT Roll, Name, GPA
+INTO ScienceList
+FROM Student
+WHERE Department='Science';
+\end{verbatim}
+\end{minipage}\par
+
+ধরনের নির্দেশ লেখার নিয়ম দেখা যায়।
+
+\subsection{Query By Example (QBE) ও Access Query Design}
+
+\begin{definitionbox}{}
+
+SQL নির্দেশ সরাসরি না লিখে গ্রিড বা উদাহরণের মাধ্যমে
+ফিল্ড, টেবিল, Sort, Show ও Criteria নির্ধারণ করে কুয়েরি তৈরি করার
+পদ্ধতিকে \textbf{QBE (Query By Example)} বলা হয়।
+
+\end{definitionbox}
+
+\subsubsection{QBE-এর সংজ্ঞায় দৃশ্যমান কাঠামোর ভূমিকা}
+QBE-তে সারণির মতো দৃশ্যমান কাঠামোয় প্রয়োজনীয় মান ও শর্ত বসিয়ে কুয়েরি প্রকাশ করা হয়। সহজ কুয়েরির জন্য শুরুতেই পুরো SQL নির্দেশ লিখতে হয় না। তবে কোন তথ্য দেখাতে হবে, কী শর্ত মানতে হবে এবং কোন উৎসের রেকর্ড মিলবে, তা ব্যবহারকারীকে নির্ধারণ করতে হয়। Access Query Design-এ এমন গ্রিড ব্যবহৃত হয়; এটি মূল QBE ভাষার প্রতিটি বৈশিষ্ট্যের হুবহু বাস্তবায়ন নয়।
+
+
+Microsoft Access-এর \textbf{Query Design Grid} হলো
+QBE-এর পরিচিত উদাহরণ। এখানে ব্যবহারকারী SQL নির্দেশ না লিখেও গ্রাফিক্যাল গ্রিড ব্যবহার করে
+কুয়েরি তৈরি করতে পারে।
+
+\begin{flushleft}\begin{minipage}{\linewidth}\raggedright
+
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.20}
+
+\begin{tabularx}{0.96\linewidth}{
+|>{\raggedright\arraybackslash}p{23mm}
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X|}
+\hline
+
+\chSixHeader
+\textbf{Grid Row}
+&
+\textbf{Name}
+&
+\textbf{Department}
+&
+\textbf{GPA}
+\\ \hline
+
+Field
+&
+Name
+&
+Department
+&
+GPA
+\\ \hline
+
+Table
+&
+Student
+&
+Student
+&
+Student
+\\ \hline
+
+Sort
+&
+---
+&
+---
+&
+Descending
+\\ \hline
+
+Show
+&
+Yes
+&
+No
+&
+Yes
+\\ \hline
+
+Criteria
+&
+---
+&
+Science
+&
+\texttt{>=4.80}
+\\ \hline
+
+Or
+&
+---
+&
+---
+&
+---
+\\ \hline
+
+\end{tabularx}
+
+\captionof{table}{Query Design Grid-এর ধারণামূলক রূপ}
+
+\end{minipage}\end{flushleft}
+
+\chSixInterface{ch06_query_design_grid.png}{Access Query Design-এর অংশগুলোর পরিচিতি}{চিত্রে GroupName ফিল্ডটি শিক্ষার্থীর বিভাগ বোঝায়। একই Criteria সারিতে Science এবং GPA-এর শর্ত থাকায় দুটি শর্তই পূরণ করতে হবে। Show দিয়ে ফলাফলে দৃশ্যমান ফিল্ড নির্ধারিত হয় এবং Run দিয়ে কুয়েরির ফল দেখা যায়।}
+
+
+\Needspace{18\baselineskip}
+\subsubsection{Query Design Grid-এর প্রতিটি সারির কাজ}
+\begin{multicols}{2}
+\textbf{ফিল্ড ও টেবিল:} ফিল্ড সারিতে কুয়েরিতে ব্যবহৃত কলাম বেছে নেওয়া হয়; টেবিল সারি জানায় কলামটি কোন সারণির। এখানে Name, Department ও GPA তিনটিই Student থেকে এসেছে। একাধিক সারণিতে একই নামের ফিল্ড থাকলে তার উৎস জানা বিশেষ প্রয়োজন।
+
+\textbf{Sort:} ফল কোন ফিল্ডের মান অনুযায়ী কোন দিকে সাজবে তা নির্ধারণ করে। GPA-এর জন্য Descending দিলে বেশি GPA আগে আসে। একই GPA-র মধ্যে নির্দিষ্ট ক্রম চাইলে দ্বিতীয় Sort ফিল্ডও দিতে হবে; শুধু প্রথম শর্ত থেকে সমান মানের ক্রম বোঝা যায় না।
+
+\textbf{Show:} ফলাফলে কোন কলাম দেখা যাবে তা নির্ধারণ করে। এখানে Name ও GPA-এর Show চালু, Department-এর Show বন্ধ। ফলে Department দিয়ে বাছাই করা হলেও ফলের সারণিতে কলামটি থাকে না।
+
+\textbf{Criteria ও Or:} কোন রেকর্ড নির্বাচন হবে তার শর্ত Criteria সারিতে লেখা হয়। একই সারিতে Department-এর জন্য \texttt{'Science'} এবং GPA-এর জন্য \texttt{>=4.80} থাকলে উভয় শর্ত পূরণ করতে হবে। বিকল্প শর্ত দেওয়ার জন্য Or সারি ব্যবহৃত হয়।
+\end{multicols}
+\begin{boardbox}{একই সারি ও বিকল্প সারির পার্থক্য}
+আলাদা ফিল্ডের একই Criteria সারির শর্তগুলো AND দিয়ে যুক্ত হয়; ভিন্ন Criteria সারির শর্তসমষ্টি OR দিয়ে যুক্ত হয়। Science এবং GPA অন্তত 4.80 এক সারিতে থাকলে শুধু যোগ্য Science শিক্ষার্থীরা আসে। Science এক সারিতে ও GPA-এর শর্ত অন্য সারিতে দিলে যেকোনো এক শর্ত পূরণকারীও আসতে পারে। তাই একই শব্দ লিখেও সারির অবস্থান বদলালে ফল বদলে যায়।
+\end{boardbox}
+
+\subsubsection{গ্রিড থেকে SQL বুঝে নেওয়া}
+
+উপরের Query Design Grid-এর SQL হতে পারে—
+
+\begin{chSixSideBySide}[.48]
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT Name, GPA
+FROM Student
+WHERE Department='Science'
+  AND GPA>=4.80
+ORDER BY GPA DESC;
+\end{verbatim}
+\end{minipage}\par
+\chSixNextColumn
+SELECT-এর Name ও GPA ফলের কলাম নির্ধারণ করে। WHERE শুধু Science বিভাগের GPA অন্তত 4.80 পাওয়া রেকর্ড রাখে; Department বাছাইয়ের কাজে থাকলেও প্রদর্শিত হয় না। শেষে ORDER BY বেশি GPA আগে দেখায়। এভাবে \textbf{প্রদর্শন, বাছাই ও সাজানো} তিনটি পৃথক কাজ এক কুয়েরিতে সম্পন্ন হয়।
+\end{chSixSideBySide}
+
+\begin{keypointbox}{QBE ও SQL-এর সম্পর্ক}
+QBE-তে গ্রাফিক্যাল গ্রিডে ফিল্ড, Sort ও Criteria নির্ধারণ করা হয়। সফটওয়্যার সেই নকশার ভিত্তিতে SQL তৈরি বা চালাতে পারে। একই উৎস ও একই শর্তের কুয়েরি দুইভাবে প্রকাশ করলে নির্বাচিত তথ্যও একই হয়।
+\end{keypointbox}
+
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{23mm}|X|X|}\hline\chSixHeader
+বিষয় & SQL & QBE\\\hline
+কুয়েরি প্রকাশ & নির্দেশ লিখে & গ্রিডে ফিল্ড ও শর্ত বেছে\\\hline
+উদাহরণ & \texttt{WHERE GPA>=4.80} & GPA কলামের Criteria-তে \texttt{>=4.80}\\\hline
+কাজের সম্পর্ক & সরাসরি কুয়েরির ভাষা & সফটওয়্যার গ্রিড থেকে SQL তৈরি করতে পারে\\\hline
+ফল & শর্ত অনুযায়ী নির্বাচিত ডেটা & একই শর্ত হলে একই ডেটা\\\hline
+\end{tabularx}\end{flushleft}
+রিলেশনাল পরিবেশে উদাহরণভিত্তিক কুয়েরির প্রসঙ্গে RQBE (Relational Query By Example) কথাটিও ব্যবহৃত হয়। QBE-তে Show বন্ধ থাকা ফিল্ড Criteria বা Sort-এর কাজে লাগতে পারে; ফলের কলাম এবং বাছাইয়ের কলাম একই হওয়া বাধ্যতামূলক নয়।
+\subsection{নির্বাচিত Field, উৎস, শর্ত ও ক্রম}
+
+SELECT কুয়েরিতে প্রদর্শিত ফিল্ড, উৎস সারণি, বাছাইয়ের শর্ত এবং ফলের ক্রম নির্ধারণ করা হয়। এই চারটি বিষয় নিচের উদাহরণে দেখানো হয়েছে।
+
+\noindent\textbf{কী দেখাবে $\rightarrow$ কোন টেবিল $\rightarrow$ কোন শর্ত $\rightarrow$ কোন ক্রম।}
+
+উদাহরণ— ``Science বিভাগের GPA 5 পাওয়া শিক্ষার্থীদের Roll ও Name
+Roll-এর ঊর্ধ্বক্রমে (Ascending Order) দেখাও।''
+
+\begin{chSixSideBySide}[.50]
+\small
+
+\begin{tabularx}{\linewidth}{|p{22mm}|X|}
+\hline
+
+কী দেখাবে?
+&
+Roll, Name
+\\ \hline
+
+কোন টেবিল?
+&
+Student
+\\ \hline
+
+Condition?
+&
+Department='Science' AND GPA=5
+\\ \hline
+
+Order?
+&
+Roll ASC
+\\ \hline
+
+\end{tabularx}
+\chSixNextColumn
+তাই—
+
+\par\noindent\begin{minipage}{\linewidth}
+\begin{verbatim}
+SELECT Roll, Name
+FROM Student
+WHERE Department='Science'
+  AND GPA=5
+ORDER BY Roll ASC;
+\end{verbatim}
+\end{minipage}\par
+\end{chSixSideBySide}
+
+\subsubsection{কোডের ফল নিজের হাতে বোঝার ধাপ}
+\begin{flushleft}\centering\captionsetup{justification=centering}
+\begin{tikzpicture}[node distance=3mm,every node/.style={booknode,font=\small,text width=22mm,minimum height=11mm}]
+\node (a) {FROM\\উৎস};\node[right=of a] (b) {WHERE\\সারি বাছাই};
+\node[right=of b] (c) {SELECT\\ফলের কলাম};\node[right=of c] (d) {ORDER BY\\ফলের ক্রম};
+\draw[bookarrow](a)--(b);\draw[bookarrow](b)--(c);\draw[bookarrow](c)--(d);
+\end{tikzpicture}
+\end{flushleft}
+সাধারণ SELECT-এর ফল বুঝতে প্রথমে উৎসের সারিগুলো বিবেচনা করো। এরপর প্রতিটি সারিতে শর্ত মিলিয়ে দেখো, নির্বাচিত সারি থেকে প্রয়োজনীয় কলাম রাখো এবং শেষে নির্ধারিত ক্রমে ফল সাজাও। দলভিত্তিক হিসাবের ক্ষেত্রে WHERE-এর শর্তে বাছাই করা সারিগুলোকে GROUP BY দিয়ে দলে ভাগ করা হয়। এরপর HAVING দিয়ে দলভিত্তিক শর্ত পরীক্ষা করা হয়।
+
+এই ধাপগুলো কুয়েরির ফল বোঝার যৌক্তিক উপায়; সফটওয়্যার ভেতরে ঠিক এই ক্রমেই কাজ করবে, এমন নয়। একই উৎসের ওপর শর্ত পরিবর্তন করলে নির্বাচিত সারি বদলাতে পারে। SELECT-এর তালিকা পরিবর্তন করলে প্রদর্শিত কলাম বদলায়, আর ORDER BY পরিবর্তন করলে ফল দেখানোর ক্রম বদলায়।
+
+\subsection{SQL লেখার সাধারণ ভুল}
+\begin{flushleft}\small
+\begin{tabularx}{\linewidth}{|p{48mm}|X|}\hline\chSixHeader
+ভুল বা বিভ্রান্তি & সঠিক ধারণা ও উদাহরণ\\\hline
+Text-এ Quote না দেওয়া & \texttt{Department='Science'}; Science এখানে মান, কলামের নাম নয়।\\\hline
+\texttt{Email=NULL} লেখা & অজানা মান পরীক্ষায় \texttt{Email IS NULL}।\\\hline
+দুটি শর্তের মধ্যে অপারেটর নেই & \texttt{GPA=5 AND Department='Science'}।\\\hline
+UPDATE-এ WHERE ভুলে যাওয়া & \texttt{UPDATE Student SET GPA=5;} সব রেকর্ডের GPA বদলায়।\\\hline
+DELETE ও DROP এক ভাবা & DELETE রেকর্ড বাদ দেয়; DROP TABLE টেবিলের সংজ্ঞাসহ অপসারণ করে।\\\hline
+Filtering ও সর্টিং এক ভাবা & WHERE রেকর্ড বাছাই করে; ORDER BY ফলের ক্রম নির্ধারণ করে।\\\hline
+UPDATE ও ALTER এক ভাবা & UPDATE মান বদলায়; ALTER কাঠামো বদলায়।\\\hline
+JOIN-এর মিলের শর্ত বাদ & সংশ্লিষ্ট ফিল্ড না মেলালে অপ্রয়োজনীয় রেকর্ড-সমন্বয় পাওয়া যায়।\\\hline
+\end{tabularx}\end{flushleft}
+
+\subsection{গুরুত্বপূর্ণ প্রশ্ন}
+\textbf{অনুশীলন:} কুয়েরি অংশের মূল Student টেবিল ব্যবহার করো। GPA কমপক্ষে 4.5 কিন্তু 5-এর কম এমন শিক্ষার্থীদের নাম দেখানোর SQL লেখো। তারপর শুধু Science বিভাগের মোট Fee বের করো। শেষে ব্যাখ্যা করো, নতুন Mobile ফিল্ড যোগ করা এবং বিদ্যমান Mobile মান সংশোধনের জন্য কেন আলাদা নির্দেশ লাগে।\par
+
+
+

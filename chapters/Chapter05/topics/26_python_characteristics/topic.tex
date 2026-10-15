@@ -1,0 +1,625 @@
+\sectionheading{5.26 Python Programming Language-এর বৈশিষ্ট্য}
+
+Python জনপ্রিয় হওয়ার অন্যতম কারণ হলো এর
+\textbf{সহজ Syntax, পাঠযোগ্য Code, কম Code-এ কাজ করার সুবিধা}
+এবং বিভিন্ন ধরনের Application তৈরির উপযোগিতা।
+
+%================================================
+% Main Features
+%================================================
+
+\booksubheading{Python-এর প্রধান বৈশিষ্ট্য}
+
+%================================================
+% Feature 1
+%================================================
+
+\textbf{\color{darkTeal}১. সহজ ও বোধগম্য (Simple and Easy)}
+
+Python-এর Syntax তুলনামূলক সহজ এবং সাধারণ English-এর কাছাকাছি।
+ফলে নতুনদের জন্য Code পড়া, লেখা ও শেখা সহজ।
+
+\begin{examplebox}{ছোট উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello")
+\end{english}
+
+\end{codebox}
+
+একটি Output প্রদর্শনের জন্য খুব অল্প Code প্রয়োজন।
+
+\end{examplebox}
+
+%================================================
+% Feature 2
+%================================================
+
+\textbf{\color{darkTeal}২. উচ্চস্তরের ভাষা (High Level Language)}
+
+Python একটি \textbf{High Level Programming Language}।
+
+তাই Programmer-কে সাধারণত Memory Address বা Hardware-এর
+নিম্নস্তরের বিষয় সরাসরি নিয়ন্ত্রণ করতে হয় না।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+High Level
+\(\longrightarrow\)
+মানুষের জন্য তুলনামূলক সহজে বোঝা ও লেখা যায়।
+
+\end{rememberbox}
+
+%================================================
+% Feature 3
+%================================================
+
+\textbf{\color{darkTeal}৩. Interpreter-ভিত্তিক ভাষা
+(Interpreted Language)}
+
+Python Program সাধারণত
+\textbf{Python Interpreter}-এর মাধ্যমে Execute করা হয়।
+
+Program চালানোর সময় Interpreter Code-এর Instructionগুলো
+বিশ্লেষণ ও Execute করে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+Python
+\(\longrightarrow\)
+\textbf{Interpreted Language}
+
+\end{rememberbox}
+
+%================================================
+% Feature 4
+%================================================
+
+\textbf{\color{darkTeal}৪. General Purpose Language}
+
+Python কোনো একটি নির্দিষ্ট কাজের জন্য সীমাবদ্ধ নয়।
+
+এটি বিভিন্ন ধরনের Program ও Software তৈরিতে ব্যবহার করা যায়।
+
+যেমন—
+
+\begin{itemize}
+
+\item Web Application
+
+\item Automation
+
+\item Data Analysis
+
+\item Artificial Intelligence
+
+\item Machine Learning
+
+\item Scientific Computing
+
+\end{itemize}
+
+\begin{center}
+
+\textbf{একটি ভাষা}
+\(\longrightarrow\)
+\textbf{বিভিন্ন ধরনের কাজ}
+
+\end{center}
+
+%================================================
+% Feature 5
+%================================================
+
+\textbf{\color{darkTeal}৫. পাঠযোগ্য Code (Readable)}
+
+Python-এর Code তুলনামূলক পরিষ্কার ও সহজে পড়া যায়।
+
+অন্যান্য অনেক Programming Language-এর তুলনায় একই কাজ
+কম ও সরল Code-এর মাধ্যমে প্রকাশ করা সম্ভব।
+
+\begin{center}
+
+\textbf{সহজ Syntax}
+\(\longrightarrow\)
+\textbf{পাঠযোগ্য Code}
+
+\end{center}
+
+%================================================
+% Feature 6
+%================================================
+
+\textbf{\color{darkTeal}৬. কম Code-এ Program লেখা যায়}
+
+Python-এ অনেক কাজ তুলনামূলকভাবে অল্প সংখ্যক Statement
+ব্যবহার করে করা যায়।
+
+ফলে—
+
+\begin{itemize}
+
+\item Code ছোট হয়।
+
+\item লেখা সহজ হয়।
+
+\item পড়া সহজ হয়।
+
+\item পরিবর্তন ও রক্ষণাবেক্ষণ সহজ হয়।
+
+\end{itemize}
+
+%================================================
+% Feature 7
+%================================================
+
+\textbf{\color{darkTeal}৭. Case Sensitive}
+
+Python একটি
+\textbf{Case Sensitive Programming Language}।
+
+অর্থাৎ বড় হাতের ও ছোট হাতের অক্ষরকে Python ভিন্নভাবে বিবেচনা করে।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+name\\
+Name\\
+NAME
+\end{english}
+
+\end{codebox}
+
+উপরের তিনটি নাম Python-এর কাছে এক নয়।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+\textenglish{\ttfamily age}
+এবং
+\textenglish{\ttfamily Age}
+
+একই Variable নয়।
+
+\medskip
+
+\textbf{Case Sensitive}
+\(\longrightarrow\)
+Capital ও Small Letter গুরুত্বপূর্ণ।
+
+\end{rememberbox}
+
+%================================================
+% Feature 8
+%================================================
+
+\textbf{\color{darkTeal}৮. Dynamically Typed}
+
+Python-এ Variable তৈরি করার সময় সাধারণভাবে
+আলাদাভাবে Data Type ঘোষণা করতে হয় না।
+
+Variable-এ যে ধরনের Value রাখা হয়, Python সেই অনুযায়ী
+তার Type নির্ধারণ করে।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+x = 10\\
+name = "Rahim"
+\end{english}
+
+\end{codebox}
+
+এখানে Variable তৈরির আগে আলাদাভাবে
+\textenglish{\ttfamily int}
+বা
+\textenglish{\ttfamily string}
+লিখে Type ঘোষণা করা হয়নি।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+এই বিষয়টি
+\textbf{Variable ও Data Type}
+অংশে বিস্তারিতভাবে আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Feature 9
+%================================================
+
+\textbf{\color{darkTeal}৯. Object-Oriented Programming সমর্থন করে}
+
+Python
+\textbf{Object-Oriented Programming (OOP)}
+সমর্থন করে।
+
+অর্থাৎ Class ও Object ব্যবহার করে Program তৈরি করা সম্ভব।
+
+HSC পর্যায়ে এখানে শুধু এই মূল ধারণাটি মনে রাখলেই যথেষ্ট।
+
+%================================================
+% Feature 10
+%================================================
+
+\textbf{\color{darkTeal}১০. Portable / Cross-platform}
+
+এক Operating System-এ লেখা Python Program প্রয়োজনীয়
+Python Environment থাকলে অন্য Operating System-এও
+ব্যবহার করা যায়।
+
+\begin{center}
+
+\textbf{Windows}
+\(\longleftrightarrow\)
+\textbf{Linux}
+\(\longleftrightarrow\)
+\textbf{macOS}
+
+\end{center}
+
+এ কারণে Python-কে
+\textbf{Portable} বা
+\textbf{Cross-platform}
+Language বলা হয়।
+
+%================================================
+% Feature 11
+%================================================
+
+\textbf{\color{darkTeal}১১. Free ও Open Source}
+
+Python বিনামূল্যে ব্যবহার করা যায় এবং এর Source Code উন্মুক্ত।
+
+অর্থাৎ—
+
+\begin{itemize}
+
+\item Python ব্যবহার করতে Licence Fee লাগে না।
+
+\item শেখা ও Software Development-এর জন্য সহজে ব্যবহার করা যায়।
+
+\end{itemize}
+
+%================================================
+% Feature 12
+%================================================
+
+\textbf{\color{darkTeal}১২. বিশাল Library Support}
+
+Python-এর Standard Library এবং বিভিন্ন অতিরিক্ত
+Package ও Library রয়েছে।
+
+এসব ব্যবহার করে অনেক সাধারণ ও জটিল কাজ সহজে করা যায়।
+
+যেমন—
+
+\begin{itemize}
+
+\item Mathematical কাজ
+
+\item File Processing
+
+\item Web Development
+
+\item Data Analysis
+
+\item Artificial Intelligence ও Machine Learning
+
+\end{itemize}
+
+\begin{center}
+
+\textbf{Library ব্যবহার}
+\(\longrightarrow\)
+\textbf{কম Code}
+\(\longrightarrow\)
+\textbf{দ্রুত Development}
+
+\end{center}
+
+%================================================
+% Feature 13
+%================================================
+
+\textbf{\color{darkTeal}১৩. Automatic Memory Management}
+
+Python Memory ব্যবস্থাপনার অনেক কাজ স্বয়ংক্রিয়ভাবে করে।
+
+ফলে সাধারণ Programming-এর ক্ষেত্রে Programmer-কে
+Memory Allocation ও Deallocation নিয়ে সরাসরি বেশি কাজ
+করতে হয় না।
+
+%================================================
+% Summary Table
+%================================================
+
+\booksubheading{Python-এর বৈশিষ্ট্য এক নজরে}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.35\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{সহজ অর্থ}}
+
+\\
+
+\hline
+
+Simple and Easy
+&
+শেখা, পড়া ও লেখা সহজ
+\\
+
+\hline
+
+High Level
+&
+মানুষের জন্য তুলনামূলক সহজে বোঝা যায়
+\\
+
+\hline
+
+Interpreted
+&
+Interpreter-এর মাধ্যমে Program Execute হয়
+\\
+
+\hline
+
+General Purpose
+&
+বিভিন্ন ধরনের কাজে ব্যবহার করা যায়
+\\
+
+\hline
+
+Readable
+&
+Code সহজে পড়া ও বোঝা যায়
+\\
+
+\hline
+
+Less Code
+&
+তুলনামূলক কম Code-এ কাজ করা যায়
+\\
+
+\hline
+
+Case Sensitive
+&
+Capital ও Small Letter-কে ভিন্ন হিসেবে বিবেচনা করে
+\\
+
+\hline
+
+Dynamically Typed
+&
+Variable-এর Type আগে আলাদাভাবে ঘোষণা করা বাধ্যতামূলক নয়
+\\
+
+\hline
+
+Object-Oriented
+&
+Class ও Object ব্যবহার সমর্থন করে
+\\
+
+\hline
+
+Portable
+&
+বিভিন্ন Operating System-এ ব্যবহারযোগ্য
+\\
+
+\hline
+
+Free and Open Source
+&
+বিনামূল্যে ব্যবহারযোগ্য এবং Source Code উন্মুক্ত
+\\
+
+\hline
+
+Library Support
+&
+বিভিন্ন কাজের জন্য প্রচুর Library ও Package রয়েছে
+\\
+
+\hline
+
+Automatic Memory Management
+&
+Memory ব্যবস্থাপনার অনেক কাজ স্বয়ংক্রিয়ভাবে সম্পন্ন হয়
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Important for Exam
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}পরীক্ষায় বেশি গুরুত্বপূর্ণ}
+
+Python হলো—
+
+\begin{center}
+
+\textbf{High Level}
+\(\longrightarrow\)
+\textbf{Interpreted}
+\(\longrightarrow\)
+\textbf{General Purpose}
+
+\medskip
+
+\textbf{Case Sensitive}
+\(\longrightarrow\)
+\textbf{Dynamically Typed}
+\(\longrightarrow\)
+\textbf{Object-Oriented}
+
+\medskip
+
+\textbf{Portable}
+\(\longrightarrow\)
+\textbf{Free and Open Source}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Python-কে Low Level Language মনে করা।
+
+\item Python-কে শুধু একটি নির্দিষ্ট কাজের Language মনে করা।
+
+\item Python-কে Case Insensitive মনে করা।
+
+\item
+\textenglish{\ttfamily name}
+ও
+\textenglish{\ttfamily Name}
+-কে একই Variable মনে করা।
+
+\item Python-এ Variable-এর Data Type আগে ঘোষণা করতেই হবে
+এমন ধারণা করা।
+
+\item Python শুধু Artificial Intelligence-এর জন্য ব্যবহৃত হয়
+এমন মনে করা।
+
+\item Portable বলতে শুধু একটি Operating System-এ কাজ করে
+এমন মনে করা।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+Python-এর Syntax সহজ ও Code পাঠযোগ্য।
+
+\item
+Python একটি
+\textbf{High Level Programming Language}।
+
+\item
+Python
+\textbf{Interpreter}-এর মাধ্যমে Program Execute করে।
+
+\item
+Python একটি
+\textbf{General Purpose Programming Language}।
+
+\item
+Python
+\textbf{Case Sensitive}।
+
+\item
+Python
+\textbf{Dynamically Typed}।
+
+\item
+Python
+\textbf{Object-Oriented Programming}
+সমর্থন করে।
+
+\item
+Python
+\textbf{Portable / Cross-platform}।
+
+\item
+Python
+\textbf{Free ও Open Source}।
+
+\item
+Python-এর প্রচুর
+\textbf{Library ও Package}
+রয়েছে।
+
+\item
+Python Memory Management-এর অনেক কাজ
+স্বয়ংক্রিয়ভাবে করে।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Simple}
+\(\longrightarrow\)
+\textbf{High Level}
+\(\longrightarrow\)
+\textbf{Interpreted}
+\(\longrightarrow\)
+\textbf{General Purpose}
+
+\medskip
+
+\textbf{Case Sensitive}
+\(\longrightarrow\)
+\textbf{Dynamic}
+\(\longrightarrow\)
+\textbf{OOP}
+\(\longrightarrow\)
+\textbf{Portable}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.27 Programming Environment
+%================================================
+

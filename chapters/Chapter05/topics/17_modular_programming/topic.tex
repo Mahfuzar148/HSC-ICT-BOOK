@@ -1,0 +1,484 @@
+\sectionheading{5.17 মডুলার প্রোগ্রামিং (Modular Programming)}
+
+বড় একটি Program একসঙ্গে লিখলে তা বোঝা, পরীক্ষা করা এবং পরিবর্তন
+করা কঠিন হতে পারে।
+
+তাই বড় Program-কে কাজ অনুযায়ী কয়েকটি
+\textbf{ছোট ও স্বতন্ত্র অংশে} ভাগ করে তৈরি করা হয়।
+এসব অংশকে \textbf{Module} বলা হয় এবং এই পদ্ধতিই
+\textbf{Modular Programming}।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Modular Programming কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Programming পদ্ধতিতে একটি বড় Program-কে নির্দিষ্ট কাজভিত্তিক
+কয়েকটি \textbf{ছোট, স্বতন্ত্র ও পরিচালনাযোগ্য Module-এ ভাগ করে}
+Program তৈরি করা হয়, তাকে \textbf{Modular Programming} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+বড় Program
+\(\longrightarrow\)
+ছোট ছোট Module
+\(\longrightarrow\)
+সম্পূর্ণ Program
+}
+
+\end{center}
+
+%================================================
+% Module
+%================================================
+\booksubheading{Module কী?}
+
+\begin{definitionbox}
+
+Program-এর এমন একটি স্বতন্ত্র অংশ, যা সাধারণত
+\textbf{নির্দিষ্ট একটি কাজ সম্পন্ন করে}, তাকে
+\textbf{Module} বলে।
+
+\end{definitionbox}
+
+একটি Student Result Program-কে উদাহরণ হিসেবে এভাবে ভাগ করা যায়—
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Input\\Module}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][9mm][c]{0.24\linewidth}{
+        \centering\textbf{Calculation\\Module}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][9mm][c]{0.20\linewidth}{
+        \centering\textbf{Result\\Module}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+এখানে—
+
+\begin{itemize}
+
+\item \textbf{Input Module} → নম্বর গ্রহণ করবে।
+
+\item \textbf{Calculation Module} → Total বা Average হিসাব করবে।
+
+\item \textbf{Result Module} → Result প্রদর্শন করবে।
+
+\end{itemize}
+
+সব Module একত্রে কাজ করে সম্পূর্ণ Program তৈরি করে।
+
+%================================================
+% Structure
+%================================================
+\booksubheading{Modular Programming-এর গঠন}
+
+একটি বড় Problem-কে প্রথমে কয়েকটি ছোট কাজ বা Module-এ ভাগ করা হয়।
+
+\begin{center}
+
+\textbf{
+Main Program
+\(\longrightarrow\)
+Module--1 + Module--2 + Module--3 + \(\cdots\)
+}
+
+\end{center}
+
+প্রয়োজনে কোনো Module-কে আবার আরও ছোট
+\textbf{Submodule}-এ ভাগ করা যেতে পারে।
+
+\begin{examplebox}{উদাহরণ}
+
+একটি Result Processing System-কে এভাবে ভাগ করা যেতে পারে—
+
+\begin{itemize}
+
+\item Student Data Module
+\item Marks Calculation Module
+\item Grade Determination Module
+\item Result Display Module
+
+\end{itemize}
+
+\end{examplebox}
+
+%================================================
+% Need
+%================================================
+\booksubheading{Modular Programming কেন প্রয়োজন?}
+
+বড় Program-এর সব Code একই জায়গায় লিখলে—
+
+\begin{itemize}
+
+\item Program জটিল হয়ে যেতে পারে।
+\item Error খুঁজে পাওয়া কঠিন হতে পারে।
+\item Modification করা কঠিন হয়।
+\item একই Code পুনরায় ব্যবহার করা অসুবিধাজনক হতে পারে।
+
+\end{itemize}
+
+কাজগুলো Module-এ ভাগ করলে Program তুলনামূলকভাবে
+সুশৃঙ্খল ও পরিচালনাযোগ্য হয়।
+
+%================================================
+% Complete Example
+%================================================
+\begin{examplebox}{একটি সহজ উদাহরণ}
+
+ধরা যাক একটি Program-এর কাজ হলো একজন শিক্ষার্থীর তিন বিষয়ের নম্বর
+নিয়ে Average এবং Result দেখানো।
+
+Program-টিকে এভাবে ভাগ করা যেতে পারে—
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.32\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{Module}}
+&
+\multicolumn{1}{c|}{\textbf{কাজ}}
+\\
+\hline
+
+Input Module
+&
+তিনটি নম্বর গ্রহণ
+\\
+\hline
+
+Calculation Module
+&
+মোট ও Average নির্ণয়
+\\
+\hline
+
+Result Module
+&
+Result নির্ধারণ
+\\
+\hline
+
+Output Module
+&
+ফলাফল প্রদর্শন
+\\
+\hline
+
+\end{tabularx}
+
+\end{examplebox}
+
+%================================================
+% Features
+%================================================
+\booksubheading{Modular Programming-এর প্রধান বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}
+\\
+\hline
+
+বিভাজন
+&
+বড় Program ছোট Module-এ বিভক্ত থাকে।
+\\
+\hline
+
+নির্দিষ্ট কাজ
+&
+প্রতিটি Module সাধারণত নির্দিষ্ট একটি কাজ সম্পন্ন করে।
+\\
+\hline
+
+স্বতন্ত্রতা
+&
+একটি Module তুলনামূলকভাবে স্বাধীনভাবে তৈরি বা পরীক্ষা করা যায়।
+\\
+\hline
+
+পুনঃব্যবহার
+&
+প্রয়োজন হলে কোনো Module পুনরায় ব্যবহার করা যেতে পারে।
+\\
+\hline
+
+সহজ Testing
+&
+Module আলাদাভাবে পরীক্ষা করা সুবিধাজনক।
+\\
+\hline
+
+সহজ Maintenance
+&
+নির্দিষ্ট অংশ পরিবর্তন বা সংশোধন করা সহজ।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Modular Programming-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item বড় ও জটিল Program সহজে পরিচালনা করা যায়।
+
+\item Program বোঝা সহজ হয়।
+
+\item Error শনাক্ত ও Debugging করা সহজ হয়।
+
+\item নির্দিষ্ট Module পরিবর্তন করলে পুরো Program পরিবর্তনের
+প্রয়োজন কমে।
+
+\item একই Module অন্য জায়গায় পুনরায় ব্যবহার করা যেতে পারে।
+
+\item একাধিক Programmer বিভিন্ন Module নিয়ে আলাদাভাবে কাজ করতে পারে।
+
+\item Testing ও Maintenance সহজ হয়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Limitations
+%================================================
+\booksubheading{Modular Programming-এর সীমাবদ্ধতা}
+
+\begin{itemize}
+
+\item Program-কে সঠিকভাবে Module-এ ভাগ করার জন্য আগে পরিকল্পনা প্রয়োজন।
+
+\item Moduleগুলোর মধ্যে সঠিক যোগাযোগ বা Data আদান-প্রদান নিশ্চিত করতে হয়।
+
+\item খুব ছোট Program-কে অপ্রয়োজনীয়ভাবে বেশি Module-এ ভাগ করলে
+Program-এর Structure জটিল হতে পারে।
+
+\end{itemize}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Modular Programming-এর উদ্দেশ্য শুধু বেশি Module তৈরি করা নয়;
+বরং \textbf{কাজ অনুযায়ী যৌক্তিকভাবে Program ভাগ করা}।
+
+\end{rememberbox}
+
+%================================================
+% Module and Function
+%================================================
+\booksubheading{Module ও Function-এর সম্পর্ক}
+
+একটি নির্দিষ্ট কাজকে আলাদা করে বাস্তবায়নের জন্য Programming-এ
+\textbf{Function} ব্যবহার করা যায়।
+
+তাই Function Modular Programming বাস্তবায়নের একটি গুরুত্বপূর্ণ
+উপায় হতে পারে।
+
+উদাহরণ—
+
+\begin{center}
+
+\textenglish{\ttfamily input\_data()}
+\(\longrightarrow\)
+Input গ্রহণ
+
+\vspace{0.5mm}
+
+\textenglish{\ttfamily calculate()}
+\(\longrightarrow\)
+হিসাব করা
+
+\vspace{0.5mm}
+
+\textenglish{\ttfamily show\_result()}
+\(\longrightarrow\)
+Result দেখানো
+
+\end{center}
+
+Python Function পরবর্তী অংশে বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Modular ও Non-Modular Program-এর তুলনা}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.22\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Modular Program}}
+&
+\multicolumn{1}{c|}{\textbf{Non-Modular/একক Program}}
+\\
+\hline
+
+গঠন
+&
+ছোট ছোট Module-এ বিভক্ত
+&
+অধিকাংশ কাজ একই Program অংশে থাকে
+\\
+\hline
+
+বোঝা
+&
+তুলনামূলক সহজ
+&
+বড় হলে কঠিন হতে পারে
+\\
+\hline
+
+Testing
+&
+Module আলাদাভাবে পরীক্ষা করা যায়
+&
+পুরো Program একসঙ্গে পরীক্ষা করতে হতে পারে
+\\
+\hline
+
+Debugging
+&
+Error-এর অংশ শনাক্ত করা সহজ
+&
+তুলনামূলক কঠিন
+\\
+\hline
+
+Modification
+&
+নির্দিষ্ট Module পরিবর্তন করা যায়
+&
+পরিবর্তনে অন্য অংশ প্রভাবিত হতে পারে
+\\
+\hline
+
+Reusability
+&
+বেশি
+&
+তুলনামূলক কম
+\\
+\hline
+
+Maintenance
+&
+সহজ
+&
+বড় Program-এ তুলনামূলক কঠিন
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Extra Concept
+%================================================
+\booksubheading{Main Module ও Submodule — সংক্ষিপ্ত ধারণা}
+
+বড় Program-এ যে অংশ অন্য Module-গুলোর কাজ সমন্বয় করে,
+তাকে সাধারণভাবে \textbf{Main Module} হিসেবে ভাবা যায়।
+
+কোনো Module-কে আবার আরও ছোট অংশে ভাগ করলে সেগুলোকে
+\textbf{Submodule} বলা যায়।
+
+\begin{center}
+
+\textbf{
+Main Module
+\(\longrightarrow\)
+Module
+\(\longrightarrow\)
+Submodule
+}
+
+\end{center}
+
+এটি মূল ধারণার তুলনায় কম গুরুত্বপূর্ণ;
+Program-এর Structure বোঝার জন্য সংক্ষেপে জানলেই যথেষ্ট।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item \textbf{Modular Programming} =
+বড় Program-কে কাজভিত্তিক ছোট Module-এ ভাগ করা।
+
+\item \textbf{Module} সাধারণত একটি নির্দিষ্ট কাজ সম্পন্ন করে।
+
+\item একটি Module আবার \textbf{Submodule}-এ বিভক্ত হতে পারে।
+
+\item Modular Programming-এ
+\textbf{Testing, Debugging, Modification ও Maintenance} সহজ হয়।
+
+\item Module-এর \textbf{Reusability} একটি গুরুত্বপূর্ণ সুবিধা।
+
+\item Function ব্যবহার করে Modular Programming বাস্তবায়ন করা যায়।
+
+\item খুব বেশি অপ্রয়োজনীয় Module তৈরি করাও ভালো Design নয়।
+
+\item দ্রুত মনে রাখার কৌশল—
+
+\begin{center}
+
+\textbf{
+Divide
+\(\longrightarrow\)
+Develop
+\(\longrightarrow\)
+Test
+\(\longrightarrow\)
+Combine
+}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.18 Program Design Techniques
+%================================================

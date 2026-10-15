@@ -1,0 +1,61 @@
+\subsection{বাফার, দুই দিকে শিফট এবং universal register}
+\smallhead{বাফার রেজিস্টারে load ও hold}
+শুধু ডেটা লোড করলেই হয় না; পরবর্তী অংশ প্রস্তুত না হওয়া পর্যন্ত সেটি ধরে রাখতে হয়। Load=১-এ নতুন P গ্রহণ এবং Load=০-এ নিজের Q ধরে রাখতে প্রতিটি D-এর আগে selector বসানো যায়।
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\node[chmux] (m) at (0,0) {MUX\\$L$};
+\node[chff] (f) at (3,0) {D FF\\$Q_i$};
+\draw[->] (-1.6,.35)--(-.8,.35)--(m.west) node[pos=0,left] {$P_i$};
+\draw[->] (m.east)--(f.west) node[midway,above] {$D_i$};
+\draw[->] (f.east)--(5,0) node[right] {$Q_i$};
+\draw[->] (4.3,0)--(4.3,1.5)--(-1,1.5)|-(m.north);
+\fill (4.3,0) circle(1.5pt);
+\draw[->] (3,-1.7)--(f.south) node[pos=0,below] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{বাফার রেজিস্টারের একটি বিটে নতুন ডেটা ও নিজের পুরোনো Q-এর নির্বাচন।}
+
+\end{minipage}
+\end{center}
+সমীকরণ $D_i=LP_i+\overline LQ_i$। আট বিটে এই অংশ আটবার থাকে এবং ক্লক ও L সাধারণভাবে সরবরাহ করা হয়। বাফার বলা হয়েছে কাজের উদ্দেশ্য অনুযায়ী; এটি PIPO নির্মাণও হতে পারে।
+
+\chThreeExample{৬}{লোড না থাকলে ডেটা ধরে রাখা}
+বর্তমান Q=1010, ইনপুট P=0111।
+\chThreeAnswer $L=0$-এ ক্লক এলেও Q=1010; $L=1$-এ পরের সক্রিয় ক্লকে Q=0111। ইনপুট বদলানো এবং stored output বদলানো এক ঘটনা নয়।
+
+\smallhead{দুই দিকে শিফট রেজিস্টারের একটি বিট}
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\node[chmux] (m) at (0,0) {MUX\\$R$};
+\node[chff] (f) at (3,0) {D FF\\$Q_i$};
+\draw[->] (-2,.5)--(-.8,.5)--(m.west) node[pos=0,left] {$Q_{i+1}$};
+\draw[->] (-2,-.5)--(-.8,-.5)--(m.south) node[pos=0,left] {$Q_{i-1}$};
+\draw[->] (m.east)--(f.west) node[midway,above] {$D_i$};
+\draw[->] (f.east)--++(1,0) node[right] {$Q_i$};
+\draw[->] (3,-1.7)--(f.south) node[pos=0,below] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{দিক নিয়ন্ত্রণ R অনুযায়ী পাশের দুই flip-flop-এর একটি নির্বাচন।}
+
+\end{minipage}
+\end{center}
+$R=1$-এ ডান শিফট: $D_i=Q_{i+1}$। $R=0$-এ বাম শিফট: $D_i=Q_{i-1}$। দুই প্রান্তে প্রতিবেশীর বদলে যথাক্রমে ডান-শিফট ও বাম-শিফট serial input দেওয়া হয়। তাই সাধারণ মধ্যবর্তী বিটে $D_i=RQ_{i+1}+\overline RQ_{i-1}$।
+
+\chThreeExample{৭}{বাম ও ডান শিফটের মান}
+চার বিট 0110-তে প্রান্তিক নতুন বিট ০।
+\chThreeAnswer ডান শিফটে 0011, অর্থাৎ $6\to3$; বাম শিফটে 1100, অর্থাৎ $6\to12$। চিহ্নবিহীন সংখ্যায় logical right shift দুই দিয়ে পূর্ণসংখ্যা ভাগের মতো। বাম শিফটে বিট বেরিয়ে গেলে overflow হতে পারে; যেমন $1100\to1000$ প্রকৃত $12\times2$ নয়। signed arithmetic right shift-এ sign bit ধরে রাখার নিয়ম আলাদা।
+
+\smallhead{Universal shift register}
+একটি চার-পথের selector দিয়ে প্রতিটি D-তে নিজের Q, ডান পাশের/বাম পাশের প্রতিবেশী এবং parallel input-এর যেকোনো একটি নেওয়া যায়। এতে hold, ডান শিফট, বাম শিফট ও parallel load—চার কাজ হয়।
+\begin{center}
+\begin{minipage}{\linewidth}\centering\begin{chThreeDiagram}\begin{tikzpicture}[>=Stealth,line width=.7pt]
+\node[draw,minimum width=23mm,minimum height=30mm,align=center] (m) at (0,0) {4:1 MUX\\$S_1S_0$};
+\node[chff] (f) at (4,0) {D FF\\$Q_i$};
+\foreach \y/\label in {1.1/Q_i,.4/Q_{i+1},-.4/Q_{i-1},-1.1/P_i}{\draw[->] (-3,\y)--(-1.15,\y) node[pos=0,left] {$\label$};}
+\draw[->] (m.east)--(f.west) node[midway,above] {$D_i$};
+\draw[->] (f.east)--++(1,0) node[right] {$Q_i$};
+\draw[->] (4,-2.2)--(f.south) node[pos=0,below] {CLK};
+\end{tikzpicture}\end{chThreeDiagram}
+\captionof{figure}{Universal register-এর প্রতিটি বিটে চারটি ডেটা পথের নির্বাচন।}
+
+\end{minipage}
+\end{center}
+এই উদাহরণের control mapping: 00=hold, 01=ডান শিফট, 10=বাম শিফট, 11=parallel load। পুরো রেজিস্টারে একাধিক এমন অংশ, সাধারণ ক্লক ও সাধারণ selector bits থাকে। বাস্তব IC-এর mapping তার datasheet অনুযায়ী নিতে হয়।

@@ -1,0 +1,46 @@
+\section{অধ্যায়ের সারসংক্ষেপ ও গুরুত্বপূর্ণ পরিভাষা}
+
+\par\smallskip\noindent
+\begin{minipage}[t]{.46\linewidth}\vspace{0pt}\small
+\subsection{গুরুত্বপূর্ণ পরিভাষা}
+\begin{tabularx}{\linewidth}{|p{20mm}|Y|}\hline
+\chSixHeader পরিভাষা & এক বাক্যে মনে রাখি\\\hline
+
+
+Database / DBMS & সম্পর্কিত ডেটার সংগ্রহ / তা পরিচালনার সফটওয়্যার\\ \hline
+Field / Record & বৈশিষ্ট্যের কলাম / একটি এন্টিটির মানসমূহের সারি\\ \hline
+Primary Key / Foreign Key & অনন্য শনাক্তকারী / সম্পর্কিত কী-এর রেফারেন্স\\ \hline
+NULL & মান অনুপস্থিত বা অজানা; ০ নয়\\ \hline
+Validation & গ্রহণযোগ্য মানের নিয়ম প্রয়োগ\\ \hline
+Query / SQL & ডেটাবেজে অনুরোধ / নির্দেশ প্রকাশের ভাষা\\ \hline
+Sorting / Indexing & ফল সাজানো / অনুসন্ধানের সহায়ক কাঠামো\\ \hline
+Transaction / ACID & যৌক্তিক লেনদেন / নির্ভরযোগ্যতার চার বৈশিষ্ট্য\\ \hline
+NoSQL / Big Data & বিকল্প ডেটা মডেল / বৃহৎ ও জটিল তথ্য সামলানোর প্রসঙ্গ\\ \hline
+Backup / Recovery & অনুলিপি রাখা / কার্যকর অবস্থায় ফেরানো\\ \hline
+Encryption & কী দিয়ে মূল তথ্যকে গোপন সংকেতে রূপান্তর\\ \hline
+
+\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{.51\linewidth}\vspace{0pt}\small
+\subsection{SQL নির্দেশ এক নজরে}
+\begin{tabularx}{\linewidth}{|p{27mm}|X|}\hline
+নির্দেশ & কাজ\\ \hline
+CREATE / ALTER / DROP & কাঠামো তৈরি / পরিবর্তন / অপসারণ\\ \hline
+SELECT / WHERE & ফিল্ড নির্বাচন / রেকর্ডের শর্ত\\ \hline
+INSERT / UPDATE / DELETE & রেকর্ড যোগ / মান সংশোধন / রেকর্ড বাদ\\ \hline
+GROUP BY / HAVING & দল তৈরি / দলের শর্ত\\ \hline
+ORDER BY / CREATE INDEX & ফল সাজানো / অনুসন্ধানের সহায়ক কাঠামো তৈরি\\ \hline
+COMMIT / ROLLBACK & লেনদেন স্থায়ী / চলমান পরিবর্তন বাতিল\\ \hline
+\end{tabularx}
+\end{minipage}\par\smallskip
+
+\subsection{MCQ-তে ভুল এড়ানোর তথ্য}
+SQL = Structured Query Language; SELECT রেকর্ড নির্বাচন করে।
+
+\textbf{কী ও ডেটা টাইপ:} প্রাইমারি কী একাধিক ফিল্ডের হতে পারে; সব কী AutoNumber নয়। ফরেন কী-তে ডুপ্লিকেট হতে পারে; সব ফরেন কী অবশ্যই NULL হবে—এ কথাও ভুল। Date/Time তারিখের জন্য, Currency অর্থের জন্য, Text পরিচিতি/মোবাইলের জন্য উপযোগী।
+
+\textbf{কুয়েরি ও ইনডেক্স:} WHERE শর্ত দেয়, ORDER BY সাজায়; ইনডেক্স ফলের ক্রম নিশ্চিত করে না। COUNT(*) সারি গোনে; COUNT(field) NULL বাদ দেয়। DELETE রেকর্ড বাদ দেয়; DROP TABLE টেবিল বাদ দেয়।
+
+\textbf{পুনরাবৃত্তি ও অনন্যতা:} একই মান দুবার দেখা মানেই নকশা ভুল নয়; কোন ফিল্ড বা সমন্বয় অনন্য হওয়া দরকার সেটি দেখো।
+
+Student(StudentID, Name) ও Result(ResultID, StudentID, Marks) থেকে বেশি নম্বর পাওয়া শিক্ষার্থীর নাম দেখাতে কী কী ধারণা লাগবে? \textbf{ইঙ্গিত:} কী, 1:N, JOIN, WHERE, ORDER BY।

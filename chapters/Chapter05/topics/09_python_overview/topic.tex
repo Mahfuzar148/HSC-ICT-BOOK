@@ -1,0 +1,450 @@
+\sectionheading{5.9 Python}
+
+Python একটি \textbf{High Level, General Purpose Programming Language}।
+এর Syntax তুলনামূলক সহজ, পরিষ্কার ও পাঠযোগ্য হওয়ায় নতুন
+Programmer-দের জন্য এটি শেখা সহজ।
+
+একই সঙ্গে Web Development, Automation, Data Analysis,
+Artificial Intelligence ইত্যাদি আধুনিক ক্ষেত্রেও Python
+ব্যাপকভাবে ব্যবহৃত হয়।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{Python কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Python হলো একটি \textbf{High Level, General Purpose এবং
+Interpreter-ভিত্তিক Programming Language}, যা সহজ ও পাঠযোগ্য
+Syntax-এর জন্য পরিচিত।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+Python
+=
+High Level
++
+General Purpose
++
+সহজ Syntax
+}
+
+\end{center}
+
+%================================================
+% History
+%================================================
+\booksubheading{Python-এর সংক্ষিপ্ত ইতিহাস}
+
+Python সম্পর্কে কয়েকটি তথ্য MCQ-এর জন্য গুরুত্বপূর্ণ—
+
+\begin{compacttwocolpoints}
+
+\item Python-এর স্রষ্টা \textbf{Guido van Rossum}।
+
+\item Python-এর প্রথম প্রকাশ ঘটে \textbf{1991 সালে}।
+
+\item Python একটি \textbf{High Level Programming Language}।
+
+\item এটি একটি \textbf{General Purpose Programming Language}।
+
+\item Python-এর নামটি সরাসরি সাপের নাম থেকে নেওয়া হয়নি;
+নামকরণে \textbf{Monty Python}-এর প্রভাব ছিল।
+
+\end{compacttwocolpoints}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{center}
+
+\textbf{
+Guido van Rossum
+\(\rightarrow\)
+Python
+\(\rightarrow\)
+1991
+}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Simple Example
+%================================================
+\booksubheading{Python-এর একটি সহজ উদাহরণ}
+
+Screen-এ \textenglish{\ttfamily Hello} প্রদর্শনের জন্য
+Python-এ লেখা যায়—
+
+\begin{codebox}
+
+\begin{center}
+{\textenglish{\ttfamily print("Hello")}}
+\end{center}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{center}
+{\textenglish{\ttfamily Hello}}
+\end{center}
+
+\end{codebox}
+
+এই ছোট Program থেকেই বোঝা যায় Python-এর Syntax তুলনামূলক
+সহজ ও সংক্ষিপ্ত।
+
+%================================================
+% Basic Features
+%================================================
+\booksubheading{Python-এর প্রাথমিক বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{সহজ ধারণা}}
+\\
+\hline
+
+High Level
+&
+মানুষের জন্য তুলনামূলক সহজে লেখা ও বোঝা যায়।
+\\
+\hline
+
+General Purpose
+&
+বিভিন্ন ধরনের Problem ও Application-এ ব্যবহার করা যায়।
+\\
+\hline
+
+Interpreter-based
+&
+সাধারণত Interpreter-এর সাহায্যে Program চালানো হয়।
+\\
+\hline
+
+Simple Syntax
+&
+Code তুলনামূলক সহজ, পরিষ্কার ও পাঠযোগ্য।
+\\
+\hline
+
+Portable
+&
+বিভিন্ন Operating System-এ ব্যবহার করা যায়।
+\\
+\hline
+
+Open Source
+&
+বিনামূল্যে ব্যবহার ও উন্নয়নের সুযোগ রয়েছে।
+\\
+\hline
+
+Large Library
+&
+অনেক Built-in Module, Library ও Package পাওয়া যায়।
+\\
+\hline
+
+\end{tabularx}
+
+Python-এর বৈশিষ্ট্য পরবর্তী নির্দিষ্ট Topic-এ আরও বিস্তারিত
+আলোচনা করা হবে।
+
+%================================================
+% Interpreter
+%================================================
+\booksubheading{Python-এ Interpreter-এর ভূমিকা}
+
+Python Program সাধারণত Interpreter-এর সাহায্যে Execute করা হয়।
+
+সহজভাবে—
+
+\begin{center}
+\begin{adjustbox}{max width=0.98\linewidth}
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.24\linewidth}{
+        \centering\textbf{Python\\Source Code}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{mainTeal}{softGreen}{
+    \parbox[c][8mm][c]{0.24\linewidth}{
+        \centering\textbf{Python\\Interpreter}
+    }
+}
+\quad
+\(\longrightarrow\)
+\quad
+\fcolorbox{darkBlue}{softBlue}{
+    \parbox[c][8mm][c]{0.20\linewidth}{
+        \centering\textbf{Execution}
+    }
+}
+\end{adjustbox}
+\end{center}
+
+Interpreter Python Source Code-এর Instruction বুঝে Program
+Execute করতে সাহায্য করে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Python-কে সাধারণভাবে একটি
+\textbf{Interpreted Language} বলা হয়।
+
+Interpreter সম্পর্কে পরবর্তী Translator Program অংশে আরও
+বিস্তারিত আলোচনা করা হবে।
+
+\end{rememberbox}
+
+%================================================
+% Uses
+%================================================
+\booksubheading{Python কোথায় ব্যবহার করা হয়?}
+
+Python-এর ব্যবহার অনেক বিস্তৃত। যেমন—
+
+\begin{compacttwocolpoints}
+
+\item সাধারণ Programming ও Problem Solving-এ।
+
+\item Web Development-এ।
+
+\item Automation ও Scripting-এ।
+
+\item Data Analysis-এ।
+
+\item Scientific Computing-এ।
+
+\item Machine Learning-এ।
+
+\item Artificial Intelligence-এ।
+
+\item Data Science-এ।
+
+\item শিক্ষা ও গবেষণায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Why Popular
+%================================================
+\booksubheading{Python জনপ্রিয় হওয়ার কারণ}
+
+Python জনপ্রিয় হওয়ার কয়েকটি প্রধান কারণ—
+
+\begin{compacttwocolpoints}
+
+\item Syntax সহজ ও পরিষ্কার।
+
+\item কম Code-এ অনেক কাজ করা যায়।
+
+\item নতুনদের জন্য শেখা তুলনামূলক সহজ।
+
+\item অনেক Library ও Package পাওয়া যায়।
+
+\item বিভিন্ন Operating System-এ ব্যবহার করা যায়।
+
+\item Web, Automation, Data Science এবং AI-সহ বিভিন্ন ক্ষেত্রে
+ব্যবহার করা যায়।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Python-এর সুবিধা}
+
+\begin{compacttwocolpoints}
+
+\item Program লেখা ও পড়া সহজ।
+
+\item Development তুলনামূলক দ্রুত করা যায়।
+
+\item Debugging সহজ।
+
+\item Code সাধারণত সংক্ষিপ্ত ও পাঠযোগ্য হয়।
+
+\item Library ও Framework-এর সংখ্যা অনেক।
+
+\item বিভিন্ন ধরনের Application তৈরিতে ব্যবহার করা যায়।
+
+\item নতুন Programmer-দের জন্য শেখা সুবিধাজনক।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Limitations
+%================================================
+\booksubheading{Python-এর কিছু সীমাবদ্ধতা}
+
+\begin{itemize}
+
+\item অনেক ক্ষেত্রে Compiled Low Level Language-এর তুলনায়
+Execution ধীর হতে পারে।
+
+\item Hardware-এর ওপর Low Level Language-এর মতো সরাসরি
+নিয়ন্ত্রণ কম।
+
+\item কিছু Resource-sensitive Application-এর জন্য সবসময়
+সেরা পছন্দ নাও হতে পারে।
+
+\end{itemize}
+
+%================================================
+% Java vs Python
+%================================================
+\booksubheading{Java ও Python-এর প্রাথমিক পার্থক্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.23\linewidth}|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বিষয়}}
+&
+\multicolumn{1}{c|}{\textbf{Java}}
+&
+\multicolumn{1}{c|}{\textbf{Python}}
+\\
+\hline
+
+ভাষার স্তর
+&
+High Level
+&
+High Level
+\\
+\hline
+
+ধরন
+&
+General Purpose
+&
+General Purpose
+\\
+\hline
+
+প্রধান বৈশিষ্ট্য
+&
+Object-Oriented, JVM ও Bytecode
+&
+সহজ Syntax ও Interpreter-based ব্যবহার
+\\
+\hline
+
+Syntax
+&
+তুলনামূলক বেশি নিয়মবদ্ধ
+&
+তুলনামূলক সহজ ও সংক্ষিপ্ত
+\\
+\hline
+
+স্রষ্টা
+&
+James Gosling
+&
+Guido van Rossum
+\\
+\hline
+
+প্রথম প্রকাশ
+&
+1995
+&
+1991
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Machine Independence
+%================================================
+\booksubheading{Python কি Machine Independent?}
+
+Python Source Code কোনো একটি নির্দিষ্ট Processor-এর Binary
+Instruction দিয়ে লেখা হয় না।
+
+প্রয়োজনীয় Python Environment বা Interpreter থাকলে একই
+Source Code বিভিন্ন Operating System-এ ব্যবহার করা সম্ভব হতে পারে।
+
+তাই Python-এর \textbf{Portability তুলনামূলক বেশি}।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}খেয়াল করো}
+
+Machine Independent বা Portable বলার অর্থ এই নয় যে কোনো
+Environment ছাড়াই Python Program সব Computer-এ চলবে।
+
+Program চালানোর জন্য প্রয়োজনীয়
+\textbf{Python Interpreter/Environment} থাকতে হবে।
+
+\end{rememberbox}
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Python একটি \textbf{High Level Programming Language}।
+
+\item এটি একটি \textbf{General Purpose Language}।
+
+\item Python-এর স্রষ্টা \textbf{Guido van Rossum}।
+
+\item Python প্রথম প্রকাশিত হয় \textbf{1991 সালে}।
+
+\item Python-কে সাধারণভাবে
+\textbf{Interpreter-based Language} বলা হয়।
+
+\item Python-এর Syntax সহজ, পরিষ্কার ও পাঠযোগ্য।
+
+\item Python-এর নামের সঙ্গে \textbf{Monty Python}-এর সম্পর্ক রয়েছে।
+
+\item Python Web Development, Automation, Data Science,
+Machine Learning ও Artificial Intelligence-এ ব্যবহৃত হয়।
+
+\item Python বিভিন্ন Platform-এ ব্যবহারযোগ্য এবং এর
+Portability তুলনামূলক বেশি।
+
+\item Python-এর বিস্তারিত বৈশিষ্ট্য, Programming Environment,
+Installation ও Syntax পরবর্তী Topic-গুলোতে আলোচনা করা হবে।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.10 Fourth Generation Language
+%================================================

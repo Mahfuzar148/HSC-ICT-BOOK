@@ -1,0 +1,18 @@
+% !TeX program = lualatex
+\documentclass[12pt,twoside,openany]{book}
+\input{preamble.tex}
+\input{chapters/Chapter02/latex/page_layout.tex}
+\chTwoGeometry{\geometry}
+\input{chapters/Chapter02/latex/text_font.tex}
+\def\chTwoStandalone{1}
+\renewcommand{\contentsname}{সূচিপত্র}
+\setcounter{tocdepth}{1}
+\let\cleardoublepage\clearpage
+\AtBeginDocument{\setlength{\headwidth}{\textwidth}}
+\begin{document}
+\frontmatter
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{1}
+\input{chapters/Chapter02/latex/chapter}
+\end{document}

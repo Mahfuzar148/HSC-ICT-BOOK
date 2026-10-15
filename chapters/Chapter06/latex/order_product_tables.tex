@@ -1,0 +1,28 @@
+\begin{flushleft}
+\begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=0pt,align=left}]
+\node (orders) {\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Orders}}\\\hline
+\chSixHeader OrderID & Customer\\\hline
+1001 & Rafi\\\hline 1002 & Nila\\\hline 1003 & Hasan\\\hline
+\end{tabular}};
+\node[anchor=north west] (details) at ([xshift=13mm]orders.north east)
+{\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{OrderDetails}}\\\hline
+\chSixHeader OrderID & ProductID\\\hline
+1001 & P01\\\hline 1001 & P03\\\hline 1002 & P02\\\hline
+1002 & P03\\\hline 1003 & P01\\\hline
+\end{tabular}};
+\node[anchor=north west] (product) at ([xshift=13mm]details.north east)
+{\begin{tabular}{|l|l|}\hline
+\multicolumn{2}{|l|}{\textbf{Product}}\\\hline
+\chSixHeader ProductID & ProductName\\\hline
+P01 & Computer\\\hline P02 & Printer\\\hline P03 & Keyboard\\\hline
+\end{tabular}};
+\draw[bookarrow] (orders.east)--node[pos=.2,above=2pt]{1}node[pos=.8,above=2pt]{M}(details.west);
+\draw[bookarrow] (product.west)--node[pos=.2,above=2pt]{1}node[pos=.8,above=2pt]{M}(details.east);
+\node[anchor=north west] at ([yshift=-2mm]orders.south west) {OrderID = PK};
+\node[anchor=north west,text width=37mm] at ([yshift=-2mm]details.south west) {OrderID ও ProductID = FK};
+\node[anchor=north west] at ([yshift=-2mm]product.south west) {ProductID = PK};
+\end{tikzpicture}
+\captionof{table}{Orders ও Product-এর M:N সংযোগে OrderDetails}
+\end{flushleft}

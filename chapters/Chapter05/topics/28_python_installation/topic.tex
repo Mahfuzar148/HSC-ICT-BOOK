@@ -1,0 +1,635 @@
+\sectionheading{5.28 Python Installation ও Setup}
+
+Python-এ Program লেখা ও Execute করার আগে Computer-এ
+\textbf{Python Interpreter} Install করতে হয়।
+
+Installation সম্পন্ন হওয়ার পর Python Shell, IDLE অথবা
+প্রয়োজনীয় Code Editor/IDE ব্যবহার করে Python Program
+লেখা ও চালানো যায়।
+
+%================================================
+% Definition
+%================================================
+
+\booksubheading{Python Installation কী?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+Computer-এ Python Interpreter এবং প্রয়োজনীয় Supporting Tool
+স্থাপন করে Python Program লেখা ও চালানোর উপযোগী পরিবেশ
+তৈরি করার প্রক্রিয়াকে \textbf{Python Installation ও Setup} বলা হয়।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{Download}
+\(\longrightarrow\)
+\textbf{Install}
+\(\longrightarrow\)
+\textbf{PATH Setup}
+\(\longrightarrow\)
+\textbf{Verify}
+\(\longrightarrow\)
+\textbf{Run}
+
+\end{center}
+
+%================================================
+% Installation Steps
+%================================================
+
+\booksubheading{Python Install করার সাধারণ ধাপ}
+
+Windows Computer-এ Python Install করার সাধারণ প্রক্রিয়া—
+
+\begin{enumerate}
+
+\item
+Python-এর Official Website থেকে Python 3-এর Installer
+Download করতে হবে।
+
+\item
+Download করা Installer চালু করতে হবে।
+
+\item
+Installation-এর শুরুতে
+\textbf{Add python.exe to PATH}
+Option থাকলে সেটি নির্বাচন করতে হবে।
+
+\item
+এরপর \textbf{Install Now} নির্বাচন করে Installation শুরু করতে হবে।
+
+\item
+Installation সম্পন্ন হওয়ার পর Command Prompt বা Terminal
+চালু করতে হবে।
+
+\item
+Python সঠিকভাবে Install হয়েছে কি না Version দেখে যাচাই করতে হবে।
+
+\item
+এরপর IDLE, Python Shell অথবা প্রয়োজনীয় Editor ব্যবহার করে
+Program লেখা শুরু করা যাবে।
+
+\end{enumerate}
+
+\replaceableimage[60mm]
+{images/python-installer.png}
+{Windows-এ Python Installer: Add python.exe to PATH এবং Install Now}
+
+\begin{center}
+\footnotesize\textbf{চিত্র: Windows-এ Python Installation-এর প্রাথমিক ধাপ}
+\end{center}
+
+%================================================
+% PATH
+%================================================
+
+\booksubheading{Add python.exe to PATH কেন গুরুত্বপূর্ণ?}
+
+Installation-এর সময় গুরুত্বপূর্ণ একটি Option হলো—
+
+\begin{center}
+
+\textbf{Add python.exe to PATH}
+
+\end{center}
+
+এটি নির্বাচন করলে Operating System Command Prompt বা Terminal
+থেকে Python Program চালানোর জন্য Python Interpreter-এর
+Location সহজে খুঁজে পায়।
+
+\begin{center}
+
+\textbf{Python PATH-এ যুক্ত}
+\(\longrightarrow\)
+\textbf{Terminal থেকে Python চালানো সহজ}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}সতর্কতা}
+
+PATH সঠিকভাবে Set না থাকলে Command Prompt-এ
+Python Command ব্যবহার করার সময় Error দেখা দিতে পারে।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+python is not recognized ...
+\end{english}
+
+\end{codebox}
+
+প্রয়োজনে পরে Environment Variable-এর PATH-এ Python-এর
+Location যোগ করেও এটি ঠিক করা যায়।
+
+\end{rememberbox}
+
+%================================================
+% Verify Installation
+%================================================
+
+\booksubheading{Python Installation যাচাই করা}
+
+Python Install হওয়ার পর Command Prompt বা Terminal খুলে
+নিচের Command ব্যবহার করা যায়—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+python --version
+\end{english}
+
+\end{codebox}
+
+Windows-এর অনেক Setup-এ নিচের Command-ও ব্যবহার করা যায়—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+py --version
+\end{english}
+
+\end{codebox}
+
+Python সঠিকভাবে Install থাকলে Installed Version দেখা যাবে।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Python 3.x.x
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 3.x.x}
+দ্বারা Python 3-এর Installed Version বোঝানো হয়েছে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Version সঠিকভাবে দেখা যাচ্ছে
+\(\longrightarrow\)
+Python Installation সফলভাবে হয়েছে।
+
+\end{rememberbox}
+
+%================================================
+% Python Shell
+%================================================
+
+\booksubheading{Python Shell চালু করা}
+
+Command Prompt বা Terminal-এ লিখতে পারি—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+python
+\end{english}
+
+\end{codebox}
+
+অথবা উপযুক্ত Windows Setup-এ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+py
+\end{english}
+
+\end{codebox}
+
+এরপর Python Interactive Shell-এর Prompt দেখা যেতে পারে—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+>>>
+\end{english}
+
+\end{codebox}
+
+এই Prompt-এ সরাসরি Python Instruction লেখা যায়।
+
+\begin{examplebox}{উদাহরণ}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+>>> 5 + 3\\
+8
+\end{english}
+
+\end{codebox}
+
+এখানে
+\textenglish{\ttfamily 5 + 3}
+লেখার পর সঙ্গে সঙ্গে
+\textenglish{\ttfamily 8}
+Result পাওয়া গেছে।
+
+\end{examplebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+\textenglish{\ttfamily >>>}
+\(\longrightarrow\)
+Python Interactive Shell-এর Prompt
+
+\end{rememberbox}
+
+%================================================
+% IDLE
+%================================================
+
+\booksubheading{IDLE চালু করা}
+
+Python-এর Standard Installation-এর সঙ্গে সাধারণত
+\textbf{IDLE} ব্যবহার করার সুবিধা পাওয়া যায়।
+
+Windows-এ Start Menu থেকে IDLE খুঁজে চালু করা যায়।
+
+IDLE-এর মাধ্যমে—
+
+\begin{compacttwocolpoints}
+
+\item Python Shell ব্যবহার করা যায়।
+
+\item নতুন Python Program লেখা যায়।
+
+\item Program File Save করা যায়।
+
+\item Program Run করা যায়।
+
+\item Error Message দেখা যায়।
+
+\end{compacttwocolpoints}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\textbf{IDLE}
+=
+Integrated Development and Learning Environment
+
+\end{rememberbox}
+
+%================================================
+% Test Program
+%================================================
+
+\booksubheading{প্রথম Test Program}
+
+Installation ও Environment সঠিকভাবে কাজ করছে কি না
+যাচাই করার জন্য একটি ছোট Program চালানো যায়—
+
+\begin{examplebox}{Test Program}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+print("Hello, Python!")
+\end{english}
+
+\end{codebox}
+
+\textbf{Output:}
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+Hello, Python!
+\end{english}
+
+\end{codebox}
+
+এতে বোঝা যায় Python Environment Program Execute করতে পারছে।
+
+\end{examplebox}
+
+%================================================
+% File Extension
+%================================================
+
+\booksubheading{Python Program File-এর Extension}
+
+Python Program সাধারণত
+\textbf{\textenglish{\ttfamily .py}}
+Extension-এ Save করা হয়।
+
+উদাহরণ—
+
+\begin{codebox}
+
+\begin{english}
+\ttfamily
+hello.py\\
+sum.py\\
+program.py
+\end{english}
+
+\end{codebox}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}MCQ তথ্য}
+
+Python Source File Extension
+\(\longrightarrow\)
+\textbf{\textenglish{\ttfamily .py}}
+
+\end{rememberbox}
+
+%================================================
+% Setup
+%================================================
+
+\booksubheading{Setup বলতে কী বোঝায়?}
+
+শুধু Python Install করলেই Programming-এর প্রস্তুতি সম্পূর্ণ হয় না।
+
+Programming শুরু করার উপযোগী অবস্থায় প্রয়োজনীয় Environment
+প্রস্তুত করাও Setup-এর অংশ।
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\bfseries\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{কাজ}}
+&
+\multicolumn{1}{c|}{\textbf{উদ্দেশ্য}}
+
+\\
+
+\hline
+
+Python Install
+&
+Python Interpreter পাওয়া
+\\
+
+\hline
+
+PATH Setup
+&
+Terminal থেকে সহজে Python চালানো
+\\
+
+\hline
+
+Version Check
+&
+Installation সঠিক হয়েছে কি না যাচাই করা
+\\
+
+\hline
+
+IDLE / Editor চালু
+&
+Code লেখার পরিবেশ প্রস্তুত করা
+\\
+
+\hline
+
+Test Program Run
+&
+Python Environment ঠিকভাবে কাজ করছে কি না যাচাই করা
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Common Installation Problems
+%================================================
+
+\booksubheading{Installation-এর সাধারণ সমস্যা}
+
+\begin{tabularx}
+{\linewidth}
+{
+|>{\RaggedRight\arraybackslash}p{0.34\linewidth}
+|Y|
+}
+
+\hline
+
+\rowcolor{softBlue}
+
+\multicolumn{1}{|c|}{\textbf{সমস্যা}}
+&
+\multicolumn{1}{c|}{\textbf{সম্ভাব্য কারণ/সমাধান}}
+
+\\
+
+\hline
+
+\textenglish{\ttfamily python}
+Command কাজ করছে না
+&
+PATH সঠিকভাবে Set হয়েছে কি না পরীক্ষা করতে হবে।
+\\
+
+\hline
+
+Python Version দেখা যাচ্ছে না
+&
+Installation সম্পূর্ণ হয়েছে কি না পরীক্ষা করতে হবে।
+\\
+
+\hline
+
+পুরোনো Version চালু হচ্ছে
+&
+Computer-এ একাধিক Python Version থাকতে পারে।
+\\
+
+\hline
+
+Program Run হচ্ছে না
+&
+Command, File এবং Environment Setup পরীক্ষা করতে হবে।
+\\
+
+\hline
+
+IDLE পাওয়া যাচ্ছে না
+&
+Python Installation ও IDLE Component পরীক্ষা করতে হবে।
+\\
+
+\hline
+
+\end{tabularx}
+
+%================================================
+% Python 3
+%================================================
+
+\booksubheading{কোন Version ব্যবহার করবে?}
+
+নতুন Program শেখা ও এই বইয়ের উদাহরণের জন্য
+\textbf{Python 3} ব্যবহার করা হবে।
+
+এই বইয়ের পরবর্তী সকল Python Program
+\textbf{Python 3 Syntax} অনুসরণ করবে।
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}দ্রুত ধারাবাহিকতা}
+
+\begin{center}
+
+\textbf{Download}
+\(\longrightarrow\)
+\textbf{Add to PATH}
+\(\longrightarrow\)
+\textbf{Install}
+\(\longrightarrow\)
+\textbf{Version Check}
+\(\longrightarrow\)
+\textbf{Run}
+
+\end{center}
+
+\end{rememberbox}
+
+%================================================
+% Common Mistakes
+%================================================
+
+\booksubheading{সাধারণ ভুল}
+
+\begin{compacttwocolpoints}
+
+\item Python Install না করেই Local Computer-এ Program
+Execute করার চেষ্টা করা।
+
+\item
+\textbf{Add python.exe to PATH}
+Option উপেক্ষা করা।
+
+\item Python Installation হয়েছে কি না Version Check না করা।
+
+\item Python Source File ভুল Extension-এ Save করা।
+
+\item Python 2 ও Python 3-এর Syntax মিশিয়ে ব্যবহার করা।
+
+\item Python, IDLE এবং Code Editor-কে একই Software মনে করা।
+
+\item
+\textenglish{\ttfamily >>>}
+-কে Program-এর অংশ মনে করে File-এর মধ্যে লিখে দেওয়া।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Final Reminder
+%================================================
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item
+Python Program চালাতে Computer-এ
+\textbf{Python Interpreter}
+Install থাকতে হয়।
+
+\item
+এই বইয়ের জন্য
+\textbf{Python 3}
+ব্যবহার করা হবে।
+
+\item
+Installation-এর সময়
+\textbf{Add python.exe to PATH}
+Option গুরুত্বপূর্ণ।
+
+\item
+Installation যাচাই করতে—
+
+\begin{center}
+
+\textenglish{\ttfamily python --version}
+
+অথবা
+
+\textenglish{\ttfamily py --version}
+
+\end{center}
+
+ব্যবহার করা যায়।
+
+\item
+\textenglish{\ttfamily >>>}
+হলো Python Interactive Shell-এর Prompt।
+
+\item
+Python Source File-এর Extension হলো
+\textbf{\textenglish{\ttfamily .py}}।
+
+\item
+IDLE ব্যবহার করে Python Code লেখা, Save এবং Run করা যায়।
+
+\item
+দ্রুত মনে রাখবে—
+
+\begin{center}
+
+\textbf{Install Python}
+\(\longrightarrow\)
+\textbf{PATH ঠিক করো}
+\(\longrightarrow\)
+\textbf{Version Check করো}
+\(\longrightarrow\)
+\textbf{Test Program চালাও}
+
+\end{center}
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
+
+%================================================
+% 5.29 Ways of Writing Python Code
+%================================================
+

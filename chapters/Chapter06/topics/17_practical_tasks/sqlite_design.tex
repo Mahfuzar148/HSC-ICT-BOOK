@@ -1,0 +1,17 @@
+\subsection{DB Browser for SQLite-এ Table তৈরি}
+DB Browser for SQLite-এ New Database দিয়ে ফাইলের নাম ও স্থান নির্বাচন করা যায়। Create Table ডায়ালগ বক্সে টেবিলের নাম, ফিল্ড ও টাইপ বসিয়ে প্রয়োজনীয় বিধি নির্বাচন করা হয়। \textbf{NN} দিয়ে NOT NULL, \textbf{PK} দিয়ে Primary Key এবং \textbf{U} দিয়ে Unique বিধির ধারণা বোঝানো হয়। \textbf{AI (AutoIncrement)} হলো উপযুক্ত integer primary key-এর স্বয়ংক্রিয় পরিচিতি সংক্রান্ত বিকল্প; সব ফিল্ডে এটি প্রযোজ্য নয়।
+
+Browse Data-তে টেবিল বেছে রেকর্ড যোগ করা যায় এবং Execute SQL-এ নির্দেশ লেখা যায়। সম্পাদনা শেষে Write Changes দিয়ে পরিবর্তন স্থায়ীভাবে সংরক্ষণ করি। Access ও SQLite-এর টাইপের নাম ও সুবিধা এক নয়; এক সফটওয়্যারের নির্দেশ সরাসরি অন্যটিতে একইভাবে কাজ করবে ধরে নেওয়া যাবে না। ব্যবহারিক অংশে SQLite-এর সম্পূর্ণ চালানো যায় এমন উদাহরণ আছে।
+
+\subsubsection{SQLite-এ কর্মীর তথ্যের কাঠামো}
+\textbf{কর্মীর পরিচয়, বেতন, তারিখ ও ছবি:} EmployeeID-তে INTEGER PRIMARY KEY, বেতনে NUMERIC, তারিখে ধারাবাহিক YYYY-MM-DD Text এবং ছবির বাইনারি ডেটায় BLOB রাখা যায়। Salary-তে একই মুদ্রায় বেতনের সংখ্যামান থাকবে; এটি ছবি বা সাধারণ বর্ণনার ফিল্ড নয়।
+\begin{verbatim}
+CREATE TABLE Employee (
+  EmployeeID INTEGER PRIMARY KEY,
+  Salary NUMERIC NOT NULL CHECK (Salary>=0),
+  JoiningDate TEXT NOT NULL,
+  Photo BLOB
+);
+\end{verbatim}
+Access-এ একই উদ্দেশ্যে Salary--Currency, JoiningDate--Date/Time এবং Photo--Attachment/OLE Object ব্যবহার করা যায়। SQLite-এ শুধু NUMERIC নাম ঘোষণা করলেই Access Currency-এর স্থির দশমিক আচরণ পাওয়া নিশ্চিত নয়। তারিখের বৈধতা ও গ্রহণযোগ্য বিন্যাসের অতিরিক্ত যাচাইও প্রয়োজন।
+

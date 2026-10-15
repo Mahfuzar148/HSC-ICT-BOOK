@@ -1,0 +1,461 @@
+\sectionheading{5.3 মেশিন ভাষা (Machine Language)}
+
+কম্পিউটারের Processor মানুষের ব্যবহৃত বাংলা, ইংরেজি কিংবা
+Python-এর মতো High Level Language সরাসরি বুঝতে পারে না।
+Processor মূলত \textbf{0 ও 1-এর নির্দিষ্ট বিন্যাসে তৈরি Binary
+Instruction} বুঝে কাজ করে।
+
+কম্পিউটারের সরাসরি বোধগম্য এই Instruction-এর ভাষাই হলো
+\textbf{Machine Language}।
+
+%================================================
+% Definition
+%================================================
+\booksubheading{মেশিন ভাষা কাকে বলে?}
+
+\begin{definitionbox}
+
+\textbf{\color{darkTeal}সংজ্ঞা}
+
+যে Programming Language-এ \textbf{0 ও 1-এর Binary Code} ব্যবহার
+করে কম্পিউটারকে সরাসরি Instruction দেওয়া হয় এবং যা Processor
+সরাসরি বুঝতে ও Execute করতে পারে, তাকে
+\textbf{মেশিন ভাষা (Machine Language)} বলে।
+
+\end{definitionbox}
+
+\textbf{সহজভাবে মনে রাখবে—}
+
+\begin{center}
+
+\textbf{
+0 ও 1-এর ভাষা
+\(\;=\;\)
+Machine Language
+}
+
+\end{center}
+
+Machine Language কম্পিউটারের Hardware-এর সবচেয়ে কাছাকাছি।
+তাই এটি \textbf{Low Level Language}-এর অন্তর্ভুক্ত।
+
+%================================================
+% Why Binary
+%================================================
+\booksubheading{Machine Language-এ 0 ও 1 কেন ব্যবহৃত হয়?}
+
+কম্পিউটারের Electronic Circuit মূলত দুটি অবস্থাকে সহজে প্রকাশ
+ও শনাক্ত করতে পারে। যেমন—\textbf{ON/OFF} অথবা
+\textbf{High/Low Voltage}।
+
+এই দুটি অবস্থাকে Binary Digit দিয়ে প্রকাশ করা হয়।
+
+\begin{center}
+
+\begin{tabularx}{0.68\linewidth}{|C{0.25\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\textbf{Binary Digit}
+&
+\multicolumn{1}{c|}{\textbf{সহজ ধারণা}}
+\\
+\hline
+
+0
+&
+OFF / Low অবস্থা
+\\
+\hline
+
+1
+&
+ON / High অবস্থা
+\\
+\hline
+
+\end{tabularx}
+
+\end{center}
+
+তাই কম্পিউটারের Instruction শেষ পর্যন্ত 0 ও 1-এর
+\textbf{Bit Pattern} আকারে প্রকাশ করা হয়।
+
+%================================================
+% Example
+%================================================
+\begin{examplebox}{Machine Instruction-এর ধারণামূলক উদাহরণ}
+
+ধরা যাক, কোনো Processor-এর একটি Instruction Binary আকারে—
+
+\begin{center}
+
+{\large\textenglish{\ttfamily 10110010 00000101}}
+
+\end{center}
+
+0 ও 1-এর এই নির্দিষ্ট বিন্যাস Processor-এর কাছে একটি নির্দিষ্ট
+কাজের নির্দেশ প্রকাশ করতে পারে।
+
+মানুষের পক্ষে এ ধরনের Binary Instruction মনে রাখা ও বোঝা কঠিন,
+কিন্তু Processor সরাসরি এটি বুঝতে পারে।
+
+\end{examplebox}
+
+%================================================
+% Instruction Structure
+%================================================
+\booksubheading{Machine Instruction-এর মৌলিক গঠন}
+
+একটি Machine Instruction-এ সাধারণভাবে দুটি গুরুত্বপূর্ণ অংশের
+ধারণা পাওয়া যায়—
+
+\begin{center}
+
+\begin{tikzpicture}[node distance=15mm]
+
+\node[databox] (opcode)
+{\textbf{Opcode}\\কী কাজ হবে};
+
+\node[processbox, right=of opcode] (operand)
+{\textbf{Operand}\\কোন Data/Address-এর ওপর};
+
+\draw[arrow] (opcode) -- (operand);
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{Opcode (Operation Code):}
+Processor-কে কী Operation বা কাজ করতে হবে তা নির্দেশ করে।
+
+\item \textbf{Operand:}
+কোন Data, Register বা Memory Location-এর ওপর Operationটি হবে
+সে সম্পর্কিত তথ্য প্রকাশ করে।
+
+\end{itemize}
+
+\begin{examplebox}{Opcode ও Operand সহজভাবে বোঝো}
+
+ধরা যাক নির্দেশটি হলো—
+
+\begin{center}
+
+\textbf{A-এর সঙ্গে B যোগ করো}
+
+\end{center}
+
+এখানে \textbf{``যোগ করো''} অংশটি কী Operation করতে হবে তা বোঝায়।
+অন্যদিকে \textbf{A ও B} হলো যে Data-এর ওপর কাজটি করা হবে।
+
+Machine Language-এ এই তথ্যগুলো Binary Code-এর মাধ্যমে প্রকাশিত হয়।
+
+\end{examplebox}
+
+%================================================
+% How it works
+%================================================
+\booksubheading{Machine Language কীভাবে কাজ করে?}
+
+Machine Language-এর Instruction সরাসরি Processor-এর
+Instruction Set-এর সঙ্গে সম্পর্কিত। তাই Processor Machine Code
+সরাসরি Decode করে নির্ধারিত কাজ Execute করতে পারে।
+
+\begin{center}
+
+\begin{tikzpicture}[node distance=13mm]
+
+\node[databox] (code)
+{\textbf{Machine Code}\\0 ও 1};
+
+\node[processbox, right=of code] (cpu)
+{\textbf{Processor}\\Decode ও Execute};
+
+\node[databox, right=of cpu] (result)
+{\textbf{Result}\\কাজ সম্পন্ন};
+
+\draw[arrow] (code) -- (cpu);
+\draw[arrow] (cpu) -- (result);
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+Machine Language কম্পিউটারের সরাসরি বোধগম্য ভাষা।
+তাই Machine Language-এ লেখা Instruction-কে আবার Machine Code-এ
+রূপান্তর করার প্রয়োজন হয় না।
+
+\end{rememberbox}
+
+%================================================
+% Features
+%================================================
+\booksubheading{Machine Language-এর বৈশিষ্ট্য}
+
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{0.27\linewidth}|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{বৈশিষ্ট্য}}
+&
+\multicolumn{1}{c|}{\textbf{ব্যাখ্যা}}
+\\
+\hline
+
+Binary ভিত্তিক
+&
+Instruction 0 ও 1-এর Binary Code দিয়ে লেখা হয়।
+\\
+\hline
+
+সরাসরি বোধগম্য
+&
+Processor Machine Instruction সরাসরি বুঝতে ও Execute করতে পারে।
+\\
+\hline
+
+Low Level Language
+&
+Hardware-এর খুব কাছাকাছি অবস্থান করে।
+\\
+\hline
+
+Machine Dependent
+&
+নির্দিষ্ট Processor বা Machine-এর Instruction Set-এর ওপর নির্ভরশীল।
+\\
+\hline
+
+Translator প্রয়োজন নেই
+&
+Machine Code Processor সরাসরি Execute করতে পারে।
+\\
+\hline
+
+Program লেখা কঠিন
+&
+Binary Instruction মনে রাখা ও হাতে লেখা মানুষের জন্য কঠিন।
+\\
+\hline
+
+Error শনাক্ত কঠিন
+&
+দীর্ঘ 0 ও 1-এর মধ্যে ভুল খুঁজে বের করা সময়সাপেক্ষ।
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Machine Dependence
+%================================================
+\booksubheading{Machine Language কেন Machine Dependent?}
+
+প্রতিটি Processor বা Processor Family-এর নিজস্ব
+\textbf{Instruction Set} থাকতে পারে।
+
+অর্থাৎ একটি নির্দিষ্ট Binary Pattern কোনো Processor-এর কাছে
+যে Instruction প্রকাশ করে, অন্য ধরনের Processor-এর কাছে একই
+Binary Pattern একই অর্থ নাও প্রকাশ করতে পারে।
+
+তাই একটি Machine বা Processor-এর জন্য লেখা Machine Language
+Program অন্য ধরনের Machine-এ সরাসরি ব্যবহার করা সবসময় সম্ভব নয়।
+
+\begin{examplebox}{Machine Dependence সহজভাবে বোঝো}
+
+ধরা যাক, \textbf{Computer-A} ও \textbf{Computer-B}-তে দুই ধরনের
+Processor রয়েছে।
+
+Computer-A-এর জন্য লেখা Binary Instruction যদি Computer-B-এর
+Instruction Set-এর সঙ্গে না মেলে, তবে একই Machine Program
+Computer-B-তে সরাসরি কাজ করবে না।
+
+এই কারণে Machine Language-কে
+\textbf{Machine Dependent Language} বলা হয়।
+
+\end{examplebox}
+
+%================================================
+% Advantages
+%================================================
+\booksubheading{Machine Language-এর সুবিধা}
+
+\begin{itemize}
+
+\item \textbf{Processor সরাসরি বুঝতে পারে—}
+Machine Language-এর Instruction সরাসরি Execute করা যায়।
+
+\item \textbf{অনুবাদের অতিরিক্ত ধাপ প্রয়োজন হয় না—}
+Instruction ইতোমধ্যে Machine-এর বোধগম্য Binary রূপে থাকে।
+
+\item \textbf{Hardware-এর সঙ্গে সরাসরি কাজ করা যায়—}
+Processor-এর Instruction Set-এর ওপর সরাসরি নিয়ন্ত্রণ পাওয়া যায়।
+
+\item \textbf{Memory ও Hardware-level Operation নির্দিষ্টভাবে নিয়ন্ত্রণ
+করা সম্ভব।}
+
+\end{itemize}
+
+%================================================
+% Disadvantages
+%================================================
+\booksubheading{Machine Language-এর অসুবিধা}
+
+Machine Language কম্পিউটারের জন্য সরাসরি বোধগম্য হলেও মানুষের
+জন্য এটি ব্যবহার করা খুবই কঠিন।
+
+\begin{compacttwocolpoints}
+
+\item 0 ও 1 ব্যবহার করে Program লেখা অত্যন্ত কঠিন।
+
+\item Binary Instruction মনে রাখা কঠিন।
+
+\item Program লেখা সময়সাপেক্ষ।
+
+\item Program পড়া ও Logic বুঝতে অসুবিধা হয়।
+
+\item একটি Bit-এর ভুলেও Instruction বা Result পরিবর্তিত হতে পারে।
+
+\item Error শনাক্ত ও সংশোধন করা কঠিন।
+
+\item Program পরিবর্তন ও Maintenance করা জটিল।
+
+\item Machine Dependent হওয়ায় Portability কম।
+
+\item বড় Program Machine Language-এ লেখা অত্যন্ত কষ্টসাধ্য।
+
+\end{compacttwocolpoints}
+
+%================================================
+% Comparison
+%================================================
+\booksubheading{Machine Language-এর সুবিধা ও অসুবিধা এক নজরে}
+
+\begin{tabularx}{\linewidth}{|Y|Y|}
+\hline
+
+\rowcolor{softBlue}
+\multicolumn{1}{|c|}{\textbf{সুবিধা}}
+&
+\multicolumn{1}{c|}{\textbf{অসুবিধা}}
+\\
+\hline
+
+Processor সরাসরি বুঝতে পারে
+&
+মানুষের জন্য লেখা ও বোঝা কঠিন
+\\
+\hline
+
+অতিরিক্ত Translator প্রয়োজন নেই
+&
+Error খুঁজে বের করা কঠিন
+\\
+\hline
+
+Hardware-এর সঙ্গে সরাসরি কাজ করা যায়
+&
+Machine Dependent
+\\
+\hline
+
+Instruction সরাসরি Execute করা যায়
+&
+Program তৈরি ও পরিবর্তন সময়সাপেক্ষ
+\\
+\hline
+
+\end{tabularx}
+
+%================================================
+% Generation
+%================================================
+\booksubheading{Machine Language ও First Generation Language}
+
+Programming Language-এর Generation অনুযায়ী Machine Language-কে
+\textbf{First Generation Language (1GL)} বলা হয়।
+
+\begin{center}
+
+\textbf{
+Machine Language
+\(\;=\;\)
+First Generation Language (1GL)
+}
+
+\end{center}
+
+এটি Programming Language-এর সবচেয়ে প্রাথমিক স্তরের ভাষাগুলোর
+একটি এবং Hardware-এর সঙ্গে সরাসরি সম্পর্কিত।
+
+%================================================
+% Why next language
+%================================================
+\booksubheading{Machine Language থেকে নতুন ভাষার প্রয়োজন কেন হলো?}
+
+Machine Language-এ Program লেখা, Binary Instruction মনে রাখা,
+Program পরিবর্তন করা এবং Error খুঁজে বের করা Programmer-এর জন্য
+খুব কঠিন ছিল।
+
+এই সমস্যা কমানোর জন্য 0 ও 1-এর পরিবর্তে সহজ প্রতীকী শব্দ বা
+\textbf{Mnemonic Code} ব্যবহার করে Instruction লেখার ধারণা তৈরি হয়।
+এর ফলে \textbf{Assembly Language}-এর বিকাশ ঘটে।
+
+\begin{center}
+
+\textbf{
+Binary Code
+\(\longrightarrow\)
+Program লেখা কঠিন
+\(\longrightarrow\)
+Mnemonic-এর প্রয়োজন
+\(\longrightarrow\)
+Assembly Language
+}
+
+\end{center}
+
+পরবর্তী অংশে Assembly Language বিস্তারিত আলোচনা করা হবে।
+
+%================================================
+% Final Reminder
+%================================================
+\begin{rememberbox}
+
+\textbf{\color{deepOrange}মনে রাখবে}
+
+\begin{itemize}
+
+\item Machine Language হলো \textbf{0 ও 1-এর Binary ভাষা}।
+
+\item এটি একটি \textbf{Low Level Language}।
+
+\item Machine Language হলো
+\textbf{First Generation Language (1GL)}।
+
+\item Processor Machine Language
+\textbf{সরাসরি বুঝতে ও Execute করতে পারে}।
+
+\item Machine Instruction-এ
+\textbf{Opcode ও Operand}-এর ধারণা গুরুত্বপূর্ণ।
+
+\item Machine Language হলো
+\textbf{Machine Dependent}।
+
+\item Machine Language-এর জন্য Machine Code তৈরির
+Translator প্রয়োজন হয় না।
+
+\item কম্পিউটারের জন্য সরাসরি বোধগম্য হলেও মানুষের জন্য
+Program লেখা, পড়া ও Debug করা কঠিন।
+
+\end{itemize}
+
+\end{rememberbox}
+
+\small
